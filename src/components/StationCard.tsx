@@ -1,5 +1,6 @@
-import { MapPin, ExternalLink, BedDouble, Train } from "lucide-react";
+import { MapPin, ExternalLink, BedDouble, Train, Euro, Navigation } from "lucide-react";
 import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data/stations";
+import { stationHotels } from "@/data/hotels";
 
 const typeColors: Record<string, string> = {
   "Alfa Pendular": "bg-primary text-primary-foreground",
@@ -10,6 +11,8 @@ const typeColors: Record<string, string> = {
 };
 
 export function StationCard({ station }: { station: Station }) {
+  const hotels = stationHotels[station.name] || [];
+
   return (
     <div className="group bg-card border border-border rounded-lg p-5 hover:shadow-lg hover:border-primary/30 transition-all duration-300">
       <div className="flex items-start justify-between gap-3 mb-3">
@@ -35,7 +38,7 @@ export function StationCard({ station }: { station: Station }) {
         ))}
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 mb-4">
         <a
           href={getAppleMapsUrl(station)}
           target="_blank"
@@ -58,9 +61,44 @@ export function StationCard({ station }: { station: Station }) {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground transition-colors"
         >
-          <BedDouble className="w-3.5 h-3.5" /> Hotels on Booking
+          <BedDouble className="w-3.5 h-3.5" /> More on Booking
         </a>
       </div>
+
+      {/* Hotels section */}
+      {hotels.length > 0 && (
+        <div className="border-t border-border pt-3">
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">
+            Budget stays nearby
+          </p>
+          <ul className="space-y-2">
+            {hotels.map((hotel) => (
+              <li key={hotel.name}>
+                <a
+                  href={hotel.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start justify-between gap-2 p-2 -mx-2 rounded-md hover:bg-accent/50 transition-colors"
+                >
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-foreground truncate">
+                      {hotel.name}
+                    </p>
+                    <p className="text-xs text-muted-foreground flex items-center gap-1 mt-0.5">
+                      <Navigation className="w-3 h-3" />
+                      {hotel.distanceKm} km from station
+                    </p>
+                  </div>
+                  <span className="text-sm font-semibold text-primary whitespace-nowrap flex items-center gap-0.5">
+                    <Euro className="w-3 h-3" />
+                    {hotel.priceFrom}
+                  </span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
