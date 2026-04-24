@@ -2,6 +2,8 @@ import { useState } from "react";
 import { stations } from "@/data/stations";
 import { StationCard } from "@/components/StationCard";
 import { Search, TrainFront } from "lucide-react";
+import heroStation from "@/assets/hero-station.jpg";
+import footerDouro from "@/assets/footer-douro.jpg";
 
 const allTypes = [...new Set(stations.flatMap((s) => s.types))];
 
@@ -20,15 +22,23 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <header className="bg-primary text-primary-foreground py-16 px-6">
-        <div className="max-w-5xl mx-auto">
+      <header className="relative text-primary-foreground py-24 md:py-32 px-6 overflow-hidden">
+        <img
+          src={heroStation}
+          alt="Historic Portuguese train station at golden hour with azulejo tiles"
+          width={1920}
+          height={1080}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/30" />
+        <div className="relative max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <TrainFront className="w-8 h-8" />
             <h1 className="font-display text-4xl md:text-5xl">
               Portugal North Stations
             </h1>
           </div>
-          <p className="text-primary-foreground/80 text-lg max-w-2xl">
+          <p className="text-primary-foreground/90 text-lg max-w-2xl">
             Find maps and affordable hotels near every major train station from
             Pombal to Valença.
           </p>
@@ -85,6 +95,31 @@ const Index = () => {
           </p>
         )}
       </main>
+
+      {/* Footer */}
+      <footer className="relative mt-12 text-primary-foreground overflow-hidden">
+        <img
+          src={footerDouro}
+          alt="Railway tracks winding through the Douro Valley vineyards"
+          width={1920}
+          height={768}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/40" />
+        <div className="relative max-w-5xl mx-auto px-6 py-16 text-center">
+          <h2 className="font-display text-3xl md:text-4xl mb-3">
+            Ride the rails of the north
+          </h2>
+          <p className="text-primary-foreground/90 max-w-xl mx-auto mb-6">
+            From the misty Douro Valley to the Atlantic coast — every station
+            here links you to maps and a place to sleep.
+          </p>
+          <p className="text-primary-foreground/70 text-sm">
+            We do not recommend these hotels, but if you do — we want to know.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
