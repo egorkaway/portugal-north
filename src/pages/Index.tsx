@@ -30,7 +30,7 @@ const Index = () => {
           height={1080}
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/50 to-transparent" />
+        <div className="absolute inset-0 bg-primary/50" />
         <div className="relative max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <TrainFront className="w-8 h-8" />
