@@ -22,15 +22,15 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero */}
-      <header className="relative text-primary-foreground py-24 md:py-32 px-6 overflow-hidden">
+      <header className="relative text-primary-foreground py-20 md:py-28 px-6 overflow-hidden bg-primary">
         <img
           src={heroStation}
           alt="Historic Portuguese train station at golden hour with azulejo tiles"
           width={1920}
           height={1080}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/70 to-primary/30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/50 to-transparent" />
         <div className="relative max-w-5xl mx-auto">
           <div className="flex items-center gap-3 mb-4">
             <TrainFront className="w-8 h-8" />
