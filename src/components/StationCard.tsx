@@ -112,6 +112,7 @@ export function StationCard({ station }: { station: Station }) {
           </ul>
         </div>
       )}
+      </div>
     </div>
   );
 }
