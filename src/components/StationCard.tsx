@@ -13,9 +13,21 @@ const typeColors: Record<string, string> = {
 
 export function StationCard({ station }: { station: Station }) {
   const hotels = stationHotels[station.name] || [];
+  const imageUrl = stationImages[station.name];
 
   return (
-    <div className="group bg-card border border-border rounded-lg p-5 hover:shadow-lg hover:border-primary/30 transition-all duration-300">
+    <div className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col">
+      {imageUrl && (
+        <div className="relative w-full aspect-[16/9] bg-muted overflow-hidden">
+          <img
+            src={imageUrl}
+            alt={`${station.name} train station`}
+            loading="lazy"
+            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      )}
+      <div className="p-5 flex flex-col flex-1">
       <div className="flex items-start justify-between gap-3 mb-3">
         <div>
           <h2 className="font-display text-xl text-foreground group-hover:text-primary transition-colors">
