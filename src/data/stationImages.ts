@@ -15,7 +15,8 @@ export const stationImages: Record<string, string> = {
   "Porto-Campanhã": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Campanh%C3%A3-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Campanh%C3%A3.jpg/960px-Campanh%C3%A3-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Campanh%C3%A3.jpg",
   "Ermesinde": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Vista_A%C3%A9rea_da_Esta%C3%A7%C3%A3o_de_Ermesinde.jpg/960px-Vista_A%C3%A9rea_da_Esta%C3%A7%C3%A3o_de_Ermesinde.jpg",
   "Trofa": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Esta%C3%A7%C3%A3o_de_Comboios_da_Trofa_-_panoramio.jpg/960px-Esta%C3%A7%C3%A3o_de_Comboios_da_Trofa_-_panoramio.jpg",
-  "Santo Tirso": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Gare_de_Santo_Tirso.jpg",
+  // City landmark (Mosteiro de Santo Tirso) — used as fallback since station photo coverage is poor.
+  "Santo Tirso": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Mosteiro_de_Santo_Tirso.jpg/960px-Mosteiro_de_Santo_Tirso.jpg",
   "Famalicão": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Famalic%C3%A3oesta%C3%A7%C3%A3o.jpg/960px-Famalic%C3%A3oesta%C3%A7%C3%A3o.jpg",
   "Nine": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/NineCP2016.jpg/960px-NineCP2016.jpg",
   "Braga": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Esta%C3%A7%C3%A3o_de_Braga%2C_2009.12.17.jpg/960px-Esta%C3%A7%C3%A3o_de_Braga%2C_2009.12.17.jpg",
