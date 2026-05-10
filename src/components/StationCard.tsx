@@ -1,7 +1,8 @@
-import { MapPin, ExternalLink, BedDouble, Train, Euro, Navigation } from "lucide-react";
+import { MapPin, ExternalLink, BedDouble, Train, Euro, Navigation, ThumbsUp, ThumbsDown } from "lucide-react";
 import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data/stations";
 import { stationHotels } from "@/data/hotels";
 import { stationImages } from "@/data/stationImages";
+import { useStationVote } from "@/hooks/useStationVote";
 
 const typeColors: Record<string, string> = {
   "Alfa Pendular": "bg-primary text-primary-foreground",
@@ -14,6 +15,7 @@ const typeColors: Record<string, string> = {
 export function StationCard({ station }: { station: Station }) {
   const hotels = stationHotels[station.name] || [];
   const imageUrl = stationImages[station.name];
+  const { vote, cast } = useStationVote(station.name);
 
   return (
     <div className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col">
@@ -29,7 +31,7 @@ export function StationCard({ station }: { station: Station }) {
       )}
       <div className="p-5 flex flex-col flex-1">
       <div className="flex items-start justify-between gap-3 mb-3">
-        <div>
+        <div className="min-w-0">
           <h2 className="font-display text-xl text-foreground group-hover:text-primary transition-colors">
             {station.name}
           </h2>
@@ -37,6 +39,36 @@ export function StationCard({ station }: { station: Station }) {
             <Train className="w-3.5 h-3.5" />
             {station.lines.join(" / ")}
           </p>
+        </div>
+        <div className="flex items-center gap-1 shrink-0" aria-label="Your private vote">
+          <button
+            type="button"
+            onClick={() => cast("up")}
+            aria-label="Upvote station"
+            aria-pressed={vote === "up"}
+            title={vote === "up" ? "Remove your upvote" : "Upvote (only you can see this)"}
+            className={`p-1.5 rounded-md border transition-colors ${
+              vote === "up"
+                ? "bg-primary text-primary-foreground border-primary"
+                : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-primary"
+            }`}
+          >
+            <ThumbsUp className="w-3.5 h-3.5" />
+          </button>
+          <button
+            type="button"
+            onClick={() => cast("down")}
+            aria-label="Downvote station"
+            aria-pressed={vote === "down"}
+            title={vote === "down" ? "Remove your downvote" : "Downvote (only you can see this)"}
+            className={`p-1.5 rounded-md border transition-colors ${
+              vote === "down"
+                ? "bg-destructive text-destructive-foreground border-destructive"
+                : "bg-card text-muted-foreground border-border hover:border-destructive/40 hover:text-destructive"
+            }`}
+          >
+            <ThumbsDown className="w-3.5 h-3.5" />
+          </button>
         </div>
       </div>
 
