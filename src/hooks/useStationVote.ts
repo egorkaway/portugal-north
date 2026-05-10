@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 
 export type Vote = "up" | "down" | null;
+export type VotesMap = Record<string, "up" | "down">;
 
 const COOKIE_NAME = "station_votes";
 
-function readVotes(): Record<string, "up" | "down"> {
+function readVotes(): VotesMap {
   if (typeof document === "undefined") return {};
   const match = document.cookie
     .split("; ")
@@ -17,30 +18,51 @@ function readVotes(): Record<string, "up" | "down"> {
   }
 }
 
-function writeVotes(votes: Record<string, "up" | "down">) {
+function writeVotes(votes: VotesMap) {
   const value = encodeURIComponent(JSON.stringify(votes));
-  // 1 year, same-site
   document.cookie = `${COOKIE_NAME}=${value}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
 }
 
-export function useStationVote(stationName: string) {
-  const [vote, setVote] = useState<Vote>(null);
+// Simple pub/sub so all consumers stay in sync within one tab.
+const listeners = new Set<() => void>();
+let cache: VotesMap | null = null;
 
-  useEffect(() => {
-    const votes = readVotes();
-    setVote(votes[stationName] ?? null);
-  }, [stationName]);
+function getSnapshot(): VotesMap {
+  if (cache === null) cache = readVotes();
+  return cache;
+}
+
+function emit() {
+  cache = readVotes();
+  listeners.forEach((l) => l());
+}
+
+function subscribe(cb: () => void) {
+  listeners.add(cb);
+  return () => listeners.delete(cb);
+}
+
+export function useAllVotes(): VotesMap {
+  return useSyncExternalStore(
+    subscribe,
+    getSnapshot,
+    () => ({}) as VotesMap,
+  );
+}
+
+export function useStationVote(stationName: string) {
+  const votes = useAllVotes();
+  const vote: Vote = votes[stationName] ?? null;
 
   const cast = (next: "up" | "down") => {
-    const votes = readVotes();
-    if (votes[stationName] === next) {
-      delete votes[stationName];
-      setVote(null);
+    const current = readVotes();
+    if (current[stationName] === next) {
+      delete current[stationName];
     } else {
-      votes[stationName] = next;
-      setVote(next);
+      current[stationName] = next;
     }
-    writeVotes(votes);
+    writeVotes(current);
+    emit();
   };
 
   return { vote, cast };

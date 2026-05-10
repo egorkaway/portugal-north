@@ -1,22 +1,33 @@
 import { useState } from "react";
 import { stations } from "@/data/stations";
 import { StationCard } from "@/components/StationCard";
-import { Search, TrainFront } from "lucide-react";
+import { Search, TrainFront, ThumbsUp, ThumbsDown, Circle } from "lucide-react";
 import heroStation from "@/assets/hero-station.jpg";
 import footerDouro from "@/assets/footer-douro.jpg";
+import { useAllVotes } from "@/hooks/useStationVote";
 
 const allTypes = [...new Set(stations.flatMap((s) => s.types))];
+
+type VoteFilter = "up" | "down" | "none";
 
 const Index = () => {
   const [search, setSearch] = useState("");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
+  const votes = useAllVotes();
 
   const filtered = stations.filter((s) => {
     const matchesSearch =
       s.name.toLowerCase().includes(search.toLowerCase()) ||
       s.lines.some((l) => l.toLowerCase().includes(search.toLowerCase()));
     const matchesFilter = !activeFilter || s.types.includes(activeFilter);
-    return matchesSearch && matchesFilter;
+    const v = votes[s.name];
+    const matchesVote =
+      !voteFilter ||
+      (voteFilter === "up" && v === "up") ||
+      (voteFilter === "down" && v === "down") ||
+      (voteFilter === "none" && !v);
+    return matchesSearch && matchesFilter && matchesVote;
   });
 
   return (
@@ -75,6 +86,27 @@ const Index = () => {
               </button>
             ))}
           </div>
+        </div>
+        <div className="max-w-5xl mx-auto px-6 pb-3 flex flex-wrap items-center gap-1.5">
+          <span className="text-xs text-muted-foreground mr-1">Your votes:</span>
+          {([
+            { key: "up" as const, label: "Upvoted", Icon: ThumbsUp },
+            { key: "down" as const, label: "Downvoted", Icon: ThumbsDown },
+            { key: "none" as const, label: "Not voted yet", Icon: Circle },
+          ]).map(({ key, label, Icon }) => (
+            <button
+              key={key}
+              onClick={() => setVoteFilter(voteFilter === key ? null : key)}
+              className={`inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                voteFilter === key
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
+              }`}
+            >
+              <Icon className="w-3 h-3" />
+              {label}
+            </button>
+          ))}
         </div>
       </div>
 
