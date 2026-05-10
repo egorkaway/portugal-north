@@ -87,6 +87,27 @@ const Index = () => {
             ))}
           </div>
         </div>
+        <div className="max-w-5xl mx-auto px-6 pb-3 flex flex-wrap items-center gap-1.5">
+          <span className="text-xs text-muted-foreground mr-1">Your votes:</span>
+          {([
+            { key: "up" as const, label: "Upvoted", Icon: ThumbsUp },
+            { key: "down" as const, label: "Downvoted", Icon: ThumbsDown },
+            { key: "none" as const, label: "Not voted yet", Icon: Circle },
+          ]).map(({ key, label, Icon }) => (
+            <button
+              key={key}
+              onClick={() => setVoteFilter(voteFilter === key ? null : key)}
+              className={`inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                voteFilter === key
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
+              }`}
+            >
+              <Icon className="w-3 h-3" />
+              {label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Grid */}
