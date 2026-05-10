@@ -1,22 +1,33 @@
 import { useState } from "react";
 import { stations } from "@/data/stations";
 import { StationCard } from "@/components/StationCard";
-import { Search, TrainFront } from "lucide-react";
+import { Search, TrainFront, ThumbsUp, ThumbsDown, Circle } from "lucide-react";
 import heroStation from "@/assets/hero-station.jpg";
 import footerDouro from "@/assets/footer-douro.jpg";
+import { useAllVotes } from "@/hooks/useStationVote";
 
 const allTypes = [...new Set(stations.flatMap((s) => s.types))];
+
+type VoteFilter = "up" | "down" | "none";
 
 const Index = () => {
   const [search, setSearch] = useState("");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
+  const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
+  const votes = useAllVotes();
 
   const filtered = stations.filter((s) => {
     const matchesSearch =
       s.name.toLowerCase().includes(search.toLowerCase()) ||
       s.lines.some((l) => l.toLowerCase().includes(search.toLowerCase()));
     const matchesFilter = !activeFilter || s.types.includes(activeFilter);
-    return matchesSearch && matchesFilter;
+    const v = votes[s.name];
+    const matchesVote =
+      !voteFilter ||
+      (voteFilter === "up" && v === "up") ||
+      (voteFilter === "down" && v === "down") ||
+      (voteFilter === "none" && !v);
+    return matchesSearch && matchesFilter && matchesVote;
   });
 
   return (
