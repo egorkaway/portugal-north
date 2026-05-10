@@ -1,7 +1,8 @@
-import { MapPin, ExternalLink, BedDouble, Train, Euro, Navigation } from "lucide-react";
+import { MapPin, ExternalLink, BedDouble, Train, Euro, Navigation, ThumbsUp, ThumbsDown } from "lucide-react";
 import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data/stations";
 import { stationHotels } from "@/data/hotels";
 import { stationImages } from "@/data/stationImages";
+import { useStationVote } from "@/hooks/useStationVote";
 
 const typeColors: Record<string, string> = {
   "Alfa Pendular": "bg-primary text-primary-foreground",
