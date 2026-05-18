@@ -61,8 +61,13 @@ const Index = () => {
         <div className="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row gap-3">
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+            <label htmlFor="station-search" className="sr-only">
+              Search station or line
+            </label>
             <input
-              type="text"
+              id="station-search"
+              type="search"
+              aria-label="Search station or line"
               placeholder="Search station or line..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
