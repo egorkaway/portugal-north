@@ -36,6 +36,19 @@ export const stations: Station[] = [
   { name: "Barcelos", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.5333, lng: -8.6167 },
   { name: "Viana do Castelo", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.6936, lng: -8.8389 },
   { name: "Valença", lines: ["Linha do Minho"], types: ["Regional"], lat: 42.0275, lng: -8.6425 },
+  // Smaller / regional stops
+  { name: "Cacia", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.6833, lng: -8.5972 },
+  { name: "Salreu", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.7222, lng: -8.5806 },
+  { name: "Esmoriz", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.9633, lng: -8.6356 },
+  { name: "Granja", lines: ["Linha do Norte"], types: ["Regional"], lat: 41.0344, lng: -8.6483 },
+  { name: "Darque", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.6822, lng: -8.8264 },
+  { name: "Afife", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.7625, lng: -8.8506 },
+  { name: "Vila Praia de Âncora", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.8133, lng: -8.8631 },
+  { name: "Caminha", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.8722, lng: -8.8408 },
+  { name: "Mesão Frio", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1614, lng: -7.8772 },
+  { name: "Pinhão", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1894, lng: -7.5478 },
+  { name: "Tua", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.2128, lng: -7.4178 },
+  { name: "Vizela", lines: ["Linha de Guimarães"], types: ["Urban", "Regional"], lat: 41.3789, lng: -8.3014 },
 ];
 
 export function getAppleMapsUrl(station: Station): string {
