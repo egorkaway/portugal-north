@@ -1,5 +1,5 @@
-// Real photos sourced from Wikimedia Commons (CC-licensed). 
-// Each URL is a 960px-wide thumbnail served directly by upload.wikimedia.org.
+// Real photos sourced from Wikimedia Commons (CC-licensed) and Pexels (free use).
+// Each URL is a thumbnail served directly by the source CDN.
 export const stationImages: Record<string, string> = {
   "Pombal": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Panorama_of_Pombal_train_station.jpg/960px-Panorama_of_Pombal_train_station.jpg",
   "Alfarelos": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Alfarelos-Granja_do_Ulmeiro_05.jpg/960px-Alfarelos-Granja_do_Ulmeiro_05.jpg",
@@ -40,4 +40,9 @@ export const stationImages: Record<string, string> = {
   "Pinhão": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/A_Esta%C3%A7%C3%A3o_do_Pinh%C3%A3o_com_os_seus_pain%C3%A9is_de_azulejos_exterior.jpg/960px-A_Esta%C3%A7%C3%A3o_do_Pinh%C3%A3o_com_os_seus_pain%C3%A9is_de_azulejos_exterior.jpg",
   "Tua": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Comboio_hist%C3%B3rico_na_Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_do_Tua_%283300093141%29.jpg/960px-Comboio_hist%C3%B3rico_na_Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_do_Tua_%283300093141%29.jpg",
   "Vizela": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Estacao_Ferroviaria_de_Vizela.jpg/960px-Estacao_Ferroviaria_de_Vizela.jpg",
+  // Pexels fallbacks where Wikimedia had no station photo
+  "Vila Praia de Âncora": "https://images.pexels.com/photos/35872756/pexels-photo-35872756.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Mesão Frio": "https://images.pexels.com/photos/20095795/pexels-photo-20095795.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Afife": "https://images.pexels.com/photos/35239401/pexels-photo-35239401.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Salreu": "https://images.pexels.com/photos/36471670/pexels-photo-36471670.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
 };
