@@ -1,5 +1,5 @@
-// Real photos sourced from Wikimedia Commons (CC-licensed). 
-// Each URL is a 960px-wide thumbnail served directly by upload.wikimedia.org.
+// Real photos sourced from Wikimedia Commons (CC-licensed) and Pexels (free use).
+// Each URL is a thumbnail served directly by the source CDN.
 export const stationImages: Record<string, string> = {
   "Pombal": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Panorama_of_Pombal_train_station.jpg/960px-Panorama_of_Pombal_train_station.jpg",
   "Alfarelos": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Alfarelos-Granja_do_Ulmeiro_05.jpg/960px-Alfarelos-Granja_do_Ulmeiro_05.jpg",
