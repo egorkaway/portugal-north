@@ -31,4 +31,13 @@ export const stationImages: Record<string, string> = {
   "Barcelos": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Barcelos_-_Portugal_%2852454827120%29.jpg/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Barcelos_-_Portugal_%2852454827120%29.jpg",
   "Viana do Castelo": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Viana_do_Castelo_train_station_%282%29.jpg/960px-Viana_do_Castelo_train_station_%282%29.jpg",
   "Valença": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Valen%C3%A7a_-_panoramio_%288%29.jpg/960px-Valen%C3%A7a_-_panoramio_%288%29.jpg",
+  // Smaller / regional stops (Wikimedia Commons)
+  "Cacia": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/CPA_4007%2C_Cacia_%285175357115%29.jpg/960px-CPA_4007%2C_Cacia_%285175357115%29.jpg",
+  "Esmoriz": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Cruzamento_em_Esmoriz_%285064869304%29.jpg/960px-Cruzamento_em_Esmoriz_%285064869304%29.jpg",
+  "Granja": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Esta%C3%A7%C3%A3o_ferrovi%C3%A1ria_Granja_07.jpg/960px-Esta%C3%A7%C3%A3o_ferrovi%C3%A1ria_Granja_07.jpg",
+  "Darque": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/CP_1413_%2B_%22PTG%22_%2826337261208%29.jpg/960px-CP_1413_%2B_%22PTG%22_%2826337261208%29.jpg",
+  "Caminha": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/CP_1424_%2827901805261%29.jpg/960px-CP_1424_%2827901805261%29.jpg",
+  "Pinhão": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/A_Esta%C3%A7%C3%A3o_do_Pinh%C3%A3o_com_os_seus_pain%C3%A9is_de_azulejos_exterior.jpg/960px-A_Esta%C3%A7%C3%A3o_do_Pinh%C3%A3o_com_os_seus_pain%C3%A9is_de_azulejos_exterior.jpg",
+  "Tua": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Comboio_hist%C3%B3rico_na_Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_do_Tua_%283300093141%29.jpg/960px-Comboio_hist%C3%B3rico_na_Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_do_Tua_%283300093141%29.jpg",
+  "Vizela": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Estacao_Ferroviaria_de_Vizela.jpg/960px-Estacao_Ferroviaria_de_Vizela.jpg",
 };
