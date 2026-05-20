@@ -45,4 +45,21 @@ export const stationImages: Record<string, string> = {
   "Mesão Frio": "https://images.pexels.com/photos/20095795/pexels-photo-20095795.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Afife": "https://images.pexels.com/photos/35239401/pexels-photo-35239401.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Salreu": "https://images.pexels.com/photos/36471670/pexels-photo-36471670.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  // Additional northern stops
+  "Souselas": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Comboios_da_Medway_em_Souselas%2C_Coimbra.jpg/960px-Comboios_da_Medway_em_Souselas%2C_Coimbra.jpg",
+  "Oliveira do Bairro": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/CP_4721_%2840728858120%29.jpg/960px-CP_4721_%2840728858120%29.jpg",
+  "Tamel": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/TK_6004_%288193835947%29.jpg/960px-TK_6004_%288193835947%29.jpg",
+  "Aregos": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CP_592.0_%2817341367656%29.jpg/960px-CP_592.0_%2817341367656%29.jpg",
+  "Contumil": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/CP_4000_-_Contumil_%288162790842%29.jpg/960px-CP_4000_-_Contumil_%288162790842%29.jpg",
+  "Caldas de Vizela": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Vista_geral_da_Gare_de_Vizela.jpg/960px-Vista_geral_da_Gare_de_Vizela.jpg",
+  "Lordelo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/CP_1413_%2B_%22PTG%22_%2839158632105%29.jpg/960px-CP_1413_%2B_%22PTG%22_%2839158632105%29.jpg",
+  // Pexels fallbacks (location/scenery)
+  "Curia": "https://images.pexels.com/photos/17651977/pexels-photo-17651977.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Válega": "https://images.pexels.com/photos/35855262/pexels-photo-35855262.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Rio Tinto": "https://images.pexels.com/photos/14383715/pexels-photo-14383715.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Durrães": "https://images.pexels.com/photos/12083360/pexels-photo-12083360.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Carreço": "https://images.pexels.com/photos/18672155/pexels-photo-18672155.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Areosa": "https://images.pexels.com/photos/36536130/pexels-photo-36536130.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Mosteirô": "https://images.pexels.com/photos/20095792/pexels-photo-20095792.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Mirandela": "https://images.pexels.com/photos/20095795/pexels-photo-20095795.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
 };
