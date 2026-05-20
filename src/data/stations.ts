@@ -49,6 +49,22 @@ export const stations: Station[] = [
   { name: "Pinhão", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1894, lng: -7.5478 },
   { name: "Tua", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.2128, lng: -7.4178 },
   { name: "Vizela", lines: ["Linha de Guimarães"], types: ["Urban", "Regional"], lat: 41.3789, lng: -8.3014 },
+  // Additional northern stops
+  { name: "Souselas", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.2778, lng: -8.4108 },
+  { name: "Curia", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.4322, lng: -8.4644 },
+  { name: "Oliveira do Bairro", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.5128, lng: -8.4961 },
+  { name: "Válega", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.8806, lng: -8.6097 },
+  { name: "Contumil", lines: ["Linha do Minho", "Linha do Norte"], types: ["Urban", "Regional"], lat: 41.1656, lng: -8.5836 },
+  { name: "Rio Tinto", lines: ["Linha do Minho"], types: ["Urban", "Regional"], lat: 41.1797, lng: -8.5683 },
+  { name: "Tamel", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.5172, lng: -8.5642 },
+  { name: "Durrães", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.5853, lng: -8.7136 },
+  { name: "Carreço", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.7372, lng: -8.8628 },
+  { name: "Areosa", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.7150, lng: -8.8533 },
+  { name: "Aregos", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.0944, lng: -8.0481 },
+  { name: "Mosteirô", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.0786, lng: -8.1283 },
+  { name: "Caldas de Vizela", lines: ["Linha de Guimarães"], types: ["Urban", "Regional"], lat: 41.3811, lng: -8.3197 },
+  { name: "Lordelo", lines: ["Linha de Guimarães"], types: ["Urban", "Regional"], lat: 41.3964, lng: -8.3461 },
+  { name: "Mirandela", lines: ["Linha do Tua (historic)"], types: ["Inactive / Historic"], lat: 41.4869, lng: -7.1858 },
 ];
 
 export function getAppleMapsUrl(station: Station): string {
