@@ -76,4 +76,13 @@ export const stationImages: Record<string, string> = {
   "Macinhata do Vouga": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Esta%C3%A7%C3%A3o_de_Macinhata_do_Vouga_%28Ramal_de_Aveiro%29.jpg/960px-Esta%C3%A7%C3%A3o_de_Macinhata_do_Vouga_%28Ramal_de_Aveiro%29.jpg",
   // Rio Mau lacks Wikimedia coverage — Pexels fallback (rural northern Portugal scenery)
   "Rio Mau": "https://images.pexels.com/photos/20095792/pexels-photo-20095792.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Cortegaça": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Apeadeiro_de_Cortega%C3%A7a.jpg/960px-Apeadeiro_de_Cortega%C3%A7a.jpg",
+  "Taveiro": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Linha_do_Norte_-_Taveiro.JPG/960px-Linha_do_Norte_-_Taveiro.JPG",
+  // Lousada — town landmark (Torre de Vilar do Torno) as fallback
+  "Lousada": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Torre_de_Vilar_do_Torno_-_Lousada_-_Portugal_%28286712376%29.jpg/960px-Torre_de_Vilar_do_Torno_-_Lousada_-_Portugal_%28286712376%29.jpg",
+  "Vila Nova de Cerveira": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Estaci%C3%B3n_de_Vila_Nova_de_Cerveira_2.jpg/960px-Estaci%C3%B3n_de_Vila_Nova_de_Cerveira_2.jpg",
+  "Pocinho": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Esta%C3%A7%C3%A3o_do_Pocinho%2C_2006.08.19.jpg/960px-Esta%C3%A7%C3%A3o_do_Pocinho%2C_2006.08.19.jpg",
+  "Ferradosa": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Ferradosa_Railway_Station.jpg/960px-Ferradosa_Railway_Station.jpg",
+  "Vesúvio": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Apeadeiro_de_Ves%C3%BAvio.jpg/960px-Apeadeiro_de_Ves%C3%BAvio.jpg",
+  "Bragança": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Estacao-ferroviaria-braganca.jpg/960px-Estacao-ferroviaria-braganca.jpg",
 };
