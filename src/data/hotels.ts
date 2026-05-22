@@ -343,4 +343,112 @@ export const stationHotels: StationHotels = {
     { name: "Tulipa Hotel", distanceKm: 0.7, priceFrom: 50, bookingUrl: "https://www.booking.com/hotel/pt/tulipa-braganca.html" },
     { name: "Pousada de Bragança", distanceKm: 1.9, priceFrom: 95, bookingUrl: "https://www.booking.com/hotel/pt/pousada-de-braganca-sao-bartolomeu.html" },
   ],
+  "Lisboa Santa Apolónia": [
+    { name: "My Story Hotel Tejo", distanceKm: 0.6, priceFrom: 65, bookingUrl: "https://www.booking.com/hotel/pt/my-story-tejo.html" },
+    { name: "Hotel Mundial", distanceKm: 1.2, priceFrom: 80, bookingUrl: "https://www.booking.com/hotel/pt/mundial.html" },
+  ],
+  "Lisboa Oriente": [
+    { name: "Tryp Lisboa Oriente", distanceKm: 0.4, priceFrom: 75, bookingUrl: "https://www.booking.com/hotel/pt/tryp-lisboa-oriente.html" },
+    { name: "Olissippo Oriente", distanceKm: 0.5, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/olissippo-oriente.html" },
+  ],
+  "Lisboa Rossio": [
+    { name: "My Story Hotel Rossio", distanceKm: 0.1, priceFrom: 80, bookingUrl: "https://www.booking.com/hotel/pt/my-story-rossio.html" },
+    { name: "Internacional Design Hotel", distanceKm: 0.2, priceFrom: 90, bookingUrl: "https://www.booking.com/hotel/pt/internacional-design.html" },
+  ],
+  "Cais do Sodré": [
+    { name: "LX Boutique Hotel", distanceKm: 0.2, priceFrom: 85, bookingUrl: "https://www.booking.com/hotel/pt/lx-boutique.html" },
+    { name: "The 7 Hotel", distanceKm: 0.5, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/the-7-cais-do-sodre.html" },
+  ],
+  "Cascais": [
+    { name: "Hotel Baia", distanceKm: 0.5, priceFrom: 90, bookingUrl: "https://www.booking.com/hotel/pt/baia.html" },
+    { name: "Pergola House", distanceKm: 0.9, priceFrom: 75, bookingUrl: "https://www.booking.com/hotel/pt/pergola-house.html" },
+  ],
+  "Sintra": [
+    { name: "Sintra Bliss House", distanceKm: 0.6, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/sintra-bliss.html" },
+    { name: "Nova Sintra", distanceKm: 1.1, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/nova-sintra.html" },
+  ],
+  "Setúbal": [
+    { name: "Hotel do Sado", distanceKm: 1.4, priceFrom: 60, bookingUrl: "https://www.booking.com/hotel/pt/do-sado.html" },
+    { name: "Hotel IBIS Setúbal", distanceKm: 0.9, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/ibis-setubal.html" },
+  ],
+  "Entroncamento": [
+    { name: "Hotel Apolo XIX", distanceKm: 0.4, priceFrom: 40, bookingUrl: "https://www.booking.com/hotel/pt/apolo-xix.html" },
+    { name: "Residencial Brasília", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Entroncamento&order=price" },
+  ],
+  "Santarém": [
+    { name: "Hotel Alfageme", distanceKm: 1.6, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/alfageme.html" },
+    { name: "Casa da Alcáçova", distanceKm: 1.9, priceFrom: 80, bookingUrl: "https://www.booking.com/hotel/pt/casa-da-alcacova.html" },
+  ],
+  "Tomar": [
+    { name: "Hotel dos Templários", distanceKm: 0.6, priceFrom: 75, bookingUrl: "https://www.booking.com/hotel/pt/dos-templarios.html" },
+    { name: "Hotel Kamanga", distanceKm: 0.4, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/kamanga.html" },
+  ],
+  "Caldas da Rainha": [
+    { name: "Sana Silver Coast Hotel", distanceKm: 0.9, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/sana-silver-coast.html" },
+    { name: "Hotel Cristal Caldas", distanceKm: 0.7, priceFrom: 50, bookingUrl: "https://www.booking.com/hotel/pt/cristal-caldas.html" },
+  ],
+  "Leiria": [
+    { name: "Hotel Eurosol Leiria", distanceKm: 0.3, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/eurosol-leiria.html" },
+    { name: "Hotel Lis", distanceKm: 1.1, priceFrom: 40, bookingUrl: "https://www.booking.com/hotel/pt/lis-leiria.html" },
+  ],
+  "Figueira da Foz": [
+    { name: "Hotel Costa de Prata", distanceKm: 0.8, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/costa-de-prata.html" },
+    { name: "Eurostars Oasis Plaza", distanceKm: 1.2, priceFrom: 65, bookingUrl: "https://www.booking.com/hotel/pt/eurostars-oasis-plaza.html" },
+  ],
+  "Castelo Branco": [
+    { name: "Tryp Colina do Castelo", distanceKm: 1.5, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/tryp-colina-do-castelo.html" },
+    { name: "Best Western Rainha D. Amélia", distanceKm: 1.2, priceFrom: 50, bookingUrl: "https://www.booking.com/hotel/pt/rainha-d-amelia.html" },
+  ],
+  "Covilhã": [
+    { name: "TRYP Covilhã Dona Maria", distanceKm: 1.8, priceFrom: 50, bookingUrl: "https://www.booking.com/hotel/pt/tryp-covilha-dona-maria.html" },
+    { name: "Hotel Solneve", distanceKm: 1.9, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/solneve.html" },
+  ],
+  "Guarda": [
+    { name: "Hotel Lusitânia Congress & Spa", distanceKm: 1.6, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/lusitania-congress-spa.html" },
+    { name: "Hotel Santos", distanceKm: 1.4, priceFrom: 40, bookingUrl: "https://www.booking.com/hotel/pt/santos.html" },
+  ],
+  "Vilar Formoso": [
+    { name: "Hotel Lusitano", distanceKm: 0.4, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilar+Formoso&order=price" },
+    { name: "Hotel Fronteira", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilar+Formoso&order=price" },
+  ],
+  "Viseu": [
+    { name: "Hotel Avenida Viseu", distanceKm: 0.5, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/avenida-viseu.html" },
+    { name: "Pousada de Viseu", distanceKm: 1.0, priceFrom: 95, bookingUrl: "https://www.booking.com/hotel/pt/pousada-viseu.html" },
+  ],
+  "Évora": [
+    { name: "Vitória Stone Hotel", distanceKm: 0.8, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/vitoria-stone.html" },
+    { name: "Albergaria do Calvário", distanceKm: 1.3, priceFrom: 90, bookingUrl: "https://www.booking.com/hotel/pt/albergaria-do-calvario.html" },
+  ],
+  "Beja": [
+    { name: "Hotel Bejense", distanceKm: 1.0, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/bejense.html" },
+    { name: "Pousada Convento Beja", distanceKm: 1.4, priceFrom: 95, bookingUrl: "https://www.booking.com/hotel/pt/pousada-convento-beja.html" },
+  ],
+  "Faro": [
+    { name: "Hotel Faro & Beach Club", distanceKm: 0.4, priceFrom: 75, bookingUrl: "https://www.booking.com/hotel/pt/faro.html" },
+    { name: "Stay Hotel Faro Centro", distanceKm: 0.3, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/stay-faro-centro.html" },
+  ],
+  "Albufeira-Ferreiras": [
+    { name: "Hotel Boa Vista", distanceKm: 1.2, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferreiras%2C+Albufeira&order=price" },
+    { name: "Ália Albufeira", distanceKm: 1.8, priceFrom: 60, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferreiras%2C+Albufeira&order=price" },
+  ],
+  "Tunes": [
+    { name: "Vila Galé Albacora", distanceKm: 1.9, priceFrom: 65, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tunes%2C+Algarve&order=price" },
+    { name: "Casa de Tunes", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tunes%2C+Algarve&order=price" },
+  ],
+  "Lagos": [
+    { name: "Hotel Marina Rio", distanceKm: 0.4, priceFrom: 60, bookingUrl: "https://www.booking.com/hotel/pt/marina-rio.html" },
+    { name: "Lagos Avenida Hotel", distanceKm: 0.6, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/lagos-avenida.html" },
+  ],
+  "Portimão": [
+    { name: "Hotel Família Portimão", distanceKm: 1.0, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Portim%C3%A3o&order=price" },
+    { name: "AP Eva Senses", distanceKm: 1.8, priceFrom: 75, bookingUrl: "https://www.booking.com/hotel/pt/ap-eva-senses.html" },
+  ],
+  "Tavira": [
+    { name: "Pousada Convento Tavira", distanceKm: 0.9, priceFrom: 85, bookingUrl: "https://www.booking.com/hotel/pt/pousada-convento-tavira.html" },
+    { name: "Vila Galé Tavira", distanceKm: 1.6, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/vila-gale-tavira.html" },
+  ],
+  "Vila Real de Santo António": [
+    { name: "Apolo Hotel", distanceKm: 0.5, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/apolo-vila-real.html" },
+    { name: "Guadiana Hotel", distanceKm: 0.7, priceFrom: 50, bookingUrl: "https://www.booking.com/hotel/pt/guadiana-vila-real.html" },
+  ],
 };

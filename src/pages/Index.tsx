@@ -46,12 +46,12 @@ const Index = () => {
           <div className="flex items-center gap-3 mb-4">
             <TrainFront className="w-8 h-8" />
             <h1 className="font-display text-4xl md:text-5xl">
-              Portugal North Stations
+              Portugal Stations
             </h1>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-2xl">
-            Find maps and affordable hotels near every major train station from
-            Pombal to Valença.
+            Find maps and affordable hotels near train stations across Portugal —
+            from the Minho to the Algarve.
           </p>
         </div>
       </header>

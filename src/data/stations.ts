@@ -87,6 +87,38 @@ export const stations: Station[] = [
   { name: "Ferradosa", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1856, lng: -7.3489 },
   { name: "Vesúvio", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1583, lng: -7.2497 },
   { name: "Bragança", lines: ["Linha do Tua (historic)"], types: ["Inactive / Historic"], lat: 41.8061, lng: -6.7567 },
+  // Lisbon area
+  { name: "Lisboa Santa Apolónia", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Urban"], lat: 38.7139, lng: -9.1225 },
+  { name: "Lisboa Oriente", lines: ["Linha do Norte", "Linha do Sul"], types: ["Alfa Pendular", "Intercidades", "Urban", "Regional"], lat: 38.7681, lng: -9.0994 },
+  { name: "Lisboa Rossio", lines: ["Linha de Sintra"], types: ["Urban"], lat: 38.7144, lng: -9.1397 },
+  { name: "Cais do Sodré", lines: ["Linha de Cascais"], types: ["Urban"], lat: 38.7058, lng: -9.1442 },
+  { name: "Cascais", lines: ["Linha de Cascais"], types: ["Urban"], lat: 38.6967, lng: -9.4197 },
+  { name: "Sintra", lines: ["Linha de Sintra"], types: ["Urban"], lat: 38.7989, lng: -9.3856 },
+  { name: "Setúbal", lines: ["Linha do Sul"], types: ["Intercidades", "Urban", "Regional"], lat: 38.5292, lng: -8.8836 },
+  // Centro & Linha do Oeste
+  { name: "Entroncamento", lines: ["Linha do Norte", "Linha da Beira Baixa"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 39.4661, lng: -8.4694 },
+  { name: "Santarém", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 39.2369, lng: -8.6822 },
+  { name: "Tomar", lines: ["Ramal de Tomar"], types: ["Regional"], lat: 39.6028, lng: -8.4128 },
+  { name: "Caldas da Rainha", lines: ["Linha do Oeste"], types: ["Regional"], lat: 39.4047, lng: -9.1369 },
+  { name: "Leiria", lines: ["Linha do Oeste"], types: ["Regional"], lat: 39.7472, lng: -8.8067 },
+  { name: "Figueira da Foz", lines: ["Ramal de Alfarelos"], types: ["Regional"], lat: 40.1494, lng: -8.8556 },
+  // Beira interior
+  { name: "Castelo Branco", lines: ["Linha da Beira Baixa"], types: ["Intercidades", "Regional"], lat: 39.8200, lng: -7.5089 },
+  { name: "Covilhã", lines: ["Linha da Beira Baixa"], types: ["Intercidades", "Regional"], lat: 40.2742, lng: -7.4969 },
+  { name: "Guarda", lines: ["Linha da Beira Alta"], types: ["Intercidades", "Regional"], lat: 40.5378, lng: -7.2706 },
+  { name: "Vilar Formoso", lines: ["Linha da Beira Alta"], types: ["Intercidades", "Regional"], lat: 40.6133, lng: -6.8358 },
+  { name: "Viseu", lines: ["Linha do Dão (historic)"], types: ["Inactive / Historic"], lat: 40.6614, lng: -7.9111 },
+  // Alentejo
+  { name: "Évora", lines: ["Linha do Alentejo"], types: ["Intercidades", "Regional"], lat: 38.5719, lng: -7.9089 },
+  { name: "Beja", lines: ["Linha do Alentejo"], types: ["Intercidades", "Regional"], lat: 38.0156, lng: -7.8639 },
+  // Algarve
+  { name: "Faro", lines: ["Linha do Algarve"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 37.0186, lng: -7.9319 },
+  { name: "Albufeira-Ferreiras", lines: ["Linha do Algarve"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 37.1228, lng: -8.2278 },
+  { name: "Tunes", lines: ["Linha do Algarve", "Linha do Sul"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 37.1722, lng: -8.2628 },
+  { name: "Lagos", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1014, lng: -8.6722 },
+  { name: "Portimão", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1417, lng: -8.5333 },
+  { name: "Tavira", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1278, lng: -7.6500 },
+  { name: "Vila Real de Santo António", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1956, lng: -7.4153 },
 ];
 
 export function getAppleMapsUrl(station: Station): string {
