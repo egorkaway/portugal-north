@@ -50,8 +50,8 @@ const Index = () => {
             </h1>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-2xl">
-            Find maps and affordable hotels near every major train station from
-            Pombal to Valença.
+            Find maps and affordable hotels near train stations across Portugal —
+            from the Minho to the Algarve.
           </p>
         </div>
       </header>
