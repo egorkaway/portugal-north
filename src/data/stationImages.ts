@@ -62,4 +62,18 @@ export const stationImages: Record<string, string> = {
   "Areosa": "https://images.pexels.com/photos/36536130/pexels-photo-36536130.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Mosteirô": "https://images.pexels.com/photos/20095792/pexels-photo-20095792.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Mirandela": "https://images.pexels.com/photos/20095795/pexels-photo-20095795.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  // Further additions
+  "Coimbra": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/CoimbraA-Station.jpg/960px-CoimbraA-Station.jpg",
+  "Mogofores": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Atacadeira_da_Fergrupo%2C_estacionada_na_esta%C3%A7%C3%A3o_de_Mogofores.jpg/960px-Atacadeira_da_Fergrupo%2C_estacionada_na_esta%C3%A7%C3%A3o_de_Mogofores.jpg",
+  "Avanca": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Avanca_-_Portugal_%2829266025533%29.jpg/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Avanca_-_Portugal_%2829266025533%29.jpg",
+  "Penafiel": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Abelha_em_Penafiel_%283775282291%29.jpg/960px-Abelha_em_Penafiel_%283775282291%29.jpg",
+  "Paredes": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Esta%C3%A7%C3%A3o_de_Paredes_CALVB2668_04.jpg/960px-Esta%C3%A7%C3%A3o_de_Paredes_CALVB2668_04.jpg",
+  "Cete": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Esta%C3%A7%C3%A3o_de_Cete_CALVB2668_03_%28cropped%29.jpg/960px-Esta%C3%A7%C3%A3o_de_Cete_CALVB2668_03_%28cropped%29.jpg",
+  "Recarei-Sobreira": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Recarei-Sobreira.jpg/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Recarei-Sobreira.jpg",
+  "Vila Meã": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Vila_Mea_Railway_Station_-_Emilio_Biel.jpg/960px-Vila_Mea_Railway_Station_-_Emilio_Biel.jpg",
+  "Águeda": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Esta%C3%A7%C3%A3o_de_%C3%81gueda%2C_2008.12.25.jpg/960px-Esta%C3%A7%C3%A3o_de_%C3%81gueda%2C_2008.12.25.jpg",
+  "Sernada do Vouga": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Automotoras_em_Sernada_do_Vouga_-_GazetaCF_1363_1944.jpg",
+  "Macinhata do Vouga": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Esta%C3%A7%C3%A3o_de_Macinhata_do_Vouga_%28Ramal_de_Aveiro%29.jpg/960px-Esta%C3%A7%C3%A3o_de_Macinhata_do_Vouga_%28Ramal_de_Aveiro%29.jpg",
+  // Rio Mau lacks Wikimedia coverage — Pexels fallback (rural northern Portugal scenery)
+  "Rio Mau": "https://images.pexels.com/photos/20095792/pexels-photo-20095792.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
 };

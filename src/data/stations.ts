@@ -65,6 +65,19 @@ export const stations: Station[] = [
   { name: "Caldas de Vizela", lines: ["Linha de Guimarães"], types: ["Urban", "Regional"], lat: 41.3811, lng: -8.3197 },
   { name: "Lordelo", lines: ["Linha de Guimarães"], types: ["Urban", "Regional"], lat: 41.3964, lng: -8.3461 },
   { name: "Mirandela", lines: ["Linha do Tua (historic)"], types: ["Inactive / Historic"], lat: 41.4869, lng: -7.1858 },
+  // Further additions
+  { name: "Coimbra", lines: ["Ramal de Coimbra"], types: ["Urban", "Regional"], lat: 40.2050, lng: -8.4297 },
+  { name: "Mogofores", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.4467, lng: -8.4719 },
+  { name: "Avanca", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.8083, lng: -8.5917 },
+  { name: "Penafiel", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.2050, lng: -8.2842 },
+  { name: "Paredes", lines: ["Linha do Douro"], types: ["Urban", "Regional"], lat: 41.2061, lng: -8.3361 },
+  { name: "Cete", lines: ["Linha do Douro"], types: ["Urban", "Regional"], lat: 41.1989, lng: -8.3744 },
+  { name: "Recarei-Sobreira", lines: ["Linha do Douro"], types: ["Urban", "Regional"], lat: 41.1731, lng: -8.4364 },
+  { name: "Vila Meã", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1850, lng: -8.0394 },
+  { name: "Rio Mau", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1644, lng: -8.0786 },
+  { name: "Águeda", lines: ["Linha do Vouga (historic)"], types: ["Inactive / Historic"], lat: 40.5775, lng: -8.4467 },
+  { name: "Sernada do Vouga", lines: ["Linha do Vouga (historic)"], types: ["Inactive / Historic"], lat: 40.6889, lng: -8.4014 },
+  { name: "Macinhata do Vouga", lines: ["Linha do Vouga (historic)"], types: ["Inactive / Historic"], lat: 40.6500, lng: -8.4639 },
 ];
 
 export function getAppleMapsUrl(station: Station): string {
