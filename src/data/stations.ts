@@ -78,6 +78,15 @@ export const stations: Station[] = [
   { name: "Águeda", lines: ["Linha do Vouga (historic)"], types: ["Inactive / Historic"], lat: 40.5775, lng: -8.4467 },
   { name: "Sernada do Vouga", lines: ["Linha do Vouga (historic)"], types: ["Inactive / Historic"], lat: 40.6889, lng: -8.4014 },
   { name: "Macinhata do Vouga", lines: ["Linha do Vouga (historic)"], types: ["Inactive / Historic"], lat: 40.6500, lng: -8.4639 },
+  // Even more northern stops
+  { name: "Cortegaça", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.9408, lng: -8.6356 },
+  { name: "Taveiro", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.1822, lng: -8.4731 },
+  { name: "Lousada", lines: ["Linha do Douro"], types: ["Urban", "Regional"], lat: 41.2783, lng: -8.2811 },
+  { name: "Vila Nova de Cerveira", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.9419, lng: -8.7392 },
+  { name: "Pocinho", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1361, lng: -7.1219 },
+  { name: "Ferradosa", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1856, lng: -7.3489 },
+  { name: "Vesúvio", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1583, lng: -7.2497 },
+  { name: "Bragança", lines: ["Linha do Tua (historic)"], types: ["Inactive / Historic"], lat: 41.8061, lng: -6.7567 },
 ];
 
 export function getAppleMapsUrl(station: Station): string {
