@@ -50,14 +50,25 @@ export async function syncVoteToServer(
 }
 
 export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 12_000);
+
   let res: Response;
   try {
-    res = await fetch(API_BASE, { cache: "no-store" });
-  } catch {
+    res = await fetch(API_BASE, { cache: "no-store", signal: controller.signal });
+  } catch (error) {
+    if (error instanceof Error && error.name === "AbortError") {
+      throw new RatingsFetchError(
+        "Ratings API timed out. Vote storage may be slow or misconfigured.",
+        "network",
+      );
+    }
     throw new RatingsFetchError(
       "Could not reach the ratings API. Check your connection or try again later.",
       "network",
     );
+  } finally {
+    clearTimeout(timeout);
   }
 
   if (!res.ok) {

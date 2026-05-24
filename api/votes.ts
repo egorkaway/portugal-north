@@ -21,8 +21,12 @@ async function handleGet(): Promise<Response> {
   if (!isVoteStorageConfigured()) {
     return json({ ratings: {}, configured: false });
   }
-  const ratings = await readGlobalRatings();
-  return json({ ratings, configured: true });
+  try {
+    const ratings = await readGlobalRatings();
+    return json({ ratings, configured: true });
+  } catch {
+    return json({ ratings: {}, configured: true, error: "storage_read_failed" }, 503);
+  }
 }
 
 async function handlePost(request: Request): Promise<Response> {

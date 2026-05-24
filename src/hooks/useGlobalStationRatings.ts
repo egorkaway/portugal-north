@@ -6,5 +6,6 @@ export function useGlobalStationRatings() {
     queryKey: ["global-station-ratings"],
     queryFn: fetchGlobalRatings,
     staleTime: 60_000,
+    retry: 1,
   });
 }
