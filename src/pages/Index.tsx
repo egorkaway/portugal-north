@@ -51,8 +51,8 @@ const Index = () => {
             </h1>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-2xl">
-            Every CP station from the Minho to the Algarve — with maps and
-            budget hotels within walking distance.
+            Major CP stations from the Minho to the Algarve — with budget
+            hotels within walking distance.
           </p>
         </div>
       </header>
@@ -150,8 +150,8 @@ const Index = () => {
             Ride the rails of Portugal
           </h2>
           <p className="text-primary-foreground/90 max-w-xl mx-auto mb-6">
-            From the misty Douro Valley to the Atlantic coast — every station
-            here links you to maps and a place to sleep.
+            From the misty Douro Valley to the Atlantic coast — key stops with
+            a place to sleep nearby.
           </p>
           <p className="text-primary-foreground/70 text-sm">
             We do not recommend these hotels, but if you do — we want to know.
