@@ -32,6 +32,18 @@ Each station has a thumbs-up / thumbs-down toggle. Your choice is stored in a fi
 
 When you vote, the change is also sent to `/api/votes`, which updates aggregate up/down counts in [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) (no database, no per-user log). All community totals live in one `community-votes.json` blob; reads use `get()` only (not `list()`, which counts as an [Advanced Operation](https://vercel.com/docs/vercel-blob)). Use `useGlobalStationRatings()` or `useGlobalImageRatings()` to read community totals.
 
+### Content Signals
+
+`public/robots.txt` declares [Content Signals](https://contentsignals.org/) preferences: search indexing allowed (`search=yes`), AI training and AI input disallowed (`ai-train=no`, `ai-input=no`).
+
+### Agent discovery
+
+The homepage response includes [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288) `Link` headers (via `vercel.json`) pointing to:
+
+- `/.well-known/api-catalog` — [RFC 9727](https://www.rfc-editor.org/rfc/rfc9727) API catalog (`application/linkset+json`), served by `api/api-catalog.ts` with `service-desc`, `service-doc`, and `status` links
+- `/docs/api` — human-readable API notes (`rel="service-doc"`)
+- `/api/openapi.json` — OpenAPI 3 description (`rel="describedby"`)
+
 ### Page titles & SEO
 
 Each route has its own `<title>`, meta description, canonical URL, and Open Graph tags. At build time, `scripts/prerender-pages.mjs` writes a static `index.html` per URL under `dist/` (home, rankings, every `/stations/:slug` page) so crawlers, link previews, and “View Source” see the correct metadata—not only the homepage defaults. Runtime navigation uses the same copy via `PageHead` + `react-helmet-async`.

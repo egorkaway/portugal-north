@@ -1,0 +1,99 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Portugal by Train API",
+    "version": "1.0.0",
+    "description": "HTTP API for community station/hotel votes and live CP train departures."
+  },
+  "servers": [{ "url": "https://www.verystays.com/api" }],
+  "paths": {
+    "/departures": {
+      "get": {
+        "summary": "Upcoming departures for a CP station",
+        "operationId": "getDepartures",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "required": true,
+            "description": "CP travel-api station code (e.g. 94-1008)",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "integer", "minimum": 1, "maximum": 10, "default": 3 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Departure board rows",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "departures": { "type": "array", "items": { "type": "object" } },
+                    "configured": { "type": "boolean" }
+                  }
+                }
+              }
+            }
+          },
+          "400": { "description": "Missing or invalid station code" },
+          "502": { "description": "Upstream CP API error" }
+        }
+      }
+    },
+    "/votes": {
+      "get": {
+        "summary": "Global community vote totals",
+        "operationId": "getVotes",
+        "parameters": [
+          {
+            "name": "ping",
+            "in": "query",
+            "required": false,
+            "schema": { "type": "string", "enum": ["1"] },
+            "description": "Health check when set to 1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Aggregated ratings and closed-hotel reports",
+            "content": { "application/json": { "schema": { "type": "object" } } }
+          },
+          "503": { "description": "Blob storage read failed" }
+        }
+      },
+      "post": {
+        "summary": "Apply a vote or closed-hotel report delta",
+        "operationId": "postVote",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "station": { "type": "string" },
+                  "stationImage": { "type": "string" },
+                  "hotelKey": { "type": "string" },
+                  "hotelClosed": { "type": "string" },
+                  "previous": { "oneOf": [{ "type": "string" }, { "type": "boolean" }, { "type": "null" }] },
+                  "next": { "oneOf": [{ "type": "string" }, { "type": "boolean" }, { "type": "null" }] }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Vote stored" },
+          "400": { "description": "Invalid payload" },
+          "503": { "description": "Storage not configured or write failed" }
+        }
+      }
+    }
+  }
+}

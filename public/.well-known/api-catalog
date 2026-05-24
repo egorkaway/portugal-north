@@ -1,0 +1,25 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://www.verystays.com/api",
+      "service-desc": [
+        {
+          "href": "https://www.verystays.com/api/openapi.json",
+          "type": "application/openapi+json"
+        }
+      ],
+      "service-doc": [
+        {
+          "href": "https://www.verystays.com/docs/api",
+          "type": "text/markdown"
+        }
+      ],
+      "status": [
+        {
+          "href": "https://www.verystays.com/api/votes?ping=1",
+          "type": "application/json"
+        }
+      ]
+    }
+  ]
+}

@@ -5,6 +5,22 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { buildSitemapXml } from "./src/lib/sitemap";
 
+async function handleApiCatalogDev(
+  req: IncomingMessage,
+  res: ServerResponse,
+): Promise<boolean> {
+  if (req.url !== "/.well-known/api-catalog") return false;
+
+  const { buildApiCatalogLinkset } = await import("./api/lib/apiCatalog.ts");
+  res.statusCode = 200;
+  res.setHeader(
+    "Content-Type",
+    'application/linkset+json; profile="https://www.rfc-editor.org/info/rfc9727"',
+  );
+  res.end(JSON.stringify(buildApiCatalogLinkset(siteUrl), null, 2));
+  return true;
+}
+
 async function handleDeparturesDevApi(
   req: IncomingMessage,
   res: ServerResponse,
@@ -57,9 +73,11 @@ export default defineConfig({
       name: "departures-dev-api",
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
-          void handleDeparturesDevApi(req, res).then((handled) => {
-            if (!handled) next();
-          });
+          void handleApiCatalogDev(req, res)
+            .then((handled) => (handled ? true : handleDeparturesDevApi(req, res)))
+            .then((handled) => {
+              if (!handled) next();
+            });
         });
       },
     },

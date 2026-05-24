@@ -1,16 +1,23 @@
+# Content signals (https://contentsignals.org/): search indexing allowed;
+# AI training and AI input (e.g. RAG) not permitted without separate permission.
 User-agent: Googlebot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: Bingbot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: Twitterbot
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: facebookexternalhit
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 User-agent: *
 Allow: /
+Content-Signal: ai-train=no, search=yes, ai-input=no
 
 Sitemap: __SITE_URL__/sitemap.xml
