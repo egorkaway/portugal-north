@@ -51,7 +51,7 @@ const Index = () => {
             </h1>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-2xl">
-            Major CP stations from the Minho to the Algarve — with budget
+            Major CP stations from the Minho to the Algarve, with budget
             hotels within walking distance.
           </p>
         </div>
@@ -150,11 +150,11 @@ const Index = () => {
             Ride the rails of Portugal
           </h2>
           <p className="text-primary-foreground/90 max-w-xl mx-auto mb-6">
-            From the misty Douro Valley to the Atlantic coast — key stops with
+            From the misty Douro Valley to the Atlantic coast, with key stops and
             a place to sleep nearby.
           </p>
           <p className="text-primary-foreground/70 text-sm">
-            We do not recommend these hotels, but if you do — we want to know.
+            We do not recommend these hotels, but if you do, we want to know.
           </p>
 
           <div className="mt-10 pt-8 border-t border-primary-foreground/20">
@@ -172,8 +172,8 @@ const Index = () => {
                 <div className="min-w-0 flex-1">
                   <p className="font-display text-xl text-primary-foreground">Clima Ibérico</p>
                   <p className="mt-1 text-sm text-primary-foreground/80">
-                    Weather and meteorological alerts across Spain and Portugal — check
-                    conditions before you travel.
+                    Weather and meteorological alerts across Spain and Portugal.
+                    Check conditions before you travel.
                   </p>
                 </div>
                 <ExternalLink

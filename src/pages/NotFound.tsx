@@ -12,9 +12,9 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
-        <title>Page Not Found — Portugal by Train</title>
+        <title>Page Not Found | Portugal by Train</title>
         <meta name="description" content="The page you were looking for could not be found. Return to the homepage to explore train stations across Portugal." />
-        <meta property="og:title" content="Page Not Found — Portugal by Train" />
+        <meta property="og:title" content="Page Not Found | Portugal by Train" />
         <meta property="og:description" content="The page you were looking for could not be found. Return to the homepage to explore train stations across Portugal." />
         <meta property="og:url" content={`https://portugal-north.lovable.app${location.pathname}`} />
         <meta name="robots" content="noindex" />

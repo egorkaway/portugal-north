@@ -1,6 +1,6 @@
 # Portugal by Train
 
-A static reference guide to train stations across Portugal — from the Minho to the Algarve — with maps and hand-picked budget hotels within walking distance of each stop.
+A static reference guide to major train stations across Portugal, from the Minho to the Algarve, with recommended budget hotels within walking distance of key stops.
 
 Live: **[portugal-north.lovable.app](https://portugal-north.lovable.app)**
 
@@ -10,11 +10,11 @@ Live: **[portugal-north.lovable.app](https://portugal-north.lovable.app)**
 
 Each station card shows:
 
-- **Station name & railway line(s)** — Alfa Pendular, Intercidades, Regional, Urban, or historic/inactive
-- **Service type badges** — colour-coded so you can tell at a glance what stops where
-- **Map links** — one-click to Apple Maps and OpenStreetMap, pinned to the station's coordinates
-- **Budget hotels nearby** — up to three hand-curated options within 2 km, with price-from and a direct Booking.com link
-- **"More on Booking" shortcut** — opens a pre-filtered Booking.com search (≤ 2 km radius, sorted by price) for the selected station
+- **Station name & railway line(s):** Alfa Pendular, Intercidades, Regional, Urban, or historic/inactive
+- **Service type badges:** colour-coded so you can tell at a glance what stops where
+- **Map links:** one-click to Apple Maps and OpenStreetMap, pinned to the station's coordinates
+- **Budget hotels nearby:** up to three recommended options within 2 km, with price-from and a direct Booking.com link
+- **"More on Booking" shortcut:** opens a pre-filtered Booking.com search (≤ 2 km radius, sorted by price) for the selected station
 
 ### Filtering & search
 
@@ -22,11 +22,11 @@ The sticky toolbar lets you:
 
 - **Search** by station name or line name
 - **Filter by service type** (Alfa Pendular, Intercidades, Regional, Urban, Inactive / Historic)
-- **Filter by your vote** — see only stations you've upvoted, downvoted, or haven't rated yet
+- **Filter by your vote:** see only stations you've upvoted, downvoted, or haven't rated yet
 
 ### Private voting
 
-Each station has a thumbs-up / thumbs-down toggle. Votes are stored in a first-party cookie (`station_votes`) that lasts one year — no account, no server, nothing shared. The vote filter in the toolbar lets you quickly pull up your favourites.
+Each station has a thumbs-up / thumbs-down toggle. Votes are stored in a first-party cookie (`station_votes`) that lasts one year. No account, no server, nothing shared. The vote filter in the toolbar lets you quickly pull up your favourites.
 
 ---
 
@@ -87,7 +87,7 @@ npm run build     # production build
 
 ## Data
 
-All station and hotel data lives in plain TypeScript files — no database, no API calls at runtime. To add a station, append an entry to `src/data/stations.ts`:
+All station and hotel data lives in plain TypeScript files. No database, no API calls at runtime. To add a station, append an entry to `src/data/stations.ts`:
 
 ```ts
 { name: "Minha Estação", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.123, lng: -8.456 }
