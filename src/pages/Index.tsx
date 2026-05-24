@@ -80,12 +80,21 @@ const Index = () => {
         />
         <div className="absolute inset-0 bg-primary/50" />
         <div className="relative max-w-5xl mx-auto">
-          <div className="flex items-center gap-3 mb-4">
-            <TrainFront className="w-8 h-8" />
-            <h1 className="font-display text-4xl md:text-5xl">
+          <h1 className="mb-4 font-display text-4xl md:text-5xl">
+            <a
+              href="/"
+              onClick={(e) => {
+                if (window.location.pathname === "/") {
+                  e.preventDefault();
+                  window.location.reload();
+                }
+              }}
+              className="inline-flex items-center gap-3 text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              <TrainFront className="h-8 w-8 shrink-0" aria-hidden="true" />
               Portugal by Train
-            </h1>
-          </div>
+            </a>
+          </h1>
           <p className="text-primary-foreground/90 text-lg max-w-2xl">
             Major CP stations from the Minho to the Algarve, with budget
             hotels within walking distance.
