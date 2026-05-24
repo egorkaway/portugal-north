@@ -124,4 +124,22 @@ export const stationImages: Record<string, string> = {
   "Olhão": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Olh%C3%A3o-Esta%C3%A7%C3%A3o-4.jpg/960px-Olh%C3%A3o-Esta%C3%A7%C3%A3o-4.jpg",
   "Loulé": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Esta%C3%A7%C3%A3o_de_Loul%C3%A9-Praia_de_Quarteira.JPG/960px-Esta%C3%A7%C3%A3o_de_Loul%C3%A9-Praia_de_Quarteira.JPG",
   "Silves": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Silves_railway_station.jpg/960px-Silves_railway_station.jpg",
+  // Recently added stations (Wikimedia where available, else Pexels)
+  "Quintans": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/TK_6004_%2847759189511%29.jpg/960px-TK_6004_%2847759189511%29.jpg",
+  "Paraimo-Sangalhos": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/CPA_4002_%2846969866234%29.jpg/960px-CPA_4002_%2846969866234%29.jpg",
+  "Vilela-Fornos": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Medway_4719_%2850842299321%29.jpg/960px-Medway_4719_%2850842299321%29.jpg",
+  "Coimbrões": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/CP_3400_-_Coimbr%C3%B5es_%2810576156284%29.jpg/960px-CP_3400_-_Coimbr%C3%B5es_%2810576156284%29.jpg",
+  "Valadares": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Valadares.jpg/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Valadares.jpg",
+  "Soure": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Soure_06.JPG/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Soure_06.JPG",
+  "Lamarosa": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flickr_-_nmorao_-_Esta%C3%A7%C3%A3o_da_Lamarosa%2C_2009.05.06.jpg/960px-Flickr_-_nmorao_-_Esta%C3%A7%C3%A3o_da_Lamarosa%2C_2009.05.06.jpg",
+  "Miramar": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/MiramarCP.jpg/960px-MiramarCP.jpg",
+  // Pexels fallbacks (no suitable station photo on Wikimedia)
+  "Oiã": "https://images.pexels.com/photos/16655081/pexels-photo-16655081.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Aguim": "https://images.pexels.com/photos/35389341/pexels-photo-35389341.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Adémia": "https://images.pexels.com/photos/5548209/pexels-photo-5548209.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "General Torres": "https://images.pexels.com/photos/808961/pexels-photo-808961.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Francelos": "https://images.pexels.com/photos/17157805/pexels-photo-17157805.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Aguda": "https://images.pexels.com/photos/36675216/pexels-photo-36675216.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Paramos": "https://images.pexels.com/photos/35750902/pexels-photo-35750902.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Caxarias": "https://images.pexels.com/photos/21031431/pexels-photo-21031431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
 };
