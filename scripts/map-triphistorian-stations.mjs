@@ -50,8 +50,21 @@ function parseStations(ts) {
 }
 
 function searchQueries(name) {
-  const base = name.replace(/\s*\([^)]*\)\s*/g, " ").replace(/\s+/g, " ").trim();
-  return [...new Set([base, `${base} Railway Station`, name])];
+  const base = name
+    .replace(/\s*\([^)]*\)\s*/g, " ")
+    .replace(/-/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  const hyphenAsSpace = name.replace(/\s*\([^)]*\)\s*/g, " ").replace(/-/g, " ").trim();
+  return [
+    ...new Set([
+      base,
+      hyphenAsSpace,
+      `${base} Railway Station`,
+      `${hyphenAsSpace} Railway Station`,
+      name.replace(/-/g, " "),
+    ]),
+  ];
 }
 
 function isRailHit(hit) {
@@ -71,9 +84,10 @@ function scoreHit(hit, station) {
   const lng = Number(hit.longitude);
   if (Number.isFinite(lat) && Number.isFinite(lng)) {
     const km = haversineKm(station.lat, station.lng, lat, lng);
-    if (km <= 2) score += 50 - km * 10;
-    else if (km <= 8) score += 10 - km;
-    else score -= km;
+    if (km <= 1.5) score += 80 - km * 20;
+    else if (km <= 5) score += 40 - km * 5;
+    else if (km <= 15) score += 5 - km;
+    else score -= km * 2;
   }
   if (isRailHit(hit)) score += 20;
   return score;
@@ -99,7 +113,13 @@ async function matchStation(station) {
   }
   const ranked = [...seen.values()].sort((a, b) => b.score - a.score);
   const best = ranked[0];
-  if (!best || best.score < 25) return null;
+  if (!best || best.score < 35) return null;
+  const lat = Number(best.hit.latitude);
+  const lng = Number(best.hit.longitude);
+  if (Number.isFinite(lat) && Number.isFinite(lng)) {
+    const km = haversineKm(station.lat, station.lng, lat, lng);
+    if (km > 8) return null;
+  }
   return best.hit.id;
 }
 
