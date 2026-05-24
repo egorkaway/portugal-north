@@ -563,4 +563,364 @@ export const stationHotels: StationHotels = {
     { name: "Colina dos Mouros", distanceKm: 0.6, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Hotel Vila Sodré", distanceKm: 1.4, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
   ],
+  "São Pedro da Torre": [
+    { name: "Hotels near São Pedro da Torre", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Pedro%20da%20Torre%2C%20Portugal&order=price" },
+    { name: "Guest houses near São Pedro da Torre", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Pedro%20da%20Torre%2C%20Portugal&order=price" },
+    { name: "Budget stays near São Pedro da Torre", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Pedro%20da%20Torre%2C%20Portugal&order=price" },
+  ],
+  "Carvalha": [
+    { name: "Hotels near Carvalha", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Carvalha%2C%20Portugal&order=price" },
+    { name: "Guest houses near Carvalha", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Carvalha%2C%20Portugal&order=price" },
+    { name: "Budget stays near Carvalha", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Carvalha%2C%20Portugal&order=price" },
+  ],
+  "Gondarém": [
+    { name: "Hotels near Gondarém", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gondar%C3%A9m%2C%20Portugal&order=price" },
+    { name: "Guest houses near Gondarém", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gondar%C3%A9m%2C%20Portugal&order=price" },
+    { name: "Budget stays near Gondarém", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gondar%C3%A9m%2C%20Portugal&order=price" },
+  ],
+  "Esqueiró": [
+    { name: "Hotels near Esqueiró", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Esqueir%C3%B3%2C%20Portugal&order=price" },
+    { name: "Guest houses near Esqueiró", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Esqueir%C3%B3%2C%20Portugal&order=price" },
+    { name: "Budget stays near Esqueiró", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Esqueir%C3%B3%2C%20Portugal&order=price" },
+  ],
+  "Seixas": [
+    { name: "Hotels near Seixas", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Seixas%2C%20Portugal&order=price" },
+    { name: "Guest houses near Seixas", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Seixas%2C%20Portugal&order=price" },
+    { name: "Budget stays near Seixas", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Seixas%2C%20Portugal&order=price" },
+  ],
+  "Senhora da Agonia": [
+    { name: "Hotels near Senhora da Agonia", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Senhora%20da%20Agonia%2C%20Portugal&order=price" },
+    { name: "Guest houses near Senhora da Agonia", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Senhora%20da%20Agonia%2C%20Portugal&order=price" },
+    { name: "Budget stays near Senhora da Agonia", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Senhora%20da%20Agonia%2C%20Portugal&order=price" },
+  ],
+  "Moledo do Minho": [
+    { name: "Hotels near Moledo do Minho", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Moledo%20do%20Minho%2C%20Portugal&order=price" },
+    { name: "Guest houses near Moledo do Minho", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Moledo%20do%20Minho%2C%20Portugal&order=price" },
+    { name: "Budget stays near Moledo do Minho", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Moledo%20do%20Minho%2C%20Portugal&order=price" },
+  ],
+  "Alvarães": [
+    { name: "Hotels near Alvarães", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alvar%C3%A3es%2C%20Portugal&order=price" },
+    { name: "Guest houses near Alvarães", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alvar%C3%A3es%2C%20Portugal&order=price" },
+    { name: "Budget stays near Alvarães", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alvar%C3%A3es%2C%20Portugal&order=price" },
+  ],
+  "Senhora das Neves": [
+    { name: "Hotels near Senhora das Neves", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Senhora%20das%20Neves%2C%20Portugal&order=price" },
+    { name: "Guest houses near Senhora das Neves", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Senhora%20das%20Neves%2C%20Portugal&order=price" },
+    { name: "Budget stays near Senhora das Neves", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Senhora%20das%20Neves%2C%20Portugal&order=price" },
+  ],
+  "Barroselas": [
+    { name: "Hotels near Barroselas", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barroselas%2C%20Portugal&order=price" },
+    { name: "Guest houses near Barroselas", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barroselas%2C%20Portugal&order=price" },
+    { name: "Budget stays near Barroselas", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barroselas%2C%20Portugal&order=price" },
+  ],
+  "Carapecos": [
+    { name: "Hotels near Carapecos", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Carapecos%2C%20Portugal&order=price" },
+    { name: "Guest houses near Carapecos", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Carapecos%2C%20Portugal&order=price" },
+    { name: "Budget stays near Carapecos", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Carapecos%2C%20Portugal&order=price" },
+  ],
+  "Silva": [
+    { name: "Hotels near Silva", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silva%2C%20Portugal&order=price" },
+    { name: "Guest houses near Silva", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silva%2C%20Portugal&order=price" },
+    { name: "Budget stays near Silva", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silva%2C%20Portugal&order=price" },
+  ],
+  "Midões": [
+    { name: "Hotels near Midões", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mid%C3%B5es%2C%20Portugal&order=price" },
+    { name: "Guest houses near Midões", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mid%C3%B5es%2C%20Portugal&order=price" },
+    { name: "Budget stays near Midões", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mid%C3%B5es%2C%20Portugal&order=price" },
+  ],
+  "Carreira": [
+    { name: "Hotels near Carreira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Carreira%2C%20Portugal&order=price" },
+    { name: "Guest houses near Carreira", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Carreira%2C%20Portugal&order=price" },
+    { name: "Budget stays near Carreira", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Carreira%2C%20Portugal&order=price" },
+  ],
+  "Louro": [
+    { name: "Hotels near Louro", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Louro%2C%20Portugal&order=price" },
+    { name: "Guest houses near Louro", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Louro%2C%20Portugal&order=price" },
+    { name: "Budget stays near Louro", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Louro%2C%20Portugal&order=price" },
+  ],
+  "Mouquim": [
+    { name: "Hotels near Mouquim", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mouquim%2C%20Portugal&order=price" },
+    { name: "Guest houses near Mouquim", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mouquim%2C%20Portugal&order=price" },
+    { name: "Budget stays near Mouquim", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mouquim%2C%20Portugal&order=price" },
+  ],
+  "Portela": [
+    { name: "Hotels near Portela", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Portela%2C%20Portugal&order=price" },
+    { name: "Guest houses near Portela", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Portela%2C%20Portugal&order=price" },
+    { name: "Budget stays near Portela", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Portela%2C%20Portugal&order=price" },
+  ],
+  "São Romão": [
+    { name: "Hotels near São Romão", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Rom%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Guest houses near São Romão", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Rom%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Budget stays near São Romão", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Rom%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "São Frutuoso": [
+    { name: "Hotels near São Frutuoso", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Frutuoso%2C%20Portugal&order=price" },
+    { name: "Guest houses near São Frutuoso", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Frutuoso%2C%20Portugal&order=price" },
+    { name: "Budget stays near São Frutuoso", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Frutuoso%2C%20Portugal&order=price" },
+  ],
+  "Leandro": [
+    { name: "Hotels near Leandro", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Leandro%2C%20Portugal&order=price" },
+    { name: "Guest houses near Leandro", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Leandro%2C%20Portugal&order=price" },
+    { name: "Budget stays near Leandro", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Leandro%2C%20Portugal&order=price" },
+  ],
+  "Travagem": [
+    { name: "Hotels near Travagem", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Travagem%2C%20Portugal&order=price" },
+    { name: "Guest houses near Travagem", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Travagem%2C%20Portugal&order=price" },
+    { name: "Budget stays near Travagem", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Travagem%2C%20Portugal&order=price" },
+  ],
+  "Barrimau": [
+    { name: "Hotels near Barrimau", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barrimau%2C%20Portugal&order=price" },
+    { name: "Guest houses near Barrimau", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barrimau%2C%20Portugal&order=price" },
+    { name: "Budget stays near Barrimau", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barrimau%2C%20Portugal&order=price" },
+  ],
+  "Esmeriz": [
+    { name: "Hotels near Esmeriz", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Esmeriz%2C%20Portugal&order=price" },
+    { name: "Guest houses near Esmeriz", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Esmeriz%2C%20Portugal&order=price" },
+    { name: "Budget stays near Esmeriz", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Esmeriz%2C%20Portugal&order=price" },
+  ],
+  "Ferreiros": [
+    { name: "Hotels near Ferreiros", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferreiros%2C%20Portugal&order=price" },
+    { name: "Guest houses near Ferreiros", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferreiros%2C%20Portugal&order=price" },
+    { name: "Budget stays near Ferreiros", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferreiros%2C%20Portugal&order=price" },
+  ],
+  "Mazagão": [
+    { name: "Hotels near Mazagão", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mazag%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Guest houses near Mazagão", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mazag%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Budget stays near Mazagão", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mazag%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Aveleda": [
+    { name: "Hotels near Aveleda", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aveleda%2C%20Portugal&order=price" },
+    { name: "Guest houses near Aveleda", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aveleda%2C%20Portugal&order=price" },
+    { name: "Budget stays near Aveleda", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aveleda%2C%20Portugal&order=price" },
+  ],
+  "Tadim": [
+    { name: "Hotels near Tadim", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tadim%2C%20Portugal&order=price" },
+    { name: "Guest houses near Tadim", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tadim%2C%20Portugal&order=price" },
+    { name: "Budget stays near Tadim", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tadim%2C%20Portugal&order=price" },
+  ],
+  "Ruílhe": [
+    { name: "Hotels near Ruílhe", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ru%C3%ADlhe%2C%20Portugal&order=price" },
+    { name: "Guest houses near Ruílhe", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ru%C3%ADlhe%2C%20Portugal&order=price" },
+    { name: "Budget stays near Ruílhe", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ru%C3%ADlhe%2C%20Portugal&order=price" },
+  ],
+  "Arentim": [
+    { name: "Hotels near Arentim", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arentim%2C%20Portugal&order=price" },
+    { name: "Guest houses near Arentim", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arentim%2C%20Portugal&order=price" },
+    { name: "Budget stays near Arentim", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arentim%2C%20Portugal&order=price" },
+  ],
+  "Couto de Cambeses": [
+    { name: "Hotels near Couto de Cambeses", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Couto%20de%20Cambeses%2C%20Portugal&order=price" },
+    { name: "Guest houses near Couto de Cambeses", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Couto%20de%20Cambeses%2C%20Portugal&order=price" },
+    { name: "Budget stays near Couto de Cambeses", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Couto%20de%20Cambeses%2C%20Portugal&order=price" },
+  ],
+  "Covas": [
+    { name: "Hotels near Covas", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Covas%2C%20Portugal&order=price" },
+    { name: "Guest houses near Covas", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Covas%2C%20Portugal&order=price" },
+    { name: "Budget stays near Covas", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Covas%2C%20Portugal&order=price" },
+  ],
+  "Nespereira": [
+    { name: "Hotels near Nespereira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nespereira%2C%20Portugal&order=price" },
+    { name: "Guest houses near Nespereira", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nespereira%2C%20Portugal&order=price" },
+    { name: "Budget stays near Nespereira", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nespereira%2C%20Portugal&order=price" },
+  ],
+  "Pereirinhas": [
+    { name: "Hotels near Pereirinhas", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pereirinhas%2C%20Portugal&order=price" },
+    { name: "Guest houses near Pereirinhas", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pereirinhas%2C%20Portugal&order=price" },
+    { name: "Budget stays near Pereirinhas", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pereirinhas%2C%20Portugal&order=price" },
+  ],
+  "Cuca": [
+    { name: "Hotels near Cuca", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cuca%2C%20Portugal&order=price" },
+    { name: "Guest houses near Cuca", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cuca%2C%20Portugal&order=price" },
+    { name: "Budget stays near Cuca", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cuca%2C%20Portugal&order=price" },
+  ],
+  "Giesteira": [
+    { name: "Hotels near Giesteira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Giesteira%2C%20Portugal&order=price" },
+    { name: "Guest houses near Giesteira", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Giesteira%2C%20Portugal&order=price" },
+    { name: "Budget stays near Giesteira", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Giesteira%2C%20Portugal&order=price" },
+  ],
+  "Caniços": [
+    { name: "Hotels near Caniços", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cani%C3%A7os%2C%20Portugal&order=price" },
+    { name: "Guest houses near Caniços", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cani%C3%A7os%2C%20Portugal&order=price" },
+    { name: "Budget stays near Caniços", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cani%C3%A7os%2C%20Portugal&order=price" },
+  ],
+  "Vila das Aves": [
+    { name: "Hotels near Vila das Aves", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20das%20Aves%2C%20Portugal&order=price" },
+    { name: "Guest houses near Vila das Aves", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20das%20Aves%2C%20Portugal&order=price" },
+    { name: "Budget stays near Vila das Aves", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20das%20Aves%2C%20Portugal&order=price" },
+  ],
+  "Meinedo": [
+    { name: "Hotels near Meinedo", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Meinedo%2C%20Portugal&order=price" },
+    { name: "Guest houses near Meinedo", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Meinedo%2C%20Portugal&order=price" },
+    { name: "Budget stays near Meinedo", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Meinedo%2C%20Portugal&order=price" },
+  ],
+  "Bustelo": [
+    { name: "Hotels near Bustelo", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bustelo%2C%20Portugal&order=price" },
+    { name: "Guest houses near Bustelo", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bustelo%2C%20Portugal&order=price" },
+    { name: "Budget stays near Bustelo", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bustelo%2C%20Portugal&order=price" },
+  ],
+  "Recesinhos": [
+    { name: "Hotels near Recesinhos", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Recesinhos%2C%20Portugal&order=price" },
+    { name: "Guest houses near Recesinhos", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Recesinhos%2C%20Portugal&order=price" },
+    { name: "Budget stays near Recesinhos", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Recesinhos%2C%20Portugal&order=price" },
+  ],
+  "Cabeda": [
+    { name: "Hotels near Cabeda", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cabeda%2C%20Portugal&order=price" },
+    { name: "Guest houses near Cabeda", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cabeda%2C%20Portugal&order=price" },
+    { name: "Budget stays near Cabeda", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cabeda%2C%20Portugal&order=price" },
+  ],
+  "Suzão": [
+    { name: "Hotels near Suzão", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Suz%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Guest houses near Suzão", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Suz%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Budget stays near Suzão", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Suz%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Godim": [
+    { name: "Hotels near Godim", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Godim%2C%20Portugal&order=price" },
+    { name: "Guest houses near Godim", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Godim%2C%20Portugal&order=price" },
+    { name: "Budget stays near Godim", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Godim%2C%20Portugal&order=price" },
+  ],
+  "Covelinhas": [
+    { name: "Hotels near Covelinhas", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Covelinhas%2C%20Portugal&order=price" },
+    { name: "Guest houses near Covelinhas", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Covelinhas%2C%20Portugal&order=price" },
+    { name: "Budget stays near Covelinhas", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Covelinhas%2C%20Portugal&order=price" },
+  ],
+  "Caldas de Moledo": [
+    { name: "Hotels near Caldas de Moledo", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caldas%20de%20Moledo%2C%20Portugal&order=price" },
+    { name: "Guest houses near Caldas de Moledo", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caldas%20de%20Moledo%2C%20Portugal&order=price" },
+    { name: "Budget stays near Caldas de Moledo", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caldas%20de%20Moledo%2C%20Portugal&order=price" },
+  ],
+  "Ferrão": [
+    { name: "Hotels near Ferrão", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferr%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Guest houses near Ferrão", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferr%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Budget stays near Ferrão", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferr%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Barqueiros": [
+    { name: "Hotels near Barqueiros", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barqueiros%2C%20Portugal&order=price" },
+    { name: "Guest houses near Barqueiros", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barqueiros%2C%20Portugal&order=price" },
+    { name: "Budget stays near Barqueiros", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barqueiros%2C%20Portugal&order=price" },
+  ],
+  "Ermida": [
+    { name: "Hotels near Ermida", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ermida%2C%20Portugal&order=price" },
+    { name: "Guest houses near Ermida", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ermida%2C%20Portugal&order=price" },
+    { name: "Budget stays near Ermida", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ermida%2C%20Portugal&order=price" },
+  ],
+  "Oleiros": [
+    { name: "Hotels near Oleiros", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oleiros%2C%20Portugal&order=price" },
+    { name: "Guest houses near Oleiros", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oleiros%2C%20Portugal&order=price" },
+    { name: "Budget stays near Oleiros", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oleiros%2C%20Portugal&order=price" },
+  ],
+  "Irivo": [
+    { name: "Hotels near Irivo", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Irivo%2C%20Portugal&order=price" },
+    { name: "Guest houses near Irivo", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Irivo%2C%20Portugal&order=price" },
+    { name: "Budget stays near Irivo", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Irivo%2C%20Portugal&order=price" },
+  ],
+  "Juncal": [
+    { name: "Hotels near Juncal", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Juncal%2C%20Portugal&order=price" },
+    { name: "Guest houses near Juncal", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Juncal%2C%20Portugal&order=price" },
+    { name: "Budget stays near Juncal", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Juncal%2C%20Portugal&order=price" },
+  ],
+  "Mirão": [
+    { name: "Hotels near Mirão", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mir%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Guest houses near Mirão", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mir%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Budget stays near Mirão", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mir%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Porto Rei": [
+    { name: "Hotels near Porto Rei", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Rei%2C%20Portugal&order=price" },
+    { name: "Guest houses near Porto Rei", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Rei%2C%20Portugal&order=price" },
+    { name: "Budget stays near Porto Rei", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Rei%2C%20Portugal&order=price" },
+  ],
+  "Leça do Balio": [
+    { name: "Hotels near Leça do Balio", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Le%C3%A7a%20do%20Balio%2C%20Portugal&order=price" },
+    { name: "Guest houses near Leça do Balio", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Le%C3%A7a%20do%20Balio%2C%20Portugal&order=price" },
+    { name: "Budget stays near Leça do Balio", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Le%C3%A7a%20do%20Balio%2C%20Portugal&order=price" },
+  ],
+  "Águas Santas - Palmilheira": [
+    { name: "Hotels near Águas Santas - Palmilheira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=%C3%81guas%20Santas%20-%20Palmilheira%2C%20Portugal&order=price" },
+    { name: "Guest houses near Águas Santas - Palmilheira", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=%C3%81guas%20Santas%20-%20Palmilheira%2C%20Portugal&order=price" },
+    { name: "Budget stays near Águas Santas - Palmilheira", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=%C3%81guas%20Santas%20-%20Palmilheira%2C%20Portugal&order=price" },
+  ],
+  "São Gemil": [
+    { name: "Hotels near São Gemil", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Gemil%2C%20Portugal&order=price" },
+    { name: "Guest houses near São Gemil", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Gemil%2C%20Portugal&order=price" },
+    { name: "Budget stays near São Gemil", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Gemil%2C%20Portugal&order=price" },
+  ],
+  "São Mamede de Infesta": [
+    { name: "Hotels near São Mamede de Infesta", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Mamede%20de%20Infesta%2C%20Portugal&order=price" },
+    { name: "Guest houses near São Mamede de Infesta", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Mamede%20de%20Infesta%2C%20Portugal&order=price" },
+    { name: "Budget stays near São Mamede de Infesta", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Mamede%20de%20Infesta%2C%20Portugal&order=price" },
+  ],
+  "Hospital São João": [
+    { name: "Hotels near Hospital São João", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospital%20S%C3%A3o%20Jo%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Guest houses near Hospital São João", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospital%20S%C3%A3o%20Jo%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Budget stays near Hospital São João", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospital%20S%C3%A3o%20Jo%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Arroteia": [
+    { name: "Hotels near Arroteia", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arroteia%2C%20Portugal&order=price" },
+    { name: "Guest houses near Arroteia", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arroteia%2C%20Portugal&order=price" },
+    { name: "Budget stays near Arroteia", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arroteia%2C%20Portugal&order=price" },
+  ],
+  "Madalena": [
+    { name: "Hotels near Madalena", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Madalena%2C%20Portugal&order=price" },
+    { name: "Guest houses near Madalena", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Madalena%2C%20Portugal&order=price" },
+    { name: "Budget stays near Madalena", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Madalena%2C%20Portugal&order=price" },
+  ],
+  "Silvalde": [
+    { name: "Hotels near Silvalde", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silvalde%2C%20Portugal&order=price" },
+    { name: "Guest houses near Silvalde", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silvalde%2C%20Portugal&order=price" },
+    { name: "Budget stays near Silvalde", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silvalde%2C%20Portugal&order=price" },
+  ],
+  "Espinho - Vouga": [
+    { name: "Hotels near Espinho - Vouga", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Espinho%20-%20Vouga%2C%20Portugal&order=price" },
+    { name: "Guest houses near Espinho - Vouga", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Espinho%20-%20Vouga%2C%20Portugal&order=price" },
+    { name: "Budget stays near Espinho - Vouga", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Espinho%20-%20Vouga%2C%20Portugal&order=price" },
+  ],
+  "São João da Madeira": [
+    { name: "Hotels near São João da Madeira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20Portugal&order=price" },
+    { name: "Guest houses near São João da Madeira", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20Portugal&order=price" },
+    { name: "Budget stays near São João da Madeira", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20Portugal&order=price" },
+  ],
+  "Vila da Feira": [
+    { name: "Hotels near Vila da Feira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20da%20Feira%2C%20Portugal&order=price" },
+    { name: "Guest houses near Vila da Feira", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20da%20Feira%2C%20Portugal&order=price" },
+    { name: "Budget stays near Vila da Feira", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20da%20Feira%2C%20Portugal&order=price" },
+  ],
+  "Oliveira de Azeméis": [
+    { name: "Hotels near Oliveira de Azeméis", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oliveira%20de%20Azem%C3%A9is%2C%20Portugal&order=price" },
+    { name: "Guest houses near Oliveira de Azeméis", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oliveira%20de%20Azem%C3%A9is%2C%20Portugal&order=price" },
+    { name: "Budget stays near Oliveira de Azeméis", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oliveira%20de%20Azem%C3%A9is%2C%20Portugal&order=price" },
+  ],
+  "Rio Meão": [
+    { name: "Hotels near Rio Meão", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rio%20Me%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Guest houses near Rio Meão", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rio%20Me%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Budget stays near Rio Meão", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rio%20Me%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "São João de Ver": [
+    { name: "Hotels near São João de Ver", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Jo%C3%A3o%20de%20Ver%2C%20Portugal&order=price" },
+    { name: "Guest houses near São João de Ver", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Jo%C3%A3o%20de%20Ver%2C%20Portugal&order=price" },
+    { name: "Budget stays near São João de Ver", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Jo%C3%A3o%20de%20Ver%2C%20Portugal&order=price" },
+  ],
+  "Mangualde": [
+    { name: "Hotels near Mangualde", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mangualde%2C%20Portugal&order=price" },
+    { name: "Guest houses near Mangualde", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mangualde%2C%20Portugal&order=price" },
+    { name: "Budget stays near Mangualde", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mangualde%2C%20Portugal&order=price" },
+  ],
+  "Nelas": [
+    { name: "Hotels near Nelas", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nelas%2C%20Portugal&order=price" },
+    { name: "Guest houses near Nelas", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nelas%2C%20Portugal&order=price" },
+    { name: "Budget stays near Nelas", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nelas%2C%20Portugal&order=price" },
+  ],
+  "Gouveia": [
+    { name: "Hotels near Gouveia", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gouveia%2C%20Portugal&order=price" },
+    { name: "Guest houses near Gouveia", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gouveia%2C%20Portugal&order=price" },
+    { name: "Budget stays near Gouveia", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gouveia%2C%20Portugal&order=price" },
+  ],
+  "Celorico da Beira": [
+    { name: "Hotels near Celorico da Beira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Celorico%20da%20Beira%2C%20Portugal&order=price" },
+    { name: "Guest houses near Celorico da Beira", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Celorico%20da%20Beira%2C%20Portugal&order=price" },
+    { name: "Budget stays near Celorico da Beira", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Celorico%20da%20Beira%2C%20Portugal&order=price" },
+  ],
+  "Fornos de Algodres": [
+    { name: "Hotels near Fornos de Algodres", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Fornos%20de%20Algodres%2C%20Portugal&order=price" },
+    { name: "Guest houses near Fornos de Algodres", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Fornos%20de%20Algodres%2C%20Portugal&order=price" },
+    { name: "Budget stays near Fornos de Algodres", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Fornos%20de%20Algodres%2C%20Portugal&order=price" },
+  ],
 };
