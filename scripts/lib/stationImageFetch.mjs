@@ -71,6 +71,44 @@ function localityFromName(name) {
   return name.split(/[-–]/)[0].trim();
 }
 
+/** Place names to search when train-specific Pexels queries fail. */
+export function locationNamesFromStation(station) {
+  const { name, lat, lng } = station;
+  const names = new Set();
+  const plainName = stripDiacritics(name);
+
+  const paren = name.match(/\(([^)]+)\)/);
+  if (paren) names.add(paren[1].replace(/\s+area$/i, "").trim());
+
+  const isNamedStop = /^(senhora|sao|hospital|apeadeiro)\b/i.test(plainName);
+
+  if (!isNamedStop) {
+    const deTown = name.match(
+      /\b(?:de|da|do)\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\s]{2,}?)(?=\s*\(|\s*[-–]|$)/i,
+    );
+    if (deTown) names.add(deTown[1].trim());
+
+    if (!paren) {
+      const beforeHyphen = name.split(/[-–]/)[0].trim();
+      if (beforeHyphen.length >= 4 && !isGenericStationLabel(beforeHyphen)) {
+        names.add(beforeHyphen);
+      }
+    }
+  }
+
+  names.add(regionFromCoords(lat, lng));
+
+  return [...names].filter((place) => place.length >= 3 && !isGenericStationLabel(place));
+}
+
+function isGenericStationLabel(label) {
+  const lower = stripDiacritics(label).toLowerCase();
+  if (/^(senhora|sao|hospital|estacao|apeadeiro|comboios)\b/.test(lower)) return true;
+  const generic =
+    /^(portela|leandro|travagem|cabeda|suzao|oleiros|irivo|juncal|mirao|carreira|porto rei|madalena|arroteia|bustelo|meinedo|cuca|giesteira|pereirinhas|nespereira|covas|silva|midoes|seixas|esqueiro|carvalha|barrimau|esmeriz|ferreiros|mazagao|aveleda|tadim|ruilhe|arentim|alvaraes|barroselas|carapecos|ferrao|ermida|barqueiros|godim|covelinhas|recesinhos|agonia|neves|torre)$/i;
+  return generic.test(lower);
+}
+
 function regionFromCoords(lat, lng) {
   if (lat >= 41.7) return "Minho";
   if (lat >= 41.1 && lng >= -8.75) return "Porto";
@@ -95,7 +133,7 @@ const LINE_QUERY_HINTS = {
   "Linha de Sintra": ["Sintra train", "suburban train Lisbon"],
 };
 
-/** Distinct Pexels search phrases per station (most specific first). */
+/** Train-focused Pexels queries (tried first). */
 export function buildPexelsQueries(station) {
   const locality = localityFromName(station.name);
   const region = regionFromCoords(station.lat, station.lng);
@@ -108,8 +146,6 @@ export function buildPexelsQueries(station) {
     `${plain} Portugal railroad`,
     "Comboios de Portugal train",
     "Portuguese railway station",
-    "Portugal train tracks landscape",
-    "European commuter train station",
   ]);
 
   for (const line of station.lines) {
@@ -119,6 +155,22 @@ export function buildPexelsQueries(station) {
     if (line.includes("Douro")) queries.add("Douro scenic railway");
     if (line.includes("Minho")) queries.add("northern Portugal railway");
     if (line.includes("Urban")) queries.add("urban train Portugal");
+  }
+
+  return [...queries];
+}
+
+/** Location-only Pexels queries (fallback when train searches fail or duplicate). */
+export function buildLocationPexelsQueries(station) {
+  const queries = new Set();
+
+  for (const place of locationNamesFromStation(station)) {
+    const plain = stripDiacritics(place);
+    queries.add(`${place} Portugal`);
+    queries.add(`${place} Portugal landscape`);
+    queries.add(`${place} Portugal city`);
+    queries.add(`${plain} Portugal travel`);
+    queries.add(`${place} town Portugal`);
   }
 
   return [...queries];
@@ -198,12 +250,18 @@ export async function resolveStationImage(station, { apiKey, usedUrls, pexelsOnl
     }
   }
 
-  const queries = buildPexelsQueries(station);
-  for (const query of queries) {
+  for (const query of buildPexelsQueries(station)) {
     const url = await pexelsPickUnique(query, station.name, usedUrls, apiKey);
     if (url) return { url, source: "pexels", query };
     await sleep(400);
   }
+
+  for (const query of buildLocationPexelsQueries(station)) {
+    const url = await pexelsPickUnique(query, station.name, usedUrls, apiKey);
+    if (url) return { url, source: "pexels-location", query };
+    await sleep(400);
+  }
+
   return null;
 }
 

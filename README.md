@@ -136,4 +136,4 @@ node scripts/fetch-station-images.mjs          # missing stations only
 node scripts/diversify-station-images.mjs      # fix duplicate Pexels URLs
 ```
 
-The fetch logic uses region/line-specific search terms and picks a different photo per station (not always the first search hit).
+The fetch logic uses region/line-specific train search terms first, then falls back to **location-only** queries (e.g. “Braga Portugal”, “Douro Portugal landscape”) when a unique station photo cannot be found.
