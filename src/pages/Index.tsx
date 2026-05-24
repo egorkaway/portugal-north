@@ -94,7 +94,7 @@ const Index = () => {
             ))}
           </div>
         </div>
-        <div className="max-w-5xl mx-auto px-6 pb-3 flex flex-wrap items-center gap-1.5">
+        <div className="mx-auto hidden max-w-5xl flex-wrap items-center gap-1.5 px-6 pb-3 md:flex">
           <span className="text-xs text-muted-foreground mr-1">Your votes:</span>
           {([
             { key: "up" as const, label: "Upvoted", Icon: ThumbsUp },
