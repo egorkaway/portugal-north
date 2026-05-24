@@ -898,6 +898,57 @@ export const stationHotels: StationHotels = {
   "Alhandra": [
     { name: "Bombeiros Voluntários de Alhandra", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bombeiros%20Volunt%C3%A1rios%20de%20Alhandra%2C%20Alhandra%2C%20Portugal&order=price" },
   ],
+  "Alverca": [
+    { name: "Dormidas A Laterna", distanceKm: 1.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dormidas%20A%20Laterna%2C%20Alverca%2C%20Portugal&order=price" },
+    { name: "Alpha10", distanceKm: 1.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alpha10%2C%20Alverca%2C%20Portugal&order=price" },
+    { name: "Dormidas Leal", distanceKm: 1.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dormidas%20Leal%2C%20Alverca%2C%20Portugal&order=price" },
+  ],
+  "Amadora": [
+    { name: "Guest House A.L.", distanceKm: 2.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guest%20House%20A.L.%2C%20Amadora%2C%20Portugal&order=price" },
+    { name: "Pousada Dona Maria I", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20Dona%20Maria%20I%2C%20Amadora%2C%20Portugal&order=price" },
+    { name: "Moxy Alfragide", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Moxy%20Alfragide%2C%20Amadora%2C%20Portugal&order=price" },
+  ],
+  "Azambuja": [
+    { name: "Residencial Flor da Primavera", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Flor%20da%20Primavera%2C%20Azambuja%2C%20Portugal&order=price" },
+    { name: "Albergue de Peregrinos da Azambuja", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20da%20Azambuja%2C%20Azambuja%2C%20Portugal&order=price" },
+    { name: "Ouro", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ouro%2C%20Azambuja%2C%20Portugal&order=price" },
+  ],
+  "Baixa da Banheira": [
+    { name: "Lisbon South Bed Hostel", distanceKm: 3.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lisbon%20South%20Bed%20Hostel%2C%20Baixa%20da%20Banheira%2C%20Portugal&order=price" },
+  ],
+  "Barreiro-A": [
+    { name: "Lisbon South Bed Hostel", distanceKm: 1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lisbon%20South%20Bed%20Hostel%2C%20Barreiro-A%2C%20Portugal&order=price" },
+  ],
+  "Belém": [
+    { name: "Pensão Residencial Setubalense", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Residencial%20Setubalense%2C%20Bel%C3%A9m%2C%20Portugal&order=price" },
+    { name: "Famous Crows Hostel", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Famous%20Crows%20Hostel%2C%20Bel%C3%A9m%2C%20Portugal&order=price" },
+    { name: "Ver Belém Suites", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ver%20Bel%C3%A9m%20Suites%2C%20Bel%C3%A9m%2C%20Portugal&order=price" },
+  ],
+  "Benfica": [
+    { name: "7 Luz", distanceKm: 0.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=7%20Luz%2C%20Benfica%2C%20Portugal&order=price" },
+    { name: "Upon Lisbon Prime Residences", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Upon%20Lisbon%20Prime%20Residences%2C%20Benfica%2C%20Portugal&order=price" },
+    { name: "IBIS Lisboa Alfragide", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=IBIS%20Lisboa%20Alfragide%2C%20Benfica%2C%20Portugal&order=price" },
+  ],
+  "Bobadela": [
+    { name: "B&B Hotel Lisboa Aeroporto", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotel%20Lisboa%20Aeroporto%2C%20Bobadela%2C%20Portugal&order=price" },
+    { name: "Stay Hotel Lisboa Aeroporto", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Stay%20Hotel%20Lisboa%20Aeroporto%2C%20Bobadela%2C%20Portugal&order=price" },
+    { name: "Holiday Inn Express Lisbon Airport", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Bobadela%2C%20Portugal&order=price" },
+  ],
+  "Braco de Prata": [
+    { name: "B:Mar Hostel and Suites", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%3AMar%20Hostel%20and%20Suites%2C%20Braco%20de%20Prata%2C%20Portugal&order=price" },
+    { name: "The Homeboat Company", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=The%20Homeboat%20Company%2C%20Braco%20de%20Prata%2C%20Portugal&order=price" },
+    { name: "Beatu's Sweet Rooms", distanceKm: 1.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Beatu's%20Sweet%20Rooms%2C%20Braco%20de%20Prata%2C%20Portugal&order=price" },
+  ],
+  "Campolide": [
+    { name: "Metropolitan Living Lisbon Campolide", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Metropolitan%20Living%20Lisbon%20Campolide%2C%20Campolide%2C%20Portugal&order=price" },
+    { name: "Mercure", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mercure%2C%20Campolide%2C%20Portugal&order=price" },
+    { name: "SANA Malhoa Hotel", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=SANA%20Malhoa%20Hotel%2C%20Campolide%2C%20Portugal&order=price" },
+  ],
+  "Carcavelos": [
+    { name: "Hotel São Julião", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20S%C3%A3o%20Juli%C3%A3o%2C%20Carcavelos%2C%20Portugal&order=price" },
+    { name: "Alojamento Local", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamento%20Local%2C%20Carcavelos%2C%20Portugal&order=price" },
+    { name: "Help Yourself Hostels Carcavelo Coast", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Help%20Yourself%20Hostels%20Carcavelo%20Coast%2C%20Carcavelos%2C%20Portugal&order=price" },
+  ],
   "Pragal": [
     { name: "Holiday Inn Express Lisbon-Almada", distanceKm: 0.4, priceFrom: 60, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
     { name: "Alojamento Pragal", distanceKm: 0.6, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
