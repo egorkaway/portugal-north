@@ -1,3 +1,5 @@
+import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { isVoteStorageConfigured } from "./lib/blobVotes.js";
 import {
   applyVoteDelta,
   isValidDirection,
@@ -5,66 +7,59 @@ import {
   isValidVoteChange,
   readGlobalRatings,
 } from "./lib/voteLogic.js";
-import { isVoteStorageConfigured } from "./lib/blobVotes.js";
 
-function json(data: unknown, status = 200): Response {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: {
-      "Content-Type": "application/json",
-      "Cache-Control": "no-store",
-    },
-  });
-}
+export default async function handler(req: VercelRequest, res: VercelResponse) {
+  if (req.method === "GET") {
+    if (req.query.ping === "1") {
+      return res.status(200).json({
+        ok: true,
+        configured: isVoteStorageConfigured(),
+        hasToken: Boolean(process.env.BLOB_READ_WRITE_TOKEN),
+      });
+    }
 
-async function handleGet(): Promise<Response> {
-  if (!isVoteStorageConfigured()) {
-    return json({ ratings: {}, configured: false });
-  }
-  try {
-    const ratings = await readGlobalRatings();
-    return json({ ratings, configured: true });
-  } catch {
-    return json({ ratings: {}, configured: true, error: "storage_read_failed" }, 503);
-  }
-}
+    if (!isVoteStorageConfigured()) {
+      return res.status(200).json({ ratings: {}, configured: false });
+    }
 
-async function handlePost(request: Request): Promise<Response> {
-  if (!isVoteStorageConfigured()) {
-    return json({ ok: false, reason: "storage_not_configured" });
+    try {
+      const ratings = await readGlobalRatings();
+      return res.status(200).json({ ratings, configured: true });
+    } catch {
+      return res
+        .status(503)
+        .json({ ratings: {}, configured: true, error: "storage_read_failed" });
+    }
   }
 
-  let body: {
-    station: string;
-    previous: "up" | "down" | null;
-    next: "up" | "down" | null;
-  };
-  try {
-    body = await request.json();
-  } catch {
-    return json({ ok: false, reason: "invalid_json" }, 400);
+  if (req.method === "POST") {
+    if (!isVoteStorageConfigured()) {
+      return res.status(503).json({ ok: false, reason: "storage_not_configured" });
+    }
+
+    const body = req.body as {
+      station?: string;
+      previous?: "up" | "down" | null;
+      next?: "up" | "down" | null;
+    };
+
+    const { station, previous, next } = body;
+    if (
+      !isValidStationName(station) ||
+      !isValidDirection(previous ?? null) ||
+      !isValidDirection(next ?? null) ||
+      !isValidVoteChange(previous ?? null, next ?? null)
+    ) {
+      return res.status(400).json({ ok: false, reason: "invalid_payload" });
+    }
+
+    try {
+      const stored = await applyVoteDelta(station, previous ?? null, next ?? null);
+      return res.status(200).json({ ok: stored });
+    } catch {
+      return res.status(500).json({ ok: false, reason: "storage_error" });
+    }
   }
 
-  const { station, previous, next } = body;
-  if (
-    !isValidStationName(station) ||
-    !isValidDirection(previous) ||
-    !isValidDirection(next) ||
-    !isValidVoteChange(previous, next)
-  ) {
-    return json({ ok: false, reason: "invalid_payload" }, 400);
-  }
-
-  try {
-    const stored = await applyVoteDelta(station, previous, next);
-    return json({ ok: stored });
-  } catch {
-    return json({ ok: false, reason: "storage_error" }, 500);
-  }
-}
-
-export default async function handler(request: Request): Promise<Response> {
-  if (request.method === "GET") return handleGet();
-  if (request.method === "POST") return handlePost(request);
-  return json({ ok: false, reason: "method_not_allowed" }, 405);
+  return res.status(405).json({ ok: false, reason: "method_not_allowed" });
 }

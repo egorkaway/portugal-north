@@ -102,8 +102,8 @@ npm run build     # production build
 ### Global vote storage on Vercel
 
 1. Deploy to [Vercel](https://vercel.com).
-2. Open **portugal-north** → **Storage** → **Connect to a Database** → choose **Blob** (not Postgres).
-3. Create the store, link it to this project, then redeploy. Vercel adds `BLOB_READ_WRITE_TOKEN` or `BLOB_STORE_ID`.
+2. Open **portugal-north** → **Storage** → create/connect a **Blob** store to this project.
+3. Confirm **Production** has `BLOB_READ_WRITE_TOKEN`, then **redeploy**.
 
 Without Blob configured, the site still works; only per-browser cookie votes are kept.
 

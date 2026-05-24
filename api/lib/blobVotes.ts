@@ -1,21 +1,28 @@
-import { get, put } from "@vercel/blob";
+import { get, list, put } from "@vercel/blob";
 import type { GlobalRatings } from "./voteLogic.js";
 
 const PATHNAME = "station-votes.json";
 const BLOB_ACCESS = "private" as const;
-const OPERATION_TIMEOUT_MS = 8_000;
+const OPERATION_TIMEOUT_MS = 6_000;
 
-function blobOptions() {
-  const token = process.env.BLOB_READ_WRITE_TOKEN;
-  return {
-    access: BLOB_ACCESS,
-    abortSignal: AbortSignal.timeout(OPERATION_TIMEOUT_MS),
-    ...(token ? { token } : {}),
-  };
+function getToken(): string | undefined {
+  return process.env.BLOB_READ_WRITE_TOKEN;
 }
 
 export function isVoteStorageConfigured(): boolean {
-  return Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID);
+  return Boolean(getToken());
+}
+
+function blobClientOptions() {
+  const token = getToken();
+  if (!token) {
+    throw new Error("BLOB_READ_WRITE_TOKEN is not set");
+  }
+  return {
+    access: BLOB_ACCESS,
+    token,
+    abortSignal: AbortSignal.timeout(OPERATION_TIMEOUT_MS),
+  };
 }
 
 function normalizeRatings(raw: unknown): GlobalRatings {
@@ -34,9 +41,14 @@ function normalizeRatings(raw: unknown): GlobalRatings {
 }
 
 export async function readRatingsFromBlob(): Promise<GlobalRatings> {
-  if (!isVoteStorageConfigured()) return {};
+  const opts = blobClientOptions();
 
-  const result = await get(PATHNAME, blobOptions());
+  const { blobs } = await list({ prefix: PATHNAME, limit: 1, ...opts });
+  if (!blobs.some((blob) => blob.pathname === PATHNAME)) {
+    return {};
+  }
+
+  const result = await get(PATHNAME, opts);
   if (!result?.stream) return {};
 
   const text = await new Response(result.stream).text();
@@ -51,7 +63,7 @@ export async function readRatingsFromBlob(): Promise<GlobalRatings> {
 
 export async function writeRatingsToBlob(ratings: GlobalRatings): Promise<void> {
   await put(PATHNAME, JSON.stringify(ratings), {
-    ...blobOptions(),
+    ...blobClientOptions(),
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json",
