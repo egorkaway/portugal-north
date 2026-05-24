@@ -30,7 +30,7 @@ The sticky toolbar lets you:
 
 Each station has a thumbs-up / thumbs-down toggle. Your choice is stored in a first-party cookie (`station_votes`) that lasts one year. No account is required. The vote filter in the toolbar lets you quickly pull up your favourites.
 
-When you vote, the change is also sent to `/api/votes`, which updates a small JSON file in [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) (no database). Use `useGlobalStationRatings()` when you want to show community totals on station cards.
+When you vote, the change is also sent to `/api/votes`, which updates aggregate up/down counts in [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) (no database, no per-user log). Station votes use `station-votes.json`; photo feedback (“Does this photo represent…?”) uses `station-image-votes.json`. Use `useGlobalStationRatings()` or `useGlobalImageRatings()` to read community totals.
 
 ---
 

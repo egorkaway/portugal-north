@@ -46,16 +46,18 @@ async function postVote(
     | HotelVoteSyncPayload
     | StationImageVoteSyncPayload
     | HotelClosedReportSyncPayload,
-): Promise<void> {
+): Promise<boolean> {
   try {
-    await fetch(API_BASE, {
+    const res = await fetch(API_BASE, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
       keepalive: true,
     });
+    return res.ok;
   } catch {
     // Local cookie vote still works if the API is unreachable.
+    return false;
   }
 }
 
@@ -63,32 +65,32 @@ export async function syncVoteToServer(
   station: string,
   previous: VoteDirection | null,
   next: VoteDirection | null,
-): Promise<void> {
-  await postVote({ station, previous, next });
+): Promise<boolean> {
+  return postVote({ station, previous, next });
 }
 
 export async function syncHotelVoteToServer(
   hotelKey: string,
   previous: VoteDirection | null,
   next: VoteDirection | null,
-): Promise<void> {
-  await postVote({ hotelKey, previous, next });
+): Promise<boolean> {
+  return postVote({ hotelKey, previous, next });
 }
 
 export async function syncStationImageVoteToServer(
   station: string,
   previous: VoteDirection | null,
   next: VoteDirection | null,
-): Promise<void> {
-  await postVote({ stationImage: station, previous, next });
+): Promise<boolean> {
+  return postVote({ stationImage: station, previous, next });
 }
 
 export async function syncHotelClosedReportToServer(
   hotelKey: string,
   wasReported: boolean,
   isReported: boolean,
-): Promise<void> {
-  await postVote({ hotelClosed: hotelKey, previous: wasReported, next: isReported });
+): Promise<boolean> {
+  return postVote({ hotelClosed: hotelKey, previous: wasReported, next: isReported });
 }
 
 export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {

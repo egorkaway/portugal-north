@@ -1,5 +1,6 @@
 import { ImageOff, Image as ImageIcon } from "lucide-react";
 import type { Vote } from "@/hooks/useStationVote";
+import { useGlobalImageRatings } from "@/hooks/useGlobalStationRatings";
 import { useStationImageVote } from "@/hooks/useStationImageVote";
 
 function ImageVoteButton({
@@ -34,6 +35,14 @@ function ImageVoteButton({
   );
 }
 
+function formatImageTotals(up: number, down: number): string | null {
+  if (up === 0 && down === 0) return null;
+  const parts: string[] = [];
+  if (up > 0) parts.push(`${up} good photo${up === 1 ? "" : "s"}`);
+  if (down > 0) parts.push(`${down} not representative`);
+  return parts.join(" · ");
+}
+
 export function StationImageVote({
   stationName,
   imageUrl,
@@ -42,6 +51,9 @@ export function StationImageVote({
   imageUrl: string;
 }) {
   const { vote, cast } = useStationImageVote(stationName);
+  const { data: global } = useGlobalImageRatings();
+  const totals = global?.imageRatings[stationName];
+  const communityLine = totals ? formatImageTotals(totals.up, totals.down) : null;
 
   return (
     <div className="mb-8 overflow-hidden rounded-lg border border-border bg-muted">
@@ -57,8 +69,12 @@ export function StationImageVote({
           </p>
           <StationImageVoteControls vote={vote} onGood={() => cast("up")} onBad={() => cast("down")} />
           <p className="mt-2 text-xs text-white/70">
-            Your feedback is saved in this browser and helps us pick better images.
+            Your choice is remembered in this browser. Community totals are stored on our server to
+            help pick better images.
           </p>
+          {communityLine && (
+            <p className="mt-1 text-xs text-white/80">Community: {communityLine}</p>
+          )}
         </div>
       </div>
     </div>

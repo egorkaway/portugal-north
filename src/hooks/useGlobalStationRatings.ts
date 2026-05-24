@@ -20,3 +20,14 @@ export function useGlobalStationRatings() {
       : undefined,
   };
 }
+
+/** Aggregated photo feedback totals per station (up = good photo, down = not representative). */
+export function useGlobalImageRatings() {
+  const query = useGlobalRatings();
+  return {
+    ...query,
+    data: query.data
+      ? { imageRatings: query.data.imageRatings, configured: query.data.configured }
+      : undefined,
+  };
+}

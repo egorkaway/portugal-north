@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import type { Vote, VotesMap } from "@/hooks/useStationVote";
 import { syncStationImageVoteToServer } from "@/lib/votesApi";
 
@@ -41,6 +42,7 @@ function subscribe(cb: () => void) {
 }
 
 export function useStationImageVote(stationName: string) {
+  const queryClient = useQueryClient();
   const votes = useSyncExternalStore(subscribe, getSnapshot, () => ({}));
   const vote: Vote = votes[stationName] ?? null;
 
@@ -59,7 +61,11 @@ export function useStationImageVote(stationName: string) {
 
     writeVotes(current);
     emit();
-    void syncStationImageVoteToServer(stationName, previous, next);
+    void syncStationImageVoteToServer(stationName, previous, next).then((stored) => {
+      if (stored) {
+        queryClient.invalidateQueries({ queryKey: ["global-ratings"] });
+      }
+    });
   };
 
   return { vote, cast };
