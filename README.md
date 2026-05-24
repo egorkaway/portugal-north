@@ -36,6 +36,10 @@ When you vote, the change is also sent to `/api/votes`, which updates aggregate 
 
 `public/robots.txt` declares [Content Signals](https://contentsignals.org/) preferences: search indexing allowed (`search=yes`), AI training and AI input disallowed (`ai-train=no`, `ai-input=no`).
 
+### Markdown for Agents
+
+Requests with `Accept: text/markdown` receive a markdown representation of each prerendered page (`Content-Type: text/markdown`, `Vary: Accept`, `x-markdown-tokens`). HTML remains the default for browsers. Markdown files are generated at build time (`scripts/prerender-markdown.mjs`); `middleware.ts` serves them on Vercel.
+
 ### Agent discovery
 
 `/.well-known/agent-skills/index.json` publishes an [Agent Skills Discovery](https://github.com/cloudflare/agent-skills-discovery-rfc) v0.2.0 index (`$schema`, `skills[]` with `name`, `type`, `description`, `url`, `digest`). Skill sources live in `api/agent-skills/`; run `node scripts/sync-agent-skills-public.mjs` to refresh `public/.well-known/agent-skills/`.

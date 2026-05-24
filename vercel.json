@@ -101,9 +101,7 @@
   ],
   "functions": {
     "api/**/*.ts": {
-      "maxDuration": 10
-    },
-    "api/agent-skills-index.ts": {
+      "maxDuration": 10,
       "includeFiles": "api/agent-skills/**"
     }
   }

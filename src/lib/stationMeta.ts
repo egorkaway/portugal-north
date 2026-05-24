@@ -9,14 +9,14 @@ function truncate(text: string, max: number): string {
   return `${text.slice(0, max - 1).trimEnd()}…`;
 }
 
-function formatLineList(lines: string[]): string {
+export function formatLineList(lines: string[]): string {
   if (lines.length === 0) return "CP network";
   if (lines.length === 1) return lines[0];
   if (lines.length === 2) return `${lines[0]} and ${lines[1]}`;
   return `${lines.slice(0, -1).join(", ")}, and ${lines[lines.length - 1]}`;
 }
 
-function formatServiceTypes(types: string[]): string {
+export function formatServiceTypes(types: string[]): string {
   const active = types.filter((t) => t !== "Inactive / Historic");
   if (active.length === 0) return "CP trains";
   if (active.length <= 3) return active.join(", ");
