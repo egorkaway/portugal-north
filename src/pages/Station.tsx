@@ -14,6 +14,11 @@ import { StationDepartures } from "@/components/StationDepartures";
 import { StationImageVote } from "@/components/StationImageVote";
 import { VoteButtons } from "@/components/VoteButtons";
 import { useStationVote } from "@/hooks/useStationVote";
+import {
+  getStationMetaDescription,
+  getStationOgDescription,
+  getStationPageTitle,
+} from "@/lib/stationMeta";
 import { getStationBySlug } from "@/lib/stationSlug";
 import { absoluteUrl } from "@/lib/site";
 
@@ -37,21 +42,31 @@ const Station = () => {
   const imageUrl = stationImages[station.name];
   const { vote, cast } = useStationVote(station.name);
   const path = `/stations/${slug}`;
+  const pageTitle = getStationPageTitle(station);
+  const metaDescription = getStationMetaDescription(station, hotels);
+  const ogDescription = getStationOgDescription(station, hotels);
+  const canonicalUrl = absoluteUrl(path);
 
   return (
     <>
       <Helmet>
-        <title>{station.name} | Portugal by Train</title>
-        <meta
-          name="description"
-          content={`Budget hotels near ${station.name} train station in Portugal. Lines: ${station.lines.join(", ")}.`}
-        />
-        <meta property="og:title" content={`${station.name} | Portugal by Train`} />
-        <meta
-          property="og:description"
-          content={`Budget hotels near ${station.name} train station. Vote on stays you would recommend.`}
-        />
-        <meta property="og:url" content={absoluteUrl(path)} />
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Portugal by Train" />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={ogDescription} />
+        <meta property="og:url" content={canonicalUrl} />
+        {imageUrl && (
+          <>
+            <meta property="og:image" content={imageUrl} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={pageTitle} />
+            <meta name="twitter:description" content={ogDescription} />
+            <meta name="twitter:image" content={imageUrl} />
+          </>
+        )}
       </Helmet>
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">

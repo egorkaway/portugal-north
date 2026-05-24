@@ -12,9 +12,11 @@ import {
 } from "lucide-react";
 import heroStation from "@/assets/hero-station.jpg";
 import { SiteFooter } from "@/components/SiteFooter";
+import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
 import { useAllVotes } from "@/hooks/useStationVote";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import { distanceKm } from "@/lib/geo";
+import { sortStationsByCommunityUpvotes } from "@/lib/rankStations";
 
 const allTypes = [...new Set(stations.flatMap((s) => s.types))];
 
@@ -25,8 +27,17 @@ const Index = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
   const votes = useAllVotes();
+  const { data: globalVotes } = useGlobalStationRatings();
   const { state: locationState, coords, isActive: sortByDistance, requestLocation } =
     useUserLocation();
+
+  const sortByCommunityVotes =
+    !sortByDistance &&
+    Boolean(
+      globalVotes?.configured &&
+        globalVotes.ratings &&
+        Object.values(globalVotes.ratings).some((r) => r.up > 0),
+    );
 
   const filtered = useMemo(() => {
     const matches = stations.filter((s) => {
@@ -43,14 +54,20 @@ const Index = () => {
       return matchesSearch && matchesFilter && matchesVote;
     });
 
-    if (!coords) return matches;
+    if (coords) {
+      return [...matches].sort(
+        (a, b) =>
+          distanceKm(coords.lat, coords.lng, a.lat, a.lng) -
+          distanceKm(coords.lat, coords.lng, b.lat, b.lng),
+      );
+    }
 
-    return [...matches].sort(
-      (a, b) =>
-        distanceKm(coords.lat, coords.lng, a.lat, a.lng) -
-        distanceKm(coords.lat, coords.lng, b.lat, b.lng),
-    );
-  }, [search, activeFilter, voteFilter, votes, coords]);
+    if (globalVotes?.configured && globalVotes.ratings) {
+      return sortStationsByCommunityUpvotes(matches, globalVotes.ratings);
+    }
+
+    return matches;
+  }, [search, activeFilter, voteFilter, votes, coords, globalVotes]);
 
   const distanceByStation = useMemo(() => {
     if (!coords) return null;
@@ -181,7 +198,11 @@ const Index = () => {
       <main className="max-w-5xl mx-auto px-6 py-8">
         <p className="text-sm text-muted-foreground mb-4">
           {filtered.length} station{filtered.length !== 1 && "s"}
-          {sortByDistance ? " · Sorted by distance from you" : ""}
+          {sortByDistance
+            ? " · Sorted by distance from you"
+            : sortByCommunityVotes
+              ? " · Top community picks first"
+              : ""}
           {locationState.status === "denied"
             ? " · Location access denied"
             : locationState.status === "unsupported"

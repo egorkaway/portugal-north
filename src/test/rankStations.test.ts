@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { getTopDownvoted, getTopUpvoted } from "@/lib/rankStations";
+import {
+  getTopDownvoted,
+  getTopUpvoted,
+  sortStationsByCommunityUpvotes,
+} from "@/lib/rankStations";
+import type { Station } from "@/data/stations";
 
 describe("rankStations", () => {
   it("returns top 3 upvoted stations by up count", () => {
@@ -22,5 +27,18 @@ describe("rankStations", () => {
     });
 
     expect(ranked.map((s) => s.name)).toEqual(["Charlie", "Alpha", "Bravo"]);
+  });
+
+  it("sorts stations with upvotes ahead of the rest", () => {
+    const items: Station[] = [
+      { name: "Zeta", lines: [], types: [], lat: 0, lng: 0 },
+      { name: "Alpha", lines: [], types: [], lat: 0, lng: 0 },
+      { name: "Bravo", lines: [], types: [], lat: 0, lng: 0 },
+    ];
+    const sorted = sortStationsByCommunityUpvotes(items, {
+      Alpha: { up: 2, down: 0 },
+      Bravo: { up: 5, down: 1 },
+    });
+    expect(sorted.map((s) => s.name)).toEqual(["Bravo", "Alpha", "Zeta"]);
   });
 });
