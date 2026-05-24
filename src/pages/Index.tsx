@@ -12,6 +12,7 @@ import {
   Smartphone,
   ExternalLink,
   Navigation,
+  Languages,
 } from "lucide-react";
 import heroStation from "@/assets/hero-station.jpg";
 import footerDouro from "@/assets/footer-douro.jpg";
@@ -228,7 +229,7 @@ const Index = () => {
             <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">
               Also from us
             </p>
-            <div className="mx-auto flex max-w-3xl flex-col gap-3 sm:flex-row sm:items-stretch">
+            <div className="mx-auto grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <a
                 href="https://berrymet.com"
                 target="_blank"
@@ -260,6 +261,25 @@ const Index = () => {
                   <p className="mt-1 text-sm text-primary-foreground/80">
                     GetMapa's iPhone app tracks the places you visit and builds a
                     personal travel map from your trips and photos.
+                  </p>
+                </div>
+                <ExternalLink
+                  className="mt-1 h-4 w-4 shrink-0 text-primary-foreground/50 transition-colors group-hover:text-primary-foreground"
+                  aria-hidden="true"
+                />
+              </a>
+              <a
+                href="https://portuguess.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-start gap-4 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-5 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15"
+              >
+                <Languages className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
+                <div className="min-w-0 flex-1">
+                  <p className="font-display text-xl text-primary-foreground">PortuGuess</p>
+                  <p className="mt-1 text-sm text-primary-foreground/80">
+                    Learn European Portuguese with quizzes, word lists, and offline
+                    apps for iOS and Android.
                   </p>
                 </div>
                 <ExternalLink
