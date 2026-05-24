@@ -7,6 +7,7 @@
  *   node scripts/fetch-station-hotels.mjs --report
  *   node scripts/fetch-station-hotels.mjs --dry-run
  *   node scripts/fetch-station-hotels.mjs --station "Amadora"
+ *   node scripts/fetch-station-hotels.mjs --max 8 --delay 5000
  *   node scripts/fetch-station-hotels.mjs
  */
 import { readFileSync } from "node:fs";
@@ -31,8 +32,19 @@ const onlyMissing = process.argv.includes("--only-missing");
 const onlyStation = process.argv.includes("--station")
   ? process.argv[process.argv.indexOf("--station") + 1]
   : null;
-const target = Number(process.argv.find((a) => a.startsWith("--target="))?.split("=")[1] ?? 3);
-const maxStations = Number(process.argv.find((a) => a.startsWith("--max="))?.split("=")[1] ?? 0);
+function readFlagValue(name) {
+  const eq = process.argv.find((a) => a.startsWith(`${name}=`));
+  if (eq) return eq.split("=")[1];
+  const idx = process.argv.indexOf(name);
+  if (idx !== -1 && process.argv[idx + 1] && !process.argv[idx + 1].startsWith("-")) {
+    return process.argv[idx + 1];
+  }
+  return undefined;
+}
+
+const target = Number(readFlagValue("--target") ?? 3);
+const maxStations = Number(readFlagValue("--max") ?? 0);
+const delayMs = Number(readFlagValue("--delay") ?? 2500);
 
 const stations = parseStations(readFileSync(stationsPath, "utf8"));
 const hotelMap = parseHotelMap(readFileSync(hotelsPath, "utf8"));
@@ -103,7 +115,7 @@ for (const station of targets) {
     );
   }
 
-  await sleep(2500);
+  await sleep(delayMs);
 }
 
 if (!dryRun && stationsUpdated > 0) {
