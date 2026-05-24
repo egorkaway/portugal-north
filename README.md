@@ -2,7 +2,9 @@
 
 A static reference guide to major train stations across Portugal, from the Minho to the Algarve, with recommended budget hotels within walking distance of key stops.
 
-Live: **[portugal-north.lovable.app](https://portugal-north.lovable.app)**
+Live: **[verystays.com](https://www.verystays.com)**
+
+Set `VITE_SITE_URL` to `https://www.verystays.com` in Vercel environment variables (this is also the build default).
 
 ---
 

@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
+import { absoluteUrl } from "@/lib/site";
 
 const NotFound = () => {
   const location = useLocation();
@@ -16,7 +17,7 @@ const NotFound = () => {
         <meta name="description" content="The page you were looking for could not be found. Return to the homepage to explore train stations across Portugal." />
         <meta property="og:title" content="Page Not Found | Portugal by Train" />
         <meta property="og:description" content="The page you were looking for could not be found. Return to the homepage to explore train stations across Portugal." />
-        <meta property="og:url" content={`https://portugal-north.lovable.app${location.pathname}`} />
+        <meta property="og:url" content={absoluteUrl(location.pathname)} />
         <meta name="robots" content="noindex" />
       </Helmet>
       <div className="flex min-h-screen items-center justify-center bg-muted">
