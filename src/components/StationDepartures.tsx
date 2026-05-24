@@ -1,4 +1,4 @@
-import { AlertCircle, Clock, RefreshCw } from "lucide-react";
+import { Clock, RefreshCw } from "lucide-react";
 import { getCpStationCode } from "@/data/cpStationCodes";
 import { useStationDepartures } from "@/hooks/useStationDepartures";
 import { isCpTravelApiConfigured } from "@/lib/cpTravelApi";
@@ -40,40 +40,10 @@ function DepartureRow({
 export function StationDepartures({ stationName }: { stationName: string }) {
   const stationCode = getCpStationCode(stationName);
   const configured = isCpTravelApiConfigured();
-  const { data, isLoading, isError, error, isFetching, refetch } = useStationDepartures(stationName);
+  const { data, isLoading, isError, isFetching, refetch } = useStationDepartures(stationName);
 
-  if (!configured) {
-    return (
-      <section className="mb-10" aria-labelledby="departures-heading">
-        <div className="mb-4 flex items-center gap-2">
-          <Clock className="h-5 w-5 text-primary" aria-hidden="true" />
-          <h2 id="departures-heading" className="font-display text-2xl text-foreground">
-            Next departures
-          </h2>
-        </div>
-        <p className="text-sm text-muted-foreground">
-          Live departures are not configured for this deployment. Add{" "}
-          <code className="text-xs">VITE_CP_*</code> keys from{" "}
-          <code className="text-xs">scripts/refresh-cp-env.mjs</code>, then rebuild.
-        </p>
-      </section>
-    );
-  }
-
-  if (!stationCode) {
-    return (
-      <section className="mb-10" aria-labelledby="departures-heading">
-        <div className="mb-4 flex items-center gap-2">
-          <Clock className="h-5 w-5 text-primary" aria-hidden="true" />
-          <h2 id="departures-heading" className="font-display text-2xl text-foreground">
-            Next departures
-          </h2>
-        </div>
-        <p className="text-sm text-muted-foreground">
-          No CP station code mapped for this stop yet (inactive or unlisted in CP).
-        </p>
-      </section>
-    );
+  if (!configured || !stationCode || isLoading || isError || !data?.length) {
+    return null;
   }
 
   return (
@@ -95,36 +65,11 @@ export function StationDepartures({ stationName }: { stationName: string }) {
           Refresh
         </button>
       </div>
-      <p className="mb-4 text-sm text-muted-foreground">
-        Up to three upcoming trains from CP (unofficial API, times in Lisbon). Fetched in your
-        browser.
-      </p>
-
-      {isLoading && (
-        <p className="text-sm text-muted-foreground" role="status">
-          Loading departures…
-        </p>
-      )}
-
-      {isError && (
-        <p className="flex items-start gap-2 text-sm text-destructive" role="alert">
-          <AlertCircle className="h-4 w-4 shrink-0 mt-0.5" aria-hidden="true" />
-          Could not load departures
-          {error instanceof Error && error.message ? ` (${error.message})` : ""}.
-        </p>
-      )}
-
-      {!isLoading && !isError && data && data.length === 0 && (
-        <p className="text-sm text-muted-foreground">No upcoming departures listed for today.</p>
-      )}
-
-      {data && data.length > 0 && (
-        <ul className="space-y-2">
-          {data.map((dep) => (
-            <DepartureRow key={`${dep.trainNumber}-${dep.time}`} {...dep} />
-          ))}
-        </ul>
-      )}
+      <ul className="space-y-2">
+        {data.map((dep) => (
+          <DepartureRow key={`${dep.trainNumber}-${dep.time}`} {...dep} />
+        ))}
+      </ul>
     </section>
   );
 }
