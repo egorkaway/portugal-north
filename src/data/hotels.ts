@@ -949,6 +949,19 @@ export const stationHotels: StationHotels = {
     { name: "Alojamento Local", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamento%20Local%2C%20Carcavelos%2C%20Portugal&order=price" },
     { name: "Help Yourself Hostels Carcavelo Coast", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Help%20Yourself%20Hostels%20Carcavelo%20Coast%2C%20Carcavelos%2C%20Portugal&order=price" },
   ],
+  "Castanheira do Ribatejo": [
+    { name: "Lezíria Park Hotel", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lez%C3%ADria%20Park%20Hotel%2C%20Castanheira%20do%20Ribatejo%2C%20Portugal&order=price" },
+  ],
+  "Caxias": [
+    { name: "Hjem", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hjem%2C%20Caxias%2C%20Portugal&order=price" },
+    { name: "Hotel Solar Palmeiras", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Solar%20Palmeiras%2C%20Caxias%2C%20Portugal&order=price" },
+    { name: "Hotel Vila Galé Collection Palácio dos Arcos", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vila%20Gal%C3%A9%20Collection%20Pal%C3%A1cio%20dos%20Arcos%2C%20Caxias%2C%20Portugal&order=price" },
+  ],
+  "Cruz Quebrada": [
+    { name: "MS Aparthotel", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=MS%20Aparthotel%2C%20Cruz%20Quebrada%2C%20Portugal&order=price" },
+    { name: "Amazónia Jamor Hotel", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Amaz%C3%B3nia%20Jamor%20Hotel%2C%20Cruz%20Quebrada%2C%20Portugal&order=price" },
+    { name: "Hjem", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hjem%2C%20Cruz%20Quebrada%2C%20Portugal&order=price" },
+  ],
   "Pragal": [
     { name: "Holiday Inn Express Lisbon-Almada", distanceKm: 0.4, priceFrom: 60, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
     { name: "Alojamento Pragal", distanceKm: 0.6, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
