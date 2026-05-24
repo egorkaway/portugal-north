@@ -1,8 +1,36 @@
 import fs from "node:fs";
 import path from "node:path";
+import type { IncomingMessage, ServerResponse } from "node:http";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { buildSitemapXml } from "./src/lib/sitemap";
+
+async function handleDeparturesDevApi(
+  req: IncomingMessage,
+  res: ServerResponse,
+): Promise<boolean> {
+  if (!req.url?.startsWith("/api/departures")) return false;
+
+  const url = new URL(req.url, "http://localhost");
+  const code = url.searchParams.get("code") ?? "";
+  const limit = Number(url.searchParams.get("limit") ?? "3");
+
+  try {
+    const { fetchCpStationDepartures } = await import("./api/lib/cpDeparturesServer.ts");
+    const departures = await fetchCpStationDepartures(code, limit);
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify({ departures, configured: true }));
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "unknown";
+    const status = message === "invalid_station_code" ? 400 : 502;
+    res.statusCode = status;
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify({ error: message, departures: [], configured: true }));
+  }
+
+  return true;
+}
 
 const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(
   /\/$/,
@@ -25,6 +53,16 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    {
+      name: "departures-dev-api",
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          void handleDeparturesDevApi(req, res).then((handled) => {
+            if (!handled) next();
+          });
+        });
+      },
+    },
     {
       name: "site-url",
       buildStart() {

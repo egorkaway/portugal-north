@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import { Helmet } from "react-helmet-async";
 import { useSearchParams } from "react-router-dom";
 import { stations } from "@/data/stations";
 import { StationCard } from "@/components/StationCard";
@@ -16,7 +15,8 @@ import heroStation from "@/assets/hero-station.jpg";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { buildHomeStructuredData } from "@/lib/structuredData";
-import { absoluteUrl } from "@/lib/site";
+import { PageHead } from "@/components/PageHead";
+import { HOME_PAGE_META } from "@/lib/pageMeta";
 import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
 import { useAllVotes } from "@/hooks/useStationVote";
 import { useUserLocation } from "@/hooks/useUserLocation";
@@ -96,9 +96,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Helmet>
-        <link rel="canonical" href={absoluteUrl("/")} />
-      </Helmet>
+      <PageHead meta={HOME_PAGE_META} />
       <JsonLd data={buildHomeStructuredData()} />
       {/* Hero */}
       <header className="relative text-primary-foreground py-20 md:py-28 px-6 overflow-hidden bg-primary">

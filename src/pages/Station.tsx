@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { ArrowLeft, BedDouble, MapPin, Train, ExternalLink, Navigation } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import {
@@ -14,16 +13,12 @@ import { StationDepartures } from "@/components/StationDepartures";
 import { StationImageVote } from "@/components/StationImageVote";
 import { VoteButtons } from "@/components/VoteButtons";
 import { useStationVote } from "@/hooks/useStationVote";
-import {
-  getStationMetaDescription,
-  getStationOgDescription,
-  getStationPageTitle,
-} from "@/lib/stationMeta";
+import { PageHead } from "@/components/PageHead";
+import { buildStationPageMeta } from "@/lib/pageMeta";
 import { JsonLd } from "@/components/JsonLd";
 import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
 import { buildStationStructuredData } from "@/lib/structuredData";
 import { getStationBySlug } from "@/lib/stationSlug";
-import { absoluteUrl } from "@/lib/site";
 
 const typeColors: Record<string, string> = {
   "Alfa Pendular": "bg-primary text-primary-foreground",
@@ -45,11 +40,7 @@ const Station = () => {
   const imageUrl = stationImages[station.name];
   const { vote, cast } = useStationVote(station.name);
   const { data: globalVotes } = useGlobalRatings();
-  const path = `/stations/${slug}`;
-  const pageTitle = getStationPageTitle(station);
-  const metaDescription = getStationMetaDescription(station, hotels);
-  const ogDescription = getStationOgDescription(station, hotels);
-  const canonicalUrl = absoluteUrl(path);
+  const pageMeta = buildStationPageMeta(station, hotels, imageUrl);
   const structuredData = buildStationStructuredData({
     station,
     slug: slug!,
@@ -61,25 +52,7 @@ const Station = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Portugal by Train" />
-        <meta property="og:title" content={pageTitle} />
-        <meta property="og:description" content={ogDescription} />
-        <meta property="og:url" content={canonicalUrl} />
-        {imageUrl && (
-          <>
-            <meta property="og:image" content={imageUrl} />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={pageTitle} />
-            <meta name="twitter:description" content={ogDescription} />
-            <meta name="twitter:image" content={imageUrl} />
-          </>
-        )}
-      </Helmet>
+      <PageHead meta={pageMeta} />
       <JsonLd data={structuredData} />
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">

@@ -1,7 +1,6 @@
 import { Clock, RefreshCw } from "lucide-react";
 import { getCpStationCode } from "@/data/cpStationCodes";
 import { useStationDepartures } from "@/hooks/useStationDepartures";
-import { isCpTravelApiConfigured } from "@/lib/cpTravelApi";
 
 function DepartureRow({
   trainNumber,
@@ -39,10 +38,9 @@ function DepartureRow({
 
 export function StationDepartures({ stationName }: { stationName: string }) {
   const stationCode = getCpStationCode(stationName);
-  const configured = isCpTravelApiConfigured();
-  const { data, isLoading, isError, isFetching, refetch } = useStationDepartures(stationName);
+  const { data, isLoading, isError, isFetching, refetch, error } = useStationDepartures(stationName);
 
-  if (!configured || !stationCode || isLoading || isError || !data?.length) {
+  if (!stationCode) {
     return null;
   }
 
@@ -55,21 +53,50 @@ export function StationDepartures({ stationName }: { stationName: string }) {
             Next departures
           </h2>
         </div>
-        <button
-          type="button"
-          onClick={() => refetch()}
-          disabled={isFetching}
-          className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground disabled:opacity-50"
-        >
-          <RefreshCw className={`h-4 w-4 ${isFetching ? "animate-spin" : ""}`} aria-hidden="true" />
-          Refresh
-        </button>
+        {!isLoading && !isError && (
+          <button
+            type="button"
+            onClick={() => refetch()}
+            disabled={isFetching}
+            className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground disabled:opacity-50"
+          >
+            <RefreshCw className={`h-4 w-4 ${isFetching ? "animate-spin" : ""}`} aria-hidden="true" />
+            Refresh
+          </button>
+        )}
       </div>
-      <ul className="space-y-2">
-        {data.map((dep) => (
-          <DepartureRow key={`${dep.trainNumber}-${dep.time}`} {...dep} />
-        ))}
-      </ul>
+
+      {isLoading && (
+        <ul className="space-y-2" aria-busy="true">
+          {[1, 2, 3].map((i) => (
+            <li
+              key={i}
+              className="h-[4.25rem] animate-pulse rounded-md border border-border bg-muted/40"
+            />
+          ))}
+        </ul>
+      )}
+
+      {isError && (
+        <p className="text-sm text-muted-foreground" role="status">
+          Live departures are temporarily unavailable
+          {error instanceof Error && import.meta.env.DEV ? ` (${error.message})` : ""}.
+        </p>
+      )}
+
+      {!isLoading && !isError && data?.length === 0 && (
+        <p className="text-sm text-muted-foreground" role="status">
+          No upcoming departures found for the next few hours.
+        </p>
+      )}
+
+      {!isLoading && !isError && data && data.length > 0 && (
+        <ul className="space-y-2">
+          {data.map((dep) => (
+            <DepartureRow key={`${dep.trainNumber}-${dep.time}`} {...dep} />
+          ))}
+        </ul>
+      )}
     </section>
   );
 }

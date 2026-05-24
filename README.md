@@ -32,9 +32,13 @@ Each station has a thumbs-up / thumbs-down toggle. Your choice is stored in a fi
 
 When you vote, the change is also sent to `/api/votes`, which updates aggregate up/down counts in [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) (no database, no per-user log). Station votes use `station-votes.json`; photo feedback (“Does this photo represent…?”) uses `station-image-votes.json`. Use `useGlobalStationRatings()` or `useGlobalImageRatings()` to read community totals.
 
-### Next departures (prototype)
+### Page titles & SEO
 
-Station pages can show up to three upcoming trains from the unofficial CP travel API, fetched **in the browser** (no Vercel function). Set `VITE_CP_*` env vars (see `.env.example`); refresh locally with `node scripts/refresh-cp-env.mjs` when CP rotates keys. Station → CP code mapping lives in `src/data/cpStationCodes.ts` (`node scripts/map-cp-stations.mjs` to regenerate).
+Each route has its own `<title>`, meta description, canonical URL, and Open Graph tags. At build time, `scripts/prerender-pages.mjs` writes a static `index.html` per URL under `dist/` (home, rankings, every `/stations/:slug` page) so crawlers, link previews, and “View Source” see the correct metadata—not only the homepage defaults. Runtime navigation uses the same copy via `PageHead` + `react-helmet-async`.
+
+### Next departures
+
+Station pages show up to three upcoming trains via **`GET /api/departures`**, a Vercel serverless route that proxies the CP travel API. Credentials are read from [cp.pt/fe-config.json](https://www.cp.pt/fe-config.json) on the server (cached ~45 minutes), so you do **not** need `VITE_CP_*` in production. Station → CP code mapping lives in `src/data/cpStationCodes.ts` (`node scripts/map-cp-stations.mjs` to regenerate). For local `npm run dev`, the Vite dev server serves the same `/api/departures` route; use `vercel dev` if you also need Blob vote sync.
 
 ---
 

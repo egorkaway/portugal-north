@@ -1,28 +1,15 @@
-import { Helmet } from "react-helmet-async";
+import { PageHead } from "@/components/PageHead";
+import { RANKINGS_PAGE_META } from "@/lib/pageMeta";
 import { ArrowLeft, TrainFront } from "lucide-react";
 import { Link } from "react-router-dom";
 import { JsonLd } from "@/components/JsonLd";
 import { RankingsPanel } from "@/components/RankingsPanel";
 import { buildRankingsStructuredData } from "@/lib/structuredData";
-import { absoluteUrl } from "@/lib/site";
 
 const Rankings = () => {
   return (
     <>
-      <Helmet>
-        <title>Community Rankings | Portugal by Train</title>
-        <meta
-          name="description"
-          content="See which CP train stations and budget hotels visitors rate highest and lowest across Portugal."
-        />
-        <meta property="og:title" content="Community Rankings | Portugal by Train" />
-        <meta
-          property="og:description"
-          content="Community rankings for CP stations and budget hotels across Portugal."
-        />
-        <meta property="og:url" content={absoluteUrl("/rankings")} />
-        <link rel="canonical" href={absoluteUrl("/rankings")} />
-      </Helmet>
+      <PageHead meta={RANKINGS_PAGE_META} />
       <JsonLd data={buildRankingsStructuredData()} />
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">

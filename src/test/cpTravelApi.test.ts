@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { lisbonDateAndTime, parseUpcomingDepartures } from "@/lib/cpTravelApi";
+import { lisbonDateAndTime, parseUpcomingDepartures } from "@/lib/cpDeparturesParse";
 
 describe("parseUpcomingDepartures", () => {
-  it("returns up to three upcoming stops sorted by time", () => {
+  it("returns up to three upcoming departures sorted by time", () => {
     const result = parseUpcomingDepartures(
       {
         stationStops: [
@@ -12,7 +12,6 @@ describe("parseUpcomingDepartures", () => {
             trainOrigin: { code: "a", designation: "A" },
             trainDestination: { code: "b", designation: "B" },
             trainService: { code: "R", designation: "Regional" },
-            etd: "17:55",
           },
           {
             trainNumber: 200,
@@ -31,21 +30,36 @@ describe("parseUpcomingDepartures", () => {
           },
           {
             trainNumber: 400,
-            departureTime: "16:00",
+            arrivalTime: "16:00",
             trainOrigin: { code: "a", designation: "A" },
             trainDestination: { code: "e", designation: "E" },
             trainService: { code: "R", designation: "Regional" },
-            eta: "16:05",
           },
         ],
       },
       3,
     );
 
-    expect(result).toHaveLength(2);
+    expect(result).toHaveLength(3);
     expect(result[0].trainNumber).toBe("300");
     expect(result[1].trainNumber).toBe("200");
+    expect(result[2].trainNumber).toBe("100");
     expect(result[1].delayMinutes).toBe(5);
+  });
+
+  it("ignores arrival-only stops", () => {
+    const result = parseUpcomingDepartures({
+      stationStops: [
+        {
+          trainNumber: 1,
+          arrivalTime: "12:00",
+          trainOrigin: { code: "a", designation: "A" },
+          trainDestination: { code: "b", designation: "B" },
+          trainService: { code: "U", designation: "Urbano" },
+        },
+      ],
+    });
+    expect(result).toHaveLength(0);
   });
 });
 
