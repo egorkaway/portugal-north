@@ -126,3 +126,14 @@ All station and hotel data lives in plain TypeScript files. No database, no API 
 ```
 
 Hotel entries go in `src/data/hotels.ts`, keyed by the exact station name string.
+
+### Station photos
+
+Photos are filled from Wikimedia (preferred) and Pexels. Set `PEXELS_API_KEY` in `.env`, then:
+
+```bash
+node scripts/fetch-station-images.mjs          # missing stations only
+node scripts/diversify-station-images.mjs      # fix duplicate Pexels URLs
+```
+
+The fetch logic uses region/line-specific search terms and picks a different photo per station (not always the first search hit).
