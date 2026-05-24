@@ -32,6 +32,10 @@ Each station has a thumbs-up / thumbs-down toggle. Your choice is stored in a fi
 
 When you vote, the change is also sent to `/api/votes`, which updates aggregate up/down counts in [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) (no database, no per-user log). Station votes use `station-votes.json`; photo feedback (“Does this photo represent…?”) uses `station-image-votes.json`. Use `useGlobalStationRatings()` or `useGlobalImageRatings()` to read community totals.
 
+### Next departures (prototype)
+
+Station pages can show up to three upcoming trains from the unofficial CP travel API, fetched **in the browser** (no Vercel function). Set `VITE_CP_*` env vars (see `.env.example`); refresh locally with `node scripts/refresh-cp-env.mjs` when CP rotates keys. Station → CP code mapping lives in `src/data/cpStationCodes.ts` (`node scripts/map-cp-stations.mjs` to regenerate).
+
 ---
 
 ## Tech stack

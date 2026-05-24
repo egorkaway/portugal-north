@@ -9,6 +9,7 @@ import {
 import { stationHotels } from "@/data/hotels";
 import { stationImages } from "@/data/stationImages";
 import { HotelList } from "@/components/HotelList";
+import { StationDepartures } from "@/components/StationDepartures";
 import { StationImageVote } from "@/components/StationImageVote";
 import { VoteButtons } from "@/components/VoteButtons";
 import { useStationVote } from "@/hooks/useStationVote";
@@ -92,6 +93,8 @@ const Station = () => {
               </span>
             ))}
           </div>
+
+          <StationDepartures stationName={station.name} />
 
           <div className="mb-10 flex flex-wrap gap-2">
             <a
