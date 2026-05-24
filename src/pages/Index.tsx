@@ -16,7 +16,8 @@ import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
 import { buildHomeStructuredData } from "@/lib/structuredData";
 import { PageHead } from "@/components/PageHead";
-import { HOME_PAGE_META } from "@/lib/pageMeta";
+import { getHomePageMeta } from "@/lib/pageMeta";
+import { useLocale } from "@/i18n/LocaleProvider";
 import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
 import { useAllVotes } from "@/hooks/useStationVote";
 import { useUserLocation } from "@/hooks/useUserLocation";
@@ -28,6 +29,7 @@ const allTypes = [...new Set(stations.flatMap((s) => s.types))];
 type VoteFilter = "up" | "down" | "none";
 
 const Index = () => {
+  const { t, plural, locale, messages } = useLocale();
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
@@ -96,7 +98,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <PageHead meta={HOME_PAGE_META} />
+      <PageHead meta={getHomePageMeta(locale)} />
       <JsonLd data={buildHomeStructuredData()} />
       {/* Hero */}
       <header className="relative text-primary-foreground py-20 md:py-28 px-6 overflow-hidden bg-primary">
@@ -122,13 +124,10 @@ const Index = () => {
               className="inline-flex items-center gap-3 text-primary-foreground transition-opacity hover:opacity-90"
             >
               <TrainFront className="h-8 w-8 shrink-0" aria-hidden="true" />
-              Portugal by Train
+              {messages.site.name}
             </a>
           </h1>
-          <p className="text-primary-foreground/90 text-lg max-w-2xl">
-            Major CP stations from the Minho to the Algarve, with budget
-            hotels within walking distance.
-          </p>
+          <p className="text-primary-foreground/90 text-lg max-w-2xl">{t("home.heroSubtitle")}</p>
         </div>
       </header>
 
@@ -139,13 +138,13 @@ const Index = () => {
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <label htmlFor="station-search" className="sr-only">
-                Search station or line
+                {t("home.searchLabel")}
               </label>
               <input
                 id="station-search"
                 type="search"
-                aria-label="Search station or line"
-                placeholder="Search station or line..."
+                aria-label={t("home.searchLabel")}
+                placeholder={t("home.searchPlaceholder")}
                 value={search}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-4 py-2 rounded-md border border-input bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
@@ -164,10 +163,10 @@ const Index = () => {
             >
               <Navigation className="h-4 w-4" aria-hidden="true" />
               {locationState.status === "loading"
-                ? "Locating..."
+                ? t("home.locating")
                 : sortByDistance
-                  ? "Sorted by distance"
-                  : "Sort by distance"}
+                  ? t("home.sortedByDistance")
+                  : t("home.sortByDistance")}
             </button>
           </div>
           <div className="flex flex-wrap items-center gap-1.5">
@@ -189,11 +188,11 @@ const Index = () => {
           </div>
         </div>
         <div className="mx-auto hidden max-w-5xl flex-wrap items-center gap-1.5 px-6 pb-3 md:flex">
-          <span className="text-xs text-muted-foreground mr-1">Your votes:</span>
+          <span className="text-xs text-muted-foreground mr-1">{t("home.yourVotes")}</span>
           {([
-            { key: "up" as const, label: "Upvoted", Icon: ThumbsUp },
-            { key: "down" as const, label: "Downvoted", Icon: ThumbsDown },
-            { key: "none" as const, label: "Not voted yet", Icon: Circle },
+            { key: "up" as const, label: t("home.upvoted"), Icon: ThumbsUp },
+            { key: "down" as const, label: t("home.downvoted"), Icon: ThumbsDown },
+            { key: "none" as const, label: t("home.notVoted"), Icon: Circle },
           ]).map(({ key, label, Icon }) => (
             <button
               key={key}
@@ -214,20 +213,20 @@ const Index = () => {
       {/* Grid */}
       <main className="max-w-5xl mx-auto px-6 py-8">
         <p className="text-sm text-muted-foreground mb-4">
-          {filtered.length} station{filtered.length !== 1 && "s"}
+          {plural("home.stationCount", filtered.length, { count: filtered.length })}
           {sortByDistance
-            ? " · Sorted by distance from you"
+            ? t("home.sortedByDistanceNote")
             : sortByCommunityVotes
-              ? " · Top community picks first"
+              ? t("home.topCommunityPicks")
               : ""}
           {locationState.status === "denied"
-            ? " · Location access denied"
+            ? t("home.locationDenied")
             : locationState.status === "unsupported"
-              ? " · Location not supported in this browser"
+              ? t("home.locationUnsupported")
               : locationState.status === "error"
-                ? " · Could not get your location"
+                ? t("home.locationError")
                 : ""}
-          {!sortByDistance && " · Click \"Hotels on Booking\" to find the 3 cheapest rooms within 2 km"}
+          {!sortByDistance && t("home.bookingHint")}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((station) => (
@@ -240,7 +239,7 @@ const Index = () => {
         </div>
         {filtered.length === 0 && (
           <p className="text-center text-muted-foreground py-16">
-            No stations match your search.
+            {t("home.noResults")}
           </p>
         )}
       </main>

@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { WebMcpBridge } from "@/components/WebMcpBridge";
+import { LocaleProvider } from "@/i18n/LocaleProvider";
 import Index from "./pages/Index.tsx";
 import Rankings from "./pages/Rankings.tsx";
 import Station from "./pages/Station.tsx";
@@ -14,21 +15,23 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <WebMcpBridge />
-        <Routes>
+    <LocaleProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <WebMcpBridge />
+          <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/rankings" element={<Rankings />} />
           <Route path="/stations/:slug" element={<Station />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-      <Analytics />
-    </TooltipProvider>
+          </Routes>
+        </BrowserRouter>
+        <Analytics />
+      </TooltipProvider>
+    </LocaleProvider>
   </QueryClientProvider>
 );
 

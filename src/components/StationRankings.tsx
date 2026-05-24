@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import { RankingsPanel } from "@/components/RankingsPanel";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export function StationRankings() {
+  const { t } = useLocale();
+
   return (
     <section
       aria-labelledby="community-rankings-heading"
@@ -13,17 +16,15 @@ export function StationRankings() {
             id="community-rankings-heading"
             className="font-display text-2xl md:text-3xl text-foreground mb-2"
           >
-            Community rankings
+            {t("rankings.communityTitle")}
           </h2>
-          <p className="text-sm text-muted-foreground">
-            Top stations by global votes. See hotel rankings on the full page.
-          </p>
+          <p className="text-sm text-muted-foreground">{t("rankings.communityTeaser")}</p>
         </div>
         <Link
           to="/rankings"
           className="text-sm font-medium text-primary underline-offset-4 hover:underline shrink-0"
         >
-          Full rankings page
+          {t("rankings.fullPage")}
         </Link>
       </div>
       <RankingsPanel stationsOnly rankingsHref="/rankings" />

@@ -1,9 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { PageHead } from "@/components/PageHead";
-import { NOT_FOUND_PAGE_META } from "@/lib/pageMeta";
+import { getNotFoundPageMeta } from "@/lib/pageMeta";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 const NotFound = () => {
+  const { t, locale } = useLocale();
   const location = useLocation();
 
   useEffect(() => {
@@ -12,13 +14,13 @@ const NotFound = () => {
 
   return (
     <>
-      <PageHead meta={NOT_FOUND_PAGE_META} />
+      <PageHead meta={getNotFoundPageMeta(locale)} />
       <div className="flex min-h-screen items-center justify-center bg-muted">
         <div className="text-center">
-          <h1 className="mb-4 text-4xl font-bold">404</h1>
-          <p className="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
+          <h1 className="mb-4 text-4xl font-bold">{t("notFound.title")}</h1>
+          <p className="mb-4 text-xl text-muted-foreground">{t("notFound.message")}</p>
           <a href="/" className="text-primary underline hover:text-primary/90">
-            Return to Home
+            {t("notFound.home")}
           </a>
         </div>
       </div>

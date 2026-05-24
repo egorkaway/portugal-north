@@ -3,8 +3,10 @@ import type { Hotel } from "@/data/hotels";
 import { useHotelClosedReport } from "@/hooks/useHotelClosedReport";
 import { useHotelVote } from "@/hooks/useHotelVote";
 import { VoteButtons } from "@/components/VoteButtons";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 function HotelClosedSuggestion({ stationName, hotelName }: { stationName: string; hotelName: string }) {
+  const { t } = useLocale();
   const { reported, toggle } = useHotelClosedReport(stationName, hotelName);
 
   return (
@@ -19,12 +21,13 @@ function HotelClosedSuggestion({ stationName, hotelName }: { stationName: string
       }`}
     >
       <Store className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-      {reported ? "You suggested this hotel may be closed" : "Suggest hotel may be closed"}
+      {reported ? t("station.suggestedClosed") : t("station.suggestClosed")}
     </button>
   );
 }
 
 function HotelRowCompactLink({ hotel }: { hotel: Hotel }) {
+  const { t } = useLocale();
   return (
     <a
       href={hotel.bookingUrl}
@@ -36,13 +39,13 @@ function HotelRowCompactLink({ hotel }: { hotel: Hotel }) {
         <p className="text-sm font-medium text-foreground truncate">{hotel.name}</p>
         <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
           <Navigation className="h-3 w-3 shrink-0" aria-hidden="true" />
-          {hotel.distanceKm} km from station
+          {t("station.kmFromStation", { km: hotel.distanceKm })}
         </p>
       </div>
       <span className="flex shrink-0 items-center gap-0.5 whitespace-nowrap text-sm font-semibold text-primary">
         <Euro className="h-3 w-3" aria-hidden="true" />
         {hotel.priceFrom}
-        <span className="sr-only"> euros per night from</span>
+        <span className="sr-only">{t("station.eurosPerNightFrom")}</span>
       </span>
     </a>
   );
@@ -55,6 +58,7 @@ function HotelRowCompactWithVotes({
   stationName: string;
   hotel: Hotel;
 }) {
+  const { t } = useLocale();
   const { vote, cast } = useHotelVote(stationName, hotel.name);
 
   return (
@@ -69,13 +73,13 @@ function HotelRowCompactWithVotes({
           <p className="text-sm font-medium text-foreground truncate">{hotel.name}</p>
           <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
             <Navigation className="h-3 w-3 shrink-0" aria-hidden="true" />
-            {hotel.distanceKm} km from station
+            {t("station.kmFromStation", { km: hotel.distanceKm })}
           </p>
         </a>
         <span className="flex shrink-0 items-center gap-0.5 whitespace-nowrap text-sm font-semibold text-primary">
           <Euro className="h-3 w-3" aria-hidden="true" />
           {hotel.priceFrom}
-          <span className="sr-only"> euros per night from</span>
+          <span className="sr-only">{t("station.eurosPerNightFrom")}</span>
         </span>
         <VoteButtons
           vote={vote}
@@ -109,6 +113,7 @@ function HotelRowCompact({
 }
 
 function HotelRow({ stationName, hotel }: { stationName: string; hotel: Hotel }) {
+  const { t } = useLocale();
   const { vote, cast } = useHotelVote(stationName, hotel.name);
 
   return (
@@ -119,12 +124,12 @@ function HotelRow({ stationName, hotel }: { stationName: string; hotel: Hotel })
           <span className="text-sm font-semibold text-primary whitespace-nowrap flex items-center gap-0.5 shrink-0">
             <Euro className="w-3 h-3" aria-hidden="true" />
             {hotel.priceFrom}
-            <span className="sr-only"> euros per night from</span>
+            <span className="sr-only">{t("station.eurosPerNightFrom")}</span>
           </span>
         </div>
         <p className="mt-1 text-xs text-muted-foreground flex items-center gap-1">
           <Navigation className="w-3 h-3 shrink-0" aria-hidden="true" />
-          {hotel.distanceKm} km from station
+          {t("station.kmFromStation", { km: hotel.distanceKm })}
         </p>
         <div className="mt-3 flex flex-col gap-4">
           <a
@@ -133,7 +138,7 @@ function HotelRow({ stationName, hotel }: { stationName: string; hotel: Hotel })
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
           >
-            View on Booking
+            {t("station.viewOnBooking")}
             <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
           </a>
           <HotelClosedSuggestion stationName={stationName} hotelName={hotel.name} />
@@ -161,12 +166,11 @@ export function HotelList({
   /** Defaults to true on station pages (full), false on homepage cards (compact). */
   showVoteButtons?: boolean;
 }) {
+  const { t } = useLocale();
   const votesVisible = showVoteButtons ?? variant === "full";
   if (hotels.length === 0) {
     return (
-      <p className="text-sm text-muted-foreground">
-        No recommended hotels listed for this station yet.
-      </p>
+      <p className="text-sm text-muted-foreground">{t("station.noHotels")}</p>
     );
   }
 

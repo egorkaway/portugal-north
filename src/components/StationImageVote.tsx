@@ -2,6 +2,7 @@ import { ImageOff, Image as ImageIcon } from "lucide-react";
 import type { Vote } from "@/hooks/useStationVote";
 import { useGlobalImageRatings } from "@/hooks/useGlobalStationRatings";
 import { useStationImageVote } from "@/hooks/useStationImageVote";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 function ImageVoteButton({
   active,
@@ -38,11 +39,16 @@ function ImageVoteButton({
   );
 }
 
-function formatImageTotals(up: number, down: number): string | null {
+function formatImageTotals(
+  up: number,
+  down: number,
+  t: ReturnType<typeof useLocale>["t"],
+  plural: ReturnType<typeof useLocale>["plural"],
+): string | null {
   if (up === 0 && down === 0) return null;
   const parts: string[] = [];
-  if (up > 0) parts.push(`${up} good photo${up === 1 ? "" : "s"}`);
-  if (down > 0) parts.push(`${down} not representative`);
+  if (up > 0) parts.push(plural("imageVote.goodPhotos", up, { count: up }));
+  if (down > 0) parts.push(plural("imageVote.notRepresentative", down, { count: down }));
   return parts.join(" · ");
 }
 
@@ -53,30 +59,30 @@ export function StationImageVote({
   stationName: string;
   imageUrl: string;
 }) {
+  const { t, plural } = useLocale();
   const { vote, cast } = useStationImageVote(stationName);
   const { data: global } = useGlobalImageRatings();
   const totals = global?.imageRatings[stationName];
-  const communityLine = totals ? formatImageTotals(totals.up, totals.down) : null;
+  const communityLine = totals ? formatImageTotals(totals.up, totals.down, t, plural) : null;
 
   return (
     <div className="mb-8 overflow-hidden rounded-lg border border-border bg-muted">
       <div className="relative aspect-[21/9]">
         <img
           src={imageUrl}
-          alt={`${stationName} train station`}
+          alt={t("station.stationPhotoAlt", { name: stationName })}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-3 pb-3 pt-10 sm:px-4 sm:pb-4 sm:pt-12">
           <p className="mb-2 text-xs text-white/90 sm:mb-3 sm:text-sm">
-            Does this photo represent {stationName}?
+            {t("imageVote.question", { name: stationName })}
           </p>
           <StationImageVoteControls vote={vote} onGood={() => cast("up")} onBad={() => cast("down")} />
-          <p className="mt-2 text-xs text-white/70">
-            Your choice is remembered in this browser. Community totals are stored on our server to
-            help pick better images.
-          </p>
+          <p className="mt-2 text-xs text-white/70">{t("imageVote.browserNote")}</p>
           {communityLine && (
-            <p className="mt-1 text-xs text-white/80">Community: {communityLine}</p>
+            <p className="mt-1 text-xs text-white/80">
+              {t("imageVote.community", { summary: communityLine })}
+            </p>
           )}
         </div>
       </div>
@@ -94,25 +100,27 @@ export function StationImageVoteControls({
   onGood: () => void;
   onBad: () => void;
 }) {
+  const { t } = useLocale();
+
   return (
     <div
       className="flex gap-1.5 sm:flex-wrap sm:gap-2"
       role="group"
-      aria-label="Rate whether the station photo is representative"
+      aria-label={t("imageVote.rateLabel")}
     >
       <ImageVoteButton
         active={vote === "up"}
         onClick={onGood}
-        label="Good photo"
-        shortLabel="Good"
+        label={t("imageVote.goodPhoto")}
+        shortLabel={t("imageVote.goodShort")}
         icon={ImageIcon}
         activeClassName="border-primary bg-primary text-primary-foreground"
       />
       <ImageVoteButton
         active={vote === "down"}
         onClick={onBad}
-        label="Doesn't represent station"
-        shortLabel="Not representative"
+        label={t("imageVote.badPhoto")}
+        shortLabel={t("imageVote.badShort")}
         icon={ImageOff}
         activeClassName="border-destructive bg-destructive text-destructive-foreground"
       />

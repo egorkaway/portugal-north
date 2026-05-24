@@ -1,0 +1,179 @@
+import type { Messages } from "@/i18n/types";
+
+export const pt: Messages = {
+  site: { name: "Portugal de Comboio" },
+  lang: {
+    label: "Idioma",
+    en: "English",
+    pt: "Português",
+    es: "Español",
+  },
+  nav: {
+    allStations: "Todas as estações",
+    backToStations: "Voltar às estações",
+    returnHome: "Voltar ao início",
+  },
+  home: {
+    heroSubtitle:
+      "Principais estações da CP do Minho ao Algarve, com hotéis económicos a poucos minutos a pé.",
+    searchLabel: "Pesquisar estação ou linha",
+    searchPlaceholder: "Pesquisar estação ou linha...",
+    sortByDistance: "Ordenar por distância",
+    sortedByDistance: "Ordenado por distância",
+    locating: "A localizar...",
+    yourVotes: "Os seus votos:",
+    upvoted: "Com voto positivo",
+    downvoted: "Com voto negativo",
+    notVoted: "Sem voto",
+    stationCount_one: "{{count}} estação",
+    stationCount_other: "{{count}} estações",
+    sortedByDistanceNote: " · Ordenado pela sua distância",
+    topCommunityPicks: " · Melhores da comunidade primeiro",
+    locationDenied: " · Acesso à localização negado",
+    locationUnsupported: " · Localização não suportada neste browser",
+    locationError: " · Não foi possível obter a sua localização",
+    bookingHint:
+      ' · Clique em "Mais no Booking" para ver as 3 quartos mais baratos num raio de 2 km',
+    noResults: "Nenhuma estação corresponde à pesquisa.",
+  },
+  station: {
+    stationPhotoAlt: "Estação de comboio de {{name}}",
+    budgetStays: "Estadias económicas perto",
+    hotelsIntro:
+      "Vote a favor ou contra hotéis que conhece, ou indique se um alojamento pode estar encerrado. O feedback fica guardado neste browser.",
+    noHotels: "Ainda não há hotéis recomendados para esta estação.",
+    appleMaps: "Apple Maps",
+    openStreetMap: "OpenStreetMap",
+    tripHistorian: "TripHistorian",
+    searchBooking: "Procurar hotéis no Booking",
+    moreOnBooking: "Mais no Booking",
+    stationPage: "Página da estação",
+    kmFromStation: "{{km}} km da estação",
+    eurosPerNightFrom: " euros por noite desde",
+    viewOnBooking: "Ver no Booking",
+    suggestClosed: "Sugerir que o hotel pode estar encerrado",
+    suggestedClosed: "Sugeriu que este hotel pode estar encerrado",
+    away: "a {{distance}}",
+  },
+  departures: {
+    title: "Próximas partidas",
+    refresh: "Atualizar",
+    unavailable: "Partidas em direto temporariamente indisponíveis",
+    none: "Sem partidas nas próximas horas.",
+    train: "comboio",
+    platform: "plataforma",
+    delayMin: "+{{minutes}} min",
+  },
+  rankings: {
+    title: "Rankings da comunidade",
+    subtitle: "Estações e hotéis classificados pelos votos dos visitantes em Portugal",
+    intro:
+      "Os rankings vêm dos votos nas estações e nas listas de hotéis de cada página. Se o armazenamento de votos falhar, a mensagem abaixo explica o problema.",
+    communityTitle: "Rankings da comunidade",
+    communityTeaser: "Melhores estações por votos globais. Veja hotéis na página completa.",
+    fullPage: "Página completa de rankings",
+    viewFull: "Ver rankings completos da comunidade",
+    loading: "A carregar votos da comunidade...",
+    unavailableTitle: "Classificações da comunidade indisponíveis",
+    unavailableDetail:
+      "Os votos nos cartões continuam guardados no seu browser. Os totais globais precisam da API Vercel e de um Blob neste projeto.",
+    unavailableHint: "",
+    retrying: "A tentar de novo...",
+    tryAgain: "Tentar novamente",
+    noVotesYet:
+      "Ainda não há votos da comunidade. Vote em estações e hotéis no site para construir os rankings.",
+    stationRankings: "Rankings de estações",
+    hotelRankings: "Rankings de hotéis",
+    hotelLeaderboard:
+      "Uma classificação nacional de todos os hotéis recomendados, em qualquer estação.",
+    noStationVotes: "Ainda sem votos em estações.",
+    noHotelVotes: "Ainda sem votos em hotéis.",
+    voteTotalsStations:
+      "{{up}} votos positivos e {{down}} negativos em {{items}} estações.",
+    voteTotalsHotels: "{{up}} votos positivos e {{down}} negativos em {{items}} hotéis.",
+    topUpvoted: "Mais votados",
+    mostDownvoted: "Mais votados negativamente",
+    noStationUpvotes: "Sem votos positivos. Vote num cartão de estação para começar.",
+    noStationDownvotes: "Sem votos negativos.",
+    noHotelUpvotes: "Sem votos positivos. Vote numa página de estação para classificar hotéis.",
+    noHotelDownvotes: "Sem votos negativos.",
+  },
+  vote: {
+    yourVoteOn: "O seu voto em {{subject}}",
+    upvote: "Voto positivo em {{subject}}",
+    downvote: "Voto negativo em {{subject}}",
+    removeUpvote: "Remover voto positivo",
+    removeDownvote: "Remover voto negativo",
+    upvoteOnlyYou: "Voto positivo (só você vê)",
+    downvoteOnlyYou: "Voto negativo (só você vê)",
+  },
+  imageVote: {
+    question: "Esta foto representa {{name}}?",
+    goodPhoto: "Boa foto",
+    goodShort: "Boa",
+    badPhoto: "Não representa a estação",
+    badShort: "Não representa",
+    rateLabel: "Avaliar se a foto representa a estação",
+    browserNote:
+      "A sua escolha fica neste browser. Os totais da comunidade ajudam a escolher melhores imagens.",
+    community: "Comunidade: {{summary}}",
+    goodPhotos_one: "{{count}} boa foto",
+    goodPhotos_other: "{{count}} boas fotos",
+    notRepresentative_one: "{{count}} não representativa",
+    notRepresentative_other: "{{count}} não representativas",
+  },
+  footer: {
+    title: "Pelos carris de Portugal",
+    subtitle:
+      "Do Douro enevoado à costa atlântica, com paragens-chave e um sítio para dormir perto.",
+    disclaimer: "Não recomendamos estes hotéis, mas se gostar, queremos saber.",
+    alsoFromUs: "Também nossos",
+    climaTitle: "Clima Ibérico",
+    climaDesc:
+      "Meteorologia e alertas em Espanha e Portugal. Confira as condições antes de viajar.",
+    mapaTitle: "Map Your Travel",
+    mapaDesc:
+      "A app GetMapa para iPhone regista os sítios que visita e cria um mapa de viagem a partir das fotos.",
+    portuGuessTitle: "PortuGuess",
+    portuGuessDesc:
+      "Aprenda português europeu com quizzes, listas de palavras e apps offline para iOS e Android.",
+  },
+  notFound: {
+    title: "404",
+    message: "Ups! Página não encontrada",
+    home: "Voltar ao início",
+  },
+  meta: {
+    siteName: "Portugal de Comboio",
+    home: {
+      title: "Portugal de Comboio: Estações e Hotéis Económicos",
+      description:
+        "Descubra estações da CP de Portugal, do Minho ao Algarve, com linhas e hotéis económicos a poucos minutos a pé.",
+    },
+    rankings: {
+      title: "Rankings da Comunidade | Portugal de Comboio",
+      description:
+        "Veja que estações CP e hotéis os visitantes mais gostam ou menos gostam em Portugal.",
+      ogDescription: "Rankings da comunidade para estações CP e hotéis económicos em Portugal.",
+    },
+    notFound: {
+      title: "Página não encontrada | Portugal de Comboio",
+      description:
+        "A página que procurava não existe. Volte ao início para explorar estações de comboio em Portugal.",
+    },
+    stationTitle: "Estação de {{name}} — Hotéis e Linhas | {{site}}",
+    stationDescription: "{{services}} em {{name}} ({{lines}}). {{stays}}",
+    stationOgWithHotels:
+      "{{name}} ({{lines}}): {{services}}. Estadias desde {{price}} €/noite — {{names}}{{more}}.",
+    stationOgNoHotels:
+      "{{name}}: {{services}} na {{lines}}. Explore mapas e vote nesta estação.",
+    stationOgExplore: "Explore mapas e vote nesta estação.",
+    cpNetwork: "rede CP",
+    cpTrains: "comboios CP",
+    mapsVotes: "Mapas, votos da comunidade e detalhes da estação.",
+    budgetStay_one: "1 estadia económica",
+    budgetStay_other: "{{count}} estadias económicas",
+    fromPerNight: "desde {{price}} €/noite num raio de 2 km, mais mapas e votos.",
+    andMore: " e mais {{count}}",
+  },
+};

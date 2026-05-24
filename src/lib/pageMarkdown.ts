@@ -137,7 +137,7 @@ ${hotelLines}
 
 ## Summary
 
-${formatServiceTypes(station.types)} at **${station.name}** on ${formatLineList(station.lines)}.
+${formatServiceTypes(station.types, "en")} at **${station.name}** on ${formatLineList(station.lines, "en")}.
 `;
 
   const structured = buildStationStructuredData({

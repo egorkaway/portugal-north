@@ -42,6 +42,6 @@ describe("getHotelsForStation", () => {
   });
 
   it("returns empty list when only placeholders exist", () => {
-    expect(getHotelsForStation("São Pedro da Torre")).toEqual([]);
+    expect(getHotelsForStation("Gondarém")).toEqual([]);
   });
 });

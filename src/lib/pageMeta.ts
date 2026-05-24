@@ -1,5 +1,7 @@
 import type { Hotel } from "@/data/hotels";
 import type { Station } from "@/data/stations";
+import type { Locale, Translator } from "@/i18n";
+import { createTranslator } from "@/i18n";
 import {
   getStationMetaDescription,
   getStationOgDescription,
@@ -17,42 +19,55 @@ export type PageMeta = {
   robots?: string;
 };
 
-export const HOME_PAGE_META: PageMeta = {
-  title: "Portugal by Train: Stations & Budget Hotels",
-  description:
-    "Discover major train stations across Portugal, from the Minho to the Algarve, with line info and recommended budget hotels within walking distance.",
-  canonicalPath: "/",
-  ogImagePath: "/og-image.jpg",
-};
+export function getHomePageMeta(locale: Locale = "en"): PageMeta {
+  const { messages } = createTranslator(locale);
+  return {
+    title: messages.meta.home.title,
+    description: messages.meta.home.description,
+    canonicalPath: "/",
+    ogImagePath: "/og-image.jpg",
+  };
+}
 
-export const RANKINGS_PAGE_META: PageMeta = {
-  title: "Community Rankings | Portugal by Train",
-  description:
-    "See which CP train stations and budget hotels visitors rate highest and lowest across Portugal.",
-  canonicalPath: "/rankings",
-  ogDescription: "Community rankings for CP stations and budget hotels across Portugal.",
-  ogImagePath: "/og-image.jpg",
-};
+export function getRankingsPageMeta(locale: Locale = "en"): PageMeta {
+  const { messages } = createTranslator(locale);
+  return {
+    title: messages.meta.rankings.title,
+    description: messages.meta.rankings.description,
+    canonicalPath: "/rankings",
+    ogDescription: messages.meta.rankings.ogDescription,
+    ogImagePath: "/og-image.jpg",
+  };
+}
 
-export const NOT_FOUND_PAGE_META: PageMeta = {
-  title: "Page Not Found | Portugal by Train",
-  description:
-    "The page you were looking for could not be found. Return to the homepage to explore train stations across Portugal.",
-  canonicalPath: "/404",
-  robots: "noindex",
-  ogImagePath: "/og-image.jpg",
-};
+export function getNotFoundPageMeta(locale: Locale = "en"): PageMeta {
+  const { messages } = createTranslator(locale);
+  return {
+    title: messages.meta.notFound.title,
+    description: messages.meta.notFound.description,
+    canonicalPath: "/404",
+    robots: "noindex",
+    ogImagePath: "/og-image.jpg",
+  };
+}
+
+/** @deprecated Use getHomePageMeta("en") — kept for prerender/tests */
+export const HOME_PAGE_META = getHomePageMeta("en");
+export const RANKINGS_PAGE_META = getRankingsPageMeta("en");
+export const NOT_FOUND_PAGE_META = getNotFoundPageMeta("en");
 
 export function buildStationPageMeta(
   station: Station,
   hotels: Hotel[],
-  shareImageUrl?: string,
+  shareImageUrl: string | undefined,
+  locale: Locale = "en",
 ): PageMeta {
+  const tr = createTranslator(locale);
   return {
-    title: getStationPageTitle(station),
-    description: getStationMetaDescription(station, hotels),
+    title: getStationPageTitle(station, tr),
+    description: getStationMetaDescription(station, hotels, tr),
     canonicalPath: `/stations/${stationToSlug(station.name)}`,
-    ogDescription: getStationOgDescription(station, hotels),
+    ogDescription: getStationOgDescription(station, hotels, tr),
     ogImagePath: shareImageUrl,
   };
 }
@@ -69,7 +84,7 @@ export function escapeAttr(text: string): string {
 }
 
 /** HTML injected into each prerendered page and mirrored by PageHead at runtime. */
-export function buildSeoHeadHtml(meta: PageMeta, siteUrl: string): string {
+export function buildSeoHeadHtml(meta: PageMeta, siteUrl: string, siteName?: string): string {
   const base = siteUrl.replace(/\/$/, "");
   const canonical = `${base}${meta.canonicalPath}`;
   const ogTitle = escapeAttr(meta.ogTitle ?? meta.title);
@@ -77,6 +92,7 @@ export function buildSeoHeadHtml(meta: PageMeta, siteUrl: string): string {
   const ogImage = meta.ogImagePath?.startsWith("http")
     ? meta.ogImagePath
     : `${base}${meta.ogImagePath ?? "/og-image.jpg"}`;
+  const name = escapeAttr(siteName ?? "Portugal by Train");
 
   const robots = meta.robots
     ? `\n    <meta name="robots" content="${escapeAttr(meta.robots)}" />`
@@ -86,7 +102,7 @@ export function buildSeoHeadHtml(meta: PageMeta, siteUrl: string): string {
     <meta name="description" content="${escapeAttr(meta.description)}" />${robots}
     <link rel="canonical" href="${escapeAttr(canonical)}" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Portugal by Train" />
+    <meta property="og:site_name" content="${name}" />
     <meta property="og:url" content="${escapeAttr(canonical)}" />
     <meta property="og:title" content="${ogTitle}" />
     <meta property="og:description" content="${ogDescription}" />

@@ -1,6 +1,7 @@
 import { Clock, RefreshCw } from "lucide-react";
 import { getCpStationCode } from "@/data/cpStationCodes";
 import { useStationDepartures } from "@/hooks/useStationDepartures";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 function DepartureRow({
   trainNumber,
@@ -17,19 +18,21 @@ function DepartureRow({
   platform: string | null;
   delayMinutes: number | null;
 }) {
+  const { t } = useLocale();
+
   return (
     <li className="flex items-start justify-between gap-3 rounded-md border border-border bg-card px-4 py-3">
       <div className="min-w-0">
         <p className="font-medium text-foreground tabular-nums">{time}</p>
         <p className="mt-0.5 text-sm text-foreground truncate">→ {destination}</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          {serviceType} · train {trainNumber}
-          {platform ? ` · platform ${platform}` : ""}
+          {serviceType} · {t("departures.train")} {trainNumber}
+          {platform ? ` · ${t("departures.platform")} ${platform}` : ""}
         </p>
       </div>
       {delayMinutes !== null && (
         <span className="shrink-0 rounded-full bg-destructive/10 px-2 py-0.5 text-xs font-medium text-destructive">
-          +{delayMinutes} min
+          {t("departures.delayMin", { minutes: delayMinutes })}
         </span>
       )}
     </li>
@@ -37,6 +40,7 @@ function DepartureRow({
 }
 
 export function StationDepartures({ stationName }: { stationName: string }) {
+  const { t } = useLocale();
   const stationCode = getCpStationCode(stationName);
   const { data, isLoading, isError, isFetching, refetch, error } = useStationDepartures(stationName);
 
@@ -50,7 +54,7 @@ export function StationDepartures({ stationName }: { stationName: string }) {
         <div className="flex items-center gap-2">
           <Clock className="h-5 w-5 text-primary" aria-hidden="true" />
           <h2 id="departures-heading" className="font-display text-2xl text-foreground">
-            Next departures
+            {t("departures.title")}
           </h2>
         </div>
         {!isLoading && !isError && (
@@ -61,7 +65,7 @@ export function StationDepartures({ stationName }: { stationName: string }) {
             className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground disabled:opacity-50"
           >
             <RefreshCw className={`h-4 w-4 ${isFetching ? "animate-spin" : ""}`} aria-hidden="true" />
-            Refresh
+            {t("departures.refresh")}
           </button>
         )}
       </div>
@@ -79,14 +83,14 @@ export function StationDepartures({ stationName }: { stationName: string }) {
 
       {isError && (
         <p className="text-sm text-muted-foreground" role="status">
-          Live departures are temporarily unavailable
+          {t("departures.unavailable")}
           {error instanceof Error && import.meta.env.DEV ? ` (${error.message})` : ""}.
         </p>
       )}
 
       {!isLoading && !isError && data?.length === 0 && (
         <p className="text-sm text-muted-foreground" role="status">
-          No upcoming departures found for the next few hours.
+          {t("departures.none")}
         </p>
       )}
 

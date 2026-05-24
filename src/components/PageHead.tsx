@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useLocale } from "@/i18n/LocaleProvider";
 import type { PageMeta } from "@/lib/pageMeta";
 import { absoluteUrl } from "@/lib/site";
 
@@ -8,6 +9,7 @@ type PageHeadProps = {
 
 /** Per-route title, description, canonical, and social tags (mirrored in static HTML at build). */
 export function PageHead({ meta }: PageHeadProps) {
+  const { locale, t } = useLocale();
   const ogImage = meta.ogImagePath?.startsWith("http")
     ? meta.ogImagePath
     : absoluteUrl(meta.ogImagePath ?? "/og-image.jpg");
@@ -22,7 +24,8 @@ export function PageHead({ meta }: PageHeadProps) {
       {meta.robots && <meta name="robots" content={meta.robots} />}
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />
-      <meta property="og:site_name" content="Portugal by Train" />
+      <meta property="og:site_name" content={t("meta.siteName")} />
+      <html lang={locale} />
       <meta property="og:title" content={ogTitle} />
       <meta property="og:description" content={ogDescription} />
       <meta property="og:url" content={pageUrl} />

@@ -4,6 +4,7 @@ import { stations } from "../data/stations";
 import type { GlobalRatings } from "./voteTypes";
 import { getStationPath } from "./stationSlug";
 import { absoluteUrl, SITE_URL } from "./site";
+import { createTranslator } from "@/i18n";
 import { getStationMetaDescription, getStationPageTitle } from "./stationMeta";
 
 const SITE_NAME = "Portugal by Train";
@@ -115,8 +116,9 @@ export function buildStationStructuredData(options: {
   const path = `/stations/${slug}`;
   const pageUrl = absoluteUrl(path);
   const stationId = `${pageUrl}#station`;
-  const pageTitle = getStationPageTitle(station);
-  const description = getStationMetaDescription(station, hotels);
+  const tr = createTranslator("en");
+  const pageTitle = getStationPageTitle(station, tr);
+  const description = getStationMetaDescription(station, hotels, tr);
 
   const stationCounts = stationRatings?.[station.name];
   const stationAggregate = stationCounts

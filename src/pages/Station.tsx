@@ -19,6 +19,7 @@ import { VoteButtons } from "@/components/VoteButtons";
 import { useStationVote } from "@/hooks/useStationVote";
 import { PageHead } from "@/components/PageHead";
 import { buildStationPageMeta } from "@/lib/pageMeta";
+import { useLocale } from "@/i18n/LocaleProvider";
 import { JsonLd } from "@/components/JsonLd";
 import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
 import { buildStationStructuredData } from "@/lib/structuredData";
@@ -34,6 +35,7 @@ const typeColors: Record<string, string> = {
 };
 
 const Station = () => {
+  const { t, locale } = useLocale();
   const { slug } = useParams<{ slug: string }>();
   const station = slug ? getStationBySlug(slug) : undefined;
 
@@ -48,7 +50,7 @@ const Station = () => {
   const showPhotoVote = hasRepresentativeStationImage(station.name);
   const { vote, cast } = useStationVote(station.name);
   const { data: globalVotes } = useGlobalRatings();
-  const pageMeta = buildStationPageMeta(station, hotels, shareImageUrl);
+  const pageMeta = buildStationPageMeta(station, hotels, shareImageUrl, locale);
   const structuredData = buildStationStructuredData({
     station,
     slug: slug!,
@@ -70,7 +72,7 @@ const Station = () => {
               className="mb-4 inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
             >
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-              All stations
+              {t("nav.allStations")}
             </Link>
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
@@ -97,7 +99,7 @@ const Station = () => {
             <div className="mb-8 overflow-hidden rounded-lg border border-border bg-muted">
               <img
                 src={imageUrl}
-                alt={`${station.name} train station`}
+                alt={t("station.stationPhotoAlt", { name: station.name })}
                 className="aspect-[21/9] w-full object-cover"
               />
             </div>
@@ -124,7 +126,7 @@ const Station = () => {
               className="inline-flex items-center gap-1.5 rounded-md bg-foreground/5 px-3 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
             >
               <MapPin className="h-4 w-4" aria-hidden="true" />
-              Apple Maps
+              {t("station.appleMaps")}
             </a>
             <a
               href={getOSMUrl(station)}
@@ -133,7 +135,7 @@ const Station = () => {
               className="inline-flex items-center gap-1.5 rounded-md bg-foreground/5 px-3 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
             >
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
-              OpenStreetMap
+              {t("station.openStreetMap")}
             </a>
             {tripHistorianUrl ? (
               <a
@@ -143,7 +145,7 @@ const Station = () => {
                 className="inline-flex items-center gap-1.5 rounded-md bg-foreground/5 px-3 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 <History className="h-4 w-4" aria-hidden="true" />
-                TripHistorian
+                {t("station.tripHistorian")}
               </a>
             ) : null}
             <a
@@ -153,7 +155,7 @@ const Station = () => {
               className="inline-flex items-center gap-1.5 rounded-md bg-secondary/10 px-3 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary hover:text-secondary-foreground"
             >
               <BedDouble className="h-4 w-4" aria-hidden="true" />
-              Search hotels on Booking
+              {t("station.searchBooking")}
             </a>
           </div>
 
@@ -162,13 +164,10 @@ const Station = () => {
               <div className="mb-4 flex items-center gap-2">
                 <BedDouble className="h-5 w-5 text-primary" aria-hidden="true" />
                 <h2 id="hotels-heading" className="font-display text-2xl text-foreground">
-                  Budget stays nearby
+                  {t("station.budgetStays")}
                 </h2>
               </div>
-              <p className="mb-6 text-sm text-muted-foreground">
-                Upvote or downvote hotels you have tried, or suggest if a listing may be closed.
-                Your feedback is saved in this browser.
-              </p>
+              <p className="mb-6 text-sm text-muted-foreground">{t("station.hotelsIntro")}</p>
               <HotelList stationName={station.name} hotels={hotels} />
             </section>
           )}

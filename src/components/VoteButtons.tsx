@@ -1,5 +1,6 @@
 import { ThumbsDown, ThumbsUp } from "lucide-react";
 import type { Vote } from "@/hooks/useStationVote";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 export function VoteButtons({
   vote,
@@ -12,14 +13,19 @@ export function VoteButtons({
   onDown: () => void;
   subjectLabel: string;
 }) {
+  const { t } = useLocale();
+
   return (
-    <div className="flex items-center gap-1 shrink-0" aria-label={`Your vote on ${subjectLabel}`}>
+    <div
+      className="flex items-center gap-1 shrink-0"
+      aria-label={t("vote.yourVoteOn", { subject: subjectLabel })}
+    >
       <button
         type="button"
         onClick={onUp}
-        aria-label={`Upvote ${subjectLabel}`}
+        aria-label={t("vote.upvote", { subject: subjectLabel })}
         aria-pressed={vote === "up"}
-        title={vote === "up" ? "Remove your upvote" : "Upvote (only you can see this)"}
+        title={vote === "up" ? t("vote.removeUpvote") : t("vote.upvoteOnlyYou")}
         className={`p-1.5 rounded-md border transition-colors ${
           vote === "up"
             ? "bg-primary text-primary-foreground border-primary"
@@ -31,9 +37,9 @@ export function VoteButtons({
       <button
         type="button"
         onClick={onDown}
-        aria-label={`Downvote ${subjectLabel}`}
+        aria-label={t("vote.downvote", { subject: subjectLabel })}
         aria-pressed={vote === "down"}
-        title={vote === "down" ? "Remove your downvote" : "Downvote (only you can see this)"}
+        title={vote === "down" ? t("vote.removeDownvote") : t("vote.downvoteOnlyYou")}
         className={`p-1.5 rounded-md border transition-colors ${
           vote === "down"
             ? "bg-destructive text-destructive-foreground border-destructive"

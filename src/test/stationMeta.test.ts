@@ -1,10 +1,13 @@
 import { describe, expect, it } from "vitest";
+import { createTranslator } from "@/i18n";
 import {
   getStationMetaDescription,
   getStationOgDescription,
   getStationPageTitle,
 } from "@/lib/stationMeta";
 import type { Station } from "@/data/stations";
+
+const tr = createTranslator("en");
 
 const portoCampanha: Station = {
   name: "Porto-Campanhã",
@@ -16,7 +19,7 @@ const portoCampanha: Station = {
 
 describe("stationMeta", () => {
   it("builds a unique title per station", () => {
-    expect(getStationPageTitle(portoCampanha)).toBe(
+    expect(getStationPageTitle(portoCampanha, tr)).toBe(
       "Porto-Campanhã Train Station — Hotels & Lines | Portugal by Train",
     );
   });
@@ -25,7 +28,7 @@ describe("stationMeta", () => {
     const description = getStationMetaDescription(portoCampanha, [
       { name: "Hotel A", distanceKm: 0.5, priceFrom: 38, bookingUrl: "#" },
       { name: "Hotel B", distanceKm: 1, priceFrom: 42, bookingUrl: "#" },
-    ]);
+    ], tr);
     expect(description).toContain("Porto-Campanhã");
     expect(description).toContain("Linha do Norte");
     expect(description).toContain("€38/night");
@@ -35,8 +38,8 @@ describe("stationMeta", () => {
   it("varies og description when hotel names differ", () => {
     const og = getStationOgDescription(portoCampanha, [
       { name: "Campanha Boutique", distanceKm: 0.1, priceFrom: 38, bookingUrl: "#" },
-    ]);
+    ], tr);
     expect(og).toContain("Campanha Boutique");
-    expect(og).not.toBe(getStationMetaDescription(portoCampanha, []));
+    expect(og).not.toBe(getStationMetaDescription(portoCampanha, [], tr));
   });
 });

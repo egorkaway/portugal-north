@@ -8,6 +8,7 @@ import { useStationVote } from "@/hooks/useStationVote";
 import { formatDistance } from "@/lib/geo";
 import { getStationPath } from "@/lib/stationSlug";
 import { VoteButtons } from "@/components/VoteButtons";
+import { useLocale } from "@/i18n/LocaleProvider";
 
 const typeColors: Record<string, string> = {
   "Alfa Pendular": "bg-primary text-primary-foreground",
@@ -24,6 +25,7 @@ export function StationCard({
   station: Station;
   distanceKm?: number;
 }) {
+  const { t } = useLocale();
   const hotels = getHotelsForStation(station.name);
   const imageUrl = getStationImageUrl(station.name);
   const { vote, cast } = useStationVote(station.name);
@@ -34,7 +36,7 @@ export function StationCard({
       <Link to={stationPath} className="block relative w-full aspect-[16/9] bg-muted overflow-hidden">
         <img
           src={imageUrl}
-          alt={`${station.name} train station`}
+          alt={t("station.stationPhotoAlt", { name: station.name })}
           loading="lazy"
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
@@ -57,7 +59,7 @@ export function StationCard({
             {distanceKm !== undefined && (
               <p className="text-xs text-primary flex items-center gap-1 mt-1">
                 <Navigation className="w-3 h-3 shrink-0" />
-                {formatDistance(distanceKm)} away
+                {t("station.away", { distance: formatDistance(distanceKm) })}
               </p>
             )}
           </div>
@@ -87,7 +89,7 @@ export function StationCard({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-foreground/5 hover:bg-primary hover:text-primary-foreground transition-colors"
           >
-            <MapPin className="w-3.5 h-3.5" /> Apple Maps
+            <MapPin className="w-3.5 h-3.5" /> {t("station.appleMaps")}
           </a>
           <a
             href={getOSMUrl(station)}
@@ -95,7 +97,7 @@ export function StationCard({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-foreground/5 hover:bg-primary hover:text-primary-foreground transition-colors"
           >
-            <ExternalLink className="w-3.5 h-3.5" /> OpenStreetMap
+            <ExternalLink className="w-3.5 h-3.5" /> {t("station.openStreetMap")}
           </a>
           <a
             href={getBookingSearchUrl(station)}
@@ -103,7 +105,7 @@ export function StationCard({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground transition-colors"
           >
-            <BedDouble className="w-3.5 h-3.5" /> More on Booking
+            <BedDouble className="w-3.5 h-3.5" /> {t("station.moreOnBooking")}
           </a>
         </div>
 
@@ -111,13 +113,13 @@ export function StationCard({
           <div className="border-t border-border pt-3 mt-auto">
             <div className="mb-2 flex items-center justify-between gap-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                Budget stays nearby
+                {t("station.budgetStays")}
               </p>
               <Link
                 to={stationPath}
                 className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-primary hover:underline"
               >
-                Station page
+                {t("station.stationPage")}
                 <ArrowRight className="h-3 w-3" aria-hidden="true" />
               </Link>
             </div>

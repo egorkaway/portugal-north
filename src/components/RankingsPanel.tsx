@@ -7,6 +7,11 @@ import { getTopDownvoted, getTopUpvoted } from "@/lib/rankStations";
 import { ratingsErrorMessage } from "@/lib/votesApi";
 import { stationToSlug } from "@/lib/stationSlug";
 import type { GlobalRatings } from "@/lib/voteTypes";
+import { useLocale } from "@/i18n/LocaleProvider";
+
+function formatCount(n: number, locale: string): string {
+  return n.toLocaleString(locale === "pt" ? "pt-PT" : locale === "es" ? "es-ES" : "en-US");
+}
 
 export function RankingList({
   title,
@@ -101,6 +106,7 @@ export function RankingsPanel({
   showDetailedError = false,
   rankingsHref,
 }: RankingsPanelProps) {
+  const { t, locale } = useLocale();
   const queryClient = useQueryClient();
   const { data, isLoading, isError, error, isFetching } = useGlobalRatings();
 
@@ -121,9 +127,7 @@ export function RankingsPanel({
     : hasStationRankings || hasHotelRankings;
 
   if (isLoading) {
-    return (
-      <p className="text-sm text-muted-foreground">Loading community votes...</p>
-    );
+    return <p className="text-sm text-muted-foreground">{t("rankings.loading")}</p>;
   }
 
   if (isError) {
@@ -136,14 +140,13 @@ export function RankingsPanel({
           />
           <div className="min-w-0 space-y-3">
             <div>
-              <p className="font-medium text-foreground">Community ratings unavailable</p>
+              <p className="font-medium text-foreground">{t("rankings.unavailableTitle")}</p>
               <p className="mt-1 text-sm text-muted-foreground">
                 {ratingsErrorMessage(error)}
               </p>
               {showDetailedError && (
                 <p className="mt-2 text-xs text-muted-foreground">
-                  Votes on station and hotel cards are still saved in your browser. Global
-                  totals require the Vercel API route and a Blob store on this project.
+                  {t("rankings.unavailableDetail")}
                 </p>
               )}
             </div>
@@ -157,7 +160,7 @@ export function RankingsPanel({
                 className={`h-4 w-4 ${isFetching ? "animate-spin" : ""}`}
                 aria-hidden="true"
               />
-              {isFetching ? "Retrying..." : "Try again"}
+              {isFetching ? t("rankings.retrying") : t("rankings.tryAgain")}
             </button>
           </div>
         </div>
@@ -167,10 +170,7 @@ export function RankingsPanel({
 
   if (!alwaysShow && !hasRankings) {
     return (
-      <p className="text-sm text-muted-foreground">
-        No community votes recorded yet. Vote on stations and hotels across the site to help
-        build the rankings.
-      </p>
+      <p className="text-sm text-muted-foreground">{t("rankings.noVotesYet")}</p>
     );
   }
 
@@ -197,31 +197,35 @@ export function RankingsPanel({
           <div className="mb-4 flex items-center gap-2">
             <TrainFront className="h-5 w-5 text-primary" aria-hidden="true" />
             <h2 id="station-rankings-heading" className="font-display text-2xl text-foreground">
-              Station rankings
+              {t("rankings.stationRankings")}
             </h2>
           </div>
         )}
         {stationTotals && (
           <p className="mb-4 text-sm text-muted-foreground">
             {stationTotals.itemsWithVotes === 0
-              ? "No station votes yet."
-              : `${stationTotals.up.toLocaleString()} upvotes and ${stationTotals.down.toLocaleString()} downvotes across ${stationTotals.itemsWithVotes.toLocaleString()} stations.`}
+              ? t("rankings.noStationVotes")
+              : t("rankings.voteTotalsStations", {
+                  up: formatCount(stationTotals.up, locale),
+                  down: formatCount(stationTotals.down, locale),
+                  items: formatCount(stationTotals.itemsWithVotes, locale),
+                })}
           </p>
         )}
         <div className="grid gap-4 sm:grid-cols-2">
           <RankingList
-            title="Top upvoted"
+            title={t("rankings.topUpvoted")}
             icon={ThumbsUp}
             iconClassName="text-primary"
-            emptyLabel="No upvotes yet. Vote on a station card to get started."
+            emptyLabel={t("rankings.noStationUpvotes")}
             items={topStationsUp}
             countKey="up"
           />
           <RankingList
-            title="Most downvoted"
+            title={t("rankings.mostDownvoted")}
             icon={ThumbsDown}
             iconClassName="text-destructive"
-            emptyLabel="No downvotes yet."
+            emptyLabel={t("rankings.noStationDownvotes")}
             items={topStationsDown}
             countKey="down"
           />
@@ -233,34 +237,35 @@ export function RankingsPanel({
           <div className="mb-4 flex items-center gap-2">
             <BedDouble className="h-5 w-5 text-primary" aria-hidden="true" />
             <h2 id="hotel-rankings-heading" className="font-display text-2xl text-foreground">
-              Hotel rankings
+              {t("rankings.hotelRankings")}
             </h2>
           </div>
-          <p className="mb-4 text-sm text-muted-foreground">
-            One national leaderboard for every recommended hotel, no matter which station it
-            serves.
-          </p>
+          <p className="mb-4 text-sm text-muted-foreground">{t("rankings.hotelLeaderboard")}</p>
           {hotelTotals && (
             <p className="mb-4 text-sm text-muted-foreground">
               {hotelTotals.itemsWithVotes === 0
-                ? "No hotel votes yet."
-                : `${hotelTotals.up.toLocaleString()} upvotes and ${hotelTotals.down.toLocaleString()} downvotes across ${hotelTotals.itemsWithVotes.toLocaleString()} hotels.`}
+                ? t("rankings.noHotelVotes")
+                : t("rankings.voteTotalsHotels", {
+                    up: formatCount(hotelTotals.up, locale),
+                    down: formatCount(hotelTotals.down, locale),
+                    items: formatCount(hotelTotals.itemsWithVotes, locale),
+                  })}
             </p>
           )}
           <div className="grid gap-4 sm:grid-cols-2">
             <RankingList
-              title="Top upvoted"
+              title={t("rankings.topUpvoted")}
               icon={ThumbsUp}
               iconClassName="text-primary"
-              emptyLabel="No upvotes yet. Vote on a station page to rate hotels."
+              emptyLabel={t("rankings.noHotelUpvotes")}
               items={hotelItemsUp}
               countKey="up"
             />
             <RankingList
-              title="Most downvoted"
+              title={t("rankings.mostDownvoted")}
               icon={ThumbsDown}
               iconClassName="text-destructive"
-              emptyLabel="No downvotes yet."
+              emptyLabel={t("rankings.noHotelDownvotes")}
               items={hotelItemsDown}
               countKey="down"
             />
@@ -274,7 +279,7 @@ export function RankingsPanel({
             to={rankingsHref}
             className="font-medium text-primary underline-offset-4 hover:underline"
           >
-            View full community rankings
+            {t("rankings.viewFull")}
           </Link>
         </p>
       )}

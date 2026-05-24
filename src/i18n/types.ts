@@ -1,0 +1,154 @@
+export const LOCALES = ["en", "pt", "es"] as const;
+export type Locale = (typeof LOCALES)[number];
+
+export const LOCALE_STORAGE_KEY = "portugal-by-train-locale";
+
+export type Messages = {
+  site: { name: string };
+  lang: {
+    label: string;
+    en: string;
+    pt: string;
+    es: string;
+  };
+  nav: {
+    allStations: string;
+    backToStations: string;
+    returnHome: string;
+  };
+  home: {
+    heroSubtitle: string;
+    searchLabel: string;
+    searchPlaceholder: string;
+    sortByDistance: string;
+    sortedByDistance: string;
+    locating: string;
+    yourVotes: string;
+    upvoted: string;
+    downvoted: string;
+    notVoted: string;
+    stationCount_one: string;
+    stationCount_other: string;
+    sortedByDistanceNote: string;
+    topCommunityPicks: string;
+    locationDenied: string;
+    locationUnsupported: string;
+    locationError: string;
+    bookingHint: string;
+    noResults: string;
+  };
+  station: {
+    stationPhotoAlt: string;
+    budgetStays: string;
+    hotelsIntro: string;
+    noHotels: string;
+    appleMaps: string;
+    openStreetMap: string;
+    tripHistorian: string;
+    searchBooking: string;
+    moreOnBooking: string;
+    stationPage: string;
+    kmFromStation: string;
+    eurosPerNightFrom: string;
+    viewOnBooking: string;
+    suggestClosed: string;
+    suggestedClosed: string;
+    away: string;
+  };
+  departures: {
+    title: string;
+    refresh: string;
+    unavailable: string;
+    none: string;
+    train: string;
+    platform: string;
+    delayMin: string;
+  };
+  rankings: {
+    title: string;
+    subtitle: string;
+    intro: string;
+    communityTitle: string;
+    communityTeaser: string;
+    fullPage: string;
+    viewFull: string;
+    loading: string;
+    unavailableTitle: string;
+    unavailableDetail: string;
+    unavailableHint: string;
+    retrying: string;
+    tryAgain: string;
+    noVotesYet: string;
+    stationRankings: string;
+    hotelRankings: string;
+    hotelLeaderboard: string;
+    noStationVotes: string;
+    noHotelVotes: string;
+    voteTotalsStations: string;
+    voteTotalsHotels: string;
+    topUpvoted: string;
+    mostDownvoted: string;
+    noStationUpvotes: string;
+    noStationDownvotes: string;
+    noHotelUpvotes: string;
+    noHotelDownvotes: string;
+  };
+  vote: {
+    yourVoteOn: string;
+    upvote: string;
+    downvote: string;
+    removeUpvote: string;
+    removeDownvote: string;
+    upvoteOnlyYou: string;
+    downvoteOnlyYou: string;
+  };
+  imageVote: {
+    question: string;
+    goodPhoto: string;
+    goodShort: string;
+    badPhoto: string;
+    badShort: string;
+    rateLabel: string;
+    browserNote: string;
+    community: string;
+    goodPhotos_one: string;
+    goodPhotos_other: string;
+    notRepresentative_one: string;
+    notRepresentative_other: string;
+  };
+  footer: {
+    title: string;
+    subtitle: string;
+    disclaimer: string;
+    alsoFromUs: string;
+    climaTitle: string;
+    climaDesc: string;
+    mapaTitle: string;
+    mapaDesc: string;
+    portuGuessTitle: string;
+    portuGuessDesc: string;
+  };
+  notFound: {
+    title: string;
+    message: string;
+    home: string;
+  };
+  meta: {
+    siteName: string;
+    home: { title: string; description: string };
+    rankings: { title: string; description: string; ogDescription: string };
+    notFound: { title: string; description: string };
+    stationTitle: string;
+    stationDescription: string;
+    stationOgWithHotels: string;
+    stationOgNoHotels: string;
+    stationOgExplore: string;
+    cpNetwork: string;
+    cpTrains: string;
+    mapsVotes: string;
+    budgetStay_one: string;
+    budgetStay_other: string;
+    fromPerNight: string;
+    andMore: string;
+  };
+};
