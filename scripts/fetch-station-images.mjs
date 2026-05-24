@@ -5,6 +5,7 @@
  *
  * Usage:
  *   PEXELS_API_KEY=your_key node scripts/fetch-station-images.mjs
+ *   PEXELS_API_KEY=your_key node scripts/fetch-station-images.mjs --pexels-only
  *   PEXELS_API_KEY=your_key node scripts/fetch-station-images.mjs --station "Oiã"
  */
 
@@ -17,6 +18,7 @@ const stationsPath = join(root, "src/data/stations.ts");
 const imagesPath = join(root, "src/data/stationImages.ts");
 
 const PEXELS_KEY = process.env.PEXELS_API_KEY;
+const pexelsOnly = process.argv.includes("--pexels-only");
 const onlyStation = process.argv.includes("--station")
   ? process.argv[process.argv.indexOf("--station") + 1]
   : null;
@@ -38,6 +40,18 @@ function parseImageMap(ts) {
   return map;
 }
 
+function appendToImagesFile(name, url) {
+  let imagesTs = readFileSync(imagesPath, "utf8");
+  const line = `  ${JSON.stringify(name)}: ${JSON.stringify(url)},`;
+  if (imagesTs.includes(`"${name}"`)) return;
+  if (imagesTs.trimEnd().endsWith("};")) {
+    imagesTs = imagesTs.replace(/\n};\s*$/, `\n${line}\n};\n`);
+  } else {
+    imagesTs += `\n${line}\n`;
+  }
+  writeFileSync(imagesPath, imagesTs);
+}
+
 async function wikiThumb(title) {
   const url = new URL("https://pt.wikipedia.org/w/api.php");
   url.searchParams.set("action", "query");
@@ -46,13 +60,22 @@ async function wikiThumb(title) {
   url.searchParams.set("pithumbsize", "960");
   url.searchParams.set("format", "json");
   const res = await fetch(url, {
-    headers: { "User-Agent": "portugal-north/1.0" },
+    headers: { "User-Agent": "portugal-north/1.0 (image-fetch; contact: verystays.com)" },
   });
-  const data = await res.json();
+  const text = await res.text();
+  if (!res.ok || text.startsWith("You are making too many requests")) {
+    return { thumb: null, rateLimited: true };
+  }
+  let data;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    return { thumb: null, rateLimited: false };
+  }
   const page = Object.values(data.query?.pages ?? {})[0];
   const src = page?.thumbnail?.source;
-  if (!src || src.includes("Pt_ferv.png")) return null;
-  return src;
+  if (!src || src.includes("Pt_ferv.png")) return { thumb: null, rateLimited: false };
+  return { thumb: src, rateLimited: false };
 }
 
 async function pexelsSearch(query) {
@@ -77,14 +100,28 @@ const wikiTitles = [
 ];
 
 async function resolveImage(stationName) {
-  for (const titleFn of wikiTitles) {
-    const thumb = await wikiThumb(titleFn(stationName));
-    if (thumb) return { url: thumb, source: "wikimedia" };
-    await sleep(400);
+  if (!pexelsOnly) {
+    for (const titleFn of wikiTitles) {
+      const { thumb, rateLimited } = await wikiThumb(titleFn(stationName));
+      if (rateLimited) {
+        console.log(`    (Wikipedia rate limited — trying Pexels)`);
+        break;
+      }
+      if (thumb) return { url: thumb, source: "wikimedia" };
+      await sleep(1200);
+    }
   }
-  const query = `${stationName} Portugal train railway`;
-  const url = await pexelsSearch(query);
-  if (url) return { url, source: "pexels" };
+
+  const queries = [
+    `${stationName} Portugal train station`,
+    `${stationName} Portugal railway`,
+    "Portugal train railway station",
+  ];
+  for (const query of queries) {
+    const url = await pexelsSearch(query);
+    if (url) return { url, source: "pexels" };
+    await sleep(350);
+  }
   return null;
 }
 
@@ -99,39 +136,29 @@ const targets = onlyStation
   : stations.filter((s) => !images[s]);
 
 if (onlyStation && targets.length === 0) {
-  console.error(`Unknown station: ${onlyStation}`);
+  console.error(`Unknown station or already has image: ${onlyStation}`);
   process.exit(1);
 }
 
-console.log(`Resolving images for ${targets.length} station(s)...`);
+console.log(
+  `Resolving images for ${targets.length} station(s)${pexelsOnly ? " (Pexels only)" : ""}...`,
+);
 
-const additions = {};
+let added = 0;
 for (const name of targets) {
-  const result = await resolveImage(name);
-  if (result) {
-    additions[name] = result.url;
-    console.log(`  ${name}: ${result.source}`);
-  } else {
-    console.log(`  ${name}: NOT FOUND`);
+  try {
+    const result = await resolveImage(name);
+    if (result) {
+      appendToImagesFile(name, result.url);
+      added++;
+      console.log(`  ${name}: ${result.source}`);
+    } else {
+      console.log(`  ${name}: NOT FOUND`);
+    }
+  } catch (error) {
+    console.log(`  ${name}: ERROR — ${error instanceof Error ? error.message : error}`);
   }
-  await sleep(500);
+  await sleep(600);
 }
 
-if (Object.keys(additions).length === 0) {
-  console.log("Nothing to add.");
-  process.exit(0);
-}
-
-let imagesTs = readFileSync(imagesPath, "utf8");
-const insertLines = Object.entries(additions)
-  .map(([name, url]) => `  "${name}": "${url}",`)
-  .join("\n");
-
-if (imagesTs.trimEnd().endsWith("};")) {
-  imagesTs = imagesTs.replace(/\n};\s*$/, `\n${insertLines}\n};\n`);
-} else {
-  imagesTs += `\n${insertLines}\n`;
-}
-
-writeFileSync(imagesPath, imagesTs);
-console.log(`Updated ${imagesPath}`);
+console.log(`Done. Added ${added} image(s) to ${imagesPath}`);

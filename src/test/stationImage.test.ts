@@ -15,9 +15,14 @@ describe("stationImage", () => {
     ).toBe(true);
   });
 
-  it("returns bundled placeholder for stations without a real photo", () => {
-    expect(getStationImageUrl("São Pedro da Torre")).toBe(STATION_IMAGE_PLACEHOLDER);
-    expect(hasRepresentativeStationImage("São Pedro da Torre")).toBe(false);
+  it("returns bundled placeholder when no image is mapped", () => {
+    expect(getStationImageUrl("Nonexistent Station XYZ")).toBe(STATION_IMAGE_PLACEHOLDER);
+    expect(hasRepresentativeStationImage("Nonexistent Station XYZ")).toBe(false);
+  });
+
+  it("treats Pexels photos as representative", () => {
+    expect(getStationImageUrl("São Pedro da Torre")).toContain("pexels.com");
+    expect(hasRepresentativeStationImage("São Pedro da Torre")).toBe(true);
   });
 
   it("returns real photo URL when available", () => {
