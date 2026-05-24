@@ -7,7 +7,7 @@ export interface Hotel {
 
 export type StationHotels = Record<string, Hotel[]>;
 
-// Curated list of budget hotels within ~2km of each station
+// Recommended budget hotels within ~2km of each station
 // Prices are approximate starting rates in EUR
 export const stationHotels: StationHotels = {
   "Pombal": [

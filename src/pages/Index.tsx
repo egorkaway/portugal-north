@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { stations } from "@/data/stations";
 import { StationCard } from "@/components/StationCard";
-import { Search, TrainFront, ThumbsUp, ThumbsDown, Circle } from "lucide-react";
+import { Search, TrainFront, ThumbsUp, ThumbsDown, Circle, CloudSun, ExternalLink } from "lucide-react";
 import heroStation from "@/assets/hero-station.jpg";
 import footerDouro from "@/assets/footer-douro.jpg";
 import { useAllVotes } from "@/hooks/useStationVote";
@@ -156,6 +156,33 @@ const Index = () => {
           <p className="text-primary-foreground/70 text-sm">
             We do not recommend these hotels, but if you do — we want to know.
           </p>
+
+          <div className="mt-10 pt-8 border-t border-primary-foreground/20">
+            <a
+              href="https://berrymet.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group mx-auto flex max-w-md items-start gap-4 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-5 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15"
+            >
+              <CloudSun className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
+              <div className="min-w-0 flex-1">
+                <p className="text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">
+                  Also from us
+                </p>
+                <p className="mt-1 font-display text-xl text-primary-foreground">
+                  Clima Ibérico
+                </p>
+                <p className="mt-1 text-sm text-primary-foreground/80">
+                  Weather and meteorological alerts across Spain and Portugal — check
+                  conditions before you travel.
+                </p>
+              </div>
+              <ExternalLink
+                className="mt-1 h-4 w-4 shrink-0 text-primary-foreground/50 transition-colors group-hover:text-primary-foreground"
+                aria-hidden="true"
+              />
+            </a>
+          </div>
         </div>
       </footer>
     </div>
