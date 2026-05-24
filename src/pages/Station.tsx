@@ -5,7 +5,7 @@ import {
   getBookingSearchUrl,
   getOSMUrl,
 } from "@/data/stations";
-import { stationHotels } from "@/data/hotels";
+import { getHotelsForStation } from "@/lib/stationHotels";
 import {
   getStationImageUrl,
   getStationShareImageUrl,
@@ -40,7 +40,7 @@ const Station = () => {
     return <Navigate to="/404" replace />;
   }
 
-  const hotels = stationHotels[station.name] || [];
+  const hotels = getHotelsForStation(station.name);
   const imageUrl = getStationImageUrl(station.name);
   const shareImageUrl = getStationShareImageUrl(station.name);
   const showPhotoVote = hasRepresentativeStationImage(station.name);
@@ -144,19 +144,21 @@ const Station = () => {
             </a>
           </div>
 
-          <section aria-labelledby="hotels-heading">
-            <div className="mb-4 flex items-center gap-2">
-              <BedDouble className="h-5 w-5 text-primary" aria-hidden="true" />
-              <h2 id="hotels-heading" className="font-display text-2xl text-foreground">
-                Budget stays nearby
-              </h2>
-            </div>
-            <p className="mb-6 text-sm text-muted-foreground">
-              Upvote or downvote hotels you have tried, or suggest if a listing may be closed. Your
-              feedback is saved in this browser.
-            </p>
-            <HotelList stationName={station.name} hotels={hotels} />
-          </section>
+          {hotels.length > 0 && (
+            <section aria-labelledby="hotels-heading">
+              <div className="mb-4 flex items-center gap-2">
+                <BedDouble className="h-5 w-5 text-primary" aria-hidden="true" />
+                <h2 id="hotels-heading" className="font-display text-2xl text-foreground">
+                  Budget stays nearby
+                </h2>
+              </div>
+              <p className="mb-6 text-sm text-muted-foreground">
+                Upvote or downvote hotels you have tried, or suggest if a listing may be closed.
+                Your feedback is saved in this browser.
+              </p>
+              <HotelList stationName={station.name} hotels={hotels} />
+            </section>
+          )}
 
           <p className="mt-8 text-xs text-muted-foreground flex items-center gap-1">
             <Navigation className="h-3 w-3" aria-hidden="true" />

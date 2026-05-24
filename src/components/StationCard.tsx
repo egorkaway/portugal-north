@@ -2,7 +2,7 @@ import { MapPin, ExternalLink, BedDouble, Train, Navigation, ArrowRight } from "
 import { HotelList } from "@/components/HotelList";
 import { Link } from "react-router-dom";
 import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data/stations";
-import { stationHotels } from "@/data/hotels";
+import { getHotelsForStation } from "@/lib/stationHotels";
 import { getStationImageUrl } from "@/lib/stationImage";
 import { useStationVote } from "@/hooks/useStationVote";
 import { formatDistance } from "@/lib/geo";
@@ -24,7 +24,7 @@ export function StationCard({
   station: Station;
   distanceKm?: number;
 }) {
-  const hotels = stationHotels[station.name] || [];
+  const hotels = getHotelsForStation(station.name);
   const imageUrl = getStationImageUrl(station.name);
   const { vote, cast } = useStationVote(station.name);
   const stationPath = getStationPath(station);
