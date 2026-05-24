@@ -7,12 +7,14 @@ function ImageVoteButton({
   active,
   onClick,
   label,
+  shortLabel,
   icon: Icon,
   activeClassName,
 }: {
   active: boolean;
   onClick: () => void;
   label: string;
+  shortLabel: string;
   icon: typeof ImageIcon;
   activeClassName: string;
 }) {
@@ -23,14 +25,15 @@ function ImageVoteButton({
       aria-pressed={active}
       aria-label={label}
       title={label}
-      className={`inline-flex items-center gap-2 rounded-md border px-3 py-2 text-sm font-medium transition-colors ${
+      className={`inline-flex min-w-0 flex-1 items-center justify-center gap-1 rounded-md border px-2 py-1.5 text-xs font-medium transition-colors sm:flex-none sm:gap-1.5 sm:px-3 sm:py-2 sm:text-sm ${
         active
           ? activeClassName
           : "border-white/30 bg-black/40 text-white hover:bg-black/55"
       }`}
     >
-      <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
-      {label}
+      <Icon className="h-3.5 w-3.5 shrink-0 sm:h-4 sm:w-4" aria-hidden="true" />
+      <span className="truncate sm:hidden">{shortLabel}</span>
+      <span className="hidden truncate sm:inline">{label}</span>
     </button>
   );
 }
@@ -63,8 +66,8 @@ export function StationImageVote({
           alt={`${stationName} train station`}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-4 pb-4 pt-12">
-          <p className="mb-3 text-sm text-white/90">
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-3 pb-3 pt-10 sm:px-4 sm:pb-4 sm:pt-12">
+          <p className="mb-2 text-xs text-white/90 sm:mb-3 sm:text-sm">
             Does this photo represent {stationName}?
           </p>
           <StationImageVoteControls vote={vote} onGood={() => cast("up")} onBad={() => cast("down")} />
@@ -93,7 +96,7 @@ export function StationImageVoteControls({
 }) {
   return (
     <div
-      className="flex flex-wrap gap-2"
+      className="flex gap-1.5 sm:flex-wrap sm:gap-2"
       role="group"
       aria-label="Rate whether the station photo is representative"
     >
@@ -101,6 +104,7 @@ export function StationImageVoteControls({
         active={vote === "up"}
         onClick={onGood}
         label="Good photo"
+        shortLabel="Good"
         icon={ImageIcon}
         activeClassName="border-primary bg-primary text-primary-foreground"
       />
@@ -108,6 +112,7 @@ export function StationImageVoteControls({
         active={vote === "down"}
         onClick={onBad}
         label="Doesn't represent station"
+        shortLabel="Not representative"
         icon={ImageOff}
         activeClassName="border-destructive bg-destructive text-destructive-foreground"
       />
