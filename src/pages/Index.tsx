@@ -47,12 +47,12 @@ const Index = () => {
           <div className="flex items-center gap-3 mb-4">
             <TrainFront className="w-8 h-8" />
             <h1 className="font-display text-4xl md:text-5xl">
-              Portugal Stations
+              Portugal by Train
             </h1>
           </div>
           <p className="text-primary-foreground/90 text-lg max-w-2xl">
-            Find maps and affordable hotels near train stations across Portugal —
-            from the Minho to the Algarve.
+            Every CP station from the Minho to the Algarve — with maps and
+            budget hotels within walking distance.
           </p>
         </div>
       </header>
@@ -147,7 +147,7 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/40" />
         <div className="relative max-w-5xl mx-auto px-6 py-16 text-center">
           <h2 className="font-display text-3xl md:text-4xl mb-3">
-            Ride the rails of the north
+            Ride the rails of Portugal
           </h2>
           <p className="text-primary-foreground/90 max-w-xl mx-auto mb-6">
             From the misty Douro Valley to the Atlantic coast — every station
