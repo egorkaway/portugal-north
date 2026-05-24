@@ -80,7 +80,7 @@ export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
 
   if (data.configured === false) {
     throw new RatingsFetchError(
-      "Global vote storage is not configured on this deployment. Local votes still work in your browser, but community totals need Redis env vars on Vercel.",
+      "Global vote storage is not configured on this deployment. Local votes still work in your browser, but community totals need a Vercel Blob store on this project.",
       "storage_not_configured",
     );
   }

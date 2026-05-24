@@ -5,11 +5,7 @@ import {
   isValidVoteChange,
   readGlobalRatings,
 } from "./lib/voteLogic.js";
-import { isRedisConfigured } from "./lib/redis.js";
-
-export const config = {
-  runtime: "edge",
-};
+import { isVoteStorageConfigured } from "./lib/blobVotes.js";
 
 function json(data: unknown, status = 200): Response {
   return new Response(JSON.stringify(data), {
@@ -22,7 +18,7 @@ function json(data: unknown, status = 200): Response {
 }
 
 async function handleGet(): Promise<Response> {
-  if (!isRedisConfigured()) {
+  if (!isVoteStorageConfigured()) {
     return json({ ratings: {}, configured: false });
   }
   const ratings = await readGlobalRatings();
@@ -30,7 +26,7 @@ async function handleGet(): Promise<Response> {
 }
 
 async function handlePost(request: Request): Promise<Response> {
-  if (!isRedisConfigured()) {
+  if (!isVoteStorageConfigured()) {
     return json({ ok: false, reason: "storage_not_configured" });
   }
 
@@ -55,8 +51,12 @@ async function handlePost(request: Request): Promise<Response> {
     return json({ ok: false, reason: "invalid_payload" }, 400);
   }
 
-  const stored = await applyVoteDelta(station, previous, next);
-  return json({ ok: stored });
+  try {
+    const stored = await applyVoteDelta(station, previous, next);
+    return json({ ok: stored });
+  } catch {
+    return json({ ok: false, reason: "storage_error" }, 500);
+  }
 }
 
 export default async function handler(request: Request): Promise<Response> {

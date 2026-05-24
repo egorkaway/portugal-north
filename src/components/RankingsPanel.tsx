@@ -110,7 +110,7 @@ export function RankingsPanel({
               {showDetailedError && (
                 <p className="mt-2 text-xs text-muted-foreground">
                   Votes on station cards are still saved in your browser. Global totals
-                  require the Vercel API route and Upstash Redis to be configured.
+                  require the Vercel API route and a Blob store (Storage → Blob) on this project.
                 </p>
               )}
             </div>

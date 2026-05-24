@@ -1,39 +1,34 @@
-import { getRedis, HASH_KEY } from "./redis.js";
+import { readRatingsFromBlob, writeRatingsToBlob } from "./blobVotes.js";
 
 type VoteDirection = "up" | "down";
 
 export type StationRating = { up: number; down: number };
 export type GlobalRatings = Record<string, StationRating>;
 
-function field(station: string, direction: VoteDirection): string {
-  return `${station}:${direction}`;
-}
+export function applyDeltaInMemory(
+  ratings: GlobalRatings,
+  station: string,
+  previous: VoteDirection | null,
+  next: VoteDirection | null,
+): GlobalRatings {
+  const current = ratings[station]
+    ? { ...ratings[station] }
+    : { up: 0, down: 0 };
 
-function parseHash(raw: Record<string, number | string> | null): GlobalRatings {
-  const ratings: GlobalRatings = {};
-  if (!raw) return ratings;
+  if (previous) current[previous] = Math.max(0, current[previous] - 1);
+  if (next) current[next] += 1;
 
-  for (const [key, value] of Object.entries(raw)) {
-    const n = typeof value === "number" ? value : Number(value);
-    if (!Number.isFinite(n)) continue;
-    const count = Math.max(0, Math.floor(n));
-    const sep = key.lastIndexOf(":");
-    if (sep <= 0) continue;
-    const station = key.slice(0, sep);
-    const dir = key.slice(sep + 1);
-    if (dir !== "up" && dir !== "down") continue;
-    if (!ratings[station]) ratings[station] = { up: 0, down: 0 };
-    ratings[station][dir] = count;
+  const nextRatings = { ...ratings };
+  if (current.up === 0 && current.down === 0) {
+    delete nextRatings[station];
+  } else {
+    nextRatings[station] = current;
   }
-
-  return ratings;
+  return nextRatings;
 }
 
 export async function readGlobalRatings(): Promise<GlobalRatings> {
-  const redis = getRedis();
-  if (!redis) return {};
-  const raw = await redis.hgetall<Record<string, number>>(HASH_KEY);
-  return parseHash(raw);
+  return readRatingsFromBlob();
 }
 
 export async function applyVoteDelta(
@@ -41,13 +36,9 @@ export async function applyVoteDelta(
   previous: VoteDirection | null,
   next: VoteDirection | null,
 ): Promise<boolean> {
-  const redis = getRedis();
-  if (!redis) return false;
-
-  const pipe = redis.pipeline();
-  if (previous) pipe.hincrby(HASH_KEY, field(station, previous), -1);
-  if (next) pipe.hincrby(HASH_KEY, field(station, next), 1);
-  await pipe.exec();
+  const ratings = await readRatingsFromBlob();
+  const updated = applyDeltaInMemory(ratings, station, previous, next);
+  await writeRatingsToBlob(updated);
   return true;
 }
 

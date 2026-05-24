@@ -30,7 +30,7 @@ The sticky toolbar lets you:
 
 Each station has a thumbs-up / thumbs-down toggle. Your choice is stored in a first-party cookie (`station_votes`) that lasts one year. No account is required. The vote filter in the toolbar lets you quickly pull up your favourites.
 
-When you vote, the change is also sent to `/api/votes`, which increments lightweight global counters in [Upstash Redis](https://upstash.com) (no traditional database). Use `useGlobalStationRatings()` when you want to show community totals on station cards.
+When you vote, the change is also sent to `/api/votes`, which updates a small JSON file in [Vercel Blob](https://vercel.com/docs/storage/vercel-blob) (no database). Use `useGlobalStationRatings()` when you want to show community totals on station cards.
 
 ---
 
@@ -44,7 +44,7 @@ When you vote, the change is also sent to `/api/votes`, which increments lightwe
 | Component primitives | Radix UI + shadcn/ui |
 | Routing | React Router v6 |
 | Data | Static TypeScript files in `src/data/` |
-| State | React state + cookie-backed pub/sub for votes; global counts via Upstash Redis on Vercel |
+| State | React state + cookie-backed pub/sub for votes; global counts via Vercel Blob |
 | Testing | Vitest (unit) + Playwright (e2e) |
 
 ---
@@ -65,7 +65,7 @@ src/
   lib/
     votesApi.ts                 # Client helpers for vote sync and global ratings
 api/
-  votes.ts                      # Edge function: POST sync, GET global ratings (Upstash Redis)
+  votes.ts                      # API route: POST sync, GET global ratings (Vercel Blob)
   pages/
     Index.tsx          # Main page: hero, filter bar, station grid, footer
 public/
@@ -87,7 +87,7 @@ npm run dev
 
 The dev server starts at `http://localhost:5173`.
 
-For local testing of vote sync and global ratings, use [Vercel CLI](https://vercel.com/docs/cli) with Upstash env vars in `.env.local`:
+For local testing of vote sync and global ratings, use [Vercel CLI](https://vercel.com/docs/cli) with Blob env vars in `.env.local`:
 
 ```bash
 vercel env pull .env.local
@@ -102,10 +102,10 @@ npm run build     # production build
 ### Global vote storage on Vercel
 
 1. Deploy to [Vercel](https://vercel.com).
-2. Add Upstash Redis from the project **Storage** tab, or run `vercel integration add upstash`.
-3. Vercel injects `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` automatically.
+2. Open the **portugal-north** project → **Storage** → **Connect Database** → **Blob**.
+3. Vercel injects `BLOB_READ_WRITE_TOKEN` automatically. Redeploy after adding storage.
 
-Without Redis configured, the site still works; only per-browser cookie votes are kept.
+Without Blob configured, the site still works; only per-browser cookie votes are kept.
 
 ---
 
