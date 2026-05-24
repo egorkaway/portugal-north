@@ -3,6 +3,7 @@ import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data
 import { stationHotels } from "@/data/hotels";
 import { stationImages } from "@/data/stationImages";
 import { useStationVote } from "@/hooks/useStationVote";
+import { formatDistance } from "@/lib/geo";
 
 const typeColors: Record<string, string> = {
   "Alfa Pendular": "bg-primary text-primary-foreground",
@@ -12,7 +13,13 @@ const typeColors: Record<string, string> = {
   "Inactive / Historic": "bg-muted text-muted-foreground opacity-60",
 };
 
-export function StationCard({ station }: { station: Station }) {
+export function StationCard({
+  station,
+  distanceKm,
+}: {
+  station: Station;
+  distanceKm?: number;
+}) {
   const hotels = stationHotels[station.name] || [];
   const imageUrl = stationImages[station.name];
   const { vote, cast } = useStationVote(station.name);
@@ -36,9 +43,15 @@ export function StationCard({ station }: { station: Station }) {
             {station.name}
           </h2>
           <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
-            <Train className="w-3.5 h-3.5" />
-            {station.lines.join(" / ")}
+            <Train className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">{station.lines.join(" / ")}</span>
           </p>
+          {distanceKm !== undefined && (
+            <p className="text-xs text-primary flex items-center gap-1 mt-1">
+              <Navigation className="w-3 h-3 shrink-0" />
+              {formatDistance(distanceKm)} away
+            </p>
+          )}
         </div>
         <div className="flex items-center gap-1 shrink-0" aria-label="Your private vote">
           <button

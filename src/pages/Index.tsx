@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { stations } from "@/data/stations";
 import { StationCard } from "@/components/StationCard";
 import { StationRankings } from "@/components/StationRankings";
-import { Search, TrainFront, ThumbsUp, ThumbsDown, Circle, CloudSun, Smartphone, ExternalLink } from "lucide-react";
+import {
+  Search,
+  TrainFront,
+  ThumbsUp,
+  ThumbsDown,
+  Circle,
+  CloudSun,
+  Smartphone,
+  ExternalLink,
+  Navigation,
+} from "lucide-react";
 import heroStation from "@/assets/hero-station.jpg";
 import footerDouro from "@/assets/footer-douro.jpg";
 import { useAllVotes } from "@/hooks/useStationVote";
+import { useUserLocation } from "@/hooks/useUserLocation";
+import { distanceKm } from "@/lib/geo";
 
 const allTypes = [...new Set(stations.flatMap((s) => s.types))];
 
@@ -16,20 +28,42 @@ const Index = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
   const votes = useAllVotes();
+  const { state: locationState, coords, isActive: sortByDistance, requestLocation } =
+    useUserLocation();
 
-  const filtered = stations.filter((s) => {
-    const matchesSearch =
-      s.name.toLowerCase().includes(search.toLowerCase()) ||
-      s.lines.some((l) => l.toLowerCase().includes(search.toLowerCase()));
-    const matchesFilter = !activeFilter || s.types.includes(activeFilter);
-    const v = votes[s.name];
-    const matchesVote =
-      !voteFilter ||
-      (voteFilter === "up" && v === "up") ||
-      (voteFilter === "down" && v === "down") ||
-      (voteFilter === "none" && !v);
-    return matchesSearch && matchesFilter && matchesVote;
-  });
+  const filtered = useMemo(() => {
+    const matches = stations.filter((s) => {
+      const matchesSearch =
+        s.name.toLowerCase().includes(search.toLowerCase()) ||
+        s.lines.some((l) => l.toLowerCase().includes(search.toLowerCase()));
+      const matchesFilter = !activeFilter || s.types.includes(activeFilter);
+      const v = votes[s.name];
+      const matchesVote =
+        !voteFilter ||
+        (voteFilter === "up" && v === "up") ||
+        (voteFilter === "down" && v === "down") ||
+        (voteFilter === "none" && !v);
+      return matchesSearch && matchesFilter && matchesVote;
+    });
+
+    if (!coords) return matches;
+
+    return [...matches].sort(
+      (a, b) =>
+        distanceKm(coords.lat, coords.lng, a.lat, a.lng) -
+        distanceKm(coords.lat, coords.lng, b.lat, b.lng),
+    );
+  }, [search, activeFilter, voteFilter, votes, coords]);
+
+  const distanceByStation = useMemo(() => {
+    if (!coords) return null;
+    return Object.fromEntries(
+      filtered.map((station) => [
+        station.name,
+        distanceKm(coords.lat, coords.lng, station.lat, station.lng),
+      ]),
+    );
+  }, [filtered, coords]);
 
   return (
     <div className="min-h-screen bg-background">
@@ -76,7 +110,25 @@ const Index = () => {
               className="w-full pl-9 pr-4 py-2 rounded-md border border-input bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
             />
           </div>
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap items-center gap-1.5">
+            <button
+              type="button"
+              onClick={requestLocation}
+              disabled={locationState.status === "loading"}
+              aria-pressed={sortByDistance}
+              className={`inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border transition-colors shrink-0 ${
+                sortByDistance
+                  ? "bg-primary text-primary-foreground border-primary"
+                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
+              }`}
+            >
+              <Navigation className="w-3.5 h-3.5" />
+              {locationState.status === "loading"
+                ? "Locating..."
+                : sortByDistance
+                  ? "Near me"
+                  : "Sort by distance"}
+            </button>
             {allTypes.map((type) => (
               <button
                 key={type}
@@ -120,12 +172,24 @@ const Index = () => {
       {/* Grid */}
       <main className="max-w-5xl mx-auto px-6 py-8">
         <p className="text-sm text-muted-foreground mb-4">
-          {filtered.length} station{filtered.length !== 1 && "s"} · Click
-          "Hotels on Booking" to find the 3 cheapest rooms within 2 km
+          {filtered.length} station{filtered.length !== 1 && "s"}
+          {sortByDistance ? " · Sorted by distance from you" : ""}
+          {locationState.status === "denied"
+            ? " · Location access denied"
+            : locationState.status === "unsupported"
+              ? " · Location not supported in this browser"
+              : locationState.status === "error"
+                ? " · Could not get your location"
+                : ""}
+          {!sortByDistance && " · Click \"Hotels on Booking\" to find the 3 cheapest rooms within 2 km"}
         </p>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {filtered.map((station) => (
-            <StationCard key={station.name} station={station} />
+            <StationCard
+              key={station.name}
+              station={station}
+              distanceKm={distanceByStation?.[station.name]}
+            />
           ))}
         </div>
         {filtered.length === 0 && (
