@@ -1,4 +1,4 @@
-import { ArrowLeft, BedDouble, MapPin, Train, ExternalLink, Navigation } from "lucide-react";
+import { ArrowLeft, BedDouble, MapPin, Train, ExternalLink, Navigation, History } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import {
   getAppleMapsUrl,
@@ -23,6 +23,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
 import { buildStationStructuredData } from "@/lib/structuredData";
 import { getStationBySlug } from "@/lib/stationSlug";
+import { getTripHistorianStationUrl } from "@/lib/tripHistorian";
 
 const typeColors: Record<string, string> = {
   "Alfa Pendular": "bg-primary text-primary-foreground",
@@ -41,6 +42,7 @@ const Station = () => {
   }
 
   const hotels = getHotelsForStation(station.name);
+  const tripHistorianUrl = getTripHistorianStationUrl(station.name);
   const imageUrl = getStationImageUrl(station.name);
   const shareImageUrl = getStationShareImageUrl(station.name);
   const showPhotoVote = hasRepresentativeStationImage(station.name);
@@ -133,6 +135,17 @@ const Station = () => {
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
               OpenStreetMap
             </a>
+            {tripHistorianUrl ? (
+              <a
+                href={tripHistorianUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md bg-foreground/5 px-3 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                <History className="h-4 w-4" aria-hidden="true" />
+                TripHistorian
+              </a>
+            ) : null}
             <a
               href={getBookingSearchUrl(station)}
               target="_blank"
