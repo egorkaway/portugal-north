@@ -9,6 +9,7 @@ import {
 import { stationHotels } from "@/data/hotels";
 import { stationImages } from "@/data/stationImages";
 import { HotelList } from "@/components/HotelList";
+import { SiteFooter } from "@/components/SiteFooter";
 import { StationDepartures } from "@/components/StationDepartures";
 import { StationImageVote } from "@/components/StationImageVote";
 import { VoteButtons } from "@/components/VoteButtons";
@@ -145,6 +146,8 @@ const Station = () => {
             {station.lat.toFixed(4)}, {station.lng.toFixed(4)}
           </p>
         </main>
+
+        <SiteFooter showIntro={false} />
       </div>
     </>
   );
