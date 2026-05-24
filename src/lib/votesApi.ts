@@ -2,6 +2,35 @@ import type { GlobalRatings, VoteDirection, VoteSyncPayload } from "@/lib/voteTy
 
 const API_BASE = "/api/votes";
 
+export type GlobalRatingsResult = {
+  ratings: GlobalRatings;
+  configured: boolean;
+};
+
+export type RatingsFetchErrorCode =
+  | "network"
+  | "http"
+  | "storage_not_configured"
+  | "invalid_response";
+
+export class RatingsFetchError extends Error {
+  readonly code: RatingsFetchErrorCode;
+  readonly status?: number;
+
+  constructor(message: string, code: RatingsFetchErrorCode, status?: number) {
+    super(message);
+    this.name = "RatingsFetchError";
+    this.code = code;
+    this.status = status;
+  }
+}
+
+export function ratingsErrorMessage(error: unknown): string {
+  if (error instanceof RatingsFetchError) return error.message;
+  if (error instanceof Error) return error.message;
+  return "Could not load community ratings.";
+}
+
 export async function syncVoteToServer(
   station: string,
   previous: VoteDirection | null,
@@ -20,9 +49,44 @@ export async function syncVoteToServer(
   }
 }
 
-export async function fetchGlobalRatings(): Promise<GlobalRatings> {
-  const res = await fetch(API_BASE, { cache: "no-store" });
-  if (!res.ok) return {};
-  const data = (await res.json()) as { ratings?: GlobalRatings };
-  return data.ratings ?? {};
+export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
+  let res: Response;
+  try {
+    res = await fetch(API_BASE, { cache: "no-store" });
+  } catch {
+    throw new RatingsFetchError(
+      "Could not reach the ratings API. Check your connection or try again later.",
+      "network",
+    );
+  }
+
+  if (!res.ok) {
+    throw new RatingsFetchError(
+      `Ratings API returned ${res.status}. Community totals may be unavailable on this deployment.`,
+      "http",
+      res.status,
+    );
+  }
+
+  let data: { ratings?: GlobalRatings; configured?: boolean };
+  try {
+    data = (await res.json()) as { ratings?: GlobalRatings; configured?: boolean };
+  } catch {
+    throw new RatingsFetchError(
+      "Ratings API returned an invalid response.",
+      "invalid_response",
+    );
+  }
+
+  if (data.configured === false) {
+    throw new RatingsFetchError(
+      "Global vote storage is not configured on this deployment. Local votes still work in your browser, but community totals need Redis env vars on Vercel.",
+      "storage_not_configured",
+    );
+  }
+
+  return {
+    ratings: data.ratings ?? {},
+    configured: true,
+  };
 }
