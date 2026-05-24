@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { stations } from "@/data/stations";
 import { StationCard } from "@/components/StationCard";
-import { Search, TrainFront, ThumbsUp, ThumbsDown, Circle, CloudSun, Hexagon, ExternalLink } from "lucide-react";
+import { Search, TrainFront, ThumbsUp, ThumbsDown, Circle, CloudSun, Smartphone, ExternalLink } from "lucide-react";
 import heroStation from "@/assets/hero-station.jpg";
 import footerDouro from "@/assets/footer-douro.jpg";
 import { useAllVotes } from "@/hooks/useStationVote";
@@ -187,11 +187,12 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="group flex flex-1 items-start gap-4 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-5 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15"
               >
-                <Hexagon className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
+                <Smartphone className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
                 <div className="min-w-0 flex-1">
-                  <p className="font-display text-xl text-primary-foreground">H3 Map Editor</p>
+                  <p className="font-display text-xl text-primary-foreground">Map Your Travel</p>
                   <p className="mt-1 text-sm text-primary-foreground/80">
-                    Create and visualize hexagonal maps using H3 geospatial indexing.
+                    GetMapa's iPhone app tracks the places you visit and builds a
+                    personal travel map from your trips and photos.
                   </p>
                 </div>
                 <ExternalLink
