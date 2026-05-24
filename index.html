@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1d7a70" />
     <title>Portugal by Train — Stations, Maps & Budget Hotels</title>
     <meta name="description" content="Discover train stations across Portugal — from Minho to the Algarve — with maps, line info and hand-picked budget hotels within walking distance." />
     <meta name="author" content="Portugal by Train" />
@@ -21,7 +22,8 @@
     <meta property="og:locale" content="en_GB" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Portugal by Train — Stations, Maps & Budget Hotels" />
+    <meta name="twitter:site" content="@egorkaway" />
+    <meta name="twitter:title" content="Portugal by Train — Stations, Maps &amp; Budget Hotels" />
     <meta name="twitter:description" content="Discover train stations across Portugal — from Minho to the Algarve — with maps, line info and hand-picked budget hotels within walking distance." />
     <meta name="twitter:image" content="https://portugal-north.lovable.app/og-image.jpg" />
     <meta name="twitter:image:alt" content="A vintage Portuguese train winding through the terraced vineyards of the Douro valley at golden hour." />
@@ -32,7 +34,15 @@
         "@type": "WebSite",
         "name": "Portugal by Train",
         "url": "https://portugal-north.lovable.app/",
-        "description": "Discover train stations across Portugal with maps, line info and nearby budget hotels."
+        "description": "Discover train stations across Portugal with maps, line info and nearby budget hotels.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://portugal-north.lovable.app/?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
       }
     </script>
     <script type="application/ld+json">
@@ -41,7 +51,12 @@
         "@type": "Organization",
         "name": "Portugal by Train",
         "url": "https://portugal-north.lovable.app/",
-        "logo": "https://portugal-north.lovable.app/og-image.jpg",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://portugal-north.lovable.app/logo.png",
+          "width": 512,
+          "height": 512
+        },
         "description": "A curated guide to Portuguese train stations and budget-friendly hotels within walking distance."
       }
     </script>

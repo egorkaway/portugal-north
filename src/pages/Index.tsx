@@ -39,6 +39,7 @@ const Index = () => {
           alt="Historic Portuguese train station at golden hour with azulejo tiles"
           width={1920}
           height={1080}
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-primary/50" />
