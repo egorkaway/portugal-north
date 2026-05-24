@@ -12,7 +12,7 @@ function HotelClosedSuggestion({ stationName, hotelName }: { stationName: string
       type="button"
       onClick={toggle}
       aria-pressed={reported}
-      className={`mt-2 inline-flex items-center gap-1.5 text-xs font-medium transition-colors ${
+      className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors ${
         reported
           ? "text-destructive hover:text-destructive/80"
           : "text-muted-foreground hover:text-foreground"
@@ -126,16 +126,18 @@ function HotelRow({ stationName, hotel }: { stationName: string; hotel: Hotel })
           <Navigation className="w-3 h-3 shrink-0" aria-hidden="true" />
           {hotel.distanceKm} km from station
         </p>
-        <a
-          href={hotel.bookingUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
-        >
-          View on Booking
-          <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
-        </a>
-        <HotelClosedSuggestion stationName={stationName} hotelName={hotel.name} />
+        <div className="mt-3 flex flex-col gap-4">
+          <a
+            href={hotel.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+          >
+            View on Booking
+            <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+          </a>
+          <HotelClosedSuggestion stationName={stationName} hotelName={hotel.name} />
+        </div>
       </div>
       <VoteButtons
         vote={vote}
