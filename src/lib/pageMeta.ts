@@ -46,14 +46,14 @@ export const NOT_FOUND_PAGE_META: PageMeta = {
 export function buildStationPageMeta(
   station: Station,
   hotels: Hotel[],
-  imageUrl?: string,
+  shareImageUrl?: string,
 ): PageMeta {
   return {
     title: getStationPageTitle(station),
     description: getStationMetaDescription(station, hotels),
     canonicalPath: `/stations/${stationToSlug(station.name)}`,
     ogDescription: getStationOgDescription(station, hotels),
-    ogImagePath: imageUrl,
+    ogImagePath: shareImageUrl,
   };
 }
 

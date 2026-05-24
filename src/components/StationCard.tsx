@@ -3,7 +3,7 @@ import { HotelList } from "@/components/HotelList";
 import { Link } from "react-router-dom";
 import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data/stations";
 import { stationHotels } from "@/data/hotels";
-import { stationImages } from "@/data/stationImages";
+import { getStationImageUrl } from "@/lib/stationImage";
 import { useStationVote } from "@/hooks/useStationVote";
 import { formatDistance } from "@/lib/geo";
 import { getStationPath } from "@/lib/stationSlug";
@@ -25,25 +25,19 @@ export function StationCard({
   distanceKm?: number;
 }) {
   const hotels = stationHotels[station.name] || [];
-  const imageUrl = stationImages[station.name];
+  const imageUrl = getStationImageUrl(station.name);
   const { vote, cast } = useStationVote(station.name);
   const stationPath = getStationPath(station);
 
   return (
     <div className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col">
       <Link to={stationPath} className="block relative w-full aspect-[16/9] bg-muted overflow-hidden">
-        {imageUrl ? (
-          <img
-            src={imageUrl}
-            alt={`${station.name} train station`}
-            loading="lazy"
-            className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-        ) : (
-          <div className="absolute inset-0 flex items-center justify-center text-muted-foreground">
-            <Train className="h-10 w-10 opacity-40" aria-hidden="true" />
-          </div>
-        )}
+        <img
+          src={imageUrl}
+          alt={`${station.name} train station`}
+          loading="lazy"
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
       </Link>
       <div className="p-5 flex flex-col flex-1">
         <div className="flex items-start justify-between gap-3 mb-3">

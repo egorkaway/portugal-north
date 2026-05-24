@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" role="img" aria-label="Train station placeholder">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a6b62"/>
+      <stop offset="55%" stop-color="#2d8f84"/>
+      <stop offset="100%" stop-color="#1d4f4a"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f3d38" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0a2926" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="540" fill="url(#sky)"/>
+  <rect y="320" width="960" height="220" fill="url(#ground)"/>
+  <g opacity="0.18" fill="#ffffff">
+    <circle cx="120" cy="90" r="48"/>
+    <circle cx="820" cy="70" r="36"/>
+    <circle cx="640" cy="120" r="28"/>
+  </g>
+  <g transform="translate(0 368)" fill="none" stroke="#e8f6f4" stroke-width="6" stroke-linecap="round">
+    <path d="M0 72 H960"/>
+    <path d="M0 72 H960" stroke="#b8e0da" stroke-width="2" stroke-dasharray="28 22"/>
+    <path d="M120 72 V48 M280 72 V48 M440 72 V48 M600 72 V48 M760 72 V48"/>
+  </g>
+  <g transform="translate(330 250)">
+    <rect x="0" y="52" width="300" height="68" rx="10" fill="#0d3530" opacity="0.55"/>
+    <rect x="24" y="24" width="252" height="72" rx="12" fill="#f4fbf9"/>
+    <rect x="44" y="40" width="72" height="40" rx="6" fill="#1d7a70"/>
+    <rect x="132" y="44" width="120" height="12" rx="4" fill="#c5e8e3"/>
+    <rect x="132" y="64" width="88" height="10" rx="4" fill="#9fd4cc"/>
+    <circle cx="64" cy="108" r="18" fill="#123f3a"/>
+    <circle cx="64" cy="108" r="10" fill="#2d8f84"/>
+    <circle cx="236" cy="108" r="18" fill="#123f3a"/>
+    <circle cx="236" cy="108" r="10" fill="#2d8f84"/>
+    <rect x="8" y="8" width="284" height="14" rx="4" fill="#1d7a70" opacity="0.85"/>
+  </g>
+  <text x="480" y="470" text-anchor="middle" fill="#e8f6f4" font-family="system-ui, sans-serif" font-size="22" font-weight="600" opacity="0.9">
+    Portugal by Train
+  </text>
+</svg>

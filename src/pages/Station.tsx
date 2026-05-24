@@ -6,7 +6,11 @@ import {
   getOSMUrl,
 } from "@/data/stations";
 import { stationHotels } from "@/data/hotels";
-import { stationImages } from "@/data/stationImages";
+import {
+  getStationImageUrl,
+  getStationShareImageUrl,
+  hasRepresentativeStationImage,
+} from "@/lib/stationImage";
 import { HotelList } from "@/components/HotelList";
 import { SiteFooter } from "@/components/SiteFooter";
 import { StationDepartures } from "@/components/StationDepartures";
@@ -37,15 +41,17 @@ const Station = () => {
   }
 
   const hotels = stationHotels[station.name] || [];
-  const imageUrl = stationImages[station.name];
+  const imageUrl = getStationImageUrl(station.name);
+  const shareImageUrl = getStationShareImageUrl(station.name);
+  const showPhotoVote = hasRepresentativeStationImage(station.name);
   const { vote, cast } = useStationVote(station.name);
   const { data: globalVotes } = useGlobalRatings();
-  const pageMeta = buildStationPageMeta(station, hotels, imageUrl);
+  const pageMeta = buildStationPageMeta(station, hotels, shareImageUrl);
   const structuredData = buildStationStructuredData({
     station,
     slug: slug!,
     hotels,
-    imageUrl,
+    imageUrl: shareImageUrl,
     stationRatings: globalVotes?.ratings,
     hotelRatings: globalVotes?.hotelRatings,
   });
@@ -83,7 +89,17 @@ const Station = () => {
         </header>
 
         <main className="mx-auto max-w-5xl px-6 py-10">
-          {imageUrl && <StationImageVote stationName={station.name} imageUrl={imageUrl} />}
+          {showPhotoVote ? (
+            <StationImageVote stationName={station.name} imageUrl={imageUrl} />
+          ) : (
+            <div className="mb-8 overflow-hidden rounded-lg border border-border bg-muted">
+              <img
+                src={imageUrl}
+                alt={`${station.name} train station`}
+                className="aspect-[21/9] w-full object-cover"
+              />
+            </div>
+          )}
 
           <div className="mb-8 flex flex-wrap gap-1.5">
             {station.types.map((type) => (

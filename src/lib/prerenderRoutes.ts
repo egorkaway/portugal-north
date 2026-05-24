@@ -1,5 +1,5 @@
 import { stationHotels } from "@/data/hotels";
-import { stationImages } from "@/data/stationImages";
+import { getStationShareImageUrl } from "@/lib/stationImage";
 import { stations } from "@/data/stations";
 import {
   HOME_PAGE_META,
@@ -29,10 +29,9 @@ export function getPrerenderRoutes(): PrerenderRoute[] {
   for (const station of stations) {
     const slug = stationToSlug(station.name);
     const hotels = stationHotels[station.name] ?? [];
-    const imageUrl = stationImages[station.name];
     routes.push({
       outFile: `stations/${slug}/index.html`,
-      meta: buildStationPageMeta(station, hotels, imageUrl),
+      meta: buildStationPageMeta(station, hotels, getStationShareImageUrl(station.name)),
     });
   }
 
