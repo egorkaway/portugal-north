@@ -95,41 +95,43 @@ const Index = () => {
 
       {/* Filters */}
       <div className="sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex flex-col sm:flex-row gap-3">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <label htmlFor="station-search" className="sr-only">
-              Search station or line
-            </label>
-            <input
-              id="station-search"
-              type="search"
-              aria-label="Search station or line"
-              placeholder="Search station or line..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-9 pr-4 py-2 rounded-md border border-input bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
-            />
-          </div>
-          <div className="flex flex-wrap items-center gap-1.5">
+        <div className="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <label htmlFor="station-search" className="sr-only">
+                Search station or line
+              </label>
+              <input
+                id="station-search"
+                type="search"
+                aria-label="Search station or line"
+                placeholder="Search station or line..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full pl-9 pr-4 py-2 rounded-md border border-input bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
+              />
+            </div>
             <button
               type="button"
               onClick={requestLocation}
               disabled={locationState.status === "loading"}
               aria-pressed={sortByDistance}
-              className={`inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-full border transition-colors shrink-0 ${
+              className={`inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold shadow-sm transition-colors shrink-0 ${
                 sortByDistance
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
-              }`}
+                  ? "bg-primary text-primary-foreground ring-2 ring-primary/30 hover:bg-primary/90"
+                  : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
+              } disabled:cursor-wait disabled:opacity-80`}
             >
-              <Navigation className="w-3.5 h-3.5" />
+              <Navigation className="h-4 w-4" aria-hidden="true" />
               {locationState.status === "loading"
                 ? "Locating..."
                 : sortByDistance
-                  ? "Near me"
+                  ? "Sorted by distance"
                   : "Sort by distance"}
             </button>
+          </div>
+          <div className="flex flex-wrap items-center gap-1.5">
             {allTypes.map((type) => (
               <button
                 key={type}
