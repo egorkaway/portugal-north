@@ -42,7 +42,7 @@ Apply one vote or closed-hotel report per request. Send JSON with exactly one ta
 
 ## Station pages
 
-Public HTML station guides live under `/stations/{slug}` (203 CP stops). Slugs are lowercase ASCII derived from station names.
+Public HTML station guides live under `/stations/{slug}` (257 CP stops). Slugs are lowercase ASCII derived from station names.
 
 ## WebMCP (browser)
 
