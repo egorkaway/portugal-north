@@ -119,6 +119,21 @@ export const stations: Station[] = [
   { name: "Portimão", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1417, lng: -8.5333 },
   { name: "Tavira", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1278, lng: -7.6500 },
   { name: "Vila Real de Santo António", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1956, lng: -7.4153 },
+  // Lisbon south bank & Oeste
+  { name: "Pragal", lines: ["Linha do Sul"], types: ["Alfa Pendular", "Intercidades", "Urban"], lat: 38.6736, lng: -9.1633 },
+  { name: "Pinhal Novo", lines: ["Linha do Sul", "Linha do Alentejo"], types: ["Intercidades", "Urban", "Regional"], lat: 38.6361, lng: -8.9117 },
+  { name: "Barreiro", lines: ["Linha do Sul (historic terminus)"], types: ["Urban", "Regional"], lat: 38.6644, lng: -9.0742 },
+  { name: "Torres Vedras", lines: ["Linha do Oeste"], types: ["Regional"], lat: 39.0928, lng: -9.2603 },
+  { name: "Mira Sintra-Meleças", lines: ["Linha do Oeste", "Linha de Sintra"], types: ["Urban"], lat: 38.8056, lng: -9.3322 },
+  // Beira Baixa & Alto Alentejo
+  { name: "Abrantes", lines: ["Linha da Beira Baixa"], types: ["Intercidades", "Regional"], lat: 39.4675, lng: -8.2008 },
+  { name: "Portalegre", lines: ["Linha do Leste"], types: ["Regional"], lat: 39.2517, lng: -7.4444 },
+  { name: "Elvas", lines: ["Linha do Leste"], types: ["Regional"], lat: 38.8775, lng: -7.1758 },
+  { name: "Vendas Novas", lines: ["Linha do Alentejo", "Ramal de Vendas Novas"], types: ["Regional"], lat: 38.6772, lng: -8.4533 },
+  // Algarve additions
+  { name: "Olhão", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.0289, lng: -7.8425 },
+  { name: "Loulé", lines: ["Linha do Algarve"], types: ["Intercidades", "Regional"], lat: 37.0833, lng: -8.0411 },
+  { name: "Silves", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1922, lng: -8.4400 },
 ];
 
 export function getAppleMapsUrl(station: Station): string {
