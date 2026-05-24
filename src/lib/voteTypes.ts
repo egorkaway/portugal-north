@@ -18,3 +18,15 @@ export type HotelVoteSyncPayload = {
   previous: VoteDirection | null;
   next: VoteDirection | null;
 };
+
+export type StationImageVoteSyncPayload = {
+  stationImage: string;
+  previous: VoteDirection | null;
+  next: VoteDirection | null;
+};
+
+export type HotelClosedReportSyncPayload = {
+  hotelClosed: string;
+  previous: boolean;
+  next: boolean;
+};

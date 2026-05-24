@@ -1,13 +1,19 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { isVoteStorageConfigured } from "./lib/blobVotes.js";
 import {
+  applyHotelClosedReportDelta,
   applyHotelVoteDelta,
+  applyStationImageVoteDelta,
   applyStationVoteDelta,
+  isValidClosedReportChange,
   isValidDirection,
   isValidHotelKey,
   isValidName,
+  isValidReportedFlag,
   isValidVoteChange,
+  readGlobalHotelClosedReports,
   readGlobalHotelRatings,
+  readGlobalStationImageRatings,
   readGlobalStationRatings,
 } from "./lib/voteLogic.js";
 
@@ -25,20 +31,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(200).json({
         ratings: {},
         hotelRatings: {},
+        imageRatings: {},
+        hotelClosedReports: {},
         configured: false,
       });
     }
 
     try {
-      const [ratings, hotelRatings] = await Promise.all([
+      const [ratings, hotelRatings, imageRatings, hotelClosedReports] = await Promise.all([
         readGlobalStationRatings(),
         readGlobalHotelRatings(),
+        readGlobalStationImageRatings(),
+        readGlobalHotelClosedReports(),
       ]);
-      return res.status(200).json({ ratings, hotelRatings, configured: true });
+      return res
+        .status(200)
+        .json({ ratings, hotelRatings, imageRatings, hotelClosedReports, configured: true });
     } catch {
       return res.status(503).json({
         ratings: {},
         hotelRatings: {},
+        imageRatings: {},
+        hotelClosedReports: {},
         configured: true,
         error: "storage_read_failed",
       });
@@ -52,27 +66,61 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const body = req.body as {
       station?: string;
+      stationImage?: string;
       hotelKey?: string;
-      previous?: "up" | "down" | null;
-      next?: "up" | "down" | null;
+      hotelClosed?: string;
+      previous?: "up" | "down" | boolean | null;
+      next?: "up" | "down" | boolean | null;
     };
 
-    const { station, hotelKey, previous, next } = body;
+    const { station, stationImage, hotelKey, hotelClosed, previous, next } = body;
 
-    if (
-      !isValidDirection(previous ?? null) ||
-      !isValidDirection(next ?? null) ||
-      !isValidVoteChange(previous ?? null, next ?? null)
-    ) {
+    const voteTargets = [station, stationImage, hotelKey, hotelClosed].filter(
+      (v) => v !== undefined,
+    );
+    if (voteTargets.length !== 1) {
       return res.status(400).json({ ok: false, reason: "invalid_payload" });
     }
 
     try {
+      if (hotelClosed !== undefined) {
+        if (
+          !isValidHotelKey(hotelClosed) ||
+          !isValidReportedFlag(previous) ||
+          !isValidReportedFlag(next) ||
+          !isValidClosedReportChange(previous, next)
+        ) {
+          return res.status(400).json({ ok: false, reason: "invalid_payload" });
+        }
+        const stored = await applyHotelClosedReportDelta(hotelClosed, previous, next);
+        return res.status(200).json({ ok: stored });
+      }
+
+      if (
+        !isValidDirection(previous ?? null) ||
+        !isValidDirection(next ?? null) ||
+        !isValidVoteChange(previous ?? null, next ?? null)
+      ) {
+        return res.status(400).json({ ok: false, reason: "invalid_payload" });
+      }
+
       if (hotelKey !== undefined) {
         if (!isValidHotelKey(hotelKey)) {
           return res.status(400).json({ ok: false, reason: "invalid_payload" });
         }
         const stored = await applyHotelVoteDelta(hotelKey, previous ?? null, next ?? null);
+        return res.status(200).json({ ok: stored });
+      }
+
+      if (stationImage !== undefined) {
+        if (!isValidName(stationImage)) {
+          return res.status(400).json({ ok: false, reason: "invalid_payload" });
+        }
+        const stored = await applyStationImageVoteDelta(
+          stationImage,
+          previous ?? null,
+          next ?? null,
+        );
         return res.status(200).json({ ok: stored });
       }
 

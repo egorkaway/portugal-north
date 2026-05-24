@@ -1,7 +1,11 @@
 import {
+  HOTEL_CLOSED_REPORTS_PATH,
   HOTEL_VOTES_PATH,
+  readClosedReportsFromBlob,
   readRatingsFromBlob,
+  STATION_IMAGE_VOTES_PATH,
   STATION_VOTES_PATH,
+  writeClosedReportsToBlob,
   writeRatingsToBlob,
 } from "./blobVotes.js";
 
@@ -9,6 +13,9 @@ type VoteDirection = "up" | "down";
 
 export type StationRating = { up: number; down: number };
 export type GlobalRatings = Record<string, StationRating>;
+
+export type HotelClosedReport = { reports: number };
+export type HotelClosedReports = Record<string, HotelClosedReport>;
 
 export function applyDeltaInMemory(
   ratings: GlobalRatings,
@@ -60,6 +67,56 @@ export async function applyHotelVoteDelta(
   return true;
 }
 
+export async function readGlobalStationImageRatings(): Promise<GlobalRatings> {
+  return readRatingsFromBlob(STATION_IMAGE_VOTES_PATH);
+}
+
+export async function applyStationImageVoteDelta(
+  station: string,
+  previous: VoteDirection | null,
+  next: VoteDirection | null,
+): Promise<boolean> {
+  const ratings = await readGlobalStationImageRatings();
+  const updated = applyDeltaInMemory(ratings, station, previous, next);
+  await writeRatingsToBlob(STATION_IMAGE_VOTES_PATH, updated);
+  return true;
+}
+
+export function applyClosedReportDeltaInMemory(
+  reports: HotelClosedReports,
+  key: string,
+  wasReported: boolean,
+  isReported: boolean,
+): HotelClosedReports {
+  const current = reports[key] ? { ...reports[key] } : { reports: 0 };
+
+  if (wasReported) current.reports = Math.max(0, current.reports - 1);
+  if (isReported) current.reports += 1;
+
+  const nextReports = { ...reports };
+  if (current.reports === 0) {
+    delete nextReports[key];
+  } else {
+    nextReports[key] = current;
+  }
+  return nextReports;
+}
+
+export async function readGlobalHotelClosedReports(): Promise<HotelClosedReports> {
+  return readClosedReportsFromBlob(HOTEL_CLOSED_REPORTS_PATH);
+}
+
+export async function applyHotelClosedReportDelta(
+  hotelKey: string,
+  wasReported: boolean,
+  isReported: boolean,
+): Promise<boolean> {
+  const reports = await readGlobalHotelClosedReports();
+  const updated = applyClosedReportDeltaInMemory(reports, hotelKey, wasReported, isReported);
+  await writeClosedReportsToBlob(HOTEL_CLOSED_REPORTS_PATH, updated);
+  return true;
+}
+
 /** @deprecated Use readGlobalStationRatings */
 export async function readGlobalRatings(): Promise<GlobalRatings> {
   return readGlobalStationRatings();
@@ -93,4 +150,12 @@ export function isValidVoteChange(
   next: VoteDirection | null,
 ): boolean {
   return previous !== null || next !== null;
+}
+
+export function isValidReportedFlag(value: unknown): value is boolean {
+  return value === true || value === false;
+}
+
+export function isValidClosedReportChange(wasReported: boolean, isReported: boolean): boolean {
+  return wasReported !== isReported;
 }

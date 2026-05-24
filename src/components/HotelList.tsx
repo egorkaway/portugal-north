@@ -1,7 +1,28 @@
-import { Euro, ExternalLink, Navigation } from "lucide-react";
+import { Euro, ExternalLink, Navigation, Store } from "lucide-react";
 import type { Hotel } from "@/data/hotels";
+import { useHotelClosedReport } from "@/hooks/useHotelClosedReport";
 import { useHotelVote } from "@/hooks/useHotelVote";
 import { VoteButtons } from "@/components/VoteButtons";
+
+function HotelClosedSuggestion({ stationName, hotelName }: { stationName: string; hotelName: string }) {
+  const { reported, toggle } = useHotelClosedReport(stationName, hotelName);
+
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      aria-pressed={reported}
+      className={`mt-2 inline-flex items-center gap-1.5 text-xs font-medium transition-colors ${
+        reported
+          ? "text-destructive hover:text-destructive/80"
+          : "text-muted-foreground hover:text-foreground"
+      }`}
+    >
+      <Store className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+      {reported ? "You suggested this hotel may be closed" : "Suggest hotel may be closed"}
+    </button>
+  );
+}
 
 function HotelRowCompactLink({ hotel }: { hotel: Hotel }) {
   return (
@@ -114,6 +135,7 @@ function HotelRow({ stationName, hotel }: { stationName: string; hotel: Hotel })
           View on Booking
           <ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
         </a>
+        <HotelClosedSuggestion stationName={stationName} hotelName={hotel.name} />
       </div>
       <VoteButtons
         vote={vote}

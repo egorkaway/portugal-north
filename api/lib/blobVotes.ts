@@ -1,8 +1,10 @@
 import { get, list, put } from "@vercel/blob";
-import type { GlobalRatings } from "./voteLogic.js";
+import type { GlobalRatings, HotelClosedReports } from "./voteLogic.js";
 
 export const STATION_VOTES_PATH = "station-votes.json";
 export const HOTEL_VOTES_PATH = "hotel-votes.json";
+export const STATION_IMAGE_VOTES_PATH = "station-image-votes.json";
+export const HOTEL_CLOSED_REPORTS_PATH = "hotel-closed-reports.json";
 
 const BLOB_ACCESS = "private" as const;
 const OPERATION_TIMEOUT_MS = 6_000;
@@ -63,8 +65,8 @@ async function readJsonFromBlob(pathname: string): Promise<unknown> {
   }
 }
 
-async function writeJsonToBlob(pathname: string, ratings: GlobalRatings): Promise<void> {
-  await put(pathname, JSON.stringify(ratings), {
+async function writeJsonToBlob(pathname: string, data: GlobalRatings | HotelClosedReports): Promise<void> {
+  await put(pathname, JSON.stringify(data), {
     ...blobClientOptions(),
     addRandomSuffix: false,
     allowOverwrite: true,
@@ -81,4 +83,29 @@ export async function writeRatingsToBlob(
   ratings: GlobalRatings,
 ): Promise<void> {
   await writeJsonToBlob(pathname, ratings);
+}
+
+export function normalizeClosedReports(raw: unknown): HotelClosedReports {
+  if (!raw || typeof raw !== "object") return {};
+  const reports: HotelClosedReports = {};
+
+  for (const [key, value] of Object.entries(raw as Record<string, unknown>)) {
+    if (!value || typeof value !== "object") continue;
+    const entry = value as { reports?: unknown };
+    const count = Math.max(0, Math.floor(Number(entry.reports) || 0));
+    if (count > 0) reports[key] = { reports: count };
+  }
+
+  return reports;
+}
+
+export async function readClosedReportsFromBlob(pathname: string): Promise<HotelClosedReports> {
+  return normalizeClosedReports(await readJsonFromBlob(pathname));
+}
+
+export async function writeClosedReportsToBlob(
+  pathname: string,
+  reports: HotelClosedReports,
+): Promise<void> {
+  await writeJsonToBlob(pathname, reports);
 }

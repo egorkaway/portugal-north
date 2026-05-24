@@ -1,6 +1,8 @@
 import type {
   GlobalRatings,
+  HotelClosedReportSyncPayload,
   HotelVoteSyncPayload,
+  StationImageVoteSyncPayload,
   StationVoteSyncPayload,
   VoteDirection,
 } from "@/lib/voteTypes";
@@ -10,6 +12,7 @@ const API_BASE = "/api/votes";
 export type GlobalRatingsResult = {
   ratings: GlobalRatings;
   hotelRatings: GlobalRatings;
+  imageRatings: GlobalRatings;
   configured: boolean;
 };
 
@@ -37,7 +40,13 @@ export function ratingsErrorMessage(error: unknown): string {
   return "Could not load community ratings.";
 }
 
-async function postVote(body: StationVoteSyncPayload | HotelVoteSyncPayload): Promise<void> {
+async function postVote(
+  body:
+    | StationVoteSyncPayload
+    | HotelVoteSyncPayload
+    | StationImageVoteSyncPayload
+    | HotelClosedReportSyncPayload,
+): Promise<void> {
   try {
     await fetch(API_BASE, {
       method: "POST",
@@ -64,6 +73,22 @@ export async function syncHotelVoteToServer(
   next: VoteDirection | null,
 ): Promise<void> {
   await postVote({ hotelKey, previous, next });
+}
+
+export async function syncStationImageVoteToServer(
+  station: string,
+  previous: VoteDirection | null,
+  next: VoteDirection | null,
+): Promise<void> {
+  await postVote({ stationImage: station, previous, next });
+}
+
+export async function syncHotelClosedReportToServer(
+  hotelKey: string,
+  wasReported: boolean,
+  isReported: boolean,
+): Promise<void> {
+  await postVote({ hotelClosed: hotelKey, previous: wasReported, next: isReported });
 }
 
 export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
@@ -99,6 +124,7 @@ export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
   let data: {
     ratings?: GlobalRatings;
     hotelRatings?: GlobalRatings;
+    imageRatings?: GlobalRatings;
     configured?: boolean;
   };
   try {
@@ -120,6 +146,7 @@ export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
   return {
     ratings: data.ratings ?? {},
     hotelRatings: data.hotelRatings ?? {},
+    imageRatings: data.imageRatings ?? {},
     configured: true,
   };
 }

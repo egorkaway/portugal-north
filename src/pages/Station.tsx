@@ -9,6 +9,7 @@ import {
 import { stationHotels } from "@/data/hotels";
 import { stationImages } from "@/data/stationImages";
 import { HotelList } from "@/components/HotelList";
+import { StationImageVote } from "@/components/StationImageVote";
 import { VoteButtons } from "@/components/VoteButtons";
 import { useStationVote } from "@/hooks/useStationVote";
 import { getStationBySlug } from "@/lib/stationSlug";
@@ -79,15 +80,7 @@ const Station = () => {
         </header>
 
         <main className="mx-auto max-w-5xl px-6 py-10">
-          {imageUrl && (
-            <div className="mb-8 aspect-[21/9] overflow-hidden rounded-lg border border-border bg-muted">
-              <img
-                src={imageUrl}
-                alt={`${station.name} train station`}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          )}
+          {imageUrl && <StationImageVote stationName={station.name} imageUrl={imageUrl} />}
 
           <div className="mb-8 flex flex-wrap gap-1.5">
             {station.types.map((type) => (
@@ -138,7 +131,8 @@ const Station = () => {
               </h2>
             </div>
             <p className="mb-6 text-sm text-muted-foreground">
-              Upvote or downvote hotels you have tried. Your votes are private in this browser.
+              Upvote or downvote hotels you have tried, or suggest if a listing may be closed. Your
+              feedback is saved in this browser.
             </p>
             <HotelList stationName={station.name} hotels={hotels} />
           </section>

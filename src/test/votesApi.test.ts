@@ -17,6 +17,7 @@ describe("fetchGlobalRatings", () => {
           hotelRatings: {
             "Aveiro::Hotel das Salinas": { up: 2, down: 0 },
           },
+          imageRatings: { Aveiro: { up: 5, down: 1 } },
         }),
       }),
     );
@@ -24,6 +25,7 @@ describe("fetchGlobalRatings", () => {
     const result = await fetchGlobalRatings();
     expect(result.ratings["Porto Campanhã"]).toEqual({ up: 3, down: 1 });
     expect(result.hotelRatings["Aveiro::Hotel das Salinas"]).toEqual({ up: 2, down: 0 });
+    expect(result.imageRatings.Aveiro).toEqual({ up: 5, down: 1 });
   });
 
   it("throws when storage is not configured", async () => {
