@@ -1,4 +1,4 @@
-import { stations, type Station } from "@/data/stations";
+import { stations, type Station } from "../data/stations";
 
 export function stationToSlug(name: string): string {
   return name

@@ -1,5 +1,5 @@
-import { stations } from "@/data/stations";
-import { getStationPath } from "@/lib/stationSlug";
+import { stations } from "../data/stations";
+import { getStationPath } from "./stationSlug";
 
 export type SitemapEntry = {
   path: string;
