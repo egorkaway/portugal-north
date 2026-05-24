@@ -1,11 +1,14 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { isVoteStorageConfigured } from "./lib/blobVotes.js";
 import {
-  applyVoteDelta,
+  applyHotelVoteDelta,
+  applyStationVoteDelta,
   isValidDirection,
-  isValidStationName,
+  isValidHotelKey,
+  isValidName,
   isValidVoteChange,
-  readGlobalRatings,
+  readGlobalHotelRatings,
+  readGlobalStationRatings,
 } from "./lib/voteLogic.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -19,16 +22,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     if (!isVoteStorageConfigured()) {
-      return res.status(200).json({ ratings: {}, configured: false });
+      return res.status(200).json({
+        ratings: {},
+        hotelRatings: {},
+        configured: false,
+      });
     }
 
     try {
-      const ratings = await readGlobalRatings();
-      return res.status(200).json({ ratings, configured: true });
+      const [ratings, hotelRatings] = await Promise.all([
+        readGlobalStationRatings(),
+        readGlobalHotelRatings(),
+      ]);
+      return res.status(200).json({ ratings, hotelRatings, configured: true });
     } catch {
-      return res
-        .status(503)
-        .json({ ratings: {}, configured: true, error: "storage_read_failed" });
+      return res.status(503).json({
+        ratings: {},
+        hotelRatings: {},
+        configured: true,
+        error: "storage_read_failed",
+      });
     }
   }
 
@@ -39,13 +52,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const body = req.body as {
       station?: string;
+      hotelKey?: string;
       previous?: "up" | "down" | null;
       next?: "up" | "down" | null;
     };
 
-    const { station, previous, next } = body;
+    const { station, hotelKey, previous, next } = body;
+
     if (
-      !isValidStationName(station) ||
       !isValidDirection(previous ?? null) ||
       !isValidDirection(next ?? null) ||
       !isValidVoteChange(previous ?? null, next ?? null)
@@ -54,7 +68,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
-      const stored = await applyVoteDelta(station, previous ?? null, next ?? null);
+      if (hotelKey !== undefined) {
+        if (!isValidHotelKey(hotelKey)) {
+          return res.status(400).json({ ok: false, reason: "invalid_payload" });
+        }
+        const stored = await applyHotelVoteDelta(hotelKey, previous ?? null, next ?? null);
+        return res.status(200).json({ ok: stored });
+      }
+
+      if (!isValidName(station)) {
+        return res.status(400).json({ ok: false, reason: "invalid_payload" });
+      }
+      const stored = await applyStationVoteDelta(station, previous ?? null, next ?? null);
       return res.status(200).json({ ok: stored });
     } catch {
       return res.status(500).json({ ok: false, reason: "storage_error" });

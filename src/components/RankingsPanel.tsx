@@ -1,9 +1,11 @@
-import { AlertCircle, RefreshCw, ThumbsDown, ThumbsUp } from "lucide-react";
+import { AlertCircle, BedDouble, RefreshCw, ThumbsDown, ThumbsUp, TrainFront } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
+import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
+import { getTopDownvotedHotels, getTopUpvotedHotels } from "@/lib/rankHotels";
 import { getTopDownvoted, getTopUpvoted } from "@/lib/rankStations";
 import { ratingsErrorMessage } from "@/lib/votesApi";
+import { stationToSlug } from "@/lib/stationSlug";
 import type { GlobalRatings } from "@/lib/voteTypes";
 
 export function RankingList({
@@ -18,7 +20,13 @@ export function RankingList({
   icon: typeof ThumbsUp;
   iconClassName: string;
   emptyLabel: string;
-  items: { name: string; up: number; down: number }[];
+  items: {
+    name: string;
+    up: number;
+    down: number;
+    subtitle?: string;
+    href?: string;
+  }[];
   countKey: "up" | "down";
 }) {
   return (
@@ -31,18 +39,29 @@ export function RankingList({
         <p className="text-sm text-muted-foreground">{emptyLabel}</p>
       ) : (
         <ol className="space-y-3">
-          {items.map((station, index) => (
-            <li key={station.name} className="flex items-start justify-between gap-3">
+          {items.map((item, index) => (
+            <li key={item.name + (item.subtitle ?? "")} className="flex items-start justify-between gap-3">
               <div className="min-w-0">
                 <p className="text-sm font-medium text-foreground">
                   <span className="mr-2 text-muted-foreground">{index + 1}.</span>
-                  {station.name}
+                  {item.name}
                 </p>
+                {item.subtitle && (
+                  <p className="mt-0.5 pl-5 text-xs text-muted-foreground">
+                    {item.href ? (
+                      <Link to={item.href} className="hover:text-primary hover:underline">
+                        {item.subtitle}
+                      </Link>
+                    ) : (
+                      item.subtitle
+                    )}
+                  </p>
+                )}
               </div>
               <span
                 className={`shrink-0 text-sm font-semibold tabular-nums ${iconClassName}`}
               >
-                {station[countKey]}
+                {item[countKey]}
               </span>
             </li>
           ))}
@@ -52,40 +71,54 @@ export function RankingList({
   );
 }
 
-function getVoteTotals(ratings: GlobalRatings) {
-  let stationsWithVotes = 0;
+function getVoteTotals(ratings: GlobalRatings, label: string) {
+  let itemsWithVotes = 0;
   let up = 0;
   let down = 0;
 
   for (const counts of Object.values(ratings)) {
     if (counts.up > 0 || counts.down > 0) {
-      stationsWithVotes += 1;
+      itemsWithVotes += 1;
       up += counts.up;
       down += counts.down;
     }
   }
 
-  return { stationsWithVotes, up, down };
+  return { itemsWithVotes, up, down, label };
 }
 
 type RankingsPanelProps = {
   alwaysShow?: boolean;
+  /** Homepage teaser: only top stations, link to /rankings for hotels */
+  stationsOnly?: boolean;
   showDetailedError?: boolean;
   rankingsHref?: string;
 };
 
 export function RankingsPanel({
   alwaysShow = false,
+  stationsOnly = false,
   showDetailedError = false,
   rankingsHref,
 }: RankingsPanelProps) {
   const queryClient = useQueryClient();
-  const { data, isLoading, isError, error, isFetching } = useGlobalStationRatings();
-  const ratings = data?.ratings;
-  const topUp = ratings ? getTopUpvoted(ratings) : [];
-  const topDown = ratings ? getTopDownvoted(ratings) : [];
-  const totals = ratings ? getVoteTotals(ratings) : null;
-  const hasRankings = topUp.length > 0 || topDown.length > 0;
+  const { data, isLoading, isError, error, isFetching } = useGlobalRatings();
+
+  const stationRatings = data?.ratings;
+  const hotelRatings = data?.hotelRatings;
+  const topStationsUp = stationRatings ? getTopUpvoted(stationRatings) : [];
+  const topStationsDown = stationRatings ? getTopDownvoted(stationRatings) : [];
+  const topHotelsUp = hotelRatings ? getTopUpvotedHotels(hotelRatings) : [];
+  const topHotelsDown = hotelRatings ? getTopDownvotedHotels(hotelRatings) : [];
+
+  const stationTotals = stationRatings ? getVoteTotals(stationRatings, "stations") : null;
+  const hotelTotals = hotelRatings ? getVoteTotals(hotelRatings, "hotels") : null;
+
+  const hasStationRankings = topStationsUp.length > 0 || topStationsDown.length > 0;
+  const hasHotelRankings = topHotelsUp.length > 0 || topHotelsDown.length > 0;
+  const hasRankings = stationsOnly
+    ? hasStationRankings
+    : hasStationRankings || hasHotelRankings;
 
   if (isLoading) {
     return (
@@ -109,16 +142,14 @@ export function RankingsPanel({
               </p>
               {showDetailedError && (
                 <p className="mt-2 text-xs text-muted-foreground">
-                  Votes on station cards are still saved in your browser. Global totals
-                  require the Vercel API route and a Blob store (Storage → Blob) on this project.
+                  Votes on station and hotel cards are still saved in your browser. Global
+                  totals require the Vercel API route and a Blob store on this project.
                 </p>
               )}
             </div>
             <button
               type="button"
-              onClick={() =>
-                queryClient.invalidateQueries({ queryKey: ["global-station-ratings"] })
-              }
+              onClick={() => queryClient.invalidateQueries({ queryKey: ["global-ratings"] })}
               disabled={isFetching}
               className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-3 py-1.5 text-sm font-medium text-foreground transition-colors hover:bg-muted disabled:cursor-wait disabled:opacity-70"
             >
@@ -137,39 +168,106 @@ export function RankingsPanel({
   if (!alwaysShow && !hasRankings) {
     return (
       <p className="text-sm text-muted-foreground">
-        No community votes recorded yet. Vote on any station card to help build the
-        rankings.
+        No community votes recorded yet. Vote on stations and hotels across the site to help
+        build the rankings.
       </p>
     );
   }
 
+  const hotelItemsUp = topHotelsUp.map((h) => ({
+    name: h.hotelName,
+    up: h.up,
+    down: h.down,
+    subtitle: h.stationName,
+    href: h.stationName ? `/stations/${stationToSlug(h.stationName)}` : undefined,
+  }));
+
+  const hotelItemsDown = topHotelsDown.map((h) => ({
+    name: h.hotelName,
+    up: h.up,
+    down: h.down,
+    subtitle: h.stationName,
+    href: h.stationName ? `/stations/${stationToSlug(h.stationName)}` : undefined,
+  }));
+
   return (
-    <div className="space-y-6">
-      {totals && (
-        <p className="text-sm text-muted-foreground">
-          {totals.stationsWithVotes === 0
-            ? "No community votes recorded yet."
-            : `${totals.up.toLocaleString()} upvotes and ${totals.down.toLocaleString()} downvotes across ${totals.stationsWithVotes.toLocaleString()} stations.`}
-        </p>
+    <div className="space-y-10">
+      <section aria-labelledby={stationsOnly ? undefined : "station-rankings-heading"}>
+        {!stationsOnly && (
+          <div className="mb-4 flex items-center gap-2">
+            <TrainFront className="h-5 w-5 text-primary" aria-hidden="true" />
+            <h2 id="station-rankings-heading" className="font-display text-2xl text-foreground">
+              Station rankings
+            </h2>
+          </div>
+        )}
+        {stationTotals && (
+          <p className="mb-4 text-sm text-muted-foreground">
+            {stationTotals.itemsWithVotes === 0
+              ? "No station votes yet."
+              : `${stationTotals.up.toLocaleString()} upvotes and ${stationTotals.down.toLocaleString()} downvotes across ${stationTotals.itemsWithVotes.toLocaleString()} stations.`}
+          </p>
+        )}
+        <div className="grid gap-4 sm:grid-cols-2">
+          <RankingList
+            title="Top upvoted"
+            icon={ThumbsUp}
+            iconClassName="text-primary"
+            emptyLabel="No upvotes yet. Vote on a station card to get started."
+            items={topStationsUp}
+            countKey="up"
+          />
+          <RankingList
+            title="Most downvoted"
+            icon={ThumbsDown}
+            iconClassName="text-destructive"
+            emptyLabel="No downvotes yet."
+            items={topStationsDown}
+            countKey="down"
+          />
+        </div>
+      </section>
+
+      {!stationsOnly && (
+        <section aria-labelledby="hotel-rankings-heading">
+          <div className="mb-4 flex items-center gap-2">
+            <BedDouble className="h-5 w-5 text-primary" aria-hidden="true" />
+            <h2 id="hotel-rankings-heading" className="font-display text-2xl text-foreground">
+              Hotel rankings
+            </h2>
+          </div>
+          <p className="mb-4 text-sm text-muted-foreground">
+            One national leaderboard for every recommended hotel, no matter which station it
+            serves.
+          </p>
+          {hotelTotals && (
+            <p className="mb-4 text-sm text-muted-foreground">
+              {hotelTotals.itemsWithVotes === 0
+                ? "No hotel votes yet."
+                : `${hotelTotals.up.toLocaleString()} upvotes and ${hotelTotals.down.toLocaleString()} downvotes across ${hotelTotals.itemsWithVotes.toLocaleString()} hotels.`}
+            </p>
+          )}
+          <div className="grid gap-4 sm:grid-cols-2">
+            <RankingList
+              title="Top upvoted"
+              icon={ThumbsUp}
+              iconClassName="text-primary"
+              emptyLabel="No upvotes yet. Vote on a station page to rate hotels."
+              items={hotelItemsUp}
+              countKey="up"
+            />
+            <RankingList
+              title="Most downvoted"
+              icon={ThumbsDown}
+              iconClassName="text-destructive"
+              emptyLabel="No downvotes yet."
+              items={hotelItemsDown}
+              countKey="down"
+            />
+          </div>
+        </section>
       )}
-      <div className="grid gap-4 sm:grid-cols-2">
-        <RankingList
-          title="Top upvoted"
-          icon={ThumbsUp}
-          iconClassName="text-primary"
-          emptyLabel="No upvotes yet. Vote on a station card to get started."
-          items={topUp}
-          countKey="up"
-        />
-        <RankingList
-          title="Most downvoted"
-          icon={ThumbsDown}
-          iconClassName="text-destructive"
-          emptyLabel="No downvotes yet."
-          items={topDown}
-          countKey="down"
-        />
-      </div>
+
       {rankingsHref && (
         <p className="text-sm">
           <Link

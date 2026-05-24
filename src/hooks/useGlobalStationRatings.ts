@@ -1,11 +1,22 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchGlobalRatings } from "@/lib/votesApi";
 
-export function useGlobalStationRatings() {
+export function useGlobalRatings() {
   return useQuery({
-    queryKey: ["global-station-ratings"],
+    queryKey: ["global-ratings"],
     queryFn: fetchGlobalRatings,
     staleTime: 60_000,
     retry: 1,
   });
+}
+
+/** Station-only slice of global ratings (backwards compatible). */
+export function useGlobalStationRatings() {
+  const query = useGlobalRatings();
+  return {
+    ...query,
+    data: query.data
+      ? { ratings: query.data.ratings, configured: query.data.configured }
+      : undefined,
+  };
 }

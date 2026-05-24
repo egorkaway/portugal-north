@@ -16,7 +16,7 @@ export function StationRankings() {
             Community rankings
           </h2>
           <p className="text-sm text-muted-foreground">
-            Global upvotes and downvotes from visitors. Your vote counts too.
+            Top stations by global votes. See hotel rankings on the full page.
           </p>
         </div>
         <Link
@@ -26,7 +26,7 @@ export function StationRankings() {
           Full rankings page
         </Link>
       </div>
-      <RankingsPanel />
+      <RankingsPanel stationsOnly rankingsHref="/rankings" />
     </section>
   );
 }

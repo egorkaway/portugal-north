@@ -73,7 +73,7 @@ export function useStationVote(stationName: string) {
     writeVotes(current);
     emit();
     void syncVoteToServer(stationName, previous, next).then(() => {
-      queryClient.invalidateQueries({ queryKey: ["global-station-ratings"] });
+      queryClient.invalidateQueries({ queryKey: ["global-ratings"] });
     });
   };
 

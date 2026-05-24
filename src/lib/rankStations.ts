@@ -1,3 +1,7 @@
+import {
+  getTopDownvoted as rankTopDown,
+  getTopUpvoted as rankTopUp,
+} from "@/lib/rankVotes";
 import type { GlobalRatings } from "@/lib/voteTypes";
 
 export type RankedStation = {
@@ -7,27 +11,9 @@ export type RankedStation = {
 };
 
 export function getTopUpvoted(ratings: GlobalRatings, limit = 3): RankedStation[] {
-  return Object.entries(ratings)
-    .filter(([, counts]) => counts.up > 0)
-    .sort(
-      (a, b) =>
-        b[1].up - a[1].up ||
-        b[1].up - b[1].down - (a[1].up - a[1].down) ||
-        a[0].localeCompare(b[0]),
-    )
-    .slice(0, limit)
-    .map(([name, counts]) => ({ name, ...counts }));
+  return rankTopUp(ratings, limit).map(({ id, up, down }) => ({ name: id, up, down }));
 }
 
 export function getTopDownvoted(ratings: GlobalRatings, limit = 3): RankedStation[] {
-  return Object.entries(ratings)
-    .filter(([, counts]) => counts.down > 0)
-    .sort(
-      (a, b) =>
-        b[1].down - a[1].down ||
-        a[1].up - a[1].down - (b[1].up - b[1].down) ||
-        a[0].localeCompare(b[0]),
-    )
-    .slice(0, limit)
-    .map(([name, counts]) => ({ name, ...counts }));
+  return rankTopDown(ratings, limit).map(({ id, up, down }) => ({ name: id, up, down }));
 }

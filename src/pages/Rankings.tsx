@@ -11,12 +11,12 @@ const Rankings = () => {
         <title>Community Rankings | Portugal by Train</title>
         <meta
           name="description"
-          content="See which CP train stations visitors rate highest and lowest, based on global community votes."
+          content="See which CP train stations and budget hotels visitors rate highest and lowest across Portugal."
         />
         <meta property="og:title" content="Community Rankings | Portugal by Train" />
         <meta
           property="og:description"
-          content="See which CP train stations visitors rate highest and lowest, based on global community votes."
+          content="Community rankings for CP stations and budget hotels across Portugal."
         />
         <meta property="og:url" content={absoluteUrl("/rankings")} />
       </Helmet>
@@ -27,7 +27,7 @@ const Rankings = () => {
             <div>
               <h1 className="font-display text-3xl md:text-4xl">Community rankings</h1>
               <p className="mt-1 text-sm text-primary-foreground/85">
-                Top and bottom stations by global visitor votes
+                Stations and hotels ranked by visitor votes across Portugal
               </p>
             </div>
           </div>
@@ -44,9 +44,9 @@ const Rankings = () => {
 
           <div className="mb-8 space-y-2">
             <p className="text-muted-foreground">
-              These rankings come from thumbs up and down votes on station cards across
-              the site. If the API or vote storage is misconfigured on deployment, the
-              error below explains what went wrong.
+              Rankings come from thumbs up and down on station cards and on hotel lists at
+              each station page. If vote storage is misconfigured, the error below explains
+              what went wrong.
             </p>
           </div>
 

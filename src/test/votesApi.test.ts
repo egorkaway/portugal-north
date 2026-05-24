@@ -6,7 +6,7 @@ describe("fetchGlobalRatings", () => {
     vi.unstubAllGlobals();
   });
 
-  it("returns ratings when storage is configured", async () => {
+  it("returns station and hotel ratings when storage is configured", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({
@@ -14,12 +14,16 @@ describe("fetchGlobalRatings", () => {
         json: async () => ({
           configured: true,
           ratings: { "Porto Campanhã": { up: 3, down: 1 } },
+          hotelRatings: {
+            "Aveiro::Hotel das Salinas": { up: 2, down: 0 },
+          },
         }),
       }),
     );
 
     const result = await fetchGlobalRatings();
     expect(result.ratings["Porto Campanhã"]).toEqual({ up: 3, down: 1 });
+    expect(result.hotelRatings["Aveiro::Hotel das Salinas"]).toEqual({ up: 2, down: 0 });
   });
 
   it("throws when storage is not configured", async () => {
@@ -27,7 +31,7 @@ describe("fetchGlobalRatings", () => {
       "fetch",
       vi.fn().mockResolvedValue({
         ok: true,
-        json: async () => ({ configured: false, ratings: {} }),
+        json: async () => ({ configured: false, ratings: {}, hotelRatings: {} }),
       }),
     );
 

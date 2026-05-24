@@ -1,7 +1,9 @@
 import { get, list, put } from "@vercel/blob";
 import type { GlobalRatings } from "./voteLogic.js";
 
-const PATHNAME = "station-votes.json";
+export const STATION_VOTES_PATH = "station-votes.json";
+export const HOTEL_VOTES_PATH = "hotel-votes.json";
+
 const BLOB_ACCESS = "private" as const;
 const OPERATION_TIMEOUT_MS = 6_000;
 
@@ -25,47 +27,58 @@ function blobClientOptions() {
   };
 }
 
-function normalizeRatings(raw: unknown): GlobalRatings {
+export function normalizeRatings(raw: unknown): GlobalRatings {
   if (!raw || typeof raw !== "object") return {};
   const ratings: GlobalRatings = {};
 
-  for (const [station, value] of Object.entries(raw as Record<string, unknown>)) {
+  for (const [key, value] of Object.entries(raw as Record<string, unknown>)) {
     if (!value || typeof value !== "object") continue;
     const entry = value as { up?: unknown; down?: unknown };
     const up = Math.max(0, Math.floor(Number(entry.up) || 0));
     const down = Math.max(0, Math.floor(Number(entry.down) || 0));
-    if (up > 0 || down > 0) ratings[station] = { up, down };
+    if (up > 0 || down > 0) ratings[key] = { up, down };
   }
 
   return ratings;
 }
 
-export async function readRatingsFromBlob(): Promise<GlobalRatings> {
+async function readJsonFromBlob(pathname: string): Promise<unknown> {
   const opts = blobClientOptions();
 
-  const { blobs } = await list({ prefix: PATHNAME, limit: 1, ...opts });
-  if (!blobs.some((blob) => blob.pathname === PATHNAME)) {
-    return {};
+  const { blobs } = await list({ prefix: pathname, limit: 1, ...opts });
+  if (!blobs.some((blob) => blob.pathname === pathname)) {
+    return null;
   }
 
-  const result = await get(PATHNAME, opts);
-  if (!result?.stream) return {};
+  const result = await get(pathname, opts);
+  if (!result?.stream) return null;
 
   const text = await new Response(result.stream).text();
-  if (!text) return {};
+  if (!text) return null;
 
   try {
-    return normalizeRatings(JSON.parse(text));
+    return JSON.parse(text);
   } catch {
-    return {};
+    return null;
   }
 }
 
-export async function writeRatingsToBlob(ratings: GlobalRatings): Promise<void> {
-  await put(PATHNAME, JSON.stringify(ratings), {
+async function writeJsonToBlob(pathname: string, ratings: GlobalRatings): Promise<void> {
+  await put(pathname, JSON.stringify(ratings), {
     ...blobClientOptions(),
     addRandomSuffix: false,
     allowOverwrite: true,
     contentType: "application/json",
   });
+}
+
+export async function readRatingsFromBlob(pathname: string): Promise<GlobalRatings> {
+  return normalizeRatings(await readJsonFromBlob(pathname));
+}
+
+export async function writeRatingsToBlob(
+  pathname: string,
+  ratings: GlobalRatings,
+): Promise<void> {
+  await writeJsonToBlob(pathname, ratings);
 }

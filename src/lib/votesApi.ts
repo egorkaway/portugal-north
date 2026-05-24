@@ -1,9 +1,15 @@
-import type { GlobalRatings, VoteDirection, VoteSyncPayload } from "@/lib/voteTypes";
+import type {
+  GlobalRatings,
+  HotelVoteSyncPayload,
+  StationVoteSyncPayload,
+  VoteDirection,
+} from "@/lib/voteTypes";
 
 const API_BASE = "/api/votes";
 
 export type GlobalRatingsResult = {
   ratings: GlobalRatings;
+  hotelRatings: GlobalRatings;
   configured: boolean;
 };
 
@@ -31,22 +37,33 @@ export function ratingsErrorMessage(error: unknown): string {
   return "Could not load community ratings.";
 }
 
-export async function syncVoteToServer(
-  station: string,
-  previous: VoteDirection | null,
-  next: VoteDirection | null,
-): Promise<void> {
-  const payload: VoteSyncPayload = { station, previous, next };
+async function postVote(body: StationVoteSyncPayload | HotelVoteSyncPayload): Promise<void> {
   try {
     await fetch(API_BASE, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(body),
       keepalive: true,
     });
   } catch {
     // Local cookie vote still works if the API is unreachable.
   }
+}
+
+export async function syncVoteToServer(
+  station: string,
+  previous: VoteDirection | null,
+  next: VoteDirection | null,
+): Promise<void> {
+  await postVote({ station, previous, next });
+}
+
+export async function syncHotelVoteToServer(
+  hotelKey: string,
+  previous: VoteDirection | null,
+  next: VoteDirection | null,
+): Promise<void> {
+  await postVote({ hotelKey, previous, next });
 }
 
 export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
@@ -79,9 +96,13 @@ export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
     );
   }
 
-  let data: { ratings?: GlobalRatings; configured?: boolean };
+  let data: {
+    ratings?: GlobalRatings;
+    hotelRatings?: GlobalRatings;
+    configured?: boolean;
+  };
   try {
-    data = (await res.json()) as { ratings?: GlobalRatings; configured?: boolean };
+    data = (await res.json()) as typeof data;
   } catch {
     throw new RatingsFetchError(
       "Ratings API returned an invalid response.",
@@ -98,6 +119,7 @@ export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
 
   return {
     ratings: data.ratings ?? {},
+    hotelRatings: data.hotelRatings ?? {},
     configured: true,
   };
 }
