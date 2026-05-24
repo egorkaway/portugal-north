@@ -1,0 +1,22 @@
+{
+  "protocolVersion": "2025-06-18",
+  "serverInfo": {
+    "name": "com.verystays/portugal-by-train",
+    "title": "Portugal by Train",
+    "version": "1.0.0",
+    "description": "CP train stations across Portugal with hotel suggestions, live departures, and community ratings."
+  },
+  "transport": {
+    "type": "streamable-http",
+    "endpoint": "https://www.verystays.com/api/mcp"
+  },
+  "capabilities": {
+    "tools": {},
+    "resources": {},
+    "prompts": {}
+  },
+  "authentication": {
+    "required": false
+  },
+  "documentationUrl": "https://www.verystays.com/docs/api"
+}

@@ -21,6 +21,34 @@ async function handleApiCatalogDev(
   return true;
 }
 
+async function handleMcpServerCardDev(
+  req: IncomingMessage,
+  res: ServerResponse,
+): Promise<boolean> {
+  if (req.url !== "/.well-known/mcp/server-card.json") return false;
+
+  const { buildMcpServerCard } = await import("./api/lib/mcpServerCard.ts");
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.end(JSON.stringify(buildMcpServerCard(siteUrl), null, 2));
+  return true;
+}
+
+async function handleAgentSkillsIndexDev(
+  req: IncomingMessage,
+  res: ServerResponse,
+): Promise<boolean> {
+  if (req.url !== "/.well-known/agent-skills/index.json") return false;
+
+  const { buildAgentSkillsIndex } = await import("./api/lib/agentSkillsIndex.ts");
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "application/json; charset=utf-8");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.end(JSON.stringify(buildAgentSkillsIndex(siteUrl), null, 2));
+  return true;
+}
+
 async function handleDeparturesDevApi(
   req: IncomingMessage,
   res: ServerResponse,
@@ -74,6 +102,8 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
           void handleApiCatalogDev(req, res)
+            .then((handled) => (handled ? true : handleMcpServerCardDev(req, res)))
+            .then((handled) => (handled ? true : handleAgentSkillsIndexDev(req, res)))
             .then((handled) => (handled ? true : handleDeparturesDevApi(req, res)))
             .then((handled) => {
               if (!handled) next();

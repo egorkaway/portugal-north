@@ -38,6 +38,10 @@ When you vote, the change is also sent to `/api/votes`, which updates aggregate 
 
 ### Agent discovery
 
+`/.well-known/agent-skills/index.json` publishes an [Agent Skills Discovery](https://github.com/cloudflare/agent-skills-discovery-rfc) v0.2.0 index (`$schema`, `skills[]` with `name`, `type`, `description`, `url`, `digest`). Skill sources live in `api/agent-skills/`; run `node scripts/sync-agent-skills-public.mjs` to refresh `public/.well-known/agent-skills/`.
+
+`/.well-known/mcp/server-card.json` publishes an [MCP Server Card](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127) (SEP-1649) with `serverInfo`, Streamable HTTP `transport` (`/api/mcp`), and `capabilities` (tools/resources/prompts surfaces declared, not yet implemented).
+
 The homepage response includes [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288) `Link` headers (via `vercel.json`) pointing to:
 
 - `/.well-known/api-catalog` — [RFC 9727](https://www.rfc-editor.org/rfc/rfc9727) API catalog (`application/linkset+json`), served by `api/api-catalog.ts` with `service-desc`, `service-doc`, and `status` links

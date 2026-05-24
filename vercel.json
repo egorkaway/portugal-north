@@ -1,6 +1,14 @@
 {
   "rewrites": [
     { "source": "/.well-known/api-catalog", "destination": "/api/api-catalog" },
+    {
+      "source": "/.well-known/mcp/server-card.json",
+      "destination": "/api/mcp-server-card"
+    },
+    {
+      "source": "/.well-known/agent-skills/index.json",
+      "destination": "/api/agent-skills-index"
+    },
     { "source": "/docs/api", "destination": "/docs/api.md" },
     {
       "source": "/((?!api/|\\.well-known/|docs/).*)",
@@ -27,6 +35,40 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=3600"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/mcp/server-card.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        }
+      ]
+    },
+    {
+      "source": "/.well-known/agent-skills/index.json",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
     },
@@ -60,6 +102,9 @@
   "functions": {
     "api/**/*.ts": {
       "maxDuration": 10
+    },
+    "api/agent-skills-index.ts": {
+      "includeFiles": "api/agent-skills/**"
     }
   }
 }
