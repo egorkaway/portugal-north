@@ -1,7 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { ArrowLeft, TrainFront } from "lucide-react";
 import { Link } from "react-router-dom";
+import { JsonLd } from "@/components/JsonLd";
 import { RankingsPanel } from "@/components/RankingsPanel";
+import { buildRankingsStructuredData } from "@/lib/structuredData";
 import { absoluteUrl } from "@/lib/site";
 
 const Rankings = () => {
@@ -19,7 +21,9 @@ const Rankings = () => {
           content="Community rankings for CP stations and budget hotels across Portugal."
         />
         <meta property="og:url" content={absoluteUrl("/rankings")} />
+        <link rel="canonical" href={absoluteUrl("/rankings")} />
       </Helmet>
+      <JsonLd data={buildRankingsStructuredData()} />
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">
           <div className="mx-auto flex max-w-5xl items-center gap-3 px-6 py-8">

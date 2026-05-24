@@ -19,6 +19,9 @@ import {
   getStationOgDescription,
   getStationPageTitle,
 } from "@/lib/stationMeta";
+import { JsonLd } from "@/components/JsonLd";
+import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
+import { buildStationStructuredData } from "@/lib/structuredData";
 import { getStationBySlug } from "@/lib/stationSlug";
 import { absoluteUrl } from "@/lib/site";
 
@@ -41,11 +44,20 @@ const Station = () => {
   const hotels = stationHotels[station.name] || [];
   const imageUrl = stationImages[station.name];
   const { vote, cast } = useStationVote(station.name);
+  const { data: globalVotes } = useGlobalRatings();
   const path = `/stations/${slug}`;
   const pageTitle = getStationPageTitle(station);
   const metaDescription = getStationMetaDescription(station, hotels);
   const ogDescription = getStationOgDescription(station, hotels);
   const canonicalUrl = absoluteUrl(path);
+  const structuredData = buildStationStructuredData({
+    station,
+    slug: slug!,
+    hotels,
+    imageUrl,
+    stationRatings: globalVotes?.ratings,
+    hotelRatings: globalVotes?.hotelRatings,
+  });
 
   return (
     <>
@@ -68,6 +80,7 @@ const Station = () => {
           </>
         )}
       </Helmet>
+      <JsonLd data={structuredData} />
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">
           <div className="mx-auto max-w-5xl px-6 py-8">

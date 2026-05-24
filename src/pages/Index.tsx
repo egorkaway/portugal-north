@@ -1,4 +1,6 @@
 import { useMemo, useState } from "react";
+import { Helmet } from "react-helmet-async";
+import { useSearchParams } from "react-router-dom";
 import { stations } from "@/data/stations";
 import { StationCard } from "@/components/StationCard";
 import { StationRankings } from "@/components/StationRankings";
@@ -11,7 +13,10 @@ import {
   Navigation,
 } from "lucide-react";
 import heroStation from "@/assets/hero-station.jpg";
+import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
+import { buildHomeStructuredData } from "@/lib/structuredData";
+import { absoluteUrl } from "@/lib/site";
 import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
 import { useAllVotes } from "@/hooks/useStationVote";
 import { useUserLocation } from "@/hooks/useUserLocation";
@@ -23,7 +28,8 @@ const allTypes = [...new Set(stations.flatMap((s) => s.types))];
 type VoteFilter = "up" | "down" | "none";
 
 const Index = () => {
-  const [search, setSearch] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
   const votes = useAllVotes();
@@ -79,8 +85,21 @@ const Index = () => {
     );
   }, [filtered, coords]);
 
+  const setSearchQuery = (value: string) => {
+    setSearch(value);
+    if (value.trim()) {
+      setSearchParams({ q: value }, { replace: true });
+    } else {
+      setSearchParams({}, { replace: true });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <link rel="canonical" href={absoluteUrl("/")} />
+      </Helmet>
+      <JsonLd data={buildHomeStructuredData()} />
       {/* Hero */}
       <header className="relative text-primary-foreground py-20 md:py-28 px-6 overflow-hidden bg-primary">
         <img
@@ -130,7 +149,7 @@ const Index = () => {
                 aria-label="Search station or line"
                 placeholder="Search station or line..."
                 value={search}
-                onChange={(e) => setSearch(e.target.value)}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full pl-9 pr-4 py-2 rounded-md border border-input bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
               />
             </div>
