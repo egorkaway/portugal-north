@@ -1,12 +1,7 @@
 import {
-  HOTEL_CLOSED_REPORTS_PATH,
-  HOTEL_VOTES_PATH,
-  readClosedReportsFromBlob,
-  readRatingsFromBlob,
-  STATION_IMAGE_VOTES_PATH,
-  STATION_VOTES_PATH,
-  writeClosedReportsToBlob,
-  writeRatingsToBlob,
+  readCommunityVotesFromBlob,
+  writeCommunityVotesToBlob,
+  type CommunityVotesBlob,
 } from "./blobVotes.js";
 
 type VoteDirection = "up" | "down";
@@ -38,11 +33,17 @@ export function applyDeltaInMemory(
 }
 
 export async function readGlobalStationRatings(): Promise<GlobalRatings> {
-  return readRatingsFromBlob(STATION_VOTES_PATH);
+  const data = await readCommunityVotesFromBlob();
+  return data.ratings;
 }
 
 export async function readGlobalHotelRatings(): Promise<GlobalRatings> {
-  return readRatingsFromBlob(HOTEL_VOTES_PATH);
+  const data = await readCommunityVotesFromBlob();
+  return data.hotelRatings;
+}
+
+export async function readAllCommunityVotes(): Promise<CommunityVotesBlob> {
+  return readCommunityVotesFromBlob();
 }
 
 export async function applyStationVoteDelta(
@@ -50,9 +51,9 @@ export async function applyStationVoteDelta(
   previous: VoteDirection | null,
   next: VoteDirection | null,
 ): Promise<boolean> {
-  const ratings = await readGlobalStationRatings();
-  const updated = applyDeltaInMemory(ratings, station, previous, next);
-  await writeRatingsToBlob(STATION_VOTES_PATH, updated);
+  const data = await readCommunityVotesFromBlob();
+  const updated = applyDeltaInMemory(data.ratings, station, previous, next);
+  await writeCommunityVotesToBlob({ ...data, ratings: updated });
   return true;
 }
 
@@ -61,14 +62,15 @@ export async function applyHotelVoteDelta(
   previous: VoteDirection | null,
   next: VoteDirection | null,
 ): Promise<boolean> {
-  const ratings = await readGlobalHotelRatings();
-  const updated = applyDeltaInMemory(ratings, hotelKey, previous, next);
-  await writeRatingsToBlob(HOTEL_VOTES_PATH, updated);
+  const data = await readCommunityVotesFromBlob();
+  const updated = applyDeltaInMemory(data.hotelRatings, hotelKey, previous, next);
+  await writeCommunityVotesToBlob({ ...data, hotelRatings: updated });
   return true;
 }
 
 export async function readGlobalStationImageRatings(): Promise<GlobalRatings> {
-  return readRatingsFromBlob(STATION_IMAGE_VOTES_PATH);
+  const data = await readCommunityVotesFromBlob();
+  return data.imageRatings;
 }
 
 export async function applyStationImageVoteDelta(
@@ -76,9 +78,9 @@ export async function applyStationImageVoteDelta(
   previous: VoteDirection | null,
   next: VoteDirection | null,
 ): Promise<boolean> {
-  const ratings = await readGlobalStationImageRatings();
-  const updated = applyDeltaInMemory(ratings, station, previous, next);
-  await writeRatingsToBlob(STATION_IMAGE_VOTES_PATH, updated);
+  const data = await readCommunityVotesFromBlob();
+  const updated = applyDeltaInMemory(data.imageRatings, station, previous, next);
+  await writeCommunityVotesToBlob({ ...data, imageRatings: updated });
   return true;
 }
 
@@ -103,7 +105,8 @@ export function applyClosedReportDeltaInMemory(
 }
 
 export async function readGlobalHotelClosedReports(): Promise<HotelClosedReports> {
-  return readClosedReportsFromBlob(HOTEL_CLOSED_REPORTS_PATH);
+  const data = await readCommunityVotesFromBlob();
+  return data.hotelClosedReports;
 }
 
 export async function applyHotelClosedReportDelta(
@@ -111,9 +114,14 @@ export async function applyHotelClosedReportDelta(
   wasReported: boolean,
   isReported: boolean,
 ): Promise<boolean> {
-  const reports = await readGlobalHotelClosedReports();
-  const updated = applyClosedReportDeltaInMemory(reports, hotelKey, wasReported, isReported);
-  await writeClosedReportsToBlob(HOTEL_CLOSED_REPORTS_PATH, updated);
+  const data = await readCommunityVotesFromBlob();
+  const updated = applyClosedReportDeltaInMemory(
+    data.hotelClosedReports,
+    hotelKey,
+    wasReported,
+    isReported,
+  );
+  await writeCommunityVotesToBlob({ ...data, hotelClosedReports: updated });
   return true;
 }
 

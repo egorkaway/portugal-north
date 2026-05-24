@@ -11,10 +11,7 @@ import {
   isValidName,
   isValidReportedFlag,
   isValidVoteChange,
-  readGlobalHotelClosedReports,
-  readGlobalHotelRatings,
-  readGlobalStationImageRatings,
-  readGlobalStationRatings,
+  readAllCommunityVotes,
 } from "./lib/voteLogic.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
@@ -38,12 +35,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     try {
-      const [ratings, hotelRatings, imageRatings, hotelClosedReports] = await Promise.all([
-        readGlobalStationRatings(),
-        readGlobalHotelRatings(),
-        readGlobalStationImageRatings(),
-        readGlobalHotelClosedReports(),
-      ]);
+      const { ratings, hotelRatings, imageRatings, hotelClosedReports } =
+        await readAllCommunityVotes();
       return res
         .status(200)
         .json({ ratings, hotelRatings, imageRatings, hotelClosedReports, configured: true });

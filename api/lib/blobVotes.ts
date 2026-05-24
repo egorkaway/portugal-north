@@ -1,10 +1,35 @@
-import { get, list, put } from "@vercel/blob";
+import { BlobNotFoundError, get, put } from "@vercel/blob";
 import type { GlobalRatings, HotelClosedReports } from "./voteLogic.js";
 
+/** Single blob for all community vote data (fewer reads than four separate files). */
+export const COMMUNITY_VOTES_PATH = "community-votes.json";
+
+/** Legacy paths — read only when migrating an older store. */
 export const STATION_VOTES_PATH = "station-votes.json";
 export const HOTEL_VOTES_PATH = "hotel-votes.json";
 export const STATION_IMAGE_VOTES_PATH = "station-image-votes.json";
 export const HOTEL_CLOSED_REPORTS_PATH = "hotel-closed-reports.json";
+
+const LEGACY_PATHS = [
+  STATION_VOTES_PATH,
+  HOTEL_VOTES_PATH,
+  STATION_IMAGE_VOTES_PATH,
+  HOTEL_CLOSED_REPORTS_PATH,
+] as const;
+
+export type CommunityVotesBlob = {
+  ratings: GlobalRatings;
+  hotelRatings: GlobalRatings;
+  imageRatings: GlobalRatings;
+  hotelClosedReports: HotelClosedReports;
+};
+
+const EMPTY_COMMUNITY_VOTES: CommunityVotesBlob = {
+  ratings: {},
+  hotelRatings: {},
+  imageRatings: {},
+  hotelClosedReports: {},
+};
 
 const BLOB_ACCESS = "private" as const;
 const OPERATION_TIMEOUT_MS = 6_000;
@@ -44,47 +69,6 @@ export function normalizeRatings(raw: unknown): GlobalRatings {
   return ratings;
 }
 
-async function readJsonFromBlob(pathname: string): Promise<unknown> {
-  const opts = blobClientOptions();
-
-  const { blobs } = await list({ prefix: pathname, limit: 1, ...opts });
-  if (!blobs.some((blob) => blob.pathname === pathname)) {
-    return null;
-  }
-
-  const result = await get(pathname, opts);
-  if (!result?.stream) return null;
-
-  const text = await new Response(result.stream).text();
-  if (!text) return null;
-
-  try {
-    return JSON.parse(text);
-  } catch {
-    return null;
-  }
-}
-
-async function writeJsonToBlob(pathname: string, data: GlobalRatings | HotelClosedReports): Promise<void> {
-  await put(pathname, JSON.stringify(data), {
-    ...blobClientOptions(),
-    addRandomSuffix: false,
-    allowOverwrite: true,
-    contentType: "application/json",
-  });
-}
-
-export async function readRatingsFromBlob(pathname: string): Promise<GlobalRatings> {
-  return normalizeRatings(await readJsonFromBlob(pathname));
-}
-
-export async function writeRatingsToBlob(
-  pathname: string,
-  ratings: GlobalRatings,
-): Promise<void> {
-  await writeJsonToBlob(pathname, ratings);
-}
-
 export function normalizeClosedReports(raw: unknown): HotelClosedReports {
   if (!raw || typeof raw !== "object") return {};
   const reports: HotelClosedReports = {};
@@ -99,13 +83,75 @@ export function normalizeClosedReports(raw: unknown): HotelClosedReports {
   return reports;
 }
 
-export async function readClosedReportsFromBlob(pathname: string): Promise<HotelClosedReports> {
-  return normalizeClosedReports(await readJsonFromBlob(pathname));
+function normalizeCommunityVotes(raw: unknown): CommunityVotesBlob {
+  if (!raw || typeof raw !== "object") return { ...EMPTY_COMMUNITY_VOTES };
+  const data = raw as Record<string, unknown>;
+  return {
+    ratings: normalizeRatings(data.ratings),
+    hotelRatings: normalizeRatings(data.hotelRatings),
+    imageRatings: normalizeRatings(data.imageRatings),
+    hotelClosedReports: normalizeClosedReports(data.hotelClosedReports),
+  };
 }
 
-export async function writeClosedReportsToBlob(
-  pathname: string,
-  reports: HotelClosedReports,
-): Promise<void> {
-  await writeJsonToBlob(pathname, reports);
+/** Direct get by pathname — no list() (list counts as an Advanced Operation). */
+async function readJsonFromBlob(pathname: string): Promise<unknown> {
+  try {
+    const result = await get(pathname, blobClientOptions());
+    if (!result?.stream) return null;
+
+    const text = await new Response(result.stream).text();
+    if (!text) return null;
+
+    try {
+      return JSON.parse(text);
+    } catch {
+      return null;
+    }
+  } catch (error) {
+    if (error instanceof BlobNotFoundError) return null;
+    throw error;
+  }
+}
+
+async function writeJsonToBlob(pathname: string, data: unknown): Promise<void> {
+  await put(pathname, JSON.stringify(data), {
+    ...blobClientOptions(),
+    addRandomSuffix: false,
+    allowOverwrite: true,
+    contentType: "application/json",
+  });
+}
+
+async function readLegacyCommunityVotes(): Promise<CommunityVotesBlob | null> {
+  const [ratingsRaw, hotelRatingsRaw, imageRatingsRaw, closedRaw] = await Promise.all(
+    LEGACY_PATHS.map((pathname) => readJsonFromBlob(pathname)),
+  );
+
+  const hasLegacy =
+    ratingsRaw != null ||
+    hotelRatingsRaw != null ||
+    imageRatingsRaw != null ||
+    closedRaw != null;
+
+  if (!hasLegacy) return null;
+
+  return {
+    ratings: normalizeRatings(ratingsRaw),
+    hotelRatings: normalizeRatings(hotelRatingsRaw),
+    imageRatings: normalizeRatings(imageRatingsRaw),
+    hotelClosedReports: normalizeClosedReports(closedRaw),
+  };
+}
+
+export async function readCommunityVotesFromBlob(): Promise<CommunityVotesBlob> {
+  const current = await readJsonFromBlob(COMMUNITY_VOTES_PATH);
+  if (current != null) return normalizeCommunityVotes(current);
+
+  const legacy = await readLegacyCommunityVotes();
+  return legacy ?? { ...EMPTY_COMMUNITY_VOTES };
+}
+
+export async function writeCommunityVotesToBlob(data: CommunityVotesBlob): Promise<void> {
+  await writeJsonToBlob(COMMUNITY_VOTES_PATH, data);
 }
