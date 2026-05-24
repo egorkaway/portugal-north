@@ -4,7 +4,8 @@ import type { GlobalRatings } from "./voteLogic.js";
 const PATHNAME = "station-votes.json";
 
 export function isVoteStorageConfigured(): boolean {
-  return Boolean(process.env.BLOB_READ_WRITE_TOKEN);
+  // Token from store creation, or OIDC when the store is linked to the project.
+  return Boolean(process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID);
 }
 
 function normalizeRatings(raw: unknown): GlobalRatings {
