@@ -10,5 +10,6 @@ describe("stationSlug", () => {
   it("slugifies names consistently", () => {
     expect(stationToSlug("São Bento (Porto)")).toBe("sao-bento-porto");
     expect(stationToSlug("Vila Nova de Gaia-Devesas")).toBe("vila-nova-de-gaia-devesas");
+    expect(getStationBySlug("paraimo-sangalhos")?.name).toBe("Paraimo-Sangalhos");
   });
 });
