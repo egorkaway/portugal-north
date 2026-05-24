@@ -75,7 +75,7 @@ api/
 public/
   og-image.jpg         # Social preview image (1200×630)
   logo.png             # Square logo for structured data (512×512)
-  sitemap.xml
+  sitemap.xml          # generated: home, /rankings, all /stations/* (vite build or npm run sitemap)
   robots.txt
   llms.txt             # AI crawler summary
 ```
