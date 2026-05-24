@@ -1,4 +1,5 @@
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
+import { syncVoteToServer } from "@/lib/votesApi";
 
 export type Vote = "up" | "down" | null;
 export type VotesMap = Record<string, "up" | "down">;
@@ -54,15 +55,22 @@ export function useStationVote(stationName: string) {
   const votes = useAllVotes();
   const vote: Vote = votes[stationName] ?? null;
 
-  const cast = (next: "up" | "down") => {
+  const cast = (direction: "up" | "down") => {
     const current = readVotes();
-    if (current[stationName] === next) {
+    const previous = current[stationName] ?? null;
+    let next: "up" | "down" | null;
+
+    if (previous === direction) {
       delete current[stationName];
+      next = null;
     } else {
-      current[stationName] = next;
+      current[stationName] = direction;
+      next = direction;
     }
+
     writeVotes(current);
     emit();
+    void syncVoteToServer(stationName, previous, next);
   };
 
   return { vote, cast };
