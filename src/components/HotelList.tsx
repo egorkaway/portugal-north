@@ -3,6 +3,40 @@ import type { Hotel } from "@/data/hotels";
 import { useHotelVote } from "@/hooks/useHotelVote";
 import { VoteButtons } from "@/components/VoteButtons";
 
+function HotelRowCompact({ stationName, hotel }: { stationName: string; hotel: Hotel }) {
+  const { vote, cast } = useHotelVote(stationName, hotel.name);
+
+  return (
+    <li>
+      <div className="flex items-start gap-2 rounded-md p-2 -mx-2 hover:bg-accent/50 transition-colors">
+        <a
+          href={hotel.bookingUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="min-w-0 flex-1"
+        >
+          <p className="text-sm font-medium text-foreground truncate">{hotel.name}</p>
+          <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
+            <Navigation className="h-3 w-3 shrink-0" aria-hidden="true" />
+            {hotel.distanceKm} km from station
+          </p>
+        </a>
+        <span className="flex shrink-0 items-center gap-0.5 whitespace-nowrap text-sm font-semibold text-primary">
+          <Euro className="h-3 w-3" aria-hidden="true" />
+          {hotel.priceFrom}
+          <span className="sr-only"> euros per night from</span>
+        </span>
+        <VoteButtons
+          vote={vote}
+          onUp={() => cast("up")}
+          onDown={() => cast("down")}
+          subjectLabel={hotel.name}
+        />
+      </div>
+    </li>
+  );
+}
+
 function HotelRow({ stationName, hotel }: { stationName: string; hotel: Hotel }) {
   const { vote, cast } = useHotelVote(stationName, hotel.name);
 
@@ -44,15 +78,27 @@ function HotelRow({ stationName, hotel }: { stationName: string; hotel: Hotel })
 export function HotelList({
   stationName,
   hotels,
+  variant = "full",
 }: {
   stationName: string;
   hotels: Hotel[];
+  variant?: "full" | "compact";
 }) {
   if (hotels.length === 0) {
     return (
       <p className="text-sm text-muted-foreground">
         No recommended hotels listed for this station yet.
       </p>
+    );
+  }
+
+  if (variant === "compact") {
+    return (
+      <ul className="space-y-2">
+        {hotels.map((hotel) => (
+          <HotelRowCompact key={hotel.name} stationName={stationName} hotel={hotel} />
+        ))}
+      </ul>
     );
   }
 

@@ -1,4 +1,5 @@
-import { MapPin, ExternalLink, BedDouble, Train, Navigation } from "lucide-react";
+import { MapPin, ExternalLink, BedDouble, Train, Navigation, ArrowRight } from "lucide-react";
+import { HotelList } from "@/components/HotelList";
 import { Link } from "react-router-dom";
 import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data/stations";
 import { stationHotels } from "@/data/hotels";
@@ -114,15 +115,19 @@ export function StationCard({
 
         {hotels.length > 0 && (
           <div className="border-t border-border pt-3 mt-auto">
-            <p className="text-xs text-muted-foreground mb-2">
-              {hotels.length} budget {hotels.length === 1 ? "stay" : "stays"} nearby
-            </p>
-            <Link
-              to={stationPath}
-              className="text-sm font-medium text-primary hover:underline"
-            >
-              View hotels and vote
-            </Link>
+            <div className="mb-2 flex items-center justify-between gap-2">
+              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                Budget stays nearby
+              </p>
+              <Link
+                to={stationPath}
+                className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-primary hover:underline"
+              >
+                Station page
+                <ArrowRight className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            </div>
+            <HotelList stationName={station.name} hotels={hotels} variant="compact" />
           </div>
         )}
       </div>
