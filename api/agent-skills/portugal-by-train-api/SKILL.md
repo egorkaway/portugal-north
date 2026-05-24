@@ -43,3 +43,13 @@ Apply one vote or closed-hotel report per request. Send JSON with exactly one ta
 ## Station pages
 
 Public HTML station guides live under `/stations/{slug}` (203 CP stops). Slugs are lowercase ASCII derived from station names.
+
+## WebMCP (browser)
+
+When loaded in a [WebMCP](https://webmachinelearning.github.io/webmcp/)-capable browser, the site registers tools via `navigator.modelContext.registerTool()`:
+
+- `search_stations` — find stations by name or line
+- `get_station` — station metadata by slug or name
+- `get_departures` — live CP departures
+- `get_community_rankings` — top voted stations
+- `navigate_to_station` — open `/stations/{slug}` in the tab
