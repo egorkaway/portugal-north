@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { stations } from "@/data/stations";
 import { StationCard } from "@/components/StationCard";
+import { StationRankings } from "@/components/StationRankings";
 import { Search, TrainFront, ThumbsUp, ThumbsDown, Circle, CloudSun, Smartphone, ExternalLink } from "lucide-react";
 import heroStation from "@/assets/hero-station.jpg";
 import footerDouro from "@/assets/footer-douro.jpg";
@@ -133,6 +134,8 @@ const Index = () => {
           </p>
         )}
       </main>
+
+      <StationRankings />
 
       {/* Footer */}
       <footer className="relative mt-12 text-primary-foreground overflow-hidden">

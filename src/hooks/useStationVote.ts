@@ -1,4 +1,5 @@
 import { useSyncExternalStore } from "react";
+import { useQueryClient } from "@tanstack/react-query";
 import { syncVoteToServer } from "@/lib/votesApi";
 
 export type Vote = "up" | "down" | null;
@@ -52,6 +53,7 @@ export function useAllVotes(): VotesMap {
 }
 
 export function useStationVote(stationName: string) {
+  const queryClient = useQueryClient();
   const votes = useAllVotes();
   const vote: Vote = votes[stationName] ?? null;
 
@@ -70,7 +72,9 @@ export function useStationVote(stationName: string) {
 
     writeVotes(current);
     emit();
-    void syncVoteToServer(stationName, previous, next);
+    void syncVoteToServer(stationName, previous, next).then(() => {
+      queryClient.invalidateQueries({ queryKey: ["global-station-ratings"] });
+    });
   };
 
   return { vote, cast };
