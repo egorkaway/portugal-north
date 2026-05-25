@@ -241,6 +241,7 @@ export const stationHotels: StationHotels = {
   "Paraimo-Sangalhos": [
     { name: "Quinta dos Abrigueiros", distanceKm: 1.2, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sangalhos%2C+Portugal&order=price" },
     { name: "Hotel das Termas da Curia", distanceKm: 2, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Paraimo%2C+Portugal&order=price" },
+    { name: "Estalagem de Sangalhos", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Estalagem%20de%20Sangalhos%2C%20Paraimo-Sangalhos%2C%20Portugal&order=price" },
   ],
   "Aguim": [
     { name: "Hotel das Termas da Curia", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aguim%2C+Portugal&order=price" },
@@ -298,6 +299,7 @@ export const stationHotels: StationHotels = {
   "Caxarias": [
     { name: "Hotel Mira Serra", distanceKm: 1.5, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caxarias%2C+Our%C3%A9m&order=price" },
     { name: "Hotel Santo António", distanceKm: 1.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Our%C3%A9m%2C+Portugal&order=price" },
+    { name: "Alojamento Local Manalvo", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamento%20Local%20Manalvo%2C%20Caxarias%2C%20Portugal&order=price" },
   ],
   "Lamarosa": [
     { name: "Hotel dos Templários", distanceKm: 1.5, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torres+Novas%2C+Portugal&order=price" },
@@ -334,6 +336,7 @@ export const stationHotels: StationHotels = {
   "Areosa": [
     { name: "Hotel Axis Viana", distanceKm: 1.8, priceFrom: 60, bookingUrl: "https://www.booking.com/searchresults.html?ss=Areosa%2C+Viana+do+Castelo&order=price" },
     { name: "Casa de Areosa", distanceKm: 0.6, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Areosa%2C+Viana+do+Castelo&order=price" },
+    { name: "Quinta Boa Viagem", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20Boa%20Viagem%2C%20Areosa%2C%20Portugal&order=price" },
   ],
   "Aregos": [
     { name: "Hotel Termas de São Vicente", distanceKm: 1.5, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caldas+de+Aregos%2C+Portugal&order=price" },
@@ -343,6 +346,7 @@ export const stationHotels: StationHotels = {
   "Mosteirô": [
     { name: "Quinta de Mosteirô", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mosteiro%2C+Cinfaes&order=price" },
     { name: "Douro Cliff Hotel", distanceKm: 1.9, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mosteiro%2C+Cinfaes&order=price" },
+    { name: "A Padaria Farmhouse", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=A%20Padaria%20Farmhouse%2C%20Mosteir%C3%B4%2C%20Portugal&order=price" },
   ],
   "Caldas de Vizela": [
     { name: "Hotel Bienestar Termas de Vizela", distanceKm: 0.4, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/bienestar-termas-de-vizela.html" },
@@ -367,10 +371,12 @@ export const stationHotels: StationHotels = {
   "Mogofores": [
     { name: "Quinta dos Abrigueiros", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mogofores%2C+Portugal&order=price" },
     { name: "Curia Palace Hotel", distanceKm: 1.4, priceFrom: 60, bookingUrl: "https://www.booking.com/hotel/pt/curia-palace.html" },
+    { name: "Curia Clube", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Curia%20Clube%2C%20Mogofores%2C%20Portugal&order=price" },
   ],
   "Avanca": [
     { name: "Casa Egas Moniz", distanceKm: 0.9, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Avanca%2C+Portugal&order=price" },
     { name: "Hotel Estarreja", distanceKm: 1.9, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Estarreja%2C+Portugal&order=price" },
+    { name: "Hospedaria La Mirandeza", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20La%20Mirandeza%2C%20Avanca%2C%20Portugal&order=price" },
   ],
   "Penafiel": [
     { name: "Penafiel Park Hotel & Spa", distanceKm: 1.2, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/penafiel-park-amp-spa.html" },
@@ -380,9 +386,12 @@ export const stationHotels: StationHotels = {
   "Paredes": [
     { name: "Hotel Comendador", distanceKm: 0.5, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Paredes%2C+Portugal&order=price" },
     { name: "Casa de Aveleda", distanceKm: 1.8, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Paredes%2C+Portugal&order=price" },
+    { name: "Hotel de Paredes", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20de%20Paredes%2C%20Paredes%2C%20Portugal&order=price" },
   ],
   "Cete": [
     { name: "Quinta de Cete", distanceKm: 0.7, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cete%2C+Paredes&order=price" },
+    { name: "Hotel Zé do Telhado", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Z%C3%A9%20do%20Telhado%2C%20Cete%2C%20Portugal&order=price" },
+    { name: "Hotel de Paredes", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20de%20Paredes%2C%20Cete%2C%20Portugal&order=price" },
   ],
   "Recarei-Sobreira": [
     { name: "Casa de Recarei", distanceKm: 1.1, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Recarei%2C+Paredes&order=price" },
