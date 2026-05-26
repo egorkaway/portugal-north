@@ -1,15 +1,15 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 
-const capture = vi.fn();
+const capturePostHog = vi.fn();
 
 vi.mock("@/lib/posthog", () => ({
   isPostHogEnabled: true,
-  posthog: { capture },
+  capturePostHog,
 }));
 
 describe("posthogEvents", () => {
   afterEach(() => {
-    capture.mockClear();
+    capturePostHog.mockClear();
     sessionStorage.clear();
   });
 
@@ -21,7 +21,7 @@ describe("posthogEvents", () => {
       hotelCount: 2,
       lineCount: 1,
     });
-    expect(capture).toHaveBeenCalledWith("station_viewed", {
+    expect(capturePostHog).toHaveBeenCalledWith("station_viewed", {
       station_name: "Aveiro",
       station_slug: "aveiro",
       hotel_count: 2,
@@ -38,7 +38,7 @@ describe("posthogEvents", () => {
       previous: null,
       next: "up",
     });
-    expect(capture).toHaveBeenCalledWith(
+    expect(capturePostHog).toHaveBeenCalledWith(
       "vote_cast",
       expect.objectContaining({
         vote_type: "hotel",
@@ -54,7 +54,7 @@ describe("posthogEvents", () => {
     const { trackPwaInstalled } = await import("@/lib/posthogEvents");
     trackPwaInstalled();
     trackPwaInstalled();
-    expect(capture).toHaveBeenCalledTimes(1);
-    expect(capture.mock.calls[0]?.[0]).toBe("pwa_installed");
+    expect(capturePostHog).toHaveBeenCalledTimes(1);
+    expect(capturePostHog.mock.calls[0]?.[0]).toBe("pwa_installed");
   });
 });

@@ -1,11 +1,10 @@
-import { isPostHogEnabled, posthog } from "@/lib/posthog";
+import { capturePostHog, isPostHogEnabled } from "@/lib/posthog";
 
 export type VoteType = "station" | "hotel" | "station_image";
 export type VoteDirection = "up" | "down";
 
 function capture(event: string, properties?: Record<string, unknown>): void {
-  if (!isPostHogEnabled) return;
-  posthog.capture(event, properties);
+  capturePostHog(event, properties);
 }
 
 export function trackStationViewed(options: {

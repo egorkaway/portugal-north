@@ -17,7 +17,25 @@ export function initPostHog(): void {
     person_profiles: "identified_only",
     capture_pageview: false,
     capture_pageleave: true,
+    ...(import.meta.env.DEV ? { debug: true } : {}),
   });
+}
+
+/** Queue-safe capture — waits for PostHog to finish loading. */
+export function capturePostHog(
+  event: string,
+  properties?: Record<string, unknown>,
+): void {
+  if (!isPostHogEnabled) return;
+
+  const send = () => posthog.capture(event, properties);
+
+  if (posthog.__loaded) {
+    send();
+    return;
+  }
+
+  posthog.on("loaded", send);
 }
 
 export { posthog };
