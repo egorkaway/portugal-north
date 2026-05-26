@@ -1,9 +1,8 @@
 #!/usr/bin/env node
 /**
- * Clear community imageRatings in Blob for stations listed in the last refresh report.
+ * Manually clear community imageRatings in Blob (normally done automatically on deploy).
  *
- *   BLOB_READ_WRITE_TOKEN=... node scripts/clear-refreshed-image-votes.mjs
- *   node scripts/clear-refreshed-image-votes.mjs --station "Oiã" "Aveiro"
+ *   BLOB_READ_WRITE_TOKEN=... node scripts/clear-refreshed-image-votes.mjs --station "Oiã"
  */
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";

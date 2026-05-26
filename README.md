@@ -158,30 +158,17 @@ node scripts/diversify-station-images.mjs      # fix duplicate Pexels URLs
 
 The fetch logic uses region/line-specific train search terms first, then falls back to **location-only** queries (e.g. “Braga Portugal”, “Douro Portugal landscape”) when a unique station photo cannot be found.
 
-#### Community-driven photo refresh (semi-automatic)
+#### Community-driven photo refresh (on deploy)
 
-Users can vote on station photos (“Does this photo represent …?”). When a photo gets enough **not representative** votes, refresh it from Wikimedia/Pexels and open a PR:
+On each **Vercel deploy**, the build runs `refresh-station-images-from-votes.mjs --build` before Vite:
 
-1. Set `PEXELS_API_KEY` in `.env` (and `BLOB_READ_WRITE_TOKEN` if you will reset vote totals).
-2. Preview candidates from live production votes:
+1. Reads photo vote totals and rejected-URL history from **Vercel Blob** (same store as community votes).
+2. For any station with **≥ 3** “not representative” votes, fetches a new Wikimedia/Pexels image (never reusing rejected URLs).
+3. Writes the new URLs into `src/data/stationImages.ts` (bundled into the site on that deploy).
+4. Clears vote counters for those stations so users can rate the new photo.
 
-   ```bash
-   npm run images:refresh-from-votes:dry
-   ```
+**Vercel env vars** (Production + Preview): `PEXELS_API_KEY`, `BLOB_READ_WRITE_TOKEN` (already used for votes). If either is missing, the step is skipped and the build continues.
 
-3. Apply changes, update `data/station-image-history.json` (rejected URLs are never reused), and write a report:
+Optional: `IMAGE_REFRESH_MAX_PER_BUILD=5` (default) limits how many stations refresh per deploy to keep builds fast.
 
-   ```bash
-   npm run images:refresh-from-votes
-   # optional: git branch + commit
-   node scripts/refresh-station-images-from-votes.mjs --create-branch
-   ```
-
-4. After the PR is deployed, clear stale vote counters for refreshed stations (optional but recommended):
-
-   ```bash
-   npm run images:clear-votes
-   # or: node scripts/refresh-station-images-from-votes.mjs --clear-votes  (same run as step 3)
-   ```
-
-Flags: `--min-down 3` (default), `--require-net-negative` (down > up), `--station "Name"`, `--api-base https://www.verystays.com`.
+Local preview: `npm run images:refresh-from-votes:dry`

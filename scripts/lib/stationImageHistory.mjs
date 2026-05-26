@@ -11,7 +11,6 @@ import { readFileSync, writeFileSync } from "node:fs";
 export function readImageHistory(historyPath) {
   try {
     const raw = JSON.parse(readFileSync(historyPath, "utf8"));
-    if (!raw || typeof raw !== "object") return {};
     return normalizeHistory(raw);
   } catch {
     return {};
@@ -22,7 +21,7 @@ export function readImageHistory(historyPath) {
  * @param {unknown} raw
  * @returns {StationImageHistory}
  */
-function normalizeHistory(raw) {
+export function normalizeHistory(raw) {
   /** @type {StationImageHistory} */
   const out = {};
   for (const [name, value] of Object.entries(raw)) {
