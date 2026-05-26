@@ -21,8 +21,11 @@ import { useLocale } from "@/i18n/LocaleProvider";
 import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
 import { useAllVotes } from "@/hooks/useStationVote";
 import { useUserLocation } from "@/hooks/useUserLocation";
-import { distanceKm } from "@/lib/geo";
-import { sortStationsByCommunityUpvotes } from "@/lib/rankStations";
+import {
+  sortStationsByCommunityUpvotes,
+  sortStationsByDistance,
+  stationDistancesKm,
+} from "@/lib/rankStations";
 
 const allTypes = [...new Set(stations.flatMap((s) => s.types))];
 
@@ -63,11 +66,7 @@ const Index = () => {
     });
 
     if (coords) {
-      return [...matches].sort(
-        (a, b) =>
-          distanceKm(coords.lat, coords.lng, a.lat, a.lng) -
-          distanceKm(coords.lat, coords.lng, b.lat, b.lng),
-      );
+      return sortStationsByDistance(matches, coords);
     }
 
     if (globalVotes?.configured && globalVotes.ratings) {
@@ -79,12 +78,7 @@ const Index = () => {
 
   const distanceByStation = useMemo(() => {
     if (!coords) return null;
-    return Object.fromEntries(
-      filtered.map((station) => [
-        station.name,
-        distanceKm(coords.lat, coords.lng, station.lat, station.lng),
-      ]),
-    );
+    return stationDistancesKm(filtered, coords);
   }, [filtered, coords]);
 
   const setSearchQuery = (value: string) => {

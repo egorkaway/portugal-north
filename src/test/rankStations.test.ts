@@ -3,7 +3,9 @@ import {
   getTopDownvoted,
   getTopUpvoted,
   sortStationsByCommunityUpvotes,
+  sortStationsByDistance,
 } from "@/lib/rankStations";
+import { distanceKm } from "@/lib/geo";
 import type { Station } from "@/data/stations";
 
 describe("rankStations", () => {
@@ -27,6 +29,27 @@ describe("rankStations", () => {
     });
 
     expect(ranked.map((s) => s.name)).toEqual(["Charlie", "Alpha", "Bravo"]);
+  });
+
+  it("sorts stations nearest-first from an origin", () => {
+    const origin = { lat: 41.1579, lng: -8.6291 };
+    const items: Station[] = [
+      { name: "Far", lines: [], types: [], lat: 40.6443, lng: -8.6455 },
+      { name: "Near", lines: [], types: [], lat: 41.1456, lng: -8.6109 },
+      { name: "Mid", lines: [], types: [], lat: 41.0078, lng: -8.6403 },
+    ];
+    const sorted = sortStationsByDistance(items, origin);
+    expect(sorted.map((s) => s.name)).toEqual(["Near", "Mid", "Far"]);
+
+    for (let i = 1; i < sorted.length; i++) {
+      const prev = sorted[i - 1];
+      const next = sorted[i];
+      expect(
+        distanceKm(origin.lat, origin.lng, next.lat, next.lng),
+      ).toBeGreaterThanOrEqual(
+        distanceKm(origin.lat, origin.lng, prev.lat, prev.lng),
+      );
+    }
   });
 
   it("sorts stations with upvotes ahead of the rest", () => {
