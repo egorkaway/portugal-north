@@ -169,7 +169,7 @@ export function StationFilters({
             )}
           >
             <Navigation className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-            <span className="hidden max-w-[4.5rem] truncate sm:inline md:max-w-[8rem]">
+            <span className="hidden max-w-[4.5rem] truncate sm:inline md:max-w-none md:overflow-visible md:text-clip md:whitespace-nowrap">
               {locationLabel}
             </span>
           </button>
