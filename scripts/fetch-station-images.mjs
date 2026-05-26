@@ -61,6 +61,7 @@ for (const station of targets) {
     if (result) {
       updateImageInMap(imageMap, station.name, result.url);
       added++;
+      writeImageMap(imagesPath, imageMap);
       console.log(`  ${station.name}: ${result.source}`);
     } else {
       console.log(`  ${station.name}: NOT FOUND`);
@@ -69,10 +70,6 @@ for (const station of targets) {
     console.log(`  ${station.name}: ERROR — ${error instanceof Error ? error.message : error}`);
   }
   await sleep(600);
-}
-
-if (added > 0) {
-  writeImageMap(imagesPath, imageMap);
 }
 
 console.log(`Done. Added ${added} image(s) to ${imagesPath}`);
