@@ -54,6 +54,36 @@ export function stationDistancesKm(
   );
 }
 
+/**
+ * Home grid ordering: distance when enabled + located; otherwise community upvotes when available.
+ * While distance sort is on but coords are not ready yet, keep filter order (no community bump).
+ */
+export function orderStationsForHome(
+  matches: Station[],
+  options: {
+    distanceSortOn: boolean;
+    coords: DistanceOrigin | null;
+    globalRatings: GlobalRatings | undefined;
+    votesConfigured: boolean;
+  },
+): Station[] {
+  const { distanceSortOn, coords, globalRatings, votesConfigured } = options;
+
+  if (distanceSortOn && coords) {
+    return sortStationsByDistance(matches, coords);
+  }
+
+  if (distanceSortOn) {
+    return matches;
+  }
+
+  if (votesConfigured && globalRatings) {
+    return sortStationsByCommunityUpvotes(matches, globalRatings);
+  }
+
+  return matches;
+}
+
 /** Put community upvoted stations first (most upvotes, then best net score). Preserves list order for ties / no votes. */
 export function sortStationsByCommunityUpvotes(
   items: Station[],

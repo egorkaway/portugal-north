@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   getTopDownvoted,
   getTopUpvoted,
+  orderStationsForHome,
   sortStationsByCommunityUpvotes,
   sortStationsByDistance,
 } from "@/lib/rankStations";
@@ -50,6 +51,33 @@ describe("rankStations", () => {
         distanceKm(origin.lat, origin.lng, prev.lat, prev.lng),
       );
     }
+  });
+
+  it("does not apply community order while distance sort is pending coords", () => {
+    const items: Station[] = [
+      { name: "Zeta", lines: [], types: [], lat: 0, lng: 0 },
+      { name: "Alpha", lines: [], types: [], lat: 0, lng: 0 },
+      { name: "Bravo", lines: [], types: [], lat: 0, lng: 0 },
+    ];
+    const ratings = {
+      Alpha: { up: 2, down: 0 },
+      Bravo: { up: 5, down: 1 },
+    };
+    const withoutDistance = orderStationsForHome(items, {
+      distanceSortOn: false,
+      coords: null,
+      globalRatings: ratings,
+      votesConfigured: true,
+    });
+    expect(withoutDistance.map((s) => s.name)).toEqual(["Bravo", "Alpha", "Zeta"]);
+
+    const pending = orderStationsForHome(items, {
+      distanceSortOn: true,
+      coords: null,
+      globalRatings: ratings,
+      votesConfigured: true,
+    });
+    expect(pending.map((s) => s.name)).toEqual(["Zeta", "Alpha", "Bravo"]);
   });
 
   it("sorts stations with upvotes ahead of the rest", () => {

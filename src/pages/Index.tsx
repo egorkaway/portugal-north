@@ -21,11 +21,7 @@ import { useLocale } from "@/i18n/LocaleProvider";
 import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
 import { useAllVotes } from "@/hooks/useStationVote";
 import { useUserLocation } from "@/hooks/useUserLocation";
-import {
-  sortStationsByCommunityUpvotes,
-  sortStationsByDistance,
-  stationDistancesKm,
-} from "@/lib/rankStations";
+import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
 
 const allTypes = [...new Set(stations.flatMap((s) => s.types))];
 
@@ -42,13 +38,13 @@ const Index = () => {
   const { state: locationState, coords, isActive: sortByDistance, requestLocation } =
     useUserLocation();
 
-  const sortByCommunityVotes =
-    !sortByDistance &&
-    Boolean(
-      globalVotes?.configured &&
-        globalVotes.ratings &&
-        Object.values(globalVotes.ratings).some((r) => r.up > 0),
-    );
+  const hasCommunityUpvotes = Boolean(
+    globalVotes?.configured &&
+      globalVotes.ratings &&
+      Object.values(globalVotes.ratings).some((r) => r.up > 0),
+  );
+
+  const sortByCommunityVotes = !sortByDistance && hasCommunityUpvotes;
 
   const filtered = useMemo(() => {
     const matches = stations.filter((s) => {
@@ -65,16 +61,13 @@ const Index = () => {
       return matchesSearch && matchesFilter && matchesVote;
     });
 
-    if (coords) {
-      return sortStationsByDistance(matches, coords);
-    }
-
-    if (globalVotes?.configured && globalVotes.ratings) {
-      return sortStationsByCommunityUpvotes(matches, globalVotes.ratings);
-    }
-
-    return matches;
-  }, [search, activeFilter, voteFilter, votes, coords, globalVotes]);
+    return orderStationsForHome(matches, {
+      distanceSortOn: sortByDistance,
+      coords,
+      globalRatings: globalVotes?.ratings,
+      votesConfigured: Boolean(globalVotes?.configured && globalVotes.ratings),
+    });
+  }, [search, activeFilter, voteFilter, votes, coords, sortByDistance, globalVotes]);
 
   const distanceByStation = useMemo(() => {
     if (!coords) return null;
@@ -158,7 +151,7 @@ const Index = () => {
               <Navigation className="h-4 w-4" aria-hidden="true" />
               {locationState.status === "loading"
                 ? t("home.locating")
-                : sortByDistance
+                : coords
                   ? t("home.sortedByDistance")
                   : t("home.sortByDistance")}
             </button>
@@ -208,11 +201,13 @@ const Index = () => {
       <main className="max-w-5xl mx-auto px-6 py-8">
         <p className="text-sm text-muted-foreground mb-4">
           {plural("home.stationCount", filtered.length, { count: filtered.length })}
-          {sortByDistance
+          {coords
             ? t("home.sortedByDistanceNote")
-            : sortByCommunityVotes
-              ? t("home.topCommunityPicks")
-              : ""}
+            : sortByDistance && locationState.status === "loading"
+              ? t("home.locating")
+              : sortByCommunityVotes
+                ? t("home.topCommunityPicks")
+                : ""}
           {locationState.status === "denied"
             ? t("home.locationDenied")
             : locationState.status === "unsupported"
