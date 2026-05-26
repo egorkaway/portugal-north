@@ -8,13 +8,13 @@ export function StationRankings() {
   return (
     <section
       aria-labelledby="community-rankings-heading"
-      className="max-w-5xl mx-auto px-6 py-12 border-t border-border"
+      className="mx-auto max-w-5xl border-t border-border px-4 py-8 md:px-6 md:py-12"
     >
-      <div className="mb-6 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+      <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between md:mb-6">
         <div>
           <h2
             id="community-rankings-heading"
-            className="font-display text-2xl md:text-3xl text-foreground mb-2"
+            className="mb-1 font-display text-xl text-foreground md:mb-2 md:text-3xl"
           >
             {t("rankings.communityTitle")}
           </h2>

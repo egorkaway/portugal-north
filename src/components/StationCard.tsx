@@ -36,7 +36,7 @@ export function StationCard({
 
   return (
     <div className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col">
-      <Link to={stationPath} className="block relative w-full aspect-[16/9] bg-muted overflow-hidden">
+      <Link to={stationPath} className="relative block aspect-[2/1] w-full overflow-hidden bg-muted sm:aspect-[16/9]">
         <img
           src={imageUrl}
           alt={t("station.stationPhotoAlt", { name: station.name })}
@@ -44,10 +44,10 @@ export function StationCard({
           className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </Link>
-      <div className="p-5 flex flex-col flex-1">
-        <div className="flex items-start justify-between gap-3 mb-3">
+      <div className="flex flex-1 flex-col p-4 md:p-5">
+        <div className="mb-2 flex items-start justify-between gap-3 md:mb-3">
           <div className="min-w-0">
-            <h2 className="font-display text-xl">
+            <h2 className="font-display text-lg md:text-xl">
               <Link
                 to={stationPath}
                 className="text-foreground group-hover:text-primary transition-colors"
@@ -82,7 +82,7 @@ export function StationCard({
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-1.5 mb-4">
+        <div className="mb-3 flex flex-wrap gap-1.5 md:mb-4">
           {station.types.map((type) => (
             <span
               key={type}
@@ -93,7 +93,7 @@ export function StationCard({
           ))}
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-4">
+        <div className="mb-3 flex flex-wrap gap-1.5 md:mb-4 md:gap-2">
           <a
             href={getAppleMapsUrl(station)}
             target="_blank"
@@ -121,8 +121,8 @@ export function StationCard({
         </div>
 
         {hotels.length > 0 && (
-          <div className="border-t border-border pt-3 mt-auto">
-            <div className="mb-2 flex items-center justify-between gap-2">
+          <div className="mt-auto border-t border-border pt-2 md:pt-3">
+            <div className="mb-1.5 flex items-center justify-between gap-2 md:mb-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 {t("station.budgetStays")}
               </p>

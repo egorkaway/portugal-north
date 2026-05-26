@@ -43,15 +43,15 @@ export function RankingList({
   countKey: "up" | "down";
 }) {
   return (
-    <div className="rounded-lg border border-border bg-card p-5">
-      <div className="mb-4 flex items-center gap-2">
+    <div className="rounded-lg border border-border bg-card p-4 md:p-5">
+      <div className="mb-3 flex items-center gap-2 md:mb-4">
         <Icon className={`h-5 w-5 ${iconClassName}`} aria-hidden="true" />
-        <h3 className="font-display text-xl text-foreground">{title}</h3>
+        <h3 className="font-display text-lg text-foreground md:text-xl">{title}</h3>
       </div>
       {items.length === 0 ? (
         <p className="text-sm text-muted-foreground">{emptyLabel}</p>
       ) : (
-        <ol className="space-y-3">
+        <ol className="space-y-2 md:space-y-3">
           {items.map((item, index) => (
             <li key={item.name + (item.subtitle ?? "")} className="flex items-start justify-between gap-3">
               <div className="min-w-0">
@@ -199,7 +199,7 @@ export function RankingsPanel({
   }));
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-6 md:space-y-10">
       <OfflineRatingsBanner source={data?.source} />
       <section aria-labelledby={stationsOnly ? undefined : "station-rankings-heading"}>
         {!stationsOnly && (
@@ -211,7 +211,7 @@ export function RankingsPanel({
           </div>
         )}
         {stationTotals && (
-          <p className="mb-4 text-sm text-muted-foreground">
+          <p className="mb-3 text-sm text-muted-foreground md:mb-4">
             {stationTotals.itemsWithVotes === 0
               ? t("rankings.noStationVotes")
               : t("rankings.voteTotalsStations", {
@@ -221,7 +221,7 @@ export function RankingsPanel({
                 })}
           </p>
         )}
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
           <RankingList
             title={t("rankings.topUpvoted")}
             icon={ThumbsUp}
@@ -249,9 +249,9 @@ export function RankingsPanel({
               {t("rankings.hotelRankings")}
             </h2>
           </div>
-          <p className="mb-4 text-sm text-muted-foreground">{t("rankings.hotelLeaderboard")}</p>
+          <p className="mb-3 text-sm text-muted-foreground md:mb-4">{t("rankings.hotelLeaderboard")}</p>
           {hotelTotals && (
-            <p className="mb-4 text-sm text-muted-foreground">
+            <p className="mb-3 text-sm text-muted-foreground md:mb-4">
               {hotelTotals.itemsWithVotes === 0
                 ? t("rankings.noHotelVotes")
                 : t("rankings.voteTotalsHotels", {
@@ -261,7 +261,7 @@ export function RankingsPanel({
                   })}
             </p>
           )}
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
             <RankingList
               title={t("rankings.topUpvoted")}
               icon={ThumbsUp}

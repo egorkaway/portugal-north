@@ -66,15 +66,15 @@ export function StationImageVote({
   const communityLine = totals ? formatImageTotals(totals.up, totals.down, t, plural) : null;
 
   return (
-    <div className="mb-8 overflow-hidden rounded-lg border border-border bg-muted">
-      <div className="relative aspect-[21/9]">
+    <div className="mb-5 overflow-hidden rounded-lg border border-border bg-muted md:mb-8">
+      <div className="relative aspect-[2/1] sm:aspect-[21/9]">
         <img
           src={imageUrl}
           alt={t("station.stationPhotoAlt", { name: stationName })}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-3 pb-3 pt-10 sm:px-4 sm:pb-4 sm:pt-12">
-          <p className="mb-2 text-xs text-white/90 sm:mb-3 sm:text-sm">
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-3 pb-2.5 pt-8 sm:px-4 sm:pb-4 sm:pt-12">
+          <p className="mb-1.5 text-xs text-white/90 sm:mb-3 sm:text-sm">
             {t("imageVote.question", { name: stationName })}
           </p>
           <StationImageVoteControls vote={vote} onGood={() => cast("up")} onBad={() => cast("down")} />

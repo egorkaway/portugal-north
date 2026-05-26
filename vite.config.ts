@@ -114,7 +114,7 @@ export default defineConfig({
       ],
       manifest: {
         name: "Portugal by Train",
-        short_name: "Portugal Train",
+        short_name: "VeryStays",
         description:
           "CP train stations across Portugal with budget hotels nearby and community ratings.",
         theme_color: "#1d7a70",

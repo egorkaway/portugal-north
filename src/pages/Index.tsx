@@ -99,7 +99,7 @@ const Index = () => {
       <PageHead meta={getHomePageMeta(locale)} />
       <JsonLd data={buildHomeStructuredData()} />
       {/* Hero */}
-      <header className="relative text-primary-foreground py-20 md:py-28 px-6 overflow-hidden bg-primary">
+      <header className="relative overflow-hidden bg-primary px-4 py-12 text-primary-foreground md:px-6 md:py-28">
         <img
           src={heroStation}
           alt="Historic Portuguese train station at golden hour with azulejo tiles"
@@ -110,7 +110,7 @@ const Index = () => {
         />
         <div className="absolute inset-0 bg-primary/50" />
         <div className="relative max-w-5xl mx-auto">
-          <h1 className="mb-4 font-display text-4xl md:text-5xl">
+          <h1 className="mb-2 font-display text-3xl md:mb-4 md:text-5xl">
             <a
               href="/"
               onClick={(e) => {
@@ -121,18 +121,18 @@ const Index = () => {
               }}
               className="inline-flex items-center gap-3 text-primary-foreground transition-opacity hover:opacity-90"
             >
-              <TrainFront className="h-8 w-8 shrink-0" aria-hidden="true" />
+              <TrainFront className="h-7 w-7 shrink-0 md:h-8 md:w-8" aria-hidden="true" />
               {messages.site.name}
             </a>
           </h1>
-          <p className="text-primary-foreground/90 text-lg max-w-2xl">{t("home.heroSubtitle")}</p>
+          <p className="max-w-2xl text-base text-primary-foreground/90 md:text-lg">{t("home.heroSubtitle")}</p>
         </div>
       </header>
 
       {/* Filters */}
       <div className="sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border">
-        <div className="max-w-5xl mx-auto px-6 py-4 flex flex-col gap-3">
-          <div className="flex flex-col sm:flex-row gap-3">
+        <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-3 md:gap-3 md:px-6 md:py-4">
+          <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
             <div className="relative flex-1">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <label htmlFor="station-search" className="sr-only">
@@ -153,7 +153,7 @@ const Index = () => {
               onClick={requestLocation}
               disabled={locationState.status === "loading"}
               aria-pressed={sortByDistance}
-              className={`inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-md px-4 py-2.5 text-sm font-semibold shadow-sm transition-colors shrink-0 ${
+              className={`inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold shadow-sm transition-colors sm:w-auto md:py-2.5 ${
                 sortByDistance
                   ? "bg-primary text-primary-foreground ring-2 ring-primary/30 hover:bg-primary/90"
                   : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
@@ -233,8 +233,8 @@ const Index = () => {
       </div>
 
       {/* Grid */}
-      <main className="max-w-5xl mx-auto px-6 py-8">
-        <p className="text-sm text-muted-foreground mb-4">
+      <main className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
+        <p className="mb-3 text-sm text-muted-foreground md:mb-4">
           {plural("home.stationCount", filtered.length, { count: filtered.length })}
           {coords
             ? t("home.sortedByDistanceNote")
@@ -252,7 +252,7 @@ const Index = () => {
                 : ""}
           {!sortByDistance && t("home.bookingHint")}
         </p>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
           {filtered.map((station) => (
             <StationCard
               key={station.name}

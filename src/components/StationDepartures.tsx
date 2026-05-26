@@ -22,7 +22,7 @@ function DepartureRow({
   const { t } = useLocale();
 
   return (
-    <li className="flex items-start justify-between gap-3 rounded-md border border-border bg-card px-4 py-3">
+    <li className="flex items-start justify-between gap-3 rounded-md border border-border bg-card px-3 py-2.5 md:px-4 md:py-3">
       <div className="min-w-0">
         <p className="font-medium text-foreground tabular-nums">{time}</p>
         <p className="mt-0.5 text-sm text-foreground truncate">→ {destination}</p>
@@ -51,11 +51,11 @@ export function StationDepartures({ stationName }: { stationName: string }) {
   }
 
   return (
-    <section className="mb-10" aria-labelledby="departures-heading">
-      <div className="mb-4 flex items-center justify-between gap-2">
+    <section className="mb-6 md:mb-10" aria-labelledby="departures-heading">
+      <div className="mb-3 flex items-center justify-between gap-2 md:mb-4">
         <div className="flex items-center gap-2">
           <Clock className="h-5 w-5 text-primary" aria-hidden="true" />
-          <h2 id="departures-heading" className="font-display text-2xl text-foreground">
+          <h2 id="departures-heading" className="font-display text-xl text-foreground md:text-2xl">
             {t("departures.title")}
           </h2>
         </div>
@@ -73,11 +73,11 @@ export function StationDepartures({ stationName }: { stationName: string }) {
       </div>
 
       {isLoading && (
-        <ul className="space-y-2" aria-busy="true">
+        <ul className="space-y-1.5 md:space-y-2" aria-busy="true">
           {[1, 2, 3].map((i) => (
             <li
               key={i}
-              className="h-[4.25rem] animate-pulse rounded-md border border-border bg-muted/40"
+              className="h-[3.75rem] animate-pulse rounded-md border border-border bg-muted/40 md:h-[4.25rem]"
             />
           ))}
         </ul>
@@ -97,7 +97,7 @@ export function StationDepartures({ stationName }: { stationName: string }) {
       )}
 
       {!isLoading && !isError && data && data.length > 0 && (
-        <ul className="space-y-2">
+        <ul className="space-y-1.5 md:space-y-2">
           {data.map((dep) => (
             <DepartureRow key={`${dep.trainNumber}-${dep.time}`} {...dep} />
           ))}

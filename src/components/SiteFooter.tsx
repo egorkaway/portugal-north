@@ -7,7 +7,7 @@ export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
   const { t } = useLocale();
 
   return (
-    <footer className="relative mt-12 text-primary-foreground overflow-hidden">
+    <footer className="relative mt-8 overflow-hidden text-primary-foreground md:mt-12">
       <img
         src={footerDouro}
         alt=""
@@ -17,7 +17,7 @@ export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/40" />
-      <div className="relative max-w-5xl mx-auto px-6 py-16 text-center">
+      <div className="relative mx-auto max-w-5xl px-4 py-10 text-center md:px-6 md:py-16">
         {showIntro && (
           <>
             <h2 className="font-display text-3xl md:text-4xl mb-3">{t("footer.title")}</h2>
@@ -30,7 +30,9 @@ export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
 
         <div
           className={
-            showIntro ? "mt-10 pt-8 border-t border-primary-foreground/20 space-y-10" : "space-y-8"
+            showIntro
+              ? "mt-6 space-y-6 border-t border-primary-foreground/20 pt-6 md:mt-10 md:space-y-10 md:pt-8"
+              : "space-y-6 md:space-y-8"
           }
         >
           <LanguageSwitcher />
@@ -44,7 +46,7 @@ export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
                 href="https://berrymet.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-1 items-start gap-4 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-5 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15"
+                className="group flex flex-1 items-start gap-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-4 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15 md:gap-4 md:p-5"
               >
                 <CloudSun className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
                 <div className="min-w-0 flex-1">
@@ -62,7 +64,7 @@ export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
                 href="https://getmapa.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex flex-1 items-start gap-4 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-5 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15"
+                className="group flex flex-1 items-start gap-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-4 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15 md:gap-4 md:p-5"
               >
                 <Smartphone className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
                 <div className="min-w-0 flex-1">
@@ -80,7 +82,7 @@ export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
                 href="https://portuguess.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-start gap-4 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-5 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15"
+                className="group flex items-start gap-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-4 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15 md:gap-4 md:p-5"
               >
                 <Languages className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
                 <div className="min-w-0 flex-1">

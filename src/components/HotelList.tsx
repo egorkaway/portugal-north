@@ -117,7 +117,7 @@ function HotelRow({ stationName, hotel }: { stationName: string; hotel: Hotel })
   const { vote, cast } = useHotelVote(stationName, hotel.name);
 
   return (
-    <li className="flex items-start gap-3 rounded-md border border-border bg-card p-4">
+    <li className="flex items-start gap-3 rounded-md border border-border bg-card p-3 md:p-4">
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-3">
           <p className="font-medium text-foreground">{hotel.name}</p>
@@ -131,7 +131,7 @@ function HotelRow({ stationName, hotel }: { stationName: string; hotel: Hotel })
           <Navigation className="w-3 h-3 shrink-0" aria-hidden="true" />
           {t("station.kmFromStation", { km: hotel.distanceKm })}
         </p>
-        <div className="mt-3 flex flex-col gap-4">
+        <div className="mt-2 flex flex-col gap-3 md:mt-3 md:gap-4">
           <a
             href={hotel.bookingUrl}
             target="_blank"
@@ -202,7 +202,7 @@ export function HotelList({
   }
 
   return (
-    <ul className="space-y-3">
+    <ul className="space-y-2 md:space-y-3">
       {hotels.map((hotel) => (
         <HotelRow key={hotel.name} stationName={stationName} hotel={hotel} />
       ))}
