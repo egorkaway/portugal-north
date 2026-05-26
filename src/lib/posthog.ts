@@ -17,7 +17,13 @@ export function initPostHog(): void {
     person_profiles: "identified_only",
     capture_pageview: false,
     capture_pageleave: true,
-    ...(import.meta.env.DEV ? { debug: true } : {}),
+    ...(import.meta.env.DEV
+      ? {
+          debug: true,
+          // Allow local / Playwright testing (PostHog otherwise treats headless as a bot).
+          opt_out_useragent_filter: true,
+        }
+      : {}),
   });
 }
 

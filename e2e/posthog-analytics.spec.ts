@@ -9,7 +9,7 @@ async function waitForPostHogCapture(
       const url = response.url();
       return (
         url.includes("i.posthog.com") &&
-        (url.includes("/e") || url.includes("/batch")) &&
+        (url.includes("/e/") || url.includes("/e?") || url.includes("/batch")) &&
         response.request().method() === "POST" &&
         response.status() < 400
       );
