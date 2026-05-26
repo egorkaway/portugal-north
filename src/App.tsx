@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { PostHogPageView } from "@/components/PostHogPageView";
 import { PwaInstallListener } from "@/components/PwaInstallListener";
 import { PwaPermissionsPrompt } from "@/components/PwaPermissionsPrompt";
 import { VoteSyncBootstrap } from "@/components/VoteSyncBootstrap";
@@ -24,6 +25,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <PostHogPageView />
           <PwaInstallListener />
           <PwaPermissionsPrompt />
           <VoteSyncBootstrap />

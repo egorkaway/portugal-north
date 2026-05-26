@@ -1,6 +1,7 @@
 import { useSyncExternalStore } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import type { Vote, VotesMap } from "@/hooks/useStationVote";
+import { trackVoteCast } from "@/lib/posthogEvents";
 import { syncStationImageVoteToServer } from "@/lib/votesApi";
 
 const COOKIE_NAME = "station_image_votes";
@@ -61,6 +62,12 @@ export function useStationImageVote(stationName: string) {
 
     writeVotes(current);
     emit();
+    trackVoteCast({
+      voteType: "station_image",
+      stationName,
+      previous,
+      next,
+    });
     void syncStationImageVoteToServer(stationName, previous, next).then((stored) => {
       if (stored) {
         queryClient.invalidateQueries({ queryKey: ["global-ratings"] });

@@ -14,6 +14,7 @@ import {
 import { HotelList } from "@/components/HotelList";
 import { SiteFooter } from "@/components/SiteFooter";
 import { StationDepartures } from "@/components/StationDepartures";
+import { StationViewTracker } from "@/components/StationViewTracker";
 import { StationImageVote } from "@/components/StationImageVote";
 import { VoteButtons } from "@/components/VoteButtons";
 import { VisitedButton } from "@/components/VisitedButton";
@@ -67,6 +68,12 @@ const Station = () => {
     <>
       <PageHead meta={pageMeta} />
       <JsonLd data={structuredData} />
+      <StationViewTracker
+        stationName={station.name}
+        slug={slug!}
+        hotelCount={hotels.length}
+        lineCount={station.lines.length}
+      />
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">

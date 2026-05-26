@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { useQueryClient } from "@tanstack/react-query";
+import { trackVoteCast } from "@/lib/posthogEvents";
 import { syncVoteToServer } from "@/lib/votesApi";
 
 export type Vote = "up" | "down" | null;
@@ -72,6 +73,12 @@ export function useStationVote(stationName: string) {
 
     writeVotes(current);
     emit();
+    trackVoteCast({
+      voteType: "station",
+      stationName,
+      previous,
+      next,
+    });
     void syncVoteToServer(stationName, previous, next).then(() => {
       queryClient.invalidateQueries({ queryKey: ["global-ratings"] });
     });

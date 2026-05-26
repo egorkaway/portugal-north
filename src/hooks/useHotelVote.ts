@@ -2,6 +2,7 @@ import { useSyncExternalStore } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import type { Vote, VotesMap } from "@/hooks/useStationVote";
 import { hotelVoteKey } from "@/lib/rankHotels";
+import { trackVoteCast } from "@/lib/posthogEvents";
 import { syncHotelVoteToServer } from "@/lib/votesApi";
 
 const COOKIE_NAME = "hotel_votes";
@@ -67,6 +68,13 @@ export function useHotelVote(stationName: string, hotelName: string) {
 
     writeVotes(current);
     emit();
+    trackVoteCast({
+      voteType: "hotel",
+      stationName,
+      hotelName,
+      previous,
+      next,
+    });
     void syncHotelVoteToServer(key, previous, next).then(() => {
       queryClient.invalidateQueries({ queryKey: ["global-ratings"] });
     });
