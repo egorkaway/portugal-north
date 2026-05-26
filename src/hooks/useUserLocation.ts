@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 export type UserCoords = { lat: number; lng: number };
 
-type UserLocationState =
+export type UserLocationState =
   | { status: "idle" }
   | { status: "loading" }
   | { status: "ready"; coords: UserCoords }

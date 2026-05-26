@@ -20,6 +20,7 @@ export const pt: Messages = {
       "Principais estações da CP do Minho ao Algarve, com hotéis económicos a poucos minutos a pé.",
     searchLabel: "Pesquisar estação ou linha",
     searchPlaceholder: "Pesquisar estação ou linha...",
+    filtersLabel: "Filtrar estações",
     sortByDistance: "Ordenar por distância",
     sortedByDistance: "Ordenado por distância",
     locating: "A localizar...",

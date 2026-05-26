@@ -3,16 +3,8 @@ import { useSearchParams } from "react-router-dom";
 import { stations } from "@/data/stations";
 import { StationCard } from "@/components/StationCard";
 import { StationRankings } from "@/components/StationRankings";
-import {
-  Search,
-  TrainFront,
-  ThumbsUp,
-  ThumbsDown,
-  Circle,
-  Navigation,
-  Check,
-  MapPin,
-} from "lucide-react";
+import { TrainFront } from "lucide-react";
+import { StationFilters } from "@/components/StationFilters";
 import heroStation from "@/assets/hero-station.jpg";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -25,8 +17,9 @@ import { useAllVotes } from "@/hooks/useStationVote";
 import { useAllVisited } from "@/hooks/useStationVisited";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
+import { sortTrainTypes } from "@/lib/trainTypes";
 
-const allTypes = [...new Set(stations.flatMap((s) => s.types))];
+const allTypes = sortTrainTypes([...new Set(stations.flatMap((s) => s.types))]);
 
 type VoteFilter = "up" | "down" | "none";
 type VisitedFilter = "visited" | "notVisited";
@@ -129,108 +122,23 @@ const Index = () => {
         </div>
       </header>
 
-      {/* Filters */}
-      <div className="sticky top-0 z-10 bg-background/95 backdrop-blur border-b border-border">
-        <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 py-3 md:gap-3 md:px-6 md:py-4">
-          <div className="flex flex-col gap-2 sm:flex-row sm:gap-3">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-              <label htmlFor="station-search" className="sr-only">
-                {t("home.searchLabel")}
-              </label>
-              <input
-                id="station-search"
-                type="search"
-                aria-label={t("home.searchLabel")}
-                placeholder={t("home.searchPlaceholder")}
-                value={search}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-9 pr-4 py-2 rounded-md border border-input bg-card text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring text-sm"
-              />
-            </div>
-            <button
-              type="button"
-              onClick={requestLocation}
-              disabled={locationState.status === "loading"}
-              aria-pressed={sortByDistance}
-              className={`inline-flex w-full shrink-0 items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold shadow-sm transition-colors sm:w-auto md:py-2.5 ${
-                sortByDistance
-                  ? "bg-primary text-primary-foreground ring-2 ring-primary/30 hover:bg-primary/90"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/90"
-              } disabled:cursor-wait disabled:opacity-80`}
-            >
-              <Navigation className="h-4 w-4" aria-hidden="true" />
-              {locationState.status === "loading"
-                ? t("home.locating")
-                : coords
-                  ? t("home.sortedByDistance")
-                  : sortByDistance &&
-                      (locationState.status === "denied" || locationState.status === "error")
-                    ? t("home.locationBlocked")
-                    : t("home.sortByDistance")}
-            </button>
-          </div>
-          <div className="flex flex-wrap items-center gap-1.5">
-            {allTypes.map((type) => (
-              <button
-                key={type}
-                onClick={() =>
-                  setActiveFilter(activeFilter === type ? null : type)
-                }
-                className={`text-xs px-3 py-1.5 rounded-full border transition-colors ${
-                  activeFilter === type
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-card text-muted-foreground border-border hover:border-primary/40"
-                }`}
-              >
-                {type}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className="mx-auto hidden max-w-5xl flex-wrap items-center gap-1.5 px-6 pb-3 md:flex">
-          <span className="text-xs text-muted-foreground mr-1">{t("home.yourVotes")}</span>
-          {([
-            { key: "up" as const, label: t("home.upvoted"), Icon: ThumbsUp },
-            { key: "down" as const, label: t("home.downvoted"), Icon: ThumbsDown },
-            { key: "none" as const, label: t("home.notVoted"), Icon: Circle },
-          ]).map(({ key, label, Icon }) => (
-            <button
-              key={key}
-              onClick={() => setVoteFilter(voteFilter === key ? null : key)}
-              className={`inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full border transition-colors ${
-                voteFilter === key
-                  ? "bg-primary text-primary-foreground border-primary"
-                  : "bg-card text-muted-foreground border-border hover:border-primary/40"
-              }`}
-            >
-              <Icon className="w-3 h-3" />
-              {label}
-            </button>
-          ))}
-        </div>
-        <div className="mx-auto hidden max-w-5xl flex-wrap items-center gap-1.5 px-6 pb-3 md:flex">
-          <span className="text-xs text-muted-foreground mr-1">{t("home.yourVisits")}</span>
-          {([
-            { key: "visited" as const, label: t("home.visited"), Icon: Check },
-            { key: "notVisited" as const, label: t("home.notVisitedYet"), Icon: MapPin },
-          ]).map(({ key, label, Icon }) => (
-            <button
-              key={key}
-              type="button"
-              onClick={() => setVisitedFilter(visitedFilter === key ? null : key)}
-              className={`inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full border transition-colors ${
-                visitedFilter === key
-                  ? "bg-emerald-700 text-white border-emerald-700"
-                  : "bg-card text-muted-foreground border-border hover:border-emerald-600/40"
-              }`}
-            >
-              <Icon className="w-3 h-3" aria-hidden="true" />
-              {label}
-            </button>
-          ))}
-        </div>
-      </div>
+      <StationFilters
+        search={search}
+        onSearchChange={setSearchQuery}
+        trainTypes={allTypes}
+        activeType={activeFilter}
+        onTypeToggle={(type) => setActiveFilter(activeFilter === type ? null : type)}
+        voteFilter={voteFilter}
+        onVoteFilterToggle={(key) => setVoteFilter(voteFilter === key ? null : key)}
+        visitedFilter={visitedFilter}
+        onVisitedFilterToggle={(key) =>
+          setVisitedFilter(visitedFilter === key ? null : key)
+        }
+        sortByDistance={sortByDistance}
+        onRequestLocation={requestLocation}
+        locationState={locationState}
+        coords={coords}
+      />
 
       {/* Grid */}
       <main className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">

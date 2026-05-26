@@ -20,6 +20,7 @@ export const ca: Messages = {
       "Principals estacions de CP del Minho a l'Algarve, amb hotels econòmics a poca distància a peu.",
     searchLabel: "Cercar estació o línia",
     searchPlaceholder: "Cercar estació o línia...",
+    filtersLabel: "Filtrar estacions",
     sortByDistance: "Ordenar per distància",
     sortedByDistance: "Ordenat per distància",
     locating: "Localitzant...",

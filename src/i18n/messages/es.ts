@@ -20,6 +20,7 @@ export const es: Messages = {
       "Principales estaciones de CP del Miño al Algarve, con hoteles económicos a poca distancia a pie.",
     searchLabel: "Buscar estación o línea",
     searchPlaceholder: "Buscar estación o línea...",
+    filtersLabel: "Filtrar estaciones",
     sortByDistance: "Ordenar por distancia",
     sortedByDistance: "Ordenado por distancia",
     locating: "Localizando...",

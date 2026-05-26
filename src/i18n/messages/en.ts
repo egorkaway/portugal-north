@@ -20,6 +20,7 @@ export const en: Messages = {
       "Major CP stations from the Minho to the Algarve, with budget hotels within walking distance.",
     searchLabel: "Search station or line",
     searchPlaceholder: "Search station or line...",
+    filtersLabel: "Filter stations",
     sortByDistance: "Sort by distance",
     sortedByDistance: "Sorted by distance",
     locating: "Locating...",

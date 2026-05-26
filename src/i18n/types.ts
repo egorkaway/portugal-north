@@ -22,6 +22,7 @@ export type Messages = {
     heroSubtitle: string;
     searchLabel: string;
     searchPlaceholder: string;
+    filtersLabel: string;
     sortByDistance: string;
     sortedByDistance: string;
     locating: string;
