@@ -417,6 +417,8 @@ export const stationHotels: StationHotels = {
   ],
   "Macinhata do Vouga": [
     { name: "Casa do Vouga", distanceKm: 1.2, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Macinhata+do+Vouga&order=price" },
+    { name: "Hotel Alameda", distanceKm: 3.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alameda%2C%20Macinhata%20do%20Vouga%2C%20Portugal&order=price" },
+    { name: "Quinta da Fontoura", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Fontoura%2C%20Macinhata%20do%20Vouga%2C%20Portugal&order=price" },
   ],
   "Cortegaça": [
     { name: "Hotel Praia Mar", distanceKm: 1.4, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cortega%C3%A7a%2C+Ovar&order=price" },
@@ -859,6 +861,7 @@ export const stationHotels: StationHotels = {
   "Tomar": [
     { name: "Hotel dos Templários", distanceKm: 0.6, priceFrom: 75, bookingUrl: "https://www.booking.com/hotel/pt/dos-templarios.html" },
     { name: "Hotel Kamanga", distanceKm: 0.4, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/kamanga.html" },
+    { name: "Artistic Guesthouse", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Artistic%20Guesthouse%2C%20Tomar%2C%20Portugal&order=price" },
   ],
   "Caldas da Rainha": [
     { name: "Sana Silver Coast Hotel", distanceKm: 0.9, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/sana-silver-coast.html" },
@@ -893,10 +896,12 @@ export const stationHotels: StationHotels = {
   "Vilar Formoso": [
     { name: "Hotel Lusitano", distanceKm: 0.4, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilar+Formoso&order=price" },
     { name: "Hotel Fronteira", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilar+Formoso&order=price" },
+    { name: "Quinta do Prado Verde", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Prado%20Verde%2C%20Vilar%20Formoso%2C%20Portugal&order=price" },
   ],
   "Viseu": [
     { name: "Hotel Avenida Viseu", distanceKm: 0.5, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/avenida-viseu.html" },
     { name: "Pousada de Viseu", distanceKm: 1, priceFrom: 95, bookingUrl: "https://www.booking.com/hotel/pt/pousada-viseu.html" },
+    { name: "Hotel Solar dos Pais", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Solar%20dos%20Pais%2C%20Viseu%2C%20Portugal&order=price" },
   ],
   "Évora": [
     { name: "Vitória Stone Hotel", distanceKm: 0.8, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/vitoria-stone.html" },
@@ -935,10 +940,12 @@ export const stationHotels: StationHotels = {
   "Tavira": [
     { name: "Pousada Convento Tavira", distanceKm: 0.9, priceFrom: 85, bookingUrl: "https://www.booking.com/hotel/pt/pousada-convento-tavira.html" },
     { name: "Vila Galé Tavira", distanceKm: 1.6, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/vila-gale-tavira.html" },
+    { name: "Residencial Princesa do Gilao", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Princesa%20do%20Gilao%2C%20Tavira%2C%20Portugal&order=price" },
   ],
   "Vila Real de Santo António": [
     { name: "Apolo Hotel", distanceKm: 0.5, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/apolo-vila-real.html" },
     { name: "Guadiana Hotel", distanceKm: 0.7, priceFrom: 50, bookingUrl: "https://www.booking.com/hotel/pt/guadiana-vila-real.html" },
+    { name: "Hotel Guadiana", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Guadiana%2C%20Vila%20Real%20de%20Santo%20Ant%C3%B3nio%2C%20Portugal&order=price" },
   ],
   "Pragal": [
     { name: "Holiday Inn Express Lisbon-Almada", distanceKm: 0.4, priceFrom: 60, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
@@ -958,6 +965,7 @@ export const stationHotels: StationHotels = {
   "Torres Vedras": [
     { name: "Hotel Império Jardim", distanceKm: 0.6, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torres+Vedras&order=price" },
     { name: "Hotel dos Arcos", distanceKm: 0.9, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torres+Vedras&order=price" },
+    { name: "Stay", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Stay%2C%20Torres%20Vedras%2C%20Portugal&order=price" },
   ],
   "Mira Sintra-Meleças": [
     { name: "Hotel Nova Sintra", distanceKm: 1.6, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mele%C3%A7as%2C+Sintra&order=price" },
@@ -981,6 +989,7 @@ export const stationHotels: StationHotels = {
   "Vendas Novas": [
     { name: "Hotel Afonso", distanceKm: 0.7, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vendas+Novas&order=price" },
     { name: "Pensão Central", distanceKm: 0.6, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vendas+Novas&order=price" },
+    { name: "Hotel Acez", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Acez%2C%20Vendas%20Novas%2C%20Portugal&order=price" },
   ],
   "Olhão": [
     { name: "Real Marina Hotel & Spa", distanceKm: 1.1, priceFrom: 80, bookingUrl: "https://www.booking.com/searchresults.html?ss=Olh%C3%A3o&order=price" },
