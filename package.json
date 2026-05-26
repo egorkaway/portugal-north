@@ -14,7 +14,10 @@
     "test:e2e": "playwright test",
     "test:e2e:posthog": "playwright test e2e/posthog-analytics.spec.ts",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "images:refresh-from-votes": "node scripts/refresh-station-images-from-votes.mjs",
+    "images:refresh-from-votes:dry": "node scripts/refresh-station-images-from-votes.mjs --dry-run",
+    "images:clear-votes": "node scripts/clear-refreshed-image-votes.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

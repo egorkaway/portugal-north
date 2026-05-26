@@ -157,3 +157,31 @@ node scripts/diversify-station-images.mjs      # fix duplicate Pexels URLs
 ```
 
 The fetch logic uses region/line-specific train search terms first, then falls back to **location-only** queries (e.g. “Braga Portugal”, “Douro Portugal landscape”) when a unique station photo cannot be found.
+
+#### Community-driven photo refresh (semi-automatic)
+
+Users can vote on station photos (“Does this photo represent …?”). When a photo gets enough **not representative** votes, refresh it from Wikimedia/Pexels and open a PR:
+
+1. Set `PEXELS_API_KEY` in `.env` (and `BLOB_READ_WRITE_TOKEN` if you will reset vote totals).
+2. Preview candidates from live production votes:
+
+   ```bash
+   npm run images:refresh-from-votes:dry
+   ```
+
+3. Apply changes, update `data/station-image-history.json` (rejected URLs are never reused), and write a report:
+
+   ```bash
+   npm run images:refresh-from-votes
+   # optional: git branch + commit
+   node scripts/refresh-station-images-from-votes.mjs --create-branch
+   ```
+
+4. After the PR is deployed, clear stale vote counters for refreshed stations (optional but recommended):
+
+   ```bash
+   npm run images:clear-votes
+   # or: node scripts/refresh-station-images-from-votes.mjs --clear-votes  (same run as step 3)
+   ```
+
+Flags: `--min-down 3` (default), `--require-net-negative` (down > up), `--station "Name"`, `--api-base https://www.verystays.com`.
