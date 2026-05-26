@@ -103,7 +103,15 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      includeAssets: ["favicon.svg", "favicon.ico", "apple-touch-icon.png", "logo.png"],
+      includeAssets: [
+        "favicon.svg",
+        "favicon.ico",
+        "favicon-32.png",
+        "apple-touch-icon.png",
+        "pwa-192.png",
+        "logo.png",
+        "icon.svg",
+      ],
       manifest: {
         name: "Portugal by Train",
         short_name: "Portugal Train",
@@ -116,6 +124,12 @@ export default defineConfig({
         start_url: "/",
         lang: "en",
         icons: [
+          {
+            src: "pwa-192.png",
+            sizes: "192x192",
+            type: "image/png",
+            purpose: "any",
+          },
           {
             src: "logo.png",
             sizes: "512x512",
