@@ -7,6 +7,8 @@ export const en: Messages = {
     en: "English",
     pt: "Português",
     es: "Español",
+    gl: "Galego",
+    ca: "Català",
   },
   nav: {
     allStations: "All stations",

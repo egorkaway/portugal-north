@@ -1,0 +1,191 @@
+import type { Messages } from "@/i18n/types";
+
+export const ca: Messages = {
+  site: { name: "Portugal en tren" },
+  lang: {
+    label: "Idioma",
+    en: "English",
+    pt: "Português",
+    es: "Español",
+    gl: "Galego",
+    ca: "Català",
+  },
+  nav: {
+    allStations: "Totes les estacions",
+    backToStations: "Tornar a les estacions",
+    returnHome: "Tornar a l'inici",
+  },
+  home: {
+    heroSubtitle:
+      "Principals estacions de CP del Minho a l'Algarve, amb hotels econòmics a poca distància a peu.",
+    searchLabel: "Cercar estació o línia",
+    searchPlaceholder: "Cercar estació o línia...",
+    sortByDistance: "Ordenar per distància",
+    sortedByDistance: "Ordenat per distància",
+    locating: "Localitzant...",
+    yourVotes: "Els teus vots:",
+    upvoted: "Votat positivament",
+    downvoted: "Votat negativament",
+    notVoted: "Sense vot",
+    yourVisits: "Les teves visites:",
+    visited: "Visitada",
+    notVisitedYet: "Encara no visitada",
+    stationCount_one: "{{count}} estació",
+    stationCount_other: "{{count}} estacions",
+    sortedByDistanceNote: " · Ordenat per distància des de tu",
+    topCommunityPicks: " · Millors de la comunitat primer",
+    locationDenied: " · Accés a la ubicació denegat",
+    locationBlocked: "Ubicació bloquejada",
+    locationUnsupported: " · Ubicació no compatible amb aquest navegador",
+    locationError: " · No s'ha pogut obtenir la teva ubicació",
+    bookingHint:
+      ' · Prem "Més a Booking" per veure les 3 habitacions més barates en un radi de 2 km',
+    noResults: "Cap estació coincideix amb la cerca.",
+  },
+  station: {
+    stationPhotoAlt: "Estació de tren de {{name}}",
+    budgetStays: "Allotjaments econòmics a prop",
+    hotelsIntro:
+      "Vota a favor o en contra d'hotels que coneixes, o indica si un allotjament pot estar tancat. El teu feedback es desa en aquest navegador.",
+    noHotels: "Encara no hi ha hotels recomanats per a aquesta estació.",
+    appleMaps: "Apple Maps",
+    openStreetMap: "OpenStreetMap",
+    tripHistorian: "TripHistorian",
+    searchBooking: "Cercar hotels a Booking",
+    moreOnBooking: "Més a Booking",
+    stationPage: "Pàgina de l'estació",
+    kmFromStation: "{{km}} km de l'estació",
+    eurosPerNightFrom: " euros per nit des de",
+    viewOnBooking: "Veure a Booking",
+    suggestClosed: "Suggerir que l'hotel pot estar tancat",
+    suggestedClosed: "Has suggerit que aquest hotel pot estar tancat",
+    away: "a {{distance}}",
+  },
+  departures: {
+    title: "Pròximes sortides",
+    refresh: "Actualitzar",
+    unavailable: "Sortides en directe temporalment no disponibles",
+    none: "No hi ha sortides en les properes hores.",
+    train: "tren",
+    platform: "andana",
+    delayMin: "+{{minutes}} min",
+  },
+  rankings: {
+    title: "Rankings de la comunitat",
+    subtitle: "Estacions i hotels segons els vots dels visitants a Portugal",
+    intro:
+      "Els rankings provenen dels vots a les estacions i a les llistes d'hotels de cada pàgina. Si l'emmagatzematge de vots falla, el missatge de sota ho explica.",
+    communityTitle: "Rankings de la comunitat",
+    communityTeaser: "Millors estacions per vots globals. Hotels a la pàgina completa.",
+    fullPage: "Pàgina completa de rankings",
+    viewFull: "Veure rankings complets de la comunitat",
+    loading: "Carregant vots de la comunitat...",
+    unavailableTitle: "Classificacions de la comunitat no disponibles",
+    unavailableDetail:
+      "Els vots a les targetes es desen al teu navegador. Els totals globals requereixen l'API de Vercel i un Blob en aquest projecte.",
+    unavailableHint: "",
+    retrying: "Reintentant...",
+    tryAgain: "Tornar-ho a provar",
+    noVotesYet:
+      "Encara no hi ha vots de la comunitat. Vota a estacions i hotels del lloc per crear els rankings.",
+    stationRankings: "Rankings d'estacions",
+    hotelRankings: "Rankings d'hotels",
+    hotelLeaderboard:
+      "Una classificació nacional de tots els hotels recomanats, a qualsevol estació.",
+    noStationVotes: "Encara sense vots a estacions.",
+    noHotelVotes: "Encara sense vots a hotels.",
+    voteTotalsStations:
+      "{{up}} vots positius i {{down}} negatius en {{items}} estacions.",
+    voteTotalsHotels: "{{up}} vots positius i {{down}} negatius en {{items}} hotels.",
+    topUpvoted: "Més votats",
+    mostDownvoted: "Més votats negativament",
+    noStationUpvotes: "Sense vots positius. Vota en una targeta d'estació per començar.",
+    noStationDownvotes: "Sense vots negatius.",
+    noHotelUpvotes: "Sense vots positius. Vota en una pàgina d'estació per valorar hotels.",
+    noHotelDownvotes: "Sense vots negatius.",
+  },
+  visited: {
+    markVisited: "Marcar {{subject}} com a visitada",
+    markNotVisited: "Marcar {{subject}} com a no visitada",
+    visited: "Visitada",
+    notVisited: "No visitada",
+  },
+  vote: {
+    yourVoteOn: "El teu vot a {{subject}}",
+    upvote: "Vot positiu a {{subject}}",
+    downvote: "Vot negatiu a {{subject}}",
+    removeUpvote: "Treure vot positiu",
+    removeDownvote: "Treure vot negatiu",
+    upvoteOnlyYou: "Vot positiu (només tu ho veus)",
+    downvoteOnlyYou: "Vot negatiu (només tu ho veus)",
+  },
+  imageVote: {
+    question: "Aquesta foto representa {{name}}?",
+    goodPhoto: "Bona foto",
+    goodShort: "Bona",
+    badPhoto: "No representa l'estació",
+    badShort: "No representa",
+    rateLabel: "Valorar si la foto representa l'estació",
+    browserNote:
+      "La teva elecció es desa en aquest navegador. Els totals de la comunitat ajuden a triar millors imatges.",
+    community: "Comunitat: {{summary}}",
+    goodPhotos_one: "{{count}} bona foto",
+    goodPhotos_other: "{{count}} bones fotos",
+    notRepresentative_one: "{{count}} no representativa",
+    notRepresentative_other: "{{count}} no representatives",
+  },
+  footer: {
+    title: "Per les vies de Portugal",
+    subtitle:
+      "Del Douro ennuvolat a la costa atlàntica, amb parades clau i un lloc on dormir a prop.",
+    disclaimer: "No recomanem aquests hotels, però si t'agraden, volem saber-ho.",
+    alsoFromUs: "També nostres",
+    climaTitle: "Clima Ibérico",
+    climaDesc:
+      "Temps i alertes meteorològiques a Espanya i Portugal. Consulta les condicions abans de viatjar.",
+    mapaTitle: "Map Your Travel",
+    mapaDesc:
+      "L'app GetMapa per a iPhone registra els llocs que visites i crea un mapa de viatge amb les teves fotos.",
+    portuGuessTitle: "PortuGuess",
+    portuGuessDesc:
+      "Aprèn portuguès europeu amb qüestionaris, llistes de paraules i apps sense connexió per a iOS i Android.",
+  },
+  notFound: {
+    title: "404",
+    message: "Vaja! Pàgina no trobada",
+    home: "Tornar a l'inici",
+  },
+  meta: {
+    siteName: "Portugal en tren",
+    home: {
+      title: "Portugal en tren: Estacions i hotels econòmics",
+      description:
+        "Descobreix estacions de CP a Portugal, del Minho a l'Algarve, amb línies i hotels econòmics a poca distància a peu.",
+    },
+    rankings: {
+      title: "Rankings de la comunitat | Portugal en tren",
+      description:
+        "Mira quines estacions de CP i hotels els visitants valoren més i menys a Portugal.",
+      ogDescription: "Rankings de la comunitat per a estacions de CP i hotels econòmics a Portugal.",
+    },
+    notFound: {
+      title: "Pàgina no trobada | Portugal en tren",
+      description:
+        "La pàgina que buscaves no existeix. Torna a l'inici per explorar estacions de tren a Portugal.",
+    },
+    stationTitle: "Estació de {{name}} — Hotels i línies | {{site}}",
+    stationDescription: "{{services}} a {{name}} ({{lines}}). {{stays}}",
+    stationOgWithHotels:
+      "{{name}} ({{lines}}): {{services}}. Allotjaments des de {{price}} €/nit — {{names}}{{more}}.",
+    stationOgNoHotels:
+      "{{name}}: {{services}} a {{lines}}. Explora mapes i vota aquesta estació.",
+    stationOgExplore: "Explora mapes i vota aquesta estació.",
+    cpNetwork: "xarxa CP",
+    cpTrains: "trens CP",
+    mapsVotes: "Mapes, vots de la comunitat i detalls de l'estació.",
+    budgetStay_one: "1 allotjament econòmic",
+    budgetStay_other: "{{count}} allotjaments econòmics",
+    fromPerNight: "des de {{price}} €/nit en un radi de 2 km, més mapes i vots.",
+    andMore: " i {{count}} més",
+  },
+};

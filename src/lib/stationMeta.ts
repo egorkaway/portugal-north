@@ -10,8 +10,9 @@ function truncate(text: string, max: number): string {
 }
 
 function conjunction(locale: Locale): string {
-  if (locale === "pt") return "e";
+  if (locale === "pt" || locale === "gl") return "e";
   if (locale === "es") return "y";
+  if (locale === "ca") return "i";
   return "and";
 }
 
@@ -28,7 +29,15 @@ export function formatServiceTypes(types: string[], locale: Locale): string {
   if (active.length === 0) return "";
   if (active.length <= 3) return active.join(", ");
   const more =
-    locale === "pt" ? "e mais" : locale === "es" ? "y más" : "and more";
+    locale === "pt"
+      ? "e mais"
+      : locale === "gl"
+        ? "e máis"
+        : locale === "es"
+          ? "y más"
+          : locale === "ca"
+            ? "i més"
+            : "and more";
   return `${active.slice(0, 2).join(", ")}, ${more}`;
 }
 

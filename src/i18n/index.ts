@@ -1,23 +1,25 @@
+import { ca } from "@/i18n/messages/ca";
 import { en } from "@/i18n/messages/en";
 import { es } from "@/i18n/messages/es";
+import { gl } from "@/i18n/messages/gl";
 import { pt } from "@/i18n/messages/pt";
 import type { Locale, Messages } from "@/i18n/types";
-import { LOCALE_STORAGE_KEY } from "@/i18n/types";
+import { LOCALE_STORAGE_KEY, LOCALES } from "@/i18n/types";
 
 export type { Locale, Messages };
 export { LOCALES, LOCALE_STORAGE_KEY } from "@/i18n/types";
 
-const catalogs: Record<Locale, Messages> = { en, pt, es };
+const catalogs: Record<Locale, Messages> = { en, pt, es, gl, ca };
 
 export function getMessages(locale: Locale): Messages {
   return catalogs[locale] ?? catalogs.en;
 }
 
 export function isLocale(value: string): value is Locale {
-  return value === "en" || value === "pt" || value === "es";
+  return (LOCALES as readonly string[]).includes(value);
 }
 
-/** Prefer pt/es from browser languages; default to English. */
+/** Prefer pt/es/gl/ca from browser languages; default to English. */
 export function detectBrowserLocale(): Locale {
   if (typeof navigator === "undefined") return "en";
 
@@ -27,9 +29,12 @@ export function detectBrowserLocale(): Locale {
   ].filter(Boolean);
 
   for (const tag of candidates) {
-    const base = tag.split("-")[0]?.toLowerCase();
+    const lower = tag.toLowerCase();
+    const base = lower.split("-")[0];
     if (base === "pt") return "pt";
     if (base === "es") return "es";
+    if (base === "gl") return "gl";
+    if (base === "ca" || lower.startsWith("ca-")) return "ca";
   }
   return "en";
 }

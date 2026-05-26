@@ -1,10 +1,12 @@
 import { useLocale } from "@/i18n/LocaleProvider";
-import type { Locale } from "@/i18n/types";
+import type { Locale, Messages } from "@/i18n/types";
 
-const OPTIONS: { value: Locale; labelKey: "en" | "pt" | "es" }[] = [
+const OPTIONS: { value: Locale; labelKey: keyof Messages["lang"] }[] = [
   { value: "en", labelKey: "en" },
   { value: "pt", labelKey: "pt" },
   { value: "es", labelKey: "es" },
+  { value: "gl", labelKey: "gl" },
+  { value: "ca", labelKey: "ca" },
 ];
 
 export function LanguageSwitcher() {

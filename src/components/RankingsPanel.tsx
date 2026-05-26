@@ -9,8 +9,15 @@ import { stationToSlug } from "@/lib/stationSlug";
 import type { GlobalRatings } from "@/lib/voteTypes";
 import { useLocale } from "@/i18n/LocaleProvider";
 
+const LOCALE_NUMBER_FORMAT: Record<string, string> = {
+  pt: "pt-PT",
+  es: "es-ES",
+  gl: "gl-ES",
+  ca: "ca-ES",
+};
+
 function formatCount(n: number, locale: string): string {
-  return n.toLocaleString(locale === "pt" ? "pt-PT" : locale === "es" ? "es-ES" : "en-US");
+  return n.toLocaleString(LOCALE_NUMBER_FORMAT[locale] ?? "en-US");
 }
 
 export function RankingList({

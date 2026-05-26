@@ -1,4 +1,4 @@
-export const LOCALES = ["en", "pt", "es"] as const;
+export const LOCALES = ["en", "pt", "es", "gl", "ca"] as const;
 export type Locale = (typeof LOCALES)[number];
 
 export const LOCALE_STORAGE_KEY = "portugal-by-train-locale";
@@ -10,6 +10,8 @@ export type Messages = {
     en: string;
     pt: string;
     es: string;
+    gl: string;
+    ca: string;
   };
   nav: {
     allStations: string;
