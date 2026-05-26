@@ -26,6 +26,7 @@ function FilterChip({
   activeClassName,
   onClick,
   label,
+  longLabel,
   accessibilityLabel,
   icon: Icon,
   compact = false,
@@ -34,13 +35,15 @@ function FilterChip({
   activeClassName: string;
   onClick: () => void;
   label: string;
+  /** Full label on `xl+` when `label` is abbreviated. */
+  longLabel?: string;
   /** Screen reader / tooltip when label is abbreviated. */
   accessibilityLabel?: string;
   icon?: LucideIcon;
   /** Icon-only on the narrowest screens; label from `sm` up. */
   compact?: boolean;
 }) {
-  const a11yLabel = accessibilityLabel ?? label;
+  const a11yLabel = accessibilityLabel ?? longLabel ?? label;
   return (
     <button
       type="button"
@@ -50,21 +53,30 @@ function FilterChip({
       onClick={onClick}
       className={cn(
         "inline-flex shrink-0 items-center justify-center rounded-full border font-medium transition-colors",
-        "text-[11px] leading-none md:text-xs",
+        "text-xs leading-none sm:text-[11px] md:text-xs",
         compact
-          ? "h-7 w-7 gap-0 p-0 sm:h-auto sm:w-auto sm:gap-1 sm:px-2 sm:py-1 md:px-2.5"
-          : "gap-1 px-2 py-1 md:px-2.5",
+          ? "size-11 gap-0 p-0 sm:size-auto sm:h-auto sm:w-auto sm:gap-1 sm:px-2 sm:py-1 md:px-2.5"
+          : "min-h-11 gap-1.5 px-3 py-2 sm:min-h-0 sm:gap-1 sm:px-2 sm:py-1 md:px-2.5",
         active ? activeClassName : chipInactive,
       )}
     >
-      {Icon && <Icon className="h-3 w-3 shrink-0" aria-hidden="true" />}
+      {Icon && (
+        <Icon className="size-4 shrink-0 sm:size-3" aria-hidden="true" />
+      )}
       <span
         className={cn(
           compact && "sr-only sm:not-sr-only sm:static sm:max-w-none",
-          !compact && "max-w-[5.5rem] truncate sm:max-w-none",
+          !compact && !longLabel && "max-w-[5.5rem] truncate sm:max-w-none",
         )}
       >
-        {label}
+        {longLabel ? (
+          <>
+            <span className="xl:hidden">{label}</span>
+            <span className="hidden xl:inline">{longLabel}</span>
+          </>
+        ) : (
+          label
+        )}
       </span>
     </button>
   );
@@ -176,7 +188,7 @@ export function StationFilters({
         </div>
 
         <div
-          className="flex flex-wrap items-center gap-1 md:gap-1.5"
+          className="flex flex-wrap items-center gap-1.5 sm:gap-1 md:gap-1.5"
           role="group"
           aria-label={t("home.filtersLabel")}
         >
@@ -187,6 +199,7 @@ export function StationFilters({
               activeClassName={chipActivePrimary}
               onClick={() => onTypeToggle(type)}
               label={getTrainTypeAbbrev(type)}
+              longLabel={type}
               accessibilityLabel={type}
             />
           ))}
