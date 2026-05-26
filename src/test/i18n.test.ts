@@ -15,6 +15,7 @@ describe("i18n", () => {
   it("interpolates translation parameters", () => {
     const { t } = createTranslator("en");
     expect(t("vote.upvote", { subject: "Braga" })).toBe("Upvote Braga");
+    expect(t("visited.markVisited", { subject: "Braga" })).toBe("Mark Braga as visited");
   });
 
   it("builds localized home page meta", () => {

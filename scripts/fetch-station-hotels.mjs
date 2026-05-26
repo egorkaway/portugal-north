@@ -61,6 +61,13 @@ if (onlyMissing) {
   targets = targets.filter((s) => !hotelMap[s.name]?.length);
 }
 
+// Top up stations closest to 3 curated first (2 → 1 → 0).
+targets.sort((a, b) => {
+  const diff = curatedCount(b.name) - curatedCount(a.name);
+  if (diff !== 0) return diff;
+  return a.name.localeCompare(b.name);
+});
+
 if (maxStations > 0) {
   targets = targets.slice(0, maxStations);
 }

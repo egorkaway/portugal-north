@@ -27,6 +27,9 @@ export type Messages = {
     upvoted: string;
     downvoted: string;
     notVoted: string;
+    yourVisits: string;
+    visited: string;
+    notVisitedYet: string;
     stationCount_one: string;
     stationCount_other: string;
     sortedByDistanceNote: string;
@@ -93,6 +96,12 @@ export type Messages = {
     noStationDownvotes: string;
     noHotelUpvotes: string;
     noHotelDownvotes: string;
+  };
+  visited: {
+    markVisited: string;
+    markNotVisited: string;
+    visited: string;
+    notVisited: string;
   };
   vote: {
     yourVoteOn: string;

@@ -10,6 +10,8 @@ import {
   ThumbsDown,
   Circle,
   Navigation,
+  Check,
+  MapPin,
 } from "lucide-react";
 import heroStation from "@/assets/hero-station.jpg";
 import { JsonLd } from "@/components/JsonLd";
@@ -20,12 +22,14 @@ import { getHomePageMeta } from "@/lib/pageMeta";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
 import { useAllVotes } from "@/hooks/useStationVote";
+import { useAllVisited } from "@/hooks/useStationVisited";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
 
 const allTypes = [...new Set(stations.flatMap((s) => s.types))];
 
 type VoteFilter = "up" | "down" | "none";
+type VisitedFilter = "visited" | "notVisited";
 
 const Index = () => {
   const { t, plural, locale, messages } = useLocale();
@@ -33,7 +37,9 @@ const Index = () => {
   const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
+  const [visitedFilter, setVisitedFilter] = useState<VisitedFilter | null>(null);
   const votes = useAllVotes();
+  const visitedMap = useAllVisited();
   const { data: globalVotes } = useGlobalStationRatings();
   const { state: locationState, coords, isActive: sortByDistance, requestLocation } =
     useUserLocation();
@@ -58,7 +64,12 @@ const Index = () => {
         (voteFilter === "up" && v === "up") ||
         (voteFilter === "down" && v === "down") ||
         (voteFilter === "none" && !v);
-      return matchesSearch && matchesFilter && matchesVote;
+      const isVisited = Boolean(visitedMap[s.name]);
+      const matchesVisited =
+        !visitedFilter ||
+        (visitedFilter === "visited" && isVisited) ||
+        (visitedFilter === "notVisited" && !isVisited);
+      return matchesSearch && matchesFilter && matchesVote && matchesVisited;
     });
 
     return orderStationsForHome(matches, {
@@ -67,7 +78,7 @@ const Index = () => {
       globalRatings: globalVotes?.ratings,
       votesConfigured: Boolean(globalVotes?.configured && globalVotes.ratings),
     });
-  }, [search, activeFilter, voteFilter, votes, coords, sortByDistance, globalVotes]);
+  }, [search, activeFilter, voteFilter, visitedFilter, votes, visitedMap, coords, sortByDistance, globalVotes]);
 
   const distanceByStation = useMemo(() => {
     if (!coords) return null;
@@ -194,6 +205,27 @@ const Index = () => {
               }`}
             >
               <Icon className="w-3 h-3" />
+              {label}
+            </button>
+          ))}
+        </div>
+        <div className="mx-auto hidden max-w-5xl flex-wrap items-center gap-1.5 px-6 pb-3 md:flex">
+          <span className="text-xs text-muted-foreground mr-1">{t("home.yourVisits")}</span>
+          {([
+            { key: "visited" as const, label: t("home.visited"), Icon: Check },
+            { key: "notVisited" as const, label: t("home.notVisitedYet"), Icon: MapPin },
+          ]).map(({ key, label, Icon }) => (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setVisitedFilter(visitedFilter === key ? null : key)}
+              className={`inline-flex items-center gap-1 text-xs px-3 py-1.5 rounded-full border transition-colors ${
+                visitedFilter === key
+                  ? "bg-emerald-700 text-white border-emerald-700"
+                  : "bg-card text-muted-foreground border-border hover:border-emerald-600/40"
+              }`}
+            >
+              <Icon className="w-3 h-3" aria-hidden="true" />
               {label}
             </button>
           ))}

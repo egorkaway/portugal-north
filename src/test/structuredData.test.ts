@@ -6,7 +6,26 @@ import {
   jsonLdScript,
   votesToAggregateRating,
 } from "../lib/structuredData";
+import { stationImages } from "../data/stationImages";
+import { DEFAULT_SITE_URL } from "../lib/site";
 import type { Station } from "../data/stations";
+
+type ImageObjectNode = {
+  "@type": string;
+  contentUrl?: string;
+  creator?: { "@type": string; name: string };
+  creditText?: string;
+  copyrightNotice?: string;
+  license?: string;
+};
+
+function trainStationImage(data: ReturnType<typeof buildStationStructuredData>): ImageObjectNode {
+  const graph = data["@graph"] as { "@type": string; image?: ImageObjectNode }[];
+  const station = graph.find((n) => n["@type"] === "TrainStation");
+  return station?.image as ImageObjectNode;
+}
+
+const PRODUCTION_ORIGIN = DEFAULT_SITE_URL;
 
 const aveiro: Station = {
   name: "Aveiro",
@@ -21,14 +40,25 @@ describe("structuredData", () => {
     expect(jsonLdScript({ x: "<script>" })).not.toContain("<");
   });
 
-  it("builds breadcrumb positions", () => {
+  it("builds breadcrumb positions with absolute item URLs", () => {
     const crumb = buildBreadcrumbList([
       { name: "Home", path: "/" },
       { name: "Aveiro", path: "/stations/aveiro" },
     ]);
-    const items = crumb.itemListElement as { position: number; name: string }[];
+    const items = crumb.itemListElement as {
+      position: number;
+      name: string;
+      item: string;
+    }[];
+    expect(items[0].item).toBe(`${PRODUCTION_ORIGIN}/`);
     expect(items[1].position).toBe(2);
     expect(items[1].name).toBe("Aveiro");
+    expect(items[1].item).toBe(`${PRODUCTION_ORIGIN}/stations/aveiro`);
+    expect(crumb["@id"]).toBe(`${PRODUCTION_ORIGIN}/stations/aveiro#breadcrumb`);
+    for (const { item } of items) {
+      expect(item).toMatch(/^https:\/\//);
+      expect(item).not.toMatch(/^\/[^/]/);
+    }
   });
 
   it("omits aggregate rating without enough votes", () => {
@@ -48,7 +78,7 @@ describe("structuredData", () => {
           bookingUrl: "https://www.booking.com/example",
         },
       ],
-      imageUrl: "https://upload.wikimedia.org/wikipedia/commons/example.jpg",
+      imageUrl: stationImages.Aveiro,
       stationRatings: { Aveiro: { up: 5, down: 1 } },
     });
     const graph = data["@graph"] as { "@type": string }[];
@@ -56,6 +86,50 @@ describe("structuredData", () => {
     expect(types).toContain("BreadcrumbList");
     expect(types).toContain("TrainStation");
     expect(types).toContain("LodgingBusiness");
+
+    const breadcrumb = graph.find((n) => n["@type"] === "BreadcrumbList") as {
+      itemListElement: { item: string }[];
+    };
+    expect(breadcrumb.itemListElement[0].item).toBe(`${PRODUCTION_ORIGIN}/`);
+    expect(breadcrumb.itemListElement[1].item).toBe(
+      `${PRODUCTION_ORIGIN}/stations/aveiro`,
+    );
+  });
+
+  it("station ImageObject includes Google image metadata fields", () => {
+    const wikimedia = buildStationStructuredData({
+      station: aveiro,
+      slug: "aveiro",
+      hotels: [],
+      imageUrl: stationImages.Aveiro,
+    });
+    const wikiImage = trainStationImage(wikimedia);
+    expect(wikiImage.creator).toEqual({ "@type": "Person", name: "nmorao" });
+    expect(wikiImage.creditText).toContain("Wikimedia Commons");
+    expect(wikiImage.copyrightNotice).toContain("CC BY-SA");
+    expect(wikiImage.license).toBe("https://creativecommons.org/licenses/by-sa/4.0/");
+
+    const pexelsUrl = stationImages["São Pedro da Torre"];
+    const pexels = buildStationStructuredData({
+      station: { ...aveiro, name: "São Pedro da Torre" },
+      slug: "sao-pedro-da-torre",
+      hotels: [],
+      imageUrl: pexelsUrl,
+    });
+    const pexelsImage = trainStationImage(pexels);
+    expect(pexelsImage.creator).toEqual({ "@type": "Organization", name: "Pexels" });
+    expect(pexelsImage.creditText).toBe("Photo via Pexels");
+    expect(pexelsImage.copyrightNotice).toContain("Pexels License");
+    expect(pexelsImage.license).toBe("https://www.pexels.com/license/");
+  });
+
+  it("home organization logo includes image metadata fields", () => {
+    const data = buildHomeStructuredData();
+    const graph = data["@graph"] as { "@type": string; logo?: ImageObjectNode }[];
+    const org = graph.find((n) => n["@type"] === "Organization");
+    expect(org?.logo?.creator?.name).toBe("Portugal by Train");
+    expect(org?.logo?.creditText).toBe("Portugal by Train");
+    expect(org?.logo?.copyrightNotice).toContain("Portugal by Train");
   });
 
   it("home graph includes ItemList of stations", () => {

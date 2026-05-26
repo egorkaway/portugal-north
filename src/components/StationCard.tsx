@@ -5,9 +5,11 @@ import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data
 import { getHotelsForStation } from "@/lib/stationHotels";
 import { getStationImageUrl } from "@/lib/stationImage";
 import { useStationVote } from "@/hooks/useStationVote";
+import { useStationVisited } from "@/hooks/useStationVisited";
 import { formatDistance } from "@/lib/geo";
 import { getStationPath } from "@/lib/stationSlug";
 import { VoteButtons } from "@/components/VoteButtons";
+import { VisitedButton } from "@/components/VisitedButton";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 const typeColors: Record<string, string> = {
@@ -29,6 +31,7 @@ export function StationCard({
   const hotels = getHotelsForStation(station.name);
   const imageUrl = getStationImageUrl(station.name);
   const { vote, cast } = useStationVote(station.name);
+  const { visited, toggle: toggleVisited } = useStationVisited(station.name);
   const stationPath = getStationPath(station);
 
   return (
@@ -63,12 +66,20 @@ export function StationCard({
               </p>
             )}
           </div>
-          <VoteButtons
-            vote={vote}
-            onUp={() => cast("up")}
-            onDown={() => cast("down")}
-            subjectLabel={station.name}
-          />
+          <div className="flex flex-col items-end gap-1.5 shrink-0">
+            <VoteButtons
+              vote={vote}
+              onUp={() => cast("up")}
+              onDown={() => cast("down")}
+              subjectLabel={station.name}
+            />
+            <VisitedButton
+              visited={visited}
+              onToggle={toggleVisited}
+              subjectLabel={station.name}
+              compact
+            />
+          </div>
         </div>
 
         <div className="flex flex-wrap gap-1.5 mb-4">

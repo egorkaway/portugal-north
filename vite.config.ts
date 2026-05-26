@@ -88,6 +88,9 @@ function writeSitemap(filePath: string) {
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    "import.meta.env.VITE_SITE_URL": JSON.stringify(siteUrl),
+  },
   server: {
     host: "::",
     port: 8080,

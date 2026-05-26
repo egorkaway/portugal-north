@@ -16,7 +16,9 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { StationDepartures } from "@/components/StationDepartures";
 import { StationImageVote } from "@/components/StationImageVote";
 import { VoteButtons } from "@/components/VoteButtons";
+import { VisitedButton } from "@/components/VisitedButton";
 import { useStationVote } from "@/hooks/useStationVote";
+import { useStationVisited } from "@/hooks/useStationVisited";
 import { PageHead } from "@/components/PageHead";
 import { buildStationPageMeta } from "@/lib/pageMeta";
 import { useLocale } from "@/i18n/LocaleProvider";
@@ -49,6 +51,7 @@ const Station = () => {
   const shareImageUrl = getStationShareImageUrl(station.name);
   const showPhotoVote = hasRepresentativeStationImage(station.name);
   const { vote, cast } = useStationVote(station.name);
+  const { visited, toggle: toggleVisited } = useStationVisited(station.name);
   const { data: globalVotes } = useGlobalRatings();
   const pageMeta = buildStationPageMeta(station, hotels, shareImageUrl, locale);
   const structuredData = buildStationStructuredData({
@@ -82,12 +85,19 @@ const Station = () => {
                   {station.lines.join(" · ")}
                 </p>
               </div>
-              <VoteButtons
-                vote={vote}
-                onUp={() => cast("up")}
-                onDown={() => cast("down")}
-                subjectLabel={station.name}
-              />
+              <div className="flex flex-col items-end gap-2 shrink-0">
+                <VoteButtons
+                  vote={vote}
+                  onUp={() => cast("up")}
+                  onDown={() => cast("down")}
+                  subjectLabel={station.name}
+                />
+                <VisitedButton
+                  visited={visited}
+                  onToggle={toggleVisited}
+                  subjectLabel={station.name}
+                />
+              </div>
             </div>
           </div>
         </header>

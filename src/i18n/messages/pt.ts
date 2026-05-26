@@ -25,6 +25,9 @@ export const pt: Messages = {
     upvoted: "Com voto positivo",
     downvoted: "Com voto negativo",
     notVoted: "Sem voto",
+    yourVisits: "As suas visitas:",
+    visited: "Visitada",
+    notVisitedYet: "Ainda não visitada",
     stationCount_one: "{{count}} estação",
     stationCount_other: "{{count}} estações",
     sortedByDistanceNote: " · Ordenado pela sua distância",
@@ -98,6 +101,12 @@ export const pt: Messages = {
     noStationDownvotes: "Sem votos negativos.",
     noHotelUpvotes: "Sem votos positivos. Vote numa página de estação para classificar hotéis.",
     noHotelDownvotes: "Sem votos negativos.",
+  },
+  visited: {
+    markVisited: "Marcar {{subject}} como visitada",
+    markNotVisited: "Marcar {{subject}} como não visitada",
+    visited: "Visitada",
+    notVisited: "Não visitada",
   },
   vote: {
     yourVoteOn: "O seu voto em {{subject}}",

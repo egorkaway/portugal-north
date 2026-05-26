@@ -6,6 +6,7 @@ import { getStationPath } from "./stationSlug";
 import { absoluteUrl, SITE_URL } from "./site";
 import { createTranslator } from "@/i18n";
 import { getStationMetaDescription, getStationPageTitle } from "./stationMeta";
+import { attributionForImageUrl, siteLogoAttribution } from "./imageAttribution";
 
 const SITE_NAME = "Portugal by Train";
 const MIN_VOTES_FOR_AGGREGATE = 2;
@@ -47,32 +48,22 @@ export function votesToAggregateRating(
   };
 }
 
-function imageLicenseForUrl(url: string): { license: string; acquireLicensePage?: string } | null {
-  if (url.includes("wikimedia.org") || url.includes("wikipedia.org")) {
-    return {
-      license: "https://creativecommons.org/licenses/by-sa/4.0/",
-      acquireLicensePage: "https://commons.wikimedia.org/",
-    };
-  }
-  if (url.includes("pexels.com")) {
-    return {
-      license: "https://www.pexels.com/license/",
-      acquireLicensePage: "https://www.pexels.com/license/",
-    };
-  }
-  return null;
-}
-
 function buildStationImageObject(imageUrl: string, stationName: string): JsonLd {
-  const license = imageLicenseForUrl(imageUrl);
+  const { creator, creditText, copyrightNotice, license, acquireLicensePage } =
+    attributionForImageUrl(imageUrl);
   const image: JsonLd = {
     "@type": "ImageObject",
     contentUrl: imageUrl,
     name: `${stationName} train station`,
+    creator,
+    creditText,
+    copyrightNotice,
   };
   if (license) {
-    image.license = license.license;
-    image.acquireLicensePage = license.acquireLicensePage;
+    image.license = license;
+  }
+  if (acquireLicensePage) {
+    image.acquireLicensePage = acquireLicensePage;
   }
   return image;
 }
@@ -159,7 +150,7 @@ export function buildStationStructuredData(options: {
       url: pageUrl,
       name: pageTitle,
       description,
-      isPartOf: { "@id": `${SITE_URL || absoluteUrl("/")}#website` },
+      isPartOf: { "@id": `${SITE_URL}#website` },
       about: { "@id": stationId },
       mainEntity: { "@id": stationId },
     },
@@ -206,8 +197,10 @@ export function buildHomeStructuredData(): JsonLd {
         logo: {
           "@type": "ImageObject",
           url: absoluteUrl("/logo.png"),
+          contentUrl: absoluteUrl("/logo.png"),
           width: 512,
           height: 512,
+          ...siteLogoAttribution(),
         },
       },
       {
