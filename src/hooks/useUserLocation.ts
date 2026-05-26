@@ -11,39 +11,59 @@ type UserLocationState =
   | { status: "error" };
 
 export function useUserLocation() {
-  /** User asked for distance sort (stays true while locating until success or failure). */
   const [distanceSortOn, setDistanceSortOn] = useState(false);
   const [state, setState] = useState<UserLocationState>({ status: "idle" });
+  /** Bumps when user retries after denied/error so the effect runs again while sort stays on. */
+  const [locateAttempt, setLocateAttempt] = useState(0);
   const requestGenerationRef = useRef(0);
+  const inFlightRef = useRef(false);
 
   const cancelRequest = useCallback(() => {
     requestGenerationRef.current += 1;
+    inFlightRef.current = false;
     setDistanceSortOn(false);
     setState({ status: "idle" });
   }, []);
 
+  const startLocate = useCallback(() => {
+    setLocateAttempt((n) => n + 1);
+  }, []);
+
   const requestLocation = useCallback(() => {
     if (distanceSortOn) {
-      cancelRequest();
+      if (state.status === "loading") return;
+      if (state.status === "ready") {
+        cancelRequest();
+        return;
+      }
+      // denied / error / unsupported — retry without turning sort off
+      startLocate();
       return;
     }
     setDistanceSortOn(true);
-  }, [distanceSortOn, cancelRequest]);
+    startLocate();
+  }, [distanceSortOn, state.status, cancelRequest, startLocate]);
 
   useEffect(() => {
-    if (!distanceSortOn) return;
+    if (!distanceSortOn) {
+      inFlightRef.current = false;
+      return;
+    }
+
+    if (inFlightRef.current) return;
 
     if (!navigator.geolocation) {
       setState({ status: "unsupported" });
-      setDistanceSortOn(false);
       return;
     }
 
     const generation = ++requestGenerationRef.current;
+    inFlightRef.current = true;
     setState({ status: "loading" });
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
+        inFlightRef.current = false;
         if (generation !== requestGenerationRef.current) return;
         setState({
           status: "ready",
@@ -54,24 +74,28 @@ export function useUserLocation() {
         });
       },
       (error) => {
+        inFlightRef.current = false;
         if (generation !== requestGenerationRef.current) return;
-        setDistanceSortOn(false);
         if (error.code === error.PERMISSION_DENIED) {
           setState({ status: "denied" });
           return;
         }
         setState({ status: "error" });
       },
-      { enableHighAccuracy: true, timeout: 15_000, maximumAge: 60_000 },
+      { enableHighAccuracy: false, timeout: 20_000, maximumAge: 300_000 },
     );
-  }, [distanceSortOn]);
+
+    return () => {
+      requestGenerationRef.current += 1;
+      inFlightRef.current = false;
+    };
+  }, [distanceSortOn, locateAttempt]);
 
   const coords = state.status === "ready" ? state.coords : null;
 
   return {
     state,
     coords,
-    /** Distance sort requested (on while locating or when coords are ready). */
     isActive: distanceSortOn,
     requestLocation,
     cancelRequest,

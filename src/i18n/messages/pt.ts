@@ -30,6 +30,7 @@ export const pt: Messages = {
     sortedByDistanceNote: " · Ordenado pela sua distância",
     topCommunityPicks: " · Melhores da comunidade primeiro",
     locationDenied: " · Acesso à localização negado",
+    locationBlocked: "Localização bloqueada",
     locationUnsupported: " · Localização não suportada neste browser",
     locationError: " · Não foi possível obter a sua localização",
     bookingHint:

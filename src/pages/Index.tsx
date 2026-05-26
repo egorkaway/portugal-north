@@ -153,7 +153,10 @@ const Index = () => {
                 ? t("home.locating")
                 : coords
                   ? t("home.sortedByDistance")
-                  : t("home.sortByDistance")}
+                  : sortByDistance &&
+                      (locationState.status === "denied" || locationState.status === "error")
+                    ? t("home.locationBlocked")
+                    : t("home.sortByDistance")}
             </button>
           </div>
           <div className="flex flex-wrap items-center gap-1.5">

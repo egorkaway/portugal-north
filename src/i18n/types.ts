@@ -32,6 +32,7 @@ export type Messages = {
     sortedByDistanceNote: string;
     topCommunityPicks: string;
     locationDenied: string;
+    locationBlocked: string;
     locationUnsupported: string;
     locationError: string;
     bookingHint: string;
