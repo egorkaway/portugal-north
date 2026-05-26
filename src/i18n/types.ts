@@ -98,6 +98,19 @@ export type Messages = {
     noStationDownvotes: string;
     noHotelUpvotes: string;
     noHotelDownvotes: string;
+    offlineCached: string;
+    offlineDevice: string;
+  };
+  pwa: {
+    votesPendingSync: string;
+    votesSyncing: string;
+    permissionsTitle: string;
+    permissionsBody: string;
+    permissionsLocation: string;
+    permissionsNotifications: string;
+    permissionsEnable: string;
+    permissionsEnabling: string;
+    permissionsNotNow: string;
   };
   visited: {
     markVisited: string;

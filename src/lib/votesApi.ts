@@ -1,20 +1,26 @@
+import {
+  buildRatingsFromDeviceVotes,
+  hasDeviceVotes,
+} from "@/lib/deviceVoteStorage";
+import { loadOfflineRatingsCache, saveOfflineRatingsCache } from "@/lib/offlineRatingsCache";
+import {
+  enqueueVoteSync,
+  type QueuedVotePayload,
+} from "@/lib/voteSyncQueue";
 import type {
   GlobalRatings,
+  GlobalRatingsResult,
   HotelClosedReportSyncPayload,
   HotelVoteSyncPayload,
+  RatingsSource,
   StationImageVoteSyncPayload,
   StationVoteSyncPayload,
   VoteDirection,
 } from "@/lib/voteTypes";
 
-const API_BASE = "/api/votes";
+export type { GlobalRatingsResult, RatingsSource };
 
-export type GlobalRatingsResult = {
-  ratings: GlobalRatings;
-  hotelRatings: GlobalRatings;
-  imageRatings: GlobalRatings;
-  configured: boolean;
-};
+const API_BASE = "/api/votes";
 
 export type RatingsFetchErrorCode =
   | "network"
@@ -40,13 +46,12 @@ export function ratingsErrorMessage(error: unknown): string {
   return "Could not load community ratings.";
 }
 
-async function postVote(
-  body:
-    | StationVoteSyncPayload
-    | HotelVoteSyncPayload
-    | StationImageVoteSyncPayload
-    | HotelClosedReportSyncPayload,
-): Promise<boolean> {
+export async function postVotePayload(body: QueuedVotePayload): Promise<boolean> {
+  if (typeof navigator !== "undefined" && !navigator.onLine) {
+    enqueueVoteSync(body);
+    return false;
+  }
+
   try {
     const res = await fetch(API_BASE, {
       method: "POST",
@@ -54,11 +59,19 @@ async function postVote(
       body: JSON.stringify(body),
       keepalive: true,
     });
-    return res.ok;
+    if (!res.ok) {
+      enqueueVoteSync(body);
+      return false;
+    }
+    return true;
   } catch {
-    // Local cookie vote still works if the API is unreachable.
+    enqueueVoteSync(body);
     return false;
   }
+}
+
+async function postVote(body: QueuedVotePayload): Promise<boolean> {
+  return postVotePayload(body);
 }
 
 export async function syncVoteToServer(
@@ -93,6 +106,16 @@ export async function syncHotelClosedReportToServer(
   return postVote({ hotelClosed: hotelKey, previous: wasReported, next: isReported });
 }
 
+function offlineRatingsFallback(): GlobalRatingsResult | null {
+  const cached = loadOfflineRatingsCache();
+  if (cached) return cached;
+
+  const device = buildRatingsFromDeviceVotes();
+  if (hasDeviceVotes(device)) return device;
+
+  return null;
+}
+
 export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 12_000);
@@ -101,6 +124,10 @@ export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
   try {
     res = await fetch(API_BASE, { cache: "no-store", signal: controller.signal });
   } catch (error) {
+    clearTimeout(timeout);
+    const fallback = offlineRatingsFallback();
+    if (fallback) return fallback;
+
     if (error instanceof Error && error.name === "AbortError") {
       throw new RatingsFetchError(
         "Ratings API timed out. Vote storage may be slow or misconfigured.",
@@ -116,6 +143,10 @@ export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
   }
 
   if (!res.ok) {
+    if (res.status >= 500) {
+      const fallback = offlineRatingsFallback();
+      if (fallback) return fallback;
+    }
     throw new RatingsFetchError(
       `Ratings API returned ${res.status}. Community totals may be unavailable on this deployment.`,
       "http",
@@ -145,10 +176,13 @@ export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
     );
   }
 
-  return {
+  const result: GlobalRatingsResult = {
     ratings: data.ratings ?? {},
     hotelRatings: data.hotelRatings ?? {},
     imageRatings: data.imageRatings ?? {},
     configured: true,
+    source: "network",
   };
+  saveOfflineRatingsCache(result);
+  return result;
 }

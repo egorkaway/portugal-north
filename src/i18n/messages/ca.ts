@@ -103,6 +103,25 @@ export const ca: Messages = {
     noStationDownvotes: "Sense vots negatius.",
     noHotelUpvotes: "Sense vots positius. Vota en una pàgina d'estació per valorar hotels.",
     noHotelDownvotes: "Sense vots negatius.",
+    offlineCached:
+      "Sense connexió — es mostren rankings de la comunitat desats de la darrera visita. Els vots nous en aquest dispositiu es sincronitzaran quan tornis a estar en línia.",
+    offlineDevice:
+      "Sense connexió — es mostren rankings només amb els teus vots en aquest dispositiu.",
+  },
+  pwa: {
+    votesPendingSync:
+      "{{count}} vot(s) desat(s) en aquest dispositiu — es sincronitzaran quan tornis a estar en línia.",
+    votesSyncing: "Sincronitzant els teus vots desats…",
+    permissionsTitle: "Treu més profit de l'app",
+    permissionsBody:
+      "Has instal·lat Portugal by Train — activa aquestes funcions opcionals per a una millor experiència:",
+    permissionsLocation:
+      "Ubicació — ordenar estacions per distància a la pàgina d'inici.",
+    permissionsNotifications:
+      "Notificacions — per avisos sobre viatges i novetats (quan estiguin disponibles).",
+    permissionsEnable: "Activar",
+    permissionsEnabling: "Obrint configuració…",
+    permissionsNotNow: "Ara no",
   },
   visited: {
     markVisited: "Marcar {{subject}} com a visitada",

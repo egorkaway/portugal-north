@@ -4,6 +4,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { PwaInstallListener } from "@/components/PwaInstallListener";
+import { PwaPermissionsPrompt } from "@/components/PwaPermissionsPrompt";
+import { VoteSyncBootstrap } from "@/components/VoteSyncBootstrap";
+import { VoteSyncNotice } from "@/components/VoteSyncNotice";
 import { WebMcpBridge } from "@/components/WebMcpBridge";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import Index from "./pages/Index.tsx";
@@ -20,6 +24,10 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <PwaInstallListener />
+          <PwaPermissionsPrompt />
+          <VoteSyncBootstrap />
+          <VoteSyncNotice />
           <WebMcpBridge />
           <Routes>
           <Route path="/" element={<Index />} />

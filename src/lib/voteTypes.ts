@@ -7,6 +7,17 @@ export type ItemRating = {
 
 export type GlobalRatings = Record<string, ItemRating>;
 
+export type RatingsSource = "network" | "cache" | "device";
+
+export type GlobalRatingsResult = {
+  ratings: GlobalRatings;
+  hotelRatings: GlobalRatings;
+  imageRatings: GlobalRatings;
+  configured: boolean;
+  source?: RatingsSource;
+  savedAt?: number;
+};
+
 export type StationVoteSyncPayload = {
   station: string;
   previous: VoteDirection | null;

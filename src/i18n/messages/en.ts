@@ -102,6 +102,24 @@ export const en: Messages = {
     noStationDownvotes: "No downvotes yet.",
     noHotelUpvotes: "No upvotes yet. Vote on a station page to rate hotels.",
     noHotelDownvotes: "No downvotes yet.",
+    offlineCached:
+      "Offline — showing community rankings saved from your last visit. New votes on this device will sync when you are back online.",
+    offlineDevice:
+      "Offline — showing rankings from your votes on this device only.",
+  },
+  pwa: {
+    votesPendingSync:
+      "{{count}} vote(s) saved on this device — will sync when you are back online.",
+    votesSyncing: "Syncing your saved votes…",
+    permissionsTitle: "Get more from the app",
+    permissionsBody:
+      "You installed Portugal by Train — enable these optional features for a better experience:",
+    permissionsLocation: "Location — sort stations by distance from you on the home page.",
+    permissionsNotifications:
+      "Notifications — we can alert you about trip ideas and updates (only if we add them later).",
+    permissionsEnable: "Enable",
+    permissionsEnabling: "Opening settings…",
+    permissionsNotNow: "Not now",
   },
   visited: {
     markVisited: "Mark {{subject}} as visited",

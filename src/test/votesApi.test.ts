@@ -4,6 +4,7 @@ import { fetchGlobalRatings, RatingsFetchError } from "@/lib/votesApi";
 describe("fetchGlobalRatings", () => {
   afterEach(() => {
     vi.unstubAllGlobals();
+    localStorage.clear();
   });
 
   it("returns station and hotel ratings when storage is configured", async () => {
@@ -42,7 +43,27 @@ describe("fetchGlobalRatings", () => {
     });
   });
 
-  it("throws on HTTP errors", async () => {
+  it("throws on non-retryable HTTP errors", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: false,
+        status: 404,
+      }),
+    );
+
+    await expect(fetchGlobalRatings()).rejects.toBeInstanceOf(RatingsFetchError);
+  });
+
+  it("falls back to cache on server errors when cache exists", async () => {
+    const { saveOfflineRatingsCache } = await import("@/lib/offlineRatingsCache");
+    saveOfflineRatingsCache({
+      ratings: { Aveiro: { up: 1, down: 0 } },
+      hotelRatings: {},
+      imageRatings: {},
+      configured: true,
+    });
+
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({
@@ -51,6 +72,8 @@ describe("fetchGlobalRatings", () => {
       }),
     );
 
-    await expect(fetchGlobalRatings()).rejects.toBeInstanceOf(RatingsFetchError);
+    const result = await fetchGlobalRatings();
+    expect(result.source).toBe("cache");
+    expect(result.ratings.Aveiro).toEqual({ up: 1, down: 0 });
   });
 });

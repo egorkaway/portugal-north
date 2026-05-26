@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
 import { getTopDownvotedHotels, getTopUpvotedHotels } from "@/lib/rankHotels";
 import { getTopDownvoted, getTopUpvoted } from "@/lib/rankStations";
+import { OfflineRatingsBanner } from "@/components/OfflineRatingsBanner";
 import { ratingsErrorMessage } from "@/lib/votesApi";
 import { stationToSlug } from "@/lib/stationSlug";
 import type { GlobalRatings } from "@/lib/voteTypes";
@@ -199,6 +200,7 @@ export function RankingsPanel({
 
   return (
     <div className="space-y-10">
+      <OfflineRatingsBanner source={data?.source} />
       <section aria-labelledby={stationsOnly ? undefined : "station-rankings-heading"}>
         {!stationsOnly && (
           <div className="mb-4 flex items-center gap-2">

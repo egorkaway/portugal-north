@@ -3,6 +3,7 @@ import path from "node:path";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import { VitePWA } from "vite-plugin-pwa";
 import { buildSitemapXml } from "./src/lib/sitemap";
 
 async function handleApiCatalogDev(
@@ -100,6 +101,58 @@ export default defineConfig({
   },
   plugins: [
     react(),
+    VitePWA({
+      registerType: "autoUpdate",
+      includeAssets: ["favicon.svg", "favicon.ico", "apple-touch-icon.png", "logo.png"],
+      manifest: {
+        name: "Portugal by Train",
+        short_name: "Portugal Train",
+        description:
+          "CP train stations across Portugal with budget hotels nearby and community ratings.",
+        theme_color: "#1d7a70",
+        background_color: "#f5f7f8",
+        display: "standalone",
+        scope: "/",
+        start_url: "/",
+        lang: "en",
+        icons: [
+          {
+            src: "logo.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "any",
+          },
+          {
+            src: "logo.png",
+            sizes: "512x512",
+            type: "image/png",
+            purpose: "maskable",
+          },
+          {
+            src: "apple-touch-icon.png",
+            sizes: "180x180",
+            type: "image/png",
+          },
+        ],
+      },
+      workbox: {
+        navigateFallback: "/index.html",
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,webp,woff2,txt,xml}"],
+        runtimeCaching: [
+          {
+            urlPattern: /^https:\/\/pagead2\.googlesyndication\.com\/.*/i,
+            handler: "NetworkOnly",
+          },
+          {
+            urlPattern: /\/api\//i,
+            handler: "NetworkOnly",
+          },
+        ],
+      },
+      devOptions: {
+        enabled: false,
+      },
+    }),
     {
       name: "departures-dev-api",
       configureServer(server) {

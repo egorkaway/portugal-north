@@ -1,5 +1,6 @@
 import { Clock, RefreshCw } from "lucide-react";
 import { getCpStationCode } from "@/data/cpStationCodes";
+import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useStationDepartures } from "@/hooks/useStationDepartures";
 import { useLocale } from "@/i18n/LocaleProvider";
 
@@ -41,10 +42,11 @@ function DepartureRow({
 
 export function StationDepartures({ stationName }: { stationName: string }) {
   const { t } = useLocale();
+  const online = useOnlineStatus();
   const stationCode = getCpStationCode(stationName);
   const { data, isLoading, isError, isFetching, refetch, error } = useStationDepartures(stationName);
 
-  if (!stationCode) {
+  if (!stationCode || !online) {
     return null;
   }
 

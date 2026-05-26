@@ -103,6 +103,25 @@ export const gl: Messages = {
     noStationDownvotes: "Sen votos negativos.",
     noHotelUpvotes: "Sen votos positivos. Vota nunha páxina de estación para valorar hoteis.",
     noHotelDownvotes: "Sen votos negativos.",
+    offlineCached:
+      "Sen conexión — móstranse rankings da comunidade gardados da túa última visita. Os votos novos neste dispositivo sincronizaranse cando volvas estar en liña.",
+    offlineDevice:
+      "Sen conexión — móstranse rankings só cos teus votos neste dispositivo.",
+  },
+  pwa: {
+    votesPendingSync:
+      "{{count}} voto(s) gardado(s) neste dispositivo — sincronizaranse cando volvas estar en liña.",
+    votesSyncing: "Sincronizando os teus votos gardados…",
+    permissionsTitle: "Saca máis partido da app",
+    permissionsBody:
+      "Instalaches Portugal by Train — activa estas funcións opcionais para unha mellor experiencia:",
+    permissionsLocation:
+      "Localización — ordenar estacións por distancia na páxina de inicio.",
+    permissionsNotifications:
+      "Notificacións — para avisos sobre viaxes e novidades (cando estean dispoñibles).",
+    permissionsEnable: "Activar",
+    permissionsEnabling: "Abrindo axustes…",
+    permissionsNotNow: "Agora non",
   },
   visited: {
     markVisited: "Marcar {{subject}} como visitada",

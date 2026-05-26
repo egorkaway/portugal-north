@@ -103,6 +103,25 @@ export const pt: Messages = {
     noStationDownvotes: "Sem votos negativos.",
     noHotelUpvotes: "Sem votos positivos. Vote numa página de estação para classificar hotéis.",
     noHotelDownvotes: "Sem votos negativos.",
+    offlineCached:
+      "Offline — a mostrar rankings da comunidade guardados da sua última visita. Novos votos neste dispositivo serão sincronizados quando voltar a estar online.",
+    offlineDevice:
+      "Offline — a mostrar rankings apenas com os seus votos neste dispositivo.",
+  },
+  pwa: {
+    votesPendingSync:
+      "{{count}} voto(s) guardado(s) neste dispositivo — serão sincronizados quando voltar a estar online.",
+    votesSyncing: "A sincronizar os seus votos guardados…",
+    permissionsTitle: "Tire mais partido da app",
+    permissionsBody:
+      "Instalou o Portugal by Train — ative estas funcionalidades opcionais para uma melhor experiência:",
+    permissionsLocation:
+      "Localização — ordenar estações por distância na página inicial.",
+    permissionsNotifications:
+      "Notificações — para avisos sobre viagens e novidades (quando estiverem disponíveis).",
+    permissionsEnable: "Ativar",
+    permissionsEnabling: "A abrir definições…",
+    permissionsNotNow: "Agora não",
   },
   visited: {
     markVisited: "Marcar {{subject}} como visitada",
