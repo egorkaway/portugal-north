@@ -814,14 +814,17 @@ export const stationHotels: StationHotels = {
   "Lisboa Santa Apolónia": [
     { name: "My Story Hotel Tejo", distanceKm: 0.6, priceFrom: 65, bookingUrl: "https://www.booking.com/hotel/pt/my-story-tejo.html" },
     { name: "Hotel Mundial", distanceKm: 1.2, priceFrom: 80, bookingUrl: "https://www.booking.com/hotel/pt/mundial.html" },
+    { name: "Residência Oliveira", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Resid%C3%AAncia%20Oliveira%2C%20Lisboa%20Santa%20Apol%C3%B3nia%2C%20Portugal&order=price" },
   ],
   "Lisboa Oriente": [
     { name: "Tryp Lisboa Oriente", distanceKm: 0.4, priceFrom: 75, bookingUrl: "https://www.booking.com/hotel/pt/tryp-lisboa-oriente.html" },
     { name: "Olissippo Oriente", distanceKm: 0.5, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/olissippo-oriente.html" },
+    { name: "Hotel Moxy Lisboa Oriente", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Moxy%20Lisboa%20Oriente%2C%20Lisboa%20Oriente%2C%20Portugal&order=price" },
   ],
   "Lisboa Rossio": [
     { name: "My Story Hotel Rossio", distanceKm: 0.1, priceFrom: 80, bookingUrl: "https://www.booking.com/hotel/pt/my-story-rossio.html" },
     { name: "Internacional Design Hotel", distanceKm: 0.2, priceFrom: 90, bookingUrl: "https://www.booking.com/hotel/pt/internacional-design.html" },
+    { name: "Gat Rossio Hotel", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gat%20Rossio%20Hotel%2C%20Lisboa%20Rossio%2C%20Portugal&order=price" },
   ],
   "Cais do Sodré": [
     { name: "LX Boutique Hotel", distanceKm: 0.2, priceFrom: 85, bookingUrl: "https://www.booking.com/hotel/pt/lx-boutique.html" },
@@ -836,10 +839,12 @@ export const stationHotels: StationHotels = {
   "Sintra": [
     { name: "Sintra Bliss House", distanceKm: 0.6, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/sintra-bliss.html" },
     { name: "Nova Sintra", distanceKm: 1.1, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/nova-sintra.html" },
+    { name: "Monte da Lua", distanceKm: 0.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Monte%20da%20Lua%2C%20Sintra%2C%20Portugal&order=price" },
   ],
   "Setúbal": [
     { name: "Hotel do Sado", distanceKm: 1.4, priceFrom: 60, bookingUrl: "https://www.booking.com/hotel/pt/do-sado.html" },
     { name: "Hotel IBIS Setúbal", distanceKm: 0.9, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/ibis-setubal.html" },
+    { name: "Aranguês", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arangu%C3%AAs%2C%20Set%C3%BAbal%2C%20Portugal&order=price" },
   ],
   "Entroncamento": [
     { name: "Hotel Apolo XIX", distanceKm: 0.4, priceFrom: 40, bookingUrl: "https://www.booking.com/hotel/pt/apolo-xix.html" },
@@ -849,6 +854,7 @@ export const stationHotels: StationHotels = {
   "Santarém": [
     { name: "Hotel Alfageme", distanceKm: 1.6, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/alfageme.html" },
     { name: "Casa da Alcáçova", distanceKm: 1.9, priceFrom: 80, bookingUrl: "https://www.booking.com/hotel/pt/casa-da-alcacova.html" },
+    { name: "Pensão Coimbra", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Coimbra%2C%20Santar%C3%A9m%2C%20Portugal&order=price" },
   ],
   "Tomar": [
     { name: "Hotel dos Templários", distanceKm: 0.6, priceFrom: 75, bookingUrl: "https://www.booking.com/hotel/pt/dos-templarios.html" },
@@ -862,6 +868,7 @@ export const stationHotels: StationHotels = {
   "Leiria": [
     { name: "Hotel Eurosol Leiria", distanceKm: 0.3, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/eurosol-leiria.html" },
     { name: "Hotel Lis", distanceKm: 1.1, priceFrom: 40, bookingUrl: "https://www.booking.com/hotel/pt/lis-leiria.html" },
+    { name: "São Francisco", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Francisco%2C%20Leiria%2C%20Portugal&order=price" },
   ],
   "Figueira da Foz": [
     { name: "Hotel Costa de Prata", distanceKm: 0.8, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/costa-de-prata.html" },
@@ -923,6 +930,7 @@ export const stationHotels: StationHotels = {
   "Portimão": [
     { name: "Hotel Família Portimão", distanceKm: 1, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Portim%C3%A3o&order=price" },
     { name: "AP Eva Senses", distanceKm: 1.8, priceFrom: 75, bookingUrl: "https://www.booking.com/hotel/pt/ap-eva-senses.html" },
+    { name: "Made Inn", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Made%20Inn%2C%20Portim%C3%A3o%2C%20Portugal&order=price" },
   ],
   "Tavira": [
     { name: "Pousada Convento Tavira", distanceKm: 0.9, priceFrom: 85, bookingUrl: "https://www.booking.com/hotel/pt/pousada-convento-tavira.html" },
@@ -935,10 +943,12 @@ export const stationHotels: StationHotels = {
   "Pragal": [
     { name: "Holiday Inn Express Lisbon-Almada", distanceKm: 0.4, priceFrom: 60, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
     { name: "Alojamento Pragal", distanceKm: 0.6, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
+    { name: "Cyber Hostel Almada", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cyber%20Hostel%20Almada%2C%20Pragal%2C%20Portugal&order=price" },
   ],
   "Pinhal Novo": [
     { name: "Hotel Pinhal Novo", distanceKm: 0.5, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pinhal+Novo&order=price" },
     { name: "Residencial Central", distanceKm: 0.7, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pinhal+Novo&order=price" },
+    { name: "Recanto Tropical", distanceKm: 3.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Recanto%20Tropical%2C%20Pinhal%20Novo%2C%20Portugal&order=price" },
   ],
   "Barreiro": [
     { name: "Hotel Barreiro", distanceKm: 0.9, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barreiro%2C+Portugal&order=price" },
@@ -952,6 +962,7 @@ export const stationHotels: StationHotels = {
   "Mira Sintra-Meleças": [
     { name: "Hotel Nova Sintra", distanceKm: 1.6, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mele%C3%A7as%2C+Sintra&order=price" },
     { name: "Casa de Meleças", distanceKm: 1.2, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mele%C3%A7as%2C+Sintra&order=price" },
+    { name: "Lugar Saloio Sintra", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lugar%20Saloio%20Sintra%2C%20Mira%20Sintra-Mele%C3%A7as%2C%20Portugal&order=price" },
   ],
   "Abrantes": [
     { name: "Hotel de Turismo de Abrantes", distanceKm: 1.5, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Abrantes&order=price" },
@@ -974,13 +985,16 @@ export const stationHotels: StationHotels = {
   "Olhão": [
     { name: "Real Marina Hotel & Spa", distanceKm: 1.1, priceFrom: 80, bookingUrl: "https://www.booking.com/searchresults.html?ss=Olh%C3%A3o&order=price" },
     { name: "Hotel Ria-Sol", distanceKm: 0.5, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Olh%C3%A3o&order=price" },
+    { name: "Pensão Boémia", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Bo%C3%A9mia%2C%20Olh%C3%A3o%2C%20Portugal&order=price" },
   ],
   "Loulé": [
     { name: "Loulé Jardim Hotel", distanceKm: 1.9, priceFrom: 65, bookingUrl: "https://www.booking.com/searchresults.html?ss=Loul%C3%A9&order=price" },
     { name: "Casa Beny", distanceKm: 1.8, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Loul%C3%A9&order=price" },
+    { name: "Quinta dos Amigos", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20dos%20Amigos%2C%20Loul%C3%A9%2C%20Portugal&order=price" },
   ],
   "Silves": [
     { name: "Colina dos Mouros", distanceKm: 0.6, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Hotel Vila Sodré", distanceKm: 1.4, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
+    { name: "Horta Grande", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Horta%20Grande%2C%20Silves%2C%20Portugal&order=price" },
   ],
 };
