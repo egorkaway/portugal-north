@@ -1,4 +1,5 @@
 import posthog from "posthog-js";
+import { identifyAnonymousUser } from "@/lib/posthogIdentity";
 
 const key =
   import.meta.env.VITE_POSTHOG_TOKEN ?? import.meta.env.VITE_PUBLIC_POSTHOG_KEY;
@@ -14,9 +15,13 @@ export function initPostHog(): void {
 
   posthog.init(key, {
     api_host: host,
+    // We call identify() with a stable anonymous id on load (see posthogIdentity.ts).
     person_profiles: "identified_only",
     capture_pageview: false,
     capture_pageleave: true,
+    loaded: (client) => {
+      identifyAnonymousUser(client);
+    },
     ...(import.meta.env.DEV
       ? {
           debug: true,
@@ -26,6 +31,8 @@ export function initPostHog(): void {
       : {}),
   });
 }
+
+export { identifyAuthenticatedUser, getOrCreateAnonymousId } from "@/lib/posthogIdentity";
 
 /** Queue-safe capture — waits for PostHog to finish loading. */
 export function capturePostHog(
