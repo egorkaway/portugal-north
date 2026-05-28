@@ -14,7 +14,7 @@ import { fileURLToPath } from "node:url";
 import {
   loadEnvFile,
   parseImageMap,
-  parseStations,
+  parseAllStationsFromRepo,
   resolveStationImage,
   sleep,
   updateImageInMap,
@@ -37,7 +37,7 @@ if (!apiKey) {
   process.exit(1);
 }
 
-const stations = parseStations(readFileSync(stationsPath, "utf8"));
+const stations = parseAllStationsFromRepo(root);
 const imageMap = parseImageMap(readFileSync(imagesPath, "utf8"));
 const targets = onlyStation
   ? stations.filter((station) => station.name === onlyStation)

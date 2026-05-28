@@ -13,7 +13,7 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { parseStations } from "./lib/stationImageFetch.mjs";
+import { parseAllStationsFromRepo } from "./lib/stationImageFetch.mjs";
 import {
   isPlaceholderHotelName,
   parseHotelMap,
@@ -46,7 +46,7 @@ const target = Number(readFlagValue("--target") ?? 3);
 const maxStations = Number(readFlagValue("--max") ?? 0);
 const delayMs = Number(readFlagValue("--delay") ?? 2500);
 
-const stations = parseStations(readFileSync(stationsPath, "utf8"));
+const stations = parseAllStationsFromRepo(root);
 const hotelMap = parseHotelMap(readFileSync(hotelsPath, "utf8"));
 
 function curatedCount(stationName) {

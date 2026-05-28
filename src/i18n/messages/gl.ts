@@ -56,6 +56,8 @@ export const gl: Messages = {
     appleMaps: "Apple Maps",
     openStreetMap: "OpenStreetMap",
     tripHistorian: "TripHistorian",
+    metroDoPorto: "Metro do Porto",
+    metroLisboa: "Metropolitano de Lisboa",
     searchBooking: "Buscar hoteis en Booking",
     moreOnBooking: "Máis en Booking",
     stationPage: "Páxina da estación",

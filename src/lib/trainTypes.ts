@@ -4,6 +4,7 @@ export const TRAIN_TYPE_ORDER = [
   "Intercidades",
   "Regional",
   "Urban",
+  "Metro",
   "Inactive / Historic",
 ] as const;
 
@@ -12,6 +13,7 @@ const TRAIN_TYPE_ABBREV: Record<string, string> = {
   Intercidades: "IC",
   Regional: "R",
   Urban: "U",
+  Metro: "Metro",
   "Inactive / Historic": "Historic",
 };
 

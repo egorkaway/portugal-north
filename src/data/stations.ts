@@ -1,12 +1,9 @@
-export interface Station {
-  name: string;
-  lines: string[];
-  types: string[];
-  lat: number;
-  lng: number;
-}
+import { metroLisboaStations } from "./metroLisboaStations";
+import { metroPortoStations } from "./metroPortoStations";
+export type { Station } from "./stationTypes";
+import type { Station } from "./stationTypes";
 
-export const stations: Station[] = [
+const cpStations: Station[] = [
   { name: "Pombal", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 39.9153, lng: -8.6283 },
   { name: "Alfarelos", lines: ["Linha do Norte"], types: ["Intercidades", "Regional"], lat: 40.1678, lng: -8.6514 },
   { name: "Coimbra-B", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 40.2117, lng: -8.4353 },
@@ -379,6 +376,9 @@ export const stations: Station[] = [
   { name: "Loulé", lines: ["Linha do Algarve"], types: ["Intercidades", "Regional"], lat: 37.0833, lng: -8.0411 },
   { name: "Silves", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1922, lng: -8.4400 },
 ];
+
+/** CP and Metro do Porto stations shown on the site. */
+export const stations: Station[] = [...cpStations, ...metroPortoStations, ...metroLisboaStations];
 
 export function getAppleMapsUrl(station: Station): string {
   return `https://maps.apple.com/?q=${encodeURIComponent(station.name + " station Portugal")}&ll=${station.lat},${station.lng}&z=15`;

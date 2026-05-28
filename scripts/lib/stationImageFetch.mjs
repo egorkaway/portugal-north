@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 
 export function loadEnvFile(envPath) {
   try {
@@ -34,6 +35,16 @@ export function parseStations(ts) {
       lng: Number(match[4]),
     }),
   );
+}
+
+/** CP stations plus Metro do Porto and Metropolitano de Lisboa termini. */
+export function parseAllStationsFromRepo(root) {
+  const read = (rel) => readFileSync(join(root, rel), "utf8");
+  return [
+    ...parseStations(read("src/data/stations.ts")),
+    ...parseStations(read("src/data/metroPortoStations.ts")),
+    ...parseStations(read("src/data/metroLisboaStations.ts")),
+  ];
 }
 
 export function parseImageMap(ts) {

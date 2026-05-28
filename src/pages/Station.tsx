@@ -28,12 +28,14 @@ import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
 import { buildStationStructuredData } from "@/lib/structuredData";
 import { getStationBySlug } from "@/lib/stationSlug";
 import { getTripHistorianStationUrl } from "@/lib/tripHistorian";
+import { getMetroOperatorLink, isMetroStation } from "@/lib/metroStation";
 
 const typeColors: Record<string, string> = {
   "Alfa Pendular": "bg-primary text-primary-foreground",
   "Intercidades": "bg-secondary text-secondary-foreground",
   "Regional": "bg-accent text-accent-foreground",
   "Urban": "bg-muted text-muted-foreground",
+  Metro: "bg-violet-600 text-white",
   "Inactive / Historic": "bg-muted text-muted-foreground opacity-60",
 };
 
@@ -48,6 +50,8 @@ const Station = () => {
 
   const hotels = getHotelsForStation(station.name);
   const tripHistorianUrl = getTripHistorianStationUrl(station.name);
+  const metroStation = isMetroStation(station);
+  const metroLink = getMetroOperatorLink(station);
   const imageUrl = getStationImageUrl(station.name);
   const shareImageUrl = getStationShareImageUrl(station.name);
   const showPhotoVote = hasRepresentativeStationImage(station.name);
@@ -156,7 +160,18 @@ const Station = () => {
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
               {t("station.openStreetMap")}
             </a>
-            {tripHistorianUrl ? (
+            {metroLink ? (
+              <a
+                href={metroLink.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md bg-violet-600/10 px-3 py-2 text-sm font-medium text-violet-800 transition-colors hover:bg-violet-600 hover:text-white dark:text-violet-200"
+              >
+                <Train className="h-4 w-4" aria-hidden="true" />
+                {t(metroLink.labelKey)}
+              </a>
+            ) : null}
+            {!metroStation && tripHistorianUrl ? (
               <a
                 href={tripHistorianUrl}
                 target="_blank"

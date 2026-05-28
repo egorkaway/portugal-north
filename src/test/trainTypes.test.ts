@@ -7,6 +7,7 @@ describe("getTrainTypeAbbrev", () => {
     expect(getTrainTypeAbbrev("Intercidades")).toBe("IC");
     expect(getTrainTypeAbbrev("Regional")).toBe("R");
     expect(getTrainTypeAbbrev("Urban")).toBe("U");
+    expect(getTrainTypeAbbrev("Metro")).toBe("Metro");
     expect(getTrainTypeAbbrev("Inactive / Historic")).toBe("Historic");
   });
 
@@ -20,6 +21,7 @@ describe("sortTrainTypes", () => {
     expect(
       sortTrainTypes([
         "Inactive / Historic",
+        "Metro",
         "Urban",
         "Regional",
         "Alfa Pendular",
@@ -30,6 +32,7 @@ describe("sortTrainTypes", () => {
       "Intercidades",
       "Regional",
       "Urban",
+      "Metro",
       "Inactive / Historic",
     ]);
   });

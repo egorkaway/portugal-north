@@ -56,6 +56,8 @@ export type Messages = {
     appleMaps: string;
     openStreetMap: string;
     tripHistorian: string;
+    metroDoPorto: string;
+    metroLisboa: string;
     searchBooking: string;
     moreOnBooking: string;
     stationPage: string;

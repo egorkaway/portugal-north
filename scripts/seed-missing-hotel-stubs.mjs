@@ -9,7 +9,7 @@
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { parseStations } from "./lib/stationImageFetch.mjs";
+import { parseAllStationsFromRepo } from "./lib/stationImageFetch.mjs";
 import { parseHotelMap, writeHotelMap } from "./lib/stationHotelFetch.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -31,7 +31,7 @@ function stubHotels(stationName) {
   ];
 }
 
-const stations = parseStations(readFileSync(stationsPath, "utf8"));
+const stations = parseAllStationsFromRepo(root);
 const hotelMap = parseHotelMap(readFileSync(hotelsPath, "utf8"));
 
 const missing = stations.filter((s) => !hotelMap[s.name]?.length);

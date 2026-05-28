@@ -17,6 +17,7 @@ const typeColors: Record<string, string> = {
   "Intercidades": "bg-secondary text-secondary-foreground",
   "Regional": "bg-accent text-accent-foreground",
   "Urban": "bg-muted text-muted-foreground",
+  Metro: "bg-violet-600 text-white",
   "Inactive / Historic": "bg-muted text-muted-foreground opacity-60",
 };
 

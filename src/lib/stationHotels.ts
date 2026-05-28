@@ -1,3 +1,4 @@
+import { metroStationHotels } from "@/data/metroStationAssets";
 import { stationHotels, type Hotel } from "@/data/hotels";
 
 /** Auto-generated Booking search placeholders, not real properties. */
@@ -10,5 +11,6 @@ export function isPlaceholderHotel(hotel: Hotel): boolean {
 
 /** Curated hotels for a station (excludes generic placeholders). */
 export function getHotelsForStation(stationName: string): Hotel[] {
-  return (stationHotels[stationName] ?? []).filter((hotel) => !isPlaceholderHotel(hotel));
+  const hotels = stationHotels[stationName] ?? metroStationHotels[stationName] ?? [];
+  return hotels.filter((hotel) => !isPlaceholderHotel(hotel));
 }
