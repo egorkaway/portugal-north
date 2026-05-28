@@ -74,8 +74,8 @@ export const ca: Messages = {
     train: "tren",
     platform: "andana",
     delayMin: "+{{minutes}} min",
-    plan: "L'agafaré",
-    planned: "Planificat",
+    take: "L'agafo",
+    taking: "Agafant",
   },
   rankings: {
     title: "Rankings de la comunitat",

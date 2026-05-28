@@ -26,7 +26,11 @@ function writeMap(map: PlannedMap): void {
 
 export function getPlannedDepartureIds(stationName: string): Set<string> {
   const map = readMap();
-  return new Set(map[stationName] ?? []);
+  // Backwards-compatible: older clients may have stored multiple ids.
+  // New behavior is single-select (0 or 1 id).
+  const ids = map[stationName] ?? [];
+  const first = typeof ids[0] === "string" ? ids[0] : undefined;
+  return first ? new Set([first]) : new Set();
 }
 
 export function togglePlannedDepartureId(
@@ -34,11 +38,13 @@ export function togglePlannedDepartureId(
   departureId: string,
 ): Set<string> {
   const map = readMap();
-  const current = new Set(map[stationName] ?? []);
-  if (current.has(departureId)) current.delete(departureId);
-  else current.add(departureId);
-  map[stationName] = [...current];
+  const current = map[stationName] ?? [];
+  const selected = typeof current[0] === "string" ? current[0] : null;
+
+  // Single-select: selecting a different train replaces the old one.
+  // Tapping the selected train clears it.
+  map[stationName] = selected === departureId ? [] : [departureId];
   writeMap(map);
-  return current;
+  return new Set(map[stationName]);
 }
 

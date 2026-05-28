@@ -74,8 +74,8 @@ export const es: Messages = {
     train: "tren",
     platform: "andén",
     delayMin: "+{{minutes}} min",
-    plan: "Lo tomaré",
-    planned: "Planificado",
+    take: "Lo tomo",
+    taking: "Tomando",
   },
   rankings: {
     title: "Rankings de la comunidad",

@@ -74,8 +74,8 @@ export const pt: Messages = {
     train: "comboio",
     platform: "plataforma",
     delayMin: "+{{minutes}} min",
-    plan: "Quero apanhar",
-    planned: "Planeado",
+    take: "Vou apanhar",
+    taking: "A apanhar",
   },
   rankings: {
     title: "Rankings da comunidade",

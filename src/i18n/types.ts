@@ -74,8 +74,8 @@ export type Messages = {
     train: string;
     platform: string;
     delayMin: string;
-    plan: string;
-    planned: string;
+    take: string;
+    taking: string;
   };
   rankings: {
     title: string;

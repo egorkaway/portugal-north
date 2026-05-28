@@ -74,8 +74,8 @@ export const gl: Messages = {
     train: "tren",
     platform: "andeén",
     delayMin: "+{{minutes}} min",
-    plan: "Vou coller",
-    planned: "Planeado",
+    take: "Vou coller",
+    taking: "A coller",
   },
   rankings: {
     title: "Rankings da comunidade",

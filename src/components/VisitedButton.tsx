@@ -32,8 +32,8 @@ export function VisitedButton({
       }
       className={`inline-flex items-center gap-1 rounded-md border px-2 py-1.5 text-xs font-medium transition-colors shrink-0 ${
         visited
-          ? "border-emerald-600/50 bg-emerald-600/15 text-emerald-800 dark:text-emerald-200 hover:bg-emerald-600/25"
-          : "border-border bg-card text-muted-foreground hover:border-emerald-600/40 hover:text-emerald-800 dark:hover:text-emerald-200"
+          ? "border-amber-600 bg-amber-500 text-white hover:bg-amber-500/90"
+          : "border-border bg-card text-muted-foreground hover:border-amber-600/50 hover:text-amber-800 dark:hover:text-amber-200"
       }`}
     >
       {visited ? (

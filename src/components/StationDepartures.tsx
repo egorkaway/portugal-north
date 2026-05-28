@@ -14,8 +14,8 @@ function DepartureRow({
   serviceType,
   platform,
   delayMinutes,
-  planned,
-  onTogglePlanned,
+  taking,
+  onToggleTaking,
 }: {
   id: string;
   trainNumber: string;
@@ -24,8 +24,8 @@ function DepartureRow({
   serviceType: string;
   platform: string | null;
   delayMinutes: number | null;
-  planned: boolean;
-  onTogglePlanned: (id: string) => void;
+  taking: boolean;
+  onToggleTaking: (id: string) => void;
 }) {
   const { t } = useLocale();
 
@@ -42,15 +42,15 @@ function DepartureRow({
       <div className="flex shrink-0 flex-col items-end gap-1.5">
         <button
           type="button"
-          aria-pressed={planned}
-          onClick={() => onTogglePlanned(id)}
+          aria-pressed={taking}
+          onClick={() => onToggleTaking(id)}
           className={
-            planned
+            taking
               ? "rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-primary-foreground"
               : "rounded-full border border-border bg-background px-2.5 py-1 text-xs font-semibold text-foreground hover:bg-muted"
           }
         >
-          {planned ? t("departures.planned") : t("departures.plan")}
+          {taking ? t("departures.taking") : t("departures.take")}
         </button>
         {delayMinutes !== null && (
           <span className="rounded-full bg-destructive/10 px-2 py-0.5 text-xs font-medium text-destructive">
@@ -134,8 +134,8 @@ export function StationDepartures({ stationName }: { stationName: string }) {
             <DepartureRow
               key={dep.id}
               {...dep}
-              planned={plannedIds.has(dep.id)}
-              onTogglePlanned={(id) => {
+              taking={plannedIds.has(dep.id)}
+              onToggleTaking={(id) => {
                 setPlannedIds(togglePlannedDepartureId(stationName, id));
               }}
             />
