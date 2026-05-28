@@ -1,4 +1,5 @@
 import { PageHead } from "@/components/PageHead";
+import { SiteFooter } from "@/components/SiteFooter";
 import { getRankingsPageMeta } from "@/lib/pageMeta";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { ArrowLeft, TrainFront } from "lucide-react";
@@ -40,6 +41,8 @@ const Rankings = () => {
 
           <RankingsPanel alwaysShow showDetailedError />
         </main>
+
+        <SiteFooter showIntro={false} />
       </div>
     </>
   );

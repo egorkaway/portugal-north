@@ -1,4 +1,6 @@
 import { Check, MapPin } from "lucide-react";
+import type { VoteControlSurface } from "@/lib/voteButtonStyles";
+import { visitedButtonClassName } from "@/lib/voteButtonStyles";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 export function VisitedButton({
@@ -6,12 +8,14 @@ export function VisitedButton({
   onToggle,
   subjectLabel,
   compact,
+  surface = "card",
 }: {
   visited: boolean;
   onToggle: () => void;
   subjectLabel: string;
   /** Smaller label on station cards; full label on detail page. */
   compact?: boolean;
+  surface?: VoteControlSurface;
 }) {
   const { t } = useLocale();
 
@@ -30,13 +34,7 @@ export function VisitedButton({
           ? t("visited.markNotVisited", { subject: subjectLabel })
           : t("visited.markVisited", { subject: subjectLabel })
       }
-      className={`inline-flex items-center gap-1 rounded-md border px-2 py-1.5 text-xs font-medium transition-colors shrink-0 ${
-        visited
-          ? "border-amber-600 bg-amber-500 text-white hover:bg-amber-500/90"
-          : compact
-            ? "border-border/80 bg-muted/50 text-foreground/70 hover:border-amber-600/50 hover:text-amber-800 dark:hover:text-amber-200"
-            : "border-border bg-card text-muted-foreground hover:border-amber-600/50 hover:text-amber-800 dark:hover:text-amber-200"
-      }`}
+      className={visitedButtonClassName(visited, surface, compact)}
     >
       {visited ? (
         <Check className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />

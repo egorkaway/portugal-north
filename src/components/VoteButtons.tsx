@@ -1,5 +1,10 @@
 import { ThumbsDown, ThumbsUp } from "lucide-react";
 import type { Vote } from "@/hooks/useStationVote";
+import type { VoteControlSurface } from "@/lib/voteButtonStyles";
+import {
+  voteDownButtonClassName,
+  voteUpButtonClassName,
+} from "@/lib/voteButtonStyles";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 export function VoteButtons({
@@ -7,11 +12,14 @@ export function VoteButtons({
   onUp,
   onDown,
   subjectLabel,
+  surface = "card",
 }: {
   vote: Vote;
   onUp: () => void;
   onDown: () => void;
   subjectLabel: string;
+  /** `primary` for green station headers; default for cards and hotel rows. */
+  surface?: VoteControlSurface;
 }) {
   const { t } = useLocale();
 
@@ -26,11 +34,7 @@ export function VoteButtons({
         aria-label={t("vote.upvote", { subject: subjectLabel })}
         aria-pressed={vote === "up"}
         title={vote === "up" ? t("vote.removeUpvote") : t("vote.upvoteOnlyYou")}
-        className={`p-1.5 rounded-md border transition-colors ${
-          vote === "up"
-            ? "bg-primary-foreground text-primary border-primary-foreground/60"
-            : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-primary"
-        }`}
+        className={voteUpButtonClassName(vote, surface)}
       >
         <ThumbsUp className="w-3.5 h-3.5" />
       </button>
@@ -40,11 +44,7 @@ export function VoteButtons({
         aria-label={t("vote.downvote", { subject: subjectLabel })}
         aria-pressed={vote === "down"}
         title={vote === "down" ? t("vote.removeDownvote") : t("vote.downvoteOnlyYou")}
-        className={`p-1.5 rounded-md border transition-colors ${
-          vote === "down"
-            ? "bg-destructive text-destructive-foreground border-destructive"
-            : "bg-card text-muted-foreground border-border hover:border-destructive/40 hover:text-destructive"
-        }`}
+        className={voteDownButtonClassName(vote, surface)}
       >
         <ThumbsDown className="w-3.5 h-3.5" />
       </button>

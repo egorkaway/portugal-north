@@ -98,11 +98,13 @@ const Station = () => {
                   onUp={() => cast("up")}
                   onDown={() => cast("down")}
                   subjectLabel={station.name}
+                  surface="primary"
                 />
                 <VisitedButton
                   visited={visited}
                   onToggle={toggleVisited}
                   subjectLabel={station.name}
+                  surface="primary"
                 />
               </div>
             </div>

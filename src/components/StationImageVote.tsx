@@ -114,7 +114,7 @@ export function StationImageVoteControls({
         label={t("imageVote.goodPhoto")}
         shortLabel={t("imageVote.goodShort")}
         icon={ImageIcon}
-        activeClassName="border-primary bg-primary text-primary-foreground"
+        activeClassName="border-emerald-500 bg-emerald-600 text-white"
       />
       <ImageVoteButton
         active={vote === "down"}

@@ -1,4 +1,5 @@
 import { PageHead } from "@/components/PageHead";
+import { SiteFooter } from "@/components/SiteFooter";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getTicketsPageMeta } from "@/lib/pageMeta";
 import { ArrowLeft, CreditCard, Globe, Smartphone, Ticket, TrainFront } from "lucide-react";
@@ -133,6 +134,8 @@ const Tickets = () => {
             </section>
           </div>
         </main>
+
+        <SiteFooter showIntro={false} />
       </div>
     </>
   );
