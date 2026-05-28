@@ -1,18 +1,47 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Portugal by Train">
-  <rect width="512" height="512" rx="108" fill="#1d7a70"/>
-  <g
-    transform="translate(96 88) scale(13.33)"
+  <defs>
+    <linearGradient id="pt" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3ecf8e"/>
+      <stop offset="100%" stop-color="#1a8f7a"/>
+    </linearGradient>
+    <linearGradient id="es" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f5a623"/>
+      <stop offset="100%" stop-color="#f7d154"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="108" fill="#345846"/>
+  <path
+    d="M 118 168 Q 168 128 248 148 L 312 168 Q 352 188 368 228 L 378 268 Q 382 308 352 338 L 298 368 Q 248 382 198 368 L 148 348 Q 118 328 108 288 L 102 228 Q 108 188 118 168 Z"
+    fill="url(#pt)"
+    opacity="0.95"
+  />
+  <path
+    d="M 248 148 L 312 168 Q 368 178 398 208 L 408 248 Q 412 288 388 318 L 348 348 Q 308 362 268 352 L 248 148 Z"
+    fill="url(#es)"
+    opacity="0.9"
+  />
+  <path
+    d="M 168 248 Q 228 218 308 238 Q 348 248 378 278"
     fill="none"
     stroke="#ffffff"
-    stroke-width="1.65"
+    stroke-width="14"
     stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-    <path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"/>
-    <path d="m9 15-1-1"/>
-    <path d="m15 15 1-1"/>
-    <path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"/>
-    <path d="m8 19-2 3"/>
-    <path d="m16 19 2 3"/>
+    opacity="0.85"
+  />
+  <circle cx="198" cy="258" r="16" fill="#ffffff" opacity="0.9"/>
+  <circle cx="278" cy="248" r="16" fill="#ffffff" opacity="0.9"/>
+  <circle cx="338" cy="268" r="16" fill="#ffffff" opacity="0.9"/>
+  <g transform="translate(148 312) rotate(-8)">
+    <path
+      d="M 0 48 L 88 48 L 108 32 L 168 32 L 188 48 L 228 48 L 228 88 L 0 88 Z"
+      fill="#e8f4ff"
+      fill-opacity="0.35"
+      stroke="#ffffff"
+      stroke-width="6"
+      stroke-linejoin="round"
+    />
+    <rect x="118" y="40" width="44" height="28" rx="6" fill="#ffffff" fill-opacity="0.5"/>
+    <ellipse cx="42" cy="92" rx="22" ry="10" fill="#ffffff" fill-opacity="0.25"/>
+    <ellipse cx="186" cy="92" rx="22" ry="10" fill="#ffffff" fill-opacity="0.25"/>
   </g>
 </svg>

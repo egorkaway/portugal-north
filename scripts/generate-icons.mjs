@@ -28,6 +28,11 @@ async function fromRaster(sourcePath) {
       .toFile(path.join(publicDir, outName));
     console.log(`Wrote ${outName} (${size}×${size}) from raster`);
   }
+
+  await sharp(sourcePath)
+    .resize(32, 32, { fit: "cover", position: "centre" })
+    .toFile(path.join(publicDir, "favicon.ico"));
+  console.log("Wrote favicon.ico (32×32) from raster");
 }
 
 function fromSvg(svgPath) {
@@ -35,7 +40,7 @@ function fromSvg(svgPath) {
   for (const [size, outName] of OUTPUTS) {
     const resvg = new Resvg(svg, {
       fitTo: { mode: "width", value: size },
-      background: "#1d7a70",
+      background: "#345846",
     });
     fs.writeFileSync(path.join(publicDir, outName), resvg.render().asPng());
     console.log(`Wrote ${outName} (${size}×${size}) from SVG`);
