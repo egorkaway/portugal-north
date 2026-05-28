@@ -138,6 +138,22 @@ export type Messages = {
     tipRailPass: string;
     tipUrban: string;
     disclaimer: string;
+    metroTitle: string;
+    metroIntro: string;
+    metroCombineNote: string;
+    metroPortoTitle: string;
+    metroPortoBody: string;
+    metroPortoZones: string;
+    metroPortoTips: string;
+    metroPortoAndanteLink: string;
+    metroPortoTariffsLink: string;
+    metroLisboaTitle: string;
+    metroLisboaBody: string;
+    metroLisboaZones: string;
+    metroLisboaTips: string;
+    metroLisboaNaveganteLink: string;
+    metroLisboaTariffsLink: string;
+    metroDisclaimer: string;
   };
   pwa: {
     votesPendingSync: string;

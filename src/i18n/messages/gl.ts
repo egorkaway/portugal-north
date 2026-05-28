@@ -119,7 +119,7 @@ export const gl: Messages = {
   },
   tickets: {
     title: "Billetes e prezos",
-    subtitle: "Como mercar billetes da CP e o que adoita influír no prezo",
+    subtitle: "CP, Andante no Porto, navegante® en Lisboa e o que influí no prezo",
     howToBuyTitle: "Como mercar billetes",
     howToBuyIntro:
       "A maioría da xente merca billetes en liña ou nas estacións. En rutas concorridas, mercar con antelación adoita ser máis seguro.",
@@ -152,6 +152,31 @@ export const gl: Messages = {
     tipUrban: "Para traxectos curtos, Urbano/Regional adoita ter mellor valor.",
     disclaimer:
       "Isto non é información oficial de prezos. Confirma sempre tarifas e regras actuais na CP.",
+    metroTitle: "Metro e transporte local (Porto e Lisboa)",
+    metroIntro:
+      "Os metros urbanos teñen billetes á parte dos trens da CP. No Porto e en Lisboa o prezo depende das zonas que atraveses, non só da cor da liña.",
+    metroCombineNote:
+      "O billete da CP non inclúe o metro. Usa Andante ou navegante® no tramo de metro, salvo produto combinado explícito da CP.",
+    metroPortoTitle: "Porto: Andante",
+    metroPortoBody:
+      "O Andante cobre o Metro do Porto, autobuses STCP e outros operadores na área metropolitana. Compra a tarxeta recargable nas estacións de metro ou Lojas Andante e carga viaxes, pases diarios ou títulos mensuais.",
+    metroPortoZones:
+      "As tarifas seguen zonas (Z1–Z8 no mapa metropolitano). Unha zona é o mínimo; aeroporto, Matosinhos e Póvoa de Varzim adoitan cruzar máis zonas.",
+    metroPortoTips:
+      "Valida nos tornos á entrada. Hai billetes ocasionais en papel, pero a tarxeta é máis práctica para varias viaxes no mesmo día.",
+    metroPortoAndanteLink: "Información Andante",
+    metroPortoTariffsLink: "Tarifarios Metro do Porto",
+    metroLisboaTitle: "Lisboa: navegante®",
+    metroLisboaBody:
+      "O Metropolitano de Lisboa comparte navegante® con Carris (autobuses/tranvías), Fertagus e outros operadores na área metropolitana.",
+    metroLisboaZones:
+      "Os títulos véndense por aneis de zonas (p. ex. Navegante Municipal no núcleo, Metropolitano para aneis máis amplos). Aeroporto, Amadora e Odivelas adoitan precisar un pase maior que un salto na Baixa.",
+    metroLisboaTips:
+      "Carga viaxes ocasionais ou pases diarios nas máquinas; hai tarxetas personalizadas nas estacións principais (navegante® na Hora).",
+    metroLisboaNaveganteLink: "navegante®",
+    metroLisboaTariffsLink: "Tarifarios Metropolitano de Lisboa",
+    metroDisclaimer:
+      "Os mapas de zonas e prezos cambian. Consulta os sitios oficiais antes de viaxar.",
   },
   pwa: {
     votesPendingSync:

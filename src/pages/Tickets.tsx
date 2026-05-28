@@ -2,12 +2,16 @@ import { PageHead } from "@/components/PageHead";
 import { SiteFooter } from "@/components/SiteFooter";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getTicketsPageMeta } from "@/lib/pageMeta";
-import { ArrowLeft, CreditCard, Globe, Smartphone, Ticket, TrainFront } from "lucide-react";
+import { ArrowLeft, CreditCard, Globe, Layers, Smartphone, Ticket, TrainFront } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const CP_WEBSITE_URL = "https://www.cp.pt/";
 const CP_APP_IOS_URL = "https://apps.apple.com/app/comboios-de-portugal/id1105415627";
 const CP_APP_ANDROID_URL = "https://play.google.com/store/apps/details?id=pt.cp.mobiapp";
+const ANDANTE_URL = "https://www.andante.pt/";
+const METRO_PORTO_TARIFFS_URL = "https://www.metrodoporto.pt/pt/viajar/tarifarios";
+const NAVEGANTE_URL = "https://www.navegante.pt/";
+const METRO_LISBOA_TARIFFS_URL = "https://www.metrolisboa.pt/pt/comprar/tarifario";
 
 const Tickets = () => {
   const { t, locale } = useLocale();
@@ -130,6 +134,74 @@ const Tickets = () => {
 
               <div className="mt-4 rounded-lg border border-border bg-muted p-4 text-sm text-muted-foreground">
                 {t("tickets.disclaimer")}
+              </div>
+            </section>
+
+            <section className="space-y-2">
+              <h2 className="text-lg font-semibold md:text-xl">{t("tickets.metroTitle")}</h2>
+              <p className="text-muted-foreground">{t("tickets.metroIntro")}</p>
+              <p className="text-sm text-muted-foreground">{t("tickets.metroCombineNote")}</p>
+
+              <div className="mt-4 grid gap-3 md:grid-cols-2">
+                <div className="rounded-lg border border-violet-600/20 bg-card p-4">
+                  <div className="flex items-center gap-2 font-medium">
+                    <Layers className="h-4 w-4 text-violet-600" aria-hidden="true" />
+                    {t("tickets.metroPortoTitle")}
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground">{t("tickets.metroPortoBody")}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{t("tickets.metroPortoZones")}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{t("tickets.metroPortoTips")}</p>
+                  <div className="mt-3 flex flex-wrap gap-3">
+                    <a
+                      href={ANDANTE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-violet-700 underline underline-offset-4 hover:text-violet-900 dark:text-violet-300"
+                    >
+                      {t("tickets.metroPortoAndanteLink")}
+                    </a>
+                    <a
+                      href={METRO_PORTO_TARIFFS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-violet-700 underline underline-offset-4 hover:text-violet-900 dark:text-violet-300"
+                    >
+                      {t("tickets.metroPortoTariffsLink")}
+                    </a>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border border-violet-600/20 bg-card p-4">
+                  <div className="flex items-center gap-2 font-medium">
+                    <Layers className="h-4 w-4 text-violet-600" aria-hidden="true" />
+                    {t("tickets.metroLisboaTitle")}
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground">{t("tickets.metroLisboaBody")}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{t("tickets.metroLisboaZones")}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{t("tickets.metroLisboaTips")}</p>
+                  <div className="mt-3 flex flex-wrap gap-3">
+                    <a
+                      href={NAVEGANTE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-violet-700 underline underline-offset-4 hover:text-violet-900 dark:text-violet-300"
+                    >
+                      {t("tickets.metroLisboaNaveganteLink")}
+                    </a>
+                    <a
+                      href={METRO_LISBOA_TARIFFS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm font-semibold text-violet-700 underline underline-offset-4 hover:text-violet-900 dark:text-violet-300"
+                    >
+                      {t("tickets.metroLisboaTariffsLink")}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-4 rounded-lg border border-border bg-muted p-4 text-sm text-muted-foreground">
+                {t("tickets.metroDisclaimer")}
               </div>
             </section>
           </div>

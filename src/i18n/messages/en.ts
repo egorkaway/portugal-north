@@ -118,7 +118,7 @@ export const en: Messages = {
   },
   tickets: {
     title: "Tickets & prices",
-    subtitle: "How to buy CP tickets and what usually affects prices",
+    subtitle: "CP trains, Porto Andante, Lisbon navegante®, and what affects fares",
     howToBuyTitle: "How to buy tickets",
     howToBuyIntro:
       "Most visitors buy CP tickets online or at stations. For busy routes and peak times, buying earlier is usually safer.",
@@ -151,6 +151,31 @@ export const en: Messages = {
     tipUrban: "For short city hops, Urban/Regional tickets can be the best value.",
     disclaimer:
       "This is a practical overview, not official pricing. Always confirm current fares and rules on CP before you travel.",
+    metroTitle: "Metro & local transit (Porto & Lisbon)",
+    metroIntro:
+      "City metros use separate tickets from CP trains. Both Porto and Lisbon use zone-based fares — what you pay depends on how many zones you cross, not the line colour alone.",
+    metroCombineNote:
+      "A CP ticket does not include metro rides. Use Andante or navegante® for the metro leg unless CP sells an explicit combined product for your trip.",
+    metroPortoTitle: "Porto: Andante",
+    metroPortoBody:
+      "Andante covers Metro do Porto, STCP buses, and other operators in the Porto metropolitan area. Get a rechargeable card at metro stations or Lojas Andante, then load single trips, day passes, or monthly titles.",
+    metroPortoZones:
+      "Fares follow zones (Z1–Z8 on the metropolitan map). One zone is the cheapest; airport, Matosinhos, and Póvoa de Varzim trips often cross more zones.",
+    metroPortoTips:
+      "Validate at the gates when you enter. Occasional paper tickets exist, but the card is easier if you make several rides in a day.",
+    metroPortoAndanteLink: "Andante card info",
+    metroPortoTariffsLink: "Metro do Porto fares",
+    metroLisboaTitle: "Lisbon: navegante®",
+    metroLisboaBody:
+      "Metropolitano de Lisboa shares the navegante® system with Carris (buses/trams), Fertagus, and other operators in the Lisbon metropolitan area.",
+    metroLisboaZones:
+      "Titles are sold by zone rings (e.g. Navegante Municipal for the city core, Metropolitano for wider rings). Airport, Amadora, and Odivelas often need a larger pass than a short hop in Baixa.",
+    metroLisboaTips:
+      "Load occasional trips or day passes at station machines; personalised cards are available at major stations (navegante® na Hora).",
+    metroLisboaNaveganteLink: "navegante®",
+    metroLisboaTariffsLink: "Metropolitano de Lisboa fares",
+    metroDisclaimer:
+      "Zone maps and prices change. Check the official operator sites before you travel.",
   },
   pwa: {
     votesPendingSync:
@@ -233,8 +258,9 @@ export const en: Messages = {
     tickets: {
       title: "Tickets & Prices | Portugal by Train",
       description:
-        "How to buy CP train tickets in Portugal and what usually affects prices across service types (AP, IC, Regional, Urban).",
-      ogDescription: "A quick guide to buying CP tickets and understanding typical price drivers.",
+        "How to buy CP train tickets, Porto Andante and Lisbon navegante® metro passes, and what affects fares (zones, service type, booking time).",
+      ogDescription:
+        "CP tickets plus Andante and navegante® zone fares for Porto and Lisbon metros.",
     },
     notFound: {
       title: "Page Not Found | Portugal by Train",

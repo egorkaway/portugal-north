@@ -119,7 +119,7 @@ export const pt: Messages = {
   },
   tickets: {
     title: "Bilhetes e preços",
-    subtitle: "Como comprar bilhetes da CP e o que costuma influenciar o preço",
+    subtitle: "CP, Andante no Porto, navegante® em Lisboa e o que influencia o preço",
     howToBuyTitle: "Como comprar bilhetes",
     howToBuyIntro:
       "A maioria das pessoas compra bilhetes online ou nas estações. Em rotas concorridas, comprar com antecedência costuma ser mais seguro.",
@@ -152,6 +152,31 @@ export const pt: Messages = {
     tipUrban: "Para deslocações curtas, Urbano/Regional costuma ter melhor valor.",
     disclaimer:
       "Isto não é informação oficial de preços. Confirme sempre tarifas e regras atuais no site da CP.",
+    metroTitle: "Metro e transportes locais (Porto e Lisboa)",
+    metroIntro:
+      "Os metros urbanos têm bilhetes à parte dos comboios da CP. No Porto e em Lisboa o preço depende das zonas que atravessa, não só da cor da linha.",
+    metroCombineNote:
+      "O bilhete da CP não inclui o metro. Use Andante ou navegante® no troço de metro, salvo produto combinado explícito da CP.",
+    metroPortoTitle: "Porto: Andante",
+    metroPortoBody:
+      "O Andante serve o Metro do Porto, autocarros da STCP e outros operadores na Área Metropolitana do Porto. Compre o cartão recarregável nas estações de metro ou Lojas Andante e carregue viagens, passes diários ou títulos mensais.",
+    metroPortoZones:
+      "As tarifas seguem zonas (Z1–Z8 no mapa metropolitano). Uma zona é o mínimo; aeroporto, Matosinhos e Póvoa de Varzim costumam passar mais zonas.",
+    metroPortoTips:
+      "Valide nas catracas à entrada. Há bilhetes ocasionais em papel, mas o cartão é mais prático para várias viagens no mesmo dia.",
+    metroPortoAndanteLink: "Informação Andante",
+    metroPortoTariffsLink: "Tarifários Metro do Porto",
+    metroLisboaTitle: "Lisboa: navegante®",
+    metroLisboaBody:
+      "O Metropolitano de Lisboa usa o sistema navegante® com a Carris (autocarros/elétricos), Fertagus e outros operadores na Área Metropolitana de Lisboa.",
+    metroLisboaZones:
+      "Os títulos vendem-se por anéis de zonas (ex.: Navegante Municipal no núcleo urbano, Metropolitano para anéis mais largos). Aeroporto, Amadora e Odivelas muitas vezes exigem um passe maior que um salto na Baixa.",
+    metroLisboaTips:
+      "Carregue viagens ocasionais ou passes diários nas máquinas; cartões personalizados estão disponíveis nas estações principais (navegante® na Hora).",
+    metroLisboaNaveganteLink: "navegante®",
+    metroLisboaTariffsLink: "Tarifários Metropolitano de Lisboa",
+    metroDisclaimer:
+      "Mapas de zonas e preços mudam. Confirme nos sites oficiais antes de viajar.",
   },
   pwa: {
     votesPendingSync:
@@ -235,8 +260,9 @@ export const pt: Messages = {
     tickets: {
       title: "Bilhetes e Preços | Portugal de Comboio",
       description:
-        "Como comprar bilhetes de comboio da CP em Portugal e o que costuma influenciar os preços (AP, IC, Regional, Urbano).",
-      ogDescription: "Guia rápido para comprar bilhetes da CP e entender os principais fatores de preço.",
+        "Como comprar bilhetes CP, passes Andante e navegante® nos metros do Porto e Lisboa, e o que influencia as tarifas.",
+      ogDescription:
+        "Bilhetes CP, zonas Andante e navegante® nos metros do Porto e de Lisboa.",
     },
     notFound: {
       title: "Página não encontrada | Portugal de Comboio",

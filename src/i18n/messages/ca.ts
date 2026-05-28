@@ -119,7 +119,7 @@ export const ca: Messages = {
   },
   tickets: {
     title: "Bitllets i preus",
-    subtitle: "Com comprar bitllets de la CP i què sol influir en el preu",
+    subtitle: "CP, Andante al Porto, navegante® a Lisboa i què influeix en el preu",
     howToBuyTitle: "Com comprar bitllets",
     howToBuyIntro:
       "La majoria de gent compra bitllets en línia o a les estacions. En rutes populars, comprar amb antelació sol ser més segur.",
@@ -152,6 +152,31 @@ export const ca: Messages = {
     tipUrban: "Per trajectes curts, Urbà/Regional sol tenir millor valor.",
     disclaimer:
       "Això no és informació oficial de preus. Confirma sempre tarifes i normes actuals a la CP.",
+    metroTitle: "Metro i transport local (Porto i Lisboa)",
+    metroIntro:
+      "Els metros urbans tenen bitllets a part dels trens de CP. Al Porto i a Lisboa el preu depèn de les zones que travessis, no només del color de la línia.",
+    metroCombineNote:
+      "El bitllet de CP no inclou el metro. Fes servir Andante o navegante® al tram de metro, llevat de producte combinat explícit de CP.",
+    metroPortoTitle: "Porto: Andante",
+    metroPortoBody:
+      "Andante cobreix el Metro do Porto, autobusos STCP i altres operadors a l'àrea metropolitana. Compra la targeta recarregable a estacions de metro o Lojas Andante i carrega viatges, passis diaris o títols mensuals.",
+    metroPortoZones:
+      "Les tarifes segueixen zones (Z1–Z8 al mapa metropolità). Una zona és el mínim; aeroport, Matosinhos i Póvoa de Varzim sovint creuen més zones.",
+    metroPortoTips:
+      "Valida als torniquets en entrar. Hi ha bitllets ocasionals en paper, però la targeta és més pràctica per a diversos viatges el mateix dia.",
+    metroPortoAndanteLink: "Informació Andante",
+    metroPortoTariffsLink: "Tarifes Metro do Porto",
+    metroLisboaTitle: "Lisboa: navegante®",
+    metroLisboaBody:
+      "El Metropolitano de Lisboa comparteix navegante® amb Carris (autobusos/tramvies), Fertagus i altres operadors a l'àrea metropolitana.",
+    metroLisboaZones:
+      "Els títols es venen per anells de zones (p. ex. Navegante Municipal al nucli, Metropolitano per anells més amplis). Aeroport, Amadora i Odivelas sovint requereixen un passi més gran que un salt a la Baixa.",
+    metroLisboaTips:
+      "Carrega viatges ocasionals o passis diaris a les màquines; hi ha targetes personalitzades a estacions principals (navegante® na Hora).",
+    metroLisboaNaveganteLink: "navegante®",
+    metroLisboaTariffsLink: "Tarifes Metropolitano de Lisboa",
+    metroDisclaimer:
+      "Els mapes de zones i preus canvien. Consulta els llocs oficials abans de viatjar.",
   },
   pwa: {
     votesPendingSync:

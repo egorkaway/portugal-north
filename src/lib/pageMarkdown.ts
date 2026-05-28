@@ -99,6 +99,20 @@ ${meta.description}
 ## Overview
 
 This guide explains common ways to buy CP train tickets in Portugal (online, app, station) and what tends to affect prices (service type, route length, availability, and how early you book).
+
+## Metro & local transit
+
+City metros are separate from CP. Both Porto and Lisbon use **zone-based** fares.
+
+### Porto: [Andante](https://www.andante.pt/)
+
+Covers [Metro do Porto](https://www.metrodoporto.pt/) and STCP buses. Buy a rechargeable card, load trips or passes, and validate at gates. Fares depend on zones (Z1–Z8); airport and seaside termini often cross more zones. See [Metro do Porto fares](https://www.metrodoporto.pt/pt/viajar/tarifarios).
+
+### Lisbon: [navegante®](https://www.navegante.pt/)
+
+Shared by [Metropolitano de Lisboa](https://www.metrolisboa.pt/) and Carris/Fertagus. Titles are sold by zone rings (city core vs wider metropolitan). See [current fares](https://www.metrolisboa.pt/pt/comprar/tarifario).
+
+A CP ticket does not include metro rides unless CP sells an explicit combined product for your journey.
 `;
 }
 
