@@ -15,6 +15,8 @@ import Index from "./pages/Index.tsx";
 import Rankings from "./pages/Rankings.tsx";
 import Station from "./pages/Station.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import Tickets from "./pages/Tickets.tsx";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
 
 const queryClient = new QueryClient();
 
@@ -31,13 +33,17 @@ const App = () => (
           <VoteSyncBootstrap />
           <VoteSyncNotice />
           <WebMcpBridge />
-          <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/rankings" element={<Rankings />} />
-          <Route path="/stations/:slug" element={<Station />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-          </Routes>
+          <div className="pb-24 sm:pb-0">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/rankings" element={<Rankings />} />
+              <Route path="/tickets" element={<Tickets />} />
+              <Route path="/stations/:slug" element={<Station />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+          <MobileBottomNav />
         </BrowserRouter>
         <Analytics />
       </TooltipProvider>

@@ -5,6 +5,7 @@ import {
   RANKINGS_PAGE_META,
   buildStationPageMeta,
   type PageMeta,
+  getTicketsPageMeta,
 } from "@/lib/pageMeta";
 import { formatLineList, formatServiceTypes } from "@/lib/stationMeta";
 import { getStationBySlug, stationToSlug } from "@/lib/stationSlug";
@@ -78,6 +79,27 @@ Vote on station and hotel listings across the site; rankings aggregate community
 `;
 
   return body;
+}
+
+export function buildTicketsMarkdown(meta: PageMeta, siteUrl: string): string {
+  const base = siteUrl.replace(/\/$/, "");
+  return `${yamlFrontmatter({
+    title: meta.title,
+    description: meta.description,
+    image: meta.ogImagePath ? `${base}${meta.ogImagePath}` : undefined,
+  })}# ${meta.title}
+
+${meta.description}
+
+## Quick links
+
+- [All stations](${base}/)
+- [Community rankings](${base}/rankings)
+
+## Overview
+
+This guide explains common ways to buy CP train tickets in Portugal (online, app, station) and what tends to affect prices (service type, route length, availability, and how early you book).
+`;
 }
 
 export function buildStationMarkdown(
@@ -181,6 +203,9 @@ export function buildMarkdownForRoute(route: PrerenderRoute, siteUrl: string): s
   if (meta.canonicalPath === "/rankings") {
     return buildRankingsMarkdown(meta, siteUrl);
   }
+  if (meta.canonicalPath === "/tickets") {
+    return buildTicketsMarkdown(meta, siteUrl);
+  }
   if (meta.canonicalPath === "/404") {
     return buildNotFoundMarkdown(meta, siteUrl);
   }
@@ -213,6 +238,9 @@ export function buildMarkdownForPath(pathname: string, siteUrl: string): string 
 
   if (normalized === "/rankings") {
     return buildRankingsMarkdown(RANKINGS_PAGE_META, siteUrl);
+  }
+  if (normalized === "/tickets") {
+    return buildTicketsMarkdown(getTicketsPageMeta("en"), siteUrl);
   }
 
   return null;

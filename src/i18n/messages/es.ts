@@ -14,6 +14,10 @@ export const es: Messages = {
     allStations: "Todas las estaciones",
     backToStations: "Volver a estaciones",
     returnHome: "Volver al inicio",
+    home: "Inicio",
+    rankings: "Rankings",
+    tickets: "Billetes",
+    mobile: "Navegación móvil",
   },
   home: {
     heroSubtitle:
@@ -70,6 +74,8 @@ export const es: Messages = {
     train: "tren",
     platform: "andén",
     delayMin: "+{{minutes}} min",
+    plan: "Lo tomaré",
+    planned: "Planificado",
   },
   rankings: {
     title: "Rankings de la comunidad",
@@ -108,6 +114,42 @@ export const es: Messages = {
       "Sin conexión — mostrando rankings de la comunidad guardados de tu última visita. Los votos nuevos en este dispositivo se sincronizarán cuando vuelvas a estar en línea.",
     offlineDevice:
       "Sin conexión — mostrando rankings solo con tus votos en este dispositivo.",
+  },
+  tickets: {
+    title: "Billetes y precios",
+    subtitle: "Cómo comprar billetes de CP y qué suele influir en el precio",
+    howToBuyTitle: "Cómo comprar billetes",
+    howToBuyIntro:
+      "La mayoría de la gente compra billetes online o en estaciones. En rutas populares, comprar con antelación suele ser más seguro.",
+    buyOnlineTitle: "Web",
+    buyOnlineBody:
+      "Usa el sitio oficial de CP para buscar rutas y comprar con tarjeta. Normalmente obtendrás un PDF/QR para mostrar a bordo.",
+    buyOnlineLink: "Abrir web de CP",
+    buyInAppTitle: "App",
+    buyInAppBody:
+      "La app de CP es práctica para cambios de última hora y para llevar los billetes en el móvil. Si falla, prueba la web o la taquilla.",
+    buyInAppIos: "iPhone / iPad",
+    buyInAppAndroid: "Android",
+    buyAtStationTitle: "En la estación",
+    buyAtStationBody:
+      "Las estaciones grandes suelen tener taquillas y máquinas. En paradas pequeñas puede haber horarios limitados.",
+    buyOnboardNote:
+      "En muchos trenes que no sean AP, a veces se puede comprar a bordo — pero las reglas varían, así que compra antes de subir cuando puedas.",
+    pricesTitle: "Resumen de precios (aprox.)",
+    pricesIntro:
+      "Los precios varían por distancia, tipo de servicio, hora/día y disponibilidad. Esto es una guía práctica.",
+    serviceTypesTitle: "Tipos de servicio",
+    serviceAP: "AP (Alfa Pendular): más rápido; a menudo más caro.",
+    serviceIC: "IC (Intercidades): interurbano; normalmente algo más barato que AP.",
+    serviceR: "R (Regional): más lento; generalmente más barato y con más paradas.",
+    serviceU: "U (Urban): cercanías (Lisboa/Oporto); trayectos cortos.",
+    moneySavingTitle: "Cómo ahorrar",
+    tipAdvance: "Compra con antelación cuando puedas (sobre todo AP/IC).",
+    tipFlexibility: "Sé flexible con día/hora — pequeños cambios pueden afectar precio/disponibilidad.",
+    tipRailPass: "Si haces muchos trayectos largos, compara con pases (si aplica).",
+    tipUrban: "Para trayectos cortos, Urban/Regional suele ser mejor valor.",
+    disclaimer:
+      "Esto no es información oficial de precios. Confirma siempre tarifas y reglas actuales en CP.",
   },
   pwa: {
     votesPendingSync:
@@ -187,6 +229,12 @@ export const es: Messages = {
       description:
         "Mira qué estaciones CP y hoteles los visitantes valoran más y menos en Portugal.",
       ogDescription: "Rankings de la comunidad para estaciones CP y hoteles económicos en Portugal.",
+    },
+    tickets: {
+      title: "Billetes y Precios | Portugal en Tren",
+      description:
+        "Cómo comprar billetes de tren de CP en Portugal y qué suele influir en el precio (AP, IC, Regional, Urban).",
+      ogDescription: "Guía rápida para comprar billetes de CP y entender los factores habituales de precio.",
     },
     notFound: {
       title: "Página no encontrada | Portugal en Tren",

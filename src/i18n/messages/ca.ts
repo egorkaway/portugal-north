@@ -14,6 +14,10 @@ export const ca: Messages = {
     allStations: "Totes les estacions",
     backToStations: "Tornar a les estacions",
     returnHome: "Tornar a l'inici",
+    home: "Inici",
+    rankings: "Rankings",
+    tickets: "Bitllets",
+    mobile: "Navegació mòbil",
   },
   home: {
     heroSubtitle:
@@ -70,6 +74,8 @@ export const ca: Messages = {
     train: "tren",
     platform: "andana",
     delayMin: "+{{minutes}} min",
+    plan: "L'agafaré",
+    planned: "Planificat",
   },
   rankings: {
     title: "Rankings de la comunitat",
@@ -108,6 +114,42 @@ export const ca: Messages = {
       "Sense connexió — es mostren rankings de la comunitat desats de la darrera visita. Els vots nous en aquest dispositiu es sincronitzaran quan tornis a estar en línia.",
     offlineDevice:
       "Sense connexió — es mostren rankings només amb els teus vots en aquest dispositiu.",
+  },
+  tickets: {
+    title: "Bitllets i preus",
+    subtitle: "Com comprar bitllets de la CP i què sol influir en el preu",
+    howToBuyTitle: "Com comprar bitllets",
+    howToBuyIntro:
+      "La majoria de gent compra bitllets en línia o a les estacions. En rutes populars, comprar amb antelació sol ser més segur.",
+    buyOnlineTitle: "Web",
+    buyOnlineBody:
+      "Fes servir el web oficial de la CP per buscar rutes i comprar amb targeta. Normalment obtindràs un PDF/QR per ensenyar a bord.",
+    buyOnlineLink: "Obrir web de la CP",
+    buyInAppTitle: "App",
+    buyInAppBody:
+      "L'app de la CP és pràctica per a canvis d'última hora i per portar els bitllets al mòbil. Si falla, prova el web o la taquilla.",
+    buyInAppIos: "iPhone / iPad",
+    buyInAppAndroid: "Android",
+    buyAtStationTitle: "A l'estació",
+    buyAtStationBody:
+      "Les estacions grans solen tenir taquilles i màquines. A parades petites pot haver-hi horaris limitats.",
+    buyOnboardNote:
+      "En molts trens que no siguin AP, de vegades es pot comprar a bord — però les normes varien, així que compra abans de pujar quan puguis.",
+    pricesTitle: "Resum de preus (aprox.)",
+    pricesIntro:
+      "Els preus varien per distància, tipus de servei, hora/dia i disponibilitat. Això és una guia pràctica.",
+    serviceTypesTitle: "Tipus de servei",
+    serviceAP: "AP (Alfa Pendular): més ràpid; sovint més car.",
+    serviceIC: "IC (Intercidades): interurbà; normalment una mica més barat que AP.",
+    serviceR: "R (Regional): més lent; generalment més barat i amb més parades.",
+    serviceU: "U (Urbà): rodalies (Lisboa/Porto); trajectes curts.",
+    moneySavingTitle: "Com estalviar",
+    tipAdvance: "Compra amb antelació quan puguis (sobretot AP/IC).",
+    tipFlexibility: "Sigues flexible amb dia/hora — petits canvis poden afectar preu/disponibilitat.",
+    tipRailPass: "Si fas molts trajectes llargs, compara amb passis (si aplica).",
+    tipUrban: "Per trajectes curts, Urbà/Regional sol tenir millor valor.",
+    disclaimer:
+      "Això no és informació oficial de preus. Confirma sempre tarifes i normes actuals a la CP.",
   },
   pwa: {
     votesPendingSync:
@@ -187,6 +229,12 @@ export const ca: Messages = {
       description:
         "Mira quines estacions de CP i hotels els visitants valoren més i menys a Portugal.",
       ogDescription: "Rankings de la comunitat per a estacions de CP i hotels econòmics a Portugal.",
+    },
+    tickets: {
+      title: "Bitllets i Preus | Portugal en tren",
+      description:
+        "Com comprar bitllets de tren de la CP a Portugal i què sol influir en el preu (AP, IC, Regional, Urbà).",
+      ogDescription: "Guia ràpida per comprar bitllets de la CP i entendre els factors habituals de preu.",
     },
     notFound: {
       title: "Pàgina no trobada | Portugal en tren",

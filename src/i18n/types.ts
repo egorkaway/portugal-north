@@ -17,6 +17,10 @@ export type Messages = {
     allStations: string;
     backToStations: string;
     returnHome: string;
+    home: string;
+    rankings: string;
+    tickets: string;
+    mobile: string;
   };
   home: {
     heroSubtitle: string;
@@ -70,6 +74,8 @@ export type Messages = {
     train: string;
     platform: string;
     delayMin: string;
+    plan: string;
+    planned: string;
   };
   rankings: {
     title: string;
@@ -101,6 +107,35 @@ export type Messages = {
     noHotelDownvotes: string;
     offlineCached: string;
     offlineDevice: string;
+  };
+  tickets: {
+    title: string;
+    subtitle: string;
+    howToBuyTitle: string;
+    howToBuyIntro: string;
+    buyOnlineTitle: string;
+    buyOnlineBody: string;
+    buyOnlineLink: string;
+    buyInAppTitle: string;
+    buyInAppBody: string;
+    buyInAppIos: string;
+    buyInAppAndroid: string;
+    buyAtStationTitle: string;
+    buyAtStationBody: string;
+    buyOnboardNote: string;
+    pricesTitle: string;
+    pricesIntro: string;
+    serviceTypesTitle: string;
+    serviceAP: string;
+    serviceIC: string;
+    serviceR: string;
+    serviceU: string;
+    moneySavingTitle: string;
+    tipAdvance: string;
+    tipFlexibility: string;
+    tipRailPass: string;
+    tipUrban: string;
+    disclaimer: string;
   };
   pwa: {
     votesPendingSync: string;
@@ -163,6 +198,7 @@ export type Messages = {
     siteName: string;
     home: { title: string; description: string };
     rankings: { title: string; description: string; ogDescription: string };
+    tickets: { title: string; description: string; ogDescription: string };
     notFound: { title: string; description: string };
     stationTitle: string;
     stationDescription: string;

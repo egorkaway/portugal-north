@@ -1,23 +1,31 @@
 import { Clock, RefreshCw } from "lucide-react";
+import { useMemo, useState } from "react";
 import { getCpStationCode } from "@/data/cpStationCodes";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useStationDepartures } from "@/hooks/useStationDepartures";
 import { useLocale } from "@/i18n/LocaleProvider";
+import { getPlannedDepartureIds, togglePlannedDepartureId } from "@/lib/plannedDepartures";
 
 function DepartureRow({
+  id,
   trainNumber,
   time,
   destination,
   serviceType,
   platform,
   delayMinutes,
+  planned,
+  onTogglePlanned,
 }: {
+  id: string;
   trainNumber: string;
   time: string;
   destination: string;
   serviceType: string;
   platform: string | null;
   delayMinutes: number | null;
+  planned: boolean;
+  onTogglePlanned: (id: string) => void;
 }) {
   const { t } = useLocale();
 
@@ -31,11 +39,25 @@ function DepartureRow({
           {platform ? ` · ${t("departures.platform")} ${platform}` : ""}
         </p>
       </div>
-      {delayMinutes !== null && (
-        <span className="shrink-0 rounded-full bg-destructive/10 px-2 py-0.5 text-xs font-medium text-destructive">
-          {t("departures.delayMin", { minutes: delayMinutes })}
-        </span>
-      )}
+      <div className="flex shrink-0 flex-col items-end gap-1.5">
+        <button
+          type="button"
+          aria-pressed={planned}
+          onClick={() => onTogglePlanned(id)}
+          className={
+            planned
+              ? "rounded-full bg-primary px-2.5 py-1 text-xs font-semibold text-primary-foreground"
+              : "rounded-full border border-border bg-background px-2.5 py-1 text-xs font-semibold text-foreground hover:bg-muted"
+          }
+        >
+          {planned ? t("departures.planned") : t("departures.plan")}
+        </button>
+        {delayMinutes !== null && (
+          <span className="rounded-full bg-destructive/10 px-2 py-0.5 text-xs font-medium text-destructive">
+            {t("departures.delayMin", { minutes: delayMinutes })}
+          </span>
+        )}
+      </div>
     </li>
   );
 }
@@ -45,6 +67,16 @@ export function StationDepartures({ stationName }: { stationName: string }) {
   const online = useOnlineStatus();
   const stationCode = getCpStationCode(stationName);
   const { data, isLoading, isError, isFetching, refetch, error } = useStationDepartures(stationName);
+  const [plannedIds, setPlannedIds] = useState<Set<string>>(() =>
+    getPlannedDepartureIds(stationName),
+  );
+
+  const departures = useMemo(() => {
+    return (data ?? []).map((dep) => ({
+      ...dep,
+      id: `${stationName}|${dep.trainNumber}|${dep.time}|${dep.destination}`,
+    }));
+  }, [data, stationName]);
 
   if (!stationCode || !online) {
     return null;
@@ -98,8 +130,15 @@ export function StationDepartures({ stationName }: { stationName: string }) {
 
       {!isLoading && !isError && data && data.length > 0 && (
         <ul className="space-y-1.5 md:space-y-2">
-          {data.map((dep) => (
-            <DepartureRow key={`${dep.trainNumber}-${dep.time}`} {...dep} />
+          {departures.map((dep) => (
+            <DepartureRow
+              key={dep.id}
+              {...dep}
+              planned={plannedIds.has(dep.id)}
+              onTogglePlanned={(id) => {
+                setPlannedIds(togglePlannedDepartureId(stationName, id));
+              }}
+            />
           ))}
         </ul>
       )}

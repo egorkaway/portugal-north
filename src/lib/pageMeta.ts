@@ -40,6 +40,17 @@ export function getRankingsPageMeta(locale: Locale = "en"): PageMeta {
   };
 }
 
+export function getTicketsPageMeta(locale: Locale = "en"): PageMeta {
+  const { messages } = createTranslator(locale);
+  return {
+    title: messages.meta.tickets.title,
+    description: messages.meta.tickets.description,
+    canonicalPath: "/tickets",
+    ogDescription: messages.meta.tickets.ogDescription,
+    ogImagePath: "/og-image.jpg",
+  };
+}
+
 export function getNotFoundPageMeta(locale: Locale = "en"): PageMeta {
   const { messages } = createTranslator(locale);
   return {
