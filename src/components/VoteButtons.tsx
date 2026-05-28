@@ -28,7 +28,7 @@ export function VoteButtons({
         title={vote === "up" ? t("vote.removeUpvote") : t("vote.upvoteOnlyYou")}
         className={`p-1.5 rounded-md border transition-colors ${
           vote === "up"
-            ? "bg-primary text-primary-foreground border-primary"
+            ? "bg-primary-foreground text-primary border-primary-foreground/60"
             : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-primary"
         }`}
       >
