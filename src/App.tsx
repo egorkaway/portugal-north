@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { PostHogPageView } from "@/components/PostHogPageView";
+import { ScrollToTop } from "@/components/ScrollToTop";
 import { PwaInstallListener } from "@/components/PwaInstallListener";
 import { PwaPermissionsPrompt } from "@/components/PwaPermissionsPrompt";
 import { VoteSyncBootstrap } from "@/components/VoteSyncBootstrap";
@@ -27,6 +28,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <PostHogPageView />
           <PwaInstallListener />
           <PwaPermissionsPrompt />
