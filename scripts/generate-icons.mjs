@@ -40,7 +40,7 @@ function fromSvg(svgPath) {
   for (const [size, outName] of OUTPUTS) {
     const resvg = new Resvg(svg, {
       fitTo: { mode: "width", value: size },
-      background: "#345846",
+      background: "#012841",
     });
     fs.writeFileSync(path.join(publicDir, outName), resvg.render().asPng());
     console.log(`Wrote ${outName} (${size}×${size}) from SVG`);

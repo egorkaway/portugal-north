@@ -117,7 +117,7 @@ export default defineConfig({
         short_name: "VeryStays",
         description:
           "CP train stations across Portugal with budget hotels nearby and community ratings.",
-        theme_color: "#345846",
+        theme_color: "#012841",
         background_color: "#f5f7f8",
         display: "standalone",
         scope: "/",
