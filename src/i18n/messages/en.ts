@@ -78,6 +78,10 @@ export const en: Messages = {
     delayMin: "+{{minutes}} min",
     take: "Take",
     taking: "Taking",
+    leavesIn: "in {{minutes}} min",
+    leavesInHours: "in {{hours}}h {{minutes}}m",
+    leavesInHoursOnly: "in {{hours}}h",
+    leavingNow: "departing now",
   },
   rankings: {
     title: "Community rankings",

@@ -78,6 +78,10 @@ export const pt: Messages = {
     delayMin: "+{{minutes}} min",
     take: "Vou apanhar",
     taking: "A apanhar",
+    leavesIn: "em {{minutes}} min",
+    leavesInHours: "em {{hours}}h {{minutes}}m",
+    leavesInHoursOnly: "em {{hours}}h",
+    leavingNow: "a sair agora",
   },
   rankings: {
     title: "Rankings da comunidade",

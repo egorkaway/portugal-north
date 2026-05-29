@@ -1,9 +1,14 @@
 import { Clock, RefreshCw } from "lucide-react";
 import { useMemo, useState } from "react";
 import { getCpStationCode } from "@/data/cpStationCodes";
+import { useNowMinute } from "@/hooks/useNowMinute";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useStationDepartures } from "@/hooks/useStationDepartures";
 import { useLocale } from "@/i18n/LocaleProvider";
+import {
+  formatDepartureCountdown,
+  getMinutesUntilDeparture,
+} from "@/lib/departureCountdown";
 import { getPlannedDepartureIds, togglePlannedDepartureId } from "@/lib/plannedDepartures";
 
 function DepartureRow({
@@ -16,6 +21,7 @@ function DepartureRow({
   delayMinutes,
   taking,
   onToggleTaking,
+  now,
 }: {
   id: string;
   trainNumber: string;
@@ -26,13 +32,24 @@ function DepartureRow({
   delayMinutes: number | null;
   taking: boolean;
   onToggleTaking: (id: string) => void;
+  now: Date;
 }) {
   const { t } = useLocale();
+
+  const minutesUntil =
+    taking ? getMinutesUntilDeparture(time, delayMinutes, now) : null;
+  const countdownLabel =
+    minutesUntil !== null ? formatDepartureCountdown(minutesUntil, { t }) : null;
 
   return (
     <li className="flex items-start justify-between gap-3 rounded-md border border-border bg-card px-3 py-2.5 md:px-4 md:py-3">
       <div className="min-w-0">
-        <p className="font-medium text-foreground tabular-nums">{time}</p>
+        <p className="font-medium text-foreground tabular-nums">
+          {time}
+          {countdownLabel ? (
+            <span className="ml-2 text-sm font-semibold text-primary">{countdownLabel}</span>
+          ) : null}
+        </p>
         <p className="mt-0.5 text-sm text-foreground truncate">→ {destination}</p>
         <p className="mt-1 text-xs text-muted-foreground">
           {serviceType} · {t("departures.train")} {trainNumber}
@@ -70,6 +87,7 @@ export function StationDepartures({ stationName }: { stationName: string }) {
   const [plannedIds, setPlannedIds] = useState<Set<string>>(() =>
     getPlannedDepartureIds(stationName),
   );
+  const now = useNowMinute();
 
   const departures = useMemo(() => {
     return (data ?? []).map((dep) => ({
@@ -138,6 +156,7 @@ export function StationDepartures({ stationName }: { stationName: string }) {
               onToggleTaking={(id) => {
                 setPlannedIds(togglePlannedDepartureId(stationName, id));
               }}
+              now={now}
             />
           ))}
         </ul>

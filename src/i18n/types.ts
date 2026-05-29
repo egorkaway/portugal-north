@@ -78,6 +78,10 @@ export type Messages = {
     delayMin: string;
     take: string;
     taking: string;
+    leavesIn: string;
+    leavesInHours: string;
+    leavesInHoursOnly: string;
+    leavingNow: string;
   };
   rankings: {
     title: string;

@@ -1,0 +1,42 @@
+import { lisbonDateAndTime } from "@/lib/cpDeparturesParse";
+import type { Translator } from "@/i18n";
+
+function parseClockToMinutes(time: string): number | null {
+  const match = /^(\d{1,2}):(\d{2})$/.exec(time.trim());
+  if (!match) return null;
+  return Number(match[1]) * 60 + Number(match[2]);
+}
+
+/** Minutes until departure (includes delay); null if time is unparseable. */
+export function getMinutesUntilDeparture(
+  departureTime: string,
+  delayMinutes: number | null,
+  now: Date = new Date(),
+): number | null {
+  const depMinutes = parseClockToMinutes(departureTime);
+  if (depMinutes === null) return null;
+
+  const effectiveDeparture = depMinutes + (delayMinutes ?? 0);
+  const { time: nowTime } = lisbonDateAndTime(now);
+  const nowMinutes = parseClockToMinutes(nowTime);
+  if (nowMinutes === null) return null;
+
+  return effectiveDeparture - nowMinutes;
+}
+
+export function formatDepartureCountdown(
+  minutesUntil: number,
+  tr: Pick<Translator, "t">,
+): string {
+  if (minutesUntil <= 0) return tr.t("departures.leavingNow");
+  if (minutesUntil < 60) {
+    return tr.t("departures.leavesIn", { minutes: minutesUntil });
+  }
+
+  const hours = Math.floor(minutesUntil / 60);
+  const minutes = minutesUntil % 60;
+  if (minutes === 0) {
+    return tr.t("departures.leavesInHoursOnly", { hours });
+  }
+  return tr.t("departures.leavesInHours", { hours, minutes });
+}

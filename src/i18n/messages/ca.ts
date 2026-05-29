@@ -78,6 +78,10 @@ export const ca: Messages = {
     delayMin: "+{{minutes}} min",
     take: "L'agafo",
     taking: "Agafant",
+    leavesIn: "en {{minutes}} min",
+    leavesInHours: "en {{hours}}h {{minutes}}m",
+    leavesInHoursOnly: "en {{hours}}h",
+    leavingNow: "surt ara",
   },
   rankings: {
     title: "Rankings de la comunitat",

@@ -78,6 +78,10 @@ export const gl: Messages = {
     delayMin: "+{{minutes}} min",
     take: "Vou coller",
     taking: "A coller",
+    leavesIn: "en {{minutes}} min",
+    leavesInHours: "en {{hours}}h {{minutes}}m",
+    leavesInHoursOnly: "en {{hours}}h",
+    leavingNow: "saíndo agora",
   },
   rankings: {
     title: "Rankings da comunidade",
