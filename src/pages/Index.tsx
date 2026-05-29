@@ -17,6 +17,7 @@ import { useAllVotes } from "@/hooks/useStationVote";
 import { useAllVisited } from "@/hooks/useStationVisited";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
+import { stationMatchesSearch } from "@/lib/searchText";
 import { sortTrainTypes } from "@/lib/trainTypes";
 
 const allTypes = sortTrainTypes([...new Set(stations.flatMap((s) => s.types))]);
@@ -47,9 +48,7 @@ const Index = () => {
 
   const filtered = useMemo(() => {
     const matches = stations.filter((s) => {
-      const matchesSearch =
-        s.name.toLowerCase().includes(search.toLowerCase()) ||
-        s.lines.some((l) => l.toLowerCase().includes(search.toLowerCase()));
+      const matchesSearch = stationMatchesSearch(s, search);
       const matchesFilter = !activeFilter || s.types.includes(activeFilter);
       const v = votes[s.name];
       const matchesVote =

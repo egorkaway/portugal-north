@@ -3,6 +3,7 @@ import { getCpStationCode } from "@/data/cpStationCodes";
 import { fetchStationDepartures } from "@/lib/cpTravelApi";
 import { getTopDownvoted, getTopUpvoted } from "@/lib/rankStations";
 import { getStationBySlug, getStationPath, stationToSlug } from "@/lib/stationSlug";
+import { foldSearchText, stationMatchesSearch } from "@/lib/searchText";
 import { fetchGlobalRatings } from "@/lib/votesApi";
 
 export type StationSummary = {
@@ -36,21 +37,15 @@ export function resolveStation(slugOrName: string): Station | undefined {
   const bySlug = getStationBySlug(trimmed);
   if (bySlug) return bySlug;
 
-  const lower = trimmed.toLowerCase();
-  return stations.find((s) => s.name.toLowerCase() === lower);
+  const folded = foldSearchText(trimmed);
+  return stations.find((s) => foldSearchText(s.name) === folded);
 }
 
 export function searchStations(query: string, limit = 20): StationSummary[] {
   const capped = Math.min(Math.max(limit, 1), 50);
-  const q = query.trim().toLowerCase();
+  const q = query.trim();
 
-  const matches = q
-    ? stations.filter(
-        (s) =>
-          s.name.toLowerCase().includes(q) ||
-          s.lines.some((line) => line.toLowerCase().includes(q)),
-      )
-    : [...stations];
+  const matches = q ? stations.filter((s) => stationMatchesSearch(s, q)) : [...stations];
 
   return matches.slice(0, capped).map(toSummary);
 }
