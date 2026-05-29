@@ -8,6 +8,7 @@ import { PostHogPageView } from "@/components/PostHogPageView";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { PwaInstallListener } from "@/components/PwaInstallListener";
 import { PwaPermissionsPrompt } from "@/components/PwaPermissionsPrompt";
+import { AppUpdateBootstrap } from "@/components/AppUpdateBootstrap";
 import { VoteSyncBootstrap } from "@/components/VoteSyncBootstrap";
 import { VoteSyncNotice } from "@/components/VoteSyncNotice";
 import { WebMcpBridge } from "@/components/WebMcpBridge";
@@ -28,6 +29,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <AppUpdateBootstrap />
           <ScrollToTop />
           <PostHogPageView />
           <PwaInstallListener />

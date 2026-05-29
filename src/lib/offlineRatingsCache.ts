@@ -1,4 +1,5 @@
 import type { GlobalRatingsResult } from "./voteTypes";
+import { APP_UPDATE_CHECK_INTERVAL_MS } from "@/lib/appUpdate";
 
 const CACHE_KEY = "pn_global_ratings_v1";
 
@@ -23,6 +24,7 @@ export function loadOfflineRatingsCache(): GlobalRatingsResult | null {
     if (!raw) return null;
     const parsed = JSON.parse(raw) as CachedPayload;
     if (!parsed.ratings || !parsed.hotelRatings) return null;
+    if (Date.now() - parsed.savedAt > APP_UPDATE_CHECK_INTERVAL_MS) return null;
     return {
       ratings: parsed.ratings,
       hotelRatings: parsed.hotelRatings,

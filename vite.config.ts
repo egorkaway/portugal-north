@@ -151,6 +151,8 @@ export default defineConfig({
       },
       workbox: {
         navigateFallback: "/index.html",
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
         globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,webp,woff2,txt,xml}"],
         runtimeCaching: [
           {
@@ -185,6 +187,13 @@ export default defineConfig({
       name: "site-url",
       buildStart() {
         writeSitemap(path.resolve(__dirname, "public/sitemap.xml"));
+        const version = {
+          builtAt: new Date().toISOString(),
+        };
+        fs.writeFileSync(
+          path.resolve(__dirname, "public/version.json"),
+          `${JSON.stringify(version, null, 2)}\n`,
+        );
       },
       transformIndexHtml(html) {
         return html.replaceAll("__SITE_URL__", siteUrl);
@@ -198,6 +207,10 @@ export default defineConfig({
           const content = fs.readFileSync(robotsPath, "utf8").replaceAll("__SITE_URL__", siteUrl);
           fs.writeFileSync(robotsPath, content);
         }
+        fs.writeFileSync(
+          path.join(outDir, "version.json"),
+          JSON.stringify({ builtAt: new Date().toISOString() }, null, 2) + "\n",
+        );
       },
     },
   ],

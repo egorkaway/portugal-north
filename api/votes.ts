@@ -24,6 +24,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       });
     }
 
+    res.setHeader("Cache-Control", "no-cache, must-revalidate");
+
     if (!isVoteStorageConfigured()) {
       return res.status(200).json({
         ratings: {},

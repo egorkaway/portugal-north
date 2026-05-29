@@ -1,11 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
+import { APP_UPDATE_CHECK_INTERVAL_MS } from "@/lib/appUpdate";
 import { fetchGlobalRatings } from "@/lib/votesApi";
 
 export function useGlobalRatings() {
   return useQuery({
     queryKey: ["global-ratings"],
     queryFn: fetchGlobalRatings,
-    staleTime: 60_000,
+    staleTime: APP_UPDATE_CHECK_INTERVAL_MS,
+    refetchInterval: APP_UPDATE_CHECK_INTERVAL_MS,
+    refetchOnWindowFocus: true,
     retry: 1,
   });
 }

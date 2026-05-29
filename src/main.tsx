@@ -6,7 +6,13 @@ import App from "./App.tsx";
 import { initPostHog, isPostHogEnabled, posthog } from "./lib/posthog.ts";
 import "./index.css";
 
-registerSW({ immediate: true });
+registerSW({
+  immediate: true,
+  onRegisteredSW(_url, registration) {
+    if (!registration) return;
+    void registration.update();
+  },
+});
 initPostHog();
 
 const app = (

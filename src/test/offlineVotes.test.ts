@@ -4,6 +4,7 @@ import {
   hasDeviceVotes,
   VOTE_COOKIE_NAMES,
 } from "@/lib/deviceVoteStorage";
+import { APP_UPDATE_CHECK_INTERVAL_MS } from "@/lib/appUpdate";
 import { loadOfflineRatingsCache, saveOfflineRatingsCache } from "@/lib/offlineRatingsCache";
 import {
   enqueueVoteSync,
@@ -57,6 +58,22 @@ describe("offline vote storage", () => {
   });
 
   it("loadOfflineRatingsCache returns null when empty", () => {
+    expect(loadOfflineRatingsCache()).toBeNull();
+  });
+
+  it("drops offline ratings cache older than one week", () => {
+    saveOfflineRatingsCache({
+      ratings: { Braga: { up: 2, down: 0 } },
+      hotelRatings: {},
+      imageRatings: {},
+      configured: true,
+    });
+    const raw = localStorage.getItem("pn_global_ratings_v1");
+    expect(raw).not.toBeNull();
+    const parsed = JSON.parse(raw!) as { savedAt: number };
+    parsed.savedAt = Date.now() - APP_UPDATE_CHECK_INTERVAL_MS - 1;
+    localStorage.setItem("pn_global_ratings_v1", JSON.stringify(parsed));
+
     expect(loadOfflineRatingsCache()).toBeNull();
   });
 });
