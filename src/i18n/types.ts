@@ -82,6 +82,8 @@ export type Messages = {
     leavesInHours: string;
     leavesInHoursOnly: string;
     leavingNow: string;
+    loadMore: string;
+    loadingMore: string;
   };
   rankings: {
     title: string;

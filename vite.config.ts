@@ -58,7 +58,8 @@ async function handleDeparturesDevApi(
 
   const url = new URL(req.url, "http://localhost");
   const code = url.searchParams.get("code") ?? "";
-  const limit = Number(url.searchParams.get("limit") ?? "3");
+  const limitRaw = Number(url.searchParams.get("limit") ?? "3");
+  const limit = Number.isFinite(limitRaw) ? Math.min(10, Math.max(1, limitRaw)) : 3;
 
   try {
     const { fetchCpStationDepartures } = await import("./api/lib/cpDeparturesServer.ts");

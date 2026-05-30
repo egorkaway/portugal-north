@@ -30,6 +30,7 @@ export const stationImages: Record<string, string> = {
   "Amadora Este": "https://images.pexels.com/photos/35231556/pexels-photo-35231556.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Amarante": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/07.11.93_Amarante_9101_%283380785350%29.jpg/960px-07.11.93_Amarante_9101_%283380785350%29.jpg",
   "Aregos": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CP_592.0_%2817341367656%29.jpg/960px-CP_592.0_%2817341367656%29.jpg",
+  "Areia-Darque": "https://images.pexels.com/photos/33690984/pexels-photo-33690984.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Arentim": "https://images.pexels.com/photos/6623349/pexels-photo-6623349.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Areosa": "https://images.pexels.com/photos/36536130/pexels-photo-36536130.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Arrifana": "https://images.pexels.com/photos/17315130/pexels-photo-17315130.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",

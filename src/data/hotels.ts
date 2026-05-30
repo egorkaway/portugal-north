@@ -182,6 +182,11 @@ export const stationHotels: StationHotels = {
     { name: "Casa do Rio Lima", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Darque%2C+Viana+do+Castelo%2C+Portugal&order=price" },
     { name: "Hotel Margarida Da Praça", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Margarida%20Da%20Pra%C3%A7a%2C%20Darque%2C%20Portugal&order=price" },
   ],
+  "Areia-Darque": [
+    { name: "Hotel do Cais", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20do%20Cais%2C%20Viana+do+Castelo%2C+Portugal&order=price" },
+    { name: "Residencial Maryjoe Darque", distanceKm: 1.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Maryjoe%20Darque%2C%20Viana+do+Castelo%2C+Portugal&order=price" },
+    { name: "Hotel Aliança Darque", distanceKm: 1.0, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alian%C3%A7a%20Darque%2C%20Viana+do+Castelo%2C+Portugal&order=price" },
+  ],
   "Afife": [
     { name: "Casa do Adro de Afife", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Afife%2C+Portugal&order=price" },
     { name: "Quinta da Boa Viagem", distanceKm: 1.8, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Afife%2C+Portugal&order=price" },

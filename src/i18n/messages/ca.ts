@@ -82,6 +82,8 @@ export const ca: Messages = {
     leavesInHours: "en {{hours}}h {{minutes}}m",
     leavesInHoursOnly: "en {{hours}}h",
     leavingNow: "surt ara",
+    loadMore: "Mostrar més trens",
+    loadingMore: "Carregant…",
   },
   rankings: {
     title: "Rankings de la comunitat",

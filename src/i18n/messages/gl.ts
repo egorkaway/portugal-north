@@ -82,6 +82,8 @@ export const gl: Messages = {
     leavesInHours: "en {{hours}}h {{minutes}}m",
     leavesInHoursOnly: "en {{hours}}h",
     leavingNow: "saíndo agora",
+    loadMore: "Mostrar máis trens",
+    loadingMore: "A cargar…",
   },
   rankings: {
     title: "Rankings da comunidade",

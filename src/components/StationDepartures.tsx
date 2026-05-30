@@ -1,10 +1,15 @@
 import { Clock, RefreshCw } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getCpStationCode } from "@/data/cpStationCodes";
 import { useNowMinute } from "@/hooks/useNowMinute";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { useStationDepartures } from "@/hooks/useStationDepartures";
 import { useLocale } from "@/i18n/LocaleProvider";
+import {
+  canLoadMoreDepartures,
+  INITIAL_DEPARTURES_LIMIT,
+  nextDeparturesLimit,
+} from "@/lib/departureLimits";
 import {
   formatDepartureCountdown,
   getMinutesUntilDeparture,
@@ -83,11 +88,19 @@ export function StationDepartures({ stationName }: { stationName: string }) {
   const { t } = useLocale();
   const online = useOnlineStatus();
   const stationCode = getCpStationCode(stationName);
-  const { data, isLoading, isError, isFetching, refetch, error } = useStationDepartures(stationName);
+  const [limit, setLimit] = useState(INITIAL_DEPARTURES_LIMIT);
+  const { data, isLoading, isError, isFetching, refetch, error } = useStationDepartures(
+    stationName,
+    limit,
+  );
   const [plannedIds, setPlannedIds] = useState<Set<string>>(() =>
     getPlannedDepartureIds(stationName),
   );
   const now = useNowMinute();
+
+  useEffect(() => {
+    setLimit(INITIAL_DEPARTURES_LIMIT);
+  }, [stationName]);
 
   const departures = useMemo(() => {
     return (data ?? []).map((dep) => ({
@@ -95,6 +108,9 @@ export function StationDepartures({ stationName }: { stationName: string }) {
       id: `${stationName}|${dep.trainNumber}|${dep.time}|${dep.destination}`,
     }));
   }, [data, stationName]);
+
+  const showLoadMore = !isLoading && !isError && canLoadMoreDepartures(limit, departures.length);
+  const loadingMore = isFetching && !isLoading;
 
   if (!stationCode || !online) {
     return null;
@@ -147,19 +163,31 @@ export function StationDepartures({ stationName }: { stationName: string }) {
       )}
 
       {!isLoading && !isError && data && data.length > 0 && (
-        <ul className="space-y-1.5 md:space-y-2">
-          {departures.map((dep) => (
-            <DepartureRow
-              key={dep.id}
-              {...dep}
-              taking={plannedIds.has(dep.id)}
-              onToggleTaking={(id) => {
-                setPlannedIds(togglePlannedDepartureId(stationName, id));
-              }}
-              now={now}
-            />
-          ))}
-        </ul>
+        <>
+          <ul className="space-y-1.5 md:space-y-2">
+            {departures.map((dep) => (
+              <DepartureRow
+                key={dep.id}
+                {...dep}
+                taking={plannedIds.has(dep.id)}
+                onToggleTaking={(id) => {
+                  setPlannedIds(togglePlannedDepartureId(stationName, id));
+                }}
+                now={now}
+              />
+            ))}
+          </ul>
+          {showLoadMore && (
+            <button
+              type="button"
+              onClick={() => setLimit(nextDeparturesLimit(limit))}
+              disabled={loadingMore}
+              className="mt-3 w-full rounded-md border border-border bg-background px-4 py-2.5 text-sm font-semibold text-foreground hover:bg-muted disabled:opacity-60 md:mt-4"
+            >
+              {loadingMore ? t("departures.loadingMore") : t("departures.loadMore")}
+            </button>
+          )}
+        </>
       )}
     </section>
   );

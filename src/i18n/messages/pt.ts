@@ -82,6 +82,8 @@ export const pt: Messages = {
     leavesInHours: "em {{hours}}h {{minutes}}m",
     leavesInHoursOnly: "em {{hours}}h",
     leavingNow: "a sair agora",
+    loadMore: "Mostrar mais comboios",
+    loadingMore: "A carregar…",
   },
   rankings: {
     title: "Rankings da comunidade",

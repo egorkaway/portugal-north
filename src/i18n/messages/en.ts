@@ -82,6 +82,8 @@ export const en: Messages = {
     leavesInHours: "in {{hours}}h {{minutes}}m",
     leavesInHoursOnly: "in {{hours}}h",
     leavingNow: "departing now",
+    loadMore: "Show more trains",
+    loadingMore: "Loading…",
   },
   rankings: {
     title: "Community rankings",
