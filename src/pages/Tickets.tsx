@@ -23,28 +23,27 @@ const Tickets = () => {
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-              <div className="flex min-w-0 items-center gap-3">
-                <TrainFront className="h-7 w-7 shrink-0" aria-hidden="true" />
-                <div className="min-w-0">
-                  <h1 className="truncate font-display text-2xl md:text-4xl">{t("tickets.title")}</h1>
-                  <p className="mt-1 text-sm text-primary-foreground/85">{t("tickets.subtitle")}</p>
-                </div>
-              </div>
+            <div className="mb-3 flex flex-col gap-2 sm:mb-4 sm:flex-row sm:items-center sm:justify-between">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
+              >
+                <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                {t("nav.backToStations")}
+              </Link>
               <SitePageNavLinks variant="hero" hide={["tickets"]} />
+            </div>
+            <div className="flex min-w-0 items-center gap-3">
+              <TrainFront className="h-7 w-7 shrink-0" aria-hidden="true" />
+              <div className="min-w-0">
+                <h1 className="truncate font-display text-2xl md:text-4xl">{t("tickets.title")}</h1>
+                <p className="mt-1 text-sm text-primary-foreground/85">{t("tickets.subtitle")}</p>
+              </div>
             </div>
           </div>
         </header>
 
         <main className="mx-auto max-w-5xl px-4 py-6 md:px-6 md:py-10">
-          <Link
-            to="/"
-            className="mb-5 inline-flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground md:mb-8"
-          >
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            {t("nav.backToStations")}
-          </Link>
-
           <div className="space-y-8">
             <section className="space-y-2">
               <h2 className="text-lg font-semibold md:text-xl">{t("tickets.howToBuyTitle")}</h2>

@@ -118,8 +118,12 @@ const Index = () => {
               {messages.site.name}
             </a>
           </h1>
-          <p className="max-w-2xl text-base text-primary-foreground/90 md:text-lg">{t("home.heroSubtitle")}</p>
-          <SitePageNavLinks variant="hero" className="mt-5 md:mt-6" />
+          <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+            <p className="max-w-2xl text-base text-primary-foreground/90 md:text-lg">
+              {t("home.heroSubtitle")}
+            </p>
+            <SitePageNavLinks variant="hero" className="shrink-0" />
+          </div>
         </div>
       </header>
 

@@ -64,8 +64,8 @@ const en: PrivacyContent = {
       title: "Analytics",
       paragraphs: [
         "We use Vercel Analytics for privacy-friendly, aggregate traffic metrics on the site.",
-        "When configured, we also use PostHog to understand how the guide is used: page views, station pages opened, and vote actions (type of vote and station/hotel names, not free-text you type). PostHog receives a random anonymous ID stored in your browser; we do not use PostHog to collect passwords or payment data because the site has no login or checkout.",
-        "You can limit analytics by blocking third-party scripts in your browser or using standard tracking protection. PostHog is only loaded when the site operator has set a PostHog project key in deployment settings.",
+        "We also use PostHog to understand how the guide is used: page views, station pages opened, and vote actions (type of vote and station/hotel names, not free-text you type). PostHog receives a random anonymous ID stored in your browser; we do not use PostHog to collect passwords or payment data because the site has no login or checkout.",
+        "You can limit analytics by blocking third-party scripts in your browser or using standard tracking protection.",
       ],
     },
     {
@@ -146,8 +146,8 @@ const pt: PrivacyContent = {
       title: "Analytics",
       paragraphs: [
         "Usamos Vercel Analytics para métricas agregadas de tráfego.",
-        "Quando configurado, usamos PostHog para perceber uso do guia: páginas vistas, estações abertas e acções de voto (tipo e nomes de estação/hotel, sem texto livre). O PostHog recebe um ID anónimo no browser; não recolhemos passwords nem pagamentos porque não há login nem checkout.",
-        "Pode limitar analytics bloqueando scripts de terceiros ou usando protecção de rastreio. O PostHog só é carregado se o operador definir a chave do projecto no deploy.",
+        "Também usamos PostHog para perceber o uso do guia: páginas vistas, estações abertas e acções de voto (tipo e nomes de estação/hotel, sem texto livre). O PostHog recebe um ID anónimo no browser; não recolhemos passwords nem pagamentos porque não há login nem checkout.",
+        "Pode limitar analytics bloqueando scripts de terceiros ou usando protecção de rastreio.",
       ],
     },
     {
@@ -225,8 +225,8 @@ const es: PrivacyContent = {
         title: "Analítica",
         paragraphs: [
           "Usamos Vercel Analytics para tráfico agregado.",
-          "Con configuración, PostHog registra páginas vistas, estaciones abiertas y votos (tipo y nombres, sin texto libre) con un ID anónimo. No hay login ni pagos en el sitio.",
-          "Puedes limitar analítica bloqueando scripts o con protección de rastreo. PostHog solo carga si hay clave de proyecto.",
+          "También usamos PostHog para páginas vistas, estaciones abiertas y votos (tipo y nombres, sin texto libre) con un ID anónimo. No hay login ni pagos en el sitio.",
+          "Puedes limitar analítica bloqueando scripts o con protección de rastreo.",
         ],
       },
       "third-parties": {

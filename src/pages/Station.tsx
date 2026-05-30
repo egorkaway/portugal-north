@@ -82,14 +82,16 @@ const Station = () => {
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
-            <Link
-              to="/"
-              className="mb-3 inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground md:mb-4"
-            >
-              <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-              {t("nav.allStations")}
-            </Link>
-            <SitePageNavLinks variant="hero" className="mb-4 md:mb-5" />
+            <div className="mb-3 flex flex-col gap-2 sm:mb-4 sm:flex-row sm:items-center sm:justify-between">
+              <Link
+                to="/"
+                className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
+              >
+                <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                {t("nav.allStations")}
+              </Link>
+              <SitePageNavLinks variant="hero" />
+            </div>
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <h1 className="font-display text-2xl md:text-4xl">{station.name}</h1>

@@ -28,7 +28,7 @@ export function SitePageNavLinks({
 
   return (
     <nav
-      className={cn("hidden flex-wrap items-center gap-2 sm:flex", className)}
+      className={cn("hidden items-center gap-1.5 sm:flex", className)}
       aria-label={t("nav.main")}
     >
       {links.map(({ key, to, label, icon: Icon }) => (
@@ -37,18 +37,18 @@ export function SitePageNavLinks({
           to={to}
           className={({ isActive }) =>
             cn(
-              "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-colors",
+              "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold transition-colors",
               variant === "hero"
                 ? isActive
-                  ? "bg-primary-foreground text-primary shadow-sm"
+                  ? "bg-primary-foreground text-primary"
                   : "border border-primary-foreground/35 bg-primary-foreground/15 text-primary-foreground hover:bg-primary-foreground/25"
                 : isActive
-                  ? "bg-primary text-primary-foreground shadow-sm"
+                  ? "bg-primary text-primary-foreground"
                   : "border border-border bg-card text-foreground hover:bg-muted",
             )
           }
         >
-          <Icon className="h-4 w-4 shrink-0" aria-hidden="true" />
+          <Icon className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
           {label}
         </NavLink>
       ))}
