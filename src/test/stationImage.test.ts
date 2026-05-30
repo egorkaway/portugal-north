@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   getStationImageUrl,
+  getStationImageReloadUrl,
   hasRepresentativeStationImage,
   isPlaceholderImageUrl,
   STATION_IMAGE_PLACEHOLDER,
@@ -28,5 +29,14 @@ describe("stationImage", () => {
   it("returns real photo URL when available", () => {
     expect(getStationImageUrl("Porto-Campanhã")).toContain("Campanh");
     expect(hasRepresentativeStationImage("Porto-Campanhã")).toBe(true);
+  });
+
+  it("adds a cache-bust query param for reload", () => {
+    expect(getStationImageReloadUrl("https://example.com/a.jpg")).toBe(
+      "https://example.com/a.jpg?_r=1",
+    );
+    expect(getStationImageReloadUrl("https://example.com/a.jpg?w=940")).toBe(
+      "https://example.com/a.jpg?w=940&_r=1",
+    );
   });
 });

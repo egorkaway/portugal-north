@@ -3,6 +3,7 @@ import type { Vote } from "@/hooks/useStationVote";
 import { useGlobalImageRatings } from "@/hooks/useGlobalStationRatings";
 import { useStationImageVote } from "@/hooks/useStationImageVote";
 import { useLocale } from "@/i18n/LocaleProvider";
+import { StationPhoto } from "@/components/StationPhoto";
 
 function ImageVoteButton({
   active,
@@ -68,7 +69,7 @@ export function StationImageVote({
   return (
     <div className="mb-5 overflow-hidden rounded-lg border border-border bg-muted md:mb-8">
       <div className="relative aspect-[2/1] sm:aspect-[21/9]">
-        <img
+        <StationPhoto
           src={imageUrl}
           alt={t("station.stationPhotoAlt", { name: stationName })}
           className="h-full w-full object-cover"

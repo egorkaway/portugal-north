@@ -18,6 +18,12 @@ export function getStationImageUrl(stationName: string): string {
   return STATION_IMAGE_PLACEHOLDER;
 }
 
+/** Cache-bust URL for a single client-side reload after a failed image load. */
+export function getStationImageReloadUrl(url: string): string {
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}_r=1`;
+}
+
 /** True when we have a real station photo (not a generic placeholder). */
 export function hasRepresentativeStationImage(stationName: string): boolean {
   const url = stationImages[stationName];

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data/stations";
 import { getHotelsForStation } from "@/lib/stationHotels";
 import { getStationImageUrl } from "@/lib/stationImage";
+import { StationPhoto } from "@/components/StationPhoto";
 import { useStationVote } from "@/hooks/useStationVote";
 import { useStationVisited } from "@/hooks/useStationVisited";
 import { formatDistance } from "@/lib/geo";
@@ -38,7 +39,7 @@ export function StationCard({
   return (
     <div className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col">
       <Link to={stationPath} className="relative block aspect-[2/1] w-full overflow-hidden bg-muted sm:aspect-[16/9]">
-        <img
+        <StationPhoto
           src={imageUrl}
           alt={t("station.stationPhotoAlt", { name: station.name })}
           loading="lazy"

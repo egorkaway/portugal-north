@@ -16,6 +16,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { StationDepartures } from "@/components/StationDepartures";
 import { StationViewTracker } from "@/components/StationViewTracker";
 import { StationImageVote } from "@/components/StationImageVote";
+import { StationPhoto } from "@/components/StationPhoto";
 import { VoteButtons } from "@/components/VoteButtons";
 import { VisitedButton } from "@/components/VisitedButton";
 import { useStationVote } from "@/hooks/useStationVote";
@@ -120,7 +121,7 @@ const Station = () => {
             <StationImageVote stationName={station.name} imageUrl={imageUrl} />
           ) : (
             <div className="mb-5 overflow-hidden rounded-lg border border-border bg-muted md:mb-8">
-              <img
+              <StationPhoto
                 src={imageUrl}
                 alt={t("station.stationPhotoAlt", { name: station.name })}
                 className="aspect-[2/1] w-full object-cover sm:aspect-[21/9]"
