@@ -18,6 +18,7 @@ export const ca: Messages = {
     rankings: "Rankings",
     tickets: "Bitllets",
     mobile: "Navegació mòbil",
+    main: "Navegació principal",
   },
   home: {
     heroSubtitle:
@@ -244,6 +245,7 @@ export const ca: Messages = {
     portuGuessTitle: "PortuGuess",
     portuGuessDesc:
       "Aprèn portuguès europeu amb qüestionaris, llistes de paraules i apps sense connexió per a iOS i Android.",
+    privacy: "Política de privacitat",
   },
   notFound: {
     title: "404",
@@ -268,6 +270,13 @@ export const ca: Messages = {
       description:
         "Com comprar bitllets de tren de la CP a Portugal i què sol influir en el preu (AP, IC, Regional, Urbà).",
       ogDescription: "Guia ràpida per comprar bitllets de la CP i entendre els factors habituals de preu.",
+    },
+    privacy: {
+      title: "Política de Privacitat | Portugal en tren",
+      description:
+        "Com verystays.com emmagatzema vots, preferències del navegador, ubicació opcional, analítica i consultes de sortides.",
+      ogDescription:
+        "Què recull Portugal en tren quan votes, filtres estacions o uses sortides CP en directe.",
     },
     notFound: {
       title: "Pàgina no trobada | Portugal en tren",

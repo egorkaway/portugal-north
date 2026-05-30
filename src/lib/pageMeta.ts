@@ -51,6 +51,17 @@ export function getTicketsPageMeta(locale: Locale = "en"): PageMeta {
   };
 }
 
+export function getPrivacyPageMeta(locale: Locale = "en"): PageMeta {
+  const { messages } = createTranslator(locale);
+  return {
+    title: messages.meta.privacy.title,
+    description: messages.meta.privacy.description,
+    canonicalPath: "/privacy",
+    ogDescription: messages.meta.privacy.ogDescription,
+    ogImagePath: "/og-image.jpg",
+  };
+}
+
 export function getNotFoundPageMeta(locale: Locale = "en"): PageMeta {
   const { messages } = createTranslator(locale);
   return {

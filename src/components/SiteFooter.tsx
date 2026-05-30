@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { CloudSun, ExternalLink, Languages, Smartphone } from "lucide-react";
 import footerDouro from "@/assets/footer-douro.jpg";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
@@ -36,6 +37,15 @@ export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
           }
         >
           <LanguageSwitcher />
+
+          <p className="text-sm text-primary-foreground/80">
+            <Link
+              to="/privacy"
+              className="underline underline-offset-4 transition-colors hover:text-primary-foreground"
+            >
+              {t("footer.privacy")}
+            </Link>
+          </p>
 
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">

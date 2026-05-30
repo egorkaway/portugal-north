@@ -18,6 +18,7 @@ export const gl: Messages = {
     rankings: "Rankings",
     tickets: "Billetes",
     mobile: "Navegación móbil",
+    main: "Navegación principal",
   },
   home: {
     heroSubtitle:
@@ -244,6 +245,7 @@ export const gl: Messages = {
     portuGuessTitle: "PortuGuess",
     portuGuessDesc:
       "Aprende portugués europeo con cuestionarios, listas de palabras e apps sen conexión para iOS e Android.",
+    privacy: "Política de privacidade",
   },
   notFound: {
     title: "404",
@@ -268,6 +270,13 @@ export const gl: Messages = {
       description:
         "Como mercar billetes de tren da CP en Portugal e o que adoita influír no prezo (AP, IC, Regional, Urbano).",
       ogDescription: "Guía rápida para mercar billetes da CP e entender os factores habituais de prezo.",
+    },
+    privacy: {
+      title: "Política de Privacidade | Portugal en tren",
+      description:
+        "Como verystays.com almacena votos, preferencias do navegador, localización opcional, analítica e consultas de saídas.",
+      ogDescription:
+        "Que recolle Portugal en tren cando votas, filtras estacións ou usas saídas CP en directo.",
     },
     notFound: {
       title: "Páxina non atopada | Portugal en tren",

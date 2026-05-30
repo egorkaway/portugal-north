@@ -6,6 +6,7 @@ import {
   NOT_FOUND_PAGE_META,
   RANKINGS_PAGE_META,
   getTicketsPageMeta,
+  getPrivacyPageMeta,
   buildSeoHeadHtml,
   buildStationPageMeta,
   type PageMeta,
@@ -25,6 +26,7 @@ export function getPrerenderRoutes(): PrerenderRoute[] {
     { outFile: "index.html", meta: HOME_PAGE_META },
     { outFile: "rankings/index.html", meta: RANKINGS_PAGE_META },
     { outFile: "tickets/index.html", meta: getTicketsPageMeta("en") },
+    { outFile: "privacy/index.html", meta: getPrivacyPageMeta("en") },
     { outFile: "404.html", meta: NOT_FOUND_PAGE_META },
   ];
 

@@ -8,6 +8,7 @@ import { StationFilters } from "@/components/StationFilters";
 import heroStation from "@/assets/hero-station.jpg";
 import { JsonLd } from "@/components/JsonLd";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SitePageNavLinks } from "@/components/SitePageNavLinks";
 import { buildHomeStructuredData } from "@/lib/structuredData";
 import { PageHead } from "@/components/PageHead";
 import { getHomePageMeta } from "@/lib/pageMeta";
@@ -118,6 +119,7 @@ const Index = () => {
             </a>
           </h1>
           <p className="max-w-2xl text-base text-primary-foreground/90 md:text-lg">{t("home.heroSubtitle")}</p>
+          <SitePageNavLinks variant="hero" className="mt-5 md:mt-6" />
         </div>
       </header>
 

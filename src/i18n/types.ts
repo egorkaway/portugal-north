@@ -21,6 +21,7 @@ export type Messages = {
     rankings: string;
     tickets: string;
     mobile: string;
+    main: string;
   };
   home: {
     heroSubtitle: string;
@@ -212,6 +213,7 @@ export type Messages = {
     mapaDesc: string;
     portuGuessTitle: string;
     portuGuessDesc: string;
+    privacy: string;
   };
   notFound: {
     title: string;
@@ -223,6 +225,7 @@ export type Messages = {
     home: { title: string; description: string };
     rankings: { title: string; description: string; ogDescription: string };
     tickets: { title: string; description: string; ogDescription: string };
+    privacy: { title: string; description: string; ogDescription: string };
     notFound: { title: string; description: string };
     stationTitle: string;
     stationDescription: string;

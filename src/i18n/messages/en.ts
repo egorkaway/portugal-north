@@ -18,6 +18,7 @@ export const en: Messages = {
     rankings: "Rankings",
     tickets: "Tickets",
     mobile: "Mobile navigation",
+    main: "Main navigation",
   },
   home: {
     heroSubtitle:
@@ -242,6 +243,7 @@ export const en: Messages = {
     portuGuessTitle: "PortuGuess",
     portuGuessDesc:
       "Learn European Portuguese with quizzes, word lists, and offline apps for iOS and Android.",
+    privacy: "Privacy policy",
   },
   notFound: {
     title: "404",
@@ -267,6 +269,13 @@ export const en: Messages = {
         "How to buy CP train tickets, Porto Andante and Lisbon navegante® metro passes, and what affects fares (zones, service type, booking time).",
       ogDescription:
         "CP tickets plus Andante and navegante® zone fares for Porto and Lisbon metros.",
+    },
+    privacy: {
+      title: "Privacy Policy | Portugal by Train",
+      description:
+        "How verystays.com stores votes, browser preferences, optional location, analytics, and live departure lookups.",
+      ogDescription:
+        "What Portugal by Train collects when you vote, filter stations, or use live CP departures.",
     },
     notFound: {
       title: "Page Not Found | Portugal by Train",

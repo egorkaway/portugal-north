@@ -1,5 +1,6 @@
 import { PageHead } from "@/components/PageHead";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SitePageNavLinks } from "@/components/SitePageNavLinks";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getTicketsPageMeta } from "@/lib/pageMeta";
 import { ArrowLeft, CreditCard, Globe, Layers, Smartphone, Ticket, TrainFront } from "lucide-react";
@@ -21,11 +22,16 @@ const Tickets = () => {
       <PageHead meta={getTicketsPageMeta(locale)} />
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">
-          <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-5 md:px-6 md:py-8">
-            <TrainFront className="h-7 w-7 shrink-0" aria-hidden="true" />
-            <div className="min-w-0">
-              <h1 className="truncate font-display text-2xl md:text-4xl">{t("tickets.title")}</h1>
-              <p className="mt-1 text-sm text-primary-foreground/85">{t("tickets.subtitle")}</p>
+          <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="flex min-w-0 items-center gap-3">
+                <TrainFront className="h-7 w-7 shrink-0" aria-hidden="true" />
+                <div className="min-w-0">
+                  <h1 className="truncate font-display text-2xl md:text-4xl">{t("tickets.title")}</h1>
+                  <p className="mt-1 text-sm text-primary-foreground/85">{t("tickets.subtitle")}</p>
+                </div>
+              </div>
+              <SitePageNavLinks variant="hero" hide={["tickets"]} />
             </div>
           </div>
         </header>

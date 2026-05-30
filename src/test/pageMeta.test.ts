@@ -15,7 +15,7 @@ describe("buildSeoHeadHtml", () => {
 describe("getPrerenderRoutes", () => {
   it("generates one HTML file per station plus core pages", () => {
     const routes = getPrerenderRoutes();
-    expect(routes.length).toBe(stations.length + 4);
+    expect(routes.length).toBe(stations.length + 5);
     const porto = stations.find((s) => s.name === "Porto-Campanhã");
     expect(porto).toBeDefined();
     const meta = buildStationPageMeta(porto!, getHotelsForStation(porto!.name));

@@ -13,6 +13,7 @@ import {
 } from "@/lib/stationImage";
 import { HotelList } from "@/components/HotelList";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SitePageNavLinks } from "@/components/SitePageNavLinks";
 import { StationDepartures } from "@/components/StationDepartures";
 import { StationViewTracker } from "@/components/StationViewTracker";
 import { StationImageVote } from "@/components/StationImageVote";
@@ -88,6 +89,7 @@ const Station = () => {
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />
               {t("nav.allStations")}
             </Link>
+            <SitePageNavLinks variant="hero" className="mb-4 md:mb-5" />
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <h1 className="font-display text-2xl md:text-4xl">{station.name}</h1>

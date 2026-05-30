@@ -18,6 +18,7 @@ export const pt: Messages = {
     rankings: "Rankings",
     tickets: "Bilhetes",
     mobile: "Navegação móvel",
+    main: "Navegação principal",
   },
   home: {
     heroSubtitle:
@@ -244,6 +245,7 @@ export const pt: Messages = {
     portuGuessTitle: "PortuGuess",
     portuGuessDesc:
       "Aprenda português europeu com quizzes, listas de palavras e apps offline para iOS e Android.",
+    privacy: "Política de privacidade",
   },
   notFound: {
     title: "404",
@@ -269,6 +271,13 @@ export const pt: Messages = {
         "Como comprar bilhetes CP, passes Andante e navegante® nos metros do Porto e Lisboa, e o que influencia as tarifas.",
       ogDescription:
         "Bilhetes CP, zonas Andante e navegante® nos metros do Porto e de Lisboa.",
+    },
+    privacy: {
+      title: "Política de Privacidade | Portugal de Comboio",
+      description:
+        "Como o verystays.com guarda votos, preferências do browser, localização opcional, analytics e consultas de partidas.",
+      ogDescription:
+        "O que o Portugal de Comboio recolhe quando vota, filtra estações ou usa partidas CP em direto.",
     },
     notFound: {
       title: "Página não encontrada | Portugal de Comboio",

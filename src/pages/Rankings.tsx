@@ -1,5 +1,6 @@
 import { PageHead } from "@/components/PageHead";
 import { SiteFooter } from "@/components/SiteFooter";
+import { SitePageNavLinks } from "@/components/SitePageNavLinks";
 import { getRankingsPageMeta } from "@/lib/pageMeta";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { ArrowLeft, TrainFront } from "lucide-react";
@@ -17,11 +18,16 @@ const Rankings = () => {
       <JsonLd data={buildRankingsStructuredData()} />
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">
-          <div className="mx-auto flex max-w-5xl items-center gap-3 px-4 py-5 md:px-6 md:py-8">
-            <TrainFront className="h-7 w-7 shrink-0" aria-hidden="true" />
-            <div>
-              <h1 className="font-display text-2xl md:text-4xl">{t("rankings.title")}</h1>
-              <p className="mt-1 text-sm text-primary-foreground/85">{t("rankings.subtitle")}</p>
+          <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="flex items-center gap-3">
+                <TrainFront className="h-7 w-7 shrink-0" aria-hidden="true" />
+                <div>
+                  <h1 className="font-display text-2xl md:text-4xl">{t("rankings.title")}</h1>
+                  <p className="mt-1 text-sm text-primary-foreground/85">{t("rankings.subtitle")}</p>
+                </div>
+              </div>
+              <SitePageNavLinks variant="hero" hide={["rankings"]} />
             </div>
           </div>
         </header>
