@@ -1,4 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  readDistanceSortEnabled,
+  writeDistanceSortEnabled,
+} from "@/lib/distanceSortStorage";
 
 export type UserCoords = { lat: number; lng: number };
 
@@ -11,7 +15,7 @@ export type UserLocationState =
   | { status: "error" };
 
 export function useUserLocation() {
-  const [distanceSortOn, setDistanceSortOn] = useState(false);
+  const [distanceSortOn, setDistanceSortOn] = useState(() => readDistanceSortEnabled());
   const [state, setState] = useState<UserLocationState>({ status: "idle" });
   /** Bumps when user retries after denied/error so the effect runs again while sort stays on. */
   const [locateAttempt, setLocateAttempt] = useState(0);
@@ -22,6 +26,7 @@ export function useUserLocation() {
     requestGenerationRef.current += 1;
     inFlightRef.current = false;
     setDistanceSortOn(false);
+    writeDistanceSortEnabled(false);
     setState({ status: "idle" });
   }, []);
 
@@ -41,6 +46,7 @@ export function useUserLocation() {
       return;
     }
     setDistanceSortOn(true);
+    writeDistanceSortEnabled(true);
     startLocate();
   }, [distanceSortOn, state.status, cancelRequest, startLocate]);
 
