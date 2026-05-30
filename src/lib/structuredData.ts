@@ -41,8 +41,8 @@ export function votesToAggregateRating(
   return {
     "@type": "AggregateRating",
     ratingValue: Math.min(5, Math.max(1, ratingValue)),
+    // Community thumbs-up/down votes — not written reviews (Google Review snippet types).
     ratingCount: total,
-    reviewCount: total,
     bestRating: 5,
     worstRating: 1,
   };
@@ -100,21 +100,16 @@ export function buildStationStructuredData(options: {
   slug: string;
   hotels: Hotel[];
   imageUrl?: string;
-  stationRatings?: GlobalRatings;
+  /** Hotel community votes only — TrainStation is not a valid Review snippet parent in Google. */
   hotelRatings?: GlobalRatings;
 }): JsonLd {
-  const { station, slug, hotels, imageUrl, stationRatings, hotelRatings } = options;
+  const { station, slug, hotels, imageUrl, hotelRatings } = options;
   const path = `/stations/${slug}`;
   const pageUrl = absoluteUrl(path);
   const stationId = `${pageUrl}#station`;
   const tr = createTranslator("en");
   const pageTitle = getStationPageTitle(station, tr);
   const description = getStationMetaDescription(station, hotels, tr);
-
-  const stationCounts = stationRatings?.[station.name];
-  const stationAggregate = stationCounts
-    ? votesToAggregateRating(stationCounts.up, stationCounts.down)
-    : null;
 
   const trainStation: JsonLd = {
     "@type": "TrainStation",
@@ -134,9 +129,6 @@ export function buildStationStructuredData(options: {
 
   if (imageUrl) {
     trainStation.image = buildStationImageObject(imageUrl, station.name);
-  }
-  if (stationAggregate) {
-    trainStation.aggregateRating = stationAggregate;
   }
 
   const graph: JsonLd[] = [

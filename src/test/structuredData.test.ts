@@ -66,6 +66,16 @@ describe("structuredData", () => {
     expect(votesToAggregateRating(3, 1)).not.toBeNull();
   });
 
+  it("aggregate rating uses ratingCount only (community votes, not reviews)", () => {
+    expect(votesToAggregateRating(4, 2)).toEqual({
+      "@type": "AggregateRating",
+      ratingValue: 3.3,
+      ratingCount: 6,
+      bestRating: 5,
+      worstRating: 1,
+    });
+  });
+
   it("station graph includes TrainStation and hotels", () => {
     const data = buildStationStructuredData({
       station: aveiro,
@@ -79,13 +89,23 @@ describe("structuredData", () => {
         },
       ],
       imageUrl: stationImages.Aveiro,
-      stationRatings: { Aveiro: { up: 5, down: 1 } },
+      hotelRatings: { "Aveiro::Hotel das Salinas": { up: 5, down: 1 } },
     });
-    const graph = data["@graph"] as { "@type": string }[];
+    const graph = data["@graph"] as { "@type": string; aggregateRating?: unknown }[];
     const types = graph.map((n) => n["@type"]);
     expect(types).toContain("BreadcrumbList");
     expect(types).toContain("TrainStation");
     expect(types).toContain("LodgingBusiness");
+
+    const trainStation = graph.find((n) => n["@type"] === "TrainStation");
+    expect(trainStation?.aggregateRating).toBeUndefined();
+
+    const hotel = graph.find((n) => n["@type"] === "LodgingBusiness");
+    expect(hotel?.aggregateRating).toMatchObject({
+      "@type": "AggregateRating",
+      ratingCount: 6,
+    });
+    expect(hotel?.aggregateRating).not.toHaveProperty("reviewCount");
 
     const breadcrumb = graph.find((n) => n["@type"] === "BreadcrumbList") as {
       itemListElement: { item: string }[];

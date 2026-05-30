@@ -65,7 +65,6 @@ const Station = () => {
     slug: slug!,
     hotels,
     imageUrl: shareImageUrl,
-    stationRatings: globalVotes?.ratings,
     hotelRatings: globalVotes?.hotelRatings,
   });
 
