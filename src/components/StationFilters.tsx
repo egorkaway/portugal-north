@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import { useRef } from "react";
 import {
   Check,
   Circle,
@@ -121,6 +122,20 @@ export function StationFilters({
   coords: { lat: number; lng: number } | null;
 }) {
   const { t } = useLocale();
+  const touchHandledRef = useRef(false);
+
+  const handleSortByDistanceTouch = () => {
+    touchHandledRef.current = true;
+    onRequestLocation();
+  };
+
+  const handleSortByDistanceClick = () => {
+    if (touchHandledRef.current) {
+      touchHandledRef.current = false;
+      return;
+    }
+    onRequestLocation();
+  };
 
   const locationLabel =
     locationState.status === "loading"
@@ -167,7 +182,8 @@ export function StationFilters({
           </div>
           <button
             type="button"
-            onClick={onRequestLocation}
+            onTouchStart={handleSortByDistanceTouch}
+            onClick={handleSortByDistanceClick}
             aria-pressed={sortByDistance}
             aria-label={locationLabel}
             title={locationLabel}

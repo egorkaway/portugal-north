@@ -1,7 +1,10 @@
 import { describe, expect, it, vi, beforeEach, afterEach } from "vitest";
 import { renderHook, act, waitFor } from "@testing-library/react";
 import { useUserLocation } from "@/hooks/useUserLocation";
-import { DISTANCE_SORT_STORAGE_KEY } from "@/lib/distanceSortStorage";
+import {
+  DISTANCE_SORT_STORAGE_KEY,
+  LAST_COORDS_STORAGE_KEY,
+} from "@/lib/distanceSortStorage";
 
 function mockLocalStorage() {
   const store = new Map<string, string>();
@@ -17,15 +20,26 @@ function mockLocalStorage() {
   return store;
 }
 
-describe("useUserLocation", () => {
+function mockGeolocation() {
   const getCurrentPosition = vi.fn();
+  const watchPosition = vi.fn();
+  const clearWatch = vi.fn();
 
+  vi.stubGlobal("navigator", {
+    geolocation: { getCurrentPosition, watchPosition, clearWatch },
+  });
+
+  return { getCurrentPosition, watchPosition, clearWatch };
+}
+
+function mockPosition(lat: number, lng: number) {
+  return { coords: { latitude: lat, longitude: lng } };
+}
+
+describe("useUserLocation", () => {
   beforeEach(() => {
-    getCurrentPosition.mockReset();
     mockLocalStorage();
-    vi.stubGlobal("navigator", {
-      geolocation: { getCurrentPosition },
-    });
+    mockGeolocation();
   });
 
   afterEach(() => {
@@ -33,9 +47,12 @@ describe("useUserLocation", () => {
   });
 
   it("stays active after permission denied (no flicker off)", async () => {
-    getCurrentPosition.mockImplementation((_ok, err) => {
+    const { getCurrentPosition, watchPosition } = mockGeolocation();
+    const fail = (_ok: unknown, err?: (error: { code: number; PERMISSION_DENIED: number }) => void) => {
       err?.({ code: 1, PERMISSION_DENIED: 1 });
-    });
+    };
+    getCurrentPosition.mockImplementation(fail);
+    watchPosition.mockImplementation(fail);
 
     const { result } = renderHook(() => useUserLocation());
 
@@ -52,9 +69,12 @@ describe("useUserLocation", () => {
   });
 
   it("turns off after permission denied when tapped again", async () => {
-    getCurrentPosition.mockImplementation((_ok, err) => {
+    const { getCurrentPosition, watchPosition } = mockGeolocation();
+    const fail = (_ok: unknown, err?: (error: { code: number; PERMISSION_DENIED: number }) => void) => {
       err?.({ code: 1, PERMISSION_DENIED: 1 });
-    });
+    };
+    getCurrentPosition.mockImplementation(fail);
+    watchPosition.mockImplementation(fail);
 
     const { result } = renderHook(() => useUserLocation());
 
@@ -75,8 +95,10 @@ describe("useUserLocation", () => {
     expect(localStorage.getItem(DISTANCE_SORT_STORAGE_KEY)).toBeNull();
   });
 
-  it("turns off while location is loading", async () => {
+  it("turns off while location is loading", () => {
+    const { getCurrentPosition, watchPosition } = mockGeolocation();
     getCurrentPosition.mockImplementation(() => {});
+    watchPosition.mockReturnValue(1);
 
     const { result } = renderHook(() => useUserLocation());
 
@@ -95,11 +117,12 @@ describe("useUserLocation", () => {
   });
 
   it("keeps coords and active state after success", async () => {
-    getCurrentPosition.mockImplementation((ok) => {
-      ok?.({
-        coords: { latitude: 41.15, longitude: -8.61 },
-      });
-    });
+    const { getCurrentPosition, watchPosition } = mockGeolocation();
+    const succeed = (ok?: (position: ReturnType<typeof mockPosition>) => void) => {
+      ok?.(mockPosition(41.15, -8.61));
+    };
+    getCurrentPosition.mockImplementation(succeed);
+    watchPosition.mockImplementation(succeed);
 
     const { result } = renderHook(() => useUserLocation());
 
@@ -108,19 +131,21 @@ describe("useUserLocation", () => {
     });
 
     await waitFor(() => {
-      expect(result.current.state.status).toBe("ready");
+      expect(result.current.coords).toEqual({ lat: 41.15, lng: -8.61 });
     });
 
     expect(result.current.isActive).toBe(true);
-    expect(result.current.coords).toEqual({ lat: 41.15, lng: -8.61 });
+    expect(result.current.state.status).toBe("idle");
+    expect(localStorage.getItem(LAST_COORDS_STORAGE_KEY)).toContain("41.15");
   });
 
-  it("restores active sort after remount when preference was saved", async () => {
-    getCurrentPosition.mockImplementation((ok) => {
-      ok?.({
-        coords: { latitude: 41.15, longitude: -8.61 },
-      });
-    });
+  it("restores coords after remount when preference was saved", async () => {
+    const { getCurrentPosition, watchPosition } = mockGeolocation();
+    const succeed = (ok?: (position: ReturnType<typeof mockPosition>) => void) => {
+      ok?.(mockPosition(41.15, -8.61));
+    };
+    getCurrentPosition.mockImplementation(succeed);
+    watchPosition.mockImplementation(succeed);
 
     const first = renderHook(() => useUserLocation());
 
@@ -129,7 +154,7 @@ describe("useUserLocation", () => {
     });
 
     await waitFor(() => {
-      expect(first.result.current.state.status).toBe("ready");
+      expect(first.result.current.coords).toEqual({ lat: 41.15, lng: -8.61 });
     });
 
     first.unmount();
@@ -138,26 +163,16 @@ describe("useUserLocation", () => {
 
     expect(second.result.current.isActive).toBe(true);
     expect(localStorage.getItem(DISTANCE_SORT_STORAGE_KEY)).toBe("1");
-    expect(second.result.current.state.status).toBe("idle");
-    expect(second.result.current.coords).toBeNull();
-
-    act(() => {
-      second.result.current.requestLocation();
-    });
-
-    await waitFor(() => {
-      expect(second.result.current.state.status).toBe("ready");
-    });
-
     expect(second.result.current.coords).toEqual({ lat: 41.15, lng: -8.61 });
   });
 
   it("clears saved preference when sort is turned off", async () => {
-    getCurrentPosition.mockImplementation((ok) => {
-      ok?.({
-        coords: { latitude: 41.15, longitude: -8.61 },
-      });
-    });
+    const { getCurrentPosition, watchPosition } = mockGeolocation();
+    const succeed = (ok?: (position: ReturnType<typeof mockPosition>) => void) => {
+      ok?.(mockPosition(41.15, -8.61));
+    };
+    getCurrentPosition.mockImplementation(succeed);
+    watchPosition.mockImplementation(succeed);
 
     const { result } = renderHook(() => useUserLocation());
 
@@ -166,7 +181,7 @@ describe("useUserLocation", () => {
     });
 
     await waitFor(() => {
-      expect(result.current.state.status).toBe("ready");
+      expect(result.current.coords).toEqual({ lat: 41.15, lng: -8.61 });
     });
 
     act(() => {
@@ -174,6 +189,8 @@ describe("useUserLocation", () => {
     });
 
     expect(result.current.isActive).toBe(false);
+    expect(result.current.coords).toBeNull();
     expect(localStorage.getItem(DISTANCE_SORT_STORAGE_KEY)).toBeNull();
+    expect(localStorage.getItem(LAST_COORDS_STORAGE_KEY)).toBeNull();
   });
 });

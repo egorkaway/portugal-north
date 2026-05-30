@@ -1,8 +1,12 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   DISTANCE_SORT_STORAGE_KEY,
+  LAST_COORDS_STORAGE_KEY,
+  clearLastCoords,
   readDistanceSortEnabled,
+  readLastCoords,
   writeDistanceSortEnabled,
+  writeLastCoords,
 } from "@/lib/distanceSortStorage";
 
 function mockLocalStorage() {
@@ -46,5 +50,15 @@ describe("distanceSortStorage", () => {
     expect(readDistanceSortEnabled()).toBe(false);
     expect(() => writeDistanceSortEnabled(true)).not.toThrow();
     vi.unstubAllGlobals();
+  });
+
+  it("stores and reads recent coordinates", () => {
+    writeLastCoords({ lat: 40.21, lng: -8.43 });
+    expect(readLastCoords()).toEqual(
+      expect.objectContaining({ lat: 40.21, lng: -8.43, at: expect.any(Number) }),
+    );
+    clearLastCoords();
+    expect(localStorage.getItem(LAST_COORDS_STORAGE_KEY)).toBeNull();
+    expect(readLastCoords()).toBeNull();
   });
 });

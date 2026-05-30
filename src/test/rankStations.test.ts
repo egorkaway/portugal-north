@@ -53,6 +53,20 @@ describe("rankStations", () => {
     }
   });
 
+  it("sorts Coimbra stations first from a Coimbra origin", () => {
+    const origin = { lat: 40.21, lng: -8.43 };
+    const items: Station[] = [
+      { name: "Pombal", lines: [], types: [], lat: 39.9153, lng: -8.6283 },
+      { name: "Coimbra-B", lines: [], types: [], lat: 40.2117, lng: -8.4353 },
+      { name: "Coimbra", lines: [], types: [], lat: 40.205, lng: -8.4297 },
+    ];
+    expect(sortStationsByDistance(items, origin).map((s) => s.name)).toEqual([
+      "Coimbra-B",
+      "Coimbra",
+      "Pombal",
+    ]);
+  });
+
   it("does not apply community order while distance sort is pending coords", () => {
     const items: Station[] = [
       { name: "Zeta", lines: [], types: [], lat: 0, lng: 0 },
