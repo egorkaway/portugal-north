@@ -21,7 +21,7 @@ export const ca: Messages = {
   },
   home: {
     heroSubtitle:
-      "Principals estacions de CP del Minho a l'Algarve, amb hotels econòmics a poca distància a peu.",
+      "Principals estacions de CP del Minho a l'Algarve, amb hotels amb preus raonables a poca distància a peu.",
     searchLabel: "Cercar estació o línia",
     searchPlaceholder: "Cercar estació o línia...",
     filtersLabel: "Filtrar estacions",
@@ -44,12 +44,12 @@ export const ca: Messages = {
     locationUnsupported: " · Ubicació no compatible amb aquest navegador",
     locationError: " · No s'ha pogut obtenir la teva ubicació",
     bookingHint:
-      ' · Prem "Més a Booking" per veure les 3 habitacions més barates en un radi de 2 km',
+      ' · Prem "Més a Booking" per veure allotjaments amb preus raonables en un radi de 2 km',
     noResults: "Cap estació coincideix amb la cerca.",
   },
   station: {
     stationPhotoAlt: "Estació de tren de {{name}}",
-    budgetStays: "Allotjaments econòmics a prop",
+    budgetStays: "Allotjaments amb preus raonables a prop",
     hotelsIntro:
       "Vota a favor o en contra d'hotels que coneixes, o indica si un allotjament pot estar tancat. El teu feedback es desa en aquest navegador.",
     noHotels: "Encara no hi ha hotels recomanats per a aquesta estació.",
@@ -251,15 +251,15 @@ export const ca: Messages = {
   meta: {
     siteName: "Portugal en tren",
     home: {
-      title: "Portugal en tren: Estacions i hotels econòmics",
+      title: "Portugal en tren: Estacions i hotels amb preus raonables",
       description:
-        "Descobreix estacions de CP a Portugal, del Minho a l'Algarve, amb línies i hotels econòmics a poca distància a peu.",
+        "Descobreix estacions de CP a Portugal, del Minho a l'Algarve, amb línies i hotels amb preus raonables a poca distància a peu.",
     },
     rankings: {
       title: "Rankings de la comunitat | Portugal en tren",
       description:
         "Mira quines estacions de CP i hotels els visitants valoren més i menys a Portugal.",
-      ogDescription: "Rankings de la comunitat per a estacions de CP i hotels econòmics a Portugal.",
+      ogDescription: "Rankings de la comunitat per a estacions de CP i hotels amb preus raonables a Portugal.",
     },
     tickets: {
       title: "Bitllets i Preus | Portugal en tren",
@@ -282,8 +282,8 @@ export const ca: Messages = {
     cpNetwork: "xarxa CP",
     cpTrains: "trens CP",
     mapsVotes: "Mapes, vots de la comunitat i detalls de l'estació.",
-    budgetStay_one: "1 allotjament econòmic",
-    budgetStay_other: "{{count}} allotjaments econòmics",
+    budgetStay_one: "1 allotjament amb preu raonable",
+    budgetStay_other: "{{count}} allotjaments amb preus raonables",
     fromPerNight: "des de {{price}} €/nit en un radi de 2 km, més mapes i vots.",
     andMore: " i {{count}} més",
   },

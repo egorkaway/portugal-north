@@ -44,7 +44,7 @@ export const en: Messages = {
     locationUnsupported: " · Location not supported in this browser",
     locationError: " · Could not get your location",
     bookingHint:
-      ' · Click "More on Booking" to find the 3 cheapest rooms within 2 km',
+      ' · Click "More on Booking" to find reasonably priced rooms within 2 km',
     noResults: "No stations match your search.",
   },
   station: {

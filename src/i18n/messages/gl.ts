@@ -21,7 +21,7 @@ export const gl: Messages = {
   },
   home: {
     heroSubtitle:
-      "Principais estacións da CP do Miño ao Algarve, con hoteis económicos a poucos minutos a pé.",
+      "Principais estacións da CP do Miño ao Algarve, con hoteis con prezos razoables a poucos minutos a pé.",
     searchLabel: "Buscar estación ou liña",
     searchPlaceholder: "Buscar estación ou liña...",
     filtersLabel: "Filtrar estacións",
@@ -44,12 +44,12 @@ export const gl: Messages = {
     locationUnsupported: " · Localización non compatible con este navegador",
     locationError: " · Non foi posible obter a túa localización",
     bookingHint:
-      ' · Preme "Máis en Booking" para ver os 3 cuartos máis baratos nun raio de 2 km',
+      ' · Preme "Máis en Booking" para ver aloxamentos con prezos razoables nun raio de 2 km',
     noResults: "Ningunha estación coincide coa busca.",
   },
   station: {
     stationPhotoAlt: "Estación de tren de {{name}}",
-    budgetStays: "Aloxamentos económicos preto",
+    budgetStays: "Aloxamentos con prezos razoables preto",
     hotelsIntro:
       "Vota a favor ou en contra de hoteis que coñezas, ou indica se un aloxamento pode estar pechado. O teu feedback queda gardado neste navegador.",
     noHotels: "Aínda non hai hoteis recomendados para esta estación.",
@@ -251,15 +251,15 @@ export const gl: Messages = {
   meta: {
     siteName: "Portugal en tren",
     home: {
-      title: "Portugal en tren: Estacións e hoteis económicos",
+      title: "Portugal en tren: Estacións e hoteis con prezos razoables",
       description:
-        "Descobre estacións da CP en Portugal, do Miño ao Algarve, con liñas e hoteis económicos a poucos minutos a pé.",
+        "Descobre estacións da CP en Portugal, do Miño ao Algarve, con liñas e hoteis con prezos razoables a poucos minutos a pé.",
     },
     rankings: {
       title: "Rankings da comunidade | Portugal en tren",
       description:
         "Mira que estacións da CP e hoteis os visitantes valoran máis e menos en Portugal.",
-      ogDescription: "Rankings da comunidade para estacións da CP e hoteis económicos en Portugal.",
+      ogDescription: "Rankings da comunidade para estacións da CP e hoteis con prezos razoables en Portugal.",
     },
     tickets: {
       title: "Billetes e Prezos | Portugal en tren",
@@ -282,8 +282,8 @@ export const gl: Messages = {
     cpNetwork: "rede CP",
     cpTrains: "trens CP",
     mapsVotes: "Mapas, votos da comunidade e detalles da estación.",
-    budgetStay_one: "1 aloxamento económico",
-    budgetStay_other: "{{count}} aloxamentos económicos",
+    budgetStay_one: "1 aloxamento con prezo razoable",
+    budgetStay_other: "{{count}} aloxamentos con prezos razoables",
     fromPerNight: "desde {{price}} €/noite nun raio de 2 km, máis mapas e votos.",
     andMore: " e {{count}} máis",
   },

@@ -21,7 +21,7 @@ export const pt: Messages = {
   },
   home: {
     heroSubtitle:
-      "Principais estações da CP do Minho ao Algarve, com hotéis económicos a poucos minutos a pé.",
+      "Principais estações da CP do Minho ao Algarve, com hotéis com preços acessíveis a poucos minutos a pé.",
     searchLabel: "Pesquisar estação ou linha",
     searchPlaceholder: "Pesquisar estação ou linha...",
     filtersLabel: "Filtrar estações",
@@ -44,12 +44,12 @@ export const pt: Messages = {
     locationUnsupported: " · Localização não suportada neste browser",
     locationError: " · Não foi possível obter a sua localização",
     bookingHint:
-      ' · Clique em "Mais no Booking" para ver as 3 quartos mais baratos num raio de 2 km',
+      ' · Clique em "Mais no Booking" para ver estadias com preços acessíveis num raio de 2 km',
     noResults: "Nenhuma estação corresponde à pesquisa.",
   },
   station: {
     stationPhotoAlt: "Estação de comboio de {{name}}",
-    budgetStays: "Estadias económicas perto",
+    budgetStays: "Estadias com preços acessíveis perto",
     hotelsIntro:
       "Vote a favor ou contra hotéis que conhece, ou indique se um alojamento pode estar encerrado. O feedback fica guardado neste browser.",
     noHotels: "Ainda não há hotéis recomendados para esta estação.",
@@ -251,15 +251,15 @@ export const pt: Messages = {
   meta: {
     siteName: "Portugal de Comboio",
     home: {
-      title: "Portugal de Comboio: Estações e Hotéis Económicos",
+      title: "Portugal de Comboio: Estações e Hotéis com Preços Acessíveis",
       description:
-        "Descubra estações da CP de Portugal, do Minho ao Algarve, com linhas e hotéis económicos a poucos minutos a pé.",
+        "Descubra estações da CP de Portugal, do Minho ao Algarve, com linhas e hotéis com preços acessíveis a poucos minutos a pé.",
     },
     rankings: {
       title: "Rankings da Comunidade | Portugal de Comboio",
       description:
         "Veja que estações CP e hotéis os visitantes mais gostam ou menos gostam em Portugal.",
-      ogDescription: "Rankings da comunidade para estações CP e hotéis económicos em Portugal.",
+      ogDescription: "Rankings da comunidade para estações CP e hotéis com preços acessíveis em Portugal.",
     },
     tickets: {
       title: "Bilhetes e Preços | Portugal de Comboio",
@@ -283,8 +283,8 @@ export const pt: Messages = {
     cpNetwork: "rede CP",
     cpTrains: "comboios CP",
     mapsVotes: "Mapas, votos da comunidade e detalhes da estação.",
-    budgetStay_one: "1 estadia económica",
-    budgetStay_other: "{{count}} estadias económicas",
+    budgetStay_one: "1 estadia com preço acessível",
+    budgetStay_other: "{{count}} estadias com preços acessíveis",
     fromPerNight: "desde {{price}} €/noite num raio de 2 km, mais mapas e votos.",
     andMore: " e mais {{count}}",
   },
