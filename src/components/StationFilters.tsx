@@ -168,7 +168,6 @@ export function StationFilters({
           <button
             type="button"
             onClick={onRequestLocation}
-            disabled={locationState.status === "loading"}
             aria-pressed={sortByDistance}
             aria-label={locationLabel}
             title={locationLabel}
@@ -177,7 +176,6 @@ export function StationFilters({
               sortByDistance
                 ? "bg-primary text-primary-foreground ring-1 ring-primary/30 hover:bg-primary/90"
                 : "bg-secondary text-secondary-foreground hover:bg-secondary/90",
-              "disabled:cursor-wait disabled:opacity-80",
             )}
           >
             <Navigation className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />

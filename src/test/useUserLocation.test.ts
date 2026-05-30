@@ -51,6 +51,49 @@ describe("useUserLocation", () => {
     expect(result.current.coords).toBeNull();
   });
 
+  it("turns off after permission denied when tapped again", async () => {
+    getCurrentPosition.mockImplementation((_ok, err) => {
+      err?.({ code: 1, PERMISSION_DENIED: 1 });
+    });
+
+    const { result } = renderHook(() => useUserLocation());
+
+    act(() => {
+      result.current.requestLocation();
+    });
+
+    await waitFor(() => {
+      expect(result.current.state.status).toBe("denied");
+    });
+
+    act(() => {
+      result.current.requestLocation();
+    });
+
+    expect(result.current.isActive).toBe(false);
+    expect(result.current.state.status).toBe("idle");
+    expect(localStorage.getItem(DISTANCE_SORT_STORAGE_KEY)).toBeNull();
+  });
+
+  it("turns off while location is loading", async () => {
+    getCurrentPosition.mockImplementation(() => {});
+
+    const { result } = renderHook(() => useUserLocation());
+
+    act(() => {
+      result.current.requestLocation();
+    });
+
+    expect(result.current.state.status).toBe("loading");
+
+    act(() => {
+      result.current.requestLocation();
+    });
+
+    expect(result.current.isActive).toBe(false);
+    expect(result.current.state.status).toBe("idle");
+  });
+
   it("keeps coords and active state after success", async () => {
     getCurrentPosition.mockImplementation((ok) => {
       ok?.({
@@ -95,6 +138,12 @@ describe("useUserLocation", () => {
 
     expect(second.result.current.isActive).toBe(true);
     expect(localStorage.getItem(DISTANCE_SORT_STORAGE_KEY)).toBe("1");
+    expect(second.result.current.state.status).toBe("idle");
+    expect(second.result.current.coords).toBeNull();
+
+    act(() => {
+      second.result.current.requestLocation();
+    });
 
     await waitFor(() => {
       expect(second.result.current.state.status).toBe("ready");
