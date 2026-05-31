@@ -5,6 +5,21 @@ import { useHotelVote } from "@/hooks/useHotelVote";
 import { VoteButtons } from "@/components/VoteButtons";
 import { useLocale } from "@/i18n/LocaleProvider";
 
+function HotelPrice({ priceFrom }: { priceFrom: number }) {
+  const { t } = useLocale();
+  const fullLabel = t("station.priceStartsAt", { price: priceFrom });
+
+  return (
+    <span className="flex shrink-0 items-center gap-0.5 whitespace-nowrap text-sm font-semibold text-primary">
+      <span className="inline-flex items-center gap-0.5 md:hidden" aria-label={fullLabel}>
+        <Euro className="h-3 w-3 shrink-0" aria-hidden="true" />
+        {priceFrom}
+      </span>
+      <span className="hidden text-xs font-semibold md:inline md:text-sm">{fullLabel}</span>
+    </span>
+  );
+}
+
 function HotelClosedSuggestion({ stationName, hotelName }: { stationName: string; hotelName: string }) {
   const { t } = useLocale();
   const { reported, toggle } = useHotelClosedReport(stationName, hotelName);
@@ -27,7 +42,6 @@ function HotelClosedSuggestion({ stationName, hotelName }: { stationName: string
 }
 
 function HotelRowCompactLink({ hotel }: { hotel: Hotel }) {
-  const { t } = useLocale();
   return (
     <a
       href={hotel.bookingUrl}
@@ -42,11 +56,7 @@ function HotelRowCompactLink({ hotel }: { hotel: Hotel }) {
           {t("station.kmFromStation", { km: hotel.distanceKm })}
         </p>
       </div>
-      <span className="flex shrink-0 items-center gap-0.5 whitespace-nowrap text-sm font-semibold text-primary">
-        <Euro className="h-3 w-3" aria-hidden="true" />
-        {hotel.priceFrom}
-        <span className="sr-only">{t("station.eurosPerNightFrom")}</span>
-      </span>
+      <HotelPrice priceFrom={hotel.priceFrom} />
     </a>
   );
 }
@@ -76,11 +86,7 @@ function HotelRowCompactWithVotes({
             {t("station.kmFromStation", { km: hotel.distanceKm })}
           </p>
         </a>
-        <span className="flex shrink-0 items-center gap-0.5 whitespace-nowrap text-sm font-semibold text-primary">
-          <Euro className="h-3 w-3" aria-hidden="true" />
-          {hotel.priceFrom}
-          <span className="sr-only">{t("station.eurosPerNightFrom")}</span>
-        </span>
+        <HotelPrice priceFrom={hotel.priceFrom} />
         <VoteButtons
           vote={vote}
           onUp={() => cast("up")}
@@ -121,11 +127,7 @@ function HotelRow({ stationName, hotel }: { stationName: string; hotel: Hotel })
       <div className="min-w-0 flex-1">
         <div className="flex items-start justify-between gap-3">
           <p className="font-medium text-foreground">{hotel.name}</p>
-          <span className="text-sm font-semibold text-primary whitespace-nowrap flex items-center gap-0.5 shrink-0">
-            <Euro className="w-3 h-3" aria-hidden="true" />
-            {hotel.priceFrom}
-            <span className="sr-only">{t("station.eurosPerNightFrom")}</span>
-          </span>
+          <HotelPrice priceFrom={hotel.priceFrom} />
         </div>
         <p className="mt-1 text-xs text-muted-foreground flex items-center gap-1">
           <Navigation className="w-3 h-3 shrink-0" aria-hidden="true" />

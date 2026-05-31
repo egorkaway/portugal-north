@@ -13,7 +13,14 @@ const TOURISM_TYPES = new Set([
   "hostel",
   "motel",
   "chalet",
+  "bed_and_breakfast",
 ]);
+
+/** Radii when topping up toward 3 hotels (max 5 km). */
+const RADIUS_STEPS_DEFAULT = [2000, 3500, 5000];
+
+/** Same cap for stations with no curated hotels yet. */
+const RADIUS_STEPS_SPARSE = [2000, 3500, 5000];
 
 export function isPlaceholderHotelName(name) {
   return PLACEHOLDER_NAME.test(name);
@@ -67,7 +74,7 @@ export function writeHotelMap(hotelsPath, map, stationOrder) {
 
 export type StationHotels = Record<string, Hotel[]>;
 
-// Recommended budget hotels within ~2km of each station
+// Recommended budget hotels near each station (typically within ~2–5 km depending on OSM coverage)
 // Prices are approximate starting rates in EUR
 export const stationHotels: StationHotels = {
 ${blocks.join("\n")}
@@ -133,7 +140,7 @@ function normName(name) {
 export async function fetchNearbyHotels(station, { radiusM = 2000 } = {}) {
   const query = `[out:json][timeout:45];
 (
-  nwr["tourism"~"hotel|guest_house|hostel|motel"](around:${radiusM},${station.lat},${station.lng});
+  nwr["tourism"~"hotel|guest_house|hostel|motel|chalet|bed_and_breakfast"](around:${radiusM},${station.lat},${station.lng});
   nwr["amenity"~"hotel|guest_house|hostel"](around:${radiusM},${station.lat},${station.lng});
 );
 out center tags;`;
@@ -195,23 +202,28 @@ out center tags;`;
   return hotels;
 }
 
-export async function resolveHotelsForStation(station, existingHotels, { target = 3 } = {}) {
-  const curated = existingHotels.filter((h) => !isPlaceholderHotelName(h.name));
-  const needed = target - curated.length;
-  if (needed <= 0) return { curated, added: [], skipped: "full" };
+export function radiusStepsForStation(curatedCount, target = 3) {
+  if (curatedCount >= target) return [];
+  return curatedCount === 0 ? RADIUS_STEPS_SPARSE : RADIUS_STEPS_DEFAULT;
+}
 
-  let radiusM = 2000;
-  let candidates = await fetchNearbyHotels(station, { radiusM });
-  if (candidates.length < needed) {
-    radiusM = 3500;
-    candidates = await fetchNearbyHotels(station, { radiusM });
+function mergeCandidates(existing, batch) {
+  const seen = new Set(existing.map((h) => normName(h.name)));
+  const merged = [...existing];
+  for (const candidate of batch) {
+    const key = normName(candidate.name);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    merged.push(candidate);
   }
+  merged.sort((a, b) => a.distanceKm - b.distanceKm);
+  return merged;
+}
 
-  const existingKeys = new Set(curated.map((h) => normName(h.name)));
+function pickHotels(candidates, existingKeys, limit) {
   const added = [];
-
   for (const candidate of candidates) {
-    if (added.length >= needed) break;
+    if (added.length >= limit) break;
     const key = normName(candidate.name);
     if (existingKeys.has(key)) continue;
     existingKeys.add(key);
@@ -221,6 +233,28 @@ export async function resolveHotelsForStation(station, existingHotels, { target 
       priceFrom: candidate.priceFrom,
       bookingUrl: candidate.bookingUrl,
     });
+  }
+  return added;
+}
+
+export async function resolveHotelsForStation(station, existingHotels, { target = 3 } = {}) {
+  const curated = existingHotels.filter((h) => !isPlaceholderHotelName(h.name));
+  const needed = target - curated.length;
+  if (needed <= 0) return { curated, added: [], skipped: "full" };
+
+  const radiusSteps = radiusStepsForStation(curated.length, target);
+  const existingKeys = new Set(curated.map((h) => normName(h.name)));
+  let candidates = [];
+  let radiusM = radiusSteps[0] ?? 2000;
+  const added = [];
+
+  for (const radius of radiusSteps) {
+    radiusM = radius;
+    const batch = await fetchNearbyHotels(station, { radiusM });
+    candidates = mergeCandidates(candidates, batch);
+    const next = pickHotels(candidates, existingKeys, needed - added.length);
+    added.push(...next);
+    if (added.length >= needed) break;
   }
 
   return {

@@ -63,7 +63,7 @@ export const es: Messages = {
     moreOnBooking: "Más en Booking",
     stationPage: "Página de la estación",
     kmFromStation: "{{km}} km de la estación",
-    eurosPerNightFrom: " euros por noche desde",
+    priceStartsAt: "Precios desde {{price}} €",
     viewOnBooking: "Ver en Booking",
     suggestClosed: "Sugerir que el hotel puede estar cerrado",
     suggestedClosed: "Has sugerido que este hotel puede estar cerrado",

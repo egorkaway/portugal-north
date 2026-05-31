@@ -63,7 +63,7 @@ export type Messages = {
     moreOnBooking: string;
     stationPage: string;
     kmFromStation: string;
-    eurosPerNightFrom: string;
+    priceStartsAt: string;
     viewOnBooking: string;
     suggestClosed: string;
     suggestedClosed: string;

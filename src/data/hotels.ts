@@ -7,7 +7,7 @@ export interface Hotel {
 
 export type StationHotels = Record<string, Hotel[]>;
 
-// Recommended budget hotels within ~2km of each station
+// Recommended budget hotels near each station (typically within ~2–15 km depending on OSM coverage)
 // Prices are approximate starting rates in EUR
 export const stationHotels: StationHotels = {
   "Pombal": [
@@ -185,7 +185,7 @@ export const stationHotels: StationHotels = {
   "Areia-Darque": [
     { name: "Hotel do Cais", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20do%20Cais%2C%20Viana+do+Castelo%2C+Portugal&order=price" },
     { name: "Residencial Maryjoe Darque", distanceKm: 1.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Maryjoe%20Darque%2C%20Viana+do+Castelo%2C+Portugal&order=price" },
-    { name: "Hotel Aliança Darque", distanceKm: 1.0, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alian%C3%A7a%20Darque%2C%20Viana+do+Castelo%2C+Portugal&order=price" },
+    { name: "Hotel Aliança Darque", distanceKm: 1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alian%C3%A7a%20Darque%2C%20Viana+do+Castelo%2C+Portugal&order=price" },
   ],
   "Afife": [
     { name: "Casa do Adro de Afife", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Afife%2C+Portugal&order=price" },
@@ -729,9 +729,9 @@ export const stationHotels: StationHotels = {
     { name: "Budget stays near Leça do Balio", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Le%C3%A7a%20do%20Balio%2C%20Portugal&order=price" },
   ],
   "Águas Santas - Palmilheira": [
-    { name: "Hotels near Águas Santas - Palmilheira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=%C3%81guas%20Santas%20-%20Palmilheira%2C%20Portugal&order=price" },
-    { name: "Guest houses near Águas Santas - Palmilheira", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=%C3%81guas%20Santas%20-%20Palmilheira%2C%20Portugal&order=price" },
-    { name: "Budget stays near Águas Santas - Palmilheira", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=%C3%81guas%20Santas%20-%20Palmilheira%2C%20Portugal&order=price" },
+    { name: "Quinta da Granja", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Granja%2C%20%C3%81guas%20Santas%20-%20Palmilheira%2C%20Portugal&order=price" },
+    { name: "Pransor Águas Santas", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pransor%20%C3%81guas%20Santas%2C%20%C3%81guas%20Santas%20-%20Palmilheira%2C%20Portugal&order=price" },
+    { name: "Pensão Residencial Abê", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Residencial%20Ab%C3%AA%2C%20%C3%81guas%20Santas%20-%20Palmilheira%2C%20Portugal&order=price" },
   ],
   "São Gemil": [
     { name: "Hotels near São Gemil", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Gemil%2C%20Portugal&order=price" },
@@ -952,6 +952,56 @@ export const stationHotels: StationHotels = {
     { name: "Guadiana Hotel", distanceKm: 0.7, priceFrom: 50, bookingUrl: "https://www.booking.com/hotel/pt/guadiana-vila-real.html" },
     { name: "Hotel Guadiana", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Guadiana%2C%20Vila%20Real%20de%20Santo%20Ant%C3%B3nio%2C%20Portugal&order=price" },
   ],
+  "Aguieira": [
+    { name: "Residencial Castro", distanceKm: 1.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Castro%2C%20Aguieira%2C%20Portugal&order=price" },
+    { name: "Residencial e Restaurante O Trindade", distanceKm: 2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20e%20Restaurante%20O%20Trindade%2C%20Aguieira%2C%20Portugal&order=price" },
+    { name: "Pensão Celeste", distanceKm: 3.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Celeste%2C%20Aguieira%2C%20Portugal&order=price" },
+  ],
+  "Albergaria dos Doze": [
+    { name: "Quinta d'Oliveira", distanceKm: 5.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20d'Oliveira%2C%20Albergaria%20dos%20Doze%2C%20Portugal&order=price" },
+    { name: "Albergue Farrius Bar", distanceKm: 7.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Farrius%20Bar%2C%20Albergaria%20dos%20Doze%2C%20Portugal&order=price" },
+    { name: "Quinta do Chumbaria", distanceKm: 7.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Chumbaria%2C%20Albergaria%20dos%20Doze%2C%20Portugal&order=price" },
+  ],
+  "Alegria": [
+    { name: "Hotel Pesqdouro", distanceKm: 4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pesqdouro%2C%20Alegria%2C%20Portugal&order=price" },
+    { name: "Dourovou - Ecoturismo Fluvial", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dourovou%20-%20Ecoturismo%20Fluvial%2C%20Alegria%2C%20Portugal&order=price" },
+    { name: "Casa do Tua", distanceKm: 4.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Tua%2C%20Alegria%2C%20Portugal&order=price" },
+  ],
+  "Alferrarede": [
+    { name: "HI Abrantes – Pousada de Juventude", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=HI%20Abrantes%20%E2%80%93%20Pousada%20de%20Juventude%2C%20Alferrarede%2C%20Portugal&order=price" },
+    { name: "Luna", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Luna%2C%20Alferrarede%2C%20Portugal&order=price" },
+    { name: "Luna Hotel Turismo", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Luna%20Hotel%20Turismo%2C%20Alferrarede%2C%20Portugal&order=price" },
+  ],
+  "Agualva - Cacém": [
+    { name: "Quinta do Scoto", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Scoto%2C%20Agualva%20-%20Cac%C3%A9m%2C%20Portugal&order=price" },
+    { name: "Guest House A.L.", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guest%20House%20A.L.%2C%20Agualva%20-%20Cac%C3%A9m%2C%20Portugal&order=price" },
+    { name: "Pousada Dona Maria I", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20Dona%20Maria%20I%2C%20Agualva%20-%20Cac%C3%A9m%2C%20Portugal&order=price" },
+  ],
+  "Alcantara - Mar": [
+    { name: "LX Hostel", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=LX%20Hostel%2C%20Alcantara%20-%20Mar%2C%20Portugal&order=price" },
+    { name: "Hotel Infante Santo", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Infante%20Santo%2C%20Alcantara%20-%20Mar%2C%20Portugal&order=price" },
+    { name: "Vila Galé Ópera", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Gal%C3%A9%20%C3%93pera%2C%20Alcantara%20-%20Mar%2C%20Portugal&order=price" },
+  ],
+  "Alcantara - Terra": [
+    { name: "Cheese & Wine Lapa", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cheese%20%26%20Wine%20Lapa%2C%20Alcantara%20-%20Terra%2C%20Portugal&order=price" },
+    { name: "Hotel Infante Santo", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Infante%20Santo%2C%20Alcantara%20-%20Terra%2C%20Portugal&order=price" },
+    { name: "LX Hostel", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=LX%20Hostel%2C%20Alcantara%20-%20Terra%2C%20Portugal&order=price" },
+  ],
+  "Algés": [
+    { name: "Palácio do Governador", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pal%C3%A1cio%20do%20Governador%2C%20Alg%C3%A9s%2C%20Portugal&order=price" },
+    { name: "MS Aparthotel", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=MS%20Aparthotel%2C%20Alg%C3%A9s%2C%20Portugal&order=price" },
+    { name: "AltisBelem Hotel & SPA", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AltisBelem%20Hotel%20%26%20SPA%2C%20Alg%C3%A9s%2C%20Portugal&order=price" },
+  ],
+  "Algueirão - Mem Martins": [
+    { name: "Pensão Gare", distanceKm: 0, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Gare%2C%20Algueir%C3%A3o%20-%20Mem%20Martins%2C%20Portugal&order=price" },
+    { name: "alvor", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=alvor%2C%20Algueir%C3%A3o%20-%20Mem%20Martins%2C%20Portugal&order=price" },
+    { name: "Lugar Saloio Sintra", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lugar%20Saloio%20Sintra%2C%20Algueir%C3%A3o%20-%20Mem%20Martins%2C%20Portugal&order=price" },
+  ],
+  "Alhandra": [
+    { name: "Bombeiros Voluntários de Alhandra", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bombeiros%20Volunt%C3%A1rios%20de%20Alhandra%2C%20Alhandra%2C%20Portugal&order=price" },
+    { name: "Hostel DP", distanceKm: 3.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20DP%2C%20Alhandra%2C%20Portugal&order=price" },
+    { name: "Hospedaria Maioral", distanceKm: 3.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20Maioral%2C%20Alhandra%2C%20Portugal&order=price" },
+  ],
   "Pragal": [
     { name: "Holiday Inn Express Lisbon-Almada", distanceKm: 0.4, priceFrom: 60, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
     { name: "Alojamento Pragal", distanceKm: 0.6, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
@@ -1010,5 +1060,10 @@ export const stationHotels: StationHotels = {
     { name: "Colina dos Mouros", distanceKm: 0.6, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Hotel Vila Sodré", distanceKm: 1.4, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Horta Grande", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Horta%20Grande%2C%20Silves%2C%20Portugal&order=price" },
+  ],
+  "Aeroporto (Metro Lisboa)": [
+    { name: "Star inn", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Star%20inn%2C%20Aeroporto%20(Metro%20Lisboa)%2C%20Portugal&order=price" },
+    { name: "Melíã Lisboa Aeroporto", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mel%C3%AD%C3%A3%20Lisboa%20Aeroporto%2C%20Aeroporto%20(Metro%20Lisboa)%2C%20Portugal&order=price" },
+    { name: "Terminus", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Terminus%2C%20Aeroporto%20(Metro%20Lisboa)%2C%20Portugal&order=price" },
   ],
 };
