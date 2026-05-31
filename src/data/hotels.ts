@@ -470,14 +470,14 @@ export const stationHotels: StationHotels = {
     { name: "Padre Cruz", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Padre%20Cruz%2C%20Carvalha%2C%20Portugal&order=price" },
   ],
   "Gondarém": [
-    { name: "Hotels near Gondarém", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gondar%C3%A9m%2C%20Portugal&order=price" },
-    { name: "Guest houses near Gondarém", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gondar%C3%A9m%2C%20Portugal&order=price" },
-    { name: "Budget stays near Gondarém", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gondar%C3%A9m%2C%20Portugal&order=price" },
+    { name: "Vila D'Artes", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20D'Artes%2C%20Gondar%C3%A9m%2C%20Portugal&order=price" },
+    { name: "Estalagem da Boega", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Estalagem%20da%20Boega%2C%20Gondar%C3%A9m%2C%20Portugal&order=price" },
+    { name: "Hostel Albergue. Casa Gwendoline", distanceKm: 2.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20Albergue.%20Casa%20Gwendoline%2C%20Gondar%C3%A9m%2C%20Portugal&order=price" },
   ],
   "Esqueiró": [
-    { name: "Hotels near Esqueiró", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Esqueir%C3%B3%2C%20Portugal&order=price" },
-    { name: "Guest houses near Esqueiró", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Esqueir%C3%B3%2C%20Portugal&order=price" },
-    { name: "Budget stays near Esqueiró", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Esqueir%C3%B3%2C%20Portugal&order=price" },
+    { name: "Vila D'Artes", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20D'Artes%2C%20Esqueir%C3%B3%2C%20Portugal&order=price" },
+    { name: "Albergue S. Bento", distanceKm: 2.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20S.%20Bento%2C%20Esqueir%C3%B3%2C%20Portugal&order=price" },
+    { name: "Casas da Azenha", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20da%20Azenha%2C%20Esqueir%C3%B3%2C%20Portugal&order=price" },
   ],
   "Seixas": [
     { name: "Albergue S. Bento", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20S.%20Bento%2C%20Seixas%2C%20Portugal&order=price" },
@@ -490,9 +490,9 @@ export const stationHotels: StationHotels = {
     { name: "Turismo Rural - Casa de Leiras", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Turismo%20Rural%20-%20Casa%20de%20Leiras%2C%20Senhora%20da%20Agonia%2C%20Portugal&order=price" },
   ],
   "Moledo do Minho": [
-    { name: "Hotels near Moledo do Minho", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Moledo%20do%20Minho%2C%20Portugal&order=price" },
-    { name: "Guest houses near Moledo do Minho", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Moledo%20do%20Minho%2C%20Portugal&order=price" },
-    { name: "Budget stays near Moledo do Minho", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Moledo%20do%20Minho%2C%20Portugal&order=price" },
+    { name: "Casa da Légua", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20L%C3%A9gua%2C%20Moledo%20do%20Minho%2C%20Portugal&order=price" },
+    { name: "Aldeamento Turístico do Camarido", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aldeamento%20Tur%C3%ADstico%20do%20Camarido%2C%20Moledo%20do%20Minho%2C%20Portugal&order=price" },
+    { name: "Porta do Sol", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porta%20do%20Sol%2C%20Moledo%20do%20Minho%2C%20Portugal&order=price" },
   ],
   "Alvarães": [
     { name: "Hotels near Alvarães", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alvar%C3%A3es%2C%20Portugal&order=price" },
@@ -764,14 +764,14 @@ export const stationHotels: StationHotels = {
     { name: "Budget stays near Silvalde", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silvalde%2C%20Portugal&order=price" },
   ],
   "Espinho - Vouga": [
-    { name: "Hotels near Espinho - Vouga", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Espinho%20-%20Vouga%2C%20Portugal&order=price" },
-    { name: "Guest houses near Espinho - Vouga", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Espinho%20-%20Vouga%2C%20Portugal&order=price" },
-    { name: "Budget stays near Espinho - Vouga", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Espinho%20-%20Vouga%2C%20Portugal&order=price" },
+    { name: "Alameda Guest House", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alameda%20Guest%20House%2C%20Espinho%20-%20Vouga%2C%20Portugal&order=price" },
+    { name: "A&Z", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=A%26Z%2C%20Espinho%20-%20Vouga%2C%20Portugal&order=price" },
+    { name: "Surf House", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Surf%20House%2C%20Espinho%20-%20Vouga%2C%20Portugal&order=price" },
   ],
   "São João da Madeira": [
-    { name: "Hotels near São João da Madeira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20Portugal&order=price" },
-    { name: "Guest houses near São João da Madeira", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20Portugal&order=price" },
-    { name: "Budget stays near São João da Madeira", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20Portugal&order=price" },
+    { name: "Hotel A.S. São João da Madeira", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20A.S.%20S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20Portugal&order=price" },
+    { name: "Residencial Solar São João", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Solar%20S%C3%A3o%20Jo%C3%A3o%2C%20S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20Portugal&order=price" },
+    { name: "Agocida da Santa Casa da Misericórdia", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Agocida%20da%20Santa%20Casa%20da%20Miseric%C3%B3rdia%2C%20S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20Portugal&order=price" },
   ],
   "Vila da Feira": [
     { name: "Hotels near Vila da Feira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20da%20Feira%2C%20Portugal&order=price" },
@@ -905,7 +905,7 @@ export const stationHotels: StationHotels = {
   ],
   "Viseu": [
     { name: "Hotel Solar dos Pais", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Solar%20dos%20Pais%2C%20Viseu%2C%20Portugal&order=price" },
-    { name: "Apartamentos \"O Fado\"", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20%22O%20Fado%22%2C%20Viseu%2C%20Portugal&order=price" },
+    { name: "Apartamentos \\\\\\\\", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20%22O%20Fado%22%2C%20Viseu%2C%20Portugal&order=price" },
     { name: "Casa da Sé", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20S%C3%A9%2C%20Viseu%2C%20Portugal&order=price" },
   ],
   "Évora": [
