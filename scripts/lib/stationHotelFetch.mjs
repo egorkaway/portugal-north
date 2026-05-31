@@ -1,6 +1,7 @@
 /** Discover hotels near stations via OpenStreetMap (Overpass API). */
 
 import { writeFileSync } from "node:fs";
+import { isRejectedHotel } from "./rejectedHotels.mjs";
 
 const OVERPASS_URL = "https://overpass-api.de/api/interpreter";
 const USER_AGENT = "portugal-north-hotel-fetch/1.0 (https://www.verystays.com)";
@@ -220,12 +221,19 @@ function mergeCandidates(existing, batch) {
   return merged;
 }
 
-function pickHotels(candidates, existingKeys, limit) {
+function pickHotels(candidates, existingKeys, limit, { stationName, rejected = null } = {}) {
   const added = [];
   for (const candidate of candidates) {
     if (added.length >= limit) break;
     const key = normName(candidate.name);
     if (existingKeys.has(key)) continue;
+    if (
+      rejected &&
+      stationName &&
+      isRejectedHotel(rejected, stationName, candidate.name, candidate.bookingUrl)
+    ) {
+      continue;
+    }
     existingKeys.add(key);
     added.push({
       name: candidate.name,
@@ -237,7 +245,11 @@ function pickHotels(candidates, existingKeys, limit) {
   return added;
 }
 
-export async function resolveHotelsForStation(station, existingHotels, { target = 3 } = {}) {
+export async function resolveHotelsForStation(
+  station,
+  existingHotels,
+  { target = 3, rejected = null } = {},
+) {
   const curated = existingHotels.filter((h) => !isPlaceholderHotelName(h.name));
   const needed = target - curated.length;
   if (needed <= 0) return { curated, added: [], skipped: "full" };
@@ -252,7 +264,10 @@ export async function resolveHotelsForStation(station, existingHotels, { target 
     radiusM = radius;
     const batch = await fetchNearbyHotels(station, { radiusM });
     candidates = mergeCandidates(candidates, batch);
-    const next = pickHotels(candidates, existingKeys, needed - added.length);
+    const next = pickHotels(candidates, existingKeys, needed - added.length, {
+      stationName: station.name,
+      rejected,
+    });
     added.push(...next);
     if (added.length >= needed) break;
   }
