@@ -119,8 +119,9 @@ const Index = () => {
             </a>
           </h1>
           <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-            <p className="max-w-2xl text-base text-primary-foreground/90 md:text-lg">
-              {t("home.heroSubtitle")}
+            <p className="text-primary-foreground/90 text-lg max-w-2xl">
+              Major CP stations from the Minho to the Algarve — with maps and
+              budget hotels within walking distance.
             </p>
             <SitePageNavLinks variant="hero" className="shrink-0" />
           </div>
