@@ -110,6 +110,8 @@ export const stationHotels: StationHotels = {
   ],
   "Guimarães": [
     { name: "ibis Guimarães Centro", distanceKm: 0.8, priceFrom: 39, bookingUrl: "https://www.booking.com/hotel/pt/ibis-guimaraes.html" },
+    { name: "Ilha do Sabão", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ilha%20do%20Sab%C3%A3o%2C%20Guimar%C3%A3es%2C%20Portugal&order=price" },
+    { name: "Hostel Prime", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20Prime%2C%20Guimar%C3%A3es%2C%20Portugal&order=price" },
   ],
   "Valongo": [
     { name: "Residencial Valongo", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Valongo%2C+Portugal&order=price" },
@@ -133,6 +135,8 @@ export const stationHotels: StationHotels = {
   ],
   "Amarante": [
     { name: "Hotel Navarras", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/hotel/pt/navarras.html" },
+    { name: "Des Arts Hostel and Suites", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Des%20Arts%20Hostel%20and%20Suites%2C%20Amarante%2C%20Portugal&order=price" },
+    { name: "Casa do Fontanário Stay", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Fontan%C3%A1rio%20Stay%2C%20Amarante%2C%20Portugal&order=price" },
   ],
   "Peso da Régua": [
     { name: "Hotel Régua Douro", distanceKm: 0.1, priceFrom: 40, bookingUrl: "https://www.booking.com/hotel/pt/regua-douro.html" },
@@ -141,13 +145,18 @@ export const stationHotels: StationHotels = {
   ],
   "Barcelos": [
     { name: "Residencial Arantes", distanceKm: 0.8, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcelos%2C+Portugal&order=price" },
+    { name: "Hotel Dom Nuno", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Dom%20Nuno%2C%20Barcelos%2C%20Portugal&order=price" },
+    { name: "Albergue de Peregrinos Cidade de Barcelos", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Cidade%20de%20Barcelos%2C%20Barcelos%2C%20Portugal&order=price" },
   ],
   "Viana do Castelo": [
     { name: "HI Viana do Castelo (Pousada de Juventude)", distanceKm: 1.5, priceFrom: 15, bookingUrl: "https://www.booking.com/hotel/pt/pousada-de-juventude-de-viana-do-castelo.html" },
+    { name: "Residencial Santos", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Santos%2C%20Viana%20do%20Castelo%2C%20Portugal&order=price" },
+    { name: "Casa Manuel Espregueira e Oliveira", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Manuel%20Espregueira%20e%20Oliveira%2C%20Viana%20do%20Castelo%2C%20Portugal&order=price" },
   ],
   "Valença": [
     { name: "Hotel Val Flores", distanceKm: 0.6, priceFrom: 35, bookingUrl: "https://www.booking.com/hotel/pt/val-flores.html" },
     { name: "Residencial Ponte Seca", distanceKm: 0.4, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Valenca%2C+Portugal&order=price" },
+    { name: "Residencial S. Gião", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20S.%20Gi%C3%A3o%2C%20Valen%C3%A7a%2C%20Portugal&order=price" },
   ],
   "Cacia": [
     { name: "Casa de Cacia", distanceKm: 0.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cacia%2C+Aveiro%2C+Portugal&order=price" },
@@ -190,6 +199,8 @@ export const stationHotels: StationHotels = {
   ],
   "Caminha": [
     { name: "Residencial Galo D'Ouro", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caminha%2C+Portugal&order=price" },
+    { name: "Albergue Bom Caminha", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Bom%20Caminha%2C%20Caminha%2C%20Portugal&order=price" },
+    { name: "Turismo Rural - Casa de Leiras", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Turismo%20Rural%20-%20Casa%20de%20Leiras%2C%20Caminha%2C%20Portugal&order=price" },
   ],
   "Mesão Frio": [
     { name: "Casa d'Alem", distanceKm: 1.8, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mesao+Frio%2C+Portugal&order=price" },
@@ -199,6 +210,7 @@ export const stationHotels: StationHotels = {
   "Pinhão": [
     { name: "Casa do Visconde de Chanceleiros", distanceKm: 1.8, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pinhao%2C+Portugal&order=price" },
     { name: "Quinta do Pôpa", distanceKm: 1.5, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pinhao%2C+Portugal&order=price" },
+    { name: "Residencial Ponto Grande", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Ponto%20Grande%2C%20Pinh%C3%A3o%2C%20Portugal&order=price" },
   ],
   "Tua": [
     { name: "Casa do Tua", distanceKm: 0.6, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tua%2C+Portugal&order=price" },
@@ -217,6 +229,7 @@ export const stationHotels: StationHotels = {
   "Curia": [
     { name: "Hotel das Termas da Curia", distanceKm: 0.6, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Curia%2C+Portugal&order=price" },
     { name: "Pensão Lourenço", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Curia%2C+Portugal&order=price" },
+    { name: "Curia Clube", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Curia%20Clube%2C%20Curia%2C%20Portugal&order=price" },
   ],
   "Oliveira do Bairro": [
     { name: "Paloma Blanca Hotel", distanceKm: 0.9, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oliveira+do+Bairro%2C+Portugal&order=price" },
@@ -360,10 +373,13 @@ export const stationHotels: StationHotels = {
   ],
   "Coimbra": [
     { name: "Ibis Coimbra Centro", distanceKm: 0.4, priceFrom: 50, bookingUrl: "https://www.booking.com/hotel/pt/ibis-coimbra.html" },
+    { name: "Hotel Avenida", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Avenida%2C%20Coimbra%2C%20Portugal&order=price" },
+    { name: "Coimbra Portagem Hostel", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Coimbra%20Portagem%20Hostel%2C%20Coimbra%2C%20Portugal&order=price" },
   ],
   "Mogofores": [
     { name: "Quinta dos Abrigueiros", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mogofores%2C+Portugal&order=price" },
     { name: "Curia Clube", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Curia%20Clube%2C%20Mogofores%2C%20Portugal&order=price" },
+    { name: "Hotel das Termas - Curia, Termas, Spa & Golf", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20das%20Termas%20-%20Curia%2C%20Termas%2C%20Spa%20%26%20Golf%2C%20Mogofores%2C%20Portugal&order=price" },
   ],
   "Avanca": [
     { name: "Casa Egas Moniz", distanceKm: 0.9, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Avanca%2C+Portugal&order=price" },
@@ -373,6 +389,7 @@ export const stationHotels: StationHotels = {
   "Penafiel": [
     { name: "Residencial Marques", distanceKm: 0.6, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Penafiel%2C+Portugal&order=price" },
     { name: "Quinta do Quintino", distanceKm: 1.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Quintino%2C%20Penafiel%2C%20Portugal&order=price" },
+    { name: "Quinta do Padrão", distanceKm: 2.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Padr%C3%A3o%2C%20Penafiel%2C%20Portugal&order=price" },
   ],
   "Paredes": [
     { name: "Hotel Comendador", distanceKm: 0.5, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Paredes%2C+Portugal&order=price" },
@@ -397,6 +414,8 @@ export const stationHotels: StationHotels = {
   ],
   "Águeda": [
     { name: "Pensão Celeste", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Celeste%2C%20%C3%81gueda%2C%20Portugal&order=price" },
+    { name: "Albergue de Peregrinos Santo António de Águeda/Celeste", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Santo%20Ant%C3%B3nio%20de%20%C3%81gueda%2FCeleste%2C%20%C3%81gueda%2C%20Portugal&order=price" },
+    { name: "Hostel and Friends", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20and%20Friends%2C%20%C3%81gueda%2C%20Portugal&order=price" },
   ],
   "Sernada do Vouga": [
     { name: "Casa da Vereda", distanceKm: 1.5, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sernada+do+Vouga&order=price" },
@@ -423,6 +442,8 @@ export const stationHotels: StationHotels = {
   ],
   "Vila Nova de Cerveira": [
     { name: "Residencial Rainha do Gusmão", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Rainha%20do%20Gusm%C3%A3o%2C%20Vila%20Nova%20de%20Cerveira%2C%20Portugal&order=price" },
+    { name: "Minho Belo", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Minho%20Belo%2C%20Vila%20Nova%20de%20Cerveira%2C%20Portugal&order=price" },
+    { name: "Pousada de Juventude Vila Nova de Cerveira", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20de%20Juventude%20Vila%20Nova%20de%20Cerveira%2C%20Vila%20Nova%20de%20Cerveira%2C%20Portugal&order=price" },
   ],
   "Pocinho": [
     { name: "Casa do Pocinho", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pocinho%2C+Portugal&order=price" },
@@ -435,6 +456,8 @@ export const stationHotels: StationHotels = {
   ],
   "Bragança": [
     { name: "Hotel Ibis Bragança", distanceKm: 1.4, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/ibis-braganca.html" },
+    { name: "Tic Tac", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tic%20Tac%2C%20Bragan%C3%A7a%2C%20Portugal&order=price" },
+    { name: "Tulipa", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tulipa%2C%20Bragan%C3%A7a%2C%20Portugal&order=price" },
   ],
   "São Pedro da Torre": [
     { name: "Alvorada Medieval", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alvorada%20Medieval%2C%20S%C3%A3o%20Pedro%20da%20Torre%2C%20Portugal&order=price" },
@@ -798,18 +821,22 @@ export const stationHotels: StationHotels = {
   "Lisboa Santa Apolónia": [
     { name: "My Story Hotel Tejo", distanceKm: 0.6, priceFrom: 65, bookingUrl: "https://www.booking.com/hotel/pt/my-story-tejo.html" },
     { name: "Residência Oliveira", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Resid%C3%AAncia%20Oliveira%2C%20Lisboa%20Santa%20Apol%C3%B3nia%2C%20Portugal&order=price" },
+    { name: "The Editory Riverside Hotel", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=The%20Editory%20Riverside%20Hotel%2C%20Lisboa%20Santa%20Apol%C3%B3nia%2C%20Portugal&order=price" },
   ],
   "Lisboa Oriente": [
     { name: "Olissippo Oriente", distanceKm: 0.5, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/olissippo-oriente.html" },
     { name: "Hotel Moxy Lisboa Oriente", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Moxy%20Lisboa%20Oriente%2C%20Lisboa%20Oriente%2C%20Portugal&order=price" },
+    { name: "Hotel Tivoli Oriente", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Tivoli%20Oriente%2C%20Lisboa%20Oriente%2C%20Portugal&order=price" },
   ],
   "Lisboa Rossio": [
     { name: "My Story Hotel Rossio", distanceKm: 0.1, priceFrom: 80, bookingUrl: "https://www.booking.com/hotel/pt/my-story-rossio.html" },
     { name: "Gat Rossio Hotel", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gat%20Rossio%20Hotel%2C%20Lisboa%20Rossio%2C%20Portugal&order=price" },
+    { name: "DownTown", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=DownTown%2C%20Lisboa%20Rossio%2C%20Portugal&order=price" },
   ],
   "Cais do Sodré": [
     { name: "LX Boutique Hotel", distanceKm: 0.2, priceFrom: 85, bookingUrl: "https://www.booking.com/hotel/pt/lx-boutique.html" },
     { name: "Sunset Destination Hostel", distanceKm: 0, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sunset%20Destination%20Hostel%2C%20Cais%20do%20Sodr%C3%A9%2C%20Portugal&order=price" },
+    { name: "Lost Lisbon :: Cais House", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lost%20Lisbon%20%3A%3A%20Cais%20House%2C%20Cais%20do%20Sodr%C3%A9%2C%20Portugal&order=price" },
   ],
   "Cascais": [
     { name: "Hotel Baia", distanceKm: 0.5, priceFrom: 90, bookingUrl: "https://www.booking.com/hotel/pt/baia.html" },
@@ -819,18 +846,22 @@ export const stationHotels: StationHotels = {
   "Sintra": [
     { name: "Nova Sintra", distanceKm: 1.1, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/nova-sintra.html" },
     { name: "Monte da Lua", distanceKm: 0.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Monte%20da%20Lua%2C%20Sintra%2C%20Portugal&order=price" },
+    { name: "Chalet Saudade", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Chalet%20Saudade%2C%20Sintra%2C%20Portugal&order=price" },
   ],
   "Setúbal": [
     { name: "Hotel IBIS Setúbal", distanceKm: 0.9, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/ibis-setubal.html" },
     { name: "Aranguês", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arangu%C3%AAs%2C%20Set%C3%BAbal%2C%20Portugal&order=price" },
+    { name: "Lilac Homestay", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lilac%20Homestay%2C%20Set%C3%BAbal%2C%20Portugal&order=price" },
   ],
   "Entroncamento": [
     { name: "Residencial Brasília", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Entroncamento&order=price" },
     { name: "Hotel Gameiro", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Gameiro%2C%20Entroncamento%2C%20Portugal&order=price" },
+    { name: "Casa das Memórias", distanceKm: 2.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20das%20Mem%C3%B3rias%2C%20Entroncamento%2C%20Portugal&order=price" },
   ],
   "Santarém": [
     { name: "Casa da Alcáçova", distanceKm: 1.9, priceFrom: 80, bookingUrl: "https://www.booking.com/hotel/pt/casa-da-alcacova.html" },
     { name: "Pensão Coimbra", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Coimbra%2C%20Santar%C3%A9m%2C%20Portugal&order=price" },
+    { name: "Santarem Hostel", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santarem%20Hostel%2C%20Santar%C3%A9m%2C%20Portugal&order=price" },
   ],
   "Tomar": [
     { name: "Hotel dos Templários", distanceKm: 0.6, priceFrom: 75, bookingUrl: "https://www.booking.com/hotel/pt/dos-templarios.html" },
@@ -844,6 +875,8 @@ export const stationHotels: StationHotels = {
   ],
   "Leiria": [
     { name: "São Francisco", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%A3o%20Francisco%2C%20Leiria%2C%20Portugal&order=price" },
+    { name: "Atlas Hostel", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Atlas%20Hostel%2C%20Leiria%2C%20Portugal&order=price" },
+    { name: "Eurosol Residence Hotel Apartamento", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurosol%20Residence%20Hotel%20Apartamento%2C%20Leiria%2C%20Portugal&order=price" },
   ],
   "Figueira da Foz": [
     { name: "Hotel Costa de Prata", distanceKm: 0.8, priceFrom: 55, bookingUrl: "https://www.booking.com/hotel/pt/costa-de-prata.html" },
@@ -852,13 +885,18 @@ export const stationHotels: StationHotels = {
   ],
   "Castelo Branco": [
     { name: "Pousada da Juventude", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20da%20Juventude%2C%20Castelo%20Branco%2C%20Portugal&order=price" },
+    { name: "Hotel Rainha Dona Amélia", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rainha%20Dona%20Am%C3%A9lia%2C%20Castelo%20Branco%2C%20Portugal&order=price" },
+    { name: "Guest House Esplanada", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guest%20House%20Esplanada%2C%20Castelo%20Branco%2C%20Portugal&order=price" },
   ],
   "Covilhã": [
     { name: "Puralã - Wool Valley Hotel & SPA", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pural%C3%A3%20-%20Wool%20Valley%20Hotel%20%26%20SPA%2C%20Covilh%C3%A3%2C%20Portugal&order=price" },
+    { name: "Hotel Covilhã Dona Maria", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Covilh%C3%A3%20Dona%20Maria%2C%20Covilh%C3%A3%2C%20Portugal&order=price" },
+    { name: "Hotel Sol e Neve", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sol%20e%20Neve%2C%20Covilh%C3%A3%2C%20Portugal&order=price" },
   ],
   "Guarda": [
     { name: "Hotel Santos", distanceKm: 1.4, priceFrom: 40, bookingUrl: "https://www.booking.com/hotel/pt/santos.html" },
     { name: "Guesthouse da Sé", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guesthouse%20da%20S%C3%A9%2C%20Guarda%2C%20Portugal&order=price" },
+    { name: "Residência Filipe", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Resid%C3%AAncia%20Filipe%2C%20Guarda%2C%20Portugal&order=price" },
   ],
   "Vilar Formoso": [
     { name: "Hotel Lusitano", distanceKm: 0.4, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilar+Formoso&order=price" },
@@ -867,15 +905,23 @@ export const stationHotels: StationHotels = {
   ],
   "Viseu": [
     { name: "Hotel Solar dos Pais", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Solar%20dos%20Pais%2C%20Viseu%2C%20Portugal&order=price" },
+    { name: "Apartamentos \"O Fado\"", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20%22O%20Fado%22%2C%20Viseu%2C%20Portugal&order=price" },
+    { name: "Casa da Sé", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20S%C3%A9%2C%20Viseu%2C%20Portugal&order=price" },
   ],
   "Évora": [
     { name: "Casa Morgado Esporão", distanceKm: 0, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Morgado%20Espor%C3%A3o%2C%20%C3%89vora%2C%20Portugal&order=price" },
+    { name: "Burgos Hostel", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Burgos%20Hostel%2C%20%C3%89vora%2C%20Portugal&order=price" },
+    { name: "Mont'Sobro House", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mont'Sobro%20House%2C%20%C3%89vora%2C%20Portugal&order=price" },
   ],
   "Beja": [
     { name: "Hospedaria Santa Maria", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20Santa%20Maria%2C%20Beja%2C%20Portugal&order=price" },
+    { name: "Hospedaria Zé Maria", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20Z%C3%A9%20Maria%2C%20Beja%2C%20Portugal&order=price" },
+    { name: "Maria's Guesthouse", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Maria's%20Guesthouse%2C%20Beja%2C%20Portugal&order=price" },
   ],
   "Faro": [
     { name: "Pensão Residencial Oliveira", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Residencial%20Oliveira%2C%20Faro%2C%20Portugal&order=price" },
+    { name: "City Rooms", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/hotel/pt/city-rooms-paris-private-room-by-hd.html" },
+    { name: "Stay Hotels", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Stay%20Hotels%2C%20Faro%2C%20Portugal&order=price" },
   ],
   "Albufeira-Ferreiras": [
     { name: "Hotel Boa Vista", distanceKm: 1.2, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferreiras%2C+Albufeira&order=price" },
@@ -889,16 +935,22 @@ export const stationHotels: StationHotels = {
   "Lagos": [
     { name: "Lagos Avenida Hotel", distanceKm: 0.6, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/lagos-avenida.html" },
     { name: "Cidade Velha", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cidade%20Velha%2C%20Lagos%2C%20Portugal&order=price" },
+    { name: "Riomar", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Riomar%2C%20Lagos%2C%20Portugal&order=price" },
   ],
   "Portimão": [
     { name: "Hotel Família Portimão", distanceKm: 1, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Portim%C3%A3o&order=price" },
     { name: "Made Inn", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Made%20Inn%2C%20Portim%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Aloha Hostel", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aloha%20Hostel%2C%20Portim%C3%A3o%2C%20Portugal&order=price" },
   ],
   "Tavira": [
     { name: "Residencial Princesa do Gilao", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Princesa%20do%20Gilao%2C%20Tavira%2C%20Portugal&order=price" },
+    { name: "AP Maria Nova Lounge Hotel", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AP%20Maria%20Nova%20Lounge%20Hotel%2C%20Tavira%2C%20Portugal&order=price" },
+    { name: "Residencial Imperial", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Imperial%2C%20Tavira%2C%20Portugal&order=price" },
   ],
   "Vila Real de Santo António": [
     { name: "Hotel Guadiana", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Guadiana%2C%20Vila%20Real%20de%20Santo%20Ant%C3%B3nio%2C%20Portugal&order=price" },
+    { name: "The Sun Hostel", distanceKm: 0, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=The%20Sun%20Hostel%2C%20Vila%20Real%20de%20Santo%20Ant%C3%B3nio%2C%20Portugal&order=price" },
+    { name: "Residencial Baixa Mar", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Baixa%20Mar%2C%20Vila%20Real%20de%20Santo%20Ant%C3%B3nio%2C%20Portugal&order=price" },
   ],
   "Aguieira": [
     { name: "Residencial Castro", distanceKm: 1.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Castro%2C%20Aguieira%2C%20Portugal&order=price" },
@@ -1008,6 +1060,36 @@ export const stationHotels: StationHotels = {
     { name: "Colina dos Mouros", distanceKm: 0.6, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Hotel Vila Sodré", distanceKm: 1.4, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Horta Grande", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Horta%20Grande%2C%20Silves%2C%20Portugal&order=price" },
+  ],
+  "Estádio do Dragão": [
+    { name: "Porto Antas Hotel", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Antas%20Hotel%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
+    { name: "AC Hotel Porto", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AC%20Hotel%20Porto%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Antas Ville", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Antas%20Ville%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Campanhã (Metro)": [
+    { name: "Peach Hostel & Suites", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Peach%20Hostel%20%26%20Suites%2C%20Campanh%C3%A3%20(Metro)%2C%20Portugal&order=price" },
+    { name: "Hospedaria Porto", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20Porto%2C%20Campanh%C3%A3%20(Metro)%2C%20Portugal&order=price" },
+    { name: "Hotel Poveira", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Poveira%2C%20Campanh%C3%A3%20(Metro)%2C%20Portugal&order=price" },
+  ],
+  "Trindade (Metro)": [
+    { name: "Hotel Porto Interface Trindade by Kavia", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Porto%20Interface%20Trindade%20by%20Kavia%2C%20Trindade%20(Metro)%2C%20Portugal&order=price" },
+    { name: "Rachel", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rachel%2C%20Trindade%20(Metro)%2C%20Portugal&order=price" },
+    { name: "Porto Trindade Hotel", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Trindade%20Hotel%2C%20Trindade%20(Metro)%2C%20Portugal&order=price" },
+  ],
+  "Estação Aeroporto": [
+    { name: "Solar Antigo Porto Aeroporto", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solar%20Antigo%20Porto%20Aeroporto%2C%20Esta%C3%A7%C3%A3o%20Aeroporto%2C%20Portugal&order=price" },
+    { name: "Singular", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Singular%2C%20Esta%C3%A7%C3%A3o%20Aeroporto%2C%20Portugal&order=price" },
+    { name: "Park Hotel Porto Aeroporto", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Park%20Hotel%20Porto%20Aeroporto%2C%20Esta%C3%A7%C3%A3o%20Aeroporto%2C%20Portugal&order=price" },
+  ],
+  "Rato": [
+    { name: "Back to Lisbon", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Back%20to%20Lisbon%2C%20Rato%2C%20Portugal&order=price" },
+    { name: "Luxury Lisbon Palace - Fine Homes", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Luxury%20Lisbon%20Palace%20-%20Fine%20Homes%2C%20Rato%2C%20Portugal&order=price" },
+    { name: "Lisbon São Bento", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lisbon%20S%C3%A3o%20Bento%2C%20Rato%2C%20Portugal&order=price" },
+  ],
+  "São Sebastião (Metro)": [
+    { name: "Hotel Alif Avenidas", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alif%20Avenidas%2C%20S%C3%A3o%20Sebasti%C3%A3o%20(Metro)%2C%20Portugal&order=price" },
+    { name: "Lisbon Serviced Apartments", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lisbon%20Serviced%20Apartments%2C%20S%C3%A3o%20Sebasti%C3%A3o%20(Metro)%2C%20Portugal&order=price" },
+    { name: "Hotel Real Parque", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Real%20Parque%2C%20S%C3%A3o%20Sebasti%C3%A3o%20(Metro)%2C%20Portugal&order=price" },
   ],
   "Aeroporto (Metro Lisboa)": [
     { name: "Star inn", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Star%20inn%2C%20Aeroporto%20(Metro%20Lisboa)%2C%20Portugal&order=price" },

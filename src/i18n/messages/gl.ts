@@ -64,6 +64,7 @@ export const gl: Messages = {
     stationPage: "Páxina da estación",
     kmFromStation: "{{km}} km da estación",
     priceStartsAt: "Prezos desde {{price}} €",
+    priceFromCompact: "€{{price}}+",
     viewOnBooking: "Ver en Booking",
     suggestClosed: "Suxerir que o hotel pode estar pechado",
     suggestedClosed: "Suxeriches que este hotel pode estar pechado",
