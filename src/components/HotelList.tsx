@@ -42,6 +42,8 @@ function HotelClosedSuggestion({ stationName, hotelName }: { stationName: string
 }
 
 function HotelRowCompactLink({ hotel }: { hotel: Hotel }) {
+  const { t } = useLocale();
+
   return (
     <a
       href={hotel.bookingUrl}
