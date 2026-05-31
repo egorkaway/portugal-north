@@ -10,6 +10,22 @@ describe("buildSeoHeadHtml", () => {
     expect(html).toContain("<title>Portugal by Train: Stations &amp; Budget Hotels</title>");
     expect(html).toContain('rel="canonical" href="https://www.verystays.com/"');
   });
+
+  it("does not HTML-escape ampersands in og/twitter image URLs", () => {
+    const pexelsUrl =
+      "https://images.pexels.com/photos/953125/pexels-photo-953125.jpeg?auto=compress&cs=tinysrgb&h=650&w=940";
+    const html = buildSeoHeadHtml(
+      {
+        title: "Test",
+        description: "Test",
+        canonicalPath: "/stations/test/",
+        ogImagePath: pexelsUrl,
+      },
+      "https://www.verystays.com",
+    );
+    expect(html).toContain(`content="${pexelsUrl}"`);
+    expect(html).not.toContain("&amp;cs=tinysrgb");
+  });
 });
 
 describe("getPrerenderRoutes", () => {

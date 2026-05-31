@@ -30,8 +30,13 @@ export function PageHead({ meta }: PageHeadProps) {
       <meta property="og:description" content={ogDescription} />
       <meta property="og:url" content={pageUrl} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:secure_url" content={ogImage} />
+      {(!meta.ogImagePath || meta.ogImagePath === "/og-image.jpg") && (
+        <>
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
+        </>
+      )}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@egorkaway" />
       <meta name="twitter:title" content={ogTitle} />

@@ -105,16 +105,29 @@ export function escapeAttr(text: string): string {
   return escapeHtml(text).replace(/"/g, "&quot;");
 }
 
+/** Attribute-safe URL: do not escape `&` (Twitter/OG crawlers use the literal attribute value). */
+export function escapeAttrUrl(url: string): string {
+  return url.replace(/"/g, "&quot;");
+}
+
+function resolveOgImageUrl(meta: PageMeta, base: string): string {
+  return meta.ogImagePath?.startsWith("http")
+    ? meta.ogImagePath
+    : `${base}${meta.ogImagePath ?? "/og-image.jpg"}`;
+}
+
 /** HTML injected into each prerendered page and mirrored by PageHead at runtime. */
 export function buildSeoHeadHtml(meta: PageMeta, siteUrl: string, siteName?: string): string {
   const base = siteUrl.replace(/\/$/, "");
   const canonical = `${base}${meta.canonicalPath}`;
   const ogTitle = escapeAttr(meta.ogTitle ?? meta.title);
   const ogDescription = escapeAttr(meta.ogDescription ?? meta.description);
-  const ogImage = meta.ogImagePath?.startsWith("http")
-    ? meta.ogImagePath
-    : `${base}${meta.ogImagePath ?? "/og-image.jpg"}`;
+  const ogImage = resolveOgImageUrl(meta, base);
   const name = escapeAttr(siteName ?? "Portugal by Train");
+  const isDefaultOgImage = !meta.ogImagePath || meta.ogImagePath === "/og-image.jpg";
+  const imageDimensions = isDefaultOgImage
+    ? `\n    <meta property="og:image:width" content="1200" />\n    <meta property="og:image:height" content="630" />`
+    : "";
 
   const robots = meta.robots
     ? `\n    <meta name="robots" content="${escapeAttr(meta.robots)}" />`
@@ -122,18 +135,17 @@ export function buildSeoHeadHtml(meta: PageMeta, siteUrl: string, siteName?: str
 
   return `    <title>${escapeHtml(meta.title)}</title>
     <meta name="description" content="${escapeAttr(meta.description)}" />${robots}
-    <link rel="canonical" href="${escapeAttr(canonical)}" />
+    <link rel="canonical" href="${escapeAttrUrl(canonical)}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="${name}" />
-    <meta property="og:url" content="${escapeAttr(canonical)}" />
+    <meta property="og:url" content="${escapeAttrUrl(canonical)}" />
     <meta property="og:title" content="${ogTitle}" />
     <meta property="og:description" content="${ogDescription}" />
-    <meta property="og:image" content="${escapeAttr(ogImage)}" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image" content="${escapeAttrUrl(ogImage)}" />
+    <meta property="og:image:secure_url" content="${escapeAttrUrl(ogImage)}" />${imageDimensions}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@egorkaway" />
     <meta name="twitter:title" content="${ogTitle}" />
     <meta name="twitter:description" content="${ogDescription}" />
-    <meta name="twitter:image" content="${escapeAttr(ogImage)}" />`;
+    <meta name="twitter:image" content="${escapeAttrUrl(ogImage)}" />`;
 }
