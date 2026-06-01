@@ -20,8 +20,10 @@ const TOURISM_TYPES = new Set([
 /** Radii when topping up toward 3 hotels (max 5 km). */
 const RADIUS_STEPS_DEFAULT = [2000, 3500, 5000];
 
-/** Same cap for stations with no curated hotels yet. */
-const RADIUS_STEPS_SPARSE = [2000, 3500, 5000];
+/** Wider steps when a stop has no hotels yet (rural halts, metro termini far from OSM tags). */
+const RADIUS_STEPS_SPARSE = [2000, 3500, 5000, 8000, 12000];
+
+const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
 
 export function isPlaceholderHotelName(name) {
   return PLACEHOLDER_NAME.test(name);
@@ -138,7 +140,43 @@ function normName(name) {
     .trim();
 }
 
-export async function fetchNearbyHotels(station, { radiusM = 2000 } = {}) {
+/** Strip metro suffixes for town-name geocoding. */
+export function townQueryForStation(stationName) {
+  const base = stationName.replace(/\s*\(Metro\)\s*$/i, "").trim();
+  return `${base}, Portugal`;
+}
+
+export async function geocodeTown(query) {
+  const url = `${NOMINATIM_URL}?${new URLSearchParams({
+    q: query,
+    format: "json",
+    limit: "1",
+  })}`;
+  const res = await fetch(url, {
+    headers: { "User-Agent": USER_AGENT },
+  });
+  if (!res.ok) return null;
+  const data = await res.json();
+  const hit = data[0];
+  if (!hit?.lat || !hit?.lon) return null;
+  return { lat: Number(hit.lat), lng: Number(hit.lon), displayName: hit.display_name };
+}
+
+/**
+ * Search accommodation around a town center; distances are still measured from the station.
+ */
+export async function fetchHotelsNearTown(station, { townQuery, radiusM = 5000 } = {}) {
+  const query = townQuery ?? townQueryForStation(station.name);
+  const town = await geocodeTown(query);
+  if (!town) return { hotels: [], town: null };
+
+  const searchPoint = { name: station.name, lat: town.lat, lng: town.lng };
+  const hotels = await fetchNearbyHotels(searchPoint, { radiusM, distanceFrom: station });
+  return { hotels, town };
+}
+
+export async function fetchNearbyHotels(station, { radiusM = 2000, distanceFrom = null } = {}) {
+  const anchor = distanceFrom ?? station;
   const query = `[out:json][timeout:45];
 (
   nwr["tourism"~"hotel|guest_house|hostel|motel|chalet|bed_and_breakfast"](around:${radiusM},${station.lat},${station.lng});
@@ -187,7 +225,8 @@ out center tags;`;
     if (seen.has(key)) continue;
     seen.add(key);
 
-    const distanceKm = Math.round(haversineKm(station.lat, station.lng, coords.lat, coords.lng) * 10) / 10;
+    const distanceKm =
+      Math.round(haversineKm(anchor.lat, anchor.lng, coords.lat, coords.lng) * 10) / 10;
     if (distanceKm > radiusM / 1000 + 0.5) continue;
 
     hotels.push({
@@ -272,10 +311,26 @@ export async function resolveHotelsForStation(
     if (added.length >= needed) break;
   }
 
+  let source = "station_radius";
+  if (added.length < needed) {
+    const { hotels: townHotels, town } = await fetchHotelsNearTown(station, { radiusM: 5000 });
+    if (town && townHotels.length) {
+      candidates = mergeCandidates(candidates, townHotels);
+      const next = pickHotels(candidates, existingKeys, needed - added.length, {
+        stationName: station.name,
+        rejected,
+      });
+      added.push(...next);
+      if (added.length) source = "town_center";
+    }
+    await sleep(1100);
+  }
+
   return {
     curated: [...curated, ...added],
     added,
     radiusM,
+    source,
     skipped: added.length ? undefined : "not_found",
   };
 }

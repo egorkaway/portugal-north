@@ -23,8 +23,8 @@ export const metroPortoStations: Station[] = [
     name: "Póvoa de Varzim",
     lines: ["Metro Linha B (Vermelha)"],
     types: ["Metro"],
-    lat: 41.7706,
-    lng: -8.7798,
+    lat: 41.377944,
+    lng: -8.7583194,
   },
   {
     name: "Campanhã (Metro)",
