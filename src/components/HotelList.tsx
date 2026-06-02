@@ -5,9 +5,20 @@ import { useHotelVote } from "@/hooks/useHotelVote";
 import { VoteButtons } from "@/components/VoteButtons";
 import { useLocale } from "@/i18n/LocaleProvider";
 
-function HotelPrice({ priceFrom }: { priceFrom: number }) {
+function HotelPrice({ priceFrom, compact = false }: { priceFrom: number; compact?: boolean }) {
   const { t } = useLocale();
   const fullLabel = t("station.priceStartsAt", { price: priceFrom });
+
+  if (compact) {
+    return (
+      <span
+        className="shrink-0 whitespace-nowrap text-sm font-semibold text-primary"
+        aria-label={fullLabel}
+      >
+        {t("station.priceFromCompact", { price: priceFrom })}
+      </span>
+    );
+  }
 
   return (
     <span className="flex shrink-0 items-center gap-0.5 whitespace-nowrap text-sm font-semibold text-primary">
@@ -41,7 +52,7 @@ function HotelClosedSuggestion({ stationName, hotelName }: { stationName: string
   );
 }
 
-function HotelRowCompactLink({ hotel }: { hotel: Hotel }) {
+function HotelRowCompactLink({ hotel, compactPrice }: { hotel: Hotel; compactPrice?: boolean }) {
   const { t } = useLocale();
 
   return (
@@ -58,7 +69,7 @@ function HotelRowCompactLink({ hotel }: { hotel: Hotel }) {
           {t("station.kmFromStation", { km: hotel.distanceKm })}
         </p>
       </div>
-      <HotelPrice priceFrom={hotel.priceFrom} />
+      <HotelPrice priceFrom={hotel.priceFrom} compact={compactPrice} />
     </a>
   );
 }
@@ -66,9 +77,11 @@ function HotelRowCompactLink({ hotel }: { hotel: Hotel }) {
 function HotelRowCompactWithVotes({
   stationName,
   hotel,
+  compactPrice,
 }: {
   stationName: string;
   hotel: Hotel;
+  compactPrice?: boolean;
 }) {
   const { t } = useLocale();
   const { vote, cast } = useHotelVote(stationName, hotel.name);
@@ -88,7 +101,7 @@ function HotelRowCompactWithVotes({
             {t("station.kmFromStation", { km: hotel.distanceKm })}
           </p>
         </a>
-        <HotelPrice priceFrom={hotel.priceFrom} />
+        <HotelPrice priceFrom={hotel.priceFrom} compact={compactPrice} />
         <VoteButtons
           vote={vote}
           onUp={() => cast("up")}
@@ -104,18 +117,26 @@ function HotelRowCompact({
   stationName,
   hotel,
   showVoteButtons,
+  compactPrice,
 }: {
   stationName: string;
   hotel: Hotel;
   showVoteButtons: boolean;
+  compactPrice?: boolean;
 }) {
   if (showVoteButtons) {
-    return <HotelRowCompactWithVotes stationName={stationName} hotel={hotel} />;
+    return (
+      <HotelRowCompactWithVotes
+        stationName={stationName}
+        hotel={hotel}
+        compactPrice={compactPrice}
+      />
+    );
   }
 
   return (
     <li>
-      <HotelRowCompactLink hotel={hotel} />
+      <HotelRowCompactLink hotel={hotel} compactPrice={compactPrice} />
     </li>
   );
 }
@@ -172,6 +193,7 @@ export function HotelList({
 }) {
   const { t } = useLocale();
   const votesVisible = showVoteButtons ?? variant === "full";
+  const compactPrice = variant === "compact";
   if (hotels.length === 0) {
     return (
       <p className="text-sm text-muted-foreground">{t("station.noHotels")}</p>
@@ -187,6 +209,7 @@ export function HotelList({
             stationName={stationName}
             hotel={hotel}
             showVoteButtons={votesVisible}
+            compactPrice={compactPrice}
           />
         ))}
       </ul>
@@ -198,7 +221,7 @@ export function HotelList({
       <ul className="space-y-2">
         {hotels.map((hotel) => (
           <li key={hotel.name}>
-            <HotelRowCompactLink hotel={hotel} />
+            <HotelRowCompactLink hotel={hotel} compactPrice={compactPrice} />
           </li>
         ))}
       </ul>

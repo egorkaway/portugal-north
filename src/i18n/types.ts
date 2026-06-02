@@ -64,6 +64,7 @@ export type Messages = {
     stationPage: string;
     kmFromStation: string;
     priceStartsAt: string;
+    priceFromCompact: string;
     viewOnBooking: string;
     suggestClosed: string;
     suggestedClosed: string;

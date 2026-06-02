@@ -21,10 +21,12 @@ import {
   sleep,
   writeHotelMap,
 } from "./lib/stationHotelFetch.mjs";
+import { readRejectedHotels } from "./lib/rejectedHotels.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const stationsPath = join(root, "src/data/stations.ts");
 const hotelsPath = join(root, "src/data/hotels.ts");
+const rejectedHotelsPath = join(root, "scripts/data/rejected-hotels.json");
 
 const reportOnly = process.argv.includes("--report");
 const dryRun = process.argv.includes("--dry-run");
@@ -48,6 +50,7 @@ const delayMs = Number(readFlagValue("--delay") ?? 2500);
 
 const stations = parseAllStationsFromRepo(root);
 const hotelMap = parseHotelMap(readFileSync(hotelsPath, "utf8"));
+const rejectedHotels = readRejectedHotels(rejectedHotelsPath);
 
 function curatedCount(stationName) {
   return (hotelMap[stationName] ?? []).filter((h) => !isPlaceholderHotelName(h.name)).length;
@@ -101,7 +104,7 @@ const notFound = [];
 for (const station of targets) {
   const existing = hotelMap[station.name] ?? [];
   try {
-    const result = await resolveHotelsForStation(station, existing, { target });
+    const result = await resolveHotelsForStation(station, existing, { target, rejected: rejectedHotels });
     if (result.added.length === 0) {
       notFound.push(station.name);
       console.log(`  ${station.name}: NOT FOUND (have ${result.curated.length - result.added.length})`);

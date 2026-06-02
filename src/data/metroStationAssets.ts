@@ -9,22 +9,10 @@ function bookingSearch(place: string) {
 export const metroStationHotels: Record<string, Hotel[]> = {
   "Estádio do Dragão": [
     {
-      name: "Hotel Campanile Porto",
-      distanceKm: 0.6,
-      priceFrom: 45,
-      bookingUrl: "https://www.booking.com/hotel/pt/campanile-porto.html",
-    },
-    {
       name: "Stay Hotel Porto Centro Trindade",
       distanceKm: 1.8,
       priceFrom: 42,
       bookingUrl: bookingSearch("Porto Campanhã"),
-    },
-    {
-      name: "Ibis Budget Porto Centro",
-      distanceKm: 1.5,
-      priceFrom: 40,
-      bookingUrl: "https://www.booking.com/hotel/pt/ibis-budget-porto-centro.html",
     },
   ],
   "Senhor de Matosinhos": [
@@ -73,18 +61,6 @@ export const metroStationHotels: Record<string, Hotel[]> = {
       distanceKm: 0.2,
       priceFrom: 38,
       bookingUrl: "https://www.booking.com/hotel/pt/campanha-boutique-station.html",
-    },
-    {
-      name: "ABC Hotel Porto Campanhã",
-      distanceKm: 0.4,
-      priceFrom: 40,
-      bookingUrl: "https://www.booking.com/hotel/pt/abc-porto.html",
-    },
-    {
-      name: "Star Inn Porto",
-      distanceKm: 1.2,
-      priceFrom: 42,
-      bookingUrl: "https://www.booking.com/hotel/pt/star-inn-porto.html",
     },
   ],
   ISMAI: [
@@ -149,22 +125,10 @@ export const metroStationHotels: Record<string, Hotel[]> = {
   ],
   "Trindade (Metro)": [
     {
-      name: "Mystay Porto São Bento",
-      distanceKm: 0.4,
-      priceFrom: 45,
-      bookingUrl: "https://www.booking.com/hotel/pt/mystay-porto-sao-bento.html",
-    },
-    {
       name: "Hotel Dom Henrique Downtown",
       distanceKm: 0.3,
       priceFrom: 48,
       bookingUrl: bookingSearch("Porto Trindade"),
-    },
-    {
-      name: "H.ö.H Guest House Porto",
-      distanceKm: 0.5,
-      priceFrom: 42,
-      bookingUrl: "https://www.booking.com/hotel/pt/h-o-h-guest-house.html",
     },
   ],
   "Estação Aeroporto": [
@@ -173,12 +137,6 @@ export const metroStationHotels: Record<string, Hotel[]> = {
       distanceKm: 0.3,
       priceFrom: 45,
       bookingUrl: bookingSearch("Porto Airport"),
-    },
-    {
-      name: "Holiday Inn Express Porto Airport",
-      distanceKm: 0.5,
-      priceFrom: 55,
-      bookingUrl: "https://www.booking.com/hotel/pt/holiday-inn-express-porto-airport.html",
     },
     {
       name: "Park Hotel Porto Aeroporto",
@@ -275,12 +233,6 @@ export const metroStationHotels: Record<string, Hotel[]> = {
       bookingUrl: bookingSearch("Rato Lisbon"),
     },
     {
-      name: "Hotel Lisboa Plaza",
-      distanceKm: 0.5,
-      priceFrom: 48,
-      bookingUrl: "https://www.booking.com/hotel/pt/lisboa-plaza.html",
-    },
-    {
       name: "Hotel Londres",
       distanceKm: 0.4,
       priceFrom: 42,
@@ -353,12 +305,6 @@ export const metroStationHotels: Record<string, Hotel[]> = {
       distanceKm: 0.5,
       priceFrom: 48,
       bookingUrl: bookingSearch("Avenida da Liberdade"),
-    },
-    {
-      name: "Hotel Lisboa Plaza",
-      distanceKm: 0.6,
-      priceFrom: 48,
-      bookingUrl: "https://www.booking.com/hotel/pt/lisboa-plaza.html",
     },
     {
       name: "Hotel Borges",

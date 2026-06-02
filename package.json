@@ -17,7 +17,12 @@
     "test:watch": "vitest",
     "images:refresh-from-votes": "node scripts/refresh-station-images-from-votes.mjs",
     "images:refresh-from-votes:dry": "node scripts/refresh-station-images-from-votes.mjs --dry-run",
-    "images:clear-votes": "node scripts/clear-refreshed-image-votes.mjs"
+    "images:clear-votes": "node scripts/clear-refreshed-image-votes.mjs",
+    "hotels:audit-links": "node scripts/audit-hotel-links.mjs --report",
+    "hotels:audit-links:fix": "node scripts/audit-hotel-links.mjs --fix",
+    "hotels:audit-links:dry": "node scripts/audit-hotel-links.mjs --dry-run",
+    "hotels:apply-audit-report": "node scripts/apply-hotel-audit-report.mjs",
+    "hotels:recheck-ambiguous": "node scripts/recheck-ambiguous-hotel-links.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

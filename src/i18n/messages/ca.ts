@@ -64,6 +64,7 @@ export const ca: Messages = {
     stationPage: "Pàgina de l'estació",
     kmFromStation: "{{km}} km de l'estació",
     priceStartsAt: "Preus des de {{price}} €",
+    priceFromCompact: "€{{price}}+",
     viewOnBooking: "Veure a Booking",
     suggestClosed: "Suggerir que l'hotel pot estar tancat",
     suggestedClosed: "Has suggerit que aquest hotel pot estar tancat",
