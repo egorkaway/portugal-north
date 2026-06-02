@@ -68,6 +68,10 @@ export type Messages = {
     suggestClosed: string;
     suggestedClosed: string;
     away: string;
+    yesimTitle: string;
+    yesimBody: string;
+    yesimCta: string;
+    yesimNote: string;
   };
   departures: {
     title: string;

@@ -68,6 +68,11 @@ export const gl: Messages = {
     suggestClosed: "Suxerir que o hotel pode estar pechado",
     suggestedClosed: "Suxeriches que este hotel pode estar pechado",
     away: "a {{distance}}",
+    yesimTitle: "eSIM de viaxe para o aeroporto",
+    yesimBody:
+      "Chega con datos móbiles listos — útil para mapas, apps de transporte e mensaxes antes de chegar ao centro.",
+    yesimCta: "Obter eSIM Yesim",
+    yesimNote: "Ligazón de socio · abre Yesim nun novo separador",
   },
   departures: {
     title: "Próximas saídas",

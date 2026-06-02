@@ -30,7 +30,9 @@ import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
 import { buildStationStructuredData } from "@/lib/structuredData";
 import { getStationBySlug } from "@/lib/stationSlug";
 import { getTripHistorianStationUrl } from "@/lib/tripHistorian";
+import { isAirportStation } from "@/lib/airportStation";
 import { getMetroOperatorLink, isMetroStation } from "@/lib/metroStation";
+import { StationYesimPromo } from "@/components/StationYesimPromo";
 
 const typeColors: Record<string, string> = {
   "Alfa Pendular": "bg-primary text-primary-foreground",
@@ -53,6 +55,7 @@ const Station = () => {
   const hotels = getHotelsForStation(station.name);
   const tripHistorianUrl = getTripHistorianStationUrl(station.name);
   const metroStation = isMetroStation(station);
+  const airportStation = isAirportStation(station);
   const metroLink = getMetroOperatorLink(station);
   const imageUrl = getStationImageUrl(station.name);
   const shareImageUrl = getStationShareImageUrl(station.name);
@@ -209,6 +212,8 @@ const Station = () => {
               <HotelList stationName={station.name} hotels={hotels} />
             </section>
           )}
+
+          {airportStation ? <StationYesimPromo /> : null}
 
           <p className="mt-5 flex items-center gap-1 text-xs text-muted-foreground md:mt-8">
             <Navigation className="h-3 w-3" aria-hidden="true" />
