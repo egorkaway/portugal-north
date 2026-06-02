@@ -69,6 +69,11 @@ export const es: Messages = {
     suggestClosed: "Sugerir que el hotel puede estar cerrado",
     suggestedClosed: "Has sugerido que este hotel puede estar cerrado",
     away: "a {{distance}}",
+    yesimTitle: "eSIM de viaje para el aeropuerto",
+    yesimBody:
+      "Llega con datos móviles listos — útil para mapas, apps de transporte y mensajes antes de llegar al centro.",
+    yesimCta: "Obtener eSIM Yesim",
+    yesimNote: "Enlace de socio · abre Yesim en una pestaña nueva",
   },
   departures: {
     title: "Próximas salidas",

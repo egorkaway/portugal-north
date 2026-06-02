@@ -69,6 +69,11 @@ export const ca: Messages = {
     suggestClosed: "Suggerir que l'hotel pot estar tancat",
     suggestedClosed: "Has suggerit que aquest hotel pot estar tancat",
     away: "a {{distance}}",
+    yesimTitle: "eSIM de viatge per a l'aeroport",
+    yesimBody:
+      "Arriba amb dades mòbils a punt — útil per a mapes, apps de transport i missatges abans d'arribar al centre.",
+    yesimCta: "Obtenir eSIM Yesim",
+    yesimNote: "Enllaç de soci · obre Yesim en una pestanya nova",
   },
   departures: {
     title: "Pròximes sortides",
