@@ -1,3 +1,5 @@
+import { stations } from "@/data/stations";
+
 /** CP travel-api station codes (`94-xxxx`). Regenerate: node scripts/map-cp-stations.mjs */
 export const cpStationCodes: Partial<Record<string, string>> = {
   "Abrantes": "94-52001",
@@ -87,7 +89,6 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Celorico da Beira": "94-48405",
   "Cete": "94-8227",
   "Chão de Maçãs – Fátima": "94-34249",
-  "Coimbra": "94-36004",
   "Coimbra-B": "94-36004",
   "Coimbrões": "94-39149",
   "Contumil": "94-3004",
@@ -350,6 +351,18 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Zibreira": "94-62331",
 };
 
+function isInactiveOnlyStation(stationName: string): boolean {
+  const station = stations.find((s) => s.name === stationName);
+  return (
+    station !== undefined &&
+    station.types.length > 0 &&
+    station.types.every((type) => type === "Inactive / Historic")
+  );
+}
+
 export function getCpStationCode(stationName: string): string | undefined {
+  if (isInactiveOnlyStation(stationName)) {
+    return undefined;
+  }
   return cpStationCodes[stationName];
 }

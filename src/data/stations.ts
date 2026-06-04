@@ -82,7 +82,7 @@ const cpStations: Station[] = [
   { name: "Lordelo", lines: ["Linha de Guimarães"], types: ["Urban", "Regional"], lat: 41.3964, lng: -8.3461 },
   { name: "Mirandela", lines: ["Linha do Tua (historic)"], types: ["Inactive / Historic"], lat: 41.4869, lng: -7.1858 },
   // Further additions
-  { name: "Coimbra", lines: ["Ramal de Coimbra"], types: ["Urban", "Regional"], lat: 40.2050, lng: -8.4297 },
+  { name: "Coimbra", lines: ["Ramal de Coimbra (historic)"], types: ["Inactive / Historic"], lat: 40.2050, lng: -8.4297 },
   { name: "Mogofores", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.4467, lng: -8.4719 },
   { name: "Avanca", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.8083, lng: -8.5917 },
   { name: "Penafiel", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.2050, lng: -8.2842 },
