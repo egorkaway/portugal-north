@@ -892,7 +892,7 @@ export const stationHotels: StationHotels = {
   ],
   "Viseu": [
     { name: "Hotel Solar dos Pais", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Solar%20dos%20Pais%2C%20Viseu%2C%20Portugal&order=price" },
-    { name: "Apartamentos \\\\\\\\", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20%22O%20Fado%22%2C%20Viseu%2C%20Portugal&order=price" },
+    { name: "Apartamentos \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20%22O%20Fado%22%2C%20Viseu%2C%20Portugal&order=price" },
     { name: "Casa da Sé", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20S%C3%A9%2C%20Viseu%2C%20Portugal&order=price" },
   ],
   "Évora": [
@@ -1180,7 +1180,7 @@ export const stationHotels: StationHotels = {
     { name: "Casinha da Praça", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casinha%20da%20Pra%C3%A7a%2C%20Praia%20do%20Ribatejo%2C%20Portugal&order=price" },
   ],
   "Ramalhal": [
-    { name: "Apartamento \"O Sol\"", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Ramalhal%2C%20Portugal&order=price" },
+    { name: "Apartamento \\\\", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Ramalhal%2C%20Portugal&order=price" },
   ],
   "Rede": [
     { name: "Solar da Rede", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solar%20da%20Rede%2C%20Rede%2C%20Portugal&order=price" },
@@ -1196,7 +1196,7 @@ export const stationHotels: StationHotels = {
     { name: "Inn Golegã", distanceKm: 4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Inn%20Goleg%C3%A3%2C%20Riachos%20%E2%80%93%20Torres%20Novas%20%E2%80%93%20Goleg%C3%A3%2C%20Portugal&order=price" },
   ],
   "Runa": [
-    { name: "Apartamento \"O Sol\"", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Runa%2C%20Portugal&order=price" },
+    { name: "Apartamento \\\\", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Runa%2C%20Portugal&order=price" },
     { name: "Casa Perestrello", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Perestrello%2C%20Runa%2C%20Portugal&order=price" },
     { name: "Stay", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Stay%2C%20Runa%2C%20Portugal&order=price" },
   ],
@@ -1567,6 +1567,11 @@ export const stationHotels: StationHotels = {
     { name: "Albergue Maria Rita", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Maria%20Rita%2C%20Virtudes%2C%20Portugal&order=price" },
     { name: "Residencial Flor da Primavera", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Flor%20da%20Primavera%2C%20Virtudes%2C%20Portugal&order=price" },
   ],
+  "Mafra": [
+    { name: "Cabra Figa", distanceKm: 5.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cabra%20Figa%2C%20Mafra%2C%20Portugal&order=price" },
+    { name: "Mafra Hotel", distanceKm: 6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mafra%20Hotel%2C%20Mafra%2C%20Portugal&order=price" },
+    { name: "Vivenda André", distanceKm: 6.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vivenda%20Andr%C3%A9%2C%20Mafra%2C%20Portugal&order=price" },
+  ],
   "Pragal": [
     { name: "Holiday Inn Express Lisbon-Almada", distanceKm: 0.4, priceFrom: 60, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
     { name: "Alojamento Pragal", distanceKm: 0.6, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pragal%2C+Almada&order=price" },
@@ -1635,6 +1640,11 @@ export const stationHotels: StationHotels = {
     { name: "Casa Amarela", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Amarela%2C%20Senhor%20de%20Matosinhos%2C%20Portugal&order=price" },
     { name: "Hotel Senhor de Matosinhos", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Senhor%20de%20Matosinhos%2C%20Senhor%20de%20Matosinhos%2C%20Portugal&order=price" },
     { name: "Pensão Central", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Central%2C%20Senhor%20de%20Matosinhos%2C%20Portugal&order=price" },
+  ],
+  "Póvoa de Varzim": [
+    { name: "Siglas & Runas II", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Siglas%20%26%20Runas%20II%2C%20P%C3%B3voa%20de%20Varzim%2C%20Portugal&order=price" },
+    { name: "Hotel Luso Brasileiro", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Luso%20Brasileiro%2C%20P%C3%B3voa%20de%20Varzim%2C%20Portugal&order=price" },
+    { name: "Albergue São José de Ribamar", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20S%C3%A3o%20Jos%C3%A9%20de%20Ribamar%2C%20P%C3%B3voa%20de%20Varzim%2C%20Portugal&order=price" },
   ],
   "Campanhã (Metro)": [
     { name: "Peach Hostel & Suites", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Peach%20Hostel%20%26%20Suites%2C%20Campanh%C3%A3%20(Metro)%2C%20Portugal&order=price" },
