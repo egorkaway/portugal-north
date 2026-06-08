@@ -6,8 +6,10 @@
  *   npm run social:stations -- --limit 5
  *   npm run social:stations -- --station "Aveiro"
  *   npm run social:stations -- --dry-run
+ *
+ * Stations without a real photo in stationImages.ts are skipped.
  */
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
@@ -44,10 +46,16 @@ const imageMap = parseImageMap(
   readFileSync(join(root, "src/data/stationImages.ts"), "utf8"),
 );
 
-let targets = stations;
+function hasStationPhoto(stationName) {
+  return !isPlaceholderImageUrl(imageMap[stationName]);
+}
+
+const withoutPhoto = stations.filter((s) => !hasStationPhoto(s.name));
+
+let targets = stations.filter((s) => hasStationPhoto(s.name));
 if (stationFilter) {
   const needle = stationFilter.toLowerCase();
-  targets = stations.filter(
+  targets = targets.filter(
     (s) =>
       s.name.toLowerCase() === needle ||
       s.name.toLowerCase().includes(needle) ||
@@ -59,7 +67,18 @@ if (Number.isFinite(limit) && limit > 0) {
 }
 
 if (!targets.length) {
-  console.error("No stations matched.");
+  if (stationFilter) {
+    const matches = stations.filter(
+      (s) =>
+        s.name.toLowerCase().includes(stationFilter.toLowerCase()) ||
+        stationToSlug(s.name).includes(stationFilter.replace(/\s+/g, "-")),
+    );
+    if (matches.some((s) => !hasStationPhoto(s.name))) {
+      console.error(`No card generated: "${stationFilter}" has no station photo.`);
+      process.exit(1);
+    }
+  }
+  console.error("No stations with photos matched.");
   process.exit(1);
 }
 
@@ -77,16 +96,13 @@ async function renderOne(station) {
   const pageUrl = `${siteUrl}/stations/${slug}`;
 
   if (dryRun) {
-    console.log(
-      `[dry-run] ${station.name} → ${outPath}${isPlaceholderImageUrl(imageUrl) ? " (placeholder photo)" : ""}`,
-    );
+    console.log(`[dry-run] ${station.name} → ${outPath}`);
     return {
       name: station.name,
       slug,
       file: `/social/stations/${slug}.png`,
       pageUrl,
       tagline: pickTagline(station.name),
-      hasPhoto: !isPlaceholderImageUrl(imageUrl),
     };
   }
 
@@ -105,12 +121,12 @@ async function renderOne(station) {
     file: `/social/stations/${slug}.png`,
     pageUrl,
     tagline: pickTagline(station.name),
-    hasPhoto: !isPlaceholderImageUrl(imageUrl),
   };
 }
 
 let ok = 0;
-let skipped = 0;
+let failed = 0;
+const isFullRun = !stationFilter && !Number.isFinite(limit);
 
 for (let i = 0; i < targets.length; i += CONCURRENCY) {
   const chunk = targets.slice(i, i + CONCURRENCY);
@@ -122,7 +138,7 @@ for (let i = 0; i < targets.length; i += CONCURRENCY) {
       ok += 1;
       manifest.push(result.value);
     } else {
-      skipped += 1;
+      failed += 1;
       const message =
         result.status === "rejected"
           ? result.reason instanceof Error
@@ -135,6 +151,18 @@ for (let i = 0; i < targets.length; i += CONCURRENCY) {
 }
 
 if (!dryRun) {
+  if (isFullRun) {
+    const keepSlugs = new Set(manifest.map((entry) => entry.slug));
+    for (const file of readdirSync(outDir)) {
+      if (!file.endsWith(".png")) continue;
+      const slug = file.slice(0, -4);
+      if (!keepSlugs.has(slug)) {
+        unlinkSync(join(outDir, file));
+        console.log(`Removed ${file} (no station photo)`);
+      }
+    }
+  }
+
   writeFileSync(
     join(outDir, "manifest.json"),
     JSON.stringify(
@@ -143,6 +171,7 @@ if (!dryRun) {
         siteUrl,
         size: 1080,
         count: manifest.length,
+        skippedWithoutPhoto: isFullRun ? withoutPhoto.length : undefined,
         stations: manifest,
       },
       null,
@@ -151,8 +180,13 @@ if (!dryRun) {
   );
 }
 
+const skippedNote =
+  isFullRun || dryRun
+    ? `, ${withoutPhoto.length} skipped (no photo)`
+    : "";
+
 console.log(
   dryRun
-    ? `Dry run: ${manifest.length} card(s) planned in ${outDir}`
-    : `Done: ${ok} written, ${skipped} failed → ${outDir}`,
+    ? `Dry run: ${manifest.length} card(s) planned${skippedNote} → ${outDir}`
+    : `Done: ${ok} written${skippedNote}, ${failed} failed → ${outDir}`,
 );

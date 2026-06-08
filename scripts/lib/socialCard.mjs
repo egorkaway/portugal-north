@@ -88,21 +88,32 @@ export function buildOverlaySvg({
   const longest = Math.max(...titleLines.map((l) => l.length));
   const fontSize = titleFontSize(titleLines.length, longest);
   const lineFontSize = 28;
-  const accentY = 688;
-  const gapAfterAccent = 18;
-  const gapLineToTitle = 44;
+  const taglineFontSize = 34;
 
-  const primaryLineY = accentY + 6 + gapAfterAccent + lineFontSize;
+  const accentY = 648;
+  const gapAccentToLine = 32;
+  const visualGapLineToTitle = 40;
+  const visualGapBetweenTitleLines = 28;
+  const visualGapTitleToTagline = 44;
+
+  const primaryLineY = accentY + 6 + gapAccentToLine + lineFontSize;
   const titleStartY = primaryLine
-    ? primaryLineY + gapLineToTitle + (titleLines.length > 1 ? 0 : 8)
-    : accentY + 6 + gapAfterAccent + fontSize;
+    ? primaryLineY + 8 + visualGapLineToTitle + fontSize * 0.82
+    : accentY + 6 + gapAccentToLine + fontSize;
 
   const titleTspans = titleLines
     .map((line, index) => {
-      const dy = index === 0 ? 0 : fontSize * 1.08;
+      const dy = index === 0 ? 0 : fontSize + visualGapBetweenTitleLines;
       return `<tspan x="72" dy="${dy}">${escapeXml(line)}</tspan>`;
     })
     .join("");
+
+  const titleBlockHeight =
+    titleLines.length === 1
+      ? fontSize
+      : fontSize + visualGapBetweenTitleLines + fontSize;
+  const taglineY =
+    titleStartY + titleBlockHeight + visualGapTitleToTagline - fontSize * 0.15;
 
   const lineText = primaryLine
     ? `<text x="72" y="${primaryLineY}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="${lineFontSize}" font-weight="600" letter-spacing="0.08em">${escapeXml(primaryLine.toUpperCase())}</text>`
@@ -125,7 +136,7 @@ export function buildOverlaySvg({
   <text y="${titleStartY}" fill="${BRAND_CREAM}" font-family="Georgia, 'Times New Roman', serif" font-size="${fontSize}" font-weight="700">
     ${titleTspans}
   </text>
-  <text x="72" y="${titleStartY + (titleLines.length > 1 ? fontSize * 2.25 : fontSize * 1.5) + 12}" fill="#c5d6d2" font-family="Inter, system-ui, sans-serif" font-size="34" font-weight="500">${escapeXml(tagline)}</text>
+  <text x="72" y="${taglineY}" fill="#c5d6d2" font-family="Inter, system-ui, sans-serif" font-size="${taglineFontSize}" font-weight="500">${escapeXml(tagline)}</text>
   <text x="72" y="1000" fill="#8fb5ad" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" letter-spacing="0.04em">PORTUGAL BY TRAIN</text>
   <text x="72" y="1044" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="600">${escapeXml(`${siteHost}/stations/${slug}`)}</text>
   <circle cx="984" cy="1020" r="34" fill="${BRAND_PRIMARY}"/>
