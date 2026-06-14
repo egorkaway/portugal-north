@@ -1,1 +1,1 @@
-export * from "../../api/lib/cpDeparturesParse.ts";
+export * from "../../server/lib/cpDeparturesParse.ts";

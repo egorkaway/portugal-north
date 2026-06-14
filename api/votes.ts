@@ -12,7 +12,7 @@ import {
   isValidReportedFlag,
   isValidVoteChange,
   readAllCommunityVotes,
-} from "./lib/voteLogic.js";
+} from "../server/lib/voteLogic.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "GET") {

@@ -31,7 +31,7 @@ const SKILL_DEFINITIONS = [
 function resolveSkillsRoot(): string {
   const candidates = [
     join(process.cwd(), "api/agent-skills"),
-    join(dirname(fileURLToPath(import.meta.url)), "../agent-skills"),
+    join(dirname(fileURLToPath(import.meta.url)), "../../api/agent-skills"),
   ];
   for (const dir of candidates) {
     if (existsSync(join(dir, SKILL_DEFINITIONS[0].name, "SKILL.md"))) {

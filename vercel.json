@@ -1,14 +1,5 @@
 {
   "rewrites": [
-    { "source": "/.well-known/api-catalog", "destination": "/api/api-catalog" },
-    {
-      "source": "/.well-known/mcp/server-card.json",
-      "destination": "/api/mcp-server-card"
-    },
-    {
-      "source": "/.well-known/agent-skills/index.json",
-      "destination": "/api/agent-skills-index"
-    },
     { "source": "/docs/api", "destination": "/docs/api.md" },
     {
       "source": "/((?!api/|\\.well-known/|docs/).*)",
@@ -154,9 +145,8 @@
     }
   ],
   "functions": {
-    "api/**/*.ts": {
-      "maxDuration": 10,
-      "includeFiles": "api/agent-skills/**"
+    "api/*.ts": {
+      "maxDuration": 10
     }
   }
 }

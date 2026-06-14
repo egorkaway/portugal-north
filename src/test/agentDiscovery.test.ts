@@ -1,14 +1,14 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { buildApiCatalogLinkset } from "../../api/lib/apiCatalog";
+import { buildApiCatalogLinkset } from "../../server/lib/apiCatalog";
 import {
   AGENT_SKILLS_SCHEMA,
   buildAgentSkillsIndex,
   readSkillArtifact,
   sha256Digest,
-} from "../../api/lib/agentSkillsIndex";
-import { buildMcpServerCard } from "../../api/lib/mcpServerCard";
+} from "../../server/lib/agentSkillsIndex";
+import { buildMcpServerCard } from "../../server/lib/mcpServerCard";
 
 const SITE = "https://www.verystays.com";
 
@@ -87,7 +87,7 @@ describe("agent discovery (RFC 8288 / RFC 9727)", () => {
     expect(robots).toMatch(/User-agent: \*\s*\nAllow: \/\s*\nContent-Signal:/m);
   });
 
-  it("advertises resources on the homepage via Link header", () => {
+  it("serves discovery resources as static files (no API rewrites)", () => {
     const vercel = JSON.parse(readFileSync(join(process.cwd(), "vercel.json"), "utf8")) as {
       headers: { source: string; headers: { key: string; value: string }[] }[];
       rewrites: { source: string; destination: string }[];
@@ -99,19 +99,9 @@ describe("agent discovery (RFC 8288 / RFC 9727)", () => {
     expect(link).toContain('rel="service-doc"');
     expect(link).toContain("</docs/api>");
 
-    const catalogRewrite = vercel.rewrites.find(
-      (r) => r.source === "/.well-known/api-catalog",
-    );
-    expect(catalogRewrite?.destination).toBe("/api/api-catalog");
-
-    const mcpRewrite = vercel.rewrites.find(
-      (r) => r.source === "/.well-known/mcp/server-card.json",
-    );
-    expect(mcpRewrite?.destination).toBe("/api/mcp-server-card");
-
-    const skillsRewrite = vercel.rewrites.find(
-      (r) => r.source === "/.well-known/agent-skills/index.json",
-    );
-    expect(skillsRewrite?.destination).toBe("/api/agent-skills-index");
+    const destinations = vercel.rewrites.map((r) => r.destination);
+    expect(destinations).not.toContain("/api/api-catalog");
+    expect(destinations).not.toContain("/api/mcp-server-card");
+    expect(destinations).not.toContain("/api/agent-skills-index");
   });
 });

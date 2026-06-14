@@ -42,13 +42,13 @@ Requests with `Accept: text/markdown` receive a markdown representation of each 
 
 ### Agent discovery
 
-`/.well-known/agent-skills/index.json` publishes an [Agent Skills Discovery](https://github.com/cloudflare/agent-skills-discovery-rfc) v0.2.0 index (`$schema`, `skills[]` with `name`, `type`, `description`, `url`, `digest`). Skill sources live in `api/agent-skills/`; run `node scripts/sync-agent-skills-public.mjs` to refresh `public/.well-known/agent-skills/`.
+`/.well-known/agent-skills/index.json` publishes an [Agent Skills Discovery](https://github.com/cloudflare/agent-skills-discovery-rfc) v0.2.0 index (`$schema`, `skills[]` with `name`, `type`, `description`, `url`, `digest`). Skill sources live in `api/agent-skills/`; run `node scripts/sync-discovery-public.mjs` to refresh `public/.well-known/`.
 
 `/.well-known/mcp/server-card.json` publishes an [MCP Server Card](https://github.com/modelcontextprotocol/modelcontextprotocol/pull/2127) (SEP-1649) with `serverInfo`, Streamable HTTP `transport` (`/api/mcp`), and `capabilities` (tools/resources/prompts surfaces declared, not yet implemented).
 
 The homepage response includes [RFC 8288](https://www.rfc-editor.org/rfc/rfc8288) `Link` headers (via `vercel.json`) pointing to:
 
-- `/.well-known/api-catalog` — [RFC 9727](https://www.rfc-editor.org/rfc/rfc9727) API catalog (`application/linkset+json`), served by `api/api-catalog.ts` with `service-desc`, `service-doc`, and `status` links
+- `/.well-known/api-catalog` — [RFC 9727](https://www.rfc-editor.org/rfc/rfc9727) API catalog (`application/linkset+json`), built into `public/.well-known/api-catalog` at deploy time with `service-desc`, `service-doc`, and `status` links
 - `/docs/api` — human-readable API notes (`rel="service-doc"`)
 - `/api/openapi.json` — OpenAPI 3 description (`rel="describedby"`)
 
@@ -92,10 +92,13 @@ src/
     useGlobalStationRatings.ts  # Fetches aggregated up/down counts from /api/votes
   lib/
     votesApi.ts                 # Client helpers for vote sync and global ratings
-api/
-  votes.ts                      # API route: POST sync, GET global ratings (Vercel Blob)
   pages/
     Index.tsx          # Main page: hero, filter bar, station grid, footer
+api/
+  votes.ts                      # API route: POST sync, GET global ratings (Vercel Blob)
+  departures.ts                 # API route: CP live departures proxy
+  mcp.ts                        # API route: MCP transport stub (501)
+server/lib/                     # Shared server code (not deployed as functions)
 public/
   og-image.jpg         # Social preview image (1200×630)
   logo.png             # Square logo for structured data (512×512)

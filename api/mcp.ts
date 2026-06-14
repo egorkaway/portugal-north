@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { getSiteUrl } from "./lib/apiCatalog.js";
+import { getSiteUrl } from "../server/lib/apiCatalog.js";
 
 /**
  * Transport endpoint advertised in the MCP Server Card.

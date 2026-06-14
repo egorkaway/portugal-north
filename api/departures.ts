@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { fetchCpStationDepartures } from "./lib/cpDeparturesServer.js";
+import { fetchCpStationDepartures } from "../server/lib/cpDeparturesServer.js";
 
 const MAX_DEPARTURES_LIMIT = 10;
 

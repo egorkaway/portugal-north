@@ -12,7 +12,7 @@ async function handleApiCatalogDev(
 ): Promise<boolean> {
   if (req.url !== "/.well-known/api-catalog") return false;
 
-  const { buildApiCatalogLinkset } = await import("./api/lib/apiCatalog.ts");
+  const { buildApiCatalogLinkset } = await import("./server/lib/apiCatalog.ts");
   res.statusCode = 200;
   res.setHeader(
     "Content-Type",
@@ -28,7 +28,7 @@ async function handleMcpServerCardDev(
 ): Promise<boolean> {
   if (req.url !== "/.well-known/mcp/server-card.json") return false;
 
-  const { buildMcpServerCard } = await import("./api/lib/mcpServerCard.ts");
+  const { buildMcpServerCard } = await import("./server/lib/mcpServerCard.ts");
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -42,7 +42,7 @@ async function handleAgentSkillsIndexDev(
 ): Promise<boolean> {
   if (req.url !== "/.well-known/agent-skills/index.json") return false;
 
-  const { buildAgentSkillsIndex } = await import("./api/lib/agentSkillsIndex.ts");
+  const { buildAgentSkillsIndex } = await import("./server/lib/agentSkillsIndex.ts");
   res.statusCode = 200;
   res.setHeader("Content-Type", "application/json; charset=utf-8");
   res.setHeader("Access-Control-Allow-Origin", "*");
@@ -62,7 +62,7 @@ async function handleDeparturesDevApi(
   const limit = Number.isFinite(limitRaw) ? Math.min(10, Math.max(1, limitRaw)) : 3;
 
   try {
-    const { fetchCpStationDepartures } = await import("./api/lib/cpDeparturesServer.ts");
+    const { fetchCpStationDepartures } = await import("./server/lib/cpDeparturesServer.ts");
     const departures = await fetchCpStationDepartures(code, limit);
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");

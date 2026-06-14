@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyClosedReportDeltaInMemory, applyDeltaInMemory } from "../../api/lib/voteLogic";
+import { applyClosedReportDeltaInMemory, applyDeltaInMemory } from "../../server/lib/voteLogic";
 
 describe("applyDeltaInMemory", () => {
   it("increments and decrements vote counts", () => {
