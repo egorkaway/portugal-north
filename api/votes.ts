@@ -91,10 +91,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(200).json({ ok: stored });
       }
 
+      const prevDirection = previous ?? null;
+      const nextDirection = next ?? null;
+
       if (
-        !isValidDirection(previous ?? null) ||
-        !isValidDirection(next ?? null) ||
-        !isValidVoteChange(previous ?? null, next ?? null)
+        !isValidDirection(prevDirection) ||
+        !isValidDirection(nextDirection) ||
+        !isValidVoteChange(prevDirection, nextDirection)
       ) {
         return res.status(400).json({ ok: false, reason: "invalid_payload" });
       }
@@ -103,7 +106,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         if (!isValidHotelKey(hotelKey)) {
           return res.status(400).json({ ok: false, reason: "invalid_payload" });
         }
-        const stored = await applyHotelVoteDelta(hotelKey, previous ?? null, next ?? null);
+        const stored = await applyHotelVoteDelta(hotelKey, prevDirection, nextDirection);
         return res.status(200).json({ ok: stored });
       }
 
@@ -113,8 +116,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         }
         const stored = await applyStationImageVoteDelta(
           stationImage,
-          previous ?? null,
-          next ?? null,
+          prevDirection,
+          nextDirection,
         );
         return res.status(200).json({ ok: stored });
       }
@@ -122,7 +125,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       if (!isValidName(station)) {
         return res.status(400).json({ ok: false, reason: "invalid_payload" });
       }
-      const stored = await applyStationVoteDelta(station, previous ?? null, next ?? null);
+      const stored = await applyStationVoteDelta(station, prevDirection, nextDirection);
       return res.status(200).json({ ok: stored });
     } catch {
       return res.status(500).json({ ok: false, reason: "storage_error" });
