@@ -28,7 +28,7 @@ export function NearestLongDistanceStations({ station }: { station: Station }) {
   }
 
   return (
-    <section aria-labelledby="long-distance-heading" className="mt-8 md:mt-10">
+    <section aria-labelledby="long-distance-heading" className="mb-6 md:mb-8">
       <div className="mb-3 flex items-center gap-2 md:mb-4">
         <Train className="h-5 w-5 text-primary" aria-hidden="true" />
         <h2 id="long-distance-heading" className="font-display text-xl text-foreground md:text-2xl">

@@ -149,6 +149,8 @@ const Station = () => {
 
           <StationDepartures stationName={station.name} />
 
+          <NearestLongDistanceStations station={station} />
+
           <div className="mb-6 flex flex-wrap gap-2 md:mb-10">
             <a
               href={getAppleMapsUrl(station)}
@@ -213,8 +215,6 @@ const Station = () => {
               <HotelList stationName={station.name} hotels={hotels} />
             </section>
           )}
-
-          <NearestLongDistanceStations station={station} />
 
           {airportStation ? <StationYesimPromo /> : null}
 

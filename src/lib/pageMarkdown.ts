@@ -8,11 +8,17 @@ import {
   getTicketsPageMeta,
 } from "@/lib/pageMeta";
 import { formatLineList, formatServiceTypes } from "@/lib/stationMeta";
-import { getStationBySlug, stationToSlug } from "@/lib/stationSlug";
+import { getStationBySlug, getStationPath, stationToSlug } from "@/lib/stationSlug";
 import type { PrerenderRoute } from "@/lib/prerenderRoutes";
 import { buildHomeStructuredData, buildStationStructuredData } from "@/lib/structuredData";
 import { getHotelsForStation } from "@/lib/stationHotels";
 import { getStationShareImageUrl } from "@/lib/stationImage";
+import { formatDistance } from "@/lib/geo";
+import {
+  getLongDistanceTypes,
+  getNearestLongDistanceStations,
+  shouldShowNearestLongDistance,
+} from "@/lib/nearestLongDistanceStations";
 
 /** Rough token estimate (~4 chars per token for English prose). */
 export function estimateMarkdownTokens(markdown: string): number {
@@ -139,6 +145,26 @@ export function buildStationMarkdown(
           )
           .join("\n");
 
+  const longDistanceLines = shouldShowNearestLongDistance(station)
+    ? getNearestLongDistanceStations(station)
+        .map(({ station: candidate, distanceKm }) => {
+          const types = getLongDistanceTypes(candidate).join(", ");
+          return `- [${candidate.name}](${base}${getStationPath(candidate)}) — ${formatDistance(distanceKm)} away (${types})`;
+        })
+        .join("\n")
+    : "";
+
+  const longDistanceSection =
+    longDistanceLines.length > 0
+      ? `## Nearest long-distance stops
+
+This stop has regional or urban service only. For Alfa Pendular or Intercidades trains, try these nearby stations:
+
+${longDistanceLines}
+
+`
+      : "";
+
   const body = `${yamlFrontmatter({
     title: meta.title,
     description: meta.description,
@@ -165,7 +191,7 @@ ${station.types.map((type) => `- ${type}`).join("\n")}
 
 ${hotelLines}
 
-## Links
+${longDistanceSection}## Links
 
 - [Search hotels on Booking](${getBookingSearchUrl(station)})
 - [All stations](${base}/)

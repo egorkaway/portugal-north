@@ -30,6 +30,13 @@ describe("pageMarkdown", () => {
     expect(md).toContain("Linha de Braga");
   });
 
+  it("includes nearest long-distance stops for regional-only stations", () => {
+    const md = buildMarkdownForPath("/stations/mealhada", SITE);
+    expect(md).toContain("## Nearest long-distance stops");
+    expect(md).toContain("[Pampilhosa]");
+    expect(md).toContain("[Coimbra-B]");
+  });
+
   it("matches prerender route count", () => {
     const routes = getPrerenderRoutes();
     for (const route of routes.slice(0, 3)) {
