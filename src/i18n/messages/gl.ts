@@ -69,6 +69,9 @@ export const gl: Messages = {
     suggestClosed: "Suxerir que o hotel pode estar pechado",
     suggestedClosed: "Suxeriches que este hotel pode estar pechado",
     away: "a {{distance}}",
+    longDistanceNearby: "Paradas de longa distancia máis próximas",
+    longDistanceIntro:
+      "Esta parada só ten servizo rexional ou urbano. Para trens Alfa Pendular ou Intercidades, proba estas estacións próximas:",
     yesimTitle: "eSIM de viaxe para o aeroporto",
     yesimBody:
       "Chega con datos móbiles listos — útil para mapas, apps de transporte e mensaxes antes de chegar ao centro.",

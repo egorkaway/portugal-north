@@ -33,6 +33,7 @@ import { getTripHistorianStationUrl } from "@/lib/tripHistorian";
 import { isAirportStation } from "@/lib/airportStation";
 import { getMetroOperatorLink, isMetroStation } from "@/lib/metroStation";
 import { StationYesimPromo } from "@/components/StationYesimPromo";
+import { NearestLongDistanceStations } from "@/components/NearestLongDistanceStations";
 
 const typeColors: Record<string, string> = {
   "Alfa Pendular": "bg-primary text-primary-foreground",
@@ -212,6 +213,8 @@ const Station = () => {
               <HotelList stationName={station.name} hotels={hotels} />
             </section>
           )}
+
+          <NearestLongDistanceStations station={station} />
 
           {airportStation ? <StationYesimPromo /> : null}
 

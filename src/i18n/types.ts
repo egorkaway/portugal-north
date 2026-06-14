@@ -69,6 +69,8 @@ export type Messages = {
     suggestClosed: string;
     suggestedClosed: string;
     away: string;
+    longDistanceNearby: string;
+    longDistanceIntro: string;
     yesimTitle: string;
     yesimBody: string;
     yesimCta: string;
