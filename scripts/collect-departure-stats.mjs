@@ -8,6 +8,7 @@
  *   npm run stats:departures -- --dry-run
  *
  * Stations are shuffled each run so partial runs (--limit or timeouts) spread across the network.
+ * Stops early after 5 consecutive API failures (e.g. CP outage or rate limit).
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -30,6 +31,7 @@ const {
 const { buildReliabilityScoresManifest } = await import("../server/lib/reliabilityScore.ts");
 
 const reliabilityPath = join(root, "public/data/reliability-scores.json");
+const CONSECUTIVE_FAILURE_LIMIT = 5;
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
