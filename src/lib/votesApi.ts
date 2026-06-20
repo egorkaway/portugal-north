@@ -46,9 +46,32 @@ export function ratingsErrorMessage(error: unknown): string {
   return "Could not load community ratings.";
 }
 
-export async function postVotePayload(body: QueuedVotePayload): Promise<boolean> {
+export type PostVotePayloadOptions = {
+  /** When false (flush path), do not re-enqueue on failure. Default true. */
+  requeueOnFailure?: boolean;
+};
+
+export async function shouldRequeueVoteFailure(res: Response): Promise<boolean> {
+  if (res.status === 400) return false;
+  if (res.status === 503) {
+    try {
+      const data = (await res.clone().json()) as { reason?: string };
+      if (data.reason === "storage_not_configured") return false;
+    } catch {
+      // Fall through to default retry behavior.
+    }
+  }
+  return true;
+}
+
+export async function postVotePayload(
+  body: QueuedVotePayload,
+  options?: PostVotePayloadOptions,
+): Promise<boolean> {
+  const requeueOnFailure = options?.requeueOnFailure ?? true;
+
   if (typeof navigator !== "undefined" && !navigator.onLine) {
-    enqueueVoteSync(body);
+    if (requeueOnFailure) enqueueVoteSync(body);
     return false;
   }
 
@@ -60,12 +83,16 @@ export async function postVotePayload(body: QueuedVotePayload): Promise<boolean>
       keepalive: true,
     });
     if (!res.ok) {
-      enqueueVoteSync(body);
-      return false;
+      const canRequeue = await shouldRequeueVoteFailure(res);
+      if (requeueOnFailure) {
+        if (canRequeue) enqueueVoteSync(body);
+        return false;
+      }
+      return !canRequeue;
     }
     return true;
   } catch {
-    enqueueVoteSync(body);
+    if (requeueOnFailure) enqueueVoteSync(body);
     return false;
   }
 }

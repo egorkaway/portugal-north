@@ -10,12 +10,21 @@ import {
   enqueueVoteSync,
   flushVoteSyncQueue,
   getPendingVoteSyncCount,
+  resetVoteSyncFlushState,
+  scheduleVoteSyncFlush,
+  subscribeVoteSyncEnqueue,
 } from "@/lib/voteSyncQueue";
-import { fetchGlobalRatings } from "@/lib/votesApi";
+import {
+  fetchGlobalRatings,
+  postVotePayload,
+  shouldRequeueVoteFailure,
+} from "@/lib/votesApi";
 
 describe("offline vote storage", () => {
   afterEach(() => {
     vi.unstubAllGlobals();
+    vi.useRealTimers();
+    resetVoteSyncFlushState();
     localStorage.clear();
     document.cookie.split(";").forEach((c) => {
       document.cookie = c
@@ -55,6 +64,116 @@ describe("offline vote storage", () => {
     await flushVoteSyncQueue(post);
     expect(post).toHaveBeenCalledTimes(1);
     expect(getPendingVoteSyncCount()).toBe(0);
+  });
+
+  it("subscribeVoteSyncEnqueue fires on enqueue but not after flush", async () => {
+    const onEnqueue = vi.fn();
+    subscribeVoteSyncEnqueue(onEnqueue);
+
+    enqueueVoteSync({ station: "Aveiro", previous: null, next: "up" });
+    expect(onEnqueue).toHaveBeenCalledTimes(1);
+
+    await flushVoteSyncQueue(vi.fn().mockResolvedValue(true));
+    expect(onEnqueue).toHaveBeenCalledTimes(1);
+  });
+
+  it("scheduleVoteSyncFlush debounces multiple enqueue notifications", async () => {
+    vi.useFakeTimers();
+    const flush = vi.fn().mockResolvedValue(undefined);
+
+    scheduleVoteSyncFlush(flush);
+    enqueueVoteSync({ station: "A", previous: null, next: "up" });
+    scheduleVoteSyncFlush(flush);
+    enqueueVoteSync({ station: "B", previous: null, next: "up" });
+    scheduleVoteSyncFlush(flush);
+
+    expect(flush).not.toHaveBeenCalled();
+    await vi.advanceTimersByTimeAsync(100);
+    expect(flush).toHaveBeenCalledTimes(1);
+  });
+
+  it("flush drops non-retryable failures without re-enqueue churn", async () => {
+    enqueueVoteSync({ station: "Aveiro", previous: null, next: "up" });
+    expect(getPendingVoteSyncCount()).toBe(1);
+
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: false,
+        status: 400,
+        clone: () => ({
+          json: async () => ({ ok: false, reason: "invalid_payload" }),
+        }),
+      }),
+    );
+
+    await flushVoteSyncQueue((payload) =>
+      postVotePayload(payload, { requeueOnFailure: false }),
+    );
+
+    expect(getPendingVoteSyncCount()).toBe(0);
+    expect(fetch).toHaveBeenCalledTimes(1);
+  });
+
+  it("postVotePayload does not enqueue on 400", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: false,
+        status: 400,
+        clone: () => ({
+          json: async () => ({ ok: false, reason: "invalid_payload" }),
+        }),
+      }),
+    );
+
+    const ok = await postVotePayload({ station: "Aveiro", previous: null, next: "up" });
+    expect(ok).toBe(false);
+    expect(getPendingVoteSyncCount()).toBe(0);
+  });
+
+  it("postVotePayload does not enqueue on storage_not_configured", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        ok: false,
+        status: 503,
+        clone: () => ({
+          json: async () => ({ ok: false, reason: "storage_not_configured" }),
+        }),
+      }),
+    );
+
+    const ok = await postVotePayload({ station: "Aveiro", previous: null, next: "up" });
+    expect(ok).toBe(false);
+    expect(getPendingVoteSyncCount()).toBe(0);
+  });
+
+  it("shouldRequeueVoteFailure returns false for 400 and storage_not_configured", async () => {
+    expect(
+      await shouldRequeueVoteFailure({
+        status: 400,
+        clone: () => ({ json: async () => ({}) }),
+      } as Response),
+    ).toBe(false);
+
+    expect(
+      await shouldRequeueVoteFailure({
+        status: 503,
+        clone: () => ({
+          json: async () => ({ reason: "storage_not_configured" }),
+        }),
+      } as Response),
+    ).toBe(false);
+
+    expect(
+      await shouldRequeueVoteFailure({
+        status: 503,
+        clone: () => ({
+          json: async () => ({ reason: "storage_read_failed" }),
+        }),
+      } as Response),
+    ).toBe(true);
   });
 
   it("loadOfflineRatingsCache returns null when empty", () => {

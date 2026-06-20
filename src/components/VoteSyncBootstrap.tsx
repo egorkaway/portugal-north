@@ -1,22 +1,33 @@
 import { useEffect } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import { flushVoteSyncQueue } from "@/lib/voteSyncQueue";
+import {
+  flushVoteSyncQueue,
+  scheduleVoteSyncFlush,
+  subscribeVoteSyncEnqueue,
+} from "@/lib/voteSyncQueue";
 import { postVotePayload } from "@/lib/votesApi";
 
-/** Flushes queued vote syncs when the browser comes back online. */
+/** Flushes queued vote syncs on mount, when new items enqueue, and when back online. */
 export function VoteSyncBootstrap() {
   const queryClient = useQueryClient();
 
   useEffect(() => {
-    const sync = () => {
-      void flushVoteSyncQueue(postVotePayload).then(() => {
+    const flush = () =>
+      flushVoteSyncQueue((payload) =>
+        postVotePayload(payload, { requeueOnFailure: false }),
+      ).then(() => {
         queryClient.invalidateQueries({ queryKey: ["global-ratings"] });
       });
-    };
 
-    sync();
-    window.addEventListener("online", sync);
-    return () => window.removeEventListener("online", sync);
+    const schedule = () => scheduleVoteSyncFlush(flush);
+
+    schedule();
+    const unsubEnqueue = subscribeVoteSyncEnqueue(schedule);
+    window.addEventListener("online", schedule);
+    return () => {
+      unsubEnqueue();
+      window.removeEventListener("online", schedule);
+    };
   }, [queryClient]);
 
   return null;
