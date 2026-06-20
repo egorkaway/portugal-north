@@ -104,7 +104,7 @@ export const ca: Messages = {
     title: "Rankings de la comunitat",
     subtitle: "Estacions i hotels segons els vots dels visitants a Portugal",
     intro:
-      "Els rankings provenen dels vots a les estacions i a les llistes d'hotels de cada pàgina. Si l'emmagatzematge de vots falla, el missatge de sota ho explica.",
+      "Els rankings provenen dels vots a les estacions i a les llistes d'hotels de cada pàgina.",
     communityTitle: "Rankings de la comunitat",
     communityTeaser: "Millors estacions per vots globals. Hotels a la pàgina completa.",
     fullPage: "Pàgina completa de rankings",

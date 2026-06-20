@@ -104,7 +104,7 @@ export const gl: Messages = {
     title: "Rankings da comunidade",
     subtitle: "Estacións e hoteis segundo os votos dos visitantes en Portugal",
     intro:
-      "Os rankings provén dos votos nas estacións e nas listas de hoteis de cada páxina. Se o almacenamento de votos falla, a mensaxe de abaixo explícalo.",
+      "Os rankings provén dos votos nas estacións e nas listas de hoteis de cada páxina.",
     communityTitle: "Rankings da comunidade",
     communityTeaser: "Mellores estacións por votos globais. Hoteis na páxina completa.",
     fullPage: "Páxina completa de rankings",

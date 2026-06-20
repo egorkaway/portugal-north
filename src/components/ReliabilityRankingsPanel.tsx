@@ -68,8 +68,8 @@ export function ReliabilityRankingsPanel() {
     );
   }
 
-  const top = getTopReliabilityStations(data.scores, 10);
-  const bottom = getBottomReliabilityStations(data.scores, 10);
+  const top = getTopReliabilityStations(data.scores, data.movements, 10);
+  const bottom = getBottomReliabilityStations(data.scores, data.movements, 10);
 
   if (top.length === 0) {
     return <p className="text-sm text-muted-foreground">{t("rankings.noReliabilityData")}</p>;

@@ -104,7 +104,7 @@ export const pt: Messages = {
     title: "Rankings da comunidade",
     subtitle: "Estações e hotéis classificados pelos votos dos visitantes em Portugal",
     intro:
-      "Os rankings vêm dos votos nas estações e nas listas de hotéis de cada página. Se o armazenamento de votos falhar, a mensagem abaixo explica o problema.",
+      "Os rankings vêm dos votos nas estações e nas listas de hotéis de cada página.",
     communityTitle: "Rankings da comunidade",
     communityTeaser: "Melhores estações por votos globais. Veja hotéis na página completa.",
     fullPage: "Página completa de rankings",

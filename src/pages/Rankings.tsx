@@ -44,11 +44,10 @@ const Rankings = () => {
         </header>
 
         <main className="mx-auto max-w-5xl px-4 py-6 md:px-6 md:py-10">
-          <div className="mb-5 space-y-2 md:mb-8">
-            <p className="text-muted-foreground">{t("rankings.intro")}</p>
-          </div>
-
           <ReliabilityRankingsPanel />
+
+          <p className="mb-5 text-muted-foreground md:mb-8">{t("rankings.intro")}</p>
+
           <RankingsPanel alwaysShow showDetailedError />
           <BuildNumberLabel />
         </main>

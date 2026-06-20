@@ -5,6 +5,8 @@ export type ReliabilityScoresManifest = {
   runCount: number;
   stationCount: number;
   scores: Record<string, number>;
+  /** Cumulative departures + arrivals in sampled windows (tiebreaker for rankings). */
+  movements: Record<string, number>;
 };
 
 export const RELIABILITY_SCORE_MIN = 1;
@@ -68,10 +70,19 @@ export function buildReliabilityScoresManifest(
   store: DepartureStatsStore,
 ): ReliabilityScoresManifest {
   const scores = computeReliabilityScores(store);
+  const movements: Record<string, number> = {};
+
+  for (const [name, stats] of Object.entries(store.stations)) {
+    if (!(name in scores)) continue;
+    movements[name] =
+      stats.totals.departuresNextHour + stats.totals.arrivalsNextHour;
+  }
+
   return {
     generatedAt: new Date().toISOString(),
     runCount: store.runCount,
     stationCount: Object.keys(scores).length,
     scores,
+    movements,
   };
 }

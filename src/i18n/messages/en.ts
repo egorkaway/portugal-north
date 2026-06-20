@@ -104,7 +104,7 @@ export const en: Messages = {
     title: "Community rankings",
     subtitle: "Stations and hotels ranked by visitor votes across Portugal",
     intro:
-      "Rankings come from thumbs up and down on station cards and on hotel lists at each station page. If vote storage is misconfigured, the error below explains what went wrong.",
+      "Rankings come from thumbs up and down on station cards and on hotel lists at each station page.",
     communityTitle: "Community rankings",
     communityTeaser: "Top stations by global votes. See hotel rankings on the full page.",
     fullPage: "Full rankings page",
