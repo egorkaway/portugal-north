@@ -1,6 +1,6 @@
 {
-  "runCount": 1,
-  "lastRunAt": "2026-06-20T09:51:13.167Z",
+  "runCount": 2,
+  "lastRunAt": "2026-06-20T09:53:19.710Z",
   "stations": {
     "Pombal": {
       "cpCode": "94-34645",
@@ -22,9 +22,9 @@
         "delayMinutes": 11
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:13.745Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Alfarelos": {
       "cpCode": "94-35006",
@@ -46,9 +46,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:14.098Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Coimbra-B": {
       "cpCode": "94-36004",
@@ -80,9 +80,9 @@
         "delayMinutes": 26
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:14.492Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Pampilhosa": {
       "cpCode": "94-37002",
@@ -104,9 +104,9 @@
         "delayMinutes": 6
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:14.860Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Mealhada": {
       "cpCode": "94-37051",
@@ -123,9 +123,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:15.205Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Aveiro": {
       "cpCode": "94-38000",
@@ -157,9 +157,9 @@
         "delayMinutes": 19
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:15.594Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Canelas": {
       "cpCode": "94-38117",
@@ -176,9 +176,9 @@
         "delayMinutes": 6
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:15.976Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Estarreja": {
       "cpCode": "94-38158",
@@ -195,9 +195,9 @@
         "delayMinutes": 6
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:16.338Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Ovar": {
       "cpCode": "94-38299",
@@ -214,9 +214,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:16.741Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Espinho": {
       "cpCode": "94-39008",
@@ -238,9 +238,9 @@
         "delayMinutes": 9
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:17.096Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vila Nova de Gaia-Devesas": {
       "cpCode": "94-39164",
@@ -267,9 +267,9 @@
         "delayMinutes": 10
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:17.494Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "São Bento (Porto)": {
       "cpCode": "94-1008",
@@ -291,9 +291,9 @@
         "delayMinutes": 17
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:17.908Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Porto-Campanhã": {
       "cpCode": "94-2006",
@@ -320,9 +320,9 @@
         "delayMinutes": 38
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:18.925Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Ermesinde": {
       "cpCode": "94-4002",
@@ -344,9 +344,9 @@
         "delayMinutes": 21
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:19.345Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Trofa": {
       "cpCode": "94-4630",
@@ -368,9 +368,9 @@
         "delayMinutes": 16
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:19.720Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Santo Tirso": {
       "cpCode": "94-28068",
@@ -387,9 +387,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:20.082Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Famalicão": {
       "cpCode": "94-5074",
@@ -406,9 +406,9 @@
         "delayMinutes": 7
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:20.514Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Nine": {
       "cpCode": "94-6007",
@@ -430,9 +430,9 @@
         "delayMinutes": 7
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:20.937Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Braga": {
       "cpCode": "94-29157",
@@ -449,9 +449,9 @@
         "delayMinutes": 13
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:21.317Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Lousado": {
       "cpCode": "94-5009",
@@ -468,9 +468,9 @@
         "delayMinutes": 7
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:21.665Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Guimarães": {
       "cpCode": "94-24000",
@@ -487,9 +487,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:22.013Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Valongo": {
       "cpCode": "94-8086",
@@ -506,9 +506,9 @@
         "delayMinutes": 5
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:22.436Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Caíde": {
       "cpCode": "94-8383",
@@ -530,9 +530,9 @@
         "delayMinutes": 3
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:22.785Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Marco de Canaveses": {
       "cpCode": "94-9001",
@@ -559,9 +559,9 @@
         "delayMinutes": 9
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:23.127Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Livração": {
       "cpCode": "94-8474",
@@ -583,9 +583,9 @@
         "delayMinutes": 2
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:23.487Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Barcelos": {
       "cpCode": "94-6122",
@@ -602,9 +602,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:23.826Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Viana do Castelo": {
       "cpCode": "94-18002",
@@ -621,9 +621,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:24.174Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Valença": {
       "cpCode": "94-7005",
@@ -645,9 +645,9 @@
         "delayMinutes": 8
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:24.516Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Cacia": {
       "cpCode": "94-38075",
@@ -664,9 +664,9 @@
         "delayMinutes": 6
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:24.879Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Salreu": {
       "cpCode": "94-38125",
@@ -683,9 +683,9 @@
         "delayMinutes": 6
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:25.269Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Esmoriz": {
       "cpCode": "94-38406",
@@ -702,9 +702,9 @@
         "delayMinutes": 3
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:25.637Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Granja": {
       "cpCode": "94-39040",
@@ -721,9 +721,9 @@
         "delayMinutes": 3
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:26.016Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Darque": {
       "cpCode": "94-6387",
@@ -740,9 +740,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:26.356Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Areia-Darque": {
       "cpCode": "94-6395",
@@ -759,9 +759,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:26.675Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Afife": {
       "cpCode": "94-18119",
@@ -772,9 +772,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:27.032Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vila Praia de Âncora": {
       "cpCode": "94-18150",
@@ -785,9 +785,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:27.387Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Caminha": {
       "cpCode": "94-18242",
@@ -798,9 +798,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:27.714Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Pinhão": {
       "cpCode": "94-10249",
@@ -817,9 +817,9 @@
         "delayMinutes": 7
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:28.052Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Tua": {
       "cpCode": "94-11007",
@@ -830,9 +830,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:28.404Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vizela": {
       "cpCode": "94-28233",
@@ -849,9 +849,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:28.753Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Souselas": {
       "cpCode": "94-36087",
@@ -868,9 +868,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:29.072Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Curia": {
       "cpCode": "94-37119",
@@ -887,9 +887,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:29.419Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Oliveira do Bairro": {
       "cpCode": "94-37218",
@@ -906,9 +906,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:29.796Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Quintans": {
       "cpCode": "94-37358",
@@ -925,9 +925,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:30.143Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Oiã": {
       "cpCode": "94-37275",
@@ -944,9 +944,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:30.514Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Paraimo-Sangalhos": {
       "cpCode": "94-37184",
@@ -963,9 +963,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:30.899Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Aguim": {
       "cpCode": "94-37093",
@@ -982,9 +982,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:31.252Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vilela-Fornos": {
       "cpCode": "94-36053",
@@ -1001,9 +1001,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:31.619Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Adémia": {
       "cpCode": "94-36046",
@@ -1020,9 +1020,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:31.937Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "General Torres": {
       "cpCode": "94-39172",
@@ -1039,9 +1039,9 @@
         "delayMinutes": 3
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:32.547Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Coimbrões": {
       "cpCode": "94-39149",
@@ -1058,9 +1058,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:32.884Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Valadares": {
       "cpCode": "94-39115",
@@ -1077,9 +1077,9 @@
         "delayMinutes": 3
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:33.220Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Francelos": {
       "cpCode": "94-39081",
@@ -1096,9 +1096,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:33.551Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Miramar": {
       "cpCode": "94-39073",
@@ -1115,9 +1115,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:33.913Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Aguda": {
       "cpCode": "94-39057",
@@ -1134,9 +1134,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:34.360Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Paramos": {
       "cpCode": "94-38414",
@@ -1153,9 +1153,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:34.750Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Soure": {
       "cpCode": "94-34801",
@@ -1172,9 +1172,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:35.066Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Caxarias": {
       "cpCode": "94-34330",
@@ -1196,9 +1196,9 @@
         "delayMinutes": 11
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:35.421Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Lamarosa": {
       "cpCode": "94-34090",
@@ -1215,9 +1215,9 @@
         "delayMinutes": 9
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:35.778Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Válega": {
       "cpCode": "94-38240",
@@ -1234,9 +1234,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:36.123Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Contumil": {
       "cpCode": "94-3004",
@@ -1253,9 +1253,9 @@
         "delayMinutes": 11
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:36.553Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Rio Tinto": {
       "cpCode": "94-3038",
@@ -1272,9 +1272,9 @@
         "delayMinutes": 12
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:36.956Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Tamel": {
       "cpCode": "94-6213",
@@ -1291,9 +1291,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:37.343Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Durrães": {
       "cpCode": "94-6262",
@@ -1310,9 +1310,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:37.665Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Carreço": {
       "cpCode": "94-18085",
@@ -1323,9 +1323,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:37.988Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Areosa": {
       "cpCode": "94-18044",
@@ -1342,9 +1342,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:38.322Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Aregos": {
       "cpCode": "94-9191",
@@ -1366,9 +1366,9 @@
         "delayMinutes": 9
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:38.668Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Mosteirô": {
       "cpCode": "94-9134",
@@ -1390,9 +1390,9 @@
         "delayMinutes": 2
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:39.033Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Caldas de Vizela": {
       "cpCode": "94-9399",
@@ -1409,9 +1409,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:39.364Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Lordelo": {
       "cpCode": "94-28191",
@@ -1428,9 +1428,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:39.723Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Mogofores": {
       "cpCode": "94-37143",
@@ -1447,9 +1447,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:40.055Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Avanca": {
       "cpCode": "94-38216",
@@ -1466,9 +1466,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:40.433Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Penafiel": {
       "cpCode": "94-8318",
@@ -1485,9 +1485,9 @@
         "delayMinutes": 1
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:40.811Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Paredes": {
       "cpCode": "94-8276",
@@ -1504,9 +1504,9 @@
         "delayMinutes": 1
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:41.164Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Cete": {
       "cpCode": "94-8227",
@@ -1523,9 +1523,9 @@
         "delayMinutes": 6
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:41.534Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Recarei-Sobreira": {
       "cpCode": "94-8177",
@@ -1542,9 +1542,9 @@
         "delayMinutes": 6
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:41.922Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vila Meã": {
       "cpCode": "94-8433",
@@ -1561,9 +1561,9 @@
         "delayMinutes": 1
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:42.267Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Águeda": {
       "cpCode": "94-42218",
@@ -1580,9 +1580,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:42.600Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Sernada do Vouga": {
       "cpCode": "94-43000",
@@ -1593,9 +1593,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:42.949Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Macinhata do Vouga": {
       "cpCode": "94-42259",
@@ -1612,9 +1612,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:43.279Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Cortegaça": {
       "cpCode": "94-38372",
@@ -1631,9 +1631,9 @@
         "delayMinutes": 3
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:43.633Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Taveiro": {
       "cpCode": "94-35139",
@@ -1650,9 +1650,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:43.993Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vila Nova de Cerveira": {
       "cpCode": "94-18341",
@@ -1663,9 +1663,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:44.318Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Pocinho": {
       "cpCode": "94-12005",
@@ -1682,9 +1682,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:44.637Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Ferradosa": {
       "cpCode": "94-11114",
@@ -1701,9 +1701,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:44.969Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vesúvio": {
       "cpCode": "94-11197",
@@ -1720,9 +1720,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:45.306Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "São Pedro da Torre": {
       "cpCode": "94-18440",
@@ -1739,9 +1739,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:45.667Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Carvalha": {
       "cpCode": "94-18416",
@@ -1758,9 +1758,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:46.041Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Gondarém": {
       "cpCode": "94-18325",
@@ -1771,9 +1771,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:46.367Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Esqueiró": {
       "cpCode": "94-18291",
@@ -1784,9 +1784,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:46.683Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Seixas": {
       "cpCode": "94-18275",
@@ -1797,9 +1797,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:47.025Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Senhora da Agonia": {
       "cpCode": "94-18234",
@@ -1810,9 +1810,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:47.371Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Moledo do Minho": {
       "cpCode": "94-18200",
@@ -1823,9 +1823,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:47.696Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Alvarães": {
       "cpCode": "94-6338",
@@ -1842,9 +1842,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:48.077Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Senhora das Neves": {
       "cpCode": "94-6312",
@@ -1861,9 +1861,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:48.411Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Barroselas": {
       "cpCode": "94-6304",
@@ -1880,9 +1880,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:48.745Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Carapecos": {
       "cpCode": "94-6197",
@@ -1899,9 +1899,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:49.075Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Silva": {
       "cpCode": "94-6155",
@@ -1918,9 +1918,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:49.419Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Midões": {
       "cpCode": "94-6080",
@@ -1937,9 +1937,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:49.737Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Carreira": {
       "cpCode": "94-6056",
@@ -1956,9 +1956,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:50.062Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Louro": {
       "cpCode": "94-5116",
@@ -1975,9 +1975,9 @@
         "delayMinutes": 8
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:50.413Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Mouquim": {
       "cpCode": "94-5108",
@@ -1994,9 +1994,9 @@
         "delayMinutes": 8
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:50.779Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Portela": {
       "cpCode": "94-4101",
@@ -2007,9 +2007,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:51.123Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "São Romão": {
       "cpCode": "94-4077",
@@ -2026,9 +2026,9 @@
         "delayMinutes": 8
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:51.468Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "São Frutuoso": {
       "cpCode": "94-4051",
@@ -2045,9 +2045,9 @@
         "delayMinutes": 8
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:51.837Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Leandro": {
       "cpCode": "94-4036",
@@ -2064,9 +2064,9 @@
         "delayMinutes": 8
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:52.284Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Travagem": {
       "cpCode": "94-4010",
@@ -2083,9 +2083,9 @@
         "delayMinutes": 8
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:52.667Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Barrimau": {
       "cpCode": "94-5058",
@@ -2102,9 +2102,9 @@
         "delayMinutes": 8
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:53.003Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Esmeriz": {
       "cpCode": "94-5033",
@@ -2121,9 +2121,9 @@
         "delayMinutes": 8
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:53.724Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Ferreiros": {
       "cpCode": "94-29132",
@@ -2140,9 +2140,9 @@
         "delayMinutes": 12
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:54.111Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Mazagão": {
       "cpCode": "94-29116",
@@ -2159,9 +2159,9 @@
         "delayMinutes": 12
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:54.470Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Aveleda": {
       "cpCode": "94-29108",
@@ -2178,9 +2178,9 @@
         "delayMinutes": 19
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:54.799Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Tadim": {
       "cpCode": "94-29090",
@@ -2197,9 +2197,9 @@
         "delayMinutes": 19
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:55.131Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Ruílhe": {
       "cpCode": "94-29074",
@@ -2216,9 +2216,9 @@
         "delayMinutes": 7
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:55.481Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Arentim": {
       "cpCode": "94-29066",
@@ -2235,9 +2235,9 @@
         "delayMinutes": 7
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:55.832Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Couto de Cambeses": {
       "cpCode": "94-29033",
@@ -2254,9 +2254,9 @@
         "delayMinutes": 7
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:56.178Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Covas": {
       "cpCode": "94-28290",
@@ -2273,9 +2273,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:56.537Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Nespereira": {
       "cpCode": "94-28266",
@@ -2292,9 +2292,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:56.878Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Pereirinhas": {
       "cpCode": "94-28217",
@@ -2311,9 +2311,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:57.197Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Cuca": {
       "cpCode": "94-28209",
@@ -2330,9 +2330,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:57.515Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Giesteira": {
       "cpCode": "94-28159",
@@ -2349,9 +2349,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:57.835Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Caniços": {
       "cpCode": "94-28100",
@@ -2368,9 +2368,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:58.185Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vila das Aves": {
       "cpCode": "94-28134",
@@ -2387,9 +2387,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:58.543Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Meinedo": {
       "cpCode": "94-8359",
@@ -2406,9 +2406,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:58.877Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Bustelo": {
       "cpCode": "94-8334",
@@ -2419,9 +2419,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:59.245Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Recesinhos": {
       "cpCode": "94-8441",
@@ -2432,9 +2432,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:59.557Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Cabeda": {
       "cpCode": "94-8029",
@@ -2451,9 +2451,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:51:59.885Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Suzão": {
       "cpCode": "94-8060",
@@ -2470,9 +2470,9 @@
         "delayMinutes": 4
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:00.237Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Godim": {
       "cpCode": "94-9423",
@@ -2489,9 +2489,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:00.587Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Covelinhas": {
       "cpCode": "94-10090",
@@ -2508,9 +2508,9 @@
         "delayMinutes": 7
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:00.921Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Caldas de Moledo": {
       "cpCode": "94-9399",
@@ -2527,9 +2527,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:01.249Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Ferrão": {
       "cpCode": "94-10165",
@@ -2546,9 +2546,9 @@
         "delayMinutes": 7
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:01.565Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Barqueiros": {
       "cpCode": "94-9324",
@@ -2565,9 +2565,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:01.897Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Ermida": {
       "cpCode": "94-9258",
@@ -2589,9 +2589,9 @@
         "delayMinutes": 9
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:02.239Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Oleiros": {
       "cpCode": "94-8250",
@@ -2608,9 +2608,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:02.561Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Irivo": {
       "cpCode": "94-8243",
@@ -2627,9 +2627,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:02.914Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Juncal": {
       "cpCode": "94-9050",
@@ -2646,9 +2646,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:03.248Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Mirão": {
       "cpCode": "94-9225",
@@ -2665,9 +2665,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:03.561Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Porto Rei": {
       "cpCode": "94-9282",
@@ -2684,9 +2684,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:03.913Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Leça do Balio": {
       "cpCode": "94-21071",
@@ -2703,9 +2703,9 @@
         "delayMinutes": 2
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:04.252Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Águas Santas - Palmilheira": {
       "cpCode": "94-3046",
@@ -2722,9 +2722,9 @@
         "delayMinutes": 12
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:04.640Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "São Gemil": {
       "cpCode": "94-21006",
@@ -2741,9 +2741,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:04.983Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "São Mamede de Infesta": {
       "cpCode": "94-21048",
@@ -2760,9 +2760,9 @@
         "delayMinutes": 2
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:05.335Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Hospital São João": {
       "cpCode": "94-21030",
@@ -2779,9 +2779,9 @@
         "delayMinutes": 2
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:05.671Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Arroteia": {
       "cpCode": "94-21055",
@@ -2798,9 +2798,9 @@
         "delayMinutes": 2
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:06.009Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Madalena": {
       "cpCode": "94-39123",
@@ -2817,9 +2817,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:06.373Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Silvalde": {
       "cpCode": "94-38422",
@@ -2836,9 +2836,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:06.729Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Espinho - Vouga": {
       "cpCode": "94-44016",
@@ -2855,9 +2855,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:07.083Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "São João da Madeira": {
       "cpCode": "94-44255",
@@ -2868,9 +2868,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:07.397Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vila da Feira": {
       "cpCode": "94-44206",
@@ -2887,9 +2887,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:07.724Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Oliveira de Azeméis": {
       "cpCode": "94-44339",
@@ -2900,9 +2900,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:08.031Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Rio Meão": {
       "cpCode": "94-44115",
@@ -2919,9 +2919,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:08.414Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "São João de Ver": {
       "cpCode": "94-44156",
@@ -2938,9 +2938,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:08.760Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Mangualde": {
       "cpCode": "94-48009",
@@ -2957,9 +2957,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:09.074Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Nelas": {
       "cpCode": "94-46672",
@@ -2976,9 +2976,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:09.391Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Gouveia": {
       "cpCode": "94-48165",
@@ -2995,9 +2995,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:09.760Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Celorico da Beira": {
       "cpCode": "94-48405",
@@ -3014,9 +3014,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:10.078Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Fornos de Algodres": {
       "cpCode": "94-48249",
@@ -3033,9 +3033,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:10.401Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Lisboa Santa Apolónia": {
       "cpCode": "94-30007",
@@ -3062,9 +3062,9 @@
         "delayMinutes": 37
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:10.788Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Lisboa Oriente": {
       "cpCode": "94-31039",
@@ -3086,9 +3086,9 @@
         "delayMinutes": 35
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:11.222Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Lisboa Rossio": {
       "cpCode": "94-59006",
@@ -3105,9 +3105,9 @@
         "delayMinutes": 2
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:11.614Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Cais do Sodré": {
       "cpCode": "94-69005",
@@ -3124,9 +3124,9 @@
         "delayMinutes": 7
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:11.995Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Cascais": {
       "cpCode": "94-69260",
@@ -3143,9 +3143,9 @@
         "delayMinutes": 1
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:12.388Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Sintra": {
       "cpCode": "94-61101",
@@ -3162,9 +3162,9 @@
         "delayMinutes": 5
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:12.799Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Setúbal": {
       "cpCode": "94-68122",
@@ -3181,9 +3181,9 @@
         "delayMinutes": 5
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:13.135Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Entroncamento": {
       "cpCode": "94-34009",
@@ -3205,9 +3205,9 @@
         "delayMinutes": 9
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:13.515Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Santarém": {
       "cpCode": "94-32185",
@@ -3229,9 +3229,9 @@
         "delayMinutes": 22
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:13.878Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Tomar": {
       "cpCode": "94-40154",
@@ -3248,9 +3248,9 @@
         "delayMinutes": 9
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:14.225Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Caldas da Rainha": {
       "cpCode": "94-63008",
@@ -3272,9 +3272,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:14.565Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Leiria": {
       "cpCode": "94-63560",
@@ -3285,9 +3285,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:14.889Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Figueira da Foz": {
       "cpCode": "94-64113",
@@ -3304,9 +3304,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:15.279Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Castelo Branco": {
       "cpCode": "94-53009",
@@ -3323,9 +3323,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:15.620Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Covilhã": {
       "cpCode": "94-54007",
@@ -3342,9 +3342,9 @@
         "delayMinutes": 4
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:16.005Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Guarda": {
       "cpCode": "94-49007",
@@ -3366,9 +3366,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:16.351Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vilar Formoso": {
       "cpCode": "94-49460",
@@ -3379,9 +3379,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:16.697Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Évora": {
       "cpCode": "94-83006",
@@ -3398,9 +3398,9 @@
         "delayMinutes": 17
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:17.042Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Beja": {
       "cpCode": "94-75002",
@@ -3411,9 +3411,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:17.351Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Faro": {
       "cpCode": "94-73007",
@@ -3435,9 +3435,9 @@
         "delayMinutes": 19
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:17.701Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Albufeira-Ferreiras": {
       "cpCode": "94-78063",
@@ -3459,9 +3459,9 @@
         "delayMinutes": 20
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:18.031Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Tunes": {
       "cpCode": "94-78006",
@@ -3483,9 +3483,9 @@
         "delayMinutes": 20
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:18.373Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Lagos": {
       "cpCode": "94-90464",
@@ -3502,9 +3502,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:18.733Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Portimão": {
       "cpCode": "94-90290",
@@ -3521,9 +3521,9 @@
         "delayMinutes": 1
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:19.102Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Tavira": {
       "cpCode": "94-73320",
@@ -3540,9 +3540,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:19.446Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Vila Real de Santo António": {
       "cpCode": "94-73569",
@@ -3559,9 +3559,9 @@
         "delayMinutes": 1
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:19.794Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Aguieira": {
       "cpCode": "94-42267",
@@ -3578,9 +3578,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:20.168Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Albergaria dos Doze": {
       "cpCode": "94-34439",
@@ -3597,9 +3597,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:20.488Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Alegria": {
       "cpCode": "94-11064",
@@ -3616,9 +3616,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:20.820Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Alferrarede": {
       "cpCode": "94-52068",
@@ -3629,9 +3629,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:21.140Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Almourol": {
       "cpCode": "94-51102",
@@ -3648,9 +3648,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:21.483Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Alvega – Ortiga": {
       "cpCode": "94-52209",
@@ -3661,9 +3661,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:21.796Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Arrifana": {
       "cpCode": "94-44248",
@@ -3674,9 +3674,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:22.133Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Azurva": {
       "cpCode": "94-42051",
@@ -3693,9 +3693,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:22.448Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Barca da Amieira – Envendos": {
       "cpCode": "94-52415",
@@ -3712,9 +3712,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:22.805Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Barquinha": {
       "cpCode": "94-51045",
@@ -3731,9 +3731,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:23.163Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Barragem de Belver": {
       "cpCode": "94-52241",
@@ -3744,9 +3744,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:23.906Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Belver": {
       "cpCode": "94-52282",
@@ -3763,9 +3763,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:24.249Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Bifurcacao de Lares": {
       "cpCode": "94-64022",
@@ -3782,9 +3782,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:24.572Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Bombarral": {
       "cpCode": "94-62703",
@@ -3801,9 +3801,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:24.898Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Cabanoes": {
       "cpCode": "94-42150",
@@ -3820,9 +3820,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:25.224Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Carrascal – Delongo": {
       "cpCode": "94-40030",
@@ -3839,9 +3839,9 @@
         "delayMinutes": 9
       },
       "successfulSamples": 1,
-      "failedSamples": 0,
+      "failedSamples": 1,
       "lastSampleAt": "2026-06-20T09:52:25.572Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Carvalhal Portela": {
       "cpCode": "94-42309",
@@ -3852,7 +3852,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3865,7 +3865,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3878,7 +3878,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3891,7 +3891,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3904,7 +3904,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3917,7 +3917,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3930,7 +3930,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3943,7 +3943,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3956,7 +3956,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3969,7 +3969,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3982,7 +3982,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -3995,7 +3995,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4008,7 +4008,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4021,7 +4021,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4034,7 +4034,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4047,7 +4047,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4060,7 +4060,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4073,7 +4073,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4086,7 +4086,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4099,7 +4099,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4112,7 +4112,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4125,7 +4125,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4138,7 +4138,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4151,7 +4151,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4164,7 +4164,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4177,7 +4177,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4190,7 +4190,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4203,7 +4203,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4216,7 +4216,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4229,7 +4229,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4242,7 +4242,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
       "lastError": "cp_api_http_429"
     },
@@ -4255,9 +4255,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastError": "fetch failed"
     },
     "Mourisca do Vouga": {
       "cpCode": "94-42259",
@@ -4267,23 +4267,29 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:24.867Z",
+      "lastError": null
     },
     "Mouriscas - A": {
       "cpCode": "94-52167",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 9
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 9
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:25.577Z",
+      "lastError": null
     },
     "Óbidos": {
       "cpCode": "94-62836",
@@ -4293,10 +4299,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:26.773Z",
+      "lastError": null
     },
     "Oronhe": {
       "cpCode": "94-42176",
@@ -4306,10 +4312,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:27.356Z",
+      "lastError": null
     },
     "Outeiro": {
       "cpCode": "94-62612",
@@ -4319,10 +4325,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:27.921Z",
+      "lastError": null
     },
     "Paços de Brandão": {
       "cpCode": "94-44107",
@@ -4332,23 +4338,29 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:28.469Z",
+      "lastError": null
     },
     "Paialvo": {
       "cpCode": "94-34157",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:29.006Z",
+      "lastError": null
     },
     "Pala": {
       "cpCode": "94-9100",
@@ -4358,10 +4370,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:29.570Z",
+      "lastError": null
     },
     "Parada": {
       "cpCode": "94-8201",
@@ -4371,23 +4383,29 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:30.170Z",
+      "lastError": null
     },
     "Pataias": {
       "cpCode": "94-63354",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "InterRegional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 8
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 8
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:30.710Z",
+      "lastError": null
     },
     "Pelariga": {
       "cpCode": "94-34702",
@@ -4397,36 +4415,48 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:31.262Z",
+      "lastError": null
     },
     "Pero Negro": {
       "cpCode": "94-62315",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:31.851Z",
+      "lastError": null
     },
     "Praia do Ribatejo": {
       "cpCode": "94-51128",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:32.475Z",
+      "lastError": null
     },
     "Ramalhal": {
       "cpCode": "94-62547",
@@ -4436,62 +4466,86 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:33.093Z",
+      "lastError": null
     },
     "Rede": {
       "cpCode": "94-9357",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "InterRegional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:33.681Z",
+      "lastError": null
     },
     "Reveles": {
       "cpCode": "94-65128",
-      "byTrainType": {},
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:34.236Z",
+      "lastError": null
     },
     "Riachos – Torres Novas – Golegã": {
       "cpCode": "94-32466",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:34.794Z",
+      "lastError": null
     },
     "Runa": {
       "cpCode": "94-62422",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:35.347Z",
+      "lastError": null
     },
     "Salir do Porto": {
       "cpCode": "94-63107",
@@ -4501,10 +4555,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:35.912Z",
+      "lastError": null
     },
     "Sampaio - Oleiros": {
       "cpCode": "94-44073",
@@ -4514,23 +4568,29 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:36.472Z",
+      "lastError": null
     },
     "Sanfins": {
       "cpCode": "94-44198",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:37.026Z",
+      "lastError": null
     },
     "Santa Cita": {
       "cpCode": "94-40105",
@@ -4540,49 +4600,67 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:37.674Z",
+      "lastError": null
     },
     "Santa Margarida": {
       "cpCode": "94-51185",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:38.329Z",
+      "lastError": null
     },
     "Santana - Cartaxo": {
       "cpCode": "94-32045",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:38.957Z",
+      "lastError": null
     },
     "Santiago de Riba – Ul": {
       "cpCode": "94-44313",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 13
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 13
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:39.614Z",
+      "lastError": null
     },
     "São João Loure": {
       "cpCode": "94-42093",
@@ -4592,23 +4670,29 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:40.199Z",
+      "lastError": null
     },
     "Sao Martinho do Campo": {
       "cpCode": "94-8102",
-      "byTrainType": {},
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:40.773Z",
+      "lastError": null
     },
     "São Martinho do Porto": {
       "cpCode": "94-63131",
@@ -4618,49 +4702,67 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:41.917Z",
+      "lastError": null
     },
     "Sapataria": {
       "cpCode": "94-62299",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:42.492Z",
+      "lastError": null
     },
     "Seiça – Ourém": {
       "cpCode": "94-34264",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:43.036Z",
+      "lastError": null
     },
     "Setil": {
       "cpCode": "94-32003",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:43.625Z",
+      "lastError": null
     },
     "Silvalde – Vouga": {
       "cpCode": "94-44032",
@@ -4670,10 +4772,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:44.187Z",
+      "lastError": null
     },
     "Simoes": {
       "cpCode": "94-34744",
@@ -4683,10 +4785,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:44.751Z",
+      "lastError": null
     },
     "Soudos - Vila Nova": {
       "cpCode": "94-40014",
@@ -4696,10 +4798,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:45.308Z",
+      "lastError": null
     },
     "Taipa - Requeixo": {
       "cpCode": "94-42127",
@@ -4709,10 +4811,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:45.865Z",
+      "lastError": null
     },
     "Tancos": {
       "cpCode": "94-51086",
@@ -4722,36 +4824,48 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:46.402Z",
+      "lastError": null
     },
     "Terronhas": {
       "cpCode": "94-8136",
-      "byTrainType": {},
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:46.962Z",
+      "lastError": null
     },
     "Tramagal": {
       "cpCode": "94-51243",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:47.530Z",
+      "lastError": null
     },
     "Trancoso": {
       "cpCode": "94-8151",
@@ -4761,10 +4875,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:48.129Z",
+      "lastError": null
     },
     "Travasso": {
       "cpCode": "94-42135",
@@ -4774,10 +4888,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:48.709Z",
+      "lastError": null
     },
     "Valado – Nazaré – Alcobaça": {
       "cpCode": "94-63263",
@@ -4787,36 +4901,48 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:49.332Z",
+      "lastError": null
     },
     "Vale de Figueira": {
       "cpCode": "94-32284",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:49.916Z",
+      "lastError": null
     },
     "Vale de Santarem": {
       "cpCode": "94-32102",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:50.566Z",
+      "lastError": null
     },
     "Vermoil": {
       "cpCode": "94-34553",
@@ -4826,49 +4952,77 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:51.180Z",
+      "lastError": null
     },
     "Verride": {
       "cpCode": "94-65086",
-      "byTrainType": {},
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:51.764Z",
+      "lastError": null
     },
     "Vila Franca de Xira": {
       "cpCode": "94-31278",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        },
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        },
+        "Intercidades": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:52.373Z",
+      "lastError": null
     },
     "Vila Nova da Rainha": {
       "cpCode": "94-31377",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 6
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 6
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:52.969Z",
+      "lastError": null
     },
     "Vila Nova de Ancos": {
       "cpCode": "94-34868",
@@ -4878,49 +5032,67 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:53.562Z",
+      "lastError": null
     },
     "Zibreira": {
       "cpCode": "94-62331",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:54.137Z",
+      "lastError": null
     },
     "Agualva - Cacém": {
       "cpCode": "94-61002",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:54.940Z",
+      "lastError": null
     },
     "Alcantara - Mar": {
       "cpCode": "94-69039",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 7,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 7,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:55.597Z",
+      "lastError": null
     },
     "Alcantara - Terra": {
       "cpCode": "94-67025",
@@ -4930,36 +5102,48 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:56.166Z",
+      "lastError": null
     },
     "Algés": {
       "cpCode": "94-69088",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:56.820Z",
+      "lastError": null
     },
     "Algueirão - Mem Martins": {
       "cpCode": "94-61069",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:04:57.465Z",
+      "lastError": null
     },
     "Alhandra": {
       "cpCode": "94-31237",
@@ -4970,269 +5154,399 @@
         "delayMinutes": 0
       },
       "successfulSamples": 0,
-      "failedSamples": 1,
+      "failedSamples": 2,
       "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastError": "fetch failed"
     },
     "Alhos Vedros": {
       "cpCode": "94-95075",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 3,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:30.053Z",
+      "lastError": null
     },
     "Alverca": {
       "cpCode": "94-31187",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        },
+        "Regional": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 7
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:30.641Z",
+      "lastError": null
     },
     "Amadora": {
       "cpCode": "94-60087",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:31.471Z",
+      "lastError": null
     },
     "Azambuja": {
       "cpCode": "94-33001",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 6
+        },
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 9
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:32.076Z",
+      "lastError": null
     },
     "Baixa da Banheira": {
       "cpCode": "94-95059",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:32.683Z",
+      "lastError": null
     },
     "Barreiro-A": {
       "cpCode": "94-95026",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:33.256Z",
+      "lastError": null
     },
     "Belém": {
       "cpCode": "94-69054",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 5
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 5
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:33.864Z",
+      "lastError": null
     },
     "Benfica": {
       "cpCode": "94-60046",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:34.549Z",
+      "lastError": null
     },
     "Bobadela": {
       "cpCode": "94-31070",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:35.208Z",
+      "lastError": null
     },
     "Braco de Prata": {
       "cpCode": "94-31005",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 8
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 8
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:35.872Z",
+      "lastError": null
     },
     "Campolide": {
       "cpCode": "94-60004",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 2
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 2
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:36.501Z",
+      "lastError": null
     },
     "Carcavelos": {
       "cpCode": "94-69187",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 2
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 2
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:37.106Z",
+      "lastError": null
     },
     "Carregado": {
       "cpCode": "94-31336",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:37.781Z",
+      "lastError": null
     },
     "Castanheira do Ribatejo": {
       "cpCode": "94-31310",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:38.347Z",
+      "lastError": null
     },
     "Caxias": {
       "cpCode": "94-69120",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 2
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 2
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:38.976Z",
+      "lastError": null
     },
     "Cruz Quebrada": {
       "cpCode": "94-69104",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
+          "delayMinutes": 7
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
+        "delayMinutes": 7
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:39.633Z",
+      "lastError": null
     },
     "Entrecampos": {
       "cpCode": "94-66050",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:40.231Z",
+      "lastError": null
     },
     "Espadanal da Azambuja": {
       "cpCode": "94-31401",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 6
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 3,
+        "delayMinutes": 6
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:40.819Z",
+      "lastError": null
     },
     "Estoril": {
       "cpCode": "94-69245",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 6
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 6
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:41.439Z",
+      "lastError": null
     },
     "Lavradio": {
       "cpCode": "94-95042",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:42.111Z",
+      "lastError": null
     },
     "Marvila": {
       "cpCode": "94-66019",
@@ -5242,361 +5556,528 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:42.661Z",
+      "lastError": null
     },
     "Massama - Barcarena": {
       "cpCode": "94-60137",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:43.347Z",
+      "lastError": null
     },
     "Merces": {
       "cpCode": "94-61051",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:44.226Z",
+      "lastError": null
     },
     "Moita": {
       "cpCode": "94-95109",
-      "byTrainType": {},
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:44.796Z",
+      "lastError": null
     },
     "Monte Abraão": {
       "cpCode": "94-60111",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:45.451Z",
+      "lastError": null
     },
     "Monte Estoril": {
       "cpCode": "94-69252",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 7
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 7
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:46.037Z",
+      "lastError": null
     },
     "Moscavide": {
       "cpCode": "94-31047",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:46.662Z",
+      "lastError": null
     },
     "Oeiras": {
       "cpCode": "94-69179",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:47.277Z",
+      "lastError": null
     },
     "Paço de Arcos": {
       "cpCode": "94-69146",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:48.177Z",
+      "lastError": null
     },
     "Palmela": {
       "cpCode": "94-68080",
-      "byTrainType": {},
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:48.780Z",
+      "lastError": null
     },
     "Parede": {
       "cpCode": "94-69203",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:49.377Z",
+      "lastError": null
     },
     "Penteado": {
       "cpCode": "94-95125",
-      "byTrainType": {},
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:49.960Z",
+      "lastError": null
     },
     "Portela de Sintra": {
       "cpCode": "94-61093",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:50.555Z",
+      "lastError": null
     },
     "Povoa": {
       "cpCode": "94-31146",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        },
+        "Regional": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 7
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:51.173Z",
+      "lastError": null
     },
     "Praça do Quebedo": {
       "cpCode": "94-68130",
-      "byTrainType": {},
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:51.757Z",
+      "lastError": null
     },
     "Queluz - Belas": {
       "cpCode": "94-60103",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 9,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 9,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:52.392Z",
+      "lastError": null
     },
     "Reboleira": {
       "cpCode": "94-60095",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:53.078Z",
+      "lastError": null
     },
     "Reguengo - Vale da Pedra - Pontevel": {
       "cpCode": "94-33084",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:53.649Z",
+      "lastError": null
     },
     "Rio de Mouro": {
       "cpCode": "94-61044",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:54.323Z",
+      "lastError": null
     },
     "Roma - Areeiro": {
       "cpCode": "94-66035",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:54.966Z",
+      "lastError": null
     },
     "Sacavem": {
       "cpCode": "94-31062",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:55.574Z",
+      "lastError": null
     },
     "Santa Cruz - Damaia": {
       "cpCode": "94-60038",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:56.223Z",
+      "lastError": null
     },
     "Santa Iria": {
       "cpCode": "94-31112",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:56.835Z",
+      "lastError": null
     },
     "Santo Amaro": {
       "cpCode": "94-69161",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:57.489Z",
+      "lastError": null
     },
     "Santos": {
       "cpCode": "94-69013",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 5
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 5
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:58.115Z",
+      "lastError": null
     },
     "Sete Rios": {
       "cpCode": "94-66076",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:58.879Z",
+      "lastError": null
     },
     "Virtudes": {
       "cpCode": "94-33043",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 3
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:10:59.461Z",
+      "lastError": null
     },
     "Mafra": {
       "cpCode": "94-62166",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:00.023Z",
+      "lastError": null
     },
     "Pragal": {
       "cpCode": "94-17087",
@@ -5606,75 +6087,105 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:00.604Z",
+      "lastError": null
     },
     "Pinhal Novo": {
       "cpCode": "94-68007",
-      "byTrainType": {},
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:01.192Z",
+      "lastError": null
     },
     "Barreiro": {
       "cpCode": "94-95000",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        }
       },
-      "successfulSamples": 0,
+      "totals": {
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:01.805Z",
+      "lastError": null
     },
     "Torres Vedras": {
       "cpCode": "94-62471",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:02.450Z",
+      "lastError": null
     },
     "Mira Sintra-Meleças": {
       "cpCode": "94-62042",
-      "byTrainType": {},
+      "byTrainType": {
+        "Urbano": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:03.015Z",
+      "lastError": null
     },
     "Abrantes": {
       "cpCode": "94-52001",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:03.592Z",
+      "lastError": null
     },
     "Portalegre": {
       "cpCode": "94-57000",
@@ -5684,10 +6195,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:04.170Z",
+      "lastError": null
     },
     "Elvas": {
       "cpCode": "94-57497",
@@ -5697,10 +6208,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:04.785Z",
+      "lastError": null
     },
     "Vendas Novas": {
       "cpCode": "94-72009",
@@ -5710,10 +6221,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:05.367Z",
+      "lastError": null
     },
     "Olhão": {
       "cpCode": "94-73106",
@@ -5723,23 +6234,29 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:05.922Z",
+      "lastError": null
     },
     "Loulé": {
       "cpCode": "94-78238",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:06.493Z",
+      "lastError": null
     },
     "Silves": {
       "cpCode": "94-90183",
@@ -5749,10 +6266,10 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 0,
+      "successfulSamples": 1,
       "failedSamples": 1,
-      "lastSampleAt": null,
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-20T11:11:07.041Z",
+      "lastError": null
     }
   }
 }

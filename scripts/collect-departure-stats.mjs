@@ -6,6 +6,8 @@
  *   npm run stats:departures -- --limit 5
  *   npm run stats:departures -- --station "Porto-Campanhã"
  *   npm run stats:departures -- --dry-run
+ *
+ * Stations are shuffled each run so partial runs (--limit or timeouts) spread across the network.
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -68,6 +70,15 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+/** Fisher–Yates shuffle (mutates array). */
+function shuffleInPlace(items) {
+  for (let i = items.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [items[i], items[j]] = [items[j], items[i]];
+  }
+  return items;
+}
+
 const cpCodes = parseCpStationCodes(readFileSync(join(root, "src/data/cpStationCodes.ts"), "utf8"));
 const stations = parseAllStationsFromRepo(root);
 
@@ -83,6 +94,8 @@ if (stationFilter) {
       entry.cpCode.includes(needle),
   );
 }
+
+shuffleInPlace(targets);
 
 if (Number.isFinite(limit) && limit > 0) {
   targets = targets.slice(0, limit);
