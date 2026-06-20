@@ -105,7 +105,7 @@ const Index = () => {
         <div className="relative mx-auto max-w-5xl">
           <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
             <div className="min-w-0">
-              <h1 className="mb-2 font-display text-3xl md:mb-4 md:text-5xl">
+              <h1 className="mb-2 font-display text-3xl tracking-tight hero-title-shadow md:mb-4 md:text-5xl lg:text-6xl lg:tracking-normal">
                 <a
                   href="/"
                   onClick={(e) => {
@@ -114,10 +114,19 @@ const Index = () => {
                       window.location.reload();
                     }
                   }}
-                  className="inline-flex items-center gap-3 text-primary-foreground transition-opacity hover:opacity-90"
+                  className="group inline-flex items-center gap-3 text-primary-foreground no-underline transition-[opacity,gap] hover:gap-3.5 hover:opacity-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary-foreground md:gap-3.5"
                 >
-                  <TrainFront className="h-7 w-7 shrink-0 md:h-8 md:w-8" aria-hidden="true" />
-                  {messages.site.name}
+                  <TrainFront
+                    className="h-7 w-7 shrink-0 transition-transform group-hover:scale-105 md:h-8 md:w-8 lg:h-9 lg:w-9"
+                    aria-hidden="true"
+                  />
+                  <span className="flex flex-col gap-1.5 md:gap-2">
+                    <span>{messages.site.name}</span>
+                    <span
+                      className="h-0.5 w-12 rounded-full bg-secondary transition-[width] group-hover:w-16 md:w-16 lg:w-20 lg:group-hover:w-24"
+                      aria-hidden="true"
+                    />
+                  </span>
                 </a>
               </h1>
               <p className="max-w-2xl text-lg text-primary-foreground/90">
