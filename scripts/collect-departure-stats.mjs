@@ -121,6 +121,8 @@ beginDepartureStatsRun(store);
 
 let ok = 0;
 let failed = 0;
+let consecutiveFailures = 0;
+let stoppedEarly = false;
 
 for (const { station, cpCode } of targets) {
   const label = `${station.name} (${cpCode})`;
@@ -139,14 +141,23 @@ for (const { station, cpCode } of targets) {
     );
     mergeStationSnapshot(store, station.name, cpCode, snapshot);
     ok += 1;
+    consecutiveFailures = 0;
     console.log(
       `OK ${label}: +${snapshot.totals.departures} dep, +${snapshot.totals.arrivals} arr, +${snapshot.totals.delayMinutes} delay min`,
     );
   } catch (error) {
     failed += 1;
+    consecutiveFailures += 1;
     const message = error instanceof Error ? error.message : String(error);
     recordStationSampleFailure(store, station.name, cpCode, message);
     console.error(`FAIL ${label}: ${message}`);
+    if (consecutiveFailures >= CONSECUTIVE_FAILURE_LIMIT) {
+      stoppedEarly = true;
+      console.error(
+        `Stopping after ${CONSECUTIVE_FAILURE_LIMIT} consecutive failures — skipping remaining stations.`,
+      );
+      break;
+    }
   }
 
   if (delayMs > 0) {
@@ -158,8 +169,11 @@ if (!dryRun) {
   saveStore(store);
 }
 
+const skipped = stoppedEarly ? targets.length - ok - failed : 0;
+const earlyNote = stoppedEarly ? `, ${skipped} skipped after ${CONSECUTIVE_FAILURE_LIMIT} consecutive failures` : "";
+
 console.log(
   dryRun
     ? `Dry run: ${ok} station(s) planned (run #${store.runCount} not saved)`
-    : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed → ${statsPath} (+ reliability scores)`,
+    : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed${earlyNote} → ${statsPath} (+ reliability scores)`,
 );

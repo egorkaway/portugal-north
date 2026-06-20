@@ -79,7 +79,7 @@ export const pt: Messages = {
     yesimNote: "Ligação de parceiro · abre a Yesim num novo separador",
     reliabilityTitle: "Pontuação de fiabilidade",
     reliabilityBody:
-      "Com base nos atrasos acumulados das nossas amostras de partidas em {{runCount}} execuções da rede.",
+      "Com base nos atrasos acumulados das nossas amostras de partidas em tempo real na rede.",
     reliabilityScale: "10 = menos atrasos nos nossos dados · 1 = mais atrasos",
     reliabilityLoading: "A carregar pontuação de fiabilidade…",
   },

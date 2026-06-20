@@ -79,7 +79,7 @@ export const en: Messages = {
     yesimNote: "Partner link · opens Yesim in a new tab",
     reliabilityTitle: "Reliability score",
     reliabilityBody:
-      "Based on cumulative delays from our live departure samples across {{runCount}} network runs.",
+      "Based on cumulative delays from our live departure samples across the network.",
     reliabilityScale: "10 = fewest delays in our data · 1 = most delays",
     reliabilityLoading: "Loading reliability score…",
   },

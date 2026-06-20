@@ -79,7 +79,7 @@ export const ca: Messages = {
     yesimNote: "Enllaç de soci · obre Yesim en una pestanya nova",
     reliabilityTitle: "Puntuació de fiabilitat",
     reliabilityBody:
-      "Basada en els retards acumulats de les nostres mostres de sortides en {{runCount}} execucions de la xarxa.",
+      "Basada en els retards acumulats de les nostres mostres de sortides en temps real a la xarxa.",
     reliabilityScale: "10 = menys retards en les nostres dades · 1 = més retards",
     reliabilityLoading: "Carregant puntuació de fiabilitat…",
   },

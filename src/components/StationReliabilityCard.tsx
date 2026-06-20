@@ -8,7 +8,7 @@ import { useLocale } from "@/i18n/LocaleProvider";
 
 export function StationReliabilityCard({ stationName }: { stationName: string }) {
   const { t } = useLocale();
-  const { score, hasCpCode, isLoading, isError, runCount } = useReliabilityScore(stationName);
+  const { score, hasCpCode, isLoading, isError } = useReliabilityScore(stationName);
 
   if (!hasCpCode || isError) return null;
   if (isLoading) {
@@ -38,7 +38,7 @@ export function StationReliabilityCard({ stationName }: { stationName: string })
             {t("station.reliabilityTitle")}
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">
-            {t("station.reliabilityBody", { runCount })}
+            {t("station.reliabilityBody")}
           </p>
           <div className="mt-4 flex items-end gap-3">
             <p className={`text-4xl font-semibold tabular-nums ${reliabilityScoreTone(score)}`}>

@@ -20,6 +20,5 @@ export function useReliabilityScore(stationName: string) {
     ...query,
     score,
     hasCpCode: Boolean(cpCode),
-    runCount: query.data?.runCount ?? 0,
   };
 }

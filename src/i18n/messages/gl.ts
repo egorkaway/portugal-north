@@ -79,7 +79,7 @@ export const gl: Messages = {
     yesimNote: "Ligazón de socio · abre Yesim nun novo separador",
     reliabilityTitle: "Puntuación de fiabilidade",
     reliabilityBody:
-      "Baseada nos atrasos acumulados das nosas mostras de saídas en {{runCount}} execucións da rede.",
+      "Baseada nos atrasos acumulados das nosas mostras de saídas en tempo real na rede.",
     reliabilityScale: "10 = menos atrasos nos nosos datos · 1 = máis atrasos",
     reliabilityLoading: "Cargando puntuación de fiabilidade…",
   },
