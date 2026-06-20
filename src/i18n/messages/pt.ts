@@ -128,10 +128,14 @@ export const pt: Messages = {
     noStationDownvotes: "Sem votos negativos.",
     noHotelUpvotes: "Sem votos positivos. Vote numa página de estação para classificar hotéis.",
     noHotelDownvotes: "Sem votos negativos.",
-    offlineCached:
-      "Offline — a mostrar rankings da comunidade guardados da sua última visita. Novos votos neste dispositivo serão sincronizados quando voltar a estar online.",
-    offlineDevice:
-      "Offline — a mostrar rankings apenas com os seus votos neste dispositivo.",
+    cachedFallback:
+      "Os rankings da comunidade estão temporariamente indisponíveis — a mostrar totais guardados da sua última visita.",
+    cachedFallbackOffline:
+      "Está offline — a mostrar rankings da comunidade guardados da sua última visita. Novos votos neste dispositivo serão sincronizados quando voltar a estar online.",
+    deviceFallback:
+      "Os rankings da comunidade estão temporariamente indisponíveis — a mostrar totais apenas dos seus votos neste dispositivo.",
+    deviceFallbackOffline:
+      "Está offline — a mostrar rankings apenas com os seus votos neste dispositivo.",
   },
   tickets: {
     title: "Bilhetes e preços",

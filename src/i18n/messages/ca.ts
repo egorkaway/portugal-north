@@ -128,9 +128,13 @@ export const ca: Messages = {
     noStationDownvotes: "Sense vots negatius.",
     noHotelUpvotes: "Sense vots positius. Vota en una pàgina d'estació per valorar hotels.",
     noHotelDownvotes: "Sense vots negatius.",
-    offlineCached:
+    cachedFallback:
+      "Els rankings de la comunitat no estan disponibles temporalment — es mostren totals desats de la darrera visita.",
+    cachedFallbackOffline:
       "Sense connexió — es mostren rankings de la comunitat desats de la darrera visita. Els vots nous en aquest dispositiu es sincronitzaran quan tornis a estar en línia.",
-    offlineDevice:
+    deviceFallback:
+      "Els rankings de la comunitat no estan disponibles temporalment — es mostren totals només dels teus vots en aquest dispositiu.",
+    deviceFallbackOffline:
       "Sense connexió — es mostren rankings només amb els teus vots en aquest dispositiu.",
   },
   tickets: {

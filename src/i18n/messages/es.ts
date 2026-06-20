@@ -128,9 +128,13 @@ export const es: Messages = {
     noStationDownvotes: "Sin votos negativos.",
     noHotelUpvotes: "Sin votos positivos. Vota en una página de estación para valorar hoteles.",
     noHotelDownvotes: "Sin votos negativos.",
-    offlineCached:
+    cachedFallback:
+      "Los rankings de la comunidad no están disponibles temporalmente — mostrando totales guardados de tu última visita.",
+    cachedFallbackOffline:
       "Sin conexión — mostrando rankings de la comunidad guardados de tu última visita. Los votos nuevos en este dispositivo se sincronizarán cuando vuelvas a estar en línea.",
-    offlineDevice:
+    deviceFallback:
+      "Los rankings de la comunidad no están disponibles temporalmente — mostrando totales solo de tus votos en este dispositivo.",
+    deviceFallbackOffline:
       "Sin conexión — mostrando rankings solo con tus votos en este dispositivo.",
   },
   tickets: {

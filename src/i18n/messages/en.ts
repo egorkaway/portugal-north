@@ -127,10 +127,14 @@ export const en: Messages = {
     noStationDownvotes: "No downvotes yet.",
     noHotelUpvotes: "No upvotes yet. Vote on a station page to rate hotels.",
     noHotelDownvotes: "No downvotes yet.",
-    offlineCached:
-      "Offline — showing community rankings saved from your last visit. New votes on this device will sync when you are back online.",
-    offlineDevice:
-      "Offline — showing rankings from your votes on this device only.",
+    cachedFallback:
+      "Community rankings are temporarily unavailable — showing saved totals from your last visit.",
+    cachedFallbackOffline:
+      "You're offline — showing community rankings saved from your last visit. New votes on this device will sync when you're back online.",
+    deviceFallback:
+      "Community rankings are temporarily unavailable — showing totals from your votes on this device only.",
+    deviceFallbackOffline:
+      "You're offline — showing rankings from your votes on this device only.",
   },
   tickets: {
     title: "Tickets & prices",

@@ -121,8 +121,10 @@ export type Messages = {
     noStationDownvotes: string;
     noHotelUpvotes: string;
     noHotelDownvotes: string;
-    offlineCached: string;
-    offlineDevice: string;
+    cachedFallback: string;
+    cachedFallbackOffline: string;
+    deviceFallback: string;
+    deviceFallbackOffline: string;
   };
   tickets: {
     title: string;
