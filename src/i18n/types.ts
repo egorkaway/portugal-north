@@ -75,6 +75,10 @@ export type Messages = {
     yesimBody: string;
     yesimCta: string;
     yesimNote: string;
+    reliabilityTitle: string;
+    reliabilityBody: string;
+    reliabilityScale: string;
+    reliabilityLoading: string;
   };
   departures: {
     title: string;

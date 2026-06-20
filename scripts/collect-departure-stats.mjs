@@ -27,6 +27,9 @@ const {
   mergeStationSnapshot,
   recordStationSampleFailure,
 } = await import("../server/lib/departureStats.ts");
+const { buildReliabilityScoresManifest } = await import("../server/lib/reliabilityScore.ts");
+
+const reliabilityPath = join(root, "public/data/reliability-scores.json");
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
@@ -64,6 +67,11 @@ function loadStore() {
 function saveStore(store) {
   mkdirSync(dirname(statsPath), { recursive: true });
   writeFileSync(statsPath, `${JSON.stringify(store, null, 2)}\n`);
+  mkdirSync(dirname(reliabilityPath), { recursive: true });
+  writeFileSync(
+    reliabilityPath,
+    `${JSON.stringify(buildReliabilityScoresManifest(store), null, 2)}\n`,
+  );
 }
 
 function sleep(ms) {
@@ -151,5 +159,5 @@ if (!dryRun) {
 console.log(
   dryRun
     ? `Dry run: ${ok} station(s) planned (run #${store.runCount} not saved)`
-    : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed → ${statsPath}`,
+    : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed → ${statsPath} (+ reliability scores)`,
 );

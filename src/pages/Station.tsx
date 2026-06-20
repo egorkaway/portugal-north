@@ -15,6 +15,7 @@ import { HotelList } from "@/components/HotelList";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SitePageNavLinks } from "@/components/SitePageNavLinks";
 import { StationDepartures } from "@/components/StationDepartures";
+import { StationReliabilityCard } from "@/components/StationReliabilityCard";
 import { StationViewTracker } from "@/components/StationViewTracker";
 import { StationImageVote } from "@/components/StationImageVote";
 import { StationPhoto } from "@/components/StationPhoto";
@@ -148,6 +149,7 @@ const Station = () => {
           </div>
 
           <StationDepartures stationName={station.name} />
+          <StationReliabilityCard stationName={station.name} />
 
           <NearestLongDistanceStations station={station} />
 

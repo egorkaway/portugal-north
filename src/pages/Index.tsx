@@ -118,12 +118,12 @@ const Index = () => {
               {messages.site.name}
             </a>
           </h1>
-          <div className="mt-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-            <p className="text-primary-foreground/90 text-lg max-w-2xl">
+          <div className="mt-2 flex flex-col gap-3 md:gap-4">
+            <p className="max-w-2xl text-lg text-primary-foreground/90">
               Major CP stations from the Minho to the Algarve — with maps and
               budget hotels within walking distance.
             </p>
-            <SitePageNavLinks variant="hero" className="shrink-0" />
+            <SitePageNavLinks variant="hero" className="self-start md:self-end" />
           </div>
         </div>
       </header>

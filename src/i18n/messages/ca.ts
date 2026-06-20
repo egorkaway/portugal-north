@@ -77,6 +77,11 @@ export const ca: Messages = {
       "Arriba amb dades mòbils a punt — útil per a mapes, apps de transport i missatges abans d'arribar al centre.",
     yesimCta: "Obtenir eSIM Yesim",
     yesimNote: "Enllaç de soci · obre Yesim en una pestanya nova",
+    reliabilityTitle: "Puntuació de fiabilitat",
+    reliabilityBody:
+      "Basada en els retards acumulats de les nostres mostres de sortides en {{runCount}} execucions de la xarxa.",
+    reliabilityScale: "10 = menys retards en les nostres dades · 1 = més retards",
+    reliabilityLoading: "Carregant puntuació de fiabilitat…",
   },
   departures: {
     title: "Pròximes sortides",

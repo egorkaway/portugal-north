@@ -77,6 +77,11 @@ export const en: Messages = {
       "Land with mobile data ready — useful for maps, ride apps, and messages before you reach the city centre.",
     yesimCta: "Get a Yesim eSIM",
     yesimNote: "Partner link · opens Yesim in a new tab",
+    reliabilityTitle: "Reliability score",
+    reliabilityBody:
+      "Based on cumulative delays from our live departure samples across {{runCount}} network runs.",
+    reliabilityScale: "10 = fewest delays in our data · 1 = most delays",
+    reliabilityLoading: "Loading reliability score…",
   },
   departures: {
     title: "Next departures",

@@ -77,6 +77,11 @@ export const pt: Messages = {
       "Chegue com dados móveis ativos — útil para mapas, apps de transporte e mensagens antes de chegar ao centro.",
     yesimCta: "Obter eSIM Yesim",
     yesimNote: "Ligação de parceiro · abre a Yesim num novo separador",
+    reliabilityTitle: "Pontuação de fiabilidade",
+    reliabilityBody:
+      "Com base nos atrasos acumulados das nossas amostras de partidas em {{runCount}} execuções da rede.",
+    reliabilityScale: "10 = menos atrasos nos nossos dados · 1 = mais atrasos",
+    reliabilityLoading: "A carregar pontuação de fiabilidade…",
   },
   departures: {
     title: "Próximas partidas",
