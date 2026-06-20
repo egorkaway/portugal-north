@@ -102,28 +102,30 @@ const Index = () => {
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-primary/50" />
-        <div className="relative max-w-5xl mx-auto">
-          <h1 className="mb-2 font-display text-3xl md:mb-4 md:text-5xl">
-            <a
-              href="/"
-              onClick={(e) => {
-                if (window.location.pathname === "/") {
-                  e.preventDefault();
-                  window.location.reload();
-                }
-              }}
-              className="inline-flex items-center gap-3 text-primary-foreground transition-opacity hover:opacity-90"
-            >
-              <TrainFront className="h-7 w-7 shrink-0 md:h-8 md:w-8" aria-hidden="true" />
-              {messages.site.name}
-            </a>
-          </h1>
-          <div className="mt-2 flex flex-col gap-3 md:gap-4">
-            <p className="max-w-2xl text-lg text-primary-foreground/90">
-              Major CP stations from the Minho to the Algarve — with maps and
-              budget hotels within walking distance.
-            </p>
-            <SitePageNavLinks variant="hero" className="self-start md:self-end" />
+        <div className="relative mx-auto max-w-5xl">
+          <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
+            <div className="min-w-0">
+              <h1 className="mb-2 font-display text-3xl md:mb-4 md:text-5xl">
+                <a
+                  href="/"
+                  onClick={(e) => {
+                    if (window.location.pathname === "/") {
+                      e.preventDefault();
+                      window.location.reload();
+                    }
+                  }}
+                  className="inline-flex items-center gap-3 text-primary-foreground transition-opacity hover:opacity-90"
+                >
+                  <TrainFront className="h-7 w-7 shrink-0 md:h-8 md:w-8" aria-hidden="true" />
+                  {messages.site.name}
+                </a>
+              </h1>
+              <p className="max-w-2xl text-lg text-primary-foreground/90">
+                Major CP stations from the Minho to the Algarve — with maps and
+                budget hotels within walking distance.
+              </p>
+            </div>
+            <SitePageNavLinks variant="hero" className="shrink-0 self-start" />
           </div>
         </div>
       </header>

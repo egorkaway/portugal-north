@@ -87,7 +87,7 @@ const Station = () => {
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
-            <div className="mb-3 flex flex-col gap-2 sm:mb-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mb-3 sm:mb-4">
               <Link
                 to="/"
                 className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
@@ -95,7 +95,6 @@ const Station = () => {
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 {t("nav.allStations")}
               </Link>
-              <SitePageNavLinks variant="hero" />
             </div>
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
@@ -105,7 +104,8 @@ const Station = () => {
                   {station.lines.join(" · ")}
                 </p>
               </div>
-              <div className="flex flex-col items-end gap-2 shrink-0">
+              <div className="flex shrink-0 flex-col items-end gap-2">
+                <SitePageNavLinks variant="hero" />
                 <VoteButtons
                   vote={vote}
                   onUp={() => cast("up")}

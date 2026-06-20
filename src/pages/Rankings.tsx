@@ -20,7 +20,7 @@ const Rankings = () => {
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
-            <div className="mb-3 flex flex-col gap-2 sm:mb-4 sm:flex-row sm:items-center sm:justify-between">
+            <div className="mb-3 sm:mb-4">
               <Link
                 to="/"
                 className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
@@ -28,14 +28,16 @@ const Rankings = () => {
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 {t("nav.backToStations")}
               </Link>
-              <SitePageNavLinks variant="hero" hide={["rankings"]} />
             </div>
-            <div className="flex items-center gap-3">
-              <TrainFront className="h-7 w-7 shrink-0" aria-hidden="true" />
-              <div>
-                <h1 className="font-display text-2xl md:text-4xl">{t("rankings.title")}</h1>
-                <p className="mt-1 text-sm text-primary-foreground/85">{t("rankings.subtitle")}</p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+              <div className="flex min-w-0 items-start gap-3">
+                <TrainFront className="h-7 w-7 shrink-0" aria-hidden="true" />
+                <div>
+                  <h1 className="font-display text-2xl md:text-4xl">{t("rankings.title")}</h1>
+                  <p className="mt-1 text-sm text-primary-foreground/85">{t("rankings.subtitle")}</p>
+                </div>
               </div>
+              <SitePageNavLinks variant="hero" hide={["rankings"]} className="shrink-0" />
             </div>
           </div>
         </header>
