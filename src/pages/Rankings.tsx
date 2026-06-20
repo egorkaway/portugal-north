@@ -7,6 +7,7 @@ import { ArrowLeft, TrainFront } from "lucide-react";
 import { Link } from "react-router-dom";
 import { JsonLd } from "@/components/JsonLd";
 import { RankingsPanel } from "@/components/RankingsPanel";
+import { ReliabilityRankingsPanel } from "@/components/ReliabilityRankingsPanel";
 import { BuildNumberLabel } from "@/components/BuildNumberLabel";
 import { buildRankingsStructuredData } from "@/lib/structuredData";
 
@@ -47,6 +48,7 @@ const Rankings = () => {
             <p className="text-muted-foreground">{t("rankings.intro")}</p>
           </div>
 
+          <ReliabilityRankingsPanel />
           <RankingsPanel alwaysShow showDetailedError />
           <BuildNumberLabel />
         </main>

@@ -142,6 +142,14 @@ export const pt: Messages = {
     deviceFallbackOffline:
       "Está offline — a mostrar rankings apenas com os seus votos neste dispositivo.",
     buildInfo: "Build {{buildNumber}}",
+    reliabilityRankings: "Rankings de fiabilidade",
+    reliabilityIntro:
+      "Com base nos atrasos acumulados das nossas amostras de partidas CP em tempo real. 10 = menos atrasos nos nossos dados; 1 = mais atrasos.",
+    reliabilityLoading: "A carregar rankings de fiabilidade…",
+    reliabilityUnavailable: "Os rankings de fiabilidade estão temporariamente indisponíveis.",
+    noReliabilityData: "Ainda não há dados de fiabilidade.",
+    mostReliable: "Top 10 mais fiáveis",
+    leastReliable: "Top 10 menos fiáveis",
   },
   tickets: {
     title: "Bilhetes e preços",

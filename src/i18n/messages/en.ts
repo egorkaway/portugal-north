@@ -141,6 +141,14 @@ export const en: Messages = {
     deviceFallbackOffline:
       "You're offline — showing rankings from your votes on this device only.",
     buildInfo: "Build {{buildNumber}}",
+    reliabilityRankings: "Reliability rankings",
+    reliabilityIntro:
+      "Based on cumulative delays from our live CP departure samples. 10 means fewest delays in our data; 1 means most.",
+    reliabilityLoading: "Loading reliability rankings…",
+    reliabilityUnavailable: "Reliability rankings are temporarily unavailable.",
+    noReliabilityData: "No reliability data yet.",
+    mostReliable: "Top 10 most reliable",
+    leastReliable: "Top 10 least reliable",
   },
   tickets: {
     title: "Tickets & prices",

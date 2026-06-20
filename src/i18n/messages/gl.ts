@@ -142,6 +142,14 @@ export const gl: Messages = {
     deviceFallbackOffline:
       "Sen conexión — móstranse rankings só cos teus votos neste dispositivo.",
     buildInfo: "Build {{buildNumber}}",
+    reliabilityRankings: "Rankings de fiabilidade",
+    reliabilityIntro:
+      "Baseado nos atrasos acumulados das nosas mostras de saídas CP en tempo real. 10 = menos atrasos nos nosos datos; 1 = máis atrasos.",
+    reliabilityLoading: "Cargando rankings de fiabilidade…",
+    reliabilityUnavailable: "Os rankings de fiabilidade non están dispoñibles temporalmente.",
+    noReliabilityData: "Aínda non hai datos de fiabilidade.",
+    mostReliable: "Top 10 máis fiábeis",
+    leastReliable: "Top 10 menos fiábeis",
   },
   tickets: {
     title: "Billetes e prezos",

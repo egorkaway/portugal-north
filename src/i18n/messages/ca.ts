@@ -142,6 +142,14 @@ export const ca: Messages = {
     deviceFallbackOffline:
       "Sense connexió — es mostren rankings només amb els teus vots en aquest dispositiu.",
     buildInfo: "Build {{buildNumber}}",
+    reliabilityRankings: "Rankings de fiabilitat",
+    reliabilityIntro:
+      "Basat en els retards acumulats de les nostres mostres de sortides CP en temps real. 10 = menys retards en les nostres dades; 1 = més retards.",
+    reliabilityLoading: "Carregant rankings de fiabilitat…",
+    reliabilityUnavailable: "Els rankings de fiabilitat no estan disponibles temporalment.",
+    noReliabilityData: "Encara no hi ha dades de fiabilitat.",
+    mostReliable: "Top 10 més fiables",
+    leastReliable: "Top 10 menys fiables",
   },
   tickets: {
     title: "Bitllets i preus",

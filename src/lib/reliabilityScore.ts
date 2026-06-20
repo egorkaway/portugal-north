@@ -35,3 +35,28 @@ export function reliabilityScoreBarTone(score: number): string {
   if (score >= 5) return "bg-amber-500";
   return "bg-destructive";
 }
+
+export type RankedReliabilityStation = {
+  name: string;
+  score: number;
+};
+
+export function getTopReliabilityStations(
+  scores: Record<string, number>,
+  limit = 10,
+): RankedReliabilityStation[] {
+  return Object.entries(scores)
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .slice(0, limit)
+    .map(([name, score]) => ({ name, score }));
+}
+
+export function getBottomReliabilityStations(
+  scores: Record<string, number>,
+  limit = 10,
+): RankedReliabilityStation[] {
+  return Object.entries(scores)
+    .sort((a, b) => a[1] - b[1] || a[0].localeCompare(b[0]))
+    .slice(0, limit)
+    .map(([name, score]) => ({ name, score }));
+}

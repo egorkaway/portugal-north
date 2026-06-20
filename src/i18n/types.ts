@@ -130,6 +130,13 @@ export type Messages = {
     deviceFallback: string;
     deviceFallbackOffline: string;
     buildInfo: string;
+    reliabilityRankings: string;
+    reliabilityIntro: string;
+    reliabilityLoading: string;
+    reliabilityUnavailable: string;
+    noReliabilityData: string;
+    mostReliable: string;
+    leastReliable: string;
   };
   tickets: {
     title: string;
