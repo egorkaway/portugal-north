@@ -125,6 +125,7 @@ export type Messages = {
     cachedFallbackOffline: string;
     deviceFallback: string;
     deviceFallbackOffline: string;
+    buildInfo: string;
   };
   tickets: {
     title: string;

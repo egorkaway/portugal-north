@@ -23,7 +23,8 @@
     "hotels:audit-links:fix": "node scripts/audit-hotel-links.mjs --fix",
     "hotels:audit-links:dry": "node scripts/audit-hotel-links.mjs --dry-run",
     "hotels:apply-audit-report": "node scripts/apply-hotel-audit-report.mjs",
-    "hotels:recheck-ambiguous": "node scripts/recheck-ambiguous-hotel-links.mjs"
+    "hotels:recheck-ambiguous": "node scripts/recheck-ambiguous-hotel-links.mjs",
+    "stats:departures": "node --import tsx scripts/collect-departure-stats.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

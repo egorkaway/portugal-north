@@ -7,6 +7,7 @@ import { ArrowLeft, TrainFront } from "lucide-react";
 import { Link } from "react-router-dom";
 import { JsonLd } from "@/components/JsonLd";
 import { RankingsPanel } from "@/components/RankingsPanel";
+import { BuildNumberLabel } from "@/components/BuildNumberLabel";
 import { buildRankingsStructuredData } from "@/lib/structuredData";
 
 const Rankings = () => {
@@ -45,6 +46,7 @@ const Rankings = () => {
           </div>
 
           <RankingsPanel alwaysShow showDetailedError />
+          <BuildNumberLabel />
         </main>
 
         <SiteFooter showIntro={false} />

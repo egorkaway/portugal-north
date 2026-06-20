@@ -136,6 +136,7 @@ export const gl: Messages = {
       "Os rankings da comunidade non están dispoñibles temporalmente — móstranse totais só cos teus votos neste dispositivo.",
     deviceFallbackOffline:
       "Sen conexión — móstranse rankings só cos teus votos neste dispositivo.",
+    buildInfo: "Build {{buildNumber}}",
   },
   tickets: {
     title: "Billetes e prezos",

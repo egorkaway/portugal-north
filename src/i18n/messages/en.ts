@@ -135,6 +135,7 @@ export const en: Messages = {
       "Community rankings are temporarily unavailable — showing totals from your votes on this device only.",
     deviceFallbackOffline:
       "You're offline — showing rankings from your votes on this device only.",
+    buildInfo: "Build {{buildNumber}}",
   },
   tickets: {
     title: "Tickets & prices",

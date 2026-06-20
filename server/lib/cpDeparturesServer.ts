@@ -8,10 +8,15 @@ import { cpAuthHeaders, getCpTravelConfig } from "./cpConfig.js";
 
 const STATION_CODE_RE = /^94-\d+$/;
 
-export async function fetchCpStationDepartures(
+export type CpStationTimetable = {
+  stationCode: string;
+  timetableDate: string;
+  response: CpTimetableResponse;
+};
+
+async function fetchCpStationTimetableResponse(
   stationCode: string,
-  limit = 3,
-): Promise<StationDeparture[]> {
+): Promise<CpStationTimetable> {
   if (!STATION_CODE_RE.test(stationCode)) {
     throw new Error("invalid_station_code");
   }
@@ -30,6 +35,20 @@ export async function fetchCpStationDepartures(
     throw new Error(`cp_api_http_${res.status}`);
   }
 
-  const data = (await res.json()) as CpTimetableResponse;
-  return parseUpcomingDepartures(data, limit);
+  const response = (await res.json()) as CpTimetableResponse;
+  return { stationCode, timetableDate: date, response };
+}
+
+export async function fetchCpStationTimetable(
+  stationCode: string,
+): Promise<CpStationTimetable> {
+  return fetchCpStationTimetableResponse(stationCode);
+}
+
+export async function fetchCpStationDepartures(
+  stationCode: string,
+  limit = 3,
+): Promise<StationDeparture[]> {
+  const { response } = await fetchCpStationTimetableResponse(stationCode);
+  return parseUpcomingDepartures(response, limit);
 }

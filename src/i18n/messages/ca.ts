@@ -136,6 +136,7 @@ export const ca: Messages = {
       "Els rankings de la comunitat no estan disponibles temporalment — es mostren totals només dels teus vots en aquest dispositiu.",
     deviceFallbackOffline:
       "Sense connexió — es mostren rankings només amb els teus vots en aquest dispositiu.",
+    buildInfo: "Build {{buildNumber}}",
   },
   tickets: {
     title: "Bitllets i preus",
