@@ -5,6 +5,10 @@ import {
   subscribeVoteSyncQueue,
 } from "@/lib/voteSyncQueue";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
+import {
+  shouldShowVoteSyncBanner,
+  useVoteSyncBannerGiveUp,
+} from "@/hooks/useVoteSyncBannerGiveUp";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 function usePendingVoteSyncCount() {
@@ -19,8 +23,9 @@ export function VoteSyncNotice() {
   const { t } = useLocale();
   const online = useOnlineStatus();
   const pending = usePendingVoteSyncCount();
+  const giveUp = useVoteSyncBannerGiveUp(pending, online);
 
-  if (pending === 0) return null;
+  if (!shouldShowVoteSyncBanner({ pending, online, giveUp })) return null;
 
   return (
     <p
