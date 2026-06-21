@@ -102,7 +102,8 @@ export const es: Messages = {
   },
   rankings: {
     title: "Rankings de la comunidad",
-    subtitle: "Estaciones y hoteles según los votos de visitantes en Portugal",
+    subtitle:
+      "Votos de visitantes en estaciones y hoteles, más fiabilidad de estaciones según retrasos CP en tiempo real en Portugal",
     intro:
       "Los rankings provienen de los votos en las estaciones y en las listas de hoteles de cada página.",
     communityTitle: "Rankings de la comunidad",

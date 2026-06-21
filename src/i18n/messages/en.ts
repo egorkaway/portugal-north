@@ -102,7 +102,8 @@ export const en: Messages = {
   },
   rankings: {
     title: "Community rankings",
-    subtitle: "Stations and hotels ranked by visitor votes across Portugal",
+    subtitle:
+      "Visitor votes for stations and hotels, plus station reliability from live CP delay data across Portugal",
     intro:
       "Rankings come from thumbs up and down on station cards and on hotel lists at each station page.",
     communityTitle: "Community rankings",

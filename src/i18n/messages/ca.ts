@@ -102,7 +102,8 @@ export const ca: Messages = {
   },
   rankings: {
     title: "Rankings de la comunitat",
-    subtitle: "Estacions i hotels segons els vots dels visitants a Portugal",
+    subtitle:
+      "Vots de visitants en estacions i hotels, més fiabilitat d'estacions segons retards CP en temps real a Portugal",
     intro:
       "Els rankings provenen dels vots a les estacions i a les llistes d'hotels de cada pàgina.",
     communityTitle: "Rankings de la comunitat",
