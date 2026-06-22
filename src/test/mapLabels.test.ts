@@ -34,6 +34,14 @@ describe("buildMapLabelPoints", () => {
     const faroStation = points.find((point) => point.id === "station-Faro");
 
     expect(faroAirport?.direction).toBe("top");
+    expect(faroAirport?.minZoomToShow).toBe(7);
     expect(faroStation?.direction).toBe("bottom");
+    expect(faroStation?.minZoomToShow).toBeUndefined();
+  });
+
+  it("requires closer zoom for Lisbon airport than Porto", () => {
+    const points = buildMapLabelPoints(stations, airportLabels);
+    expect(points.find((point) => point.id === "airport-LIS")?.minZoomToShow).toBe(7);
+    expect(points.find((point) => point.id === "airport-OPO")?.minZoomToShow).toBeUndefined();
   });
 });

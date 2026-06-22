@@ -19,6 +19,8 @@ export type MapLabelPoint = {
   showMarker: boolean;
   direction: "top" | "bottom" | "left" | "right";
   offset: [number, number];
+  /** Hide marker and label when map zoom is below this level. */
+  minZoomToShow?: number;
 };
 
 const STATION_LABEL_LAYOUT: Partial<
@@ -37,6 +39,14 @@ const AIRPORT_LABEL_LAYOUT: Partial<
   FAO: { direction: "top", offset: [0, -12] },
   OPO: { direction: "top", offset: [0, -12] },
   LIS: { direction: "right", offset: [12, 0] },
+};
+
+/** Southern/northern airport labels clutter the map when zoomed out past Portugal overview. */
+const AIRPORT_MIN_ZOOM_TO_SHOW: Partial<
+  Record<(typeof portugalAirports)[number]["iata"], number>
+> = {
+  FAO: 7,
+  LIS: 7,
 };
 
 export function buildMapLabelPoints(
@@ -58,6 +68,7 @@ export function buildMapLabelPoints(
       label: `${airportLabels[airport.iata]} (${airport.iata})`,
       kind: "airport",
       showMarker: true,
+      minZoomToShow: AIRPORT_MIN_ZOOM_TO_SHOW[airport.iata],
       ...layout,
     };
   });
