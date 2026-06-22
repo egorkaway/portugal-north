@@ -29,7 +29,7 @@ describe("fetchGlobalRatings", () => {
     expect(result.imageRatings.Aveiro).toEqual({ up: 5, down: 1 });
   });
 
-  it("throws when storage is not configured", async () => {
+  it("returns empty ratings when storage is not configured", async () => {
     vi.stubGlobal(
       "fetch",
       vi.fn().mockResolvedValue({
@@ -38,9 +38,10 @@ describe("fetchGlobalRatings", () => {
       }),
     );
 
-    await expect(fetchGlobalRatings()).rejects.toMatchObject({
-      code: "storage_not_configured",
-    });
+    const result = await fetchGlobalRatings();
+    expect(result.configured).toBe(false);
+    expect(result.ratings).toEqual({});
+    expect(result.hotelRatings).toEqual({});
   });
 
   it("throws on non-retryable HTTP errors", async () => {

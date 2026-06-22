@@ -12,6 +12,7 @@ export function getSitemapEntries(): SitemapEntry[] {
     { path: "/", changefreq: "weekly", priority: "1.0" },
     { path: "/rankings", changefreq: "daily", priority: "0.8" },
     { path: "/tickets", changefreq: "monthly", priority: "0.7" },
+    { path: "/map", changefreq: "weekly", priority: "0.75" },
     { path: "/privacy", changefreq: "monthly", priority: "0.5" },
     ...stations.map((station) => ({
       path: getStationPath(station),

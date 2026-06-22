@@ -38,14 +38,20 @@ export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
         >
           <LanguageSwitcher />
 
-          <p className="text-sm text-primary-foreground/80">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-primary-foreground/80">
+            <Link
+              to="/map"
+              className="underline underline-offset-4 transition-colors hover:text-primary-foreground"
+            >
+              {t("footer.stationMap")}
+            </Link>
             <Link
               to="/privacy"
               className="underline underline-offset-4 transition-colors hover:text-primary-foreground"
             >
               {t("footer.privacy")}
             </Link>
-          </p>
+          </div>
 
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-primary-foreground/60">

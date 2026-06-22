@@ -17,6 +17,7 @@ export const pt: Messages = {
     home: "Início",
     rankings: "Rankings",
     tickets: "Bilhetes",
+    map: "Mapa",
     mobile: "Navegação móvel",
     main: "Navegação principal",
   },
@@ -152,6 +153,21 @@ export const pt: Messages = {
     mostReliable: "Top 10 mais fiáveis",
     leastReliable: "Top 10 menos fiáveis",
   },
+  map: {
+    title: "Mapa de atividade das estações",
+    subtitle: "Hexágonos H3 dimensionados pelas partidas e chegadas amostradas em Portugal continental",
+    intro:
+      "Cada hexágono é uma célula H3 à volta de uma estação da nossa lista. Estações mais movimentadas (mais partidas e chegadas nas amostras CP) usam hexágonos maiores na resolução 5; as mais calmas usam hexágonos menores na resolução 9, com resolução 7 no meio.",
+    loading: "A carregar mapa…",
+    unavailable: "Os dados de atividade das estações estão temporariamente indisponíveis.",
+    legendTitle: "Tamanho do hexágono",
+    legendBusy: "Mais movimentada (H3 res. 5)",
+    legendMid: "Tráfego médio (H3 res. 7)",
+    legendQuiet: "Mais calma (H3 res. 9)",
+    tooltipMovements: "{{count}} partidas + chegadas (amostradas)",
+    tooltipResolution: "Resolução H3 {{resolution}}",
+    viewStation: "Ver estação",
+  },
   tickets: {
     title: "Bilhetes e preços",
     subtitle: "CP, Andante no Porto, navegante® em Lisboa e o que influencia o preço",
@@ -274,6 +290,7 @@ export const pt: Messages = {
     portuGuessDesc:
       "Aprenda português europeu com quizzes, listas de palavras e apps offline para iOS e Android.",
     privacy: "Política de privacidade",
+    stationMap: "Mapa de atividade das estações",
   },
   notFound: {
     title: "404",
@@ -299,6 +316,13 @@ export const pt: Messages = {
         "Como comprar bilhetes CP, passes Andante e navegante® nos metros do Porto e Lisboa, e o que influencia as tarifas.",
       ogDescription:
         "Bilhetes CP, zonas Andante e navegante® nos metros do Porto e de Lisboa.",
+    },
+    map: {
+      title: "Mapa de Atividade | Portugal de Comboio",
+      description:
+        "Mapa interativo das estações CP em Portugal continental com hexágonos H3 dimensionados por partidas e chegadas amostradas.",
+      ogDescription:
+        "Veja quais estações CP são mais movimentadas nas nossas amostras de partidas, num mapa H3 de Portugal.",
     },
     privacy: {
       title: "Política de Privacidade | Portugal de Comboio",

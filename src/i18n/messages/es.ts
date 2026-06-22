@@ -17,6 +17,7 @@ export const es: Messages = {
     home: "Inicio",
     rankings: "Rankings",
     tickets: "Billetes",
+    map: "Mapa",
     mobile: "Navegación móvil",
     main: "Navegación principal",
   },
@@ -152,6 +153,21 @@ export const es: Messages = {
     mostReliable: "Top 10 más fiables",
     leastReliable: "Top 10 menos fiables",
   },
+  map: {
+    title: "Mapa de actividad de estaciones",
+    subtitle: "Hexágonos H3 según salidas y llegadas muestreadas en Portugal continental",
+    intro:
+      "Cada hexágono es una celda H3 alrededor de una estación de nuestra lista. Las estaciones más activas (más salidas y llegadas en nuestras muestras CP) usan hexágonos mayores en resolución 5; las más tranquilas usan hexágonos menores en resolución 9, con resolución 7 en el medio.",
+    loading: "Cargando mapa…",
+    unavailable: "Los datos de actividad de estaciones no están disponibles temporalmente.",
+    legendTitle: "Tamaño del hexágono",
+    legendBusy: "Más activa (H3 res. 5)",
+    legendMid: "Tráfico medio (H3 res. 7)",
+    legendQuiet: "Más tranquila (H3 res. 9)",
+    tooltipMovements: "{{count}} salidas + llegadas (muestreadas)",
+    tooltipResolution: "Resolución H3 {{resolution}}",
+    viewStation: "Ver estación",
+  },
   tickets: {
     title: "Billetes y precios",
     subtitle: "CP, Andante en Oporto, navegante® en Lisboa y qué influye en el precio",
@@ -274,6 +290,7 @@ export const es: Messages = {
     portuGuessDesc:
       "Aprende portugués europeo con cuestionarios, listas de palabras y apps sin conexión para iOS y Android.",
     privacy: "Política de privacidad",
+    stationMap: "Mapa de actividad de estaciones",
   },
   notFound: {
     title: "404",
@@ -298,6 +315,13 @@ export const es: Messages = {
       description:
         "Cómo comprar billetes de tren de CP en Portugal y qué suele influir en el precio (AP, IC, Regional, Urban).",
       ogDescription: "Guía rápida para comprar billetes de CP y entender los factores habituales de precio.",
+    },
+    map: {
+      title: "Mapa de Actividad | Portugal en Tren",
+      description:
+        "Mapa interactivo de estaciones CP en Portugal continental con hexágonos H3 según salidas y llegadas muestreadas.",
+      ogDescription:
+        "Mira qué estaciones CP son más activas en nuestras muestras de salidas, en un mapa H3 de Portugal.",
     },
     privacy: {
       title: "Política de Privacidad | Portugal en Tren",

@@ -1,4 +1,4 @@
-import { BarChart3, Ticket } from "lucide-react";
+import { BarChart3, Map, Ticket } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { cn } from "@/lib/utils";
@@ -8,7 +8,7 @@ type SitePageNavLinksProps = {
   /** Light pills on a primary/hero background, or default on page content. */
   variant?: "hero" | "surface";
   /** Hide links for the current section (e.g. on the rankings page). */
-  hide?: Array<"rankings" | "tickets">;
+  hide?: Array<"rankings" | "tickets" | "map">;
 };
 
 /** Desktop-only shortcuts to Rankings and Tickets (mobile uses the bottom tab bar). */
@@ -22,6 +22,7 @@ export function SitePageNavLinks({
   const links = [
     { key: "rankings" as const, to: "/rankings", label: t("nav.rankings"), icon: BarChart3 },
     { key: "tickets" as const, to: "/tickets", label: t("nav.tickets"), icon: Ticket },
+    { key: "map" as const, to: "/map", label: t("nav.map"), icon: Map },
   ].filter((link) => !hide.includes(link.key));
 
   if (links.length === 0) return null;

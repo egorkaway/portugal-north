@@ -20,6 +20,7 @@ export type Messages = {
     home: string;
     rankings: string;
     tickets: string;
+    map: string;
     mobile: string;
     main: string;
   };
@@ -138,6 +139,20 @@ export type Messages = {
     mostReliable: string;
     leastReliable: string;
   };
+  map: {
+    title: string;
+    subtitle: string;
+    intro: string;
+    loading: string;
+    unavailable: string;
+    legendTitle: string;
+    legendBusy: string;
+    legendMid: string;
+    legendQuiet: string;
+    tooltipMovements: string;
+    tooltipResolution: string;
+    viewStation: string;
+  };
   tickets: {
     title: string;
     subtitle: string;
@@ -235,6 +250,7 @@ export type Messages = {
     portuGuessTitle: string;
     portuGuessDesc: string;
     privacy: string;
+    stationMap: string;
   };
   notFound: {
     title: string;
@@ -246,6 +262,7 @@ export type Messages = {
     home: { title: string; description: string };
     rankings: { title: string; description: string; ogDescription: string };
     tickets: { title: string; description: string; ogDescription: string };
+    map: { title: string; description: string; ogDescription: string };
     privacy: { title: string; description: string; ogDescription: string };
     notFound: { title: string; description: string };
     stationTitle: string;

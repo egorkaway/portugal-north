@@ -197,10 +197,14 @@ export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
   }
 
   if (data.configured === false) {
-    throw new RatingsFetchError(
-      "Global vote storage is not configured. Add BLOB_READ_WRITE_TOKEN from your Vercel Blob store to this project, then redeploy.",
-      "storage_not_configured",
-    );
+    const fallback = offlineRatingsFallback();
+    if (fallback) return fallback;
+    return {
+      ratings: data.ratings ?? {},
+      hotelRatings: data.hotelRatings ?? {},
+      imageRatings: data.imageRatings ?? {},
+      configured: false,
+    };
   }
 
   const result: GlobalRatingsResult = {

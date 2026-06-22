@@ -51,6 +51,45 @@ async function handleAgentSkillsIndexDev(
   return true;
 }
 
+const EMPTY_VOTES_RESPONSE = {
+  ratings: {},
+  hotelRatings: {},
+  imageRatings: {},
+  hotelClosedReports: {},
+  configured: false,
+} as const;
+
+async function handleVotesDevApi(
+  req: IncomingMessage,
+  res: ServerResponse,
+): Promise<boolean> {
+  const url = new URL(req.url ?? "/", "http://localhost");
+  if (url.pathname !== "/api/votes") return false;
+
+  res.setHeader("Content-Type", "application/json");
+
+  if (req.method === "GET") {
+    if (url.searchParams.get("ping") === "1") {
+      res.statusCode = 200;
+      res.end(JSON.stringify({ ok: true, configured: false, hasToken: false }));
+      return true;
+    }
+    res.statusCode = 200;
+    res.end(JSON.stringify(EMPTY_VOTES_RESPONSE));
+    return true;
+  }
+
+  if (req.method === "POST") {
+    res.statusCode = 503;
+    res.end(JSON.stringify({ ok: false, reason: "storage_not_configured" }));
+    return true;
+  }
+
+  res.statusCode = 405;
+  res.end(JSON.stringify({ ok: false, reason: "method_not_allowed" }));
+  return true;
+}
+
 async function handleDeparturesDevApi(
   req: IncomingMessage,
   res: ServerResponse,
@@ -185,6 +224,7 @@ export default defineConfig({
           void handleApiCatalogDev(req, res)
             .then((handled) => (handled ? true : handleMcpServerCardDev(req, res)))
             .then((handled) => (handled ? true : handleAgentSkillsIndexDev(req, res)))
+            .then((handled) => (handled ? true : handleVotesDevApi(req, res)))
             .then((handled) => (handled ? true : handleDeparturesDevApi(req, res)))
             .then((handled) => {
               if (!handled) next();

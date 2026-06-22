@@ -1,6 +1,6 @@
 {
-  "runCount": 22,
-  "lastRunAt": "2026-06-22T05:43:14.656Z",
+  "runCount": 24,
+  "lastRunAt": "2026-06-22T11:00:09.344Z",
   "stations": {
     "Pombal": {
       "cpCode": "94-34645",
@@ -35,29 +35,34 @@
       "cpCode": "94-35006",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 2
-        },
-        "Urbano": {
           "departuresNextHour": 4,
           "arrivalsNextHour": 4,
+          "delayMinutes": 8
+        },
+        "Urbano": {
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
           "delayMinutes": 0
         },
         "Intercidades": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 28
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 33
+        },
+        "InterRegional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
-        "delayMinutes": 30
+        "departuresNextHour": 15,
+        "arrivalsNextHour": 15,
+        "delayMinutes": 41
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:08:27.415Z",
+      "lastSampleAt": "2026-06-22T07:39:25.076Z",
       "lastError": null
     },
     "Coimbra-B": {
@@ -122,19 +127,24 @@
       "cpCode": "94-37051",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
           "delayMinutes": 0
+        },
+        "Intercidades": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 8
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
-        "delayMinutes": 0
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 5,
+        "delayMinutes": 8
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-20T18:22:26.385Z",
+      "lastSampleAt": "2026-06-22T07:39:34.561Z",
       "lastError": null
     },
     "Aveiro": {
@@ -175,43 +185,43 @@
       "cpCode": "94-38117",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
           "delayMinutes": 11
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
         "delayMinutes": 11
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:24.495Z",
+      "lastSampleAt": "2026-06-22T07:39:54.311Z",
       "lastError": null
     },
     "Estarreja": {
       "cpCode": "94-38158",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 9,
-          "arrivalsNextHour": 9,
+          "departuresNextHour": 13,
+          "arrivalsNextHour": 13,
           "delayMinutes": 12
         },
         "Intercidades": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 0
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 8
         }
       },
       "totals": {
-        "departuresNextHour": 10,
-        "arrivalsNextHour": 10,
-        "delayMinutes": 12
+        "departuresNextHour": 15,
+        "arrivalsNextHour": 15,
+        "delayMinutes": 20
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:59.234Z",
+      "lastSampleAt": "2026-06-22T07:40:43.151Z",
       "lastError": null
     },
     "Ovar": {
@@ -242,86 +252,91 @@
       "cpCode": "94-39008",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 17,
-          "arrivalsNextHour": 18,
-          "delayMinutes": 25
+          "departuresNextHour": 25,
+          "arrivalsNextHour": 26,
+          "delayMinutes": 32
         },
         "Intercidades": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
-          "delayMinutes": 45
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 80
         }
       },
       "totals": {
-        "departuresNextHour": 23,
-        "arrivalsNextHour": 24,
-        "delayMinutes": 70
+        "departuresNextHour": 33,
+        "arrivalsNextHour": 34,
+        "delayMinutes": 112
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:08:39.220Z",
+      "lastSampleAt": "2026-06-22T07:39:35.791Z",
       "lastError": null
     },
     "Vila Nova de Gaia-Devesas": {
       "cpCode": "94-39164",
       "byTrainType": {
         "Intercidades": {
-          "departuresNextHour": 7,
-          "arrivalsNextHour": 7,
-          "delayMinutes": 39
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 9,
+          "delayMinutes": 75
         },
         "Urbano": {
-          "departuresNextHour": 31,
-          "arrivalsNextHour": 31,
-          "delayMinutes": 21
+          "departuresNextHour": 38,
+          "arrivalsNextHour": 38,
+          "delayMinutes": 25
         },
         "Alfa Pendular": {
           "departuresNextHour": 9,
           "arrivalsNextHour": 8,
           "delayMinutes": 84
+        },
+        "InterRegional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 5
         }
       },
       "totals": {
-        "departuresNextHour": 47,
-        "arrivalsNextHour": 46,
-        "delayMinutes": 144
+        "departuresNextHour": 57,
+        "arrivalsNextHour": 56,
+        "delayMinutes": 189
       },
-      "successfulSamples": 7,
+      "successfulSamples": 8,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:45:26.587Z",
+      "lastSampleAt": "2026-06-22T07:38:45.465Z",
       "lastError": null
     },
     "São Bento (Porto)": {
       "cpCode": "94-1008",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 28,
-          "arrivalsNextHour": 25,
-          "delayMinutes": 19
+          "departuresNextHour": 33,
+          "arrivalsNextHour": 33,
+          "delayMinutes": 30
         },
         "InterRegional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 3,
           "delayMinutes": 9
         }
       },
       "totals": {
-        "departuresNextHour": 32,
-        "arrivalsNextHour": 27,
-        "delayMinutes": 28
+        "departuresNextHour": 38,
+        "arrivalsNextHour": 36,
+        "delayMinutes": 39
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:54.754Z",
+      "lastSampleAt": "2026-06-22T07:40:19.562Z",
       "lastError": null
     },
     "Porto-Campanhã": {
       "cpCode": "94-2006",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 55,
-          "arrivalsNextHour": 57,
-          "delayMinutes": 35
+          "departuresNextHour": 71,
+          "arrivalsNextHour": 74,
+          "delayMinutes": 53
         },
         "Alfa Pendular": {
           "departuresNextHour": 4,
@@ -329,9 +344,9 @@
           "delayMinutes": 60
         },
         "InterRegional": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 9
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 21
         },
         "Internacionais": {
           "departuresNextHour": 0,
@@ -339,9 +354,9 @@
           "delayMinutes": 1
         },
         "Intercidades": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 22
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 50
         },
         "Regional": {
           "departuresNextHour": 0,
@@ -350,27 +365,27 @@
         }
       },
       "totals": {
-        "departuresNextHour": 68,
-        "arrivalsNextHour": 69,
-        "delayMinutes": 129
+        "departuresNextHour": 88,
+        "arrivalsNextHour": 91,
+        "delayMinutes": 187
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:23.881Z",
+      "lastSampleAt": "2026-06-22T07:38:42.776Z",
       "lastError": null
     },
     "Ermesinde": {
       "cpCode": "94-4002",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 39,
-          "arrivalsNextHour": 38,
-          "delayMinutes": 30
+          "departuresNextHour": 50,
+          "arrivalsNextHour": 49,
+          "delayMinutes": 41
         },
         "InterRegional": {
-          "departuresNextHour": 11,
-          "arrivalsNextHour": 11,
-          "delayMinutes": 61
+          "departuresNextHour": 13,
+          "arrivalsNextHour": 13,
+          "delayMinutes": 74
         },
         "Regional": {
           "departuresNextHour": 1,
@@ -379,13 +394,13 @@
         }
       },
       "totals": {
-        "departuresNextHour": 51,
-        "arrivalsNextHour": 50,
-        "delayMinutes": 93
+        "departuresNextHour": 64,
+        "arrivalsNextHour": 63,
+        "delayMinutes": 117
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:46.984Z",
+      "lastSampleAt": "2026-06-22T07:39:15.557Z",
       "lastError": null
     },
     "Trofa": {
@@ -416,33 +431,33 @@
       "cpCode": "94-28068",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
           "delayMinutes": 3
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
         "delayMinutes": 3
       },
-      "successfulSamples": 5,
-      "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:08:10.397Z",
-      "lastError": null
+      "successfulSamples": 6,
+      "failedSamples": 3,
+      "lastSampleAt": "2026-06-22T07:40:32.623Z",
+      "lastError": "fetch failed"
     },
     "Famalicão": {
       "cpCode": "94-5074",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 11,
-          "arrivalsNextHour": 11,
-          "delayMinutes": 13
+          "departuresNextHour": 14,
+          "arrivalsNextHour": 15,
+          "delayMinutes": 14
         },
         "InterRegional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 6
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 19
         },
         "Alfa Pendular": {
           "departuresNextHour": 1,
@@ -456,22 +471,22 @@
         }
       },
       "totals": {
-        "departuresNextHour": 14,
-        "arrivalsNextHour": 14,
-        "delayMinutes": 31
+        "departuresNextHour": 19,
+        "arrivalsNextHour": 20,
+        "delayMinutes": 45
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:08:05.396Z",
+      "lastSampleAt": "2026-06-22T07:39:11.541Z",
       "lastError": null
     },
     "Nine": {
       "cpCode": "94-6007",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 16,
-          "arrivalsNextHour": 17,
-          "delayMinutes": 18
+          "departuresNextHour": 19,
+          "arrivalsNextHour": 20,
+          "delayMinutes": 19
         },
         "Regional": {
           "departuresNextHour": 3,
@@ -479,13 +494,13 @@
           "delayMinutes": 1
         },
         "InterRegional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 11
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 28
         },
         "Internacionais": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
           "delayMinutes": 3
         },
         "Intercidades": {
@@ -500,13 +515,13 @@
         }
       },
       "totals": {
-        "departuresNextHour": 27,
-        "arrivalsNextHour": 27,
-        "delayMinutes": 57
+        "departuresNextHour": 33,
+        "arrivalsNextHour": 32,
+        "delayMinutes": 75
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:50.541Z",
+      "lastSampleAt": "2026-06-22T07:40:12.519Z",
       "lastError": null
     },
     "Braga": {
@@ -542,38 +557,38 @@
       "cpCode": "94-5009",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 18,
-          "arrivalsNextHour": 17,
-          "delayMinutes": 17
+          "departuresNextHour": 24,
+          "arrivalsNextHour": 23,
+          "delayMinutes": 20
         }
       },
       "totals": {
-        "departuresNextHour": 18,
-        "arrivalsNextHour": 17,
-        "delayMinutes": 17
+        "departuresNextHour": 24,
+        "arrivalsNextHour": 23,
+        "delayMinutes": 20
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:08:00.194Z",
+      "lastSampleAt": "2026-06-22T07:38:56.137Z",
       "lastError": null
     },
     "Guimarães": {
       "cpCode": "94-24000",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 3,
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 4,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 3,
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 4,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:39.480Z",
+      "lastSampleAt": "2026-06-22T07:40:39.234Z",
       "lastError": null
     },
     "Valongo": {
@@ -628,8 +643,8 @@
       "cpCode": "94-9001",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
           "delayMinutes": 7
         },
         "Regional": {
@@ -638,43 +653,43 @@
           "delayMinutes": 0
         },
         "InterRegional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
           "delayMinutes": 33
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 4,
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 6,
         "delayMinutes": 40
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-20T18:25:02.283Z",
+      "lastSampleAt": "2026-06-22T07:38:51.819Z",
       "lastError": null
     },
     "Livração": {
       "cpCode": "94-8474",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 7,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 4
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 11,
+          "delayMinutes": 5
         },
         "InterRegional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
           "delayMinutes": 9
         }
       },
       "totals": {
-        "departuresNextHour": 11,
-        "arrivalsNextHour": 12,
-        "delayMinutes": 13
+        "departuresNextHour": 15,
+        "arrivalsNextHour": 16,
+        "delayMinutes": 14
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:33.410Z",
+      "lastSampleAt": "2026-06-22T07:39:50.590Z",
       "lastError": null
     },
     "Barcelos": {
@@ -687,23 +702,23 @@
         },
         "InterRegional": {
           "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
-          "delayMinutes": 14
+          "arrivalsNextHour": 4,
+          "delayMinutes": 22
         },
         "Internacionais": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
           "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 10,
-        "arrivalsNextHour": 10,
-        "delayMinutes": 16
+        "departuresNextHour": 11,
+        "arrivalsNextHour": 12,
+        "delayMinutes": 24
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:02.121Z",
+      "lastSampleAt": "2026-06-22T07:39:57.882Z",
       "lastError": null
     },
     "Viana do Castelo": {
@@ -744,48 +759,48 @@
       "cpCode": "94-7005",
       "byTrainType": {
         "InterRegional": {
-          "departuresNextHour": 1,
+          "departuresNextHour": 2,
           "arrivalsNextHour": 1,
           "delayMinutes": 8
         },
         "Regional": {
           "departuresNextHour": 2,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 1
+          "arrivalsNextHour": 2,
+          "delayMinutes": 12
         },
         "Internacionais": {
-          "departuresNextHour": 2,
+          "departuresNextHour": 3,
           "arrivalsNextHour": 2,
-          "delayMinutes": 0
+          "delayMinutes": 1
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 4,
-        "delayMinutes": 9
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 5,
+        "delayMinutes": 21
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:19.580Z",
+      "lastSampleAt": "2026-06-22T07:39:57.311Z",
       "lastError": null
     },
     "Cacia": {
       "cpCode": "94-38075",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
           "delayMinutes": 11
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
         "delayMinutes": 11
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:20:16.180Z",
+      "lastSampleAt": "2026-06-22T07:40:38.644Z",
       "lastError": null
     },
     "Salreu": {
@@ -811,38 +826,38 @@
       "cpCode": "94-38406",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 12,
-          "arrivalsNextHour": 12,
-          "delayMinutes": 21
+          "departuresNextHour": 21,
+          "arrivalsNextHour": 21,
+          "delayMinutes": 28
         }
       },
       "totals": {
-        "departuresNextHour": 12,
-        "arrivalsNextHour": 12,
-        "delayMinutes": 21
+        "departuresNextHour": 21,
+        "arrivalsNextHour": 21,
+        "delayMinutes": 28
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T08:19:35.186Z",
+      "lastSampleAt": "2026-06-22T07:39:18.697Z",
       "lastError": null
     },
     "Granja": {
       "cpCode": "94-39040",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 34,
-          "arrivalsNextHour": 33,
-          "delayMinutes": 31
+          "departuresNextHour": 41,
+          "arrivalsNextHour": 40,
+          "delayMinutes": 35
         }
       },
       "totals": {
-        "departuresNextHour": 34,
-        "arrivalsNextHour": 33,
-        "delayMinutes": 31
+        "departuresNextHour": 41,
+        "arrivalsNextHour": 40,
+        "delayMinutes": 35
       },
-      "successfulSamples": 7,
+      "successfulSamples": 8,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:45:01.641Z",
+      "lastSampleAt": "2026-06-22T07:39:32.507Z",
       "lastError": null
     },
     "Darque": {
@@ -868,9 +883,9 @@
       "cpCode": "94-6395",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
-          "delayMinutes": 5
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 35
         },
         "InterRegional": {
           "departuresNextHour": 1,
@@ -879,13 +894,13 @@
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
-        "delayMinutes": 5
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 35
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:07:20.813Z",
+      "lastSampleAt": "2026-06-22T07:40:05.290Z",
       "lastError": null
     },
     "Afife": {
@@ -931,9 +946,9 @@
         "arrivalsNextHour": 5,
         "delayMinutes": 5
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T08:24:18.201Z",
+      "lastSampleAt": "2026-06-22T07:39:08.232Z",
       "lastError": null
     },
     "Caminha": {
@@ -993,180 +1008,180 @@
         "arrivalsNextHour": 1,
         "delayMinutes": 7
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:24:35.248Z",
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-22T07:39:09.630Z",
+      "lastError": null
     },
     "Vizela": {
       "cpCode": "94-28233",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
           "delayMinutes": 4
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
         "delayMinutes": 4
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:35.363Z",
+      "lastSampleAt": "2026-06-22T07:39:12.823Z",
       "lastError": null
     },
     "Souselas": {
       "cpCode": "94-36087",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
           "delayMinutes": 12
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 5,
         "delayMinutes": 12
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T08:23:52.733Z",
+      "lastSampleAt": "2026-06-22T07:39:38.488Z",
       "lastError": null
     },
     "Curia": {
       "cpCode": "94-37119",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
         "delayMinutes": 0
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:58.648Z",
+      "lastSampleAt": "2026-06-22T07:39:19.911Z",
       "lastError": null
     },
     "Oliveira do Bairro": {
       "cpCode": "94-37218",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
           "delayMinutes": 10
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
         "delayMinutes": 10
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:52.253Z",
+      "lastSampleAt": "2026-06-22T07:40:09.313Z",
       "lastError": null
     },
     "Quintans": {
       "cpCode": "94-37358",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
           "delayMinutes": 37
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
         "delayMinutes": 37
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:07:02.901Z",
+      "lastSampleAt": "2026-06-22T07:40:48.509Z",
       "lastError": null
     },
     "Oiã": {
       "cpCode": "94-37275",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
           "delayMinutes": 21
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
         "delayMinutes": 21
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:35.929Z",
+      "lastSampleAt": "2026-06-22T07:39:49.274Z",
       "lastError": null
     },
     "Paraimo-Sangalhos": {
       "cpCode": "94-37184",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 7,
-          "arrivalsNextHour": 7,
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 9,
           "delayMinutes": 25
         }
       },
       "totals": {
-        "departuresNextHour": 7,
-        "arrivalsNextHour": 7,
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 9,
         "delayMinutes": 25
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:30.124Z",
+      "lastSampleAt": "2026-06-22T07:40:07.180Z",
       "lastError": null
     },
     "Aguim": {
       "cpCode": "94-37093",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
-      "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:12.600Z",
-      "lastError": null
+      "successfulSamples": 5,
+      "failedSamples": 4,
+      "lastSampleAt": "2026-06-22T07:39:53.698Z",
+      "lastError": "fetch failed"
     },
     "Vilela-Fornos": {
       "cpCode": "94-36053",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 5,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 5,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:08.165Z",
+      "lastSampleAt": "2026-06-22T07:39:45.960Z",
       "lastError": null
     },
     "Adémia": {
@@ -1184,65 +1199,65 @@
         "delayMinutes": 12
       },
       "successfulSamples": 5,
-      "failedSamples": 2,
+      "failedSamples": 3,
       "lastSampleAt": "2026-06-22T05:45:23.987Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "General Torres": {
       "cpCode": "94-39172",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 19,
-          "arrivalsNextHour": 19,
-          "delayMinutes": 10
+          "departuresNextHour": 26,
+          "arrivalsNextHour": 26,
+          "delayMinutes": 14
         }
       },
       "totals": {
-        "departuresNextHour": 19,
-        "arrivalsNextHour": 19,
-        "delayMinutes": 10
+        "departuresNextHour": 26,
+        "arrivalsNextHour": 26,
+        "delayMinutes": 14
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:23.166Z",
+      "lastSampleAt": "2026-06-22T07:39:03.067Z",
       "lastError": null
     },
     "Coimbrões": {
       "cpCode": "94-39149",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 11
+          "departuresNextHour": 11,
+          "arrivalsNextHour": 11,
+          "delayMinutes": 14
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
-        "delayMinutes": 11
+        "departuresNextHour": 11,
+        "arrivalsNextHour": 11,
+        "delayMinutes": 14
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T08:24:44.651Z",
+      "lastSampleAt": "2026-06-22T07:39:10.858Z",
       "lastError": null
     },
     "Valadares": {
       "cpCode": "94-39115",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 27,
-          "arrivalsNextHour": 28,
-          "delayMinutes": 11
+          "departuresNextHour": 34,
+          "arrivalsNextHour": 35,
+          "delayMinutes": 15
         }
       },
       "totals": {
-        "departuresNextHour": 27,
-        "arrivalsNextHour": 28,
-        "delayMinutes": 11
+        "departuresNextHour": 34,
+        "arrivalsNextHour": 35,
+        "delayMinutes": 15
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:27.114Z",
+      "lastSampleAt": "2026-06-22T07:39:54.938Z",
       "lastError": null
     },
     "Francelos": {
@@ -1268,100 +1283,100 @@
       "cpCode": "94-39073",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
-          "delayMinutes": 0
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 9,
+          "delayMinutes": 4
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
-        "delayMinutes": 0
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 9,
+        "delayMinutes": 4
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:23:35.090Z",
+      "lastSampleAt": "2026-06-22T07:40:05.924Z",
       "lastError": null
     },
     "Aguda": {
       "cpCode": "94-39057",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 10,
-          "arrivalsNextHour": 10,
-          "delayMinutes": 2
+          "departuresNextHour": 13,
+          "arrivalsNextHour": 13,
+          "delayMinutes": 5
         }
       },
       "totals": {
-        "departuresNextHour": 10,
-        "arrivalsNextHour": 10,
-        "delayMinutes": 2
+        "departuresNextHour": 13,
+        "arrivalsNextHour": 13,
+        "delayMinutes": 5
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:43:38.765Z",
+      "lastSampleAt": "2026-06-22T07:39:17.500Z",
       "lastError": null
     },
     "Paramos": {
       "cpCode": "94-38414",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 13,
-          "arrivalsNextHour": 13,
-          "delayMinutes": 15
+          "departuresNextHour": 18,
+          "arrivalsNextHour": 18,
+          "delayMinutes": 22
         }
       },
       "totals": {
-        "departuresNextHour": 13,
-        "arrivalsNextHour": 13,
-        "delayMinutes": 15
+        "departuresNextHour": 18,
+        "arrivalsNextHour": 18,
+        "delayMinutes": 22
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:58.597Z",
+      "lastSampleAt": "2026-06-22T07:40:27.892Z",
       "lastError": null
     },
     "Soure": {
       "cpCode": "94-34801",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
-          "delayMinutes": 5
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
+          "delayMinutes": 12
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
-        "delayMinutes": 5
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
+        "delayMinutes": 12
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:44:17.107Z",
+      "lastSampleAt": "2026-06-22T07:39:43.051Z",
       "lastError": null
     },
     "Caxarias": {
       "cpCode": "94-34330",
       "byTrainType": {
         "Intercidades": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 3,
           "delayMinutes": 27
         },
         "Regional": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 9,
           "delayMinutes": 6
         }
       },
       "totals": {
-        "departuresNextHour": 9,
-        "arrivalsNextHour": 10,
+        "departuresNextHour": 11,
+        "arrivalsNextHour": 12,
         "delayMinutes": 33
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:19.353Z",
+      "lastSampleAt": "2026-06-22T07:39:30.044Z",
       "lastError": null
     },
     "Lamarosa": {
@@ -1425,20 +1440,20 @@
       "cpCode": "94-3038",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 25,
-          "arrivalsNextHour": 24,
-          "delayMinutes": 26
+          "departuresNextHour": 36,
+          "arrivalsNextHour": 36,
+          "delayMinutes": 36
         }
       },
       "totals": {
-        "departuresNextHour": 25,
-        "arrivalsNextHour": 24,
-        "delayMinutes": 26
+        "departuresNextHour": 36,
+        "arrivalsNextHour": 36,
+        "delayMinutes": 36
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:23:42.074Z",
-      "lastError": "fetch failed"
+      "lastSampleAt": "2026-06-22T07:40:35.586Z",
+      "lastError": null
     },
     "Tamel": {
       "cpCode": "94-6213",
@@ -1483,9 +1498,9 @@
         "arrivalsNextHour": 8,
         "delayMinutes": 10
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:26.544Z",
+      "lastSampleAt": "2026-06-22T07:39:37.242Z",
       "lastError": null
     },
     "Carreço": {
@@ -1502,9 +1517,9 @@
         "arrivalsNextHour": 1,
         "delayMinutes": 2
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:33.996Z",
+      "lastSampleAt": "2026-06-22T07:39:03.652Z",
       "lastError": null
     },
     "Areosa": {
@@ -1554,8 +1569,8 @@
       "cpCode": "94-9134",
       "byTrainType": {
         "InterRegional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
           "delayMinutes": 2
         },
         "Regional": {
@@ -1565,51 +1580,51 @@
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
         "delayMinutes": 2
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:24:34.370Z",
+      "lastSampleAt": "2026-06-22T07:39:08.855Z",
       "lastError": null
     },
     "Caldas de Vizela": {
       "cpCode": "94-9399",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 1,
-        "arrivalsNextHour": 1,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:23.520Z",
+      "lastSampleAt": "2026-06-22T07:39:18.059Z",
       "lastError": null
     },
     "Lordelo": {
       "cpCode": "94-28191",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 7,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 10,
           "delayMinutes": 3
         }
       },
       "totals": {
-        "departuresNextHour": 7,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 10,
         "delayMinutes": 3
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:45:18.213Z",
+      "lastSampleAt": "2026-06-22T07:40:30.848Z",
       "lastError": null
     },
     "Mogofores": {
@@ -1635,28 +1650,28 @@
       "cpCode": "94-38216",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 5
+          "departuresNextHour": 12,
+          "arrivalsNextHour": 13,
+          "delayMinutes": 6
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
-        "delayMinutes": 5
+        "departuresNextHour": 12,
+        "arrivalsNextHour": 13,
+        "delayMinutes": 6
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-21T11:07:37.797Z",
+      "lastSampleAt": "2026-06-22T07:40:11.895Z",
       "lastError": null
     },
     "Penafiel": {
       "cpCode": "94-8318",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 12,
-          "arrivalsNextHour": 13,
-          "delayMinutes": 6
+          "departuresNextHour": 15,
+          "arrivalsNextHour": 16,
+          "delayMinutes": 8
         },
         "InterRegional": {
           "departuresNextHour": 6,
@@ -1665,22 +1680,22 @@
         }
       },
       "totals": {
-        "departuresNextHour": 18,
-        "arrivalsNextHour": 19,
-        "delayMinutes": 53
+        "departuresNextHour": 21,
+        "arrivalsNextHour": 22,
+        "delayMinutes": 55
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T08:24:13.941Z",
+      "lastSampleAt": "2026-06-22T07:39:36.574Z",
       "lastError": null
     },
     "Paredes": {
       "cpCode": "94-8276",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
-          "delayMinutes": 1
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 9,
+          "delayMinutes": 3
         },
         "InterRegional": {
           "departuresNextHour": 2,
@@ -1689,89 +1704,89 @@
         }
       },
       "totals": {
-        "departuresNextHour": 7,
-        "arrivalsNextHour": 7,
-        "delayMinutes": 8
+        "departuresNextHour": 11,
+        "arrivalsNextHour": 11,
+        "delayMinutes": 10
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:20:51.248Z",
+      "lastSampleAt": "2026-06-22T07:38:52.481Z",
       "lastError": null
     },
     "Cete": {
       "cpCode": "94-8227",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 8
+          "departuresNextHour": 12,
+          "arrivalsNextHour": 12,
+          "delayMinutes": 10
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
-        "delayMinutes": 8
+        "departuresNextHour": 12,
+        "arrivalsNextHour": 12,
+        "delayMinutes": 10
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:07:42.392Z",
+      "lastSampleAt": "2026-06-22T07:39:02.333Z",
       "lastError": null
     },
     "Recarei-Sobreira": {
       "cpCode": "94-8177",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
-          "delayMinutes": 7
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 10,
+          "delayMinutes": 9
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
-        "delayMinutes": 7
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 10,
+        "delayMinutes": 9
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 5,
-      "lastSampleAt": "2026-06-21T11:07:23.289Z",
-      "lastError": "fetch failed"
+      "lastSampleAt": "2026-06-22T07:38:57.291Z",
+      "lastError": null
     },
     "Vila Meã": {
       "cpCode": "94-8433",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 11,
-          "arrivalsNextHour": 11,
-          "delayMinutes": 4
+          "departuresNextHour": 13,
+          "arrivalsNextHour": 13,
+          "delayMinutes": 5
         }
       },
       "totals": {
-        "departuresNextHour": 11,
-        "arrivalsNextHour": 11,
-        "delayMinutes": 4
+        "departuresNextHour": 13,
+        "arrivalsNextHour": 13,
+        "delayMinutes": 5
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:52.839Z",
+      "lastSampleAt": "2026-06-22T07:38:46.758Z",
       "lastError": null
     },
     "Águeda": {
       "cpCode": "94-42218",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:08:44.201Z",
+      "lastSampleAt": "2026-06-22T07:38:55.440Z",
       "lastError": null
     },
     "Sernada do Vouga": {
@@ -1797,62 +1812,62 @@
       "cpCode": "94-42259",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 5,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:08:48.018Z",
+      "lastSampleAt": "2026-06-22T07:40:47.868Z",
       "lastError": null
     },
     "Cortegaça": {
       "cpCode": "94-38372",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 8
+          "departuresNextHour": 12,
+          "arrivalsNextHour": 12,
+          "delayMinutes": 12
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
-        "delayMinutes": 8
+        "departuresNextHour": 12,
+        "arrivalsNextHour": 12,
+        "delayMinutes": 12
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-21T11:08:02.102Z",
-      "lastError": "fetch failed"
+      "lastSampleAt": "2026-06-22T07:38:40.042Z",
+      "lastError": null
     },
     "Taveiro": {
       "cpCode": "94-35139",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
           "delayMinutes": 3
         },
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 2
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 9
         }
       },
       "totals": {
-        "departuresNextHour": 7,
-        "arrivalsNextHour": 7,
-        "delayMinutes": 5
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 9,
+        "delayMinutes": 12
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:19:21.658Z",
+      "lastSampleAt": "2026-06-22T07:40:46.044Z",
       "lastError": null
     },
     "Vila Nova de Cerveira": {
@@ -1864,19 +1879,19 @@
           "delayMinutes": 1
         },
         "InterRegional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 3,
+        "departuresNextHour": 3,
+        "arrivalsNextHour": 4,
         "delayMinutes": 1
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T08:20:00.689Z",
+      "lastSampleAt": "2026-06-22T07:40:32.047Z",
       "lastError": null
     },
     "Pocinho": {
@@ -1912,9 +1927,9 @@
         "arrivalsNextHour": 4,
         "delayMinutes": 27
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:05.597Z",
+      "lastSampleAt": "2026-06-22T07:40:13.830Z",
       "lastError": null
     },
     "Vesúvio": {
@@ -1936,28 +1951,28 @@
         "arrivalsNextHour": 3,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:47.671Z",
+      "lastSampleAt": "2026-06-22T07:40:29.607Z",
       "lastError": null
     },
     "São Pedro da Torre": {
       "cpCode": "94-18440",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 3
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 14
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
-        "delayMinutes": 3
+        "departuresNextHour": 3,
+        "arrivalsNextHour": 3,
+        "delayMinutes": 14
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:40.697Z",
+      "lastSampleAt": "2026-06-22T07:39:39.672Z",
       "lastError": null
     },
     "Carvalha": {
@@ -1974,9 +1989,9 @@
         "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:25:05.284Z",
+      "lastSampleAt": "2026-06-22T07:40:03.028Z",
       "lastError": null
     },
     "Gondarém": {
@@ -2006,9 +2021,9 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:43:30.796Z",
+      "lastSampleAt": "2026-06-22T07:39:31.206Z",
       "lastError": null
     },
     "Seixas": {
@@ -2044,9 +2059,9 @@
         "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:13.729Z",
+      "lastSampleAt": "2026-06-22T07:40:38.073Z",
       "lastError": null
     },
     "Moledo do Minho": {
@@ -2092,9 +2107,9 @@
         "arrivalsNextHour": 7,
         "delayMinutes": 5
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:45.111Z",
+      "lastSampleAt": "2026-06-22T07:39:28.283Z",
       "lastError": null
     },
     "Senhora das Neves": {
@@ -2111,9 +2126,9 @@
         "arrivalsNextHour": 4,
         "delayMinutes": 2
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:08:43.563Z",
+      "lastSampleAt": "2026-06-22T07:40:18.695Z",
       "lastError": null
     },
     "Barroselas": {
@@ -2135,9 +2150,9 @@
         "arrivalsNextHour": 6,
         "delayMinutes": 9
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:09.267Z",
+      "lastSampleAt": "2026-06-22T07:38:50.594Z",
       "lastError": null
     },
     "Carapecos": {
@@ -2154,9 +2169,9 @@
         "arrivalsNextHour": 6,
         "delayMinutes": 5
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:45:04.252Z",
+      "lastSampleAt": "2026-06-22T07:39:56.761Z",
       "lastError": null
     },
     "Silva": {
@@ -2173,9 +2188,9 @@
         "arrivalsNextHour": 5,
         "delayMinutes": 5
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:06.721Z",
+      "lastSampleAt": "2026-06-22T07:40:23.442Z",
       "lastError": null
     },
     "Midões": {
@@ -2192,9 +2207,9 @@
         "arrivalsNextHour": 5,
         "delayMinutes": 0
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:46.374Z",
+      "lastSampleAt": "2026-06-22T07:39:33.968Z",
       "lastError": null
     },
     "Carreira": {
@@ -2220,133 +2235,133 @@
       "cpCode": "94-5116",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 14,
-          "arrivalsNextHour": 14,
+          "departuresNextHour": 16,
+          "arrivalsNextHour": 17,
           "delayMinutes": 12
         }
       },
       "totals": {
-        "departuresNextHour": 14,
-        "arrivalsNextHour": 14,
+        "departuresNextHour": 16,
+        "arrivalsNextHour": 17,
         "delayMinutes": 12
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:41.759Z",
+      "lastSampleAt": "2026-06-22T07:39:22.582Z",
       "lastError": null
     },
     "Mouquim": {
       "cpCode": "94-5108",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 11,
+          "arrivalsNextHour": 11,
           "delayMinutes": 14
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 11,
+        "arrivalsNextHour": 11,
         "delayMinutes": 14
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 5,
-      "lastSampleAt": "2026-06-22T05:43:42.223Z",
+      "lastSampleAt": "2026-06-22T07:40:13.253Z",
       "lastError": null
     },
     "Portela": {
       "cpCode": "94-4101",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
           "delayMinutes": 1
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
         "delayMinutes": 1
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:04.468Z",
+      "lastSampleAt": "2026-06-22T07:39:25.881Z",
       "lastError": null
     },
     "São Romão": {
       "cpCode": "94-4077",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 14,
-          "arrivalsNextHour": 15,
-          "delayMinutes": 14
+          "departuresNextHour": 21,
+          "arrivalsNextHour": 22,
+          "delayMinutes": 21
         }
       },
       "totals": {
-        "departuresNextHour": 14,
-        "arrivalsNextHour": 15,
-        "delayMinutes": 14
+        "departuresNextHour": 21,
+        "arrivalsNextHour": 22,
+        "delayMinutes": 21
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:59.894Z",
+      "lastSampleAt": "2026-06-22T07:39:51.875Z",
       "lastError": null
     },
     "São Frutuoso": {
       "cpCode": "94-4051",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 13,
-          "arrivalsNextHour": 13,
-          "delayMinutes": 16
+          "departuresNextHour": 17,
+          "arrivalsNextHour": 17,
+          "delayMinutes": 19
         }
       },
       "totals": {
-        "departuresNextHour": 13,
-        "arrivalsNextHour": 13,
-        "delayMinutes": 16
+        "departuresNextHour": 17,
+        "arrivalsNextHour": 17,
+        "delayMinutes": 19
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:31.430Z",
+      "lastSampleAt": "2026-06-22T07:38:54.270Z",
       "lastError": null
     },
     "Leandro": {
       "cpCode": "94-4036",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 13
+          "departuresNextHour": 11,
+          "arrivalsNextHour": 11,
+          "delayMinutes": 15
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
-        "delayMinutes": 13
+        "departuresNextHour": 11,
+        "arrivalsNextHour": 11,
+        "delayMinutes": 15
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:24.139Z",
+      "lastSampleAt": "2026-06-22T07:40:44.278Z",
       "lastError": null
     },
     "Travagem": {
       "cpCode": "94-4010",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
-          "delayMinutes": 8
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 9,
+          "delayMinutes": 11
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
-        "delayMinutes": 8
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 9,
+        "delayMinutes": 11
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:25:02.056Z",
+      "lastSampleAt": "2026-06-22T07:39:30.641Z",
       "lastError": null
     },
     "Barrimau": {
@@ -2391,19 +2406,19 @@
       "cpCode": "94-29132",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 10,
-          "arrivalsNextHour": 10,
+          "departuresNextHour": 13,
+          "arrivalsNextHour": 13,
           "delayMinutes": 16
         }
       },
       "totals": {
-        "departuresNextHour": 10,
-        "arrivalsNextHour": 10,
+        "departuresNextHour": 13,
+        "arrivalsNextHour": 13,
         "delayMinutes": 16
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T08:19:41.734Z",
+      "lastSampleAt": "2026-06-22T07:38:59.098Z",
       "lastError": null
     },
     "Mazagão": {
@@ -2524,38 +2539,38 @@
       "cpCode": "94-28290",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 10,
-          "arrivalsNextHour": 10,
+          "departuresNextHour": 12,
+          "arrivalsNextHour": 12,
           "delayMinutes": 4
         }
       },
       "totals": {
-        "departuresNextHour": 10,
-        "arrivalsNextHour": 10,
+        "departuresNextHour": 12,
+        "arrivalsNextHour": 12,
         "delayMinutes": 4
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:36.299Z",
+      "lastSampleAt": "2026-06-22T07:38:44.747Z",
       "lastError": null
     },
     "Nespereira": {
       "cpCode": "94-28266",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:43:37.564Z",
+      "lastSampleAt": "2026-06-22T07:38:47.932Z",
       "lastError": null
     },
     "Pereirinhas": {
@@ -2581,95 +2596,95 @@
       "cpCode": "94-28209",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:18.227Z",
+      "lastSampleAt": "2026-06-22T07:39:20.496Z",
       "lastError": null
     },
     "Giesteira": {
       "cpCode": "94-28159",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 2
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 3
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
-        "delayMinutes": 2
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 3
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:25:05.920Z",
+      "lastSampleAt": "2026-06-22T07:40:02.263Z",
       "lastError": null
     },
     "Caniços": {
       "cpCode": "94-28100",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 5,
         "delayMinutes": 0
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-20T11:12:19.518Z",
-      "lastError": "fetch failed"
+      "lastSampleAt": "2026-06-22T07:39:26.498Z",
+      "lastError": null
     },
     "Vila das Aves": {
       "cpCode": "94-28134",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 10,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 12,
           "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 10,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 12,
         "delayMinutes": 2
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:53.217Z",
+      "lastSampleAt": "2026-06-22T07:40:33.795Z",
       "lastError": null
     },
     "Meinedo": {
       "cpCode": "94-8359",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 4
+          "departuresNextHour": 11,
+          "arrivalsNextHour": 11,
+          "delayMinutes": 6
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
-        "delayMinutes": 4
+        "departuresNextHour": 11,
+        "arrivalsNextHour": 11,
+        "delayMinutes": 6
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:07:54.650Z",
+      "lastSampleAt": "2026-06-22T07:39:52.520Z",
       "lastError": null
     },
     "Bustelo": {
@@ -2706,50 +2721,88 @@
         "delayMinutes": 3
       },
       "successfulSamples": 3,
-      "failedSamples": 2,
+      "failedSamples": 3,
       "lastSampleAt": "2026-06-21T08:19:35.782Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Cabeda": {
       "cpCode": "94-8029",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
           "delayMinutes": 1
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
         "delayMinutes": 1
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:48.617Z",
+      "lastSampleAt": "2026-06-22T07:39:05.538Z",
       "lastError": null
     },
     "Suzão": {
       "cpCode": "94-8060",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 14,
-          "arrivalsNextHour": 15,
-          "delayMinutes": 7
+          "departuresNextHour": 20,
+          "arrivalsNextHour": 21,
+          "delayMinutes": 9
         }
       },
       "totals": {
-        "departuresNextHour": 14,
-        "arrivalsNextHour": 15,
-        "delayMinutes": 7
+        "departuresNextHour": 20,
+        "arrivalsNextHour": 21,
+        "delayMinutes": 9
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:43:21.445Z",
+      "lastSampleAt": "2026-06-22T07:39:23.188Z",
       "lastError": null
     },
     "Godim": {
       "cpCode": "94-9423",
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 3,
+        "arrivalsNextHour": 3,
+        "delayMinutes": 0
+      },
+      "successfulSamples": 7,
+      "failedSamples": 2,
+      "lastSampleAt": "2026-06-22T07:38:39.442Z",
+      "lastError": null
+    },
+    "Covelinhas": {
+      "cpCode": "94-10090",
+      "byTrainType": {
+        "InterRegional": {
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 41
+        }
+      },
+      "totals": {
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 5,
+        "delayMinutes": 41
+      },
+      "successfulSamples": 6,
+      "failedSamples": 2,
+      "lastSampleAt": "2026-06-22T07:39:19.321Z",
+      "lastError": null
+    },
+    "Caldas de Moledo": {
+      "cpCode": "94-9399",
       "byTrainType": {
         "Regional": {
           "departuresNextHour": 2,
@@ -2762,47 +2815,9 @@
         "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 6,
-      "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:32.160Z",
-      "lastError": null
-    },
-    "Covelinhas": {
-      "cpCode": "94-10090",
-      "byTrainType": {
-        "InterRegional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 41
-        }
-      },
-      "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
-        "delayMinutes": 41
-      },
       "successfulSamples": 5,
-      "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:45:02.209Z",
-      "lastError": null
-    },
-    "Caldas de Moledo": {
-      "cpCode": "94-9399",
-      "byTrainType": {
-        "Regional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 0
-        }
-      },
-      "totals": {
-        "departuresNextHour": 1,
-        "arrivalsNextHour": 1,
-        "delayMinutes": 0
-      },
-      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:06.102Z",
+      "lastSampleAt": "2026-06-22T07:40:14.401Z",
       "lastError": null
     },
     "Ferrão": {
@@ -2847,24 +2862,24 @@
       "cpCode": "94-9258",
       "byTrainType": {
         "InterRegional": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
           "delayMinutes": 14
         },
         "Regional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 9,
         "delayMinutes": 14
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:49.933Z",
+      "lastSampleAt": "2026-06-22T07:39:37.881Z",
       "lastError": null
     },
     "Oleiros": {
@@ -2890,19 +2905,19 @@
       "cpCode": "94-8243",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 9,
-          "arrivalsNextHour": 9,
+          "departuresNextHour": 11,
+          "arrivalsNextHour": 11,
           "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 9,
-        "arrivalsNextHour": 9,
+        "departuresNextHour": 11,
+        "arrivalsNextHour": 11,
         "delayMinutes": 2
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:41.316Z",
+      "lastSampleAt": "2026-06-22T07:40:39.853Z",
       "lastError": null
     },
     "Juncal": {
@@ -2919,47 +2934,47 @@
         "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:20.443Z",
+      "lastSampleAt": "2026-06-22T07:40:00.182Z",
       "lastError": null
     },
     "Mirão": {
       "cpCode": "94-9225",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 1,
-        "arrivalsNextHour": 1,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:54.041Z",
+      "lastSampleAt": "2026-06-22T07:39:27.676Z",
       "lastError": null
     },
     "Porto Rei": {
       "cpCode": "94-9282",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 1,
-        "arrivalsNextHour": 1,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:26.515Z",
+      "lastSampleAt": "2026-06-22T07:40:25.755Z",
       "lastError": null
     },
     "Leça do Balio": {
@@ -3004,57 +3019,57 @@
       "cpCode": "94-21006",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 12,
+          "arrivalsNextHour": 12,
           "delayMinutes": 8
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 12,
+        "arrivalsNextHour": 12,
         "delayMinutes": 8
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:07:41.137Z",
+      "lastSampleAt": "2026-06-22T07:40:22.727Z",
       "lastError": null
     },
     "São Mamede de Infesta": {
       "cpCode": "94-21048",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 12,
+          "arrivalsNextHour": 12,
           "delayMinutes": 8
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 12,
+        "arrivalsNextHour": 12,
         "delayMinutes": 8
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:14.667Z",
+      "lastSampleAt": "2026-06-22T07:40:11.285Z",
       "lastError": null
     },
     "Hospital São João": {
       "cpCode": "94-21030",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 9,
-          "arrivalsNextHour": 9,
+          "departuresNextHour": 13,
+          "arrivalsNextHour": 13,
           "delayMinutes": 7
         }
       },
       "totals": {
-        "departuresNextHour": 9,
-        "arrivalsNextHour": 9,
+        "departuresNextHour": 13,
+        "arrivalsNextHour": 13,
         "delayMinutes": 7
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:07:17.726Z",
+      "lastSampleAt": "2026-06-22T07:39:44.213Z",
       "lastError": null
     },
     "Arroteia": {
@@ -3099,76 +3114,76 @@
       "cpCode": "94-38422",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 10,
-          "arrivalsNextHour": 10,
-          "delayMinutes": 13
+          "departuresNextHour": 12,
+          "arrivalsNextHour": 12,
+          "delayMinutes": 16
         }
       },
       "totals": {
-        "departuresNextHour": 10,
-        "arrivalsNextHour": 10,
-        "delayMinutes": 13
+        "departuresNextHour": 12,
+        "arrivalsNextHour": 12,
+        "delayMinutes": 16
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-21T11:08:24.608Z",
+      "lastSampleAt": "2026-06-22T07:38:40.630Z",
       "lastError": null
     },
     "Espinho - Vouga": {
       "cpCode": "94-44016",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 0
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 6
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 2,
-        "delayMinutes": 0
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 3,
+        "delayMinutes": 6
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 5,
-      "lastSampleAt": "2026-06-21T11:08:28.689Z",
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-22T07:40:43.704Z",
+      "lastError": null
     },
     "São João da Madeira": {
       "cpCode": "94-44255",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 7,
-          "arrivalsNextHour": 7,
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
           "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 7,
-        "arrivalsNextHour": 7,
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
         "delayMinutes": 2
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:29.955Z",
+      "lastSampleAt": "2026-06-22T07:38:44.134Z",
       "lastError": null
     },
     "Vila da Feira": {
       "cpCode": "94-44206",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 7,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 9,
           "delayMinutes": 1
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 7,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 9,
         "delayMinutes": 1
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:27.730Z",
+      "lastSampleAt": "2026-06-22T07:40:40.513Z",
       "lastError": null
     },
     "Oliveira de Azeméis": {
@@ -3205,27 +3220,27 @@
         "delayMinutes": 0
       },
       "successfulSamples": 2,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-06-21T11:08:12.749Z",
-      "lastError": "cp_api_http_429"
+      "lastError": "fetch failed"
     },
     "São João de Ver": {
       "cpCode": "94-44156",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:22.067Z",
+      "lastSampleAt": "2026-06-22T07:40:36.803Z",
       "lastError": null
     },
     "Mangualde": {
@@ -3280,10 +3295,10 @@
         "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 1,
+      "successfulSamples": 2,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-20T09:52:09.760Z",
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-22T07:39:06.258Z",
+      "lastError": null
     },
     "Celorico da Beira": {
       "cpCode": "94-48405",
@@ -3299,9 +3314,9 @@
         "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:51.001Z",
+      "lastSampleAt": "2026-06-22T07:39:44.761Z",
       "lastError": null
     },
     "Fornos de Algodres": {
@@ -3323,48 +3338,48 @@
         "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:39.935Z",
+      "lastSampleAt": "2026-06-22T07:39:06.815Z",
       "lastError": null
     },
     "Lisboa Santa Apolónia": {
       "cpCode": "94-30007",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 19
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 26
         },
         "Intercidades": {
-          "departuresNextHour": 4,
+          "departuresNextHour": 5,
           "arrivalsNextHour": 2,
           "delayMinutes": 30
         },
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 3,
-          "delayMinutes": 21
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 28
         },
         "Alfa Pendular": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 10
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 13
         },
         "InterRegional": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 1
+          "arrivalsNextHour": 2,
+          "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 14,
-        "arrivalsNextHour": 11,
-        "delayMinutes": 81
+        "departuresNextHour": 19,
+        "arrivalsNextHour": 17,
+        "delayMinutes": 99
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:53.492Z",
+      "lastSampleAt": "2026-06-22T07:39:04.814Z",
       "lastError": null
     },
     "Lisboa Oriente": {
@@ -3405,19 +3420,19 @@
       "cpCode": "94-59006",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
-          "delayMinutes": 4
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
+          "delayMinutes": 8
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
-        "delayMinutes": 4
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
+        "delayMinutes": 8
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:23:45.824Z",
+      "lastSampleAt": "2026-06-22T07:39:49.960Z",
       "lastError": null
     },
     "Cais do Sodré": {
@@ -3559,8 +3574,8 @@
       "byTrainType": {
         "Regional": {
           "departuresNextHour": 5,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 25
+          "arrivalsNextHour": 5,
+          "delayMinutes": 34
         },
         "InterRegional": {
           "departuresNextHour": 1,
@@ -3570,12 +3585,12 @@
       },
       "totals": {
         "departuresNextHour": 6,
-        "arrivalsNextHour": 4,
-        "delayMinutes": 25
+        "arrivalsNextHour": 5,
+        "delayMinutes": 34
       },
-      "successfulSamples": 7,
+      "successfulSamples": 8,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:31.567Z",
+      "lastSampleAt": "2026-06-22T07:40:26.842Z",
       "lastError": null
     },
     "Caldas da Rainha": {
@@ -3587,19 +3602,19 @@
           "delayMinutes": 0
         },
         "Regional": {
-          "departuresNextHour": 4,
+          "departuresNextHour": 5,
           "arrivalsNextHour": 2,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 5,
+        "departuresNextHour": 6,
         "arrivalsNextHour": 3,
         "delayMinutes": 0
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:42.228Z",
+      "lastSampleAt": "2026-06-22T07:39:04.203Z",
       "lastError": null
     },
     "Leiria": {
@@ -3664,9 +3679,9 @@
         "arrivalsNextHour": 7,
         "delayMinutes": 10
       },
-      "successfulSamples": 7,
+      "successfulSamples": 8,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:20.610Z",
+      "lastSampleAt": "2026-06-22T07:40:04.608Z",
       "lastError": null
     },
     "Covilhã": {
@@ -3698,18 +3713,18 @@
         },
         "Regional": {
           "departuresNextHour": 3,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 0
+          "arrivalsNextHour": 2,
+          "delayMinutes": 1
         }
       },
       "totals": {
         "departuresNextHour": 5,
-        "arrivalsNextHour": 2,
-        "delayMinutes": 0
+        "arrivalsNextHour": 3,
+        "delayMinutes": 1
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:08:31.317Z",
+      "lastSampleAt": "2026-06-22T07:39:59.065Z",
       "lastError": null
     },
     "Vilar Formoso": {
@@ -3735,20 +3750,20 @@
       "cpCode": "94-83006",
       "byTrainType": {
         "Intercidades": {
-          "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 2,
           "delayMinutes": 17
         }
       },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 1,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 2,
         "delayMinutes": 17
       },
-      "successfulSamples": 1,
+      "successfulSamples": 2,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-20T09:52:17.042Z",
-      "lastError": "fetch failed"
+      "lastSampleAt": "2026-06-22T07:40:47.261Z",
+      "lastError": null
     },
     "Beja": {
       "cpCode": "94-75002",
@@ -3836,76 +3851,81 @@
           "delayMinutes": 19
         },
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 5
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 10
+        },
+        "Intercidades": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
-        "delayMinutes": 24
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 5,
+        "delayMinutes": 31
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-21T08:23:07.467Z",
+      "lastSampleAt": "2026-06-22T07:39:28.894Z",
       "lastError": null
     },
     "Lagos": {
       "cpCode": "94-90464",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 0,
-          "delayMinutes": 0
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+        "departuresNextHour": 3,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 2
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:11.488Z",
+      "lastSampleAt": "2026-06-22T07:39:21.969Z",
       "lastError": null
     },
     "Portimão": {
       "cpCode": "94-90290",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
           "delayMinutes": 4
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
         "delayMinutes": 4
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:39.098Z",
+      "lastSampleAt": "2026-06-22T07:40:44.865Z",
       "lastError": null
     },
     "Tavira": {
       "cpCode": "94-73320",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
           "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 5,
         "delayMinutes": 2
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:22.584Z",
+      "lastSampleAt": "2026-06-22T07:39:13.451Z",
       "lastError": null
     },
     "Vila Real de Santo António": {
@@ -3950,19 +3970,19 @@
       "cpCode": "94-34439",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
-          "delayMinutes": 8
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 9
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
-        "delayMinutes": 8
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 9
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:45:19.344Z",
+      "lastSampleAt": "2026-06-22T07:39:46.540Z",
       "lastError": null
     },
     "Alegria": {
@@ -4003,28 +4023,28 @@
         "arrivalsNextHour": 3,
         "delayMinutes": 1
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:55.507Z",
+      "lastSampleAt": "2026-06-22T07:40:28.444Z",
       "lastError": null
     },
     "Almourol": {
       "cpCode": "94-51102",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
+        "departuresNextHour": 3,
+        "arrivalsNextHour": 3,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:08:18.991Z",
+      "lastSampleAt": "2026-06-22T07:39:41.909Z",
       "lastError": null
     },
     "Alvega – Ortiga": {
@@ -4041,9 +4061,9 @@
         "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:08:48.594Z",
+      "lastSampleAt": "2026-06-22T07:39:14.717Z",
       "lastError": null
     },
     "Arrifana": {
@@ -4069,23 +4089,42 @@
       "cpCode": "94-42051",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
         "delayMinutes": 0
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-20T18:23:09.096Z",
-      "lastError": "fetch failed"
+      "lastSampleAt": "2026-06-22T07:38:47.350Z",
+      "lastError": null
     },
     "Barca da Amieira – Envendos": {
       "cpCode": "94-52415",
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 3,
+        "arrivalsNextHour": 3,
+        "delayMinutes": 0
+      },
+      "successfulSamples": 5,
+      "failedSamples": 3,
+      "lastSampleAt": "2026-06-22T07:40:33.222Z",
+      "lastError": null
+    },
+    "Barquinha": {
+      "cpCode": "94-51045",
       "byTrainType": {
         "Regional": {
           "departuresNextHour": 2,
@@ -4100,64 +4139,45 @@
       },
       "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:19.898Z",
-      "lastError": null
-    },
-    "Barquinha": {
-      "cpCode": "94-51045",
-      "byTrainType": {
-        "Regional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 0
-        }
-      },
-      "totals": {
-        "departuresNextHour": 1,
-        "arrivalsNextHour": 1,
-        "delayMinutes": 0
-      },
-      "successfulSamples": 3,
-      "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:23:05.040Z",
+      "lastSampleAt": "2026-06-22T07:39:53.134Z",
       "lastError": null
     },
     "Barragem de Belver": {
       "cpCode": "94-52241",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 1,
-        "arrivalsNextHour": 1,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 3,
-      "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:43:15.646Z",
-      "lastError": null
+      "successfulSamples": 4,
+      "failedSamples": 5,
+      "lastSampleAt": "2026-06-22T07:40:06.593Z",
+      "lastError": "fetch failed"
     },
     "Belver": {
       "cpCode": "94-52282",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 5,
         "delayMinutes": 0
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:07:38.413Z",
+      "lastSampleAt": "2026-06-22T07:38:57.872Z",
       "lastError": null
     },
     "Bifurcacao de Lares": {
@@ -4198,104 +4218,104 @@
         "arrivalsNextHour": 3,
         "delayMinutes": 0
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:08:49.277Z",
+      "lastSampleAt": "2026-06-22T07:39:41.357Z",
       "lastError": null
     },
     "Cabanoes": {
       "cpCode": "94-42150",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
         "delayMinutes": 0
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:36.500Z",
+      "lastSampleAt": "2026-06-22T07:39:55.553Z",
       "lastError": null
     },
     "Carrascal – Delongo": {
       "cpCode": "94-40030",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
-          "delayMinutes": 22
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 26
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
-        "delayMinutes": 22
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 26
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-20T18:24:39.550Z",
+      "lastSampleAt": "2026-06-22T07:38:48.573Z",
       "lastError": null
     },
     "Carvalhal Portela": {
       "cpCode": "94-42309",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
         "delayMinutes": 0
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:44:47.510Z",
+      "lastSampleAt": "2026-06-22T07:40:24.010Z",
       "lastError": null
     },
     "Carvalhos de Figueiredo": {
       "cpCode": "94-40113",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
-          "delayMinutes": 3
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 13
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
-        "delayMinutes": 3
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 13
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:41.653Z",
+      "lastSampleAt": "2026-06-22T07:38:41.251Z",
       "lastError": null
     },
     "Casal do Alvaro": {
       "cpCode": "94-42168",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:44:37.763Z",
+      "lastSampleAt": "2026-06-22T07:39:45.322Z",
       "lastError": null
     },
     "Cavaco": {
@@ -4355,28 +4375,28 @@
         "arrivalsNextHour": 7,
         "delayMinutes": 2
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:44:37.205Z",
+      "lastSampleAt": "2026-06-22T07:39:31.749Z",
       "lastError": null
     },
     "Curvaceiras": {
       "cpCode": "94-40063",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 14
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 18
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
-        "delayMinutes": 14
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 5,
+        "delayMinutes": 18
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:09:01.146Z",
+      "lastSampleAt": "2026-06-22T07:40:18.094Z",
       "lastError": null
     },
     "Dois Portos": {
@@ -4421,19 +4441,19 @@
       "cpCode": "94-42077",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
         "delayMinutes": 0
       },
-      "successfulSamples": 1,
+      "successfulSamples": 2,
       "failedSamples": 5,
-      "lastSampleAt": "2026-06-22T05:45:21.608Z",
+      "lastSampleAt": "2026-06-22T07:38:54.864Z",
       "lastError": null
     },
     "Escapaes": {
@@ -4459,19 +4479,19 @@
       "cpCode": "94-42028",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 9,
-          "arrivalsNextHour": 9,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 9,
-        "arrivalsNextHour": 9,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
         "delayMinutes": 0
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:16.362Z",
+      "lastSampleAt": "2026-06-22T07:40:34.950Z",
       "lastError": null
     },
     "Famalicão da Nazaré": {
@@ -4489,46 +4509,46 @@
         "delayMinutes": 0
       },
       "successfulSamples": 3,
-      "failedSamples": 3,
+      "failedSamples": 4,
       "lastSampleAt": "2026-06-22T05:43:17.614Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Faria": {
       "cpCode": "94-44271",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
           "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
         "delayMinutes": 2
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-21T11:08:15.850Z",
+      "lastSampleAt": "2026-06-22T07:39:16.600Z",
       "lastError": null
     },
     "Feliteira": {
       "cpCode": "94-62364",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
         "delayMinutes": 0
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:43:25.898Z",
+      "lastSampleAt": "2026-06-22T07:40:14.973Z",
       "lastError": null
     },
     "Fontela": {
@@ -4592,19 +4612,19 @@
       "cpCode": "94-34199",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
-          "delayMinutes": 2
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
+          "delayMinutes": 3
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
-        "delayMinutes": 2
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
+        "delayMinutes": 3
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 6,
-      "lastSampleAt": "2026-06-22T05:43:44.138Z",
+      "lastSampleAt": "2026-06-22T07:39:29.465Z",
       "lastError": null
     },
     "Guia": {
@@ -4626,28 +4646,28 @@
         "arrivalsNextHour": 2,
         "delayMinutes": 6
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:43:48.824Z",
+      "lastSampleAt": "2026-06-22T07:40:34.374Z",
       "lastError": null
     },
     "Lapa": {
       "cpCode": "94-44057",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 0
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 6
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
-        "delayMinutes": 0
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 5,
+        "delayMinutes": 6
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-21T08:19:40.502Z",
+      "lastSampleAt": "2026-06-22T07:40:46.619Z",
       "lastError": null
     },
     "Lares": {
@@ -4778,32 +4798,38 @@
       "cpCode": "94-65052",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
-          "delayMinutes": 3
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 7
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
-        "delayMinutes": 3
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 7
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 5,
-      "lastSampleAt": "2026-06-21T11:08:02.723Z",
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-22T07:38:58.429Z",
+      "lastError": null
     },
     "Mato de Miranda": {
       "cpCode": "94-32383",
-      "byTrainType": {},
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
-        "delayMinutes": 0
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        }
       },
-      "successfulSamples": 1,
+      "totals": {
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 4
+      },
+      "successfulSamples": 2,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-21T08:24:17.584Z",
+      "lastSampleAt": "2026-06-22T07:38:43.501Z",
       "lastError": null
     },
     "Monte de Páramos": {
@@ -4868,9 +4894,9 @@
         "arrivalsNextHour": 5,
         "delayMinutes": 14
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:43:33.098Z",
+      "lastSampleAt": "2026-06-22T07:40:08.688Z",
       "lastError": null
     },
     "Mourisca do Vouga": {
@@ -4963,9 +4989,9 @@
         "arrivalsNextHour": 3,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:25.074Z",
+      "lastSampleAt": "2026-06-22T07:39:42.463Z",
       "lastError": null
     },
     "Paços de Brandão": {
@@ -4983,7 +5009,7 @@
         "delayMinutes": 0
       },
       "successfulSamples": 3,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-06-21T08:24:33.202Z",
       "lastError": "fetch failed"
     },
@@ -4991,19 +5017,19 @@
       "cpCode": "94-34157",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 1
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
-        "delayMinutes": 1
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 2
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:20:41.371Z",
+      "lastSampleAt": "2026-06-22T07:39:51.255Z",
       "lastError": null
     },
     "Pala": {
@@ -5023,19 +5049,19 @@
       "cpCode": "94-8201",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 6,
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 8,
           "delayMinutes": 1
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 6,
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 8,
         "delayMinutes": 1
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:36.937Z",
+      "lastSampleAt": "2026-06-22T07:40:09.924Z",
       "lastError": null
     },
     "Pataias": {
@@ -5066,38 +5092,38 @@
       "cpCode": "94-34702",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 4
+          "departuresNextHour": 4,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 11
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
-        "delayMinutes": 4
+        "departuresNextHour": 4,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 11
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-21T08:19:22.941Z",
+      "lastSampleAt": "2026-06-22T07:39:00.295Z",
       "lastError": null
     },
     "Pero Negro": {
       "cpCode": "94-62315",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 9,
-          "arrivalsNextHour": 9,
+          "departuresNextHour": 11,
+          "arrivalsNextHour": 11,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 9,
-        "arrivalsNextHour": 9,
+        "departuresNextHour": 11,
+        "arrivalsNextHour": 11,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:08:53.855Z",
+      "lastSampleAt": "2026-06-22T07:39:59.617Z",
       "lastError": null
     },
     "Praia do Ribatejo": {
@@ -5126,73 +5152,83 @@
           "departuresNextHour": 1,
           "arrivalsNextHour": 1,
           "delayMinutes": 0
+        },
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 1,
-        "arrivalsNextHour": 1,
+        "departuresNextHour": 2,
+        "arrivalsNextHour": 2,
         "delayMinutes": 0
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:43.334Z",
+      "lastSampleAt": "2026-06-22T07:40:31.442Z",
       "lastError": null
     },
     "Rede": {
       "cpCode": "94-9357",
       "byTrainType": {
         "InterRegional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
           "delayMinutes": 9
+        },
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
         "delayMinutes": 9
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:19.132Z",
+      "lastSampleAt": "2026-06-22T07:39:58.503Z",
       "lastError": null
     },
     "Reveles": {
       "cpCode": "94-65128",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 7,
-          "arrivalsNextHour": 7,
-          "delayMinutes": 0
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 9,
+          "delayMinutes": 5
         }
       },
       "totals": {
-        "departuresNextHour": 7,
-        "arrivalsNextHour": 7,
-        "delayMinutes": 0
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 9,
+        "delayMinutes": 5
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T08:23:15.891Z",
+      "lastSampleAt": "2026-06-22T07:39:40.246Z",
       "lastError": null
     },
     "Riachos – Torres Novas – Golegã": {
       "cpCode": "94-32466",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 10
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 14
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
-        "delayMinutes": 10
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 14
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:11.522Z",
+      "lastSampleAt": "2026-06-22T07:38:59.706Z",
       "lastError": null
     },
     "Runa": {
@@ -5210,40 +5246,46 @@
         "delayMinutes": 0
       },
       "successfulSamples": 2,
-      "failedSamples": 3,
+      "failedSamples": 4,
       "lastSampleAt": "2026-06-20T18:22:45.296Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Salir do Porto": {
       "cpCode": "94-63107",
-      "byTrainType": {},
+      "byTrainType": {
+        "Regional": {
+          "departuresNextHour": 1,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
       "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 0,
+        "departuresNextHour": 1,
+        "arrivalsNextHour": 1,
         "delayMinutes": 0
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:35.974Z",
+      "lastSampleAt": "2026-06-22T07:38:53.629Z",
       "lastError": null
     },
     "Sampaio - Oleiros": {
       "cpCode": "94-44073",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 3,
-          "arrivalsNextHour": 3,
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 3,
-        "arrivalsNextHour": 3,
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:51.180Z",
+      "lastSampleAt": "2026-06-22T07:40:25.163Z",
       "lastError": null
     },
     "Sanfins": {
@@ -5345,95 +5387,95 @@
       "cpCode": "94-42093",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 9,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 9,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:45:21.059Z",
+      "lastSampleAt": "2026-06-22T07:39:01.591Z",
       "lastError": null
     },
     "Sao Martinho do Campo": {
       "cpCode": "94-8102",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 8,
-          "arrivalsNextHour": 8,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
           "delayMinutes": 1
         }
       },
       "totals": {
-        "departuresNextHour": 8,
-        "arrivalsNextHour": 8,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
         "delayMinutes": 1
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:44.475Z",
+      "lastSampleAt": "2026-06-22T07:39:10.211Z",
       "lastError": null
     },
     "São Martinho do Porto": {
       "cpCode": "94-63131",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
+        "departuresNextHour": 3,
+        "arrivalsNextHour": 3,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:32.555Z",
+      "lastSampleAt": "2026-06-22T07:38:56.714Z",
       "lastError": null
     },
     "Sapataria": {
       "cpCode": "94-62299",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
         "delayMinutes": 0
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:55.872Z",
+      "lastSampleAt": "2026-06-22T07:40:36.243Z",
       "lastError": null
     },
     "Seiça – Ourém": {
       "cpCode": "94-34264",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 9,
-          "arrivalsNextHour": 9,
+          "departuresNextHour": 10,
+          "arrivalsNextHour": 10,
           "delayMinutes": 6
         }
       },
       "totals": {
-        "departuresNextHour": 9,
-        "arrivalsNextHour": 9,
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 10,
         "delayMinutes": 6
       },
-      "successfulSamples": 7,
+      "successfulSamples": 8,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:42.791Z",
+      "lastSampleAt": "2026-06-22T07:40:29.036Z",
       "lastError": null
     },
     "Setil": {
@@ -5478,19 +5520,19 @@
       "cpCode": "94-34744",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 1
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 8
         }
       },
       "totals": {
-        "departuresNextHour": 1,
-        "arrivalsNextHour": 1,
-        "delayMinutes": 1
+        "departuresNextHour": 3,
+        "arrivalsNextHour": 3,
+        "delayMinutes": 8
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:56.453Z",
+      "lastSampleAt": "2026-06-22T07:39:39.069Z",
       "lastError": null
     },
     "Soudos - Vila Nova": {
@@ -5516,19 +5558,19 @@
       "cpCode": "94-42127",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:07:34.083Z",
+      "lastSampleAt": "2026-06-22T07:40:00.761Z",
       "lastError": null
     },
     "Tancos": {
@@ -5545,28 +5587,28 @@
         "arrivalsNextHour": 3,
         "delayMinutes": 0
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:08:26.772Z",
+      "lastSampleAt": "2026-06-22T07:40:21.560Z",
       "lastError": null
     },
     "Terronhas": {
       "cpCode": "94-8136",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 9,
-          "arrivalsNextHour": 9,
+          "departuresNextHour": 11,
+          "arrivalsNextHour": 11,
           "delayMinutes": 2
         }
       },
       "totals": {
-        "departuresNextHour": 9,
-        "arrivalsNextHour": 9,
+        "departuresNextHour": 11,
+        "arrivalsNextHour": 11,
         "delayMinutes": 2
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:57.826Z",
+      "lastSampleAt": "2026-06-22T07:39:24.350Z",
       "lastError": null
     },
     "Tramagal": {
@@ -5649,19 +5691,19 @@
       "cpCode": "94-32284",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
-          "delayMinutes": 10
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
+          "delayMinutes": 17
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
-        "delayMinutes": 10
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
+        "delayMinutes": 17
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:46.088Z",
+      "lastSampleAt": "2026-06-22T07:40:45.420Z",
       "lastError": null
     },
     "Vale de Santarem": {
@@ -5706,43 +5748,43 @@
       "cpCode": "94-65086",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 7,
-          "delayMinutes": 0
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 9,
+          "delayMinutes": 5
         },
         "InterRegional": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
+          "departuresNextHour": 2,
+          "arrivalsNextHour": 2,
           "delayMinutes": 4
         }
       },
       "totals": {
-        "departuresNextHour": 7,
-        "arrivalsNextHour": 8,
-        "delayMinutes": 4
+        "departuresNextHour": 10,
+        "arrivalsNextHour": 11,
+        "delayMinutes": 9
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:23.391Z",
+      "lastSampleAt": "2026-06-22T07:40:30.183Z",
       "lastError": null
     },
     "Vila Franca de Xira": {
       "cpCode": "94-31278",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 13,
-          "arrivalsNextHour": 13,
-          "delayMinutes": 12
-        },
-        "Regional": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
+          "departuresNextHour": 21,
+          "arrivalsNextHour": 21,
           "delayMinutes": 20
         },
+        "Regional": {
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 9,
+          "delayMinutes": 29
+        },
         "Intercidades": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 2
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 15
         },
         "InterRegional": {
           "departuresNextHour": 1,
@@ -5751,32 +5793,32 @@
         }
       },
       "totals": {
-        "departuresNextHour": 24,
-        "arrivalsNextHour": 24,
-        "delayMinutes": 35
+        "departuresNextHour": 36,
+        "arrivalsNextHour": 36,
+        "delayMinutes": 65
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:53.909Z",
+      "lastSampleAt": "2026-06-22T07:40:20.870Z",
       "lastError": null
     },
     "Vila Nova da Rainha": {
       "cpCode": "94-31377",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 10,
-          "arrivalsNextHour": 11,
+          "departuresNextHour": 14,
+          "arrivalsNextHour": 15,
           "delayMinutes": 14
         }
       },
       "totals": {
-        "departuresNextHour": 10,
-        "arrivalsNextHour": 11,
+        "departuresNextHour": 14,
+        "arrivalsNextHour": 15,
         "delayMinutes": 14
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:45:04.839Z",
+      "lastSampleAt": "2026-06-22T07:39:43.622Z",
       "lastError": null
     },
     "Vila Nova de Ancos": {
@@ -5840,19 +5882,19 @@
       "cpCode": "94-69039",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 18,
-          "arrivalsNextHour": 20,
-          "delayMinutes": 8
+          "departuresNextHour": 34,
+          "arrivalsNextHour": 37,
+          "delayMinutes": 14
         }
       },
       "totals": {
-        "departuresNextHour": 18,
-        "arrivalsNextHour": 20,
-        "delayMinutes": 8
+        "departuresNextHour": 34,
+        "arrivalsNextHour": 37,
+        "delayMinutes": 14
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:24:08.263Z",
+      "lastSampleAt": "2026-06-22T07:39:14.121Z",
       "lastError": null
     },
     "Alcantara - Terra": {
@@ -5935,19 +5977,19 @@
       "cpCode": "94-95075",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 9,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 2
+          "departuresNextHour": 14,
+          "arrivalsNextHour": 12,
+          "delayMinutes": 4
         }
       },
       "totals": {
-        "departuresNextHour": 9,
-        "arrivalsNextHour": 8,
-        "delayMinutes": 2
+        "departuresNextHour": 14,
+        "arrivalsNextHour": 12,
+        "delayMinutes": 4
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:15.781Z",
+      "lastSampleAt": "2026-06-22T07:40:17.450Z",
       "lastError": null
     },
     "Alverca": {
@@ -5978,43 +6020,43 @@
       "cpCode": "94-60087",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 58,
-          "arrivalsNextHour": 58,
-          "delayMinutes": 15
+          "departuresNextHour": 79,
+          "arrivalsNextHour": 79,
+          "delayMinutes": 32
         }
       },
       "totals": {
-        "departuresNextHour": 58,
-        "arrivalsNextHour": 58,
-        "delayMinutes": 15
+        "departuresNextHour": 79,
+        "arrivalsNextHour": 79,
+        "delayMinutes": 32
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:15.378Z",
+      "lastSampleAt": "2026-06-22T07:40:42.419Z",
       "lastError": null
     },
     "Azambuja": {
       "cpCode": "94-33001",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 5,
-          "delayMinutes": 15
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 7,
+          "delayMinutes": 16
         },
         "Regional": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 7,
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 9,
           "delayMinutes": 30
         }
       },
       "totals": {
-        "departuresNextHour": 12,
-        "arrivalsNextHour": 12,
-        "delayMinutes": 45
+        "departuresNextHour": 16,
+        "arrivalsNextHour": 16,
+        "delayMinutes": 46
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:56.789Z",
+      "lastSampleAt": "2026-06-22T07:38:38.876Z",
       "lastError": null
     },
     "Baixa da Banheira": {
@@ -6097,38 +6139,38 @@
       "cpCode": "94-31070",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 4
+          "departuresNextHour": 14,
+          "arrivalsNextHour": 14,
+          "delayMinutes": 13
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
-        "delayMinutes": 4
+        "departuresNextHour": 14,
+        "arrivalsNextHour": 14,
+        "delayMinutes": 13
       },
-      "successfulSamples": 1,
+      "successfulSamples": 2,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-20T11:10:35.208Z",
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-22T07:40:16.718Z",
+      "lastError": null
     },
     "Braco de Prata": {
       "cpCode": "94-31005",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 25,
-          "arrivalsNextHour": 25,
-          "delayMinutes": 22
+          "departuresNextHour": 45,
+          "arrivalsNextHour": 46,
+          "delayMinutes": 40
         }
       },
       "totals": {
-        "departuresNextHour": 25,
-        "arrivalsNextHour": 25,
-        "delayMinutes": 22
+        "departuresNextHour": 45,
+        "arrivalsNextHour": 46,
+        "delayMinutes": 40
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:08.890Z",
+      "lastSampleAt": "2026-06-22T07:38:49.337Z",
       "lastError": null
     },
     "Campolide": {
@@ -6211,20 +6253,20 @@
       "cpCode": "94-69120",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 11,
-          "arrivalsNextHour": 11,
+          "departuresNextHour": 19,
+          "arrivalsNextHour": 19,
           "delayMinutes": 6
         }
       },
       "totals": {
-        "departuresNextHour": 11,
-        "arrivalsNextHour": 11,
+        "departuresNextHour": 19,
+        "arrivalsNextHour": 19,
         "delayMinutes": 6
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 5,
-      "lastSampleAt": "2026-06-20T18:23:46.773Z",
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-22T07:40:37.483Z",
+      "lastError": null
     },
     "Cruz Quebrada": {
       "cpCode": "94-69104",
@@ -6367,57 +6409,57 @@
       "cpCode": "94-61051",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 24,
-          "arrivalsNextHour": 24,
-          "delayMinutes": 4
+          "departuresNextHour": 40,
+          "arrivalsNextHour": 40,
+          "delayMinutes": 15
         }
       },
       "totals": {
-        "departuresNextHour": 24,
-        "arrivalsNextHour": 24,
-        "delayMinutes": 4
+        "departuresNextHour": 40,
+        "arrivalsNextHour": 40,
+        "delayMinutes": 15
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:25:08.994Z",
+      "lastSampleAt": "2026-06-22T07:39:48.030Z",
       "lastError": null
     },
     "Moita": {
       "cpCode": "94-95109",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 4,
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 8,
           "delayMinutes": 3
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 4,
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 8,
         "delayMinutes": 3
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-21T11:07:48.998Z",
+      "lastSampleAt": "2026-06-22T07:39:12.192Z",
       "lastError": null
     },
     "Monte Abraão": {
       "cpCode": "94-60111",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 32,
-          "arrivalsNextHour": 32,
-          "delayMinutes": 2
+          "departuresNextHour": 52,
+          "arrivalsNextHour": 52,
+          "delayMinutes": 16
         }
       },
       "totals": {
-        "departuresNextHour": 32,
-        "arrivalsNextHour": 32,
-        "delayMinutes": 2
+        "departuresNextHour": 52,
+        "arrivalsNextHour": 52,
+        "delayMinutes": 16
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T08:24:52.812Z",
+      "lastSampleAt": "2026-06-22T07:39:47.277Z",
       "lastError": null
     },
     "Monte Estoril": {
@@ -6481,57 +6523,57 @@
       "cpCode": "94-69146",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 30,
-          "arrivalsNextHour": 30,
+          "departuresNextHour": 38,
+          "arrivalsNextHour": 38,
           "delayMinutes": 15
         }
       },
       "totals": {
-        "departuresNextHour": 30,
-        "arrivalsNextHour": 30,
+        "departuresNextHour": 38,
+        "arrivalsNextHour": 38,
         "delayMinutes": 15
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-21T11:08:44.851Z",
+      "lastSampleAt": "2026-06-22T07:40:24.606Z",
       "lastError": null
     },
     "Palmela": {
       "cpCode": "94-68080",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 10,
-          "arrivalsNextHour": 10,
-          "delayMinutes": 2
+          "departuresNextHour": 14,
+          "arrivalsNextHour": 14,
+          "delayMinutes": 5
         }
       },
       "totals": {
-        "departuresNextHour": 10,
-        "arrivalsNextHour": 10,
-        "delayMinutes": 2
+        "departuresNextHour": 14,
+        "arrivalsNextHour": 14,
+        "delayMinutes": 5
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:29.149Z",
+      "lastSampleAt": "2026-06-22T07:40:03.825Z",
       "lastError": null
     },
     "Parede": {
       "cpCode": "94-69203",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 42,
-          "arrivalsNextHour": 42,
-          "delayMinutes": 15
+          "departuresNextHour": 50,
+          "arrivalsNextHour": 50,
+          "delayMinutes": 18
         }
       },
       "totals": {
-        "departuresNextHour": 42,
-        "arrivalsNextHour": 42,
-        "delayMinutes": 15
+        "departuresNextHour": 50,
+        "arrivalsNextHour": 50,
+        "delayMinutes": 18
       },
-      "successfulSamples": 7,
+      "successfulSamples": 8,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:44:21.813Z",
+      "lastSampleAt": "2026-06-22T07:39:56.171Z",
       "lastError": null
     },
     "Penteado": {
@@ -6549,27 +6591,27 @@
         "delayMinutes": 0
       },
       "successfulSamples": 2,
-      "failedSamples": 3,
+      "failedSamples": 4,
       "lastSampleAt": "2026-06-20T18:22:49.638Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Portela de Sintra": {
       "cpCode": "94-61093",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 45,
-          "arrivalsNextHour": 44,
-          "delayMinutes": 16
+          "departuresNextHour": 61,
+          "arrivalsNextHour": 60,
+          "delayMinutes": 28
         }
       },
       "totals": {
-        "departuresNextHour": 45,
-        "arrivalsNextHour": 44,
-        "delayMinutes": 16
+        "departuresNextHour": 61,
+        "arrivalsNextHour": 60,
+        "delayMinutes": 28
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 5,
-      "lastSampleAt": "2026-06-22T05:44:45.769Z",
+      "lastSampleAt": "2026-06-22T07:40:08.020Z",
       "lastError": null
     },
     "Povoa": {
@@ -6619,19 +6661,19 @@
       "cpCode": "94-60103",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 35,
-          "arrivalsNextHour": 36,
-          "delayMinutes": 11
+          "departuresNextHour": 55,
+          "arrivalsNextHour": 56,
+          "delayMinutes": 25
         }
       },
       "totals": {
-        "departuresNextHour": 35,
-        "arrivalsNextHour": 36,
-        "delayMinutes": 11
+        "departuresNextHour": 55,
+        "arrivalsNextHour": 56,
+        "delayMinutes": 25
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:15.077Z",
+      "lastSampleAt": "2026-06-22T07:39:21.334Z",
       "lastError": null
     },
     "Reboleira": {
@@ -6657,19 +6699,19 @@
       "cpCode": "94-33084",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 6,
-          "arrivalsNextHour": 6,
+          "departuresNextHour": 8,
+          "arrivalsNextHour": 8,
           "delayMinutes": 23
         }
       },
       "totals": {
-        "departuresNextHour": 6,
-        "arrivalsNextHour": 6,
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
         "delayMinutes": 23
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:43:25.081Z",
+      "lastSampleAt": "2026-06-22T07:38:51.214Z",
       "lastError": null
     },
     "Rio de Mouro": {
@@ -6695,76 +6737,76 @@
       "cpCode": "94-66035",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 23,
-          "arrivalsNextHour": 23,
-          "delayMinutes": 17
+          "departuresNextHour": 39,
+          "arrivalsNextHour": 39,
+          "delayMinutes": 26
         }
       },
       "totals": {
-        "departuresNextHour": 23,
-        "arrivalsNextHour": 23,
-        "delayMinutes": 17
+        "departuresNextHour": 39,
+        "arrivalsNextHour": 39,
+        "delayMinutes": 26
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:20.786Z",
+      "lastSampleAt": "2026-06-22T07:38:42.011Z",
       "lastError": null
     },
     "Sacavem": {
       "cpCode": "94-31062",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 19,
-          "arrivalsNextHour": 19,
-          "delayMinutes": 31
+          "departuresNextHour": 31,
+          "arrivalsNextHour": 32,
+          "delayMinutes": 47
         }
       },
       "totals": {
-        "departuresNextHour": 19,
-        "arrivalsNextHour": 19,
-        "delayMinutes": 31
+        "departuresNextHour": 31,
+        "arrivalsNextHour": 32,
+        "delayMinutes": 47
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:27.209Z",
+      "lastSampleAt": "2026-06-22T07:40:10.614Z",
       "lastError": null
     },
     "Santa Cruz - Damaia": {
       "cpCode": "94-60038",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 16,
-          "arrivalsNextHour": 17,
-          "delayMinutes": 6
+          "departuresNextHour": 36,
+          "arrivalsNextHour": 37,
+          "delayMinutes": 13
         }
       },
       "totals": {
-        "departuresNextHour": 16,
-        "arrivalsNextHour": 17,
-        "delayMinutes": 6
+        "departuresNextHour": 36,
+        "arrivalsNextHour": 37,
+        "delayMinutes": 13
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-20T11:11:37.335Z",
-      "lastError": "cp_api_http_429"
+      "lastSampleAt": "2026-06-22T07:39:07.564Z",
+      "lastError": null
     },
     "Santa Iria": {
       "cpCode": "94-31112",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 19,
-          "arrivalsNextHour": 19,
-          "delayMinutes": 33
+          "departuresNextHour": 31,
+          "arrivalsNextHour": 31,
+          "delayMinutes": 41
         }
       },
       "totals": {
-        "departuresNextHour": 19,
-        "arrivalsNextHour": 19,
-        "delayMinutes": 33
+        "departuresNextHour": 31,
+        "arrivalsNextHour": 31,
+        "delayMinutes": 41
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:44:10.930Z",
+      "lastSampleAt": "2026-06-22T07:39:33.165Z",
       "lastError": null
     },
     "Santo Amaro": {
@@ -6833,19 +6875,19 @@
       "cpCode": "94-33043",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 7,
-          "arrivalsNextHour": 7,
+          "departuresNextHour": 9,
+          "arrivalsNextHour": 9,
           "delayMinutes": 37
         }
       },
       "totals": {
-        "departuresNextHour": 7,
-        "arrivalsNextHour": 7,
+        "departuresNextHour": 9,
+        "arrivalsNextHour": 9,
         "delayMinutes": 37
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:56.540Z",
+      "lastSampleAt": "2026-06-22T07:38:50.008Z",
       "lastError": null
     },
     "Mafra": {
@@ -6871,28 +6913,28 @@
       "cpCode": "94-17087",
       "byTrainType": {
         "Intercidades": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 5,
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 6,
           "delayMinutes": 4
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 5,
+        "departuresNextHour": 5,
+        "arrivalsNextHour": 6,
         "delayMinutes": 4
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:25.405Z",
+      "lastSampleAt": "2026-06-22T07:40:15.528Z",
       "lastError": null
     },
     "Pinhal Novo": {
       "cpCode": "94-68007",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 16,
-          "arrivalsNextHour": 17,
-          "delayMinutes": 3
+          "departuresNextHour": 20,
+          "arrivalsNextHour": 21,
+          "delayMinutes": 5
         },
         "Intercidades": {
           "departuresNextHour": 4,
@@ -6900,46 +6942,46 @@
           "delayMinutes": 9
         },
         "Alfa Pendular": {
-          "departuresNextHour": 1,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 7
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 18
         }
       },
       "totals": {
-        "departuresNextHour": 21,
-        "arrivalsNextHour": 22,
-        "delayMinutes": 19
+        "departuresNextHour": 27,
+        "arrivalsNextHour": 28,
+        "delayMinutes": 32
       },
-      "successfulSamples": 7,
+      "successfulSamples": 8,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:29.521Z",
+      "lastSampleAt": "2026-06-22T07:40:41.121Z",
       "lastError": null
     },
     "Barreiro": {
       "cpCode": "94-95000",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
-          "delayMinutes": 6
+          "departuresNextHour": 7,
+          "arrivalsNextHour": 7,
+          "delayMinutes": 8
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
-        "delayMinutes": 6
+        "departuresNextHour": 7,
+        "arrivalsNextHour": 7,
+        "delayMinutes": 8
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:09.694Z",
+      "lastSampleAt": "2026-06-22T07:40:49.130Z",
       "lastError": null
     },
     "Torres Vedras": {
       "cpCode": "94-62471",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
+          "departuresNextHour": 5,
+          "arrivalsNextHour": 5,
           "delayMinutes": 0
         },
         "InterRegional": {
@@ -6949,45 +6991,45 @@
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 5,
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:43:19.701Z",
+      "lastSampleAt": "2026-06-22T07:39:23.789Z",
       "lastError": null
     },
     "Mira Sintra-Meleças": {
       "cpCode": "94-62042",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 0
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 2
         },
         "Regional": {
-          "departuresNextHour": 1,
+          "departuresNextHour": 2,
           "arrivalsNextHour": 2,
           "delayMinutes": 0
         }
       },
       "totals": {
-        "departuresNextHour": 5,
-        "arrivalsNextHour": 6,
-        "delayMinutes": 0
+        "departuresNextHour": 8,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 2
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-21T11:08:35.569Z",
+      "lastSampleAt": "2026-06-22T07:40:20.176Z",
       "lastError": null
     },
     "Abrantes": {
       "cpCode": "94-52001",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 5,
-          "arrivalsNextHour": 5,
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
           "delayMinutes": 16
         },
         "Intercidades": {
@@ -6997,13 +7039,13 @@
         }
       },
       "totals": {
-        "departuresNextHour": 11,
-        "arrivalsNextHour": 11,
+        "departuresNextHour": 12,
+        "arrivalsNextHour": 12,
         "delayMinutes": 22
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:00.391Z",
+      "lastSampleAt": "2026-06-22T07:39:48.698Z",
       "lastError": null
     },
     "Portalegre": {
@@ -7014,9 +7056,9 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:45:05.999Z",
+      "lastSampleAt": "2026-06-22T07:38:53.076Z",
       "lastError": null
     },
     "Elvas": {
@@ -7027,47 +7069,47 @@
         "arrivalsNextHour": 0,
         "delayMinutes": 0
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:44:43.908Z",
+      "lastSampleAt": "2026-06-22T07:39:40.800Z",
       "lastError": null
     },
     "Vendas Novas": {
       "cpCode": "94-72009",
       "byTrainType": {
         "Intercidades": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
           "delayMinutes": 5
         }
       },
       "totals": {
-        "departuresNextHour": 2,
-        "arrivalsNextHour": 2,
+        "departuresNextHour": 3,
+        "arrivalsNextHour": 3,
         "delayMinutes": 5
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 3,
-      "lastSampleAt": "2026-06-22T05:44:00.456Z",
+      "lastSampleAt": "2026-06-22T07:40:22.117Z",
       "lastError": null
     },
     "Olhão": {
       "cpCode": "94-73106",
       "byTrainType": {
         "Regional": {
-          "departuresNextHour": 4,
-          "arrivalsNextHour": 4,
+          "departuresNextHour": 6,
+          "arrivalsNextHour": 6,
           "delayMinutes": 8
         }
       },
       "totals": {
-        "departuresNextHour": 4,
-        "arrivalsNextHour": 4,
+        "departuresNextHour": 6,
+        "arrivalsNextHour": 6,
         "delayMinutes": 8
       },
-      "successfulSamples": 4,
+      "successfulSamples": 5,
       "failedSamples": 4,
-      "lastSampleAt": "2026-06-22T05:45:06.962Z",
+      "lastSampleAt": "2026-06-22T07:40:01.662Z",
       "lastError": null
     },
     "Loulé": {
@@ -7108,9 +7150,9 @@
         "arrivalsNextHour": 3,
         "delayMinutes": 4
       },
-      "successfulSamples": 6,
+      "successfulSamples": 7,
       "failedSamples": 2,
-      "lastSampleAt": "2026-06-22T05:43:16.206Z",
+      "lastSampleAt": "2026-06-22T07:39:00.996Z",
       "lastError": null
     }
   }

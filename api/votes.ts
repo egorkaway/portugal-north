@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { isVoteStorageConfigured } from "./lib/blobVotes.js";
+import { isVoteStorageConfigured } from "../server/lib/blobVotes.js";
 import {
   applyHotelClosedReportDelta,
   applyHotelVoteDelta,

@@ -17,6 +17,7 @@ export const en: Messages = {
     home: "Home",
     rankings: "Rankings",
     tickets: "Tickets",
+    map: "Map",
     mobile: "Mobile navigation",
     main: "Main navigation",
   },
@@ -151,6 +152,21 @@ export const en: Messages = {
     mostReliable: "Top 10 most reliable",
     leastReliable: "Top 10 least reliable",
   },
+  map: {
+    title: "Station activity map",
+    subtitle: "H3 hexes sized by sampled departures and arrivals across mainland Portugal",
+    intro:
+      "Each hex is an H3 cell around a station in our list. Busier stations (more departures and arrivals in our CP samples) use larger hexes at resolution 5; quieter ones use smaller hexes at resolution 9, with resolution 7 in between.",
+    loading: "Loading map…",
+    unavailable: "Station activity data is temporarily unavailable.",
+    legendTitle: "Hex size",
+    legendBusy: "Busiest (H3 res. 5)",
+    legendMid: "Mid traffic (H3 res. 7)",
+    legendQuiet: "Quietest (H3 res. 9)",
+    tooltipMovements: "{{count}} departures + arrivals (sampled)",
+    tooltipResolution: "H3 resolution {{resolution}}",
+    viewStation: "View station",
+  },
   tickets: {
     title: "Tickets & prices",
     subtitle: "CP trains, Porto Andante, Lisbon navegante®, and what affects fares",
@@ -272,6 +288,7 @@ export const en: Messages = {
     portuGuessDesc:
       "Learn European Portuguese with quizzes, word lists, and offline apps for iOS and Android.",
     privacy: "Privacy policy",
+    stationMap: "Station activity map",
   },
   notFound: {
     title: "404",
@@ -297,6 +314,13 @@ export const en: Messages = {
         "How to buy CP train tickets, Porto Andante and Lisbon navegante® metro passes, and what affects fares (zones, service type, booking time).",
       ogDescription:
         "CP tickets plus Andante and navegante® zone fares for Porto and Lisbon metros.",
+    },
+    map: {
+      title: "Station Activity Map | Portugal by Train",
+      description:
+        "Interactive map of CP stations in mainland Portugal with H3 hexes sized by sampled departures and arrivals.",
+      ogDescription:
+        "See which CP stations are busiest in our live departure samples, on an H3 hex map of Portugal.",
     },
     privacy: {
       title: "Privacy Policy | Portugal by Train",
