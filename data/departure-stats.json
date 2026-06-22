@@ -1,6 +1,6 @@
 {
-  "runCount": 28,
-  "lastRunAt": "2026-06-22T17:51:35.529Z",
+  "runCount": 29,
+  "lastRunAt": "2026-06-22T18:14:46.441Z",
   "stations": {
     "Pombal": {
       "cpCode": "94-34645",
@@ -1237,9 +1237,9 @@
         "delayMinutes": 17
       },
       "successfulSamples": 6,
-      "failedSamples": 2,
+      "failedSamples": 3,
       "lastSampleAt": "2026-06-22T17:51:51.268Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Valadares": {
       "cpCode": "94-39115",
@@ -2842,9 +2842,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 7,
-      "failedSamples": 3,
+      "failedSamples": 4,
       "lastSampleAt": "2026-06-22T17:53:10.489Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Ferrão": {
       "cpCode": "94-10165",
@@ -2923,9 +2923,9 @@
         "delayMinutes": 1
       },
       "successfulSamples": 4,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-06-22T12:01:28.581Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Irivo": {
       "cpCode": "94-8243",
@@ -3056,9 +3056,9 @@
         "delayMinutes": 14
       },
       "successfulSamples": 7,
-      "failedSamples": 2,
+      "failedSamples": 3,
       "lastSampleAt": "2026-06-22T17:53:47.020Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "São Mamede de Infesta": {
       "cpCode": "94-21048",
@@ -3375,9 +3375,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 7,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-06-22T07:39:06.815Z",
-      "lastError": "cp_api_http_429"
+      "lastError": "fetch failed"
     },
     "Lisboa Santa Apolónia": {
       "cpCode": "94-30007",

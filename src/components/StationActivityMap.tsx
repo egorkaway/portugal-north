@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { Download } from "lucide-react";
 import { MapContainer, Polygon, TileLayer, Tooltip } from "react-leaflet";
 import { Button } from "@/components/ui/button";
+import { MapPointLabels } from "@/components/MapPointLabels";
 import { stations } from "@/data/stations";
 import { useReliabilityScores } from "@/hooks/useReliabilityScore";
 import { useLocale } from "@/i18n/LocaleProvider";
+import { buildMapLabelPoints } from "@/lib/mapLabels";
 import {
   PORTUGAL_MAP_BOUNDS,
   PORTUGAL_MAP_CENTER,
@@ -38,6 +40,18 @@ const LEGEND_SWATCHES = {
   },
 } as const;
 
+const AIRPORT_LEGEND_SWATCH = {
+  fill: "hsl(25 92% 52%)",
+  fillOpacity: 0.92,
+  border: "hsl(25 88% 28%)",
+} as const;
+
+const AIRPORT_LABEL_KEYS = {
+  LIS: "map.airportLis",
+  OPO: "map.airportPorto",
+  FAO: "map.airportFaro",
+} as const;
+
 export default function StationActivityMap() {
   const { t } = useLocale();
   const { data, isLoading, isError } = useReliabilityScores();
@@ -46,6 +60,15 @@ export default function StationActivityMap() {
     if (!data?.movements) return null;
     return buildStationHexCells(stations, data.movements);
   }, [data?.movements]);
+
+  const labelPoints = useMemo(() => {
+    const airportLabels = {
+      LIS: t(AIRPORT_LABEL_KEYS.LIS),
+      OPO: t(AIRPORT_LABEL_KEYS.OPO),
+      FAO: t(AIRPORT_LABEL_KEYS.FAO),
+    } as const;
+    return buildMapLabelPoints(stations, airportLabels);
+  }, [t]);
 
   if (isLoading) {
     return <p className="text-sm text-muted-foreground">{t("map.loading")}</p>;
@@ -118,6 +141,7 @@ export default function StationActivityMap() {
               </Polygon>
             );
           })}
+          <MapPointLabels points={labelPoints} />
         </MapContainer>
       </div>
 
@@ -146,6 +170,18 @@ export default function StationActivityMap() {
             </span>
           );
         })}
+        <span className="inline-flex items-center gap-2">
+          <span
+            className="inline-block h-2.5 w-2.5 rounded-full border-2"
+            style={{
+              backgroundColor: AIRPORT_LEGEND_SWATCH.fill,
+              opacity: AIRPORT_LEGEND_SWATCH.fillOpacity,
+              borderColor: AIRPORT_LEGEND_SWATCH.border,
+            }}
+            aria-hidden="true"
+          />
+          {t("map.legendAirports")}
+        </span>
       </div>
     </div>
   );

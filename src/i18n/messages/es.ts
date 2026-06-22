@@ -169,6 +169,10 @@ export const es: Messages = {
     tooltipResolution: "Resolución H3 {{resolution}}",
     viewStation: "Ver estación",
     downloadGeoJson: "Descargar GeoJSON",
+    legendAirports: "Aeropuertos internacionales",
+    airportLis: "Lisboa Humberto Delgado",
+    airportPorto: "Oporto Francisco Sá Carneiro",
+    airportFaro: "Faro",
   },
   tickets: {
     title: "Billetes y precios",

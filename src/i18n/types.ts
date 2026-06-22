@@ -154,6 +154,10 @@ export type Messages = {
     tooltipResolution: string;
     viewStation: string;
     downloadGeoJson: string;
+    legendAirports: string;
+    airportLis: string;
+    airportPorto: string;
+    airportFaro: string;
   };
   tickets: {
     title: string;
