@@ -44,6 +44,11 @@ export type RankedReliabilityStation = {
   score: number;
 };
 
+export type ReliabilityRankingRow = RankedReliabilityStation & {
+  rank: number;
+  movements: number;
+};
+
 function compareReliabilityRank(
   nameA: string,
   scoreA: number,
@@ -85,4 +90,55 @@ export function getBottomReliabilityStations(
     )
     .slice(0, limit)
     .map(([name, score]) => ({ name, score }));
+}
+
+export function buildReliabilityRankingRows(
+  stationNames: readonly string[],
+  scores: Record<string, number>,
+  movements: Record<string, number> = {},
+): ReliabilityRankingRow[] {
+  const allowed = new Set(stationNames);
+
+  return Object.entries(scores)
+    .filter(([name]) => allowed.has(name))
+    .sort(([nameA, scoreA], [nameB, scoreB]) =>
+      compareReliabilityRank(nameA, scoreA, nameB, scoreB, movements, "desc"),
+    )
+    .map(([name, score], index) => ({
+      rank: index + 1,
+      name,
+      score,
+      movements: movements[name] ?? 0,
+    }));
+}
+
+function escapeCsvField(value: string | number): string {
+  const text = String(value);
+  if (/[",\n\r]/.test(text)) return `"${text.replace(/"/g, '""')}"`;
+  return text;
+}
+
+export function reliabilityRankingsToCsv(rows: ReliabilityRankingRow[]): string {
+  const lines = ["rank,station,reliability_score,movements"];
+  for (const row of rows) {
+    lines.push(
+      [row.rank, escapeCsvField(row.name), row.score, row.movements].join(","),
+    );
+  }
+  return `${lines.join("\n")}\n`;
+}
+
+export function downloadReliabilityRankingsCsv(
+  rows: ReliabilityRankingRow[],
+  filename = "station-reliability-rankings.csv",
+): void {
+  const blob = new Blob([reliabilityRankingsToCsv(rows)], {
+    type: "text/csv;charset=utf-8",
+  });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
 }

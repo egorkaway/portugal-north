@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { hexPathStyle, movementsToH3Resolution } from "@/lib/stationH3Map";
+import {
+  buildStationHexCells,
+  hexPathStyle,
+  movementsToH3Resolution,
+  stationHexCellsToGeoJSON,
+} from "@/lib/stationH3Map";
 
 describe("movementsToH3Resolution", () => {
   it("maps max movements to resolution 5 and min to 9", () => {
@@ -40,5 +45,31 @@ describe("hexPathStyle", () => {
     const quietest = hexPathStyle(9, 10, 10, 100);
     expect(quietest.fillColor).toContain("275");
     expect(quietest.fillOpacity).toBeGreaterThan(0.85);
+  });
+});
+
+describe("stationHexCellsToGeoJSON", () => {
+  it("exports closed polygons with lng/lat coordinates and station properties", () => {
+    const { cells } = buildStationHexCells(
+      [{ name: "Porto Campanhã", lat: 41.15, lng: -8.58 }],
+      { "Porto Campanhã": 42 },
+    );
+
+    const geojson = stationHexCellsToGeoJSON(cells);
+    expect(geojson.type).toBe("FeatureCollection");
+    expect(geojson.features).toHaveLength(1);
+
+    const feature = geojson.features[0];
+    expect(feature.properties.stationName).toBe("Porto Campanhã");
+    expect(feature.properties.movements).toBe(42);
+    expect(feature.geometry.type).toBe("Polygon");
+
+    const ring = feature.geometry.coordinates[0];
+    expect(ring.length).toBeGreaterThan(3);
+    expect(ring[0]).toEqual(ring[ring.length - 1]);
+    for (const [lng, lat] of ring) {
+      expect(Math.abs(lng)).toBeLessThanOrEqual(180);
+      expect(Math.abs(lat)).toBeLessThanOrEqual(90);
+    }
   });
 });

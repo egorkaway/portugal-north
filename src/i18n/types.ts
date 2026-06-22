@@ -138,6 +138,7 @@ export type Messages = {
     noReliabilityData: string;
     mostReliable: string;
     leastReliable: string;
+    downloadReliabilityCsv: string;
   };
   map: {
     title: string;
@@ -152,6 +153,7 @@ export type Messages = {
     tooltipMovements: string;
     tooltipResolution: string;
     viewStation: string;
+    downloadGeoJson: string;
   };
   tickets: {
     title: string;

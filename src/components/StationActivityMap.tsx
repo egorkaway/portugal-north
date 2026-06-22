@@ -1,6 +1,8 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
+import { Download } from "lucide-react";
 import { MapContainer, Polygon, TileLayer, Tooltip } from "react-leaflet";
+import { Button } from "@/components/ui/button";
 import { stations } from "@/data/stations";
 import { useReliabilityScores } from "@/hooks/useReliabilityScore";
 import { useLocale } from "@/i18n/LocaleProvider";
@@ -9,6 +11,7 @@ import {
   PORTUGAL_MAP_CENTER,
   PORTUGAL_MAP_ZOOM,
   buildStationHexCells,
+  downloadStationHexGeoJSON,
   hexPathStyle,
 } from "@/lib/stationH3Map";
 import { stationToSlug } from "@/lib/stationSlug";
@@ -56,6 +59,17 @@ export default function StationActivityMap() {
 
   return (
     <div className="space-y-3">
+      <div className="flex flex-wrap items-center justify-end gap-2">
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => downloadStationHexGeoJSON(cells)}
+        >
+          <Download className="h-4 w-4" aria-hidden="true" />
+          {t("map.downloadGeoJson")}
+        </Button>
+      </div>
       <div className="overflow-hidden rounded-xl border border-border shadow-sm">
         <MapContainer
           center={PORTUGAL_MAP_CENTER}

@@ -151,6 +151,7 @@ export const en: Messages = {
     noReliabilityData: "No reliability data yet.",
     mostReliable: "Top 10 most reliable",
     leastReliable: "Top 10 least reliable",
+    downloadReliabilityCsv: "Download CSV",
   },
   map: {
     title: "Station activity map",
@@ -166,6 +167,7 @@ export const en: Messages = {
     tooltipMovements: "{{count}} departures + arrivals (sampled)",
     tooltipResolution: "H3 resolution {{resolution}}",
     viewStation: "View station",
+    downloadGeoJson: "Download GeoJSON",
   },
   tickets: {
     title: "Tickets & prices",

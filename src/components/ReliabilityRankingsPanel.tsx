@@ -1,8 +1,12 @@
-import { AlertCircle, CircleGauge } from "lucide-react";
+import { AlertCircle, CircleGauge, Download } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { stations } from "@/data/stations";
 import { useReliabilityScores } from "@/hooks/useReliabilityScore";
 import { useLocale } from "@/i18n/LocaleProvider";
 import {
+  buildReliabilityRankingRows,
+  downloadReliabilityRankingsCsv,
   getBottomReliabilityStations,
   getTopReliabilityStations,
   reliabilityScoreTone,
@@ -70,6 +74,11 @@ export function ReliabilityRankingsPanel() {
 
   const top = getTopReliabilityStations(data.scores, data.movements, 10);
   const bottom = getBottomReliabilityStations(data.scores, data.movements, 10);
+  const allRows = buildReliabilityRankingRows(
+    stations.map((station) => station.name),
+    data.scores,
+    data.movements,
+  );
 
   if (top.length === 0) {
     return <p className="text-sm text-muted-foreground">{t("rankings.noReliabilityData")}</p>;
@@ -77,11 +86,22 @@ export function ReliabilityRankingsPanel() {
 
   return (
     <section aria-labelledby="reliability-rankings-heading" className="mb-6 md:mb-10">
-      <div className="mb-4 flex items-center gap-2">
-        <CircleGauge className="h-5 w-5 text-primary" aria-hidden="true" />
-        <h2 id="reliability-rankings-heading" className="font-display text-2xl text-foreground">
-          {t("rankings.reliabilityRankings")}
-        </h2>
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <div className="flex items-center gap-2">
+          <CircleGauge className="h-5 w-5 text-primary" aria-hidden="true" />
+          <h2 id="reliability-rankings-heading" className="font-display text-2xl text-foreground">
+            {t("rankings.reliabilityRankings")}
+          </h2>
+        </div>
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          onClick={() => downloadReliabilityRankingsCsv(allRows)}
+        >
+          <Download className="h-4 w-4" aria-hidden="true" />
+          {t("rankings.downloadReliabilityCsv")}
+        </Button>
       </div>
       <p className="mb-3 text-sm text-muted-foreground md:mb-4">{t("rankings.reliabilityIntro")}</p>
       <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">

@@ -152,6 +152,7 @@ export const ca: Messages = {
     noReliabilityData: "Encara no hi ha dades de fiabilitat.",
     mostReliable: "Top 10 més fiables",
     leastReliable: "Top 10 menys fiables",
+    downloadReliabilityCsv: "Descarregar CSV",
   },
   map: {
     title: "Mapa d'activitat d'estacions",
@@ -167,6 +168,7 @@ export const ca: Messages = {
     tooltipMovements: "{{count}} sortides + arribades (mostrejades)",
     tooltipResolution: "Resolució H3 {{resolution}}",
     viewStation: "Veure estació",
+    downloadGeoJson: "Descarregar GeoJSON",
   },
   tickets: {
     title: "Bitllets i preus",

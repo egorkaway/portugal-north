@@ -94,7 +94,6 @@ function movementRatio(
   return (movements - minMovements) / (maxMovements - minMovements);
 }
 
-/** Resolution-based fill and stroke colors for the activity map. */
 export function hexPathStyle(
   resolution: H3ActivityResolution,
   movements: number,
@@ -126,4 +125,68 @@ export function hexPathStyle(
         weight: 2,
       };
   }
+}
+
+export type StationHexFeatureProperties = {
+  stationName: string;
+  movements: number;
+  resolution: H3ActivityResolution;
+  cellId: string;
+};
+
+export type StationHexGeoJSON = {
+  type: "FeatureCollection";
+  features: {
+    type: "Feature";
+    properties: StationHexFeatureProperties;
+    geometry: {
+      type: "Polygon";
+      coordinates: [number, number][][];
+    };
+  }[];
+};
+
+function boundaryToGeoJsonRing(boundary: [number, number][]): [number, number][] {
+  const ring = boundary.map(([lat, lng]) => [lng, lat] as [number, number]);
+  const first = ring[0];
+  const last = ring[ring.length - 1];
+  if (!first || !last || first[0] !== last[0] || first[1] !== last[1]) {
+    ring.push(first ?? [0, 0]);
+  }
+  return ring;
+}
+
+export function stationHexCellsToGeoJSON(cells: StationHexCell[]): StationHexGeoJSON {
+  return {
+    type: "FeatureCollection",
+    features: cells.map((cell) => ({
+      type: "Feature",
+      properties: {
+        stationName: cell.stationName,
+        movements: cell.movements,
+        resolution: cell.resolution,
+        cellId: cell.cellId,
+      },
+      geometry: {
+        type: "Polygon",
+        coordinates: [boundaryToGeoJsonRing(cell.boundary)],
+      },
+    })),
+  };
+}
+
+export function downloadStationHexGeoJSON(
+  cells: StationHexCell[],
+  filename = "station-activity-hexes.geojson",
+): void {
+  const geojson = stationHexCellsToGeoJSON(cells);
+  const blob = new Blob([JSON.stringify(geojson, null, 2)], {
+    type: "application/geo+json",
+  });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
 }

@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildReliabilityRankingRows,
   getBottomReliabilityStations,
   getTopReliabilityStations,
+  reliabilityRankingsToCsv,
 } from "@/lib/reliabilityScore";
 
 describe("reliability rankings", () => {
@@ -50,5 +52,28 @@ describe("reliability rankings", () => {
     expect(bottom).toHaveLength(10);
     expect(bottom[0].score).toBe(1);
     expect(bottom[bottom.length - 1].score).toBe(9);
+  });
+
+  it("builds ranked rows for stations in the site list only", () => {
+    const rows = buildReliabilityRankingRows(
+      ["Alpha", "Lima", "Missing"],
+      scores,
+      { Alpha: 20, Lima: 80 },
+    );
+
+    expect(rows).toHaveLength(2);
+    expect(rows[0]).toEqual({ rank: 1, name: "Lima", score: 10, movements: 80 });
+    expect(rows[1]).toEqual({ rank: 2, name: "Alpha", score: 10, movements: 20 });
+  });
+
+  it("exports CSV with headers and escaped station names", () => {
+    const csv = reliabilityRankingsToCsv([
+      { rank: 1, name: 'São Bento (Porto)', score: 10, movements: 85 },
+      { rank: 2, name: "Station, Inc.", score: 8, movements: 12 },
+    ]);
+
+    expect(csv).toContain("rank,station,reliability_score,movements");
+    expect(csv).toContain("1,São Bento (Porto),10,85");
+    expect(csv).toContain('2,"Station, Inc.",8,12');
   });
 });

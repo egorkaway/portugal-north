@@ -152,6 +152,7 @@ export const gl: Messages = {
     noReliabilityData: "Aínda non hai datos de fiabilidade.",
     mostReliable: "Top 10 máis fiábeis",
     leastReliable: "Top 10 menos fiábeis",
+    downloadReliabilityCsv: "Descargar CSV",
   },
   map: {
     title: "Mapa de actividade das estacións",
@@ -167,6 +168,7 @@ export const gl: Messages = {
     tooltipMovements: "{{count}} saídas + chegadas (mostradas)",
     tooltipResolution: "Resolución H3 {{resolution}}",
     viewStation: "Ver estación",
+    downloadGeoJson: "Descargar GeoJSON",
   },
   tickets: {
     title: "Billetes e prezos",
