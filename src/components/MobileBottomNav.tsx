@@ -1,7 +1,7 @@
 import { NavLink } from "@/components/NavLink";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/i18n/LocaleProvider";
-import { BarChart3, Home, Ticket } from "lucide-react";
+import { BarChart3, Home, Map as MapIcon, Ticket } from "lucide-react";
 
 function NavItem({
   to,
@@ -35,7 +35,7 @@ function NavItem({
   );
 }
 
-/** Mobile-only bottom navigation (home, rankings, tickets). */
+/** Mobile-only bottom navigation (home, rankings, tickets, map). */
 export function MobileBottomNav() {
   const { t } = useLocale();
 
@@ -50,10 +50,11 @@ export function MobileBottomNav() {
       aria-label={t("nav.mobile")}
     >
       <div className="mx-auto max-w-5xl px-4 pb-[calc(env(safe-area-inset-bottom,0px)+0.5rem)] pt-2">
-        <div className="flex items-stretch justify-between gap-4">
+        <div className="flex items-stretch justify-between gap-2">
           <NavItem to="/" label={t("nav.home")} icon={Home} />
           <NavItem to="/rankings" label={t("nav.rankings")} icon={BarChart3} />
           <NavItem to="/tickets" label={t("nav.tickets")} icon={Ticket} />
+          <NavItem to="/map" label={t("nav.map")} icon={MapIcon} />
         </div>
       </div>
     </nav>

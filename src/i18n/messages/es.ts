@@ -173,6 +173,7 @@ export const es: Messages = {
     airportLis: "Lisboa Humberto Delgado",
     airportPorto: "Oporto Francisco Sá Carneiro",
     airportFaro: "Faro",
+    locateMe: "Mostrar mi ubicación",
   },
   tickets: {
     title: "Billetes y precios",

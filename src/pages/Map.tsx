@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { PageHead } from "@/components/PageHead";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SitePageNavLinks } from "@/components/SitePageNavLinks";
+import { BuildNumberLabel } from "@/components/BuildNumberLabel";
 import { getMapPageMeta } from "@/lib/pageMeta";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { ArrowLeft, Map as MapIcon } from "lucide-react";
@@ -45,6 +46,7 @@ const MapPage = () => {
           <Suspense fallback={<p className="text-sm text-muted-foreground">{t("map.loading")}</p>}>
             <StationActivityMap />
           </Suspense>
+          <BuildNumberLabel />
         </main>
 
         <SiteFooter showIntro={false} />

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Download } from "lucide-react";
 import { MapContainer, Polygon, TileLayer, Tooltip } from "react-leaflet";
 import { Button } from "@/components/ui/button";
+import { MapLocateControl } from "@/components/MapLocateControl";
 import { MapPointLabels } from "@/components/MapPointLabels";
 import { stations } from "@/data/stations";
 import { useReliabilityScores } from "@/hooks/useReliabilityScore";
@@ -106,6 +107,7 @@ export default function StationActivityMap() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
+          <MapLocateControl />
           {cells.map((cell) => {
             const style = hexPathStyle(
               cell.resolution,

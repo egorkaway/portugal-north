@@ -173,6 +173,7 @@ export const gl: Messages = {
     airportLis: "Lisboa Humberto Delgado",
     airportPorto: "Porto Francisco Sá Carneiro",
     airportFaro: "Faro",
+    locateMe: "Mostrar a miña localización",
   },
   tickets: {
     title: "Billetes e prezos",

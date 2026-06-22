@@ -158,6 +158,7 @@ export type Messages = {
     airportLis: string;
     airportPorto: string;
     airportFaro: string;
+    locateMe: string;
   };
   tickets: {
     title: string;

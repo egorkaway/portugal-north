@@ -173,6 +173,7 @@ export const ca: Messages = {
     airportLis: "Lisboa Humberto Delgado",
     airportPorto: "Porto Francisco Sá Carneiro",
     airportFaro: "Faro",
+    locateMe: "Mostrar la meva ubicació",
   },
   tickets: {
     title: "Bitllets i preus",
