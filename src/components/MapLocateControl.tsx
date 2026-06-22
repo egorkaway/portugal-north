@@ -92,14 +92,17 @@ export function MapLocateControl() {
       {createPortal(
         <Button
           type="button"
-          variant="secondary"
+          variant="outline"
           size="icon"
-          className="absolute right-2 top-2 z-[1000] h-9 w-9 bg-background/95 shadow-md backdrop-blur-sm"
+          className="absolute right-2 top-2 z-[1000] h-9 w-9 border-border bg-card text-foreground shadow-md hover:bg-card/90"
           onClick={() => locate()}
           disabled={locating}
           aria-label={t("map.locateMe")}
         >
-          <LocateFixed className={locating ? "animate-pulse" : undefined} aria-hidden="true" />
+          <LocateFixed
+            className={locating ? "animate-pulse text-foreground" : "text-foreground"}
+            aria-hidden="true"
+          />
         </Button>,
         map.getContainer(),
       )}
