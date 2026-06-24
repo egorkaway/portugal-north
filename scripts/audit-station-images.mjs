@@ -9,12 +9,12 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   findDuplicateGroups,
+  parseAllStationsFromRepo,
   parseImageMap,
-  parseStations,
 } from "./lib/stationImageFetch.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const stations = parseStations(readFileSync(join(root, "src/data/stations.ts"), "utf8"));
+const stations = parseAllStationsFromRepo(root);
 const imageMap = parseImageMap(readFileSync(join(root, "src/data/stationImages.ts"), "utf8"));
 
 const missing = stations.filter((s) => !imageMap[s.name]);

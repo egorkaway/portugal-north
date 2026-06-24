@@ -37,13 +37,14 @@ export function parseStations(ts) {
   );
 }
 
-/** CP stations plus Metro do Porto and Metropolitano de Lisboa termini. */
+/** CP stations, Spanish stations, plus Metro do Porto and Metropolitano de Lisboa termini. */
 export function parseAllStationsFromRepo(root) {
   const read = (rel) => readFileSync(join(root, rel), "utf8");
   return [
-    ...parseStations(read("src/data/stations.ts")),
-    ...parseStations(read("src/data/metroPortoStations.ts")),
-    ...parseStations(read("src/data/metroLisboaStations.ts")),
+    ...parseStations(read("src/data/stations.ts")).map((station) => ({ ...station, country: "pt" })),
+    ...parseStations(read("src/data/spain/stations.ts")).map((station) => ({ ...station, country: "es" })),
+    ...parseStations(read("src/data/metroPortoStations.ts")).map((station) => ({ ...station, country: "pt" })),
+    ...parseStations(read("src/data/metroLisboaStations.ts")).map((station) => ({ ...station, country: "pt" })),
   ];
 }
 
@@ -84,7 +85,7 @@ function localityFromName(name) {
 
 /** Place names to search when train-specific Pexels queries fail. */
 export function locationNamesFromStation(station) {
-  const { name, lat, lng } = station;
+  const { name, lat, lng, country = "pt" } = station;
   const names = new Set();
   const plainName = stripDiacritics(name);
 
@@ -107,7 +108,7 @@ export function locationNamesFromStation(station) {
     }
   }
 
-  names.add(regionFromCoords(lat, lng));
+  names.add(regionFromCoords(lat, lng, country));
 
   return [...names].filter((place) => place.length >= 3 && !isGenericStationLabel(place));
 }
@@ -120,7 +121,14 @@ function isGenericStationLabel(label) {
   return generic.test(lower);
 }
 
-function regionFromCoords(lat, lng) {
+function regionFromCoords(lat, lng, country = "pt") {
+  if (country === "es") {
+    if (lat >= 41.2 && lng >= 1.5 && lng <= 2.5) return "Barcelona";
+    if (lat >= 40.2 && lat < 41 && lng >= -4 && lng <= -3) return "Madrid";
+    if (lat >= 42.5 && lng >= -9.5 && lng <= -7.5) return "Galicia";
+    if (lat >= 42 && lng >= -8.5) return "Galicia";
+    return "Spain";
+  }
   if (lat >= 41.7) return "Minho";
   if (lat >= 41.1 && lng >= -8.75) return "Porto";
   if (lat >= 41 && lng < -8.2) return "Douro";
@@ -146,9 +154,30 @@ const LINE_QUERY_HINTS = {
 
 /** Train-focused Pexels queries (tried first). */
 export function buildPexelsQueries(station) {
+  const { country = "pt" } = station;
   const locality = localityFromName(station.name);
-  const region = regionFromCoords(station.lat, station.lng);
+  const region = regionFromCoords(station.lat, station.lng, country);
   const plain = stripDiacritics(locality);
+
+  if (country === "es") {
+    const queries = new Set([
+      `${locality} train station Spain`,
+      `${locality} railway Spain`,
+      `${region} train station Spain`,
+      `${plain} Spain railroad`,
+      "Renfe train station Spain",
+      "Spanish railway station",
+    ]);
+    for (const line of station.lines) {
+      if (line.includes("alta velocidad") || line.includes("AVE")) {
+        queries.add("AVE high speed train Spain");
+      }
+      if (line.includes("Eje Atlántico")) {
+        queries.add("Galicia train station Spain");
+      }
+    }
+    return [...queries];
+  }
 
   const queries = new Set([
     `${locality} train station Portugal`,
@@ -173,22 +202,24 @@ export function buildPexelsQueries(station) {
 
 /** Location-only Pexels queries (fallback when train searches fail or duplicate). */
 export function buildLocationPexelsQueries(station) {
+  const { country = "pt" } = station;
   const queries = new Set();
 
   for (const place of locationNamesFromStation(station)) {
     const plain = stripDiacritics(place);
-    queries.add(`${place} Portugal`);
-    queries.add(`${place} Portugal landscape`);
-    queries.add(`${place} Portugal city`);
-    queries.add(`${plain} Portugal travel`);
-    queries.add(`${place} town Portugal`);
+    const nation = country === "es" ? "Spain" : "Portugal";
+    queries.add(`${place} ${nation}`);
+    queries.add(`${place} ${nation} landscape`);
+    queries.add(`${place} ${nation} city`);
+    queries.add(`${plain} ${nation} travel`);
+    queries.add(`${place} town ${nation}`);
   }
 
   return [...queries];
 }
 
-export async function wikiThumb(title) {
-  const url = new URL("https://pt.wikipedia.org/w/api.php");
+export async function wikiThumb(title, lang = "pt") {
+  const url = new URL(`https://${lang}.wikipedia.org/w/api.php`);
   url.searchParams.set("action", "query");
   url.searchParams.set("titles", title);
   url.searchParams.set("prop", "pageimages");
@@ -212,12 +243,26 @@ export async function wikiThumb(title) {
   }
 }
 
-const wikiTitles = (stationName) => [
+const wikiTitlesPt = (stationName) => [
   `Apeadeiro de ${stationName}`,
   `Estação Ferroviária de ${stationName}`,
   `Estação Ferroviária da ${stationName}`,
   `${stationName} train station`,
 ];
+
+const wikiTitlesEs = (stationName) => {
+  const base = stationName.replace(/-Sants$/, " Sants").replace(/-Chamartín$/, " Chamartín");
+  return [
+    `Estación de ${stationName}`,
+    `Estación de ${base}`,
+    `Estación de Adif de ${stationName}`,
+    `${stationName} train station`,
+  ];
+};
+
+export function wikiTitlesForStation(station) {
+  return station.country === "es" ? wikiTitlesEs(station.name) : wikiTitlesPt(station.name);
+}
 
 export async function pexelsPickUnique(query, stationName, usedUrls, apiKey, { perPage = 40 } = {}) {
   const page = (hashString(`${stationName}:${query}`) % 8) + 1;
@@ -250,14 +295,17 @@ export async function pexelsPickUnique(query, stationName, usedUrls, apiKey, { p
 
 export async function resolveStationImage(station, { apiKey, usedUrls, pexelsOnly = false }) {
   if (!pexelsOnly) {
-    for (const title of wikiTitles(station.name)) {
-      const { thumb, rateLimited } = await wikiThumb(title);
-      if (rateLimited) break;
-      if (thumb && !usedUrls.has(thumb)) {
-        usedUrls.add(thumb);
-        return { url: thumb, source: "wikimedia" };
+    const langs = station.country === "es" ? ["es", "gl"] : ["pt"];
+    for (const lang of langs) {
+      for (const title of wikiTitlesForStation(station)) {
+        const { thumb, rateLimited } = await wikiThumb(title, lang);
+        if (rateLimited) break;
+        if (thumb && !usedUrls.has(thumb)) {
+          usedUrls.add(thumb);
+          return { url: thumb, source: `wikimedia-${lang}` };
+        }
+        await sleep(1200);
       }
-      await sleep(1200);
     }
   }
 

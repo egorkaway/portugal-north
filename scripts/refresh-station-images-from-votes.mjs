@@ -36,14 +36,13 @@ import {
 import {
   loadEnvFile,
   parseImageMap,
-  parseStations,
+  parseAllStationsFromRepo,
   resolveStationImage,
   sleep,
   writeImageMap,
 } from "./lib/stationImageFetch.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-const stationsPath = join(root, "src/data/stations.ts");
 const imagesPath = join(root, "src/data/stationImages.ts");
 const historyPath = join(root, "data/station-image-history.json");
 
@@ -181,7 +180,7 @@ async function main() {
       candidates.map((c) => `  ${c.name}: ${c.votes.down}↓ ${c.votes.up}↑`).join("\n"),
   );
 
-  const stations = parseStations(readFileSync(stationsPath, "utf8"));
+  const stations = parseAllStationsFromRepo(root);
   const stationByName = new Map(stations.map((s) => [s.name, s]));
   const imageMap = parseImageMap(readFileSync(imagesPath, "utf8"));
   const history = await loadHistory();
