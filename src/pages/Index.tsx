@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { getStationsForCountry } from "@/data/stationRegistry";
 import { StationCard } from "@/components/StationCard";
 import { StationRankings } from "@/components/StationRankings";
-import { CountrySelector } from "@/components/CountrySelector";
+import { CountrySelectorBar } from "@/components/CountrySelector";
 import { TrainFront } from "lucide-react";
 import { StationFilters } from "@/components/StationFilters";
 import heroStation from "@/assets/hero-station.jpg";
@@ -144,17 +144,17 @@ const Index = () => {
                 {country === "es" ? t("home.heroSubtitleEs") : t("home.heroSubtitle")}
               </p>
             </div>
-            <SitePageNavLinks variant="hero" className="shrink-0 self-start" />
+            <div className="hidden shrink-0 flex-col items-end gap-2 sm:flex">
+              <SitePageNavLinks variant="hero" className="self-end" />
+              <CountrySelectorBar
+                country={country}
+                onCountryChange={setCountry}
+                labelClassName="text-primary-foreground/90"
+              />
+            </div>
           </div>
         </div>
       </header>
-
-      <div className="border-b border-border bg-muted/30 px-4 py-4 md:px-6">
-        <div className="mx-auto flex max-w-5xl items-center justify-end gap-2">
-          <p className="text-sm text-muted-foreground">{t("country.stationsIn")}</p>
-          <CountrySelector country={country} onCountryChange={setCountry} />
-        </div>
-      </div>
 
       <StationFilters
         search={search}
@@ -208,6 +208,11 @@ const Index = () => {
             {t("home.noResults")}
           </p>
         )}
+        <CountrySelectorBar
+          country={country}
+          onCountryChange={setCountry}
+          className="mt-6 sm:hidden"
+        />
       </main>
 
       <StationRankings />

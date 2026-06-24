@@ -8,6 +8,28 @@ type CountrySelectorProps = {
   className?: string;
 };
 
+type CountrySelectorBarProps = CountrySelectorProps & {
+  labelClassName?: string;
+};
+
+export function CountrySelectorBar({
+  country,
+  onCountryChange,
+  className,
+  labelClassName,
+}: CountrySelectorBarProps) {
+  const { t } = useLocale();
+
+  return (
+    <div className={cn("flex items-center justify-end gap-2", className)}>
+      <p className={cn("text-sm text-muted-foreground", labelClassName)}>
+        {t("country.stationsIn")}
+      </p>
+      <CountrySelector country={country} onCountryChange={onCountryChange} />
+    </div>
+  );
+}
+
 export function CountrySelector({ country, onCountryChange, className }: CountrySelectorProps) {
   const { t } = useLocale();
 
