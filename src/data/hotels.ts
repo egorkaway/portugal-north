@@ -1771,6 +1771,46 @@ export const stationHotels: StationHotels = {
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Aerotel Madrid Airport - Terminal 4", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aerotel%20Madrid%20Airport%20-%20Terminal%204%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
   ],
+  "Barcelona-El Prat Airport (BCN)": [
+    { name: "ACAR - El Prat", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ACAR%20-%20El%20Prat%2C%20Barcelona-El%20Prat%20Airport%20(BCN)%2C%20Spain&order=price" },
+    { name: "Barcelona Aeropuerto", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcelona%20Aeropuerto%2C%20Barcelona-El%20Prat%20Airport%20(BCN)%2C%20Spain&order=price" },
+    { name: "Centre Esplai", distanceKm: 2.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Centre%20Esplai%2C%20Barcelona-El%20Prat%20Airport%20(BCN)%2C%20Spain&order=price" },
+  ],
+  "Málaga-Costa del Sol Airport (AGP)": [
+    { name: "Holiday Inn Express", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20M%C3%A1laga-Costa%20del%20Sol%20Airport%20(AGP)%2C%20Spain&order=price" },
+    { name: "Hotel Complejo Los Rosales", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Complejo%20Los%20Rosales%2C%20M%C3%A1laga-Costa%20del%20Sol%20Airport%20(AGP)%2C%20Spain&order=price" },
+    { name: "Casa Rural Carpe Diem", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Carpe%20Diem%2C%20M%C3%A1laga-Costa%20del%20Sol%20Airport%20(AGP)%2C%20Spain&order=price" },
+  ],
+  "Alicante-Elche Airport (ALC)": [
+    { name: "Hampton", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hampton%2C%20Alicante-Elche%20Airport%20(ALC)%2C%20Spain&order=price" },
+    { name: "Hostal El Altet", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20Altet%2C%20Alicante-Elche%20Airport%20(ALC)%2C%20Spain&order=price" },
+    { name: "Hostal Meseguer", distanceKm: 2, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Meseguer%2C%20Alicante-Elche%20Airport%20(ALC)%2C%20Spain&order=price" },
+  ],
+  "Valencia Airport (VLC)": [
+    { name: "Hotel Port Azafata Valencia", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Port%20Azafata%20Valencia%2C%20Valencia%20Airport%20(VLC)%2C%20Spain&order=price" },
+    { name: "ibis budget Valencia Aeropuerto", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20budget%20Valencia%20Aeropuerto%2C%20Valencia%20Airport%20(VLC)%2C%20Spain&order=price" },
+    { name: "Hotel Manises", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Manises%2C%20Valencia%20Airport%20(VLC)%2C%20Spain&order=price" },
+  ],
+  "Seville Airport (SVQ)": [
+    { name: "Hotel Las Tres Carabelas", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Tres%20Carabelas%2C%20Seville%20Airport%20(SVQ)%2C%20Spain&order=price" },
+    { name: "Hotel San Pablo", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20San%20Pablo%2C%20Seville%20Airport%20(SVQ)%2C%20Spain&order=price" },
+    { name: "Hotel Sevilla Congresos", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sevilla%20Congresos%2C%20Seville%20Airport%20(SVQ)%2C%20Spain&order=price" },
+  ],
+  "Bilbao Airport (BIO)": [
+    { name: "Hotel New Bilbao Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20New%20Bilbao%20Airport%2C%20Bilbao%20Airport%20(BIO)%2C%20Spain&order=price" },
+    { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Bilbao%20Airport%20(BIO)%2C%20Spain&order=price" },
+    { name: "Pension Udondo", distanceKm: 2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pension%20Udondo%2C%20Bilbao%20Airport%20(BIO)%2C%20Spain&order=price" },
+  ],
+  "Santiago Airport (SCQ)": [
+    { name: "Che", distanceKm: 1.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Che%2C%20Santiago%20Airport%20(SCQ)%2C%20Spain&order=price" },
+    { name: "Hotel Restaurante Garcas", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurante%20Garcas%2C%20Santiago%20Airport%20(SCQ)%2C%20Spain&order=price" },
+    { name: "Hotel Restaurante Ruta Jacobea", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurante%20Ruta%20Jacobea%2C%20Santiago%20Airport%20(SCQ)%2C%20Spain&order=price" },
+  ],
+  "Asturias Airport (OVD)": [
+    { name: "Hotel Arias Aeropuerto", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Arias%20Aeropuerto%2C%20Asturias%20Airport%20(OVD)%2C%20Spain&order=price" },
+    { name: "Alojamientos Rurales Naveces", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamientos%20Rurales%20Naveces%2C%20Asturias%20Airport%20(OVD)%2C%20Spain&order=price" },
+    { name: "Ruralsurf", distanceKm: 2.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ruralsurf%2C%20Asturias%20Airport%20(OVD)%2C%20Spain&order=price" },
+  ],
   "Estádio do Dragão": [
     { name: "Porto Antas Hotel", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Antas%20Hotel%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
     { name: "AC Hotel Porto", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AC%20Hotel%20Porto%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
