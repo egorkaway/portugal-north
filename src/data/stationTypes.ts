@@ -1,4 +1,4 @@
-import type { CountryCode } from "@/lib/countries";
+import type { CountryCode } from "../lib/countries";
 
 export type { CountryCode };
 

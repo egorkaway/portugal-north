@@ -11,9 +11,14 @@ describe("stationRegistry", () => {
     expect(portugalStations).not.toEqual(expect.arrayContaining(spainStations));
   });
 
-  it("includes Vigo-Guixar as the first Spanish station", () => {
-    expect(spainStations.map((station) => station.name)).toEqual(["Vigo-Guixar"]);
+  it("includes Vigo-area and Eje Atlántico Spanish stations", () => {
+    const names = spainStations.map((station) => station.name);
+    expect(names).toContain("Vigo-Guixar");
+    expect(names).toContain("Vigo-Urzáiz");
+    expect(names).toContain("Santiago de Compostela");
+    expect(names).toContain("Madrid-Chamartín");
     expect(getStationBySlug("vigo-guixar")?.country).toBe("es");
+    expect(getStationBySlug("santiago-de-compostela")?.country).toBe("es");
   });
 
   it("builds unique slugs across countries", () => {

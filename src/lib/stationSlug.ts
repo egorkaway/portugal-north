@@ -1,5 +1,5 @@
-import { allStations } from "@/data/stationRegistry";
-import type { Station } from "@/data/stationTypes";
+import { allStations } from "../data/stationRegistry";
+import type { Station } from "../data/stationTypes";
 
 export function stationToSlug(name: string): string {
   return name

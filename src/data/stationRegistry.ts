@@ -1,7 +1,7 @@
-import { spainStations } from "@/data/spain/stations";
-import { portugalStations } from "@/data/stations";
-import type { CountryCode } from "@/lib/countries";
-import type { Station } from "@/data/stationTypes";
+import type { CountryCode } from "../lib/countries";
+import { portugalStations } from "./stations";
+import { spainStations } from "./spain/stations";
+import type { Station } from "./stationTypes";
 
 export const stationsByCountry: Record<CountryCode, Station[]> = {
   pt: portugalStations,
