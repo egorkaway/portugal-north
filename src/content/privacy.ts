@@ -98,10 +98,10 @@ const en: PrivacyContent = {
 
 const pt: PrivacyContent = {
   title: "Política de privacidade",
-  subtitle: "Como a Viagem Ibérica Sustentável (verystays.com) trata as suas interações",
+  subtitle: "Como Mobilidade Ibérica (verystays.com) trata as suas interações",
   lastUpdated: "Última atualização: 28 de maio de 2026",
   intro:
-    "A Viagem Ibérica Sustentável é um guia de viagens gratuito em verystays.com. Não pedimos registo. Esta política explica o que acontece quando vota, filtra estações, consulta partidas em direto ou navega no site.",
+    "Mobilidade Ibérica é um guia de viagens gratuito em verystays.com. Não pedimos registo. Esta política explica o que acontece quando vota, filtra estações, consulta partidas em direto ou navega no site.",
   sections: [
     {
       id: "collect",

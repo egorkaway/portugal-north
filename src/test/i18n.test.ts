@@ -35,7 +35,7 @@ describe("i18n", () => {
 
   it("builds localized home page meta", () => {
     const pt = getHomePageMeta("pt");
-    expect(pt.title).toContain("Viagem Ibérica Sustentável");
+    expect(pt.title).toContain("Mobilidade Ibérica");
     expect(isLocale("pt")).toBe(true);
     expect(isLocale("gl")).toBe(true);
     expect(isLocale("ca")).toBe(true);
