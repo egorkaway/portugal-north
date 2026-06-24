@@ -1871,6 +1871,46 @@ export const stationHotels: StationHotels = {
     { name: "CASA LA PIEDRA BADAJOZ", distanceKm: 8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=CASA%20LA%20PIEDRA%20BADAJOZ%2C%20Badajoz%20Airport%20(BJZ)%2C%20Spain&order=price" },
     { name: "Hostal Velasco", distanceKm: 10.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Velasco%2C%20Badajoz%20Airport%20(BJZ)%2C%20Spain&order=price" },
   ],
+  "Almería Airport (LEI)": [
+    { name: "Hotel Restaurante Los Arcos", distanceKm: 1.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurante%20Los%20Arcos%2C%20Almer%C3%ADa%20Airport%20(LEI)%2C%20Spain&order=price" },
+    { name: "Barceló Cabo de Gata", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcel%C3%B3%20Cabo%20de%20Gata%2C%20Almer%C3%ADa%20Airport%20(LEI)%2C%20Spain&order=price" },
+    { name: "Hotel Cabogata Jardín", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cabogata%20Jard%C3%ADn%2C%20Almer%C3%ADa%20Airport%20(LEI)%2C%20Spain&order=price" },
+  ],
+  "Granada-Jaén Airport (GRX)": [
+    { name: "Hotel Marinetto", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Marinetto%2C%20Granada-Ja%C3%A9n%20Airport%20(GRX)%2C%20Spain&order=price" },
+    { name: "Finca Rural Termas de Santa Fe", distanceKm: 3.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20Rural%20Termas%20de%20Santa%20Fe%2C%20Granada-Ja%C3%A9n%20Airport%20(GRX)%2C%20Spain&order=price" },
+    { name: "BS Capitulaciones", distanceKm: 4.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=BS%20Capitulaciones%2C%20Granada-Ja%C3%A9n%20Airport%20(GRX)%2C%20Spain&order=price" },
+  ],
+  "Jerez Airport (XRY)": [
+    { name: "Hotel La Cueva", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Cueva%2C%20Jerez%20Airport%20(XRY)%2C%20Spain&order=price" },
+    { name: "Hotel Barceló Montecastillio Golf", distanceKm: 5.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Barcel%C3%B3%20Montecastillio%20Golf%2C%20Jerez%20Airport%20(XRY)%2C%20Spain&order=price" },
+    { name: "Hotel Jerez & Spa", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Jerez%20%26%20Spa%2C%20Jerez%20Airport%20(XRY)%2C%20Spain&order=price" },
+  ],
+  "Reus Airport (REU)": [
+    { name: "Hotel Mas La Boella", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mas%20La%20Boella%2C%20Reus%20Airport%20(REU)%2C%20Spain&order=price" },
+    { name: "Brea's", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Brea's%2C%20Reus%20Airport%20(REU)%2C%20Spain&order=price" },
+    { name: "Quality Reus", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quality%20Reus%2C%20Reus%20Airport%20(REU)%2C%20Spain&order=price" },
+  ],
+  "Girona-Costa Brava Airport (GRO)": [
+    { name: "Vilobí", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilob%C3%AD%2C%20Girona-Costa%20Brava%20Airport%20(GRO)%2C%20Spain&order=price" },
+    { name: "Hotel Eden Park by Brava Hotels", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Eden%20Park%20by%20Brava%20Hotels%2C%20Girona-Costa%20Brava%20Airport%20(GRO)%2C%20Spain&order=price" },
+    { name: "Sallés Hotel Aeroport de Girona", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sall%C3%A9s%20Hotel%20Aeroport%20de%20Girona%2C%20Girona-Costa%20Brava%20Airport%20(GRO)%2C%20Spain&order=price" },
+  ],
+  "Huesca-Pirineos Airport (HSK)": [
+    { name: "Hostal el Batán", distanceKm: 3.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20el%20Bat%C3%A1n%2C%20Huesca-Pirineos%20Airport%20(HSK)%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos", distanceKm: 4.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%2C%20Huesca-Pirineos%20Airport%20(HSK)%2C%20Spain&order=price" },
+    { name: "Hotel Montearagón", distanceKm: 8.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Montearag%C3%B3n%2C%20Huesca-Pirineos%20Airport%20(HSK)%2C%20Spain&order=price" },
+  ],
+  "Lleida-Alguaire Airport (ILD)": [
+    { name: "Hotel Finca Prats Golf & SPA", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Finca%20Prats%20Golf%20%26%20SPA%2C%20Lleida-Alguaire%20Airport%20(ILD)%2C%20Spain&order=price" },
+    { name: "Ibis Styles Lleida Torrefarrera", distanceKm: 9.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Styles%20Lleida%20Torrefarrera%2C%20Lleida-Alguaire%20Airport%20(ILD)%2C%20Spain&order=price" },
+    { name: "Jardins del Segrià", distanceKm: 9.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Jardins%20del%20Segri%C3%A0%2C%20Lleida-Alguaire%20Airport%20(ILD)%2C%20Spain&order=price" },
+  ],
+  "Castellón Airport (CDT)": [
+    { name: "Wild Spirit Eco Cultural Farm", distanceKm: 4.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Wild%20Spirit%20Eco%20Cultural%20Farm%2C%20Castell%C3%B3n%20Airport%20(CDT)%2C%20Spain&order=price" },
+    { name: "Casa Rural Quatrevents", distanceKm: 5.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Quatrevents%2C%20Castell%C3%B3n%20Airport%20(CDT)%2C%20Spain&order=price" },
+    { name: "Hotel La Cava (cerrado)", distanceKm: 7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Cava%20(cerrado)%2C%20Castell%C3%B3n%20Airport%20(CDT)%2C%20Spain&order=price" },
+  ],
   "Estádio do Dragão": [
     { name: "Porto Antas Hotel", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Antas%20Hotel%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
     { name: "AC Hotel Porto", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AC%20Hotel%20Porto%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
