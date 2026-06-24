@@ -7,6 +7,8 @@ export const COUNTRY_FLAGS: Record<CountryCode, string> = {
   es: "🇪🇸",
 };
 
+export const DEFAULT_COUNTRY: CountryCode = "pt";
+
 export const COUNTRY_STORAGE_KEY = "verystays-country";
 
 export function isCountryCode(value: string | null | undefined): value is CountryCode {
