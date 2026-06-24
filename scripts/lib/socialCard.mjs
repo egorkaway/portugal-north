@@ -137,7 +137,7 @@ export function buildOverlaySvg({
     ${titleTspans}
   </text>
   <text x="72" y="${taglineY}" fill="#c5d6d2" font-family="Inter, system-ui, sans-serif" font-size="${taglineFontSize}" font-weight="500">${escapeXml(tagline)}</text>
-  <text x="72" y="1000" fill="#8fb5ad" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" letter-spacing="0.04em">PORTUGAL BY TRAIN</text>
+  <text x="72" y="1000" fill="#8fb5ad" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="600" letter-spacing="0.04em">SUSTAINABLE IBERIAN TRAVEL</text>
   <text x="72" y="1044" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="30" font-weight="600">${escapeXml(`${siteHost}/stations/${slug}`)}</text>
   <circle cx="984" cy="1020" r="34" fill="${BRAND_PRIMARY}"/>
   <path d="M968 1020 H1000 M984 1004 V1036" stroke="${BRAND_CREAM}" stroke-width="5" stroke-linecap="round"/>

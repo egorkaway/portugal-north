@@ -1,9 +1,9 @@
 ---
 name: portugal-by-train-api
-description: Use the Portugal by Train HTTP API for CP live departures, community station/hotel votes, and discovery metadata. Use when integrating agents with verystays.com station data.
+description: Use the Sustainable Iberian Travel HTTP API for CP live departures, community station/hotel votes, and discovery metadata. Use when integrating agents with verystays.com station data.
 ---
 
-# Portugal by Train API
+# Sustainable Iberian Travel API
 
 ## Discovery
 

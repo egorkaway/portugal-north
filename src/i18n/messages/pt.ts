@@ -1,7 +1,7 @@
 import type { Messages } from "@/i18n/types";
 
 export const pt: Messages = {
-  site: { name: "Portugal de Comboio" },
+  site: { name: "Viagem Ibérica Sustentável" },
   lang: {
     label: "Idioma",
     en: "English",
@@ -250,7 +250,7 @@ export const pt: Messages = {
     votesSyncing: "A sincronizar os seus votos guardados…",
     permissionsTitle: "Tire mais partido da app",
     permissionsBody:
-      "Instalou o Portugal by Train — ative estas funcionalidades opcionais para uma melhor experiência:",
+      "Instalou a Viagem Ibérica Sustentável — ative estas funcionalidades opcionais para uma melhor experiência:",
     permissionsLocation:
       "Localização — ordenar estações por distância na página inicial.",
     permissionsNotifications:
@@ -313,41 +313,41 @@ export const pt: Messages = {
     home: "Voltar ao início",
   },
   meta: {
-    siteName: "Portugal de Comboio",
+    siteName: "Viagem Ibérica Sustentável",
     home: {
-      title: "Portugal de Comboio: Estações e Hotéis com Preços Acessíveis",
+      title: "Viagem Ibérica Sustentável: Estações e Hotéis com Preços Acessíveis",
       description:
         "Descubra estações da CP de Portugal, do Minho ao Algarve, com linhas e hotéis com preços acessíveis a poucos minutos a pé.",
     },
     rankings: {
-      title: "Rankings da Comunidade | Portugal de Comboio",
+      title: "Rankings da Comunidade | Viagem Ibérica Sustentável",
       description:
         "Veja que estações CP e hotéis os visitantes mais gostam ou menos gostam em Portugal.",
       ogDescription: "Rankings da comunidade para estações CP e hotéis com preços acessíveis em Portugal.",
     },
     tickets: {
-      title: "Bilhetes e Preços | Portugal de Comboio",
+      title: "Bilhetes e Preços | Viagem Ibérica Sustentável",
       description:
         "Como comprar bilhetes CP, passes Andante e navegante® nos metros do Porto e Lisboa, e o que influencia as tarifas.",
       ogDescription:
         "Bilhetes CP, zonas Andante e navegante® nos metros do Porto e de Lisboa.",
     },
     map: {
-      title: "Mapa de Atividade | Portugal de Comboio",
+      title: "Mapa de Atividade | Viagem Ibérica Sustentável",
       description:
         "Mapa interativo das estações CP em Portugal continental com hexágonos H3 dimensionados por partidas e chegadas amostradas.",
       ogDescription:
         "Veja quais estações CP são mais movimentadas nas nossas amostras de partidas, num mapa H3 de Portugal.",
     },
     privacy: {
-      title: "Política de Privacidade | Portugal de Comboio",
+      title: "Política de Privacidade | Viagem Ibérica Sustentável",
       description:
         "Como o verystays.com guarda votos, preferências do browser, localização opcional, analytics e consultas de partidas.",
       ogDescription:
-        "O que o Portugal de Comboio recolhe quando vota, filtra estações ou usa partidas CP em direto.",
+        "O que o Viagem Ibérica Sustentável recolhe quando vota, filtra estações ou usa partidas CP em direto.",
     },
     notFound: {
-      title: "Página não encontrada | Portugal de Comboio",
+      title: "Página não encontrada | Viagem Ibérica Sustentável",
       description:
         "A página que procurava não existe. Volte ao início para explorar estações de comboio em Portugal.",
     },

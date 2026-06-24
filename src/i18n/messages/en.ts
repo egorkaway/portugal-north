@@ -1,7 +1,7 @@
 import type { Messages } from "@/i18n/types";
 
 export const en: Messages = {
-  site: { name: "Portugal by Train" },
+  site: { name: "Sustainable Iberian Travel" },
   lang: {
     label: "Language",
     en: "English",
@@ -249,7 +249,7 @@ export const en: Messages = {
     votesSyncing: "Syncing your saved votes…",
     permissionsTitle: "Get more from the app",
     permissionsBody:
-      "You installed Portugal by Train — enable these optional features for a better experience:",
+      "You installed Sustainable Iberian Travel — enable these optional features for a better experience:",
     permissionsLocation: "Location — sort stations by distance from you on the home page.",
     permissionsNotifications:
       "Notifications — we can alert you about trip ideas and updates (only if we add them later).",
@@ -311,41 +311,41 @@ export const en: Messages = {
     home: "Return to Home",
   },
   meta: {
-    siteName: "Portugal by Train",
+    siteName: "Sustainable Iberian Travel",
     home: {
-      title: "Portugal by Train: Stations & Budget Hotels",
+      title: "Sustainable Iberian Travel: Stations & Budget Hotels",
       description:
         "Discover major train stations across Portugal, from the Minho to the Algarve, with line info and recommended budget hotels within walking distance.",
     },
     rankings: {
-      title: "Community Rankings | Portugal by Train",
+      title: "Community Rankings | Sustainable Iberian Travel",
       description:
         "See which CP train stations and budget hotels visitors rate highest and lowest across Portugal.",
       ogDescription: "Community rankings for CP stations and budget hotels across Portugal.",
     },
     tickets: {
-      title: "Tickets & Prices | Portugal by Train",
+      title: "Tickets & Prices | Sustainable Iberian Travel",
       description:
         "How to buy CP train tickets, Porto Andante and Lisbon navegante® metro passes, and what affects fares (zones, service type, booking time).",
       ogDescription:
         "CP tickets plus Andante and navegante® zone fares for Porto and Lisbon metros.",
     },
     map: {
-      title: "Station Activity Map | Portugal by Train",
+      title: "Station Activity Map | Sustainable Iberian Travel",
       description:
         "Interactive map of CP stations in mainland Portugal with H3 hexes sized by sampled departures and arrivals.",
       ogDescription:
         "See which CP stations are busiest in our live departure samples, on an H3 hex map of Portugal.",
     },
     privacy: {
-      title: "Privacy Policy | Portugal by Train",
+      title: "Privacy Policy | Sustainable Iberian Travel",
       description:
         "How verystays.com stores votes, browser preferences, optional location, analytics, and live departure lookups.",
       ogDescription:
-        "What Portugal by Train collects when you vote, filter stations, or use live CP departures.",
+        "What Sustainable Iberian Travel collects when you vote, filter stations, or use live CP departures.",
     },
     notFound: {
-      title: "Page Not Found | Portugal by Train",
+      title: "Page Not Found | Sustainable Iberian Travel",
       description:
         "The page you were looking for could not be found. Return to the homepage to explore train stations across Portugal.",
     },

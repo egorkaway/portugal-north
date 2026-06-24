@@ -35,7 +35,7 @@ describe("i18n", () => {
 
   it("builds localized home page meta", () => {
     const pt = getHomePageMeta("pt");
-    expect(pt.title).toContain("Portugal de Comboio");
+    expect(pt.title).toContain("Viagem Ibérica Sustentável");
     expect(isLocale("pt")).toBe(true);
     expect(isLocale("gl")).toBe(true);
     expect(isLocale("ca")).toBe(true);
@@ -43,8 +43,8 @@ describe("i18n", () => {
   });
 
   it("builds localized rankings page meta for gl and ca", () => {
-    expect(getRankingsPageMeta("gl").title).toContain("Portugal en tren");
-    expect(getRankingsPageMeta("ca").title).toContain("Portugal en tren");
+    expect(getRankingsPageMeta("gl").title).toContain("Viaxe Ibérica Sostible");
+    expect(getRankingsPageMeta("ca").title).toContain("Viatge Ibèric Sostenible");
   });
 
   it("exposes all supported locales", () => {

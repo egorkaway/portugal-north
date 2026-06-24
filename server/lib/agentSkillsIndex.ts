@@ -24,7 +24,7 @@ const SKILL_DEFINITIONS = [
   {
     name: "portugal-by-train-api",
     description:
-      "Use the Portugal by Train HTTP API for CP live departures, community votes, and discovery metadata.",
+      "Use the Sustainable Iberian Travel HTTP API for CP live departures, community votes, and discovery metadata.",
   },
 ] as const;
 

@@ -1,4 +1,4 @@
-# Portugal by Train — HTTP API
+# Sustainable Iberian Travel — HTTP API
 
 Machine-readable description: [OpenAPI 3](/api/openapi.json). API catalog (RFC 9727): [/.well-known/api-catalog](/.well-known/api-catalog).
 

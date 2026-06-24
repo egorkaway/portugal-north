@@ -1,7 +1,7 @@
 import type { Messages } from "@/i18n/types";
 
 export const es: Messages = {
-  site: { name: "Portugal en Tren" },
+  site: { name: "Viaje Ibérico Sostenible" },
   lang: {
     label: "Idioma",
     en: "English",
@@ -250,7 +250,7 @@ export const es: Messages = {
     votesSyncing: "Sincronizando tus votos guardados…",
     permissionsTitle: "Saca más partido a la app",
     permissionsBody:
-      "Has instalado Portugal by Train — activa estas funciones opcionales para una mejor experiencia:",
+      "Has instalado Viaje Ibérico Sostenible — activa estas funciones opcionales para una mejor experiencia:",
     permissionsLocation:
       "Ubicación — ordenar estaciones por distancia en la página principal.",
     permissionsNotifications:
@@ -313,40 +313,40 @@ export const es: Messages = {
     home: "Volver al inicio",
   },
   meta: {
-    siteName: "Portugal en Tren",
+    siteName: "Viaje Ibérico Sostenible",
     home: {
-      title: "Portugal en Tren: Estaciones y Hoteles con Buen Precio",
+      title: "Viaje Ibérico Sostenible: Estaciones y Hoteles con Buen Precio",
       description:
         "Descubre estaciones de CP en Portugal, del Miño al Algarve, con líneas y hoteles con buen precio a poca distancia a pie.",
     },
     rankings: {
-      title: "Rankings de la Comunidad | Portugal en Tren",
+      title: "Rankings de la Comunidad | Viaje Ibérico Sostenible",
       description:
         "Mira qué estaciones CP y hoteles los visitantes valoran más y menos en Portugal.",
       ogDescription: "Rankings de la comunidad para estaciones CP y hoteles con buen precio en Portugal.",
     },
     tickets: {
-      title: "Billetes y Precios | Portugal en Tren",
+      title: "Billetes y Precios | Viaje Ibérico Sostenible",
       description:
         "Cómo comprar billetes de tren de CP en Portugal y qué suele influir en el precio (AP, IC, Regional, Urban).",
       ogDescription: "Guía rápida para comprar billetes de CP y entender los factores habituales de precio.",
     },
     map: {
-      title: "Mapa de Actividad | Portugal en Tren",
+      title: "Mapa de Actividad | Viaje Ibérico Sostenible",
       description:
         "Mapa interactivo de estaciones CP en Portugal continental con hexágonos H3 según salidas y llegadas muestreadas.",
       ogDescription:
         "Mira qué estaciones CP son más activas en nuestras muestras de salidas, en un mapa H3 de Portugal.",
     },
     privacy: {
-      title: "Política de Privacidad | Portugal en Tren",
+      title: "Política de Privacidad | Viaje Ibérico Sostenible",
       description:
         "Cómo verystays.com guarda votos, preferencias del navegador, ubicación opcional, analítica y consultas de salidas.",
       ogDescription:
-        "Qué recopila Portugal en Tren cuando votas, filtras estaciones o usas salidas CP en directo.",
+        "Qué recopila Viaje Ibérico Sostenible cuando votas, filtras estaciones o usas salidas CP en directo.",
     },
     notFound: {
-      title: "Página no encontrada | Portugal en Tren",
+      title: "Página no encontrada | Viaje Ibérico Sostenible",
       description:
         "La página que buscabas no existe. Vuelve al inicio para explorar estaciones de tren en Portugal.",
     },

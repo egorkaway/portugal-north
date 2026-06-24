@@ -1,4 +1,4 @@
-# Portugal by Train
+# Sustainable Iberian Travel
 
 A static reference guide to major train stations across Portugal, from the Minho to the Algarve, with recommended budget hotels within walking distance of key stops.
 

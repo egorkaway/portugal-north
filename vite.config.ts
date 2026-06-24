@@ -161,10 +161,10 @@ export default defineConfig({
         "icon.svg",
       ],
       manifest: {
-        name: "Portugal by Train",
+        name: "Sustainable Iberian Travel",
         short_name: "VeryStays",
         description:
-          "CP train stations across Portugal with budget hotels nearby and community ratings.",
+          "Train stations across Portugal and Spain with budget hotels nearby and community ratings.",
         theme_color: "#012841",
         background_color: "#f5f7f8",
         display: "standalone",

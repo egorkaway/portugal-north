@@ -16,10 +16,10 @@ export type PrivacyContent = {
 
 const en: PrivacyContent = {
   title: "Privacy policy",
-  subtitle: "How Portugal by Train (verystays.com) handles your interactions",
+  subtitle: "How Sustainable Iberian Travel (verystays.com) handles your interactions",
   lastUpdated: "Last updated: 28 May 2026",
   intro:
-    "Portugal by Train is a free travel guide at verystays.com. We do not ask you to create an account. This policy explains what happens when you vote, filter stations, use live departures, or browse the site.",
+    "Sustainable Iberian Travel is a free travel guide at verystays.com. We do not ask you to create an account. This policy explains what happens when you vote, filter stations, use live departures, or browse the site.",
   sections: [
     {
       id: "collect",
@@ -98,10 +98,10 @@ const en: PrivacyContent = {
 
 const pt: PrivacyContent = {
   title: "Política de privacidade",
-  subtitle: "Como o Portugal by Train (verystays.com) trata as suas interações",
+  subtitle: "Como a Viagem Ibérica Sustentável (verystays.com) trata as suas interações",
   lastUpdated: "Última atualização: 28 de maio de 2026",
   intro:
-    "O Portugal by Train é um guia de viagens gratuito em verystays.com. Não pedimos registo. Esta política explica o que acontece quando vota, filtra estações, consulta partidas em direto ou navega no site.",
+    "A Viagem Ibérica Sustentável é um guia de viagens gratuito em verystays.com. Não pedimos registo. Esta política explica o que acontece quando vota, filtra estações, consulta partidas em direto ou navega no site.",
   sections: [
     {
       id: "collect",
@@ -182,10 +182,10 @@ const pt: PrivacyContent = {
 const es: PrivacyContent = {
   ...en,
   title: "Política de privacidad",
-  subtitle: "Cómo Portugal by Train (verystays.com) trata tus interacciones",
+  subtitle: "Cómo Viaje Ibérico Sostenible (verystays.com) trata tus interacciones",
   lastUpdated: "Última actualización: 28 de mayo de 2026",
   intro:
-    "Portugal by Train es una guía gratuita en verystays.com. No pedimos cuenta. Esta política explica qué ocurre cuando votas, filtras estaciones, consultas salidas en directo o navegas.",
+    "Viaje Ibérico Sostenible es una guía gratuita en verystays.com. No pedimos cuenta. Esta política explica qué ocurre cuando votas, filtras estaciones, consultas salidas en directo o navegas.",
   sections: en.sections.map((section) => {
     const map: Record<string, { title: string; paragraphs: string[] }> = {
       collect: {
@@ -258,19 +258,19 @@ const es: PrivacyContent = {
 const ca: PrivacyContent = {
   ...es,
   title: "Política de privacitat",
-  subtitle: "Com Portugal by Train (verystays.com) tracta les teves interaccions",
+  subtitle: "Com Viatge Ibèric Sostenible (verystays.com) tracta les teves interaccions",
   lastUpdated: "Darrera actualització: 28 de maig de 2026",
   intro:
-    "Portugal by Train és una guia gratuïta a verystays.com. No demanem compte. Aquesta política explica què passa quan votes, filtres estacions o consultes sortides en directe.",
+    "Viatge Ibèric Sostenible és una guia gratuïta a verystays.com. No demanem compte. Aquesta política explica què passa quan votes, filtres estacions o consultes sortides en directe.",
 };
 
 const gl: PrivacyContent = {
   ...es,
   title: "Política de privacidade",
-  subtitle: "Como Portugal by Train (verystays.com) trata as túas interaccións",
+  subtitle: "Como Viaxe Ibérica Sostible (verystays.com) trata as túas interaccións",
   lastUpdated: "Última actualización: 28 de maio de 2026",
   intro:
-    "Portugal by Train é unha guía gratuíta en verystays.com. Non pedimos conta. Esta política explica o que ocorre cando votas, filtras estacións ou consultas saídas en directo.",
+    "Viaxe Ibérica Sostible é unha guía gratuíta en verystays.com. Non pedimos conta. Esta política explica o que ocorre cando votas, filtras estacións ou consultas saídas en directo.",
 };
 
 export const privacyByLocale: Record<Locale, PrivacyContent> = {
