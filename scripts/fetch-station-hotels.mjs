@@ -34,6 +34,7 @@ const onlyMissing = process.argv.includes("--only-missing");
 const onlyStation = process.argv.includes("--station")
   ? process.argv[process.argv.indexOf("--station") + 1]
   : null;
+const onlyCountry = readFlagValue("--country");
 function readFlagValue(name) {
   const eq = process.argv.find((a) => a.startsWith(`${name}=`));
   if (eq) return eq.split("=")[1];
@@ -59,6 +60,10 @@ function curatedCount(stationName) {
 let targets = (onlyStation ? stations.filter((s) => s.name === onlyStation) : stations).filter(
   (s) => curatedCount(s.name) < target,
 );
+
+if (onlyCountry) {
+  targets = targets.filter((s) => s.country === onlyCountry);
+}
 
 if (onlyMissing) {
   targets = targets.filter((s) => !hotelMap[s.name]?.length);

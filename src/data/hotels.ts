@@ -892,7 +892,7 @@ export const stationHotels: StationHotels = {
   ],
   "Viseu": [
     { name: "Hotel Solar dos Pais", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Solar%20dos%20Pais%2C%20Viseu%2C%20Portugal&order=price" },
-    { name: "Apartamentos \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20%22O%20Fado%22%2C%20Viseu%2C%20Portugal&order=price" },
+    { name: "Apartamentos \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20%22O%20Fado%22%2C%20Viseu%2C%20Portugal&order=price" },
     { name: "Casa da Sé", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20S%C3%A9%2C%20Viseu%2C%20Portugal&order=price" },
   ],
   "Évora": [
@@ -1180,7 +1180,7 @@ export const stationHotels: StationHotels = {
     { name: "Casinha da Praça", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casinha%20da%20Pra%C3%A7a%2C%20Praia%20do%20Ribatejo%2C%20Portugal&order=price" },
   ],
   "Ramalhal": [
-    { name: "Apartamento \\\\", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Ramalhal%2C%20Portugal&order=price" },
+    { name: "Apartamento \\\\\\\\\\\\\\\\", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Ramalhal%2C%20Portugal&order=price" },
   ],
   "Rede": [
     { name: "Solar da Rede", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solar%20da%20Rede%2C%20Rede%2C%20Portugal&order=price" },
@@ -1196,7 +1196,7 @@ export const stationHotels: StationHotels = {
     { name: "Inn Golegã", distanceKm: 4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Inn%20Goleg%C3%A3%2C%20Riachos%20%E2%80%93%20Torres%20Novas%20%E2%80%93%20Goleg%C3%A3%2C%20Portugal&order=price" },
   ],
   "Runa": [
-    { name: "Apartamento \\\\", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Runa%2C%20Portugal&order=price" },
+    { name: "Apartamento \\\\\\\\\\\\\\\\", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Runa%2C%20Portugal&order=price" },
     { name: "Casa Perestrello", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Perestrello%2C%20Runa%2C%20Portugal&order=price" },
     { name: "Stay", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Stay%2C%20Runa%2C%20Portugal&order=price" },
   ],
@@ -1630,6 +1630,71 @@ export const stationHotels: StationHotels = {
     { name: "Colina dos Mouros", distanceKm: 0.6, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Hotel Vila Sodré", distanceKm: 1.4, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Horta Grande", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Horta%20Grande%2C%20Silves%2C%20Portugal&order=price" },
+  ],
+  "Vigo-Guixar": [
+    { name: "Hotel OCA Ipanema", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20OCA%20Ipanema%2C%20Vigo-Guixar%2C%20Spain&order=price" },
+    { name: "Hostal Plaza", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Plaza%2C%20Vigo-Guixar%2C%20Spain&order=price" },
+    { name: "Occidental Vigo", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Occidental%20Vigo%2C%20Vigo-Guixar%2C%20Spain&order=price" },
+  ],
+  "Vigo-Urzáiz": [
+    { name: "Occidental Vigo", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Occidental%20Vigo%2C%20Vigo-Urz%C3%A1iz%2C%20Spain&order=price" },
+    { name: "Hostal Plaza", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Plaza%2C%20Vigo-Urz%C3%A1iz%2C%20Spain&order=price" },
+    { name: "Exe Vigo", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Vigo%2C%20Vigo-Urz%C3%A1iz%2C%20Spain&order=price" },
+  ],
+  "Redondela": [
+    { name: "Albergue Avoa Regina", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Avoa%20Regina%2C%20Redondela%2C%20Spain&order=price" },
+    { name: "A Marisma", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=A%20Marisma%2C%20Redondela%2C%20Spain&order=price" },
+    { name: "Anabel Home", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Anabel%20Home%2C%20Redondela%2C%20Spain&order=price" },
+  ],
+  "Pontevedra": [
+    { name: "Hotel Galicia Palace", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Galicia%20Palace%2C%20Pontevedra%2C%20Spain&order=price" },
+    { name: "Hotel Virgen del Camino", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Virgen%20del%20Camino%2C%20Pontevedra%2C%20Spain&order=price" },
+    { name: "Albergue Nacama", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Nacama%2C%20Pontevedra%2C%20Spain&order=price" },
+  ],
+  "Vilagarcía de Arousa": [
+    { name: "Hotel Vilagarcía", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vilagarc%C3%ADa%2C%20Vilagarc%C3%ADa%20de%20Arousa%2C%20Spain&order=price" },
+    { name: "Hotel Alda Castelao", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alda%20Castelao%2C%20Vilagarc%C3%ADa%20de%20Arousa%2C%20Spain&order=price" },
+    { name: "Hotel Playa Compostela", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Playa%20Compostela%2C%20Vilagarc%C3%ADa%20de%20Arousa%2C%20Spain&order=price" },
+  ],
+  "Padrón": [
+    { name: "Pensión El Cuco", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20El%20Cuco%2C%20Padr%C3%B3n%2C%20Spain&order=price" },
+    { name: "Rossol", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rossol%2C%20Padr%C3%B3n%2C%20Spain&order=price" },
+    { name: "Albergue Corredoiras", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Corredoiras%2C%20Padr%C3%B3n%2C%20Spain&order=price" },
+  ],
+  "Santiago de Compostela": [
+    { name: "Avío Apartamentos", distanceKm: 1.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Av%C3%ADo%20Apartamentos%2C%20Santiago%20de%20Compostela%2C%20Spain&order=price" },
+    { name: "Thostel Albergue", distanceKm: 2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Thostel%20Albergue%2C%20Santiago%20de%20Compostela%2C%20Spain&order=price" },
+    { name: "Albergue Santo Santiago", distanceKm: 2.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Santo%20Santiago%2C%20Santiago%20de%20Compostela%2C%20Spain&order=price" },
+  ],
+  "A Coruña": [
+    { name: "Exe Coruña", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Coru%C3%B1a%2C%20A%20Coru%C3%B1a%2C%20Spain&order=price" },
+    { name: "Saudade", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Saudade%2C%20A%20Coru%C3%B1a%2C%20Spain&order=price" },
+    { name: "Moon", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Moon%2C%20A%20Coru%C3%B1a%2C%20Spain&order=price" },
+  ],
+  "O Porriño": [
+    { name: "Pensión Cando", distanceKm: 0, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Cando%2C%20O%20Porri%C3%B1o%2C%20Spain&order=price" },
+    { name: "Hotel Parque", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Parque%2C%20O%20Porri%C3%B1o%2C%20Spain&order=price" },
+    { name: "Albergue Fonte dos Aloques", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Fonte%20dos%20Aloques%2C%20O%20Porri%C3%B1o%2C%20Spain&order=price" },
+  ],
+  "Tui": [
+    { name: "Albergue Pallanes", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Pallanes%2C%20Tui%2C%20Spain&order=price" },
+    { name: "Hotel Amoriño", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Amori%C3%B1o%2C%20Tui%2C%20Spain&order=price" },
+    { name: "Villa San Clemente", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Villa%20San%20Clemente%2C%20Tui%2C%20Spain&order=price" },
+  ],
+  "Ourense": [
+    { name: "Hostal Cándido", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20C%C3%A1ndido%2C%20Ourense%2C%20Spain&order=price" },
+    { name: "Hotel Zarampallo", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Zarampallo%2C%20Ourense%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos Eligio Rivas Quintas", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Eligio%20Rivas%20Quintas%2C%20Ourense%2C%20Spain&order=price" },
+  ],
+  "Madrid-Chamartín": [
+    { name: "Hotel The One", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20The%20One%2C%20Madrid-Chamart%C3%ADn%2C%20Spain&order=price" },
+    { name: "Hotel Madrid Chamartín", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Madrid%20Chamart%C3%ADn%2C%20Madrid-Chamart%C3%ADn%2C%20Spain&order=price" },
+    { name: "Barceló Imagine", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcel%C3%B3%20Imagine%2C%20Madrid-Chamart%C3%ADn%2C%20Spain&order=price" },
+  ],
+  "Barcelona-Sants": [
+    { name: "Barceló Sants", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcel%C3%B3%20Sants%2C%20Barcelona-Sants%2C%20Spain&order=price" },
+    { name: "Meeting Point Hostels", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Meeting%20Point%20Hostels%2C%20Barcelona-Sants%2C%20Spain&order=price" },
+    { name: "Hotel AC Sants", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20AC%20Sants%2C%20Barcelona-Sants%2C%20Spain&order=price" },
   ],
   "Estádio do Dragão": [
     { name: "Porto Antas Hotel", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Antas%20Hotel%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },

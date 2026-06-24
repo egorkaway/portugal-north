@@ -125,10 +125,16 @@ export function bookingSearchUrl(query) {
   return `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(query)}&order=price`;
 }
 
-function bookingUrlFor(tags, hotelName, stationName) {
+function countryLabel(country = "pt") {
+  return country === "es" ? "Spain" : "Portugal";
+}
+
+function bookingUrlFor(tags, hotelName, station) {
+  const stationName = typeof station === "string" ? station : station.name;
+  const country = typeof station === "string" ? "pt" : (station.country ?? "pt");
   const website = tags.website ?? tags["contact:website"] ?? "";
   if (/booking\.com/i.test(website)) return website;
-  return bookingSearchUrl(`${hotelName}, ${stationName}, Portugal`);
+  return bookingSearchUrl(`${hotelName}, ${stationName}, ${countryLabel(country)}`);
 }
 
 function normName(name) {
@@ -140,10 +146,12 @@ function normName(name) {
     .trim();
 }
 
-/** Strip metro suffixes for town-name geocoding. */
-export function townQueryForStation(stationName) {
+/** Strip metro suffixes; use town before hyphen for compound station names. */
+export function townQueryForStation(stationName, country = "pt") {
   const base = stationName.replace(/\s*\(Metro\)\s*$/i, "").trim();
-  return `${base}, Portugal`;
+  const nation = countryLabel(country);
+  const locality = base.includes("-") ? base.split("-")[0].trim() : base;
+  return `${locality}, ${nation}`;
 }
 
 export async function geocodeTown(query) {
@@ -166,7 +174,7 @@ export async function geocodeTown(query) {
  * Search accommodation around a town center; distances are still measured from the station.
  */
 export async function fetchHotelsNearTown(station, { townQuery, radiusM = 5000 } = {}) {
-  const query = townQuery ?? townQueryForStation(station.name);
+  const query = townQuery ?? townQueryForStation(station.name, station.country);
   const town = await geocodeTown(query);
   if (!town) return { hotels: [], town: null };
 
@@ -233,7 +241,7 @@ out center tags;`;
       name,
       distanceKm,
       priceFrom: estimatePrice(tags),
-      bookingUrl: bookingUrlFor(tags, name, station.name),
+      bookingUrl: bookingUrlFor(tags, name, anchor),
       source: tags.tourism ?? tags.amenity ?? "hotel",
     });
   }
