@@ -1861,6 +1861,11 @@ export const stationHotels: StationHotels = {
     { name: "Hostal Lemus", distanceKm: 4, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Lemus%2C%20Salamanca%20Airport%20(SLM)%2C%20Spain&order=price" },
     { name: "Galicán Casa Rural", distanceKm: 9.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Galic%C3%A1n%20Casa%20Rural%2C%20Salamanca%20Airport%20(SLM)%2C%20Spain&order=price" },
   ],
+  "Vitoria Airport (VIT)": [
+    { name: "Domaika", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Domaika%2C%20Vitoria%20Airport%20(VIT)%2C%20Spain&order=price" },
+    { name: "Hotel Gobeo Park", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Gobeo%20Park%2C%20Vitoria%20Airport%20(VIT)%2C%20Spain&order=price" },
+    { name: "Gran Hotel Lakua", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gran%20Hotel%20Lakua%2C%20Vitoria%20Airport%20(VIT)%2C%20Spain&order=price" },
+  ],
   "Logroño-Agoncillo Airport (RJL)": [
     { name: "Finca el Cónsul", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20el%20C%C3%B3nsul%2C%20Logro%C3%B1o-Agoncillo%20Airport%20(RJL)%2C%20Spain&order=price" },
     { name: "Hotel Las Cañas", distanceKm: 6.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Ca%C3%B1as%2C%20Logro%C3%B1o-Agoncillo%20Airport%20(RJL)%2C%20Spain&order=price" },

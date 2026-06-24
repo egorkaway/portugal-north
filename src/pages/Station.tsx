@@ -151,8 +151,6 @@ const Station = () => {
             ))}
           </div>
 
-          {showYesimPromo ? <StationYesimPromo /> : null}
-
           {!airportStation ? <StationDepartures stationName={station.name} /> : null}
           {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}
 
@@ -222,6 +220,8 @@ const Station = () => {
               <HotelList stationName={station.name} hotels={hotels} />
             </section>
           )}
+
+          {showYesimPromo ? <StationYesimPromo /> : null}
 
           <p className="mt-5 flex items-center gap-1 text-xs text-muted-foreground md:mt-8">
             <Navigation className="h-3 w-3" aria-hidden="true" />
