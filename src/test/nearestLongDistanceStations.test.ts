@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import { portugalAirports } from "@/data/portugal/airports";
+import { spainAirports } from "@/data/spain/airports";
 import { stations } from "@/data/stations";
 import {
   getLongDistanceTypes,
@@ -29,6 +31,15 @@ describe("nearestLongDistanceStations", () => {
     expect(
       shouldShowNearestLongDistance(stations.find((s) => s.name === "Amarante")!),
     ).toBe(false);
+  });
+
+  it("shows nearest long-distance links on Portuguese airport pages only", () => {
+    expect(shouldShowNearestLongDistance(portugalAirports[0])).toBe(true);
+    expect(shouldShowNearestLongDistance(spainAirports[0])).toBe(false);
+    const lisbon = portugalAirports.find((a) => a.name === "Lisbon Airport (LIS)")!;
+    const nearest = getNearestLongDistanceStations(lisbon);
+    expect(nearest.length).toBeGreaterThan(0);
+    expect(nearest.every((entry) => hasLongDistanceService(entry.station))).toBe(true);
   });
 
   it("returns the two nearest AP/IC stations for Mealhada", () => {

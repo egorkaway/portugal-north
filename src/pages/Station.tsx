@@ -1,4 +1,4 @@
-import { ArrowLeft, BedDouble, MapPin, Train, ExternalLink, Navigation, History } from "lucide-react";
+import { ArrowLeft, BedDouble, MapPin, Train, Plane, ExternalLink, Navigation, History } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import {
   getAppleMapsUrl,
@@ -31,12 +31,13 @@ import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
 import { buildStationStructuredData } from "@/lib/structuredData";
 import { getStationBySlug } from "@/lib/stationSlug";
 import { getTripHistorianStationUrl } from "@/lib/tripHistorian";
-import { isAirportStation } from "@/lib/airportStation";
+import { isAirportStation, showsTravelEsimPromo } from "@/lib/airportStation";
 import { getMetroOperatorLink, isMetroStation } from "@/lib/metroStation";
 import { StationYesimPromo } from "@/components/StationYesimPromo";
 import { NearestLongDistanceStations } from "@/components/NearestLongDistanceStations";
 
 const typeColors: Record<string, string> = {
+  Airport: "bg-sky-600 text-white",
   "Alfa Pendular": "bg-primary text-primary-foreground",
   "Intercidades": "bg-secondary text-secondary-foreground",
   "Regional": "bg-accent text-accent-foreground",
@@ -58,6 +59,8 @@ const Station = () => {
   const tripHistorianUrl = getTripHistorianStationUrl(station.name);
   const metroStation = isMetroStation(station);
   const airportStation = isAirportStation(station);
+  const showYesimPromo = showsTravelEsimPromo(station);
+  const LineIcon = airportStation ? Plane : Train;
   const metroLink = getMetroOperatorLink(station);
   const imageUrl = getStationImageUrl(station.name);
   const shareImageUrl = getStationShareImageUrl(station.name);
@@ -100,7 +103,7 @@ const Station = () => {
               <div className="min-w-0">
                 <h1 className="font-display text-2xl md:text-4xl">{station.name}</h1>
                 <p className="mt-1 flex items-center gap-2 text-sm text-primary-foreground/85 md:mt-2">
-                  <Train className="h-4 w-4 shrink-0" aria-hidden="true" />
+                  <LineIcon className="h-4 w-4 shrink-0" aria-hidden="true" />
                   {station.lines.join(" · ")}
                 </p>
               </div>
@@ -148,8 +151,10 @@ const Station = () => {
             ))}
           </div>
 
-          <StationDepartures stationName={station.name} />
-          <StationReliabilityCard stationName={station.name} />
+          {showYesimPromo ? <StationYesimPromo /> : null}
+
+          {!airportStation ? <StationDepartures stationName={station.name} /> : null}
+          {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}
 
           <NearestLongDistanceStations station={station} />
 
@@ -183,7 +188,7 @@ const Station = () => {
                 {t(metroLink.labelKey)}
               </a>
             ) : null}
-            {!metroStation && tripHistorianUrl ? (
+            {!metroStation && !airportStation && tripHistorianUrl ? (
               <a
                 href={tripHistorianUrl}
                 target="_blank"
@@ -217,8 +222,6 @@ const Station = () => {
               <HotelList stationName={station.name} hotels={hotels} />
             </section>
           )}
-
-          {airportStation ? <StationYesimPromo /> : null}
 
           <p className="mt-5 flex items-center gap-1 text-xs text-muted-foreground md:mt-8">
             <Navigation className="h-3 w-3" aria-hidden="true" />

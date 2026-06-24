@@ -10,6 +10,9 @@ export function hasLongDistanceService(station: Station): boolean {
 
 /** True when the stop has no AP/IC and is not a historic-only entry. */
 export function shouldShowNearestLongDistance(station: Station): boolean {
+  if (station.types.includes("Airport")) {
+    return station.country === "pt";
+  }
   if (hasLongDistanceService(station)) return false;
   return !station.types.every((type) => type === "Inactive / Historic");
 }

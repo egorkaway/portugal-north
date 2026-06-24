@@ -37,12 +37,14 @@ export function parseStations(ts) {
   );
 }
 
-/** CP stations, Spanish stations, plus Metro do Porto and Metropolitano de Lisboa termini. */
+/** CP stations, Spanish stations, airports, plus Metro do Porto and Metropolitano de Lisboa termini. */
 export function parseAllStationsFromRepo(root) {
   const read = (rel) => readFileSync(join(root, rel), "utf8");
   return [
     ...parseStations(read("src/data/stations.ts")).map((station) => ({ ...station, country: "pt" })),
+    ...parseStations(read("src/data/portugal/airports.ts")).map((station) => ({ ...station, country: "pt" })),
     ...parseStations(read("src/data/spain/stations.ts")).map((station) => ({ ...station, country: "es" })),
+    ...parseStations(read("src/data/spain/airports.ts")).map((station) => ({ ...station, country: "es" })),
     ...parseStations(read("src/data/metroPortoStations.ts")).map((station) => ({ ...station, country: "pt" })),
     ...parseStations(read("src/data/metroLisboaStations.ts")).map((station) => ({ ...station, country: "pt" })),
   ];

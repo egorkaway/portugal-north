@@ -1,4 +1,4 @@
-import { MapPin, ExternalLink, BedDouble, Train, Navigation, ArrowRight } from "lucide-react";
+import { MapPin, ExternalLink, BedDouble, Train, Plane, Navigation, ArrowRight } from "lucide-react";
 import { HotelList } from "@/components/HotelList";
 import { Link } from "react-router-dom";
 import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data/stations";
@@ -14,6 +14,7 @@ import { VisitedButton } from "@/components/VisitedButton";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 const typeColors: Record<string, string> = {
+  Airport: "bg-sky-600 text-white",
   "Alfa Pendular": "bg-primary text-primary-foreground",
   "Intercidades": "bg-secondary text-secondary-foreground",
   "Regional": "bg-accent text-accent-foreground",
@@ -35,6 +36,8 @@ export function StationCard({
   const { vote, cast } = useStationVote(station.name);
   const { visited, toggle: toggleVisited } = useStationVisited(station.name);
   const stationPath = getStationPath(station);
+  const isAirport = station.types.includes("Airport");
+  const LineIcon = isAirport ? Plane : Train;
 
   return (
     <div className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col">
@@ -58,7 +61,7 @@ export function StationCard({
               </Link>
             </h2>
             <p className="text-sm text-muted-foreground flex items-center gap-1 mt-1">
-              <Train className="w-3.5 h-3.5 shrink-0" />
+              <LineIcon className="w-3.5 h-3.5 shrink-0" />
               <span className="truncate">{station.lines.join(" / ")}</span>
             </p>
             {distanceKm !== undefined && (

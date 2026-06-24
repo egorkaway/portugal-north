@@ -1,5 +1,6 @@
 /** Canonical order for filter chips and badges. */
 export const TRAIN_TYPE_ORDER = [
+  "Airport",
   "Alfa Pendular",
   "Intercidades",
   "Regional",
@@ -9,6 +10,7 @@ export const TRAIN_TYPE_ORDER = [
 ] as const;
 
 const TRAIN_TYPE_ABBREV: Record<string, string> = {
+  Airport: "Airport",
   "Alfa Pendular": "AP",
   Intercidades: "IC",
   Regional: "R",

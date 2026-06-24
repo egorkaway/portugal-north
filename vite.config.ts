@@ -201,6 +201,8 @@ export default defineConfig({
         navigateFallback: "/index.html",
         cleanupOutdatedCaches: true,
         clientsClaim: true,
+        // Main app chunk includes station/airport data; default 2 MiB precache cap is too low.
+        maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         // Keep precache small — Safari fails to activate SWs with hundreds of MB cached.
         globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,webp,woff2,txt,xml,webmanifest}"],
         globIgnores: ["**/social/**", "**/og-image.jpg", "**/icon-source.png"],

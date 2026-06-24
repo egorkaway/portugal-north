@@ -892,7 +892,7 @@ export const stationHotels: StationHotels = {
   ],
   "Viseu": [
     { name: "Hotel Solar dos Pais", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Solar%20dos%20Pais%2C%20Viseu%2C%20Portugal&order=price" },
-    { name: "Apartamentos \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20%22O%20Fado%22%2C%20Viseu%2C%20Portugal&order=price" },
+    { name: "Apartamentos O Fado", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20%22O%20Fado%22%2C%20Viseu%2C%20Portugal&order=price" },
     { name: "Casa da Sé", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20S%C3%A9%2C%20Viseu%2C%20Portugal&order=price" },
   ],
   "Évora": [
@@ -1180,7 +1180,7 @@ export const stationHotels: StationHotels = {
     { name: "Casinha da Praça", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casinha%20da%20Pra%C3%A7a%2C%20Praia%20do%20Ribatejo%2C%20Portugal&order=price" },
   ],
   "Ramalhal": [
-    { name: "Apartamento \\\\\\\\\\\\\\\\", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Ramalhal%2C%20Portugal&order=price" },
+    { name: "Apartamento O Sol", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Ramalhal%2C%20Portugal&order=price" },
   ],
   "Rede": [
     { name: "Solar da Rede", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solar%20da%20Rede%2C%20Rede%2C%20Portugal&order=price" },
@@ -1196,7 +1196,7 @@ export const stationHotels: StationHotels = {
     { name: "Inn Golegã", distanceKm: 4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Inn%20Goleg%C3%A3%2C%20Riachos%20%E2%80%93%20Torres%20Novas%20%E2%80%93%20Goleg%C3%A3%2C%20Portugal&order=price" },
   ],
   "Runa": [
-    { name: "Apartamento \\\\\\\\\\\\\\\\", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Runa%2C%20Portugal&order=price" },
+    { name: "Apartamento O Sol", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20%22O%20Sol%22%2C%20Runa%2C%20Portugal&order=price" },
     { name: "Casa Perestrello", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Perestrello%2C%20Runa%2C%20Portugal&order=price" },
     { name: "Stay", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Stay%2C%20Runa%2C%20Portugal&order=price" },
   ],
@@ -1630,6 +1630,31 @@ export const stationHotels: StationHotels = {
     { name: "Colina dos Mouros", distanceKm: 0.6, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Hotel Vila Sodré", distanceKm: 1.4, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Horta Grande", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Horta%20Grande%2C%20Silves%2C%20Portugal&order=price" },
+  ],
+  "Lisbon Airport (LIS)": [
+    { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
+    { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
+    { name: "Star inn", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Star%20inn%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
+  ],
+  "Porto Airport (OPO)": [
+    { name: "Solar Antigo Porto Aeroporto", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solar%20Antigo%20Porto%20Aeroporto%2C%20Porto%20Airport%20(OPO)%2C%20Portugal&order=price" },
+    { name: "Singular", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Singular%2C%20Porto%20Airport%20(OPO)%2C%20Portugal&order=price" },
+    { name: "Hotel Aeroporto", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Aeroporto%2C%20Porto%20Airport%20(OPO)%2C%20Portugal&order=price" },
+  ],
+  "Faro Airport (FAO)": [
+    { name: "Sleep & Go Faro Airport Guest House", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sleep%20%26%20Go%20Faro%20Airport%20Guest%20House%2C%20Faro%20Airport%20(FAO)%2C%20Portugal&order=price" },
+    { name: "Walk in Hostel Faro Airport", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Walk%20in%20Hostel%20Faro%20Airport%2C%20Faro%20Airport%20(FAO)%2C%20Portugal&order=price" },
+    { name: "3K Hotel", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=3K%20Hotel%2C%20Faro%20Airport%20(FAO)%2C%20Portugal&order=price" },
+  ],
+  "Beja Airport (BYJ)": [
+    { name: "Diabrória", distanceKm: 3.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Diabr%C3%B3ria%2C%20Beja%20Airport%20(BYJ)%2C%20Portugal&order=price" },
+    { name: "Holiday Inn", distanceKm: 8.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%2C%20Beja%20Airport%20(BYJ)%2C%20Portugal&order=price" },
+    { name: "Sesmarias Turismo Rural & Spa", distanceKm: 8.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sesmarias%20Turismo%20Rural%20%26%20Spa%2C%20Beja%20Airport%20(BYJ)%2C%20Portugal&order=price" },
+  ],
+  "Cascais Airport (CAT)": [
+    { name: "Seminário Torre D' Aguilha - Hotel", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Semin%C3%A1rio%20Torre%20D'%20Aguilha%20-%20Hotel%2C%20Cascais%20Airport%20(CAT)%2C%20Portugal&order=price" },
+    { name: "Dolce Vita Guesthouse", distanceKm: 3.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dolce%20Vita%20Guesthouse%2C%20Cascais%20Airport%20(CAT)%2C%20Portugal&order=price" },
+    { name: "Casa", distanceKm: 3.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%2C%20Cascais%20Airport%20(CAT)%2C%20Portugal&order=price" },
   ],
   "Vigo-Guixar": [
     { name: "Hotel OCA Ipanema", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20OCA%20Ipanema%2C%20Vigo-Guixar%2C%20Spain&order=price" },

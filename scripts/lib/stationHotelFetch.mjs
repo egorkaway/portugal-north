@@ -29,22 +29,32 @@ export function isPlaceholderHotelName(name) {
   return PLACEHOLDER_NAME.test(name);
 }
 
+const HOTEL_OBJECT_RE =
+  /^\{\s*name:\s*("(?:\\.|[^"\\])*")\s*,\s*distanceKm:\s*([\d.]+)\s*,\s*priceFrom:\s*(\d+)\s*,\s*bookingUrl:\s*("(?:\\.|[^"\\])*")\s*\},?$/;
+
+function parseHotelObjectLine(line) {
+  const trimmed = line.trim();
+  if (!trimmed.startsWith("{")) return null;
+  const match = trimmed.match(HOTEL_OBJECT_RE);
+  if (!match) return null;
+  return {
+    name: JSON.parse(match[1]),
+    distanceKm: Number(match[2]),
+    priceFrom: Number(match[3]),
+    bookingUrl: JSON.parse(match[4]),
+  };
+}
+
 export function parseHotelMap(ts) {
   const map = {};
   for (const match of ts.matchAll(/^  ("(?:[^"\\]|\\.)*"): \[([\s\S]*?)\n  \],/gm)) {
-    const name = JSON.parse(match[1]);
+    const stationName = JSON.parse(match[1]);
     const body = match[2];
-    const hotels = [
-      ...body.matchAll(
-        /name:\s*"([^"]+)"[\s\S]*?distanceKm:\s*([\d.]+)[\s\S]*?priceFrom:\s*(\d+)[\s\S]*?bookingUrl:\s*"([^"]+)"/g,
-      ),
-    ].map((m) => ({
-      name: m[1],
-      distanceKm: Number(m[2]),
-      priceFrom: Number(m[3]),
-      bookingUrl: m[4],
-    }));
-    map[name] = hotels;
+    const hotels = body
+      .split("\n")
+      .map((line) => parseHotelObjectLine(line))
+      .filter(Boolean);
+    map[stationName] = hotels;
   }
   return map;
 }
@@ -146,9 +156,14 @@ function normName(name) {
     .trim();
 }
 
-/** Strip metro suffixes; use town before hyphen for compound station names. */
+/** Strip metro suffixes and airport IATA; use town before hyphen for compound station names. */
 export function townQueryForStation(stationName, country = "pt") {
-  const base = stationName.replace(/\s*\(Metro\)\s*$/i, "").trim();
+  const base = stationName
+    .replace(/\s*\(Metro\)\s*$/i, "")
+    .replace(/\s+Airport\s*\([A-Z]{3,4}\)\s*$/i, " Airport")
+    .replace(/\s+Airport\s*$/i, "")
+    .replace(/\s*\([A-Z]{3,4}\)\s*$/i, "")
+    .trim();
   const nation = countryLabel(country);
   const locality = base.includes("-") ? base.split("-")[0].trim() : base;
   return `${locality}, ${nation}`;
@@ -223,7 +238,7 @@ out center tags;`;
   for (const element of data.elements ?? []) {
     if (!isAccommodation(element)) continue;
     const tags = element.tags ?? {};
-    const name = tags.name?.trim();
+    const name = tags.name?.trim().replace(/"/g, "'");
     if (!name || name.length < 3) continue;
 
     const coords = elementCoords(element);

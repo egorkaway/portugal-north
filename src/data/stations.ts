@@ -390,7 +390,8 @@ export const stations = portugalStations;
 
 export function getAppleMapsUrl(station: Station): string {
   const countryName = station.country === "es" ? "Spain" : "Portugal";
-  return `https://maps.apple.com/?q=${encodeURIComponent(station.name + " station " + countryName)}&ll=${station.lat},${station.lng}&z=15`;
+  const kind = station.types.includes("Airport") ? "airport" : "station";
+  return `https://maps.apple.com/?q=${encodeURIComponent(station.name + " " + kind + " " + countryName)}&ll=${station.lat},${station.lng}&z=15`;
 }
 
 export function getOSMUrl(station: Station): string {
