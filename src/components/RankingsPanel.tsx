@@ -57,7 +57,13 @@ export function RankingList({
               <div className="min-w-0">
                 <p className="text-sm font-medium text-foreground">
                   <span className="mr-2 text-muted-foreground">{index + 1}.</span>
-                  {item.name}
+                  {item.href && !item.subtitle ? (
+                    <Link to={item.href} className="hover:text-primary hover:underline">
+                      {item.name}
+                    </Link>
+                  ) : (
+                    item.name
+                  )}
                 </p>
                 {item.subtitle && (
                   <p className="mt-0.5 pl-5 text-xs text-muted-foreground">
@@ -120,8 +126,18 @@ export function RankingsPanel({
 
   const stationRatings = data?.ratings;
   const hotelRatings = data?.hotelRatings;
-  const topStationsUp = stationRatings ? getTopUpvoted(stationRatings) : [];
-  const topStationsDown = stationRatings ? getTopDownvoted(stationRatings) : [];
+  const topStationsUp = stationRatings
+    ? getTopUpvoted(stationRatings).map((station) => ({
+        ...station,
+        href: `/stations/${stationToSlug(station.name)}`,
+      }))
+    : [];
+  const topStationsDown = stationRatings
+    ? getTopDownvoted(stationRatings).map((station) => ({
+        ...station,
+        href: `/stations/${stationToSlug(station.name)}`,
+      }))
+    : [];
   const topHotelsUp = hotelRatings ? getTopUpvotedHotels(hotelRatings) : [];
   const topHotelsDown = hotelRatings ? getTopDownvotedHotels(hotelRatings) : [];
 
