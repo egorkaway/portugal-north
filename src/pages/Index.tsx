@@ -150,7 +150,7 @@ const Index = () => {
       </header>
 
       <div className="border-b border-border bg-muted/30 px-4 py-4 md:px-6">
-        <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mx-auto flex max-w-5xl items-center gap-2">
           <p className="text-sm text-muted-foreground">{t("country.stationsIn")}</p>
           <CountrySelector country={country} onCountryChange={setCountry} />
         </div>

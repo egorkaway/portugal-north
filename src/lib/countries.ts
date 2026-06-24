@@ -2,7 +2,10 @@ export const COUNTRY_CODES = ["pt", "es"] as const;
 
 export type CountryCode = (typeof COUNTRY_CODES)[number];
 
-export const DEFAULT_COUNTRY: CountryCode = "pt";
+export const COUNTRY_FLAGS: Record<CountryCode, string> = {
+  pt: "🇵🇹",
+  es: "🇪🇸",
+};
 
 export const COUNTRY_STORAGE_KEY = "verystays-country";
 

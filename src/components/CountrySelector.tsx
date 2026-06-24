@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { COUNTRY_CODES, type CountryCode } from "@/lib/countries";
+import { COUNTRY_CODES, COUNTRY_FLAGS, type CountryCode } from "@/lib/countries";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 type CountrySelectorProps = {
@@ -35,7 +35,7 @@ export function CountrySelector({ country, onCountryChange, className }: Country
                 : "text-muted-foreground hover:bg-muted hover:text-foreground",
             )}
           >
-            {t(`country.${code}`)}
+            {COUNTRY_FLAGS[code]} {t(`country.${code}`)}
           </button>
         );
       })}
