@@ -165,6 +165,16 @@ export type Messages = {
     airportLis: string;
     airportPorto: string;
     airportFaro: string;
+    airportMad: string;
+    airportBarcelona: string;
+    airportMalaga: string;
+    airportAlicante: string;
+    airportValencia: string;
+    airportSeville: string;
+    airportBilbao: string;
+    airportSantiago: string;
+    airportVigo: string;
+    airportAsturias: string;
     locateMe: string;
   };
   tickets: {

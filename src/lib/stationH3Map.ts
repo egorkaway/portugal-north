@@ -6,8 +6,8 @@ export type H3ActivityResolution = (typeof H3_ACTIVITY_RESOLUTIONS)[number];
 export const PORTUGAL_MAP_CENTER: [number, number] = [39.6, -8.0];
 export const PORTUGAL_MAP_ZOOM = 7;
 export const PORTUGAL_MAP_BOUNDS: [[number, number], [number, number]] = [
-  [36.9, -9.65],
-  [42.15, -6.05],
+  [36.5, -9.8],
+  [43.8, 3.5],
 ];
 
 export type StationHexCell = {

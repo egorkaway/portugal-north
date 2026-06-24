@@ -1,4 +1,5 @@
 import { portugalAirports } from "@/data/portugalAirports";
+import { spainMapAirports } from "@/data/spainMapAirports";
 
 export const MAP_LABELLED_STATION_NAMES = [
   "Faro",
@@ -34,43 +35,62 @@ const STATION_LABEL_LAYOUT: Partial<
 };
 
 const AIRPORT_LABEL_LAYOUT: Partial<
-  Record<(typeof portugalAirports)[number]["iata"], Pick<MapLabelPoint, "direction" | "offset">>
+  Record<string, Pick<MapLabelPoint, "direction" | "offset">>
 > = {
   FAO: { direction: "top", offset: [0, -12] },
   OPO: { direction: "top", offset: [0, -12] },
   LIS: { direction: "right", offset: [12, 0] },
+  MAD: { direction: "top", offset: [0, -12] },
+  BCN: { direction: "left", offset: [-12, 0] },
+  AGP: { direction: "top", offset: [0, -12] },
+  ALC: { direction: "bottom", offset: [0, 10] },
+  VLC: { direction: "bottom", offset: [0, 10] },
+  SVQ: { direction: "top", offset: [0, -12] },
+  BIO: { direction: "top", offset: [0, -12] },
+  SCQ: { direction: "left", offset: [-12, 0] },
+  VGO: { direction: "bottom", offset: [0, 10] },
+  OVD: { direction: "top", offset: [0, -12] },
 };
 
-/** Southern/northern airport labels clutter the map when zoomed out past Portugal overview. */
-const AIRPORT_MIN_ZOOM_TO_SHOW: Partial<
-  Record<(typeof portugalAirports)[number]["iata"], number>
-> = {
+/** Southern/eastern airport labels clutter the map when zoomed out past Iberia overview. */
+const AIRPORT_MIN_ZOOM_TO_SHOW: Partial<Record<string, number>> = {
   FAO: 7,
   LIS: 7,
+  BCN: 7,
+  ALC: 7,
+  VLC: 7,
+  AGP: 7,
 };
+
+const MAP_AIRPORTS = [...portugalAirports, ...spainMapAirports];
 
 export function buildMapLabelPoints(
   stations: { name: string; lat: number; lng: number }[],
-  airportLabels: Record<(typeof portugalAirports)[number]["iata"], string>,
+  airportLabels: Record<string, string>,
 ): MapLabelPoint[] {
   const stationByName = new Map(stations.map((station) => [station.name, station]));
 
-  const airportPoints: MapLabelPoint[] = portugalAirports.map((airport) => {
+  const airportPoints: MapLabelPoint[] = MAP_AIRPORTS.flatMap((airport) => {
+    const label = airportLabels[airport.iata];
+    if (!label) return [];
+
     const layout = AIRPORT_LABEL_LAYOUT[airport.iata] ?? {
       direction: "top" as const,
       offset: [0, -12] as [number, number],
     };
 
-    return {
-      id: `airport-${airport.iata}`,
-      lat: airport.lat,
-      lng: airport.lng,
-      label: `${airportLabels[airport.iata]} (${airport.iata})`,
-      kind: "airport",
-      showMarker: true,
-      minZoomToShow: AIRPORT_MIN_ZOOM_TO_SHOW[airport.iata],
-      ...layout,
-    };
+    return [
+      {
+        id: `airport-${airport.iata}`,
+        lat: airport.lat,
+        lng: airport.lng,
+        label: `${label} (${airport.iata})`,
+        kind: "airport",
+        showMarker: true,
+        minZoomToShow: AIRPORT_MIN_ZOOM_TO_SHOW[airport.iata],
+        ...layout,
+      },
+    ];
   });
 
   const stationPoints: MapLabelPoint[] = MAP_LABELLED_STATION_NAMES.flatMap((name) => {

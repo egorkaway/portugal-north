@@ -54,6 +54,16 @@ const AIRPORT_LABEL_KEYS = {
   LIS: "map.airportLis",
   OPO: "map.airportPorto",
   FAO: "map.airportFaro",
+  MAD: "map.airportMad",
+  BCN: "map.airportBarcelona",
+  AGP: "map.airportMalaga",
+  ALC: "map.airportAlicante",
+  VLC: "map.airportValencia",
+  SVQ: "map.airportSeville",
+  BIO: "map.airportBilbao",
+  SCQ: "map.airportSantiago",
+  VGO: "map.airportVigo",
+  OVD: "map.airportAsturias",
 } as const;
 
 export default function StationActivityMap() {
@@ -66,11 +76,9 @@ export default function StationActivityMap() {
   }, [data?.movements]);
 
   const labelPoints = useMemo(() => {
-    const airportLabels = {
-      LIS: t(AIRPORT_LABEL_KEYS.LIS),
-      OPO: t(AIRPORT_LABEL_KEYS.OPO),
-      FAO: t(AIRPORT_LABEL_KEYS.FAO),
-    } as const;
+    const airportLabels = Object.fromEntries(
+      Object.entries(AIRPORT_LABEL_KEYS).map(([iata, key]) => [iata, t(key)]),
+    ) as Record<string, string>;
     return buildMapLabelPoints(stations, airportLabels);
   }, [t]);
 

@@ -1681,6 +1681,26 @@ export const stationHotels: StationHotels = {
     { name: "Bom Sucesso", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bom%20Sucesso%2C%20Braga%20Airport%20(BGZ)%2C%20Portugal&order=price" },
     { name: "Casanova Farmhouse", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casanova%20Farmhouse%2C%20Braga%20Airport%20(BGZ)%2C%20Portugal&order=price" },
   ],
+  "Bragança Airport (BGC)": [
+    { name: "Hotel Turismo São Lázaro", distanceKm: 5.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Turismo%20S%C3%A3o%20L%C3%A1zaro%2C%20Bragan%C3%A7a%20Airport%20(BGC)%2C%20Portugal&order=price" },
+    { name: "Quinta da Rica-Fé Agroturismo", distanceKm: 5.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Rica-F%C3%A9%20Agroturismo%2C%20Bragan%C3%A7a%20Airport%20(BGC)%2C%20Portugal&order=price" },
+    { name: "Ibis Bragança", distanceKm: 6.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Bragan%C3%A7a%2C%20Bragan%C3%A7a%20Airport%20(BGC)%2C%20Portugal&order=price" },
+  ],
+  "Chaves Airport (CHV)": [
+    { name: "Hotel Encostas de Nantes", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Encostas%20de%20Nantes%2C%20Chaves%20Airport%20(CHV)%2C%20Portugal&order=price" },
+    { name: "Hotel Brites", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Brites%2C%20Chaves%20Airport%20(CHV)%2C%20Portugal&order=price" },
+    { name: "Hotel 4 Estações", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%204%20Esta%C3%A7%C3%B5es%2C%20Chaves%20Airport%20(CHV)%2C%20Portugal&order=price" },
+  ],
+  "Castelo Branco Airport": [
+    { name: "Casa 3", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%203%2C%20Castelo%20Branco%20Airport%2C%20Portugal&order=price" },
+    { name: "Residencial Horta d' Alva", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Horta%20d'%20Alva%2C%20Castelo%20Branco%20Airport%2C%20Portugal&order=price" },
+    { name: "Império do Rei", distanceKm: 4.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Imp%C3%A9rio%20do%20Rei%2C%20Castelo%20Branco%20Airport%2C%20Portugal&order=price" },
+  ],
+  "Espinho Airport": [
+    { name: "Pousada da Juventude Espinho", distanceKm: 0.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20da%20Juventude%20Espinho%2C%20Espinho%20Airport%2C%20Portugal&order=price" },
+    { name: "Alameda Guest House", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alameda%20Guest%20House%2C%20Espinho%20Airport%2C%20Portugal&order=price" },
+    { name: "Surf House", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Surf%20House%2C%20Espinho%20Airport%2C%20Portugal&order=price" },
+  ],
   "Vigo-Guixar": [
     { name: "Hotel OCA Ipanema", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20OCA%20Ipanema%2C%20Vigo-Guixar%2C%20Spain&order=price" },
     { name: "Hostal Plaza", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Plaza%2C%20Vigo-Guixar%2C%20Spain&order=price" },
@@ -1745,6 +1765,11 @@ export const stationHotels: StationHotels = {
     { name: "Barceló Sants", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcel%C3%B3%20Sants%2C%20Barcelona-Sants%2C%20Spain&order=price" },
     { name: "Meeting Point Hostels", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Meeting%20Point%20Hostels%2C%20Barcelona-Sants%2C%20Spain&order=price" },
     { name: "Hotel AC Sants", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20AC%20Sants%2C%20Barcelona-Sants%2C%20Spain&order=price" },
+  ],
+  "Madrid-Barajas Airport (MAD)": [
+    { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
+    { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
+    { name: "Aerotel Madrid Airport - Terminal 4", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aerotel%20Madrid%20Airport%20-%20Terminal%204%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
   ],
   "Estádio do Dragão": [
     { name: "Porto Antas Hotel", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Antas%20Hotel%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
