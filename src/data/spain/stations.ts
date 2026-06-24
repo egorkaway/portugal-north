@@ -1,9 +1,9 @@
 import type { Station } from "../stationTypes";
 
 /**
- * Spanish stations reachable on timetabled passenger services from Vigo.
- * Sources: Adif live boards (vigo-guixar, vigo-urzaiz), Renfe Eje Atlántico press
- * releases, seat61.com Vigo station guide, egtre.info Galicia sparse services.
+ * Spanish stations: active Renfe services from Vigo plus historic stops with surviving buildings.
+ * Sources: Adif live boards (vigo-guixar, vigo-urzaiz), Renfe Eje Atlántico press releases,
+ * seat61.com Vigo station guide, egtre.info Galicia sparse services, es.wikipedia.org (Tui).
  */
 export const spainStations: Station[] = [
   {
@@ -77,6 +77,14 @@ export const spainStations: Station[] = [
     types: ["Regional"],
     lat: 42.1619,
     lng: -8.6197,
+  },
+  {
+    name: "Tui",
+    country: "es",
+    lines: ["Ramal internacional Guillarey–Valença (historic)"],
+    types: ["Inactive / Historic"],
+    lat: 42.0565,
+    lng: -8.643,
   },
   {
     name: "Ourense",

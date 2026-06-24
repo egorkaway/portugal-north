@@ -17,8 +17,10 @@ describe("stationRegistry", () => {
     expect(names).toContain("Vigo-Urzáiz");
     expect(names).toContain("Santiago de Compostela");
     expect(names).toContain("Madrid-Chamartín");
+    expect(names).toContain("Tui");
     expect(getStationBySlug("vigo-guixar")?.country).toBe("es");
     expect(getStationBySlug("santiago-de-compostela")?.country).toBe("es");
+    expect(getStationBySlug("tui")?.types).toEqual(["Inactive / Historic"]);
   });
 
   it("builds unique slugs across countries", () => {

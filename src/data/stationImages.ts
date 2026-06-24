@@ -356,6 +356,7 @@ export const stationImages: Record<string, string> = {
   "Trofa": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Esta%C3%A7%C3%A3o_de_Comboios_da_Trofa_-_panoramio.jpg/960px-Esta%C3%A7%C3%A3o_de_Comboios_da_Trofa_-_panoramio.jpg",
   "Tua": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Comboio_hist%C3%B3rico_na_Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_do_Tua_%283300093141%29.jpg/960px-Comboio_hist%C3%B3rico_na_Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_do_Tua_%283300093141%29.jpg",
   "Tunes": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Tunes_Railway_Station_16_September_2015_%281%29.JPG/960px-Tunes_Railway_Station_16_September_2015_%281%29.JPG",
+  "Tui": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tuy_-_Estaci%C3%B3n_de_tren_2.JPG/960px-Tuy_-_Estaci%C3%B3n_de_tren_2.JPG",
   "Valadares": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Valadares.jpg/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Valadares.jpg",
   "Valado – Nazaré – Alcobaça": "https://images.pexels.com/photos/17755286/pexels-photo-17755286.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Vale de Figueira": "https://images.pexels.com/photos/12687699/pexels-photo-12687699.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
