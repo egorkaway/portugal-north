@@ -20,7 +20,7 @@ const portoCampanha: Station = {
 describe("stationMeta", () => {
   it("builds a unique title per station", () => {
     expect(getStationPageTitle(portoCampanha, tr)).toBe(
-      "Porto-Campanhã Train Station — Hotels & Lines | Sustainable Iberian Travel",
+      "Porto-Campanhã Train Station — Hotels & Lines | Sustainable Iberian",
     );
   });
 

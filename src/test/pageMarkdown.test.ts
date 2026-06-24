@@ -19,8 +19,8 @@ describe("pageMarkdown", () => {
   it("builds home markdown with YAML frontmatter", () => {
     const md = buildHomeMarkdown(HOME_PAGE_META, SITE);
     expect(md).toContain("---\n");
-    expect(md).toContain('title: "Sustainable Iberian Travel: Stations & Budget Hotels"');
-    expect(md).toContain("# Sustainable Iberian Travel");
+    expect(md).toContain('title: "Sustainable Iberian: Stations & Budget Hotels"');
+    expect(md).toContain("# Sustainable Iberian");
     expect(md).toContain("```json");
   });
 

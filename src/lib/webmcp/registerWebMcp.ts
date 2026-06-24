@@ -30,7 +30,7 @@ export function buildWebMcpTools(navigate?: NavigateFunction): ModelContextTool[
       name: "search_stations",
       title: "Search CP stations",
       description:
-        "Search Sustainable Iberian Travel stations by name or railway line. Returns slugs, paths, lines, and CP codes for matching stops.",
+        "Search Sustainable Iberian stations by name or railway line. Returns slugs, paths, lines, and CP codes for matching stops.",
       inputSchema: {
         type: "object",
         properties: {

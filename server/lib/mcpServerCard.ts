@@ -35,7 +35,7 @@ export function buildMcpServerCard(siteUrl = getSiteUrl()): McpServerCard {
     protocolVersion: PROTOCOL_VERSION,
     serverInfo: {
       name: "com.verystays/portugal-by-train",
-      title: "Sustainable Iberian Travel",
+      title: "Sustainable Iberian",
       version: SERVER_VERSION,
       description:
         "CP train stations across Portugal with hotel suggestions, live departures, and community ratings.",

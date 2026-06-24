@@ -16,10 +16,10 @@ export type PrivacyContent = {
 
 const en: PrivacyContent = {
   title: "Privacy policy",
-  subtitle: "How Sustainable Iberian Travel (verystays.com) handles your interactions",
+  subtitle: "How Sustainable Iberian (verystays.com) handles your interactions",
   lastUpdated: "Last updated: 28 May 2026",
   intro:
-    "Sustainable Iberian Travel is a free travel guide at verystays.com. We do not ask you to create an account. This policy explains what happens when you vote, filter stations, use live departures, or browse the site.",
+    "Sustainable Iberian is a free travel guide at verystays.com. We do not ask you to create an account. This policy explains what happens when you vote, filter stations, use live departures, or browse the site.",
   sections: [
     {
       id: "collect",

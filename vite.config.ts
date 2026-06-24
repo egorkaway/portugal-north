@@ -161,7 +161,7 @@ export default defineConfig({
         "icon.svg",
       ],
       manifest: {
-        name: "Sustainable Iberian Travel",
+        name: "Sustainable Iberian",
         short_name: "VeryStays",
         description:
           "Train stations across Portugal and Spain with budget hotels nearby and community ratings.",

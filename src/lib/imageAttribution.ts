@@ -14,7 +14,7 @@ const CC_BY_SA_LICENSE = "https://creativecommons.org/licenses/by-sa/4.0/";
 const WIKIMEDIA_COMMONS = "https://commons.wikimedia.org/";
 const PEXELS_LICENSE = "https://www.pexels.com/license/";
 
-const SITE_NAME = "Sustainable Iberian Travel";
+const SITE_NAME = "Sustainable Iberian";
 
 function humanizeSlug(slug: string): string {
   return slug.replace(/_/g, " ").replace(/\s+/g, " ").trim();

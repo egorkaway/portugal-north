@@ -147,9 +147,9 @@ describe("structuredData", () => {
     const data = buildHomeStructuredData();
     const graph = data["@graph"] as { "@type": string; logo?: ImageObjectNode }[];
     const org = graph.find((n) => n["@type"] === "Organization");
-    expect(org?.logo?.creator?.name).toBe("Sustainable Iberian Travel");
-    expect(org?.logo?.creditText).toBe("Sustainable Iberian Travel");
-    expect(org?.logo?.copyrightNotice).toContain("Sustainable Iberian Travel");
+    expect(org?.logo?.creator?.name).toBe("Sustainable Iberian");
+    expect(org?.logo?.creditText).toBe("Sustainable Iberian");
+    expect(org?.logo?.copyrightNotice).toContain("Sustainable Iberian");
   });
 
   it("home graph includes ItemList of stations", () => {

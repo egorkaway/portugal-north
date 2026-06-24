@@ -8,7 +8,7 @@ import { createTranslator } from "@/i18n";
 import { getStationMetaDescription, getStationPageTitle } from "./stationMeta";
 import { attributionForImageUrl, siteLogoAttribution } from "./imageAttribution";
 
-const SITE_NAME = "Sustainable Iberian Travel";
+const SITE_NAME = "Sustainable Iberian";
 const MIN_VOTES_FOR_AGGREGATE = 2;
 
 type JsonLd = Record<string, unknown>;
@@ -234,7 +234,7 @@ export function buildRankingsStructuredData(): JsonLd {
         "@type": "WebPage",
         "@id": pageUrl,
         url: pageUrl,
-        name: "Community Rankings | Sustainable Iberian Travel",
+        name: "Community Rankings | Sustainable Iberian",
         description:
           "See which CP train stations and budget hotels visitors rate highest and lowest across Portugal.",
         isPartOf: { "@id": `${absoluteUrl("/")}#website` },

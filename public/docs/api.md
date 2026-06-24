@@ -1,4 +1,4 @@
-# Sustainable Iberian Travel — HTTP API
+# Sustainable Iberian — HTTP API
 
 Machine-readable description: [OpenAPI 3](/api/openapi.json). API catalog (RFC 9727): [/.well-known/api-catalog](/.well-known/api-catalog).
 

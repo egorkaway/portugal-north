@@ -134,7 +134,7 @@ export function buildSeoHeadHtml(meta: PageMeta, siteUrl: string, siteName?: str
   const ogTitle = escapeAttr(meta.ogTitle ?? meta.title);
   const ogDescription = escapeAttr(meta.ogDescription ?? meta.description);
   const ogImage = resolveOgImageUrl(meta, base);
-  const name = escapeAttr(siteName ?? "Sustainable Iberian Travel");
+  const name = escapeAttr(siteName ?? "Sustainable Iberian");
   const isDefaultOgImage = !meta.ogImagePath || meta.ogImagePath === "/og-image.jpg";
   const imageDimensions = isDefaultOgImage
     ? `\n    <meta property="og:image:width" content="1200" />\n    <meta property="og:image:height" content="630" />`

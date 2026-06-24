@@ -8,7 +8,7 @@ import { getHotelsForStation } from "@/lib/stationHotels";
 describe("buildSeoHeadHtml", () => {
   it("includes unique title and description in output", () => {
     const html = buildSeoHeadHtml(HOME_PAGE_META, "https://www.verystays.com");
-    expect(html).toContain("<title>Sustainable Iberian Travel: Stations &amp; Budget Hotels</title>");
+    expect(html).toContain("<title>Sustainable Iberian: Stations &amp; Budget Hotels</title>");
     expect(html).toContain('rel="canonical" href="https://www.verystays.com/"');
   });
 
