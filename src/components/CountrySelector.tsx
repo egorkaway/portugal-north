@@ -10,6 +10,8 @@ type CountrySelectorProps = {
 
 type CountrySelectorBarProps = CountrySelectorProps & {
   labelClassName?: string;
+  /** Light panel on hero image, or default on page content. */
+  variant?: "hero" | "surface";
 };
 
 export function CountrySelectorBar({
@@ -17,12 +19,26 @@ export function CountrySelectorBar({
   onCountryChange,
   className,
   labelClassName,
+  variant = "surface",
 }: CountrySelectorBarProps) {
   const { t } = useLocale();
 
   return (
-    <div className={cn("flex items-center justify-end gap-2", className)}>
-      <p className={cn("text-sm text-muted-foreground", labelClassName)}>
+    <div
+      className={cn(
+        "flex items-center justify-end gap-2",
+        variant === "hero" &&
+          "rounded-xl border border-border/80 bg-card/95 p-2 shadow-md ring-1 ring-black/5 backdrop-blur-sm dark:ring-white/10",
+        className,
+      )}
+    >
+      <p
+        className={cn(
+          "text-sm",
+          variant === "hero" ? "font-medium text-foreground" : "text-muted-foreground",
+          labelClassName,
+        )}
+      >
         {t("country.stationsIn")}
       </p>
       <CountrySelector country={country} onCountryChange={onCountryChange} />

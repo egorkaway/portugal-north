@@ -149,7 +149,7 @@ const Index = () => {
               <CountrySelectorBar
                 country={country}
                 onCountryChange={setCountry}
-                labelClassName="text-primary-foreground/90"
+                variant="hero"
               />
             </div>
           </div>
