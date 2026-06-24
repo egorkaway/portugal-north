@@ -17,13 +17,21 @@ export function isCountryCode(value: string | null | undefined): value is Countr
 
 export function readStoredCountry(): CountryCode | null {
   if (typeof localStorage === "undefined") return null;
-  const stored = localStorage.getItem(COUNTRY_STORAGE_KEY);
-  return isCountryCode(stored) ? stored : null;
+  try {
+    const stored = localStorage.getItem(COUNTRY_STORAGE_KEY);
+    return isCountryCode(stored) ? stored : null;
+  } catch {
+    return null;
+  }
 }
 
 export function writeStoredCountry(country: CountryCode): void {
   if (typeof localStorage === "undefined") return;
-  localStorage.setItem(COUNTRY_STORAGE_KEY, country);
+  try {
+    localStorage.setItem(COUNTRY_STORAGE_KEY, country);
+  } catch {
+    // Safari private mode / blocked storage
+  }
 }
 
 export function countrySearchLabel(country: CountryCode): string {
