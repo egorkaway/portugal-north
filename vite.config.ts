@@ -204,10 +204,6 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,webp,woff2,txt,xml}"],
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/pagead2\.googlesyndication\.com\/.*/i,
-            handler: "NetworkOnly",
-          },
-          {
             urlPattern: /\/api\//i,
             handler: "NetworkOnly",
           },
