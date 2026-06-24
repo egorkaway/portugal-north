@@ -1811,6 +1811,66 @@ export const stationHotels: StationHotels = {
     { name: "Alojamientos Rurales Naveces", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamientos%20Rurales%20Naveces%2C%20Asturias%20Airport%20(OVD)%2C%20Spain&order=price" },
     { name: "Ruralsurf", distanceKm: 2.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ruralsurf%2C%20Asturias%20Airport%20(OVD)%2C%20Spain&order=price" },
   ],
+  "Vigo Airport (VGO)": [
+    { name: "Hotel Avión", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Avi%C3%B3n%2C%20Vigo%20Airport%20(VGO)%2C%20Spain&order=price" },
+    { name: "Hotel El Bosque", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Bosque%2C%20Vigo%20Airport%20(VGO)%2C%20Spain&order=price" },
+    { name: "Bar Corisco", distanceKm: 2.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bar%20Corisco%2C%20Vigo%20Airport%20(VGO)%2C%20Spain&order=price" },
+  ],
+  "A Coruña Airport (LCG)": [
+    { name: "A Gramalleira", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=A%20Gramalleira%2C%20A%20Coru%C3%B1a%20Airport%20(LCG)%2C%20Spain&order=price" },
+    { name: "Hostal La Paz", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Paz%2C%20A%20Coru%C3%B1a%20Airport%20(LCG)%2C%20Spain&order=price" },
+    { name: "Casa Julio", distanceKm: 1.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Julio%2C%20A%20Coru%C3%B1a%20Airport%20(LCG)%2C%20Spain&order=price" },
+  ],
+  "Santander Airport (SDR)": [
+    { name: "Hostal Golf", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Golf%2C%20Santander%20Airport%20(SDR)%2C%20Spain&order=price" },
+    { name: "Hotel Puerta Santander", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Puerta%20Santander%2C%20Santander%20Airport%20(SDR)%2C%20Spain&order=price" },
+    { name: "Hotel Nueva Plaza", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Nueva%20Plaza%2C%20Santander%20Airport%20(SDR)%2C%20Spain&order=price" },
+  ],
+  "San Sebastián Airport (EAS)": [
+    { name: "Hotel Obispo", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Obispo%2C%20San%20Sebasti%C3%A1n%20Airport%20(EAS)%2C%20Spain&order=price" },
+    { name: "Txoko-goxoa", distanceKm: 0.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Txoko-goxoa%2C%20San%20Sebasti%C3%A1n%20Airport%20(EAS)%2C%20Spain&order=price" },
+    { name: "Hotel Río Bidasoa", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20R%C3%ADo%20Bidasoa%2C%20San%20Sebasti%C3%A1n%20Airport%20(EAS)%2C%20Spain&order=price" },
+  ],
+  "Pamplona Airport (PNA)": [
+    { name: "Hostal Izaga", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Izaga%2C%20Pamplona%20Airport%20(PNA)%2C%20Spain&order=price" },
+    { name: "Husa Noain Pamplona", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Husa%20Noain%20Pamplona%2C%20Pamplona%20Airport%20(PNA)%2C%20Spain&order=price" },
+    { name: "Agorreta", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Agorreta%2C%20Pamplona%20Airport%20(PNA)%2C%20Spain&order=price" },
+  ],
+  "Zaragoza Airport (ZAZ)": [
+    { name: "Hotel Diagonal Plaza", distanceKm: 4.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Diagonal%20Plaza%2C%20Zaragoza%20Airport%20(ZAZ)%2C%20Spain&order=price" },
+    { name: "Eurostar Rey Fernando II", distanceKm: 5.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostar%20Rey%20Fernando%20II%2C%20Zaragoza%20Airport%20(ZAZ)%2C%20Spain&order=price" },
+    { name: "El Águila", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20%C3%81guila%2C%20Zaragoza%20Airport%20(ZAZ)%2C%20Spain&order=price" },
+  ],
+  "Valladolid Airport (VLL)": [
+    { name: "Venus", distanceKm: 1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Venus%2C%20Valladolid%20Airport%20(VLL)%2C%20Spain&order=price" },
+    { name: "El Parador", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Parador%2C%20Valladolid%20Airport%20(VLL)%2C%20Spain&order=price" },
+    { name: "Hostal Alba", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Alba%2C%20Valladolid%20Airport%20(VLL)%2C%20Spain&order=price" },
+  ],
+  "Burgos Airport (RGS)": [
+    { name: "Hostal Iruñako", distanceKm: 0.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Iru%C3%B1ako%2C%20Burgos%20Airport%20(RGS)%2C%20Spain&order=price" },
+    { name: "Buenos Aires", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Buenos%20Aires%2C%20Burgos%20Airport%20(RGS)%2C%20Spain&order=price" },
+    { name: "Hotel Puerto Seco", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Puerto%20Seco%2C%20Burgos%20Airport%20(RGS)%2C%20Spain&order=price" },
+  ],
+  "León Airport (LEN)": [
+    { name: "Hostal San Froilan", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20San%20Froilan%2C%20Le%C3%B3n%20Airport%20(LEN)%2C%20Spain&order=price" },
+    { name: "Hostal Plaza", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Plaza%2C%20Le%C3%B3n%20Airport%20(LEN)%2C%20Spain&order=price" },
+    { name: "Hostal Central", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Central%2C%20Le%C3%B3n%20Airport%20(LEN)%2C%20Spain&order=price" },
+  ],
+  "Salamanca Airport (SLM)": [
+    { name: "Hotel Cies", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cies%2C%20Salamanca%20Airport%20(SLM)%2C%20Spain&order=price" },
+    { name: "Hostal Lemus", distanceKm: 4, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Lemus%2C%20Salamanca%20Airport%20(SLM)%2C%20Spain&order=price" },
+    { name: "Galicán Casa Rural", distanceKm: 9.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Galic%C3%A1n%20Casa%20Rural%2C%20Salamanca%20Airport%20(SLM)%2C%20Spain&order=price" },
+  ],
+  "Logroño-Agoncillo Airport (RJL)": [
+    { name: "Finca el Cónsul", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20el%20C%C3%B3nsul%2C%20Logro%C3%B1o-Agoncillo%20Airport%20(RJL)%2C%20Spain&order=price" },
+    { name: "Hotel Las Cañas", distanceKm: 6.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Ca%C3%B1as%2C%20Logro%C3%B1o-Agoncillo%20Airport%20(RJL)%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos", distanceKm: 6.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%2C%20Logro%C3%B1o-Agoncillo%20Airport%20(RJL)%2C%20Spain&order=price" },
+  ],
+  "Badajoz Airport (BJZ)": [
+    { name: "Hotel ILUNION Golf Badajoz", distanceKm: 5.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ILUNION%20Golf%20Badajoz%2C%20Badajoz%20Airport%20(BJZ)%2C%20Spain&order=price" },
+    { name: "CASA LA PIEDRA BADAJOZ", distanceKm: 8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=CASA%20LA%20PIEDRA%20BADAJOZ%2C%20Badajoz%20Airport%20(BJZ)%2C%20Spain&order=price" },
+    { name: "Hostal Velasco", distanceKm: 10.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Velasco%2C%20Badajoz%20Airport%20(BJZ)%2C%20Spain&order=price" },
+  ],
   "Estádio do Dragão": [
     { name: "Porto Antas Hotel", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Antas%20Hotel%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
     { name: "AC Hotel Porto", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AC%20Hotel%20Porto%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
