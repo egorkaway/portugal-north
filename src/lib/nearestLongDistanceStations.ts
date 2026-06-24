@@ -1,4 +1,4 @@
-import { stations, type Station } from "@/data/stations";
+import { portugalStations, type Station } from "@/data/stations";
 import { distanceKm } from "@/lib/geo";
 import { sortStationsByDistance } from "@/lib/rankStations";
 
@@ -23,7 +23,7 @@ export function getNearestLongDistanceStations(
   station: Station,
   limit = 2,
 ): NearestLongDistanceStation[] {
-  const candidates = stations.filter(
+  const candidates = portugalStations.filter(
     (candidate) =>
       candidate.name !== station.name && hasLongDistanceService(candidate),
   );

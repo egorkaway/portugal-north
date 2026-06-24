@@ -1,10 +1,10 @@
-import type { Station } from "./stationTypes";
+import type { StationData } from "./stationTypes";
 
 /**
  * Major Metro do Porto stops: one terminus per line (plus Estádio do Dragão on A & B).
  * Coordinates are approximate station entrances for maps / distance sort.
  */
-export const metroPortoStations: Station[] = [
+export const metroPortoStations: StationData[] = [
   {
     name: "Estádio do Dragão",
     lines: ["Metro Linha A (Azul)", "Metro Linha B (Vermelha)"],

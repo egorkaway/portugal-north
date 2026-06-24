@@ -8,6 +8,9 @@ import { MapPointLabels } from "@/components/MapPointLabels";
 import { stations } from "@/data/stations";
 import { useReliabilityScores } from "@/hooks/useReliabilityScore";
 import { useLocale } from "@/i18n/LocaleProvider";
+import {
+  buildMapActivityHexData,
+} from "@/lib/mapActivityStations";
 import { buildMapLabelPoints } from "@/lib/mapLabels";
 import {
   PORTUGAL_MAP_BOUNDS,
@@ -59,7 +62,7 @@ export default function StationActivityMap() {
 
   const hexData = useMemo(() => {
     if (!data?.movements) return null;
-    return buildStationHexCells(stations, data.movements);
+    return buildMapActivityHexData(data.movements);
   }, [data?.movements]);
 
   const labelPoints = useMemo(() => {

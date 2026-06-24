@@ -72,6 +72,36 @@ export function buildStationHexCells(
   return { cells, minMovements, maxMovements };
 }
 
+/** Add fixed quiet (res. 9) hexes for stations without CP movement sampling. */
+export function appendLowActivityHexCells(
+  hexData: { cells: StationHexCell[]; minMovements: number; maxMovements: number },
+  stations: { name: string; lat: number; lng: number }[],
+): { cells: StationHexCell[]; minMovements: number; maxMovements: number } {
+  if (stations.length === 0) return hexData;
+
+  const movements = hexData.minMovements;
+  const extraCells = stations.map((station) => {
+    const resolution = 9 as const;
+    const cellId = latLngToCell(station.lat, station.lng, resolution);
+    const boundary = cellToBoundary(cellId).map(
+      ([lat, lng]) => [lat, lng] as [number, number],
+    );
+
+    return {
+      stationName: station.name,
+      movements,
+      resolution,
+      cellId,
+      boundary,
+    };
+  });
+
+  return {
+    ...hexData,
+    cells: [...hexData.cells, ...extraCells],
+  };
+}
+
 export function hexFillOpacity(movements: number, minMovements: number, maxMovements: number): number {
   if (maxMovements <= minMovements) return 0.45;
   const t = (movements - minMovements) / (maxMovements - minMovements);

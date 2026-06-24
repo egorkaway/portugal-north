@@ -24,8 +24,15 @@ export type Messages = {
     mobile: string;
     main: string;
   };
+  country: {
+    label: string;
+    stationsIn: string;
+    pt: string;
+    es: string;
+  };
   home: {
     heroSubtitle: string;
+    heroSubtitleEs: string;
     searchLabel: string;
     searchPlaceholder: string;
     filtersLabel: string;

@@ -21,9 +21,17 @@ export const ca: Messages = {
     mobile: "Navegació mòbil",
     main: "Navegació principal",
   },
+  country: {
+    label: "País",
+    stationsIn: "Mostrar estacions a",
+    pt: "Portugal",
+    es: "Espanya",
+  },
   home: {
     heroSubtitle:
       "Principals estacions de CP del Minho a l'Algarve, amb hotels amb preus raonables a poca distància a peu.",
+    heroSubtitleEs:
+      "Estacions a Espanya assolibles en tren des de Portugal — començant pel Celta a Vigo.",
     searchLabel: "Cercar estació o línia",
     searchPlaceholder: "Cercar estació o línia...",
     filtersLabel: "Filtrar estacions",

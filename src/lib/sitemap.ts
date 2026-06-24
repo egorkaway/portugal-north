@@ -1,4 +1,4 @@
-import { stations } from "../data/stations";
+import { allStations } from "../data/stationRegistry";
 import { getStationPath } from "./stationSlug";
 
 export type SitemapEntry = {
@@ -14,7 +14,7 @@ export function getSitemapEntries(): SitemapEntry[] {
     { path: "/tickets", changefreq: "monthly", priority: "0.7" },
     { path: "/map", changefreq: "weekly", priority: "0.75" },
     { path: "/privacy", changefreq: "monthly", priority: "0.5" },
-    ...stations.map((station) => ({
+    ...allStations.map((station) => ({
       path: getStationPath(station),
       changefreq: "weekly" as const,
       priority: "0.7",

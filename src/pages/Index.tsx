@@ -1,8 +1,9 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { stations } from "@/data/stations";
+import { getStationsForCountry } from "@/data/stationRegistry";
 import { StationCard } from "@/components/StationCard";
 import { StationRankings } from "@/components/StationRankings";
+import { CountrySelector } from "@/components/CountrySelector";
 import { TrainFront } from "lucide-react";
 import { StationFilters } from "@/components/StationFilters";
 import heroStation from "@/assets/hero-station.jpg";
@@ -17,22 +18,28 @@ import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
 import { useAllVotes } from "@/hooks/useStationVote";
 import { useAllVisited } from "@/hooks/useStationVisited";
 import { useUserLocation } from "@/hooks/useUserLocation";
+import { useCountrySelection } from "@/hooks/useCountrySelection";
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
 import { stationMatchesSearch } from "@/lib/searchText";
 import { sortTrainTypes } from "@/lib/trainTypes";
-
-const allTypes = sortTrainTypes([...new Set(stations.flatMap((s) => s.types))]);
 
 type VoteFilter = "up" | "down" | "none";
 type VisitedFilter = "visited" | "notVisited";
 
 const Index = () => {
   const { t, plural, locale, messages } = useLocale();
+  const { country, setCountry } = useCountrySelection();
+  const countryStations = useMemo(() => getStationsForCountry(country), [country]);
+  const allTypes = useMemo(
+    () => sortTrainTypes([...new Set(countryStations.flatMap((s) => s.types))]),
+    [countryStations],
+  );
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter | null>(null);
+
   const votes = useAllVotes();
   const visitedMap = useAllVisited();
   const { data: globalVotes } = useGlobalStationRatings();
@@ -47,8 +54,12 @@ const Index = () => {
 
   const sortByCommunityVotes = !sortByDistance && hasCommunityUpvotes;
 
+  useEffect(() => {
+    setActiveFilter(null);
+  }, [country]);
+
   const filtered = useMemo(() => {
-    const matches = stations.filter((s) => {
+    const matches = countryStations.filter((s) => {
       const matchesSearch = stationMatchesSearch(s, search);
       const matchesFilter = !activeFilter || s.types.includes(activeFilter);
       const v = votes[s.name];
@@ -71,7 +82,7 @@ const Index = () => {
       globalRatings: globalVotes?.ratings,
       votesConfigured: Boolean(globalVotes?.configured && globalVotes.ratings),
     });
-  }, [search, activeFilter, voteFilter, visitedFilter, votes, visitedMap, coords, sortByDistance, globalVotes]);
+  }, [countryStations, search, activeFilter, voteFilter, visitedFilter, votes, visitedMap, coords, sortByDistance, globalVotes]);
 
   const distanceByStation = useMemo(() => {
     if (!coords) return null;
@@ -130,14 +141,20 @@ const Index = () => {
                 </a>
               </h1>
               <p className="max-w-2xl text-lg text-primary-foreground/90">
-                Major CP stations from the Minho to the Algarve — with maps and
-                budget hotels within walking distance.
+                {country === "es" ? t("home.heroSubtitleEs") : t("home.heroSubtitle")}
               </p>
             </div>
             <SitePageNavLinks variant="hero" className="shrink-0 self-start" />
           </div>
         </div>
       </header>
+
+      <div className="border-b border-border bg-muted/30 px-4 py-4 md:px-6">
+        <div className="mx-auto flex max-w-5xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-sm text-muted-foreground">{t("country.stationsIn")}</p>
+          <CountrySelector country={country} onCountryChange={setCountry} />
+        </div>
+      </div>
 
       <StationFilters
         search={search}

@@ -21,9 +21,17 @@ export const en: Messages = {
     mobile: "Mobile navigation",
     main: "Main navigation",
   },
+  country: {
+    label: "Country",
+    stationsIn: "Show stations in",
+    pt: "Portugal",
+    es: "Spain",
+  },
   home: {
     heroSubtitle:
       "Major CP stations from the Minho to the Algarve, with budget hotels within walking distance.",
+    heroSubtitleEs:
+      "Spanish stations reachable by train from Portugal — starting with the Celta service to Vigo.",
     searchLabel: "Search station or line",
     searchPlaceholder: "Search station or line...",
     filtersLabel: "Filter stations",

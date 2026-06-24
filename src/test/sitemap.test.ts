@@ -1,16 +1,18 @@
 import { describe, expect, it } from "vitest";
 import { buildSitemapXml, getSitemapEntries } from "@/lib/sitemap";
-import { stations } from "@/data/stations";
+import { allStations } from "@/data/stationRegistry";
 
 describe("sitemap", () => {
-  it("includes home, rankings, tickets, privacy, and every station page", () => {
+  it("includes home, rankings, tickets, map, privacy, and every station page", () => {
     const entries = getSitemapEntries();
-    expect(entries).toHaveLength(4 + stations.length);
+    expect(entries).toHaveLength(5 + allStations.length);
     expect(entries[0].path).toBe("/");
     expect(entries[1].path).toBe("/rankings");
     expect(entries.some((e) => e.path === "/tickets")).toBe(true);
     expect(entries.some((e) => e.path === "/privacy")).toBe(true);
+    expect(entries.some((e) => e.path === "/map")).toBe(true);
     expect(entries.some((e) => e.path === "/stations/porto-campanha")).toBe(true);
+    expect(entries.some((e) => e.path === "/stations/vigo-guixar")).toBe(true);
   });
 
   it("builds valid XML with absolute URLs", () => {

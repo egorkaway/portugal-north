@@ -1,4 +1,5 @@
-import { stations, type Station } from "../data/stations";
+import { allStations } from "@/data/stationRegistry";
+import type { Station } from "@/data/stationTypes";
 
 export function stationToSlug(name: string): string {
   return name
@@ -11,7 +12,7 @@ export function stationToSlug(name: string): string {
 }
 
 const stationBySlug = new Map(
-  stations.map((station) => [stationToSlug(station.name), station]),
+  allStations.map((station) => [stationToSlug(station.name), station]),
 );
 
 export function getStationBySlug(slug: string): Station | undefined {

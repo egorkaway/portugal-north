@@ -1,10 +1,10 @@
-import type { Station } from "./stationTypes";
+import type { StationData } from "./stationTypes";
 
 /**
  * Major Lisbon Metro stops: one terminus per line (Azul, Amarela, Verde, Vermelha).
  * Linha Circular omitted (ring line has no termini). Coordinates ≈ station entrances.
  */
-export const metroLisboaStations: Station[] = [
+export const metroLisboaStations: StationData[] = [
   {
     name: "Santa Apolónia (Metro)",
     lines: ["Metro Lisboa Linha Azul"],

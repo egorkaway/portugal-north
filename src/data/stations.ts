@@ -1,9 +1,9 @@
 import { metroLisboaStations } from "./metroLisboaStations";
 import { metroPortoStations } from "./metroPortoStations";
-export type { Station } from "./stationTypes";
-import type { Station } from "./stationTypes";
+export type { Station, StationData } from "./stationTypes";
+import type { Station, StationData } from "./stationTypes";
 
-const cpStations: Station[] = [
+const cpStations: StationData[] = [
   { name: "Pombal", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 39.9153, lng: -8.6283 },
   { name: "Alfarelos", lines: ["Linha do Norte"], types: ["Intercidades", "Regional"], lat: 40.1678, lng: -8.6514 },
   { name: "Coimbra-B", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 40.2117, lng: -8.4353 },
@@ -378,11 +378,19 @@ const cpStations: Station[] = [
   { name: "Silves", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1922, lng: -8.4400 },
 ];
 
-/** CP and Metro do Porto stations shown on the site. */
-export const stations: Station[] = [...cpStations, ...metroPortoStations, ...metroLisboaStations];
+/** CP and Metro stations in Portugal. */
+export const portugalStations: Station[] = [
+  ...cpStations,
+  ...metroPortoStations,
+  ...metroLisboaStations,
+].map((station) => ({ ...station, country: "pt" as const }));
+
+/** Portugal-only list (rankings, map, reliability, etc.). */
+export const stations = portugalStations;
 
 export function getAppleMapsUrl(station: Station): string {
-  return `https://maps.apple.com/?q=${encodeURIComponent(station.name + " station Portugal")}&ll=${station.lat},${station.lng}&z=15`;
+  const countryName = station.country === "es" ? "Spain" : "Portugal";
+  return `https://maps.apple.com/?q=${encodeURIComponent(station.name + " station " + countryName)}&ll=${station.lat},${station.lng}&z=15`;
 }
 
 export function getOSMUrl(station: Station): string {
@@ -390,5 +398,6 @@ export function getOSMUrl(station: Station): string {
 }
 
 export function getBookingSearchUrl(station: Station): string {
-  return `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(station.name + ", Portugal")}&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price`;
+  const countryName = station.country === "es" ? "Spain" : "Portugal";
+  return `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(station.name + ", " + countryName)}&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price`;
 }

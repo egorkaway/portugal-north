@@ -21,9 +21,17 @@ export const gl: Messages = {
     mobile: "Navegación móbil",
     main: "Navegación principal",
   },
+  country: {
+    label: "País",
+    stationsIn: "Mostrar estacións en",
+    pt: "Portugal",
+    es: "España",
+  },
   home: {
     heroSubtitle:
       "Principais estacións da CP do Miño ao Algarve, con hoteis con prezos razoables a poucos minutos a pé.",
+    heroSubtitleEs:
+      "Estacións en España acadables en tren desde Portugal — comezando polo Celta a Vigo.",
     searchLabel: "Buscar estación ou liña",
     searchPlaceholder: "Buscar estación ou liña...",
     filtersLabel: "Filtrar estacións",

@@ -1,6 +1,6 @@
 import { getHotelsForStation } from "@/lib/stationHotels";
 import { getStationShareImageUrl } from "@/lib/stationImage";
-import { stations } from "@/data/stations";
+import { allStations } from "@/data/stationRegistry";
 import {
   HOME_PAGE_META,
   NOT_FOUND_PAGE_META,
@@ -32,7 +32,7 @@ export function getPrerenderRoutes(): PrerenderRoute[] {
     { outFile: "404.html", meta: NOT_FOUND_PAGE_META },
   ];
 
-  for (const station of stations) {
+  for (const station of allStations) {
     const slug = stationToSlug(station.name);
     const hotels = getHotelsForStation(station.name);
     routes.push({

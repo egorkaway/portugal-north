@@ -21,9 +21,17 @@ export const pt: Messages = {
     mobile: "Navegação móvel",
     main: "Navegação principal",
   },
+  country: {
+    label: "País",
+    stationsIn: "Mostrar estações em",
+    pt: "Portugal",
+    es: "Espanha",
+  },
   home: {
     heroSubtitle:
       "Principais estações da CP do Minho ao Algarve, com hotéis com preços acessíveis a poucos minutos a pé.",
+    heroSubtitleEs:
+      "Estações em Espanha alcançáveis de comboio a partir de Portugal — começando pelo Celta até Vigo.",
     searchLabel: "Pesquisar estação ou linha",
     searchPlaceholder: "Pesquisar estação ou linha...",
     filtersLabel: "Filtrar estações",

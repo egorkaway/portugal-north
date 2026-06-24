@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { buildSeoHeadHtml, buildStationPageMeta, HOME_PAGE_META } from "@/lib/pageMeta";
 import { getPrerenderRoutes } from "@/lib/prerenderRoutes";
-import { stations } from "@/data/stations";
+import { allStations } from "@/data/stationRegistry";
+import { portugalStations } from "@/data/stations";
 import { getHotelsForStation } from "@/lib/stationHotels";
 
 describe("buildSeoHeadHtml", () => {
@@ -31,8 +32,8 @@ describe("buildSeoHeadHtml", () => {
 describe("getPrerenderRoutes", () => {
   it("generates one HTML file per station plus core pages", () => {
     const routes = getPrerenderRoutes();
-    expect(routes.length).toBe(stations.length + 5);
-    const porto = stations.find((s) => s.name === "Porto-Campanhã");
+    expect(routes.length).toBe(allStations.length + 6);
+    const porto = portugalStations.find((s) => s.name === "Porto-Campanhã");
     expect(porto).toBeDefined();
     const meta = buildStationPageMeta(porto!, getHotelsForStation(porto!.name));
     expect(meta.title).toContain("Porto-Campanhã");
