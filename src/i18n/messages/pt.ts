@@ -29,9 +29,9 @@ export const pt: Messages = {
   },
   home: {
     heroSubtitle:
-      "Principais estações da CP do Minho ao Algarve, com hotéis com preços acessíveis a poucos minutos a pé.",
+      "Estações de comboio e aeroportos em Portugal, do Minho ao Algarve, com linhas e hotéis com preços acessíveis perto.",
     heroSubtitleEs:
-      "Estações em Espanha alcançáveis de comboio a partir de Portugal — começando pelo Celta até Vigo.",
+      "Estações de comboio e aeroportos na Espanha peninsular, com linhas e hotéis com preços acessíveis perto.",
     searchLabel: "Pesquisar estação ou linha",
     searchPlaceholder: "Pesquisar estação ou linha...",
     filtersLabel: "Filtrar estações",
@@ -327,7 +327,7 @@ export const pt: Messages = {
     home: {
       title: "Mobilidade Ibérica: Estações e Hotéis com Preços Acessíveis",
       description:
-        "Descubra estações da CP de Portugal, do Minho ao Algarve, com linhas e hotéis com preços acessíveis a poucos minutos a pé.",
+        "Descubra estações de comboio e aeroportos em Portugal e Espanha, com linhas e hotéis com preços acessíveis a poucos minutos a pé.",
     },
     rankings: {
       title: "Rankings da Comunidade | Mobilidade Ibérica",

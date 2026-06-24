@@ -170,7 +170,7 @@ export function buildHomeStructuredData(): JsonLd {
         name: SITE_NAME,
         url: homeUrl,
         description:
-          "Discover major train stations across Portugal with line info and nearby budget hotels.",
+          "Discover train stations and airports across Portugal and Spain with line info and nearby budget hotels.",
         publisher: { "@id": `${homeUrl}#organization` },
         potentialAction: {
           "@type": "SearchAction",

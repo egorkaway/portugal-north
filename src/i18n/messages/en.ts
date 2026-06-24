@@ -29,9 +29,9 @@ export const en: Messages = {
   },
   home: {
     heroSubtitle:
-      "Major CP stations from the Minho to the Algarve, with budget hotels within walking distance.",
+      "Train stations and airports across Portugal, from the Minho to the Algarve, with line info and budget hotels nearby.",
     heroSubtitleEs:
-      "Spanish stations reachable by train from Portugal — starting with the Celta service to Vigo.",
+      "Train stations and airports across mainland Spain, with line info and budget hotels near key stops.",
     searchLabel: "Search station or line",
     searchPlaceholder: "Search station or line...",
     filtersLabel: "Filter stations",
@@ -325,7 +325,7 @@ export const en: Messages = {
     home: {
       title: "Sustainable Iberian: Stations & Budget Hotels",
       description:
-        "Discover major train stations across Portugal, from the Minho to the Algarve, with line info and recommended budget hotels within walking distance.",
+        "Discover train stations and airports across Portugal and Spain, with line info and recommended budget hotels within walking distance.",
     },
     rankings: {
       title: "Community Rankings | Sustainable Iberian",

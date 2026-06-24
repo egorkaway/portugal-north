@@ -29,9 +29,9 @@ export const gl: Messages = {
   },
   home: {
     heroSubtitle:
-      "Principais estacións da CP do Miño ao Algarve, con hoteis con prezos razoables a poucos minutos a pé.",
+      "Estacións de tren e aeroportos en Portugal, do Miño ao Algarve, con liñas e hoteis económicos preto.",
     heroSubtitleEs:
-      "Estacións en España acadables en tren desde Portugal — comezando polo Celta a Vigo.",
+      "Estacións de tren e aeroportos na España peninsular, con liñas e hoteis económicos preto.",
     searchLabel: "Buscar estación ou liña",
     searchPlaceholder: "Buscar estación ou liña...",
     filtersLabel: "Filtrar estacións",
@@ -327,7 +327,7 @@ export const gl: Messages = {
     home: {
       title: "Viaxe Ibérica Sostible: Estacións e hoteis con prezos razoables",
       description:
-        "Descobre estacións da CP en Portugal, do Miño ao Algarve, con liñas e hoteis con prezos razoables a poucos minutos a pé.",
+        "Descobre estacións de tren e aeroportos en Portugal e España, con liñas e hoteis con prezos razoables a poucos minutos a pé.",
     },
     rankings: {
       title: "Rankings da comunidade | Viaxe Ibérica Sostible",

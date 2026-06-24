@@ -29,9 +29,9 @@ export const ca: Messages = {
   },
   home: {
     heroSubtitle:
-      "Principals estacions de CP del Minho a l'Algarve, amb hotels amb preus raonables a poca distància a peu.",
+      "Estacions de tren i aeroports a Portugal, del Minho a l'Algarve, amb línies i hotels econòmics a prop.",
     heroSubtitleEs:
-      "Estacions a Espanya assolibles en tren des de Portugal — començant pel Celta a Vigo.",
+      "Estacions de tren i aeroports a la península ibèrica espanyola, amb línies i hotels econòmics a prop.",
     searchLabel: "Cercar estació o línia",
     searchPlaceholder: "Cercar estació o línia...",
     filtersLabel: "Filtrar estacions",
@@ -327,7 +327,7 @@ export const ca: Messages = {
     home: {
       title: "Viatge Ibèric Sostenible: Estacions i hotels amb preus raonables",
       description:
-        "Descobreix estacions de CP a Portugal, del Minho a l'Algarve, amb línies i hotels amb preus raonables a poca distància a peu.",
+        "Descobreix estacions de tren i aeroports a Portugal i Espanya, amb línies i hotels econòmics a poca distància a peu.",
     },
     rankings: {
       title: "Rankings de la comunitat | Viatge Ibèric Sostenible",

@@ -1911,6 +1911,29 @@ export const stationHotels: StationHotels = {
     { name: "Casa Rural Quatrevents", distanceKm: 5.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Quatrevents%2C%20Castell%C3%B3n%20Airport%20(CDT)%2C%20Spain&order=price" },
     { name: "Hotel La Cava (cerrado)", distanceKm: 7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Cava%20(cerrado)%2C%20Castell%C3%B3n%20Airport%20(CDT)%2C%20Spain&order=price" },
   ],
+  "Córdoba Airport (ODB)": [
+    { name: "El Cisne Verde", distanceKm: 5.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Cisne%20Verde%2C%20C%C3%B3rdoba%20Airport%20(ODB)%2C%20Spain&order=price" },
+    { name: "Sercotel Córdoba Delicias", distanceKm: 6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20C%C3%B3rdoba%20Delicias%2C%20C%C3%B3rdoba%20Airport%20(ODB)%2C%20Spain&order=price" },
+    { name: "Exe Ciudad de Córdoba", distanceKm: 6.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Ciudad%20de%20C%C3%B3rdoba%2C%20C%C3%B3rdoba%20Airport%20(ODB)%2C%20Spain&order=price" },
+  ],
+  "Murcia International Airport (RMU)": [
+    { name: "Hotel-Restaurante Venta el Puerto 1", distanceKm: 7.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel-Restaurante%20Venta%20el%20Puerto%201%2C%20Murcia%20International%20Airport%20(RMU)%2C%20Spain&order=price" },
+    { name: "Ona Hacienda del Álamo", distanceKm: 7.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ona%20Hacienda%20del%20%C3%81lamo%2C%20Murcia%20International%20Airport%20(RMU)%2C%20Spain&order=price" },
+    { name: "Hotel Valle del Sol", distanceKm: 9.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Valle%20del%20Sol%2C%20Murcia%20International%20Airport%20(RMU)%2C%20Spain&order=price" },
+  ],
+  "Albacete Airport (ABC)": [
+    { name: "Hotel Universidad", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Universidad%2C%20Albacete%20Airport%20(ABC)%2C%20Spain&order=price" },
+    { name: "Parador Nacional de Turismo", distanceKm: 3.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20Nacional%20de%20Turismo%2C%20Albacete%20Airport%20(ABC)%2C%20Spain&order=price" },
+    { name: "Hotel Los Llanos", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Los%20Llanos%2C%20Albacete%20Airport%20(ABC)%2C%20Spain&order=price" },
+  ],
+  "Teruel Airport (TEV)": [
+    { name: "Albergue 'El Río'", distanceKm: 8.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20'El%20R%C3%ADo'%2C%20Teruel%20Airport%20(TEV)%2C%20Spain&order=price" },
+    { name: "spa hotel Ciudad de Teruel", distanceKm: 8.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=spa%20hotel%20Ciudad%20de%20Teruel%2C%20Teruel%20Airport%20(TEV)%2C%20Spain&order=price" },
+    { name: "Parador Nacional de Teruel", distanceKm: 9.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20Nacional%20de%20Teruel%2C%20Teruel%20Airport%20(TEV)%2C%20Spain&order=price" },
+  ],
+  "Ciudad Real Airport (CQM)": [
+    { name: "Palacio de la Serna", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Palacio%20de%20la%20Serna%2C%20Ciudad%20Real%20Airport%20(CQM)%2C%20Spain&order=price" },
+  ],
   "Estádio do Dragão": [
     { name: "Porto Antas Hotel", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Antas%20Hotel%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
     { name: "AC Hotel Porto", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AC%20Hotel%20Porto%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },
