@@ -14,14 +14,14 @@ describe("nearestLongDistanceStations", () => {
     expect(hasLongDistanceService(stations.find((s) => s.name === "Aveiro")!)).toBe(
       true,
     );
-    expect(hasLongDistanceService(stations.find((s) => s.name === "Mealhada")!)).toBe(
+    expect(hasLongDistanceService(stations.find((s) => s.name === "Canelas")!)).toBe(
       false,
     );
   });
 
   it("shows alternatives for regional-only stops", () => {
-    const mealhada = stations.find((s) => s.name === "Mealhada")!;
-    expect(shouldShowNearestLongDistance(mealhada)).toBe(true);
+    const canelas = stations.find((s) => s.name === "Canelas")!;
+    expect(shouldShowNearestLongDistance(canelas)).toBe(true);
   });
 
   it("hides for AP/IC stops and historic-only entries", () => {
@@ -42,13 +42,13 @@ describe("nearestLongDistanceStations", () => {
     expect(nearest.every((entry) => hasLongDistanceService(entry.station))).toBe(true);
   });
 
-  it("returns the two nearest AP/IC stations for Mealhada", () => {
-    const mealhada = stations.find((s) => s.name === "Mealhada")!;
-    const nearest = getNearestLongDistanceStations(mealhada);
+  it("returns the two nearest AP/IC stations for Canelas", () => {
+    const canelas = stations.find((s) => s.name === "Canelas")!;
+    const nearest = getNearestLongDistanceStations(canelas);
 
     expect(nearest).toHaveLength(2);
-    expect(nearest[0].station.name).toBe("Pampilhosa");
-    expect(nearest[1].station.name).toBe("Coimbra-B");
+    expect(nearest[0].station.name).toBe("Estarreja");
+    expect(nearest[1].station.name).toBe("Aveiro");
     expect(nearest[0].distanceKm).toBeLessThan(nearest[1].distanceKm);
   });
 
