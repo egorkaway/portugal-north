@@ -1646,61 +1646,6 @@ export const stationHotels: StationHotels = {
     { name: "Walk in Hostel Faro Airport", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Walk%20in%20Hostel%20Faro%20Airport%2C%20Faro%20Airport%20(FAO)%2C%20Portugal&order=price" },
     { name: "3K Hotel", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=3K%20Hotel%2C%20Faro%20Airport%20(FAO)%2C%20Portugal&order=price" },
   ],
-  "Beja Airport (BYJ)": [
-    { name: "Diabrória", distanceKm: 3.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Diabr%C3%B3ria%2C%20Beja%20Airport%20(BYJ)%2C%20Portugal&order=price" },
-    { name: "Holiday Inn", distanceKm: 8.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%2C%20Beja%20Airport%20(BYJ)%2C%20Portugal&order=price" },
-    { name: "Sesmarias Turismo Rural & Spa", distanceKm: 8.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sesmarias%20Turismo%20Rural%20%26%20Spa%2C%20Beja%20Airport%20(BYJ)%2C%20Portugal&order=price" },
-  ],
-  "Cascais Airport (CAT)": [
-    { name: "Seminário Torre D' Aguilha - Hotel", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Semin%C3%A1rio%20Torre%20D'%20Aguilha%20-%20Hotel%2C%20Cascais%20Airport%20(CAT)%2C%20Portugal&order=price" },
-    { name: "Dolce Vita Guesthouse", distanceKm: 3.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dolce%20Vita%20Guesthouse%2C%20Cascais%20Airport%20(CAT)%2C%20Portugal&order=price" },
-    { name: "Casa", distanceKm: 3.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%2C%20Cascais%20Airport%20(CAT)%2C%20Portugal&order=price" },
-  ],
-  "Coimbra Airport (CBP)": [
-    { name: "Jantesta Guest House", distanceKm: 1.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Jantesta%20Guest%20House%2C%20Coimbra%20Airport%20(CBP)%2C%20Portugal&order=price" },
-    { name: "Albergue de Peregrinos Cernache", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Cernache%2C%20Coimbra%20Airport%20(CBP)%2C%20Portugal&order=price" },
-    { name: "Casa Amazon", distanceKm: 3.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Amazon%2C%20Coimbra%20Airport%20(CBP)%2C%20Portugal&order=price" },
-  ],
-  "Évora Airport": [
-    { name: "Monte da Serralheira", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Monte%20da%20Serralheira%2C%20%C3%89vora%20Airport%2C%20Portugal&order=price" },
-    { name: "Hospedaria d'El Rei", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20d'El%20Rei%2C%20%C3%89vora%20Airport%2C%20Portugal&order=price" },
-    { name: "Hotel Dom Fernando", distanceKm: 3.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Dom%20Fernando%2C%20%C3%89vora%20Airport%2C%20Portugal&order=price" },
-  ],
-  "Portimão Airport (PRM)": [
-    { name: "Penina Hotel & Golf Resort", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Penina%20Hotel%20%26%20Golf%20Resort%2C%20Portim%C3%A3o%20Airport%20(PRM)%2C%20Portugal&order=price" },
-    { name: "Pelican Alvor", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pelican%20Alvor%2C%20Portim%C3%A3o%20Airport%20(PRM)%2C%20Portugal&order=price" },
-    { name: "Longevity Health & Wellness Hotel", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Longevity%20Health%20%26%20Wellness%20Hotel%2C%20Portim%C3%A3o%20Airport%20(PRM)%2C%20Portugal&order=price" },
-  ],
-  "Vila Real Airport (VRL)": [
-    { name: "A Casa da Sofia", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=A%20Casa%20da%20Sofia%2C%20Vila%20Real%20Airport%20(VRL)%2C%20Portugal&order=price" },
-    { name: "Casa de Trás-o-Muro", distanceKm: 1.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20de%20Tr%C3%A1s-o-Muro%2C%20Vila%20Real%20Airport%20(VRL)%2C%20Portugal&order=price" },
-    { name: "Hotel Quinta do Paço", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Quinta%20do%20Pa%C3%A7o%2C%20Vila%20Real%20Airport%20(VRL)%2C%20Portugal&order=price" },
-  ],
-  "Braga Airport (BGZ)": [
-    { name: "Motel Horly", distanceKm: 0.5, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Horly%2C%20Braga%20Airport%20(BGZ)%2C%20Portugal&order=price" },
-    { name: "Bom Sucesso", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bom%20Sucesso%2C%20Braga%20Airport%20(BGZ)%2C%20Portugal&order=price" },
-    { name: "Casanova Farmhouse", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casanova%20Farmhouse%2C%20Braga%20Airport%20(BGZ)%2C%20Portugal&order=price" },
-  ],
-  "Bragança Airport (BGC)": [
-    { name: "Hotel Turismo São Lázaro", distanceKm: 5.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Turismo%20S%C3%A3o%20L%C3%A1zaro%2C%20Bragan%C3%A7a%20Airport%20(BGC)%2C%20Portugal&order=price" },
-    { name: "Quinta da Rica-Fé Agroturismo", distanceKm: 5.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Rica-F%C3%A9%20Agroturismo%2C%20Bragan%C3%A7a%20Airport%20(BGC)%2C%20Portugal&order=price" },
-    { name: "Ibis Bragança", distanceKm: 6.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Bragan%C3%A7a%2C%20Bragan%C3%A7a%20Airport%20(BGC)%2C%20Portugal&order=price" },
-  ],
-  "Chaves Airport (CHV)": [
-    { name: "Hotel Encostas de Nantes", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Encostas%20de%20Nantes%2C%20Chaves%20Airport%20(CHV)%2C%20Portugal&order=price" },
-    { name: "Hotel Brites", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Brites%2C%20Chaves%20Airport%20(CHV)%2C%20Portugal&order=price" },
-    { name: "Hotel 4 Estações", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%204%20Esta%C3%A7%C3%B5es%2C%20Chaves%20Airport%20(CHV)%2C%20Portugal&order=price" },
-  ],
-  "Castelo Branco Airport": [
-    { name: "Casa 3", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%203%2C%20Castelo%20Branco%20Airport%2C%20Portugal&order=price" },
-    { name: "Residencial Horta d' Alva", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Horta%20d'%20Alva%2C%20Castelo%20Branco%20Airport%2C%20Portugal&order=price" },
-    { name: "Império do Rei", distanceKm: 4.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Imp%C3%A9rio%20do%20Rei%2C%20Castelo%20Branco%20Airport%2C%20Portugal&order=price" },
-  ],
-  "Espinho Airport": [
-    { name: "Pousada da Juventude Espinho", distanceKm: 0.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20da%20Juventude%20Espinho%2C%20Espinho%20Airport%2C%20Portugal&order=price" },
-    { name: "Alameda Guest House", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alameda%20Guest%20House%2C%20Espinho%20Airport%2C%20Portugal&order=price" },
-    { name: "Surf House", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Surf%20House%2C%20Espinho%20Airport%2C%20Portugal&order=price" },
-  ],
   "Vigo-Guixar": [
     { name: "Hotel OCA Ipanema", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20OCA%20Ipanema%2C%20Vigo-Guixar%2C%20Spain&order=price" },
     { name: "Hostal Plaza", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Plaza%2C%20Vigo-Guixar%2C%20Spain&order=price" },

@@ -30,6 +30,9 @@ describe("stationRegistry", () => {
     const esNames = getStationsForCountry("es").map((station) => station.name);
     expect(ptNames).toContain("Lisbon Airport (LIS)");
     expect(ptNames).toContain("Porto Airport (OPO)");
+    expect(ptNames).toContain("Faro Airport (FAO)");
+    expect(ptNames).not.toContain("Beja Airport (BYJ)");
+    expect(portugalAirports).toHaveLength(3);
     expect(esNames).toContain("Madrid-Barajas Airport (MAD)");
     expect(esNames).toContain("Barcelona-El Prat Airport (BCN)");
     expect(portugalAirports.every((a) => a.types.includes("Airport"))).toBe(true);
