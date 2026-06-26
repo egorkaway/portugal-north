@@ -1,11 +1,11 @@
-import { getStationsForCountry } from "@/data/stationRegistry";
+import { getStationsForCountry } from "../data/stationRegistry";
 import {
   COUNTRY_CODES,
   DEFAULT_COUNTRY,
   isCountryCode,
   type CountryCode,
-} from "@/lib/countries";
-import { HOME_STATIONS_PAGE_SIZE } from "@/lib/paginate";
+} from "./countries";
+import { HOME_STATIONS_PAGE_SIZE } from "./paginate";
 
 /** `/pt`, `/es/2`, optional `?q=` search. Page 1 omits the page segment. */
 export function buildHomePath(
