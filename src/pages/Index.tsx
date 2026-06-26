@@ -1,4 +1,4 @@
-import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useDeferredValue, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getStationsForCountry } from "@/data/stationRegistry";
 import { StationCard } from "@/components/StationCard";
@@ -50,7 +50,18 @@ const Index = () => {
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter | null>(null);
   const stationListRef = useRef<HTMLDivElement>(null);
-  const skipFilterPageResetRef = useRef(true);
+
+  const clearPageParam = useCallback(() => {
+    setSearchParams(
+      (current) => {
+        if (!current.has("page")) return current;
+        const next = new URLSearchParams(current);
+        next.delete("page");
+        return next;
+      },
+      { replace: true },
+    );
+  }, [setSearchParams]);
 
   const votes = useAllVotes();
   const visitedMap = useAllVisited();
@@ -72,7 +83,7 @@ const Index = () => {
       setVoteFilter(null);
       setVisitedFilter(null);
       setSearch("");
-      setCountry(nextCountry, { clearSearch: true });
+      setCountry(nextCountry, { clearSearch: true, clearPage: true });
     },
     [setCountry],
   );
@@ -133,26 +144,6 @@ const Index = () => {
     [setSearchParams],
   );
 
-  const resetPage = useCallback(() => {
-    setSearchParams(
-      (current) => {
-        if (!current.has("page")) return current;
-        const next = new URLSearchParams(current);
-        next.delete("page");
-        return next;
-      },
-      { replace: true },
-    );
-  }, [setSearchParams]);
-
-  useEffect(() => {
-    if (skipFilterPageResetRef.current) {
-      skipFilterPageResetRef.current = false;
-      return;
-    }
-    resetPage();
-  }, [search, activeFilter, voteFilter, visitedFilter, deferredCountry, resetPage]);
-
   const setSearchQuery = (value: string) => {
     setSearch(value);
     setSearchParams(
@@ -163,6 +154,7 @@ const Index = () => {
         } else {
           next.delete("q");
         }
+        next.delete("page");
         return next;
       },
       { replace: true },
@@ -232,13 +224,20 @@ const Index = () => {
         onSearchChange={setSearchQuery}
         trainTypes={allTypes}
         activeType={activeFilter}
-        onTypeToggle={(type) => setActiveFilter(activeFilter === type ? null : type)}
+        onTypeToggle={(type) => {
+          clearPageParam();
+          setActiveFilter(activeFilter === type ? null : type);
+        }}
         voteFilter={voteFilter}
-        onVoteFilterToggle={(key) => setVoteFilter(voteFilter === key ? null : key)}
+        onVoteFilterToggle={(key) => {
+          clearPageParam();
+          setVoteFilter(voteFilter === key ? null : key);
+        }}
         visitedFilter={visitedFilter}
-        onVisitedFilterToggle={(key) =>
-          setVisitedFilter(visitedFilter === key ? null : key)
-        }
+        onVisitedFilterToggle={(key) => {
+          clearPageParam();
+          setVisitedFilter(visitedFilter === key ? null : key);
+        }}
         sortByDistance={sortByDistance}
         onRequestLocation={requestLocation}
         locationState={locationState}

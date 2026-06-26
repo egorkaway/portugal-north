@@ -31,7 +31,7 @@ export function useCountrySelection() {
   }, [searchParams]);
 
   const setCountry = useCallback(
-    (nextCountry: CountryCode, options?: { clearSearch?: boolean }) => {
+    (nextCountry: CountryCode, options?: { clearSearch?: boolean; clearPage?: boolean }) => {
       setCountryState(nextCountry);
       writeStoredCountry(nextCountry);
 
@@ -40,6 +40,9 @@ export function useCountrySelection() {
           const next = new URLSearchParams(current);
           if (options?.clearSearch) {
             next.delete("q");
+          }
+          if (options?.clearPage) {
+            next.delete("page");
           }
           if (nextCountry === DEFAULT_COUNTRY) {
             next.delete("country");
