@@ -150,4 +150,14 @@ export const stationSummariesCa: Record<string, string> = {
     "Ciutat ribatejana a la Linha do Norte amb serveis Alfa Pendular i Intercidades entre Lisboa i Porto. Esglésies gòtiques i passejades a la riba del Tajo són a pocs minuts a peu de l'estació — parada útil per a pernoctar al corredor principal.",
   Travagem:
     "Parada a la línia del Minho entre Santo Tirso i Ermesinde als suburbis orientals de Porto. Trens urbans i regionals segueixen cap a Campanhã i Valongo — parada de rodalia discreta amb enllaços freqüents a la xarxa de Porto.",
+  Santos:
+    "Parada ribereña a la línia de Cascais entre Cais do Sodré i Alcântara-Mar, al costat de la freguesia de Santos i del Museu Nacional de Arte Antiga. Trens urbans molt freqüents enllacen el centre de Lisboa amb Belém i la costa de Cascais — parada central per a passejades a la riba sense l'aglomeració turística de Belém.",
+  Paramos:
+    "Parada costanera a la Linha do Norte entre Ovar i Espinho, al corredor Aveiro–Porto. Trens urbans i regionals s'aturen aquí, juntament amb alguns Intercidades — parada discreta per a les freguesies de Paramos i Maceda amb enllaços directes a Porto i Aveiro.",
+  "Recarei-Sobreira":
+    "Parada a la línia del Douro entre Paredes i Penafiel als suburbis orientals de Porto. Trens urbans i regionals segueixen cap a Campanhã i el país del vi — parada residencial del costat de Sobreira amb trànsit de rodalia constant cap a la xarxa de Porto.",
+  "São Mamede de Infesta":
+    "Una de les parades suburbanes més concorregudes de la línia del Minho, que serveix Matosinhos i la Infesta a ponent de Porto. Trens urbans i regionals enllacen Campanhã amb Braga i el corredor de l'aeroport — pràctica per a estades econòmiques a prop de Porto, amb servei de rodalia freqüent i connexions de metro i autobús a prop.",
+  Cete:
+    "Parada a la línia del Douro entre Paredes i Penafiel, a la vall del Sousa. Trens urbans connecten Campanhã amb el cinturó de rodalia oriental — parada parroquial tranquil·la amb enllaços senzills a la xarxa suburbana de Porto i a les branques del Douro.",
 };

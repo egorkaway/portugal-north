@@ -150,4 +150,14 @@ export const stationSummariesGl: Record<string, string> = {
     "Cidade ribatejana na Liña do Norte con servizos Alfa Pendular e Intercidades entre Lisboa e O Porto. Igrexas góticas e paseos á beira do Tejo están a poucos minutos a pé da estación — parada útil para pernoitar no corredor principal.",
   Travagem:
     "Parada na liña do Minho entre Santo Tirso e Ermesinde nos suburbios orientais de O Porto. Trens urbanos e rexionais seguen cara a Campanhã e Valongo — parada pendular discreta con ligazóns frecuentes á rede de O Porto.",
+  Santos:
+    "Parada ribeireña na liña de Cascais entre Cais do Sodré e Alcântara-Mar, xunto á freguesía de Santos e ao Museo Nacional de Arte Antiga. Trens urbanos moi frecuentes ligam o centro de Lisboa a Belém e á costa de Cascais — parada central para paseos á beira do río sen a multitude turística de Belém.",
+  Paramos:
+    "Parada costeira na Liña do Norte entre Ovar e Espinho, no corredor Aveiro–O Porto. Trens urbanos e rexionais paran aquí, xunto con algúns Intercidades — parada discreta para as freguesías de Paramos e Maceda con ligazóns directas a O Porto e Aveiro.",
+  "Recarei-Sobreira":
+    "Parada na liña do Douro entre Paredes e Penafiel nos suburbios orientais de O Porto. Trens urbanos e rexionais seguen cara a Campanhã e ao país do viño — parada residencial do lado de Sobreira con tráfico pendular constante cara á rede de O Porto.",
+  "São Mamede de Infesta":
+    "Unha das paradas suburbanas máis concorridas da liña do Minho, que serve Matosinhos e a Infesta a oeste de O Porto. Trens urbanos e rexionais ligan Campanhã a Braga e ao corredor do aeroporto — práctica para estadías económicas preto de O Porto, con servizo pendular frecuente e ligazóns de metro e autobús nas proximidades.",
+  Cete:
+    "Parada na liña do Douro entre Paredes e Penafiel, no val do Sousa. Trens urbanos conectan Campanhã co cinturón pendular oriental — parada parroquial tranquila con ligazóns sinxelas á rede suburbana de O Porto e ás ramas do Douro.",
 };

@@ -150,4 +150,14 @@ export const stationSummariesPt: Record<string, string> = {
     "Cidade ribatejana na Linha do Norte com serviços Alfa Pendular e Intercidades entre Lisboa e o Porto. Igrejas góticas e passeios à beira do Tejo ficam a poucos minutos a pé da estação — paragem útil para pernoitar no corredor principal.",
   Travagem:
     "Paragem na linha do Minho entre Santo Tirso e Ermesinde nos subúrbios orientais do Porto. Comboios urbanos e regionais seguem para Campanhã e Valongo — paragem pendular discreta com ligações frequentes à rede do Porto.",
+  Santos:
+    "Paragem ribeirinha na linha de Cascais entre Cais do Sodré e Alcântara-Mar, junto à freguesia de Santos e ao Museu Nacional de Arte Antiga. Comboios urbanos muito frequentes ligam o centro de Lisboa a Belém e à costa de Cascais — paragem central para passeios à beira-rio sem a multidão turística de Belém.",
+  Paramos:
+    "Paragem costeira na Linha do Norte entre Ovar e Espinho, no corredor Aveiro–Porto. Comboios urbanos e regionais param aqui, incluindo alguns Intercidades — paragem discreta para as freguesias de Paramos e Maceda com ligações diretas ao Porto e a Aveiro.",
+  "Recarei-Sobreira":
+    "Paragem na linha do Douro entre Paredes e Penafiel nos subúrbios orientais do Porto. Comboios urbanos e regionais seguem para Campanhã e para o país do vinho — paragem residencial do lado de Sobreira com tráfego pendular constante para a rede do Porto.",
+  "São Mamede de Infesta":
+    "Uma das paragens suburbanas mais movimentadas da linha do Minho, a servir Matosinhos e a Infesta a ocidente do Porto. Comboios urbanos e regionais ligam Campanhã a Braga e ao corredor do aeroporto — prática para estadias económicas perto do Porto, com serviço pendular frequente e ligações de metro e autocarro nas proximidades.",
+  Cete:
+    "Paragem na linha do Douro entre Paredes e Penafiel, no vale do Sousa. Comboios urbanos ligam Campanhã ao cinturão pendular oriental — paragem paroquial tranquila com ligações simples à rede suburbana do Porto e aos ramais do Douro.",
 };

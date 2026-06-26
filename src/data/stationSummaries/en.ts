@@ -19,6 +19,7 @@
  * Batch 13: Paredes, Lousado, Lavradio, Lisboa Santa Apolónia, Penafiel
  * Batch 14: Suzão, São Romão, Azambuja, Caíde, São Frutuoso
  * Batch 15: Ovar, Alfarelos, Couto de Cambeses, Santarém, Travagem
+ * Batch 16: Santos, Paramos, Recarei-Sobreira, São Mamede de Infesta, Cete
  */
 /** English station summaries. Spell out Alfa Pendular and Intercidades — no AP/IC. */
 export const stationSummariesEn: Record<string, string> = {
@@ -172,4 +173,14 @@ export const stationSummariesEn: Record<string, string> = {
     "Ribatejo city on the Linha do Norte with Alfa Pendular and Intercidades services between Lisbon and Porto. Gothic churches and Tagus-side walks are a short walk from the station — a useful overnight break on the main corridor.",
   Travagem:
     "Minho-line halt between Santo Tirso and Ermesinde in the Porto eastern suburbs. Urban and regional trains run towards Campanhã and Valongo — a low-profile commuter stop with frequent links into the Porto network.",
+  Santos:
+    "Riverside halt on the Cascais line between Cais do Sodré and Alcântara-Mar, beside the Santos parish and the Nacional Ancient Art Museum. Very frequent urban trains link downtown Lisbon with Belém and the Estoril coast — a central stop for waterfront walks without the tourist crush of Belém itself.",
+  Paramos:
+    "Coastal halt on the Linha do Norte between Ovar and Espinho on the Aveiro–Porto corridor. Urban and regional trains call here alongside Intercidades services — a low-key stop for the Paramos and Maceda parishes with direct links to Porto and Aveiro.",
+  "Recarei-Sobreira":
+    "Douro-line halt between Paredes and Penafiel in the eastern Porto suburbs. Urban and regional trains run towards Campanhã and the wine country — a residential stop on the Sobreira side with steady commuter traffic into the Porto network.",
+  "São Mamede de Infesta":
+    "One of the Minho line's busiest suburban stops, serving Matosinhos and Infesta west of Porto. Urban and regional trains link Campanhã with Braga and the airport corridor — practical for budget stays near Porto with frequent commuter service and metro and bus connections nearby.",
+  Cete:
+    "Douro-line halt between Paredes and Penafiel in the Sousa valley. Urban trains connect Campanhã with the eastern commuter belt — a quiet parish stop with straightforward links into Porto's suburban network and the Douro branch lines.",
 };

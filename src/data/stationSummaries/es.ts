@@ -150,4 +150,14 @@ export const stationSummariesEs: Record<string, string> = {
     "Ciudad ribateña en la Línea del Norte con servicios Alfa Pendular e Intercidades entre Lisboa y Oporto. Iglesias góticas y paseos junto al Tajo están a pocos minutos a pie de la estación — parada útil para pernoctar en el corredor principal.",
   Travagem:
     "Parada en la línea del Minho entre Santo Tirso y Ermesinde en los suburbios orientales de Oporto. Trenes urbanos y regionales siguen hacia Campanhã y Valongo — parada de cercanías discreta con enlaces frecuentes a la red de Oporto.",
+  Santos:
+    "Parada ribereña en la línea de Cascais entre Cais do Sodré y Alcântara-Mar, junto a la freguesia de Santos y al Museo Nacional de Arte Antigua. Trenes urbanos muy frecuentes enlazan el centro de Lisboa con Belém y la costa de Cascais — parada céntrica para paseos junto al río sin la aglomeración turística de Belém.",
+  Paramos:
+    "Parada costera en la Línea del Norte entre Ovar y Espinho, en el corredor Aveiro–Oporto. Trenes urbanos y regionales paran aquí, junto con algunos Intercidades — parada tranquila para las freguesias de Paramos y Maceda con enlaces directos a Oporto y Aveiro.",
+  "Recarei-Sobreira":
+    "Parada en la línea del Duero entre Paredes y Penafiel en los suburbios orientales de Oporto. Trenes urbanos y regionales siguen hacia Campanhã y la tierra del vino — parada residencial del lado de Sobreira con tráfico de cercanías constante hacia la red de Oporto.",
+  "São Mamede de Infesta":
+    "Una de las paradas suburbanas más concurridas de la línea del Minho, que sirve a Matosinhos e Infesta al oeste de Oporto. Trenes urbanos y regionales enlazan Campanhã con Braga y el corredor del aeropuerto — práctica para estancias económicas cerca de Oporto, con servicio de cercanías frecuente y conexiones de metro y autobús cerca.",
+  Cete:
+    "Parada en la línea del Duero entre Paredes y Penafiel, en el valle del Sousa. Trenes urbanos conectan Campanhã con el cinturón de cercanías oriental — parada parroquial tranquila con enlaces sencillos a la red suburbana de Oporto y a los ramales del Duero.",
 };

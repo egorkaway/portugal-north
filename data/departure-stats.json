@@ -1,6 +1,6 @@
 {
-  "runCount": 47,
-  "lastRunAt": "2026-06-26T13:53:06.447Z",
+  "runCount": 48,
+  "lastRunAt": "2026-06-26T15:56:58.792Z",
   "stations": {
     "Pombal": {
       "cpCode": "94-34645",
@@ -3053,9 +3053,9 @@
         "delayMinutes": 11
       },
       "successfulSamples": 10,
-      "failedSamples": 5,
+      "failedSamples": 6,
       "lastSampleAt": "2026-06-26T13:54:07.155Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Irivo": {
       "cpCode": "94-8243",
@@ -3148,9 +3148,9 @@
         "delayMinutes": 28
       },
       "successfulSamples": 7,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-06-26T13:53:49.769Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Águas Santas - Palmilheira": {
       "cpCode": "94-3046",
@@ -3243,9 +3243,9 @@
         "delayMinutes": 42
       },
       "successfulSamples": 11,
-      "failedSamples": 3,
+      "failedSamples": 4,
       "lastSampleAt": "2026-06-26T13:53:43.083Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Madalena": {
       "cpCode": "94-39123",
@@ -4153,9 +4153,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 4,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-06-24T11:47:24.593Z",
-      "lastError": "cp_api_http_429"
+      "lastError": "fetch failed"
     },
     "Albergaria dos Doze": {
       "cpCode": "94-34439",
@@ -7095,7 +7095,7 @@
         "delayMinutes": 74
       },
       "successfulSamples": 10,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-06-24T13:44:31.611Z",
       "lastError": "fetch failed"
     },

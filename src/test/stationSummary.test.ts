@@ -27,11 +27,11 @@ describe("station summaries batch 1", () => {
   it("lists the next five stations without summaries", () => {
     const next = stationsNeedingSummaries(5);
     expect(next).toEqual([
-      "Santos",
-      "Paramos",
-      "Recarei-Sobreira",
-      "São Mamede de Infesta",
-      "Cete",
+      "Cais do Sodré",
+      "Cascais",
+      "Hospital São João",
+      "Moita",
+      "Lamarosa",
     ]);
   });
 });
@@ -327,9 +327,30 @@ describe("station summaries batch 15", () => {
   });
 });
 
+describe("station summaries batch 16", () => {
+  it("covers stations ranked 76–80 by train volume", () => {
+    const batchSixteen = rankStationsByTrainVolume()
+      .slice(75, 80)
+      .map((entry) => entry.station.name);
+
+    expect(batchSixteen).toEqual([
+      "Santos",
+      "Paramos",
+      "Recarei-Sobreira",
+      "São Mamede de Infesta",
+      "Cete",
+    ]);
+
+    for (const name of batchSixteen) {
+      expect(hasStationSummary(name)).toBe(true);
+      expect(getStationSummary(name)).toMatch(/\.\s*$/);
+    }
+  });
+});
+
 describe("station summaries i18n", () => {
-  it("has all 75 station keys in every locale", () => {
-    expect(STATION_SUMMARY_NAMES).toHaveLength(75);
+  it("has all 80 station keys in every locale", () => {
+    expect(STATION_SUMMARY_NAMES).toHaveLength(80);
 
     for (const locale of LOCALES) {
       for (const name of STATION_SUMMARY_NAMES) {
