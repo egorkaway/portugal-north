@@ -1,0 +1,73 @@
+/** Resumos das estacións en galego. Escribir Alfa Pendular e Intercidades por extenso — sen AP/IC. */
+export const stationSummariesGl: Record<string, string> = {
+  "Lisboa Oriente":
+    "Principal hub oriental de Lisboa no Parque das Nações, xunto ao Tejo e ao aeroporto. Trens Alfa Pendular e Intercidades cara O Porto, o norte e o Algarve crúzanse aquí con intensos servizos suburbanos — ideal se te aloxas á beira do río ou precisas unha ligazón rápida a través do país. A nave da estación de Calatrava merece unha ollada mesmo nun transbordo axustado.",
+  "Agualva - Cacém":
+    "Unha das paradas máis movimentadas da liña de Sintra, ao oeste de Lisboa entre Cacém e os suburbios exteriores. Trens urbanos frecuentes ligan ao Rossio e a Sintra, e algúns servizos Intercidades paran aquí sen atravesar o centro da cidade. Útil para aloxamento máis barato ao oeste de Lisboa mantendo ligazón directa coa CP.",
+  "Portela de Sintra":
+    "Porta de entrada da liña de Sintra á beira das serras, antes da subida á vila. Trens urbanos case continuos ligan o centro de Lisboa cos palacios e cos paseos no bosque — agarda máis afluencia os fins de semana e en días de sol. Base práctica para excursións á natureza sen enfrontarse á estrada sinuosa da serra.",
+  "Queluz - Belas":
+    "Parada de alta frecuencia entre Amadora e Cacém na liña de Sintra. Os trens chegan ao Rossio en moito menos de media hora, o que fai viables Belas e a Amadora occidental para estadías económicas fóra do núcleo turístico. Monte Abraão, a unha parada, é o acceso ferroviario habitual ao Palacio Nacional de Queluz.",
+  "Porto-Campanhã":
+    "Estación intercidades principal de O Porto e hub norte para Alfa Pendular e Intercidades. Os trens seguen cara ao sur ata Lisboa, norte ata Braga e Guimarães, leste polo Douro e máis aló da fronteira ata Vigo; servizos urbanos ligan São Bento no centro histórico. Alóxate preto para partidas de longa distancia — metro e autobuses chegan á Ribeira en minutos.",
+  "Santa Cruz - Damaia":
+    "Unha das paradas de pendulares máis movimentadas da área de Lisboa, onde a liña de Sintra atravesa Damaia e a marxe occidental da Amadora. Trens urbanos circulan constantemente en dirección ao Rossio e Sintra — opción práctica se buscas prezos de hotel máis baixos ao oeste do centro cunha ligazón ferroviaria frecuente. Á hora punta, conta con ir de pé.",
+  "Braco de Prata":
+    "Parada oriental de Lisboa onde a Linha de Cintura cruza o corredor da Linha do Norte a través da cidade. Trens urbanos e regionais constantes ligan a liña principal norte–sur á cintura en torno ao centro de Lisboa. Útil para ligazóns sen pasar polo Rossio ou Santa Apolónia.",
+  "Monte Abraão":
+    "Parada da liña de Sintra máis coñecida como acceso ferroviario ao Palacio Nacional de Queluz — os xardíns do palacio quedan a poucos minutos a pé das plataformas. Trens urbanos frecuentes ligan ao Rossio e Sintra, con Queluz-Belas a unha parada en dirección a Lisboa. Máis tranquila que o centro de Sintra pero ben conectada para visitas ao palacio e estadías suburbanas.",
+  Entrecampos:
+    "Gran hub de Lisboa na Linha de Cintura, xunto ao Campo Grande e ao distrito hospitalario da cidade. Servizos Alfa Pendular e Intercidades crúzanse aquí con tráfico urbano denso — útil para billetes de longa distancia sen ir ata Oriente ou Santa Apolónia. Metro e autobuses irradian polo norte da cidade interior.",
+  Ermesinde:
+    "Parada movimentada na rede suburbana de O Porto onde os corredores do Minho e do Douro se encontran, ao leste do centro da cidade. Trens Intercidades e regionais paran aquí xunto con servizos urbanos frecuentes en dirección a Campanhã e ao alto Douro. Base viable para estadías máis baratas no cinturón Valongo–Ermesinde con ligazóns rápidas a O Porto.",
+  Benfica:
+    "Entroncamento do interior oeste de Lisboa onde a liña de Sintra atopa a Cintura. Trens urbanos circulan constantemente en dirección ao Rossio, Sintra e á liña de cintura en torno ao centro — parada práctica se te aloxas preto de Benfica, Laranjeiras ou do cinturón universitario. Menos turística que o centro, con saltos rápidos a Entrecampos ou Sete Rios.",
+  Merces:
+    "Parada da liña de Sintra na subida cara á vila de Sintra, entre Cacém e as serras. Trens urbanos frecuentes ligan o centro de Lisboa cos palacios e cos paseos no bosque, unha parada despois de Portela de Sintra. Base suburbana máis tranquila que o centro da vila, con tráfico de pendulares estable nos días laborables.",
+  Amadora:
+    "Principal parada ferroviaria da Amadora, un dos maiores suburbios de Lisboa ao oeste do centro. A liña de Sintra pasa por aquí con trens urbanos moi frecuentes cara ao Rossio e o corredor occidental. Útil para aloxamento económico cunha ligazón suburbana directa — o centro municipal e a rede de autobuses quedan a poucos minutos a pé das plataformas.",
+  "Vila Franca de Xira":
+    "Vila ribeiriña do Tejo na Linha do Norte entre Lisboa e Santarém, coñecida polas touradas na rúa e polos paseos xunto ao río. Trens Intercidades e regionais paran aquí xunto con servizos urbanos en dirección a Santa Apolónia e ao cinturón de pendulares do norte. Base de menor custo cunha ligazón directa de longa distancia a Lisboa e O Porto.",
+  "Roma - Areeiro":
+    "Parada da Cintura entre Areeiro e Entrecampos, práctica para o distrito de oficinas e hospitais de Roma–Areeiro ao leste do centro de Lisboa. Trens urbanos densos circulan na cintura interior, con transbordos doados para a liña de Sintra en Benfica ou trens de longa distancia en Entrecampos. Ben situada para ligazóns de metro en Areeiro.",
+  "Massama - Barcarena":
+    "Parada da liña de Sintra que serve os suburbios de Barcarena e Massamá ao noroeste da Amadora. Trens urbanos moi frecuentes ligan ao Rossio e Sintra — unha das paradas máis movimentadas do corredor de pendulares occidental. Práctica para estadías de menor custo entre Amadora e Queluz cunha ligazón directa ao centro de Lisboa.",
+  "Algueirão - Mem Martins":
+    "Parada suburbana na liña de Sintra entre Mem Martins e a subida cara á vila de Sintra. Trens urbanos constantes conectan Lisboa coas serras e coa zona dos palacios; agarda maior afluencia os fins de semana cando os visitantes seguen para Sintra. Base residencial con acceso ferroviario sinxelo tanto á cidade como aos paseos no bosque.",
+  Reboleira:
+    "Gran entroncamento da liña de Sintra na Amadora, onde os trens suburbanos atopan o terminal de metro da Amadora. Unha das paradas máis movimentadas ao oeste de Lisboa, con servizos urbanos constantes para o Rossio e Sintra e transbordos doados de metro pola capital. Útil se te aloxas na Amadora e queres CP e metro no mesmo lugar.",
+  Campolide:
+    "Parada da liña de Sintra xusto ao norte do centro de Lisboa, entre Sete Rios e Benfica. Trens urbanos frecuentes ligan o interior oeste da cidade ao Rossio e ao corredor de Sintra — práctica para a Praça de Espanha, o zoo e ligazóns de autobús en Sete Rios. Alternativa máis tranquila que o Rossio para embarcar en trens suburbanos con destino oeste.",
+  Contumil:
+    "Entroncamento norte de O Porto onde as liñas principais do Minho e do Norte se encontran, xusto ao leste de Campanhã. Trens urbanos e regionais pasan constantemente, ligando São Bento, o corredor do aeroporto e servizos cara ao norte en dirección a Braga. Parada útil se te aloxas nos suburbios orientais de O Porto e queres un salto rápido ao centro da cidade.",
+  "Sete Rios":
+    "Gran entroncamento de Lisboa na Cintura xunto á Praça de Espanha e ao zoo. Servizos Intercidades e trens urbanos densos ligan o corredor de Sintra, a liña de cintura e billetes de longa distancia sen atravesar o centro. Un dos principais hubs de autobuses da capital queda sobre as plataformas — práctico para metro, autocares e comboios suburbanos nun só lugar.",
+  "Águas Santas - Palmilheira":
+    "Parada movimentada na liña do Minho nos suburbios orientais de O Porto, servindo Águas Santas e Palmilheira. Trens urbanos e regionais frecuentes seguen cara a Campanhã, Braga e o corredor do Douro. Base práctica para estadías máis baratas ao leste da cidade cunha ligazón suburbana directa ao centro de O Porto.",
+  "Alcantara - Mar":
+    "Parada ribeiriña onde a Cintura atopa a liña de Cascais, a poucos pasos da LX Factory e do cais do Tejo. Trens urbanos circulan constantemente en dirección a Belém, Cascais e á cintura en torno ao centro de Lisboa — ideal para estadías á beira do río ao oeste do centro. Agarda máis afluencia o fin de semana xunto ao distrito cultural e aos paseos na marina.",
+  Sacavem:
+    "Parada oriental de Lisboa na Linha do Norte entre Santa Apolónia e o corredor do aeroporto. Trens urbanos e regionais ligan a liña principal norte cos suburbios orientais — útil para aloxamento económico ao leste do centro cunha ligazón directa á CP en dirección a Oriente. Máis tranquila que o Parque das Nações pero ben conectada no corredor do Norte.",
+  "Vila Nova de Gaia-Devesas":
+    "Principal parada de longa distancia de Gaia ao sur do Douro, con servizos Alfa Pendular e Intercidades xunto con trens urbanos movimentados. Os trens seguen cara ao sur ata Lisboa e cara ao norte ao longo da costa; o centro histórico e as adegas quedan a un curto salto de metro ou autobús alén do río. Alóxate preto para partidas intercidades sen ir ata Porto-Campanhã.",
+  Parede:
+    "Parada costeira na liña de Cascais entre Carcavelos e Oeiras, popular entre bañistas e pendulares. Trens urbanos moi frecuentes ligan o centro de Lisboa á costa do Estoril en menos de media hora. Base práctica para area e surf ao oeste da capital cunha ligazón suburbana directa.",
+  "Belém":
+    "Parada emblemática da liña de Cascais xunto aos monumentos e museos de Belém — trens urbanos circulan constantemente en dirección ao Cais do Sodré e Cascais. Un dos distritos turísticos de referencia de Lisboa, así que agarda máis afluencia en tardes de sol. Práctica para paseos á beira do río, pastéis de nata e saltos rápidos ao centro sen conducir.",
+  Oeiras:
+    "Parada da liña de Cascais que serve Oeiras e a marxe occidental do Tejo entre Cruz Quebrada e Algés. Trens urbanos densos ligan Lisboa á costa do Estoril e aos parques de oficinas ao longo do río. Útil para estadías de negocios ou aloxamento máis barato ao oeste do centro cunha ligazón ferroviaria frecuente.",
+  "Cruz Quebrada":
+    "Parada suburbana na liña de Cascais entre Algés e Paço de Arcos, con trens urbanos constantes en dirección ao Cais do Sodré e Cascais. Alternativa máis tranquila a Carcavelos na praia mantendo o corredor do Estoril ao alcance. Práctica para paseos ribeiriños e desprazamentos rápidos ao centro de Lisboa.",
+  Granja:
+    "Parada da Linha do Norte na marxe sur do Douro entre Valadares e Espinho. Trens urbanos e regionais ligan os suburbios sur de O Porto a Aveiro e a servizos Intercidades con destino Lisboa. Base costeira de menor custo con acceso ferroviario sinxelo ao norte cara O Porto e ao sur polo corredor do Minho.",
+  Valadares:
+    "Parada norte de O Porto na liña do Minho entre Contumil e Granja, servindo o suburbio de Valadares na marxe sur do Douro. Trens urbanos e regionais seguen cara a Campanhã e Guimarães cun ambiente suburbano máis tranquilo que as estacións centrais. Práctica para estadías máis baratas ao sur do río cunha ligazón directa a O Porto.",
+  Espinho:
+    "Parada costeira movimentada na Linha do Norte entre Granja e O Porto, popular entre visitantes de praia e viaxeiros con destino Aveiro. Servizos Intercidades e urbanos paran aquí xunto con trens regionais polo corredor norte. Base litoral animada con ligazóns frecuentes ao norte cara O Porto e ao sur en dirección a Lisboa.",
+  Carcavelos:
+    "Parada sur na liña de Cascais ao oeste de Lisboa, a poucos minutos a pé da praia de Carcavelos e das escolas de surf. Trens urbanos frecuentes ligan ao Cais do Sodré e á costa do Estoril — unha das paradas de verán máis movimentadas da liña. Ideal para días de praia mantendo o centro de Lisboa ao alcance dun tren.",
+  Moscavide:
+    "Parada oriental na Linha do Norte xunto a Moscavide e á aproximación a Lisboa Oriente. Trens urbanos e regionais ligan o corredor do aeroporto a Santa Apolónia e ao cinturón de pendulares do norte — útil se te aloxas preto do Parque das Nações ou precisas dun salto rápido a Oriente sen as multitude do hub.",
+  "Paço de Arcos":
+    "Suburbio da liña de Cascais entre Cruz Quebrada e Oeiras, con trens urbanos moi frecuentes cara ao Cais do Sodré e á costa do Estoril. Máis tranquilo que Algés ou o centro de Oeiras pero ben conectado para paseos ribeiriños e desprazamentos a parques de oficinas. Base residencial práctica ao oeste de Lisboa cunha ligazón suburbana directa.",
+};

@@ -63,7 +63,7 @@ const Station = () => {
   const airportStation = isAirportStation(station);
   const showYesimPromo = showsTravelEsimPromo(station);
   const berrymetCityLink = getBerrymetCityLink(station);
-  const stationSummary = getStationSummary(station.name);
+  const stationSummary = getStationSummary(station.name, locale);
   const LineIcon = airportStation ? Plane : Train;
   const metroLink = getMetroOperatorLink(station);
   const imageUrl = getStationImageUrl(station.name);
