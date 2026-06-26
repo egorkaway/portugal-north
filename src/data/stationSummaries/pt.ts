@@ -100,4 +100,54 @@ export const stationSummariesPt: Record<string, string> = {
     "Paragem ribeirinha na Linha do Norte entre Alverca e Vila Franca de Xira, no vale inferior do Tejo. Comboios urbanos e regionais param aqui no corredor Lisboa–Porto — útil para passeios à beira-rio e alojamento mais económico a nordeste da capital com ligações intercidades.",
   Caxias:
     "Paragem da linha de Cascais entre Algés e Cruz Quebrada, servindo o subúrbio ribeirinho de Caxias. Comboios urbanos frequentes ligam a margem do Tejo ao Cais do Sodré e à costa do Estoril — base residencial a oeste de Lisboa com passeios na marina e saltos rápidos a Belém.",
+  Nine:
+    "Entroncamento movimentado na linha do Minho a norte do Porto, entre Famalicão e Trofa, com comboios Alfa Pendular e Intercidades no corredor Porto–Braga. Serviços urbanos e regionais ligam o cinturão industrial envolvente a Campanhã e Guimarães — paragem prática se explorar o parque da Ave ou ficar em Vila Nova de Famalicão com ligação rápida de longo curso.",
+  "Famalicão":
+    "Grande paragem urbana na linha do Minho no vale do Ave, com serviços Alfa Pendular e Intercidades para além de densos comboios urbanos. A cidade de tradição têxtil e os passeios ribeirinhos ficam a um curto salto de autocarro das plataformas — base útil a norte do Porto com ligações diretas a Braga, Guimarães e comboios intercidades com destino Lisboa.",
+  Trofa:
+    "Paragem na linha do Minho entre o Porto e Braga no subúrbio de Trofa, com comboios Intercidades e regionais no corredor principal norte. Serviços urbanos frequentes seguem para Campanhã e Famalicão — base de menor custo no cinturão metropolitano do Porto com acesso ferroviário simples à cidade.",
+  "General Torres":
+    "Paragem suburbana da Linha do Norte em Vila Nova de Gaia entre São Pedro da Cova e Sandim, na abordagem sul ao Porto. Comboios urbanos e regionais passam pelo corredor costeiro — prática para estadias residenciais a sul do Douro com ligações rápidas a Campanhã e à linha do aeroporto.",
+  Sintra:
+    "Terminal da linha de Sintra ao pé das serras, porta de entrada para os palácios, o castelo mouro e os passeios na floresta. Comboios urbanos circulam constantemente para o Rossio no centro de Lisboa — espere grandes multidões aos fins de semana e feriados quando os visitantes inundam a vila histórica. Fique perto se quiser a experiência completa de Sintra sem conduzir pelas estradas sinuosas da serra.",
+  Esmoriz:
+    "Paragem costeira na Linha do Norte entre Espinho e Ovar, popular entre pendulares de praia a sul do Porto. Comboios urbanos e regionais circulam no corredor Lisboa–Porto — base balnear discreta com ligações simples a norte para o Porto e a sul ao longo da costa de Aveiro.",
+  "Pinhal Novo":
+    "Grande entroncamento na Linha do Sul onde o ramal do Alentejo encontra a linha principal Lisboa–Faro, com serviços Alfa Pendular e Intercidades. Comboios urbanos e regionais ligam os subúrbios da margem sul a Setúbal e ao Algarve — prático para bilhetes de longo curso sem atravessar o centro de Lisboa.",
+  Palmela:
+    "Paragem na Linha do Sul na vila do castelo a sudeste de Lisboa, entre Pinhal Novo e Setúbal. Comboios urbanos e regionais servem o corredor do estuário do Sado — prática para visitas ao país do vinho e estadias mais económicas na margem sul com ligação ferroviária direta à capital.",
+  Entroncamento:
+    "Um dos entroncamentos ferroviários mais movimentados de Portugal, onde a Linha do Norte cruza a Beira Baixa em direção a Castelo Branco. Comboios Alfa Pendular e Intercidades passam aqui no eixo Lisboa–Porto — paragem prática para pernoitas ou madrugadas com ligações de longo curso em todas as direções.",
+  "Barreiro-A":
+    "Paragem terminal na linha do Sado na margem sul, do outro lado do Tejo em relação a Lisboa. Comboios urbanos e regionais ligam o Barreiro a Setúbal e ao corredor alentejano — útil para pendulares da margem sul ou combinações ferry mais comboio para a capital.",
+  Paredes:
+    "Paragem na linha do Douro entre Penafiel e Caíde nos subúrbios orientais do Porto. Comboios Intercidades e regionais seguem para Campanhã e o alto Douro — base residencial com acesso suburbano rápido ao Porto e ao corredor de Amarante.",
+  Lousado:
+    "Paragem na linha de Guimarães a leste de Famalicão no cinturão industrial do Ave. Comboios urbanos e regionais ligam Campanhã a Guimarães — prática para alojamento no cinturão fabril com ligação suburbana direta ao Porto e ao Minho.",
+  Lavradio:
+    "Paragem na margem sul nas linhas do Sado e do Sudoeste, entre Barreiro e Pinhal Novo. Comboios urbanos e regionais servem o cinturão pendular da margem sul do Tejo — base de menor custo do outro lado do rio com ligações frequentes a Setúbal e ao Alentejo.",
+  "Lisboa Santa Apolónia":
+    "Terminal histórico ribeirinho de Lisboa junto a Alfama, com partidas Alfa Pendular e Intercidades para além de densos serviços urbanos. O salão de azulejos abre para o Tejo — ideal para comboios de longo curso com destino norte sem ir a Oriente.",
+  Penafiel:
+    "Paragem urbana na linha do Douro a leste do Porto, com serviços Intercidades e regionais em direção a Peso da Régua. Comboios urbanos ligam Campanhã ao país do vinho — base prática para excursões ao vale do Douro sem ficar no centro do Porto.",
+  "Suzão":
+    "Paragem na linha do Douro entre Penafiel e Lousada nos subúrbios orientais do Porto. Comboios urbanos e regionais seguem para Campanhã e Marco de Canaveses — paragem pendular tranquila com ligações simples à rede do Porto.",
+  "São Romão":
+    "Paragem na linha do Minho entre Trofa e Santo Tirso no cinturão norte do Porto. Comboios urbanos e regionais ligam Campanhã a Braga e ao alto Minho — prática para estadias suburbanas a nordeste do Porto com serviços pendulares frequentes.",
+  Azambuja:
+    "Paragem ribeirinha na Linha do Norte a leste de Lisboa, famosa pelas festas de touros na rua. Comboios urbanos e regionais ligam Santa Apolónia ao corredor do Ribatejo — base de menor custo com rotas diretas a norte para o Porto e a sudeste para Entroncamento.",
+  "Caíde":
+    "Paragem de entroncamento na linha do Douro a nordeste do Porto, onde o corredor principal do Douro se ramifica. Comboios Intercidades e urbanos ligam Campanhã a Marco de Canaveses e Amarante — útil para mudar em direção a Guimarães ou ao alto Douro.",
+  "São Frutuoso":
+    "Paragem suburbana na linha do Minho entre Trofa e São Romão, perto de Maia. Comboios urbanos e regionais seguem para Campanhã e Braga — paragem residencial no cinturão pendular norte do Porto com tráfego constante nos dias úteis.",
+  Ovar:
+    "Paragem urbana costeira na Linha do Norte entre Aveiro e Espinho, com serviços Intercidades e regionais. Comboios urbanos ligam o corredor Aveiro–Porto — popular para dias de praia e passeios junto à lagoa com ligações diretas a ambas as cidades.",
+  Alfarelos:
+    "Paragem de entroncamento na Linha do Norte onde o Ramal de Alfarelos segue para Figueira da Foz. Comboios Intercidades e regionais param no eixo Lisboa–Coimbra–Porto — prática para mudar em direção à costa atlântica ou à cidade universitária.",
+  "Couto de Cambeses":
+    "Paragem na linha de Braga a noroeste de Braga, no vale do Cávado. Comboios regionais e urbanos ligam Nine e Famalicão a Braga — paragem suburbana mais tranquila para explorar as serras do Minho sem ficar no centro da cidade.",
+  "Santarém":
+    "Cidade ribatejana na Linha do Norte com serviços Alfa Pendular e Intercidades entre Lisboa e o Porto. Igrejas góticas e passeios à beira do Tejo ficam a poucos minutos a pé da estação — paragem útil para pernoitar no corredor principal.",
+  Travagem:
+    "Paragem na linha do Minho entre Santo Tirso e Ermesinde nos subúrbios orientais do Porto. Comboios urbanos e regionais seguem para Campanhã e Valongo — paragem pendular discreta com ligações frequentes à rede do Porto.",
 };

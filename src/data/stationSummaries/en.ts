@@ -14,6 +14,11 @@
  * Batch 8: Rio Tinto, Monte Estoril, Santa Iria, Santo Amaro, São Bento (Porto)
  * Batch 9: Algés, Rio de Mouro, Alverca, Bobadela, Estoril
  * Batch 10: Aveiro, Coimbra-B, Povoa, Alhandra, Caxias
+ * Batch 11: Nine, Famalicão, Trofa, General Torres, Sintra
+ * Batch 12: Esmoriz, Pinhal Novo, Palmela, Entroncamento, Barreiro-A
+ * Batch 13: Paredes, Lousado, Lavradio, Lisboa Santa Apolónia, Penafiel
+ * Batch 14: Suzão, São Romão, Azambuja, Caíde, São Frutuoso
+ * Batch 15: Ovar, Alfarelos, Couto de Cambeses, Santarém, Travagem
  */
 /** English station summaries. Spell out Alfa Pendular and Intercidades — no AP/IC. */
 export const stationSummariesEn: Record<string, string> = {
@@ -117,4 +122,54 @@ export const stationSummariesEn: Record<string, string> = {
     "Tagus-side halt on the Linha do Norte between Alverca and Vila Franca de Xira, in the lower Tejo valley. Urban and regional trains call here on the Lisbon–Porto corridor — useful for riverside walks and lower-cost lodging north-east of the capital with intercity connections.",
   Caxias:
     "Cascais-line halt between Algés and Cruz Quebrada, serving the Caxias waterfront suburb. Frequent urban trains link the Tagus shore with Cais do Sodré and the Estoril coast — a residential base west of Lisbon with marina walks and quick hops to Belém.",
+  Nine:
+    "Busy Minho-line junction north of Porto between Famalicão and Trofa, with Alfa Pendular and Intercidades trains on the Porto–Braga corridor. Urban and regional services link the surrounding industrial belt with Campanhã and Guimarães — a practical stop if you are exploring the Ave park or staying in Vila Nova de Famalicão with a fast long-distance link.",
+  "Famalicão":
+    "Major Minho-line city stop in the Ave valley, with Alfa Pendular and Intercidades services besides dense urban trains. The textile heritage town and riverside walks are a short bus hop from the platforms — a useful base north of Porto with direct links to Braga, Guimarães, and Lisbon-bound intercity trains.",
+  Trofa:
+    "Minho-line halt between Porto and Braga in the Trofa suburb, with Intercidades and regional trains on the northern main corridor. Frequent urban services run towards Campanhã and Famalicão — a lower-cost base in the Porto metropolitan belt with straightforward rail access into the city.",
+  "General Torres":
+    "Norte-line suburban halt in Vila Nova de Gaia between São Pedro da Cova and Sandim, on the southern approach to Porto. Urban and regional trains pass through on the coastal corridor — practical for residential stays south of the Douro with quick links to Campanhã and the airport line.",
+  Sintra:
+    "Terminus of the Sintra line at the foot of the hills, gateway to the palaces, Moorish castle, and forest walks. Urban trains run constantly to Rossio in central Lisbon — expect heavy crowds on weekends and holidays when visitors flood the historic town. Stay nearby if you want the full Sintra experience without driving the winding hill roads.",
+  Esmoriz:
+    "Coastal halt on the Linha do Norte between Espinho and Ovar, popular with beach commuters south of Porto. Urban and regional trains run on the Lisbon–Porto corridor — a low-key seaside base with straightforward links north to Porto and south along the Aveiro coast.",
+  "Pinhal Novo":
+    "Major junction on the Linha do Sul where the Alentejo branch meets the Lisbon–Faro main line, with Alfa Pendular and Intercidades services. Urban and regional trains link the south-bank suburbs with Setúbal and the Algarve — handy for cross-country tickets without crossing into Lisbon centre.",
+  Palmela:
+    "Stop on the Linha do Sul in the castle town south-east of Lisbon, between Pinhal Novo and Setúbal. Urban and regional trains serve the Sado estuary corridor — practical for wine-country visits and lower-cost stays on the south bank with a direct rail link to the capital.",
+  Entroncamento:
+    "One of Portugal's busiest rail junctions where the Linha do Norte meets the Beira Baixa towards Castelo Branco. Alfa Pendular and Intercidades trains cross here on the Lisbon–Porto axis — a practical overnight or early-morning stop with long-distance connections in every direction.",
+  "Barreiro-A":
+    "Terminal halt on the south-bank Sado line across the Tagus from Lisbon. Urban and regional trains link Barreiro with Setúbal and the Alentejo corridor — useful for commuters from the south bank or ferry-plus-train combinations into the capital.",
+  Paredes:
+    "Douro-line stop between Penafiel and Caíde in the Porto eastern suburbs. Intercidades and regional trains run towards Campanhã and the upper Douro — a residential base with quick suburban access into Porto and the Amarante corridor.",
+  Lousado:
+    "Stop on the Guimarães line east of Famalicão in the Ave industrial belt. Urban and regional trains link Campanhã with Guimarães — practical for factory-belt lodging with a direct suburban connection into Porto and the Minho.",
+  Lavradio:
+    "South-bank halt on the Sado and Sudoeste lines between Barreiro and Pinhal Novo. Urban and regional trains serve the Tagus south-shore commuter belt — a lower-cost base across the river with frequent links towards Setúbal and the Alentejo.",
+  "Lisboa Santa Apolónia":
+    "Lisbon's historic riverside terminus beside Alfama, with Alfa Pendular and Intercidades departures plus dense urban services. The azulejo hall opens onto the Tagus — ideal for northbound long-distance trains without crossing to Oriente.",
+  Penafiel:
+    "Douro-line town stop east of Porto with Intercidades and regional services towards Peso da Régua. Urban trains connect Campanhã with the wine country — a practical base for Douro valley day trips without staying in central Porto.",
+  "Suzão":
+    "Douro-line halt between Penafiel and Lousada in the eastern Porto suburbs. Urban and regional trains run towards Campanhã and Marco de Canaveses — a quiet commuter stop with straightforward links into the Porto network.",
+  "São Romão":
+    "Minho-line halt between Trofa and Santo Tirso in the Porto northern belt. Urban and regional trains link Campanhã with Braga and the upper Minho — practical for suburban stays north-east of Porto with frequent commuter services.",
+  Azambuja:
+    "Tagus-side halt on the Linha do Norte east of Lisbon, famous for bull-running festivals. Urban and regional trains link Santa Apolónia with the Ribatejo corridor — a lower-cost base with direct routes north to Porto and south-east towards Entroncamento.",
+  "Caíde":
+    "Douro-line junction stop north-east of Porto where the main Douro corridor branches. Intercidades and urban trains connect Campanhã with Marco de Canaveses and Amarante — useful for changing towards Guimarães or the upper Douro.",
+  "São Frutuoso":
+    "Minho-line suburban halt between Trofa and São Romão near Maia. Urban and regional trains run towards Campanhã and Braga — a residential stop in the Porto northern commuter belt with steady weekday traffic.",
+  Ovar:
+    "Coastal city stop on the Linha do Norte between Aveiro and Espinho, with Intercidades and regional services. Urban trains link the Aveiro–Porto corridor — popular for beach days and lagoon-side walks with direct links to both cities.",
+  Alfarelos:
+    "Junction halt on the Linha do Norte where the Ramal de Alfarelos branches toward Figueira da Foz. Intercidades and regional trains call on the Lisbon–Coimbra–Porto axis — handy for changing towards the Atlantic coast or the university city.",
+  "Couto de Cambeses":
+    "Stop on the Braga line north-west of Braga in the Cávado valley. Regional and urban trains link Nine and Famalicão with Braga — a quieter suburban halt for exploring the Minho hills without staying in the city centre.",
+  "Santarém":
+    "Ribatejo city on the Linha do Norte with Alfa Pendular and Intercidades services between Lisbon and Porto. Gothic churches and Tagus-side walks are a short walk from the station — a useful overnight break on the main corridor.",
+  Travagem:
+    "Minho-line halt between Santo Tirso and Ermesinde in the Porto eastern suburbs. Urban and regional trains run towards Campanhã and Valongo — a low-profile commuter stop with frequent links into the Porto network.",
 };

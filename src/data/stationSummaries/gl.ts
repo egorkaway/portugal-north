@@ -100,4 +100,54 @@ export const stationSummariesGl: Record<string, string> = {
     "Parada ribeiriña na Liña do Norte entre Alverca e Vila Franca de Xira, no val inferior do Tejo. Trens urbanos e rexionais paran aquí no corredor Lisboa–Porto — útil para paseos á beira do río e aloxamento máis económico ao nordeste da capital con ligazóns intercidades.",
   Caxias:
     "Parada da liña de Cascais entre Algés e Cruz Quebrada, servindo o suburbio ribeiriño de Caxias. Trens urbanos frecuentes ligan a marxe do Tejo ao Cais do Sodré e á costa do Estoril — base residencial ao oeste de Lisboa con paseos na marina e saltos rápidos a Belém.",
+  Nine:
+    "Entronque movimentado na liña do Minho ao norte de O Porto, entre Famalicão e Trofa, con trens Alfa Pendular e Intercidades no corredor Porto–Braga. Servizos urbanos e rexionais ligan o cinturón industrial arredor con Campanhã e Guimarães — parada práctica se exploras o parque do Ave ou te aloxas en Vila Nova de Famalicão cunha ligazón rápida de longa distancia.",
+  "Famalicão":
+    "Gran parada urbana na liña do Minho no val do Ave, con servizos Alfa Pendular e Intercidades ademais de densos trens urbanos. A cidade de tradición téxtil e os paseos ribeiriños quedan a un curto salto de autobús das plataformas — base útil ao norte de O Porto con ligazóns directas a Braga, Guimarães e trens intercidades con destino Lisboa.",
+  Trofa:
+    "Parada na liña do Minho entre O Porto e Braga no suburbio de Trofa, con trens Intercidades e rexionais no corredor principal norte. Servizos urbanos frecuentes seguen cara a Campanhã e Famalicão — base de menor custo no cinturón metropolitano de O Porto con acceso ferroviario sinxelo á cidade.",
+  "General Torres":
+    "Parada suburbana da Liña do Norte en Vila Nova de Gaia entre São Pedro da Cova e Sandim, na aproximación sur a O Porto. Trens urbanos e rexionais pasan polo corredor costeiro — práctica para estadías residenciais ao sur do Douro con ligazóns rápidas a Campanhã e á liña do aeroporto.",
+  Sintra:
+    "Terminal da liña de Sintra ao pé das serras, porta de entrada aos palacios, o castelo mouro e os paseos no bosque. Trens urbanos circulan constantemente cara ao Rossio no centro de Lisboa — agarda grandes multitude os fins de semana e festivos cando os visitantes inundan a vila histórica. Alóxate preto se queres a experiencia completa de Sintra sen conducir polas estradas sinuosas da serra.",
+  Esmoriz:
+    "Parada costeira na Liña do Norte entre Espinho e Ovar, popular entre viaxeiros de praia ao sur de O Porto. Trens urbanos e rexionais circulan no corredor Lisboa–Porto — base balnear discreta con ligazóns sinxelas ao norte cara O Porto e ao sur pola costa de Aveiro.",
+  "Pinhal Novo":
+    "Gran entroncamento na Liña do Sul onde o ramal do Alentejo atopa a liña principal Lisboa–Faro, con servizos Alfa Pendular e Intercidades. Trens urbanos e rexionais ligan os suburbios da marxe sur con Setúbal e o Algarve — práctico para billetes de longa distancia sen cruzar o centro de Lisboa.",
+  Palmela:
+    "Parada na Liña do Sul na vila do castelo a sueste de Lisboa, entre Pinhal Novo e Setúbal. Trens urbanos e rexionais serven o corredor do estuario do Sado — útil para visitas ao país do viño e estadías máis baratas na marxe sur con ligazón ferroviaria directa á capital.",
+  Entroncamento:
+    "Un dos entroncamentos ferroviarios máis movidos de Portugal, onde a Liña do Norte cruza a Beira Baixa cara a Castelo Branco. Trens Alfa Pendular e Intercidades pasan aquí no eixo Lisboa–Porto — parada práctica para pernoitas ou saídas de madrugada con ligazóns de longa distancia en todas as direccións.",
+  "Barreiro-A":
+    "Parada terminal na liña do Sado na marxe sur, do outro lado do Tejo en relación a Lisboa. Trens urbanos e rexionais ligan o Barreiro a Setúbal e ao corredor alentejano — útil para pendulares da marxe sur ou combinacións ferry máis tren cara á capital.",
+  Paredes:
+    "Parada na liña do Douro entre Penafiel e Caíde nos suburbios orientais de O Porto. Trens Intercidades e rexionais seguen cara a Campanhã e o alto Douro — base residencial con acceso suburbano rápido a O Porto e ao corredor de Amarante.",
+  Lousado:
+    "Parada na liña de Guimarães ao leste de Famalicão no cinturón industrial do Ave. Trens urbanos e rexionais ligan Campanhã a Guimarães — práctica para aloxamento no cinturón fabril con ligazón suburbana directa a O Porto e ao Minho.",
+  Lavradio:
+    "Parada na marxe sur nas liñas do Sado e do Sudoeste, entre Barreiro e Pinhal Novo. Trens urbanos e rexionais serven o cinturón pendular da marxe sur do Tejo — base de menor custo do outro lado do río con ligazóns frecuentes a Setúbal e ao Alentejo.",
+  "Lisboa Santa Apolónia":
+    "Terminal histórico ribeiriño de Lisboa xunto a Alfama, con saídas Alfa Pendular e Intercidades ademais de densos servizos urbanos. O salón de azulexos abre ao Tejo — ideal para trens de longa distancia con destino norte sen ir a Oriente.",
+  Penafiel:
+    "Parada urbana na liña do Douro ao leste de O Porto, con servizos Intercidades e rexionais cara a Peso da Régua. Trens urbanos conectan Campanhã co país do viño — base práctica para excursións ao val do Douro sen aloxarse no centro de O Porto.",
+  "Suzão":
+    "Parada na liña do Douro entre Penafiel e Lousada nos suburbios orientais de O Porto. Trens urbanos e rexionais seguen cara a Campanhã e Marco de Canaveses — parada pendular tranquila con ligazóns sinxelas á rede de O Porto.",
+  "São Romão":
+    "Parada na liña do Minho entre Trofa e Santo Tirso no cinturón norte de O Porto. Trens urbanos e rexionais ligan Campanhã a Braga e ao alto Minho — práctica para estadías suburbanas ao nordeste de O Porto con servizos pendulares frecuentes.",
+  Azambuja:
+    "Parada ribeiriña na Liña do Norte ao leste de Lisboa, famosa polas festas de touradas na rúa. Trens urbanos e rexionais ligan Santa Apolónia ao corredor do Ribatejo — base de menor custo con rutas directas ao norte cara O Porto e ao sueste cara Entroncamento.",
+  "Caíde":
+    "Parada de entroncamento na liña do Douro ao nordeste de O Porto, onde se ramifica o corredor principal do Douro. Trens Intercidades e urbanos conectan Campanhã con Marco de Canaveses e Amarante — útil para cambiar cara a Guimarães ou ao alto Douro.",
+  "São Frutuoso":
+    "Parada suburbana na liña do Minho entre Trofa e São Romão, preto de Maia. Trens urbanos e rexionais seguen cara a Campanhã e Braga — parada residencial no cinturón pendular norte de O Porto con tráfico constante nos días laborables.",
+  Ovar:
+    "Parada urbana costeira na Liña do Norte entre Aveiro e Espinho, con servizos Intercidades e rexionais. Trens urbanos ligan o corredor Aveiro–Porto — popular para días de praia e paseos xunto á lagoa con ligazóns directas a ambas cidades.",
+  Alfarelos:
+    "Parada de entroncamento na Liña do Norte onde o Ramal de Alfarelos segue cara a Figueira da Foz. Trens Intercidades e rexionais paran no eixo Lisboa–Coimbra–Porto — práctica para cambiar cara á costa atlántica ou á cidade universitaria.",
+  "Couto de Cambeses":
+    "Parada na liña de Braga ao noroeste de Braga, no val do Cávado. Trens rexionais e urbanos ligan Nine e Famalicão a Braga — parada suburbana máis tranquila para explorar as serras do Minho sen aloxarse no centro da cidade.",
+  "Santarém":
+    "Cidade ribatejana na Liña do Norte con servizos Alfa Pendular e Intercidades entre Lisboa e O Porto. Igrexas góticas e paseos á beira do Tejo están a poucos minutos a pé da estación — parada útil para pernoitar no corredor principal.",
+  Travagem:
+    "Parada na liña do Minho entre Santo Tirso e Ermesinde nos suburbios orientais de O Porto. Trens urbanos e rexionais seguen cara a Campanhã e Valongo — parada pendular discreta con ligazóns frecuentes á rede de O Porto.",
 };

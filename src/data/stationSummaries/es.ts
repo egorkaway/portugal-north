@@ -100,4 +100,54 @@ export const stationSummariesEs: Record<string, string> = {
     "Parada ribereña en la Línea del Norte entre Alverca y Vila Franca de Xira, en el valle bajo del Tajo. Trenes urbanos y regionales paran aquí en el corredor Lisboa–Oporto — útil para paseos junto al río y alojamiento más económico al noreste de la capital con conexiones interurbanas.",
   Caxias:
     "Parada de la línea de Cascais entre Algés y Cruz Quebrada, que sirve al suburbio ribereño de Caxias. Trenes urbanos frecuentes enlazan la orilla del Tajo con Cais do Sodré y la costa del Estoril — base residencial al oeste de Lisboa con paseos por la marina y saltos rápidos a Belém.",
+  Nine:
+    "Entronque concurrido en la línea del Minho al norte de Oporto, entre Famalicão y Trofa, con trenes Alfa Pendular e Intercidades en el corredor Oporto–Braga. Servicios urbanos y regionales enlazan el cinturón industrial circundante con Campanhã y Guimarães — parada práctica si exploras el parque del Ave o te alojas en Vila Nova de Famalicão con enlace rápido de larga distancia.",
+  "Famalicão":
+    "Gran parada urbana en la línea del Minho en el valle del Ave, con servicios Alfa Pendular e Intercidades además de densos trenes urbanos. La ciudad de herencia textil y los paseos ribereños quedan a un corto trayecto en autobús desde los andenes — base útil al norte de Oporto con enlaces directos a Braga, Guimarães y trenes interurbanos con destino Lisboa.",
+  Trofa:
+    "Parada en la línea del Minho entre Oporto y Braga en el suburbio de Trofa, con trenes Intercidades y regionales en el corredor principal norte. Servicios urbanos frecuentes siguen hacia Campanhã y Famalicão — base de menor coste en el cinturón metropolitano de Oporto con acceso ferroviario sencillo a la ciudad.",
+  "General Torres":
+    "Parada suburbana de la Línea del Norte en Vila Nova de Gaia entre São Pedro da Cova y Sandim, en el acceso sur a Oporto. Trenes urbanos y regionales pasan por el corredor costero — práctica para estancias residenciales al sur del Duero con enlaces rápidos a Campanhã y la línea del aeropuerto.",
+  Sintra:
+    "Terminal de la línea de Sintra al pie de las colinas, puerta de entrada a los palacios, el castillo moro y los paseos por el bosque. Trenes urbanos circulan constantemente hacia Rossio en el centro de Lisboa — espera grandes multitudes los fines de semana y festivos cuando los visitantes inundan el pueblo histórico. Alójate cerca si quieres la experiencia completa de Sintra sin conducir por las carreteras sinuosas de la sierra.",
+  Esmoriz:
+    "Parada costera en la Línea del Norte entre Espinho y Ovar, popular entre viajeros de playa al sur de Oporto. Trenes urbanos y regionales circulan en el corredor Lisboa–Oporto — base balnear discreta con enlaces sencillos al norte hacia Oporto y al sur por la costa de Aveiro.",
+  "Pinhal Novo":
+    "Gran entronque en la Línea del Sur donde el ramal del Alentejo se une a la línea principal Lisboa–Faro, con servicios Alfa Pendular e Intercidades. Trenes urbanos y regionales enlazan los suburbios de la margen sur con Setúbal y el Algarve — práctico para billetes de larga distancia sin cruzar el centro de Lisboa.",
+  Palmela:
+    "Parada en la Línea del Sur en el pueblo del castillo al sureste de Lisboa, entre Pinhal Novo y Setúbal. Trenes urbanos y regionales sirven el corredor del estuario del Sado — útil para visitas al país del vino y estancias más baratas en la margen sur con enlace ferroviario directo a la capital.",
+  Entroncamento:
+    "Uno de los entronques ferroviarios más concurridos de Portugal, donde la Línea del Norte cruza la Beira Baixa hacia Castelo Branco. Trenes Alfa Pendular e Intercidades pasan aquí en el eje Lisboa–Oporto — parada práctica para pernoctar o salidas madrugadoras con conexiones de larga distancia en todas direcciones.",
+  "Barreiro-A":
+    "Parada terminal en la línea del Sado en la margen sur, al otro lado del Tajo respecto a Lisboa. Trenes urbanos y regionales enlazan Barreiro con Setúbal y el corredor alentejano — útil para viajeros de la margen sur o combinaciones ferry más tren hacia la capital.",
+  Paredes:
+    "Parada en la línea del Duero entre Penafiel y Caíde en los suburbios orientales de Oporto. Trenes Intercidades y regionales siguen hacia Campanhã y el alto Duero — base residencial con acceso suburbano rápido a Oporto y al corredor de Amarante.",
+  Lousado:
+    "Parada en la línea de Guimarães al este de Famalicão en el cinturón industrial del Ave. Trenes urbanos y regionales enlazan Campanhã con Guimarães — práctica para alojamiento en el cinturón fabril con conexión suburbana directa a Oporto y al Minho.",
+  Lavradio:
+    "Parada en la margen sur en las líneas del Sado y del Sudoeste, entre Barreiro y Pinhal Novo. Trenes urbanos y regionales sirven el cinturón de cercanías de la margen sur del Tajo — base de menor coste al otro lado del río con enlaces frecuentes a Setúbal y al Alentejo.",
+  "Lisboa Santa Apolónia":
+    "Terminal histórico ribereño de Lisboa junto a Alfama, con salidas Alfa Pendular e Intercidades además de densos servicios urbanos. El vestíbulo de azulejos se abre al Tajo — ideal para trenes de larga distancia con destino norte sin ir a Oriente.",
+  Penafiel:
+    "Parada urbana en la línea del Duero al este de Oporto, con servicios Intercidades y regionales hacia Peso da Régua. Trenes urbanos conectan Campanhã con la tierra del vino — base práctica para excursiones al valle del Duero sin alojarse en el centro de Oporto.",
+  "Suzão":
+    "Parada en la línea del Duero entre Penafiel y Lousada en los suburbios orientales de Oporto. Trenes urbanos y regionales siguen hacia Campanhã y Marco de Canaveses — parada de cercanías tranquila con enlaces sencillos a la red de Oporto.",
+  "São Romão":
+    "Parada en la línea del Minho entre Trofa y Santo Tirso en el cinturón norte de Oporto. Trenes urbanos y regionales enlazan Campanhã con Braga y el alto Minho — práctica para estancias suburbanas al noreste de Oporto con servicios de cercanías frecuentes.",
+  Azambuja:
+    "Parada ribereña en la Línea del Norte al este de Lisboa, famosa por las fiestas de encierros. Trenes urbanos y regionales enlazan Santa Apolónia con el corredor del Ribatejo — base de menor coste con rutas directas al norte hacia Oporto y al sureste hacia Entroncamento.",
+  "Caíde":
+    "Parada de entronque en la línea del Duero al noreste de Oporto, donde se ramifica el corredor principal del Duero. Trenes Intercidades y urbanos conectan Campanhã con Marco de Canaveses y Amarante — útil para cambiar hacia Guimarães o el alto Duero.",
+  "São Frutuoso":
+    "Parada suburbana en la línea del Minho entre Trofa y São Romão, cerca de Maia. Trenes urbanos y regionales siguen hacia Campanhã y Braga — parada residencial en el cinturón de cercanías norte de Oporto con tráfico constante entre semana.",
+  Ovar:
+    "Parada urbana costera en la Línea del Norte entre Aveiro y Espinho, con servicios Intercidades y regionales. Trenes urbanos enlazan el corredor Aveiro–Oporto — popular para días de playa y paseos junto a la laguna con enlaces directos a ambas ciudades.",
+  Alfarelos:
+    "Parada de entronque en la Línea del Norte donde el Ramal de Alfarelos sigue hacia Figueira da Foz. Trenes Intercidades y regionales paran en el eje Lisboa–Coímbra–Oporto — práctica para cambiar hacia la costa atlántica o la ciudad universitaria.",
+  "Couto de Cambeses":
+    "Parada en la línea de Braga al noroeste de Braga, en el valle del Cávado. Trenes regionales y urbanos enlazan Nine y Famalicão con Braga — parada suburbana más tranquila para explorar las sierras del Minho sin alojarse en el centro de la ciudad.",
+  "Santarém":
+    "Ciudad ribateña en la Línea del Norte con servicios Alfa Pendular e Intercidades entre Lisboa y Oporto. Iglesias góticas y paseos junto al Tajo están a pocos minutos a pie de la estación — parada útil para pernoctar en el corredor principal.",
+  Travagem:
+    "Parada en la línea del Minho entre Santo Tirso y Ermesinde en los suburbios orientales de Oporto. Trenes urbanos y regionales siguen hacia Campanhã y Valongo — parada de cercanías discreta con enlaces frecuentes a la red de Oporto.",
 };
