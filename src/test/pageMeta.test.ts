@@ -33,7 +33,7 @@ describe("buildSeoHeadHtml", () => {
 describe("getPrerenderRoutes", () => {
   it("generates one HTML file per station plus core pages", () => {
     const routes = getPrerenderRoutes();
-    const homeExtra = getHomeSitemapPaths().length - 1;
+    const homeExtra = getHomeSitemapPaths().length;
     expect(routes.length).toBe(allStations.length + 6 + homeExtra);
     const porto = portugalStations.find((s) => s.name === "Porto-Campanhã");
     expect(porto).toBeDefined();

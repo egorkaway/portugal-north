@@ -36,7 +36,6 @@ export function getPrerenderRoutes(): PrerenderRoute[] {
   for (const path of getHomeSitemapPaths()) {
     const parsed = parseHomeCanonicalPath(path);
     if (!parsed) continue;
-    if (path === "/pt") continue;
     routes.push({
       outFile: homePathToOutFile(path),
       meta: getHomePageMeta("en", parsed.country, parsed.page),
