@@ -9,6 +9,7 @@
     "sitemap": "node scripts/generate-sitemap.mjs",
     "icons": "node scripts/generate-icons.mjs",
     "social:stations": "node scripts/generate-social-station-cards.mjs",
+    "maps:stations": "node scripts/generate-station-map-cards.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",

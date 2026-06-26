@@ -70,6 +70,7 @@ export type Messages = {
     noHotels: string;
     appleMaps: string;
     openStreetMap: string;
+    downloadAreaMap: string;
     berrymetWeather: string;
     tripHistorian: string;
     metroDoPorto: string;

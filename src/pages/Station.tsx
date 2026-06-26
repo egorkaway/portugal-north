@@ -1,4 +1,4 @@
-import { ArrowLeft, BedDouble, CloudSun, MapPin, Train, Plane, ExternalLink, Navigation, History } from "lucide-react";
+import { ArrowLeft, BedDouble, CloudSun, MapPin, Train, Plane, ExternalLink, Navigation, History, Download } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import {
   getAppleMapsUrl,
@@ -38,6 +38,7 @@ import { NearestLongDistanceStations } from "@/components/NearestLongDistanceSta
 import { getBerrymetCityLink } from "@/lib/berrymetCity";
 import { buildHomePath } from "@/lib/homeRoute";
 import { getStationSummary } from "@/lib/stationSummary";
+import { getStationMapImagePath } from "@/lib/stationMapImage";
 
 const typeColors: Record<string, string> = {
   Airport: "bg-sky-600 text-white",
@@ -185,6 +186,14 @@ const Station = () => {
             >
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
               {t("station.openStreetMap")}
+            </a>
+            <a
+              href={getStationMapImagePath(station.name)}
+              download={`${slug}.png`}
+              className="inline-flex items-center gap-1.5 rounded-md bg-foreground/5 px-3 py-2 text-sm font-medium transition-colors hover:bg-primary hover:text-primary-foreground"
+            >
+              <Download className="h-4 w-4" aria-hidden="true" />
+              {t("station.downloadAreaMap")}
             </a>
             {berrymetCityLink ? (
               <a

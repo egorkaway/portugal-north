@@ -725,29 +725,29 @@ export const stationSummariesPt: Record<string, string> = {
   "Hospital São João (Metro)":
     "Paragem da Metro Linha D (Amarela) junto ao hospital universitário do Porto, a uma paragem de Trindade na linha amarela. Metro frequente liga o campus de São João ao centro do Porto e a Vila d'Este — útil para visitas hospitalares quando a paragem CP próxima na linha do Minho é menos conveniente para o seu sentido de viagem.",
   "Vila d'Este":
-    "Terminal oriental da Linha D do metro nos subúrbios de Gondomar acima do Douro. Metros seguem para oeste até Trindade e o corredor hospitalar — base residencial económica a leste do Porto com ligações frequentes ao centro sem atravessar as pontes de carro.",
+    "Terminal oriental da Metro Linha D (Amarela) nos subúrbios de Gondomar acima do Douro. O metro segue para oeste até Trindade e o corredor do hospital — base residencial económica a leste do Porto com ligações frequentes ao centro sem atravessar as pontes do rio de carro.",
   "Trindade (Metro)":
-    "Hub central e terminal da Linha E do metro no centro do Porto, a passos do comércio e da baixa. Todas as linhas do metro cruzam-se aqui ou em estações vizinhas — principal entroncamento para o metro do aeroporto, Campanhã CP e todos os corredores suburbanos.",
+    "Hub central e terminal da Metro Linha E (Roxa) no centro do Porto, a passos do comércio e do centro histórico. Todas as linhas do metro cruzam-se aqui ou em estações próximas — principal entroncamento para o metro do aeroporto, a CP de Campanhã e todos os corredores suburbanos sem congestionamento de superfície.",
   "Estação Aeroporto":
-    "Terminal da Linha E do metro no Aeroporto do Porto com ligação coberta ao terminal. Metros frequentes chegam a Trindade e ao centro em cerca de meia hora — ligação ferroviária habitual para quem evita táxi mas quer Alfa Pendular e Intercidades em Campanhã.",
+    "Terminal da Metro Linha E (Roxa) no Aeroporto do Porto com ligação coberta ao terminal. Metro frequente chega a Trindade e ao centro do Porto em cerca de meia hora — ligação ferroviária padrão para viajantes que evitam táxis mantendo acesso a Alfa Pendular e Intercidades em Campanhã.",
   "Fânzeres":
-    "Terminal sul da Linha F do metro nas colinas de Gondomar a leste do Porto. Metros seguem para norte até Senhora da Hora e o centro — base suburbana tranquila para estadias económicas com metro direto na margem sul metropolitana.",
+    "Terminal sul da Metro Linha F (Laranja) nas serras de Gondomar acima do Douro a leste do Porto. O metro segue para norte até Senhora da Hora e ao centro do Porto — base suburbana tranquila para estadias económicas com ligação direta de metro pela margem sul metropolitana.",
   "Senhora da Hora":
-    "Paragem da Linha F do metro no cinturão Matosinhos–Maia, entroncamento movimentado entre corredores laranja e azul. Metros frequentes ligam os subúrbios norte a Trindade e à linha do aeroporto — prática para estadias residenciais a oeste do Porto com saltos rápidos à costa ou Campanhã.",
+    "Paragem da Metro Linha F (Laranja) no cinturão Matosinhos–Maia, entroncamento movimentado entre corredores da linha laranja e das linhas azul e vermelha. Metro frequente liga os subúrbios do norte a Trindade e à linha do aeroporto — prática para estadias residenciais a oeste do Porto com saltos rápidos à costa ou a Campanhã.",
   "Santa Apolónia (Metro)":
-    "Terminal da linha Azul do Metro de Lisboa junto a Lisboa Santa Apolónia na margem do Tejo. Metros ligam Alfama e a ribeira a Amadora e aos subúrbios noroeste — mudança natural para chegadas CP de longo curso que seguem para a rede de metro.",
+    "Terminal da Metro Lisboa Linha Azul junto a Lisboa Santa Apolónia na margem do Tejo. O metro liga Alfama e a zona ribeirinha a Amadora e aos subúrbios do noroeste — mudança natural para chegadas de longa distância da CP ao entrar na rede de metro sem atravessar a cidade antiga a pé.",
   "Amadora Este":
-    "Terminal ocidental da linha Azul do Metro de Lisboa na Amadora. Metros frequentes seguem para este até Santa Apolónia e o centro — base suburbana económica a oeste de Lisboa com metro direto a Oriente, ao aeroporto e às partidas ribeirinhas da CP.",
+    "Terminal ocidental da Metro Lisboa Linha Azul na Amadora. Metro frequente segue para oriente até Santa Apolónia e o centro — base suburbana económica a oeste de Lisboa com acesso direto de metro a Oriente, à linha do aeroporto e às partidas ribeirinhas da CP.",
   Rato:
-    "Terminal ocidental da linha Amarela do Metro de Lisboa perto do Príncipe Real e do bairro das Amoreiras. Metros ligam as colinas centrais a Odivelas e aos subúrbios norte — prático para museus e estadias no bairro das embaixadas com salto rápido à interligação Marquês de Pombal.",
+    "Terminal ocidental da Metro Lisboa Linha Amarela perto do Príncipe Real e do bairro das Amoreiras. O metro liga as colinas centrais a Odivelas e aos subúrbios do norte — prático para visitas a museus e estadias no bairro das embaixadas com salto rápido de metro até Marquês de Pombal.",
   Odivelas:
-    "Terminal norte da linha Amarela do Metro de Lisboa na borda da área metropolitana. Metros frequentes seguem para sul até Rato e o centro de Lisboa — alojamento económico a norte da cidade com ligação suburbana direta a Oriente e ao corredor do aeroporto.",
+    "Terminal norte da Metro Lisboa Linha Amarela na margem do cinturão metropolitano de Lisboa. Metro frequente segue para sul até Rato e o centro de Lisboa — prático para alojamento económico ao norte da cidade com ligação pendular direta a Oriente e ao corredor do aeroporto.",
   "Cais do Sodré (Metro)":
-    "Paragem da linha Verde do Metro de Lisboa integrada com o terminal CP do Cais do Sodré da linha de Cascais. Metros ligam a ribeira a Telheiras e aos subúrbios norte enquanto comboios urbanos partem para Belém e o Estoril — entroncamento duplo a oeste da Baixa.",
+    "Paragem da Metro Lisboa Linha Verde integrada no terminal CP de Cais do Sodré para a linha de Cascais. O metro liga a zona ribeirinha a Telheiras e aos subúrbios do norte enquanto comboios urbanos partem para Belém e a costa do Estoril — duplo entroncamento chave a oeste da Baixa sem bilhetes separados entre modos.",
   Telheiras:
-    "Terminal norte da linha Verde do Metro de Lisboa junto ao distrito universitário do Lumiar. Metros frequentes seguem para sul até Cais do Sodré e o centro — útil para estadias no campus ou alojamento residencial tranquilo a norte do centro com metro direto a Oriente.",
+    "Terminal norte da Metro Lisboa Linha Verde junto ao distrito universitário de Lumiar. Metro frequente segue para sul até Cais do Sodré e o centro — útil para estadias em campus ou alojamento residencial tranquilo ao norte do centro com ligação direta de metro a Oriente.",
   "São Sebastião (Metro)":
-    "Terminal da linha Vermelha do Metro de Lisboa na Praça de Espanha junto ao zoo e ao hub de autocarros de Sete Rios. Metros ligam o noroeste ao aeroporto e Oriente — grande entroncamento com CP em Sete Rios, autocarros de longo curso e metro para o centro.",
+    "Terminal da Metro Lisboa Linha Vermelha na Praça de Espanha junto ao jardim zoológico e ao hub de autocarros de Sete Rios. O metro liga o noroeste ao aeroporto e a Oriente — grande entroncamento para a CP em Sete Rios, autocarros de longa distância e viagens de metro ao centro de Lisboa.",
   "Aeroporto (Metro Lisboa)":
-    "Terminal da linha Vermelha do Metro de Lisboa no Aeroporto Humberto Delgado com ligação direta ao terminal. Metros frequentes chegam a Oriente, Saldanha e São Sebastião em minutos — ligação habitual entre voos e comboios CP de longo curso sem táxi até à cidade.",
+    "Terminal da Metro Lisboa Linha Vermelha dentro do Aeroporto Humberto Delgado com ligação direta ao terminal. Metro frequente chega a Oriente, Saldanha e São Sebastião em minutos — ligação padrão entre voos e comboios de longa distância da CP sem táxi até à cidade.",
 };

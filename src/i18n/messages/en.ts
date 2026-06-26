@@ -71,6 +71,7 @@ export const en: Messages = {
     noHotels: "No recommended hotels listed for this station yet.",
     appleMaps: "Apple Maps",
     openStreetMap: "OpenStreetMap",
+    downloadAreaMap: "Download area map",
     berrymetWeather: "{{city}} weather",
     tripHistorian: "TripHistorian",
     metroDoPorto: "Metro do Porto",
