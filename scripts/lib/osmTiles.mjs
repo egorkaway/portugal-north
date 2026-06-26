@@ -80,11 +80,30 @@ export async function stitchSquareMap({ lat, lng, size = 1080, zoom = 15 }) {
 
   const cropLeft = Math.max(0, Math.round(topLeftX - x0 * TILE_SIZE));
   const cropTop = Math.max(0, Math.round(topLeftY - y0 * TILE_SIZE));
+  const extractWidth = Math.min(size, mosaicWidth - cropLeft);
+  const extractHeight = Math.min(size, mosaicHeight - cropTop);
 
-  const buffer = await sharp(mosaic)
-    .extract({ left: cropLeft, top: cropTop, width: size, height: size })
+  if (extractWidth <= 0 || extractHeight <= 0) {
+    throw new Error("extract_area: bad extract area");
+  }
+
+  let buffer = await sharp(mosaic)
+    .extract({ left: cropLeft, top: cropTop, width: extractWidth, height: extractHeight })
     .png()
     .toBuffer();
+
+  if (extractWidth !== size || extractHeight !== size) {
+    buffer = await sharp(buffer)
+      .extend({
+        top: 0,
+        bottom: size - extractHeight,
+        left: 0,
+        right: size - extractWidth,
+        background: "#e8ece9",
+      })
+      .png()
+      .toBuffer();
+  }
 
   return {
     buffer,
