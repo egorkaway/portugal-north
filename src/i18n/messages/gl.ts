@@ -56,6 +56,12 @@ export const gl: Messages = {
     bookingHint:
       ' · Preme "Máis en Booking" para ver aloxamentos con prezos razoables nun raio de 2 km',
     noResults: "Ningunha estación coincide coa busca.",
+    switchingCountry: "Cargando estacións…",
+    showingRange: " · Mostrando {{from}}–{{to}} de {{total}}",
+    paginationLabel: "Páxinas da lista de estacións",
+    pageOf: "Páxina {{current}} de {{total}}",
+    previousPage: "Anterior",
+    nextPage: "Seguinte",
   },
   station: {
     stationPhotoAlt: "Estación de tren de {{name}}",

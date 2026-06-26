@@ -56,6 +56,12 @@ export const ca: Messages = {
     bookingHint:
       ' · Prem "Més a Booking" per veure allotjaments amb preus raonables en un radi de 2 km',
     noResults: "Cap estació coincideix amb la cerca.",
+    switchingCountry: "Carregant estacions…",
+    showingRange: " · Mostrant {{from}}–{{to}} de {{total}}",
+    paginationLabel: "Pàgines de la llista d'estacions",
+    pageOf: "Pàgina {{current}} de {{total}}",
+    previousPage: "Anterior",
+    nextPage: "Següent",
   },
   station: {
     stationPhotoAlt: "Estació de tren de {{name}}",

@@ -21,20 +21,26 @@ export function useCountrySelection() {
 
   useEffect(() => {
     const fromUrl = countryFromSearchParams(searchParams);
-    if (fromUrl && fromUrl !== country) {
-      setCountryState(fromUrl);
-      writeStoredCountry(fromUrl);
+    if (fromUrl) {
+      setCountryState((current) => {
+        if (current === fromUrl) return current;
+        writeStoredCountry(fromUrl);
+        return fromUrl;
+      });
     }
-  }, [searchParams, country]);
+  }, [searchParams]);
 
   const setCountry = useCallback(
-    (nextCountry: CountryCode) => {
+    (nextCountry: CountryCode, options?: { clearSearch?: boolean }) => {
       setCountryState(nextCountry);
       writeStoredCountry(nextCountry);
 
       setSearchParams(
         (current) => {
           const next = new URLSearchParams(current);
+          if (options?.clearSearch) {
+            next.delete("q");
+          }
           if (nextCountry === DEFAULT_COUNTRY) {
             next.delete("country");
           } else {

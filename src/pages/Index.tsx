@@ -1,7 +1,9 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getStationsForCountry } from "@/data/stationRegistry";
 import { StationCard } from "@/components/StationCard";
+import { StationGridSkeleton } from "@/components/StationGridSkeleton";
+import { StationListPagination } from "@/components/StationListPagination";
 import { StationRankings } from "@/components/StationRankings";
 import { CountrySelectorBar } from "@/components/CountrySelector";
 import { TrainFront } from "lucide-react";
@@ -17,11 +19,14 @@ import { useLocale } from "@/i18n/LocaleProvider";
 import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
 import { useAllVotes } from "@/hooks/useStationVote";
 import { useAllVisited } from "@/hooks/useStationVisited";
+import { StationInteractionProvider } from "@/hooks/StationInteractionProvider";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import { useCountrySelection } from "@/hooks/useCountrySelection";
+import type { CountryCode } from "@/lib/countries";
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
 import { stationMatchesSearch } from "@/lib/searchText";
 import { sortTrainTypes } from "@/lib/trainTypes";
+import { paginate, pageFromSearchParams } from "@/lib/paginate";
 
 type VoteFilter = "up" | "down" | "none";
 type VisitedFilter = "visited" | "notVisited";
@@ -29,7 +34,12 @@ type VisitedFilter = "visited" | "notVisited";
 const Index = () => {
   const { t, plural, locale, messages } = useLocale();
   const { country, setCountry } = useCountrySelection();
-  const countryStations = useMemo(() => getStationsForCountry(country), [country]);
+  const deferredCountry = useDeferredValue(country);
+  const isSwitchingCountry = country !== deferredCountry;
+  const countryStations = useMemo(
+    () => getStationsForCountry(deferredCountry),
+    [deferredCountry],
+  );
   const allTypes = useMemo(
     () => sortTrainTypes([...new Set(countryStations.flatMap((s) => s.types))]),
     [countryStations],
@@ -39,6 +49,8 @@ const Index = () => {
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter | null>(null);
+  const stationListRef = useRef<HTMLDivElement>(null);
+  const skipFilterPageResetRef = useRef(true);
 
   const votes = useAllVotes();
   const visitedMap = useAllVisited();
@@ -54,9 +66,16 @@ const Index = () => {
 
   const sortByCommunityVotes = !sortByDistance && hasCommunityUpvotes;
 
-  useEffect(() => {
-    setActiveFilter(null);
-  }, [country]);
+  const handleCountryChange = useCallback(
+    (nextCountry: CountryCode) => {
+      setActiveFilter(null);
+      setVoteFilter(null);
+      setVisitedFilter(null);
+      setSearch("");
+      setCountry(nextCountry, { clearSearch: true });
+    },
+    [setCountry],
+  );
 
   const filtered = useMemo(() => {
     const matches = countryStations.filter((s) => {
@@ -84,18 +103,70 @@ const Index = () => {
     });
   }, [countryStations, search, activeFilter, voteFilter, visitedFilter, votes, visitedMap, coords, sortByDistance, globalVotes]);
 
+  const currentPage = pageFromSearchParams(searchParams);
+  const paginated = useMemo(
+    () => paginate(filtered, currentPage),
+    [filtered, currentPage],
+  );
+
   const distanceByStation = useMemo(() => {
     if (!coords) return null;
-    return stationDistancesKm(filtered, coords);
-  }, [filtered, coords]);
+    return stationDistancesKm(paginated.items, coords);
+  }, [paginated.items, coords]);
+
+  const setPage = useCallback(
+    (nextPage: number) => {
+      setSearchParams(
+        (current) => {
+          const next = new URLSearchParams(current);
+          if (nextPage <= 1) {
+            next.delete("page");
+          } else {
+            next.set("page", String(nextPage));
+          }
+          return next;
+        },
+        { replace: true },
+      );
+      stationListRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    },
+    [setSearchParams],
+  );
+
+  const resetPage = useCallback(() => {
+    setSearchParams(
+      (current) => {
+        if (!current.has("page")) return current;
+        const next = new URLSearchParams(current);
+        next.delete("page");
+        return next;
+      },
+      { replace: true },
+    );
+  }, [setSearchParams]);
+
+  useEffect(() => {
+    if (skipFilterPageResetRef.current) {
+      skipFilterPageResetRef.current = false;
+      return;
+    }
+    resetPage();
+  }, [search, activeFilter, voteFilter, visitedFilter, deferredCountry, resetPage]);
 
   const setSearchQuery = (value: string) => {
     setSearch(value);
-    if (value.trim()) {
-      setSearchParams({ q: value }, { replace: true });
-    } else {
-      setSearchParams({}, { replace: true });
-    }
+    setSearchParams(
+      (current) => {
+        const next = new URLSearchParams(current);
+        if (value.trim()) {
+          next.set("q", value);
+        } else {
+          next.delete("q");
+        }
+        return next;
+      },
+      { replace: true },
+    );
   };
 
   return (
@@ -148,7 +219,7 @@ const Index = () => {
               <SitePageNavLinks variant="hero" className="self-end" />
               <CountrySelectorBar
                 country={country}
-                onCountryChange={setCountry}
+                onCountryChange={handleCountryChange}
                 variant="hero"
               />
             </div>
@@ -175,45 +246,67 @@ const Index = () => {
       />
 
       {/* Grid */}
-      <main className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
-        <p className="mb-3 text-sm text-muted-foreground md:mb-4">
-          {plural("home.stationCount", filtered.length, { count: filtered.length })}
-          {coords
-            ? t("home.sortedByDistanceNote")
-            : sortByDistance && locationState.status === "loading"
-              ? t("home.locating")
-              : sortByCommunityVotes
-                ? t("home.topCommunityPicks")
-                : ""}
-          {locationState.status === "denied"
-            ? t("home.locationDenied")
-            : locationState.status === "unsupported"
-              ? t("home.locationUnsupported")
-              : locationState.status === "error"
-                ? t("home.locationError")
-                : ""}
-          {!sortByDistance && t("home.bookingHint")}
-        </p>
-        <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
-          {filtered.map((station) => (
-            <StationCard
-              key={station.name}
-              station={station}
-              distanceKm={distanceByStation?.[station.name]}
-            />
-          ))}
-        </div>
-        {filtered.length === 0 && (
-          <p className="text-center text-muted-foreground py-16">
-            {t("home.noResults")}
+      <StationInteractionProvider>
+        <main className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
+          <p className="mb-3 text-sm text-muted-foreground md:mb-4">
+            {isSwitchingCountry
+              ? t("home.switchingCountry")
+              : plural("home.stationCount", paginated.total, { count: paginated.total })}
+            {!isSwitchingCountry && paginated.totalPages > 1
+              ? t("home.showingRange", {
+                  from: paginated.rangeFrom,
+                  to: paginated.rangeTo,
+                  total: paginated.total,
+                })
+              : ""}
+            {!isSwitchingCountry && coords
+              ? t("home.sortedByDistanceNote")
+              : !isSwitchingCountry && sortByDistance && locationState.status === "loading"
+                ? t("home.locating")
+                : !isSwitchingCountry && sortByCommunityVotes
+                  ? t("home.topCommunityPicks")
+                  : ""}
+            {!isSwitchingCountry && locationState.status === "denied"
+              ? t("home.locationDenied")
+              : !isSwitchingCountry && locationState.status === "unsupported"
+                ? t("home.locationUnsupported")
+                : !isSwitchingCountry && locationState.status === "error"
+                  ? t("home.locationError")
+                  : ""}
+            {!isSwitchingCountry && !sortByDistance && t("home.bookingHint")}
           </p>
-        )}
-        <CountrySelectorBar
-          country={country}
-          onCountryChange={setCountry}
-          className="mt-6 sm:hidden"
-        />
-      </main>
+          {isSwitchingCountry ? (
+            <StationGridSkeleton count={country === "es" ? 6 : 9} />
+          ) : (
+            <div ref={stationListRef} id="station-list">
+              <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
+                {paginated.items.map((station) => (
+                  <StationCard
+                    key={station.name}
+                    station={station}
+                    distanceKm={distanceByStation?.[station.name]}
+                  />
+                ))}
+              </div>
+              <StationListPagination
+                currentPage={paginated.currentPage}
+                totalPages={paginated.totalPages}
+                onPageChange={setPage}
+              />
+            </div>
+          )}
+          {!isSwitchingCountry && paginated.total === 0 && (
+            <p className="text-center text-muted-foreground py-16">
+              {t("home.noResults")}
+            </p>
+          )}
+          <CountrySelectorBar
+            country={country}
+            onCountryChange={handleCountryChange}
+            className="mt-6 sm:hidden"
+          />
+        </main>
+      </StationInteractionProvider>
 
       <StationRankings />
 

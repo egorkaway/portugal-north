@@ -53,33 +53,45 @@ export function useAllVotes(): VotesMap {
   );
 }
 
+export function castStationVote(
+  stationName: string,
+  direction: "up" | "down",
+  onSynced?: () => void,
+): Vote {
+  const current = readVotes();
+  const previous = current[stationName] ?? null;
+  let next: "up" | "down" | null;
+
+  if (previous === direction) {
+    delete current[stationName];
+    next = null;
+  } else {
+    current[stationName] = direction;
+    next = direction;
+  }
+
+  writeVotes(current);
+  emit();
+  trackVoteCast({
+    voteType: "station",
+    stationName,
+    previous,
+    next,
+  });
+  void syncVoteToServer(stationName, previous, next).then(() => {
+    onSynced?.();
+  });
+
+  return next;
+}
+
 export function useStationVote(stationName: string) {
   const queryClient = useQueryClient();
   const votes = useAllVotes();
   const vote: Vote = votes[stationName] ?? null;
 
   const cast = (direction: "up" | "down") => {
-    const current = readVotes();
-    const previous = current[stationName] ?? null;
-    let next: "up" | "down" | null;
-
-    if (previous === direction) {
-      delete current[stationName];
-      next = null;
-    } else {
-      current[stationName] = direction;
-      next = direction;
-    }
-
-    writeVotes(current);
-    emit();
-    trackVoteCast({
-      voteType: "station",
-      stationName,
-      previous,
-      next,
-    });
-    void syncVoteToServer(stationName, previous, next).then(() => {
+    castStationVote(stationName, direction, () => {
       queryClient.invalidateQueries({ queryKey: ["global-ratings"] });
     });
   };

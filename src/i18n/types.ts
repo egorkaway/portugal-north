@@ -56,6 +56,12 @@ export type Messages = {
     locationError: string;
     bookingHint: string;
     noResults: string;
+    switchingCountry: string;
+    showingRange: string;
+    paginationLabel: string;
+    pageOf: string;
+    previousPage: string;
+    nextPage: string;
   };
   station: {
     stationPhotoAlt: string;

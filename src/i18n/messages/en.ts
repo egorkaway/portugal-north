@@ -56,6 +56,12 @@ export const en: Messages = {
     bookingHint:
       ' · Click "More on Booking" to find reasonably priced rooms within 2 km',
     noResults: "No stations match your search.",
+    switchingCountry: "Loading stations…",
+    showingRange: " · Showing {{from}}–{{to}} of {{total}}",
+    paginationLabel: "Station list pages",
+    pageOf: "Page {{current}} of {{total}}",
+    previousPage: "Previous",
+    nextPage: "Next",
   },
   station: {
     stationPhotoAlt: "{{name}} train station",

@@ -56,6 +56,12 @@ export const pt: Messages = {
     bookingHint:
       ' · Clique em "Mais no Booking" para ver estadias com preços acessíveis num raio de 2 km',
     noResults: "Nenhuma estação corresponde à pesquisa.",
+    switchingCountry: "A carregar estações…",
+    showingRange: " · A mostrar {{from}}–{{to}} de {{total}}",
+    paginationLabel: "Páginas da lista de estações",
+    pageOf: "Página {{current}} de {{total}}",
+    previousPage: "Anterior",
+    nextPage: "Seguinte",
   },
   station: {
     stationPhotoAlt: "Estação de comboio de {{name}}",

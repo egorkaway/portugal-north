@@ -28,15 +28,20 @@ export function useAllVisited(): VisitedMap {
   return useSyncExternalStore(subscribe, getSnapshot, () => ({}));
 }
 
+export function toggleStationVisitedAt(stationName: string): boolean {
+  const current = readVisitedMap();
+  const { next, visited } = toggleStationVisited(current, stationName);
+  writeVisitedMap(next);
+  emit();
+  return visited;
+}
+
 export function useStationVisited(stationName: string) {
   const visitedMap = useAllVisited();
   const visited = Boolean(visitedMap[stationName]);
 
   const toggle = () => {
-    const current = readVisitedMap();
-    const { next } = toggleStationVisited(current, stationName);
-    writeVisitedMap(next);
-    emit();
+    toggleStationVisitedAt(stationName);
   };
 
   return { visited, toggle };

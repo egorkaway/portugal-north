@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { MapPin, ExternalLink, BedDouble, Train, Plane, Navigation, ArrowRight } from "lucide-react";
 import { HotelList } from "@/components/HotelList";
 import { Link } from "react-router-dom";
@@ -5,8 +6,9 @@ import { Station, getAppleMapsUrl, getOSMUrl, getBookingSearchUrl } from "@/data
 import { getHotelsForStation } from "@/lib/stationHotels";
 import { getStationImageUrl } from "@/lib/stationImage";
 import { StationPhoto } from "@/components/StationPhoto";
-import { useStationVote } from "@/hooks/useStationVote";
+import { useStationVote, type Vote } from "@/hooks/useStationVote";
 import { useStationVisited } from "@/hooks/useStationVisited";
+import { useStationInteraction } from "@/hooks/StationInteractionProvider";
 import { formatDistance } from "@/lib/geo";
 import { getStationPath } from "@/lib/stationSlug";
 import { VoteButtons } from "@/components/VoteButtons";
@@ -23,18 +25,70 @@ const typeColors: Record<string, string> = {
   "Inactive / Historic": "bg-muted text-muted-foreground opacity-60",
 };
 
-export function StationCard({
+function StationCardWithHooks({
   station,
   distanceKm,
 }: {
   station: Station;
   distanceKm?: number;
 }) {
+  const { vote, cast } = useStationVote(station.name);
+  const { visited, toggle: toggleVisited } = useStationVisited(station.name);
+
+  return (
+    <StationCardView
+      station={station}
+      distanceKm={distanceKm}
+      vote={vote}
+      visited={visited}
+      onVote={cast}
+      onVisitedToggle={toggleVisited}
+    />
+  );
+}
+
+function StationCardWithContext({
+  station,
+  distanceKm,
+}: {
+  station: Station;
+  distanceKm?: number;
+}) {
+  const interaction = useStationInteraction(station.name);
+  if (!interaction) {
+    return <StationCardWithHooks station={station} distanceKm={distanceKm} />;
+  }
+
+  return (
+    <StationCardView
+      station={station}
+      distanceKm={distanceKm}
+      vote={interaction.vote}
+      visited={interaction.visited}
+      onVote={interaction.cast}
+      onVisitedToggle={interaction.toggleVisited}
+    />
+  );
+}
+
+const StationCardView = memo(function StationCardView({
+  station,
+  distanceKm,
+  vote,
+  visited,
+  onVote,
+  onVisitedToggle,
+}: {
+  station: Station;
+  distanceKm?: number;
+  vote: Vote;
+  visited: boolean;
+  onVote: (direction: "up" | "down") => void;
+  onVisitedToggle: () => void;
+}) {
   const { t } = useLocale();
   const hotels = getHotelsForStation(station.name);
   const imageUrl = getStationImageUrl(station.name);
-  const { vote, cast } = useStationVote(station.name);
-  const { visited, toggle: toggleVisited } = useStationVisited(station.name);
   const stationPath = getStationPath(station);
   const isAirport = station.types.includes("Airport");
   const LineIcon = isAirport ? Plane : Train;
@@ -74,13 +128,13 @@ export function StationCard({
           <div className="flex flex-col items-end gap-1.5 shrink-0">
             <VoteButtons
               vote={vote}
-              onUp={() => cast("up")}
-              onDown={() => cast("down")}
+              onUp={() => onVote("up")}
+              onDown={() => onVote("down")}
               subjectLabel={station.name}
             />
             <VisitedButton
               visited={visited}
-              onToggle={toggleVisited}
+              onToggle={onVisitedToggle}
               subjectLabel={station.name}
               compact
             />
@@ -145,4 +199,14 @@ export function StationCard({
       </div>
     </div>
   );
+});
+
+export function StationCard({
+  station,
+  distanceKm,
+}: {
+  station: Station;
+  distanceKm?: number;
+}) {
+  return <StationCardWithContext station={station} distanceKm={distanceKm} />;
 }

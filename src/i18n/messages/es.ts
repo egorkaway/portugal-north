@@ -56,6 +56,12 @@ export const es: Messages = {
     bookingHint:
       ' · Pulsa "Más en Booking" para ver alojamientos con buen precio en un radio de 2 km',
     noResults: "Ninguna estación coincide con la búsqueda.",
+    switchingCountry: "Cargando estaciones…",
+    showingRange: " · Mostrando {{from}}–{{to}} de {{total}}",
+    paginationLabel: "Páginas de la lista de estaciones",
+    pageOf: "Página {{current}} de {{total}}",
+    previousPage: "Anterior",
+    nextPage: "Siguiente",
   },
   station: {
     stationPhotoAlt: "Estación de tren de {{name}}",
