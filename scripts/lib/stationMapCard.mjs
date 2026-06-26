@@ -9,6 +9,7 @@ const BRAND_DARK = "#0f3d38";
 const BRAND_PRIMARY = "#1c7a6f";
 const BRAND_GOLD = "#e8a838";
 const BRAND_CREAM = "#f4f7f6";
+const TEXT_X = 56;
 
 function escapeXml(value) {
   return value
@@ -19,18 +20,51 @@ function escapeXml(value) {
     .replace(/'/g, "&apos;");
 }
 
-function pickZoom(station) {
-  const isMetro = station.lines.some((line) => /metro/i.test(line));
-  if (isMetro) return 16;
-  return 15;
+function wrapTitle(title, maxChars = 22) {
+  const words = title.split(/\s+/);
+  const lines = [];
+  let line = "";
+
+  for (const word of words) {
+    const next = line ? `${line} ${word}` : word;
+    if (next.length > maxChars && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = next;
+    }
+  }
+  if (line) lines.push(line);
+  return lines.slice(0, 2);
 }
 
-export function buildMapOverlaySvg({ slug, siteHost, markerX, markerY }) {
+function pickZoom(station) {
+  const isMetro = station.lines.some((line) => /metro/i.test(line));
+  if (isMetro) return 17;
+  return 16;
+}
+
+export function buildMapOverlaySvg({ stationName, slug, siteHost, markerX, markerY, primaryLine }) {
   const pageUrl = `${siteHost}/stations/${slug}`;
+  const titleLines = wrapTitle(stationName);
+  const titleTspans = titleLines
+    .map((line, index) => {
+      const dy = index === 0 ? 0 : 44;
+      return `<tspan x="${TEXT_X}" dy="${dy}">${escapeXml(line)}</tspan>`;
+    })
+    .join("");
+
+  const lineLabel = primaryLine
+    ? `<text x="${TEXT_X}" y="892" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" letter-spacing="0.06em">${escapeXml(primaryLine.toUpperCase())}</text>`
+    : "";
+
+  const titleY = primaryLine ? 948 : 912;
+  const urlY = titleLines.length > 1 ? 1048 : 1012;
+
   const pinR = 14;
   const pinY = markerY - pinR * 2;
-  const footerTop = 920;
-  const footerHeight = 160;
+  const footerTop = 820;
+  const footerHeight = 260;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${CARD_SIZE}" height="${CARD_SIZE}" viewBox="0 0 ${CARD_SIZE} ${CARD_SIZE}">
@@ -48,9 +82,14 @@ export function buildMapOverlaySvg({ slug, siteHost, markerX, markerY }) {
     <circle cx="${markerX}" cy="${pinY + pinR}" r="5" fill="${BRAND_CREAM}"/>
     <path d="M ${markerX} ${pinY + pinR + pinR} L ${markerX - 10} ${pinY + pinR - 2} L ${markerX + 10} ${pinY + pinR - 2} Z" fill="${BRAND_PRIMARY}" stroke="${BRAND_CREAM}" stroke-width="2"/>
   </g>
-  <rect x="0" y="${footerTop - 40}" width="${CARD_SIZE}" height="${footerHeight + 40}" fill="url(#footerFade)"/>
+  <rect x="0" y="${footerTop - 48}" width="${CARD_SIZE}" height="${footerHeight + 48}" fill="url(#footerFade)"/>
   <rect x="0" y="${footerTop}" width="${CARD_SIZE}" height="${footerHeight}" fill="${BRAND_DARK}"/>
-  <text x="${CARD_SIZE / 2}" y="1020" text-anchor="middle" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="40" font-weight="700" letter-spacing="0.02em">${escapeXml(pageUrl)}</text>
+  <rect x="${TEXT_X}" y="844" width="72" height="5" rx="2.5" fill="${BRAND_GOLD}"/>
+  ${lineLabel}
+  <text x="${TEXT_X}" y="${titleY}" fill="${BRAND_CREAM}" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700">
+    ${titleTspans}
+  </text>
+  <text x="${TEXT_X}" y="${urlY}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="700" letter-spacing="0.02em">${escapeXml(pageUrl)}</text>
 </svg>`;
 }
 
@@ -70,10 +109,12 @@ export async function renderStationMapCard({ station, siteUrl, zoom }) {
   });
 
   const overlaySvg = buildMapOverlaySvg({
+    stationName: station.name,
     slug,
     siteHost,
     markerX,
     markerY,
+    primaryLine: station.lines[0],
   });
 
   const overlayPng = new Resvg(overlaySvg, {
