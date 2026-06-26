@@ -65,6 +65,7 @@ export const gl: Messages = {
     noHotels: "Aínda non hai hoteis recomendados para esta estación.",
     appleMaps: "Apple Maps",
     openStreetMap: "OpenStreetMap",
+    berrymetWeather: "Tempo en {{city}}",
     tripHistorian: "TripHistorian",
     metroDoPorto: "Metro do Porto",
     metroLisboa: "Metropolitano de Lisboa",

@@ -64,6 +64,7 @@ export type Messages = {
     noHotels: string;
     appleMaps: string;
     openStreetMap: string;
+    berrymetWeather: string;
     tripHistorian: string;
     metroDoPorto: string;
     metroLisboa: string;

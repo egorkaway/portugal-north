@@ -1,4 +1,4 @@
-import { ArrowLeft, BedDouble, MapPin, Train, Plane, ExternalLink, Navigation, History } from "lucide-react";
+import { ArrowLeft, BedDouble, CloudSun, MapPin, Train, Plane, ExternalLink, Navigation, History } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import {
   getAppleMapsUrl,
@@ -35,6 +35,7 @@ import { isAirportStation, showsTravelEsimPromo } from "@/lib/airportStation";
 import { getMetroOperatorLink, isMetroStation } from "@/lib/metroStation";
 import { StationYesimPromo } from "@/components/StationYesimPromo";
 import { NearestLongDistanceStations } from "@/components/NearestLongDistanceStations";
+import { getBerrymetCityLink } from "@/lib/berrymetCity";
 
 const typeColors: Record<string, string> = {
   Airport: "bg-sky-600 text-white",
@@ -60,6 +61,7 @@ const Station = () => {
   const metroStation = isMetroStation(station);
   const airportStation = isAirportStation(station);
   const showYesimPromo = showsTravelEsimPromo(station);
+  const berrymetCityLink = getBerrymetCityLink(station);
   const LineIcon = airportStation ? Plane : Train;
   const metroLink = getMetroOperatorLink(station);
   const imageUrl = getStationImageUrl(station.name);
@@ -175,6 +177,17 @@ const Station = () => {
               <ExternalLink className="h-4 w-4" aria-hidden="true" />
               {t("station.openStreetMap")}
             </a>
+            {berrymetCityLink ? (
+              <a
+                href={berrymetCityLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-md bg-sky-500/10 px-3 py-2 text-sm font-medium text-sky-800 transition-colors hover:bg-sky-600 hover:text-white dark:text-sky-200"
+              >
+                <CloudSun className="h-4 w-4" aria-hidden="true" />
+                {t("station.berrymetWeather", { city: berrymetCityLink.cityName })}
+              </a>
+            ) : null}
             {metroLink ? (
               <a
                 href={metroLink.url}
