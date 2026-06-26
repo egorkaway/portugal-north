@@ -27,11 +27,11 @@ describe("station summaries batch 1", () => {
   it("lists the next five stations without summaries", () => {
     const next = stationsNeedingSummaries(5);
     expect(next).toEqual([
-      "Rio Tinto",
-      "Monte Estoril",
-      "Santa Iria",
-      "Santo Amaro",
-      "São Bento (Porto)",
+      "Nine",
+      "Famalicão",
+      "Trofa",
+      "General Torres",
+      "Sintra",
     ]);
   });
 });
@@ -159,9 +159,72 @@ describe("station summaries batch 7", () => {
   });
 });
 
+describe("station summaries batch 8", () => {
+  it("covers stations ranked 36–40 by train volume", () => {
+    const batchEight = rankStationsByTrainVolume()
+      .slice(35, 40)
+      .map((entry) => entry.station.name);
+
+    expect(batchEight).toEqual([
+      "Rio Tinto",
+      "Monte Estoril",
+      "Santa Iria",
+      "Santo Amaro",
+      "São Bento (Porto)",
+    ]);
+
+    for (const name of batchEight) {
+      expect(hasStationSummary(name)).toBe(true);
+      expect(getStationSummary(name)).toMatch(/\.\s*$/);
+    }
+  });
+});
+
+describe("station summaries batch 9", () => {
+  it("covers stations ranked 41–45 by train volume", () => {
+    const batchNine = rankStationsByTrainVolume()
+      .slice(40, 45)
+      .map((entry) => entry.station.name);
+
+    expect(batchNine).toEqual([
+      "Algés",
+      "Rio de Mouro",
+      "Alverca",
+      "Bobadela",
+      "Estoril",
+    ]);
+
+    for (const name of batchNine) {
+      expect(hasStationSummary(name)).toBe(true);
+      expect(getStationSummary(name)).toMatch(/\.\s*$/);
+    }
+  });
+});
+
+describe("station summaries batch 10", () => {
+  it("covers stations ranked 46–50 by train volume", () => {
+    const batchTen = rankStationsByTrainVolume()
+      .slice(45, 50)
+      .map((entry) => entry.station.name);
+
+    expect(batchTen).toEqual([
+      "Aveiro",
+      "Coimbra-B",
+      "Povoa",
+      "Alhandra",
+      "Caxias",
+    ]);
+
+    for (const name of batchTen) {
+      expect(hasStationSummary(name)).toBe(true);
+      expect(getStationSummary(name)).toMatch(/\.\s*$/);
+    }
+  });
+});
+
 describe("station summaries i18n", () => {
-  it("has all 35 station keys in every locale", () => {
-    expect(STATION_SUMMARY_NAMES).toHaveLength(35);
+  it("has all 50 station keys in every locale", () => {
+    expect(STATION_SUMMARY_NAMES).toHaveLength(50);
 
     for (const locale of LOCALES) {
       for (const name of STATION_SUMMARY_NAMES) {

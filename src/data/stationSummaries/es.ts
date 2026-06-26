@@ -70,4 +70,34 @@ export const stationSummariesEs: Record<string, string> = {
     "Parada oriental en la Linha do Norte junto a Moscavide y la aproximación a Lisboa Oriente. Trenes urbanos y regionales enlazan el corredor del aeropuerto con Santa Apolónia y el cinturón de cercanías del norte — útil si te alojas cerca del Parque das Nações o necesitas un salto rápido a Oriente sin las multitudes del gran nudo.",
   "Paço de Arcos":
     "Suburbio de la línea de Cascais entre Cruz Quebrada y Oeiras, con trenes urbanos muy frecuentes hacia Cais do Sodré y la costa del Estoril. Más tranquilo que Algés o el centro de Oeiras pero bien conectado para paseos ribereños y desplazamientos a parques de oficinas. Base residencial práctica al oeste de Lisboa con enlace suburbano directo.",
+  "Rio Tinto":
+    "Parada oriental en la línea del Minho en Gondomar, entre Campanhã y Valongo. Trenes urbanos y regionales frecuentes siguen hacia Oporto, Braga y el alto Minho — suburbio práctico para estancias más económicas al este de la ciudad con enlace suburbano directo a Campanhã.",
+  "Monte Estoril":
+    "Parada costera en la línea de Cascais entre Estoril y Cascais, sobre el cinturón de casinos y los paseos en lo alto del acantilado. Trenes urbanos frecuentes enlazan el centro de Lisboa con la costa atlántica en unos cuarenta minutos — base residencial más tranquila que el Estoril central con la misma conexión ferroviaria.",
+  "Santa Iria":
+    "Parada de la Línea del Norte al este de Lisboa en el corredor del Tajo, entre Sacavém y Alverca. Trenes urbanos y regionales circulan constantemente hacia Santa Apolónia y el cinturón de cercanías del norte — útil para alojamiento económico en el acceso oriental a la capital.",
+  "Santo Amaro":
+    "Parada de la línea de Cascais entre Paço de Arcos y Oeiras en la orilla occidental del Tajo. Trenes urbanos constantes van al Cais do Sodré y la costa del Estoril — práctica para desplazamientos a parques de oficinas y estancias más baratas entre Algés y la desembocadura del río.",
+  "São Bento (Porto)":
+    "Terminal emblemático de Oporto en el centro histórico, con salones revestidos de azulejos, trenes urbanos a Campanhã y servicios Intercidades al norte y al sur. La Ribeira, la Sé y las bodegas de vino de Oporto al otro lado del Duero quedan a pocos minutos a pie — puerta natural para explorar el casco antiguo de Oporto a pie.",
+  Algés:
+    "Parada de la línea de Cascais al oeste del centro de Lisboa, entre Cruz Quebrada y Caxias en el estuario del Tajo. Trenes urbanos muy frecuentes llegan al Cais do Sodré en menos de veinticinco minutos — popular para paseos por la marina, comidas junto al río y un salto suburbano rápido desde la capital.",
+  "Rio de Mouro":
+    "Parada de la línea de Sintra entre Queluz-Belas y las colinas, que sirve al suburbio de Rio de Mouro. Trenes urbanos frecuentes van a Rossio y Sintra — parada residencial con tráfico de cercanías constante y acceso sencillo a la zona de palacios sin alojarse en el centro de Sintra.",
+  Alverca:
+    "Parada de la Línea del Norte en el corredor oriental del Tajo entre Santa Iria y Póvoa, junto a la antigua ciudad aeronáutica de Alverca. Trenes urbanos y regionales enlazan Lisboa con la línea principal norte — práctica para estancias económicas al este del centro con enlace directo en el corredor de CP.",
+  Bobadela:
+    "Parada oriental de Lisboa en la Línea del Norte entre Sacavém y Moscavide, en un barrio de cercanías muy denso. Trenes urbanos y regionales circulan constantemente en la aproximación a Santa Apolónia — base de menor coste al este del centro con enlaces frecuentes a Oriente y al corredor del aeropuerto.",
+  Estoril:
+    "Parada balnear clásica de la línea de Cascais junto al casino, el paseo marítimo y las playas atlánticas. Trenes urbanos circulan constantemente hacia Cais do Sodré y Monte Estoril — una de las paradas costeras más populares para fines de semana junto al mar manteniendo el centro de Lisboa al alcance en tren.",
+  Aveiro:
+    "Gran parada urbana en la Línea del Norte en la Venecia de Portugal, con trenes Alfa Pendular e Intercidades además de intensos servicios urbanos. Los canales, los moliceiros y la herencia del bacalao están a pocos minutos a pie de los andenes — nudo natural para explorar la costa atlántica del centro de Portugal.",
+  "Coimbra-B":
+    "Principal estación de larga distancia de Coímbra en la Línea del Norte, con conexiones Alfa Pendular e Intercidades a Lisboa y Oporto. Trenes urbanos enlazan la ciudad universitaria al otro lado del río — alójate cerca para salidas interurbanas; el campus histórico en la colina queda a un salto en autobús o taxi.",
+  Povoa:
+    "Parada de la Línea del Norte al este de Lisboa que sirve a Póvoa de Santa Iria en la orilla del Tajo. Trenes urbanos y regionales circulan entre Santa Iria y Alhandra en el acceso norte a la capital — suburbio práctico para estancias de cercanías con enlace directo a Santa Apolónia.",
+  Alhandra:
+    "Parada ribereña en la Línea del Norte entre Alverca y Vila Franca de Xira, en el valle bajo del Tajo. Trenes urbanos y regionales paran aquí en el corredor Lisboa–Oporto — útil para paseos junto al río y alojamiento más económico al noreste de la capital con conexiones interurbanas.",
+  Caxias:
+    "Parada de la línea de Cascais entre Algés y Cruz Quebrada, que sirve al suburbio ribereño de Caxias. Trenes urbanos frecuentes enlazan la orilla del Tajo con Cais do Sodré y la costa del Estoril — base residencial al oeste de Lisboa con paseos por la marina y saltos rápidos a Belém.",
 };

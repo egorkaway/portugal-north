@@ -70,4 +70,34 @@ export const stationSummariesPt: Record<string, string> = {
     "Paragem oriental na Linha do Norte junto a Moscavide e à aproximação a Lisboa Oriente. Comboios urbanos e regionais ligam o corredor do aeroporto a Santa Apolónia e ao cinturão de pendulares do norte — útil se ficar perto do Parque das Nações ou precisar de um salto rápido a Oriente sem as multidões do hub.",
   "Paço de Arcos":
     "Subúrbio da linha de Cascais entre Cruz Quebrada e Oeiras, com comboios urbanos muito frequentes para o Cais do Sodré e a costa do Estoril. Mais tranquilo que Algés ou o centro de Oeiras, mas bem ligado para passeios ribeirinhos e deslocações a parques de escritórios. Base residencial prática a oeste de Lisboa com ligação suburbana direta.",
+  "Rio Tinto":
+    "Paragem oriental na linha do Minho em Gondomar, entre Campanhã e Valongo. Comboios urbanos e regionais frequentes seguem para o Porto, Braga e o alto Minho — subúrbio prático para estadias mais económicas a leste da cidade com ligação suburbana direta a Campanhã.",
+  "Monte Estoril":
+    "Paragem costeira na linha de Cascais entre Estoril e Cascais, acima do cinturão dos casinos e dos passeios no topo da arriba. Comboios urbanos frequentes ligam o centro de Lisboa à costa atlântica em cerca de quarenta minutos — base residencial mais tranquila que o Estoril central com a mesma ligação ferroviária.",
+  "Santa Iria":
+    "Paragem da Linha do Norte a leste de Lisboa no corredor do Tejo, entre Sacavém e Alverca. Comboios urbanos e regionais circulam constantemente em direção a Santa Apolónia e ao cinturão pendular do norte — útil para alojamento económico na abordagem oriental à capital.",
+  "Santo Amaro":
+    "Paragem da linha de Cascais entre Paço de Arcos e Oeiras na margem ocidental do Tejo. Comboios urbanos constantes seguem para o Cais do Sodré e a costa do Estoril — prática para deslocações a parques de escritórios e estadias mais baratas entre Algés e a foz do rio.",
+  "São Bento (Porto)":
+    "Terminal emblemático do Porto no centro histórico, com salões revestidos a azulejo, comboios urbanos para Campanhã e serviços Intercidades a norte e a sul. A Ribeira, a Sé e as caves de vinho do Porto na margem oposta ficam a poucos minutos a pé — porta de entrada natural para explorar o baixo do Porto a pé.",
+  Algés:
+    "Paragem da linha de Cascais a oeste do centro de Lisboa, entre Cruz Quebrada e Caxias no estuário do Tejo. Comboios urbanos muito frequentes chegam ao Cais do Sodré em menos de vinte e cinco minutos — popular para passeios na marina, refeições à beira-rio e um salto suburbano rápido desde a capital.",
+  "Rio de Mouro":
+    "Paragem da linha de Sintra entre Queluz-Belas e as serras, servindo o subúrbio de Rio de Mouro. Comboios urbanos frequentes seguem para o Rossio e Sintra — paragem residencial com tráfego pendular constante e acesso simples à zona dos palácios sem ficar no centro de Sintra.",
+  Alverca:
+    "Paragem da Linha do Norte no corredor oriental do Tejo entre Santa Iria e Póvoa, junto à antiga cidade aeronáutica de Alverca. Comboios urbanos e regionais ligam Lisboa à linha principal norte — prática para estadias económicas a leste do centro com ligação direta no corredor da CP.",
+  Bobadela:
+    "Paragem oriental de Lisboa na Linha do Norte entre Sacavém e Moscavide, num bairro pendular muito denso. Comboios urbanos e regionais circulam constantemente na abordagem a Santa Apolónia — base de menor custo a leste do centro com ligações frequentes a Oriente e ao corredor do aeroporto.",
+  Estoril:
+    "Paragem balnear clássica da linha de Cascais junto ao casino, ao passeio marítimo e às praias atlânticas. Comboios urbanos circulam constantemente para o Cais do Sodré e Monte Estoril — uma das paragens costeiras mais populares para fins de semana à beira-mar mantendo Lisboa central ao alcance do comboio.",
+  Aveiro:
+    "Grande paragem urbana na Linha do Norte na Veneza de Portugal, com comboios Alfa Pendular e Intercidades para além de intensos serviços urbanos. Os canais, os moliceiros e a herança do bacalhau ficam a poucos minutos a pé das plataformas — hub natural para explorar a costa atlântica do centro de Portugal.",
+  "Coimbra-B":
+    "Principal estação de longo curso de Coimbra na Linha do Norte, com ligações Alfa Pendular e Intercidades a Lisboa e ao Porto. Comboios urbanos ligam a cidade universitária do outro lado do rio — fique perto para partidas intercidades; o campus histórico no alto da colina fica a um salto de autocarro ou táxi.",
+  Povoa:
+    "Paragem da Linha do Norte a leste de Lisboa servindo Póvoa de Santa Iria na margem do Tejo. Comboios urbanos e regionais circulam entre Santa Iria e Alhandra na abordagem norte à capital — subúrbio prático para estadias de pendulares com ligação direta a Santa Apolónia.",
+  Alhandra:
+    "Paragem ribeirinha na Linha do Norte entre Alverca e Vila Franca de Xira, no vale inferior do Tejo. Comboios urbanos e regionais param aqui no corredor Lisboa–Porto — útil para passeios à beira-rio e alojamento mais económico a nordeste da capital com ligações intercidades.",
+  Caxias:
+    "Paragem da linha de Cascais entre Algés e Cruz Quebrada, servindo o subúrbio ribeirinho de Caxias. Comboios urbanos frequentes ligam a margem do Tejo ao Cais do Sodré e à costa do Estoril — base residencial a oeste de Lisboa com passeios na marina e saltos rápidos a Belém.",
 };

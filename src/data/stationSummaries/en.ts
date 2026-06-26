@@ -11,6 +11,9 @@
  * Batch 5: Sete Rios, Águas Santas - Palmilheira, Alcantara - Mar, Sacavem, Vila Nova de Gaia-Devesas
  * Batch 6: Parede, Belém, Oeiras, Cruz Quebrada, Granja
  * Batch 7: Valadares, Espinho, Carcavelos, Moscavide, Paço de Arcos
+ * Batch 8: Rio Tinto, Monte Estoril, Santa Iria, Santo Amaro, São Bento (Porto)
+ * Batch 9: Algés, Rio de Mouro, Alverca, Bobadela, Estoril
+ * Batch 10: Aveiro, Coimbra-B, Povoa, Alhandra, Caxias
  */
 /** English station summaries. Spell out Alfa Pendular and Intercidades — no AP/IC. */
 export const stationSummariesEn: Record<string, string> = {
@@ -84,4 +87,34 @@ export const stationSummariesEn: Record<string, string> = {
     "Eastern halt on the Linha do Norte beside Moscavide and the approach to Lisboa Oriente. Urban and regional trains link the airport corridor with Santa Apolónia and the northern commuter belt — useful if you are staying near Parque das Nações or need a quick hop to Oriente without the hub crowds.",
   "Paço de Arcos":
     "Cascais-line suburb between Cruz Quebrada and Oeiras, with very frequent urban trains to Cais do Sodré and the Estoril coast. Quieter than neighbouring Algés or Oeiras centre but well connected for riverside walks and office-park commutes. A practical residential base west of Lisbon with a direct suburban link.",
+  "Rio Tinto":
+    "Eastern halt on the Minho line in Gondomar, between Campanhã and Valongo. Frequent urban and regional trains run towards Porto, Braga, and the upper Minho — a practical suburb for lower-cost stays east of the city with a direct suburban link into Campanhã.",
+  "Monte Estoril":
+    "Coastal halt on the Cascais line between Estoril and Cascais, above the casino belt and cliff-top walks. Frequent urban trains link central Lisbon with the Atlantic shore in about forty minutes — a quieter residential base than central Estoril with the same rail connection.",
+  "Santa Iria":
+    "Norte-line halt east of Lisbon in the Tagus corridor, between Sacavém and Alverca. Urban and regional trains run constantly towards Santa Apolónia and the northern commuter belt — useful for budget lodging along the eastern approach to the capital.",
+  "Santo Amaro":
+    "Cascais-line stop between Paço de Arcos and Oeiras on the western Tagus shore. Constant urban trains run to Cais do Sodré and the Estoril coast — handy for office-park commutes and lower-cost stays between Algés and the river mouth.",
+  "São Bento (Porto)":
+    "Porto's showpiece terminus in the historic centre, with azulejo-lined halls and urban trains to Campanhã plus Intercidades services north and south. The Ribeira, Sé cathedral, and wine lodges across the Douro are within walking distance — the natural rail gateway for exploring downtown Porto on foot.",
+  Algés:
+    "Cascais-line halt west of central Lisbon, between Cruz Quebrada and Caxias on the Tagus estuary. Very frequent urban trains reach Cais do Sodré in under twenty-five minutes — popular for marina walks, riverfront dining, and a quick suburban hop from the capital.",
+  "Rio de Mouro":
+    "Sintra-line halt between Queluz-Belas and the hills, serving the Rio de Mouro suburb. Frequent urban trains run to Rossio and Sintra — a residential stop with steady commuter traffic and straightforward access to the palace belt without staying in central Sintra.",
+  Alverca:
+    "Norte-line halt in the eastern Tagus corridor between Santa Iria and Póvoa, beside the old aviation town of Alverca. Urban and regional trains link Lisbon with the northern main line — practical for budget stays east of the centre with a direct CP corridor link.",
+  Bobadela:
+    "Eastern Lisbon halt on the Linha do Norte between Sacavém and Moscavide, in a dense commuter district. Urban and regional trains run constantly on the approach to Santa Apolónia — a lower-cost base east of downtown with frequent links towards Oriente and the airport corridor.",
+  Estoril:
+    "Classic Cascais-line resort stop beside the casino, promenade, and Atlantic beaches. Urban trains run constantly to Cais do Sodré and Monte Estoril — one of the coast's most popular halts for seaside weekends while keeping central Lisbon within easy reach by rail.",
+  Aveiro:
+    "Major Norte-line city stop in the Venice of Portugal, with Alfa Pendular and Intercidades trains besides busy urban services. The canals, moliceiro boats, and salted-cod heritage are a short walk from the platforms — a natural hub for exploring central Portugal's Atlantic coast.",
+  "Coimbra-B":
+    "Principal intercity station for Coimbra on the Linha do Norte, with Alfa Pendular and Intercidades connections to Lisbon and Porto. Urban trains link the university city across the river — stay nearby for long-distance departures; the historic hilltop campus is a bus or taxi hop from the platforms.",
+  Povoa:
+    "Norte-line halt east of Lisbon serving Póvoa de Santa Iria on the Tagus shore. Urban and regional trains run between Santa Iria and Alhandra on the northern approach to the capital — a practical suburb for commuter stays with a direct link towards Santa Apolónia.",
+  Alhandra:
+    "Tagus-side halt on the Linha do Norte between Alverca and Vila Franca de Xira, in the lower Tejo valley. Urban and regional trains call here on the Lisbon–Porto corridor — useful for riverside walks and lower-cost lodging north-east of the capital with intercity connections.",
+  Caxias:
+    "Cascais-line halt between Algés and Cruz Quebrada, serving the Caxias waterfront suburb. Frequent urban trains link the Tagus shore with Cais do Sodré and the Estoril coast — a residential base west of Lisbon with marina walks and quick hops to Belém.",
 };
