@@ -16,7 +16,7 @@ const TEXT_X = 56;
 const URL_FONT_SIZE = 52;
 const URL_RIGHT_MARGIN = 56;
 /** Rough avg glyph width for Inter bold at 52px (incl. letter-spacing). */
-const URL_CHAR_WIDTH = URL_FONT_SIZE * 0.58;
+const URL_CHAR_WIDTH = URL_FONT_SIZE * 0.5;
 const URL_MAX_CHARS = Math.floor((CARD_SIZE - TEXT_X - URL_RIGHT_MARGIN) / URL_CHAR_WIDTH);
 const AIRPORT_NAME_RE = /\b(aeroporto|aeropuerto|airport)\b/i;
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
