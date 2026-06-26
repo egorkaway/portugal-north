@@ -1,5 +1,5 @@
 import { useCallback, useDeferredValue, useMemo, useRef, useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { getStationsForCountry } from "@/data/stationRegistry";
 import { StationCard } from "@/components/StationCard";
 import { StationGridSkeleton } from "@/components/StationGridSkeleton";
@@ -22,8 +22,8 @@ import { useAllVisited } from "@/hooks/useStationVisited";
 import { StationInteractionProvider } from "@/hooks/StationInteractionProvider";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import { useHomeRoute } from "@/hooks/useHomeRoute";
-import { isCountryCode, type CountryCode } from "@/lib/countries";
-import { buildHomePath, isHomePath, parseHomePageParam } from "@/lib/homeRoute";
+import { type CountryCode } from "@/lib/countries";
+import { buildHomePath, isHomePath, parseHomeCanonicalPath } from "@/lib/homeRoute";
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
 import { stationMatchesSearch } from "@/lib/searchText";
 import { sortTrainTypes } from "@/lib/trainTypes";
@@ -289,21 +289,22 @@ function HomePage({ country, currentPage }: { country: CountryCode; currentPage:
 }
 
 const Index = () => {
-  const { country: countryParam, page: pageParam } = useParams();
+  const location = useLocation();
+  const home = parseHomeCanonicalPath(location.pathname);
 
-  if (!isCountryCode(countryParam)) {
+  if (!home) {
     return <NotFound />;
   }
 
-  const parsedPage = pageParam ? parseHomePageParam(pageParam) : 1;
-  if (pageParam && parsedPage < 1) {
-    return <Navigate to={buildHomePath(countryParam)} replace />;
+  const { country, page } = home;
+  if (page < 1) {
+    return <Navigate to={buildHomePath(country)} replace />;
   }
-  if (pageParam === "1") {
-    return <Navigate to={buildHomePath(countryParam)} replace />;
+  if (/\/(pt|es)\/1$/.test(location.pathname)) {
+    return <Navigate to={buildHomePath(country)} replace />;
   }
 
-  return <HomePage country={countryParam} currentPage={parsedPage} />;
+  return <HomePage country={country} currentPage={page} />;
 };
 
 export default Index;
