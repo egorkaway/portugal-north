@@ -6,7 +6,7 @@ import type { Station, StationData } from "./stationTypes";
 const cpStations: StationData[] = [
   { name: "Pombal", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 39.9153, lng: -8.6283 },
   { name: "Alfarelos", lines: ["Linha do Norte"], types: ["Intercidades", "Regional", "Urban"], lat: 40.1678, lng: -8.6514 },
-  { name: "Coimbra-B", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional", "Urban"], lat: 40.2117, lng: -8.4353 },
+  { name: "Coimbra-B", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 40.2117, lng: -8.4353 },
   { name: "Pampilhosa", lines: ["Linha do Norte", "Linha da Beira Alta"], types: ["Intercidades", "Regional"], lat: 40.3347, lng: -8.4028 },
   { name: "Mealhada", lines: ["Linha do Norte"], types: ["Intercidades", "Regional"], lat: 40.3783, lng: -8.4531 },
   { name: "Aveiro", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional", "Urban"], lat: 40.6443, lng: -8.6455 },
