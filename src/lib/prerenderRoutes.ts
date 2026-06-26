@@ -2,9 +2,9 @@ import { getHotelsForStation } from "@/lib/stationHotels";
 import { getStationShareImageUrl } from "@/lib/stationImage";
 import { allStations } from "@/data/stationRegistry";
 import {
-  HOME_PAGE_META,
   NOT_FOUND_PAGE_META,
   RANKINGS_PAGE_META,
+  getHomePageMeta,
   getTicketsPageMeta,
   getMapPageMeta,
   getPrivacyPageMeta,
@@ -15,6 +15,7 @@ import {
 
 export { buildSeoHeadHtml };
 import { stationToSlug } from "@/lib/stationSlug";
+import { getHomeSitemapPaths, homePathToOutFile, parseHomeCanonicalPath } from "@/lib/homeRoute";
 
 export type PrerenderRoute = {
   /** Path relative to dist/ (e.g. index.html, stations/porto/index.html). */
@@ -24,13 +25,23 @@ export type PrerenderRoute = {
 
 export function getPrerenderRoutes(): PrerenderRoute[] {
   const routes: PrerenderRoute[] = [
-    { outFile: "index.html", meta: HOME_PAGE_META },
+    { outFile: "index.html", meta: getHomePageMeta("en", "pt") },
     { outFile: "rankings/index.html", meta: RANKINGS_PAGE_META },
     { outFile: "tickets/index.html", meta: getTicketsPageMeta("en") },
     { outFile: "map/index.html", meta: getMapPageMeta("en") },
     { outFile: "privacy/index.html", meta: getPrivacyPageMeta("en") },
     { outFile: "404.html", meta: NOT_FOUND_PAGE_META },
   ];
+
+  for (const path of getHomeSitemapPaths()) {
+    const parsed = parseHomeCanonicalPath(path);
+    if (!parsed) continue;
+    if (path === "/pt") continue;
+    routes.push({
+      outFile: homePathToOutFile(path),
+      meta: getHomePageMeta("en", parsed.country, parsed.page),
+    });
+  }
 
   for (const station of allStations) {
     const slug = stationToSlug(station.name);

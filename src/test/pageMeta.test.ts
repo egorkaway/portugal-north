@@ -1,15 +1,16 @@
 import { describe, expect, it } from "vitest";
-import { buildSeoHeadHtml, buildStationPageMeta, HOME_PAGE_META } from "@/lib/pageMeta";
+import { buildSeoHeadHtml, buildStationPageMeta, getHomePageMeta } from "@/lib/pageMeta";
 import { getPrerenderRoutes } from "@/lib/prerenderRoutes";
 import { allStations } from "@/data/stationRegistry";
+import { getHomeSitemapPaths } from "@/lib/homeRoute";
 import { portugalStations } from "@/data/stations";
 import { getHotelsForStation } from "@/lib/stationHotels";
 
 describe("buildSeoHeadHtml", () => {
   it("includes unique title and description in output", () => {
-    const html = buildSeoHeadHtml(HOME_PAGE_META, "https://www.verystays.com");
+    const html = buildSeoHeadHtml(getHomePageMeta("en", "pt"), "https://www.verystays.com");
     expect(html).toContain("<title>Sustainable Iberian: Stations &amp; Budget Hotels</title>");
-    expect(html).toContain('rel="canonical" href="https://www.verystays.com/"');
+    expect(html).toContain('rel="canonical" href="https://www.verystays.com/pt"');
   });
 
   it("does not HTML-escape ampersands in og/twitter image URLs", () => {
@@ -32,11 +33,12 @@ describe("buildSeoHeadHtml", () => {
 describe("getPrerenderRoutes", () => {
   it("generates one HTML file per station plus core pages", () => {
     const routes = getPrerenderRoutes();
-    expect(routes.length).toBe(allStations.length + 6);
+    const homeExtra = getHomeSitemapPaths().length - 1;
+    expect(routes.length).toBe(allStations.length + 6 + homeExtra);
     const porto = portugalStations.find((s) => s.name === "Porto-Campanhã");
     expect(porto).toBeDefined();
     const meta = buildStationPageMeta(porto!, getHotelsForStation(porto!.name));
     expect(meta.title).toContain("Porto-Campanhã");
-    expect(meta.description).not.toEqual(HOME_PAGE_META.description);
+    expect(meta.description).not.toEqual(getHomePageMeta("en", "pt").description);
   });
 });

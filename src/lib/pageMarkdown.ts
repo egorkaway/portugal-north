@@ -2,12 +2,13 @@ import type { Hotel } from "@/data/hotels";
 import { stations, type Station, getAppleMapsUrl, getBookingSearchUrl, getOSMUrl } from "@/data/stations";
 import { allStations } from "@/data/stationRegistry";
 import {
-  HOME_PAGE_META,
   RANKINGS_PAGE_META,
   buildStationPageMeta,
+  getHomePageMeta,
   type PageMeta,
   getTicketsPageMeta,
 } from "@/lib/pageMeta";
+import { parseHomeCanonicalPath, buildHomePath } from "@/lib/homeRoute";
 import { formatLineList, formatServiceTypes } from "@/lib/stationMeta";
 import { getStationBySlug, getStationPath, stationToSlug } from "@/lib/stationSlug";
 import type { PrerenderRoute } from "@/lib/prerenderRoutes";
@@ -56,7 +57,8 @@ ${meta.description}
 
 ## Explore
 
-- [All stations](${base}/)
+- [All stations (Portugal)](${base}/pt)
+- [All stations (Spain)](${base}/es)
 - [Community rankings](${base}/rankings)
 - [API documentation](${base}/docs/api)
 
@@ -82,7 +84,7 @@ ${meta.description}
 
 Vote on station and hotel listings across the site; rankings aggregate community up and down counts.
 
-- [Return to all stations](${base}/)
+- [Return to all stations](${base}/pt)
 - [API: global vote totals](${base}/api/votes)
 `;
 
@@ -101,7 +103,8 @@ ${meta.description}
 
 ## Quick links
 
-- [All stations](${base}/)
+- [All stations (Portugal)](${base}/pt)
+- [All stations (Spain)](${base}/es)
 - [Community rankings](${base}/rankings)
 
 ## Overview
@@ -200,7 +203,8 @@ ${hotelLines}
 ${longDistanceSection}## Links
 
 - [Search hotels on Booking](${getBookingSearchUrl(station)})
-- [All stations](${base}/)
+- [All stations (Portugal)](${base}/pt)
+- [All stations (Spain)](${base}/es)
 - [Live departures API](${base}/api/departures) (requires CP station code)
 
 ## Summary
@@ -227,7 +231,7 @@ export function buildNotFoundMarkdown(meta: PageMeta, siteUrl: string): string {
 
 ${meta.description}
 
-[Back to homepage](${base}/)
+[Back to homepage](${base}/pt)
 `;
 }
 
@@ -243,7 +247,7 @@ export function buildMarkdownForRoute(route: PrerenderRoute, siteUrl: string): s
     }
   }
 
-  if (meta.canonicalPath === "/") {
+  if (parseHomeCanonicalPath(meta.canonicalPath)) {
     return buildHomeMarkdown(meta, siteUrl);
   }
   if (meta.canonicalPath === "/rankings") {
@@ -269,8 +273,13 @@ export function buildMarkdownForPath(pathname: string, siteUrl: string): string 
   const normalized =
     pathname === "" || pathname === "/" ? "/" : pathname.replace(/\/$/, "") || "/";
 
+  const home = parseHomeCanonicalPath(normalized);
+  if (home) {
+    return buildHomeMarkdown(getHomePageMeta("en", home.country, home.page), siteUrl);
+  }
+
   if (normalized === "/") {
-    return buildHomeMarkdown(HOME_PAGE_META, siteUrl);
+    return buildHomeMarkdown(getHomePageMeta("en", "pt"), siteUrl);
   }
 
   const slugMatch = normalized.match(/^\/stations\/([^/]+)$/);

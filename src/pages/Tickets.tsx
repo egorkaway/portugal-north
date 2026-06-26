@@ -25,7 +25,7 @@ const Tickets = () => {
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
             <div className="mb-3 sm:mb-4">
               <Link
-                to="/"
+                to="/pt"
                 className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />

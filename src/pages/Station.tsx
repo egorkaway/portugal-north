@@ -36,6 +36,7 @@ import { getMetroOperatorLink, isMetroStation } from "@/lib/metroStation";
 import { StationYesimPromo } from "@/components/StationYesimPromo";
 import { NearestLongDistanceStations } from "@/components/NearestLongDistanceStations";
 import { getBerrymetCityLink } from "@/lib/berrymetCity";
+import { buildHomePath } from "@/lib/homeRoute";
 import { getStationSummary } from "@/lib/stationSummary";
 
 const typeColors: Record<string, string> = {
@@ -96,7 +97,7 @@ const Station = () => {
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
             <div className="mb-3 sm:mb-4">
               <Link
-                to={station.country === "es" ? "/?country=es" : "/"}
+                to={buildHomePath(station.country)}
                 className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />

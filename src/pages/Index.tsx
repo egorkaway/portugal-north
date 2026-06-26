@@ -1,5 +1,5 @@
 import { useCallback, useDeferredValue, useMemo, useRef, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 import { getStationsForCountry } from "@/data/stationRegistry";
 import { StationCard } from "@/components/StationCard";
 import { StationGridSkeleton } from "@/components/StationGridSkeleton";
@@ -21,19 +21,24 @@ import { useAllVotes } from "@/hooks/useStationVote";
 import { useAllVisited } from "@/hooks/useStationVisited";
 import { StationInteractionProvider } from "@/hooks/StationInteractionProvider";
 import { useUserLocation } from "@/hooks/useUserLocation";
-import { useCountrySelection } from "@/hooks/useCountrySelection";
-import type { CountryCode } from "@/lib/countries";
+import { useHomeRoute } from "@/hooks/useHomeRoute";
+import { isCountryCode, type CountryCode } from "@/lib/countries";
+import { buildHomePath, isHomePath, parseHomePageParam } from "@/lib/homeRoute";
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
 import { stationMatchesSearch } from "@/lib/searchText";
 import { sortTrainTypes } from "@/lib/trainTypes";
-import { paginate, pageFromSearchParams } from "@/lib/paginate";
+import { paginate } from "@/lib/paginate";
+import NotFound from "@/pages/NotFound";
 
 type VoteFilter = "up" | "down" | "none";
 type VisitedFilter = "visited" | "notVisited";
 
-const Index = () => {
+function HomePage({ country, currentPage }: { country: CountryCode; currentPage: number }) {
   const { t, plural, locale, messages } = useLocale();
-  const { country, setCountry } = useCountrySelection();
+  const { searchQuery, setCountry, setPage, setSearchQuery, goToFirstPage } = useHomeRoute(
+    country,
+    currentPage,
+  );
   const deferredCountry = useDeferredValue(country);
   const isSwitchingCountry = country !== deferredCountry;
   const countryStations = useMemo(
@@ -44,24 +49,10 @@ const Index = () => {
     () => sortTrainTypes([...new Set(countryStations.flatMap((s) => s.types))]),
     [countryStations],
   );
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
   const [visitedFilter, setVisitedFilter] = useState<VisitedFilter | null>(null);
   const stationListRef = useRef<HTMLDivElement>(null);
-
-  const clearPageParam = useCallback(() => {
-    setSearchParams(
-      (current) => {
-        if (!current.has("page")) return current;
-        const next = new URLSearchParams(current);
-        next.delete("page");
-        return next;
-      },
-      { replace: true },
-    );
-  }, [setSearchParams]);
 
   const votes = useAllVotes();
   const visitedMap = useAllVisited();
@@ -82,15 +73,14 @@ const Index = () => {
       setActiveFilter(null);
       setVoteFilter(null);
       setVisitedFilter(null);
-      setSearch("");
-      setCountry(nextCountry, { clearSearch: true, clearPage: true });
+      setCountry(nextCountry);
     },
     [setCountry],
   );
 
   const filtered = useMemo(() => {
     const matches = countryStations.filter((s) => {
-      const matchesSearch = stationMatchesSearch(s, search);
+      const matchesSearch = stationMatchesSearch(s, searchQuery);
       const matchesFilter = !activeFilter || s.types.includes(activeFilter);
       const v = votes[s.name];
       const matchesVote =
@@ -112,9 +102,19 @@ const Index = () => {
       globalRatings: globalVotes?.ratings,
       votesConfigured: Boolean(globalVotes?.configured && globalVotes.ratings),
     });
-  }, [countryStations, search, activeFilter, voteFilter, visitedFilter, votes, visitedMap, coords, sortByDistance, globalVotes]);
+  }, [
+    countryStations,
+    searchQuery,
+    activeFilter,
+    voteFilter,
+    visitedFilter,
+    votes,
+    visitedMap,
+    coords,
+    sortByDistance,
+    globalVotes,
+  ]);
 
-  const currentPage = pageFromSearchParams(searchParams);
   const paginated = useMemo(
     () => paginate(filtered, currentPage),
     [filtered, currentPage],
@@ -125,47 +125,22 @@ const Index = () => {
     return stationDistancesKm(paginated.items, coords);
   }, [paginated.items, coords]);
 
-  const setPage = useCallback(
+  const handlePageChange = useCallback(
     (nextPage: number) => {
-      setSearchParams(
-        (current) => {
-          const next = new URLSearchParams(current);
-          if (nextPage <= 1) {
-            next.delete("page");
-          } else {
-            next.set("page", String(nextPage));
-          }
-          return next;
-        },
-        { replace: true },
-      );
+      setPage(nextPage);
       stationListRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     },
-    [setSearchParams],
+    [setPage],
   );
 
-  const setSearchQuery = (value: string) => {
-    setSearch(value);
-    setSearchParams(
-      (current) => {
-        const next = new URLSearchParams(current);
-        if (value.trim()) {
-          next.set("q", value);
-        } else {
-          next.delete("q");
-        }
-        next.delete("page");
-        return next;
-      },
-      { replace: true },
-    );
-  };
+  const resetFiltersPage = useCallback(() => {
+    goToFirstPage();
+  }, [goToFirstPage]);
 
   return (
     <div className="min-h-screen bg-background">
-      <PageHead meta={getHomePageMeta(locale)} />
-      <JsonLd data={buildHomeStructuredData()} />
-      {/* Hero */}
+      <PageHead meta={getHomePageMeta(locale, country, currentPage)} />
+      <JsonLd data={buildHomeStructuredData(country)} />
       <header className="relative overflow-hidden bg-primary px-4 py-12 text-primary-foreground md:px-6 md:py-28">
         <img
           src={heroStation}
@@ -181,9 +156,9 @@ const Index = () => {
             <div className="min-w-0">
               <h1 className="mb-2 font-display text-3xl tracking-tight hero-title-shadow md:mb-4 md:text-5xl lg:text-6xl lg:tracking-normal">
                 <a
-                  href="/"
+                  href={buildHomePath(country)}
                   onClick={(e) => {
-                    if (window.location.pathname === "/") {
+                    if (isHomePath(window.location.pathname)) {
                       e.preventDefault();
                       window.location.reload();
                     }
@@ -220,22 +195,22 @@ const Index = () => {
       </header>
 
       <StationFilters
-        search={search}
+        search={searchQuery}
         onSearchChange={setSearchQuery}
         trainTypes={allTypes}
         activeType={activeFilter}
         onTypeToggle={(type) => {
-          clearPageParam();
+          resetFiltersPage();
           setActiveFilter(activeFilter === type ? null : type);
         }}
         voteFilter={voteFilter}
         onVoteFilterToggle={(key) => {
-          clearPageParam();
+          resetFiltersPage();
           setVoteFilter(voteFilter === key ? null : key);
         }}
         visitedFilter={visitedFilter}
         onVisitedFilterToggle={(key) => {
-          clearPageParam();
+          resetFiltersPage();
           setVisitedFilter(visitedFilter === key ? null : key);
         }}
         sortByDistance={sortByDistance}
@@ -244,7 +219,6 @@ const Index = () => {
         coords={coords}
       />
 
-      {/* Grid */}
       <StationInteractionProvider>
         <main className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
           <p className="mb-3 text-sm text-muted-foreground md:mb-4">
@@ -290,7 +264,7 @@ const Index = () => {
               <StationListPagination
                 currentPage={paginated.currentPage}
                 totalPages={paginated.totalPages}
-                onPageChange={setPage}
+                onPageChange={handlePageChange}
               />
             </div>
           )}
@@ -312,6 +286,24 @@ const Index = () => {
       <SiteFooter />
     </div>
   );
+}
+
+const Index = () => {
+  const { country: countryParam, page: pageParam } = useParams();
+
+  if (!isCountryCode(countryParam)) {
+    return <NotFound />;
+  }
+
+  const parsedPage = pageParam ? parseHomePageParam(pageParam) : 1;
+  if (pageParam && parsedPage < 1) {
+    return <Navigate to={buildHomePath(countryParam)} replace />;
+  }
+  if (pageParam === "1") {
+    return <Navigate to={buildHomePath(countryParam)} replace />;
+  }
+
+  return <HomePage country={countryParam} currentPage={parsedPage} />;
 };
 
 export default Index;

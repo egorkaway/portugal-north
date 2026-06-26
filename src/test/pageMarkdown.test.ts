@@ -30,6 +30,12 @@ describe("pageMarkdown", () => {
     expect(md).toContain("Linha de Braga");
   });
 
+  it("builds paginated home markdown", () => {
+    const md = buildMarkdownForPath("/pt/2", SITE);
+    expect(md).toContain("# Sustainable Iberian");
+    expect(md).toContain("/pt");
+  });
+
   it("includes nearest long-distance stops for regional-only stations", () => {
     const md = buildMarkdownForPath("/stations/canelas", SITE);
     expect(md).toContain("## Nearest long-distance stops");

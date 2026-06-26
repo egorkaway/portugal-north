@@ -2,6 +2,8 @@ import type { Hotel } from "@/data/hotels";
 import type { Station } from "@/data/stations";
 import type { Locale, Translator } from "@/i18n";
 import { createTranslator } from "@/i18n";
+import type { CountryCode } from "@/lib/countries";
+import { buildHomePath } from "@/lib/homeRoute";
 import {
   getStationMetaDescription,
   getStationOgDescription,
@@ -19,12 +21,16 @@ export type PageMeta = {
   robots?: string;
 };
 
-export function getHomePageMeta(locale: Locale = "en"): PageMeta {
+export function getHomePageMeta(
+  locale: Locale = "en",
+  country: CountryCode = "pt",
+  page = 1,
+): PageMeta {
   const { messages } = createTranslator(locale);
   return {
     title: messages.meta.home.title,
     description: messages.meta.home.description,
-    canonicalPath: "/",
+    canonicalPath: buildHomePath(country, page),
     ogImagePath: "/og-image.jpg",
   };
 }

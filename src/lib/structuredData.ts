@@ -7,6 +7,8 @@ import { absoluteUrl, SITE_URL } from "./site";
 import { createTranslator } from "@/i18n";
 import { getStationMetaDescription, getStationPageTitle } from "./stationMeta";
 import { attributionForImageUrl, siteLogoAttribution } from "./imageAttribution";
+import type { CountryCode } from "./countries";
+import { buildHomePath } from "./homeRoute";
 
 const SITE_NAME = "Sustainable Iberian";
 const MIN_VOTES_FOR_AGGREGATE = 2;
@@ -133,7 +135,7 @@ export function buildStationStructuredData(options: {
 
   const graph: JsonLd[] = [
     buildBreadcrumbList([
-      { name: "Home", path: "/" },
+      { name: "Home", path: buildHomePath(station.country) },
       { name: station.name, path },
     ]),
     {
@@ -158,8 +160,8 @@ export function buildStationStructuredData(options: {
   };
 }
 
-export function buildHomeStructuredData(): JsonLd {
-  const homeUrl = absoluteUrl("/");
+export function buildHomeStructuredData(country: CountryCode = "pt"): JsonLd {
+  const homeUrl = absoluteUrl(buildHomePath(country));
 
   return {
     "@context": "https://schema.org",

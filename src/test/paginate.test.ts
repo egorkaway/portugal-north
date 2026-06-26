@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { paginate, pageFromSearchParams } from "@/lib/paginate";
+import { paginate } from "@/lib/paginate";
 
 describe("paginate", () => {
   const items = Array.from({ length: 75 }, (_, index) => index + 1);
@@ -24,12 +24,5 @@ describe("paginate", () => {
   it("clamps invalid page numbers", () => {
     expect(paginate(items, 99, 30).currentPage).toBe(3);
     expect(paginate(items, 0, 30).currentPage).toBe(1);
-  });
-
-  it("parses page from search params", () => {
-    expect(pageFromSearchParams(new URLSearchParams("page=2"))).toBe(2);
-    expect(pageFromSearchParams(new URLSearchParams())).toBe(1);
-    expect(pageFromSearchParams(new URLSearchParams("page=0"))).toBe(1);
-    expect(pageFromSearchParams(new URLSearchParams("page=abc"))).toBe(1);
   });
 });

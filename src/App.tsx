@@ -14,6 +14,7 @@ import { VoteSyncNotice } from "@/components/VoteSyncNotice";
 import { WebMcpBridge } from "@/components/WebMcpBridge";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import Index from "./pages/Index.tsx";
+import HomeRedirect from "./pages/HomeRedirect.tsx";
 import Rankings from "./pages/Rankings.tsx";
 import Station from "./pages/Station.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -41,7 +42,11 @@ const App = () => (
           <WebMcpBridge />
           <div className="pb-24 sm:pb-0">
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<HomeRedirect />} />
+              <Route path="/pt" element={<Index />} />
+              <Route path="/pt/:page" element={<Index />} />
+              <Route path="/es" element={<Index />} />
+              <Route path="/es/:page" element={<Index />} />
               <Route path="/rankings" element={<Rankings />} />
               <Route path="/tickets" element={<Tickets />} />
               <Route path="/map" element={<MapPage />} />

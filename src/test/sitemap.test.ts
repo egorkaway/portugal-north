@@ -1,13 +1,18 @@
 import { describe, expect, it } from "vitest";
 import { buildSitemapXml, getSitemapEntries } from "@/lib/sitemap";
 import { allStations } from "@/data/stationRegistry";
+import { getHomeSitemapPaths } from "@/lib/homeRoute";
 
 describe("sitemap", () => {
-  it("includes home, rankings, tickets, map, privacy, and every station page", () => {
+  it("includes home pages, rankings, tickets, map, privacy, and every station page", () => {
     const entries = getSitemapEntries();
-    expect(entries).toHaveLength(5 + allStations.length);
-    expect(entries[0].path).toBe("/");
-    expect(entries[1].path).toBe("/rankings");
+    const homePages = getHomeSitemapPaths();
+    expect(entries).toHaveLength(homePages.length + 4 + allStations.length);
+    expect(entries[0].path).toBe("/pt");
+    expect(entries.some((e) => e.path === "/pt/2")).toBe(true);
+    expect(entries.some((e) => e.path === "/es")).toBe(true);
+    expect(entries.some((e) => e.path === "/es/2")).toBe(true);
+    expect(entries.some((e) => e.path === "/rankings")).toBe(true);
     expect(entries.some((e) => e.path === "/tickets")).toBe(true);
     expect(entries.some((e) => e.path === "/privacy")).toBe(true);
     expect(entries.some((e) => e.path === "/map")).toBe(true);

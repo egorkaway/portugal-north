@@ -29,8 +29,3 @@ export function paginate<T>(
     total,
   };
 }
-
-export function pageFromSearchParams(params: URLSearchParams): number {
-  const raw = Number.parseInt(params.get("page") ?? "1", 10);
-  return Number.isFinite(raw) && raw > 0 ? raw : 1;
-}

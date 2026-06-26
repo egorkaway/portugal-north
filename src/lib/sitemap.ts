@@ -1,4 +1,5 @@
 import { allStations } from "../data/stationRegistry";
+import { getHomeSitemapPaths } from "./homeRoute";
 import { getStationPath } from "./stationSlug";
 
 export type SitemapEntry = {
@@ -8,8 +9,14 @@ export type SitemapEntry = {
 };
 
 export function getSitemapEntries(): SitemapEntry[] {
+  const homePages = getHomeSitemapPaths().map((path) => ({
+    path,
+    changefreq: "weekly" as const,
+    priority: path === "/pt" ? "1.0" : "0.9",
+  }));
+
   return [
-    { path: "/", changefreq: "weekly", priority: "1.0" },
+    ...homePages,
     { path: "/rankings", changefreq: "daily", priority: "0.8" },
     { path: "/tickets", changefreq: "monthly", priority: "0.7" },
     { path: "/map", changefreq: "weekly", priority: "0.75" },
