@@ -761,4 +761,60 @@ export const stationSummariesEn: Record<string, string> = {
     "Linha da Beira Alta halt in the Serra da Estrela foothills between Fornos de Algodres and Guarda. Regional trains link Coimbra with the Spanish border corridor — a quiet mountain-country stop for village touring and connections towards Guarda and Vilar Formoso.",
   "Vilar Formoso":
     "Border terminus on the Linha da Beira Alta with Intercidades and regional services from Coimbra and Guarda. Trains link the Beira Alta corridor with Fuentes de Oñoro in Spain — the main rail crossing for Salamanca and Castile with long-distance connections in both directions.",
+  Amarante:
+    "Historic halt on the closed Linha do Tâmega in the Tâmega valley east of Porto. Passenger service ended decades ago, but the riverside town and stone bridge remain a popular day trip — use regional buses or road links from Marco de Canaveses for wine-country touring in the Marão foothills.",
+  "Peso da Régua":
+    "Principal Douro-line wine-country stop where the valley meets the river, with Intercidades and regional trains between Porto and Pocinho. The quayside promenade and port lodges are steps from the platforms — a natural base for rabelo boat trips, quinta visits, and scenic rides deeper into the upper Douro.",
+  "Mesão Frio":
+    "Douro-line village halt on a terraced bend above the river between Régua and Peso da Régua. Regional trains call on the Porto–Pocinho corridor — a quiet stop for vineyard walks and riverside views without the bustle of the main wine hubs downstream.",
+  Mirandela:
+    "Historic terminus of the narrow-gauge Linha do Tua in Trás-os-Montes, closed to passengers since the late twentieth century. The town centre and Tua riverside walks survive as a heritage destination — reach it by road or bus from Bragança or Macedo de Cavaleiros for northeastern Portugal touring.",
+  Coimbra:
+    "Former city-centre terminus of the Ramal de Coimbra, closed when long-distance traffic moved to Coimbra-B. The riverside building beside the Mondego is a heritage landmark — all regular CP services today use Coimbra-B on the Linha do Norte a short bus ride away.",
+  "Rio Mau":
+    "Douro-line halt between Penafiel and Amarante in the Sousa valley fringe. Regional trains link Porto with the upper Douro corridor — a low-profile parish stop for countryside stays east of the metropolitan belt with connections towards Marco de Canaveses.",
+  Lousada:
+    "Douro-line town stop between Penafiel and Amarante on the eastern approach to the Marão hills. Urban and regional trains run towards Campanhã and the wine country — practical for lower-cost lodging in the Sousa valley with a direct suburban link into Porto.",
+  Bragança:
+    "Historic eastern terminus of the Linha do Tua in the far northeast, no longer served by passenger rail. The walled citadel and Montesinho park country are reached by road or bus today — a cultural base for Trás-os-Montes touring when combining with active CP corridors at Mirandela or Macedo de Cavaleiros.",
+  Viseu:
+    "Former Linha do Dão terminus in the Beira Alta, closed to regular trains since the late twentieth century. The cathedral city and Dão wine hills are still a major inland destination — use bus or road links from Nelas or Mangualde on the Linha da Beira Alta for connections to Coimbra and Guarda.",
+  "Estádio do Dragão":
+    "Metro do Porto terminus beside FC Porto's stadium where Linha A and Linha B meet in the eastern suburbs. Frequent metro trains link the coast at Matosinhos and Póvoa de Varzim with Campanhã and central Porto — ideal on match days or for a quick hop from the stadium to Trindade without surface traffic.",
+  "Senhor de Matosinhos":
+    "Western terminus of Metro Linha A at the Matosinhos waterfront. Metro trains run constantly to Estádio do Dragão and through central Porto — a practical coastal base for beach walks, seafood dining, and quick access to CP at Leça do Balio or Campanhã for longer journeys.",
+  "Póvoa de Varzim":
+    "Northern terminus of Metro Linha B at the Atlantic resort of Póvoa. Frequent metro services link the casino promenade and sandy beaches with Estádio do Dragão and central Porto in under an hour — a classic seaside stay with a direct suburban metro link instead of driving the coast road.",
+  "Campanhã (Metro)":
+    "Eastern terminus of Metro Linha C beside Porto-Campanhã, the city's main CP hub. Metro trains connect the university belt and ISMAI with central Trindade — the fastest way to change between long-distance trains and the Porto metro network without a taxi across town.",
+  ISMAI:
+    "Northern terminus of Metro Linha C at the ISMAI university campus in Maia. Frequent metro trains run south to Campanhã and Trindade — practical for student stays or business visits in the northern metropolitan belt with a direct link to CP intercity departures at Campanhã.",
+  "Hospital São João (Metro)":
+    "Metro Linha D stop beside Porto's university hospital, one stop from Trindade on the yellow line. Frequent metro trains link the São João campus with central Porto and Vila d'Este — useful for hospital visits when the nearby CP halt on the Minho line is less convenient for your direction of travel.",
+  "Vila d'Este":
+    "Eastern terminus of Metro Linha D in the Gondomar suburbs above the Douro. Metro trains run west to Trindade and the hospital corridor — a lower-cost residential base east of Porto with frequent links into the city centre without crossing the river bridges by car.",
+  "Trindade (Metro)":
+    "Central hub and terminus of Metro Linha E in downtown Porto, steps from shopping and the historic centre. All metro lines intersect here or at nearby stations — the main interchange for reaching the airport metro, Campanhã CP, and every suburban corridor without surface congestion.",
+  "Estação Aeroporto":
+    "Metro Linha E terminus at Porto Airport with a covered link to the terminal. Frequent metro trains reach Trindade and central Porto in about half an hour — the standard rail connection for flyers who want to avoid taxis while keeping Alfa Pendular and Intercidades access at Campanhã.",
+  "Fânzeres":
+    "Southern terminus of Metro Linha F in the Gondomar hills above the Douro east of Porto. Metro trains run north to Senhora da Hora and central Porto — a quiet suburban base for lower-cost stays with a direct metro link across the metropolitan south bank.",
+  "Senhora da Hora":
+    "Metro Linha F stop in the Matosinhos–Maia belt, a busy interchange between orange and blue line corridors. Frequent metro trains link the northern suburbs with Trindade and the airport line — practical for residential stays west of Porto with quick hops to the coast or Campanhã.",
+  "Santa Apolónia (Metro)":
+    "Lisbon Metro Blue line terminus beside Lisboa Santa Apolónia on the Tagus embankment. Metro trains link Alfama and the riverside with Amadora and the northwest suburbs — the natural change for CP long-distance arrivals heading into the metro network without crossing the old town on foot.",
+  "Amadora Este":
+    "Western terminus of the Lisbon Metro Blue line in Amadora. Frequent metro trains run east to Santa Apolónia and the city centre — a lower-cost suburban base west of Lisbon with direct metro access to Oriente, the airport line, and riverside CP departures.",
+  Rato:
+    "Western terminus of the Lisbon Metro Yellow line near Príncipe Real and the Amoreiras district. Metro trains link the central hills with Odivelas and the northern suburbs — handy for museum visits and embassy-quarter stays with a quick metro hop to Marquês de Pombal interchange.",
+  Odivelas:
+    "Northern terminus of the Lisbon Metro Yellow line at the edge of the Lisbon metropolitan belt. Frequent metro trains run south to Rato and central Lisbon — practical for lower-cost lodging north of the city with a direct suburban link to Oriente and the airport corridor.",
+  "Cais do Sodré (Metro)":
+    "Lisbon Metro Green line stop integrated with Cais do Sodré CP terminus for the Cascais line. Metro trains link the riverside with Telheiras and the northern suburbs while urban trains depart for Belém and the Estoril coast — a key double interchange west of Baixa without separate tickets between modes.",
+  Telheiras:
+    "Northern terminus of the Lisbon Metro Green line beside the Lumiar university district. Frequent metro trains run south to Cais do Sodré and the city centre — useful for campus stays or quieter residential lodging north of downtown with a direct metro link to Oriente.",
+  "São Sebastião (Metro)":
+    "Lisbon Metro Red line terminus at Praça de Espanha beside the zoo and Sete Rios coach hub. Metro trains link the northwest with the airport and Oriente — a major interchange for CP at Sete Rios, long-distance coaches, and metro rides into central Lisbon.",
+  "Aeroporto (Metro Lisboa)":
+    "Lisbon Metro Red line terminus inside Humberto Delgado Airport with a direct terminal link. Frequent metro trains reach Oriente, Saldanha, and São Sebastião in minutes — the standard connection between flights and CP long-distance trains without a taxi into town.",
 };

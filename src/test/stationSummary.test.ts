@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { LOCALES } from "@/i18n/types";
 import { STATION_SUMMARY_NAMES } from "@/data/stationSummaries";
 import { hasStationSummary, getStationSummary } from "@/lib/stationSummary";
-import { stationsNeedingSummaries } from "@/lib/stationSummaryQueue";
+import { stationsNeedingSummaries, portugalStationsWithoutSummaries } from "@/lib/stationSummaryQueue";
 import { rankStationsByTrainVolume } from "@/lib/stationTrainVolume";
 
 describe("station summaries coverage", () => {
@@ -12,23 +12,24 @@ describe("station summaries coverage", () => {
 
   it("covers every ranked station that has a summary", () => {
     const ranked = rankStationsByTrainVolume().map((entry) => entry.station.name);
-    const pending = new Set(stationsNeedingSummaries());
+    const pending = stationsNeedingSummaries();
+
+    expect(pending).toEqual([]);
 
     for (const name of ranked) {
-      if (hasStationSummary(name)) {
-        expect(getStationSummary(name), name).toMatch(/\.\s*$/);
-      } else {
-        expect(pending.has(name), `unexpected gap: ${name}`).toBe(true);
-      }
+      expect(hasStationSummary(name), name).toBe(true);
+      expect(getStationSummary(name), name).toMatch(/\.\s*$/);
     }
+  });
 
-    expect(STATION_SUMMARY_NAMES.length + pending.size).toBe(ranked.length);
+  it("covers every Portuguese station", () => {
+    expect(portugalStationsWithoutSummaries()).toEqual([]);
   });
 });
 
 describe("station summaries i18n", () => {
   it("has all station keys in every locale", () => {
-    expect(STATION_SUMMARY_NAMES.length).toBe(347);
+    expect(STATION_SUMMARY_NAMES.length).toBe(375);
 
     for (const locale of LOCALES) {
       for (const name of STATION_SUMMARY_NAMES) {

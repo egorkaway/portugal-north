@@ -694,4 +694,60 @@ export const stationSummariesCa: Record<string, string> = {
     "Parada a la Linha da Beira Alta als contraforts de la Serra da Estrela entre Fornos de Algodres i Guarda. Trens regionals enllacen Coïmbra amb el corredor fronterer espanyol — parada de muntanya tranquil·la per a turisme en pobles i connexions cap a Guarda i Vilar Formoso.",
   "Vilar Formoso":
     "Terminal fronterer a la Linha da Beira Alta amb serveis Intercidades i regionals des de Coïmbra i Guarda. Trens enllacen el corredor de Beira Alta amb Fuentes de Oñoro a Espanya — principal pas ferroviari cap a Salamanca i Castella amb connexions de llarga distància en ambdues direccions.",
+  Amarante:
+    "Parada histórica na Linha do Tâmega tancada no vale do Tâmega a l'est do Porto. O servei de passatgers terminou há décadas, mas a vila ribeirinha e a ponte de pedra continuam a atrair visitantes — use autobúss ou estrada desde Marco de Canaveses per a turismo no país do vinho nos contrafortes do Marão.",
+  "Peso da Régua":
+    "Principal parada vinícola na linha do Douro onde o vale encontra o rio, amb trens Intercidades e regionais entre o Porto e Pocinho. O passeio ribeirinho e as caves ficam al costat de las andanys — base natural per a barcos rabelo, visitas a quintas e viagens cénicas pelo alto Douro.",
+  "Mesão Frio":
+    "Parada de aldeia na linha do Douro numa curva de socalcos acima do rio entre Régua e Peso da Régua. Trens regionais param no corredor Porto–Pocinho — parada tranquila per a passeios nas vinhas e vistas ribeirinhas sense o movimento dos grandes centres vinícolas.",
+  Mirandela:
+    "Terminal histórico da Linha do Tua de via estreita em Trás-os-Montes, tancada a passatgers desde o final do século XX. O centre da vila e os passeios al costat del Tua mantêm-se como destino de património — chegue per carretera ou autobús desde Bragança ou Macedo de Cavaleiros.",
+  Coimbra:
+    "Antigo terminal no centre de Coimbra do Ramal de Coimbra, tancat quando o tráfego de llarg recorregut passou per a Coimbra-B. O edifício ribeiro al costat del Mondego é um marco patrimonial — todos os serveis regulares da CP usam hoje Coimbra-B na Linha do Norte, a poucos minutos de autobús.",
+  "Rio Mau":
+    "Parada na linha do Douro entre Penafiel e Amarante na franja do vale do Sousa. Trens regionais enllacen o Porto ao corredor do alto Douro — parada paroquial discreta per a estadas no campo a l'est da área metropolitana amb connexions per a Marco de Canaveses.",
+  Lousada:
+    "Parada urbana na linha do Douro entre Penafiel e Amarante na aproximação à serra do Marão. Trens urbanos e regionais seguem per a Campanhã e o país do vinho — pràctica per a allotjament económico no vale do Sousa amb connexió suburbana direta ao Porto.",
+  Bragança:
+    "Terminal histórico oriental da Linha do Tua no extremo nordeste, já sense passatgers. A cidadela amuralhada e o país do Parque de Montesinho chegam-se hoje per carretera ou autobús — base cultural em Trás-os-Montes quando se combina amb corredores CP ativos em Mirandela ou Macedo de Cavaleiros.",
+  Viseu:
+    "Antigo terminal da Linha do Dão na Beira Alta, sense trens regulares desde o final do século XX. A cidade da catedral e as serras do Dão continuam a ser um grande destino no interior — use autobús ou estrada desde Nelas ou Mangualde na Linha da Beira Alta per a connexions a Coimbra e Guarda.",
+  "Estádio do Dragão":
+    "Terminal do Metro do Porto al costat del estádio do FC Porto, onde as linhas A e B se encontram nos subúrbios orientais. Metros freqüents enllacen a costa em Matosinhos e Póvoa de Varzim a Campanhã e ao centre — ideal em dias de jogo ou per a um salto rápido do estádio até Trindade sense trânsito.",
+  "Senhor de Matosinhos":
+    "Terminal ocidental da Linha A do metro na frente ribeira de Matosinhos. Metros circulam constantemente até Estádio do Dragão e pelo centre de Porto — base costeira pràctica per a passeios na praia, marisco e acesso rápido à CP em Leça do Balio ou Campanhã.",
+  "Póvoa de Varzim":
+    "Terminal norte da Linha B do metro no resort atlântico da Póvoa. Serviços freqüents enllacen o casino e as praias a Estádio do Dragão e ao centre de Porto em menos de uma hora — estada balnear clássica amb metro direto em vez da estrada costeira.",
+  "Campanhã (Metro)":
+    "Terminal oriental da Linha C do metro al costat de Porto-Campanhã, principal hub da CP. Metros enllacen o cinturão universitário e o ISMAI a Trindade — a forma mais rápida de mudar entre trens de llarg recorregut e a rede de metro sense táxi pela cidade.",
+  ISMAI:
+    "Terminal norte da Linha C do metro no campus universitário ISMAI em Maia. Metros freqüents seguem paral sud até Campanhã e Trindade — pràctic per a estadas de estudantes ou visitas de negócios no cinturão norte amb connexió direta às partidas intercidades em Campanhã.",
+  "Hospital São João (Metro)":
+    "Parada da Linha D do metro al costat del hospital universitário do Porto, a uma parada de Trindade na linha amarela. Metros freqüents enllacen o campus de São João ao centre e a Vila d'Este — útil per a consultas quando a parada CP na linha do Minho é menos conveniente per a o seu sentido de viagem.",
+  "Vila d'Este":
+    "Terminal oriental da Linha D do metro nos subúrbios de Gondomar acima do Douro. Metros seguem per a l'oest até Trindade e o corredor hospitalar — base residencial económica a l'est do Porto amb connexions freqüents ao centre sense atravessar as pontes de carro.",
+  "Trindade (Metro)":
+    "Hub central e terminal da Linha E do metro no centre de Porto, a passos do comércio e da baixa. Todas as linhas do metro cruzam-se aqui ou em estações vizinhas — principal intercanvi per a o metro do aeroporto, Campanhã CP e todos os corredores suburbanos.",
+  "Estação Aeroporto":
+    "Terminal da Linha E do metro no Aeroporto do Porto amb connexió coberta ao terminal. Metros freqüents chegam a Trindade e ao centre em cerca de meia hora — connexió ferroviária habitual per a quem evita táxi mas quer Alfa Pendular e Intercidades em Campanhã.",
+  "Fânzeres":
+    "Terminal sul da Linha F do metro nas colinas de Gondomar a l'est do Porto. Metros seguem paral nord até Senhora da Hora e o centre — base suburbana tranquila per a estadas económicas amb metro direto na ribal sud metropolitana.",
+  "Senhora da Hora":
+    "Parada da Linha F do metro no cinturão Matosinhos–Maia, intercanvi concorregut entre corredores laranja e azul. Metros freqüents enllacen os subúrbios norte a Trindade e à linha do aeroporto — pràctica per a estadas residenciais a l'oest do Porto amb saltos rápidos à costa ou Campanhã.",
+  "Santa Apolónia (Metro)":
+    "Terminal da linha Azul do Metro de Lisboa al costat de Lisboa Santa Apolónia na riba do Tejo. Metros enllacen Alfama e a ribeira a Amadora e aos subúrbios noroeste — canvi natural per a chegadas CP de llarg recorregut que seguem per a a rede de metro.",
+  "Amadora Este":
+    "Terminal ocidental da linha Azul do Metro de Lisboa na Amadora. Metros freqüents seguem per a este até Santa Apolónia e o centre — base suburbana económica a l'oest de Lisboa amb metro direto a Oriente, ao aeroporto e às partidas ribeirinhas da CP.",
+  Rato:
+    "Terminal ocidental da linha Amarela do Metro de Lisboa a prop do Príncipe Real e do bairro das Amoreiras. Metros enllacen as colinas centrais a Odivelas e aos subúrbios norte — pràctic per a museus e estadas no bairro das embaixadas amb salto rápido à interconnexió Marquês de Pombal.",
+  Odivelas:
+    "Terminal norte da linha Amarela do Metro de Lisboa na borda da área metropolitana. Metros freqüents seguem paral sud até Rato e o centre de Lisboa — allotjament económico al nord da cidade amb connexió suburbana direta a Oriente e ao corredor do aeroporto.",
+  "Cais do Sodré (Metro)":
+    "Parada da linha Verde do Metro de Lisboa integrada amb o terminal CP do Cais do Sodré da linha de Cascais. Metros enllacen a ribeira a Telheiras e aos subúrbios norte enquanto trens urbanos partem per a Belém e o Estoril — intercanvi duplo a l'oest da Baixa.",
+  Telheiras:
+    "Terminal norte da linha Verde do Metro de Lisboa al costat del distrito universitário do Lumiar. Metros freqüents seguem paral sud até Cais do Sodré e o centre — útil per a estadas no campus ou allotjament residencial tranquilo al nord do centre amb metro direto a Oriente.",
+  "São Sebastião (Metro)":
+    "Terminal da linha Vermelha do Metro de Lisboa na Praça de Espanha al costat del zoo e ao hub de autobúss de Sete Rios. Metros enllacen o noroeste ao aeroporto e Oriente — grande intercanvi amb CP em Sete Rios, autobúss de llarg recorregut e metro per a o centre.",
+  "Aeroporto (Metro Lisboa)":
+    "Terminal da linha Vermelha do Metro de Lisboa no Aeroporto Humberto Delgado amb connexió direta ao terminal. Metros freqüents chegam a Oriente, Saldanha e São Sebastião em minutos — connexió habitual entre voos e trens CP de llarg recorregut sense táxi até à cidade.",
 };
