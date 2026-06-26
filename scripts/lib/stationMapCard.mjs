@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { Resvg } from "@resvg/resvg-js";
 import sharp from "sharp";
 import { stitchSquareMap } from "./osmTiles.mjs";
@@ -10,6 +13,50 @@ const BRAND_PRIMARY = "#1c7a6f";
 const BRAND_GOLD = "#e8a838";
 const BRAND_CREAM = "#f4f7f6";
 const TEXT_X = 56;
+const AIRPORT_NAME_RE = /\b(aeroporto|aeropuerto|airport)\b/i;
+const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
+
+let topTrafficStationNames = null;
+
+function getTopTrafficStationNames(limit = 3) {
+  if (topTrafficStationNames) return topTrafficStationNames;
+
+  const stats = JSON.parse(readFileSync(join(REPO_ROOT, "data/departure-stats.json"), "utf8"));
+  topTrafficStationNames = Object.entries(stats.stations)
+    .map(([name, entry]) => ({
+      name,
+      departures: entry.totals?.departuresNextHour ?? 0,
+      samples: entry.successfulSamples ?? 0,
+    }))
+    .filter((entry) => entry.samples > 0)
+    .sort((a, b) => b.departures - a.departures || a.name.localeCompare(b.name))
+    .slice(0, limit)
+    .map((entry) => entry.name);
+
+  return topTrafficStationNames;
+}
+
+function isAirportStation(station) {
+  return AIRPORT_NAME_RE.test(station.name);
+}
+
+function baseZoom(station) {
+  const isMetro = station.lines.some((line) => /metro/i.test(line));
+  if (isMetro) return 17;
+  return 16;
+}
+
+export function pickZoom(station) {
+  let zoom = baseZoom(station);
+
+  if (getTopTrafficStationNames().includes(station.name)) {
+    zoom -= 3;
+  } else if (isAirportStation(station)) {
+    zoom -= 2;
+  }
+
+  return Math.max(zoom, 10);
+}
 
 function escapeXml(value) {
   return value
@@ -36,12 +83,6 @@ function wrapTitle(title, maxChars = 22) {
   }
   if (line) lines.push(line);
   return lines.slice(0, 2);
-}
-
-function pickZoom(station) {
-  const isMetro = station.lines.some((line) => /metro/i.test(line));
-  if (isMetro) return 17;
-  return 16;
 }
 
 export function buildMapOverlaySvg({ stationName, slug, siteHost, markerX, markerY, primaryLine }) {

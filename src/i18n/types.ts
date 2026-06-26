@@ -71,6 +71,7 @@ export type Messages = {
     appleMaps: string;
     openStreetMap: string;
     downloadAreaMap: string;
+    areaMapAlt: string;
     berrymetWeather: string;
     tripHistorian: string;
     metroDoPorto: string;

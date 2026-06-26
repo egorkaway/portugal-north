@@ -72,6 +72,7 @@ export const pt: Messages = {
     appleMaps: "Apple Maps",
     openStreetMap: "OpenStreetMap",
     downloadAreaMap: "Descarregar mapa da zona",
+    areaMapAlt: "Mapa da zona de {{name}}",
     berrymetWeather: "Tempo em {{city}}",
     tripHistorian: "TripHistorian",
     metroDoPorto: "Metro do Porto",

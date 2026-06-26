@@ -72,6 +72,7 @@ export const ca: Messages = {
     appleMaps: "Apple Maps",
     openStreetMap: "OpenStreetMap",
     downloadAreaMap: "Descarregar mapa de la zona",
+    areaMapAlt: "Mapa de la zona de {{name}}",
     berrymetWeather: "Temps a {{city}}",
     tripHistorian: "TripHistorian",
     metroDoPorto: "Metro do Porto",
