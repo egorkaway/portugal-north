@@ -250,7 +250,7 @@ const Station = () => {
             <h2 id="area-map-heading" className="sr-only">
               {t("station.downloadAreaMap")}
             </h2>
-            <div className="mx-auto max-w-md overflow-hidden rounded-lg border border-border bg-muted">
+            <div className="max-w-md overflow-hidden rounded-lg border border-border bg-muted">
               <img
                 src={getStationMapImagePath(station.name)}
                 alt={t("station.areaMapAlt", { name: station.name })}

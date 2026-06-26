@@ -13,6 +13,11 @@ const BRAND_PRIMARY = "#1c7a6f";
 const BRAND_GOLD = "#e8a838";
 const BRAND_CREAM = "#f4f7f6";
 const TEXT_X = 56;
+const URL_FONT_SIZE = 52;
+const URL_RIGHT_MARGIN = 56;
+/** Rough avg glyph width for Inter bold at 52px (incl. letter-spacing). */
+const URL_CHAR_WIDTH = URL_FONT_SIZE * 0.58;
+const URL_MAX_CHARS = Math.floor((CARD_SIZE - TEXT_X - URL_RIGHT_MARGIN) / URL_CHAR_WIDTH);
 const AIRPORT_NAME_RE = /\b(aeroporto|aeropuerto|airport)\b/i;
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -85,8 +90,14 @@ function wrapTitle(title, maxChars = 22) {
   return lines.slice(0, 2);
 }
 
+/** Full station URL when it fits the footer; otherwise domain only. */
+export function formatMapUrlLabel(siteHost, slug) {
+  const fullUrl = `${siteHost}/stations/${slug}`;
+  return fullUrl.length <= URL_MAX_CHARS ? fullUrl : siteHost;
+}
+
 export function buildMapOverlaySvg({ stationName, slug, siteHost, markerX, markerY, primaryLine }) {
-  const pageUrl = `${siteHost}/stations/${slug}`;
+  const pageUrl = formatMapUrlLabel(siteHost, slug);
   const titleLines = wrapTitle(stationName);
   const titleTspans = titleLines
     .map((line, index) => {

@@ -1,5 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { pickZoom } from "../../scripts/lib/stationMapCard.mjs";
+import { formatMapUrlLabel, pickZoom } from "../../scripts/lib/stationMapCard.mjs";
+
+describe("stationMapCard formatMapUrlLabel", () => {
+  it("keeps the full path when it fits", () => {
+    expect(formatMapUrlLabel("www.verystays.com", "pombal")).toBe(
+      "www.verystays.com/stations/pombal",
+    );
+  });
+
+  it("falls back to the domain when the full path is too long", () => {
+    expect(
+      formatMapUrlLabel("www.verystays.com", "barcelona-el-prat-airport-bcn"),
+    ).toBe("www.verystays.com");
+  });
+});
 
 describe("stationMapCard pickZoom", () => {
   it("zooms out 3 steps for the busiest train stations", () => {
