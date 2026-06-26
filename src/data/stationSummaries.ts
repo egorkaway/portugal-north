@@ -6,6 +6,8 @@
  *
  * Batch 1: Lisboa Oriente, Agualva - Cacém, Portela de Sintra, Queluz - Belas, Porto-Campanhã
  * Batch 2: Santa Cruz - Damaia, Braco de Prata, Monte Abraão, Entrecampos, Ermesinde
+ * Batch 3: Benfica, Merces, Amadora, Vila Franca de Xira, Roma - Areeiro
+ * Batch 4: Massama - Barcarena, Algueirão - Mem Martins, Reboleira, Campolide, Contumil
  */
 export const stationSummaries: Record<string, string> = {
   "Lisboa Oriente":
@@ -28,4 +30,14 @@ export const stationSummaries: Record<string, string> = {
     "Major Lisbon hub on the Cintura belt line, beside Campo Grande and the city’s hospital district. Alfa Pendular and Intercidades services cross here alongside dense urban traffic — useful for long-distance tickets without trekking to Oriente or Santa Apolónia. Metro and buses fan out across the northern inner city.",
   "Ermesinde":
     "Busy stop on the Porto suburban network where the Minho and Douro corridors meet, east of the city centre. Intercidades and regional trains call here alongside frequent urban services towards Campanhã and the upper Douro. A workable base for cheaper stays in the Valongo–Ermesinde belt with quick links into Porto.",
+  "Benfica":
+    "Inner-western Lisbon junction where the Sintra line meets the Cintura belt. Urban trains run constantly towards Rossio, Sintra, and the ring line around the city centre — a practical stop if you are staying near Benfica, Laranjeiras, or the university belt. Less touristy than downtown with quick hops to Entrecampos or Sete Rios.",
+  "Merces":
+    "Sintra-line halt on the climb towards Sintra town, between Cacém and the hills. Frequent urban trains link central Lisbon with the palaces and forest walks one stop beyond Portela de Sintra. A quieter suburban base than the town centre itself, with steady commuter traffic on weekdays.",
+  "Amadora":
+    "Main rail stop for Amadora, one of Lisbon’s largest suburbs west of the centre. The Sintra line runs through here with very frequent urban trains to Rossio and the western corridor. Useful for budget accommodation with a direct suburban link — the municipal centre and bus network are a short walk from the platforms.",
+  "Vila Franca de Xira":
+    "Tagus-side town on the Linha do Norte between Lisbon and Santarém, known for bull-running traditions and riverside walks. Intercidades and regional trains call here alongside urban services towards Santa Apolónia and the northern commuter belt. A lower-cost base with a direct long-distance link to Lisbon and Porto.",
+  "Roma - Areeiro":
+    "Cintura-line stop between Areeiro and Entrecampos, handy for the Roma–Areeiro office and hospital district east of central Lisbon. Dense urban trains circle the inner city on the belt line, with easy changes for Sintra-line services at Benfica or long-distance trains at Entrecampos. Well placed for metro connections at Areeiro.",
 };

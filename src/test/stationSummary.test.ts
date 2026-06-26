@@ -25,12 +25,32 @@ describe("station summaries batch 1", () => {
   it("lists the next five stations without summaries", () => {
     const next = stationsNeedingSummaries(5);
     expect(next).toEqual([
+      "Massama - Barcarena",
+      "Algueirão - Mem Martins",
+      "Reboleira",
+      "Campolide",
+      "Contumil",
+    ]);
+  });
+});
+
+describe("station summaries batch 3", () => {
+  it("covers stations ranked 11–15 by train volume", () => {
+    const batchThree = rankStationsByTrainVolume()
+      .slice(10, 15)
+      .map((entry) => entry.station.name);
+
+    expect(batchThree).toEqual([
       "Benfica",
       "Merces",
       "Amadora",
       "Vila Franca de Xira",
       "Roma - Areeiro",
     ]);
+
+    for (const name of batchThree) {
+      expect(getStationSummary(name)).toMatch(/\.\s*$/);
+    }
   });
 });
 
