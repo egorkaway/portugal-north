@@ -36,6 +36,7 @@ import { getMetroOperatorLink, isMetroStation } from "@/lib/metroStation";
 import { StationYesimPromo } from "@/components/StationYesimPromo";
 import { NearestLongDistanceStations } from "@/components/NearestLongDistanceStations";
 import { getBerrymetCityLink } from "@/lib/berrymetCity";
+import { getStationSummary } from "@/lib/stationSummary";
 
 const typeColors: Record<string, string> = {
   Airport: "bg-sky-600 text-white",
@@ -62,6 +63,7 @@ const Station = () => {
   const airportStation = isAirportStation(station);
   const showYesimPromo = showsTravelEsimPromo(station);
   const berrymetCityLink = getBerrymetCityLink(station);
+  const stationSummary = getStationSummary(station.name);
   const LineIcon = airportStation ? Plane : Train;
   const metroLink = getMetroOperatorLink(station);
   const imageUrl = getStationImageUrl(station.name);
@@ -152,6 +154,12 @@ const Station = () => {
               </span>
             ))}
           </div>
+
+          {stationSummary ? (
+            <p className="mb-5 text-sm leading-relaxed text-muted-foreground md:mb-8">
+              {stationSummary}
+            </p>
+          ) : null}
 
           {!airportStation ? <StationDepartures stationName={station.name} /> : null}
           {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}

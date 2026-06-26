@@ -26,7 +26,8 @@
     "hotels:recheck-ambiguous": "node scripts/recheck-ambiguous-hotel-links.mjs",
     "stats:departures": "node --import tsx scripts/collect-departure-stats.mjs",
     "stats:sync-station-types": "node --import tsx scripts/sync-station-types-from-stats.mjs --write",
-    "stats:sync-station-types:dry": "node --import tsx scripts/sync-station-types-from-stats.mjs"
+    "stats:sync-station-types:dry": "node --import tsx scripts/sync-station-types-from-stats.mjs",
+    "summaries:next": "node --import tsx scripts/list-stations-needing-summaries.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

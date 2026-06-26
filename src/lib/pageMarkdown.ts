@@ -20,6 +20,7 @@ import {
   getNearestLongDistanceStations,
   shouldShowNearestLongDistance,
 } from "@/lib/nearestLongDistanceStations";
+import { getStationSummary } from "@/lib/stationSummary";
 
 /** Rough token estimate (~4 chars per token for English prose). */
 export function estimateMarkdownTokens(markdown: string): number {
@@ -166,6 +167,10 @@ ${longDistanceLines}
 `
       : "";
 
+  const summaryText =
+    getStationSummary(station.name) ??
+    `${formatServiceTypes(station.types, "en")} at **${station.name}** on ${formatLineList(station.lines, "en")}.`;
+
   const body = `${yamlFrontmatter({
     title: meta.title,
     description: meta.description,
@@ -200,7 +205,7 @@ ${longDistanceSection}## Links
 
 ## Summary
 
-${formatServiceTypes(station.types, "en")} at **${station.name}** on ${formatLineList(station.lines, "en")}.
+${summaryText}
 `;
 
   const structured = buildStationStructuredData({
