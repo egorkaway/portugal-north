@@ -1,39 +1,33 @@
 import { describe, expect, it } from "vitest";
 import { stations } from "@/data/stations";
 import { allStations } from "@/data/stationRegistry";
-import {
-  berrymetCitySlug,
-  getBerrymetCityLink,
-} from "@/lib/berrymetCity";
-
-describe("berrymetCitySlug", () => {
-  it("normalizes accents and spaces", () => {
-    expect(berrymetCitySlug("Viana do Castelo")).toBe("viana-do-castelo");
-    expect(berrymetCitySlug("São Sebastián")).toBe("sao-sebastian");
-    expect(berrymetCitySlug("A Coruña")).toBe("a-coruna");
-  });
-});
+import { getBerrymetCityLink } from "@/lib/berrymetCity";
 
 describe("getBerrymetCityLink", () => {
-  it("links Vigo-area stations to Vigo", () => {
+  it("links Vigo-area stations to published Vigo page", () => {
     const link = getBerrymetCityLink(allStations.find((s) => s.name === "Vigo-Guixar")!);
     expect(link?.cityName).toBe("Vigo");
-    expect(link?.href).toBe("https://berrymet.com/l/vigo");
+    expect(link?.href).toBe("https://berrymet.com/g/30");
   });
 
-  it("links Lisbon-area stations to Lisboa", () => {
+  it("links Lisbon-area stations to published Lisboa page", () => {
     const link = getBerrymetCityLink(stations.find((s) => s.name === "Lisboa Oriente")!);
     expect(link?.cityName).toBe("Lisboa");
-    expect(link?.href).toBe("https://berrymet.com/l/lisboa");
+    expect(link?.href).toBe("https://berrymet.com/g/43");
   });
 
-  it("links Valença via override to Viana do Castelo", () => {
+  it("does not link Senhora da Agonia to unpublished Viana do Castelo", () => {
+    const link = getBerrymetCityLink(stations.find((s) => s.name === "Senhora da Agonia")!);
+    expect(link?.href).not.toBe("https://berrymet.com/l/viana-do-castelo");
+    expect(link?.cityName).not.toBe("Viana do Castelo");
+  });
+
+  it("returns null for Valença when no published city is within range", () => {
     const link = getBerrymetCityLink(stations.find((s) => s.name === "Valença")!);
-    expect(link?.cityName).toBe("Viana do Castelo");
-    expect(link?.href).toBe("https://berrymet.com/l/viana-do-castelo");
+    expect(link).toBeNull();
   });
 
-  it("returns null when no berrymet city is close enough", () => {
+  it("returns null when no published berrymet city is close enough", () => {
     const link = getBerrymetCityLink({
       name: "Remote Stop",
       country: "pt",
