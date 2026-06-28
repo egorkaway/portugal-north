@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import L from "leaflet";
 import { Polygon, useMap, useMapEvents } from "react-leaflet";
+import { useNavigate } from "react-router-dom";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { stationToSlug } from "@/lib/stationSlug";
 import {
@@ -34,7 +35,7 @@ function buildTooltipHtml(
         <p class="font-semibold text-foreground">${name}</p>
         <p class="text-xs text-muted-foreground">${movements}</p>
         <p class="text-xs text-muted-foreground">${resolution}</p>
-        <a href="/stations/${slug}" class="text-xs font-medium text-primary hover:underline">${viewStation}</a>
+        <a href="/stations/${slug}" data-station-link class="text-xs font-medium text-primary hover:underline">${viewStation}</a>
       </div>`;
     })
     .join('<hr class="map-hex-tooltip__divider" />');
@@ -52,27 +53,46 @@ export function MapHexLayer({
   maxMovements,
 }: MapHexLayerProps) {
   const map = useMap();
+  const navigate = useNavigate();
   const { t } = useLocale();
   const tooltipRef = useRef<L.Tooltip | null>(null);
+  const lastMatchesKeyRef = useRef("");
 
   useEffect(() => {
     tooltipRef.current = L.tooltip({
       sticky: true,
+      interactive: true,
       direction: "top",
       className: "map-hex-tooltip",
       opacity: 1,
     });
+
     return () => {
       tooltipRef.current?.remove();
       tooltipRef.current = null;
     };
   }, [map]);
 
+  useEffect(() => {
+    const container = map.getContainer();
+    const onClick = (event: MouseEvent) => {
+      const link = (event.target as HTMLElement).closest<HTMLAnchorElement>(
+        "a[data-station-link]",
+      );
+      if (!link || !container.contains(link)) return;
+      event.preventDefault();
+      navigate(link.getAttribute("href") ?? "");
+    };
+    container.addEventListener("click", onClick);
+    return () => container.removeEventListener("click", onClick);
+  }, [map, navigate]);
+
   const hideTooltip = useCallback(() => {
     const tooltip = tooltipRef.current;
     if (tooltip?.isOpen()) {
       map.closeTooltip(tooltip);
     }
+    lastMatchesKeyRef.current = "";
   }, [map]);
 
   const showTooltip = useCallback(
@@ -86,10 +106,15 @@ export function MapHexLayer({
         return;
       }
 
-      tooltip
-        .setContent(buildTooltipHtml(matches, t))
-        .setLatLng(latlng)
-        .openOn(map);
+      const matchesKey = matches
+        .map((cell) => `${cell.stationName}:${cell.cellId}`)
+        .join("|");
+      if (matchesKey !== lastMatchesKeyRef.current) {
+        tooltip.setContent(buildTooltipHtml(matches, t));
+        lastMatchesKeyRef.current = matchesKey;
+      }
+
+      tooltip.setLatLng(latlng).openOn(map);
     },
     [cells, hideTooltip, map, t],
   );
@@ -98,19 +123,20 @@ export function MapHexLayer({
     mousemove(e: L.LeafletMouseEvent) {
       showTooltip(e.latlng);
     },
-    mouseout() {
-      hideTooltip();
-    },
   };
 
   useMapEvents({
     mousemove(e) {
       showTooltip(e.latlng);
     },
-    mouseout() {
-      hideTooltip();
-    },
   });
+
+  useEffect(() => {
+    const container = map.getContainer();
+    const onLeave = () => hideTooltip();
+    container.addEventListener("mouseleave", onLeave);
+    return () => container.removeEventListener("mouseleave", onLeave);
+  }, [hideTooltip, map]);
 
   return (
     <>

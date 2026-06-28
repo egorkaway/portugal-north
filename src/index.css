@@ -126,7 +126,8 @@ All colors MUST be HSL.
   border-color: hsl(25 88% 45%);
 }
 
-.leaflet-tooltip.map-hex-tooltip {
+.leaflet-tooltip.map-hex-tooltip,
+.leaflet-tooltip.map-hex-tooltip.leaflet-interactive {
   margin: 0;
   padding: 8px 10px;
   border: 1px solid hsl(var(--border));
@@ -139,6 +140,11 @@ All colors MUST be HSL.
   line-height: 1.4;
   max-width: 260px;
   pointer-events: auto;
+}
+
+.map-hex-tooltip a {
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 .leaflet-tooltip.map-hex-tooltip::before {
