@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   buildStationHexCells,
+  findHexCellsAtLatLng,
   hexPathStyle,
   movementsToH3Resolution,
   stationHexCellsToGeoJSON,
@@ -45,6 +46,24 @@ describe("hexPathStyle", () => {
     const quietest = hexPathStyle(9, 10, 10, 100);
     expect(quietest.fillColor).toContain("275");
     expect(quietest.fillOpacity).toBeGreaterThan(0.85);
+  });
+});
+
+describe("findHexCellsAtLatLng", () => {
+  it("returns every overlapping cell at a point across different H3 resolutions", () => {
+    const { cells } = buildStationHexCells(
+      [
+        { name: "Porto Campanhã", lat: 41.1496, lng: -8.585 },
+        { name: "Porto São Bento", lat: 41.1496, lng: -8.585 },
+      ],
+      { "Porto Campanhã": 100, "Porto São Bento": 10 },
+    );
+
+    const matches = findHexCellsAtLatLng(41.1496, -8.585, cells);
+    expect(matches).toHaveLength(2);
+    expect(matches.map((c) => c.stationName)).toEqual(
+      expect.arrayContaining(["Porto Campanhã", "Porto São Bento"]),
+    );
   });
 });
 

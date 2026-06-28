@@ -27,7 +27,6 @@ import { PageHead } from "@/components/PageHead";
 import { buildStationPageMeta } from "@/lib/pageMeta";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { JsonLd } from "@/components/JsonLd";
-import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
 import { buildStationStructuredData } from "@/lib/structuredData";
 import { getStationBySlug } from "@/lib/stationSlug";
 import { getTripHistorianStationUrl } from "@/lib/tripHistorian";
@@ -74,14 +73,12 @@ const Station = () => {
   const showPhotoVote = hasRepresentativeStationImage(station.name);
   const { vote, cast } = useStationVote(station.name);
   const { visited, toggle: toggleVisited } = useStationVisited(station.name);
-  const { data: globalVotes } = useGlobalRatings();
   const pageMeta = buildStationPageMeta(station, hotels, shareImageUrl, locale);
   const structuredData = buildStationStructuredData({
     station,
     slug: slug!,
     hotels,
     imageUrl: shareImageUrl,
-    hotelRatings: globalVotes?.hotelRatings,
   });
 
   return (

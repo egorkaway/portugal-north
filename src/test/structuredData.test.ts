@@ -4,7 +4,6 @@ import {
   buildHomeStructuredData,
   buildStationStructuredData,
   jsonLdScript,
-  votesToAggregateRating,
 } from "../lib/structuredData";
 import { stationImages } from "../data/stationImages";
 import { DEFAULT_SITE_URL } from "../lib/site";
@@ -33,6 +32,7 @@ const aveiro: Station = {
   types: ["Regional"],
   lat: 40.6443,
   lng: -8.6455,
+  country: "pt",
 };
 
 describe("structuredData", () => {
@@ -48,35 +48,22 @@ describe("structuredData", () => {
     const items = crumb.itemListElement as {
       position: number;
       name: string;
-      item: string;
+      item?: string;
     }[];
-    expect(items[0].item).toBe(`${PRODUCTION_ORIGIN}/`);
+    expect(items[0].item).toBe(`${PRODUCTION_ORIGIN}/pt`);
     expect(items[1].position).toBe(2);
     expect(items[1].name).toBe("Aveiro");
-    expect(items[1].item).toBe(`${PRODUCTION_ORIGIN}/stations/aveiro`);
+    expect(items[1].item).toBeUndefined();
     expect(crumb["@id"]).toBe(`${PRODUCTION_ORIGIN}/stations/aveiro#breadcrumb`);
-    for (const { item } of items) {
-      expect(item).toMatch(/^https:\/\//);
-      expect(item).not.toMatch(/^\/[^/]/);
+    for (const entry of items) {
+      if (entry.item) {
+        expect(entry.item).toMatch(/^https:\/\//);
+        expect(entry.item).not.toMatch(/undefined/);
+      }
     }
   });
 
-  it("omits aggregate rating without enough votes", () => {
-    expect(votesToAggregateRating(1, 0)).toBeNull();
-    expect(votesToAggregateRating(3, 1)).not.toBeNull();
-  });
-
-  it("aggregate rating uses ratingCount only (community votes, not reviews)", () => {
-    expect(votesToAggregateRating(4, 2)).toEqual({
-      "@type": "AggregateRating",
-      ratingValue: 3.3,
-      ratingCount: 6,
-      bestRating: 5,
-      worstRating: 1,
-    });
-  });
-
-  it("station graph includes TrainStation and hotels", () => {
+  it("station graph includes TrainStation and hotels without review markup", () => {
     const data = buildStationStructuredData({
       station: aveiro,
       slug: "aveiro",
@@ -89,7 +76,6 @@ describe("structuredData", () => {
         },
       ],
       imageUrl: stationImages.Aveiro,
-      hotelRatings: { "Aveiro::Hotel das Salinas": { up: 5, down: 1 } },
     });
     const graph = data["@graph"] as { "@type": string; aggregateRating?: unknown }[];
     const types = graph.map((n) => n["@type"]);
@@ -101,19 +87,13 @@ describe("structuredData", () => {
     expect(trainStation?.aggregateRating).toBeUndefined();
 
     const hotel = graph.find((n) => n["@type"] === "LodgingBusiness");
-    expect(hotel?.aggregateRating).toMatchObject({
-      "@type": "AggregateRating",
-      ratingCount: 6,
-    });
-    expect(hotel?.aggregateRating).not.toHaveProperty("reviewCount");
+    expect(hotel?.aggregateRating).toBeUndefined();
 
     const breadcrumb = graph.find((n) => n["@type"] === "BreadcrumbList") as {
-      itemListElement: { item: string }[];
+      itemListElement: { item?: string }[];
     };
-    expect(breadcrumb.itemListElement[0].item).toBe(`${PRODUCTION_ORIGIN}/`);
-    expect(breadcrumb.itemListElement[1].item).toBe(
-      `${PRODUCTION_ORIGIN}/stations/aveiro`,
-    );
+    expect(breadcrumb.itemListElement[0].item).toBe(`${PRODUCTION_ORIGIN}/pt`);
+    expect(breadcrumb.itemListElement[1].item).toBeUndefined();
   });
 
   it("station ImageObject includes Google image metadata fields", () => {

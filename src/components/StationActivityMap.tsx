@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import { Link } from "react-router-dom";
 import { Download } from "lucide-react";
-import { MapContainer, Polygon, TileLayer, Tooltip } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import { Button } from "@/components/ui/button";
+import { MapHexLayer } from "@/components/MapHexLayer";
 import { MapLocateControl } from "@/components/MapLocateControl";
 import { MapPointLabels } from "@/components/MapPointLabels";
 import { stations } from "@/data/stations";
@@ -16,11 +16,8 @@ import {
   PORTUGAL_MAP_BOUNDS,
   PORTUGAL_MAP_CENTER,
   PORTUGAL_MAP_ZOOM,
-  buildStationHexCells,
   downloadStationHexGeoJSON,
-  hexPathStyle,
 } from "@/lib/stationH3Map";
-import { stationToSlug } from "@/lib/stationSlug";
 import "leaflet/dist/leaflet.css";
 
 const LEGEND_SWATCHES = {
@@ -119,41 +116,11 @@ export default function StationActivityMap() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           <MapLocateControl />
-          {cells.map((cell) => {
-            const style = hexPathStyle(
-              cell.resolution,
-              cell.movements,
-              minMovements,
-              maxMovements,
-            );
-            return (
-              <Polygon
-                key={`${cell.stationName}-${cell.cellId}`}
-                positions={cell.boundary}
-                pathOptions={{
-                  color: style.color,
-                  weight: style.weight,
-                  fillColor: style.fillColor,
-                  fillOpacity: style.fillOpacity,
-                }}
-              >
-                <Tooltip sticky>
-                  <span className="font-medium">{cell.stationName}</span>
-                  <br />
-                  {t("map.tooltipMovements", { count: cell.movements })}
-                  <br />
-                  {t("map.tooltipResolution", { resolution: cell.resolution })}
-                  <br />
-                  <Link
-                    to={`/stations/${stationToSlug(cell.stationName)}`}
-                    className="text-primary underline"
-                  >
-                    {t("map.viewStation")}
-                  </Link>
-                </Tooltip>
-              </Polygon>
-            );
-          })}
+          <MapHexLayer
+            cells={cells}
+            minMovements={minMovements}
+            maxMovements={maxMovements}
+          />
           <MapPointLabels points={labelPoints} />
         </MapContainer>
       </div>

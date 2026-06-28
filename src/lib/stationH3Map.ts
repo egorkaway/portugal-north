@@ -157,6 +157,20 @@ export function hexPathStyle(
   }
 }
 
+/** All hex cells whose H3 index contains the given point (overlapping sizes). */
+export function findHexCellsAtLatLng(
+  lat: number,
+  lng: number,
+  cells: StationHexCell[],
+): StationHexCell[] {
+  return cells
+    .filter((cell) => latLngToCell(lat, lng, cell.resolution) === cell.cellId)
+    .sort((a, b) => {
+      if (a.resolution !== b.resolution) return b.resolution - a.resolution;
+      return a.stationName.localeCompare(b.stationName);
+    });
+}
+
 export type StationHexFeatureProperties = {
   stationName: string;
   movements: number;

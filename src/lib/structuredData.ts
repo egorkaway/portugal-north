@@ -1,17 +1,16 @@
 import type { Hotel } from "../data/hotels";
 import type { Station } from "../data/stations";
 import { stations } from "../data/stations";
-import type { GlobalRatings } from "./voteTypes";
 import { getStationPath } from "./stationSlug";
 import { absoluteUrl, SITE_URL } from "./site";
 import { createTranslator } from "@/i18n";
 import { getStationMetaDescription, getStationPageTitle } from "./stationMeta";
 import { attributionForImageUrl, siteLogoAttribution } from "./imageAttribution";
 import type { CountryCode } from "./countries";
+import { DEFAULT_COUNTRY } from "./countries";
 import { buildHomePath } from "./homeRoute";
 
 const SITE_NAME = "Sustainable Iberian";
-const MIN_VOTES_FOR_AGGREGATE = 2;
 
 type JsonLd = Record<string, unknown>;
 
@@ -19,34 +18,38 @@ export function jsonLdScript(data: unknown): string {
   return JSON.stringify(data).replace(/</g, "\\u003c");
 }
 
-export function buildBreadcrumbList(items: { name: string; path: string }[]): JsonLd {
-  return {
-    "@type": "BreadcrumbList",
-    "@id": `${absoluteUrl(items[items.length - 1]?.path ?? "/")}#breadcrumb`,
-    itemListElement: items.map((item, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: item.name,
-      item: absoluteUrl(item.path),
-    })),
-  };
+function normalizeBreadcrumbPath(path: string): string {
+  if (!path || /undefined/.test(path)) {
+    return buildHomePath(DEFAULT_COUNTRY);
+  }
+  if (path === "/") {
+    return buildHomePath(DEFAULT_COUNTRY);
+  }
+  return path.startsWith("/") ? path : `/${path}`;
 }
 
-export function votesToAggregateRating(
-  up: number,
-  down: number,
-): JsonLd | null {
-  const total = up + down;
-  if (total < MIN_VOTES_FOR_AGGREGATE || up === 0) return null;
+export function buildBreadcrumbList(items: { name: string; path: string }[]): JsonLd {
+  const normalized = items.map((item) => ({
+    name: item.name,
+    path: normalizeBreadcrumbPath(item.path),
+  }));
+  const lastPath = normalized[normalized.length - 1]?.path ?? buildHomePath(DEFAULT_COUNTRY);
 
-  const ratingValue = Math.round((up / total) * 50) / 10;
   return {
-    "@type": "AggregateRating",
-    ratingValue: Math.min(5, Math.max(1, ratingValue)),
-    // Community thumbs-up/down votes — not written reviews (Google Review snippet types).
-    ratingCount: total,
-    bestRating: 5,
-    worstRating: 1,
+    "@type": "BreadcrumbList",
+    "@id": `${absoluteUrl(lastPath)}#breadcrumb`,
+    itemListElement: normalized.map((item, index) => {
+      const listItem: JsonLd = {
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+      };
+      const isLast = index === normalized.length - 1;
+      if (!isLast) {
+        listItem.item = absoluteUrl(item.path);
+      }
+      return listItem;
+    }),
   };
 }
 
@@ -70,31 +73,23 @@ function buildStationImageObject(imageUrl: string, stationName: string): JsonLd 
   return image;
 }
 
-function buildLodgingBusiness(
-  hotel: Hotel,
-  station: Station,
-  stationPageUrl: string,
-  hotelRatings?: GlobalRatings,
-): JsonLd {
-  const hotelKey = `${station.name}::${hotel.name}`;
-  const counts = hotelRatings?.[hotelKey];
-  const aggregateRating =
-    counts && votesToAggregateRating(counts.up, counts.down);
-
-  const lodging: JsonLd = {
+function buildLodgingBusiness(hotel: Hotel, station: Station): JsonLd {
+  return {
     "@type": "LodgingBusiness",
     name: hotel.name,
     url: hotel.bookingUrl,
     priceRange: `€${hotel.priceFrom}+`,
     description: `Budget stay about ${hotel.distanceKm} km from ${station.name} station.`,
-    containedInPlace: { "@id": `${stationPageUrl}#station` },
+    containedInPlace: {
+      "@type": "TrainStation",
+      name: station.name,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: station.lat,
+        longitude: station.lng,
+      },
+    },
   };
-
-  if (aggregateRating) {
-    lodging.aggregateRating = aggregateRating;
-  }
-
-  return lodging;
 }
 
 export function buildStationStructuredData(options: {
@@ -102,10 +97,8 @@ export function buildStationStructuredData(options: {
   slug: string;
   hotels: Hotel[];
   imageUrl?: string;
-  /** Hotel community votes only — TrainStation is not a valid Review snippet parent in Google. */
-  hotelRatings?: GlobalRatings;
 }): JsonLd {
-  const { station, slug, hotels, imageUrl, hotelRatings } = options;
+  const { station, slug, hotels, imageUrl } = options;
   const path = `/stations/${slug}`;
   const pageUrl = absoluteUrl(path);
   const stationId = `${pageUrl}#station`;
@@ -149,9 +142,7 @@ export function buildStationStructuredData(options: {
       mainEntity: { "@id": stationId },
     },
     trainStation,
-    ...hotels.map((hotel) =>
-      buildLodgingBusiness(hotel, station, pageUrl, hotelRatings),
-    ),
+    ...hotels.map((hotel) => buildLodgingBusiness(hotel, station)),
   ];
 
   return {
@@ -229,7 +220,7 @@ export function buildRankingsStructuredData(): JsonLd {
     "@context": "https://schema.org",
     "@graph": [
       buildBreadcrumbList([
-        { name: "Home", path: "/" },
+        { name: "Home", path: buildHomePath(DEFAULT_COUNTRY) },
         { name: "Community rankings", path },
       ]),
       {
@@ -244,4 +235,3 @@ export function buildRankingsStructuredData(): JsonLd {
     ],
   };
 }
-

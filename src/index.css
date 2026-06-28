@@ -125,3 +125,34 @@ All colors MUST be HSL.
 .leaflet-tooltip.map-point-label--airport {
   border-color: hsl(25 88% 45%);
 }
+
+.leaflet-tooltip.map-hex-tooltip {
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid hsl(var(--border));
+  border-radius: 0.5rem;
+  background: hsl(0 0% 100% / 0.96);
+  box-shadow: 0 2px 8px hsl(200 25% 12% / 0.16);
+  color: hsl(var(--foreground));
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 12px;
+  line-height: 1.4;
+  max-width: 260px;
+  pointer-events: auto;
+}
+
+.leaflet-tooltip.map-hex-tooltip::before {
+  display: none;
+}
+
+.map-hex-tooltip__station + .map-hex-tooltip__station,
+.map-hex-tooltip__divider + .map-hex-tooltip__station {
+  margin-top: 8px;
+  padding-top: 8px;
+}
+
+.map-hex-tooltip__divider {
+  margin: 8px 0 0;
+  border: none;
+  border-top: 1px solid hsl(var(--border));
+}
