@@ -276,8 +276,8 @@ export type Messages = {
     subtitle: string;
     disclaimer: string;
     alsoFromUs: string;
-    climaTitle: string;
-    climaDesc: string;
+    caminoTitle: string;
+    caminoDesc: string;
     mapaTitle: string;
     mapaDesc: string;
     portuGuessTitle: string;

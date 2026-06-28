@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CloudSun, ExternalLink, Languages, Smartphone } from "lucide-react";
+import { ExternalLink, Footprints, Languages, Smartphone } from "lucide-react";
 import footerDouro from "@/assets/footer-douro.jpg";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLocale } from "@/i18n/LocaleProvider";
@@ -59,17 +59,17 @@ export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
             </p>
             <div className="mx-auto grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <a
-                href="https://berrymet.com"
+                href="https://apps.apple.com/pt/app/my-personal-camino-de-santiago/id6761839093?l=en-GB"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-1 items-start gap-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-4 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15 md:gap-4 md:p-5"
               >
-                <CloudSun className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
+                <Footprints className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
                 <div className="min-w-0 flex-1">
                   <p className="font-display text-xl text-primary-foreground">
-                    {t("footer.climaTitle")}
+                    {t("footer.caminoTitle")}
                   </p>
-                  <p className="mt-1 text-sm text-primary-foreground/80">{t("footer.climaDesc")}</p>
+                  <p className="mt-1 text-sm text-primary-foreground/80">{t("footer.caminoDesc")}</p>
                 </div>
                 <ExternalLink
                   className="mt-1 h-4 w-4 shrink-0 text-primary-foreground/50 transition-colors group-hover:text-primary-foreground"

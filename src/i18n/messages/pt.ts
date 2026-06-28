@@ -314,9 +314,9 @@ export const pt: Messages = {
       "Do Douro enevoado à costa atlântica, com paragens-chave e um sítio para dormir perto.",
     disclaimer: "Não recomendamos estes hotéis, mas se gostar, queremos saber.",
     alsoFromUs: "Também nossos",
-    climaTitle: "Clima Ibérico",
-    climaDesc:
-      "Meteorologia e alertas em Espanha e Portugal. Confira as condições antes de viajar.",
+    caminoTitle: "My Personal Camino de Santiago",
+    caminoDesc:
+      "App para iPhone para planear etapas, seguir o caminho e guardar notas no Caminho de Santiago.",
     mapaTitle: "Map Your Travel",
     mapaDesc:
       "A app GetMapa para iPhone regista os sítios que visita e cria um mapa de viagem a partir das fotos.",

@@ -314,9 +314,9 @@ export const ca: Messages = {
       "Del Douro ennuvolat a la costa atlàntica, amb parades clau i un lloc on dormir a prop.",
     disclaimer: "No recomanem aquests hotels, però si t'agraden, volem saber-ho.",
     alsoFromUs: "També nostres",
-    climaTitle: "Clima Ibérico",
-    climaDesc:
-      "Temps i alertes meteorològiques a Espanya i Portugal. Consulta les condicions abans de viatjar.",
+    caminoTitle: "My Personal Camino de Santiago",
+    caminoDesc:
+      "App per a iPhone per planificar etapes, seguir el camí i guardar notes al Camí de Santiago.",
     mapaTitle: "Map Your Travel",
     mapaDesc:
       "L'app GetMapa per a iPhone registra els llocs que visites i crea un mapa de viatge amb les teves fotos.",

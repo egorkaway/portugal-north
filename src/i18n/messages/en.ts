@@ -312,9 +312,9 @@ export const en: Messages = {
       "From the misty Douro Valley to the Atlantic coast, with key stops and a place to sleep nearby.",
     disclaimer: "We do not recommend these hotels, but if you do, we want to know.",
     alsoFromUs: "Also from us",
-    climaTitle: "Clima Ibérico",
-    climaDesc:
-      "Weather and meteorological alerts across Spain and Portugal. Check conditions before you travel.",
+    caminoTitle: "My Personal Camino de Santiago",
+    caminoDesc:
+      "iPhone app to plan stages, track your walk, and keep notes along the Camino de Santiago.",
     mapaTitle: "Map Your Travel",
     mapaDesc:
       "GetMapa's iPhone app tracks the places you visit and builds a personal travel map from your trips and photos.",

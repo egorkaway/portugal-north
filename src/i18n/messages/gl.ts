@@ -314,9 +314,9 @@ export const gl: Messages = {
       "Do Douro brumoso á costa atlántica, con paradas clave e un lugar onde durmir preto.",
     disclaimer: "Non recomendamos estes hoteis, pero se che gustan, queremos sabelo.",
     alsoFromUs: "Tamén nosos",
-    climaTitle: "Clima Ibérico",
-    climaDesc:
-      "Tempo e alertas meteorolóxicas en España e Portugal. Consulta as condicións antes de viaxar.",
+    caminoTitle: "My Personal Camino de Santiago",
+    caminoDesc:
+      "App para iPhone para planificar etapas, seguir o camiño e gardar notas no Camiño de Santiago.",
     mapaTitle: "Map Your Travel",
     mapaDesc:
       "A app GetMapa para iPhone rexistra os lugares que visitas e crea un mapa de viaxe coas túas fotos.",
