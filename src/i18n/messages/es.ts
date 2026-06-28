@@ -90,6 +90,8 @@ export const es: Messages = {
     longDistanceNearby: "Paradas de larga distancia más cercanas",
     longDistanceIntro:
       "Esta parada solo tiene servicio regional o urbano. Para trenes Alfa Pendular o Intercidades, prueba estas estaciones cercanas:",
+    nearestStationsNearby: "Estaciones más cercanas",
+    nearestStationsIntro: "Otras paradas cerca de esta estación en el mapa.",
     yesimTitle: "eSIM de viaje para el aeropuerto",
     yesimBody:
       "Llega con datos móviles listos — útil para mapas, apps de transporte y mensajes antes de llegar al centro.",
@@ -316,7 +318,7 @@ export const es: Messages = {
     alsoFromUs: "También nuestros",
     caminoTitle: "My Personal Camino de Santiago",
     caminoDesc:
-      "App para iPhone para planificar etapas, seguir el camino y guardar notas en el Camino de Santiago.",
+      "App para iPhone para seguir el camino y tu progreso en el Camino de Santiago.",
     mapaTitle: "Map Your Travel",
     mapaDesc:
       "La app GetMapa para iPhone registra los lugares que visitas y crea un mapa de viaje con tus fotos.",

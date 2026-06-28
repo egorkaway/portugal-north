@@ -35,6 +35,7 @@ import { isAirportStation, showsTravelEsimPromo } from "@/lib/airportStation";
 import { getMetroOperatorLink, isMetroStation } from "@/lib/metroStation";
 import { StationYesimPromo } from "@/components/StationYesimPromo";
 import { NearestLongDistanceStations } from "@/components/NearestLongDistanceStations";
+import { NearestStations } from "@/components/NearestStations";
 import { getBerrymetCityLink } from "@/lib/berrymetCity";
 import { buildHomePath } from "@/lib/homeRoute";
 import { getStationSummary } from "@/lib/stationSummary";
@@ -167,6 +168,7 @@ const Station = () => {
           {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}
 
           <NearestLongDistanceStations station={station} />
+          <NearestStations station={station} />
 
           <div className="mb-6 flex flex-wrap gap-2 md:mb-10">
             <a
@@ -253,7 +255,7 @@ const Station = () => {
             <div className="max-w-md overflow-hidden rounded-lg border border-border bg-muted">
               <img
                 src={getStationMapImagePath(station.name)}
-                alt={t("station.areaMapAlt", { name: station.name })}
+                alt={stationSummary ?? t("station.areaMapAlt", { name: station.name })}
                 width={1080}
                 height={1080}
                 className="aspect-square w-full object-cover"

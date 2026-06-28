@@ -88,6 +88,8 @@ export type Messages = {
     away: string;
     longDistanceNearby: string;
     longDistanceIntro: string;
+    nearestStationsNearby: string;
+    nearestStationsIntro: string;
     yesimTitle: string;
     yesimBody: string;
     yesimCta: string;
