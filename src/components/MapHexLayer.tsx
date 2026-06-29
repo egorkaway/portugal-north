@@ -57,12 +57,27 @@ export function MapHexLayer({
   const { t } = useLocale();
   const tooltipRef = useRef<L.Tooltip | null>(null);
   const lastMatchesKeyRef = useRef("");
+  const pinnedLatLngRef = useRef<L.LatLng | null>(null);
+  const isPointerOnTooltipRef = useRef(false);
+
+  const bindTooltipHover = useCallback((tooltip: L.Tooltip) => {
+    const el = tooltip.getElement();
+    if (!el || el.dataset.hoverBound) return;
+    el.dataset.hoverBound = "1";
+    el.addEventListener("mouseenter", () => {
+      isPointerOnTooltipRef.current = true;
+    });
+    el.addEventListener("mouseleave", () => {
+      isPointerOnTooltipRef.current = false;
+    });
+  }, []);
 
   useEffect(() => {
     tooltipRef.current = L.tooltip({
-      sticky: true,
+      sticky: false,
       interactive: true,
       direction: "top",
+      offset: [0, -10],
       className: "map-hex-tooltip",
       opacity: 1,
     });
@@ -93,10 +108,14 @@ export function MapHexLayer({
       map.closeTooltip(tooltip);
     }
     lastMatchesKeyRef.current = "";
+    pinnedLatLngRef.current = null;
+    isPointerOnTooltipRef.current = false;
   }, [map]);
 
   const showTooltip = useCallback(
     (latlng: L.LatLng) => {
+      if (isPointerOnTooltipRef.current) return;
+
       const matches = findHexCellsAtLatLng(latlng.lat, latlng.lng, cells);
       const tooltip = tooltipRef.current;
       if (!tooltip) return;
@@ -109,14 +128,24 @@ export function MapHexLayer({
       const matchesKey = matches
         .map((cell) => `${cell.stationName}:${cell.cellId}`)
         .join("|");
+
       if (matchesKey !== lastMatchesKeyRef.current) {
         tooltip.setContent(buildTooltipHtml(matches, t));
         lastMatchesKeyRef.current = matchesKey;
+        pinnedLatLngRef.current = latlng;
+        tooltip.setLatLng(latlng).openOn(map);
+        bindTooltipHover(tooltip);
+        return;
       }
 
-      tooltip.setLatLng(latlng).openOn(map);
+      if (!tooltip.isOpen()) {
+        tooltip
+          .setLatLng(pinnedLatLngRef.current ?? latlng)
+          .openOn(map);
+        bindTooltipHover(tooltip);
+      }
     },
-    [cells, hideTooltip, map, t],
+    [bindTooltipHover, cells, hideTooltip, map, t],
   );
 
   const hoverHandlers = {
