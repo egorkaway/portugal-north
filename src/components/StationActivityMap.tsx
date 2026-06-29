@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { Download } from "lucide-react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Button } from "@/components/ui/button";
+import { MapFitBounds } from "@/components/MapFitBounds";
 import { MapHexLayer } from "@/components/MapHexLayer";
 import { MapLocateControl } from "@/components/MapLocateControl";
 import { MapPointLabels } from "@/components/MapPointLabels";
@@ -13,9 +14,9 @@ import {
 } from "@/lib/mapActivityStations";
 import { buildMapLabelPoints } from "@/lib/mapLabels";
 import {
-  PORTUGAL_MAP_BOUNDS,
-  PORTUGAL_MAP_CENTER,
-  PORTUGAL_MAP_ZOOM,
+  IBERIAN_MAP_BOUNDS,
+  IBERIAN_MAP_CENTER,
+  IBERIAN_MAP_ZOOM,
   downloadStationHexGeoJSON,
 } from "@/lib/stationH3Map";
 import "leaflet/dist/leaflet.css";
@@ -104,13 +105,14 @@ export default function StationActivityMap() {
       </div>
       <div className="overflow-hidden rounded-xl border border-border shadow-sm">
         <MapContainer
-          center={PORTUGAL_MAP_CENTER}
-          zoom={PORTUGAL_MAP_ZOOM}
-          maxBounds={PORTUGAL_MAP_BOUNDS}
-          minZoom={6}
+          center={IBERIAN_MAP_CENTER}
+          zoom={IBERIAN_MAP_ZOOM}
+          maxBounds={IBERIAN_MAP_BOUNDS}
+          minZoom={5}
           scrollWheelZoom
           className="z-0 h-[min(70vh,520px)] w-full"
         >
+          <MapFitBounds bounds={IBERIAN_MAP_BOUNDS} />
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

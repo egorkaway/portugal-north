@@ -3,11 +3,12 @@ import { cellToBoundary, latLngToCell } from "h3-js";
 export const H3_ACTIVITY_RESOLUTIONS = [5, 7, 9] as const;
 export type H3ActivityResolution = (typeof H3_ACTIVITY_RESOLUTIONS)[number];
 
-export const PORTUGAL_MAP_CENTER: [number, number] = [39.6, -8.0];
-export const PORTUGAL_MAP_ZOOM = 7;
-export const PORTUGAL_MAP_BOUNDS: [[number, number], [number, number]] = [
-  [36.5, -9.8],
-  [43.8, 3.5],
+/** Default view for mainland Portugal and Spain on the activity map. */
+export const IBERIAN_MAP_CENTER: [number, number] = [39.9, -3.1];
+export const IBERIAN_MAP_ZOOM = 6;
+export const IBERIAN_MAP_BOUNDS: [[number, number], [number, number]] = [
+  [35.8, -10.0],
+  [44.0, 4.0],
 ];
 
 export type StationHexCell = {
