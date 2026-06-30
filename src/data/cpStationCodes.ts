@@ -1,4 +1,4 @@
-import { stations } from "@/data/stations";
+import { stations } from "./stations";
 
 /** CP travel-api station codes (`94-xxxx`). Regenerate: node scripts/map-cp-stations.mjs */
 export const cpStationCodes: Partial<Record<string, string>> = {
