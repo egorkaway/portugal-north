@@ -1,4 +1,8 @@
 import { lisbonDateAndTime } from "./cpDeparturesParse.js";
+import {
+  fetchCpTrainJourneyFallback,
+  type FetchTrainJourneyFallbackParams,
+} from "./cpTrainJourneyFallback.js";
 
 const CP_OAUTH_URL = "https://api.cp.pt/cp-api/oauth/token";
 const CP_SIV_BASE = "https://api.cp.pt/cp-api/siv";
@@ -18,6 +22,14 @@ export type TrainJourney = {
   timetableDate: string;
   serviceType: string;
   stops: TrainJourneyStop[];
+};
+
+export type FetchTrainJourneyParams = {
+  trainNumber: string;
+  timetableDate?: string;
+  originStationCode?: string;
+  departureTime?: string;
+  destinationName?: string;
 };
 
 type SivStationRef = {
@@ -141,6 +153,27 @@ export async function fetchCpTrainJourney(
     throw new Error("cp_siv_empty_journey");
   }
   return journey;
+}
+
+export async function fetchCpTrainJourneyWithFallback(
+  params: FetchTrainJourneyParams,
+): Promise<TrainJourney> {
+  const timetableDate = params.timetableDate ?? lisbonDateAndTime().date;
+  const canFallback = Boolean(params.originStationCode && params.departureTime);
+
+  try {
+    return await fetchCpTrainJourney(params.trainNumber, timetableDate);
+  } catch (error) {
+    if (!canFallback) throw error;
+    const fallbackParams: FetchTrainJourneyFallbackParams = {
+      trainNumber: params.trainNumber,
+      timetableDate,
+      originStationCode: params.originStationCode!,
+      departureTime: params.departureTime!,
+      destinationName: params.destinationName,
+    };
+    return fetchCpTrainJourneyFallback(fallbackParams);
+  }
 }
 
 /** Stops from the boarding station onward (inclusive). */

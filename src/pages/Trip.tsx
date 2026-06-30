@@ -53,8 +53,8 @@ function TripStopRow({
 
   const content = (
     <>
-      <p className="font-medium text-foreground">{stationName}</p>
-      <p className="mt-0.5 text-sm text-muted-foreground tabular-nums">
+      <p className="break-words font-medium text-foreground">{stationName}</p>
+      <p className="mt-0.5 break-words text-sm text-muted-foreground tabular-nums">
         {isOrigin ? t("trip.departureAt", { time: clockTime ?? "—" }) : t("trip.arrivalAt", { time: clockTime ?? "—" })}
         {stop.platform ? ` · ${t("departures.platform")} ${stop.platform}` : ""}
       </p>
@@ -83,9 +83,17 @@ const Trip = () => {
   const trip = useActiveTrip();
   const now = useNowMinute();
   const { data: departures } = useStationDepartures(trip?.stationName ?? "", 10);
+  const originCode = trip ? getCpStationCode(trip.stationName) : undefined;
   const { data: journey, isLoading, isError } = useTrainJourney(
     trip?.trainNumber ?? null,
     trip?.timetableDate ?? null,
+    trip && originCode
+      ? {
+          originStationCode: originCode,
+          departureTime: trip.departureTime,
+          destinationName: trip.destination,
+        }
+      : undefined,
   );
 
   const liveDeparture = departures?.find(
@@ -98,7 +106,6 @@ const Trip = () => {
   const platform = liveDeparture?.platform ?? trip?.platform ?? null;
   const serviceType = liveDeparture?.serviceType ?? trip?.serviceType ?? "—";
 
-  const originCode = trip ? getCpStationCode(trip.stationName) : undefined;
   const downstreamStops =
     journey && originCode
       ? downstreamStopsFrom(journey, originCode)
@@ -117,10 +124,10 @@ const Trip = () => {
   return (
     <>
       <PageHead meta={getTripPageMeta(locale)} />
-      <div className="min-h-screen bg-background">
-        <header className="border-b border-border bg-primary text-primary-foreground">
-          <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
-            <div className="mb-3 sm:mb-4">
+      <div className="flex min-h-dvh flex-col bg-background">
+        <header className="shrink-0 border-b border-border bg-primary text-primary-foreground">
+          <div className="mx-auto max-w-5xl px-4 py-4 md:px-6 md:py-8">
+            <div className="mb-2 hidden sm:mb-4 sm:block">
               <Link
                 to="/pt"
                 className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
@@ -129,9 +136,9 @@ const Trip = () => {
                 {t("nav.backToStations")}
               </Link>
             </div>
-            <div className="flex items-start gap-3">
+            <div className="flex min-w-0 items-start gap-3">
               <TrainFront className="h-7 w-7 shrink-0" aria-hidden="true" />
-              <div>
+              <div className="min-w-0">
                 <h1 className="font-display text-2xl md:text-4xl">{t("trip.title")}</h1>
                 <p className="mt-1 text-sm text-primary-foreground/85">{t("trip.subtitle")}</p>
               </div>
@@ -139,35 +146,40 @@ const Trip = () => {
           </div>
         </header>
 
-        <main className="mx-auto max-w-5xl px-4 py-6 md:px-6 md:py-10">
+        <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-4 sm:py-6 md:px-6 md:py-10">
           {!trip ? (
-            <div className="rounded-lg border border-border bg-muted/30 p-6 text-center">
-              <Clock className="mx-auto mb-3 h-8 w-8 text-muted-foreground" aria-hidden="true" />
-              <h2 className="font-display text-xl text-foreground">{t("trip.emptyTitle")}</h2>
-              <p className="mt-2 text-sm text-muted-foreground">{t("trip.emptyBody")}</p>
+            <div className="flex flex-1 items-center justify-center py-8 sm:py-12">
+              <div className="w-full max-w-md rounded-lg border border-border bg-muted/30 p-6 text-center">
+                <Clock className="mx-auto mb-3 h-8 w-8 text-muted-foreground" aria-hidden="true" />
+                <h2 className="font-display text-xl text-foreground">{t("trip.emptyTitle")}</h2>
+                <p className="mt-2 text-sm text-muted-foreground">{t("trip.emptyBody")}</p>
+              </div>
             </div>
           ) : (
-            <div className="space-y-6">
-              <section className="rounded-lg border border-border bg-card p-5 md:p-6">
+            <div className="flex min-h-0 flex-1 flex-col gap-6">
+              <section className="shrink-0 rounded-lg border border-border bg-card p-5 md:p-6">
                 <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
                   {t("trip.departureCountdown")}
                 </p>
-                <p className="mt-2 font-display text-4xl text-primary tabular-nums md:text-5xl">
+                <p className="mt-2 break-words font-display text-3xl text-primary tabular-nums sm:text-4xl md:text-5xl">
                   {departureCountdown ?? trip.departureTime}
                 </p>
-                <p className="mt-3 text-lg text-foreground">
+                <p className="mt-3 break-words text-base text-foreground sm:text-lg">
                   {t("departures.train")} {trip.trainNumber} → {trip.destination}
                 </p>
-                <p className="mt-1 text-sm text-muted-foreground">
+                <p className="mt-1 break-words text-sm text-muted-foreground">
                   {serviceType}
                   {platform ? ` · ${t("departures.platform")} ${platform}` : ""}
                   {delayMinutes !== null && delayMinutes > 0
                     ? ` · ${t("departures.delayMin", { minutes: delayMinutes })}`
                     : ""}
                 </p>
-                <p className="mt-2 inline-flex items-center gap-1.5 text-sm text-muted-foreground">
-                  <MapPin className="h-4 w-4" aria-hidden="true" />
-                  <Link to={stationPagePath(trip.stationName) ?? "/pt"} className="hover:text-primary hover:underline">
+                <p className="mt-2 inline-flex max-w-full items-start gap-1.5 text-sm text-muted-foreground">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                  <Link
+                    to={stationPagePath(trip.stationName) ?? "/pt"}
+                    className="break-words hover:text-primary hover:underline"
+                  >
                     {trip.stationName}
                   </Link>
                 </p>
@@ -180,8 +192,11 @@ const Trip = () => {
                 </button>
               </section>
 
-              <section aria-labelledby="trip-stops-heading">
-                <h2 id="trip-stops-heading" className="mb-3 font-display text-2xl text-foreground">
+              <section
+                aria-labelledby="trip-stops-heading"
+                className="flex min-h-0 flex-1 flex-col"
+              >
+                <h2 id="trip-stops-heading" className="mb-3 shrink-0 font-display text-2xl text-foreground">
                   {t("trip.upcomingStops")}
                 </h2>
                 {isLoading ? (
@@ -189,7 +204,7 @@ const Trip = () => {
                 ) : isError || downstreamStops.length === 0 ? (
                   <p className="text-sm text-muted-foreground">{t("trip.stopsUnavailable")}</p>
                 ) : (
-                  <ol className="space-y-2">
+                  <ol className="min-h-0 flex-1 space-y-2 overflow-y-auto pr-1 sm:max-h-none">
                     {downstreamStops.map((stop, index) => (
                       <TripStopRow
                         key={`${stop.stationCode}-${index}`}
@@ -206,7 +221,9 @@ const Trip = () => {
           )}
         </main>
 
-        <SiteFooter showIntro={false} />
+        <div className="hidden sm:block">
+          <SiteFooter showIntro={false} />
+        </div>
       </div>
     </>
   );

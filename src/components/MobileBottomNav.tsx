@@ -23,7 +23,7 @@ function NavItem({
       aria-label={label}
       className={({ isActive }) =>
         cn(
-          "group relative flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 text-[11px] font-medium transition-colors",
+          "group relative flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 py-2 text-[10px] font-medium leading-tight transition-colors sm:gap-1 sm:px-2 sm:text-[11px]",
           isActive
             ? "bg-foreground/5 text-primary"
             : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground",
@@ -52,7 +52,7 @@ function HomeNavItem({ label }: { label: string }) {
       aria-label={label}
       className={({ isPending }) =>
         cn(
-          "group flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 text-[11px] font-medium transition-colors",
+          "group flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 py-2 text-[10px] font-medium leading-tight transition-colors sm:gap-1 sm:px-2 sm:text-[11px]",
           active
             ? "bg-foreground/5 text-primary"
             : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground",
@@ -84,8 +84,8 @@ export function MobileBottomNav() {
       )}
       aria-label={t("nav.mobile")}
     >
-      <div className="mx-auto max-w-5xl px-4 pb-[calc(env(safe-area-inset-bottom,0px)+0.5rem)] pt-2">
-        <div className="flex items-stretch justify-between gap-2">
+      <div className="mx-auto max-w-5xl px-2 pb-[calc(env(safe-area-inset-bottom,0px)+0.5rem)] pt-2 sm:px-4">
+        <div className="grid grid-cols-5 gap-0.5">
           <HomeNavItem label={t("nav.home")} />
           <NavItem
             to="/trip"

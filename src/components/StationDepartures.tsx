@@ -15,8 +15,8 @@ import {
   getMinutesUntilDeparture,
 } from "@/lib/departureCountdown";
 import {
-  isTakingDeparture,
   toggleActiveTrip,
+  useActiveTrip,
 } from "@/lib/plannedDepartures";
 
 function DepartureRow({
@@ -97,6 +97,7 @@ export function StationDepartures({ stationName }: { stationName: string }) {
     limit,
   );
   const now = useNowMinute();
+  const activeTrip = useActiveTrip();
 
   useEffect(() => {
     setLimit(INITIAL_DEPARTURES_LIMIT);
@@ -169,7 +170,7 @@ export function StationDepartures({ stationName }: { stationName: string }) {
               <DepartureRow
                 key={dep.id}
                 {...dep}
-                taking={isTakingDeparture(stationName, dep.id)}
+                taking={activeTrip?.stationName === stationName && activeTrip.id === dep.id}
                 onToggleTaking={() => {
                   toggleActiveTrip(stationName, {
                     id: dep.id,

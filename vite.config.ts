@@ -99,10 +99,19 @@ async function handleTrainJourneyDevApi(
   const url = new URL(req.url, "http://localhost");
   const train = url.searchParams.get("train") ?? "";
   const date = url.searchParams.get("date") ?? undefined;
+  const origin = url.searchParams.get("origin") ?? undefined;
+  const departure = url.searchParams.get("departure") ?? undefined;
+  const destination = url.searchParams.get("destination") ?? undefined;
 
   try {
-    const { fetchCpTrainJourney } = await import("./server/lib/cpTrainJourney.ts");
-    const journey = await fetchCpTrainJourney(train, date ?? undefined);
+    const { fetchCpTrainJourneyWithFallback } = await import("./server/lib/cpTrainJourney.ts");
+    const journey = await fetchCpTrainJourneyWithFallback({
+      trainNumber: train,
+      timetableDate: date,
+      originStationCode: origin,
+      departureTime: departure,
+      destinationName: destination,
+    });
     res.statusCode = 200;
     res.setHeader("Content-Type", "application/json");
     res.end(JSON.stringify({ journey, configured: true }));
