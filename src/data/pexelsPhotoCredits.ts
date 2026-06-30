@@ -1111,6 +1111,21 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@kaue-barbier-710715348",
     photoPageUrl: "https://www.pexels.com/photo/blurred-motion-in-subway-station-captured-31804323/",
   },
+  "31933384": {
+    photographer: "Fotografías de El Puerto  de Santa María",
+    photographerUrl: "https://www.pexels.com/@fotografias-de-el-puerto-de-santa-maria-2148829485",
+    photoPageUrl: "https://www.pexels.com/photo/modern-train-arriving-at-el-puerto-de-santa-maria-station-31933384/",
+  },
+  "32116770": {
+    photographer: "Betül  Güneş",
+    photographerUrl: "https://www.pexels.com/@betul-gunes-1793145775",
+    photoPageUrl: "https://www.pexels.com/photo/busy-train-station-platform-at-daytime-32116770/",
+  },
+  "32230393": {
+    photographer: "Sebastien Devocelle",
+    photographerUrl: "https://www.pexels.com/@lecelle",
+    photoPageUrl: "https://www.pexels.com/photo/charming-porto-architecture-with-tiled-roof-and-windows-32230393/",
+  },
   "32819765": {
     photographer: "Marcelo Renda",
     photographerUrl: "https://www.pexels.com/@marcelo-renda-2643550",
