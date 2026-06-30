@@ -1,40 +1,27 @@
+import { useEffect } from "react";
 import { useSyncExternalStore } from "react";
 import { useQueryClient } from "@tanstack/react-query";
-import type { Vote, VotesMap } from "@/hooks/useStationVote";
+import type { Vote } from "@/hooks/useStationVote";
 import { trackVoteCast } from "@/lib/posthogEvents";
+import {
+  clearStationImageVote,
+  getStaleStationImageVote,
+  getStationImageVoteForUrl,
+  readStationImageVotes,
+  setStationImageVoteForUrl,
+} from "@/lib/stationImageVoteStorage";
 import { syncStationImageVoteToServer } from "@/lib/votesApi";
 
-const COOKIE_NAME = "station_image_votes";
-
-function readVotes(): VotesMap {
-  if (typeof document === "undefined") return {};
-  const match = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith(`${COOKIE_NAME}=`));
-  if (!match) return {};
-  try {
-    return JSON.parse(decodeURIComponent(match.split("=")[1])) || {};
-  } catch {
-    return {};
-  }
-}
-
-function writeVotes(votes: VotesMap) {
-  const value = encodeURIComponent(JSON.stringify(votes));
-  document.cookie = `${COOKIE_NAME}=${value}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
-}
-
 const listeners = new Set<() => void>();
-let cache: VotesMap | null = null;
+let cache = readStationImageVotes();
 
-function getSnapshot(): VotesMap {
-  if (cache === null) cache = readVotes();
+function getSnapshot() {
   return cache;
 }
 
 function emit() {
-  cache = readVotes();
-  listeners.forEach((l) => l());
+  cache = readStationImageVotes();
+  listeners.forEach((listener) => listener());
 }
 
 function subscribe(cb: () => void) {
@@ -42,25 +29,36 @@ function subscribe(cb: () => void) {
   return () => listeners.delete(cb);
 }
 
-export function useStationImageVote(stationName: string) {
+export function useStationImageVote(stationName: string, imageUrl: string) {
   const queryClient = useQueryClient();
   const votes = useSyncExternalStore(subscribe, getSnapshot, () => ({}));
-  const vote: Vote = votes[stationName] ?? null;
+  const vote: Vote = getStationImageVoteForUrl(votes, stationName, imageUrl);
+
+  useEffect(() => {
+    const staleVote = getStaleStationImageVote(readStationImageVotes(), stationName, imageUrl);
+    if (!staleVote) return;
+
+    clearStationImageVote(stationName);
+    emit();
+    void syncStationImageVoteToServer(stationName, staleVote, null).then((stored) => {
+      if (stored) {
+        queryClient.invalidateQueries({ queryKey: ["global-ratings"] });
+      }
+    });
+  }, [imageUrl, queryClient, stationName]);
 
   const cast = (direction: "up" | "down") => {
-    const current = readVotes();
-    const previous = current[stationName] ?? null;
-    let next: "up" | "down" | null;
+    const previous = getStationImageVoteForUrl(readStationImageVotes(), stationName, imageUrl);
+    let next: Vote;
 
     if (previous === direction) {
-      delete current[stationName];
+      setStationImageVoteForUrl(stationName, imageUrl, null);
       next = null;
     } else {
-      current[stationName] = direction;
+      setStationImageVoteForUrl(stationName, imageUrl, direction);
       next = direction;
     }
 
-    writeVotes(current);
     emit();
     trackVoteCast({
       voteType: "station_image",

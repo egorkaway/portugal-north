@@ -1,4 +1,10 @@
 import { readCookieJson } from "./cookieJson";
+import { stationImages } from "@/data/stationImages";
+import {
+  getStationImageVoteForUrl,
+  readStationImageVotes,
+  type StationImageVotesMap,
+} from "./stationImageVoteStorage";
 import type { GlobalRatings, GlobalRatingsResult, VoteDirection } from "./voteTypes";
 
 export const VOTE_COOKIE_NAMES = {
@@ -21,11 +27,26 @@ function directionVotesToRatings(votes: DirectionVotes): GlobalRatings {
   return ratings;
 }
 
+function stationImageVotesToRatings(votes: StationImageVotesMap): GlobalRatings {
+  const ratings: GlobalRatings = {};
+  for (const [name, entry] of Object.entries(votes)) {
+    const imageUrl = stationImages[name];
+    if (!imageUrl) continue;
+    const vote = getStationImageVoteForUrl(votes, name, imageUrl);
+    if (!vote) continue;
+    ratings[name] = {
+      up: vote === "up" ? 1 : 0,
+      down: vote === "down" ? 1 : 0,
+    };
+  }
+  return ratings;
+}
+
 export function readDeviceVoteMaps() {
   return {
     station: readCookieJson<DirectionVotes>(VOTE_COOKIE_NAMES.station),
     hotel: readCookieJson<DirectionVotes>(VOTE_COOKIE_NAMES.hotel),
-    stationImage: readCookieJson<DirectionVotes>(VOTE_COOKIE_NAMES.stationImage),
+    stationImage: readStationImageVotes(),
     hotelClosed: readCookieJson<Record<string, true>>(VOTE_COOKIE_NAMES.hotelClosed),
   };
 }
@@ -35,7 +56,7 @@ export function buildRatingsFromDeviceVotes(): GlobalRatingsResult {
   return {
     ratings: directionVotesToRatings(maps.station),
     hotelRatings: directionVotesToRatings(maps.hotel),
-    imageRatings: directionVotesToRatings(maps.stationImage),
+    imageRatings: stationImageVotesToRatings(maps.stationImage),
     configured: true,
     source: "device",
   };

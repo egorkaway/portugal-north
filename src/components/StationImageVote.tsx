@@ -63,7 +63,7 @@ export function StationImageVote({
   photoAlt: string;
 }) {
   const { t, plural } = useLocale();
-  const { vote, cast } = useStationImageVote(stationName);
+  const { vote, cast } = useStationImageVote(stationName, imageUrl);
   const { data: global } = useGlobalImageRatings();
   const totals = global?.imageRatings[stationName];
   const communityLine = totals ? formatImageTotals(totals.up, totals.down, t, plural) : null;

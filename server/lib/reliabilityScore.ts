@@ -12,6 +12,9 @@ export type ReliabilityScoresManifest = {
 export const RELIABILITY_SCORE_MIN = 1;
 export const RELIABILITY_SCORE_MAX = 10;
 
+/** Higher traffic reduces the effective delay rate used for scoring (0 = off, ~0.2 = moderate). */
+export const RELIABILITY_VOLUME_TOLERANCE_EXP = 0.2;
+
 /** Average delay minutes per train movement (departure or arrival). Lower is better. */
 export function stationDelayRate(
   delayMinutes: number,
@@ -21,6 +24,32 @@ export function stationDelayRate(
   const movements = departures + arrivals;
   if (movements <= 0) return null;
   return delayMinutes / movements;
+}
+
+function medianMovements(values: number[]): number {
+  if (values.length === 0) return 0;
+  const sorted = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  return sorted.length % 2 === 0
+    ? (sorted[mid - 1]! + sorted[mid]!) / 2
+    : sorted[mid]!;
+}
+
+/**
+ * Delay rate adjusted for station traffic: busy hubs tolerate more aggregate delay
+ * before their score is penalised as harshly as a quiet stop with the same average.
+ */
+export function adjustedStationDelayRate(
+  delayMinutes: number,
+  departures: number,
+  arrivals: number,
+  referenceMovements: number,
+): number | null {
+  const rawRate = stationDelayRate(delayMinutes, departures, arrivals);
+  if (rawRate === null || referenceMovements <= 0) return null;
+  const movements = departures + arrivals;
+  const volumeFactor = (referenceMovements / movements) ** RELIABILITY_VOLUME_TOLERANCE_EXP;
+  return rawRate * volumeFactor;
 }
 
 export function scaleReliabilityScore(
@@ -40,21 +69,36 @@ export function scaleReliabilityScore(
 export function computeReliabilityScores(
   store: DepartureStatsStore,
 ): Record<string, number> {
-  const rates: { name: string; rate: number }[] = [];
+  const entries: { name: string; movements: number }[] = [];
 
   for (const [name, stats] of Object.entries(store.stations)) {
     if (stats.successfulSamples <= 0) continue;
-    const rate = stationDelayRate(
+    const movements =
+      stats.totals.departuresNextHour + stats.totals.arrivalsNextHour;
+    if (movements <= 0) continue;
+    entries.push({ name, movements });
+  }
+
+  if (entries.length === 0) return {};
+  if (entries.length === 1) return { [entries[0]!.name]: RELIABILITY_SCORE_MAX };
+
+  const referenceMovements = medianMovements(entries.map((entry) => entry.movements));
+
+  const rates: { name: string; rate: number }[] = [];
+  for (const entry of entries) {
+    const stats = store.stations[entry.name]!;
+    const rate = adjustedStationDelayRate(
       stats.totals.delayMinutes,
       stats.totals.departuresNextHour,
       stats.totals.arrivalsNextHour,
+      referenceMovements,
     );
     if (rate === null) continue;
-    rates.push({ name, rate });
+    rates.push({ name: entry.name, rate });
   }
 
   if (rates.length === 0) return {};
-  if (rates.length === 1) return { [rates[0].name]: RELIABILITY_SCORE_MAX };
+  if (rates.length === 1) return { [rates[0]!.name]: RELIABILITY_SCORE_MAX };
 
   const minRate = Math.min(...rates.map((entry) => entry.rate));
   const maxRate = Math.max(...rates.map((entry) => entry.rate));

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  adjustedStationDelayRate,
   computeReliabilityScores,
   scaleReliabilityScore,
   stationDelayRate,
@@ -22,6 +23,15 @@ describe("scaleReliabilityScore", () => {
 
   it("returns 10 when all rates are equal", () => {
     expect(scaleReliabilityScore(3, 3, 3)).toBe(10);
+  });
+});
+
+describe("adjustedStationDelayRate", () => {
+  it("scores busier stations more leniently for the same raw delay rate", () => {
+    const referenceMovements = 40;
+    const busy = adjustedStationDelayRate(200, 100, 0, referenceMovements);
+    const quiet = adjustedStationDelayRate(20, 10, 0, referenceMovements);
+    expect(busy).toBeLessThan(quiet!);
   });
 });
 
@@ -65,5 +75,23 @@ describe("computeReliabilityScores", () => {
     };
 
     expect(computeReliabilityScores(store)).toEqual({});
+  });
+
+  it("ranks a busy station above a quiet one with the same raw delay rate", () => {
+    const store = createEmptyDepartureStatsStore();
+
+    mergeStationSnapshot(store, "Busy hub", "94-4", {
+      observedAt: "2026-06-20T10:00:00.000Z",
+      byTrainType: { Urbano: { departures: 100, arrivals: 0, delayMinutes: 200 } },
+      totals: { departures: 100, arrivals: 0, delayMinutes: 200 },
+    });
+    mergeStationSnapshot(store, "Quiet halt", "94-5", {
+      observedAt: "2026-06-20T10:00:00.000Z",
+      byTrainType: { Regional: { departures: 10, arrivals: 0, delayMinutes: 20 } },
+      totals: { departures: 10, arrivals: 0, delayMinutes: 20 },
+    });
+
+    const scores = computeReliabilityScores(store);
+    expect(scores["Busy hub"]).toBeGreaterThan(scores["Quiet halt"]!);
   });
 });
