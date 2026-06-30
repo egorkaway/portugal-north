@@ -14,7 +14,7 @@ export function StationImageCredit({ imageUrl }: StationImageCreditProps) {
   }
 
   return (
-    <p className="text-xs leading-relaxed text-muted-foreground">
+    <p className="text-xs text-muted-foreground">
       {t("station.photoCreditBy", { author: author.name })}
     </p>
   );

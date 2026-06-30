@@ -817,4 +817,10 @@ export const stationSummariesEn: Record<string, string> = {
     "Lisbon Metro Red line terminus at Praça de Espanha beside the zoo and Sete Rios coach hub. Metro trains link the northwest with the airport and Oriente — a major interchange for CP at Sete Rios, long-distance coaches, and metro rides into central Lisbon.",
   "Aeroporto (Metro Lisboa)":
     "Lisbon Metro Red line terminus inside Humberto Delgado Airport with a direct terminal link. Frequent metro trains reach Oriente, Saldanha, and São Sebastião in minutes — the standard connection between flights and CP long-distance trains without a taxi into town.",
+  "Lisbon Airport (LIS)":
+    "Main international airport serving Lisbon and central Portugal on the north bank of the Tagus, with Metro Red line and bus links to Oriente and the city centre. Alfa Pendular and Intercidades long-distance trains depart from Oriente and Santa Apolónia — allow time for the metro ride when connecting between flights and rail services.",
+  "Porto Airport (OPO)":
+    "Northern Portugal's international airport at Maia, with Metro Linha E to Trindade and central Porto in about half an hour. Alfa Pendular and Intercidades services leave from Porto-Campanhã — the metro is the usual ground link for travellers who want to skip taxis into the city.",
+  "Faro Airport (FAO)":
+    "Algarve international airport west of Faro city, with bus and taxi links to Faro station on the Linha do Algarve and to coastal resorts. Busiest in summer — a practical fly-in for beach holidays with regional CP connections east to Tavira and west towards Lagos.",
 };

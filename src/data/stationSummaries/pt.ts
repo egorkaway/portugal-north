@@ -750,4 +750,10 @@ export const stationSummariesPt: Record<string, string> = {
     "Terminal da Metro Lisboa Linha Vermelha na Praça de Espanha junto ao jardim zoológico e ao hub de autocarros de Sete Rios. O metro liga o noroeste ao aeroporto e a Oriente — grande entroncamento para a CP em Sete Rios, autocarros de longa distância e viagens de metro ao centro de Lisboa.",
   "Aeroporto (Metro Lisboa)":
     "Terminal da Metro Lisboa Linha Vermelha dentro do Aeroporto Humberto Delgado com ligação direta ao terminal. Metro frequente chega a Oriente, Saldanha e São Sebastião em minutos — ligação padrão entre voos e comboios de longa distância da CP sem táxi até à cidade.",
+  "Lisbon Airport (LIS)":
+    "Aeroporto internacional principal de Lisboa e do centro de Portugal na margem norte do Tejo, com Metro Linha Vermelha e autocarros para Oriente e o centro da cidade. Comboios Alfa Pendular e Intercidades partem de Oriente e Santa Apolónia — prevê tempo de metro ao ligar voos a comboios de longa distância.",
+  "Porto Airport (OPO)":
+    "Aeroporto internacional do norte de Portugal na Maia, com Metro Linha E até Trindade e o centro do Porto em cerca de meia hora. Alfa Pendular e Intercidades partem de Porto-Campanhã — o metro é a ligação terrestre habitual para quem evita táxis até à cidade.",
+  "Faro Airport (FAO)":
+    "Aeroporto internacional do Algarve a oeste da cidade de Faro, com autocarros e táxis para a estação de Faro na Linha do Algarve e para os resorts costeiros. Mais movimentado no verão — entrada prática para férias de praia com ligações regionais da CP a leste até Tavira e a oeste em direção a Lagos.",
 };

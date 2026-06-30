@@ -166,15 +166,14 @@ const Station = () => {
             ))}
           </div>
 
-          {stationSummary ? (
-            <p className="mb-5 text-sm leading-relaxed text-muted-foreground md:mb-8">
-              {stationSummary}
-            </p>
-          ) : null}
-
-          {showImageCredit ? (
+          {(stationSummary || showImageCredit) ? (
             <div className="mb-5 md:mb-8">
-              <StationImageCredit imageUrl={imageUrl} />
+              {stationSummary ? (
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {stationSummary}
+                </p>
+              ) : null}
+              {showImageCredit ? <StationImageCredit imageUrl={imageUrl} /> : null}
             </div>
           ) : null}
 
