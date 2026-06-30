@@ -6,6 +6,7 @@ import {
   rankCandidateStationCodes,
 } from "../../server/lib/cpTrainJourneyFallback";
 import type { CpStationIndexEntry } from "../../server/lib/cpStationIndex";
+import { findCpStationByFuzzyName } from "../../server/lib/cpStationIndex";
 
 const origin: CpStationIndexEntry = {
   name: "Porto-Campanhã",
@@ -32,11 +33,18 @@ const neighbors: CpStationIndexEntry[] = [
     lng: -8.5528,
   },
   {
-    name: "Lisboa-Oriente",
-    code: "94-31005",
-    lines: ["Linha do Norte"],
-    lat: 38.7683,
-    lng: -9.099,
+    name: "Ermesinde",
+    code: "94-4002",
+    lines: ["Linha do Minho", "Douro"],
+    lat: 41.2139,
+    lng: -8.5528,
+  },
+  {
+    name: "Porto-Campanhã",
+    code: "94-2006",
+    lines: ["Linha do Norte", "Minho", "Douro"],
+    lat: 41.1489,
+    lng: -8.5856,
   },
   {
     name: "Braga",
@@ -53,11 +61,17 @@ describe("haversineKm", () => {
   });
 });
 
+describe("findCpStationByFuzzyName", () => {
+  it("resolves Porto Campanha to Porto-Campanhã", () => {
+    expect(findCpStationByFuzzyName("Porto Campanha")?.code).toBe("94-2006");
+  });
+});
+
 describe("rankCandidateStationCodes", () => {
-  it("prefers nearby stations on shared lines and includes destination", () => {
+  it("prefers nearby stations on shared lines and puts destination first", () => {
     const ranked = rankCandidateStationCodes(origin, neighbors, "Braga", 3);
-    expect(ranked[0]).toBe("94-39172");
-    expect(ranked).toContain("94-29157");
+    expect(ranked[0]).toBe("94-29157");
+    expect(ranked).toContain("94-39172");
     expect(ranked).not.toContain("94-2006");
   });
 
@@ -65,6 +79,13 @@ describe("rankCandidateStationCodes", () => {
     const ranked = rankCandidateStationCodes(origin, neighbors, undefined, 5);
     expect(ranked).not.toContain("94-29157");
     expect(ranked).toContain("94-39172");
+  });
+
+  it("puts the destination first for Ermesinde to Porto Campanha", () => {
+    const ermesinde = neighbors.find((station) => station.code === "94-4002");
+    expect(ermesinde).toBeDefined();
+    const ranked = rankCandidateStationCodes(ermesinde!, neighbors, "Porto Campanha", 5);
+    expect(ranked[0]).toBe("94-2006");
   });
 });
 
@@ -103,6 +124,57 @@ describe("findTrainStopInTimetable", () => {
     );
 
     expect(hit?.arrivalTime).toBe("17:14");
+  });
+
+  it("matches by destination code when the name from CP differs", () => {
+    const hit = findTrainStopInTimetable(
+      {
+        stationStops: [
+          {
+            trainNumber: 856,
+            arrivalTime: "10:26",
+            trainDestination: { code: "94-2006", designation: "Porto - Campanha" },
+            trainOrigin: { code: "94-4002", designation: "Ermesinde" },
+            trainService: { code: "IR", designation: "InterRegional" },
+          },
+        ],
+      },
+      "856",
+      10 * 60,
+      "Porto Campanha",
+      {
+        atStationCode: "94-2006",
+        destinationStationCode: "94-2006",
+      },
+    );
+
+    expect(hit?.arrivalTime).toBe("10:26");
+  });
+
+  it("can match at the destination station without a destination-name filter", () => {
+    const hit = findTrainStopInTimetable(
+      {
+        stationStops: [
+          {
+            trainNumber: 856,
+            arrivalTime: "10:26",
+            trainDestination: { code: "94-2006", designation: "Porto - Campanha" },
+            trainOrigin: { code: "94-4002", designation: "Ermesinde" },
+            trainService: { code: "IR", designation: "InterRegional" },
+          },
+        ],
+      },
+      "856",
+      10 * 60,
+      "Wrong Label",
+      {
+        atStationCode: "94-2006",
+        destinationStationCode: "94-2006",
+        requireDestinationMatch: false,
+      },
+    );
+
+    expect(hit?.arrivalTime).toBe("10:26");
   });
 });
 

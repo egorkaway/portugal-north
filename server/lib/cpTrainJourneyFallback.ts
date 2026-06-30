@@ -59,10 +59,26 @@ export function haversineKm(
   return 6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
+export type FindTrainStopOptions = {
+  /** Station being queried — skips destination-name filter when it is the train's terminus. */
+  atStationCode?: string;
+  /** Resolved destination CP code, when known. */
+  destinationStationCode?: string;
+  requireDestinationMatch?: boolean;
+};
+
 function destinationMatches(
   stopDestination: string | undefined,
+  stopDestinationCode: string | undefined,
   expectedDestination: string | undefined,
+  destinationStationCode?: string,
 ): boolean {
+  if (
+    destinationStationCode &&
+    stopDestinationCode?.trim() === destinationStationCode
+  ) {
+    return true;
+  }
   if (!expectedDestination?.trim()) return true;
   if (!stopDestination?.trim()) return true;
   const expected = normalizeStationName(expectedDestination);
@@ -75,14 +91,34 @@ export function findTrainStopInTimetable(
   trainNumber: string,
   afterMinutes: number | null,
   destinationName?: string,
+  options: FindTrainStopOptions = {},
 ): CpStationStop | null {
   const normalizedTrain = trainNumber.trim();
+  const requireDestinationMatch = options.requireDestinationMatch ?? true;
+  const skipDestinationFilter =
+    !requireDestinationMatch ||
+    Boolean(
+      options.atStationCode &&
+        options.destinationStationCode &&
+        options.atStationCode === options.destinationStationCode,
+    );
+
   let best: CpStationStop | null = null;
   let bestMinutes = Number.POSITIVE_INFINITY;
 
   for (const stop of response.stationStops ?? []) {
     if (String(stop.trainNumber) !== normalizedTrain) continue;
-    if (!destinationMatches(stop.trainDestination?.designation, destinationName)) continue;
+    if (
+      !skipDestinationFilter &&
+      !destinationMatches(
+        stop.trainDestination?.designation,
+        stop.trainDestination?.code,
+        destinationName,
+        options.destinationStationCode,
+      )
+    ) {
+      continue;
+    }
 
     const minutes = stopClockMinutes(stop);
     if (minutes === null) continue;
@@ -123,11 +159,18 @@ export function rankCandidateStationCodes(
     .filter((entry) => entry.sharedLines > 0 || destination?.code === entry.code)
     .sort((a, b) => b.score - a.score || a.distance - b.distance);
 
-  const codes = scored.slice(0, limit).map((entry) => entry.code);
-  if (destination && !codes.includes(destination.code) && destination.code !== origin.code) {
-    codes.pop();
+  const codes: string[] = [];
+  if (destination && destination.code !== origin.code) {
     codes.push(destination.code);
   }
+
+  for (const entry of scored) {
+    if (codes.length >= limit) break;
+    if (!codes.includes(entry.code)) {
+      codes.push(entry.code);
+    }
+  }
+
   return codes;
 }
 
@@ -211,6 +254,73 @@ async function mapWithConcurrency<T, R>(
   return results;
 }
 
+async function tryFetchStationTimetable(
+  stationCode: string,
+  timetableDate: string,
+  startTime: string,
+): Promise<CpTimetableResponse | null> {
+  try {
+    const timetable = await fetchCpStationTimetable(stationCode, timetableDate, startTime);
+    return timetable.response;
+  } catch {
+    return null;
+  }
+}
+
+function resolveDestinationStation(
+  destinationName: string | undefined,
+  originCpStop: CpStationStop | null,
+): CpStationIndexEntry | undefined {
+  const fromName = destinationName ? findCpStationByFuzzyName(destinationName) : undefined;
+  if (fromName) return fromName;
+
+  const destinationCode = originCpStop?.trainDestination?.code?.trim();
+  if (destinationCode) {
+    return getCpStationByCode(destinationCode);
+  }
+
+  return undefined;
+}
+
+async function pollStationForTrain(
+  stationCode: string,
+  trainNumber: string,
+  timetableDate: string,
+  startTime: string,
+  originDepartureMinutes: number,
+  destinationName: string | undefined,
+  destinationStationCode: string | undefined,
+  requireDestinationMatch: boolean,
+): Promise<{ sortMinutes: number; stop: TrainJourneyStop; serviceType?: string } | null> {
+  const station = getCpStationByCode(stationCode);
+  if (!station) return null;
+
+  const response = await tryFetchStationTimetable(stationCode, timetableDate, startTime);
+  if (!response) return null;
+
+  const cpStop = findTrainStopInTimetable(
+    response,
+    trainNumber,
+    originDepartureMinutes + 1,
+    destinationName,
+    {
+      atStationCode: stationCode,
+      destinationStationCode,
+      requireDestinationMatch,
+    },
+  );
+  if (!cpStop) return null;
+
+  const minutes = stopClockMinutes(cpStop);
+  if (minutes === null || minutes <= originDepartureMinutes) return null;
+
+  return {
+    sortMinutes: minutes,
+    stop: cpStopToJourneyStop(station.code, station.name, cpStop),
+    serviceType: cpStop.trainService?.designation?.trim(),
+  };
+}
+
 export async function fetchCpTrainJourneyFallback(
   params: FetchTrainJourneyFallbackParams,
 ): Promise<TrainJourney> {
@@ -244,17 +354,25 @@ export async function fetchCpTrainJourneyFallback(
     params.destinationName,
   );
 
-  const originTimetable = await fetchCpStationTimetable(
+  const originResponse = await tryFetchStationTimetable(
     originStationCode,
     timetableDate,
     departureTime,
   );
-  const originCpStop = findTrainStopInTimetable(
-    originTimetable.response,
-    trainNumber,
-    originDepartureMinutes,
+  const originCpStop = originResponse
+    ? findTrainStopInTimetable(
+        originResponse,
+        trainNumber,
+        originDepartureMinutes,
+        params.destinationName,
+      )
+    : null;
+
+  const destinationStation = resolveDestinationStation(
     params.destinationName,
+    originCpStop,
   );
+  const destinationStationCode = destinationStation?.code;
 
   const serviceType = originCpStop?.trainService?.designation?.trim() || "—";
 
@@ -270,7 +388,7 @@ export async function fetchCpTrainJourneyFallback(
           arrivalTime: null,
           trainOrigin: { code: origin.code, designation: origin.name },
           trainDestination: {
-            code: "",
+            code: destinationStationCode ?? "",
             designation: params.destinationName ?? "",
           },
           trainService: { code: "", designation: serviceType },
@@ -280,35 +398,22 @@ export async function fetchCpTrainJourneyFallback(
     },
   ];
 
+  const pollStation = (stationCode: string, requireDestinationMatch: boolean) =>
+    pollStationForTrain(
+      stationCode,
+      trainNumber,
+      timetableDate,
+      departureTime,
+      originDepartureMinutes,
+      params.destinationName,
+      destinationStationCode,
+      requireDestinationMatch,
+    );
+
   const timetableResults = await mapWithConcurrency(
     candidateCodes,
     TIMETABLE_CONCURRENCY,
-    async (stationCode) => {
-      const station = getCpStationByCode(stationCode);
-      if (!station) return null;
-
-      const timetable = await fetchCpStationTimetable(
-        stationCode,
-        timetableDate,
-        departureTime,
-      );
-      const cpStop = findTrainStopInTimetable(
-        timetable.response,
-        trainNumber,
-        originDepartureMinutes + 1,
-        params.destinationName,
-      );
-      if (!cpStop) return null;
-
-      const minutes = stopClockMinutes(cpStop);
-      if (minutes === null || minutes <= originDepartureMinutes) return null;
-
-      return {
-        sortMinutes: minutes,
-        stop: cpStopToJourneyStop(station.code, station.name, cpStop),
-        serviceType: cpStop.trainService?.designation?.trim(),
-      };
-    },
+    (stationCode) => pollStation(stationCode, true),
   );
 
   let resolvedServiceType = serviceType;
@@ -318,6 +423,26 @@ export async function fetchCpTrainJourneyFallback(
       resolvedServiceType = hit.serviceType;
     }
     timedStops.push({ sortMinutes: hit.sortMinutes, stop: hit.stop });
+  }
+
+  const hasDownstreamStop = timedStops.some(
+    (entry) => entry.stop.stationCode !== originStationCode,
+  );
+  if (
+    !hasDownstreamStop &&
+    destinationStationCode &&
+    destinationStationCode !== originStationCode
+  ) {
+    const destinationHit = await pollStation(destinationStationCode, false);
+    if (destinationHit) {
+      if (resolvedServiceType === "—" && destinationHit.serviceType) {
+        resolvedServiceType = destinationHit.serviceType;
+      }
+      timedStops.push({
+        sortMinutes: destinationHit.sortMinutes,
+        stop: destinationHit.stop,
+      });
+    }
   }
 
   const journey = buildJourneyFromTimedStops(

@@ -113,7 +113,20 @@ const Trip = () => {
           departureTime: trip.departureTime,
           platform: platform ?? trip.platform ?? null,
         })
-      : [];
+      : trip && originCode
+        ? [
+            {
+              stationCode: originCode,
+              stationName: trip.stationName,
+              departureTime: trip.departureTime,
+              arrivalTime: trip.departureTime,
+              platform: platform ?? trip.platform ?? null,
+            },
+          ]
+        : [];
+
+  const showStopsUnavailable =
+    !isLoading && downstreamStops.length <= 1 && (isError || !journey);
 
   useTripCompletion(trip, downstreamStops, delayMinutes, now);
 
@@ -207,7 +220,7 @@ const Trip = () => {
                 </h2>
                 {isLoading ? (
                   <p className="text-sm text-muted-foreground">{t("trip.loadingStops")}</p>
-                ) : isError || downstreamStops.length === 0 ? (
+                ) : showStopsUnavailable ? (
                   <p className="text-sm text-muted-foreground">{t("trip.stopsUnavailable")}</p>
                 ) : (
                   <ol className="min-h-0 flex-1 space-y-2 overflow-y-auto pr-1 sm:max-h-none">
