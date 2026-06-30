@@ -283,7 +283,7 @@ function HomePage({ country, currentPage }: { country: CountryCode; currentPage:
 
       <StationRankings />
 
-      <SiteFooter />
+      <SiteFooter country={country} />
     </div>
   );
 }

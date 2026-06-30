@@ -3,9 +3,18 @@ import { ExternalLink, Footprints, Languages, Smartphone } from "lucide-react";
 import footerDouro from "@/assets/footer-douro.jpg";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLocale } from "@/i18n/LocaleProvider";
+import { useFooterCountry } from "@/hooks/useFooterCountry";
+import type { CountryCode } from "@/lib/countries";
 
-export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
+export function SiteFooter({
+  showIntro = true,
+  country: countryOverride,
+}: {
+  showIntro?: boolean;
+  country?: CountryCode;
+}) {
   const { t } = useLocale();
+  const country = useFooterCountry(countryOverride);
 
   return (
     <footer className="relative mt-8 overflow-hidden text-primary-foreground md:mt-12">
@@ -94,26 +103,47 @@ export function SiteFooter({ showIntro = true }: { showIntro?: boolean }) {
                   aria-hidden="true"
                 />
               </a>
-              <a
-                href="https://portuguess.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-start gap-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-4 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15 md:gap-4 md:p-5"
-              >
-                <Languages className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
-                <div className="min-w-0 flex-1">
-                  <p className="font-display text-xl text-primary-foreground">
-                    {t("footer.portuGuessTitle")}
-                  </p>
-                  <p className="mt-1 text-sm text-primary-foreground/80">
-                    {t("footer.portuGuessDesc")}
-                  </p>
-                </div>
-                <ExternalLink
-                  className="mt-1 h-4 w-4 shrink-0 text-primary-foreground/50 transition-colors group-hover:text-primary-foreground"
-                  aria-hidden="true"
-                />
-              </a>
+              {country === "es" ? (
+                <a
+                  href="https://sovnik.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-4 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15 md:gap-4 md:p-5"
+                >
+                  <Languages className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
+                  <div className="min-w-0 flex-1">
+                    <p className="font-display text-xl text-primary-foreground">
+                      {t("footer.sovnikTitle")}
+                    </p>
+                    <p className="mt-1 text-sm text-primary-foreground/80">{t("footer.sovnikDesc")}</p>
+                  </div>
+                  <ExternalLink
+                    className="mt-1 h-4 w-4 shrink-0 text-primary-foreground/50 transition-colors group-hover:text-primary-foreground"
+                    aria-hidden="true"
+                  />
+                </a>
+              ) : (
+                <a
+                  href="https://portuguess.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-start gap-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-4 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15 md:gap-4 md:p-5"
+                >
+                  <Languages className="mt-0.5 h-8 w-8 shrink-0 text-secondary" aria-hidden="true" />
+                  <div className="min-w-0 flex-1">
+                    <p className="font-display text-xl text-primary-foreground">
+                      {t("footer.portuGuessTitle")}
+                    </p>
+                    <p className="mt-1 text-sm text-primary-foreground/80">
+                      {t("footer.portuGuessDesc")}
+                    </p>
+                  </div>
+                  <ExternalLink
+                    className="mt-1 h-4 w-4 shrink-0 text-primary-foreground/50 transition-colors group-hover:text-primary-foreground"
+                    aria-hidden="true"
+                  />
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -292,7 +292,7 @@ const Station = () => {
           </p>
         </main>
 
-        <SiteFooter showIntro={false} />
+        <SiteFooter showIntro={false} country={station.country} />
       </div>
     </>
   );

@@ -327,6 +327,9 @@ export const ca: Messages = {
     portuGuessTitle: "PortuGuess",
     portuGuessDesc:
       "Aprèn portuguès europeu amb qüestionaris, llistes de paraules i apps sense connexió per a iOS i Android.",
+    sovnikTitle: "Sovnik",
+    sovnikDesc:
+      "Aprèn gallec, català, basc i altres llengües ibèriques amb qüestionaris de vocabulari i apps mòbils.",
     privacy: "Política de privacitat",
     stationMap: "Mapa d'activitat d'estacions",
   },

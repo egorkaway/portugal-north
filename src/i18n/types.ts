@@ -284,6 +284,8 @@ export type Messages = {
     mapaDesc: string;
     portuGuessTitle: string;
     portuGuessDesc: string;
+    sovnikTitle: string;
+    sovnikDesc: string;
     privacy: string;
     stationMap: string;
   };

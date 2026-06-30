@@ -327,6 +327,9 @@ export const gl: Messages = {
     portuGuessTitle: "PortuGuess",
     portuGuessDesc:
       "Aprende portugués europeo con cuestionarios, listas de palabras e apps sen conexión para iOS e Android.",
+    sovnikTitle: "Sovnik",
+    sovnikDesc:
+      "Aprende galego, catalán, éuscaro e outras linguas ibéricas con cuestionarios de vocabulario e apps móbiles.",
     privacy: "Política de privacidade",
     stationMap: "Mapa de actividade das estacións",
   },
