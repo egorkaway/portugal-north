@@ -107,8 +107,12 @@ const Trip = () => {
   const serviceType = liveDeparture?.serviceType ?? trip?.serviceType ?? "—";
 
   const downstreamStops =
-    journey && originCode
-      ? downstreamStopsFrom(journey, originCode)
+    journey && originCode && trip
+      ? downstreamStopsFrom(journey, originCode, {
+          stationName: trip.stationName,
+          departureTime: trip.departureTime,
+          platform: platform ?? trip.platform ?? null,
+        })
       : [];
 
   useTripCompletion(trip, downstreamStops, delayMinutes, now);
@@ -158,8 +162,26 @@ const Trip = () => {
           ) : (
             <div className="flex min-h-0 flex-1 flex-col gap-6">
               <section className="shrink-0 rounded-lg border border-border bg-card p-5 md:p-6">
-                <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
-                  {t("trip.departureCountdown")}
+                <div className="flex items-start justify-between gap-4">
+                  <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
+                    {t("trip.departureCountdown")}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => clearActiveTrip()}
+                    className="shrink-0 rounded-full border border-border px-3 py-1.5 text-xs font-semibold text-foreground hover:bg-muted sm:px-4 sm:py-2 sm:text-sm"
+                  >
+                    {t("trip.stopTracking")}
+                  </button>
+                </div>
+                <p className="mt-2 flex items-start gap-1.5 text-base font-medium text-foreground">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+                  <Link
+                    to={stationPagePath(trip.stationName) ?? "/pt"}
+                    className="min-w-0 break-words hover:text-primary hover:underline"
+                  >
+                    {trip.stationName}
+                  </Link>
                 </p>
                 <p className="mt-2 break-words font-display text-3xl text-primary tabular-nums sm:text-4xl md:text-5xl">
                   {departureCountdown ?? trip.departureTime}
@@ -174,22 +196,6 @@ const Trip = () => {
                     ? ` · ${t("departures.delayMin", { minutes: delayMinutes })}`
                     : ""}
                 </p>
-                <p className="mt-2 inline-flex max-w-full items-start gap-1.5 text-sm text-muted-foreground">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
-                  <Link
-                    to={stationPagePath(trip.stationName) ?? "/pt"}
-                    className="break-words hover:text-primary hover:underline"
-                  >
-                    {trip.stationName}
-                  </Link>
-                </p>
-                <button
-                  type="button"
-                  onClick={() => clearActiveTrip()}
-                  className="mt-4 rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted"
-                >
-                  {t("trip.stopTracking")}
-                </button>
               </section>
 
               <section

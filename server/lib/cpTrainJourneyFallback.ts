@@ -162,11 +162,21 @@ export function buildJourneyFromTimedStops(
   timetableDate: string,
   serviceType: string,
   timedStops: TimedStop[],
+  originStationCode?: string,
 ): TrainJourney {
+  const sorted = [...timedStops].sort((a, b) => a.sortMinutes - b.sortMinutes);
   const seen = new Set<string>();
   const ordered: TrainJourneyStop[] = [];
 
-  for (const entry of [...timedStops].sort((a, b) => a.sortMinutes - b.sortMinutes)) {
+  const pinnedOrigin = originStationCode
+    ? sorted.find((entry) => entry.stop.stationCode === originStationCode)
+    : undefined;
+  if (pinnedOrigin) {
+    seen.add(pinnedOrigin.stop.stationCode);
+    ordered.push(pinnedOrigin.stop);
+  }
+
+  for (const entry of sorted) {
     if (seen.has(entry.stop.stationCode)) continue;
     seen.add(entry.stop.stationCode);
     ordered.push(entry.stop);
@@ -315,6 +325,7 @@ export async function fetchCpTrainJourneyFallback(
     timetableDate,
     resolvedServiceType,
     timedStops,
+    originStationCode,
   );
 
   if (journey.stops.length === 0) {

@@ -16,8 +16,25 @@ export type TrainJourney = {
 export function downstreamStopsFrom(
   journey: TrainJourney,
   originStationCode: string,
+  originFallback?: Pick<TrainJourneyStop, "stationName" | "departureTime" | "platform">,
 ): TrainJourneyStop[] {
   const index = journey.stops.findIndex((stop) => stop.stationCode === originStationCode);
-  if (index < 0) return journey.stops;
-  return journey.stops.slice(index);
+  const fromOrigin = index >= 0 ? journey.stops.slice(index) : journey.stops;
+  if (fromOrigin[0]?.stationCode === originStationCode) {
+    return fromOrigin;
+  }
+
+  if (!originFallback) {
+    return fromOrigin;
+  }
+
+  const originStop: TrainJourneyStop = {
+    stationCode: originStationCode,
+    stationName: originFallback.stationName,
+    departureTime: originFallback.departureTime,
+    arrivalTime: originFallback.departureTime,
+    platform: originFallback.platform,
+  };
+
+  return [originStop, ...fromOrigin.filter((stop) => stop.stationCode !== originStationCode)];
 }

@@ -146,4 +146,40 @@ describe("buildJourneyFromTimedStops", () => {
       "94-39172",
     ]);
   });
+
+  it("pins the boarding station first even when other stops sort earlier", () => {
+    const journey = buildJourneyFromTimedStops(
+      "15761",
+      "2026-06-30",
+      "Urbano",
+      [
+        {
+          sortMinutes: 10 * 60 + 5,
+          stop: {
+            stationCode: "94-2006",
+            stationName: "Porto-Campanhã",
+            arrivalTime: "10:04",
+            departureTime: "10:05",
+            platform: null,
+          },
+        },
+        {
+          sortMinutes: 10 * 60 + 12,
+          stop: {
+            stationCode: "94-39149",
+            stationName: "Coimbrões",
+            arrivalTime: null,
+            departureTime: "10:12",
+            platform: "2",
+          },
+        },
+      ],
+      "94-39149",
+    );
+
+    expect(journey.stops.map((stop) => stop.stationCode)).toEqual([
+      "94-39149",
+      "94-2006",
+    ]);
+  });
 });

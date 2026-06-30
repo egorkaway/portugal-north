@@ -57,4 +57,38 @@ describe("downstreamStopsFrom", () => {
 
     expect(downstreamStopsFrom(journey, "94-b")).toEqual([journey.stops[1]]);
   });
+
+  it("prepends the boarding station when it is missing from the journey", () => {
+    const journey = {
+      trainNumber: "15761",
+      timetableDate: "2026-06-30",
+      serviceType: "Urbano",
+      stops: [
+        {
+          stationCode: "94-2006",
+          stationName: "Porto-Campanhã",
+          arrivalTime: "10:04",
+          departureTime: "10:05",
+          platform: null,
+        },
+      ],
+    };
+
+    expect(
+      downstreamStopsFrom(journey, "94-39149", {
+        stationName: "Coimbrões",
+        departureTime: "10:12",
+        platform: "2",
+      }),
+    ).toEqual([
+      {
+        stationCode: "94-39149",
+        stationName: "Coimbrões",
+        departureTime: "10:12",
+        arrivalTime: "10:12",
+        platform: "2",
+      },
+      journey.stops[0],
+    ]);
+  });
 });
