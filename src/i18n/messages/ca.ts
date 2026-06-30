@@ -66,10 +66,7 @@ export const ca: Messages = {
   station: {
     stationPhotoAlt: "Estació de tren de {{name}}",
     stationPhotoAltBy: "Fotografia de {{name}} de {{author}}",
-    photoCreditPexelsBefore: "Fotografia de",
-    photoCreditPexelsAfter: "a",
-    photoCreditWikimediaBefore: "Fotografia de",
-    photoCreditWikimediaAfter: "a",
+    photoCreditBy: "Fotografia de {{author}}",
     budgetStays: "Allotjaments amb preus raonables a prop",
     hotelsIntro:
       "Vota a favor o en contra d'hotels que coneixes, o indica si un allotjament pot estar tancat. El teu feedback es desa en aquest navegador.",

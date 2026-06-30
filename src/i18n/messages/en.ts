@@ -66,10 +66,7 @@ export const en: Messages = {
   station: {
     stationPhotoAlt: "{{name}} train station",
     stationPhotoAltBy: "Photo of {{name}} by {{author}}",
-    photoCreditPexelsBefore: "Photo by",
-    photoCreditPexelsAfter: "on",
-    photoCreditWikimediaBefore: "Photo by",
-    photoCreditWikimediaAfter: "on",
+    photoCreditBy: "Photo by {{author}}",
     budgetStays: "Budget stays nearby",
     hotelsIntro:
       "Upvote or downvote hotels you have tried, or suggest if a listing may be closed. Your feedback is saved in this browser.",

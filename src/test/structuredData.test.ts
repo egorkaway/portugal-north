@@ -109,16 +109,17 @@ describe("structuredData", () => {
     expect(wikiImage.copyrightNotice).toContain("CC BY-SA");
     expect(wikiImage.license).toBe("https://creativecommons.org/licenses/by-sa/4.0/");
 
-    const pexelsUrl = stationImages["São Pedro da Torre"];
+    const pexelsUrl =
+      "https://images.pexels.com/photos/953125/pexels-photo-953125.jpeg?auto=compress&cs=tinysrgb&h=650&w=940";
     const pexels = buildStationStructuredData({
-      station: { ...aveiro, name: "São Pedro da Torre" },
-      slug: "sao-pedro-da-torre",
+      station: { ...aveiro, name: "Agualva - Cacém" },
+      slug: "agualva-cacem",
       hotels: [],
       imageUrl: pexelsUrl,
     });
     const pexelsImage = trainStationImage(pexels);
-    expect(pexelsImage.creator).toEqual({ "@type": "Organization", name: "Pexels" });
-    expect(pexelsImage.creditText).toBe("Photo via Pexels");
+    expect(pexelsImage.creator).toEqual({ "@type": "Person", name: "Francesco Paggiaro" });
+    expect(pexelsImage.creditText).toBe("Francesco Paggiaro on Pexels");
     expect(pexelsImage.copyrightNotice).toContain("Pexels License");
     expect(pexelsImage.license).toBe("https://www.pexels.com/license/");
   });

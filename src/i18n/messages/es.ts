@@ -66,10 +66,7 @@ export const es: Messages = {
   station: {
     stationPhotoAlt: "Estación de tren de {{name}}",
     stationPhotoAltBy: "Foto de {{name}} de {{author}}",
-    photoCreditPexelsBefore: "Foto de",
-    photoCreditPexelsAfter: "en",
-    photoCreditWikimediaBefore: "Foto de",
-    photoCreditWikimediaAfter: "en",
+    photoCreditBy: "Foto de {{author}}",
     budgetStays: "Alojamientos con buen precio cerca",
     hotelsIntro:
       "Vota a favor o en contra de hoteles que conoces, o indica si puede estar cerrado. Tu opinión se guarda en este navegador.",
