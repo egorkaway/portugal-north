@@ -289,7 +289,14 @@ export async function pexelsPickUnique(query, stationName, usedUrls, apiKey, { p
     const candidate = photo?.src?.large;
     if (candidate && !usedUrls.has(candidate)) {
       usedUrls.add(candidate);
-      return candidate;
+      return {
+        url: candidate,
+        credit: {
+          photographer: photo.photographer ?? "",
+          photographerUrl: photo.photographer_url ?? "",
+          photoPageUrl: photo.url ?? "",
+        },
+      };
     }
   }
   return null;
@@ -312,14 +319,14 @@ export async function resolveStationImage(station, { apiKey, usedUrls, pexelsOnl
   }
 
   for (const query of buildPexelsQueries(station)) {
-    const url = await pexelsPickUnique(query, station.name, usedUrls, apiKey);
-    if (url) return { url, source: "pexels", query };
+    const picked = await pexelsPickUnique(query, station.name, usedUrls, apiKey);
+    if (picked) return { url: picked.url, source: "pexels", query, credit: picked.credit };
     await sleep(400);
   }
 
   for (const query of buildLocationPexelsQueries(station)) {
-    const url = await pexelsPickUnique(query, station.name, usedUrls, apiKey);
-    if (url) return { url, source: "pexels-location", query };
+    const picked = await pexelsPickUnique(query, station.name, usedUrls, apiKey);
+    if (picked) return { url: picked.url, source: "pexels-location", query, credit: picked.credit };
     await sleep(400);
   }
 

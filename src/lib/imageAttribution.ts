@@ -1,3 +1,6 @@
+import { pexelsPhotoCredits } from "@/data/pexelsPhotoCredits";
+import { pexelsPhotoIdFromUrl } from "@/lib/pexelsPhotoId";
+
 /** Image creator / credit / copyright for JSON-LD ImageObject (Google image metadata). */
 
 export type ImageAttribution = {
@@ -6,6 +9,10 @@ export type ImageAttribution = {
   copyrightNotice: string;
   license?: string;
   acquireLicensePage?: string;
+  /** Optional link targets for on-page credit UI. */
+  authorUrl?: string;
+  sourceUrl?: string;
+  sourceName?: string;
 };
 
 const CC_BY_SA_NOTICE =
@@ -54,7 +61,32 @@ function wikimediaFilePageUrl(filename: string): string {
   return `${WIKIMEDIA_COMMONS}wiki/${encodeURIComponent(title)}`;
 }
 
+function attributionForPexelsCredit(credit: {
+  photographer: string;
+  photographerUrl: string;
+  photoPageUrl: string;
+}): ImageAttribution {
+  return {
+    creator: { "@type": "Person", name: credit.photographer },
+    creditText: `${credit.photographer} on Pexels`,
+    copyrightNotice: "Free to use under the Pexels License",
+    license: PEXELS_LICENSE,
+    acquireLicensePage: credit.photoPageUrl || PEXELS_LICENSE,
+    authorUrl: credit.photographerUrl || undefined,
+    sourceUrl: credit.photoPageUrl || PEXELS_LICENSE,
+    sourceName: "Pexels",
+  };
+}
+
 export function attributionForImageUrl(imageUrl: string): ImageAttribution {
+  const pexelsId = pexelsPhotoIdFromUrl(imageUrl);
+  if (pexelsId) {
+    const credit = pexelsPhotoCredits[pexelsId];
+    if (credit) {
+      return attributionForPexelsCredit(credit);
+    }
+  }
+
   if (imageUrl.includes("wikimedia.org") || imageUrl.includes("wikipedia.org")) {
     const filename = filenameFromImageUrl(imageUrl);
     const authorName = wikimediaCreatorFromFilename(filename);
@@ -64,14 +96,16 @@ export function attributionForImageUrl(imageUrl: string): ImageAttribution {
     const creditText = authorName
       ? `${authorName} via Wikimedia Commons`
       : "Wikimedia Commons";
+    const filePage = filename ? wikimediaFilePageUrl(filename) : WIKIMEDIA_COMMONS;
     return {
       creator,
       creditText,
       copyrightNotice: CC_BY_SA_NOTICE,
       license: CC_BY_SA_LICENSE,
-      acquireLicensePage: filename
-        ? wikimediaFilePageUrl(filename)
-        : WIKIMEDIA_COMMONS,
+      acquireLicensePage: filePage,
+      authorUrl: filePage,
+      sourceUrl: WIKIMEDIA_COMMONS,
+      sourceName: "Wikimedia Commons",
     };
   }
 
@@ -82,6 +116,8 @@ export function attributionForImageUrl(imageUrl: string): ImageAttribution {
       copyrightNotice: "Free to use under the Pexels License",
       license: PEXELS_LICENSE,
       acquireLicensePage: PEXELS_LICENSE,
+      sourceUrl: PEXELS_LICENSE,
+      sourceName: "Pexels",
     };
   }
 

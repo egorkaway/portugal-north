@@ -108,7 +108,7 @@ export default function StationActivityMap() {
           center={IBERIAN_MAP_CENTER}
           zoom={IBERIAN_MAP_ZOOM}
           maxBounds={IBERIAN_MAP_BOUNDS}
-          minZoom={5}
+          minZoom={6}
           scrollWheelZoom
           className="z-0 h-[min(70vh,520px)] w-full"
         >

@@ -56,9 +56,11 @@ function formatImageTotals(
 export function StationImageVote({
   stationName,
   imageUrl,
+  photoAlt,
 }: {
   stationName: string;
   imageUrl: string;
+  photoAlt: string;
 }) {
   const { t, plural } = useLocale();
   const { vote, cast } = useStationImageVote(stationName);
@@ -71,7 +73,7 @@ export function StationImageVote({
       <div className="relative aspect-[2/1] sm:aspect-[21/9]">
         <StationPhoto
           src={imageUrl}
-          alt={t("station.stationPhotoAlt", { name: stationName })}
+          alt={photoAlt}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent px-3 pb-2.5 pt-8 sm:px-4 sm:pb-4 sm:pt-12">

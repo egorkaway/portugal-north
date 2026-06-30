@@ -20,10 +20,17 @@ import {
   updateImageInMap,
   writeImageMap,
 } from "./lib/stationImageFetch.mjs";
+import {
+  loadPexelsCredits,
+  pexelsPhotoIdFromUrl,
+  upsertPexelsCredit,
+  writePexelsCredits,
+} from "./lib/pexelsCredits.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const stationsPath = join(root, "src/data/stations.ts");
 const imagesPath = join(root, "src/data/stationImages.ts");
+const creditsPath = join(root, "src/data/pexelsPhotoCredits.ts");
 
 loadEnvFile(join(root, ".env"));
 const apiKey = process.env.PEXELS_API_KEY;
@@ -53,6 +60,7 @@ console.log(
 );
 
 const usedUrls = new Set(Object.values(imageMap));
+const pexelsCredits = loadPexelsCredits(creditsPath);
 let added = 0;
 
 for (const station of targets) {
@@ -60,6 +68,11 @@ for (const station of targets) {
     const result = await resolveStationImage(station, { apiKey, usedUrls, pexelsOnly });
     if (result) {
       updateImageInMap(imageMap, station.name, result.url);
+      if (result.credit) {
+        const photoId = pexelsPhotoIdFromUrl(result.url);
+        upsertPexelsCredit(pexelsCredits, photoId, result.credit);
+        writePexelsCredits(creditsPath, pexelsCredits);
+      }
       added++;
       writeImageMap(imagesPath, imageMap);
       console.log(`  ${station.name}: ${result.source}`);

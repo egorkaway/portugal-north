@@ -65,6 +65,11 @@ export const gl: Messages = {
   },
   station: {
     stationPhotoAlt: "Estación de tren de {{name}}",
+    stationPhotoAltBy: "Foto de {{name}} de {{author}}",
+    photoCreditPexelsBefore: "Foto de",
+    photoCreditPexelsAfter: "en",
+    photoCreditWikimediaBefore: "Foto de",
+    photoCreditWikimediaAfter: "en",
     budgetStays: "Aloxamentos con prezos razoables preto",
     hotelsIntro:
       "Vota a favor ou en contra de hoteis que coñezas, ou indica se un aloxamento pode estar pechado. O teu feedback queda gardado neste navegador.",

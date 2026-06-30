@@ -39,6 +39,11 @@ import { getBerrymetCityLink } from "@/lib/berrymetCity";
 import { buildHomePath } from "@/lib/homeRoute";
 import { getStationSummary } from "@/lib/stationSummary";
 import { getStationMapImagePath } from "@/lib/stationMapImage";
+import {
+  getStationPhotoAlt,
+  shouldShowStationImageCredit,
+} from "@/lib/stationImageAttribution";
+import { StationImageCredit } from "@/components/StationImageCredit";
 
 const typeColors: Record<string, string> = {
   Airport: "bg-sky-600 text-white",
@@ -70,6 +75,8 @@ const Station = () => {
   const metroLink = getMetroOperatorLink(station);
   const imageUrl = getStationImageUrl(station.name);
   const shareImageUrl = getStationShareImageUrl(station.name);
+  const photoAlt = getStationPhotoAlt(station.name, imageUrl, t);
+  const showImageCredit = shouldShowStationImageCredit(imageUrl);
   const showPhotoVote = hasRepresentativeStationImage(station.name);
   const { vote, cast } = useStationVote(station.name);
   const { visited, toggle: toggleVisited } = useStationVisited(station.name);
@@ -133,12 +140,16 @@ const Station = () => {
 
         <main className="mx-auto max-w-5xl px-4 py-6 md:px-6 md:py-10">
           {showPhotoVote ? (
-            <StationImageVote stationName={station.name} imageUrl={imageUrl} />
+            <StationImageVote
+              stationName={station.name}
+              imageUrl={imageUrl}
+              photoAlt={photoAlt}
+            />
           ) : (
             <div className="mb-5 overflow-hidden rounded-lg border border-border bg-muted md:mb-8">
               <StationPhoto
                 src={imageUrl}
-                alt={t("station.stationPhotoAlt", { name: station.name })}
+                alt={photoAlt}
                 className="aspect-[2/1] w-full object-cover sm:aspect-[21/9]"
               />
             </div>
@@ -159,6 +170,12 @@ const Station = () => {
             <p className="mb-5 text-sm leading-relaxed text-muted-foreground md:mb-8">
               {stationSummary}
             </p>
+          ) : null}
+
+          {showImageCredit ? (
+            <div className="mb-5 md:mb-8">
+              <StationImageCredit imageUrl={imageUrl} />
+            </div>
           ) : null}
 
           {!airportStation ? <StationDepartures stationName={station.name} /> : null}

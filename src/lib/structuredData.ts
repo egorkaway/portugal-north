@@ -54,12 +54,15 @@ export function buildBreadcrumbList(items: { name: string; path: string }[]): Js
 }
 
 function buildStationImageObject(imageUrl: string, stationName: string): JsonLd {
-  const { creator, creditText, copyrightNotice, license, acquireLicensePage } =
-    attributionForImageUrl(imageUrl);
+  const attribution = attributionForImageUrl(imageUrl);
+  const { creator, creditText, copyrightNotice, license, acquireLicensePage } = attribution;
   const image: JsonLd = {
     "@type": "ImageObject",
     contentUrl: imageUrl,
-    name: `${stationName} train station`,
+    name:
+      creator["@type"] === "Person"
+        ? `${stationName} train station — photo by ${creator.name}`
+        : `${stationName} train station`,
     creator,
     creditText,
     copyrightNotice,
