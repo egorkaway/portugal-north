@@ -1,5 +1,5 @@
 import { Clock, RefreshCw } from "lucide-react";
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getCpStationCode } from "@/data/cpStationCodes";
 import { useNowMinute } from "@/hooks/useNowMinute";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
