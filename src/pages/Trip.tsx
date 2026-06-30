@@ -113,20 +113,10 @@ const Trip = () => {
           departureTime: trip.departureTime,
           platform: platform ?? trip.platform ?? null,
         })
-      : trip && originCode
-        ? [
-            {
-              stationCode: originCode,
-              stationName: trip.stationName,
-              departureTime: trip.departureTime,
-              arrivalTime: trip.departureTime,
-              platform: platform ?? trip.platform ?? null,
-            },
-          ]
-        : [];
+      : [];
 
-  const showStopsUnavailable =
-    !isLoading && downstreamStops.length <= 1 && (isError || !journey);
+  const hasConfirmedUpcomingStops =
+    !isLoading && !isError && Boolean(journey) && downstreamStops.length > 1;
 
   useTripCompletion(trip, downstreamStops, delayMinutes, now);
 
@@ -211,18 +201,14 @@ const Trip = () => {
                 </p>
               </section>
 
-              <section
-                aria-labelledby="trip-stops-heading"
-                className="flex min-h-0 flex-1 flex-col"
-              >
-                <h2 id="trip-stops-heading" className="mb-3 shrink-0 font-display text-2xl text-foreground">
-                  {t("trip.upcomingStops")}
-                </h2>
-                {isLoading ? (
-                  <p className="text-sm text-muted-foreground">{t("trip.loadingStops")}</p>
-                ) : showStopsUnavailable ? (
-                  <p className="text-sm text-muted-foreground">{t("trip.stopsUnavailable")}</p>
-                ) : (
+              {hasConfirmedUpcomingStops ? (
+                <section
+                  aria-labelledby="trip-stops-heading"
+                  className="flex min-h-0 flex-1 flex-col"
+                >
+                  <h2 id="trip-stops-heading" className="mb-3 shrink-0 font-display text-2xl text-foreground">
+                    {t("trip.upcomingStops")}
+                  </h2>
                   <ol className="min-h-0 flex-1 space-y-2 overflow-y-auto pr-1 sm:max-h-none">
                     {downstreamStops.map((stop, index) => (
                       <TripStopRow
@@ -234,8 +220,8 @@ const Trip = () => {
                       />
                     ))}
                   </ol>
-                )}
-              </section>
+                </section>
+              ) : null}
             </div>
           )}
         </main>
