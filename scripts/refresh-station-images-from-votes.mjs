@@ -12,6 +12,7 @@
  *
  *   npm run images:refresh-from-votes:dry
  *   npm run images:refresh-from-votes
+ *   npm run images:refresh-from-votes -- --force --station "Oiã" --station "Adémia"
  */
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -41,9 +42,16 @@ import {
   sleep,
   writeImageMap,
 } from "./lib/stationImageFetch.mjs";
+import {
+  loadPexelsCredits,
+  pexelsPhotoIdFromUrl,
+  upsertPexelsCredit,
+  writePexelsCredits,
+} from "./lib/pexelsCredits.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const imagesPath = join(root, "src/data/stationImages.ts");
+const creditsPath = join(root, "src/data/pexelsPhotoCredits.ts");
 const historyPath = join(root, "data/station-image-history.json");
 
 loadEnvFile(join(root, ".env"));
@@ -51,8 +59,9 @@ loadEnvFile(join(root, ".env"));
 const args = process.argv.slice(2);
 const buildMode = args.includes("--build");
 const dryRun = args.includes("--dry-run");
+const forceRefresh = args.includes("--force");
 const requireNetNegative = args.includes("--require-net-negative");
-const onlyStation = argValue("--station");
+const onlyStations = argValues("--station");
 const minDown = Number(argValue("--min-down") ?? "3");
 const maxPerRun = Number(
   argValue("--max") ?? (buildMode ? process.env.IMAGE_REFRESH_MAX_PER_BUILD ?? "5" : "999"),
@@ -70,6 +79,15 @@ function argValue(flag) {
   const i = args.indexOf(flag);
   if (i === -1 || i === args.length - 1) return null;
   return args[i + 1];
+}
+
+function argValues(flag) {
+  /** @type {string[]} */
+  const values = [];
+  for (let i = 0; i < args.length; i++) {
+    if (args[i] === flag && i + 1 < args.length) values.push(args[i + 1]);
+  }
+  return values;
 }
 
 function skipBuild(message) {
@@ -149,7 +167,22 @@ async function main() {
   const imageRatings = await loadImageRatings();
 
   let candidates = stationsNeedingRefresh(imageRatings);
-  if (onlyStation) {
+
+  if (forceRefresh && onlyStations.length > 0) {
+    const stations = parseAllStationsFromRepo(root);
+    const stationByName = new Map(stations.map((s) => [s.name, s]));
+    candidates = onlyStations.map((name) => {
+      if (!stationByName.has(name)) {
+        console.error(`Unknown station: ${name}`);
+        process.exit(1);
+      }
+      return {
+        name,
+        votes: imageRatings[name] ?? { up: 0, down: 0 },
+      };
+    });
+  } else if (onlyStations.length === 1) {
+    const onlyStation = onlyStations[0];
     candidates = candidates.filter((c) => c.name === onlyStation);
     if (candidates.length === 0) {
       const votes = imageRatings[onlyStation];
@@ -159,6 +192,8 @@ async function main() {
       }
       candidates = [{ name: onlyStation, votes }];
     }
+  } else if (onlyStations.length > 1) {
+    candidates = candidates.filter((c) => onlyStations.includes(c.name));
   }
 
   if (candidates.length > maxPerRun) {
@@ -185,6 +220,7 @@ async function main() {
   const imageMap = parseImageMap(readFileSync(imagesPath, "utf8"));
   const history = await loadHistory();
   const usedGlobally = new Set(Object.values(imageMap));
+  const pexelsCredits = loadPexelsCredits(creditsPath);
 
   /** @type {string[]} */
   const refreshedNames = [];
@@ -222,9 +258,14 @@ async function main() {
         recordRefresh(history, name, {
           from: currentUrl,
           to: result.url,
-          reason: `down>=${minDown}`,
+          reason: forceRefresh ? "forced" : `down>=${minDown}`,
           votesAtRefresh: votes,
         });
+        if (result.credit) {
+          const photoId = pexelsPhotoIdFromUrl(result.url);
+          upsertPexelsCredit(pexelsCredits, photoId, result.credit);
+          writePexelsCredits(creditsPath, pexelsCredits);
+        }
         refreshedNames.push(name);
       }
     } catch (error) {

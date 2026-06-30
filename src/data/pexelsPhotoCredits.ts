@@ -346,6 +346,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@nathanmarcam",
     photoPageUrl: "https://www.pexels.com/photo/trains-on-rail-tracks-at-dawn-10673911/",
   },
+  "10805086": {
+    photographer: "Jo Kassis",
+    photographerUrl: "https://www.pexels.com/@jokassis",
+    photoPageUrl: "https://www.pexels.com/photo/suspension-bridge-in-portugal-10805086/",
+  },
   "10861622": {
     photographer: "Magdolna Kiss",
     photographerUrl: "https://www.pexels.com/@magdolna-kiss-163885502",
@@ -426,6 +431,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@simao-araujo-291180195",
     photoPageUrl: "https://www.pexels.com/photo/aerial-photography-of-bridge-over-river-between-trees-13182427/",
   },
+  "13198726": {
+    photographer: "sena keçicioğlu",
+    photographerUrl: "https://www.pexels.com/@sena-kecicioglu-98047644",
+    photoPageUrl: "https://www.pexels.com/photo/train-at-a-train-station-13198726/",
+  },
   "13433436": {
     photographer: "Kaan Durmuş",
     photographerUrl: "https://www.pexels.com/@kaandurmus",
@@ -500,6 +510,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Priyanshu  Das",
     photographerUrl: "https://www.pexels.com/@priyanshu-das-419903538",
     photoPageUrl: "https://www.pexels.com/photo/person-walking-near-railway-station-in-grayscale-photography-15099732/",
+  },
+  "15259476": {
+    photographer: "Chirill Ceban",
+    photographerUrl: "https://www.pexels.com/@bitkidd",
+    photoPageUrl: "https://www.pexels.com/photo/photo-of-the-inside-of-the-sul-e-sueste-station-in-lisbon-portugal-15259476/",
   },
   "15656110": {
     photographer: "Jose Antonio Gallego Vázquez",
@@ -645,6 +660,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "KJ Brix",
     photographerUrl: "https://www.pexels.com/@kjbromme",
     photoPageUrl: "https://www.pexels.com/photo/train-station-in-city-17936879/",
+  },
+  "18187514": {
+    photographer: "Anderson Pereira",
+    photographerUrl: "https://www.pexels.com/@anderson-pereira-707727212",
+    photoPageUrl: "https://www.pexels.com/photo/tram-on-street-18187514/",
   },
   "18280334": {
     photographer: "Bruno Silva",
@@ -1060,6 +1080,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Renata Moraes",
     photographerUrl: "https://www.pexels.com/@moraesrenata",
     photoPageUrl: "https://www.pexels.com/photo/sao-bento-station-clock-and-azulejos-in-porto-31597977/",
+  },
+  "31762054": {
+    photographer: "Vadym Alyekseyenko",
+    photographerUrl: "https://www.pexels.com/@vadym-alyekseyenko-137433856",
+    photoPageUrl: "https://www.pexels.com/photo/train-and-construction-equipment-at-railway-crossing-31762054/",
   },
   "31797305": {
     photographer: "Antonio Garcia Prats",
