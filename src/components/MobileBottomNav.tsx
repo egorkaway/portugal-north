@@ -2,17 +2,20 @@ import { NavLink } from "@/components/NavLink";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { isHomePath } from "@/lib/homeRoute";
-import { BarChart3, Home, Map as MapIcon, Ticket } from "lucide-react";
+import { useActiveTrip } from "@/lib/plannedDepartures";
+import { BarChart3, Home, Map as MapIcon, Ticket, TrainFront } from "lucide-react";
 import { useLocation } from "react-router-dom";
 
 function NavItem({
   to,
   label,
   icon: Icon,
+  highlight = false,
 }: {
   to: string;
   label: string;
   icon: typeof Home;
+  highlight?: boolean;
 }) {
   return (
     <NavLink
@@ -20,14 +23,16 @@ function NavItem({
       aria-label={label}
       className={({ isActive }) =>
         cn(
-          // iOS-like tab item: centered icon + label, with a soft active pill
-          "group flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 text-[11px] font-medium transition-colors",
+          "group relative flex min-w-0 flex-1 flex-col items-center justify-center gap-1 rounded-2xl px-2 py-2 text-[11px] font-medium transition-colors",
           isActive
             ? "bg-foreground/5 text-primary"
             : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground",
         )
       }
     >
+      {highlight ? (
+        <span className="absolute right-3 top-1 h-2 w-2 rounded-full bg-primary" aria-hidden="true" />
+      ) : null}
       <Icon
         className="h-5 w-5 transition-transform group-active:scale-[0.98]"
         aria-hidden="true"
@@ -64,9 +69,10 @@ function HomeNavItem({ label }: { label: string }) {
   );
 }
 
-/** Mobile-only bottom navigation (home, rankings, tickets, map). */
+/** Mobile-only bottom navigation (home, trip, rankings, tickets, map). */
 export function MobileBottomNav() {
   const { t } = useLocale();
+  const activeTrip = useActiveTrip();
 
   return (
     <nav
@@ -81,6 +87,12 @@ export function MobileBottomNav() {
       <div className="mx-auto max-w-5xl px-4 pb-[calc(env(safe-area-inset-bottom,0px)+0.5rem)] pt-2">
         <div className="flex items-stretch justify-between gap-2">
           <HomeNavItem label={t("nav.home")} />
+          <NavItem
+            to="/trip"
+            label={t("nav.trip")}
+            icon={TrainFront}
+            highlight={Boolean(activeTrip)}
+          />
           <NavItem to="/rankings" label={t("nav.rankings")} icon={BarChart3} />
           <NavItem to="/tickets" label={t("nav.tickets")} icon={Ticket} />
           <NavItem to="/map" label={t("nav.map")} icon={MapIcon} />

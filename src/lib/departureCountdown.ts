@@ -24,6 +24,15 @@ export function getMinutesUntilDeparture(
   return effectiveDeparture - nowMinutes;
 }
 
+/** Minutes until a scheduled clock time (includes delay); null if unparseable. */
+export function getMinutesUntilTime(
+  clockTime: string,
+  delayMinutes: number | null,
+  now: Date = new Date(),
+): number | null {
+  return getMinutesUntilDeparture(clockTime, delayMinutes, now);
+}
+
 export function formatDepartureCountdown(
   minutesUntil: number,
   tr: Pick<Translator, "t">,
@@ -39,4 +48,21 @@ export function formatDepartureCountdown(
     return tr.t("departures.leavesInHoursOnly", { hours });
   }
   return tr.t("departures.leavesInHours", { hours, minutes });
+}
+
+export function formatArrivalCountdown(
+  minutesUntil: number,
+  tr: Pick<Translator, "t">,
+): string {
+  if (minutesUntil <= 0) return tr.t("trip.arrivingNow");
+  if (minutesUntil < 60) {
+    return tr.t("trip.arrivesIn", { minutes: minutesUntil });
+  }
+
+  const hours = Math.floor(minutesUntil / 60);
+  const minutes = minutesUntil % 60;
+  if (minutes === 0) {
+    return tr.t("trip.arrivesInHoursOnly", { hours });
+  }
+  return tr.t("trip.arrivesInHours", { hours, minutes });
 }

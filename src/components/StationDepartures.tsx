@@ -1,5 +1,5 @@
 import { Clock, RefreshCw } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo } from "react";
 import { getCpStationCode } from "@/data/cpStationCodes";
 import { useNowMinute } from "@/hooks/useNowMinute";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
@@ -14,7 +14,10 @@ import {
   formatDepartureCountdown,
   getMinutesUntilDeparture,
 } from "@/lib/departureCountdown";
-import { getPlannedDepartureIds, togglePlannedDepartureId } from "@/lib/plannedDepartures";
+import {
+  isTakingDeparture,
+  toggleActiveTrip,
+} from "@/lib/plannedDepartures";
 
 function DepartureRow({
   id,
@@ -93,9 +96,6 @@ export function StationDepartures({ stationName }: { stationName: string }) {
     stationName,
     limit,
   );
-  const [plannedIds, setPlannedIds] = useState<Set<string>>(() =>
-    getPlannedDepartureIds(stationName),
-  );
   const now = useNowMinute();
 
   useEffect(() => {
@@ -169,9 +169,17 @@ export function StationDepartures({ stationName }: { stationName: string }) {
               <DepartureRow
                 key={dep.id}
                 {...dep}
-                taking={plannedIds.has(dep.id)}
-                onToggleTaking={(id) => {
-                  setPlannedIds(togglePlannedDepartureId(stationName, id));
+                taking={isTakingDeparture(stationName, dep.id)}
+                onToggleTaking={() => {
+                  toggleActiveTrip(stationName, {
+                    id: dep.id,
+                    trainNumber: dep.trainNumber,
+                    departureTime: dep.time,
+                    destination: dep.destination,
+                    serviceType: dep.serviceType,
+                    platform: dep.platform,
+                    delayMinutes: dep.delayMinutes,
+                  });
                 }}
                 now={now}
               />

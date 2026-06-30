@@ -90,6 +90,34 @@ async function handleVotesDevApi(
   return true;
 }
 
+async function handleTrainJourneyDevApi(
+  req: IncomingMessage,
+  res: ServerResponse,
+): Promise<boolean> {
+  if (!req.url?.startsWith("/api/train-journey")) return false;
+
+  const url = new URL(req.url, "http://localhost");
+  const train = url.searchParams.get("train") ?? "";
+  const date = url.searchParams.get("date") ?? undefined;
+
+  try {
+    const { fetchCpTrainJourney } = await import("./server/lib/cpTrainJourney.ts");
+    const journey = await fetchCpTrainJourney(train, date ?? undefined);
+    res.statusCode = 200;
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify({ journey, configured: true }));
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "unknown";
+    const status =
+      message === "invalid_train_number" || message === "invalid_timetable_date" ? 400 : 502;
+    res.statusCode = status;
+    res.setHeader("Content-Type", "application/json");
+    res.end(JSON.stringify({ error: message, journey: null, configured: true }));
+  }
+
+  return true;
+}
+
 async function handleDeparturesDevApi(
   req: IncomingMessage,
   res: ServerResponse,
@@ -226,6 +254,7 @@ export default defineConfig({
             .then((handled) => (handled ? true : handleAgentSkillsIndexDev(req, res)))
             .then((handled) => (handled ? true : handleVotesDevApi(req, res)))
             .then((handled) => (handled ? true : handleDeparturesDevApi(req, res)))
+            .then((handled) => (handled ? true : handleTrainJourneyDevApi(req, res)))
             .then((handled) => {
               if (!handled) next();
             });

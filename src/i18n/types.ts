@@ -21,6 +21,7 @@ export type Messages = {
     rankings: string;
     tickets: string;
     map: string;
+    trip: string;
     mobile: string;
     main: string;
   };
@@ -115,6 +116,23 @@ export type Messages = {
     leavingNow: string;
     loadMore: string;
     loadingMore: string;
+  };
+  trip: {
+    title: string;
+    subtitle: string;
+    emptyTitle: string;
+    emptyBody: string;
+    departureCountdown: string;
+    upcomingStops: string;
+    loadingStops: string;
+    stopsUnavailable: string;
+    stopTracking: string;
+    departureAt: string;
+    arrivalAt: string;
+    arrivesIn: string;
+    arrivesInHours: string;
+    arrivesInHoursOnly: string;
+    arrivingNow: string;
   };
   rankings: {
     title: string;

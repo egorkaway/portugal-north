@@ -21,6 +21,7 @@ import NotFound from "./pages/NotFound.tsx";
 import Tickets from "./pages/Tickets.tsx";
 import MapPage from "./pages/Map.tsx";
 import Privacy from "./pages/Privacy.tsx";
+import Trip from "./pages/Trip.tsx";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 
 const queryClient = new QueryClient();
@@ -50,6 +51,7 @@ const App = () => (
               <Route path="/rankings" element={<Rankings />} />
               <Route path="/tickets" element={<Tickets />} />
               <Route path="/map" element={<MapPage />} />
+              <Route path="/trip" element={<Trip />} />
               <Route path="/privacy" element={<Privacy />} />
               <Route path="/stations/:slug" element={<Station />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

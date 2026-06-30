@@ -1,50 +1,198 @@
-const STORAGE_KEY = "pn_planned_departures_v1";
+import { useSyncExternalStore } from "react";
+import { lisbonDateAndTime } from "@/lib/cpDeparturesParse";
 
-type PlannedMap = Record<string, string[]>;
+const LEGACY_STORAGE_KEY = "pn_planned_departures_v1";
+const ACTIVE_TRIP_STORAGE_KEY = "pn_active_trip_v2";
 
-function readMap(): PlannedMap {
-  if (typeof localStorage === "undefined") return {};
+export type PlannedDeparture = {
+  id: string;
+  stationName: string;
+  trainNumber: string;
+  departureTime: string;
+  destination: string;
+  serviceType: string;
+  platform: string | null;
+  delayMinutes: number | null;
+  timetableDate: string;
+  selectedAt: string;
+};
+
+const listeners = new Set<() => void>();
+let cache: PlannedDeparture | null | undefined;
+
+function emit(): void {
+  cache = undefined;
+  listeners.forEach((listener) => listener());
+}
+
+function subscribe(listener: () => void): () => void {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+
+function parseLegacyId(id: string, stationName: string): PlannedDeparture | null {
+  const parts = id.split("|");
+  if (parts.length < 4) return null;
+  const [, trainNumber, departureTime, destination] = parts;
+  if (!trainNumber || !departureTime || !destination) return null;
+  const { date } = lisbonDateAndTime();
+  return {
+    id,
+    stationName,
+    trainNumber,
+    departureTime,
+    destination,
+    serviceType: "—",
+    platform: null,
+    delayMinutes: null,
+    timetableDate: date,
+    selectedAt: new Date().toISOString(),
+  };
+}
+
+function migrateLegacyTrip(): PlannedDeparture | null {
+  if (typeof localStorage === "undefined") return null;
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return {};
-    const parsed = JSON.parse(raw) as unknown;
-    if (!parsed || typeof parsed !== "object") return {};
-    return parsed as PlannedMap;
+    const raw = localStorage.getItem(LEGACY_STORAGE_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as Record<string, string[]>;
+    for (const [stationName, ids] of Object.entries(parsed)) {
+      const first = ids?.[0];
+      if (typeof first === "string") {
+        const trip = parseLegacyId(first, stationName);
+        if (trip) return trip;
+      }
+    }
   } catch {
-    return {};
+    // ignore
+  }
+  return null;
+}
+
+function readActiveTrip(): PlannedDeparture | null {
+  if (typeof localStorage === "undefined") return null;
+  try {
+    const raw = localStorage.getItem(ACTIVE_TRIP_STORAGE_KEY);
+    if (!raw) return migrateLegacyTrip();
+    const parsed = JSON.parse(raw) as unknown;
+    if (!parsed || typeof parsed !== "object") return null;
+    const trip = parsed as PlannedDeparture;
+    if (
+      typeof trip.id !== "string" ||
+      typeof trip.stationName !== "string" ||
+      typeof trip.trainNumber !== "string" ||
+      typeof trip.departureTime !== "string"
+    ) {
+      return null;
+    }
+    return trip;
+  } catch {
+    return null;
   }
 }
 
-function writeMap(map: PlannedMap): void {
+function writeActiveTrip(trip: PlannedDeparture | null): void {
   if (typeof localStorage === "undefined") return;
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(map));
+    if (trip) {
+      localStorage.setItem(ACTIVE_TRIP_STORAGE_KEY, JSON.stringify(trip));
+    } else {
+      localStorage.removeItem(ACTIVE_TRIP_STORAGE_KEY);
+    }
+    localStorage.removeItem(LEGACY_STORAGE_KEY);
   } catch {
     // best-effort
   }
 }
 
-export function getPlannedDepartureIds(stationName: string): Set<string> {
-  const map = readMap();
-  // Backwards-compatible: older clients may have stored multiple ids.
-  // New behavior is single-select (0 or 1 id).
-  const ids = map[stationName] ?? [];
-  const first = typeof ids[0] === "string" ? ids[0] : undefined;
-  return first ? new Set([first]) : new Set();
+function getSnapshot(): PlannedDeparture | null {
+  if (cache === undefined) cache = readActiveTrip();
+  return cache;
 }
 
+export function buildPlannedDepartureId(
+  stationName: string,
+  trainNumber: string,
+  time: string,
+  destination: string,
+): string {
+  return `${stationName}|${trainNumber}|${time}|${destination}`;
+}
+
+export function useActiveTrip(): PlannedDeparture | null {
+  return useSyncExternalStore(subscribe, getSnapshot, () => null);
+}
+
+export function setActiveTrip(trip: PlannedDeparture): void {
+  writeActiveTrip(trip);
+  emit();
+}
+
+export function clearActiveTrip(): void {
+  writeActiveTrip(null);
+  emit();
+}
+
+export function toggleActiveTrip(
+  stationName: string,
+  departure: Omit<PlannedDeparture, "id" | "stationName" | "selectedAt" | "timetableDate"> & {
+    id?: string;
+    timetableDate?: string;
+    selectedAt?: string;
+  },
+): PlannedDeparture | null {
+  const id =
+    departure.id ??
+    buildPlannedDepartureId(
+      stationName,
+      departure.trainNumber,
+      departure.departureTime,
+      departure.destination,
+    );
+  const current = readActiveTrip();
+  if (current?.id === id) {
+    clearActiveTrip();
+    return null;
+  }
+
+  const { date } = lisbonDateAndTime();
+  const trip: PlannedDeparture = {
+    id,
+    stationName,
+    trainNumber: departure.trainNumber,
+    departureTime: departure.departureTime,
+    destination: departure.destination,
+    serviceType: departure.serviceType,
+    platform: departure.platform,
+    delayMinutes: departure.delayMinutes,
+    timetableDate: departure.timetableDate ?? date,
+    selectedAt: departure.selectedAt ?? new Date().toISOString(),
+  };
+  setActiveTrip(trip);
+  return trip;
+}
+
+/** @deprecated Use useActiveTrip / toggleActiveTrip */
+export function getPlannedDepartureIds(stationName: string): Set<string> {
+  const trip = readActiveTrip();
+  if (trip?.stationName === stationName) return new Set([trip.id]);
+  return new Set();
+}
+
+/** @deprecated Use toggleActiveTrip */
 export function togglePlannedDepartureId(
   stationName: string,
   departureId: string,
 ): Set<string> {
-  const map = readMap();
-  const current = map[stationName] ?? [];
-  const selected = typeof current[0] === "string" ? current[0] : null;
-
-  // Single-select: selecting a different train replaces the old one.
-  // Tapping the selected train clears it.
-  map[stationName] = selected === departureId ? [] : [departureId];
-  writeMap(map);
-  return new Set(map[stationName]);
+  const current = readActiveTrip();
+  if (current?.id === departureId && current.stationName === stationName) {
+    clearActiveTrip();
+    return new Set();
+  }
+  return getPlannedDepartureIds(stationName);
 }
 
+export function isTakingDeparture(stationName: string, departureId: string): boolean {
+  const trip = readActiveTrip();
+  return trip?.stationName === stationName && trip.id === departureId;
+}
