@@ -7,6 +7,7 @@ import {
   getHomePageMeta,
   getTicketsPageMeta,
   getMapPageMeta,
+  getTripPageMeta,
   getPrivacyPageMeta,
   buildSeoHeadHtml,
   buildStationPageMeta,
@@ -29,6 +30,7 @@ export function getPrerenderRoutes(): PrerenderRoute[] {
     { outFile: "rankings/index.html", meta: RANKINGS_PAGE_META },
     { outFile: "tickets/index.html", meta: getTicketsPageMeta("en") },
     { outFile: "map/index.html", meta: getMapPageMeta("en") },
+    { outFile: "trip/index.html", meta: getTripPageMeta("en") },
     { outFile: "privacy/index.html", meta: getPrivacyPageMeta("en") },
     { outFile: "404.html", meta: NOT_FOUND_PAGE_META },
   ];

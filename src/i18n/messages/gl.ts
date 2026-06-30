@@ -383,6 +383,12 @@ export const gl: Messages = {
       ogDescription:
         "Mira que estacións CP son máis movidas nas nosas mostras de saídas, nun mapa H3 de Portugal.",
     },
+    trip: {
+      title: "Viaxe | Viaxe Ibérica Sostible",
+      description:
+        "Segue o teu tren CP con conta atrás para a saída e próximas paradas despois de premer Coller nunha estación.",
+      ogDescription: "Seguimento de viaxe con contas atrás e paradas seguintes.",
+    },
     privacy: {
       title: "Política de Privacidade | Viaxe Ibérica Sostible",
       description:

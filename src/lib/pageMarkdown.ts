@@ -7,6 +7,7 @@ import {
   getHomePageMeta,
   type PageMeta,
   getTicketsPageMeta,
+  getTripPageMeta,
 } from "@/lib/pageMeta";
 import { parseHomeCanonicalPath, buildHomePath } from "@/lib/homeRoute";
 import { formatLineList, formatServiceTypes } from "@/lib/stationMeta";
@@ -124,6 +125,24 @@ Covers [Metro do Porto](https://www.metrodoporto.pt/) and STCP buses. Buy a rech
 Shared by [Metropolitano de Lisboa](https://www.metrolisboa.pt/) and Carris/Fertagus. Titles are sold by zone rings (city core vs wider metropolitan). See [current fares](https://www.metrolisboa.pt/pt/comprar/tarifario).
 
 A CP ticket does not include metro rides unless CP sells an explicit combined product for your journey.
+`;
+}
+
+export function buildTripMarkdown(meta: PageMeta, siteUrl: string): string {
+  const base = siteUrl.replace(/\/$/, "");
+  return `${yamlFrontmatter({
+    title: meta.title,
+    description: meta.description,
+    image: meta.ogImagePath ? `${base}${meta.ogImagePath}` : undefined,
+  })}# ${meta.title}
+
+${meta.description}
+
+## How to start tracking
+
+1. Open any station page with live CP departures.
+2. Tap **Take** on the train you plan to board.
+3. Open the **Trip** tab in the mobile navigation for countdowns and upcoming stops.
 `;
 }
 
@@ -256,6 +275,9 @@ export function buildMarkdownForRoute(route: PrerenderRoute, siteUrl: string): s
   if (meta.canonicalPath === "/tickets") {
     return buildTicketsMarkdown(meta, siteUrl);
   }
+  if (meta.canonicalPath === "/trip") {
+    return buildTripMarkdown(meta, siteUrl);
+  }
   if (meta.canonicalPath === "/404") {
     return buildNotFoundMarkdown(meta, siteUrl);
   }
@@ -296,6 +318,9 @@ export function buildMarkdownForPath(pathname: string, siteUrl: string): string 
   }
   if (normalized === "/tickets") {
     return buildTicketsMarkdown(getTicketsPageMeta("en"), siteUrl);
+  }
+  if (normalized === "/trip") {
+    return buildTripMarkdown(getTripPageMeta("en"), siteUrl);
   }
 
   return null;

@@ -383,6 +383,12 @@ export const ca: Messages = {
       ogDescription:
         "Mira quines estacions CP són més actives a les nostres mostres de sortides, en un mapa H3 de Portugal.",
     },
+    trip: {
+      title: "Viatge | Viatge Ibèric Sostenible",
+      description:
+        "Segueix el teu tren CP amb compte enrere per a la sortida i properes parades després de prémer Agafar en una estació.",
+      ogDescription: "Seguiment de viatge amb comptes enrere i parades següents.",
+    },
     privacy: {
       title: "Política de Privacitat | Viatge Ibèric Sostenible",
       description:

@@ -68,6 +68,18 @@ export function getMapPageMeta(locale: Locale = "en"): PageMeta {
   };
 }
 
+export function getTripPageMeta(locale: Locale = "en"): PageMeta {
+  const { messages } = createTranslator(locale);
+  return {
+    title: messages.meta.trip.title,
+    description: messages.meta.trip.description,
+    canonicalPath: "/trip",
+    ogDescription: messages.meta.trip.ogDescription,
+    ogImagePath: "/og-image.jpg",
+    robots: "noindex",
+  };
+}
+
 export function getPrivacyPageMeta(locale: Locale = "en"): PageMeta {
   const { messages } = createTranslator(locale);
   return {

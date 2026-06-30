@@ -318,6 +318,7 @@ export type Messages = {
     rankings: { title: string; description: string; ogDescription: string };
     tickets: { title: string; description: string; ogDescription: string };
     map: { title: string; description: string; ogDescription: string };
+    trip: { title: string; description: string; ogDescription: string };
     privacy: { title: string; description: string; ogDescription: string };
     notFound: { title: string; description: string };
     stationTitle: string;

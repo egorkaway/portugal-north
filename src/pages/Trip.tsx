@@ -15,6 +15,7 @@ import {
   getMinutesUntilTime,
 } from "@/lib/departureCountdown";
 import { clearActiveTrip, useActiveTrip } from "@/lib/plannedDepartures";
+import { getTripPageMeta } from "@/lib/pageMeta";
 import { downstreamStopsFrom } from "@/lib/trainJourney";
 import { getStationPath } from "@/lib/stationSlug";
 import { allStations } from "@/data/stationRegistry";
@@ -78,7 +79,7 @@ function TripStopRow({
 }
 
 const Trip = () => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const trip = useActiveTrip();
   const now = useNowMinute();
   const { data: departures } = useStationDepartures(trip?.stationName ?? "", 10);
@@ -115,12 +116,7 @@ const Trip = () => {
 
   return (
     <>
-      <PageHead
-        meta={{
-          title: `${t("trip.title")} | ${t("site.name")}`,
-          description: t("trip.emptyBody"),
-        }}
-      />
+      <PageHead meta={getTripPageMeta(locale)} />
       <div className="min-h-screen bg-background">
         <header className="border-b border-border bg-primary text-primary-foreground">
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">

@@ -382,6 +382,12 @@ export const en: Messages = {
       ogDescription:
         "See which CP stations are busiest in our live departure samples, on an H3 hex map of Portugal.",
     },
+    trip: {
+      title: "Trip | Sustainable Iberian",
+      description:
+        "Track your CP train with a live departure countdown and upcoming stops after you tap Take on a station page.",
+      ogDescription: "Live train trip tracking with countdowns and upcoming stops.",
+    },
     privacy: {
       title: "Privacy Policy | Sustainable Iberian",
       description:

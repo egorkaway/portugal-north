@@ -384,6 +384,12 @@ export const pt: Messages = {
       ogDescription:
         "Veja quais estações CP são mais movimentadas nas nossas amostras de partidas, num mapa H3 de Portugal.",
     },
+    trip: {
+      title: "Viagem | Mobilidade Ibérica",
+      description:
+        "Acompanhe o seu comboio CP com contagem decrescente para a partida e próximas paragens depois de tocar em Apanhar numa estação.",
+      ogDescription: "Acompanhamento de viagem com contagens e paragens seguintes.",
+    },
     privacy: {
       title: "Política de Privacidade | Mobilidade Ibérica",
       description:
