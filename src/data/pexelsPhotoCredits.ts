@@ -1126,10 +1126,80 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@lecelle",
     photoPageUrl: "https://www.pexels.com/photo/charming-porto-architecture-with-tiled-roof-and-windows-32230393/",
   },
+  "32546134": {
+    photographer: "Lara Santos",
+    photographerUrl: "https://www.pexels.com/@larasantosartedesign",
+    photoPageUrl: "https://www.pexels.com/photo/railway-bridge-in-viana-do-castelo-portugal-32546134/",
+  },
+  "32546136": {
+    photographer: "Lara Santos",
+    photographerUrl: "https://www.pexels.com/@larasantosartedesign",
+    photoPageUrl: "https://www.pexels.com/photo/empty-train-carriage-with-modern-interior-design-32546136/",
+  },
+  "32630875": {
+    photographer: "Gabriel Grip",
+    photographerUrl: "https://www.pexels.com/@legrip",
+    photoPageUrl: "https://www.pexels.com/photo/dramatic-evening-scene-at-lisbon-train-station-32630875/",
+  },
+  "32652128": {
+    photographer: "okan  koçer",
+    photographerUrl: "https://www.pexels.com/@okan-kocer-2152337177",
+    photoPageUrl: "https://www.pexels.com/photo/straight-railway-tracks-with-power-lines-outdoors-32652128/",
+  },
+  "32724691": {
+    photographer: "Kaue Barbier",
+    photographerUrl: "https://www.pexels.com/@kaue-barbier-710715348",
+    photoPageUrl: "https://www.pexels.com/photo/urban-metro-station-with-approaching-train-32724691/",
+  },
+  "32763759": {
+    photographer: "Amaury Michaux",
+    photographerUrl: "https://www.pexels.com/@amaurymic",
+    photoPageUrl: "https://www.pexels.com/photo/scenic-train-station-in-corsica-france-32763759/",
+  },
+  "32771498": {
+    photographer: "Alessandro Antonio Serra",
+    photographerUrl: "https://www.pexels.com/@alessandro-antonio-serra-2148929360",
+    photoPageUrl: "https://www.pexels.com/photo/yellow-railway-maintenance-vehicle-at-train-station-32771498/",
+  },
+  "32780885": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/modern-tram-at-cadiz-train-station-in-spain-32780885/",
+  },
   "32819765": {
     photographer: "Marcelo Renda",
     photographerUrl: "https://www.pexels.com/@marcelo-renda-2643550",
     photoPageUrl: "https://www.pexels.com/photo/aerial-view-of-busy-subway-station-commuters-32819765/",
+  },
+  "32884611": {
+    photographer: "Tuan Vy",
+    photographerUrl: "https://www.pexels.com/@tuan-vy-903011268",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-train-at-rustic-station-platform-32884611/",
+  },
+  "32884613": {
+    photographer: "Tuan Vy",
+    photographerUrl: "https://www.pexels.com/@tuan-vy-903011268",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-train-at-empty-railway-station-32884613/",
+  },
+  "32884619": {
+    photographer: "Tuan Vy",
+    photographerUrl: "https://www.pexels.com/@tuan-vy-903011268",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-steam-locomotive-at-train-station-32884619/",
+  },
+  "32884620": {
+    photographer: "Tuan Vy",
+    photographerUrl: "https://www.pexels.com/@tuan-vy-903011268",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-train-at-an-outdoor-station-32884620/",
+  },
+  "32979182": {
+    photographer: "Regan Dsouza",
+    photographerUrl: "https://www.pexels.com/@regan-dsouza-1315522347",
+    photoPageUrl: "https://www.pexels.com/photo/historic-stone-structure-in-avila-spain-32979182/",
+  },
+  "33147868": {
+    photographer: "Charles Edward Cansino",
+    photographerUrl: "https://www.pexels.com/@charles-edward-cansino-2149014986",
+    photoPageUrl: "https://www.pexels.com/photo/captivating-black-and-white-subway-movement-shot-33147868/",
   },
   "33622646": {
     photographer: "Newman Photographs",
