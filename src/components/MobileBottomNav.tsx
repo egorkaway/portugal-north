@@ -69,7 +69,7 @@ function HomeNavItem({ label }: { label: string }) {
   );
 }
 
-/** Mobile-only bottom navigation (home, trip, rankings, tickets, map). */
+/** Mobile-only bottom navigation (home, map, trip, rankings, tickets). */
 export function MobileBottomNav() {
   const { t } = useLocale();
   const activeTrip = useActiveTrip();
@@ -87,6 +87,7 @@ export function MobileBottomNav() {
       <div className="mx-auto max-w-5xl px-2 pb-[calc(env(safe-area-inset-bottom,0px)+0.5rem)] pt-2 sm:px-4">
         <div className="grid grid-cols-5 gap-0.5">
           <HomeNavItem label={t("nav.home")} />
+          <NavItem to="/map" label={t("nav.map")} icon={MapIcon} />
           <NavItem
             to="/trip"
             label={t("nav.trip")}
@@ -95,7 +96,6 @@ export function MobileBottomNav() {
           />
           <NavItem to="/rankings" label={t("nav.rankings")} icon={BarChart3} />
           <NavItem to="/tickets" label={t("nav.tickets")} icon={Ticket} />
-          <NavItem to="/map" label={t("nav.map")} icon={MapIcon} />
         </div>
       </div>
     </nav>

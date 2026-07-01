@@ -147,7 +147,6 @@ const Trip = () => {
               <TrainFront className="h-7 w-7 shrink-0" aria-hidden="true" />
               <div className="min-w-0">
                 <h1 className="font-display text-2xl md:text-4xl">{t("trip.title")}</h1>
-                <p className="mt-1 text-sm text-primary-foreground/85">{t("trip.subtitle")}</p>
               </div>
             </div>
           </div>
