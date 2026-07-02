@@ -130,7 +130,7 @@ export const en: Messages = {
     subtitle: "Live departure countdown and delay updates for the train you are taking.",
     emptyTitle: "No active trip",
     emptyBody:
-      "Open any station page, tap Take on a departure, and your trip will appear here with live countdowns.",
+      "Open any station page, tap \"Take\" on a departure, and your trip will appear here with live countdowns.",
     departureCountdown: "Departure countdown",
     departed: "Departed",
     departedAt: "Departed at {{time}}",
@@ -148,6 +148,11 @@ export const en: Messages = {
     arrivesInHours: "in {{hours}}h {{minutes}}m",
     arrivesInHoursOnly: "in {{hours}}h",
     arrivingNow: "arriving now",
+    historyTitle: "Taken trains",
+    historyEmpty: "No saved trips yet.",
+    historyOriginLink: "View origin station",
+    historyFinalLink: "View final station",
+    historyDelete: "Delete",
   },
   rankings: {
     title: "Community rankings",

@@ -1,4 +1,4 @@
-import { ArrowLeft, Clock, MapPin, TrainFront } from "lucide-react";
+import { ArrowLeft, Clock, MapPin, TrainFront, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageHead } from "@/components/PageHead";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -22,6 +22,7 @@ import { getTripPageMeta } from "@/lib/pageMeta";
 import { downstreamStopsFrom } from "@/lib/trainJourney";
 import { defaultHomePath } from "@/lib/homeRoute";
 import { getStationPath } from "@/lib/stationSlug";
+import { deleteTripHistoryRecord, useTripHistory } from "@/lib/trainTripHistory";
 import { allStations } from "@/data/stationRegistry";
 import type { TrainJourneyStop } from "@/lib/trainJourney";
 
@@ -85,6 +86,7 @@ function TripStopRow({
 const Trip = () => {
   const { t, locale } = useLocale();
   const trip = useActiveTrip();
+  const history = useTripHistory();
   const now = useNowMinute();
   const { data: departures } = useStationDepartures(trip?.stationName ?? "", 10);
   const originCode = trip ? getCpStationCode(trip.stationName) : undefined;
@@ -275,6 +277,58 @@ const Trip = () => {
               ) : null}
             </div>
           )}
+
+          <section className="mt-10">
+            <h2 className="font-display text-xl text-foreground">{t("trip.historyTitle")}</h2>
+            {history.length === 0 ? (
+              <p className="mt-2 text-sm text-muted-foreground">{t("trip.historyEmpty")}</p>
+            ) : (
+              <ul className="mt-4 space-y-3">
+                {history.map((record) => {
+                  const originPath = stationPagePath(record.stationName);
+                  const finalPath = stationPagePath(record.finalStationName);
+                  return (
+                    <li
+                      key={record.id}
+                      className="flex flex-col gap-3 rounded-lg border border-border bg-card p-4 sm:flex-row sm:items-start sm:justify-between"
+                    >
+                      <div className="min-w-0">
+                        <p className="font-medium text-foreground">
+                          {record.trainNumber} · {record.stationName} → {record.finalStationName}
+                        </p>
+                        <p className="mt-1 text-sm text-muted-foreground tabular-nums">
+                          {record.timetableDate} · {record.departureTime}
+                        </p>
+                        {(originPath || finalPath) ? (
+                          <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                            {originPath ? (
+                              <Link to={originPath} className="text-primary hover:underline">
+                                {t("trip.historyOriginLink")}
+                              </Link>
+                            ) : null}
+                            {finalPath ? (
+                              <Link to={finalPath} className="text-primary hover:underline">
+                                {t("trip.historyFinalLink")}
+                              </Link>
+                            ) : null}
+                          </div>
+                        ) : null}
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => deleteTripHistoryRecord(record.id)}
+                        className="inline-flex items-center justify-center gap-2 self-start rounded-md border border-border px-3 py-2 text-sm font-semibold text-foreground hover:bg-muted"
+                      >
+                        <Trash2 className="h-4 w-4" aria-hidden="true" />
+                        {t("trip.historyDelete")}
+                      </button>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </section>
         </main>
 
         <div className="hidden sm:block">

@@ -148,6 +148,11 @@ export const gl: Messages = {
     arrivesInHours: "en {{hours}}h {{minutes}}m",
     arrivesInHoursOnly: "en {{hours}}h",
     arrivingNow: "a chegar agora",
+    historyTitle: "Trens collidos",
+    historyEmpty: "Aínda non hai viaxes gardadas.",
+    historyOriginLink: "Ver estación de orixe",
+    historyFinalLink: "Ver estación final",
+    historyDelete: "Eliminar",
   },
   rankings: {
     title: "Rankings da comunidade",

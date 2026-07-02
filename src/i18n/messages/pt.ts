@@ -148,6 +148,11 @@ export const pt: Messages = {
     arrivesInHours: "em {{hours}}h {{minutes}}m",
     arrivesInHoursOnly: "em {{hours}}h",
     arrivingNow: "a chegar agora",
+    historyTitle: "Comboios apanhados",
+    historyEmpty: "Ainda não há viagens guardadas.",
+    historyOriginLink: "Ver estação de origem",
+    historyFinalLink: "Ver estação final",
+    historyDelete: "Apagar",
   },
   rankings: {
     title: "Rankings da comunidade",

@@ -5,7 +5,7 @@ import {
   toggleActiveTrip,
   type PlannedDeparture,
 } from "@/lib/plannedDepartures";
-import { readTripHistory, recordCompletedTrip } from "@/lib/trainTripHistory";
+import { deleteTripHistoryRecord, readTripHistory, recordCompletedTrip } from "@/lib/trainTripHistory";
 
 const sampleTrip: PlannedDeparture = {
   id: "Porto-Campanhã|542|17:10|Lisboa",
@@ -66,5 +66,12 @@ describe("trip history", () => {
     const history = readTripHistory();
     expect(history).toHaveLength(1);
     expect(history[0]?.finalStationName).toBe("Lisboa");
+  });
+
+  it("deletes a completed trip record by id", () => {
+    recordCompletedTrip(sampleTrip, "Lisboa");
+    expect(readTripHistory()).toHaveLength(1);
+    deleteTripHistoryRecord(sampleTrip.id);
+    expect(readTripHistory()).toHaveLength(0);
   });
 });

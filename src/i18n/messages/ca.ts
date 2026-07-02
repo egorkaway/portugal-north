@@ -148,6 +148,11 @@ export const ca: Messages = {
     arrivesInHours: "en {{hours}}h {{minutes}}m",
     arrivesInHoursOnly: "en {{hours}}h",
     arrivingNow: "arribant ara",
+    historyTitle: "Trens agafats",
+    historyEmpty: "Encara no hi ha viatges desats.",
+    historyOriginLink: "Veure estació d'origen",
+    historyFinalLink: "Veure estació final",
+    historyDelete: "Esborrar",
   },
   rankings: {
     title: "Rankings de la comunitat",
