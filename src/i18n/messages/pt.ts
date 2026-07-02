@@ -127,10 +127,10 @@ export const pt: Messages = {
   },
   trip: {
     title: "Viagem",
-    subtitle: "Contagem decrescente e próximas paragens do comboio que vai apanhar.",
+    subtitle: "Contagem decrescente e atrasos em direto do comboio que vai apanhar.",
     emptyTitle: "Sem viagem ativa",
     emptyBody:
-      "Abra uma página de estação, toque em Apanhar numa partida e a viagem aparecerá aqui com contagens e paragens seguintes.",
+      "Abra uma página de estação, toque em Apanhar numa partida e a viagem aparecerá aqui com contagens em direto.",
     departureCountdown: "Contagem para a partida",
     departed: "Partiu",
     departedAt: "Partiu às {{time}}",
@@ -395,8 +395,8 @@ export const pt: Messages = {
     trip: {
       title: "Viagem | Mobilidade Ibérica",
       description:
-        "Acompanhe o seu comboio CP com contagem decrescente para a partida e próximas paragens depois de tocar em Apanhar numa estação.",
-      ogDescription: "Acompanhamento de viagem com contagens e paragens seguintes.",
+        "Acompanhe o seu comboio CP com contagem decrescente para a partida e atrasos em direto depois de tocar em Apanhar numa estação.",
+      ogDescription: "Acompanhamento de viagem com contagens e atrasos em direto.",
     },
     privacy: {
       title: "Política de Privacidade | Mobilidade Ibérica",

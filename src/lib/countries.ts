@@ -82,7 +82,8 @@ export function writeStoredCountry(country: CountryCode): void {
 }
 
 export function footerCountryFromHomeScope(scope: HomeScope): CountryCode {
-  return scope === "es" ? "es" : "pt";
+  // When the user is browsing both countries (`all`), we promote Sovnik in the footer.
+  return scope === "pt" ? "pt" : "es";
 }
 
 export function countrySearchLabel(country: CountryCode): string {

@@ -127,10 +127,10 @@ export const en: Messages = {
   },
   trip: {
     title: "Trip",
-    subtitle: "Live countdown and upcoming stops for the train you are taking.",
+    subtitle: "Live departure countdown and delay updates for the train you are taking.",
     emptyTitle: "No active trip",
     emptyBody:
-      "Open any station page, tap Take on a departure, and your trip will appear here with countdowns and upcoming stops.",
+      "Open any station page, tap Take on a departure, and your trip will appear here with live countdowns.",
     departureCountdown: "Departure countdown",
     departed: "Departed",
     departedAt: "Departed at {{time}}",
@@ -393,8 +393,8 @@ export const en: Messages = {
     trip: {
       title: "Trip | Sustainable Iberian",
       description:
-        "Track your CP train with a live departure countdown and upcoming stops after you tap Take on a station page.",
-      ogDescription: "Live train trip tracking with countdowns and upcoming stops.",
+        "Track your CP train with a live departure countdown and delay updates after you tap Take on a station page.",
+      ogDescription: "Live train trip tracking with countdowns and delay updates.",
     },
     privacy: {
       title: "Privacy Policy | Sustainable Iberian",

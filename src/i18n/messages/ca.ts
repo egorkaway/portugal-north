@@ -127,10 +127,10 @@ export const ca: Messages = {
   },
   trip: {
     title: "Viatge",
-    subtitle: "Compte enrere i properes parades del tren que agafaràs.",
+    subtitle: "Compte enrere i retards en directe del tren que agafaràs.",
     emptyTitle: "Cap viatge actiu",
     emptyBody:
-      "Obre una pàgina d'estació, prem Agafar en una sortida i el viatge apareixerà aquí amb comptes enrere i parades següents.",
+      "Obre una pàgina d'estació, prem Agafar en una sortida i el viatge apareixerà aquí amb comptes enrere en directe.",
     departureCountdown: "Compte enrere per a la sortida",
     departed: "Ha sortit",
     departedAt: "Ha sortit a les {{time}}",
@@ -394,8 +394,8 @@ export const ca: Messages = {
     trip: {
       title: "Viatge | Viatge Ibèric Sostenible",
       description:
-        "Segueix el teu tren CP amb compte enrere per a la sortida i properes parades després de prémer Agafar en una estació.",
-      ogDescription: "Seguiment de viatge amb comptes enrere i parades següents.",
+        "Segueix el teu tren CP amb compte enrere per a la sortida i retards en directe després de prémer Agafar en una estació.",
+      ogDescription: "Seguiment de viatge amb comptes enrere i retards en directe.",
     },
     privacy: {
       title: "Política de Privacitat | Viatge Ibèric Sostenible",

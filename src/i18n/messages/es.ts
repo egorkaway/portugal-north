@@ -127,10 +127,10 @@ export const es: Messages = {
   },
   trip: {
     title: "Viaje",
-    subtitle: "Cuenta atrás y próximas paradas del tren que vas a tomar.",
+    subtitle: "Cuenta atrás y retrasos en directo del tren que vas a tomar.",
     emptyTitle: "Sin viaje activo",
     emptyBody:
-      "Abre una página de estación, pulsa Tomar en una salida y tu viaje aparecerá aquí con cuentas atrás y paradas siguientes.",
+      "Abre una página de estación, pulsa Tomar en una salida y tu viaje aparecerá aquí con cuentas atrás en directo.",
     departureCountdown: "Cuenta atrás para la salida",
     departed: "Salió",
     departedAt: "Salió a las {{time}}",
@@ -394,8 +394,8 @@ export const es: Messages = {
     trip: {
       title: "Viaje | Viaje Ibérico Sostenible",
       description:
-        "Sigue tu tren CP con cuenta atrás para la salida y próximas paradas después de pulsar Tomar en una estación.",
-      ogDescription: "Seguimiento de viaje con cuentas atrás y paradas siguientes.",
+        "Sigue tu tren CP con cuenta atrás para la salida y retrasos en directo después de pulsar Tomar en una estación.",
+      ogDescription: "Seguimiento de viaje con cuentas atrás y retrasos en directo.",
     },
     privacy: {
       title: "Política de Privacidad | Viaje Ibérico Sostenible",
