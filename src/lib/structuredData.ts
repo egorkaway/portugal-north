@@ -1,13 +1,13 @@
 import type { Hotel } from "../data/hotels";
 import type { Station } from "../data/stations";
-import { stations } from "../data/stations";
+import { allStations } from "../data/stationRegistry";
 import { getStationPath } from "./stationSlug";
 import { absoluteUrl, SITE_URL } from "./site";
 import { createTranslator } from "@/i18n";
 import { getStationMetaDescription, getStationPageTitle } from "./stationMeta";
 import { attributionForImageUrl, siteLogoAttribution } from "./imageAttribution";
-import type { CountryCode } from "./countries";
-import { DEFAULT_COUNTRY } from "./countries";
+import type { HomeScope } from "./countries";
+import { DEFAULT_HOME_SCOPE } from "./countries";
 import { buildHomePath } from "./homeRoute";
 
 const SITE_NAME = "Sustainable Iberian";
@@ -20,10 +20,10 @@ export function jsonLdScript(data: unknown): string {
 
 function normalizeBreadcrumbPath(path: string): string {
   if (!path || /undefined/.test(path)) {
-    return buildHomePath(DEFAULT_COUNTRY);
+    return buildHomePath(DEFAULT_HOME_SCOPE);
   }
   if (path === "/") {
-    return buildHomePath(DEFAULT_COUNTRY);
+    return buildHomePath(DEFAULT_HOME_SCOPE);
   }
   return path.startsWith("/") ? path : `/${path}`;
 }
@@ -33,7 +33,7 @@ export function buildBreadcrumbList(items: { name: string; path: string }[]): Js
     name: item.name,
     path: normalizeBreadcrumbPath(item.path),
   }));
-  const lastPath = normalized[normalized.length - 1]?.path ?? buildHomePath(DEFAULT_COUNTRY);
+  const lastPath = normalized[normalized.length - 1]?.path ?? buildHomePath(DEFAULT_HOME_SCOPE);
 
   return {
     "@type": "BreadcrumbList",
@@ -154,8 +154,12 @@ export function buildStationStructuredData(options: {
   };
 }
 
-export function buildHomeStructuredData(country: CountryCode = "pt"): JsonLd {
-  const homeUrl = absoluteUrl(buildHomePath(country));
+export function buildHomeStructuredData(scope: HomeScope = DEFAULT_HOME_SCOPE): JsonLd {
+  const homeUrl = absoluteUrl(buildHomePath(scope));
+  const stations =
+    scope === "all"
+      ? allStations
+      : allStations.filter((station) => station.country === scope);
 
   return {
     "@context": "https://schema.org",
@@ -202,7 +206,12 @@ export function buildHomeStructuredData(country: CountryCode = "pt"): JsonLd {
       {
         "@type": "ItemList",
         "@id": `${homeUrl}#station-list`,
-        name: "CP train stations in Portugal",
+        name:
+          scope === "all"
+            ? "Train stations in Portugal and Spain"
+            : scope === "es"
+              ? "Train stations in Spain"
+              : "CP train stations in Portugal",
         numberOfItems: stations.length,
         itemListElement: stations.map((station, index) => ({
           "@type": "ListItem",
@@ -223,7 +232,7 @@ export function buildRankingsStructuredData(): JsonLd {
     "@context": "https://schema.org",
     "@graph": [
       buildBreadcrumbList([
-        { name: "Home", path: buildHomePath(DEFAULT_COUNTRY) },
+        { name: "Home", path: buildHomePath(DEFAULT_HOME_SCOPE) },
         { name: "Community rankings", path },
       ]),
       {

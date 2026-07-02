@@ -8,8 +8,13 @@ import { getHotelsForStation } from "@/lib/stationHotels";
 
 describe("buildSeoHeadHtml", () => {
   it("includes unique title and description in output", () => {
-    const html = buildSeoHeadHtml(getHomePageMeta("en", "pt"), "https://www.verystays.com");
+    const html = buildSeoHeadHtml(getHomePageMeta("en", "all"), "https://www.verystays.com");
     expect(html).toContain("<title>Sustainable Iberian: Stations &amp; Budget Hotels</title>");
+    expect(html).toContain('rel="canonical" href="https://www.verystays.com/all"');
+  });
+
+  it("supports country-scoped home canonical paths", () => {
+    const html = buildSeoHeadHtml(getHomePageMeta("en", "pt"), "https://www.verystays.com");
     expect(html).toContain('rel="canonical" href="https://www.verystays.com/pt"');
   });
 

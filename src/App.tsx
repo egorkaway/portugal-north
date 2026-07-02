@@ -44,6 +44,8 @@ const App = () => (
           <div className="pb-24 sm:pb-0">
             <Routes>
               <Route path="/" element={<HomeRedirect />} />
+              <Route path="/all" element={<Index />} />
+              <Route path="/all/:page" element={<Index />} />
               <Route path="/pt" element={<Index />} />
               <Route path="/pt/:page" element={<Index />} />
               <Route path="/es" element={<Index />} />

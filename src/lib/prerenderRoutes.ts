@@ -26,7 +26,7 @@ export type PrerenderRoute = {
 
 export function getPrerenderRoutes(): PrerenderRoute[] {
   const routes: PrerenderRoute[] = [
-    { outFile: "index.html", meta: getHomePageMeta("en", "pt") },
+    { outFile: "index.html", meta: getHomePageMeta("en", "all") },
     { outFile: "rankings/index.html", meta: RANKINGS_PAGE_META },
     { outFile: "tickets/index.html", meta: getTicketsPageMeta("en") },
     { outFile: "map/index.html", meta: getMapPageMeta("en") },
@@ -40,7 +40,7 @@ export function getPrerenderRoutes(): PrerenderRoute[] {
     if (!parsed) continue;
     routes.push({
       outFile: homePathToOutFile(path),
-      meta: getHomePageMeta("en", parsed.country, parsed.page),
+      meta: getHomePageMeta("en", parsed.scope, parsed.page),
     });
   }
 

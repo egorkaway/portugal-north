@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { PageHead } from "@/components/PageHead";
 import { getNotFoundPageMeta } from "@/lib/pageMeta";
 import { useLocale } from "@/i18n/LocaleProvider";
+import { defaultHomePath } from "@/lib/homeRoute";
 
 const NotFound = () => {
   const { t, locale } = useLocale();
@@ -19,7 +20,7 @@ const NotFound = () => {
         <div className="text-center">
           <h1 className="mb-4 text-4xl font-bold">{t("notFound.title")}</h1>
           <p className="mb-4 text-xl text-muted-foreground">{t("notFound.message")}</p>
-          <a href="/pt" className="text-primary underline hover:text-primary/90">
+          <a href={defaultHomePath()} className="text-primary underline hover:text-primary/90">
             {t("notFound.home")}
           </a>
         </div>

@@ -5,6 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { getPrivacyContent } from "@/content/privacy";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getPrivacyPageMeta } from "@/lib/pageMeta";
+import { defaultHomePath } from "@/lib/homeRoute";
 
 const Privacy = () => {
   const { locale, t } = useLocale();
@@ -18,7 +19,7 @@ const Privacy = () => {
         <header className="border-b border-border bg-primary text-primary-foreground">
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
             <Link
-              to="/pt"
+              to={defaultHomePath()}
               className="mb-3 inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground sm:mb-4"
             >
               <ArrowLeft className="h-4 w-4" aria-hidden="true" />

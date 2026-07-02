@@ -1,7 +1,7 @@
 import { NavLink } from "@/components/NavLink";
 import { cn } from "@/lib/utils";
 import { useLocale } from "@/i18n/LocaleProvider";
-import { isHomePath } from "@/lib/homeRoute";
+import { defaultHomePath, isHomePath } from "@/lib/homeRoute";
 import { useActiveTrip } from "@/lib/plannedDepartures";
 import { BarChart3, Home, Map as MapIcon, Ticket, TrainFront } from "lucide-react";
 import { useLocation } from "react-router-dom";
@@ -48,7 +48,7 @@ function HomeNavItem({ label }: { label: string }) {
 
   return (
     <NavLink
-      to="/pt"
+      to={defaultHomePath()}
       aria-label={label}
       className={({ isPending }) =>
         cn(

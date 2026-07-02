@@ -31,9 +31,9 @@ describe("pageMarkdown", () => {
   });
 
   it("builds paginated home markdown", () => {
-    const md = buildMarkdownForPath("/pt/2", SITE);
+    const md = buildMarkdownForPath("/all/2", SITE);
     expect(md).toContain("# Sustainable Iberian");
-    expect(md).toContain("/pt");
+    expect(md).toContain("/all");
   });
 
   it("includes nearest long-distance stops for regional-only stations", () => {

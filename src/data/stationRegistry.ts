@@ -1,4 +1,4 @@
-import type { CountryCode } from "../lib/countries";
+import type { CountryCode, HomeScope } from "../lib/countries";
 import { portugalStations } from "./stations";
 import { portugalAirports } from "./portugal/airports";
 import { spainStations } from "./spain/stations";
@@ -14,4 +14,9 @@ export const allStations: Station[] = [...stationsByCountry.pt, ...stationsByCou
 
 export function getStationsForCountry(country: CountryCode): Station[] {
   return stationsByCountry[country];
+}
+
+export function getStationsForHomeScope(scope: HomeScope): Station[] {
+  if (scope === "all") return allStations;
+  return getStationsForCountry(scope);
 }

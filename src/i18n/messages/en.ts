@@ -33,6 +33,8 @@ export const en: Messages = {
       "Train stations and airports across Portugal, from the Minho to the Algarve, with line info and budget hotels nearby.",
     heroSubtitleEs:
       "Train stations and airports across mainland Spain, with line info and budget hotels near key stops.",
+    heroSubtitleAll:
+      "Train stations and airports across Portugal and Spain, with line info and budget hotels near key stops.",
     searchLabel: "Search station or line",
     searchPlaceholder: "Search station or line...",
     filtersLabel: "Filter stations",

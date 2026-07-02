@@ -2,7 +2,7 @@ import type { Hotel } from "@/data/hotels";
 import type { Station } from "@/data/stations";
 import type { Locale, Translator } from "@/i18n";
 import { createTranslator } from "@/i18n";
-import type { CountryCode } from "@/lib/countries";
+import type { HomeScope } from "@/lib/countries";
 import { buildHomePath } from "@/lib/homeRoute";
 import {
   getStationMetaDescription,
@@ -23,14 +23,14 @@ export type PageMeta = {
 
 export function getHomePageMeta(
   locale: Locale = "en",
-  country: CountryCode = "pt",
+  scope: HomeScope = "all",
   page = 1,
 ): PageMeta {
   const { messages } = createTranslator(locale);
   return {
     title: messages.meta.home.title,
     description: messages.meta.home.description,
-    canonicalPath: buildHomePath(country, page),
+    canonicalPath: buildHomePath(scope, page),
     ogImagePath: "/og-image.jpg",
   };
 }

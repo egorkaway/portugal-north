@@ -33,6 +33,8 @@ export const es: Messages = {
       "Estaciones de tren y aeropuertos en Portugal, del Miño al Algarve, con líneas y hoteles económicos cerca.",
     heroSubtitleEs:
       "Estaciones de tren y aeropuertos en la España peninsular, con líneas y hoteles económicos cerca.",
+    heroSubtitleAll:
+      "Estaciones de tren y aeropuertos en Portugal y España, con líneas y hoteles económicos cerca.",
     searchLabel: "Buscar estación o línea",
     searchPlaceholder: "Buscar estación o línea...",
     filtersLabel: "Filtrar estaciones",

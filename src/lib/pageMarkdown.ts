@@ -58,6 +58,7 @@ ${meta.description}
 
 ## Explore
 
+- [All stations (Portugal & Spain)](${base}/all)
 - [All stations (Portugal)](${base}/pt)
 - [All stations (Spain)](${base}/es)
 - [Community rankings](${base}/rankings)
@@ -85,7 +86,7 @@ ${meta.description}
 
 Vote on station and hotel listings across the site; rankings aggregate community up and down counts.
 
-- [Return to all stations](${base}/pt)
+- [Return to all stations](${base}/all)
 - [API: global vote totals](${base}/api/votes)
 `;
 
@@ -104,6 +105,7 @@ ${meta.description}
 
 ## Quick links
 
+- [All stations (Portugal & Spain)](${base}/all)
 - [All stations (Portugal)](${base}/pt)
 - [All stations (Spain)](${base}/es)
 - [Community rankings](${base}/rankings)
@@ -222,6 +224,7 @@ ${hotelLines}
 ${longDistanceSection}## Links
 
 - [Search hotels on Booking](${getBookingSearchUrl(station)})
+- [All stations (Portugal & Spain)](${base}/all)
 - [All stations (Portugal)](${base}/pt)
 - [All stations (Spain)](${base}/es)
 - [Live departures API](${base}/api/departures) (requires CP station code)
@@ -250,7 +253,7 @@ export function buildNotFoundMarkdown(meta: PageMeta, siteUrl: string): string {
 
 ${meta.description}
 
-[Back to homepage](${base}/pt)
+[Back to homepage](${base}/all)
 `;
 }
 
@@ -297,11 +300,11 @@ export function buildMarkdownForPath(pathname: string, siteUrl: string): string 
 
   const home = parseHomeCanonicalPath(normalized);
   if (home) {
-    return buildHomeMarkdown(getHomePageMeta("en", home.country, home.page), siteUrl);
+    return buildHomeMarkdown(getHomePageMeta("en", home.scope, home.page), siteUrl);
   }
 
   if (normalized === "/") {
-    return buildHomeMarkdown(getHomePageMeta("en", "pt"), siteUrl);
+    return buildHomeMarkdown(getHomePageMeta("en", "all"), siteUrl);
   }
 
   const slugMatch = normalized.match(/^\/stations\/([^/]+)$/);

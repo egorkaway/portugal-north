@@ -10,6 +10,7 @@ import { RankingsPanel } from "@/components/RankingsPanel";
 import { ReliabilityRankingsPanel } from "@/components/ReliabilityRankingsPanel";
 import { BuildNumberLabel } from "@/components/BuildNumberLabel";
 import { buildRankingsStructuredData } from "@/lib/structuredData";
+import { defaultHomePath } from "@/lib/homeRoute";
 
 const Rankings = () => {
   const { t, locale } = useLocale();
@@ -23,7 +24,7 @@ const Rankings = () => {
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
             <div className="mb-3 sm:mb-4">
               <Link
-                to="/pt"
+                to={defaultHomePath()}
                 className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />

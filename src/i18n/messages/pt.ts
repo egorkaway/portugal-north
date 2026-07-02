@@ -33,6 +33,8 @@ export const pt: Messages = {
       "Estações de comboio e aeroportos em Portugal, do Minho ao Algarve, com linhas e hotéis com preços acessíveis perto.",
     heroSubtitleEs:
       "Estações de comboio e aeroportos na Espanha peninsular, com linhas e hotéis com preços acessíveis perto.",
+    heroSubtitleAll:
+      "Estações de comboio e aeroportos em Portugal e Espanha, com linhas e hotéis com preços acessíveis perto.",
     searchLabel: "Pesquisar estação ou linha",
     searchPlaceholder: "Pesquisar estação ou linha...",
     filtersLabel: "Filtrar estações",

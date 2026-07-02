@@ -8,8 +8,9 @@ describe("sitemap", () => {
     const entries = getSitemapEntries();
     const homePages = getHomeSitemapPaths();
     expect(entries).toHaveLength(homePages.length + 4 + allStations.length);
-    expect(entries[0].path).toBe("/pt");
-    expect(entries.some((e) => e.path === "/pt/2")).toBe(true);
+    expect(entries[0].path).toBe("/all");
+    expect(entries.some((e) => e.path === "/all/2")).toBe(true);
+    expect(entries.some((e) => e.path === "/pt")).toBe(true);
     expect(entries.some((e) => e.path === "/es")).toBe(true);
     expect(entries.some((e) => e.path === "/es/2")).toBe(true);
     expect(entries.some((e) => e.path === "/rankings")).toBe(true);

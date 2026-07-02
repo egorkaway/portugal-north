@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SitePageNavLinks } from "@/components/SitePageNavLinks";
 import { BuildNumberLabel } from "@/components/BuildNumberLabel";
 import { getMapPageMeta } from "@/lib/pageMeta";
+import { defaultHomePath } from "@/lib/homeRoute";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { ArrowLeft, Map as MapIcon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -21,7 +22,7 @@ const MapPage = () => {
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
             <div className="mb-3 sm:mb-4">
               <Link
-                to="/pt"
+                to={defaultHomePath()}
                 className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />

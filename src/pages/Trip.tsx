@@ -20,6 +20,7 @@ import {
 import { clearActiveTrip, useActiveTrip } from "@/lib/plannedDepartures";
 import { getTripPageMeta } from "@/lib/pageMeta";
 import { downstreamStopsFrom } from "@/lib/trainJourney";
+import { defaultHomePath } from "@/lib/homeRoute";
 import { getStationPath } from "@/lib/stationSlug";
 import { allStations } from "@/data/stationRegistry";
 import type { TrainJourneyStop } from "@/lib/trainJourney";
@@ -151,7 +152,7 @@ const Trip = () => {
           <div className="mx-auto max-w-5xl px-4 py-4 md:px-6 md:py-8">
             <div className="mb-2 hidden sm:mb-4 sm:block">
               <Link
-                to="/pt"
+                to={defaultHomePath()}
                 className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
@@ -194,7 +195,7 @@ const Trip = () => {
                 <p className="mt-2 flex items-start gap-1.5 text-base font-medium text-foreground">
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
                   <Link
-                    to={stationPagePath(trip.stationName) ?? "/pt"}
+                    to={stationPagePath(trip.stationName) ?? defaultHomePath()}
                     className="min-w-0 break-words hover:text-primary hover:underline"
                   >
                     {trip.stationName}

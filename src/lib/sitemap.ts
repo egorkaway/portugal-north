@@ -12,7 +12,7 @@ export function getSitemapEntries(): SitemapEntry[] {
   const homePages = getHomeSitemapPaths().map((path) => ({
     path,
     changefreq: "weekly" as const,
-    priority: path === "/pt" ? "1.0" : "0.9",
+    priority: path === "/all" ? "1.0" : path === "/pt" ? "0.95" : "0.9",
   }));
 
   return [

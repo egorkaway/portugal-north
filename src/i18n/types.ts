@@ -34,6 +34,7 @@ export type Messages = {
   home: {
     heroSubtitle: string;
     heroSubtitleEs: string;
+    heroSubtitleAll: string;
     searchLabel: string;
     searchPlaceholder: string;
     filtersLabel: string;

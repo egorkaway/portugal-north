@@ -33,6 +33,8 @@ export const ca: Messages = {
       "Estacions de tren i aeroports a Portugal, del Minho a l'Algarve, amb línies i hotels econòmics a prop.",
     heroSubtitleEs:
       "Estacions de tren i aeroports a la península ibèrica espanyola, amb línies i hotels econòmics a prop.",
+    heroSubtitleAll:
+      "Estacions de tren i aeroports a Portugal i Espanya, amb línies i hotels econòmics a prop.",
     searchLabel: "Cercar estació o línia",
     searchPlaceholder: "Cercar estació o línia...",
     filtersLabel: "Filtrar estacions",

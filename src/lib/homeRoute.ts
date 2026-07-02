@@ -1,19 +1,24 @@
-import { getStationsForCountry } from "../data/stationRegistry";
+import { getStationsForHomeScope } from "../data/stationRegistry";
 import {
   COUNTRY_CODES,
-  DEFAULT_COUNTRY,
+  DEFAULT_HOME_SCOPE,
   isCountryCode,
   type CountryCode,
+  type HomeScope,
 } from "./countries";
 import { HOME_STATIONS_PAGE_SIZE } from "./paginate";
 
-/** `/pt`, `/es/2`, optional `?q=` search. Page 1 omits the page segment. */
+export function defaultHomePath(page = 1): string {
+  return buildHomePath(DEFAULT_HOME_SCOPE, page);
+}
+
+/** `/pt`, `/es`, `/all`, optional page segment and `?q=` search. Page 1 omits the page segment. */
 export function buildHomePath(
-  country: CountryCode,
+  scope: HomeScope,
   page = 1,
   searchParams?: URLSearchParams | Pick<URLSearchParams, "get" | "toString">,
 ): string {
-  const base = page <= 1 ? `/${country}` : `/${country}/${page}`;
+  const base = page <= 1 ? `/${scope}` : `/${scope}/${page}`;
   if (!searchParams) return base;
 
   const q = new URLSearchParams();
@@ -36,9 +41,9 @@ export function homePathToOutFile(canonicalPath: string): string {
 
 export function isHomePath(pathname: string): boolean {
   if (pathname === "/") return true;
-  for (const country of COUNTRY_CODES) {
-    if (pathname === `/${country}`) return true;
-    if (pathname.startsWith(`/${country}/`)) return true;
+  for (const scope of [...COUNTRY_CODES, "all"] as HomeScope[]) {
+    if (pathname === `/${scope}`) return true;
+    if (pathname.startsWith(`/${scope}/`)) return true;
   }
   return false;
 }
@@ -54,25 +59,32 @@ export function pageFromLegacySearchParams(params: URLSearchParams): number {
 }
 
 export function resolveLegacyHomePath(params: URLSearchParams): string {
-  const country = countryFromLegacySearchParams(params) ?? DEFAULT_COUNTRY;
+  const country = countryFromLegacySearchParams(params);
+  const scope: HomeScope = country ?? DEFAULT_HOME_SCOPE;
   const page = pageFromLegacySearchParams(params);
   const q = params.get("q");
   const next = new URLSearchParams();
   if (q?.trim()) next.set("q", q);
-  return buildHomePath(country, page, next);
+  return buildHomePath(scope, page, next);
 }
 
-export function homePageCountForCountry(country: CountryCode): number {
-  const total = getStationsForCountry(country).length;
+export function homePageCountForHomeScope(scope: HomeScope): number {
+  const total = getStationsForHomeScope(scope).length;
   return Math.max(1, Math.ceil(total / HOME_STATIONS_PAGE_SIZE));
+}
+
+/** @deprecated Use homePageCountForHomeScope */
+export function homePageCountForCountry(country: CountryCode): number {
+  return homePageCountForHomeScope(country);
 }
 
 export function getHomeSitemapPaths(): string[] {
   const paths: string[] = [];
-  for (const country of COUNTRY_CODES) {
-    const pages = homePageCountForCountry(country);
+  const scopes: HomeScope[] = ["all", ...COUNTRY_CODES];
+  for (const scope of scopes) {
+    const pages = homePageCountForHomeScope(scope);
     for (let page = 1; page <= pages; page++) {
-      paths.push(buildHomePath(country, page));
+      paths.push(buildHomePath(scope, page));
     }
   }
   return paths;
@@ -80,15 +92,15 @@ export function getHomeSitemapPaths(): string[] {
 
 export function parseHomeCanonicalPath(
   pathname: string,
-): { country: CountryCode; page: number } | null {
+): { scope: HomeScope; page: number } | null {
   const normalized = pathname.replace(/\/$/, "") || "/";
-  if (normalized === "/") return { country: DEFAULT_COUNTRY, page: 1 };
+  if (normalized === "/") return { scope: DEFAULT_HOME_SCOPE, page: 1 };
 
-  const match = normalized.match(/^\/(pt|es)(?:\/(\d+))?$/);
+  const match = normalized.match(/^\/(pt|es|all)(?:\/(\d+))?$/);
   if (!match) return null;
 
-  const country = match[1] as CountryCode;
+  const scope = match[1] as HomeScope;
   const page = match[2] ? parseHomePageParam(match[2]) : 1;
   if (page < 1) return null;
-  return { country, page };
+  return { scope, page };
 }

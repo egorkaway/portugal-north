@@ -1,10 +1,18 @@
 import { cn } from "@/lib/utils";
-import { COUNTRY_CODES, COUNTRY_FLAGS, type CountryCode } from "@/lib/countries";
+import {
+  COUNTRY_CODES,
+  COUNTRY_FLAGS,
+  countriesForHomeScope,
+  homeScopeFromCountries,
+  toggleCountrySelection,
+  type CountryCode,
+  type HomeScope,
+} from "@/lib/countries";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 type CountrySelectorProps = {
-  country: CountryCode;
-  onCountryChange: (country: CountryCode) => void;
+  scope: HomeScope;
+  onScopeChange: (scope: HomeScope) => void;
   className?: string;
 };
 
@@ -15,8 +23,8 @@ type CountrySelectorBarProps = CountrySelectorProps & {
 };
 
 export function CountrySelectorBar({
-  country,
-  onCountryChange,
+  scope,
+  onScopeChange,
   className,
   labelClassName,
   variant = "surface",
@@ -41,13 +49,20 @@ export function CountrySelectorBar({
       >
         {t("country.stationsIn")}
       </p>
-      <CountrySelector country={country} onCountryChange={onCountryChange} />
+      <CountrySelector scope={scope} onScopeChange={onScopeChange} />
     </div>
   );
 }
 
-export function CountrySelector({ country, onCountryChange, className }: CountrySelectorProps) {
+export function CountrySelector({ scope, onScopeChange, className }: CountrySelectorProps) {
   const { t } = useLocale();
+  const selectedCountries = countriesForHomeScope(scope);
+
+  const handleToggle = (code: CountryCode) => {
+    const next = toggleCountrySelection(selectedCountries, code);
+    if (next === selectedCountries) return;
+    onScopeChange(homeScopeFromCountries(next));
+  };
 
   return (
     <div
@@ -59,13 +74,13 @@ export function CountrySelector({ country, onCountryChange, className }: Country
       )}
     >
       {COUNTRY_CODES.map((code) => {
-        const active = country === code;
+        const active = selectedCountries.includes(code);
         return (
           <button
             key={code}
             type="button"
             aria-pressed={active}
-            onClick={() => onCountryChange(code)}
+            onClick={() => handleToggle(code)}
             className={cn(
               "rounded-full px-3 py-1.5 text-sm font-medium transition-colors sm:px-4",
               active

@@ -1,6 +1,6 @@
 import { useCallback, useDeferredValue, useMemo, useRef, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { getStationsForCountry } from "@/data/stationRegistry";
+import { getStationsForHomeScope } from "@/data/stationRegistry";
 import { StationCard } from "@/components/StationCard";
 import { StationGridSkeleton } from "@/components/StationGridSkeleton";
 import { StationListPagination } from "@/components/StationListPagination";
@@ -22,7 +22,7 @@ import { useAllVisited } from "@/hooks/useStationVisited";
 import { StationInteractionProvider } from "@/hooks/StationInteractionProvider";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import { useHomeRoute } from "@/hooks/useHomeRoute";
-import { type CountryCode } from "@/lib/countries";
+import { footerCountryFromHomeScope, type HomeScope } from "@/lib/countries";
 import { buildHomePath, isHomePath, parseHomeCanonicalPath } from "@/lib/homeRoute";
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
 import { stationMatchesSearch } from "@/lib/searchText";
@@ -33,17 +33,17 @@ import NotFound from "@/pages/NotFound";
 type VoteFilter = "up" | "down" | "none";
 type VisitedFilter = "visited" | "notVisited";
 
-function HomePage({ country, currentPage }: { country: CountryCode; currentPage: number }) {
+function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: number }) {
   const { t, plural, locale, messages } = useLocale();
-  const { searchQuery, setCountry, setPage, setSearchQuery, goToFirstPage } = useHomeRoute(
-    country,
+  const { searchQuery, setScope, setPage, setSearchQuery, goToFirstPage } = useHomeRoute(
+    scope,
     currentPage,
   );
-  const deferredCountry = useDeferredValue(country);
-  const isSwitchingCountry = country !== deferredCountry;
+  const deferredScope = useDeferredValue(scope);
+  const isSwitchingCountry = scope !== deferredScope;
   const countryStations = useMemo(
-    () => getStationsForCountry(deferredCountry),
-    [deferredCountry],
+    () => getStationsForHomeScope(deferredScope),
+    [deferredScope],
   );
   const allTypes = useMemo(
     () => sortTrainTypes([...new Set(countryStations.flatMap((s) => s.types))]),
@@ -68,15 +68,24 @@ function HomePage({ country, currentPage }: { country: CountryCode; currentPage:
 
   const sortByCommunityVotes = !sortByDistance && hasCommunityUpvotes;
 
-  const handleCountryChange = useCallback(
-    (nextCountry: CountryCode) => {
+  const handleScopeChange = useCallback(
+    (nextScope: HomeScope) => {
       setActiveFilter(null);
       setVoteFilter(null);
       setVisitedFilter(null);
-      setCountry(nextCountry);
+      setScope(nextScope);
     },
-    [setCountry],
+    [setScope],
   );
+
+  const heroSubtitle =
+    scope === "es"
+      ? t("home.heroSubtitleEs")
+      : scope === "all"
+        ? t("home.heroSubtitleAll")
+        : t("home.heroSubtitle");
+
+  const skeletonCount = scope === "es" ? 6 : scope === "all" ? 12 : 9;
 
   const filtered = useMemo(() => {
     const matches = countryStations.filter((s) => {
@@ -139,8 +148,8 @@ function HomePage({ country, currentPage }: { country: CountryCode; currentPage:
 
   return (
     <div className="min-h-screen bg-background">
-      <PageHead meta={getHomePageMeta(locale, country, currentPage)} />
-      <JsonLd data={buildHomeStructuredData(country)} />
+      <PageHead meta={getHomePageMeta(locale, scope, currentPage)} />
+      <JsonLd data={buildHomeStructuredData(scope)} />
       <header className="relative overflow-hidden bg-primary px-4 py-12 text-primary-foreground md:px-6 md:py-28">
         <img
           src={heroStation}
@@ -156,7 +165,7 @@ function HomePage({ country, currentPage }: { country: CountryCode; currentPage:
             <div className="min-w-0">
               <h1 className="mb-2 font-display text-3xl tracking-tight hero-title-shadow md:mb-4 md:text-5xl lg:text-6xl lg:tracking-normal">
                 <a
-                  href={buildHomePath(country)}
+                  href={buildHomePath(scope)}
                   onClick={(e) => {
                     if (isHomePath(window.location.pathname)) {
                       e.preventDefault();
@@ -178,15 +187,13 @@ function HomePage({ country, currentPage }: { country: CountryCode; currentPage:
                   </span>
                 </a>
               </h1>
-              <p className="max-w-2xl text-lg text-primary-foreground/90">
-                {country === "es" ? t("home.heroSubtitleEs") : t("home.heroSubtitle")}
-              </p>
+              <p className="max-w-2xl text-lg text-primary-foreground/90">{heroSubtitle}</p>
             </div>
             <div className="hidden shrink-0 flex-col items-end gap-2 sm:flex">
               <SitePageNavLinks variant="hero" className="self-end" />
               <CountrySelectorBar
-                country={country}
-                onCountryChange={handleCountryChange}
+                scope={scope}
+                onScopeChange={handleScopeChange}
                 variant="hero"
               />
             </div>
@@ -249,7 +256,7 @@ function HomePage({ country, currentPage }: { country: CountryCode; currentPage:
             {!isSwitchingCountry && !sortByDistance && t("home.bookingHint")}
           </p>
           {isSwitchingCountry ? (
-            <StationGridSkeleton count={country === "es" ? 6 : 9} />
+            <StationGridSkeleton count={skeletonCount} />
           ) : (
             <div ref={stationListRef} id="station-list">
               <div className="grid gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
@@ -274,8 +281,8 @@ function HomePage({ country, currentPage }: { country: CountryCode; currentPage:
             </p>
           )}
           <CountrySelectorBar
-            country={country}
-            onCountryChange={handleCountryChange}
+            scope={scope}
+            onScopeChange={handleScopeChange}
             className="mt-6 sm:hidden"
           />
         </main>
@@ -283,7 +290,7 @@ function HomePage({ country, currentPage }: { country: CountryCode; currentPage:
 
       <StationRankings />
 
-      <SiteFooter country={country} />
+      <SiteFooter country={footerCountryFromHomeScope(scope)} />
     </div>
   );
 }
@@ -296,15 +303,15 @@ const Index = () => {
     return <NotFound />;
   }
 
-  const { country, page } = home;
+  const { scope, page } = home;
   if (page < 1) {
-    return <Navigate to={buildHomePath(country)} replace />;
+    return <Navigate to={buildHomePath(scope)} replace />;
   }
-  if (/\/(pt|es)\/1$/.test(location.pathname)) {
-    return <Navigate to={buildHomePath(country)} replace />;
+  if (/\/(pt|es|all)\/1$/.test(location.pathname)) {
+    return <Navigate to={buildHomePath(scope)} replace />;
   }
 
-  return <HomePage country={country} currentPage={page} />;
+  return <HomePage scope={scope} currentPage={page} />;
 };
 
 export default Index;

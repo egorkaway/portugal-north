@@ -50,7 +50,7 @@ describe("structuredData", () => {
       name: string;
       item?: string;
     }[];
-    expect(items[0].item).toBe(`${PRODUCTION_ORIGIN}/pt`);
+    expect(items[0].item).toBe(`${PRODUCTION_ORIGIN}/all`);
     expect(items[1].position).toBe(2);
     expect(items[1].name).toBe("Aveiro");
     expect(items[1].item).toBeUndefined();

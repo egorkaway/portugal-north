@@ -1,8 +1,8 @@
 import { Navigate, useSearchParams } from "react-router-dom";
-import { readStoredCountry } from "@/lib/countries";
+import { DEFAULT_HOME_SCOPE, readStoredHomeScope } from "@/lib/countries";
 import { buildHomePath, resolveLegacyHomePath } from "@/lib/homeRoute";
 
-/** `/` → `/pt` or legacy `?country=` / `?page=` paths. */
+/** `/` → `/all` (or stored scope) or legacy `?country=` / `?page=` paths. */
 export default function HomeRedirect() {
   const [searchParams] = useSearchParams();
   const hasLegacyQuery =
@@ -14,6 +14,6 @@ export default function HomeRedirect() {
     return <Navigate to={resolveLegacyHomePath(searchParams)} replace />;
   }
 
-  const stored = readStoredCountry();
-  return <Navigate to={buildHomePath(stored ?? "pt")} replace />;
+  const stored = readStoredHomeScope();
+  return <Navigate to={buildHomePath(stored ?? DEFAULT_HOME_SCOPE)} replace />;
 }
