@@ -359,7 +359,7 @@ export const en: Messages = {
       "Learn European Portuguese with quizzes, word lists, and offline apps for iOS and Android.",
     sovnikTitle: "Sovnik",
     sovnikDesc:
-      "Learn Galician, Catalan, Basque, and other Iberian languages with vocabulary quizzes and mobile apps.",
+      "Learn Spanish, Portuguese, Galician, Catalan, Basque, and other Iberian languages with vocabulary quizzes and mobile apps.",
     privacy: "Privacy policy",
     stationMap: "Station activity map",
   },

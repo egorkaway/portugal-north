@@ -361,7 +361,7 @@ export const es: Messages = {
       "Aprende portugués europeo con cuestionarios, listas de palabras y apps sin conexión para iOS y Android.",
     sovnikTitle: "Sovnik",
     sovnikDesc:
-      "Aprende gallego, catalán, euskera y otras lenguas ibéricas con cuestionarios de vocabulario y apps móviles.",
+      "Aprende español, portugués, gallego, catalán, euskera y otras lenguas ibéricas con cuestionarios de vocabulario y apps móviles.",
     privacy: "Política de privacidad",
     stationMap: "Mapa de actividad de estaciones",
   },
