@@ -130,6 +130,12 @@ export const en: Messages = {
     emptyBody:
       "Open any station page, tap Take on a departure, and your trip will appear here with countdowns and upcoming stops.",
     departureCountdown: "Departure countdown",
+    departed: "Departed",
+    departedAt: "Departed at {{time}}",
+    expectedDeparture: "Expected departure {{time}}",
+    minutesAgo: "{{minutes}} min ago",
+    minutesAgoHours: "{{hours}}h {{minutes}}m ago",
+    minutesAgoHoursOnly: "{{hours}}h ago",
     upcomingStops: "Upcoming stops",
     loadingStops: "Loading route stops…",
     stopsUnavailable: "Downstream stops are temporarily unavailable for this train.",

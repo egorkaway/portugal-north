@@ -130,6 +130,12 @@ export const gl: Messages = {
     emptyBody:
       "Abre unha páxina de estación, preme Coller nunha saída e a viaxe aparecerá aquí con contas atrás e paradas seguintes.",
     departureCountdown: "Conta atrás para a saída",
+    departed: "Partiu",
+    departedAt: "Partiu ás {{time}}",
+    expectedDeparture: "Saída prevista ás {{time}}",
+    minutesAgo: "hai {{minutes}} min",
+    minutesAgoHours: "hai {{hours}}h {{minutes}}m",
+    minutesAgoHoursOnly: "hai {{hours}}h",
     upcomingStops: "Próximas paradas",
     loadingStops: "A cargar paradas da ruta…",
     stopsUnavailable: "As paradas seguintes non están dispoñibles temporalmente para este tren.",

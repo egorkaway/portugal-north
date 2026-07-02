@@ -123,6 +123,12 @@ export type Messages = {
     emptyTitle: string;
     emptyBody: string;
     departureCountdown: string;
+    departed: string;
+    departedAt: string;
+    expectedDeparture: string;
+    minutesAgo: string;
+    minutesAgoHours: string;
+    minutesAgoHoursOnly: string;
     upcomingStops: string;
     loadingStops: string;
     stopsUnavailable: string;

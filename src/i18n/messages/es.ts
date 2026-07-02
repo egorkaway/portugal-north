@@ -130,6 +130,12 @@ export const es: Messages = {
     emptyBody:
       "Abre una página de estación, pulsa Tomar en una salida y tu viaje aparecerá aquí con cuentas atrás y paradas siguientes.",
     departureCountdown: "Cuenta atrás para la salida",
+    departed: "Salió",
+    departedAt: "Salió a las {{time}}",
+    expectedDeparture: "Salida prevista a las {{time}}",
+    minutesAgo: "hace {{minutes}} min",
+    minutesAgoHours: "hace {{hours}}h {{minutes}}m",
+    minutesAgoHoursOnly: "hace {{hours}}h",
     upcomingStops: "Próximas paradas",
     loadingStops: "Cargando paradas de la ruta…",
     stopsUnavailable: "Las paradas siguientes no están disponibles temporalmente para este tren.",

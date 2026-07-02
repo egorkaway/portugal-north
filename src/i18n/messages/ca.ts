@@ -130,6 +130,12 @@ export const ca: Messages = {
     emptyBody:
       "Obre una pàgina d'estació, prem Agafar en una sortida i el viatge apareixerà aquí amb comptes enrere i parades següents.",
     departureCountdown: "Compte enrere per a la sortida",
+    departed: "Ha sortit",
+    departedAt: "Ha sortit a les {{time}}",
+    expectedDeparture: "Sortida prevista a les {{time}}",
+    minutesAgo: "fa {{minutes}} min",
+    minutesAgoHours: "fa {{hours}}h {{minutes}}m",
+    minutesAgoHoursOnly: "fa {{hours}}h",
     upcomingStops: "Properes parades",
     loadingStops: "Carregant parades de la ruta…",
     stopsUnavailable: "Les parades següents no estan disponibles temporalment per a aquest tren.",

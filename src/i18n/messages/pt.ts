@@ -130,6 +130,12 @@ export const pt: Messages = {
     emptyBody:
       "Abra uma página de estação, toque em Apanhar numa partida e a viagem aparecerá aqui com contagens e paragens seguintes.",
     departureCountdown: "Contagem para a partida",
+    departed: "Partiu",
+    departedAt: "Partiu às {{time}}",
+    expectedDeparture: "Partida prevista às {{time}}",
+    minutesAgo: "há {{minutes}} min",
+    minutesAgoHours: "há {{hours}}h {{minutes}}m",
+    minutesAgoHoursOnly: "há {{hours}}h",
     upcomingStops: "Próximas paragens",
     loadingStops: "A carregar paragens da rota…",
     stopsUnavailable: "As paragens seguintes estão temporariamente indisponíveis para este comboio.",

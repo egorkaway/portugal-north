@@ -12,6 +12,9 @@ import { getStationNameByCpCode } from "@/lib/cpStationLookup";
 import {
   formatArrivalCountdown,
   formatDepartureCountdown,
+  formatDepartureTimeAgo,
+  getEffectiveDepartureClock,
+  getMinutesSinceDeparture,
   getMinutesUntilTime,
 } from "@/lib/departureCountdown";
 import { clearActiveTrip, useActiveTrip } from "@/lib/plannedDepartures";
@@ -124,8 +127,20 @@ const Trip = () => {
     ? getMinutesUntilTime(trip.departureTime, delayMinutes, now)
     : null;
   const departureCountdown =
-    departureMinutesUntil !== null
+    departureMinutesUntil !== null && departureMinutesUntil > 0
       ? formatDepartureCountdown(departureMinutesUntil, { t })
+      : null;
+  const effectiveDepartureTime = trip
+    ? getEffectiveDepartureClock(trip.departureTime, delayMinutes)
+    : null;
+  const minutesSinceDeparture = trip
+    ? getMinutesSinceDeparture(trip.departureTime, delayMinutes, now)
+    : null;
+  const hasDeparted = minutesSinceDeparture !== null;
+  const showDepartedWithoutStops = hasDeparted && !hasConfirmedUpcomingStops;
+  const departureTimeAgoLabel =
+    minutesSinceDeparture !== null
+      ? formatDepartureTimeAgo(minutesSinceDeparture, { t })
       : null;
 
   return (
@@ -166,7 +181,7 @@ const Trip = () => {
               <section className="shrink-0 rounded-lg border border-border bg-card p-5 md:p-6">
                 <div className="flex items-start justify-between gap-4">
                   <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
-                    {t("trip.departureCountdown")}
+                    {showDepartedWithoutStops ? t("trip.departed") : t("trip.departureCountdown")}
                   </p>
                   <button
                     type="button"
@@ -185,18 +200,51 @@ const Trip = () => {
                     {trip.stationName}
                   </Link>
                 </p>
-                <p className="mt-2 break-words font-display text-3xl text-primary tabular-nums sm:text-4xl md:text-5xl">
-                  {departureCountdown ?? trip.departureTime}
-                </p>
+                {showDepartedWithoutStops ? (
+                  <>
+                    <p className="mt-2 break-words font-display text-3xl text-primary tabular-nums sm:text-4xl md:text-5xl">
+                      {effectiveDepartureTime
+                        ? t("trip.departedAt", { time: effectiveDepartureTime })
+                        : t("trip.departureAt", { time: trip.departureTime })}
+                    </p>
+                    {departureTimeAgoLabel ? (
+                      <p className="mt-1 text-lg font-semibold text-foreground tabular-nums">
+                        {departureTimeAgoLabel}
+                      </p>
+                    ) : null}
+                  </>
+                ) : (
+                  <>
+                    <p className="mt-2 break-words font-display text-3xl text-primary tabular-nums sm:text-4xl md:text-5xl">
+                      {departureCountdown ??
+                        (hasDeparted
+                          ? effectiveDepartureTime
+                            ? t("trip.departedAt", { time: effectiveDepartureTime })
+                            : t("trip.departureAt", { time: trip.departureTime })
+                          : trip.departureTime)}
+                    </p>
+                    <p className="mt-1 break-words text-sm text-muted-foreground tabular-nums">
+                      {t("trip.departureAt", { time: trip.departureTime })}
+                      {delayMinutes !== null && delayMinutes > 0
+                        ? ` · ${t("departures.delayMin", { minutes: delayMinutes })}`
+                        : null}
+                    </p>
+                    {effectiveDepartureTime &&
+                    delayMinutes !== null &&
+                    delayMinutes > 0 &&
+                    effectiveDepartureTime !== trip.departureTime ? (
+                      <p className="mt-0.5 break-words text-sm text-muted-foreground tabular-nums">
+                        {t("trip.expectedDeparture", { time: effectiveDepartureTime })}
+                      </p>
+                    ) : null}
+                  </>
+                )}
                 <p className="mt-3 break-words text-base text-foreground sm:text-lg">
                   {t("departures.train")} {trip.trainNumber} → {trip.destination}
                 </p>
                 <p className="mt-1 break-words text-sm text-muted-foreground">
                   {serviceType}
                   {platform ? ` · ${t("departures.platform")} ${platform}` : ""}
-                  {delayMinutes !== null && delayMinutes > 0
-                    ? ` · ${t("departures.delayMin", { minutes: delayMinutes })}`
-                    : ""}
                 </p>
               </section>
 
