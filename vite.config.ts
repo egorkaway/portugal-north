@@ -5,7 +5,12 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { VitePWA } from "vite-plugin-pwa";
 import { buildSitemapXml } from "./src/lib/sitemap";
-import { createBuildVersion } from "./scripts/buildVersion";
+import { bumpBuildNumber, createBuildVersion, readBuildNumber } from "./scripts/buildVersion";
+
+const isProductionBuild = process.argv.includes("build");
+const embeddedBuildNumber = isProductionBuild
+  ? String(bumpBuildNumber())
+  : String(readBuildNumber());
 
 async function handleApiCatalogDev(
   req: IncomingMessage,
@@ -176,6 +181,7 @@ function writeSitemap(filePath: string) {
 export default defineConfig({
   define: {
     "import.meta.env.VITE_SITE_URL": JSON.stringify(siteUrl),
+    "import.meta.env.VITE_BUILD_NUMBER": JSON.stringify(embeddedBuildNumber),
   },
   server: {
     host: "::",
@@ -242,7 +248,12 @@ export default defineConfig({
         maximumFileSizeToCacheInBytes: 4 * 1024 * 1024,
         // Keep precache small — Safari fails to activate SWs with hundreds of MB cached.
         globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,webp,woff2,txt,xml,webmanifest}"],
-        globIgnores: ["**/social/**", "**/og-image.jpg", "**/icon-source.png"],
+        globIgnores: [
+          "**/social/**",
+          "**/og-image.jpg",
+          "**/icon-source.png",
+          "**/version.json",
+        ],
         runtimeCaching: [
           {
             urlPattern: /\/api\//i,
@@ -288,7 +299,7 @@ export default defineConfig({
           const content = fs.readFileSync(robotsPath, "utf8").replaceAll("__SITE_URL__", siteUrl);
           fs.writeFileSync(robotsPath, content);
         }
-        writeVersionJson(path.join(outDir, "version.json"), true);
+        writeVersionJson(path.join(outDir, "version.json"), false);
         writeVersionJson(path.resolve(__dirname, "public/version.json"), false);
       },
     },

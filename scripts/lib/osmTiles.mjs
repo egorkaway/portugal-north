@@ -1,7 +1,7 @@
 import sharp from "sharp";
+import { getBasemap, isBasemapId } from "./mapBasemaps.mjs";
 
 const TILE_SIZE = 256;
-const OSM_TILE_URL = "https://tile.openstreetmap.org";
 
 /** Web Mercator pixel position at zoom (top-left origin). */
 export function latLngToWorldPx(lat, lng, zoom) {
@@ -20,18 +20,14 @@ export function tileRangeForViewport(topLeftX, topLeftY, width, height) {
   return { x0, y0, x1, y1 };
 }
 
-function tileUrl(z, x, y) {
-  return `${OSM_TILE_URL}/${z}/${x}/${y}.png`;
-}
-
 const tileCache = new Map();
 
-async function fetchTile(z, x, y) {
-  const key = `${z}/${x}/${y}`;
+async function fetchTile(basemap, z, x, y) {
+  const key = `${basemap.id}/${z}/${x}/${y}`;
   if (tileCache.has(key)) return tileCache.get(key);
 
   const promise = (async () => {
-    const res = await fetch(tileUrl(z, x, y), {
+    const res = await fetch(basemap.url(z, x, y), {
       headers: { "User-Agent": "VeryStays-StationMapGenerator/1.0 (+https://www.verystays.com)" },
       signal: AbortSignal.timeout(20_000),
     });
@@ -44,11 +40,22 @@ async function fetchTile(z, x, y) {
 }
 
 /**
- * Stitch a square OSM map centered on lat/lng.
- * @param {{ lat: number, lng: number, size?: number, zoom?: number }} opts
- * @returns {Promise<{ buffer: Buffer, markerX: number, markerY: number }>}
+ * Stitch a square map centered on lat/lng.
+ * @param {{ lat: number, lng: number, size?: number, zoom?: number, basemap?: string | import("./mapBasemaps.mjs").BASEMAPS[string] }} opts
+ * @returns {Promise<{ buffer: Buffer, markerX: number, markerY: number, basemapId: string }>}
  */
-export async function stitchSquareMap({ lat, lng, size = 1080, zoom = 15 }) {
+export async function stitchSquareMap({
+  lat,
+  lng,
+  size = 1080,
+  zoom = 15,
+  basemap = "osm",
+}) {
+  const basemapConfig =
+    typeof basemap === "string"
+      ? getBasemap(isBasemapId(basemap) ? basemap : "osm")
+      : basemap;
+
   const center = latLngToWorldPx(lat, lng, zoom);
   const topLeftX = center.x - size / 2;
   const topLeftY = center.y - size / 2;
@@ -62,7 +69,7 @@ export async function stitchSquareMap({ lat, lng, size = 1080, zoom = 15 }) {
   const composites = [];
   for (let ty = y0; ty <= y1; ty++) {
     for (let tx = x0; tx <= x1; tx++) {
-      const tile = await fetchTile(zoom, tx, ty);
+      const tile = await fetchTile(basemapConfig, zoom, tx, ty);
       composites.push({
         input: tile,
         left: (tx - x0) * TILE_SIZE,
@@ -109,5 +116,6 @@ export async function stitchSquareMap({ lat, lng, size = 1080, zoom = 15 }) {
     buffer,
     markerX: Math.round(center.x - topLeftX),
     markerY: Math.round(center.y - topLeftY),
+    basemapId: basemapConfig.id,
   };
 }

@@ -1,16 +1,20 @@
 import { useEffect } from "react";
 import { checkForServiceWorkerUpdate, shouldCheckForServiceWorkerUpdate } from "@/lib/appUpdate";
 
-/** Weekly service worker update check so Safari picks up new station/hotel bundles. */
+/** Hourly service worker update check while the app is open (Safari PWA cache). */
 export function AppUpdateBootstrap() {
   useEffect(() => {
-    if (shouldCheckForServiceWorkerUpdate()) {
-      void checkForServiceWorkerUpdate();
-    }
+    const runCheck = () => {
+      if (shouldCheckForServiceWorkerUpdate()) {
+        void checkForServiceWorkerUpdate();
+      }
+    };
+
+    runCheck();
 
     const onVisible = () => {
-      if (document.visibilityState === "visible" && shouldCheckForServiceWorkerUpdate()) {
-        void checkForServiceWorkerUpdate();
+      if (document.visibilityState === "visible") {
+        runCheck();
       }
     };
 

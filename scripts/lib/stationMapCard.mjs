@@ -4,6 +4,7 @@ import { fileURLToPath } from "node:url";
 import { Resvg } from "@resvg/resvg-js";
 import sharp from "sharp";
 import { stitchSquareMap } from "./osmTiles.mjs";
+import { resolveBasemap } from "./mapBasemaps.mjs";
 import { CARD_SIZE, stationToSlug } from "./socialCard.mjs";
 
 export { stationToSlug };
@@ -146,18 +147,25 @@ export function buildMapOverlaySvg({ stationName, slug, siteHost, markerX, marke
 }
 
 /**
- * @param {{ station: { name: string, lat: number, lng: number, lines: string[] }, siteUrl: string, zoom?: number }} opts
+ * @param {{ station: { name: string, lat: number, lng: number, lines: string[] }, siteUrl: string, zoom?: number, basemapMode?: "random" | string }} opts
  */
-export async function renderStationMapCard({ station, siteUrl, zoom }) {
+export async function renderStationMapCard({
+  station,
+  siteUrl,
+  zoom,
+  basemapMode = "random",
+}) {
   const slug = stationToSlug(station.name);
   const siteHost = siteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const mapZoom = zoom ?? pickZoom(station);
+  const basemap = resolveBasemap(basemapMode);
 
-  const { buffer: mapBuffer, markerX, markerY } = await stitchSquareMap({
+  const { buffer: mapBuffer, markerX, markerY, basemapId } = await stitchSquareMap({
     lat: station.lat,
     lng: station.lng,
     size: CARD_SIZE,
     zoom: mapZoom,
+    basemap,
   });
 
   const overlaySvg = buildMapOverlaySvg({
@@ -173,8 +181,11 @@ export async function renderStationMapCard({ station, siteUrl, zoom }) {
     fitTo: { mode: "width", value: CARD_SIZE },
   }).render().asPng();
 
-  return sharp(mapBuffer)
-    .composite([{ input: overlayPng, top: 0, left: 0 }])
-    .png({ compressionLevel: 9 })
-    .toBuffer();
+  return {
+    buffer: await sharp(mapBuffer)
+      .composite([{ input: overlayPng, top: 0, left: 0 }])
+      .png({ compressionLevel: 9 })
+      .toBuffer(),
+    basemapId,
+  };
 }

@@ -9,6 +9,7 @@ interface ImportMetaEnv {
   /** @deprecated Use VITE_POSTHOG_HOST */
   readonly VITE_PUBLIC_POSTHOG_HOST?: string;
   readonly VITE_SITE_URL?: string;
+  readonly VITE_BUILD_NUMBER?: string;
   readonly VITE_CP_TRAVEL_API_URL?: string;
   readonly VITE_CP_API_KEY?: string;
   readonly VITE_CP_CONNECT_ID?: string;

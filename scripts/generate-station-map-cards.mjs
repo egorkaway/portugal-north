@@ -1,17 +1,19 @@
 #!/usr/bin/env node
 /**
- * Generate 1080×1080 square PNG area maps for each station (OSM tiles + brand overlay).
+ * Generate 1080×1080 square PNG area maps for each station (map tiles + brand overlay).
  *
  *   npm run maps:stations
  *   npm run maps:stations -- --limit 5
  *   npm run maps:stations -- --station "Aveiro"
- *   npm run maps:stations -- --dry-run
+ *   npm run maps:stations -- --basemap=carto-voyager   # same style for all
+ *   npm run maps:stations -- --basemap=random          # default: random per station
  */
-import { mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseAllStationsFromRepo } from "./lib/stationImageFetch.mjs";
 import { renderStationMapCard, stationToSlug } from "./lib/stationMapCard.mjs";
+import { isBasemapId } from "./lib/mapBasemaps.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "public/maps/stations");
@@ -29,6 +31,19 @@ const stationFilter = stationArg
     ? stationArg.split("=")[1]
     : args[args.indexOf("--station") + 1]
   : null;
+const basemapArg = args.find((a) => a.startsWith("--basemap"));
+const basemapMode = basemapArg
+  ? basemapArg.includes("=")
+    ? basemapArg.split("=")[1]
+    : args[args.indexOf("--basemap") + 1] ?? "random"
+  : "random";
+
+if (basemapMode !== "random" && !isBasemapId(basemapMode)) {
+  console.error(
+    `Unknown --basemap "${basemapMode}". Use random or one of: osm, carto-positron, carto-voyager, carto-dark, opentopomap`,
+  );
+  process.exit(1);
+}
 
 const stations = parseAllStationsFromRepo(root);
 
@@ -73,14 +88,19 @@ async function renderOne(station) {
     };
   }
 
-  const png = await renderStationMapCard({ station, siteUrl });
-  writeFileSync(outPath, png);
-  console.log(`Wrote ${slug}.png (${station.name})`);
+  const png = await renderStationMapCard({
+    station,
+    siteUrl,
+    basemapMode,
+  });
+  writeFileSync(outPath, png.buffer);
+  console.log(`Wrote ${slug}.png (${station.name}, ${png.basemapId})`);
   return {
     name: station.name,
     slug,
     file: `/maps/stations/${slug}.png`,
     pageUrl,
+    basemap: png.basemapId,
   };
 }
 
@@ -129,6 +149,7 @@ if (!dryRun) {
       {
         generatedAt: new Date().toISOString(),
         siteUrl,
+        basemapMode,
         size: 1080,
         shape: "square",
         count: manifest.length,
