@@ -1,17 +1,2992 @@
 {
-  "generatedAt": "2026-07-04T07:34:51.892Z",
+  "generatedAt": "2026-07-04T07:53:51.200Z",
   "siteUrl": "https://www.verystays.com",
   "basemapMode": "random",
   "size": 1080,
   "shape": "square",
-  "count": 1,
+  "count": 426,
   "stations": [
+    {
+      "name": "Pombal",
+      "slug": "pombal",
+      "file": "/maps/stations/pombal.png",
+      "pageUrl": "https://www.verystays.com/stations/pombal",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Alfarelos",
+      "slug": "alfarelos",
+      "file": "/maps/stations/alfarelos.png",
+      "pageUrl": "https://www.verystays.com/stations/alfarelos",
+      "basemap": "osm"
+    },
+    {
+      "name": "Coimbra-B",
+      "slug": "coimbra-b",
+      "file": "/maps/stations/coimbra-b.png",
+      "pageUrl": "https://www.verystays.com/stations/coimbra-b",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Pampilhosa",
+      "slug": "pampilhosa",
+      "file": "/maps/stations/pampilhosa.png",
+      "pageUrl": "https://www.verystays.com/stations/pampilhosa",
+      "basemap": "osm"
+    },
+    {
+      "name": "Mealhada",
+      "slug": "mealhada",
+      "file": "/maps/stations/mealhada.png",
+      "pageUrl": "https://www.verystays.com/stations/mealhada",
+      "basemap": "osm"
+    },
     {
       "name": "Aveiro",
       "slug": "aveiro",
       "file": "/maps/stations/aveiro.png",
       "pageUrl": "https://www.verystays.com/stations/aveiro",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Canelas",
+      "slug": "canelas",
+      "file": "/maps/stations/canelas.png",
+      "pageUrl": "https://www.verystays.com/stations/canelas",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Estarreja",
+      "slug": "estarreja",
+      "file": "/maps/stations/estarreja.png",
+      "pageUrl": "https://www.verystays.com/stations/estarreja",
+      "basemap": "osm"
+    },
+    {
+      "name": "Ovar",
+      "slug": "ovar",
+      "file": "/maps/stations/ovar.png",
+      "pageUrl": "https://www.verystays.com/stations/ovar",
+      "basemap": "osm"
+    },
+    {
+      "name": "Espinho",
+      "slug": "espinho",
+      "file": "/maps/stations/espinho.png",
+      "pageUrl": "https://www.verystays.com/stations/espinho",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Vila Nova de Gaia-Devesas",
+      "slug": "vila-nova-de-gaia-devesas",
+      "file": "/maps/stations/vila-nova-de-gaia-devesas.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-nova-de-gaia-devesas",
       "basemap": "carto-positron"
+    },
+    {
+      "name": "São Bento (Porto)",
+      "slug": "sao-bento-porto",
+      "file": "/maps/stations/sao-bento-porto.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-bento-porto",
+      "basemap": "osm"
+    },
+    {
+      "name": "Porto-Campanhã",
+      "slug": "porto-campanha",
+      "file": "/maps/stations/porto-campanha.png",
+      "pageUrl": "https://www.verystays.com/stations/porto-campanha",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Ermesinde",
+      "slug": "ermesinde",
+      "file": "/maps/stations/ermesinde.png",
+      "pageUrl": "https://www.verystays.com/stations/ermesinde",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Trofa",
+      "slug": "trofa",
+      "file": "/maps/stations/trofa.png",
+      "pageUrl": "https://www.verystays.com/stations/trofa",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Santo Tirso",
+      "slug": "santo-tirso",
+      "file": "/maps/stations/santo-tirso.png",
+      "pageUrl": "https://www.verystays.com/stations/santo-tirso",
+      "basemap": "osm"
+    },
+    {
+      "name": "Famalicão",
+      "slug": "famalicao",
+      "file": "/maps/stations/famalicao.png",
+      "pageUrl": "https://www.verystays.com/stations/famalicao",
+      "basemap": "osm"
+    },
+    {
+      "name": "Nine",
+      "slug": "nine",
+      "file": "/maps/stations/nine.png",
+      "pageUrl": "https://www.verystays.com/stations/nine",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Braga",
+      "slug": "braga",
+      "file": "/maps/stations/braga.png",
+      "pageUrl": "https://www.verystays.com/stations/braga",
+      "basemap": "osm"
+    },
+    {
+      "name": "Lousado",
+      "slug": "lousado",
+      "file": "/maps/stations/lousado.png",
+      "pageUrl": "https://www.verystays.com/stations/lousado",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Guimarães",
+      "slug": "guimaraes",
+      "file": "/maps/stations/guimaraes.png",
+      "pageUrl": "https://www.verystays.com/stations/guimaraes",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Valongo",
+      "slug": "valongo",
+      "file": "/maps/stations/valongo.png",
+      "pageUrl": "https://www.verystays.com/stations/valongo",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Caíde",
+      "slug": "caide",
+      "file": "/maps/stations/caide.png",
+      "pageUrl": "https://www.verystays.com/stations/caide",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Marco de Canaveses",
+      "slug": "marco-de-canaveses",
+      "file": "/maps/stations/marco-de-canaveses.png",
+      "pageUrl": "https://www.verystays.com/stations/marco-de-canaveses",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Livração",
+      "slug": "livracao",
+      "file": "/maps/stations/livracao.png",
+      "pageUrl": "https://www.verystays.com/stations/livracao",
+      "basemap": "osm"
+    },
+    {
+      "name": "Amarante",
+      "slug": "amarante",
+      "file": "/maps/stations/amarante.png",
+      "pageUrl": "https://www.verystays.com/stations/amarante",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Peso da Régua",
+      "slug": "peso-da-regua",
+      "file": "/maps/stations/peso-da-regua.png",
+      "pageUrl": "https://www.verystays.com/stations/peso-da-regua",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Barcelos",
+      "slug": "barcelos",
+      "file": "/maps/stations/barcelos.png",
+      "pageUrl": "https://www.verystays.com/stations/barcelos",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Viana do Castelo",
+      "slug": "viana-do-castelo",
+      "file": "/maps/stations/viana-do-castelo.png",
+      "pageUrl": "https://www.verystays.com/stations/viana-do-castelo",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Valença",
+      "slug": "valenca",
+      "file": "/maps/stations/valenca.png",
+      "pageUrl": "https://www.verystays.com/stations/valenca",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Cacia",
+      "slug": "cacia",
+      "file": "/maps/stations/cacia.png",
+      "pageUrl": "https://www.verystays.com/stations/cacia",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Salreu",
+      "slug": "salreu",
+      "file": "/maps/stations/salreu.png",
+      "pageUrl": "https://www.verystays.com/stations/salreu",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Esmoriz",
+      "slug": "esmoriz",
+      "file": "/maps/stations/esmoriz.png",
+      "pageUrl": "https://www.verystays.com/stations/esmoriz",
+      "basemap": "osm"
+    },
+    {
+      "name": "Granja",
+      "slug": "granja",
+      "file": "/maps/stations/granja.png",
+      "pageUrl": "https://www.verystays.com/stations/granja",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Darque",
+      "slug": "darque",
+      "file": "/maps/stations/darque.png",
+      "pageUrl": "https://www.verystays.com/stations/darque",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Areia-Darque",
+      "slug": "areia-darque",
+      "file": "/maps/stations/areia-darque.png",
+      "pageUrl": "https://www.verystays.com/stations/areia-darque",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Afife",
+      "slug": "afife",
+      "file": "/maps/stations/afife.png",
+      "pageUrl": "https://www.verystays.com/stations/afife",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Vila Praia de Âncora",
+      "slug": "vila-praia-de-ancora",
+      "file": "/maps/stations/vila-praia-de-ancora.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-praia-de-ancora",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Caminha",
+      "slug": "caminha",
+      "file": "/maps/stations/caminha.png",
+      "pageUrl": "https://www.verystays.com/stations/caminha",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Mesão Frio",
+      "slug": "mesao-frio",
+      "file": "/maps/stations/mesao-frio.png",
+      "pageUrl": "https://www.verystays.com/stations/mesao-frio",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Pinhão",
+      "slug": "pinhao",
+      "file": "/maps/stations/pinhao.png",
+      "pageUrl": "https://www.verystays.com/stations/pinhao",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Tua",
+      "slug": "tua",
+      "file": "/maps/stations/tua.png",
+      "pageUrl": "https://www.verystays.com/stations/tua",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Vizela",
+      "slug": "vizela",
+      "file": "/maps/stations/vizela.png",
+      "pageUrl": "https://www.verystays.com/stations/vizela",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Souselas",
+      "slug": "souselas",
+      "file": "/maps/stations/souselas.png",
+      "pageUrl": "https://www.verystays.com/stations/souselas",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Curia",
+      "slug": "curia",
+      "file": "/maps/stations/curia.png",
+      "pageUrl": "https://www.verystays.com/stations/curia",
+      "basemap": "osm"
+    },
+    {
+      "name": "Oliveira do Bairro",
+      "slug": "oliveira-do-bairro",
+      "file": "/maps/stations/oliveira-do-bairro.png",
+      "pageUrl": "https://www.verystays.com/stations/oliveira-do-bairro",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Quintans",
+      "slug": "quintans",
+      "file": "/maps/stations/quintans.png",
+      "pageUrl": "https://www.verystays.com/stations/quintans",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Oiã",
+      "slug": "oia",
+      "file": "/maps/stations/oia.png",
+      "pageUrl": "https://www.verystays.com/stations/oia",
+      "basemap": "osm"
+    },
+    {
+      "name": "Paraimo-Sangalhos",
+      "slug": "paraimo-sangalhos",
+      "file": "/maps/stations/paraimo-sangalhos.png",
+      "pageUrl": "https://www.verystays.com/stations/paraimo-sangalhos",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Aguim",
+      "slug": "aguim",
+      "file": "/maps/stations/aguim.png",
+      "pageUrl": "https://www.verystays.com/stations/aguim",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Vilela-Fornos",
+      "slug": "vilela-fornos",
+      "file": "/maps/stations/vilela-fornos.png",
+      "pageUrl": "https://www.verystays.com/stations/vilela-fornos",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Adémia",
+      "slug": "ademia",
+      "file": "/maps/stations/ademia.png",
+      "pageUrl": "https://www.verystays.com/stations/ademia",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "General Torres",
+      "slug": "general-torres",
+      "file": "/maps/stations/general-torres.png",
+      "pageUrl": "https://www.verystays.com/stations/general-torres",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Coimbrões",
+      "slug": "coimbroes",
+      "file": "/maps/stations/coimbroes.png",
+      "pageUrl": "https://www.verystays.com/stations/coimbroes",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Valadares",
+      "slug": "valadares",
+      "file": "/maps/stations/valadares.png",
+      "pageUrl": "https://www.verystays.com/stations/valadares",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Francelos",
+      "slug": "francelos",
+      "file": "/maps/stations/francelos.png",
+      "pageUrl": "https://www.verystays.com/stations/francelos",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Miramar",
+      "slug": "miramar",
+      "file": "/maps/stations/miramar.png",
+      "pageUrl": "https://www.verystays.com/stations/miramar",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Aguda",
+      "slug": "aguda",
+      "file": "/maps/stations/aguda.png",
+      "pageUrl": "https://www.verystays.com/stations/aguda",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Paramos",
+      "slug": "paramos",
+      "file": "/maps/stations/paramos.png",
+      "pageUrl": "https://www.verystays.com/stations/paramos",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Soure",
+      "slug": "soure",
+      "file": "/maps/stations/soure.png",
+      "pageUrl": "https://www.verystays.com/stations/soure",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Caxarias",
+      "slug": "caxarias",
+      "file": "/maps/stations/caxarias.png",
+      "pageUrl": "https://www.verystays.com/stations/caxarias",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Lamarosa",
+      "slug": "lamarosa",
+      "file": "/maps/stations/lamarosa.png",
+      "pageUrl": "https://www.verystays.com/stations/lamarosa",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Válega",
+      "slug": "valega",
+      "file": "/maps/stations/valega.png",
+      "pageUrl": "https://www.verystays.com/stations/valega",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Contumil",
+      "slug": "contumil",
+      "file": "/maps/stations/contumil.png",
+      "pageUrl": "https://www.verystays.com/stations/contumil",
+      "basemap": "osm"
+    },
+    {
+      "name": "Rio Tinto",
+      "slug": "rio-tinto",
+      "file": "/maps/stations/rio-tinto.png",
+      "pageUrl": "https://www.verystays.com/stations/rio-tinto",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Tamel",
+      "slug": "tamel",
+      "file": "/maps/stations/tamel.png",
+      "pageUrl": "https://www.verystays.com/stations/tamel",
+      "basemap": "osm"
+    },
+    {
+      "name": "Durrães",
+      "slug": "durraes",
+      "file": "/maps/stations/durraes.png",
+      "pageUrl": "https://www.verystays.com/stations/durraes",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Carreço",
+      "slug": "carreco",
+      "file": "/maps/stations/carreco.png",
+      "pageUrl": "https://www.verystays.com/stations/carreco",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Areosa",
+      "slug": "areosa",
+      "file": "/maps/stations/areosa.png",
+      "pageUrl": "https://www.verystays.com/stations/areosa",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Aregos",
+      "slug": "aregos",
+      "file": "/maps/stations/aregos.png",
+      "pageUrl": "https://www.verystays.com/stations/aregos",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Mosteirô",
+      "slug": "mosteiro",
+      "file": "/maps/stations/mosteiro.png",
+      "pageUrl": "https://www.verystays.com/stations/mosteiro",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Caldas de Vizela",
+      "slug": "caldas-de-vizela",
+      "file": "/maps/stations/caldas-de-vizela.png",
+      "pageUrl": "https://www.verystays.com/stations/caldas-de-vizela",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Lordelo",
+      "slug": "lordelo",
+      "file": "/maps/stations/lordelo.png",
+      "pageUrl": "https://www.verystays.com/stations/lordelo",
+      "basemap": "osm"
+    },
+    {
+      "name": "Mirandela",
+      "slug": "mirandela",
+      "file": "/maps/stations/mirandela.png",
+      "pageUrl": "https://www.verystays.com/stations/mirandela",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Coimbra",
+      "slug": "coimbra",
+      "file": "/maps/stations/coimbra.png",
+      "pageUrl": "https://www.verystays.com/stations/coimbra",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Mogofores",
+      "slug": "mogofores",
+      "file": "/maps/stations/mogofores.png",
+      "pageUrl": "https://www.verystays.com/stations/mogofores",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Avanca",
+      "slug": "avanca",
+      "file": "/maps/stations/avanca.png",
+      "pageUrl": "https://www.verystays.com/stations/avanca",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Penafiel",
+      "slug": "penafiel",
+      "file": "/maps/stations/penafiel.png",
+      "pageUrl": "https://www.verystays.com/stations/penafiel",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Paredes",
+      "slug": "paredes",
+      "file": "/maps/stations/paredes.png",
+      "pageUrl": "https://www.verystays.com/stations/paredes",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Cete",
+      "slug": "cete",
+      "file": "/maps/stations/cete.png",
+      "pageUrl": "https://www.verystays.com/stations/cete",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Recarei-Sobreira",
+      "slug": "recarei-sobreira",
+      "file": "/maps/stations/recarei-sobreira.png",
+      "pageUrl": "https://www.verystays.com/stations/recarei-sobreira",
+      "basemap": "osm"
+    },
+    {
+      "name": "Vila Meã",
+      "slug": "vila-mea",
+      "file": "/maps/stations/vila-mea.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-mea",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Rio Mau",
+      "slug": "rio-mau",
+      "file": "/maps/stations/rio-mau.png",
+      "pageUrl": "https://www.verystays.com/stations/rio-mau",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Águeda",
+      "slug": "agueda",
+      "file": "/maps/stations/agueda.png",
+      "pageUrl": "https://www.verystays.com/stations/agueda",
+      "basemap": "osm"
+    },
+    {
+      "name": "Sernada do Vouga",
+      "slug": "sernada-do-vouga",
+      "file": "/maps/stations/sernada-do-vouga.png",
+      "pageUrl": "https://www.verystays.com/stations/sernada-do-vouga",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Macinhata do Vouga",
+      "slug": "macinhata-do-vouga",
+      "file": "/maps/stations/macinhata-do-vouga.png",
+      "pageUrl": "https://www.verystays.com/stations/macinhata-do-vouga",
+      "basemap": "osm"
+    },
+    {
+      "name": "Cortegaça",
+      "slug": "cortegaca",
+      "file": "/maps/stations/cortegaca.png",
+      "pageUrl": "https://www.verystays.com/stations/cortegaca",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Taveiro",
+      "slug": "taveiro",
+      "file": "/maps/stations/taveiro.png",
+      "pageUrl": "https://www.verystays.com/stations/taveiro",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Lousada",
+      "slug": "lousada",
+      "file": "/maps/stations/lousada.png",
+      "pageUrl": "https://www.verystays.com/stations/lousada",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Vila Nova de Cerveira",
+      "slug": "vila-nova-de-cerveira",
+      "file": "/maps/stations/vila-nova-de-cerveira.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-nova-de-cerveira",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Pocinho",
+      "slug": "pocinho",
+      "file": "/maps/stations/pocinho.png",
+      "pageUrl": "https://www.verystays.com/stations/pocinho",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Ferradosa",
+      "slug": "ferradosa",
+      "file": "/maps/stations/ferradosa.png",
+      "pageUrl": "https://www.verystays.com/stations/ferradosa",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Vesúvio",
+      "slug": "vesuvio",
+      "file": "/maps/stations/vesuvio.png",
+      "pageUrl": "https://www.verystays.com/stations/vesuvio",
+      "basemap": "osm"
+    },
+    {
+      "name": "Bragança",
+      "slug": "braganca",
+      "file": "/maps/stations/braganca.png",
+      "pageUrl": "https://www.verystays.com/stations/braganca",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "São Pedro da Torre",
+      "slug": "sao-pedro-da-torre",
+      "file": "/maps/stations/sao-pedro-da-torre.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-pedro-da-torre",
+      "basemap": "osm"
+    },
+    {
+      "name": "Carvalha",
+      "slug": "carvalha",
+      "file": "/maps/stations/carvalha.png",
+      "pageUrl": "https://www.verystays.com/stations/carvalha",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Gondarém",
+      "slug": "gondarem",
+      "file": "/maps/stations/gondarem.png",
+      "pageUrl": "https://www.verystays.com/stations/gondarem",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Esqueiró",
+      "slug": "esqueiro",
+      "file": "/maps/stations/esqueiro.png",
+      "pageUrl": "https://www.verystays.com/stations/esqueiro",
+      "basemap": "osm"
+    },
+    {
+      "name": "Seixas",
+      "slug": "seixas",
+      "file": "/maps/stations/seixas.png",
+      "pageUrl": "https://www.verystays.com/stations/seixas",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Senhora da Agonia",
+      "slug": "senhora-da-agonia",
+      "file": "/maps/stations/senhora-da-agonia.png",
+      "pageUrl": "https://www.verystays.com/stations/senhora-da-agonia",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Moledo do Minho",
+      "slug": "moledo-do-minho",
+      "file": "/maps/stations/moledo-do-minho.png",
+      "pageUrl": "https://www.verystays.com/stations/moledo-do-minho",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Alvarães",
+      "slug": "alvaraes",
+      "file": "/maps/stations/alvaraes.png",
+      "pageUrl": "https://www.verystays.com/stations/alvaraes",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Senhora das Neves",
+      "slug": "senhora-das-neves",
+      "file": "/maps/stations/senhora-das-neves.png",
+      "pageUrl": "https://www.verystays.com/stations/senhora-das-neves",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Barroselas",
+      "slug": "barroselas",
+      "file": "/maps/stations/barroselas.png",
+      "pageUrl": "https://www.verystays.com/stations/barroselas",
+      "basemap": "osm"
+    },
+    {
+      "name": "Carapecos",
+      "slug": "carapecos",
+      "file": "/maps/stations/carapecos.png",
+      "pageUrl": "https://www.verystays.com/stations/carapecos",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Silva",
+      "slug": "silva",
+      "file": "/maps/stations/silva.png",
+      "pageUrl": "https://www.verystays.com/stations/silva",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Midões",
+      "slug": "midoes",
+      "file": "/maps/stations/midoes.png",
+      "pageUrl": "https://www.verystays.com/stations/midoes",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Carreira",
+      "slug": "carreira",
+      "file": "/maps/stations/carreira.png",
+      "pageUrl": "https://www.verystays.com/stations/carreira",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Louro",
+      "slug": "louro",
+      "file": "/maps/stations/louro.png",
+      "pageUrl": "https://www.verystays.com/stations/louro",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Mouquim",
+      "slug": "mouquim",
+      "file": "/maps/stations/mouquim.png",
+      "pageUrl": "https://www.verystays.com/stations/mouquim",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Portela",
+      "slug": "portela",
+      "file": "/maps/stations/portela.png",
+      "pageUrl": "https://www.verystays.com/stations/portela",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "São Romão",
+      "slug": "sao-romao",
+      "file": "/maps/stations/sao-romao.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-romao",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "São Frutuoso",
+      "slug": "sao-frutuoso",
+      "file": "/maps/stations/sao-frutuoso.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-frutuoso",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Leandro",
+      "slug": "leandro",
+      "file": "/maps/stations/leandro.png",
+      "pageUrl": "https://www.verystays.com/stations/leandro",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Travagem",
+      "slug": "travagem",
+      "file": "/maps/stations/travagem.png",
+      "pageUrl": "https://www.verystays.com/stations/travagem",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Barrimau",
+      "slug": "barrimau",
+      "file": "/maps/stations/barrimau.png",
+      "pageUrl": "https://www.verystays.com/stations/barrimau",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Esmeriz",
+      "slug": "esmeriz",
+      "file": "/maps/stations/esmeriz.png",
+      "pageUrl": "https://www.verystays.com/stations/esmeriz",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Ferreiros",
+      "slug": "ferreiros",
+      "file": "/maps/stations/ferreiros.png",
+      "pageUrl": "https://www.verystays.com/stations/ferreiros",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Mazagão",
+      "slug": "mazagao",
+      "file": "/maps/stations/mazagao.png",
+      "pageUrl": "https://www.verystays.com/stations/mazagao",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Aveleda",
+      "slug": "aveleda",
+      "file": "/maps/stations/aveleda.png",
+      "pageUrl": "https://www.verystays.com/stations/aveleda",
+      "basemap": "osm"
+    },
+    {
+      "name": "Tadim",
+      "slug": "tadim",
+      "file": "/maps/stations/tadim.png",
+      "pageUrl": "https://www.verystays.com/stations/tadim",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Ruílhe",
+      "slug": "ruilhe",
+      "file": "/maps/stations/ruilhe.png",
+      "pageUrl": "https://www.verystays.com/stations/ruilhe",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Arentim",
+      "slug": "arentim",
+      "file": "/maps/stations/arentim.png",
+      "pageUrl": "https://www.verystays.com/stations/arentim",
+      "basemap": "osm"
+    },
+    {
+      "name": "Couto de Cambeses",
+      "slug": "couto-de-cambeses",
+      "file": "/maps/stations/couto-de-cambeses.png",
+      "pageUrl": "https://www.verystays.com/stations/couto-de-cambeses",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Covas",
+      "slug": "covas",
+      "file": "/maps/stations/covas.png",
+      "pageUrl": "https://www.verystays.com/stations/covas",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Nespereira",
+      "slug": "nespereira",
+      "file": "/maps/stations/nespereira.png",
+      "pageUrl": "https://www.verystays.com/stations/nespereira",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Pereirinhas",
+      "slug": "pereirinhas",
+      "file": "/maps/stations/pereirinhas.png",
+      "pageUrl": "https://www.verystays.com/stations/pereirinhas",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Cuca",
+      "slug": "cuca",
+      "file": "/maps/stations/cuca.png",
+      "pageUrl": "https://www.verystays.com/stations/cuca",
+      "basemap": "osm"
+    },
+    {
+      "name": "Giesteira",
+      "slug": "giesteira",
+      "file": "/maps/stations/giesteira.png",
+      "pageUrl": "https://www.verystays.com/stations/giesteira",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Caniços",
+      "slug": "canicos",
+      "file": "/maps/stations/canicos.png",
+      "pageUrl": "https://www.verystays.com/stations/canicos",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Vila das Aves",
+      "slug": "vila-das-aves",
+      "file": "/maps/stations/vila-das-aves.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-das-aves",
+      "basemap": "osm"
+    },
+    {
+      "name": "Meinedo",
+      "slug": "meinedo",
+      "file": "/maps/stations/meinedo.png",
+      "pageUrl": "https://www.verystays.com/stations/meinedo",
+      "basemap": "osm"
+    },
+    {
+      "name": "Bustelo",
+      "slug": "bustelo",
+      "file": "/maps/stations/bustelo.png",
+      "pageUrl": "https://www.verystays.com/stations/bustelo",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Recesinhos",
+      "slug": "recesinhos",
+      "file": "/maps/stations/recesinhos.png",
+      "pageUrl": "https://www.verystays.com/stations/recesinhos",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Cabeda",
+      "slug": "cabeda",
+      "file": "/maps/stations/cabeda.png",
+      "pageUrl": "https://www.verystays.com/stations/cabeda",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Suzão",
+      "slug": "suzao",
+      "file": "/maps/stations/suzao.png",
+      "pageUrl": "https://www.verystays.com/stations/suzao",
+      "basemap": "osm"
+    },
+    {
+      "name": "Godim",
+      "slug": "godim",
+      "file": "/maps/stations/godim.png",
+      "pageUrl": "https://www.verystays.com/stations/godim",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Covelinhas",
+      "slug": "covelinhas",
+      "file": "/maps/stations/covelinhas.png",
+      "pageUrl": "https://www.verystays.com/stations/covelinhas",
+      "basemap": "osm"
+    },
+    {
+      "name": "Caldas de Moledo",
+      "slug": "caldas-de-moledo",
+      "file": "/maps/stations/caldas-de-moledo.png",
+      "pageUrl": "https://www.verystays.com/stations/caldas-de-moledo",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Ferrão",
+      "slug": "ferrao",
+      "file": "/maps/stations/ferrao.png",
+      "pageUrl": "https://www.verystays.com/stations/ferrao",
+      "basemap": "osm"
+    },
+    {
+      "name": "Barqueiros",
+      "slug": "barqueiros",
+      "file": "/maps/stations/barqueiros.png",
+      "pageUrl": "https://www.verystays.com/stations/barqueiros",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Ermida",
+      "slug": "ermida",
+      "file": "/maps/stations/ermida.png",
+      "pageUrl": "https://www.verystays.com/stations/ermida",
+      "basemap": "osm"
+    },
+    {
+      "name": "Oleiros",
+      "slug": "oleiros",
+      "file": "/maps/stations/oleiros.png",
+      "pageUrl": "https://www.verystays.com/stations/oleiros",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Irivo",
+      "slug": "irivo",
+      "file": "/maps/stations/irivo.png",
+      "pageUrl": "https://www.verystays.com/stations/irivo",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Juncal",
+      "slug": "juncal",
+      "file": "/maps/stations/juncal.png",
+      "pageUrl": "https://www.verystays.com/stations/juncal",
+      "basemap": "osm"
+    },
+    {
+      "name": "Mirão",
+      "slug": "mirao",
+      "file": "/maps/stations/mirao.png",
+      "pageUrl": "https://www.verystays.com/stations/mirao",
+      "basemap": "osm"
+    },
+    {
+      "name": "Porto Rei",
+      "slug": "porto-rei",
+      "file": "/maps/stations/porto-rei.png",
+      "pageUrl": "https://www.verystays.com/stations/porto-rei",
+      "basemap": "osm"
+    },
+    {
+      "name": "Leça do Balio",
+      "slug": "leca-do-balio",
+      "file": "/maps/stations/leca-do-balio.png",
+      "pageUrl": "https://www.verystays.com/stations/leca-do-balio",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Águas Santas - Palmilheira",
+      "slug": "aguas-santas-palmilheira",
+      "file": "/maps/stations/aguas-santas-palmilheira.png",
+      "pageUrl": "https://www.verystays.com/stations/aguas-santas-palmilheira",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "São Gemil",
+      "slug": "sao-gemil",
+      "file": "/maps/stations/sao-gemil.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-gemil",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "São Mamede de Infesta",
+      "slug": "sao-mamede-de-infesta",
+      "file": "/maps/stations/sao-mamede-de-infesta.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-mamede-de-infesta",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Hospital São João",
+      "slug": "hospital-sao-joao",
+      "file": "/maps/stations/hospital-sao-joao.png",
+      "pageUrl": "https://www.verystays.com/stations/hospital-sao-joao",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Arroteia",
+      "slug": "arroteia",
+      "file": "/maps/stations/arroteia.png",
+      "pageUrl": "https://www.verystays.com/stations/arroteia",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Madalena",
+      "slug": "madalena",
+      "file": "/maps/stations/madalena.png",
+      "pageUrl": "https://www.verystays.com/stations/madalena",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Silvalde",
+      "slug": "silvalde",
+      "file": "/maps/stations/silvalde.png",
+      "pageUrl": "https://www.verystays.com/stations/silvalde",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Espinho - Vouga",
+      "slug": "espinho-vouga",
+      "file": "/maps/stations/espinho-vouga.png",
+      "pageUrl": "https://www.verystays.com/stations/espinho-vouga",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "São João da Madeira",
+      "slug": "sao-joao-da-madeira",
+      "file": "/maps/stations/sao-joao-da-madeira.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-joao-da-madeira",
+      "basemap": "osm"
+    },
+    {
+      "name": "Vila da Feira",
+      "slug": "vila-da-feira",
+      "file": "/maps/stations/vila-da-feira.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-da-feira",
+      "basemap": "osm"
+    },
+    {
+      "name": "Oliveira de Azeméis",
+      "slug": "oliveira-de-azemeis",
+      "file": "/maps/stations/oliveira-de-azemeis.png",
+      "pageUrl": "https://www.verystays.com/stations/oliveira-de-azemeis",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Rio Meão",
+      "slug": "rio-meao",
+      "file": "/maps/stations/rio-meao.png",
+      "pageUrl": "https://www.verystays.com/stations/rio-meao",
+      "basemap": "osm"
+    },
+    {
+      "name": "São João de Ver",
+      "slug": "sao-joao-de-ver",
+      "file": "/maps/stations/sao-joao-de-ver.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-joao-de-ver",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Mangualde",
+      "slug": "mangualde",
+      "file": "/maps/stations/mangualde.png",
+      "pageUrl": "https://www.verystays.com/stations/mangualde",
+      "basemap": "osm"
+    },
+    {
+      "name": "Nelas",
+      "slug": "nelas",
+      "file": "/maps/stations/nelas.png",
+      "pageUrl": "https://www.verystays.com/stations/nelas",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Gouveia",
+      "slug": "gouveia",
+      "file": "/maps/stations/gouveia.png",
+      "pageUrl": "https://www.verystays.com/stations/gouveia",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Celorico da Beira",
+      "slug": "celorico-da-beira",
+      "file": "/maps/stations/celorico-da-beira.png",
+      "pageUrl": "https://www.verystays.com/stations/celorico-da-beira",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Fornos de Algodres",
+      "slug": "fornos-de-algodres",
+      "file": "/maps/stations/fornos-de-algodres.png",
+      "pageUrl": "https://www.verystays.com/stations/fornos-de-algodres",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Lisboa Santa Apolónia",
+      "slug": "lisboa-santa-apolonia",
+      "file": "/maps/stations/lisboa-santa-apolonia.png",
+      "pageUrl": "https://www.verystays.com/stations/lisboa-santa-apolonia",
+      "basemap": "osm"
+    },
+    {
+      "name": "Lisboa Oriente",
+      "slug": "lisboa-oriente",
+      "file": "/maps/stations/lisboa-oriente.png",
+      "pageUrl": "https://www.verystays.com/stations/lisboa-oriente",
+      "basemap": "osm"
+    },
+    {
+      "name": "Lisboa Rossio",
+      "slug": "lisboa-rossio",
+      "file": "/maps/stations/lisboa-rossio.png",
+      "pageUrl": "https://www.verystays.com/stations/lisboa-rossio",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Cais do Sodré",
+      "slug": "cais-do-sodre",
+      "file": "/maps/stations/cais-do-sodre.png",
+      "pageUrl": "https://www.verystays.com/stations/cais-do-sodre",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Cascais",
+      "slug": "cascais",
+      "file": "/maps/stations/cascais.png",
+      "pageUrl": "https://www.verystays.com/stations/cascais",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Sintra",
+      "slug": "sintra",
+      "file": "/maps/stations/sintra.png",
+      "pageUrl": "https://www.verystays.com/stations/sintra",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Setúbal",
+      "slug": "setubal",
+      "file": "/maps/stations/setubal.png",
+      "pageUrl": "https://www.verystays.com/stations/setubal",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Entroncamento",
+      "slug": "entroncamento",
+      "file": "/maps/stations/entroncamento.png",
+      "pageUrl": "https://www.verystays.com/stations/entroncamento",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Santarém",
+      "slug": "santarem",
+      "file": "/maps/stations/santarem.png",
+      "pageUrl": "https://www.verystays.com/stations/santarem",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Tomar",
+      "slug": "tomar",
+      "file": "/maps/stations/tomar.png",
+      "pageUrl": "https://www.verystays.com/stations/tomar",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Caldas da Rainha",
+      "slug": "caldas-da-rainha",
+      "file": "/maps/stations/caldas-da-rainha.png",
+      "pageUrl": "https://www.verystays.com/stations/caldas-da-rainha",
+      "basemap": "osm"
+    },
+    {
+      "name": "Leiria",
+      "slug": "leiria",
+      "file": "/maps/stations/leiria.png",
+      "pageUrl": "https://www.verystays.com/stations/leiria",
+      "basemap": "osm"
+    },
+    {
+      "name": "Figueira da Foz",
+      "slug": "figueira-da-foz",
+      "file": "/maps/stations/figueira-da-foz.png",
+      "pageUrl": "https://www.verystays.com/stations/figueira-da-foz",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Castelo Branco",
+      "slug": "castelo-branco",
+      "file": "/maps/stations/castelo-branco.png",
+      "pageUrl": "https://www.verystays.com/stations/castelo-branco",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Covilhã",
+      "slug": "covilha",
+      "file": "/maps/stations/covilha.png",
+      "pageUrl": "https://www.verystays.com/stations/covilha",
+      "basemap": "osm"
+    },
+    {
+      "name": "Guarda",
+      "slug": "guarda",
+      "file": "/maps/stations/guarda.png",
+      "pageUrl": "https://www.verystays.com/stations/guarda",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Vilar Formoso",
+      "slug": "vilar-formoso",
+      "file": "/maps/stations/vilar-formoso.png",
+      "pageUrl": "https://www.verystays.com/stations/vilar-formoso",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Viseu",
+      "slug": "viseu",
+      "file": "/maps/stations/viseu.png",
+      "pageUrl": "https://www.verystays.com/stations/viseu",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Évora",
+      "slug": "evora",
+      "file": "/maps/stations/evora.png",
+      "pageUrl": "https://www.verystays.com/stations/evora",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Beja",
+      "slug": "beja",
+      "file": "/maps/stations/beja.png",
+      "pageUrl": "https://www.verystays.com/stations/beja",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Faro",
+      "slug": "faro",
+      "file": "/maps/stations/faro.png",
+      "pageUrl": "https://www.verystays.com/stations/faro",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Albufeira-Ferreiras",
+      "slug": "albufeira-ferreiras",
+      "file": "/maps/stations/albufeira-ferreiras.png",
+      "pageUrl": "https://www.verystays.com/stations/albufeira-ferreiras",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Tunes",
+      "slug": "tunes",
+      "file": "/maps/stations/tunes.png",
+      "pageUrl": "https://www.verystays.com/stations/tunes",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Lagos",
+      "slug": "lagos",
+      "file": "/maps/stations/lagos.png",
+      "pageUrl": "https://www.verystays.com/stations/lagos",
+      "basemap": "osm"
+    },
+    {
+      "name": "Portimão",
+      "slug": "portimao",
+      "file": "/maps/stations/portimao.png",
+      "pageUrl": "https://www.verystays.com/stations/portimao",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Tavira",
+      "slug": "tavira",
+      "file": "/maps/stations/tavira.png",
+      "pageUrl": "https://www.verystays.com/stations/tavira",
+      "basemap": "osm"
+    },
+    {
+      "name": "Vila Real de Santo António",
+      "slug": "vila-real-de-santo-antonio",
+      "file": "/maps/stations/vila-real-de-santo-antonio.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-real-de-santo-antonio",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Aguieira",
+      "slug": "aguieira",
+      "file": "/maps/stations/aguieira.png",
+      "pageUrl": "https://www.verystays.com/stations/aguieira",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Albergaria dos Doze",
+      "slug": "albergaria-dos-doze",
+      "file": "/maps/stations/albergaria-dos-doze.png",
+      "pageUrl": "https://www.verystays.com/stations/albergaria-dos-doze",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Alegria",
+      "slug": "alegria",
+      "file": "/maps/stations/alegria.png",
+      "pageUrl": "https://www.verystays.com/stations/alegria",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Alferrarede",
+      "slug": "alferrarede",
+      "file": "/maps/stations/alferrarede.png",
+      "pageUrl": "https://www.verystays.com/stations/alferrarede",
+      "basemap": "osm"
+    },
+    {
+      "name": "Almourol",
+      "slug": "almourol",
+      "file": "/maps/stations/almourol.png",
+      "pageUrl": "https://www.verystays.com/stations/almourol",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Alvega – Ortiga",
+      "slug": "alvega-ortiga",
+      "file": "/maps/stations/alvega-ortiga.png",
+      "pageUrl": "https://www.verystays.com/stations/alvega-ortiga",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Arrifana",
+      "slug": "arrifana",
+      "file": "/maps/stations/arrifana.png",
+      "pageUrl": "https://www.verystays.com/stations/arrifana",
+      "basemap": "osm"
+    },
+    {
+      "name": "Azurva",
+      "slug": "azurva",
+      "file": "/maps/stations/azurva.png",
+      "pageUrl": "https://www.verystays.com/stations/azurva",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Barca da Amieira – Envendos",
+      "slug": "barca-da-amieira-envendos",
+      "file": "/maps/stations/barca-da-amieira-envendos.png",
+      "pageUrl": "https://www.verystays.com/stations/barca-da-amieira-envendos",
+      "basemap": "osm"
+    },
+    {
+      "name": "Barquinha",
+      "slug": "barquinha",
+      "file": "/maps/stations/barquinha.png",
+      "pageUrl": "https://www.verystays.com/stations/barquinha",
+      "basemap": "osm"
+    },
+    {
+      "name": "Barragem de Belver",
+      "slug": "barragem-de-belver",
+      "file": "/maps/stations/barragem-de-belver.png",
+      "pageUrl": "https://www.verystays.com/stations/barragem-de-belver",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Belver",
+      "slug": "belver",
+      "file": "/maps/stations/belver.png",
+      "pageUrl": "https://www.verystays.com/stations/belver",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Bifurcacao de Lares",
+      "slug": "bifurcacao-de-lares",
+      "file": "/maps/stations/bifurcacao-de-lares.png",
+      "pageUrl": "https://www.verystays.com/stations/bifurcacao-de-lares",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Bombarral",
+      "slug": "bombarral",
+      "file": "/maps/stations/bombarral.png",
+      "pageUrl": "https://www.verystays.com/stations/bombarral",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Cabanoes",
+      "slug": "cabanoes",
+      "file": "/maps/stations/cabanoes.png",
+      "pageUrl": "https://www.verystays.com/stations/cabanoes",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Carrascal – Delongo",
+      "slug": "carrascal-delongo",
+      "file": "/maps/stations/carrascal-delongo.png",
+      "pageUrl": "https://www.verystays.com/stations/carrascal-delongo",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Carvalhal Portela",
+      "slug": "carvalhal-portela",
+      "file": "/maps/stations/carvalhal-portela.png",
+      "pageUrl": "https://www.verystays.com/stations/carvalhal-portela",
+      "basemap": "osm"
+    },
+    {
+      "name": "Carvalhos de Figueiredo",
+      "slug": "carvalhos-de-figueiredo",
+      "file": "/maps/stations/carvalhos-de-figueiredo.png",
+      "pageUrl": "https://www.verystays.com/stations/carvalhos-de-figueiredo",
+      "basemap": "osm"
+    },
+    {
+      "name": "Casal do Alvaro",
+      "slug": "casal-do-alvaro",
+      "file": "/maps/stations/casal-do-alvaro.png",
+      "pageUrl": "https://www.verystays.com/stations/casal-do-alvaro",
+      "basemap": "osm"
+    },
+    {
+      "name": "Cavaco",
+      "slug": "cavaco",
+      "file": "/maps/stations/cavaco.png",
+      "pageUrl": "https://www.verystays.com/stations/cavaco",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Chão de Maçãs – Fátima",
+      "slug": "chao-de-macas-fatima",
+      "file": "/maps/stations/chao-de-macas-fatima.png",
+      "pageUrl": "https://www.verystays.com/stations/chao-de-macas-fatima",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Couto de Cucujaes",
+      "slug": "couto-de-cucujaes",
+      "file": "/maps/stations/couto-de-cucujaes.png",
+      "pageUrl": "https://www.verystays.com/stations/couto-de-cucujaes",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Curvaceiras",
+      "slug": "curvaceiras",
+      "file": "/maps/stations/curvaceiras.png",
+      "pageUrl": "https://www.verystays.com/stations/curvaceiras",
+      "basemap": "osm"
+    },
+    {
+      "name": "Dois Portos",
+      "slug": "dois-portos",
+      "file": "/maps/stations/dois-portos.png",
+      "pageUrl": "https://www.verystays.com/stations/dois-portos",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Eirol",
+      "slug": "eirol",
+      "file": "/maps/stations/eirol.png",
+      "pageUrl": "https://www.verystays.com/stations/eirol",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Eixo",
+      "slug": "eixo",
+      "file": "/maps/stations/eixo.png",
+      "pageUrl": "https://www.verystays.com/stations/eixo",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Escapaes",
+      "slug": "escapaes",
+      "file": "/maps/stations/escapaes.png",
+      "pageUrl": "https://www.verystays.com/stations/escapaes",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Esgueira",
+      "slug": "esgueira",
+      "file": "/maps/stations/esgueira.png",
+      "pageUrl": "https://www.verystays.com/stations/esgueira",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Famalicão da Nazaré",
+      "slug": "famalicao-da-nazare",
+      "file": "/maps/stations/famalicao-da-nazare.png",
+      "pageUrl": "https://www.verystays.com/stations/famalicao-da-nazare",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Faria",
+      "slug": "faria",
+      "file": "/maps/stations/faria.png",
+      "pageUrl": "https://www.verystays.com/stations/faria",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Feliteira",
+      "slug": "feliteira",
+      "file": "/maps/stations/feliteira.png",
+      "pageUrl": "https://www.verystays.com/stations/feliteira",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Fontela",
+      "slug": "fontela",
+      "file": "/maps/stations/fontela.png",
+      "pageUrl": "https://www.verystays.com/stations/fontela",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Fontela-A",
+      "slug": "fontela-a",
+      "file": "/maps/stations/fontela-a.png",
+      "pageUrl": "https://www.verystays.com/stations/fontela-a",
+      "basemap": "osm"
+    },
+    {
+      "name": "Fratel",
+      "slug": "fratel",
+      "file": "/maps/stations/fratel.png",
+      "pageUrl": "https://www.verystays.com/stations/fratel",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Fungalvaz",
+      "slug": "fungalvaz",
+      "file": "/maps/stations/fungalvaz.png",
+      "pageUrl": "https://www.verystays.com/stations/fungalvaz",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Guia",
+      "slug": "guia",
+      "file": "/maps/stations/guia.png",
+      "pageUrl": "https://www.verystays.com/stations/guia",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Lapa",
+      "slug": "lapa",
+      "file": "/maps/stations/lapa.png",
+      "pageUrl": "https://www.verystays.com/stations/lapa",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Lares",
+      "slug": "lares",
+      "file": "/maps/stations/lares.png",
+      "pageUrl": "https://www.verystays.com/stations/lares",
+      "basemap": "osm"
+    },
+    {
+      "name": "Litem",
+      "slug": "litem",
+      "file": "/maps/stations/litem.png",
+      "pageUrl": "https://www.verystays.com/stations/litem",
+      "basemap": "osm"
+    },
+    {
+      "name": "Lourical",
+      "slug": "lourical",
+      "file": "/maps/stations/lourical.png",
+      "pageUrl": "https://www.verystays.com/stations/lourical",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Macinhata",
+      "slug": "macinhata",
+      "file": "/maps/stations/macinhata.png",
+      "pageUrl": "https://www.verystays.com/stations/macinhata",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Marinha Grande",
+      "slug": "marinha-grande",
+      "file": "/maps/stations/marinha-grande.png",
+      "pageUrl": "https://www.verystays.com/stations/marinha-grande",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Martingança – Maceira",
+      "slug": "martinganca-maceira",
+      "file": "/maps/stations/martinganca-maceira.png",
+      "pageUrl": "https://www.verystays.com/stations/martinganca-maceira",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Marujal",
+      "slug": "marujal",
+      "file": "/maps/stations/marujal.png",
+      "pageUrl": "https://www.verystays.com/stations/marujal",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Mato de Miranda",
+      "slug": "mato-de-miranda",
+      "file": "/maps/stations/mato-de-miranda.png",
+      "pageUrl": "https://www.verystays.com/stations/mato-de-miranda",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Monte de Páramos",
+      "slug": "monte-de-paramos",
+      "file": "/maps/stations/monte-de-paramos.png",
+      "pageUrl": "https://www.verystays.com/stations/monte-de-paramos",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Monte Real",
+      "slug": "monte-real",
+      "file": "/maps/stations/monte-real.png",
+      "pageUrl": "https://www.verystays.com/stations/monte-real",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Monte Redondo",
+      "slug": "monte-redondo",
+      "file": "/maps/stations/monte-redondo.png",
+      "pageUrl": "https://www.verystays.com/stations/monte-redondo",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Mourisca do Vouga",
+      "slug": "mourisca-do-vouga",
+      "file": "/maps/stations/mourisca-do-vouga.png",
+      "pageUrl": "https://www.verystays.com/stations/mourisca-do-vouga",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Mouriscas - A",
+      "slug": "mouriscas-a",
+      "file": "/maps/stations/mouriscas-a.png",
+      "pageUrl": "https://www.verystays.com/stations/mouriscas-a",
+      "basemap": "osm"
+    },
+    {
+      "name": "Óbidos",
+      "slug": "obidos",
+      "file": "/maps/stations/obidos.png",
+      "pageUrl": "https://www.verystays.com/stations/obidos",
+      "basemap": "osm"
+    },
+    {
+      "name": "Oronhe",
+      "slug": "oronhe",
+      "file": "/maps/stations/oronhe.png",
+      "pageUrl": "https://www.verystays.com/stations/oronhe",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Outeiro",
+      "slug": "outeiro",
+      "file": "/maps/stations/outeiro.png",
+      "pageUrl": "https://www.verystays.com/stations/outeiro",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Paços de Brandão",
+      "slug": "pacos-de-brandao",
+      "file": "/maps/stations/pacos-de-brandao.png",
+      "pageUrl": "https://www.verystays.com/stations/pacos-de-brandao",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Paialvo",
+      "slug": "paialvo",
+      "file": "/maps/stations/paialvo.png",
+      "pageUrl": "https://www.verystays.com/stations/paialvo",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Pala",
+      "slug": "pala",
+      "file": "/maps/stations/pala.png",
+      "pageUrl": "https://www.verystays.com/stations/pala",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Parada",
+      "slug": "parada",
+      "file": "/maps/stations/parada.png",
+      "pageUrl": "https://www.verystays.com/stations/parada",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Pataias",
+      "slug": "pataias",
+      "file": "/maps/stations/pataias.png",
+      "pageUrl": "https://www.verystays.com/stations/pataias",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Pelariga",
+      "slug": "pelariga",
+      "file": "/maps/stations/pelariga.png",
+      "pageUrl": "https://www.verystays.com/stations/pelariga",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Pero Negro",
+      "slug": "pero-negro",
+      "file": "/maps/stations/pero-negro.png",
+      "pageUrl": "https://www.verystays.com/stations/pero-negro",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Praia do Ribatejo",
+      "slug": "praia-do-ribatejo",
+      "file": "/maps/stations/praia-do-ribatejo.png",
+      "pageUrl": "https://www.verystays.com/stations/praia-do-ribatejo",
+      "basemap": "osm"
+    },
+    {
+      "name": "Ramalhal",
+      "slug": "ramalhal",
+      "file": "/maps/stations/ramalhal.png",
+      "pageUrl": "https://www.verystays.com/stations/ramalhal",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Rede",
+      "slug": "rede",
+      "file": "/maps/stations/rede.png",
+      "pageUrl": "https://www.verystays.com/stations/rede",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Reveles",
+      "slug": "reveles",
+      "file": "/maps/stations/reveles.png",
+      "pageUrl": "https://www.verystays.com/stations/reveles",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Riachos – Torres Novas – Golegã",
+      "slug": "riachos-torres-novas-golega",
+      "file": "/maps/stations/riachos-torres-novas-golega.png",
+      "pageUrl": "https://www.verystays.com/stations/riachos-torres-novas-golega",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Runa",
+      "slug": "runa",
+      "file": "/maps/stations/runa.png",
+      "pageUrl": "https://www.verystays.com/stations/runa",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Salir do Porto",
+      "slug": "salir-do-porto",
+      "file": "/maps/stations/salir-do-porto.png",
+      "pageUrl": "https://www.verystays.com/stations/salir-do-porto",
+      "basemap": "osm"
+    },
+    {
+      "name": "Sampaio - Oleiros",
+      "slug": "sampaio-oleiros",
+      "file": "/maps/stations/sampaio-oleiros.png",
+      "pageUrl": "https://www.verystays.com/stations/sampaio-oleiros",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Sanfins",
+      "slug": "sanfins",
+      "file": "/maps/stations/sanfins.png",
+      "pageUrl": "https://www.verystays.com/stations/sanfins",
+      "basemap": "osm"
+    },
+    {
+      "name": "Santa Cita",
+      "slug": "santa-cita",
+      "file": "/maps/stations/santa-cita.png",
+      "pageUrl": "https://www.verystays.com/stations/santa-cita",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Santa Margarida",
+      "slug": "santa-margarida",
+      "file": "/maps/stations/santa-margarida.png",
+      "pageUrl": "https://www.verystays.com/stations/santa-margarida",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Santana - Cartaxo",
+      "slug": "santana-cartaxo",
+      "file": "/maps/stations/santana-cartaxo.png",
+      "pageUrl": "https://www.verystays.com/stations/santana-cartaxo",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Santiago de Riba – Ul",
+      "slug": "santiago-de-riba-ul",
+      "file": "/maps/stations/santiago-de-riba-ul.png",
+      "pageUrl": "https://www.verystays.com/stations/santiago-de-riba-ul",
+      "basemap": "osm"
+    },
+    {
+      "name": "São João Loure",
+      "slug": "sao-joao-loure",
+      "file": "/maps/stations/sao-joao-loure.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-joao-loure",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Sao Martinho do Campo",
+      "slug": "sao-martinho-do-campo",
+      "file": "/maps/stations/sao-martinho-do-campo.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-martinho-do-campo",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "São Martinho do Porto",
+      "slug": "sao-martinho-do-porto",
+      "file": "/maps/stations/sao-martinho-do-porto.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-martinho-do-porto",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Sapataria",
+      "slug": "sapataria",
+      "file": "/maps/stations/sapataria.png",
+      "pageUrl": "https://www.verystays.com/stations/sapataria",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Seiça – Ourém",
+      "slug": "seica-ourem",
+      "file": "/maps/stations/seica-ourem.png",
+      "pageUrl": "https://www.verystays.com/stations/seica-ourem",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Setil",
+      "slug": "setil",
+      "file": "/maps/stations/setil.png",
+      "pageUrl": "https://www.verystays.com/stations/setil",
+      "basemap": "osm"
+    },
+    {
+      "name": "Silvalde – Vouga",
+      "slug": "silvalde-vouga",
+      "file": "/maps/stations/silvalde-vouga.png",
+      "pageUrl": "https://www.verystays.com/stations/silvalde-vouga",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Simoes",
+      "slug": "simoes",
+      "file": "/maps/stations/simoes.png",
+      "pageUrl": "https://www.verystays.com/stations/simoes",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Soudos - Vila Nova",
+      "slug": "soudos-vila-nova",
+      "file": "/maps/stations/soudos-vila-nova.png",
+      "pageUrl": "https://www.verystays.com/stations/soudos-vila-nova",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Taipa - Requeixo",
+      "slug": "taipa-requeixo",
+      "file": "/maps/stations/taipa-requeixo.png",
+      "pageUrl": "https://www.verystays.com/stations/taipa-requeixo",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Tancos",
+      "slug": "tancos",
+      "file": "/maps/stations/tancos.png",
+      "pageUrl": "https://www.verystays.com/stations/tancos",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Terronhas",
+      "slug": "terronhas",
+      "file": "/maps/stations/terronhas.png",
+      "pageUrl": "https://www.verystays.com/stations/terronhas",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Tramagal",
+      "slug": "tramagal",
+      "file": "/maps/stations/tramagal.png",
+      "pageUrl": "https://www.verystays.com/stations/tramagal",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Trancoso",
+      "slug": "trancoso",
+      "file": "/maps/stations/trancoso.png",
+      "pageUrl": "https://www.verystays.com/stations/trancoso",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Travasso",
+      "slug": "travasso",
+      "file": "/maps/stations/travasso.png",
+      "pageUrl": "https://www.verystays.com/stations/travasso",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Valado – Nazaré – Alcobaça",
+      "slug": "valado-nazare-alcobaca",
+      "file": "/maps/stations/valado-nazare-alcobaca.png",
+      "pageUrl": "https://www.verystays.com/stations/valado-nazare-alcobaca",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Vale de Figueira",
+      "slug": "vale-de-figueira",
+      "file": "/maps/stations/vale-de-figueira.png",
+      "pageUrl": "https://www.verystays.com/stations/vale-de-figueira",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Vale de Santarem",
+      "slug": "vale-de-santarem",
+      "file": "/maps/stations/vale-de-santarem.png",
+      "pageUrl": "https://www.verystays.com/stations/vale-de-santarem",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Vermoil",
+      "slug": "vermoil",
+      "file": "/maps/stations/vermoil.png",
+      "pageUrl": "https://www.verystays.com/stations/vermoil",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Verride",
+      "slug": "verride",
+      "file": "/maps/stations/verride.png",
+      "pageUrl": "https://www.verystays.com/stations/verride",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Vila Franca de Xira",
+      "slug": "vila-franca-de-xira",
+      "file": "/maps/stations/vila-franca-de-xira.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-franca-de-xira",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Vila Nova da Rainha",
+      "slug": "vila-nova-da-rainha",
+      "file": "/maps/stations/vila-nova-da-rainha.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-nova-da-rainha",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Vila Nova de Ancos",
+      "slug": "vila-nova-de-ancos",
+      "file": "/maps/stations/vila-nova-de-ancos.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-nova-de-ancos",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Zibreira",
+      "slug": "zibreira",
+      "file": "/maps/stations/zibreira.png",
+      "pageUrl": "https://www.verystays.com/stations/zibreira",
+      "basemap": "osm"
+    },
+    {
+      "name": "Agualva - Cacém",
+      "slug": "agualva-cacem",
+      "file": "/maps/stations/agualva-cacem.png",
+      "pageUrl": "https://www.verystays.com/stations/agualva-cacem",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Alcantara - Mar",
+      "slug": "alcantara-mar",
+      "file": "/maps/stations/alcantara-mar.png",
+      "pageUrl": "https://www.verystays.com/stations/alcantara-mar",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Alcantara - Terra",
+      "slug": "alcantara-terra",
+      "file": "/maps/stations/alcantara-terra.png",
+      "pageUrl": "https://www.verystays.com/stations/alcantara-terra",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Algés",
+      "slug": "alges",
+      "file": "/maps/stations/alges.png",
+      "pageUrl": "https://www.verystays.com/stations/alges",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Algueirão - Mem Martins",
+      "slug": "algueirao-mem-martins",
+      "file": "/maps/stations/algueirao-mem-martins.png",
+      "pageUrl": "https://www.verystays.com/stations/algueirao-mem-martins",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Alhandra",
+      "slug": "alhandra",
+      "file": "/maps/stations/alhandra.png",
+      "pageUrl": "https://www.verystays.com/stations/alhandra",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Alhos Vedros",
+      "slug": "alhos-vedros",
+      "file": "/maps/stations/alhos-vedros.png",
+      "pageUrl": "https://www.verystays.com/stations/alhos-vedros",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Alverca",
+      "slug": "alverca",
+      "file": "/maps/stations/alverca.png",
+      "pageUrl": "https://www.verystays.com/stations/alverca",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Amadora",
+      "slug": "amadora",
+      "file": "/maps/stations/amadora.png",
+      "pageUrl": "https://www.verystays.com/stations/amadora",
+      "basemap": "osm"
+    },
+    {
+      "name": "Azambuja",
+      "slug": "azambuja",
+      "file": "/maps/stations/azambuja.png",
+      "pageUrl": "https://www.verystays.com/stations/azambuja",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Baixa da Banheira",
+      "slug": "baixa-da-banheira",
+      "file": "/maps/stations/baixa-da-banheira.png",
+      "pageUrl": "https://www.verystays.com/stations/baixa-da-banheira",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Barreiro-A",
+      "slug": "barreiro-a",
+      "file": "/maps/stations/barreiro-a.png",
+      "pageUrl": "https://www.verystays.com/stations/barreiro-a",
+      "basemap": "osm"
+    },
+    {
+      "name": "Belém",
+      "slug": "belem",
+      "file": "/maps/stations/belem.png",
+      "pageUrl": "https://www.verystays.com/stations/belem",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Benfica",
+      "slug": "benfica",
+      "file": "/maps/stations/benfica.png",
+      "pageUrl": "https://www.verystays.com/stations/benfica",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Bobadela",
+      "slug": "bobadela",
+      "file": "/maps/stations/bobadela.png",
+      "pageUrl": "https://www.verystays.com/stations/bobadela",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Braco de Prata",
+      "slug": "braco-de-prata",
+      "file": "/maps/stations/braco-de-prata.png",
+      "pageUrl": "https://www.verystays.com/stations/braco-de-prata",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Campolide",
+      "slug": "campolide",
+      "file": "/maps/stations/campolide.png",
+      "pageUrl": "https://www.verystays.com/stations/campolide",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Carcavelos",
+      "slug": "carcavelos",
+      "file": "/maps/stations/carcavelos.png",
+      "pageUrl": "https://www.verystays.com/stations/carcavelos",
+      "basemap": "osm"
+    },
+    {
+      "name": "Carregado",
+      "slug": "carregado",
+      "file": "/maps/stations/carregado.png",
+      "pageUrl": "https://www.verystays.com/stations/carregado",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Castanheira do Ribatejo",
+      "slug": "castanheira-do-ribatejo",
+      "file": "/maps/stations/castanheira-do-ribatejo.png",
+      "pageUrl": "https://www.verystays.com/stations/castanheira-do-ribatejo",
+      "basemap": "osm"
+    },
+    {
+      "name": "Caxias",
+      "slug": "caxias",
+      "file": "/maps/stations/caxias.png",
+      "pageUrl": "https://www.verystays.com/stations/caxias",
+      "basemap": "osm"
+    },
+    {
+      "name": "Cruz Quebrada",
+      "slug": "cruz-quebrada",
+      "file": "/maps/stations/cruz-quebrada.png",
+      "pageUrl": "https://www.verystays.com/stations/cruz-quebrada",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Entrecampos",
+      "slug": "entrecampos",
+      "file": "/maps/stations/entrecampos.png",
+      "pageUrl": "https://www.verystays.com/stations/entrecampos",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Espadanal da Azambuja",
+      "slug": "espadanal-da-azambuja",
+      "file": "/maps/stations/espadanal-da-azambuja.png",
+      "pageUrl": "https://www.verystays.com/stations/espadanal-da-azambuja",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Estoril",
+      "slug": "estoril",
+      "file": "/maps/stations/estoril.png",
+      "pageUrl": "https://www.verystays.com/stations/estoril",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Lavradio",
+      "slug": "lavradio",
+      "file": "/maps/stations/lavradio.png",
+      "pageUrl": "https://www.verystays.com/stations/lavradio",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Marvila",
+      "slug": "marvila",
+      "file": "/maps/stations/marvila.png",
+      "pageUrl": "https://www.verystays.com/stations/marvila",
+      "basemap": "osm"
+    },
+    {
+      "name": "Massama - Barcarena",
+      "slug": "massama-barcarena",
+      "file": "/maps/stations/massama-barcarena.png",
+      "pageUrl": "https://www.verystays.com/stations/massama-barcarena",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Merces",
+      "slug": "merces",
+      "file": "/maps/stations/merces.png",
+      "pageUrl": "https://www.verystays.com/stations/merces",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Moita",
+      "slug": "moita",
+      "file": "/maps/stations/moita.png",
+      "pageUrl": "https://www.verystays.com/stations/moita",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Monte Abraão",
+      "slug": "monte-abraao",
+      "file": "/maps/stations/monte-abraao.png",
+      "pageUrl": "https://www.verystays.com/stations/monte-abraao",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Monte Estoril",
+      "slug": "monte-estoril",
+      "file": "/maps/stations/monte-estoril.png",
+      "pageUrl": "https://www.verystays.com/stations/monte-estoril",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Moscavide",
+      "slug": "moscavide",
+      "file": "/maps/stations/moscavide.png",
+      "pageUrl": "https://www.verystays.com/stations/moscavide",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Oeiras",
+      "slug": "oeiras",
+      "file": "/maps/stations/oeiras.png",
+      "pageUrl": "https://www.verystays.com/stations/oeiras",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Paço de Arcos",
+      "slug": "paco-de-arcos",
+      "file": "/maps/stations/paco-de-arcos.png",
+      "pageUrl": "https://www.verystays.com/stations/paco-de-arcos",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Palmela",
+      "slug": "palmela",
+      "file": "/maps/stations/palmela.png",
+      "pageUrl": "https://www.verystays.com/stations/palmela",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Parede",
+      "slug": "parede",
+      "file": "/maps/stations/parede.png",
+      "pageUrl": "https://www.verystays.com/stations/parede",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Penteado",
+      "slug": "penteado",
+      "file": "/maps/stations/penteado.png",
+      "pageUrl": "https://www.verystays.com/stations/penteado",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Portela de Sintra",
+      "slug": "portela-de-sintra",
+      "file": "/maps/stations/portela-de-sintra.png",
+      "pageUrl": "https://www.verystays.com/stations/portela-de-sintra",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Povoa",
+      "slug": "povoa",
+      "file": "/maps/stations/povoa.png",
+      "pageUrl": "https://www.verystays.com/stations/povoa",
+      "basemap": "osm"
+    },
+    {
+      "name": "Praça do Quebedo",
+      "slug": "praca-do-quebedo",
+      "file": "/maps/stations/praca-do-quebedo.png",
+      "pageUrl": "https://www.verystays.com/stations/praca-do-quebedo",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Queluz - Belas",
+      "slug": "queluz-belas",
+      "file": "/maps/stations/queluz-belas.png",
+      "pageUrl": "https://www.verystays.com/stations/queluz-belas",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Reboleira",
+      "slug": "reboleira",
+      "file": "/maps/stations/reboleira.png",
+      "pageUrl": "https://www.verystays.com/stations/reboleira",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Reguengo - Vale da Pedra - Pontevel",
+      "slug": "reguengo-vale-da-pedra-pontevel",
+      "file": "/maps/stations/reguengo-vale-da-pedra-pontevel.png",
+      "pageUrl": "https://www.verystays.com/stations/reguengo-vale-da-pedra-pontevel",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Rio de Mouro",
+      "slug": "rio-de-mouro",
+      "file": "/maps/stations/rio-de-mouro.png",
+      "pageUrl": "https://www.verystays.com/stations/rio-de-mouro",
+      "basemap": "osm"
+    },
+    {
+      "name": "Roma - Areeiro",
+      "slug": "roma-areeiro",
+      "file": "/maps/stations/roma-areeiro.png",
+      "pageUrl": "https://www.verystays.com/stations/roma-areeiro",
+      "basemap": "osm"
+    },
+    {
+      "name": "Sacavem",
+      "slug": "sacavem",
+      "file": "/maps/stations/sacavem.png",
+      "pageUrl": "https://www.verystays.com/stations/sacavem",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Santa Cruz - Damaia",
+      "slug": "santa-cruz-damaia",
+      "file": "/maps/stations/santa-cruz-damaia.png",
+      "pageUrl": "https://www.verystays.com/stations/santa-cruz-damaia",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Santa Iria",
+      "slug": "santa-iria",
+      "file": "/maps/stations/santa-iria.png",
+      "pageUrl": "https://www.verystays.com/stations/santa-iria",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Santo Amaro",
+      "slug": "santo-amaro",
+      "file": "/maps/stations/santo-amaro.png",
+      "pageUrl": "https://www.verystays.com/stations/santo-amaro",
+      "basemap": "osm"
+    },
+    {
+      "name": "Santos",
+      "slug": "santos",
+      "file": "/maps/stations/santos.png",
+      "pageUrl": "https://www.verystays.com/stations/santos",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Sete Rios",
+      "slug": "sete-rios",
+      "file": "/maps/stations/sete-rios.png",
+      "pageUrl": "https://www.verystays.com/stations/sete-rios",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Virtudes",
+      "slug": "virtudes",
+      "file": "/maps/stations/virtudes.png",
+      "pageUrl": "https://www.verystays.com/stations/virtudes",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Mafra",
+      "slug": "mafra",
+      "file": "/maps/stations/mafra.png",
+      "pageUrl": "https://www.verystays.com/stations/mafra",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Pragal",
+      "slug": "pragal",
+      "file": "/maps/stations/pragal.png",
+      "pageUrl": "https://www.verystays.com/stations/pragal",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Pinhal Novo",
+      "slug": "pinhal-novo",
+      "file": "/maps/stations/pinhal-novo.png",
+      "pageUrl": "https://www.verystays.com/stations/pinhal-novo",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Barreiro",
+      "slug": "barreiro",
+      "file": "/maps/stations/barreiro.png",
+      "pageUrl": "https://www.verystays.com/stations/barreiro",
+      "basemap": "osm"
+    },
+    {
+      "name": "Torres Vedras",
+      "slug": "torres-vedras",
+      "file": "/maps/stations/torres-vedras.png",
+      "pageUrl": "https://www.verystays.com/stations/torres-vedras",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Mira Sintra-Meleças",
+      "slug": "mira-sintra-melecas",
+      "file": "/maps/stations/mira-sintra-melecas.png",
+      "pageUrl": "https://www.verystays.com/stations/mira-sintra-melecas",
+      "basemap": "osm"
+    },
+    {
+      "name": "Abrantes",
+      "slug": "abrantes",
+      "file": "/maps/stations/abrantes.png",
+      "pageUrl": "https://www.verystays.com/stations/abrantes",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Portalegre",
+      "slug": "portalegre",
+      "file": "/maps/stations/portalegre.png",
+      "pageUrl": "https://www.verystays.com/stations/portalegre",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Elvas",
+      "slug": "elvas",
+      "file": "/maps/stations/elvas.png",
+      "pageUrl": "https://www.verystays.com/stations/elvas",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Vendas Novas",
+      "slug": "vendas-novas",
+      "file": "/maps/stations/vendas-novas.png",
+      "pageUrl": "https://www.verystays.com/stations/vendas-novas",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Olhão",
+      "slug": "olhao",
+      "file": "/maps/stations/olhao.png",
+      "pageUrl": "https://www.verystays.com/stations/olhao",
+      "basemap": "osm"
+    },
+    {
+      "name": "Loulé",
+      "slug": "loule",
+      "file": "/maps/stations/loule.png",
+      "pageUrl": "https://www.verystays.com/stations/loule",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Silves",
+      "slug": "silves",
+      "file": "/maps/stations/silves.png",
+      "pageUrl": "https://www.verystays.com/stations/silves",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Lisbon Airport (LIS)",
+      "slug": "lisbon-airport-lis",
+      "file": "/maps/stations/lisbon-airport-lis.png",
+      "pageUrl": "https://www.verystays.com/stations/lisbon-airport-lis",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Porto Airport (OPO)",
+      "slug": "porto-airport-opo",
+      "file": "/maps/stations/porto-airport-opo.png",
+      "pageUrl": "https://www.verystays.com/stations/porto-airport-opo",
+      "basemap": "osm"
+    },
+    {
+      "name": "Faro Airport (FAO)",
+      "slug": "faro-airport-fao",
+      "file": "/maps/stations/faro-airport-fao.png",
+      "pageUrl": "https://www.verystays.com/stations/faro-airport-fao",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Vigo-Guixar",
+      "slug": "vigo-guixar",
+      "file": "/maps/stations/vigo-guixar.png",
+      "pageUrl": "https://www.verystays.com/stations/vigo-guixar",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Vigo-Urzáiz",
+      "slug": "vigo-urzaiz",
+      "file": "/maps/stations/vigo-urzaiz.png",
+      "pageUrl": "https://www.verystays.com/stations/vigo-urzaiz",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Redondela",
+      "slug": "redondela",
+      "file": "/maps/stations/redondela.png",
+      "pageUrl": "https://www.verystays.com/stations/redondela",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Pontevedra",
+      "slug": "pontevedra",
+      "file": "/maps/stations/pontevedra.png",
+      "pageUrl": "https://www.verystays.com/stations/pontevedra",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Vilagarcía de Arousa",
+      "slug": "vilagarcia-de-arousa",
+      "file": "/maps/stations/vilagarcia-de-arousa.png",
+      "pageUrl": "https://www.verystays.com/stations/vilagarcia-de-arousa",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Padrón",
+      "slug": "padron",
+      "file": "/maps/stations/padron.png",
+      "pageUrl": "https://www.verystays.com/stations/padron",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Santiago de Compostela",
+      "slug": "santiago-de-compostela",
+      "file": "/maps/stations/santiago-de-compostela.png",
+      "pageUrl": "https://www.verystays.com/stations/santiago-de-compostela",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "A Coruña",
+      "slug": "a-coruna",
+      "file": "/maps/stations/a-coruna.png",
+      "pageUrl": "https://www.verystays.com/stations/a-coruna",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "O Porriño",
+      "slug": "o-porrino",
+      "file": "/maps/stations/o-porrino.png",
+      "pageUrl": "https://www.verystays.com/stations/o-porrino",
+      "basemap": "osm"
+    },
+    {
+      "name": "Tui",
+      "slug": "tui",
+      "file": "/maps/stations/tui.png",
+      "pageUrl": "https://www.verystays.com/stations/tui",
+      "basemap": "osm"
+    },
+    {
+      "name": "Ourense",
+      "slug": "ourense",
+      "file": "/maps/stations/ourense.png",
+      "pageUrl": "https://www.verystays.com/stations/ourense",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Madrid-Chamartín",
+      "slug": "madrid-chamartin",
+      "file": "/maps/stations/madrid-chamartin.png",
+      "pageUrl": "https://www.verystays.com/stations/madrid-chamartin",
+      "basemap": "osm"
+    },
+    {
+      "name": "Barcelona-Sants",
+      "slug": "barcelona-sants",
+      "file": "/maps/stations/barcelona-sants.png",
+      "pageUrl": "https://www.verystays.com/stations/barcelona-sants",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Madrid-Barajas Airport (MAD)",
+      "slug": "madrid-barajas-airport-mad",
+      "file": "/maps/stations/madrid-barajas-airport-mad.png",
+      "pageUrl": "https://www.verystays.com/stations/madrid-barajas-airport-mad",
+      "basemap": "osm"
+    },
+    {
+      "name": "Barcelona-El Prat Airport (BCN)",
+      "slug": "barcelona-el-prat-airport-bcn",
+      "file": "/maps/stations/barcelona-el-prat-airport-bcn.png",
+      "pageUrl": "https://www.verystays.com/stations/barcelona-el-prat-airport-bcn",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Málaga-Costa del Sol Airport (AGP)",
+      "slug": "malaga-costa-del-sol-airport-agp",
+      "file": "/maps/stations/malaga-costa-del-sol-airport-agp.png",
+      "pageUrl": "https://www.verystays.com/stations/malaga-costa-del-sol-airport-agp",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Alicante-Elche Airport (ALC)",
+      "slug": "alicante-elche-airport-alc",
+      "file": "/maps/stations/alicante-elche-airport-alc.png",
+      "pageUrl": "https://www.verystays.com/stations/alicante-elche-airport-alc",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Valencia Airport (VLC)",
+      "slug": "valencia-airport-vlc",
+      "file": "/maps/stations/valencia-airport-vlc.png",
+      "pageUrl": "https://www.verystays.com/stations/valencia-airport-vlc",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Seville Airport (SVQ)",
+      "slug": "seville-airport-svq",
+      "file": "/maps/stations/seville-airport-svq.png",
+      "pageUrl": "https://www.verystays.com/stations/seville-airport-svq",
+      "basemap": "osm"
+    },
+    {
+      "name": "Bilbao Airport (BIO)",
+      "slug": "bilbao-airport-bio",
+      "file": "/maps/stations/bilbao-airport-bio.png",
+      "pageUrl": "https://www.verystays.com/stations/bilbao-airport-bio",
+      "basemap": "osm"
+    },
+    {
+      "name": "Santiago Airport (SCQ)",
+      "slug": "santiago-airport-scq",
+      "file": "/maps/stations/santiago-airport-scq.png",
+      "pageUrl": "https://www.verystays.com/stations/santiago-airport-scq",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Asturias Airport (OVD)",
+      "slug": "asturias-airport-ovd",
+      "file": "/maps/stations/asturias-airport-ovd.png",
+      "pageUrl": "https://www.verystays.com/stations/asturias-airport-ovd",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Vigo Airport (VGO)",
+      "slug": "vigo-airport-vgo",
+      "file": "/maps/stations/vigo-airport-vgo.png",
+      "pageUrl": "https://www.verystays.com/stations/vigo-airport-vgo",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "A Coruña Airport (LCG)",
+      "slug": "a-coruna-airport-lcg",
+      "file": "/maps/stations/a-coruna-airport-lcg.png",
+      "pageUrl": "https://www.verystays.com/stations/a-coruna-airport-lcg",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Santander Airport (SDR)",
+      "slug": "santander-airport-sdr",
+      "file": "/maps/stations/santander-airport-sdr.png",
+      "pageUrl": "https://www.verystays.com/stations/santander-airport-sdr",
+      "basemap": "osm"
+    },
+    {
+      "name": "San Sebastián Airport (EAS)",
+      "slug": "san-sebastian-airport-eas",
+      "file": "/maps/stations/san-sebastian-airport-eas.png",
+      "pageUrl": "https://www.verystays.com/stations/san-sebastian-airport-eas",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Pamplona Airport (PNA)",
+      "slug": "pamplona-airport-pna",
+      "file": "/maps/stations/pamplona-airport-pna.png",
+      "pageUrl": "https://www.verystays.com/stations/pamplona-airport-pna",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Zaragoza Airport (ZAZ)",
+      "slug": "zaragoza-airport-zaz",
+      "file": "/maps/stations/zaragoza-airport-zaz.png",
+      "pageUrl": "https://www.verystays.com/stations/zaragoza-airport-zaz",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Valladolid Airport (VLL)",
+      "slug": "valladolid-airport-vll",
+      "file": "/maps/stations/valladolid-airport-vll.png",
+      "pageUrl": "https://www.verystays.com/stations/valladolid-airport-vll",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Burgos Airport (RGS)",
+      "slug": "burgos-airport-rgs",
+      "file": "/maps/stations/burgos-airport-rgs.png",
+      "pageUrl": "https://www.verystays.com/stations/burgos-airport-rgs",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "León Airport (LEN)",
+      "slug": "leon-airport-len",
+      "file": "/maps/stations/leon-airport-len.png",
+      "pageUrl": "https://www.verystays.com/stations/leon-airport-len",
+      "basemap": "osm"
+    },
+    {
+      "name": "Salamanca Airport (SLM)",
+      "slug": "salamanca-airport-slm",
+      "file": "/maps/stations/salamanca-airport-slm.png",
+      "pageUrl": "https://www.verystays.com/stations/salamanca-airport-slm",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Vitoria Airport (VIT)",
+      "slug": "vitoria-airport-vit",
+      "file": "/maps/stations/vitoria-airport-vit.png",
+      "pageUrl": "https://www.verystays.com/stations/vitoria-airport-vit",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Logroño-Agoncillo Airport (RJL)",
+      "slug": "logrono-agoncillo-airport-rjl",
+      "file": "/maps/stations/logrono-agoncillo-airport-rjl.png",
+      "pageUrl": "https://www.verystays.com/stations/logrono-agoncillo-airport-rjl",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Badajoz Airport (BJZ)",
+      "slug": "badajoz-airport-bjz",
+      "file": "/maps/stations/badajoz-airport-bjz.png",
+      "pageUrl": "https://www.verystays.com/stations/badajoz-airport-bjz",
+      "basemap": "osm"
+    },
+    {
+      "name": "Almería Airport (LEI)",
+      "slug": "almeria-airport-lei",
+      "file": "/maps/stations/almeria-airport-lei.png",
+      "pageUrl": "https://www.verystays.com/stations/almeria-airport-lei",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Granada-Jaén Airport (GRX)",
+      "slug": "granada-jaen-airport-grx",
+      "file": "/maps/stations/granada-jaen-airport-grx.png",
+      "pageUrl": "https://www.verystays.com/stations/granada-jaen-airport-grx",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Jerez Airport (XRY)",
+      "slug": "jerez-airport-xry",
+      "file": "/maps/stations/jerez-airport-xry.png",
+      "pageUrl": "https://www.verystays.com/stations/jerez-airport-xry",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Reus Airport (REU)",
+      "slug": "reus-airport-reu",
+      "file": "/maps/stations/reus-airport-reu.png",
+      "pageUrl": "https://www.verystays.com/stations/reus-airport-reu",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Girona-Costa Brava Airport (GRO)",
+      "slug": "girona-costa-brava-airport-gro",
+      "file": "/maps/stations/girona-costa-brava-airport-gro.png",
+      "pageUrl": "https://www.verystays.com/stations/girona-costa-brava-airport-gro",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Huesca-Pirineos Airport (HSK)",
+      "slug": "huesca-pirineos-airport-hsk",
+      "file": "/maps/stations/huesca-pirineos-airport-hsk.png",
+      "pageUrl": "https://www.verystays.com/stations/huesca-pirineos-airport-hsk",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Lleida-Alguaire Airport (ILD)",
+      "slug": "lleida-alguaire-airport-ild",
+      "file": "/maps/stations/lleida-alguaire-airport-ild.png",
+      "pageUrl": "https://www.verystays.com/stations/lleida-alguaire-airport-ild",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Castellón Airport (CDT)",
+      "slug": "castellon-airport-cdt",
+      "file": "/maps/stations/castellon-airport-cdt.png",
+      "pageUrl": "https://www.verystays.com/stations/castellon-airport-cdt",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Córdoba Airport (ODB)",
+      "slug": "cordoba-airport-odb",
+      "file": "/maps/stations/cordoba-airport-odb.png",
+      "pageUrl": "https://www.verystays.com/stations/cordoba-airport-odb",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Murcia International Airport (RMU)",
+      "slug": "murcia-international-airport-rmu",
+      "file": "/maps/stations/murcia-international-airport-rmu.png",
+      "pageUrl": "https://www.verystays.com/stations/murcia-international-airport-rmu",
+      "basemap": "osm"
+    },
+    {
+      "name": "Albacete Airport (ABC)",
+      "slug": "albacete-airport-abc",
+      "file": "/maps/stations/albacete-airport-abc.png",
+      "pageUrl": "https://www.verystays.com/stations/albacete-airport-abc",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Teruel Airport (TEV)",
+      "slug": "teruel-airport-tev",
+      "file": "/maps/stations/teruel-airport-tev.png",
+      "pageUrl": "https://www.verystays.com/stations/teruel-airport-tev",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Ciudad Real Airport (CQM)",
+      "slug": "ciudad-real-airport-cqm",
+      "file": "/maps/stations/ciudad-real-airport-cqm.png",
+      "pageUrl": "https://www.verystays.com/stations/ciudad-real-airport-cqm",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Estádio do Dragão",
+      "slug": "estadio-do-dragao",
+      "file": "/maps/stations/estadio-do-dragao.png",
+      "pageUrl": "https://www.verystays.com/stations/estadio-do-dragao",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Senhor de Matosinhos",
+      "slug": "senhor-de-matosinhos",
+      "file": "/maps/stations/senhor-de-matosinhos.png",
+      "pageUrl": "https://www.verystays.com/stations/senhor-de-matosinhos",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Póvoa de Varzim",
+      "slug": "povoa-de-varzim",
+      "file": "/maps/stations/povoa-de-varzim.png",
+      "pageUrl": "https://www.verystays.com/stations/povoa-de-varzim",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "Campanhã (Metro)",
+      "slug": "campanha-metro",
+      "file": "/maps/stations/campanha-metro.png",
+      "pageUrl": "https://www.verystays.com/stations/campanha-metro",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "ISMAI",
+      "slug": "ismai",
+      "file": "/maps/stations/ismai.png",
+      "pageUrl": "https://www.verystays.com/stations/ismai",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Hospital São João (Metro)",
+      "slug": "hospital-sao-joao-metro",
+      "file": "/maps/stations/hospital-sao-joao-metro.png",
+      "pageUrl": "https://www.verystays.com/stations/hospital-sao-joao-metro",
+      "basemap": "osm"
+    },
+    {
+      "name": "Vila d'Este",
+      "slug": "vila-d-este",
+      "file": "/maps/stations/vila-d-este.png",
+      "pageUrl": "https://www.verystays.com/stations/vila-d-este",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Trindade (Metro)",
+      "slug": "trindade-metro",
+      "file": "/maps/stations/trindade-metro.png",
+      "pageUrl": "https://www.verystays.com/stations/trindade-metro",
+      "basemap": "carto-voyager"
+    },
+    {
+      "name": "Estação Aeroporto",
+      "slug": "estacao-aeroporto",
+      "file": "/maps/stations/estacao-aeroporto.png",
+      "pageUrl": "https://www.verystays.com/stations/estacao-aeroporto",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Fânzeres",
+      "slug": "fanzeres",
+      "file": "/maps/stations/fanzeres.png",
+      "pageUrl": "https://www.verystays.com/stations/fanzeres",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Senhora da Hora",
+      "slug": "senhora-da-hora",
+      "file": "/maps/stations/senhora-da-hora.png",
+      "pageUrl": "https://www.verystays.com/stations/senhora-da-hora",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Santa Apolónia (Metro)",
+      "slug": "santa-apolonia-metro",
+      "file": "/maps/stations/santa-apolonia-metro.png",
+      "pageUrl": "https://www.verystays.com/stations/santa-apolonia-metro",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Amadora Este",
+      "slug": "amadora-este",
+      "file": "/maps/stations/amadora-este.png",
+      "pageUrl": "https://www.verystays.com/stations/amadora-este",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Rato",
+      "slug": "rato",
+      "file": "/maps/stations/rato.png",
+      "pageUrl": "https://www.verystays.com/stations/rato",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Odivelas",
+      "slug": "odivelas",
+      "file": "/maps/stations/odivelas.png",
+      "pageUrl": "https://www.verystays.com/stations/odivelas",
+      "basemap": "carto-positron"
+    },
+    {
+      "name": "Cais do Sodré (Metro)",
+      "slug": "cais-do-sodre-metro",
+      "file": "/maps/stations/cais-do-sodre-metro.png",
+      "pageUrl": "https://www.verystays.com/stations/cais-do-sodre-metro",
+      "basemap": "osm"
+    },
+    {
+      "name": "Telheiras",
+      "slug": "telheiras",
+      "file": "/maps/stations/telheiras.png",
+      "pageUrl": "https://www.verystays.com/stations/telheiras",
+      "basemap": "carto-dark"
+    },
+    {
+      "name": "São Sebastião (Metro)",
+      "slug": "sao-sebastiao-metro",
+      "file": "/maps/stations/sao-sebastiao-metro.png",
+      "pageUrl": "https://www.verystays.com/stations/sao-sebastiao-metro",
+      "basemap": "opentopomap"
+    },
+    {
+      "name": "Aeroporto (Metro Lisboa)",
+      "slug": "aeroporto-metro-lisboa",
+      "file": "/maps/stations/aeroporto-metro-lisboa.png",
+      "pageUrl": "https://www.verystays.com/stations/aeroporto-metro-lisboa",
+      "basemap": "carto-dark"
     }
   ]
 }

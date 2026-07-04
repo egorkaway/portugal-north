@@ -30,4 +30,14 @@ describe("mapBasemaps", () => {
   it("randomises when mode is random", () => {
     expect(BASEMAP_IDS).toContain(resolveBasemap("random").id);
   });
+
+  it("weights opentopomap twice as often in random mode", () => {
+    const counts = Object.fromEntries(BASEMAP_IDS.map((id) => [id, 0]));
+    for (let i = 0; i < 500; i++) {
+      counts[randomBasemap(Math.random).id] += 1;
+    }
+    expect(counts.opentopomap).toBeGreaterThan(counts.osm);
+    expect(counts.opentopomap).toBeGreaterThan(counts["carto-positron"]);
+    expect(counts.opentopomap).toBeGreaterThan(counts["carto-voyager"]);
+  });
 });
