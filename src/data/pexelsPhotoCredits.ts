@@ -981,6 +981,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@victor-silva-3715807",
     photoPageUrl: "https://www.pexels.com/photo/historical-building-with-blue-azulejos-tiles-in-portugal-29775298/",
   },
+  "29858703": {
+    photographer: "Bruno Kraler",
+    photographerUrl: "https://www.pexels.com/@brunorock",
+    photoPageUrl: "https://www.pexels.com/photo/high-speed-train-in-snowy-landscape-at-dusk-29858703/",
+  },
   "30068944": {
     photographer: "İrem Yılmaztürk",
     photographerUrl: "https://www.pexels.com/@i-rem-yilmazturk-1831111582",

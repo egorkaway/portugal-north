@@ -16,6 +16,34 @@
       }
     ]
   },
+  "Cabeda": {
+    "rejectedUrls": [
+      "https://images.pexels.com/photos/21031409/pexels-photo-21031409.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "https://images.pexels.com/photos/21033165/pexels-photo-21033165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    ],
+    "refreshes": [
+      {
+        "at": "2026-07-04T05:52:18.279Z",
+        "from": "https://images.pexels.com/photos/21031409/pexels-photo-21031409.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://images.pexels.com/photos/21033165/pexels-photo-21033165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 0
+        }
+      },
+      {
+        "at": "2026-07-04T06:00:00.000Z",
+        "from": "https://images.pexels.com/photos/21033165/pexels-photo-21033165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Viaduto_de_Cabeda_DSC0167w.jpg/960px-Viaduto_de_Cabeda_DSC0167w.jpg",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 0
+        }
+      }
+    ]
+  },
   "Francelos": {
     "rejectedUrls": [
       "https://images.pexels.com/photos/17157805/pexels-photo-17157805.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
@@ -33,9 +61,28 @@
       }
     ]
   },
+  "Faro Airport (FAO)": {
+    "rejectedUrls": [
+      "https://images.pexels.com/photos/29743111/pexels-photo-29743111.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    ],
+    "refreshes": [
+      {
+        "at": "2026-07-04T06:10:00.000Z",
+        "from": "https://images.pexels.com/photos/29743111/pexels-photo-29743111.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/FAO_FARO_AIRPORT_PORTUGAL_FROM_FLIGHT_CDG-RAK_EASYJET_G-EFZI_A319_%2814778925195%29.jpg/960px-FAO_FARO_AIRPORT_PORTUGAL_FROM_FLIGHT_CDG-RAK_EASYJET_G-EFZI_A319_%2814778925195%29.jpg",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 0
+        }
+      }
+    ]
+  },
   "Madalena": {
     "rejectedUrls": [
-      "https://images.pexels.com/photos/21033165/pexels-photo-21033165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+      "https://images.pexels.com/photos/21033165/pexels-photo-21033165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "https://images.pexels.com/photos/18187514/pexels-photo-18187514.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "https://images.pexels.com/photos/26977308/pexels-photo-26977308.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
     ],
     "refreshes": [
       {
@@ -46,6 +93,43 @@
         "votesAtRefresh": {
           "up": 0,
           "down": 2
+        }
+      },
+      {
+        "at": "2026-07-04T05:52:15.273Z",
+        "from": "https://images.pexels.com/photos/18187514/pexels-photo-18187514.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://images.pexels.com/photos/26977308/pexels-photo-26977308.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 1
+        }
+      },
+      {
+        "at": "2026-07-04T06:00:00.000Z",
+        "from": "https://images.pexels.com/photos/26977308/pexels-photo-26977308.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Apeadeiro_de_Madalena.jpg/960px-Apeadeiro_de_Madalena.jpg",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 1
+        }
+      }
+    ]
+  },
+  "Mosteirô": {
+    "rejectedUrls": [
+      "https://images.pexels.com/photos/20218092/pexels-photo-20218092.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    ],
+    "refreshes": [
+      {
+        "at": "2026-07-04T06:10:00.000Z",
+        "from": "https://images.pexels.com/photos/20218092/pexels-photo-20218092.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Mosteir%C3%B3_Railway_Station.jpg/960px-Mosteir%C3%B3_Railway_Station.jpg",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 0
         }
       }
     ]
@@ -86,13 +170,35 @@
   },
   "Travagem": {
     "rejectedUrls": [
-      "https://images.pexels.com/photos/26977308/pexels-photo-26977308.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+      "https://images.pexels.com/photos/26977308/pexels-photo-26977308.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "https://images.pexels.com/photos/21033165/pexels-photo-21033165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "https://images.pexels.com/photos/29858703/pexels-photo-29858703.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
     ],
     "refreshes": [
       {
         "at": "2026-06-30T07:04:06.026Z",
         "from": "https://images.pexels.com/photos/26977308/pexels-photo-26977308.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
         "to": "https://images.pexels.com/photos/21033165/pexels-photo-21033165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 2
+        }
+      },
+      {
+        "at": "2026-07-04T05:52:17.443Z",
+        "from": "https://images.pexels.com/photos/21033165/pexels-photo-21033165.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://images.pexels.com/photos/29858703/pexels-photo-29858703.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 2
+        }
+      },
+      {
+        "at": "2026-07-04T06:00:00.000Z",
+        "from": "https://images.pexels.com/photos/29858703/pexels-photo-29858703.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/CP_592_%288710068870%29.jpg/960px-CP_592_%288710068870%29.jpg",
         "reason": "forced",
         "votesAtRefresh": {
           "up": 0,
