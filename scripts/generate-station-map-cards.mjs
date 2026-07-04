@@ -13,7 +13,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseAllStationsFromRepo } from "./lib/stationImageFetch.mjs";
 import { renderStationMapCard, stationToSlug } from "./lib/stationMapCard.mjs";
-import { isBasemapId } from "./lib/mapBasemaps.mjs";
+import { BASEMAP_IDS, isBasemapId } from "./lib/mapBasemaps.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "public/maps/stations");
@@ -40,7 +40,7 @@ const basemapMode = basemapArg
 
 if (basemapMode !== "random" && !isBasemapId(basemapMode)) {
   console.error(
-    `Unknown --basemap "${basemapMode}". Use random or one of: osm, carto-positron, carto-voyager, carto-dark, opentopomap`,
+    `Unknown --basemap "${basemapMode}". Use random or one of: ${BASEMAP_IDS.join(", ")}`,
   );
   process.exit(1);
 }

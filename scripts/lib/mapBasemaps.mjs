@@ -4,7 +4,15 @@ export const BASEMAP_IDS = [
   "osm",
   "carto-positron",
   "carto-voyager",
-  "carto-dark",
+  "opentopomap",
+];
+
+/** Weighted pool for random selection (opentopomap listed twice). */
+export const RANDOM_BASEMAP_POOL = [
+  "osm",
+  "carto-positron",
+  "carto-voyager",
+  "opentopomap",
   "opentopomap",
 ];
 
@@ -27,13 +35,6 @@ export const BASEMAPS = {
     label: "Carto Voyager",
     url: (z, x, y) =>
       `https://${subdomain(x, y)}.basemaps.cartocdn.com/rastertiles/voyager/${z}/${x}/${y}.png`,
-    attribution: "© OpenStreetMap contributors © CARTO",
-  },
-  "carto-dark": {
-    id: "carto-dark",
-    label: "Carto Dark Matter",
-    url: (z, x, y) =>
-      `https://${subdomain(x, y)}.basemaps.cartocdn.com/dark_all/${z}/${x}/${y}.png`,
     attribution: "© OpenStreetMap contributors © CARTO",
   },
   opentopomap: {
@@ -62,8 +63,8 @@ export function getBasemap(id) {
 
 /** Pick a basemap at random (new pick on every call). */
 export function randomBasemap(random = Math.random) {
-  const index = Math.floor(random() * BASEMAP_IDS.length);
-  return getBasemap(BASEMAP_IDS[index]);
+  const index = Math.floor(random() * RANDOM_BASEMAP_POOL.length);
+  return getBasemap(RANDOM_BASEMAP_POOL[index]);
 }
 
 /**
