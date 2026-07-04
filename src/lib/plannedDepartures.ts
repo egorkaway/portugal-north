@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { lisbonDateAndTime } from "@/lib/cpDeparturesParse";
+import { recordTakenTrip } from "@/lib/trainTripHistory";
 
 const LEGACY_STORAGE_KEY = "pn_planned_departures_v1";
 const ACTIVE_TRIP_STORAGE_KEY = "pn_active_trip_v2";
@@ -125,10 +126,13 @@ export function useActiveTrip(): PlannedDeparture | null {
 
 export function setActiveTrip(trip: PlannedDeparture): void {
   writeActiveTrip(trip);
+  recordTakenTrip(trip);
   emit();
 }
 
 export function clearActiveTrip(): void {
+  const current = readActiveTrip();
+  if (current) recordTakenTrip(current);
   writeActiveTrip(null);
   emit();
 }

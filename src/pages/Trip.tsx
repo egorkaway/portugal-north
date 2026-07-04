@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ArrowLeft, Clock, MapPin, TrainFront, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageHead } from "@/components/PageHead";
@@ -22,7 +23,7 @@ import { getTripPageMeta } from "@/lib/pageMeta";
 import { downstreamStopsFrom } from "@/lib/trainJourney";
 import { defaultHomePath } from "@/lib/homeRoute";
 import { getStationPath } from "@/lib/stationSlug";
-import { deleteTripHistoryRecord, useTripHistory } from "@/lib/trainTripHistory";
+import { deleteTripHistoryRecord, recordTakenTrip, useTripHistory } from "@/lib/trainTripHistory";
 import { allStations } from "@/data/stationRegistry";
 import type { TrainJourneyStop } from "@/lib/trainJourney";
 
@@ -88,6 +89,10 @@ const Trip = () => {
   const trip = useActiveTrip();
   const history = useTripHistory();
   const now = useNowMinute();
+
+  useEffect(() => {
+    if (trip) recordTakenTrip(trip);
+  }, [trip]);
   const { data: departures } = useStationDepartures(trip?.stationName ?? "", 10);
   const originCode = trip ? getCpStationCode(trip.stationName) : undefined;
   const { data: journey, isLoading, isError } = useTrainJourney(
@@ -183,8 +188,8 @@ const Trip = () => {
               </div>
             </div>
           ) : (
-            <div className="flex min-h-0 flex-1 flex-col gap-6">
-              <section className="shrink-0 rounded-lg border border-border bg-card p-5 md:p-6">
+            <div className="flex flex-col gap-6">
+              <section className="rounded-lg border border-border bg-card p-5 md:p-6">
                 <div className="flex items-start justify-between gap-4">
                   <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
                     {showDepartedWithoutStops ? t("trip.departed") : t("trip.departureCountdown")}
@@ -255,14 +260,11 @@ const Trip = () => {
               </section>
 
               {hasConfirmedUpcomingStops ? (
-                <section
-                  aria-labelledby="trip-stops-heading"
-                  className="flex min-h-0 flex-1 flex-col"
-                >
-                  <h2 id="trip-stops-heading" className="mb-3 shrink-0 font-display text-2xl text-foreground">
+                <section aria-labelledby="trip-stops-heading" className="flex flex-col">
+                  <h2 id="trip-stops-heading" className="mb-3 font-display text-2xl text-foreground">
                     {t("trip.upcomingStops")}
                   </h2>
-                  <ol className="min-h-0 flex-1 space-y-2 overflow-y-auto pr-1 sm:max-h-none">
+                  <ol className="space-y-2">
                     {downstreamStops.map((stop, index) => (
                       <TripStopRow
                         key={`${stop.stationCode}-${index}`}
@@ -278,7 +280,7 @@ const Trip = () => {
             </div>
           )}
 
-          <section className="mt-10">
+          <section className={trip ? "mt-6" : "mt-10"}>
             <h2 className="font-display text-xl text-foreground">{t("trip.historyTitle")}</h2>
             {history.length === 0 ? (
               <p className="mt-2 text-sm text-muted-foreground">{t("trip.historyEmpty")}</p>

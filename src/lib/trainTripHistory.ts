@@ -54,17 +54,26 @@ function getSnapshot(): CompletedTripRecord[] {
   return cache;
 }
 
-/** Persist a completed trip locally. Not surfaced in the UI yet. */
-export function recordCompletedTrip(
+/** Persist a taken or completed trip locally (most recent first). */
+export function recordTakenTrip(
   trip: PlannedDeparture,
-  finalStationName: string,
+  finalStationName: string = trip.destination,
 ): void {
   const records = readHistory();
-  const completedAt = new Date().toISOString();
+  const existing = records.find((record) => record.id === trip.id);
+  const completedAt = existing?.completedAt ?? new Date().toISOString();
   const next: CompletedTripRecord = { ...trip, completedAt, finalStationName };
   const withoutDuplicate = records.filter((record) => record.id !== trip.id);
   writeHistory([next, ...withoutDuplicate].slice(0, 100));
   emit();
+}
+
+/** @deprecated Prefer recordTakenTrip */
+export function recordCompletedTrip(
+  trip: PlannedDeparture,
+  finalStationName: string,
+): void {
+  recordTakenTrip(trip, finalStationName);
 }
 
 export function readTripHistory(): CompletedTripRecord[] {

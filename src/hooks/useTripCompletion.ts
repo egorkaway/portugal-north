@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { getMinutesUntilTime } from "@/lib/departureCountdown";
 import { clearActiveTrip, type PlannedDeparture } from "@/lib/plannedDepartures";
-import { recordCompletedTrip } from "@/lib/trainTripHistory";
+import { recordTakenTrip } from "@/lib/trainTripHistory";
 import type { TrainJourneyStop } from "@/lib/trainJourney";
 
 /** When the final downstream stop is reached, archive the trip locally and clear tracking. */
@@ -30,7 +30,7 @@ export function useTripCompletion(
     if (recordedRef.current === trip.id) return;
 
     recordedRef.current = trip.id;
-    recordCompletedTrip(trip, finalStop.stationName);
+    recordTakenTrip(trip, finalStop.stationName);
     clearActiveTrip();
   }, [trip, downstreamStops, delayMinutes, now]);
 }
