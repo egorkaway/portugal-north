@@ -12,8 +12,8 @@ export type ReliabilityScoresManifest = {
 export const RELIABILITY_SCORE_MIN = 1;
 export const RELIABILITY_SCORE_MAX = 10;
 
-/** Higher traffic reduces the effective delay rate used for scoring (0 = off, ~0.2 = moderate). */
-export const RELIABILITY_VOLUME_TOLERANCE_EXP = 0.2;
+/** Higher traffic reduces the effective delay rate used for scoring (0 = off, ~0.3 = moderate). */
+export const RELIABILITY_VOLUME_TOLERANCE_EXP = 0.3;
 
 /** Average delay minutes per train movement (departure or arrival). Lower is better. */
 export function stationDelayRate(
