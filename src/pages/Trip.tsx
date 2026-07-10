@@ -180,12 +180,10 @@ const Trip = () => {
 
         <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 py-4 sm:py-6 md:px-6 md:py-10">
           {!trip ? (
-            <div className="flex flex-1 items-center justify-center py-8 sm:py-12">
-              <div className="w-full max-w-md rounded-lg border border-border bg-muted/30 p-6 text-center">
-                <Clock className="mx-auto mb-3 h-8 w-8 text-muted-foreground" aria-hidden="true" />
-                <h2 className="font-display text-xl text-foreground">{t("trip.emptyTitle")}</h2>
-                <p className="mt-2 text-sm text-muted-foreground">{t("trip.emptyBody")}</p>
-              </div>
+            <div className="w-full max-w-md rounded-lg border border-border bg-muted/30 p-6 text-center">
+              <Clock className="mx-auto mb-3 h-8 w-8 text-muted-foreground" aria-hidden="true" />
+              <h2 className="font-display text-xl text-foreground">{t("trip.emptyTitle")}</h2>
+              <p className="mt-2 text-sm text-muted-foreground">{t("trip.emptyBody")}</p>
             </div>
           ) : (
             <div className="flex flex-col gap-6">
@@ -280,7 +278,7 @@ const Trip = () => {
             </div>
           )}
 
-          <section className={trip ? "mt-6" : "mt-10"}>
+          <section className={trip ? "mt-6" : "mt-4"}>
             <h2 className="font-display text-xl text-foreground">{t("trip.historyTitle")}</h2>
             {history.length === 0 ? (
               <p className="mt-2 text-sm text-muted-foreground">{t("trip.historyEmpty")}</p>
