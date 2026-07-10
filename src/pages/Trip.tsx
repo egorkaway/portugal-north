@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { ArrowLeft, Clock, MapPin, TrainFront, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageHead } from "@/components/PageHead";
@@ -23,7 +22,7 @@ import { getTripPageMeta } from "@/lib/pageMeta";
 import { downstreamStopsFrom } from "@/lib/trainJourney";
 import { defaultHomePath } from "@/lib/homeRoute";
 import { getStationPath } from "@/lib/stationSlug";
-import { deleteTripHistoryRecord, recordTakenTrip, useTripHistory } from "@/lib/trainTripHistory";
+import { deleteTripHistoryRecord, useTripHistory } from "@/lib/trainTripHistory";
 import { allStations } from "@/data/stationRegistry";
 import type { TrainJourneyStop } from "@/lib/trainJourney";
 
@@ -90,9 +89,6 @@ const Trip = () => {
   const history = useTripHistory();
   const now = useNowMinute();
 
-  useEffect(() => {
-    if (trip) recordTakenTrip(trip);
-  }, [trip]);
   const { data: departures } = useStationDepartures(trip?.stationName ?? "", 10);
   const originCode = trip ? getCpStationCode(trip.stationName) : undefined;
   const { data: journey, isLoading, isError } = useTrainJourney(

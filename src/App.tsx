@@ -10,6 +10,7 @@ import { PwaInstallListener } from "@/components/PwaInstallListener";
 import { PwaPermissionsPrompt } from "@/components/PwaPermissionsPrompt";
 import { AppUpdateBootstrap } from "@/components/AppUpdateBootstrap";
 import { VoteSyncBootstrap } from "@/components/VoteSyncBootstrap";
+import { ActiveTripBootstrap } from "@/components/ActiveTripBootstrap";
 import { VoteSyncNotice } from "@/components/VoteSyncNotice";
 import { WebMcpBridge } from "@/components/WebMcpBridge";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
@@ -39,6 +40,7 @@ const App = () => (
           <PwaInstallListener />
           <PwaPermissionsPrompt />
           <VoteSyncBootstrap />
+          <ActiveTripBootstrap />
           <VoteSyncNotice />
           <WebMcpBridge />
           <div className="pb-24 sm:pb-0">

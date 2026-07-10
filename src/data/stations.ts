@@ -77,7 +77,7 @@ const cpStations: StationData[] = [
   { name: "Carreço", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.7372, lng: -8.8628 },
   { name: "Areosa", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.7150, lng: -8.8533 },
   { name: "Aregos", lines: ["Linha do Douro"], types: ["Intercidades", "Regional"], lat: 41.0944, lng: -8.0481 },
-  { name: "Mosteirô", lines: ["Linha do Douro"], types: ["Intercidades", "Regional"], lat: 41.0786, lng: -8.1283 },
+  { name: "Mosteirô", lines: ["Linha do Douro"], types: ["Intercidades", "Regional"], lat: 41.0946, lng: -8.0692 },
   { name: "Caldas de Vizela", lines: ["Linha de Guimarães"], types: ["Urban", "Regional"], lat: 41.3811, lng: -8.3197 },
   { name: "Lordelo", lines: ["Linha de Guimarães"], types: ["Urban", "Regional"], lat: 41.3964, lng: -8.3461 },
   { name: "Mirandela", lines: ["Linha do Tua (historic)"], types: ["Inactive / Historic"], lat: 41.4869, lng: -7.1858 },

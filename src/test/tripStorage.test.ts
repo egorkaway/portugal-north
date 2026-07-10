@@ -26,10 +26,9 @@ describe("planned departures", () => {
     clearActiveTrip();
   });
 
-  it("stores a single active trip globally", () => {
+  it("stores a single active trip globally without adding history yet", () => {
     setActiveTrip(sampleTrip);
-    expect(readTripHistory()).toHaveLength(1);
-    expect(readTripHistory()[0]?.trainNumber).toBe("542");
+    expect(readTripHistory()).toHaveLength(0);
     const cleared = toggleActiveTrip("Porto-Campanhã", {
       trainNumber: sampleTrip.trainNumber,
       departureTime: sampleTrip.departureTime,
@@ -42,10 +41,10 @@ describe("planned departures", () => {
       selectedAt: sampleTrip.selectedAt,
     });
     expect(cleared).toBeNull();
-    expect(readTripHistory()).toHaveLength(1);
+    expect(readTripHistory()).toHaveLength(0);
   });
 
-  it("records taken trains when selecting a departure", () => {
+  it("does not record taken trains until departure", () => {
     toggleActiveTrip("Porto-Campanhã", {
       trainNumber: sampleTrip.trainNumber,
       departureTime: sampleTrip.departureTime,
@@ -55,12 +54,10 @@ describe("planned departures", () => {
       delayMinutes: sampleTrip.delayMinutes,
     });
     const history = readTripHistory();
-    expect(history).toHaveLength(1);
-    expect(history[0]?.stationName).toBe("Porto-Campanhã");
-    expect(history[0]?.finalStationName).toBe("Lisboa");
+    expect(history).toHaveLength(0);
   });
 
-  it("keeps a taken train in history after stop tracking", () => {
+  it("does not add history when stop tracking before departure", () => {
     toggleActiveTrip("Porto-Campanhã", {
       trainNumber: sampleTrip.trainNumber,
       departureTime: sampleTrip.departureTime,
@@ -70,7 +67,7 @@ describe("planned departures", () => {
       delayMinutes: sampleTrip.delayMinutes,
     });
     clearActiveTrip();
-    expect(readTripHistory()).toHaveLength(1);
+    expect(readTripHistory()).toHaveLength(0);
   });
 
   it("replaces an existing trip when selecting another train", () => {
