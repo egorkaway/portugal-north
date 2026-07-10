@@ -2,9 +2,12 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import {
   APP_BUILD_NUMBER,
   APP_UPDATE_CHECK_INTERVAL_MS,
+  CACHE_CLEARED_GUARD_KEY,
   ensureLatestBuild,
   getLastServiceWorkerCheckAt,
   markServiceWorkerChecked,
+  planBuildReload,
+  RELOAD_GUARD_KEY,
   shouldCheckForServiceWorkerUpdate,
 } from "@/lib/appUpdate";
 
@@ -52,7 +55,53 @@ describe("appUpdate", () => {
     expect(getLastServiceWorkerCheckAt()).toBe(42);
   });
 
-  it("reloads when version.json is newer than the embedded build", async () => {
+  describe("planBuildReload", () => {
+    it("renders when build numbers match and clears guards", () => {
+      const session = mockStorage();
+      session.setItem(RELOAD_GUARD_KEY, "99");
+      session.setItem(CACHE_CLEARED_GUARD_KEY, "99");
+
+      expect(planBuildReload(APP_BUILD_NUMBER, APP_BUILD_NUMBER, session)).toEqual({
+        action: "render",
+      });
+      expect(session.getItem(RELOAD_GUARD_KEY)).toBeNull();
+      expect(session.getItem(CACHE_CLEARED_GUARD_KEY)).toBeNull();
+    });
+
+    it("reloads once for a newer remote build", () => {
+      const session = mockStorage();
+      const remote = String(Number(APP_BUILD_NUMBER) + 1);
+
+      expect(planBuildReload(remote, APP_BUILD_NUMBER, session)).toEqual({
+        action: "reload",
+        markReloadGuard: remote,
+      });
+    });
+
+    it("clears caches after the first reload attempt", () => {
+      const session = mockStorage();
+      const remote = String(Number(APP_BUILD_NUMBER) + 1);
+      session.setItem(RELOAD_GUARD_KEY, remote);
+
+      expect(planBuildReload(remote, APP_BUILD_NUMBER, session)).toEqual({
+        action: "reload",
+        markCacheClearedGuard: remote,
+      });
+    });
+
+    it("renders after reload and cache clear still leave a stale bundle", () => {
+      const session = mockStorage();
+      const remote = String(Number(APP_BUILD_NUMBER) + 1);
+      session.setItem(RELOAD_GUARD_KEY, remote);
+      session.setItem(CACHE_CLEARED_GUARD_KEY, remote);
+
+      expect(planBuildReload(remote, APP_BUILD_NUMBER, session)).toEqual({
+        action: "render",
+      });
+    });
+  });
+
+  it("does not reload in dev even when version.json is newer", async () => {
     const reload = vi.fn();
     vi.stubGlobal("location", { reload });
     vi.stubGlobal(
@@ -60,54 +109,11 @@ describe("appUpdate", () => {
       vi.fn().mockResolvedValue({
         ok: true,
         json: async () => ({ buildNumber: String(Number(APP_BUILD_NUMBER) + 1) }),
-      }),
-    );
-
-    await ensureLatestBuild();
-
-    expect(reload).toHaveBeenCalledTimes(1);
-    expect(sessionStorage.getItem("pn_reloaded_for_build")).toBe(
-      String(Number(APP_BUILD_NUMBER) + 1),
-    );
-  });
-
-  it("does not reload when build numbers match", async () => {
-    const reload = vi.fn();
-    vi.stubGlobal("location", { reload });
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({
-        ok: true,
-        json: async () => ({ buildNumber: APP_BUILD_NUMBER }),
       }),
     );
 
     await ensureLatestBuild();
 
     expect(reload).not.toHaveBeenCalled();
-  });
-
-  it("does not reload twice for the same remote build before clearing caches", async () => {
-    const reload = vi.fn();
-    vi.stubGlobal("location", { reload });
-    vi.stubGlobal(
-      "fetch",
-      vi.fn().mockResolvedValue({
-        ok: true,
-        json: async () => ({ buildNumber: String(Number(APP_BUILD_NUMBER) + 1) }),
-      }),
-    );
-
-    sessionStorage.setItem("pn_reloaded_for_build", String(Number(APP_BUILD_NUMBER) + 1));
-    vi.stubGlobal("caches", { keys: async () => [], delete: async () => true });
-    vi.stubGlobal("navigator", {
-      serviceWorker: {
-        getRegistration: async () => ({ unregister: vi.fn().mockResolvedValue(true) }),
-      },
-    });
-
-    await ensureLatestBuild();
-
-    expect(reload).toHaveBeenCalledTimes(1);
   });
 });

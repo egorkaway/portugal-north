@@ -7,7 +7,41 @@ export const APP_BUILD_NUMBER = import.meta.env.VITE_BUILD_NUMBER ?? "0";
 export const APP_UPDATE_CHECK_INTERVAL_MS = 60 * 60 * 1000;
 
 const LAST_SW_CHECK_KEY = "pn_last_sw_update_check";
-const RELOAD_GUARD_KEY = "pn_reloaded_for_build";
+export const RELOAD_GUARD_KEY = "pn_reloaded_for_build";
+export const CACHE_CLEARED_GUARD_KEY = "pn_cache_cleared_for_build";
+
+export type BuildReloadPlan =
+  | { action: "render" }
+  | { action: "reload"; markReloadGuard: string; clearReloadGuard?: never }
+  | { action: "reload"; markCacheClearedGuard: string; clearReloadGuard?: never };
+
+type SessionStore = Pick<Storage, "getItem" | "setItem" | "removeItem">;
+
+export function planBuildReload(
+  remoteBuildNumber: string,
+  appBuildNumber: string,
+  session: SessionStore,
+): BuildReloadPlan {
+  if (remoteBuildNumber === appBuildNumber) {
+    session.removeItem(RELOAD_GUARD_KEY);
+    session.removeItem(CACHE_CLEARED_GUARD_KEY);
+    return { action: "render" };
+  }
+
+  const alreadyReloaded = session.getItem(RELOAD_GUARD_KEY) === remoteBuildNumber;
+  const cacheAlreadyCleared =
+    session.getItem(CACHE_CLEARED_GUARD_KEY) === remoteBuildNumber;
+
+  if (alreadyReloaded && cacheAlreadyCleared) {
+    return { action: "render" };
+  }
+
+  if (alreadyReloaded) {
+    return { action: "reload", markCacheClearedGuard: remoteBuildNumber };
+  }
+
+  return { action: "reload", markReloadGuard: remoteBuildNumber };
+}
 
 async function clearServiceWorkerCaches(): Promise<void> {
   if ("caches" in window) {
@@ -61,6 +95,8 @@ export async function checkForServiceWorkerUpdate(): Promise<void> {
  */
 export async function ensureLatestBuild(): Promise<boolean> {
   if (typeof window === "undefined") return false;
+  // Dev server keeps an embedded build from startup; production builds bump version.json.
+  if (import.meta.env.DEV) return false;
 
   let remoteBuildNumber: string;
   try {
@@ -70,19 +106,18 @@ export async function ensureLatestBuild(): Promise<boolean> {
     return false;
   }
 
-  if (remoteBuildNumber === APP_BUILD_NUMBER) {
-    sessionStorage.removeItem(RELOAD_GUARD_KEY);
+  const plan = planBuildReload(remoteBuildNumber, APP_BUILD_NUMBER, sessionStorage);
+  if (plan.action === "render") {
     return false;
   }
 
-  const alreadyReloaded = sessionStorage.getItem(RELOAD_GUARD_KEY) === remoteBuildNumber;
-
   await checkForServiceWorkerUpdate();
 
-  if (alreadyReloaded) {
+  if ("markCacheClearedGuard" in plan && plan.markCacheClearedGuard) {
     await clearServiceWorkerCaches();
-  } else {
-    sessionStorage.setItem(RELOAD_GUARD_KEY, remoteBuildNumber);
+    sessionStorage.setItem(CACHE_CLEARED_GUARD_KEY, plan.markCacheClearedGuard);
+  } else if ("markReloadGuard" in plan && plan.markReloadGuard) {
+    sessionStorage.setItem(RELOAD_GUARD_KEY, plan.markReloadGuard);
   }
 
   window.location.reload();
