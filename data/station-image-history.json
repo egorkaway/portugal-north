@@ -44,6 +44,23 @@
       }
     ]
   },
+  "Faro Airport (FAO)": {
+    "rejectedUrls": [
+      "https://images.pexels.com/photos/29743111/pexels-photo-29743111.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    ],
+    "refreshes": [
+      {
+        "at": "2026-07-04T06:10:00.000Z",
+        "from": "https://images.pexels.com/photos/29743111/pexels-photo-29743111.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/FAO_FARO_AIRPORT_PORTUGAL_FROM_FLIGHT_CDG-RAK_EASYJET_G-EFZI_A319_%2814778925195%29.jpg/960px-FAO_FARO_AIRPORT_PORTUGAL_FROM_FLIGHT_CDG-RAK_EASYJET_G-EFZI_A319_%2814778925195%29.jpg",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 0
+        }
+      }
+    ]
+  },
   "Francelos": {
     "rejectedUrls": [
       "https://images.pexels.com/photos/17157805/pexels-photo-17157805.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
@@ -61,19 +78,19 @@
       }
     ]
   },
-  "Faro Airport (FAO)": {
+  "Juncal": {
     "rejectedUrls": [
-      "https://images.pexels.com/photos/29743111/pexels-photo-29743111.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+      "https://images.pexels.com/photos/22047476/pexels-photo-22047476.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
     ],
     "refreshes": [
       {
-        "at": "2026-07-04T06:10:00.000Z",
-        "from": "https://images.pexels.com/photos/29743111/pexels-photo-29743111.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-        "to": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/FAO_FARO_AIRPORT_PORTUGAL_FROM_FLIGHT_CDG-RAK_EASYJET_G-EFZI_A319_%2814778925195%29.jpg/960px-FAO_FARO_AIRPORT_PORTUGAL_FROM_FLIGHT_CDG-RAK_EASYJET_G-EFZI_A319_%2814778925195%29.jpg",
+        "at": "2026-07-10T15:55:31.205Z",
+        "from": "https://images.pexels.com/photos/22047476/pexels-photo-22047476.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://images.pexels.com/photos/26977308/pexels-photo-26977308.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
         "reason": "forced",
         "votesAtRefresh": {
           "up": 0,
-          "down": 0
+          "down": 1
         }
       }
     ]

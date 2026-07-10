@@ -179,7 +179,7 @@ export const stationImages: Record<string, string> = {
   "Irivo": "https://images.pexels.com/photos/31797342/pexels-photo-31797342.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "ISMAI": "https://images.pexels.com/photos/29546156/pexels-photo-29546156.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Jerez Airport (XRY)": "https://images.pexels.com/photos/13513107/pexels-photo-13513107.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-  "Juncal": "https://images.pexels.com/photos/22047476/pexels-photo-22047476.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Juncal": "https://images.pexels.com/photos/26977308/pexels-photo-26977308.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Lagos": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/2017-09-28_Forecourt_of_Lagos_railway_station_%282%29.JPG/960px-2017-09-28_Forecourt_of_Lagos_railway_station_%282%29.JPG",
   "Lamarosa": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Flickr_-_nmorao_-_Esta%C3%A7%C3%A3o_da_Lamarosa%2C_2009.05.06.jpg/960px-Flickr_-_nmorao_-_Esta%C3%A7%C3%A3o_da_Lamarosa%2C_2009.05.06.jpg",
   "Lapa": "https://images.pexels.com/photos/3885725/pexels-photo-3885725.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
