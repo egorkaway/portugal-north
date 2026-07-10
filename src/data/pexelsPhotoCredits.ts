@@ -1116,6 +1116,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/railway-tracks-at-jerez-de-la-frontera-station-31797340/",
   },
+  "31797341": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/empty-train-station-platform-in-jerez-de-la-frontera-31797341/",
+  },
   "31797342": {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
@@ -1211,6 +1216,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@tuan-vy-903011268",
     photoPageUrl: "https://www.pexels.com/photo/vintage-train-at-empty-railway-station-32884613/",
   },
+  "32884615": {
+    photographer: "Tuan Vy",
+    photographerUrl: "https://www.pexels.com/@tuan-vy-903011268",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-train-station-platform-with-historic-trains-32884615/",
+  },
   "32884619": {
     photographer: "Tuan Vy",
     photographerUrl: "https://www.pexels.com/@tuan-vy-903011268",
@@ -1255,6 +1265,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Ramon Karolan",
     photographerUrl: "https://www.pexels.com/@ramonkaphotography",
     photoPageUrl: "https://www.pexels.com/photo/empty-train-platform-in-varna-bulgaria-33690980/",
+  },
+  "33690983": {
+    photographer: "Ramon Karolan",
+    photographerUrl: "https://www.pexels.com/@ramonkaphotography",
+    photoPageUrl: "https://www.pexels.com/photo/sunny-train-station-platform-in-varna-bulgaria-33690983/",
   },
   "33690984": {
     photographer: "Ramon Karolan",
