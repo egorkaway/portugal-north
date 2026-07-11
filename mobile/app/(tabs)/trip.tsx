@@ -1,255 +1,549 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
-  FlatList,
   Pressable,
   RefreshControl,
+  ScrollView,
   StyleSheet,
   Text,
   View,
 } from 'react-native';
-import { fetchStationDepartures } from '@/lib/api';
+import { useRouter } from 'expo-router';
+import { theme } from '@/constants/theme';
 import {
+  fetchStationDepartures,
+  fetchTrainJourney,
+  getCpStationCode,
+  matchLiveDeparture,
+} from '@/lib/api';
+import { getStationNameByCpCode } from '@/lib/cpStationLookup';
+import {
+  formatArrivalCountdown,
   formatDepartureCountdown,
+  formatDepartureTimeAgo,
   getEffectiveDepartureClock,
-  getMinutesUntilDeparture,
+  getMinutesSinceDeparture,
+  getMinutesUntilTime,
 } from '@/lib/departureCountdown';
+import { downstreamStopsFrom } from '@/lib/trainJourney';
+import { stationToSlug } from '@/lib/stationData';
 import {
-  clearTripWidgets,
-  syncTripWidgets,
-} from '@/lib/widgetSync';
-import {
+  deleteTripHistoryRecord,
   readActiveTrip,
-  setActiveTripFromDeparture,
+  readTripHistory,
   writeActiveTrip,
 } from '@/lib/tripStorage';
-import type { PlannedDeparture, StationDeparture } from '@/lib/types';
+import { useTripCompletion } from '@/lib/useTripCompletion';
+import { useTripDepartureRecord } from '@/lib/useTripDepartureRecord';
+import { clearTripWidgets, syncTripWidgets } from '@/lib/widgetSync';
+import type { CompletedTripRecord, PlannedDeparture } from '@/lib/types';
+import type { TrainJourneyStop } from '@/lib/api';
+
+function TripStopRow({
+  stop,
+  isOrigin,
+  delayMinutes,
+  now,
+  onPressStation,
+}: {
+  stop: TrainJourneyStop;
+  isOrigin: boolean;
+  delayMinutes: number | null;
+  now: Date;
+  onPressStation: (stationName: string) => void;
+}) {
+  const stationName = getStationNameByCpCode(stop.stationCode) ?? stop.stationName;
+  const clockTime = isOrigin
+    ? (stop.departureTime ?? stop.arrivalTime)
+    : (stop.arrivalTime ?? stop.departureTime);
+  const minutesUntil =
+    clockTime !== null ? getMinutesUntilTime(clockTime, delayMinutes, now) : null;
+  const countdownLabel =
+    minutesUntil !== null
+      ? isOrigin
+        ? formatDepartureCountdown(minutesUntil)
+        : formatArrivalCountdown(minutesUntil)
+      : null;
+
+  return (
+    <Pressable style={styles.stopRow} onPress={() => onPressStation(stationName)}>
+      <Text style={styles.stopName}>{stationName}</Text>
+      <Text style={styles.stopMeta}>
+        {isOrigin ? 'Departs' : 'Arrives'} {clockTime ?? '—'}
+        {stop.platform ? ` · Platform ${stop.platform}` : ''}
+      </Text>
+      {countdownLabel ? <Text style={styles.stopCountdown}>{countdownLabel}</Text> : null}
+    </Pressable>
+  );
+}
 
 export default function TripScreen() {
+  const router = useRouter();
   const [activeTrip, setActiveTrip] = useState<PlannedDeparture | null>(null);
-  const [departures, setDepartures] = useState<StationDeparture[]>([]);
+  const [history, setHistory] = useState<CompletedTripRecord[]>([]);
+  const [journey, setJourney] = useState<Awaited<ReturnType<typeof fetchTrainJourney>>>(null);
+  const [journeyLoading, setJourneyLoading] = useState(false);
+  const [journeyError, setJourneyError] = useState(false);
+  const [delayMinutes, setDelayMinutes] = useState<number | null>(null);
+  const [platform, setPlatform] = useState<string | null>(null);
+  const [serviceType, setServiceType] = useState<string>('—');
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [now, setNow] = useState(new Date());
 
-  const load = useCallback(async () => {
+  const reload = useCallback(async () => {
     const trip = await readActiveTrip();
     setActiveTrip(trip);
+    setHistory(await readTripHistory());
 
-    if (trip) {
-      const rows = await fetchStationDepartures(trip.stationName, 8);
-      setDepartures(rows);
-    } else {
-      setDepartures([]);
+    if (!trip) {
+      setJourney(null);
+      setDelayMinutes(null);
+      setPlatform(null);
+      setServiceType('—');
+      return;
+    }
+
+    const departures = await fetchStationDepartures(trip.stationName, 10);
+    const live = matchLiveDeparture(trip, departures);
+    const nextDelay = live?.delayMinutes ?? trip.delayMinutes ?? null;
+    const nextPlatform = live?.platform ?? trip.platform ?? null;
+    const nextServiceType = live?.serviceType ?? trip.serviceType ?? '—';
+    setDelayMinutes(nextDelay);
+    setPlatform(nextPlatform);
+    setServiceType(nextServiceType);
+
+    const originCode = getCpStationCode(trip.stationName);
+    if (!originCode) {
+      setJourney(null);
+      setJourneyError(false);
+      return;
+    }
+
+    setJourneyLoading(true);
+    setJourneyError(false);
+    try {
+      const nextJourney = await fetchTrainJourney({
+        trainNumber: trip.trainNumber,
+        timetableDate: trip.timetableDate,
+        origin: originCode,
+        departure: trip.departureTime,
+        destination: trip.destination,
+      });
+      setJourney(nextJourney);
+      if (!nextJourney) setJourneyError(true);
+    } catch {
+      setJourney(null);
+      setJourneyError(true);
+    } finally {
+      setJourneyLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    void load().finally(() => setLoading(false));
+    void reload().finally(() => setLoading(false));
     const timer = setInterval(() => setNow(new Date()), 60_000);
     return () => clearInterval(timer);
-  }, [load]);
+  }, [reload]);
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
-    await load();
+    await reload();
     await syncTripWidgets();
     setRefreshing(false);
-  }, [load]);
+  }, [reload]);
 
-  const takeDeparture = async (dep: StationDeparture) => {
-    if (!activeTrip) return;
-    const trip = await setActiveTripFromDeparture({
+  const onTripCompleted = useCallback(() => {
+    void reload();
+  }, [reload]);
+
+  const originCode = activeTrip ? getCpStationCode(activeTrip.stationName) : null;
+  const downstreamStops = useMemo(() => {
+    if (!journey || !originCode || !activeTrip) return [];
+    return downstreamStopsFrom(journey, originCode, {
       stationName: activeTrip.stationName,
-      trainNumber: dep.trainNumber,
-      departureTime: dep.time,
-      destination: dep.destination,
-      serviceType: dep.serviceType,
-      platform: dep.platform,
-      delayMinutes: dep.delayMinutes,
+      departureTime: activeTrip.departureTime,
+      platform: platform ?? activeTrip.platform ?? null,
     });
-    setActiveTrip(trip);
-    await syncTripWidgets();
-  };
+  }, [journey, originCode, activeTrip, platform]);
+
+  useTripDepartureRecord(activeTrip, delayMinutes, now, onTripCompleted);
+  useTripCompletion(activeTrip, downstreamStops, delayMinutes, now, onTripCompleted);
 
   const clearTrip = async () => {
     await writeActiveTrip(null);
     setActiveTrip(null);
-    setDepartures([]);
+    setJourney(null);
     await clearTripWidgets();
+    await reload();
+  };
+
+  const deleteHistory = async (tripId: string) => {
+    await deleteTripHistoryRecord(tripId);
+    setHistory(await readTripHistory());
+  };
+
+  const openStation = (stationName: string) => {
+    router.push(`/station/${stationToSlug(stationName)}`);
   };
 
   if (loading) {
     return (
       <View style={styles.centered}>
-        <ActivityIndicator color="#012841" />
+        <ActivityIndicator color={theme.primary} />
       </View>
     );
   }
 
-  if (!activeTrip) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.title}>No active trip</Text>
-        <Text style={styles.body}>
-          Open a station, pick a departure, and tap Take. The home-screen widget and Live Activity
-          will show the countdown here.
-        </Text>
-        <Pressable style={styles.secondaryButton} onPress={() => void syncTripWidgets()}>
-          <Text style={styles.secondaryButtonText}>Refresh widget</Text>
-        </Pressable>
-      </View>
-    );
-  }
-
-  const minutes = getMinutesUntilDeparture(
-    activeTrip.departureTime,
-    activeTrip.delayMinutes,
-    now,
-  );
-  const effectiveTime =
-    getEffectiveDepartureClock(activeTrip.departureTime, activeTrip.delayMinutes) ??
-    activeTrip.departureTime;
+  const departureMinutesUntil = activeTrip
+    ? getMinutesUntilTime(activeTrip.departureTime, delayMinutes, now)
+    : null;
+  const departureCountdown =
+    departureMinutesUntil !== null && departureMinutesUntil > 0
+      ? formatDepartureCountdown(departureMinutesUntil)
+      : null;
+  const effectiveDepartureTime = activeTrip
+    ? getEffectiveDepartureClock(activeTrip.departureTime, delayMinutes)
+    : null;
+  const minutesSinceDeparture = activeTrip
+    ? getMinutesSinceDeparture(activeTrip.departureTime, delayMinutes, now)
+    : null;
+  const hasDeparted = minutesSinceDeparture !== null;
+  const hasConfirmedUpcomingStops =
+    !journeyLoading && !journeyError && Boolean(journey) && downstreamStops.length > 1;
+  const showDepartedWithoutStops = hasDeparted && !hasConfirmedUpcomingStops;
+  const departureTimeAgoLabel =
+    minutesSinceDeparture !== null ? formatDepartureTimeAgo(minutesSinceDeparture) : null;
 
   return (
-    <View style={styles.container}>
-      <View style={styles.card}>
-        <Text style={styles.station}>{activeTrip.stationName}</Text>
-        <Text style={styles.countdown}>
-          {minutes === null ? effectiveTime : formatDepartureCountdown(minutes)}
-        </Text>
-        <Text style={styles.meta}>
-          {activeTrip.trainNumber} → {activeTrip.destination}
-        </Text>
-        <Text style={styles.meta}>
-          Departs {effectiveTime}
-          {activeTrip.platform ? ` · Platform ${activeTrip.platform}` : ''}
-        </Text>
-        <Pressable style={styles.clearButton} onPress={() => void clearTrip()}>
-          <Text style={styles.clearButtonText}>Clear trip</Text>
-        </Pressable>
+    <ScrollView
+      style={styles.container}
+      contentContainerStyle={styles.content}
+      refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => void onRefresh()} />}
+    >
+      {!activeTrip ? (
+        <View style={styles.emptyCard}>
+          <Text style={styles.emptyTitle}>No trip tracked</Text>
+          <Text style={styles.emptyBody}>
+            Open a station, pick a departure from the live board, and tap Take. Your countdown
+            will appear here and on the home-screen widget.
+          </Text>
+        </View>
+      ) : (
+        <View style={styles.activeSection}>
+          <View style={styles.card}>
+            <View style={styles.cardHeader}>
+              <Text style={styles.cardLabel}>
+                {showDepartedWithoutStops ? 'Departed' : 'Departure countdown'}
+              </Text>
+              <Pressable style={styles.stopButton} onPress={() => void clearTrip()}>
+                <Text style={styles.stopButtonText}>Stop tracking</Text>
+              </Pressable>
+            </View>
+
+            <Pressable onPress={() => openStation(activeTrip.stationName)}>
+              <Text style={styles.stationLink}>{activeTrip.stationName}</Text>
+            </Pressable>
+
+            {showDepartedWithoutStops ? (
+              <>
+                <Text style={styles.countdown}>
+                  {effectiveDepartureTime
+                    ? `Departed at ${effectiveDepartureTime}`
+                    : `Departed at ${activeTrip.departureTime}`}
+                </Text>
+                {departureTimeAgoLabel ? (
+                  <Text style={styles.timeAgo}>{departureTimeAgoLabel}</Text>
+                ) : null}
+              </>
+            ) : (
+              <>
+                <Text style={styles.countdown}>
+                  {departureCountdown ??
+                    (hasDeparted
+                      ? effectiveDepartureTime
+                        ? `Departed at ${effectiveDepartureTime}`
+                        : `Departed at ${activeTrip.departureTime}`
+                      : activeTrip.departureTime)}
+                </Text>
+                <Text style={styles.meta}>
+                  Departs {activeTrip.departureTime}
+                  {delayMinutes !== null && delayMinutes > 0 ? ` · +${delayMinutes} min delay` : ''}
+                </Text>
+                {effectiveDepartureTime &&
+                delayMinutes !== null &&
+                delayMinutes > 0 &&
+                effectiveDepartureTime !== activeTrip.departureTime ? (
+                  <Text style={styles.meta}>Expected {effectiveDepartureTime}</Text>
+                ) : null}
+              </>
+            )}
+
+            <Text style={styles.trainLine}>
+              Train {activeTrip.trainNumber} → {activeTrip.destination}
+            </Text>
+            <Text style={styles.meta}>
+              {serviceType}
+              {platform ? ` · Platform ${platform}` : ''}
+            </Text>
+          </View>
+
+          {journeyLoading ? (
+            <ActivityIndicator color={theme.primary} style={styles.journeyLoading} />
+          ) : null}
+
+          {hasConfirmedUpcomingStops ? (
+            <View style={styles.stopsSection}>
+              <Text style={styles.sectionTitle}>Upcoming stops</Text>
+              {downstreamStops.map((stop, index) => (
+                <TripStopRow
+                  key={`${stop.stationCode}-${index}`}
+                  stop={stop}
+                  isOrigin={index === 0}
+                  delayMinutes={delayMinutes}
+                  now={now}
+                  onPressStation={openStation}
+                />
+              ))}
+            </View>
+          ) : null}
+        </View>
+      )}
+
+      <View style={styles.historySection}>
+        <Text style={styles.sectionTitle}>Past trips</Text>
+        {history.length === 0 ? (
+          <Text style={styles.historyEmpty}>Trips you take will appear here.</Text>
+        ) : (
+          history.map((record) => (
+            <View key={record.id} style={styles.historyCard}>
+              <View style={styles.historyMain}>
+                <Text style={styles.historyTitle}>
+                  {record.trainNumber} · {record.stationName} → {record.finalStationName}
+                </Text>
+                <Text style={styles.historyMeta}>
+                  {record.timetableDate} · {record.departureTime}
+                </Text>
+                <View style={styles.historyLinks}>
+                  <Pressable onPress={() => openStation(record.stationName)}>
+                    <Text style={styles.historyLink}>Origin station</Text>
+                  </Pressable>
+                  <Pressable onPress={() => openStation(record.finalStationName)}>
+                    <Text style={styles.historyLink}>Final stop</Text>
+                  </Pressable>
+                </View>
+              </View>
+              <Pressable
+                style={styles.deleteButton}
+                onPress={() => void deleteHistory(record.id)}
+              >
+                <Text style={styles.deleteButtonText}>Delete</Text>
+              </Pressable>
+            </View>
+          ))
+        )}
       </View>
 
-      <Text style={styles.sectionTitle}>Other departures</Text>
-      <FlatList
-        data={departures}
-        keyExtractor={(item) => `${item.trainNumber}-${item.time}-${item.destination}`}
-        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => void onRefresh()} />}
-        renderItem={({ item }) => (
-          <Pressable style={styles.row} onPress={() => void takeDeparture(item)}>
-            <View>
-              <Text style={styles.rowTitle}>
-                {item.time} · {item.trainNumber}
-              </Text>
-              <Text style={styles.rowMeta}>{item.destination}</Text>
-            </View>
-            <Text style={styles.rowAction}>Take</Text>
-          </Pressable>
-        )}
-        ListEmptyComponent={<Text style={styles.body}>No live departures for this station.</Text>}
-      />
-    </View>
+      <Pressable style={styles.debugButton} onPress={() => void syncTripWidgets()}>
+        <Text style={styles.debugButtonText}>Refresh widget</Text>
+      </Pressable>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: theme.background,
+  },
+  content: {
+    padding: 16,
+    paddingBottom: 32,
+    gap: 16,
+  },
   centered: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#f5f7f8',
+    backgroundColor: theme.background,
   },
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f7f8',
-    padding: 16,
+  emptyCard: {
+    backgroundColor: theme.card,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: theme.border,
+    padding: 20,
+    gap: 8,
   },
-  title: {
-    fontSize: 24,
+  emptyTitle: {
+    fontSize: 20,
     fontWeight: '700',
-    color: '#012841',
-    marginBottom: 8,
+    color: theme.primary,
   },
-  body: {
-    fontSize: 16,
+  emptyBody: {
+    fontSize: 15,
     lineHeight: 22,
-    color: '#4A6274',
+    color: theme.primaryMuted,
+  },
+  activeSection: {
+    gap: 12,
   },
   card: {
-    backgroundColor: '#ffffff',
+    backgroundColor: theme.card,
     borderRadius: 16,
-    padding: 20,
-    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: theme.border,
+    padding: 16,
     gap: 6,
   },
-  station: {
-    fontSize: 14,
-    fontWeight: '600',
-    color: '#4A6274',
+  cardHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 12,
+  },
+  cardLabel: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: theme.primaryMuted,
     textTransform: 'uppercase',
     letterSpacing: 0.4,
   },
-  countdown: {
-    fontSize: 40,
+  stopButton: {
+    borderWidth: 1,
+    borderColor: theme.border,
+    borderRadius: 999,
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    backgroundColor: theme.background,
+  },
+  stopButtonText: {
+    fontSize: 12,
     fontWeight: '700',
-    color: '#012841',
+    color: theme.primary,
+  },
+  stationLink: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: theme.primary,
+    marginTop: 4,
+  },
+  countdown: {
+    fontSize: 34,
+    fontWeight: '800',
+    color: theme.primary,
+    marginTop: 4,
+  },
+  timeAgo: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: theme.primary,
+  },
+  trainLine: {
+    fontSize: 16,
+    color: theme.primary,
+    marginTop: 8,
   },
   meta: {
-    fontSize: 15,
-    color: '#4A6274',
+    fontSize: 14,
+    color: theme.primaryMuted,
+  },
+  journeyLoading: {
+    marginVertical: 8,
+  },
+  stopsSection: {
+    gap: 8,
   },
   sectionTitle: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '700',
-    color: '#012841',
-    marginBottom: 8,
+    color: theme.primary,
   },
-  row: {
-    backgroundColor: '#ffffff',
+  stopRow: {
+    backgroundColor: theme.card,
     borderRadius: 12,
+    borderWidth: 1,
+    borderColor: theme.border,
     padding: 14,
-    marginBottom: 8,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
+    gap: 2,
   },
-  rowTitle: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#012841',
-  },
-  rowMeta: {
-    fontSize: 14,
-    color: '#4A6274',
-    marginTop: 2,
-  },
-  rowAction: {
+  stopName: {
     fontSize: 15,
     fontWeight: '700',
-    color: '#012841',
+    color: theme.primary,
   },
-  clearButton: {
-    marginTop: 12,
-    alignSelf: 'flex-start',
-    paddingVertical: 8,
-    paddingHorizontal: 12,
-    borderRadius: 999,
-    backgroundColor: '#E8EEF2',
+  stopMeta: {
+    fontSize: 13,
+    color: theme.primaryMuted,
   },
-  clearButtonText: {
-    color: '#012841',
+  stopCountdown: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: theme.primary,
+    marginTop: 2,
+  },
+  historySection: {
+    gap: 10,
+    marginTop: 4,
+  },
+  historyEmpty: {
+    fontSize: 14,
+    color: theme.primaryMuted,
+  },
+  historyCard: {
+    backgroundColor: theme.card,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: theme.border,
+    padding: 14,
+    gap: 10,
+  },
+  historyMain: {
+    gap: 4,
+  },
+  historyTitle: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: theme.primary,
+  },
+  historyMeta: {
+    fontSize: 13,
+    color: theme.primaryMuted,
+  },
+  historyLinks: {
+    flexDirection: 'row',
+    gap: 16,
+    marginTop: 4,
+  },
+  historyLink: {
+    fontSize: 13,
     fontWeight: '600',
+    color: theme.primary,
   },
-  secondaryButton: {
-    marginTop: 16,
+  deleteButton: {
     alignSelf: 'flex-start',
-    paddingVertical: 10,
+    borderWidth: 1,
+    borderColor: theme.border,
+    borderRadius: 8,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
+  deleteButtonText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: theme.primary,
+  },
+  debugButton: {
+    marginTop: 8,
+    alignSelf: 'flex-start',
+    backgroundColor: theme.primary,
+    borderRadius: 999,
     paddingHorizontal: 14,
-    borderRadius: 999,
-    backgroundColor: '#012841',
+    paddingVertical: 10,
   },
-  secondaryButtonText: {
-    color: '#ffffff',
-    fontWeight: '600',
+  debugButtonText: {
+    color: '#fff',
+    fontWeight: '700',
+    fontSize: 14,
   },
 });

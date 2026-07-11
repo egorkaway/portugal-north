@@ -60,6 +60,14 @@ export async function recordTakenTrip(
   );
 }
 
+export async function deleteTripHistoryRecord(tripId: string): Promise<void> {
+  const records = await readTripHistory();
+  await AsyncStorage.setItem(
+    TRIP_HISTORY_KEY,
+    JSON.stringify(records.filter((record) => record.id !== tripId)),
+  );
+}
+
 export async function readLastCoords(): Promise<StoredCoords | null> {
   const raw = await AsyncStorage.getItem(LAST_COORDS_KEY);
   if (!raw) return null;

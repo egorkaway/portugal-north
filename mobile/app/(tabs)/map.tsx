@@ -1,7 +1,15 @@
-import { useMemo, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import {
+  ActivityIndicator,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import { useRouter } from 'expo-router';
+import * as Location from 'expo-location';
+import { SymbolView } from 'expo-symbols';
+import { useNavigation, useRouter } from 'expo-router';
 import { theme } from '@/constants/theme';
 import { reliabilityScoreColor } from '@/lib/reliabilityScore';
 import {
@@ -9,6 +17,7 @@ import {
   bakedReliabilityScores,
   stationToSlug,
 } from '@/lib/stationData';
+import { writeLastCoords } from '@/lib/tripStorage';
 
 const IBERIAN_REGION = {
   latitude: 39.9,
@@ -26,7 +35,11 @@ function markerSize(movements: number): number {
 
 export default function MapScreen() {
   const router = useRouter();
+  const navigation = useNavigation();
+  const mapRef = useRef<MapView>(null);
   const [selectedName, setSelectedName] = useState<string | null>(null);
+  const [locating, setLocating] = useState(false);
+  const [showsUserLocation, setShowsUserLocation] = useState(false);
 
   const markers = useMemo(
     () =>
@@ -49,11 +62,65 @@ export default function MapScreen() {
     [],
   );
 
+  const locateUser = useCallback(async () => {
+    setLocating(true);
+    try {
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') return;
+
+      const position = await Location.getCurrentPositionAsync({});
+      const { latitude, longitude } = position.coords;
+
+      setShowsUserLocation(true);
+      mapRef.current?.animateToRegion(
+        {
+          latitude,
+          longitude,
+          latitudeDelta: 0.45,
+          longitudeDelta: 0.45,
+        },
+        500,
+      );
+      await writeLastCoords({ lat: latitude, lng: longitude });
+    } finally {
+      setLocating(false);
+    }
+  }, []);
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <Pressable
+          accessibilityRole="button"
+          accessibilityLabel="Locate me"
+          onPress={() => void locateUser()}
+          style={styles.locateButton}
+        >
+          {locating ? (
+            <ActivityIndicator size="small" color={theme.primary} />
+          ) : (
+            <SymbolView
+              name={{ ios: 'location.fill', android: 'my_location', web: 'my_location' }}
+              tintColor={theme.primary}
+              size={22}
+            />
+          )}
+        </Pressable>
+      ),
+    });
+  }, [navigation, locateUser, locating]);
+
   const selected = markers.find((item) => item.station.name === selectedName);
 
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} initialRegion={IBERIAN_REGION}>
+      <MapView
+        ref={mapRef}
+        style={styles.map}
+        initialRegion={IBERIAN_REGION}
+        showsUserLocation={showsUserLocation}
+        showsMyLocationButton={false}
+      >
         {markers.map(({ station, color, size }) => (
           <Marker
             key={station.name}
@@ -88,9 +155,7 @@ export default function MapScreen() {
       {selected ? (
         <View style={styles.sheet}>
           <Text style={styles.sheetTitle}>{selected.station.name}</Text>
-          <Text style={styles.sheetMeta}>
-            {selected.station.lines.join(' · ')}
-          </Text>
+          <Text style={styles.sheetMeta}>{selected.station.lines.join(' · ')}</Text>
           {selected.score !== null ? (
             <Text style={styles.sheetScore}>
               Reliability {selected.score}/10 · {selected.movements} movements/day
@@ -126,6 +191,13 @@ const styles = StyleSheet.create({
   },
   map: {
     flex: 1,
+  },
+  locateButton: {
+    marginRight: 4,
+    width: 36,
+    height: 36,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   dot: {
     borderWidth: 1,
