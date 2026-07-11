@@ -1,28 +1,14 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import {
-  ActivityIndicator,
-  FlatList,
-  Pressable,
-  RefreshControl,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  View,
-} from 'react-native';
+import { FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location';
 import { useRouter } from 'expo-router';
-import { ScopePicker } from '@/components/ScopePicker';
 import { StationCard } from '@/components/StationCard';
+import { StationFilters } from '@/components/StationFilters';
 import { PAGE_SIZE, sortTrainTypes, theme } from '@/constants/theme';
 import { fetchGlobalRatings } from '@/lib/api';
 import { orderStationsForHome, stationDistancesKm } from '@/lib/rankStations';
 import { stationMatchesSearch } from '@/lib/searchText';
-import {
-  getStationsForScope,
-  type HomeScope,
-  type Station,
-} from '@/lib/stationData';
+import { allStations, stationToSlug, type Station } from '@/lib/stationData';
 import {
   castStationVote,
   readStationVotes,
@@ -31,16 +17,16 @@ import {
 } from '@/lib/voteStorage';
 import { syncStationVoteToServer } from '@/lib/api';
 import { writeLastCoords } from '@/lib/tripStorage';
-import { stationToSlug } from '@/lib/stationData';
 
 type VoteFilter = 'up' | 'down' | 'none';
+type VisitedFilter = 'visited' | 'notVisited';
 
 export default function HomeScreen() {
   const router = useRouter();
-  const [scope, setScope] = useState<HomeScope>('pt');
   const [searchQuery, setSearchQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
+  const [visitedFilter, setVisitedFilter] = useState<VisitedFilter | null>(null);
   const [sortByDistance, setSortByDistance] = useState(false);
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [votes, setVotes] = useState<Record<string, 'up' | 'down'>>({});
@@ -53,7 +39,7 @@ export default function HomeScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [loadingLocation, setLoadingLocation] = useState(false);
 
-  const countryStations = useMemo(() => getStationsForScope(scope), [scope]);
+  const countryStations = allStations;
   const allTypes = useMemo(
     () => sortTrainTypes([...new Set(countryStations.flatMap((s) => s.types))]),
     [countryStations],
@@ -84,7 +70,12 @@ export default function HomeScreen() {
         (voteFilter === 'up' && vote === 'up') ||
         (voteFilter === 'down' && vote === 'down') ||
         (voteFilter === 'none' && !vote);
-      return matchesSearch && matchesType && matchesVote;
+      const isVisited = Boolean(visitedMap[station.name]);
+      const matchesVisited =
+        !visitedFilter ||
+        (visitedFilter === 'visited' && isVisited) ||
+        (visitedFilter === 'notVisited' && !isVisited);
+      return matchesSearch && matchesType && matchesVote && matchesVisited;
     });
 
     return orderStationsForHome(matches, {
@@ -98,7 +89,9 @@ export default function HomeScreen() {
     searchQuery,
     typeFilter,
     voteFilter,
+    visitedFilter,
     votes,
+    visitedMap,
     sortByDistance,
     coords,
     globalRatings,
@@ -184,84 +177,32 @@ export default function HomeScreen() {
             <Text style={styles.title}>VeryStays</Text>
             <Text style={styles.subtitle}>Train stations across Portugal & Spain</Text>
 
-            <ScopePicker
-              scope={scope}
-              onChange={(next) => {
-                setScope(next);
-                setPage(1);
-                setTypeFilter(null);
-              }}
-            />
-
-            <TextInput
-              value={searchQuery}
-              onChangeText={(text) => {
+            <StationFilters
+              searchQuery={searchQuery}
+              onSearchChange={(text) => {
                 setSearchQuery(text);
                 setPage(1);
               }}
-              placeholder="Search stations or lines"
-              placeholderTextColor={theme.primaryMuted}
-              style={styles.search}
-              autoCapitalize="none"
-              autoCorrect={false}
+              trainTypes={allTypes}
+              typeFilter={typeFilter}
+              onTypeToggle={(type) => {
+                setTypeFilter(typeFilter === type ? null : type);
+                setPage(1);
+              }}
+              voteFilter={voteFilter}
+              onVoteFilterToggle={(filter) => {
+                setVoteFilter(voteFilter === filter ? null : filter);
+                setPage(1);
+              }}
+              visitedFilter={visitedFilter}
+              onVisitedFilterToggle={(filter) => {
+                setVisitedFilter(visitedFilter === filter ? null : filter);
+                setPage(1);
+              }}
+              sortByDistance={sortByDistance}
+              loadingLocation={loadingLocation}
+              onRequestLocation={requestLocation}
             />
-
-            <View style={styles.filterRow}>
-              <Pressable
-                onPress={() => void requestLocation()}
-                style={[styles.filterChip, sortByDistance && styles.filterChipActive]}
-              >
-                {loadingLocation ? (
-                  <ActivityIndicator size="small" color={sortByDistance ? '#fff' : theme.primary} />
-                ) : (
-                  <Text
-                    style={[styles.filterChipText, sortByDistance && styles.filterChipTextActive]}
-                  >
-                    Near me
-                  </Text>
-                )}
-              </Pressable>
-              {(['up', 'down', 'none'] as VoteFilter[]).map((filter) => (
-                <Pressable
-                  key={filter}
-                  onPress={() => setVoteFilter(voteFilter === filter ? null : filter)}
-                  style={[styles.filterChip, voteFilter === filter && styles.filterChipActive]}
-                >
-                  <Text
-                    style={[
-                      styles.filterChipText,
-                      voteFilter === filter && styles.filterChipTextActive,
-                    ]}
-                  >
-                    {filter === 'up' ? 'Upvoted' : filter === 'down' ? 'Downvoted' : 'No vote'}
-                  </Text>
-                </Pressable>
-              ))}
-            </View>
-
-            <ScrollView
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              style={styles.typeScroller}
-              contentContainerStyle={styles.typeScrollerContent}
-            >
-              {allTypes.map((item) => (
-                <Pressable
-                  key={item}
-                  onPress={() => setTypeFilter(typeFilter === item ? null : item)}
-                  style={[styles.typeChip, typeFilter === item && styles.typeChipActive]}
-                >
-                  <Text
-                    style={[
-                      styles.typeChipText,
-                      typeFilter === item && styles.typeChipTextActive,
-                    ]}
-                  >
-                    {item}
-                  </Text>
-                </Pressable>
-              ))}
-            </ScrollView>
 
             <Text style={styles.count}>
               {filtered.length} stations
@@ -287,7 +228,7 @@ const styles = StyleSheet.create({
   header: {
     paddingTop: 8,
     paddingBottom: 12,
-    gap: 12,
+    gap: 8,
   },
   title: {
     fontSize: 28,
@@ -297,72 +238,6 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 15,
     color: theme.primaryMuted,
-    marginBottom: 4,
-  },
-  search: {
-    backgroundColor: theme.card,
-    borderWidth: 1,
-    borderColor: theme.border,
-    borderRadius: 12,
-    paddingHorizontal: 14,
-    paddingVertical: 12,
-    fontSize: 16,
-    color: theme.primary,
-  },
-  filterRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
-  },
-  filterChip: {
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 999,
-    borderWidth: 1,
-    borderColor: theme.border,
-    backgroundColor: theme.card,
-    minWidth: 72,
-    alignItems: 'center',
-  },
-  filterChipActive: {
-    backgroundColor: theme.primary,
-    borderColor: theme.primary,
-  },
-  filterChipText: {
-    fontSize: 13,
-    fontWeight: '600',
-    color: theme.primaryMuted,
-  },
-  filterChipTextActive: {
-    color: '#fff',
-  },
-  typeScroller: {
-    marginHorizontal: -16,
-  },
-  typeScrollerContent: {
-    paddingHorizontal: 16,
-    gap: 8,
-  },
-  typeChip: {
-    marginRight: 8,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    borderRadius: 999,
-    borderWidth: 1,
-    borderColor: theme.border,
-    backgroundColor: theme.card,
-  },
-  typeChipActive: {
-    backgroundColor: '#E8EEF2',
-    borderColor: theme.primary,
-  },
-  typeChipText: {
-    fontSize: 13,
-    color: theme.primaryMuted,
-    fontWeight: '600',
-  },
-  typeChipTextActive: {
-    color: theme.primary,
   },
   count: {
     fontSize: 13,

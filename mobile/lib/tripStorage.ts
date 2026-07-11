@@ -2,6 +2,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import type { CompletedTripRecord, PlannedDeparture } from "@/lib/types";
 import { lisbonDateAndTime } from "@/lib/lisbonTime";
 import { notifyTripChanged } from "@/lib/tripEvents";
+import { cancelTripDepartureReminder, scheduleTripDepartureReminder } from "@/lib/tripNotifications";
 
 const ACTIVE_TRIP_KEY = "pn_active_trip_v2";
 const TRIP_HISTORY_KEY = "pn_trip_history_v1";
@@ -26,6 +27,11 @@ export async function writeActiveTrip(trip: PlannedDeparture | null): Promise<vo
     await AsyncStorage.setItem(ACTIVE_TRIP_KEY, JSON.stringify(trip));
   } else {
     await AsyncStorage.removeItem(ACTIVE_TRIP_KEY);
+    try {
+      await cancelTripDepartureReminder();
+    } catch (error) {
+      console.warn("[trip] failed to cancel departure reminder", error);
+    }
   }
   notifyTripChanged();
 }
@@ -142,14 +148,27 @@ export async function takeActiveTrip(input: {
 }): Promise<PlannedDeparture> {
   const trip = await setActiveTripFromDeparture(input);
   await recordTakenTrip(trip, trip.destination);
-  const { syncTripWidgets } = await import("@/lib/widgetSync");
-  await syncTripWidgets();
+  try {
+    await scheduleTripDepartureReminder(trip);
+  } catch (error) {
+    console.warn("[trip] departure reminder scheduling failed", error);
+  }
+  try {
+    const { syncTripWidgets } = await import("@/lib/widgetSync");
+    await syncTripWidgets();
+  } catch (error) {
+    console.warn("[trip] widget sync failed after take", error);
+  }
   return trip;
 }
 
 /** Clear active tracking and refresh widgets. */
 export async function clearActiveTrip(): Promise<void> {
   await writeActiveTrip(null);
-  const { syncTripWidgets } = await import("@/lib/widgetSync");
-  await syncTripWidgets();
+  try {
+    const { syncTripWidgets } = await import("@/lib/widgetSync");
+    await syncTripWidgets();
+  } catch (error) {
+    console.warn("[trip] widget sync failed after clear", error);
+  }
 }

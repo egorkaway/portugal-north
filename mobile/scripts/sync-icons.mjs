@@ -24,6 +24,29 @@ const targets = [
   path.join(__dirname, "../assets/images/android-icon-foreground.png"),
 ];
 
+const splashImagesetTargets = [
+  { file: "image.png", size: 200 },
+  { file: "image@2x.png", size: 400 },
+  { file: "image@3x.png", size: 600 },
+];
+
+async function writeSplashImageset(input) {
+  const imagesetDir = path.join(
+    __dirname,
+    "../ios/VeryStays/Images.xcassets/SplashScreenLogo.imageset",
+  );
+  fs.mkdirSync(imagesetDir, { recursive: true });
+
+  for (const { file, size } of splashImagesetTargets) {
+    const target = path.join(imagesetDir, file);
+    await sharp(input)
+      .resize(size, size, { fit: "cover", position: "centre" })
+      .png({ compressionLevel: 9 })
+      .toFile(target);
+    console.log(`Wrote ${path.relative(repoRoot, target)}`);
+  }
+}
+
 async function fromRaster(input) {
   for (const target of targets) {
     fs.mkdirSync(path.dirname(target), { recursive: true });
@@ -33,6 +56,8 @@ async function fromRaster(input) {
       .toFile(target);
     console.log(`Wrote ${path.relative(repoRoot, target)}`);
   }
+
+  await writeSplashImageset(input);
 
   const androidBg = path.join(__dirname, "../assets/images/android-icon-background.png");
   await sharp({

@@ -6,7 +6,7 @@ Fully **native** iOS/Android app for [VeryStays](https://www.verystays.com) — 
 
 | Tab | What it does |
 |-----|----------------|
-| **Home** | Searchable station list (PT / ES / All), filters, votes, distance sort |
+| **Home** | Searchable station list (all countries), filters, votes, distance sort |
 | **Map** | Native map with reliability-coloured station markers (data baked in) |
 | **Trip** | Active train countdown, widget + Live Activity sync |
 | **Rankings** | Reliability leaderboards (baked) + community votes (API) |

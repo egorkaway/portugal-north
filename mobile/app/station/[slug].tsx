@@ -32,7 +32,8 @@ import {
   toggleVisited,
 } from '@/lib/voteStorage';
 import { syncStationVoteToServer } from '@/lib/api';
-import { readActiveTrip, writeActiveTrip } from '@/lib/tripStorage';
+import { readActiveTrip } from '@/lib/tripStorage';
+import { subscribeTripChanges } from '@/lib/tripEvents';
 import type { PlannedDeparture } from '@/lib/types';
 
 export default function StationDetailScreen() {
@@ -63,6 +64,12 @@ export default function StationDetailScreen() {
     void loadMeta();
   }, [loadMeta]);
 
+  useEffect(() => {
+    return subscribeTripChanges(() => {
+      void readActiveTrip().then(setActiveTrip);
+    });
+  }, []);
+
   if (!station) {
     return (
       <View style={styles.centered}>
@@ -92,8 +99,7 @@ export default function StationDetailScreen() {
     setVisited(next);
   };
 
-  const handleTripChanged = async (trip: PlannedDeparture | null) => {
-    await writeActiveTrip(trip);
+  const handleTripChanged = (trip: PlannedDeparture | null) => {
     setActiveTrip(trip);
   };
 

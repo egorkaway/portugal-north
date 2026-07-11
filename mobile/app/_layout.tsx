@@ -1,6 +1,7 @@
 import '@/widgets/TripWidget';
 
 import { useFonts } from 'expo-font';
+import * as Notifications from 'expo-notifications';
 import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
@@ -8,6 +9,15 @@ import 'react-native-reanimated';
 
 import { WidgetSyncBootstrap } from '@/components/WidgetSyncBootstrap';
 import { useColorScheme } from '@/components/useColorScheme';
+
+Notifications.setNotificationHandler({
+  handleNotification: async () => ({
+    shouldShowBanner: true,
+    shouldShowList: true,
+    shouldPlaySound: true,
+    shouldSetBadge: false,
+  }),
+});
 
 export {
   ErrorBoundary,

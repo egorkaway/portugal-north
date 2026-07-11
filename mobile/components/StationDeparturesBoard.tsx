@@ -11,7 +11,13 @@ import {
   formatDepartureCountdown,
   getMinutesUntilDeparture,
 } from '@/lib/departureCountdown';
-import { takeActiveTrip, clearActiveTrip } from '@/lib/tripStorage';
+import { lisbonDateAndTime } from '@/lib/lisbonTime';
+import {
+  buildPlannedDepartureId,
+  clearActiveTrip,
+  readActiveTrip,
+  takeActiveTrip,
+} from '@/lib/tripStorage';
 import type { PlannedDeparture, StationDeparture } from '@/lib/types';
 import { theme } from '@/constants/theme';
 
@@ -21,8 +27,28 @@ type Props = {
   onTripChanged: (trip: PlannedDeparture | null) => void;
 };
 
-function buildDepartureId(dep: StationDeparture, stationName: string): string {
-  return `${stationName}|${dep.trainNumber}|${dep.time}|${dep.destination}`;
+function buildOptimisticTrip(
+  dep: StationDeparture,
+  stationName: string,
+): PlannedDeparture {
+  const { date } = lisbonDateAndTime();
+  return {
+    id: buildPlannedDepartureId(
+      stationName,
+      dep.trainNumber,
+      dep.time,
+      dep.destination,
+    ),
+    stationName,
+    trainNumber: dep.trainNumber,
+    departureTime: dep.time,
+    destination: dep.destination,
+    serviceType: dep.serviceType,
+    platform: dep.platform,
+    delayMinutes: dep.delayMinutes,
+    timetableDate: date,
+    selectedAt: new Date().toISOString(),
+  };
 }
 
 export function StationDeparturesBoard({
@@ -48,25 +74,33 @@ export function StationDeparturesBoard({
   }, [load]);
 
   const toggleTake = async (dep: StationDeparture) => {
-    const id = buildDepartureId(dep, stationName);
-    const isTaking = activeTrip?.id === id;
+    const optimisticTrip = buildOptimisticTrip(dep, stationName);
+    const isCurrentlyTaking = activeTrip?.id === optimisticTrip.id;
 
-    if (isTaking) {
-      await clearActiveTrip();
+    if (isCurrentlyTaking) {
       onTripChanged(null);
+      await clearActiveTrip();
       return;
     }
 
-    const trip = await takeActiveTrip({
-      stationName,
-      trainNumber: dep.trainNumber,
-      departureTime: dep.time,
-      destination: dep.destination,
-      serviceType: dep.serviceType,
-      platform: dep.platform,
-      delayMinutes: dep.delayMinutes,
-    });
-    onTripChanged(trip);
+    onTripChanged(optimisticTrip);
+
+    try {
+      const trip = await takeActiveTrip({
+        stationName,
+        trainNumber: dep.trainNumber,
+        departureTime: dep.time,
+        destination: dep.destination,
+        serviceType: dep.serviceType,
+        platform: dep.platform,
+        delayMinutes: dep.delayMinutes,
+      });
+      onTripChanged(trip);
+    } catch (error) {
+      console.warn('[trip] take failed', error);
+      const stored = await readActiveTrip();
+      onTripChanged(stored?.id === optimisticTrip.id ? stored : null);
+    }
   };
 
   if (loading) {
@@ -84,7 +118,12 @@ export function StationDeparturesBoard({
   return (
     <View style={styles.list}>
       {departures.map((dep) => {
-        const id = buildDepartureId(dep, stationName);
+        const id = buildPlannedDepartureId(
+          stationName,
+          dep.trainNumber,
+          dep.time,
+          dep.destination,
+        );
         const taking = activeTrip?.id === id;
         const minutes = taking
           ? getMinutesUntilDeparture(dep.time, dep.delayMinutes, now)
@@ -126,7 +165,7 @@ export function StationDeparturesBoard({
                     taking && { color: '#fff' },
                   ]}
                 >
-                  {taking ? 'Tracking' : 'Take'}
+                  {taking ? 'Taking' : 'Take'}
                 </Text>
               </Pressable>
             </View>

@@ -194,7 +194,7 @@ export async function onTripDeparted(): Promise<void> {
   if (!trip) return;
 
   const minutes = getMinutesUntilDeparture(trip.departureTime, trip.delayMinutes);
-  if (minutes === null || minutes > 0) return;
+  if (minutes === null || minutes >= 0) return;
 
   const { recordTakenTrip, writeActiveTrip } = await import('@/lib/tripStorage');
   await recordTakenTrip(trip);
