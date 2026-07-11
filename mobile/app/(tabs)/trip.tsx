@@ -8,7 +8,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useFocusEffect, useRouter } from 'expo-router';
 import { theme } from '@/constants/theme';
 import {
   fetchStationDepartures,
@@ -28,14 +28,15 @@ import {
 import { downstreamStopsFrom } from '@/lib/trainJourney';
 import { stationToSlug } from '@/lib/stationData';
 import {
+  clearActiveTrip,
   deleteTripHistoryRecord,
   readActiveTrip,
   readTripHistory,
-  writeActiveTrip,
 } from '@/lib/tripStorage';
+import { subscribeTripChanges } from '@/lib/tripEvents';
 import { useTripCompletion } from '@/lib/useTripCompletion';
 import { useTripDepartureRecord } from '@/lib/useTripDepartureRecord';
-import { clearTripWidgets, syncTripWidgets } from '@/lib/widgetSync';
+import { syncTripWidgets } from '@/lib/widgetSync';
 import type { CompletedTripRecord, PlannedDeparture } from '@/lib/types';
 import type { TrainJourneyStop } from '@/lib/api';
 
@@ -143,8 +144,20 @@ export default function TripScreen() {
   useEffect(() => {
     void reload().finally(() => setLoading(false));
     const timer = setInterval(() => setNow(new Date()), 60_000);
-    return () => clearInterval(timer);
+    const unsubscribe = subscribeTripChanges(() => {
+      void reload();
+    });
+    return () => {
+      clearInterval(timer);
+      unsubscribe();
+    };
   }, [reload]);
+
+  useFocusEffect(
+    useCallback(() => {
+      void reload();
+    }, [reload]),
+  );
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
@@ -171,10 +184,9 @@ export default function TripScreen() {
   useTripCompletion(activeTrip, downstreamStops, delayMinutes, now, onTripCompleted);
 
   const clearTrip = async () => {
-    await writeActiveTrip(null);
+    await clearActiveTrip();
     setActiveTrip(null);
     setJourney(null);
-    await clearTripWidgets();
     await reload();
   };
 

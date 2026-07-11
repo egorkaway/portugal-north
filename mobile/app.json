@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.verystays.app",
+      "bundleIdentifier": "com.iberian.travel",
       "infoPlist": {
         "NSSupportsLiveActivities": true,
         "NSSupportsLiveActivitiesFrequentUpdates": true,
@@ -18,7 +18,7 @@
       }
     },
     "android": {
-      "package": "com.verystays.app",
+      "package": "com.iberian.travel",
       "adaptiveIcon": {
         "backgroundColor": "#012841",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
@@ -51,8 +51,8 @@
       [
         "expo-widgets",
         {
-          "bundleIdentifier": "com.verystays.app.widgets",
-          "groupIdentifier": "group.com.verystays.app",
+          "bundleIdentifier": "com.iberian.travel.widgets",
+          "groupIdentifier": "group.com.iberian.travel",
           "enablePushNotifications": false,
           "widgets": [
             {

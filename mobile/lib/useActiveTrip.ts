@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { subscribeTripChanges } from '@/lib/tripEvents';
 import { readActiveTrip } from '@/lib/tripStorage';
 import type { PlannedDeparture } from '@/lib/types';
 
@@ -11,8 +12,9 @@ export function useActiveTrip(): PlannedDeparture | null {
 
   useEffect(() => {
     void refresh();
-    const timer = setInterval(() => void refresh(), 15_000);
-    return () => clearInterval(timer);
+    return subscribeTripChanges(() => {
+      void refresh();
+    });
   }, [refresh]);
 
   return trip;

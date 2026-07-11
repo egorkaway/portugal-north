@@ -1,10 +1,14 @@
 import {
-  formatDepartureCountdown,
+  formatWidgetCountdown,
   getEffectiveDepartureClock,
   getMinutesUntilDeparture,
 } from "@/lib/departureCountdown";
 import { findNearestStation } from "@/lib/nearestStation";
+import { DEFAULT_WIDGET_PROPS, normalizeWidgetProps } from "@/lib/widgetDefaults";
 import type { CompletedTripRecord, PlannedDeparture, TripWidgetProps } from "@/lib/types";
+
+/** Busiest CP hub — sensible default when location is unavailable. */
+const FEATURED_STATION = "Porto-Campanhã";
 
 export function buildWidgetProps(input: {
   activeTrip: PlannedDeparture | null;
@@ -32,7 +36,7 @@ export function buildWidgetProps(input: {
       headline:
         countdown === null
           ? input.activeTrip.departureTime
-          : formatDepartureCountdown(countdown),
+          : formatWidgetCountdown(countdown),
       subline: `${input.activeTrip.trainNumber} → ${input.activeTrip.destination}`,
       countdownMinutes: countdown,
       stationName: input.activeTrip.stationName,
@@ -74,18 +78,13 @@ export function buildWidgetProps(input: {
     };
   }
 
-  return {
-    mode: "empty",
-    headline: "VeryStays",
-    subline: "Take a train to see countdowns here",
-    countdownMinutes: null,
-    stationName: "",
-    trainNumber: "",
-    departureTime: "",
-    destination: "",
-    delayMinutes: null,
-    platform: null,
-  };
+  return normalizeWidgetProps({
+    ...DEFAULT_WIDGET_PROPS,
+    mode: "browse",
+    headline: FEATURED_STATION,
+    subline: "VeryStays · browse 426 stations",
+    stationName: FEATURED_STATION,
+  });
 }
 
 export function buildWidgetPropsWithLocation(input: {

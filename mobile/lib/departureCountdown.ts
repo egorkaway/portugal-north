@@ -62,6 +62,16 @@ export function formatDepartureCountdown(minutes: number): string {
   return `Leaves in ${hours}h ${remainder}m`;
 }
 
+/** Compact countdown for widgets, Live Activity, and Dynamic Island. */
+export function formatWidgetCountdown(minutes: number): string {
+  if (minutes <= 0) return 'Now';
+  if (minutes < 60) return `${minutes} min`;
+  const hours = Math.floor(minutes / 60);
+  const remainder = minutes % 60;
+  if (remainder === 0) return `${hours}h`;
+  return `${hours}h ${remainder}m`;
+}
+
 export function formatArrivalCountdown(minutes: number): string {
   if (minutes <= 0) return 'Arriving now';
   if (minutes < 60) return `Arrives in ${minutes} min`;

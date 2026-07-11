@@ -1,28 +1,23 @@
-import { Platform } from "react-native";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import * as Location from "expo-location";
-import { fetchStationDepartures, matchLiveDeparture } from "@/lib/api";
+import { Platform } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Location from 'expo-location';
+import { fetchStationDepartures, matchLiveDeparture } from '@/lib/api';
 import {
-  formatDepartureCountdown,
+  formatWidgetCountdown,
   getMinutesUntilDeparture,
-} from "@/lib/departureCountdown";
+} from '@/lib/departureCountdown';
+import { DEFAULT_WIDGET_PROPS, normalizeWidgetProps } from '@/lib/widgetDefaults';
 import {
   readActiveTrip,
   readLastCoords,
   readTripHistory,
   writeLastCoords,
-} from "@/lib/tripStorage";
-import { buildWidgetPropsWithLocation } from "@/lib/widgetSnapshot";
-import type { TripWidgetProps } from "@/lib/types";
+} from '@/lib/tripStorage';
+import { buildWidgetPropsWithLocation } from '@/lib/widgetSnapshot';
+import type { TripWidgetProps } from '@/lib/types';
+import tripWidget from '@/widgets/TripWidget';
 
-const LIVE_ACTIVITY_ID_KEY = "pn_live_activity_id_v1";
-
-type TripWidgetModule = {
-  default: {
-    updateTimeline: (entries: { date: Date; props: TripWidgetProps }[]) => void;
-    reload: () => void;
-  };
-};
+const LIVE_ACTIVITY_ID_KEY = 'pn_live_activity_id_v1';
 
 type LiveActivityModule = {
   default: {
@@ -31,19 +26,30 @@ type LiveActivityModule = {
   };
 };
 
-function getTripWidget(): TripWidgetModule["default"] | null {
-  if (Platform.OS !== "ios") return null;
-  try {
-    return (require("@/widgets/TripWidget").default as TripWidgetModule["default"]);
-  } catch {
-    return null;
-  }
+function getTripWidget() {
+  return Platform.OS === 'ios' ? tripWidget : null;
 }
 
-function getLiveActivityFactory(): LiveActivityModule["default"] | null {
-  if (Platform.OS !== "ios") return null;
+/** UserDefaults in the widget bridge does not reliably store null values. */
+function propsForWidgetBridge(props: TripWidgetProps): TripWidgetProps {
+  return {
+    mode: props.mode,
+    headline: props.headline,
+    subline: props.subline,
+    stationName: props.stationName,
+    trainNumber: props.trainNumber,
+    departureTime: props.departureTime,
+    destination: props.destination,
+    countdownMinutes: props.countdownMinutes ?? -1,
+    delayMinutes: props.delayMinutes ?? -1,
+    platform: props.platform ?? '',
+  };
+}
+
+function getLiveActivityFactory(): LiveActivityModule['default'] | null {
+  if (Platform.OS !== 'ios') return null;
   try {
-    return (require("@/widgets/TrainTripLiveActivity").default as LiveActivityModule["default"]);
+    return (require('@/widgets/TrainTripLiveActivity').default as LiveActivityModule['default']);
   } catch {
     return null;
   }
@@ -54,7 +60,7 @@ async function resolveCoords(): Promise<{ lat: number; lng: number } | null> {
   if (cached) return { lat: cached.lat, lng: cached.lng };
 
   const { status } = await Location.getForegroundPermissionsAsync();
-  if (status !== "granted") return null;
+  if (status !== 'granted') return null;
 
   try {
     const fix = await Location.getCurrentPositionAsync({
@@ -68,27 +74,44 @@ async function resolveCoords(): Promise<{ lat: number; lng: number } | null> {
 }
 
 function buildTimeline(props: TripWidgetProps, now = new Date()) {
-  if (props.mode !== "active" || props.countdownMinutes === null) {
-    return [{ date: now, props }];
+  const normalized = normalizeWidgetProps(props);
+
+  if (normalized.mode !== 'active' || normalized.countdownMinutes === null || normalized.countdownMinutes < 0) {
+    return [{ date: now, props: normalized }];
   }
 
   const entries: { date: Date; props: TripWidgetProps }[] = [];
-  const minutes = Math.max(0, props.countdownMinutes);
+  const minutes = Math.max(0, normalized.countdownMinutes);
 
   for (let offset = 0; offset <= minutes && offset <= 180; offset += 1) {
     const date = new Date(now.getTime() + offset * 60_000);
     const remaining = minutes - offset;
     entries.push({
       date,
-      props: {
-        ...props,
+      props: normalizeWidgetProps({
+        ...normalized,
         countdownMinutes: remaining,
-        headline: remaining <= 0 ? "Now" : formatDepartureCountdown(remaining),
-      },
+        headline: remaining <= 0 ? 'Now' : formatWidgetCountdown(remaining),
+      }),
     });
   }
 
-  return entries.length > 0 ? entries : [{ date: now, props }];
+  return entries.length > 0 ? entries : [{ date: now, props: normalized }];
+}
+
+function pushWidgetState(widget: NonNullable<ReturnType<typeof getTripWidget>>, props: TripWidgetProps, now = new Date()) {
+  const normalized = propsForWidgetBridge(normalizeWidgetProps(props));
+  const timeline = buildTimeline(normalized, now).map((entry) => ({
+    date: entry.date,
+    props: propsForWidgetBridge(normalizeWidgetProps(entry.props)),
+  }));
+
+  try {
+    widget.updateTimeline(timeline);
+    widget.reload();
+  } catch (error) {
+    console.warn('[widget] updateTimeline failed', error);
+  }
 }
 
 async function enrichActiveTripDelay() {
@@ -110,7 +133,9 @@ async function syncLiveActivity(props: TripWidgetProps): Promise<void> {
   const factory = getLiveActivityFactory();
   if (!factory) return;
 
-  if (props.mode !== "active") {
+  const normalized = normalizeWidgetProps(props);
+
+  if (normalized.mode !== 'active') {
     const instances = factory.getInstances();
     await Promise.all(instances.map((instance) => instance.end()));
     await AsyncStorage.removeItem(LIVE_ACTIVITY_ID_KEY);
@@ -119,11 +144,11 @@ async function syncLiveActivity(props: TripWidgetProps): Promise<void> {
 
   const instances = factory.getInstances();
   if (instances.length > 0) {
-    instances[0].update(props);
+    instances[0].update(normalized);
     return;
   }
 
-  factory.start(props, "verystays://trip");
+  factory.start(normalized, 'verystays://trip');
 }
 
 /** Push the latest trip state to the iOS home-screen widget and Live Activity. */
@@ -132,21 +157,30 @@ export async function syncTripWidgets(now = new Date()): Promise<TripWidgetProps
   const history = await readTripHistory();
   const coords = await resolveCoords();
 
-  const props = buildWidgetPropsWithLocation({
-    activeTrip,
-    lastTaken: history[0] ?? null,
-    coords,
-    now,
-  });
+  const props = normalizeWidgetProps(
+    buildWidgetPropsWithLocation({
+      activeTrip,
+      lastTaken: history[0] ?? null,
+      coords,
+      now,
+    }),
+  );
 
   const widget = getTripWidget();
   if (widget) {
-    widget.updateTimeline(buildTimeline(props, now));
-    widget.reload();
+    pushWidgetState(widget, props, now);
   }
 
   await syncLiveActivity(props);
   return props;
+}
+
+/** Seed widget with defaults before trip data is available. */
+export async function seedWidgetTimeline(): Promise<void> {
+  const widget = getTripWidget();
+  if (!widget) return;
+  pushWidgetState(widget, DEFAULT_WIDGET_PROPS);
+  widget.reload();
 }
 
 /** End Live Activity and refresh widget after clearing an active trip. */
@@ -162,7 +196,7 @@ export async function onTripDeparted(): Promise<void> {
   const minutes = getMinutesUntilDeparture(trip.departureTime, trip.delayMinutes);
   if (minutes === null || minutes > 0) return;
 
-  const { recordTakenTrip, writeActiveTrip } = await import("@/lib/tripStorage");
+  const { recordTakenTrip, writeActiveTrip } = await import('@/lib/tripStorage');
   await recordTakenTrip(trip);
   await writeActiveTrip(null);
   await syncTripWidgets();

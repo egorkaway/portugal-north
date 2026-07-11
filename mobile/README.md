@@ -99,6 +99,7 @@ Run from `mobile/` whenever `src/data/` or `public/data/reliability-scores.json`
 
 ```bash
 npm run sync:data
+npm run sync:icons   # from public/icon-source.png → iOS AppIcon + assets
 ```
 
 This exports `stations-full.json`, images, hotels, summaries, reliability scores, and CP codes into `mobile/data/`.
@@ -108,6 +109,6 @@ This exports `stations-full.json`, images, hotels, summaries, reliability scores
 | Issue | Fix |
 |-------|-----|
 | Signing errors | Set Team in Xcode for **VeryStays** + **ExpoWidgetsTarget** |
-| Widget not updating | Open the app once; confirm App Group `group.com.verystays.app` |
+| Widget not updating | Open the app once; confirm App Group `group.com.iberian.travel` |
 | Map blank on simulator | Ensure `react-native-maps` pods installed (`npm run ios:pods`) |
 | Release app asks for Metro | Rebuild with `npm run ios:release` |

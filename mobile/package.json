@@ -43,7 +43,8 @@
     "web": "expo start --web",
     "prebuild": "expo prebuild",
     "prebuild:clean": "expo prebuild --clean",
-    "sync:data": "node --import tsx ./scripts/sync-data.mjs"
+    "sync:data": "node --import tsx ./scripts/sync-data.mjs",
+    "sync:icons": "node ./scripts/sync-icons.mjs"
   },
   "private": true
 }

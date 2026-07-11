@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { onTripDeparted, syncTripWidgets } from "@/lib/widgetSync";
+import { useEffect, useState } from 'react';
+import { onTripDeparted, seedWidgetTimeline, syncTripWidgets } from '@/lib/widgetSync';
 
 /** Keeps widget + Live Activity in sync while the app is open. */
 export function WidgetSyncBootstrap() {
@@ -9,8 +9,13 @@ export function WidgetSyncBootstrap() {
     let cancelled = false;
 
     const run = async () => {
-      await syncTripWidgets();
-      await onTripDeparted();
+      try {
+        await seedWidgetTimeline();
+        await syncTripWidgets();
+        await onTripDeparted();
+      } catch (error) {
+        console.warn('[widget] sync failed', error);
+      }
       if (!cancelled) setTick((value) => value + 1);
     };
 

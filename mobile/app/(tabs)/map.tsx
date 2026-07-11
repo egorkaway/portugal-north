@@ -19,11 +19,12 @@ import {
 } from '@/lib/stationData';
 import { writeLastCoords } from '@/lib/tripStorage';
 
+/** Fits Iberian peninsula (≈35.8°N–44°N, 10°W–4°E) on portrait phones. */
 const IBERIAN_REGION = {
   latitude: 39.9,
-  longitude: -3.1,
-  latitudeDelta: 8,
-  longitudeDelta: 10,
+  longitude: -3,
+  latitudeDelta: 10,
+  longitudeDelta: 18,
 };
 
 function markerSize(movements: number): number {

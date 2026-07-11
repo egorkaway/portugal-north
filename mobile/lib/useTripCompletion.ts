@@ -2,8 +2,7 @@ import { useEffect, useRef } from 'react';
 import { getMinutesUntilTime } from '@/lib/departureCountdown';
 import type { TrainJourneyStop } from '@/lib/api';
 import type { PlannedDeparture } from '@/lib/types';
-import { recordTakenTrip, writeActiveTrip } from '@/lib/tripStorage';
-import { clearTripWidgets, syncTripWidgets } from '@/lib/widgetSync';
+import { recordTakenTrip, clearActiveTrip } from '@/lib/tripStorage';
 
 export function useTripCompletion(
   trip: PlannedDeparture | null,
@@ -33,8 +32,7 @@ export function useTripCompletion(
     recordedRef.current = trip.id;
     void (async () => {
       await recordTakenTrip(trip, finalStop.stationName);
-      await writeActiveTrip(null);
-      await syncTripWidgets();
+      await clearActiveTrip();
       onCompleted();
     })();
   }, [trip, downstreamStops, delayMinutes, now, onCompleted]);

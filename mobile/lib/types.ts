@@ -22,7 +22,7 @@ export type StationLite = {
   lng: number;
 };
 
-export type TripWidgetMode = "active" | "lastTaken" | "nearest" | "empty";
+export type TripWidgetMode = "active" | "lastTaken" | "nearest" | "browse";
 
 export type TripWidgetProps = {
   mode: TripWidgetMode;

@@ -1,6 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import type { CompletedTripRecord, PlannedDeparture } from "@/lib/types";
 import { lisbonDateAndTime } from "@/lib/lisbonTime";
+import { notifyTripChanged } from "@/lib/tripEvents";
 
 const ACTIVE_TRIP_KEY = "pn_active_trip_v2";
 const TRIP_HISTORY_KEY = "pn_trip_history_v1";
@@ -26,6 +27,7 @@ export async function writeActiveTrip(trip: PlannedDeparture | null): Promise<vo
   } else {
     await AsyncStorage.removeItem(ACTIVE_TRIP_KEY);
   }
+  notifyTripChanged();
 }
 
 export async function readTripHistory(): Promise<CompletedTripRecord[]> {
@@ -58,6 +60,7 @@ export async function recordTakenTrip(
     TRIP_HISTORY_KEY,
     JSON.stringify([next, ...withoutDuplicate].slice(0, 100)),
   );
+  notifyTripChanged();
 }
 
 export async function deleteTripHistoryRecord(tripId: string): Promise<void> {
@@ -66,6 +69,7 @@ export async function deleteTripHistoryRecord(tripId: string): Promise<void> {
     TRIP_HISTORY_KEY,
     JSON.stringify(records.filter((record) => record.id !== tripId)),
   );
+  notifyTripChanged();
 }
 
 export async function readLastCoords(): Promise<StoredCoords | null> {
@@ -74,7 +78,7 @@ export async function readLastCoords(): Promise<StoredCoords | null> {
   try {
     const parsed = JSON.parse(raw) as StoredCoords;
     if (typeof parsed.lat !== "number" || typeof parsed.lng !== "number") return null;
-    if (Date.now() - parsed.at > 30 * 60 * 1000) return null;
+    if (Date.now() - parsed.at > 7 * 24 * 60 * 60 * 1000) return null;
     return parsed;
   } catch {
     return null;
@@ -124,4 +128,28 @@ export async function setActiveTripFromDeparture(input: {
   };
   await writeActiveTrip(trip);
   return trip;
+}
+
+/** Set active trip, record in history, and refresh widgets immediately. */
+export async function takeActiveTrip(input: {
+  stationName: string;
+  trainNumber: string;
+  departureTime: string;
+  destination: string;
+  serviceType: string;
+  platform: string | null;
+  delayMinutes: number | null;
+}): Promise<PlannedDeparture> {
+  const trip = await setActiveTripFromDeparture(input);
+  await recordTakenTrip(trip, trip.destination);
+  const { syncTripWidgets } = await import("@/lib/widgetSync");
+  await syncTripWidgets();
+  return trip;
+}
+
+/** Clear active tracking and refresh widgets. */
+export async function clearActiveTrip(): Promise<void> {
+  await writeActiveTrip(null);
+  const { syncTripWidgets } = await import("@/lib/widgetSync");
+  await syncTripWidgets();
 }

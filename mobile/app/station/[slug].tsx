@@ -11,6 +11,8 @@ import {
   View,
 } from 'react-native';
 import { StationDeparturesBoard } from '@/components/StationDeparturesBoard';
+import { StationHotelList } from '@/components/StationHotelList';
+import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
 import { VoteButtons } from '@/components/VoteButtons';
 import { theme } from '@/constants/theme';
 import { getReliabilityForStation, reliabilityScoreColor } from '@/lib/reliabilityScore';
@@ -171,21 +173,10 @@ export default function StationDetailScreen() {
       {hotels.length > 0 ? (
         <>
           <Text style={styles.sectionTitle}>Budget stays nearby</Text>
-          {hotels.slice(0, 5).map((hotel) => (
-            <Pressable
-              key={hotel.name}
-              style={styles.hotelRow}
-              onPress={() => void Linking.openURL(hotel.bookingUrl)}
-            >
-              <View style={styles.hotelMain}>
-                <Text style={styles.hotelName}>{hotel.name}</Text>
-                <Text style={styles.hotelMeta}>
-                  {hotel.distanceKm.toFixed(1)} km · from €{hotel.priceFrom}/night
-                </Text>
-              </View>
-              <Text style={styles.hotelLink}>Book</Text>
-            </Pressable>
-          ))}
+          <Text style={styles.sectionIntro}>
+            Curated budget hotels within walking distance of the station.
+          </Text>
+          <StationHotelList hotels={hotels.slice(0, 5)} />
         </>
       ) : null}
 
@@ -298,15 +289,22 @@ const styles = StyleSheet.create({
     color: theme.primary,
   },
   sectionTitle: {
-    paddingHorizontal: 16,
+    paddingHorizontal: STATION_SECTION_PADDING,
     paddingTop: 20,
     paddingBottom: 8,
     fontSize: 18,
     fontWeight: '700',
     color: theme.primary,
   },
+  sectionIntro: {
+    paddingHorizontal: STATION_SECTION_PADDING,
+    paddingBottom: 8,
+    fontSize: 13,
+    lineHeight: 18,
+    color: theme.primaryMuted,
+  },
   reliabilityCard: {
-    marginHorizontal: 16,
+    marginHorizontal: STATION_SECTION_PADDING,
     marginTop: 8,
     backgroundColor: theme.card,
     borderRadius: 12,
@@ -323,39 +321,8 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: theme.primaryMuted,
   },
-  hotelRow: {
-    marginHorizontal: 16,
-    marginBottom: 8,
-    backgroundColor: theme.card,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: theme.border,
-    padding: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: 12,
-  },
-  hotelMain: {
-    flex: 1,
-    gap: 2,
-  },
-  hotelName: {
-    fontSize: 15,
-    fontWeight: '700',
-    color: theme.primary,
-  },
-  hotelMeta: {
-    fontSize: 13,
-    color: theme.primaryMuted,
-  },
-  hotelLink: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: theme.primary,
-  },
   mapsButton: {
-    marginHorizontal: 16,
+    marginHorizontal: STATION_SECTION_PADDING,
     marginTop: 20,
     backgroundColor: theme.primary,
     borderRadius: 999,
