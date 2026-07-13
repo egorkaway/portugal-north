@@ -121,6 +121,7 @@ export default function MapScreen() {
         initialRegion={IBERIAN_REGION}
         showsUserLocation={showsUserLocation}
         showsMyLocationButton={false}
+        onPress={() => setSelectedName(null)}
       >
         {markers.map(({ station, color, size }) => (
           <Marker
@@ -155,15 +156,31 @@ export default function MapScreen() {
 
       {selected ? (
         <View style={styles.sheet}>
-          <Text style={styles.sheetTitle}>{selected.station.name}</Text>
+          <View style={styles.sheetHeader}>
+            <Text style={styles.sheetTitle} numberOfLines={2}>
+              {selected.station.name}
+            </Text>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel="Close station card"
+              onPress={() => setSelectedName(null)}
+              style={styles.sheetClose}
+              hitSlop={8}
+            >
+              <SymbolView
+                name={{ ios: 'xmark', android: 'close', web: 'close' }}
+                tintColor={theme.primaryMuted}
+                size={16}
+                weight="semibold"
+              />
+            </Pressable>
+          </View>
           <Text style={styles.sheetMeta}>{selected.station.lines.join(' · ')}</Text>
           {selected.score !== null ? (
             <Text style={styles.sheetScore}>
               Reliability {selected.score}/10 · {selected.movements} movements/day
             </Text>
-          ) : (
-            <Text style={styles.sheetScore}>No CP reliability score</Text>
-          )}
+          ) : null}
           <Pressable
             style={styles.sheetButton}
             onPress={() => router.push(`/station/${stationToSlug(selected.station.name)}`)}
@@ -252,10 +269,25 @@ const styles = StyleSheet.create({
     borderColor: theme.border,
     gap: 6,
   },
+  sheetHeader: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    gap: 12,
+  },
   sheetTitle: {
+    flex: 1,
     fontSize: 18,
     fontWeight: '700',
     color: theme.primary,
+  },
+  sheetClose: {
+    width: 28,
+    height: 28,
+    borderRadius: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: theme.background,
   },
   sheetMeta: {
     fontSize: 13,

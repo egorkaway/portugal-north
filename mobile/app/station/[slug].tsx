@@ -172,7 +172,7 @@ export default function StationDetailScreen() {
               {reliability.score}/10
             </Text>
             <Text style={styles.reliabilityMeta}>
-              Based on {reliability.movements} daily movements (CP data, baked into app).
+              Based on cumulative delays from live departure data.
             </Text>
           </View>
         </>

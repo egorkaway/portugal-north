@@ -7,6 +7,8 @@ import {
   padding,
 } from '@expo/ui/swift-ui/modifiers';
 import { createLiveActivity, type LiveActivityEnvironment } from 'expo-widgets';
+import { widgetTheme } from '@/constants/widgetTheme';
+import { formatWidgetCompactCountdown } from '@/lib/widgetTrip';
 import type { TripWidgetProps } from '@/lib/types';
 
 const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivityEnvironment) => {
@@ -20,6 +22,14 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
     typeof props.subline === 'string' && props.subline.trim()
       ? props.subline.trim()
       : 'VeryStays';
+  const destination =
+    typeof props.destination === 'string' && props.destination.trim()
+      ? props.destination.trim()
+      : '';
+  const trainNumber =
+    typeof props.trainNumber === 'string' && props.trainNumber.trim()
+      ? props.trainNumber.trim()
+      : '';
   const departureTime =
     typeof props.departureTime === 'string' && props.departureTime.trim()
       ? props.departureTime.trim()
@@ -34,37 +44,42 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       ? Math.floor(countdownRaw)
       : null;
 
-  let compactCountdown =
-    typeof props.headline === 'string' && props.headline.trim()
-      ? props.headline.trim()
-      : 'Now';
-  if (countdownMinutes !== null) {
-    if (countdownMinutes <= 0) {
-      compactCountdown = 'Now';
-    } else if (countdownMinutes < 60) {
-      compactCountdown = `${countdownMinutes} min`;
-    } else {
-      const hours = Math.floor(countdownMinutes / 60);
-      const remainder = countdownMinutes % 60;
-      compactCountdown = remainder === 0 ? `${hours}h` : `${hours}h ${remainder}m`;
-    }
-  }
+  const compactCountdown =
+    countdownMinutes !== null
+      ? formatWidgetCompactCountdown(countdownMinutes)
+      : typeof props.headline === 'string' && props.headline.trim()
+        ? props.headline.trim()
+        : 'Now';
 
-  const background = '#012841';
-  const primary = environment.isLuminanceReduced ? '#FFFFFF' : '#FFFFFF';
-  const muted = environment.isLuminanceReduced ? '#D0D8DE' : '#B8C5CE';
-  const accent = '#7EC8E3';
+  const destinationLine = destination
+    ? trainNumber
+      ? `${trainNumber} → ${destination}`
+      : destination
+    : subline;
+
+  const background = widgetTheme.primary;
+  const primary = environment.isLuminanceReduced ? widgetTheme.onPrimary : widgetTheme.onPrimary;
+  const muted = environment.isLuminanceReduced ? '#D0D8DE' : widgetTheme.mutedOnPrimary;
+  const accent = widgetTheme.accent;
 
   return {
     banner: (
       <VStack modifiers={[containerBackground(background, 'widget'), padding({ all: 12 })]}>
-        <Text modifiers={[font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(1)]}>
+        <Text modifiers={[font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
           {stationName}
         </Text>
         <Text modifiers={[font({ weight: 'bold', size: 20 }), foregroundStyle(primary), lineLimit(1)]}>
           {compactCountdown}
         </Text>
-        <Text modifiers={[font({ size: 14 }), foregroundStyle(muted), lineLimit(1)]}>{subline}</Text>
+        <Text
+          modifiers={[
+            font({ size: 12, weight: 'semibold' }),
+            foregroundStyle(primary),
+            lineLimit(3),
+          ]}
+        >
+          {destinationLine}
+        </Text>
       </VStack>
     ),
     compactLeading: <Image systemName="tram.fill" color={accent} />,
@@ -77,7 +92,7 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
     expandedLeading: (
       <VStack modifiers={[padding({ all: 8 })]}>
         <Image systemName="tram.fill" color={accent} />
-        <Text modifiers={[font({ size: 11 }), foregroundStyle(muted), lineLimit(1)]}>
+        <Text modifiers={[font({ size: 11 }), foregroundStyle(muted), lineLimit(2)]}>
           {stationName}
         </Text>
       </VStack>
@@ -92,11 +107,19 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
     ),
     expandedBottom: (
       <VStack modifiers={[padding({ all: 8 })]}>
-        <Text modifiers={[font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(1)]}>
+        <Text modifiers={[font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
           {stationName}
         </Text>
-        <Text modifiers={[font({ size: 13 }), foregroundStyle(muted), lineLimit(1)]}>{subline}</Text>
-        <Text modifiers={[font({ size: 12 }), foregroundStyle(muted), lineLimit(1)]}>
+        <Text
+          modifiers={[
+            font({ size: 12, weight: 'semibold' }),
+            foregroundStyle(primary),
+            lineLimit(4),
+          ]}
+        >
+          {destinationLine}
+        </Text>
+        <Text modifiers={[font({ size: 12 }), foregroundStyle(accent), lineLimit(1)]}>
           {platform ? `Platform ${platform}` : 'Open VeryStays'}
         </Text>
       </VStack>

@@ -4,11 +4,29 @@ import {
   getMinutesUntilDeparture,
 } from "@/lib/departureCountdown";
 import { findNearestStation } from "@/lib/nearestStation";
+import { isLastTripStale } from "@/lib/widgetTrip";
 import { DEFAULT_WIDGET_PROPS, normalizeWidgetProps } from "@/lib/widgetDefaults";
 import type { CompletedTripRecord, PlannedDeparture, TripWidgetProps } from "@/lib/types";
 
 /** Busiest CP hub — sensible default when location is unavailable. */
 const FEATURED_STATION = "Porto-Campanhã";
+
+function buildPromptNextTrainProps(nearestStationName: string | null): TripWidgetProps {
+  return normalizeWidgetProps({
+    mode: "browse",
+    headline: "Take your next train",
+    subline: nearestStationName
+      ? `Open departures at ${nearestStationName}`
+      : "Open VeryStays and tap Take on a departure",
+    stationName: nearestStationName ?? FEATURED_STATION,
+    countdownMinutes: null,
+    trainNumber: "",
+    departureTime: "",
+    destination: "",
+    delayMinutes: null,
+    platform: null,
+  });
+}
 
 export function buildWidgetProps(input: {
   activeTrip: PlannedDeparture | null;
@@ -49,6 +67,10 @@ export function buildWidgetProps(input: {
   }
 
   if (input.lastTaken) {
+    if (isLastTripStale(input.lastTaken, now)) {
+      return buildPromptNextTrainProps(input.nearestStationName);
+    }
+
     return {
       mode: "lastTaken",
       headline: input.lastTaken.stationName,
