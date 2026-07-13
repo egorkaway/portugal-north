@@ -248,6 +248,8 @@ export const en: Messages = {
     countrySpain: "Spain",
     portugalHowToBuyIntro:
       "Long-distance CP trains can be bought online, in the CP app, at station ticket offices, or onboard some Regional services (cash only, no seat guarantee).",
+    portoVigoRenfeNote:
+      "Porto–Vigo (Celta): online tickets are sold by Renfe, not CP — they are not available on the CP website or app. CP station ticket offices can still sell this route.",
     portugalServiceAP:
       "Alfa Pendular — fastest Lisbon–Porto service; book ahead for the best price.",
     portugalServiceIC: "Intercidades — intercity trains across Portugal.",

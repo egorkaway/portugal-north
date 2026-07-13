@@ -3,14 +3,15 @@ import '@/widgets/TrainTripLiveActivity';
 
 import { useFonts } from 'expo-font';
 import * as Notifications from 'expo-notifications';
-import { DarkTheme, DefaultTheme, Stack, ThemeProvider } from 'expo-router';
+import { DefaultTheme, Stack, ThemeProvider } from 'expo-router';
+import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
+import Colors from '@/constants/Colors';
 import { WidgetSyncBootstrap } from '@/components/WidgetSyncBootstrap';
-import { useColorScheme } from '@/components/useColorScheme';
 import { seedWidgetTimeline } from '@/lib/widgetSync';
 
 Notifications.setNotificationHandler({
@@ -59,13 +60,21 @@ export default function RootLayout() {
 }
 
 function RootLayoutNav() {
-  const colorScheme = useColorScheme();
+  const light = Colors.light;
 
   return (
     <SafeAreaProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <ThemeProvider value={DefaultTheme}>
+        <StatusBar style="dark" />
         <WidgetSyncBootstrap />
-        <Stack>
+        <Stack
+          screenOptions={{
+            headerStyle: { backgroundColor: light.background },
+            headerTintColor: light.tint,
+            headerTitleStyle: { color: light.text },
+            contentStyle: { backgroundColor: light.background },
+          }}
+        >
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
           <Stack.Screen
             name="station/[slug]"

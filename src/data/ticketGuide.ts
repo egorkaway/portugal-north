@@ -25,6 +25,7 @@ export function buildTicketGuide(tickets: TicketMessages) {
       {
         country: tickets.countryPortugal,
         howToBuy: tickets.portugalHowToBuyIntro,
+        crossBorderNote: tickets.portoVigoRenfeNote,
         serviceBullets: [
           tickets.portugalServiceAP,
           tickets.portugalServiceIC,

@@ -49,6 +49,9 @@ const Tickets = () => {
               <div className="space-y-2">
                 <h3 className="text-lg font-semibold md:text-xl">{t("tickets.howToBuyTitle")}</h3>
                 <p className="text-muted-foreground">{t("tickets.portugalHowToBuyIntro")}</p>
+                <p className="rounded-lg border border-border bg-muted p-4 text-sm text-muted-foreground">
+                  {t("tickets.portoVigoRenfeNote")}
+                </p>
 
                 <div className="mt-4 grid gap-3 md:grid-cols-3">
                   <div className="rounded-lg border border-border bg-card p-4">

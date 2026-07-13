@@ -221,6 +221,7 @@ export type Messages = {
     countryPortugal: string;
     countrySpain: string;
     portugalHowToBuyIntro: string;
+    portoVigoRenfeNote: string;
     portugalServiceAP: string;
     portugalServiceIC: string;
     portugalServiceR: string;

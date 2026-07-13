@@ -2,18 +2,30 @@ import { SymbolView } from 'expo-symbols';
 import { Tabs } from 'expo-router';
 
 import Colors from '@/constants/Colors';
-import { useColorScheme } from '@/components/useColorScheme';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
 import { useActiveTrip } from '@/lib/useActiveTrip';
 
+const lightColors = Colors.light;
+
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
   const activeTrip = useActiveTrip();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: lightColors.tint,
+        tabBarInactiveTintColor: lightColors.tabIconDefault,
+        tabBarStyle: {
+          backgroundColor: lightColors.background,
+          borderTopColor: '#E2E8EE',
+        },
+        headerStyle: {
+          backgroundColor: lightColors.background,
+        },
+        headerTintColor: lightColors.tint,
+        headerTitleStyle: {
+          color: lightColors.text,
+        },
         headerShown: useClientOnlyValue(false, true),
       }}>
       <Tabs.Screen

@@ -249,6 +249,8 @@ export const ca: Messages = {
     countrySpain: "Espanya",
     portugalHowToBuyIntro:
       "Els trens de llarga distància de CP es poden comprar en línia, a l'app de CP, a les taquilles o a bord en alguns Regionals (només efectiu, sense garantia de seient).",
+    portoVigoRenfeNote:
+      "Porto–Vigo (Celta): els bitllets en línia es venen a Renfe, no a CP — no estan disponibles al web ni a l'app de CP. Les taquilles de les estacions CP encara poden vendre aquesta ruta.",
     portugalServiceAP:
       "Alfa Pendular — el servei més ràpid Lisboa–Porto; reserva amb antelació per al millor preu.",
     portugalServiceIC: "Intercidades — trens interurbans a Portugal.",

@@ -249,6 +249,8 @@ export const es: Messages = {
     countrySpain: "España",
     portugalHowToBuyIntro:
       "Los trenes de larga distancia de CP se pueden comprar online, en la app de CP, en taquillas de estación o a bordo en algunos Regionales (solo efectivo, sin garantía de asiento).",
+    portoVigoRenfeNote:
+      "Oporto–Vigo (Celta): los billetes online se venden en Renfe, no en CP — no están disponibles en la web ni en la app de CP. Las taquillas de estación de CP sí pueden vender esta ruta.",
     portugalServiceAP:
       "Alfa Pendular — el servicio más rápido Lisboa–Oporto; reserva con antelación para mejor precio.",
     portugalServiceIC: "Intercidades — trenes interurbanos en Portugal.",

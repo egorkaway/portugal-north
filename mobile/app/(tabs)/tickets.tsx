@@ -11,6 +11,7 @@ type TicketLink = {
 type TicketCountry = {
   country: string;
   howToBuy: string;
+  crossBorderNote?: string;
   serviceBullets: string[];
   links: TicketLink[];
 };
@@ -28,6 +29,7 @@ export default function TicketsScreen() {
           key={country.country}
           country={country.country}
           howToBuy={country.howToBuy}
+          crossBorderNote={country.crossBorderNote}
           serviceBullets={country.serviceBullets}
           links={country.links}
         />
@@ -41,11 +43,13 @@ export default function TicketsScreen() {
 function CountrySection({
   country,
   howToBuy,
+  crossBorderNote,
   serviceBullets,
   links,
 }: {
   country: string;
   howToBuy: string;
+  crossBorderNote?: string;
   serviceBullets: string[];
   links: TicketLink[];
 }) {
@@ -56,6 +60,11 @@ function CountrySection({
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>How to buy</Text>
         <Text style={styles.body}>{howToBuy}</Text>
+        {crossBorderNote ? (
+          <View style={styles.noteCard}>
+            <Text style={styles.noteText}>{crossBorderNote}</Text>
+          </View>
+        ) : null}
       </View>
 
       <View style={styles.section}>
@@ -133,6 +142,18 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 15,
     lineHeight: 22,
+    color: theme.primaryMuted,
+  },
+  noteCard: {
+    backgroundColor: theme.card,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: theme.border,
+    padding: 14,
+  },
+  noteText: {
+    fontSize: 14,
+    lineHeight: 20,
     color: theme.primaryMuted,
   },
   bulletRow: {

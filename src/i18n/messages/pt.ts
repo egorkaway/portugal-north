@@ -249,6 +249,8 @@ export const pt: Messages = {
     countrySpain: "Espanha",
     portugalHowToBuyIntro:
       "Os comboios de longa distância da CP podem ser comprados online, na app da CP, nas bilheteiras ou a bordo em alguns Regionais (apenas dinheiro, sem garantia de lugar).",
+    portoVigoRenfeNote:
+      "Porto–Vigo (Celta): os bilhetes online vendem-se na Renfe, não na CP — não estão disponíveis no site nem na app da CP. As bilheteiras CP nas estações ainda podem vender esta rota.",
     portugalServiceAP:
       "Alfa Pendular — o serviço mais rápido Lisboa–Porto; reserve com antecedência para melhor preço.",
     portugalServiceIC: "Intercidades — comboios interurbanos em Portugal.",

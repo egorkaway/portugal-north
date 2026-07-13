@@ -10,6 +10,7 @@ import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { SymbolView } from 'expo-symbols';
 import { useNavigation, useRouter } from 'expo-router';
+import { useSystemColorScheme } from '@/components/useSystemColorScheme';
 import { theme } from '@/constants/theme';
 import { reliabilityScoreColor } from '@/lib/reliabilityScore';
 import {
@@ -112,6 +113,7 @@ export default function MapScreen() {
   }, [navigation, locateUser, locating]);
 
   const selected = markers.find((item) => item.station.name === selectedName);
+  const mapAppearance = useSystemColorScheme();
 
   return (
     <View style={styles.container}>
@@ -119,6 +121,7 @@ export default function MapScreen() {
         ref={mapRef}
         style={styles.map}
         initialRegion={IBERIAN_REGION}
+        userInterfaceStyle={mapAppearance}
         showsUserLocation={showsUserLocation}
         showsMyLocationButton={false}
         onPress={() => setSelectedName(null)}

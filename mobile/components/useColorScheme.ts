@@ -1,6 +1,2 @@
-import { useColorScheme as useColorSchemeCore } from 'react-native';
-
-export const useColorScheme = () => {
-  const coreScheme = useColorSchemeCore();
-  return coreScheme === 'unspecified' ? 'light' : coreScheme;
-};
+/** App UI is always light; map basemap uses {@link useSystemColorScheme}. */
+export const useColorScheme = () => 'light' as const;
