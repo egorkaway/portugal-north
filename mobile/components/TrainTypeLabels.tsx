@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
+import { TrainTypeDot } from '@/components/TrainTypeDot';
 import { theme } from '@/constants/theme';
-import { getTrainTypeColor } from '@/lib/trainTypes';
 import { sortTrainTypes } from '@/constants/theme';
 
 type Props = {
@@ -14,7 +14,7 @@ export function TrainTypeLabels({ types }: Props) {
     <View style={styles.list}>
       {sorted.map((type) => (
         <View key={type} style={styles.item}>
-          <View style={[styles.dot, { backgroundColor: getTrainTypeColor(type) }]} />
+          <TrainTypeDot type={type} />
           <Text style={styles.label}>{type}</Text>
         </View>
       ))}
@@ -34,11 +34,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
-  },
-  dot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
   },
   label: {
     fontSize: 13,

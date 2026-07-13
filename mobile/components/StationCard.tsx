@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import { TrainTypeDot } from '@/components/TrainTypeDot';
 import { VoteButtons } from '@/components/VoteButtons';
-import { theme } from '@/constants/theme';
+import { sortTrainTypes, theme } from '@/constants/theme';
 import { formatDistance } from '@/lib/geo';
 import { getStationImageUrl, type Station } from '@/lib/stationData';
 import type { Vote } from '@/lib/voteStorage';
@@ -49,9 +50,14 @@ export function StationCard({
         </Text>
 
         <View style={styles.metaRow}>
-          <Text style={styles.types} numberOfLines={1}>
-            {station.types.slice(0, 2).join(', ')}
-          </Text>
+          <View style={styles.typesRow}>
+            {sortTrainTypes(station.types).map((type) => (
+              <View key={type} style={styles.typeItem}>
+                <TrainTypeDot type={type} size={7} />
+                <Text style={styles.typeLabel}>{type}</Text>
+              </View>
+            ))}
+          </View>
           {distanceKm !== undefined ? (
             <Text style={styles.distance}>{formatDistance(distanceKm)}</Text>
           ) : null}
@@ -117,18 +123,32 @@ const styles = StyleSheet.create({
   },
   metaRow: {
     flexDirection: 'row',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
     gap: 8,
   },
-  types: {
+  typesRow: {
     flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    alignItems: 'center',
+  },
+  typeItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+  },
+  typeLabel: {
     fontSize: 12,
+    fontWeight: '600',
     color: theme.primaryMuted,
   },
   distance: {
     fontSize: 12,
     fontWeight: '600',
     color: theme.primary,
+    flexShrink: 0,
   },
   visitedChip: {
     alignSelf: 'flex-start',

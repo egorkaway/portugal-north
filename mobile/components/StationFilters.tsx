@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { SymbolView } from 'expo-symbols';
+import { TrainTypeDot } from '@/components/TrainTypeDot';
 import { theme } from '@/constants/theme';
 import { getTrainTypeAbbrev } from '@/lib/trainTypes';
 
@@ -48,7 +49,7 @@ function FilterChip({
   label,
   accessibilityLabel,
   icon,
-  compact,
+  trainType,
 }: {
   active: boolean;
   activeStyle?: object;
@@ -56,7 +57,7 @@ function FilterChip({
   label: string;
   accessibilityLabel: string;
   icon?: { name: SymbolName; size?: number };
-  compact?: boolean;
+  trainType?: string;
 }) {
   return (
     <Pressable
@@ -64,12 +65,9 @@ function FilterChip({
       accessibilityRole="button"
       accessibilityState={{ selected: active }}
       accessibilityLabel={accessibilityLabel}
-      style={[
-        styles.chip,
-        compact && styles.chipCompact,
-        active && (activeStyle ?? styles.chipActivePrimary),
-      ]}
+      style={[styles.chip, active && (activeStyle ?? styles.chipActivePrimary)]}
     >
+      {trainType ? <TrainTypeDot type={trainType} size={7} /> : null}
       {icon ? (
         <SymbolView
           name={icon.name}
@@ -78,11 +76,9 @@ function FilterChip({
           weight="semibold"
         />
       ) : null}
-      {!compact || !icon ? (
-        <Text style={[styles.chipText, active && styles.chipTextActive]} numberOfLines={1}>
-          {label}
-        </Text>
-      ) : null}
+      <Text style={[styles.chipText, active && styles.chipTextActive]} numberOfLines={1}>
+        {label}
+      </Text>
     </Pressable>
   );
 }
@@ -157,6 +153,7 @@ export function StationFilters({
             onPress={() => onTypeToggle(type)}
             label={getTrainTypeAbbrev(type)}
             accessibilityLabel={type}
+            trainType={type}
           />
         ))}
 
@@ -165,26 +162,23 @@ export function StationFilters({
         <FilterChip
           active={voteFilter === 'up'}
           onPress={() => onVoteFilterToggle('up')}
-          label="Up"
+          label="Upvoted"
           accessibilityLabel="Upvoted"
           icon={{ name: ICONS.thumbsUp }}
-          compact
         />
         <FilterChip
           active={voteFilter === 'down'}
           onPress={() => onVoteFilterToggle('down')}
-          label="Down"
+          label="Downvoted"
           accessibilityLabel="Downvoted"
           icon={{ name: ICONS.thumbsDown }}
-          compact
         />
         <FilterChip
           active={voteFilter === 'none'}
           onPress={() => onVoteFilterToggle('none')}
-          label="None"
-          accessibilityLabel="Not voted"
+          label="Not voted yet"
+          accessibilityLabel="Not voted yet"
           icon={{ name: ICONS.circle }}
-          compact
         />
 
         <View style={styles.divider} />
@@ -194,18 +188,16 @@ export function StationFilters({
           activeStyle={styles.chipActiveVisited}
           onPress={() => onVisitedFilterToggle('visited')}
           label="Visited"
-          accessibilityLabel="Visited stations"
+          accessibilityLabel="Visited"
           icon={{ name: ICONS.check }}
-          compact
         />
         <FilterChip
           active={visitedFilter === 'notVisited'}
           activeStyle={styles.chipActiveVisited}
           onPress={() => onVisitedFilterToggle('notVisited')}
-          label="New"
+          label="Not visited yet"
           accessibilityLabel="Not visited yet"
           icon={{ name: ICONS.mapPin }}
-          compact
         />
       </ScrollView>
     </View>
@@ -264,21 +256,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 4,
-    paddingHorizontal: 8,
+    gap: 5,
+    paddingHorizontal: 10,
     paddingVertical: 5,
     minHeight: 30,
     borderRadius: 999,
     borderWidth: 1,
     borderColor: theme.border,
     backgroundColor: theme.card,
-  },
-  chipCompact: {
-    width: 34,
-    height: 34,
-    minHeight: 34,
-    paddingHorizontal: 0,
-    paddingVertical: 0,
   },
   chipActivePrimary: {
     backgroundColor: theme.primary,
