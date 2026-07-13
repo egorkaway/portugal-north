@@ -240,7 +240,59 @@ export const es: Messages = {
   },
   tickets: {
     title: "Billetes y precios",
-    subtitle: "CP, Andante en Oporto, navegante® en Lisboa y qué influye en el precio",
+    subtitle: "Trenes CP y Renfe, pases de metro en Portugal y España, y qué influye en el precio",
+    overviewSubtitle:
+      "Cómo comprar billetes de tren y metro en Portugal y España. Los precios varían según el tipo de servicio, la ruta y la antelación con la que reserves.",
+    overviewDisclaimer:
+      "Las tarifas cambian. Confirma siempre los precios actuales en la web del operador o en la estación antes de viajar.",
+    countryPortugal: "Portugal",
+    countrySpain: "España",
+    portugalHowToBuyIntro:
+      "Los trenes de larga distancia de CP se pueden comprar online, en la app de CP, en taquillas de estación o a bordo en algunos Regionales (solo efectivo, sin garantía de asiento).",
+    portugalServiceAP:
+      "Alfa Pendular — el servicio más rápido Lisboa–Oporto; reserva con antelación para mejor precio.",
+    portugalServiceIC: "Intercidades — trenes interurbanos en Portugal.",
+    portugalServiceR: "Regional — servicios locales y de líneas secundarias; a menudo sin reserva.",
+    portugalServiceU: "Urbano — redes suburbanas en Lisboa y Oporto.",
+    spainHowToBuyIntro:
+      "La mayoría de billetes de larga distancia se venden en Renfe online, en la app de Renfe o en taquillas. Las redes de cercanías (Cercanías, Rodalies) y los metros urbanos tienen sus propios billetes — un billete de Renfe no incluye automáticamente el metro.",
+    spainServiceAVE:
+      "AVE — trenes de alta velocidad en los corredores principales (p. ej. Madrid–Barcelona, Madrid–Sevilla, Madrid–Galicia).",
+    spainServiceAlvia: "Alvia / Intercity — trenes de larga distancia fuera de la red AVE.",
+    spainServiceMedia: "Media Distancia — servicios regionales en líneas secundarias.",
+    spainServiceCommuter:
+      "Cercanías / Rodalies — trenes suburbanos en Madrid, Barcelona y otras ciudades.",
+    usefulLinksTitle: "Enlaces útiles",
+    linkCpWebsiteTitle: "Web de CP",
+    linkCpWebsiteBody: "Compra billetes Alfa Pendular, Intercidades y Regional online.",
+    linkCpAppIosTitle: "App CP (iOS)",
+    linkCpAppIosBody: "App oficial de Comboios de Portugal para billetes en el móvil.",
+    linkCpAppAndroidTitle: "App CP (Android)",
+    linkCpAppAndroidBody: "App oficial de Comboios de Portugal para billetes en el móvil.",
+    linkAndanteTitle: "Andante (metro de Oporto)",
+    linkAndanteBody: "Tarjeta recargable para el Metro de Oporto y algunos autobuses.",
+    linkMetroPortoTariffsTitle: "Tarifas Metro do Porto",
+    linkMetroPortoTariffsBody: "Precios por zonas del Metro de Oporto.",
+    linkNaveganteTitle: "Navegante (Lisboa)",
+    linkNaveganteBody:
+      "Pase mensual para metro, autobuses, ferris y trenes suburbanos en Lisboa.",
+    linkMetroLisboaTariffsTitle: "Tarifas Metro de Lisboa",
+    linkMetroLisboaTariffsBody: "Billetes sueltos y pases del Metro de Lisboa.",
+    linkRenfeWebsiteTitle: "Web de Renfe",
+    linkRenfeWebsiteBody: "Busca rutas y compra billetes AVE, larga distancia y Media Distancia.",
+    linkRenfeAppIosTitle: "App Renfe (iOS)",
+    linkRenfeAppIosBody: "App oficial de Renfe para billetes e información en directo.",
+    linkRenfeAppAndroidTitle: "App Renfe (Android)",
+    linkRenfeAppAndroidBody: "App oficial de Renfe para billetes e información en directo.",
+    linkCercaniasTitle: "Cercanías",
+    linkCercaniasBody:
+      "Redes suburbanas en Madrid y otras ciudades — a menudo con tarifas distintas del AVE.",
+    linkRodaliesTitle: "Rodalies (Cataluña)",
+    linkRodaliesBody: "Cercanías en Barcelona y Girona, incluidas conexiones con el aeropuerto.",
+    linkMetroMadridTitle: "Metro Madrid",
+    linkMetroMadridBody: "Billetes y pases del metro de Madrid (aparte de Renfe larga distancia).",
+    linkTmbBarcelonaTitle: "TMB (metro de Barcelona)",
+    linkTmbBarcelonaBody: "Billetes de metro, autobús y tranvía en el área de Barcelona.",
     howToBuyTitle: "Cómo comprar billetes",
     howToBuyIntro:
       "La mayoría de la gente compra billetes online o en estaciones. En rutas populares, comprar con antelación suele ser más seguro.",
@@ -386,8 +438,9 @@ export const es: Messages = {
     tickets: {
       title: "Billetes y Precios | Viaje Ibérico Sostenible",
       description:
-        "Cómo comprar billetes de tren de CP en Portugal y qué suele influir en el precio (AP, IC, Regional, Urban).",
-      ogDescription: "Guía rápida para comprar billetes de CP y entender los factores habituales de precio.",
+        "Cómo comprar billetes de tren en Portugal y España — CP, Renfe, pases de metro y redes de cercanías.",
+      ogDescription:
+        "Billetes CP y Renfe más pases de metro en Oporto, Lisboa, Madrid y Barcelona.",
     },
     map: {
       title: "Mapa de Actividad | Viaje Ibérico Sostenible",

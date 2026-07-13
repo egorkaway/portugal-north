@@ -240,7 +240,59 @@ export const gl: Messages = {
   },
   tickets: {
     title: "Billetes e prezos",
-    subtitle: "CP, Andante no Porto, navegante® en Lisboa e o que influí no prezo",
+    subtitle: "Trens CP e Renfe, pases de metro en Portugal e España, e o que influí no prezo",
+    overviewSubtitle:
+      "Como mercar billetes de tren e metro en Portugal e España. Os prezos varían segundo o tipo de servizo, a ruta e a antelación da compra.",
+    overviewDisclaimer:
+      "As tarifas cambian. Confirma sempre os prezos actuais na web do operador ou na estación antes de viaxar.",
+    countryPortugal: "Portugal",
+    countrySpain: "España",
+    portugalHowToBuyIntro:
+      "Os trens de longa distancia da CP pódense mercar en liña, na app da CP, nas billeteiras ou a bordo nalgúns Regionais (só efectivo, sen garantía de asento).",
+    portugalServiceAP:
+      "Alfa Pendular — o servizo máis rápido Lisboa–Porto; reserva con antelación para mellor prezo.",
+    portugalServiceIC: "Intercidades — trens interurbanos en Portugal.",
+    portugalServiceR: "Regional — servizos locais e de liñas secundarias; a miúdo sen reserva.",
+    portugalServiceU: "Urbano — redes suburbanas en Lisboa e Porto.",
+    spainHowToBuyIntro:
+      "A maioría dos billetes de longa distancia véndense en Renfe en liña, na app Renfe ou nas billeteiras. As redes de cercanías (Cercanías, Rodalies) e os metros urbanos teñen billetes propios — un billete Renfe non inclúe automaticamente o metro.",
+    spainServiceAVE:
+      "AVE — trens de alta velocidade nos corredores principais (p. ex. Madrid–Barcelona, Madrid–Sevilla, Madrid–Galicia).",
+    spainServiceAlvia: "Alvia / Intercity — trens de longa distancia fóra da rede AVE.",
+    spainServiceMedia: "Media Distancia — servizos rexionais en liñas secundarias.",
+    spainServiceCommuter:
+      "Cercanías / Rodalies — trens suburbanos en Madrid, Barcelona e outras cidades.",
+    usefulLinksTitle: "Ligazóns útiles",
+    linkCpWebsiteTitle: "Web da CP",
+    linkCpWebsiteBody: "Merca billetes Alfa Pendular, Intercidades e Regional en liña.",
+    linkCpAppIosTitle: "App CP (iOS)",
+    linkCpAppIosBody: "App oficial de Comboios de Portugal para billetes no móbil.",
+    linkCpAppAndroidTitle: "App CP (Android)",
+    linkCpAppAndroidBody: "App oficial de Comboios de Portugal para billetes no móbil.",
+    linkAndanteTitle: "Andante (metro do Porto)",
+    linkAndanteBody: "Tarxeta recargable para o Metro do Porto e algúns autobuses.",
+    linkMetroPortoTariffsTitle: "Tarifas Metro do Porto",
+    linkMetroPortoTariffsBody: "Prezos por zonas do Metro do Porto.",
+    linkNaveganteTitle: "Navegante (Lisboa)",
+    linkNaveganteBody:
+      "Pase mensual para metro, autobuses, ferris e trens suburbanos en Lisboa.",
+    linkMetroLisboaTariffsTitle: "Tarifas Metro de Lisboa",
+    linkMetroLisboaTariffsBody: "Billetes sueltos e pases do Metro de Lisboa.",
+    linkRenfeWebsiteTitle: "Web de Renfe",
+    linkRenfeWebsiteBody: "Busca rutas e merca billetes AVE, longa distancia e Media Distancia.",
+    linkRenfeAppIosTitle: "App Renfe (iOS)",
+    linkRenfeAppIosBody: "App oficial de Renfe para billetes e información en directo.",
+    linkRenfeAppAndroidTitle: "App Renfe (Android)",
+    linkRenfeAppAndroidBody: "App oficial de Renfe para billetes e información en directo.",
+    linkCercaniasTitle: "Cercanías (cercanías)",
+    linkCercaniasBody:
+      "Redes suburbanas en Madrid e outras cidades — a miúdo con tarifas distintas do AVE.",
+    linkRodaliesTitle: "Rodalies (Cataluña)",
+    linkRodaliesBody: "Cercanías en Barcelona e Girona, incluídas ligazóns co aeroporto.",
+    linkMetroMadridTitle: "Metro Madrid",
+    linkMetroMadridBody: "Billetes e pases do metro de Madrid (separado de Renfe longa distancia).",
+    linkTmbBarcelonaTitle: "TMB (metro de Barcelona)",
+    linkTmbBarcelonaBody: "Billetes de metro, autobús e tranvía na área de Barcelona.",
     howToBuyTitle: "Como mercar billetes",
     howToBuyIntro:
       "A maioría da xente merca billetes en liña ou nas estacións. En rutas concorridas, mercar con antelación adoita ser máis seguro.",
@@ -386,8 +438,9 @@ export const gl: Messages = {
     tickets: {
       title: "Billetes e Prezos | Viaxe Ibérica Sostible",
       description:
-        "Como mercar billetes de tren da CP en Portugal e o que adoita influír no prezo (AP, IC, Regional, Urbano).",
-      ogDescription: "Guía rápida para mercar billetes da CP e entender os factores habituais de prezo.",
+        "Como mercar billetes de tren en Portugal e España — CP, Renfe, pases de metro e redes de cercanías.",
+      ogDescription:
+        "Billetes CP e Renfe máis pases de metro no Porto, Lisboa, Madrid e Barcelona.",
     },
     map: {
       title: "Mapa de Actividade | Viaxe Ibérica Sostible",

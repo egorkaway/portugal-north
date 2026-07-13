@@ -45,6 +45,10 @@ async function main() {
   const reliabilityPath = path.join(repoRoot, "public/data/reliability-scores.json");
   const reliability = JSON.parse(fs.readFileSync(reliabilityPath, "utf8"));
 
+  const { en } = await importFromSrc("src/i18n/messages/en.ts");
+  const { buildTicketGuide } = await importFromSrc("src/data/ticketGuide.ts");
+  const ticketGuide = buildTicketGuide(en.tickets);
+
   fs.writeFileSync(path.join(outDir, "stations.json"), JSON.stringify(stationsLite));
   fs.writeFileSync(path.join(outDir, "stations-full.json"), JSON.stringify(stationsFull));
   fs.writeFileSync(path.join(outDir, "cpStationCodes.json"), JSON.stringify(cpStationCodes));
@@ -52,11 +56,12 @@ async function main() {
   fs.writeFileSync(path.join(outDir, "hotels.json"), JSON.stringify(stationHotels));
   fs.writeFileSync(path.join(outDir, "summaries-en.json"), JSON.stringify(summaries));
   fs.writeFileSync(path.join(outDir, "reliability-scores.json"), JSON.stringify(reliability));
+  fs.writeFileSync(path.join(outDir, "ticket-guide.json"), JSON.stringify(ticketGuide, null, 2));
 
   console.log(
     `Synced ${stationsFull.length} stations, ${Object.keys(cpStationCodes).length} CP codes, ` +
       `${Object.keys(stationImages).length} images, ${Object.keys(stationHotels).length} hotel lists, ` +
-      `${Object.keys(summaries).length} summaries.`,
+      `${Object.keys(summaries).length} summaries, ticket guide (${ticketGuide.countries.length} countries).`,
   );
 }
 

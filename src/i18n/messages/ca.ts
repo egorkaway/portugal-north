@@ -240,7 +240,59 @@ export const ca: Messages = {
   },
   tickets: {
     title: "Bitllets i preus",
-    subtitle: "CP, Andante al Porto, navegante® a Lisboa i què influeix en el preu",
+    subtitle: "Trens CP i Renfe, passes de metro a Portugal i Espanya, i què influeix en el preu",
+    overviewSubtitle:
+      "Com comprar bitllets de tren i metro a Portugal i Espanya. Els preus varien segons el tipus de servei, la ruta i l'antelació de la compra.",
+    overviewDisclaimer:
+      "Les tarifes canvien. Confirma sempre els preus actuals al web de l'operador o a l'estació abans de viatjar.",
+    countryPortugal: "Portugal",
+    countrySpain: "Espanya",
+    portugalHowToBuyIntro:
+      "Els trens de llarga distància de CP es poden comprar en línia, a l'app de CP, a les taquilles o a bord en alguns Regionals (només efectiu, sense garantia de seient).",
+    portugalServiceAP:
+      "Alfa Pendular — el servei més ràpid Lisboa–Porto; reserva amb antelació per al millor preu.",
+    portugalServiceIC: "Intercidades — trens interurbans a Portugal.",
+    portugalServiceR: "Regional — serveis locals i de línies secundàries; sovint sense reserva.",
+    portugalServiceU: "Urbà — xarxes suburbanes a Lisboa i Porto.",
+    spainHowToBuyIntro:
+      "La majoria de bitllets de llarga distància es venen a Renfe en línia, a l'app Renfe o a les taquilles. Les xarxes de rodalies (Cercanías, Rodalies) i els metros urbans tenen bitllets propis — un bitllet Renfe no inclou automàticament el metro.",
+    spainServiceAVE:
+      "AVE — trens d'alta velocitat als corredors principals (p. ex. Madrid–Barcelona, Madrid–Sevilla, Madrid–Galícia).",
+    spainServiceAlvia: "Alvia / Intercity — trens de llarga distància fora de la xarxa AVE.",
+    spainServiceMedia: "Media Distancia — serveis regionals en línies secundàries.",
+    spainServiceCommuter:
+      "Cercanías / Rodalies — trens suburbans a Madrid, Barcelona i altres ciutats.",
+    usefulLinksTitle: "Enllaços útils",
+    linkCpWebsiteTitle: "Web de CP",
+    linkCpWebsiteBody: "Compra bitllets Alfa Pendular, Intercidades i Regional en línia.",
+    linkCpAppIosTitle: "App CP (iOS)",
+    linkCpAppIosBody: "App oficial de Comboios de Portugal per a bitllets al mòbil.",
+    linkCpAppAndroidTitle: "App CP (Android)",
+    linkCpAppAndroidBody: "App oficial de Comboios de Portugal per a bitllets al mòbil.",
+    linkAndanteTitle: "Andante (metro del Porto)",
+    linkAndanteBody: "Targeta recarregable per al Metro do Porto i alguns autobusos.",
+    linkMetroPortoTariffsTitle: "Tarifes Metro do Porto",
+    linkMetroPortoTariffsBody: "Preus per zones del Metro do Porto.",
+    linkNaveganteTitle: "Navegante (Lisboa)",
+    linkNaveganteBody:
+      "Passi mensual per a metro, autobusos, ferris i trens suburbans a Lisboa.",
+    linkMetroLisboaTariffsTitle: "Tarifes Metro de Lisboa",
+    linkMetroLisboaTariffsBody: "Bitllets individuals i passis del Metro de Lisboa.",
+    linkRenfeWebsiteTitle: "Web de Renfe",
+    linkRenfeWebsiteBody: "Cerca rutes i compra bitllets AVE, llarga distància i Media Distancia.",
+    linkRenfeAppIosTitle: "App Renfe (iOS)",
+    linkRenfeAppIosBody: "App oficial de Renfe per a bitllets i informació en directe.",
+    linkRenfeAppAndroidTitle: "App Renfe (Android)",
+    linkRenfeAppAndroidBody: "App oficial de Renfe per a bitllets i informació en directe.",
+    linkCercaniasTitle: "Cercanías (rodalies)",
+    linkCercaniasBody:
+      "Xarxes suburbanes a Madrid i altres ciutats — sovint amb tarifes diferents de l'AVE.",
+    linkRodaliesTitle: "Rodalies (Catalunya)",
+    linkRodaliesBody: "Rodalia a Barcelona i Girona, incloses connexions amb l'aeroport.",
+    linkMetroMadridTitle: "Metro Madrid",
+    linkMetroMadridBody: "Bitllets i passis del metro de Madrid (separat de Renfe llarga distància).",
+    linkTmbBarcelonaTitle: "TMB (metro de Barcelona)",
+    linkTmbBarcelonaBody: "Bitllets de metro, autobús i tramvia a l'àrea de Barcelona.",
     howToBuyTitle: "Com comprar bitllets",
     howToBuyIntro:
       "La majoria de gent compra bitllets en línia o a les estacions. En rutes populars, comprar amb antelació sol ser més segur.",
@@ -386,8 +438,9 @@ export const ca: Messages = {
     tickets: {
       title: "Bitllets i Preus | Viatge Ibèric Sostenible",
       description:
-        "Com comprar bitllets de tren de la CP a Portugal i què sol influir en el preu (AP, IC, Regional, Urbà).",
-      ogDescription: "Guia ràpida per comprar bitllets de la CP i entendre els factors habituals de preu.",
+        "Com comprar bitllets de tren a Portugal i Espanya — CP, Renfe, passes de metro i xarxes de rodalies.",
+      ogDescription:
+        "Bitllets CP i Renfe més passes de metro al Porto, Lisboa, Madrid i Barcelona.",
     },
     map: {
       title: "Mapa d'Activitat | Viatge Ibèric Sostenible",

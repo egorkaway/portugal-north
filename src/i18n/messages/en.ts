@@ -239,7 +239,60 @@ export const en: Messages = {
   },
   tickets: {
     title: "Tickets & prices",
-    subtitle: "CP trains, Porto Andante, Lisbon navegante®, and what affects fares",
+    subtitle: "CP and Renfe trains, metro passes in Portugal and Spain, and what affects fares",
+    overviewSubtitle:
+      "How to buy train and metro tickets in Portugal and Spain. Prices vary by service type, route, and how far in advance you book.",
+    overviewDisclaimer:
+      "Fares change. Always confirm current prices on the operator website or at the station before you travel.",
+    countryPortugal: "Portugal",
+    countrySpain: "Spain",
+    portugalHowToBuyIntro:
+      "Long-distance CP trains can be bought online, in the CP app, at station ticket offices, or onboard some Regional services (cash only, no seat guarantee).",
+    portugalServiceAP:
+      "Alfa Pendular — fastest Lisbon–Porto service; book ahead for the best price.",
+    portugalServiceIC: "Intercidades — intercity trains across Portugal.",
+    portugalServiceR: "Regional — local and branch-line services; often no reservation.",
+    portugalServiceU: "Urban — suburban networks around Lisbon and Porto.",
+    spainHowToBuyIntro:
+      "Most long-distance tickets are sold by Renfe online, in the Renfe app, or at station counters. Commuter networks (Cercanías, Rodalies) and city metros use their own tickets — a Renfe ticket does not automatically include metro rides.",
+    spainServiceAVE:
+      "AVE — high-speed trains on major corridors (e.g. Madrid–Barcelona, Madrid–Seville, Madrid–Galicia).",
+    spainServiceAlvia: "Alvia / Intercity — long-distance trains beyond the AVE network.",
+    spainServiceMedia: "Media Distancia — regional services on secondary lines.",
+    spainServiceCommuter:
+      "Cercanías / Rodalies — suburban trains around Madrid, Barcelona, and other cities.",
+    usefulLinksTitle: "Useful links",
+    linkCpWebsiteTitle: "CP website",
+    linkCpWebsiteBody: "Buy Alfa Pendular, Intercidades, and Regional tickets online.",
+    linkCpAppIosTitle: "CP app (iOS)",
+    linkCpAppIosBody: "Official Comboios de Portugal app for mobile tickets.",
+    linkCpAppAndroidTitle: "CP app (Android)",
+    linkCpAppAndroidBody: "Official Comboios de Portugal app for mobile tickets.",
+    linkAndanteTitle: "Andante (Porto metro)",
+    linkAndanteBody: "Rechargeable card for Metro do Porto and some buses.",
+    linkMetroPortoTariffsTitle: "Metro Porto tariffs",
+    linkMetroPortoTariffsBody: "Current zone pricing for Metro do Porto.",
+    linkNaveganteTitle: "Navegante (Lisbon)",
+    linkNaveganteBody:
+      "Monthly pass covering Metro, buses, ferries, and suburban trains in Lisbon.",
+    linkMetroLisboaTariffsTitle: "Metro Lisboa tariffs",
+    linkMetroLisboaTariffsBody: "Single tickets and passes for Metro de Lisboa.",
+    linkRenfeWebsiteTitle: "Renfe website",
+    linkRenfeWebsiteBody: "Search routes and buy AVE, long-distance, and Media Distancia tickets.",
+    linkRenfeAppIosTitle: "Renfe app (iOS)",
+    linkRenfeAppIosBody: "Official Renfe app for tickets and live train info.",
+    linkRenfeAppAndroidTitle: "Renfe app (Android)",
+    linkRenfeAppAndroidBody: "Official Renfe app for tickets and live train info.",
+    linkCercaniasTitle: "Cercanías (commuter trains)",
+    linkCercaniasBody:
+      "Suburban networks around Madrid and other cities — often separate from AVE fares.",
+    linkRodaliesTitle: "Rodalies (Catalonia)",
+    linkRodaliesBody: "Commuter trains around Barcelona and Girona, including airport links.",
+    linkMetroMadridTitle: "Metro Madrid",
+    linkMetroMadridBody:
+      "Tickets and passes for the Madrid metro (separate from Renfe long-distance).",
+    linkTmbBarcelonaTitle: "TMB (Barcelona metro)",
+    linkTmbBarcelonaBody: "Metro, bus, and tram tickets in the Barcelona area.",
     howToBuyTitle: "How to buy tickets",
     howToBuyIntro:
       "Most visitors buy CP tickets online or at stations. For busy routes and peak times, buying earlier is usually safer.",
@@ -384,9 +437,9 @@ export const en: Messages = {
     tickets: {
       title: "Tickets & Prices | Sustainable Iberian",
       description:
-        "How to buy CP train tickets, Porto Andante and Lisbon navegante® metro passes, and what affects fares (zones, service type, booking time).",
+        "How to buy train tickets in Portugal and Spain — CP, Renfe, metro passes, commuter networks, and what affects fares.",
       ogDescription:
-        "CP tickets plus Andante and navegante® zone fares for Porto and Lisbon metros.",
+        "CP and Renfe tickets plus Porto, Lisbon, Madrid, and Barcelona metro passes.",
     },
     map: {
       title: "Station Activity Map | Sustainable Iberian",

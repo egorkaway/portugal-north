@@ -127,19 +127,22 @@ export default function MapScreen() {
           <Marker
             key={station.name}
             coordinate={{ latitude: station.lat, longitude: station.lng }}
+            stopPropagation
             onPress={() => setSelectedName(station.name)}
           >
-            <View
-              style={[
-                styles.dot,
-                {
-                  width: size,
-                  height: size,
-                  borderRadius: size / 2,
-                  backgroundColor: color,
-                },
-              ]}
-            />
+            <View style={styles.markerHitArea}>
+              <View
+                style={[
+                  styles.dot,
+                  {
+                    width: size,
+                    height: size,
+                    borderRadius: size / 2,
+                    backgroundColor: color,
+                  },
+                ]}
+              />
+            </View>
           </Marker>
         ))}
       </MapView>
@@ -220,6 +223,12 @@ const styles = StyleSheet.create({
   dot: {
     borderWidth: 1,
     borderColor: '#fff',
+  },
+  markerHitArea: {
+    width: 36,
+    height: 36,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   legend: {
     position: 'absolute',

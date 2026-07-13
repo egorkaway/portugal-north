@@ -1,10 +1,11 @@
 import { Text, VStack } from '@expo/ui/swift-ui';
 import {
-  containerBackground,
+  background,
   font,
   foregroundStyle,
   lineLimit,
   padding,
+  widgetAccentedRenderingMode,
 } from '@expo/ui/swift-ui/modifiers';
 import { createWidget, type WidgetEnvironment } from 'expo-widgets';
 import { getWidgetColors } from '@/constants/widgetTheme';
@@ -125,7 +126,8 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
   return (
     <VStack
       modifiers={[
-        containerBackground(colors.background, 'widget'),
+        widgetAccentedRenderingMode('fullColor'),
+        background(colors.background),
         padding({ all: compact ? 10 : 14 }),
       ]}
     >

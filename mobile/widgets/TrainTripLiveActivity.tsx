@@ -1,6 +1,7 @@
 import { Image, Text, VStack } from '@expo/ui/swift-ui';
 import {
-  containerBackground,
+  activityBackgroundTint,
+  background,
   font,
   foregroundStyle,
   lineLimit,
@@ -64,7 +65,13 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
 
   return {
     banner: (
-      <VStack modifiers={[containerBackground(background, 'widget'), padding({ all: 12 })]}>
+      <VStack
+        modifiers={[
+          activityBackgroundTint(background),
+          background(background),
+          padding({ all: 12 }),
+        ]}
+      >
         <Text modifiers={[font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
           {stationName}
         </Text>
