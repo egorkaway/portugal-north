@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": false,
-      "buildNumber": "5",
+      "buildNumber": "6",
       "bundleIdentifier": "com.iberian.travel",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
@@ -64,14 +64,12 @@
               "name": "TripWidget",
               "displayName": "Train countdown",
               "description": "Countdown to your next train, last trip taken, or nearest station.",
-              "ios": {
-                "supportedFamilies": [
-                  "systemSmall",
-                  "systemMedium",
-                  "accessoryRectangular",
-                  "accessoryInline"
-                ]
-              }
+              "supportedFamilies": [
+                "systemSmall",
+                "systemMedium",
+                "accessoryRectangular",
+                "accessoryInline"
+              ]
             }
           ]
         }

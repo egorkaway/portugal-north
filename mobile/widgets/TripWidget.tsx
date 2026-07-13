@@ -1,16 +1,40 @@
 import { Text, VStack } from '@expo/ui/swift-ui';
 import {
-  background,
+  containerBackground,
   font,
   foregroundStyle,
   lineLimit,
   padding,
-  widgetAccentedRenderingMode,
 } from '@expo/ui/swift-ui/modifiers';
 import { createWidget, type WidgetEnvironment } from 'expo-widgets';
-import { getWidgetColors } from '@/constants/widgetTheme';
-import { formatWidgetCompactCountdown } from '@/lib/widgetTrip';
 import type { TripWidgetProps } from '@/lib/types';
+
+/** Inline theme colors — widget layouts run in an isolated JS runtime without app imports. */
+function widgetColors(colorScheme: 'light' | 'dark') {
+  if (colorScheme === 'dark') {
+    return {
+      background: '#012841',
+      primary: '#FFFFFF',
+      muted: '#B8C5CE',
+      accent: '#7EC8E3',
+    };
+  }
+  return {
+    background: '#F5F7F8',
+    primary: '#012841',
+    muted: '#4A6274',
+    accent: '#7EC8E3',
+  };
+}
+
+function compactCountdownLabel(countdownMinutes: number | null): string {
+  if (countdownMinutes === null) return '';
+  if (countdownMinutes <= 0) return 'Now';
+  if (countdownMinutes < 60) return `${countdownMinutes} min`;
+  const hours = Math.floor(countdownMinutes / 60);
+  const remainder = countdownMinutes % 60;
+  return remainder === 0 ? `${hours}h` : `${hours}h ${remainder}m`;
+}
 
 const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) => {
   'widget';
@@ -52,14 +76,14 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
       : null;
 
   const isDark = environment.colorScheme === 'dark';
-  const colors = getWidgetColors(isDark ? 'dark' : 'light');
+  const colors = widgetColors(isDark ? 'dark' : 'light');
   const compact = environment.widgetFamily === 'systemSmall';
   const accessory =
     environment.widgetFamily === 'accessoryInline' ||
     environment.widgetFamily === 'accessoryRectangular';
 
   const compactCountdown =
-    countdownMinutes !== null ? formatWidgetCompactCountdown(countdownMinutes) : headline;
+    countdownMinutes !== null ? compactCountdownLabel(countdownMinutes) : headline;
 
   const promptNext = headline === 'Take your next train';
 
@@ -126,8 +150,7 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
   return (
     <VStack
       modifiers={[
-        widgetAccentedRenderingMode('fullColor'),
-        background(colors.background),
+        containerBackground(colors.background, 'widget'),
         padding({ all: compact ? 10 : 14 }),
       ]}
     >

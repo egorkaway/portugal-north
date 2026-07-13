@@ -16,14 +16,13 @@ import {
 import { buildWidgetPropsWithLocation } from '@/lib/widgetSnapshot';
 import type { TripWidgetProps } from '@/lib/types';
 import tripWidget from '@/widgets/TripWidget';
+import trainTripLiveActivity from '@/widgets/TrainTripLiveActivity';
 
 const LIVE_ACTIVITY_ID_KEY = 'pn_live_activity_id_v1';
 
-type LiveActivityModule = {
-  default: {
-    start: (props: TripWidgetProps, url?: string) => { update: (p: TripWidgetProps) => void; end: () => Promise<void> };
-    getInstances: () => Array<{ update: (p: TripWidgetProps) => void; end: () => Promise<void> }>;
-  };
+type LiveActivityFactory = {
+  start: (props: TripWidgetProps, url?: string) => { update: (p: TripWidgetProps) => void; end: () => Promise<void> };
+  getInstances: () => Array<{ update: (p: TripWidgetProps) => void; end: () => Promise<void> }>;
 };
 
 function getTripWidget() {
@@ -46,13 +45,8 @@ function propsForWidgetBridge(props: TripWidgetProps): TripWidgetProps {
   };
 }
 
-function getLiveActivityFactory(): LiveActivityModule['default'] | null {
-  if (Platform.OS !== 'ios') return null;
-  try {
-    return (require('@/widgets/TrainTripLiveActivity').default as LiveActivityModule['default']);
-  } catch {
-    return null;
-  }
+function getLiveActivityFactory(): LiveActivityFactory | null {
+  return Platform.OS === 'ios' ? trainTripLiveActivity : null;
 }
 
 async function resolveCoords(): Promise<{ lat: number; lng: number } | null> {
@@ -179,7 +173,8 @@ export async function syncTripWidgets(now = new Date()): Promise<TripWidgetProps
 export async function seedWidgetTimeline(): Promise<void> {
   const widget = getTripWidget();
   if (!widget) return;
-  pushWidgetState(widget, DEFAULT_WIDGET_PROPS);
+  const props = propsForWidgetBridge(normalizeWidgetProps(DEFAULT_WIDGET_PROPS));
+  widget.updateSnapshot(props);
   widget.reload();
 }
 

@@ -33,7 +33,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>6</string>
 	<key>ExpoWidgetsAppGroupIdentifier</key>
 	<string>group.com.iberian.travel</string>
 	<key>ExpoWidgets_EnablePushNotifications</key>
@@ -62,7 +62,7 @@
 	<key>NSSupportsLiveActivities</key>
 	<true/>
 	<key>NSSupportsLiveActivitiesFrequentUpdates</key>
-	<false/>
+	<true/>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>

@@ -8,9 +8,24 @@ import {
   padding,
 } from '@expo/ui/swift-ui/modifiers';
 import { createLiveActivity, type LiveActivityEnvironment } from 'expo-widgets';
-import { widgetTheme } from '@/constants/widgetTheme';
-import { formatWidgetCompactCountdown } from '@/lib/widgetTrip';
 import type { TripWidgetProps } from '@/lib/types';
+
+/** Inline theme — live activity layouts run in an isolated JS runtime without app imports. */
+const THEME = {
+  primary: '#012841',
+  onPrimary: '#FFFFFF',
+  mutedOnPrimary: '#B8C5CE',
+  accent: '#7EC8E3',
+} as const;
+
+function compactCountdownLabel(countdownMinutes: number | null): string {
+  if (countdownMinutes === null) return '';
+  if (countdownMinutes <= 0) return 'Now';
+  if (countdownMinutes < 60) return `${countdownMinutes} min`;
+  const hours = Math.floor(countdownMinutes / 60);
+  const remainder = countdownMinutes % 60;
+  return remainder === 0 ? `${hours}h` : `${hours}h ${remainder}m`;
+}
 
 const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivityEnvironment) => {
   'widget';
@@ -47,7 +62,7 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
 
   const compactCountdown =
     countdownMinutes !== null
-      ? formatWidgetCompactCountdown(countdownMinutes)
+      ? compactCountdownLabel(countdownMinutes)
       : typeof props.headline === 'string' && props.headline.trim()
         ? props.headline.trim()
         : 'Now';
@@ -58,17 +73,17 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       : destination
     : subline;
 
-  const background = widgetTheme.primary;
-  const primary = environment.isLuminanceReduced ? widgetTheme.onPrimary : widgetTheme.onPrimary;
-  const muted = environment.isLuminanceReduced ? '#D0D8DE' : widgetTheme.mutedOnPrimary;
-  const accent = widgetTheme.accent;
+  const backgroundColor = THEME.primary;
+  const primary = THEME.onPrimary;
+  const muted = environment.isLuminanceReduced ? '#D0D8DE' : THEME.mutedOnPrimary;
+  const accent = THEME.accent;
 
   return {
     banner: (
       <VStack
         modifiers={[
-          activityBackgroundTint(background),
-          background(background),
+          activityBackgroundTint(backgroundColor),
+          background(backgroundColor),
           padding({ all: 12 }),
         ]}
       >

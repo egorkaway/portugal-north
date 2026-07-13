@@ -1,4 +1,5 @@
 import '@/widgets/TripWidget';
+import '@/widgets/TrainTripLiveActivity';
 
 import { useFonts } from 'expo-font';
 import * as Notifications from 'expo-notifications';
@@ -10,6 +11,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { WidgetSyncBootstrap } from '@/components/WidgetSyncBootstrap';
 import { useColorScheme } from '@/components/useColorScheme';
+import { seedWidgetTimeline } from '@/lib/widgetSync';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -38,6 +40,10 @@ export default function RootLayout() {
   useEffect(() => {
     if (error) throw error;
   }, [error]);
+
+  useEffect(() => {
+    void seedWidgetTimeline();
+  }, []);
 
   useEffect(() => {
     if (loaded) {
