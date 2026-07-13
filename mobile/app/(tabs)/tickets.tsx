@@ -1,4 +1,5 @@
 import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { BuildFooter } from '@/components/BuildFooter';
 import { theme } from '@/constants/theme';
 import ticketGuide from '@/data/ticket-guide.json';
 
@@ -36,6 +37,7 @@ export default function TicketsScreen() {
       ))}
 
       <Text style={styles.disclaimer}>{ticketGuide.disclaimer}</Text>
+      <BuildFooter />
     </ScrollView>
   );
 }

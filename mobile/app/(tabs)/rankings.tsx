@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { useRouter } from 'expo-router';
+import { BuildFooter } from '@/components/BuildFooter';
 import { theme } from '@/constants/theme';
 import { fetchGlobalRatings } from '@/lib/api';
 import { getTopDownvotedHotels, getTopUpvotedHotels } from '@/lib/rankHotels';
@@ -67,8 +68,11 @@ export default function RankingsScreen() {
 
   if (loading) {
     return (
-      <View style={styles.centered}>
-        <ActivityIndicator color={theme.primary} />
+      <View style={styles.container}>
+        <View style={styles.centered}>
+          <ActivityIndicator color={theme.primary} />
+        </View>
+        <BuildFooter fixed />
       </View>
     );
   }
@@ -165,6 +169,7 @@ export default function RankingsScreen() {
           </RankingSection>
         </>
       )}
+      <BuildFooter />
     </ScrollView>
   );
 }

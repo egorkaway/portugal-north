@@ -4,6 +4,7 @@ import * as Location from 'expo-location';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { StationCard } from '@/components/StationCard';
+import { BuildFooter } from '@/components/BuildFooter';
 import { StationFilters } from '@/components/StationFilters';
 import { PAGE_SIZE, sortTrainTypes, theme } from '@/constants/theme';
 import { fetchGlobalRatings } from '@/lib/api';
@@ -212,6 +213,7 @@ export default function HomeScreen() {
             </Text>
           </View>
         }
+        ListFooterComponent={<BuildFooter />}
         contentContainerStyle={styles.listContent}
       />
     </View>

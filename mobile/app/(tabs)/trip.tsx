@@ -37,6 +37,7 @@ import { subscribeTripChanges } from '@/lib/tripEvents';
 import { useTripCompletion } from '@/lib/useTripCompletion';
 import { useTripDepartureRecord } from '@/lib/useTripDepartureRecord';
 import { WidgetPreviewCard } from '@/components/WidgetPreviewCard';
+import { BuildFooter } from '@/components/BuildFooter';
 import { DEFAULT_WIDGET_PROPS } from '@/lib/widgetDefaults';
 import { syncTripWidgets } from '@/lib/widgetSync';
 import type { CompletedTripRecord, PlannedDeparture, TripWidgetProps } from '@/lib/types';
@@ -218,8 +219,11 @@ export default function TripScreen() {
 
   if (loading) {
     return (
-      <View style={styles.centered}>
-        <ActivityIndicator color={theme.primary} />
+      <View style={styles.container}>
+        <View style={styles.centered}>
+          <ActivityIndicator color={theme.primary} />
+        </View>
+        <BuildFooter fixed />
       </View>
     );
   }
@@ -378,6 +382,7 @@ export default function TripScreen() {
         onRefresh={() => void refreshWidgetPreview()}
         refreshing={widgetRefreshing}
       />
+      <BuildFooter />
     </ScrollView>
   );
 }

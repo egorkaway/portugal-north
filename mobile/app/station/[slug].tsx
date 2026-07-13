@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import { StationDeparturesBoard } from '@/components/StationDeparturesBoard';
+import { BuildFooter } from '@/components/BuildFooter';
 import { StationHotelList } from '@/components/StationHotelList';
 import { TrainTypeLabels } from '@/components/TrainTypeLabels';
 import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
@@ -74,11 +75,14 @@ export default function StationDetailScreen() {
 
   if (!station) {
     return (
-      <View style={styles.centered}>
-        <Text style={styles.title}>Station not found</Text>
-        <Pressable style={styles.button} onPress={() => router.back()}>
-          <Text style={styles.buttonText}>Go back</Text>
-        </Pressable>
+      <View style={styles.container}>
+        <View style={styles.centered}>
+          <Text style={styles.title}>Station not found</Text>
+          <Pressable style={styles.button} onPress={() => router.back()}>
+            <Text style={styles.buttonText}>Go back</Text>
+          </Pressable>
+        </View>
+        <BuildFooter fixed />
       </View>
     );
   }
@@ -116,8 +120,11 @@ export default function StationDetailScreen() {
 
   if (loadingMeta) {
     return (
-      <View style={styles.centered}>
-        <ActivityIndicator color={theme.primary} />
+      <View style={styles.container}>
+        <View style={styles.centered}>
+          <ActivityIndicator color={theme.primary} />
+        </View>
+        <BuildFooter fixed />
       </View>
     );
   }
@@ -199,6 +206,7 @@ export default function StationDetailScreen() {
       <Text style={styles.coords}>
         {station.lat.toFixed(5)}, {station.lng.toFixed(5)}
       </Text>
+      <BuildFooter />
     </ScrollView>
   );
 }
