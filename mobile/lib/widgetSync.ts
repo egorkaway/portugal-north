@@ -103,6 +103,11 @@ function pushWidgetState(widget: NonNullable<ReturnType<typeof getTripWidget>>, 
   try {
     widget.updateTimeline(timeline);
     widget.reload();
+    console.log('[widget] timeline updated', {
+      entries: timeline.length,
+      headline: normalized.headline,
+      mode: normalized.mode,
+    });
   } catch (error) {
     console.warn('[widget] updateTimeline failed', error);
   }
@@ -173,9 +178,7 @@ export async function syncTripWidgets(now = new Date()): Promise<TripWidgetProps
 export async function seedWidgetTimeline(): Promise<void> {
   const widget = getTripWidget();
   if (!widget) return;
-  const props = propsForWidgetBridge(normalizeWidgetProps(DEFAULT_WIDGET_PROPS));
-  widget.updateSnapshot(props);
-  widget.reload();
+  pushWidgetState(widget, DEFAULT_WIDGET_PROPS);
 }
 
 /** End Live Activity and refresh widget after clearing an active trip. */

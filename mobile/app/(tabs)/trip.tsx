@@ -36,8 +36,10 @@ import {
 import { subscribeTripChanges } from '@/lib/tripEvents';
 import { useTripCompletion } from '@/lib/useTripCompletion';
 import { useTripDepartureRecord } from '@/lib/useTripDepartureRecord';
+import { WidgetPreviewCard } from '@/components/WidgetPreviewCard';
+import { DEFAULT_WIDGET_PROPS } from '@/lib/widgetDefaults';
 import { syncTripWidgets } from '@/lib/widgetSync';
-import type { CompletedTripRecord, PlannedDeparture } from '@/lib/types';
+import type { CompletedTripRecord, PlannedDeparture, TripWidgetProps } from '@/lib/types';
 import type { TrainJourneyStop } from '@/lib/api';
 
 function TripStopRow({
@@ -90,6 +92,8 @@ export default function TripScreen() {
   const [serviceType, setServiceType] = useState<string>('—');
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
+  const [widgetRefreshing, setWidgetRefreshing] = useState(false);
+  const [widgetPreviewProps, setWidgetPreviewProps] = useState<TripWidgetProps>(DEFAULT_WIDGET_PROPS);
   const [now, setNow] = useState(new Date());
 
   const reload = useCallback(async () => {
@@ -141,30 +145,43 @@ export default function TripScreen() {
     }
   }, []);
 
+  const refreshWidgetPreview = useCallback(async () => {
+    setWidgetRefreshing(true);
+    try {
+      const props = await syncTripWidgets(now);
+      setWidgetPreviewProps(props);
+    } finally {
+      setWidgetRefreshing(false);
+    }
+  }, [now]);
+
   useEffect(() => {
     void reload().finally(() => setLoading(false));
+    void refreshWidgetPreview();
     const timer = setInterval(() => setNow(new Date()), 60_000);
     const unsubscribe = subscribeTripChanges(() => {
       void reload();
+      void refreshWidgetPreview();
     });
     return () => {
       clearInterval(timer);
       unsubscribe();
     };
-  }, [reload]);
+  }, [reload, refreshWidgetPreview]);
 
   useFocusEffect(
     useCallback(() => {
       void reload();
-    }, [reload]),
+      void refreshWidgetPreview();
+    }, [reload, refreshWidgetPreview]),
   );
 
   const onRefresh = useCallback(async () => {
     setRefreshing(true);
     await reload();
-    await syncTripWidgets();
+    await refreshWidgetPreview();
     setRefreshing(false);
-  }, [reload]);
+  }, [reload, refreshWidgetPreview]);
 
   const onTripCompleted = useCallback(() => {
     void reload();
@@ -356,9 +373,11 @@ export default function TripScreen() {
         )}
       </View>
 
-      <Pressable style={styles.debugButton} onPress={() => void syncTripWidgets()}>
-        <Text style={styles.debugButtonText}>Refresh widget</Text>
-      </Pressable>
+      <WidgetPreviewCard
+        props={widgetPreviewProps}
+        onRefresh={() => void refreshWidgetPreview()}
+        refreshing={widgetRefreshing}
+      />
     </ScrollView>
   );
 }
@@ -544,18 +563,5 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '600',
     color: theme.primary,
-  },
-  debugButton: {
-    marginTop: 8,
-    alignSelf: 'flex-start',
-    backgroundColor: theme.primary,
-    borderRadius: 999,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-  },
-  debugButtonText: {
-    color: '#fff',
-    fontWeight: '700',
-    fontSize: 14,
   },
 });

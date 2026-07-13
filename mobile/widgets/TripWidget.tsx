@@ -1,43 +1,46 @@
 import { Text, VStack } from '@expo/ui/swift-ui';
 import {
-  containerBackground,
   font,
   foregroundStyle,
   lineLimit,
   padding,
+  underline,
 } from '@expo/ui/swift-ui/modifiers';
 import { createWidget, type WidgetEnvironment } from 'expo-widgets';
 import type { TripWidgetProps } from '@/lib/types';
 
-/** Inline theme colors — widget layouts run in an isolated JS runtime without app imports. */
-function widgetColors(colorScheme: 'light' | 'dark') {
-  if (colorScheme === 'dark') {
-    return {
-      background: '#012841',
-      primary: '#FFFFFF',
-      muted: '#B8C5CE',
-      accent: '#7EC8E3',
-    };
-  }
-  return {
-    background: '#F5F7F8',
-    primary: '#012841',
-    muted: '#4A6274',
-    accent: '#7EC8E3',
-  };
-}
-
-function compactCountdownLabel(countdownMinutes: number | null): string {
-  if (countdownMinutes === null) return '';
-  if (countdownMinutes <= 0) return 'Now';
-  if (countdownMinutes < 60) return `${countdownMinutes} min`;
-  const hours = Math.floor(countdownMinutes / 60);
-  const remainder = countdownMinutes % 60;
-  return remainder === 0 ? `${hours}h` : `${hours}h ${remainder}m`;
-}
-
 const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) => {
   'widget';
+
+  // Helpers must live inside the widget function — the layout is evaluated in an
+  // isolated JS runtime that does not retain module-level closures.
+  function widgetColors(colorScheme: 'light' | 'dark') {
+    if (colorScheme === 'dark') {
+      return {
+        background: '#012841',
+        primary: '#FFFFFF',
+        label: '#8FE3B8',
+        detail: '#C5D3DC',
+        footer: '#FFFFFF',
+      };
+    }
+    return {
+      background: '#FFFFFF',
+      primary: '#012841',
+      label: '#059669',
+      detail: '#2D4A5E',
+      footer: '#012841',
+    };
+  }
+
+  function compactCountdownLabel(countdownMinutes: number | null): string {
+    if (countdownMinutes === null) return '';
+    if (countdownMinutes <= 0) return 'Now';
+    if (countdownMinutes < 60) return `${countdownMinutes} min`;
+    const hours = Math.floor(countdownMinutes / 60);
+    const remainder = countdownMinutes % 60;
+    return remainder === 0 ? `${hours}h` : `${hours}h ${remainder}m`;
+  }
 
   const input = rawProps && typeof rawProps === 'object' ? rawProps : {};
   const mode =
@@ -124,7 +127,12 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
       : destination
     : '';
   const showDestination = destinationLine.length > 0 && (mode === 'active' || mode === 'lastTaken');
-  const destinationFontSize = compact ? 10 : 12;
+  const underlineStation = mode === 'active';
+  const labelSize = compact ? 11 : 12;
+  const titleSize = compact ? 22 : 28;
+  const detailSize = compact ? 12 : 14;
+  const destinationFontSize = compact ? 12 : 14;
+  const footerSize = compact ? 12 : 14;
   const destinationLineLimit = compact ? 4 : 5;
 
   if (accessory) {
@@ -134,38 +142,39 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
           ? `${compactCountdown} · ${destination}`
           : `${compactCountdown} · ${stationName}`
         : title;
+
     return (
-      <Text
-        modifiers={[
-          font({ weight: 'semibold', size: 12 }),
-          foregroundStyle(colors.primary),
-          lineLimit(2),
-        ]}
-      >
-        {accessoryText}
-      </Text>
+      <VStack modifiers={[padding({ all: environment.widgetFamily === 'accessoryRectangular' ? 8 : 0 })]}>
+        <Text
+          modifiers={[
+            font({ weight: 'bold', size: 13 }),
+            foregroundStyle(colors.primary),
+            lineLimit(environment.widgetFamily === 'accessoryInline' ? 1 : 2),
+          ]}
+        >
+          {accessoryText}
+        </Text>
+      </VStack>
     );
   }
 
   return (
-    <VStack
-      modifiers={[
-        containerBackground(colors.background, 'widget'),
-        padding({ all: compact ? 10 : 14 }),
-      ]}
-    >
+    <VStack modifiers={[padding({ all: compact ? 10 : 14 })]}>
       <Text
         modifiers={[
-          font({ size: compact ? 10 : 11, weight: 'semibold' }),
-          foregroundStyle(colors.muted),
+          font({ size: labelSize, weight: 'bold' }),
+          foregroundStyle(colors.label),
           lineLimit(2),
+          ...(underlineStation
+            ? [underline({ isActive: true, pattern: 'solid', color: colors.label })]
+            : []),
         ]}
       >
         {label}
       </Text>
       <Text
         modifiers={[
-          font({ weight: 'bold', size: compact ? 20 : 24 }),
+          font({ weight: 'bold', size: titleSize }),
           foregroundStyle(colors.primary),
           lineLimit(mode === 'active' ? 1 : 2),
         ]}
@@ -175,7 +184,7 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
       {showDestination ? (
         <Text
           modifiers={[
-            font({ size: destinationFontSize, weight: 'semibold' }),
+            font({ size: destinationFontSize, weight: 'bold' }),
             foregroundStyle(colors.primary),
             lineLimit(destinationLineLimit),
           ]}
@@ -185,19 +194,23 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
       ) : (
         <Text
           modifiers={[
-            font({ size: compact ? 11 : 13 }),
-            foregroundStyle(colors.muted),
+            font({ size: detailSize, weight: 'semibold' }),
+            foregroundStyle(colors.detail),
             lineLimit(compact ? 3 : 4),
           ]}
         >
           {detail}
         </Text>
       )}
-      {!compact ? (
-        <Text modifiers={[font({ size: 12 }), foregroundStyle(colors.accent), lineLimit(2)]}>
-          {footer}
-        </Text>
-      ) : null}
+      <Text
+        modifiers={[
+          font({ size: footerSize, weight: 'bold' }),
+          foregroundStyle(colors.footer),
+          lineLimit(2),
+        ]}
+      >
+        {footer}
+      </Text>
     </VStack>
   );
 };

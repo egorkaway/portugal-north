@@ -1,28 +1,41 @@
 /** Colors aligned with `constants/theme.ts` for widgets and Live Activities. */
 export const widgetTheme = {
   primary: '#012841',
-  primaryMuted: '#4A6274',
+  primaryMuted: '#3D5566',
   accent: '#7EC8E3',
-  background: '#F5F7F8',
+  brandGreen: '#059669',
+  background: '#FFFFFF',
+  backgroundMuted: '#F5F7F8',
   card: '#FFFFFF',
   onPrimary: '#FFFFFF',
-  mutedOnPrimary: '#B8C5CE',
+  mutedOnPrimary: '#C5D3DC',
+  detail: '#2D4A5E',
 } as const;
 
-export function getWidgetColors(colorScheme: 'light' | 'dark') {
+export type WidgetColorPalette = {
+  background: string;
+  primary: string;
+  label: string;
+  detail: string;
+  footer: string;
+};
+
+export function getWidgetColors(colorScheme: 'light' | 'dark'): WidgetColorPalette {
   if (colorScheme === 'dark') {
     return {
       background: widgetTheme.primary,
       primary: widgetTheme.onPrimary,
-      muted: widgetTheme.mutedOnPrimary,
-      accent: widgetTheme.accent,
+      label: '#8FE3B8',
+      detail: widgetTheme.mutedOnPrimary,
+      footer: widgetTheme.onPrimary,
     };
   }
 
   return {
     background: widgetTheme.background,
     primary: widgetTheme.primary,
-    muted: widgetTheme.primaryMuted,
-    accent: widgetTheme.accent,
+    label: widgetTheme.brandGreen,
+    detail: widgetTheme.detail,
+    footer: widgetTheme.primary,
   };
 }

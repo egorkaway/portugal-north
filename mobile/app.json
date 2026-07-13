@@ -64,16 +64,20 @@
               "name": "TripWidget",
               "displayName": "Train countdown",
               "description": "Countdown to your next train, last trip taken, or nearest station.",
-              "supportedFamilies": [
-                "systemSmall",
-                "systemMedium",
-                "accessoryRectangular",
-                "accessoryInline"
-              ]
+              "ios": {
+                "contentMarginsDisabled": true,
+                "supportedFamilies": [
+                  "systemSmall",
+                  "systemMedium",
+                  "accessoryRectangular",
+                  "accessoryInline"
+                ]
+              }
             }
           ]
         }
-      ]
+      ],
+      "./plugins/withWidgetContainerBackground.js"
     ],
     "experiments": {
       "typedRoutes": true
