@@ -194,6 +194,12 @@ export async function onTripDeparted(): Promise<void> {
   const minutes = getMinutesUntilDeparture(trip.departureTime, trip.delayMinutes);
   if (minutes === null || minutes >= 0) return;
 
+  // Keep Live Activity visible briefly after departure.
+  // We only clear the active trip (which ends the Live Activity) once we're
+  // 3+ minutes past the scheduled departure.
+  const HIDE_LIVE_ACTIVITY_AFTER_MINUTES = 3;
+  if (minutes > -HIDE_LIVE_ACTIVITY_AFTER_MINUTES) return;
+
   const { recordTakenTrip, writeActiveTrip } = await import('@/lib/tripStorage');
   await recordTakenTrip(trip);
   await writeActiveTrip(null);

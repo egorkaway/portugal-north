@@ -2,6 +2,7 @@ import { Image, Text, VStack } from '@expo/ui/swift-ui';
 import {
   activityBackgroundTint,
   background,
+  containerRelativeFrame,
   font,
   foregroundStyle,
   lineLimit,
@@ -76,13 +77,16 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
   const primary = THEME.onPrimary;
   const muted = environment.isLuminanceReduced ? '#D0D8DE' : THEME.mutedOnPrimary;
   const accent = THEME.accent;
+  const backgroundModifiers = [
+    activityBackgroundTint(backgroundColor),
+    background(backgroundColor),
+  ] as const;
 
   return {
     banner: (
       <VStack
         modifiers={[
-          activityBackgroundTint(backgroundColor),
-          background(backgroundColor),
+          ...backgroundModifiers,
           padding({ all: 12 }),
         ]}
       >
@@ -103,15 +107,25 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
         </Text>
       </VStack>
     ),
-    compactLeading: <Image systemName="tram.fill" color={accent} />,
-    compactTrailing: (
-      <Text modifiers={[font({ weight: 'bold', size: 14 }), foregroundStyle(accent), lineLimit(1)]}>
-        {compactCountdown}
-      </Text>
+    compactLeading: (
+      <VStack modifiers={[...backgroundModifiers, containerRelativeFrame({ axes: 'both' }), padding({ all: 4 })]}>
+        <Image systemName="tram.fill" color={accent} />
+      </VStack>
     ),
-    minimal: <Image systemName="tram.fill" color={accent} />,
+    compactTrailing: (
+      <VStack modifiers={[...backgroundModifiers, containerRelativeFrame({ axes: 'both' }), padding({ all: 4 })]}>
+        <Text modifiers={[font({ weight: 'bold', size: 14 }), foregroundStyle(accent), lineLimit(1)]}>
+          {compactCountdown}
+        </Text>
+      </VStack>
+    ),
+    minimal: (
+      <VStack modifiers={[...backgroundModifiers, containerRelativeFrame({ axes: 'both' }), padding({ all: 4 })]}>
+        <Image systemName="tram.fill" color={accent} />
+      </VStack>
+    ),
     expandedLeading: (
-      <VStack modifiers={[padding({ all: 8 })]}>
+      <VStack modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
         <Image systemName="tram.fill" color={accent} />
         <Text modifiers={[font({ size: 11 }), foregroundStyle(muted), lineLimit(2)]}>
           {stationName}
@@ -119,7 +133,7 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       </VStack>
     ),
     expandedTrailing: (
-      <VStack modifiers={[padding({ all: 8 })]}>
+      <VStack modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
         <Text modifiers={[font({ weight: 'bold', size: 24 }), foregroundStyle(primary), lineLimit(1)]}>
           {compactCountdown}
         </Text>
@@ -127,7 +141,7 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       </VStack>
     ),
     expandedBottom: (
-      <VStack modifiers={[padding({ all: 8 })]}>
+      <VStack modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
         <Text modifiers={[font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
           {stationName}
         </Text>
