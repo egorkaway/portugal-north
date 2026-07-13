@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location';
 import { useRouter } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { StationCard } from '@/components/StationCard';
 import { StationFilters } from '@/components/StationFilters';
 import { PAGE_SIZE, sortTrainTypes, theme } from '@/constants/theme';
@@ -23,6 +24,7 @@ type VisitedFilter = 'visited' | 'notVisited';
 
 export default function HomeScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const [searchQuery, setSearchQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
@@ -173,9 +175,9 @@ export default function HomeScreen() {
         }}
         onEndReachedThreshold={0.4}
         ListHeaderComponent={
-          <View style={styles.header}>
+          <View style={[styles.header, { paddingTop: insets.top + 4 }]}>
             <Text style={styles.title}>VeryStays</Text>
-            <Text style={styles.subtitle}>Train stations across Portugal & Spain</Text>
+            <Text style={styles.subtitle}>Travel hubs across Iberian peninsula</Text>
 
             <StationFilters
               searchQuery={searchQuery}
@@ -226,7 +228,6 @@ const styles = StyleSheet.create({
     paddingBottom: 24,
   },
   header: {
-    paddingTop: 8,
     paddingBottom: 12,
     gap: 8,
   },

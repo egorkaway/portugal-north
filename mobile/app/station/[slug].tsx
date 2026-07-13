@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import { StationDeparturesBoard } from '@/components/StationDeparturesBoard';
 import { StationHotelList } from '@/components/StationHotelList';
+import { TrainTypeLabels } from '@/components/TrainTypeLabels';
 import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
 import { VoteButtons } from '@/components/VoteButtons';
 import { theme } from '@/constants/theme';
@@ -23,6 +24,7 @@ import {
   getStationImageUrl,
   getSummaryForStation,
   getCpCode,
+  getBookingSearchUrl,
   isAirportStation,
 } from '@/lib/stationData';
 import {
@@ -108,6 +110,10 @@ export default function StationDetailScreen() {
     void Linking.openURL(url);
   };
 
+  const openBookingSearch = () => {
+    void Linking.openURL(getBookingSearchUrl(station));
+  };
+
   if (loadingMeta) {
     return (
       <View style={styles.centered}>
@@ -134,13 +140,7 @@ export default function StationDetailScreen() {
         <VoteButtons vote={vote} onVote={(direction) => void handleVote(direction)} />
       </View>
 
-      <View style={styles.chips}>
-        {station.types.map((type) => (
-          <View key={type} style={styles.chip}>
-            <Text style={styles.chipText}>{type}</Text>
-          </View>
-        ))}
-      </View>
+      <TrainTypeLabels types={station.types} />
 
       <Pressable
         onPress={() => void handleVisited()}
@@ -165,15 +165,17 @@ export default function StationDetailScreen() {
       ) : null}
 
       {!airport && reliability.score !== null ? (
-        <View style={styles.reliabilityCard}>
+        <>
           <Text style={styles.sectionTitle}>On-time reliability</Text>
-          <Text style={[styles.reliabilityScore, { color: reliabilityScoreColor(reliability.score) }]}>
-            {reliability.score}/10
-          </Text>
-          <Text style={styles.reliabilityMeta}>
-            Based on {reliability.movements} daily movements (CP data, baked into app).
-          </Text>
-        </View>
+          <View style={styles.reliabilityCard}>
+            <Text style={[styles.reliabilityScore, { color: reliabilityScoreColor(reliability.score) }]}>
+              {reliability.score}/10
+            </Text>
+            <Text style={styles.reliabilityMeta}>
+              Based on {reliability.movements} daily movements (CP data, baked into app).
+            </Text>
+          </View>
+        </>
       ) : null}
 
       {hotels.length > 0 ? (
@@ -188,6 +190,10 @@ export default function StationDetailScreen() {
 
       <Pressable style={styles.mapsButton} onPress={openMaps}>
         <Text style={styles.mapsButtonText}>Open in Apple Maps</Text>
+      </Pressable>
+
+      <Pressable style={styles.bookingButton} onPress={openBookingSearch}>
+        <Text style={styles.bookingButtonText}>Search on Booking</Text>
       </Pressable>
 
       <Text style={styles.coords}>
@@ -246,24 +252,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: theme.primaryMuted,
   },
-  chips: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 8,
-    paddingHorizontal: 16,
-    paddingTop: 12,
-  },
-  chip: {
-    backgroundColor: '#E8EEF2',
-    borderRadius: 999,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-  },
-  chipText: {
-    fontSize: 12,
-    fontWeight: '600',
-    color: theme.primary,
-  },
   visitedButton: {
     marginHorizontal: 16,
     marginTop: 12,
@@ -311,21 +299,23 @@ const styles = StyleSheet.create({
   },
   reliabilityCard: {
     marginHorizontal: STATION_SECTION_PADDING,
-    marginTop: 8,
     backgroundColor: theme.card,
     borderRadius: 12,
     borderWidth: 1,
     borderColor: theme.border,
     padding: 14,
     gap: 4,
+    alignItems: 'flex-start',
   },
   reliabilityScore: {
     fontSize: 28,
     fontWeight: '800',
+    textAlign: 'left',
   },
   reliabilityMeta: {
     fontSize: 13,
     color: theme.primaryMuted,
+    textAlign: 'left',
   },
   mapsButton: {
     marginHorizontal: STATION_SECTION_PADDING,
@@ -337,6 +327,21 @@ const styles = StyleSheet.create({
   },
   mapsButtonText: {
     color: '#fff',
+    fontWeight: '700',
+    fontSize: 15,
+  },
+  bookingButton: {
+    marginHorizontal: STATION_SECTION_PADDING,
+    marginTop: 10,
+    backgroundColor: theme.card,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: theme.border,
+    paddingVertical: 12,
+    alignItems: 'center',
+  },
+  bookingButtonText: {
+    color: theme.primary,
     fontWeight: '700',
     fontSize: 15,
   },

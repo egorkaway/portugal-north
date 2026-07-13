@@ -27,7 +27,7 @@ export function StationHotelList({ hotels }: Props) {
           <View style={styles.cardAside}>
             <Text style={styles.cardPrice}>€{hotel.priceFrom}</Text>
             <View style={styles.actionButton}>
-              <Text style={styles.actionButtonText}>Book</Text>
+              <Text style={styles.actionButtonText}>View</Text>
             </View>
           </View>
         </Pressable>

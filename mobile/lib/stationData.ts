@@ -79,6 +79,11 @@ export function getCpCode(stationName: string): string | null {
   return bakedCpCodes[stationName] ?? null;
 }
 
+export function getBookingSearchUrl(station: Station): string {
+  const countryName = station.country === 'es' ? 'Spain' : 'Portugal';
+  return `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(station.name + ', ' + countryName)}&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price`;
+}
+
 export function isAirportStation(station: Station): boolean {
   return station.types.includes('Airport');
 }

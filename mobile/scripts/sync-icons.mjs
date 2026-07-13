@@ -20,9 +20,32 @@ const targets = [
     __dirname,
     "../ios/VeryStays/Images.xcassets/AppIcon.appiconset/App-Icon-1024x1024@1x.png",
   ),
-  path.join(__dirname, "../assets/images/splash-icon.png"),
   path.join(__dirname, "../assets/images/android-icon-foreground.png"),
 ];
+
+const splashIconPath = path.join(__dirname, "../assets/images/splash-icon.png");
+
+/** ~iOS app-icon corner proportion on a square splash logo. */
+const SPLASH_CORNER_RADIUS_RATIO = 0.22;
+
+function roundedMaskSvg(size, radius) {
+  return Buffer.from(
+    `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}">
+      <rect width="${size}" height="${size}" rx="${radius}" ry="${radius}" fill="white"/>
+    </svg>`,
+  );
+}
+
+async function writeRoundedSplashPng(input, size, target) {
+  const radius = Math.round(size * SPLASH_CORNER_RADIUS_RATIO);
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  await sharp(input)
+    .resize(size, size, { fit: "cover", position: "centre" })
+    .composite([{ input: roundedMaskSvg(size, radius), blend: "dest-in" }])
+    .png({ compressionLevel: 9 })
+    .toFile(target);
+  console.log(`Wrote ${path.relative(repoRoot, target)}`);
+}
 
 const splashImagesetTargets = [
   { file: "image.png", size: 200 },
@@ -39,11 +62,7 @@ async function writeSplashImageset(input) {
 
   for (const { file, size } of splashImagesetTargets) {
     const target = path.join(imagesetDir, file);
-    await sharp(input)
-      .resize(size, size, { fit: "cover", position: "centre" })
-      .png({ compressionLevel: 9 })
-      .toFile(target);
-    console.log(`Wrote ${path.relative(repoRoot, target)}`);
+    await writeRoundedSplashPng(input, size, target);
   }
 }
 
@@ -56,6 +75,8 @@ async function fromRaster(input) {
       .toFile(target);
     console.log(`Wrote ${path.relative(repoRoot, target)}`);
   }
+
+  await writeRoundedSplashPng(input, 1024, splashIconPath);
 
   await writeSplashImageset(input);
 
