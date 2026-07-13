@@ -309,7 +309,7 @@ export const en: Messages = {
     buyAtStationBody:
       "Major stations have ticket desks and often machines. Smaller stops may have limited hours, so don’t assume you can always buy on arrival.",
     buyOnboardNote:
-      "For many trains other than AP, you can often buy on board — but rules and availability vary, so try to buy before boarding when you can.",
+      "For many trains other than AP, you can often buy on board with cash — but rules and availability vary, so try to buy before boarding when you can.",
     pricesTitle: "Price overview (rough)",
     pricesIntro:
       "Prices vary by route length, service type, time of day, and availability. These are typical patterns rather than guarantees.",

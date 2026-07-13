@@ -309,7 +309,7 @@ export const pt: Messages = {
     buyAtStationBody:
       "As principais estações têm bilheteiras e muitas vezes máquinas. Em paragens pequenas pode haver horários limitados.",
     buyOnboardNote:
-      "Em muitos comboios que não sejam AP, por vezes dá para comprar a bordo — mas as regras variam, por isso compre antes de embarcar sempre que possível.",
+      "Em muitos comboios que não sejam AP, por vezes dá para comprar a bordo — mas só em dinheiro, e as regras variam; compre antes de embarcar sempre que possível.",
     pricesTitle: "Visão geral de preços (aproximada)",
     pricesIntro:
       "Os preços variam com a distância, o tipo de serviço, a hora/dia e a disponibilidade. Isto é um guia prático.",

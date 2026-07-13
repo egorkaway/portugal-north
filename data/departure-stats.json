@@ -1,6 +1,6 @@
 {
-  "runCount": 113,
-  "lastRunAt": "2026-07-13T13:08:37.901Z",
+  "runCount": 114,
+  "lastRunAt": "2026-07-13T14:45:20.667Z",
   "stations": {
     "Pombal": {
       "cpCode": "94-34645",
@@ -725,9 +725,9 @@
         "delayMinutes": 495
       },
       "successfulSamples": 38,
-      "failedSamples": 2,
+      "failedSamples": 3,
       "lastSampleAt": "2026-07-13T13:11:09.397Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Marco de Canaveses": {
       "cpCode": "94-9001",
@@ -1506,9 +1506,9 @@
         "delayMinutes": 157
       },
       "successfulSamples": 29,
-      "failedSamples": 9,
+      "failedSamples": 10,
       "lastSampleAt": "2026-07-13T07:06:29.295Z",
-      "lastError": "cp_api_http_429"
+      "lastError": "fetch failed"
     },
     "Caxarias": {
       "cpCode": "94-34330",
@@ -2061,9 +2061,9 @@
         "delayMinutes": 193
       },
       "successfulSamples": 35,
-      "failedSamples": 3,
+      "failedSamples": 4,
       "lastSampleAt": "2026-07-13T13:11:01.971Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Vila Nova de Cerveira": {
       "cpCode": "94-18341",
@@ -3697,9 +3697,9 @@
         "delayMinutes": 84
       },
       "successfulSamples": 32,
-      "failedSamples": 3,
+      "failedSamples": 4,
       "lastSampleAt": "2026-07-13T07:06:24.512Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Cais do Sodré": {
       "cpCode": "94-69005",
@@ -4972,9 +4972,9 @@
         "delayMinutes": 66
       },
       "successfulSamples": 33,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-07-13T13:11:10.623Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Lares": {
       "cpCode": "94-64055",

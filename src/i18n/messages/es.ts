@@ -309,7 +309,7 @@ export const es: Messages = {
     buyAtStationBody:
       "Las estaciones grandes suelen tener taquillas y máquinas. En paradas pequeñas puede haber horarios limitados.",
     buyOnboardNote:
-      "En muchos trenes que no sean AP, a veces se puede comprar a bordo — pero las reglas varían, así que compra antes de subir cuando puedas.",
+      "En muchos trenes que no sean AP, a veces se puede comprar a bordo — pero solo en efectivo, y las reglas varían; compra antes de subir cuando puedas.",
     pricesTitle: "Resumen de precios (aprox.)",
     pricesIntro:
       "Los precios varían por distancia, tipo de servicio, hora/día y disponibilidad. Esto es una guía práctica.",

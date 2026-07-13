@@ -309,7 +309,7 @@ export const ca: Messages = {
     buyAtStationBody:
       "Les estacions grans solen tenir taquilles i màquines. A parades petites pot haver-hi horaris limitats.",
     buyOnboardNote:
-      "En molts trens que no siguin AP, de vegades es pot comprar a bord — però les normes varien, així que compra abans de pujar quan puguis.",
+      "En molts trens que no siguin AP, de vegades es pot comprar a bord — però només en efectiu, i les normes varien; compra abans de pujar quan puguis.",
     pricesTitle: "Resum de preus (aprox.)",
     pricesIntro:
       "Els preus varien per distància, tipus de servei, hora/dia i disponibilitat. Això és una guia pràctica.",
