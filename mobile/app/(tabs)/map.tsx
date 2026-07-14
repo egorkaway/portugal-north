@@ -6,7 +6,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import MapView, { Marker, type MarkerPressEvent } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { SymbolView } from 'expo-symbols';
 import { useNavigation, useRouter } from 'expo-router';
@@ -29,6 +29,10 @@ const IBERIAN_REGION = {
   longitudeDelta: 18,
 };
 
+/** Minimum comfortable tap target for map markers (Apple HIG ≈ 44pt). */
+const MARKER_HIT_SIZE = 52;
+const MARKER_PRESS_LOCK_MS = 120;
+
 function markerSize(movements: number): number {
   if (movements >= 500) return 14;
   if (movements >= 200) return 11;
@@ -40,6 +44,7 @@ export default function MapScreen() {
   const router = useRouter();
   const navigation = useNavigation();
   const mapRef = useRef<MapView>(null);
+  const markerPressLock = useRef(false);
   const [selectedName, setSelectedName] = useState<string | null>(null);
   const [locating, setLocating] = useState(false);
   const [showsUserLocation, setShowsUserLocation] = useState(false);
@@ -63,6 +68,29 @@ export default function MapScreen() {
         };
       }),
     [],
+  );
+
+  const selectStation = useCallback((stationName: string) => {
+    markerPressLock.current = true;
+    setSelectedName(stationName);
+    setTimeout(() => {
+      markerPressLock.current = false;
+    }, MARKER_PRESS_LOCK_MS);
+  }, []);
+
+  const clearSelection = useCallback(() => {
+    if (markerPressLock.current) return;
+    setSelectedName(null);
+  }, []);
+
+  const handleMarkerPress = useCallback(
+    (event: MarkerPressEvent) => {
+      const stationName = event.nativeEvent.id;
+      if (stationName && stationName !== 'unknown') {
+        selectStation(stationName);
+      }
+    },
+    [selectStation],
   );
 
   const locateUser = useCallback(async () => {
@@ -125,16 +153,20 @@ export default function MapScreen() {
         userInterfaceStyle={mapAppearance}
         showsUserLocation={showsUserLocation}
         showsMyLocationButton={false}
-        onPress={() => setSelectedName(null)}
+        onPress={clearSelection}
+        onMarkerPress={handleMarkerPress}
       >
         {markers.map(({ station, color, size }) => (
           <Marker
             key={station.name}
+            identifier={station.name}
             coordinate={{ latitude: station.lat, longitude: station.lng }}
             stopPropagation
-            onPress={() => setSelectedName(station.name)}
+            tracksViewChanges={false}
+            onPress={() => selectStation(station.name)}
           >
-            <View style={styles.markerHitArea}>
+            <View style={styles.markerHitArea} collapsable={false}>
+              <View style={styles.markerTouchTarget} />
               <View
                 style={[
                   styles.dot,
@@ -151,13 +183,15 @@ export default function MapScreen() {
         ))}
       </MapView>
 
-      <View style={styles.legend}>
-        <Text style={styles.legendTitle}>Reliability</Text>
-        <View style={styles.legendRow}>
-          <LegendSwatch color={reliabilityScoreColor(9)} label="8–10" />
-          <LegendSwatch color={reliabilityScoreColor(6)} label="5–7" />
-          <LegendSwatch color={reliabilityScoreColor(3)} label="0–4" />
-          <LegendSwatch color="#0284C7" label="Airport" />
+      <View style={styles.legend} pointerEvents="box-none">
+        <View style={styles.legendCard}>
+          <Text style={styles.legendTitle}>Reliability</Text>
+          <View style={styles.legendRow}>
+            <LegendSwatch color={reliabilityScoreColor(9)} label="8–10" />
+            <LegendSwatch color={reliabilityScoreColor(6)} label="5–7" />
+            <LegendSwatch color={reliabilityScoreColor(3)} label="0–4" />
+            <LegendSwatch color="#0284C7" label="Airport" />
+          </View>
         </View>
       </View>
 
@@ -230,16 +264,23 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
   },
   markerHitArea: {
-    width: 36,
-    height: 36,
+    width: MARKER_HIT_SIZE,
+    height: MARKER_HIT_SIZE,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  markerTouchTarget: {
+    ...StyleSheet.absoluteFillObject,
+    // Nearly invisible fill helps iOS register taps on custom annotation views.
+    backgroundColor: 'rgba(255,255,255,0.001)',
   },
   legend: {
     position: 'absolute',
     top: 12,
     left: 12,
     right: 12,
+  },
+  legendCard: {
     backgroundColor: 'rgba(255,255,255,0.95)',
     borderRadius: 12,
     padding: 12,

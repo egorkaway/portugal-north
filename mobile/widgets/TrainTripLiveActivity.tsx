@@ -6,6 +6,7 @@ import {
   font,
   foregroundStyle,
   lineLimit,
+  multilineTextAlignment,
   padding,
 } from '@expo/ui/swift-ui/modifiers';
 import { createLiveActivity, type LiveActivityEnvironment } from 'expo-widgets';
@@ -13,6 +14,10 @@ import type { TripWidgetProps } from '@/lib/types';
 
 const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivityEnvironment) => {
   'widget';
+
+  function leftTextModifiers() {
+    return [multilineTextAlignment('leading')];
+  }
 
   const THEME = {
     primary: '#012841',
@@ -85,19 +90,21 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
   return {
     banner: (
       <VStack
+        alignment="leading"
         modifiers={[
           ...backgroundModifiers,
           padding({ all: 12 }),
         ]}
       >
-        <Text modifiers={[font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
+        <Text modifiers={[...leftTextModifiers(), font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
           {stationName}
         </Text>
-        <Text modifiers={[font({ weight: 'bold', size: 20 }), foregroundStyle(primary), lineLimit(1)]}>
+        <Text modifiers={[...leftTextModifiers(), font({ weight: 'bold', size: 20 }), foregroundStyle(primary), lineLimit(1)]}>
           {compactCountdown}
         </Text>
         <Text
           modifiers={[
+            ...leftTextModifiers(),
             font({ size: 12, weight: 'semibold' }),
             foregroundStyle(primary),
             lineLimit(3),
@@ -113,8 +120,11 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       </VStack>
     ),
     compactTrailing: (
-      <VStack modifiers={[...backgroundModifiers, containerRelativeFrame({ axes: 'both' }), padding({ all: 4 })]}>
-        <Text modifiers={[font({ weight: 'bold', size: 14 }), foregroundStyle(accent), lineLimit(1)]}>
+      <VStack
+        alignment="leading"
+        modifiers={[...backgroundModifiers, containerRelativeFrame({ axes: 'both' }), padding({ all: 4 })]}
+      >
+        <Text modifiers={[...leftTextModifiers(), font({ weight: 'bold', size: 14 }), foregroundStyle(accent), lineLimit(1)]}>
           {compactCountdown}
         </Text>
       </VStack>
@@ -125,28 +135,29 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       </VStack>
     ),
     expandedLeading: (
-      <VStack modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
+      <VStack alignment="leading" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
         <Image systemName="tram.fill" color={accent} />
-        <Text modifiers={[font({ size: 11 }), foregroundStyle(muted), lineLimit(2)]}>
+        <Text modifiers={[...leftTextModifiers(), font({ size: 11 }), foregroundStyle(muted), lineLimit(2)]}>
           {stationName}
         </Text>
       </VStack>
     ),
     expandedTrailing: (
-      <VStack modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
-        <Text modifiers={[font({ weight: 'bold', size: 24 }), foregroundStyle(primary), lineLimit(1)]}>
+      <VStack alignment="leading" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
+        <Text modifiers={[...leftTextModifiers(), font({ weight: 'bold', size: 24 }), foregroundStyle(primary), lineLimit(1)]}>
           {compactCountdown}
         </Text>
-        <Text modifiers={[font({ size: 12 }), foregroundStyle(muted), lineLimit(1)]}>{departureTime}</Text>
+        <Text modifiers={[...leftTextModifiers(), font({ size: 12 }), foregroundStyle(muted), lineLimit(1)]}>{departureTime}</Text>
       </VStack>
     ),
     expandedBottom: (
-      <VStack modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
-        <Text modifiers={[font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
+      <VStack alignment="leading" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
+        <Text modifiers={[...leftTextModifiers(), font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
           {stationName}
         </Text>
         <Text
           modifiers={[
+            ...leftTextModifiers(),
             font({ size: 12, weight: 'semibold' }),
             foregroundStyle(primary),
             lineLimit(4),
@@ -154,7 +165,7 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
         >
           {destinationLine}
         </Text>
-        <Text modifiers={[font({ size: 12 }), foregroundStyle(accent), lineLimit(1)]}>
+        <Text modifiers={[...leftTextModifiers(), font({ size: 12 }), foregroundStyle(accent), lineLimit(1)]}>
           {platform ? `Platform ${platform}` : 'Open VeryStays'}
         </Text>
       </VStack>

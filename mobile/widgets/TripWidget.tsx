@@ -3,6 +3,7 @@ import {
   font,
   foregroundStyle,
   lineLimit,
+  multilineTextAlignment,
   padding,
   underline,
 } from '@expo/ui/swift-ui/modifiers';
@@ -13,7 +14,11 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
   'widget';
 
   // Helpers must live inside the widget function — the layout is evaluated in an
-  // isolated JS runtime that does not retain module-level closures.
+  // isolated JS runtime that does not retain module-level closures or imports.
+  function leftTextModifiers() {
+    return [multilineTextAlignment('leading')];
+  }
+
   function widgetColors(colorScheme: 'light' | 'dark') {
     if (colorScheme === 'dark') {
       return {
@@ -144,9 +149,13 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
         : title;
 
     return (
-      <VStack modifiers={[padding({ all: environment.widgetFamily === 'accessoryRectangular' ? 8 : 0 })]}>
+      <VStack
+        alignment="leading"
+        modifiers={[padding({ all: environment.widgetFamily === 'accessoryRectangular' ? 8 : 0 })]}
+      >
         <Text
           modifiers={[
+            ...leftTextModifiers(),
             font({ weight: 'bold', size: 13 }),
             foregroundStyle(colors.primary),
             lineLimit(environment.widgetFamily === 'accessoryInline' ? 1 : 2),
@@ -159,9 +168,10 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
   }
 
   return (
-    <VStack modifiers={[padding({ all: compact ? 10 : 14 })]}>
+    <VStack alignment="leading" modifiers={[padding({ all: compact ? 10 : 14 })]}>
       <Text
         modifiers={[
+          ...leftTextModifiers(),
           font({ size: labelSize, weight: 'bold' }),
           foregroundStyle(colors.label),
           lineLimit(2),
@@ -174,6 +184,7 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
       </Text>
       <Text
         modifiers={[
+          ...leftTextModifiers(),
           font({ weight: 'bold', size: titleSize }),
           foregroundStyle(colors.primary),
           lineLimit(mode === 'active' ? 1 : 2),
@@ -184,6 +195,7 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
       {showDestination ? (
         <Text
           modifiers={[
+            ...leftTextModifiers(),
             font({ size: destinationFontSize, weight: 'bold' }),
             foregroundStyle(colors.primary),
             lineLimit(destinationLineLimit),
@@ -194,6 +206,7 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
       ) : (
         <Text
           modifiers={[
+            ...leftTextModifiers(),
             font({ size: detailSize, weight: 'semibold' }),
             foregroundStyle(colors.detail),
             lineLimit(compact ? 3 : 4),
@@ -204,6 +217,7 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
       )}
       <Text
         modifiers={[
+          ...leftTextModifiers(),
           font({ size: footerSize, weight: 'bold' }),
           foregroundStyle(colors.footer),
           lineLimit(2),
