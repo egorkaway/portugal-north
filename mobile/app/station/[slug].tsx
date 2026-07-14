@@ -75,14 +75,11 @@ export default function StationDetailScreen() {
 
   if (!station) {
     return (
-      <View style={styles.container}>
-        <View style={styles.centered}>
-          <Text style={styles.title}>Station not found</Text>
-          <Pressable style={styles.button} onPress={() => router.back()}>
-            <Text style={styles.buttonText}>Go back</Text>
-          </Pressable>
-        </View>
-        <BuildFooter fixed />
+      <View style={styles.centered}>
+        <Text style={styles.title}>Station not found</Text>
+        <Pressable style={styles.button} onPress={() => router.back()}>
+          <Text style={styles.buttonText}>Go back</Text>
+        </Pressable>
       </View>
     );
   }
@@ -120,11 +117,8 @@ export default function StationDetailScreen() {
 
   if (loadingMeta) {
     return (
-      <View style={styles.container}>
-        <View style={styles.centered}>
-          <ActivityIndicator color={theme.primary} />
-        </View>
-        <BuildFooter fixed />
+      <View style={styles.centered}>
+        <ActivityIndicator color={theme.primary} />
       </View>
     );
   }

@@ -35,6 +35,8 @@ export type TripWidgetProps = {
   destination: string;
   delayMinutes: number | null;
   platform: string | null;
+  /** Unix ms for effective departure — powers Live Activity native countdown timer. */
+  departureAtMs: number | null;
 };
 
 export type StationDeparture = {

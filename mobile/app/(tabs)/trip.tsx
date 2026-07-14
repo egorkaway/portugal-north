@@ -201,6 +201,19 @@ export default function TripScreen() {
   useTripDepartureRecord(activeTrip, delayMinutes, now, onTripCompleted);
   useTripCompletion(activeTrip, downstreamStops, delayMinutes, now, onTripCompleted);
 
+  const pastTrips = useMemo(() => {
+    if (!activeTrip) return history;
+    const minutesSinceDeparture = getMinutesSinceDeparture(
+      activeTrip.departureTime,
+      delayMinutes,
+      now,
+    );
+    if (minutesSinceDeparture === null) {
+      return history.filter((record) => record.id !== activeTrip.id);
+    }
+    return history;
+  }, [history, activeTrip, delayMinutes, now]);
+
   const clearTrip = async () => {
     await clearActiveTrip();
     setActiveTrip(null);
@@ -219,11 +232,8 @@ export default function TripScreen() {
 
   if (loading) {
     return (
-      <View style={styles.container}>
-        <View style={styles.centered}>
-          <ActivityIndicator color={theme.primary} />
-        </View>
-        <BuildFooter fixed />
+      <View style={styles.centered}>
+        <ActivityIndicator color={theme.primary} />
       </View>
     );
   }
@@ -345,10 +355,10 @@ export default function TripScreen() {
 
       <View style={styles.historySection}>
         <Text style={styles.sectionTitle}>Past trips</Text>
-        {history.length === 0 ? (
+        {pastTrips.length === 0 ? (
           <Text style={styles.historyEmpty}>Trips you take will appear here.</Text>
         ) : (
-          history.map((record) => (
+          pastTrips.map((record) => (
             <View key={record.id} style={styles.historyCard}>
               <View style={styles.historyMain}>
                 <Text style={styles.historyTitle}>

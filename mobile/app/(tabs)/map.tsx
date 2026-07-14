@@ -11,7 +11,6 @@ import * as Location from 'expo-location';
 import { SymbolView } from 'expo-symbols';
 import { useNavigation, useRouter } from 'expo-router';
 import { useSystemColorScheme } from '@/components/useSystemColorScheme';
-import { BuildFooter } from '@/components/BuildFooter';
 import { theme } from '@/constants/theme';
 import { reliabilityScoreColor } from '@/lib/reliabilityScore';
 import {
@@ -230,7 +229,6 @@ export default function MapScreen() {
           </Pressable>
         </View>
       ) : null}
-      <BuildFooter fixed />
     </View>
   );
 }

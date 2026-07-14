@@ -35,6 +35,17 @@ export function getMinutesUntilDeparture(
   return effectiveDeparture - nowMinutes;
 }
 
+/** Absolute departure instant for native Live Activity timers. */
+export function getDepartureTimestampMs(
+  departureTime: string,
+  delayMinutes: number | null,
+  now: Date = new Date(),
+): number | null {
+  const minutes = getMinutesUntilDeparture(departureTime, delayMinutes, now);
+  if (minutes === null || minutes <= 0) return null;
+  return now.getTime() + minutes * 60_000;
+}
+
 export function getMinutesUntilTime(
   clockTime: string,
   delayMinutes: number | null,

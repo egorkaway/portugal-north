@@ -136,7 +136,7 @@ export async function setActiveTripFromDeparture(input: {
   return trip;
 }
 
-/** Set active trip, record in history, and refresh widgets immediately. */
+/** Set active trip and refresh widgets immediately. History is recorded after departure. */
 export async function takeActiveTrip(input: {
   stationName: string;
   trainNumber: string;
@@ -147,7 +147,6 @@ export async function takeActiveTrip(input: {
   delayMinutes: number | null;
 }): Promise<PlannedDeparture> {
   const trip = await setActiveTripFromDeparture(input);
-  await recordTakenTrip(trip, trip.destination);
   try {
     await scheduleTripDepartureReminder(trip);
   } catch (error) {

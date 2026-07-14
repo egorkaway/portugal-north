@@ -65,12 +65,68 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       ? Math.floor(countdownRaw)
       : null;
 
+  const departureAtMsRaw = props.departureAtMs;
+  const departureAt =
+    typeof departureAtMsRaw === 'number' && departureAtMsRaw > 0
+      ? new Date(departureAtMsRaw)
+      : null;
+
   const compactCountdown =
     countdownMinutes !== null
       ? compactCountdownLabel(countdownMinutes)
       : typeof props.headline === 'string' && props.headline.trim()
         ? props.headline.trim()
         : 'Now';
+
+  function renderCountdownText(
+    size: number,
+    weight: 'bold' | 'semibold',
+    color: string,
+  ) {
+    if (departureAt) {
+      const now = new Date();
+      if (departureAt.getTime() <= now.getTime()) {
+        return (
+          <Text
+            modifiers={[
+              ...leftTextModifiers(),
+              font({ weight, size }),
+              foregroundStyle(color),
+              lineLimit(1),
+            ]}
+          >
+            Now
+          </Text>
+        );
+      }
+
+      return (
+        <Text
+          timerInterval={{ lower: now, upper: departureAt }}
+          countsDown={true}
+          modifiers={[
+            ...leftTextModifiers(),
+            font({ weight, size }),
+            foregroundStyle(color),
+            lineLimit(1),
+          ]}
+        />
+      );
+    }
+
+    return (
+      <Text
+        modifiers={[
+          ...leftTextModifiers(),
+          font({ weight, size }),
+          foregroundStyle(color),
+          lineLimit(1),
+        ]}
+      >
+        {compactCountdown}
+      </Text>
+    );
+  }
 
   const destinationLine = destination
     ? trainNumber
@@ -99,9 +155,7 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
         <Text modifiers={[...leftTextModifiers(), font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
           {stationName}
         </Text>
-        <Text modifiers={[...leftTextModifiers(), font({ weight: 'bold', size: 20 }), foregroundStyle(primary), lineLimit(1)]}>
-          {compactCountdown}
-        </Text>
+        {renderCountdownText(20, 'bold', primary)}
         <Text
           modifiers={[
             ...leftTextModifiers(),
@@ -124,9 +178,7 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
         alignment="leading"
         modifiers={[...backgroundModifiers, containerRelativeFrame({ axes: 'both' }), padding({ all: 4 })]}
       >
-        <Text modifiers={[...leftTextModifiers(), font({ weight: 'bold', size: 14 }), foregroundStyle(accent), lineLimit(1)]}>
-          {compactCountdown}
-        </Text>
+        {renderCountdownText(14, 'bold', accent)}
       </VStack>
     ),
     minimal: (
@@ -144,9 +196,7 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
     ),
     expandedTrailing: (
       <VStack alignment="leading" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
-        <Text modifiers={[...leftTextModifiers(), font({ weight: 'bold', size: 24 }), foregroundStyle(primary), lineLimit(1)]}>
-          {compactCountdown}
-        </Text>
+        {renderCountdownText(24, 'bold', primary)}
         <Text modifiers={[...leftTextModifiers(), font({ size: 12 }), foregroundStyle(muted), lineLimit(1)]}>{departureTime}</Text>
       </VStack>
     ),

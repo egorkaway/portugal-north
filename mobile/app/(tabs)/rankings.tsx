@@ -68,11 +68,8 @@ export default function RankingsScreen() {
 
   if (loading) {
     return (
-      <View style={styles.container}>
-        <View style={styles.centered}>
-          <ActivityIndicator color={theme.primary} />
-        </View>
-        <BuildFooter fixed />
+      <View style={styles.centered}>
+        <ActivityIndicator color={theme.primary} />
       </View>
     );
   }

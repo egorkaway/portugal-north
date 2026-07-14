@@ -1,6 +1,7 @@
 import Constants from 'expo-constants';
 
 export function getAppBuildLabel(): string {
+  const version = Constants.expoConfig?.version ?? '1.0';
   const build =
     Constants.nativeBuildVersion ??
     Constants.expoConfig?.ios?.buildNumber ??
@@ -8,5 +9,5 @@ export function getAppBuildLabel(): string {
       ? String(Constants.expoConfig.android.versionCode)
       : undefined);
 
-  return build ? `Build ${build}` : '';
+  return build ? `${version} (${build})` : version;
 }

@@ -42,6 +42,7 @@ function propsForWidgetBridge(props: TripWidgetProps): TripWidgetProps {
     countdownMinutes: props.countdownMinutes ?? -1,
     delayMinutes: props.delayMinutes ?? -1,
     platform: props.platform ?? '',
+    departureAtMs: props.departureAtMs ?? -1,
   };
 }
 
@@ -128,22 +129,46 @@ async function enrichActiveTripDelay() {
   };
 }
 
-async function syncLiveActivity(props: TripWidgetProps): Promise<void> {
+async function endAllLiveActivities(): Promise<void> {
+  const factory = getLiveActivityFactory();
+  if (!factory) return;
+
+  const instances = factory.getInstances();
+  if (instances.length === 0) return;
+
+  await Promise.all(instances.map((instance) => instance.end('immediate')));
+  await AsyncStorage.removeItem(LIVE_ACTIVITY_ID_KEY);
+}
+
+async function syncLiveActivity(
+  props: TripWidgetProps,
+  activeTrip: Awaited<ReturnType<typeof enrichActiveTripDelay>>,
+  now: Date,
+): Promise<void> {
   const factory = getLiveActivityFactory();
   if (!factory) return;
 
   const normalized = normalizeWidgetProps(props);
 
-  if (normalized.mode !== 'active') {
-    const instances = factory.getInstances();
-    await Promise.all(instances.map((instance) => instance.end()));
-    await AsyncStorage.removeItem(LIVE_ACTIVITY_ID_KEY);
+  const minutesUntil =
+    activeTrip &&
+    getMinutesUntilDeparture(activeTrip.departureTime, activeTrip.delayMinutes, now);
+
+  const hasDeparted =
+    normalized.mode !== 'active' ||
+    !activeTrip ||
+    minutesUntil === null ||
+    minutesUntil <= 0 ||
+    (normalized.countdownMinutes !== null && normalized.countdownMinutes <= 0);
+
+  if (hasDeparted) {
+    await endAllLiveActivities();
     return;
   }
 
   const instances = factory.getInstances();
   if (instances.length > 0) {
-    instances[0].update(normalized);
+    await instances[0].update(normalized);
     return;
   }
 
@@ -170,7 +195,7 @@ export async function syncTripWidgets(now = new Date()): Promise<TripWidgetProps
     pushWidgetState(widget, props, now);
   }
 
-  await syncLiveActivity(props);
+  await syncLiveActivity(props, activeTrip, now);
   return props;
 }
 
@@ -194,11 +219,10 @@ export async function onTripDeparted(): Promise<void> {
   const minutes = getMinutesUntilDeparture(trip.departureTime, trip.delayMinutes);
   if (minutes === null || minutes >= 0) return;
 
-  // Keep Live Activity visible briefly after departure.
-  // We only clear the active trip (which ends the Live Activity) once we're
-  // 3+ minutes past the scheduled departure.
-  const HIDE_LIVE_ACTIVITY_AFTER_MINUTES = 3;
-  if (minutes > -HIDE_LIVE_ACTIVITY_AFTER_MINUTES) return;
+  // End Live Activity as soon as departure passes (handled in syncLiveActivity).
+  // Keep the active trip in-app for a few minutes so Past trips can update.
+  const CLEAR_ACTIVE_TRIP_AFTER_MINUTES = 3;
+  if (minutes > -CLEAR_ACTIVE_TRIP_AFTER_MINUTES) return;
 
   const { recordTakenTrip, writeActiveTrip } = await import('@/lib/tripStorage');
   await recordTakenTrip(trip);

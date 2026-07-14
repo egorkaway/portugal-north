@@ -11,6 +11,7 @@ export const DEFAULT_WIDGET_PROPS: TripWidgetProps = {
   destination: '',
   delayMinutes: null,
   platform: null,
+  departureAtMs: null,
 };
 
 export function normalizeWidgetProps(
@@ -35,5 +36,9 @@ export function normalizeWidgetProps(
     delayMinutes:
       props.delayMinutes === undefined || props.delayMinutes < 0 ? null : props.delayMinutes,
     platform: props.platform?.trim() ? props.platform : null,
+    departureAtMs:
+      props.departureAtMs === undefined || props.departureAtMs <= 0
+        ? null
+        : props.departureAtMs,
   };
 }

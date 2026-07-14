@@ -1,6 +1,7 @@
 import {
   formatWidgetCountdown,
   getEffectiveDepartureClock,
+  getDepartureTimestampMs,
   getMinutesUntilDeparture,
 } from "@/lib/departureCountdown";
 import { findNearestStation } from "@/lib/nearestStation";
@@ -25,6 +26,7 @@ function buildPromptNextTrainProps(nearestStationName: string | null): TripWidge
     destination: "",
     delayMinutes: null,
     platform: null,
+    departureAtMs: null,
   });
 }
 
@@ -63,6 +65,11 @@ export function buildWidgetProps(input: {
       destination: input.activeTrip.destination,
       delayMinutes: input.activeTrip.delayMinutes,
       platform: input.activeTrip.platform,
+      departureAtMs: getDepartureTimestampMs(
+        input.activeTrip.departureTime,
+        input.activeTrip.delayMinutes,
+        now,
+      ),
     };
   }
 
@@ -82,6 +89,7 @@ export function buildWidgetProps(input: {
       destination: input.lastTaken.finalStationName,
       delayMinutes: input.lastTaken.delayMinutes,
       platform: input.lastTaken.platform,
+      departureAtMs: null,
     };
   }
 
@@ -97,6 +105,7 @@ export function buildWidgetProps(input: {
       destination: "",
       delayMinutes: null,
       platform: null,
+      departureAtMs: null,
     };
   }
 
