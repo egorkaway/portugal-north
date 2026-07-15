@@ -3,15 +3,18 @@ import '@/widgets/TrainTripLiveActivity';
 
 import { useFonts } from 'expo-font';
 import * as Notifications from 'expo-notifications';
-import { DefaultTheme, Stack, ThemeProvider } from 'expo-router';
+import { DefaultTheme, Stack, ThemeProvider, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { ActivityIndicator, View } from 'react-native';
 import 'react-native-reanimated';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import Colors from '@/constants/Colors';
+import { theme } from '@/constants/theme';
 import { WidgetSyncBootstrap } from '@/components/WidgetSyncBootstrap';
+import { isOnboardingComplete } from '@/lib/onboardingStorage';
 import { seedWidgetTimeline } from '@/lib/widgetSync';
 
 Notifications.setNotificationHandler({
@@ -61,6 +64,32 @@ export default function RootLayout() {
 
 function RootLayoutNav() {
   const light = Colors.light;
+  const router = useRouter();
+  const [bootState, setBootState] = useState<'loading' | 'ready'>('loading');
+
+  useEffect(() => {
+    void isOnboardingComplete().then((complete) => {
+      if (!complete) {
+        router.replace('/onboarding');
+      }
+      setBootState('ready');
+    });
+  }, [router]);
+
+  if (bootState === 'loading') {
+    return (
+      <View
+        style={{
+          flex: 1,
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: theme.background,
+        }}
+      >
+        <ActivityIndicator color={theme.primary} size="large" />
+      </View>
+    );
+  }
 
   return (
     <SafeAreaProvider>
@@ -76,6 +105,7 @@ function RootLayoutNav() {
           }}
         >
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="onboarding" options={{ headerShown: false, animation: 'fade' }} />
           <Stack.Screen
             name="station/[slug]"
             options={{

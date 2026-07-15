@@ -14,6 +14,8 @@ Fully **native** iOS/Android app for [VeryStays](https://www.verystays.com) — 
 
 Station detail opens as a stack screen: photo, summary, live departures (**Take** → Trip tab), flight connections (airports), hotels, maps link.
 
+First launch shows a short onboarding flow (welcome, location, notifications, widgets).
+
 ## What's offline vs online
 
 | Baked into the app | Needs internet |
