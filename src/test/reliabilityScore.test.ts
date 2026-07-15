@@ -94,4 +94,33 @@ describe("computeReliabilityScores", () => {
     const scores = computeReliabilityScores(store);
     expect(scores["Busy hub"]).toBeGreaterThan(scores["Quiet halt"]!);
   });
+
+  it("winsorizes scale max so one outlier does not hide other poor performers", () => {
+    const store = createEmptyDepartureStatsStore();
+
+    mergeStationSnapshot(store, "Outlier", "94-0", {
+      observedAt: "2026-06-20T10:00:00.000Z",
+      byTrainType: { Regional: { departures: 10, arrivals: 0, delayMinutes: 1000 } },
+      totals: { departures: 10, arrivals: 0, delayMinutes: 1000 },
+    });
+    for (let i = 1; i <= 8; i++) {
+      mergeStationSnapshot(store, `Poor ${i}`, `94-${i}`, {
+        observedAt: "2026-06-20T10:00:00.000Z",
+        byTrainType: {
+          Regional: { departures: 10, arrivals: 0, delayMinutes: 20 + i * 5 },
+        },
+        totals: { departures: 10, arrivals: 0, delayMinutes: 20 + i * 5 },
+      });
+    }
+    mergeStationSnapshot(store, "Good", "94-9", {
+      observedAt: "2026-06-20T10:00:00.000Z",
+      byTrainType: { Regional: { departures: 10, arrivals: 0, delayMinutes: 0 } },
+      totals: { departures: 10, arrivals: 0, delayMinutes: 0 },
+    });
+
+    const scores = computeReliabilityScores(store);
+    expect(Object.values(scores).filter((score) => score < 5).length).toBeGreaterThanOrEqual(5);
+    expect(scores["Outlier"]).toBeLessThan(5);
+    expect(scores["Poor 8"]).toBeLessThan(5);
+  });
 });

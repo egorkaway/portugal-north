@@ -12,8 +12,14 @@ export type ReliabilityScoresManifest = {
 export const RELIABILITY_SCORE_MIN = 1;
 export const RELIABILITY_SCORE_MAX = 10;
 
-/** Higher traffic reduces the effective delay rate used for scoring (0 = off, ~2.55 = strong hub weighting). */
-export const RELIABILITY_VOLUME_TOLERANCE_EXP = 2.55;
+/** Higher traffic reduces the effective delay rate used for scoring (0 = off, ~0.27 = moderate). */
+export const RELIABILITY_VOLUME_TOLERANCE_EXP = 0.27;
+
+/**
+ * Scale max uses the Nth-worst adjusted delay rate instead of the absolute max so one
+ * outlier does not compress almost every station to 10.
+ */
+export const RELIABILITY_SCALE_WORST_RANK = 5;
 
 /** Average delay minutes per train movement (departure or arrival). Lower is better. */
 export function stationDelayRate(
@@ -100,8 +106,12 @@ export function computeReliabilityScores(
   if (rates.length === 0) return {};
   if (rates.length === 1) return { [rates[0]!.name]: RELIABILITY_SCORE_MAX };
 
+  const sortedByRate = [...rates].sort((a, b) => b.rate - a.rate);
   const minRate = Math.min(...rates.map((entry) => entry.rate));
-  const maxRate = Math.max(...rates.map((entry) => entry.rate));
+  const maxRate =
+    sortedByRate.length > RELIABILITY_SCALE_WORST_RANK
+      ? sortedByRate[RELIABILITY_SCALE_WORST_RANK - 1]!.rate
+      : Math.max(...rates.map((entry) => entry.rate));
 
   const scores: Record<string, number> = {};
   for (const { name, rate } of rates) {
