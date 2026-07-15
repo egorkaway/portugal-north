@@ -21,20 +21,20 @@ import {
 } from "@/lib/stationH3Map";
 import "leaflet/dist/leaflet.css";
 
-const LEGEND_SWATCHES = {
-  5: {
+const LEGEND_TIERS = {
+  busy: {
     fill: "hsl(145 58% 50%)",
     fillOpacity: 0.42,
     border: "hsl(145 82% 26%)",
-    size: "h-3 w-3",
+    size: "h-2.5 w-2.5",
   },
-  7: {
+  mid: {
     fill: "hsl(210 52% 46%)",
     fillOpacity: 0.55,
     border: "hsl(210 72% 18%)",
     size: "h-2.5 w-2.5",
   },
-  9: {
+  quiet: {
     fill: "hsl(275 48% 34%)",
     fillOpacity: 0.92,
     border: "hsl(275 68% 10%)",
@@ -129,16 +129,16 @@ export default function StationActivityMap() {
 
       <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
         <span className="font-medium text-foreground">{t("map.legendTitle")}</span>
-        {([5, 7, 9] as const).map((resolution) => {
-          const swatch = LEGEND_SWATCHES[resolution];
+        {(["busy", "mid", "quiet"] as const).map((tier) => {
+          const swatch = LEGEND_TIERS[tier];
           const label =
-            resolution === 5
+            tier === "busy"
               ? t("map.legendBusy")
-              : resolution === 7
+              : tier === "mid"
                 ? t("map.legendMid")
                 : t("map.legendQuiet");
           return (
-            <span key={resolution} className="inline-flex items-center gap-2">
+            <span key={tier} className="inline-flex items-center gap-2">
               <span
                 className={`inline-block rounded-sm border-2 ${swatch.size}`}
                 style={{

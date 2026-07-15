@@ -171,7 +171,7 @@ export function MapHexLayer({
     <>
       {cells.map((cell) => {
         const style = hexPathStyle(
-          cell.resolution,
+          cell.tier,
           cell.movements,
           minMovements,
           maxMovements,

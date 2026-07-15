@@ -1,7 +1,9 @@
 import { cellToBoundary, latLngToCell } from "h3-js";
 
-export const H3_ACTIVITY_RESOLUTIONS = [5, 7, 9] as const;
+export const H3_ACTIVITY_RESOLUTIONS = [7, 9] as const;
 export type H3ActivityResolution = (typeof H3_ACTIVITY_RESOLUTIONS)[number];
+
+export type HexActivityTier = "busy" | "mid" | "quiet";
 
 /** Default view for mainland Portugal and Spain on the activity map. */
 export const IBERIAN_MAP_CENTER: [number, number] = [39.9, -3.1];
@@ -14,26 +16,31 @@ export const IBERIAN_MAP_BOUNDS: [[number, number], [number, number]] = [
 export type StationHexCell = {
   stationName: string;
   movements: number;
+  tier: HexActivityTier;
   resolution: H3ActivityResolution;
   cellId: string;
   /** Leaflet positions as [lat, lng]. */
   boundary: [number, number][];
 };
 
-/** Map movement totals to H3 resolutions 5 (busiest), 7, 9 (quietest) — never 6 or 8. */
-export function movementsToH3Resolution(
+/** Map movement totals to busy / mid / quiet tiers and H3 res. 7 or 9 hex sizes. */
+export function movementsToActivityTier(
   movements: number,
   minMovements: number,
   maxMovements: number,
-): H3ActivityResolution {
-  if (maxMovements <= minMovements) return 7;
-  if (movements >= maxMovements) return 5;
-  if (movements <= minMovements) return 9;
+): HexActivityTier {
+  if (maxMovements <= minMovements) return "mid";
+  if (movements >= maxMovements) return "busy";
+  if (movements <= minMovements) return "quiet";
 
   const t = (movements - minMovements) / (maxMovements - minMovements);
-  if (t >= 2 / 3) return 5;
-  if (t >= 1 / 3) return 7;
-  return 9;
+  if (t >= 2 / 3) return "busy";
+  if (t >= 1 / 3) return "mid";
+  return "quiet";
+}
+
+export function activityTierToH3Resolution(tier: HexActivityTier): H3ActivityResolution {
+  return tier === "quiet" ? 9 : 7;
 }
 
 export function buildStationHexCells(
@@ -55,7 +62,8 @@ export function buildStationHexCells(
   const maxMovements = Math.max(...entries.map((entry) => entry.movements));
 
   const cells = entries.map(({ station, movements }) => {
-    const resolution = movementsToH3Resolution(movements, minMovements, maxMovements);
+    const tier = movementsToActivityTier(movements, minMovements, maxMovements);
+    const resolution = activityTierToH3Resolution(tier);
     const cellId = latLngToCell(station.lat, station.lng, resolution);
     const boundary = cellToBoundary(cellId).map(
       ([lat, lng]) => [lat, lng] as [number, number],
@@ -64,6 +72,7 @@ export function buildStationHexCells(
     return {
       stationName: station.name,
       movements,
+      tier,
       resolution,
       cellId,
       boundary,
@@ -91,6 +100,7 @@ export function appendLowActivityHexCells(
     return {
       stationName: station.name,
       movements,
+      tier: "quiet" as const,
       resolution,
       cellId,
       boundary,
@@ -126,29 +136,29 @@ function movementRatio(
 }
 
 export function hexPathStyle(
-  resolution: H3ActivityResolution,
+  tier: HexActivityTier,
   movements: number,
   minMovements: number,
   maxMovements: number,
 ): HexPathStyle {
   const t = movementRatio(movements, minMovements, maxMovements);
 
-  switch (resolution) {
-    case 5:
+  switch (tier) {
+    case "busy":
       return {
         fillColor: "hsl(145 58% 50%)",
         fillOpacity: 0.48 - t * 0.14,
         color: "hsl(145 82% 26%)",
         weight: 3,
       };
-    case 7:
+    case "mid":
       return {
         fillColor: "hsl(210 52% 46%)",
         fillOpacity: 0.42 + t * 0.22,
         color: "hsl(210 72% 18%)",
         weight: 2,
       };
-    case 9:
+    case "quiet":
       return {
         fillColor: "hsl(275 48% 34%)",
         fillOpacity: 0.78 + (1 - t) * 0.18,
@@ -167,7 +177,10 @@ export function findHexCellsAtLatLng(
   return cells
     .filter((cell) => latLngToCell(lat, lng, cell.resolution) === cell.cellId)
     .sort((a, b) => {
-      if (a.resolution !== b.resolution) return b.resolution - a.resolution;
+      const tierRank = { busy: 2, mid: 1, quiet: 0 } as const;
+      const tierDiff = tierRank[b.tier] - tierRank[a.tier];
+      if (tierDiff !== 0) return tierDiff;
+      if (a.movements !== b.movements) return b.movements - a.movements;
       return a.stationName.localeCompare(b.stationName);
     });
 }
@@ -175,6 +188,7 @@ export function findHexCellsAtLatLng(
 export type StationHexFeatureProperties = {
   stationName: string;
   movements: number;
+  tier: HexActivityTier;
   resolution: H3ActivityResolution;
   cellId: string;
 };
@@ -209,6 +223,7 @@ export function stationHexCellsToGeoJSON(cells: StationHexCell[]): StationHexGeo
       properties: {
         stationName: cell.stationName,
         movements: cell.movements,
+        tier: cell.tier,
         resolution: cell.resolution,
         cellId: cell.cellId,
       },
