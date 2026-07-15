@@ -4,6 +4,11 @@ import sharp from "sharp";
 export const CARD_SIZE = 1080;
 export const PHOTO_HEIGHT = 640;
 
+/** Host label for map/social card footers (no scheme, no www). */
+export function siteHostFromUrl(siteUrl) {
+  return siteUrl.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/$/, "");
+}
+
 const BRAND_DARK = "#0f3d38";
 const BRAND_PRIMARY = "#1c7a6f";
 const BRAND_GOLD = "#e8a838";
@@ -182,7 +187,7 @@ export async function renderSocialCard({
   tagline = pickTagline(stationName),
   primaryLine,
 }) {
-  const siteHost = siteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  const siteHost = siteHostFromUrl(siteUrl);
 
   let photoBuffer;
   try {

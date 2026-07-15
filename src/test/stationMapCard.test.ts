@@ -1,17 +1,24 @@
 import { describe, expect, it } from "vitest";
-import { formatMapUrlLabel, pickZoom } from "../../scripts/lib/stationMapCard.mjs";
+import { formatMapUrlLabel, pickZoom, siteHostFromUrl } from "../../scripts/lib/stationMapCard.mjs";
 
 describe("stationMapCard formatMapUrlLabel", () => {
   it("keeps the full path when it fits", () => {
-    expect(formatMapUrlLabel("www.verystays.com", "pombal")).toBe(
-      "www.verystays.com/stations/pombal",
+    expect(formatMapUrlLabel("verystays.com", "pombal")).toBe(
+      "verystays.com/stations/pombal",
     );
   });
 
   it("falls back to the domain when the full path is too long", () => {
     expect(
-      formatMapUrlLabel("www.verystays.com", "barcelona-el-prat-airport-bcn"),
-    ).toBe("www.verystays.com");
+      formatMapUrlLabel("verystays.com", "barcelona-el-prat-airport-bcn"),
+    ).toBe("verystays.com");
+  });
+});
+
+describe("siteHostFromUrl", () => {
+  it("strips scheme and www prefix", () => {
+    expect(siteHostFromUrl("https://www.verystays.com/")).toBe("verystays.com");
+    expect(siteHostFromUrl("http://verystays.com")).toBe("verystays.com");
   });
 });
 

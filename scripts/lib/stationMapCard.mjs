@@ -5,9 +5,9 @@ import { Resvg } from "@resvg/resvg-js";
 import sharp from "sharp";
 import { stitchSquareMap } from "./osmTiles.mjs";
 import { resolveBasemap } from "./mapBasemaps.mjs";
-import { CARD_SIZE, stationToSlug } from "./socialCard.mjs";
+import { CARD_SIZE, siteHostFromUrl, stationToSlug } from "./socialCard.mjs";
 
-export { stationToSlug };
+export { stationToSlug, siteHostFromUrl };
 
 const BRAND_DARK = "#0f3d38";
 const BRAND_PRIMARY = "#1c7a6f";
@@ -156,7 +156,7 @@ export async function renderStationMapCard({
   basemapMode = "random",
 }) {
   const slug = stationToSlug(station.name);
-  const siteHost = siteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  const siteHost = siteHostFromUrl(siteUrl);
   const mapZoom = zoom ?? pickZoom(station);
   const basemap = resolveBasemap(basemapMode);
 
