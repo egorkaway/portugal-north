@@ -99,8 +99,7 @@ export function AirportConnectionsSection({ entry, stationName }: Props) {
       <View style={styles.list}>
         {entry.topDestinations.map((destination, index) => {
           const destinationSlug = getAirportStationSlugByIata(destination.iata);
-          const lineColor =
-            destination.lineColor ?? getFlightLineColor(destination.flightCount);
+          const lineColor = getFlightLineColor(destination.flightCount);
 
           return (
             <View key={destination.iata} style={styles.card}>

@@ -112,8 +112,8 @@ export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProp
       <ol className="mt-6 space-y-3">
         {entry.topDestinations.map((destination, index) => {
           const destinationPath = getAirportStationPathByIata(destination.iata);
-          const lineColor = destination.lineColor ?? getFlightLineColor(destination.flightCount);
-          const lineWeight = destination.lineWeight ?? getFlightLineWeight(destination.flightCount);
+          const lineColor = getFlightLineColor(destination.flightCount);
+          const lineWeight = getFlightLineWeight(destination.flightCount);
           const nameStyle = {
             textDecorationColor: lineColor,
             textDecorationThickness: `${lineWeight}px`,

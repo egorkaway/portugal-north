@@ -54,6 +54,8 @@ describe("buildAirportConnections", () => {
     expect(entry?.connections[0]?.iata).toBe("MAD");
     expect(entry?.connections[0]?.flightCount).toBe(3);
     expect(entry?.connections[0]?.lineColor).toBe(getFlightLineColor(3));
+    expect(getFlightLineColor(5)).not.toBe(getFlightLineColor(3));
+    expect(getFlightLineColor(3)).not.toBe(getFlightLineColor(1));
     expect(entry?.topDestinations).toHaveLength(2);
     expect(entry?.mapImage).toBe("/maps/airports/lisbon-airport-lis-connections.png");
   });

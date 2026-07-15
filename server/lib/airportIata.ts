@@ -24,8 +24,8 @@ export function isValidCoordinates(lat: number, lng: number): boolean {
 }
 
 export function getFlightLineColor(flightCount: number): string {
-  if (flightCount >= 5) return "#dc2626";
-  if (flightCount >= 3) return "#ea580c";
+  if (flightCount >= 5) return "#b91c1c";
+  if (flightCount >= 3) return "#7c3aed";
   return "#2563eb";
 }
 
