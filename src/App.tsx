@@ -1,23 +1,19 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Analytics } from "@vercel/analytics/react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { AppShellFallback } from "@/components/AppShellFallback";
-import { PostHogPageView } from "@/components/PostHogPageView";
+import { AppShellFallback, removeStaticAppShell } from "@/components/AppShellFallback";
 import { ScrollToTop } from "@/components/ScrollToTop";
-import { PwaInstallListener } from "@/components/PwaInstallListener";
-import { PwaPermissionsPrompt } from "@/components/PwaPermissionsPrompt";
-import { AppUpdateBootstrap } from "@/components/AppUpdateBootstrap";
-import { VoteSyncBootstrap } from "@/components/VoteSyncBootstrap";
-import { ActiveTripBootstrap } from "@/components/ActiveTripBootstrap";
-import { VoteSyncNotice } from "@/components/VoteSyncNotice";
-import { WebMcpBridge } from "@/components/WebMcpBridge";
+import { DeferredClientBootstraps } from "@/components/DeferredClientBootstraps";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import HomeRedirect from "./pages/HomeRedirect.tsx";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
+
+const Analytics = lazy(() =>
+  import("@vercel/analytics/react").then((module) => ({ default: module.Analytics })),
+);
 
 const Index = lazy(() => import("./pages/Index.tsx"));
 const Rankings = lazy(() => import("./pages/Rankings.tsx"));
@@ -30,49 +26,50 @@ const Trip = lazy(() => import("./pages/Trip.tsx"));
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <LocaleProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <AppUpdateBootstrap />
-          <ScrollToTop />
-          <PostHogPageView />
-          <PwaInstallListener />
-          <PwaPermissionsPrompt />
-          <VoteSyncBootstrap />
-          <ActiveTripBootstrap />
-          <VoteSyncNotice />
-          <WebMcpBridge />
-          <div className="pb-24 sm:pb-0">
-            <Suspense fallback={<AppShellFallback />}>
-              <Routes>
-                <Route path="/" element={<HomeRedirect />} />
-                <Route path="/all" element={<Index />} />
-                <Route path="/all/:page" element={<Index />} />
-                <Route path="/pt" element={<Index />} />
-                <Route path="/pt/:page" element={<Index />} />
-                <Route path="/es" element={<Index />} />
-                <Route path="/es/:page" element={<Index />} />
-                <Route path="/rankings" element={<Rankings />} />
-                <Route path="/tickets" element={<Tickets />} />
-                <Route path="/map" element={<MapPage />} />
-                <Route path="/trip" element={<Trip />} />
-                <Route path="/privacy" element={<Privacy />} />
-                <Route path="/stations/:slug" element={<Station />} />
-                {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </Suspense>
-          </div>
-          <MobileBottomNav />
-        </BrowserRouter>
-        <Analytics />
-      </TooltipProvider>
-    </LocaleProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  useEffect(() => {
+    removeStaticAppShell();
+  }, []);
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <LocaleProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTop />
+            <DeferredClientBootstraps />
+            <div className="pb-24 sm:pb-0">
+              <Suspense fallback={<AppShellFallback />}>
+                <Routes>
+                  <Route path="/" element={<HomeRedirect />} />
+                  <Route path="/all" element={<Index />} />
+                  <Route path="/all/:page" element={<Index />} />
+                  <Route path="/pt" element={<Index />} />
+                  <Route path="/pt/:page" element={<Index />} />
+                  <Route path="/es" element={<Index />} />
+                  <Route path="/es/:page" element={<Index />} />
+                  <Route path="/rankings" element={<Rankings />} />
+                  <Route path="/tickets" element={<Tickets />} />
+                  <Route path="/map" element={<MapPage />} />
+                  <Route path="/trip" element={<Trip />} />
+                  <Route path="/privacy" element={<Privacy />} />
+                  <Route path="/stations/:slug" element={<Station />} />
+                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </div>
+            <MobileBottomNav />
+          </BrowserRouter>
+          <Suspense fallback={null}>
+            <Analytics />
+          </Suspense>
+        </TooltipProvider>
+      </LocaleProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

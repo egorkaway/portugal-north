@@ -310,4 +310,17 @@ export default defineConfig({
     },
     dedupe: ["react", "react-dom", "react/jsx-runtime", "react/jsx-dev-runtime", "@tanstack/react-query", "@tanstack/query-core"],
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (!id.includes("node_modules")) return;
+          if (id.includes("posthog-js")) return "posthog";
+          if (id.includes("react-router") || id.includes("react-dom") || id.includes("/react/")) {
+            return "react-vendor";
+          }
+        },
+      },
+    },
+  },
 });
