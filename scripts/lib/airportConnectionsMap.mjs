@@ -1,7 +1,7 @@
 import { Resvg } from "@resvg/resvg-js";
 import sharp from "sharp";
 import { formatMapUrlLabel } from "./stationMapCard.mjs";
-import { resolveBasemap } from "./mapBasemaps.mjs";
+import { resolveAirportBasemap } from "./mapBasemaps.mjs";
 import { stitchBoundsMap } from "./osmTiles.mjs";
 
 const CARD_SIZE = 1080;
@@ -83,7 +83,7 @@ export async function renderAirportConnectionsMap(
     })),
   ];
 
-  const basemap = resolveBasemap(basemapMode);
+  const basemap = resolveAirportBasemap(basemapMode);
   const siteHost = siteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const { buffer: mapBuffer, project, basemapId } = await stitchBoundsMap({
     points,

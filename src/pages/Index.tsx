@@ -14,6 +14,7 @@ import { SitePageNavLinks } from "@/components/SitePageNavLinks";
 import { buildHomeStructuredData } from "@/lib/structuredData";
 import { PageHead } from "@/components/PageHead";
 import { getHomePageMeta } from "@/lib/pageMeta";
+import { useDismissStaticShell } from "@/components/AppShellFallback";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { useGlobalStationRatings } from "@/hooks/useGlobalStationRatings";
 import { useAllVotes } from "@/hooks/useStationVote";
@@ -38,6 +39,7 @@ type VoteFilter = "up" | "down" | "none";
 type VisitedFilter = "visited" | "notVisited";
 
 function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: number }) {
+  useDismissStaticShell();
   const { t, plural, locale, messages } = useLocale();
   const { searchQuery, setScope, setPage, setSearchQuery, goToFirstPage } = useHomeRoute(
     scope,

@@ -2,7 +2,9 @@ import { describe, expect, it } from "vitest";
 import {
   BASEMAP_IDS,
   getBasemap,
+  randomAirportBasemap,
   randomBasemap,
+  resolveAirportBasemap,
   resolveBasemap,
 } from "../../scripts/lib/mapBasemaps.mjs";
 
@@ -39,5 +41,20 @@ describe("mapBasemaps", () => {
     expect(counts.opentopomap).toBeGreaterThan(counts.osm);
     expect(counts.opentopomap).toBeGreaterThan(counts["carto-positron"]);
     expect(counts.opentopomap).toBeGreaterThan(counts["carto-voyager"]);
+  });
+
+  it("excludes opentopomap from airport connection basemaps", () => {
+    const picks = new Set(
+      Array.from({ length: 40 }, (_, index) => randomAirportBasemap(() => index / 40).id),
+    );
+    expect(picks.has("opentopomap")).toBe(false);
+    for (const id of picks) {
+      expect(["osm", "carto-positron", "carto-voyager"]).toContain(id);
+    }
+  });
+
+  it("rejects opentopomap for airport connection maps", () => {
+    expect(() => resolveAirportBasemap("opentopomap")).toThrow(/not supported/);
+    expect(resolveAirportBasemap("carto-voyager").id).toBe("carto-voyager");
   });
 });

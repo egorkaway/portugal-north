@@ -78,7 +78,7 @@ export function MobileBottomNav() {
     <nav
       className={cn(
         // iOS-like tab bar: frosted background + top hairline + subtle shadow
-        "fixed inset-x-0 bottom-0 z-30 border-t border-border/60 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70",
+        "shell-hide-until-ready fixed inset-x-0 bottom-0 z-30 border-t border-border/60 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70",
         "shadow-[0_-8px_24px_rgba(0,0,0,0.08)]",
         "sm:hidden",
       )}

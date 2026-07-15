@@ -17,7 +17,15 @@
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap"
+      />
+    </noscript>
 
     <!--seo-->
     <title>Sustainable Iberian: Stations & Budget Hotels</title>
@@ -42,10 +50,17 @@
     <!--/seo-->
     <style>
       #static-app-shell {
+        position: fixed;
+        inset: 0;
+        z-index: 40;
+        overflow-y: auto;
         min-height: 100vh;
         background: #f5f7f8;
         color: #1a2a32;
         font-family: Inter, system-ui, -apple-system, sans-serif;
+      }
+      body[data-shell="active"] .shell-hide-until-ready {
+        display: none;
       }
       #static-app-shell .shell-hero {
         position: relative;
@@ -158,14 +173,14 @@
     </style>
   </head>
 
-  <body>
+  <body data-shell="active">
     <div id="root"></div>
     <div id="static-app-shell" aria-hidden="true">
       <header class="shell-hero">
         <div class="shell-hero-inner">
-          <h1 class="shell-title">Sustainable Iberian</h1>
+          <h1 class="shell-title" id="shell-title">Sustainable Iberian</h1>
           <span class="shell-accent"></span>
-          <p class="shell-subtitle">
+          <p class="shell-subtitle" id="shell-subtitle">
             Train stations and airports across Portugal and Spain, with line info and budget hotels near
             key stops.
           </p>
@@ -173,7 +188,7 @@
       </header>
       <main class="shell-main">
         <div class="shell-filter"></div>
-        <p class="shell-status">Loading stations…</p>
+        <p class="shell-status" id="shell-status">Loading stations…</p>
         <div class="shell-grid">
           <div class="shell-card">
             <div class="shell-card-image"></div>
@@ -226,6 +241,98 @@
         </div>
       </main>
     </div>
+    <script>
+      (function () {
+        var LOCALE_KEY = "portugal-by-train-locale";
+        var SCOPE_KEY = "verystays-country";
+        var COPY = {
+          en: {
+            name: "Sustainable Iberian",
+            subtitle: {
+              pt: "Train stations and airports across Portugal, from the Minho to the Algarve, with line info and budget hotels nearby.",
+              es: "Train stations and airports across mainland Spain, with line info and budget hotels near key stops.",
+              all: "Train stations and airports across Portugal and Spain, with line info and budget hotels near key stops.",
+            },
+            loading: "Loading stations…",
+          },
+          pt: {
+            name: "Mobilidade Ibérica",
+            subtitle: {
+              pt: "Estações de comboio e aeroportos em Portugal, do Minho ao Algarve, com linhas e hotéis com preços acessíveis perto.",
+              es: "Estações de comboio e aeroportos na Espanha peninsular, com linhas e hotéis com preços acessíveis perto.",
+              all: "Estações de comboio e aeroportos em Portugal e Espanha, com linhas e hotéis com preços acessíveis perto.",
+            },
+            loading: "A carregar estações…",
+          },
+          es: {
+            name: "Viaje Ibérico Sostenible",
+            subtitle: {
+              pt: "Estaciones de tren y aeropuertos en Portugal, del Miño al Algarve, con líneas y hoteles económicos cerca.",
+              es: "Estaciones de tren y aeropuertos en la España peninsular, con líneas y hoteles económicos cerca.",
+              all: "Estaciones de tren y aeropuertos en Portugal y España, con líneas y hoteles económicos cerca.",
+            },
+            loading: "Cargando estaciones…",
+          },
+          gl: {
+            name: "Viaxe Ibérica Sostible",
+            subtitle: {
+              pt: "Estacións de tren e aeroportos en Portugal, do Miño ao Algarve, con liñas e hoteis económicos preto.",
+              es: "Estacións de tren e aeroportos na España peninsular, con liñas e hoteis económicos preto.",
+              all: "Estacións de tren e aeroportos en Portugal e España, con liñas e hoteis económicos preto.",
+            },
+            loading: "Cargando estacións…",
+          },
+          ca: {
+            name: "Viatge Ibèric Sostenible",
+            subtitle: {
+              pt: "Estacions de tren i aeroports a Portugal, del Minho a l'Algarve, amb línies i hotels econòmics a prop.",
+              es: "Estacions de tren i aeroports a la península ibèrica espanyola, amb línies i hotels econòmics a prop.",
+              all: "Estacions de tren i aeroports a Portugal i Espanya, amb línies i hotels econòmics a prop.",
+            },
+            loading: "Carregant estacions…",
+          },
+        };
+
+        function detectLocale() {
+          try {
+            var stored = localStorage.getItem(LOCALE_KEY);
+            if (stored && COPY[stored]) return stored;
+          } catch (e) {}
+          var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+          for (var i = 0; i < langs.length; i++) {
+            var tag = String(langs[i] || "").toLowerCase();
+            var base = tag.split("-")[0];
+            if (base === "pt") return "pt";
+            if (base === "es") return "es";
+            if (base === "gl") return "gl";
+            if (base === "ca" || tag.indexOf("ca-") === 0) return "ca";
+          }
+          return "en";
+        }
+
+        function detectScope() {
+          var path = location.pathname || "/";
+          if (path.indexOf("/pt") === 0) return "pt";
+          if (path.indexOf("/es") === 0) return "es";
+          try {
+            var stored = localStorage.getItem(SCOPE_KEY);
+            if (stored === "pt" || stored === "es" || stored === "all") return stored;
+          } catch (e) {}
+          return "all";
+        }
+
+        var locale = detectLocale();
+        var scope = detectScope();
+        var strings = COPY[locale] || COPY.en;
+        var title = document.getElementById("shell-title");
+        var subtitle = document.getElementById("shell-subtitle");
+        var status = document.getElementById("shell-status");
+        if (title) title.textContent = strings.name;
+        if (subtitle) subtitle.textContent = strings.subtitle[scope] || strings.subtitle.all;
+        if (status) status.textContent = strings.loading;
+        document.documentElement.lang = locale;
+      })();
+    </script>
     <script>
       (function () {
         var key = "pn_sw_recovery";

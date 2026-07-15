@@ -16,6 +16,14 @@ export const RANDOM_BASEMAP_POOL = [
   "opentopomap",
 ];
 
+/** Airport connection maps: no terrain/hillshade tiles (poor at regional/world zoom). */
+export const AIRPORT_CONNECTIONS_BASEMAP_POOL = [
+  "osm",
+  "carto-positron",
+  "carto-voyager",
+  "carto-voyager",
+];
+
 export const BASEMAPS = {
   osm: {
     id: "osm",
@@ -67,12 +75,31 @@ export function randomBasemap(random = Math.random) {
   return getBasemap(RANDOM_BASEMAP_POOL[index]);
 }
 
+/** Pick a basemap for airport connection maps (excludes opentopomap). */
+export function randomAirportBasemap(random = Math.random) {
+  const index = Math.floor(random() * AIRPORT_CONNECTIONS_BASEMAP_POOL.length);
+  return getBasemap(AIRPORT_CONNECTIONS_BASEMAP_POOL[index]);
+}
+
 /**
  * @param {"random" | string} mode — "random" or a fixed basemap id
  */
 export function resolveBasemap(mode = "random") {
   if (mode === "random") {
     return randomBasemap();
+  }
+  return getBasemap(mode);
+}
+
+/**
+ * @param {"random" | string} mode — "random" or a fixed basemap id (opentopomap rejected)
+ */
+export function resolveAirportBasemap(mode = "random") {
+  if (mode === "random") {
+    return randomAirportBasemap();
+  }
+  if (mode === "opentopomap") {
+    throw new Error("opentopomap is not supported for airport connection maps");
   }
   return getBasemap(mode);
 }
