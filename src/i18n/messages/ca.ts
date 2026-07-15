@@ -78,6 +78,13 @@ export const ca: Messages = {
     openStreetMap: "OpenStreetMap",
     downloadAreaMap: "Descarregar mapa de la zona",
     areaMapAlt: "Mapa de la zona de {{name}}",
+    airportConnectionsTitle: "Connexions aèries",
+    airportConnectionsIntro:
+      "Mostra de {{count}} sortides d'AviationStack — {{destinations}} destinacions mapades.",
+    airportConnectionsMapAlt: "Mapa de connexions aèries des de {{name}}",
+    downloadConnectionsMap: "Descarregar mapa de connexions",
+    airportConnectionsFlights_one: "{{count}} vol",
+    airportConnectionsFlights_other: "{{count}} vols",
     berrymetWeather: "Temps a {{city}}",
     tripHistorian: "TripHistorian",
     metroDoPorto: "Metro do Porto",

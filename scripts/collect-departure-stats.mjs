@@ -167,6 +167,8 @@ for (const { station, cpCode } of targets) {
 
 if (!dryRun) {
   saveStore(store);
+  const { collectAirportConnections } = await import("./collect-airport-connections.mjs");
+  await collectAirportConnections({ rootDir: root, delayMs });
 }
 
 const skipped = stoppedEarly ? targets.length - ok - failed : 0;

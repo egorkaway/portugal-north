@@ -33,6 +33,7 @@ import { getTripHistorianStationUrl } from "@/lib/tripHistorian";
 import { isAirportStation, showsTravelEsimPromo } from "@/lib/airportStation";
 import { getMetroOperatorLink, isMetroStation } from "@/lib/metroStation";
 import { StationYesimPromo } from "@/components/StationYesimPromo";
+import { AirportConnectionsPanel } from "@/components/AirportConnectionsPanel";
 import { NearestLongDistanceStations } from "@/components/NearestLongDistanceStations";
 import { NearestStations } from "@/components/NearestStations";
 import { getBerrymetCityLink } from "@/lib/berrymetCity";
@@ -179,6 +180,7 @@ const Station = () => {
 
           {!airportStation ? <StationDepartures stationName={station.name} /> : null}
           {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}
+          {airportStation ? <AirportConnectionsPanel station={station} /> : null}
 
           <NearestLongDistanceStations station={station} />
           <NearestStations station={station} />

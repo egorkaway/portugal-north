@@ -74,6 +74,12 @@ export type Messages = {
     openStreetMap: string;
     downloadAreaMap: string;
     areaMapAlt: string;
+    airportConnectionsTitle: string;
+    airportConnectionsIntro: string;
+    airportConnectionsMapAlt: string;
+    downloadConnectionsMap: string;
+    airportConnectionsFlights_one: string;
+    airportConnectionsFlights_other: string;
     berrymetWeather: string;
     tripHistorian: string;
     metroDoPorto: string;

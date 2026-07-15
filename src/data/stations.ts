@@ -73,7 +73,7 @@ const cpStations: StationData[] = [
   { name: "Contumil", lines: ["Linha do Minho", "Linha do Norte"], types: ["Urban", "Regional"], lat: 41.1656, lng: -8.5836 },
   { name: "Rio Tinto", lines: ["Linha do Minho"], types: ["Urban", "Regional"], lat: 41.1797, lng: -8.5683 },
   { name: "Tamel", lines: ["Linha do Minho"], types: ["Intercidades", "Regional"], lat: 41.5172, lng: -8.5642 },
-  { name: "Durrães", lines: ["Linha do Minho"], types: ["Intercidades", "Regional"], lat: 41.5853, lng: -8.7136 },
+  { name: "Durrães", lines: ["Linha do Minho"], types: ["Intercidades", "Regional"], lat: 41.6391, lng: -8.6670 },
   { name: "Carreço", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.7372, lng: -8.8628 },
   { name: "Areosa", lines: ["Linha do Minho"], types: ["Regional"], lat: 41.7150, lng: -8.8533 },
   { name: "Aregos", lines: ["Linha do Douro"], types: ["Intercidades", "Regional"], lat: 41.0944, lng: -8.0481 },

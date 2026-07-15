@@ -119,3 +119,128 @@ export async function stitchSquareMap({
     basemapId: basemapConfig.id,
   };
 }
+
+function pickZoomForPoints(points, width, height, paddingPx = 72) {
+  for (let zoom = 8; zoom >= 1; zoom -= 1) {
+    const xs = points.map((point) => latLngToWorldPx(point.lat, point.lng, zoom).x);
+    const ys = points.map((point) => latLngToWorldPx(point.lat, point.lng, zoom).y);
+    const spanX = Math.max(...xs) - Math.min(...xs);
+    const spanY = Math.max(...ys) - Math.min(...ys);
+    if (spanX <= width - paddingPx * 2 && spanY <= height - paddingPx * 2) {
+      return zoom;
+    }
+  }
+  return 1;
+}
+
+/**
+ * Stitch a map viewport that fits all points. Clamps tile fetches to valid Web Mercator
+ * indices so low-zoom world views still render when the viewport extends past x/y = 0.
+ */
+export async function stitchBoundsMap({
+  points,
+  width,
+  height,
+  paddingPx = 72,
+  basemap = "carto-voyager",
+}) {
+  const basemapConfig =
+    typeof basemap === "string"
+      ? getBasemap(isBasemapId(basemap) ? basemap : "carto-voyager")
+      : basemap;
+
+  const zoom = pickZoomForPoints(points, width, height, paddingPx);
+  const xs = points.map((point) => latLngToWorldPx(point.lat, point.lng, zoom).x);
+  const ys = points.map((point) => latLngToWorldPx(point.lat, point.lng, zoom).y);
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+
+  const centerX = (minX + maxX) / 2;
+  const centerY = (minY + maxY) / 2;
+  const topLeftX = centerX - width / 2;
+  const topLeftY = centerY - height / 2;
+  const maxTile = (1 << zoom) - 1;
+
+  const tileX0 = Math.max(0, Math.floor(topLeftX / TILE_SIZE));
+  const tileY0 = Math.max(0, Math.floor(topLeftY / TILE_SIZE));
+  const tileX1 = Math.min(maxTile, Math.floor((topLeftX + width - 1) / TILE_SIZE));
+  const tileY1 = Math.min(maxTile, Math.floor((topLeftY + height - 1) / TILE_SIZE));
+
+  const composites = [];
+  if (tileX0 <= tileX1 && tileY0 <= tileY1) {
+    for (let ty = tileY0; ty <= tileY1; ty += 1) {
+      for (let tx = tileX0; tx <= tileX1; tx += 1) {
+        const tile = await fetchTile(basemapConfig, zoom, tx, ty);
+        composites.push({
+          input: tile,
+          left: (tx - tileX0) * TILE_SIZE,
+          top: (ty - tileY0) * TILE_SIZE,
+        });
+      }
+    }
+  }
+
+  const mosaicWidth = Math.max(TILE_SIZE, (tileX1 - tileX0 + 1) * TILE_SIZE);
+  const mosaicHeight = Math.max(TILE_SIZE, (tileY1 - tileY0 + 1) * TILE_SIZE);
+  const mosaic =
+    composites.length > 0
+      ? await sharp({
+          create: { width: mosaicWidth, height: mosaicHeight, channels: 3, background: "#dce7ef" },
+        })
+          .composite(composites)
+          .png()
+          .toBuffer()
+      : await sharp({
+          create: { width: 1, height: 1, channels: 3, background: "#dce7ef" },
+        })
+          .png()
+          .toBuffer();
+
+  const interLeft = Math.max(topLeftX, tileX0 * TILE_SIZE);
+  const interTop = Math.max(topLeftY, tileY0 * TILE_SIZE);
+  const interRight = Math.min(topLeftX + width, (tileX1 + 1) * TILE_SIZE);
+  const interBottom = Math.min(topLeftY + height, (tileY1 + 1) * TILE_SIZE);
+
+  const canvas = sharp({
+    create: { width, height, channels: 3, background: "#dce7ef" },
+  });
+
+  if (interRight > interLeft && interBottom > interTop) {
+    const srcLeft = Math.round(interLeft - tileX0 * TILE_SIZE);
+    const srcTop = Math.round(interTop - tileY0 * TILE_SIZE);
+    const extractWidth = Math.round(interRight - interLeft);
+    const extractHeight = Math.round(interBottom - interTop);
+    const destLeft = Math.round(interLeft - topLeftX);
+    const destTop = Math.round(interTop - topLeftY);
+
+    const cropped = await sharp(mosaic)
+      .extract({ left: srcLeft, top: srcTop, width: extractWidth, height: extractHeight })
+      .png()
+      .toBuffer();
+
+    const buffer = await canvas.composite([{ input: cropped, left: destLeft, top: destTop }]).png().toBuffer();
+
+    const project = (lat, lng) => {
+      const world = latLngToWorldPx(lat, lng, zoom);
+      return {
+        x: Math.round(world.x - topLeftX),
+        y: Math.round(world.y - topLeftY),
+      };
+    };
+
+    return { buffer, project, basemapId: basemapConfig.id, zoom };
+  }
+
+  const buffer = await canvas.png().toBuffer();
+  const project = (lat, lng) => {
+    const world = latLngToWorldPx(lat, lng, zoom);
+    return {
+      x: Math.round(world.x - topLeftX),
+      y: Math.round(world.y - topLeftY),
+    };
+  };
+
+  return { buffer, project, basemapId: basemapConfig.id, zoom };
+}

@@ -1,6 +1,6 @@
 {
-  "runCount": 118,
-  "lastRunAt": "2026-07-15T04:39:17.990Z",
+  "runCount": 119,
+  "lastRunAt": "2026-07-15T08:09:13.212Z",
   "stations": {
     "Pombal": {
       "cpCode": "94-34645",
@@ -27,9 +27,9 @@
         "delayMinutes": 1153
       },
       "successfulSamples": 45,
-      "failedSamples": 3,
+      "failedSamples": 4,
       "lastSampleAt": "2026-07-15T04:39:26.602Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Alfarelos": {
       "cpCode": "94-35006",
@@ -629,9 +629,9 @@
         "delayMinutes": 473
       },
       "successfulSamples": 43,
-      "failedSamples": 2,
+      "failedSamples": 3,
       "lastSampleAt": "2026-07-14T14:19:03.595Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Lousado": {
       "cpCode": "94-5009",
@@ -909,9 +909,9 @@
         "delayMinutes": 239
       },
       "successfulSamples": 41,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-07-15T04:39:58.997Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Salreu": {
       "cpCode": "94-38125",
@@ -4853,9 +4853,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 42,
-      "failedSamples": 7,
+      "failedSamples": 8,
       "lastSampleAt": "2026-07-14T05:58:51.857Z",
-      "lastError": "cp_api_http_429"
+      "lastError": "fetch failed"
     },
     "Fontela": {
       "cpCode": "94-64089",
@@ -6082,9 +6082,9 @@
         "delayMinutes": 180
       },
       "successfulSamples": 41,
-      "failedSamples": 3,
+      "failedSamples": 4,
       "lastSampleAt": "2026-07-14T14:20:17.510Z",
-      "lastError": null
+      "lastError": "fetch failed"
     },
     "Verride": {
       "cpCode": "94-65086",
