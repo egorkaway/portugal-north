@@ -3,6 +3,7 @@ import { useReliabilityScore } from "@/hooks/useReliabilityScore";
 import {
   reliabilityScoreBarTone,
   reliabilityScoreTone,
+  formatReliabilityScore,
 } from "@/lib/reliabilityScore";
 import { useLocale } from "@/i18n/LocaleProvider";
 
@@ -42,7 +43,7 @@ export function StationReliabilityCard({ stationName }: { stationName: string })
           </p>
           <div className="mt-4 flex items-end gap-3">
             <p className={`text-4xl font-semibold tabular-nums ${reliabilityScoreTone(score)}`}>
-              {score}
+              {formatReliabilityScore(score)}
               <span className="ml-1 text-lg font-medium text-muted-foreground">/10</span>
             </p>
             <div className="mb-1 min-w-0 flex-1">

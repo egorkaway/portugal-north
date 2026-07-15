@@ -10,6 +10,7 @@ import {
   getBottomReliabilityStations,
   getTopReliabilityStations,
   reliabilityScoreTone,
+  formatReliabilityScore,
 } from "@/lib/reliabilityScore";
 import { stationToSlug } from "@/lib/stationSlug";
 
@@ -43,7 +44,7 @@ function ReliabilityRankingList({
               <span
                 className={`shrink-0 text-sm font-semibold tabular-nums ${reliabilityScoreTone(item.score)}`}
               >
-                {item.score}/10
+                {formatReliabilityScore(item.score)}/10
               </span>
             </li>
           ))}

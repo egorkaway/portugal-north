@@ -54,6 +54,12 @@ export function reliabilityScoreColor(score: number): string {
   return '#DC2626';
 }
 
+/** Format a 0–10 reliability score with one decimal when needed (e.g. 9.1, 9, 10). */
+export function formatReliabilityScore(score: number): string {
+  const rounded = Math.round(score * 10) / 10;
+  return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+}
+
 export function getReliabilityForStation(
   manifest: ReliabilityScoresManifest,
   stationName: string,

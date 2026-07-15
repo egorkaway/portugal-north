@@ -33,6 +33,12 @@ export function reliabilityScoreTone(score: number): string {
   return "text-destructive";
 }
 
+/** Format a 0–10 reliability score with one decimal when needed (e.g. 9.1, 9, 10). */
+export function formatReliabilityScore(score: number): string {
+  const rounded = Math.round(score * 10) / 10;
+  return Number.isInteger(rounded) ? String(rounded) : rounded.toFixed(1);
+}
+
 export function reliabilityScoreBarTone(score: number): string {
   if (score >= 8) return "bg-emerald-500";
   if (score >= 5) return "bg-amber-500";
@@ -122,7 +128,7 @@ export function reliabilityRankingsToCsv(rows: ReliabilityRankingRow[]): string 
   const lines = ["rank,station,reliability_score,movements"];
   for (const row of rows) {
     lines.push(
-      [row.rank, escapeCsvField(row.name), row.score, row.movements].join(","),
+      [row.rank, escapeCsvField(row.name), formatReliabilityScore(row.score), row.movements].join(","),
     );
   }
   return `${lines.join("\n")}\n`;

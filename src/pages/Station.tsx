@@ -180,9 +180,8 @@ const Station = () => {
 
           {!airportStation ? <StationDepartures stationName={station.name} /> : null}
           {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}
-          {airportStation ? <AirportConnectionsPanel station={station} /> : null}
-
           <NearestLongDistanceStations station={station} />
+          {airportStation ? <AirportConnectionsPanel station={station} /> : null}
           <NearestStations station={station} />
 
           <div className="mb-6 flex flex-wrap gap-2 md:mb-10">

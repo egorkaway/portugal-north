@@ -12,7 +12,7 @@ import { SymbolView } from 'expo-symbols';
 import { useNavigation, useRouter } from 'expo-router';
 import { useSystemColorScheme } from '@/components/useSystemColorScheme';
 import { theme } from '@/constants/theme';
-import { reliabilityScoreColor } from '@/lib/reliabilityScore';
+import { reliabilityScoreColor, formatReliabilityScore } from '@/lib/reliabilityScore';
 import {
   allStations,
   bakedReliabilityScores,
@@ -218,7 +218,7 @@ export default function MapScreen() {
           <Text style={styles.sheetMeta}>{selected.station.lines.join(' · ')}</Text>
           {selected.score !== null ? (
             <Text style={styles.sheetScore}>
-              Reliability {selected.score}/10 · {selected.movements} movements/day
+              Reliability {formatReliabilityScore(selected.score)}/10 · {selected.movements} movements/day
             </Text>
           ) : null}
           <Pressable

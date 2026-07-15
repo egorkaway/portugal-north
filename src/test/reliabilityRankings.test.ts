@@ -1,12 +1,20 @@
 import { describe, expect, it } from "vitest";
 import {
   buildReliabilityRankingRows,
+  formatReliabilityScore,
   getBottomReliabilityStations,
   getTopReliabilityStations,
   reliabilityRankingsToCsv,
 } from "@/lib/reliabilityScore";
 
 describe("reliability rankings", () => {
+  it("formats scores with one decimal when needed", () => {
+    expect(formatReliabilityScore(9)).toBe("9");
+    expect(formatReliabilityScore(10)).toBe("10");
+    expect(formatReliabilityScore(9.1)).toBe("9.1");
+    expect(formatReliabilityScore(9.04)).toBe("9");
+  });
+
   const scores: Record<string, number> = {
     Alpha: 10,
     Bravo: 9,

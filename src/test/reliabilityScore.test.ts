@@ -18,7 +18,7 @@ describe("scaleReliabilityScore", () => {
   it("maps the best rate to 10 and the worst to 1", () => {
     expect(scaleReliabilityScore(0, 0, 10)).toBe(10);
     expect(scaleReliabilityScore(10, 0, 10)).toBe(1);
-    expect(scaleReliabilityScore(5, 0, 10)).toBe(6);
+    expect(scaleReliabilityScore(5, 0, 10)).toBe(5.5);
   });
 
   it("returns 10 when all rates are equal", () => {
@@ -57,7 +57,7 @@ describe("computeReliabilityScores", () => {
 
     expect(computeReliabilityScores(store)).toEqual({
       "On time": 10,
-      "Sometimes late": 6,
+      "Sometimes late": 5.5,
       "Often late": 1,
     });
   });

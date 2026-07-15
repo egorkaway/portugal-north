@@ -68,7 +68,7 @@ export function scaleReliabilityScore(
   const raw = RELIABILITY_SCORE_MAX - normalized * (RELIABILITY_SCORE_MAX - RELIABILITY_SCORE_MIN);
   return Math.max(
     RELIABILITY_SCORE_MIN,
-    Math.min(RELIABILITY_SCORE_MAX, Math.round(raw)),
+    Math.min(RELIABILITY_SCORE_MAX, Math.round(raw * 10) / 10),
   );
 }
 

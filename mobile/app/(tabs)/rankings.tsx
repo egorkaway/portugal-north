@@ -18,6 +18,7 @@ import {
   getBottomReliabilityStations,
   getTopReliabilityStations,
   reliabilityScoreColor,
+  formatReliabilityScore,
 } from '@/lib/reliabilityScore';
 import { bakedReliabilityScores, stationToSlug } from '@/lib/stationData';
 
@@ -91,7 +92,7 @@ export default function RankingsScreen() {
             key={item.name}
             rank={index + 1}
             title={item.name}
-            value={`${item.score}/10`}
+            value={`${formatReliabilityScore(item.score)}/10`}
             valueColor={reliabilityScoreColor(item.score)}
             onPress={() => router.push(`/station/${stationToSlug(item.name)}`)}
           />
@@ -104,7 +105,7 @@ export default function RankingsScreen() {
             key={item.name}
             rank={index + 1}
             title={item.name}
-            value={`${item.score}/10`}
+            value={`${formatReliabilityScore(item.score)}/10`}
             valueColor={reliabilityScoreColor(item.score)}
             onPress={() => router.push(`/station/${stationToSlug(item.name)}`)}
           />

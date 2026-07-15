@@ -18,7 +18,7 @@ import { TrainTypeLabels } from '@/components/TrainTypeLabels';
 import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
 import { VoteButtons } from '@/components/VoteButtons';
 import { theme } from '@/constants/theme';
-import { getReliabilityForStation, reliabilityScoreColor } from '@/lib/reliabilityScore';
+import { getReliabilityForStation, reliabilityScoreColor, formatReliabilityScore } from '@/lib/reliabilityScore';
 import { getAirportConnectionsEntry } from '@/lib/airportConnections';
 import {
   bakedReliabilityScores,
@@ -173,7 +173,7 @@ export default function StationDetailScreen() {
           <Text style={styles.sectionTitle}>On-time reliability</Text>
           <View style={styles.reliabilityCard}>
             <Text style={[styles.reliabilityScore, { color: reliabilityScoreColor(reliability.score) }]}>
-              {reliability.score}/10
+              {formatReliabilityScore(reliability.score)}/10
             </Text>
             <Text style={styles.reliabilityMeta}>
               Based on cumulative delays from live departure data.
