@@ -33,10 +33,56 @@ async function fetchTile(basemap, z, x, y) {
     });
     if (!res.ok) throw new Error(`tile_http_${res.status}_${key}`);
     return Buffer.from(await res.arrayBuffer());
-  })();
+  })().catch(async (error) => {
+    tileCache.delete(key);
+    if (basemap.id === "carto-voyager") throw error;
+    const fallback = getBasemap("carto-voyager");
+    return fetchTile(fallback, z, x, y);
+  });
 
   tileCache.set(key, promise);
   return promise;
+}
+
+function worldSizePx(zoom) {
+  return TILE_SIZE * (1 << zoom);
+}
+
+async function stitchFullWorldMap(basemapConfig, zoom, width, height) {
+  const worldSize = worldSizePx(zoom);
+  const maxTile = (1 << zoom) - 1;
+  const composites = [];
+
+  for (let ty = 0; ty <= maxTile; ty += 1) {
+    for (let tx = 0; tx <= maxTile; tx += 1) {
+      const tile = await fetchTile(basemapConfig, zoom, tx, ty);
+      composites.push({
+        input: tile,
+        left: tx * TILE_SIZE,
+        top: ty * TILE_SIZE,
+      });
+    }
+  }
+
+  const mosaic = await sharp({
+    create: { width: worldSize, height: worldSize, channels: 3, background: "#dce7ef" },
+  })
+    .composite(composites)
+    .png()
+    .toBuffer();
+
+  const scaleX = width / worldSize;
+  const scaleY = height / worldSize;
+  const buffer = await sharp(mosaic).resize(width, height, { fit: "fill" }).png().toBuffer();
+  const project = (lat, lng) => {
+    const world = latLngToWorldPx(lat, lng, zoom);
+    return {
+      x: Math.round(world.x * scaleX),
+      y: Math.round(world.y * scaleY),
+    };
+  };
+
+  return { buffer, project, basemapId: basemapConfig.id, zoom };
 }
 
 /**
@@ -150,6 +196,14 @@ export async function stitchBoundsMap({
       : basemap;
 
   const zoom = pickZoomForPoints(points, width, height, paddingPx);
+  const worldSize = worldSizePx(zoom);
+
+  // Low-zoom world views are smaller than the card viewport; upscale the full world
+  // so we do not leave blank strips when centering on global connection points.
+  if (width > worldSize || height > worldSize) {
+    return stitchFullWorldMap(basemapConfig, zoom, width, height);
+  }
+
   const xs = points.map((point) => latLngToWorldPx(point.lat, point.lng, zoom).x);
   const ys = points.map((point) => latLngToWorldPx(point.lat, point.lng, zoom).y);
   const minX = Math.min(...xs);
@@ -159,8 +213,10 @@ export async function stitchBoundsMap({
 
   const centerX = (minX + maxX) / 2;
   const centerY = (minY + maxY) / 2;
-  const topLeftX = centerX - width / 2;
-  const topLeftY = centerY - height / 2;
+  let topLeftX = centerX - width / 2;
+  let topLeftY = centerY - height / 2;
+  topLeftX = Math.max(0, Math.min(topLeftX, worldSize - width));
+  topLeftY = Math.max(0, Math.min(topLeftY, worldSize - height));
   const maxTile = (1 << zoom) - 1;
 
   const tileX0 = Math.max(0, Math.floor(topLeftX / TILE_SIZE));
