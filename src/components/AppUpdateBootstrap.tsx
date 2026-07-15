@@ -1,9 +1,15 @@
 import { useEffect } from "react";
-import { checkForServiceWorkerUpdate, shouldCheckForServiceWorkerUpdate } from "@/lib/appUpdate";
+import {
+  checkForServiceWorkerUpdate,
+  ensureLatestBuild,
+  shouldCheckForServiceWorkerUpdate,
+} from "@/lib/appUpdate";
 
-/** Hourly service worker update check while the app is open (Safari PWA cache). */
+/** Background update checks and one-shot stale-bundle recovery (Safari/PWA). */
 export function AppUpdateBootstrap() {
   useEffect(() => {
+    void ensureLatestBuild();
+
     const runCheck = () => {
       if (shouldCheckForServiceWorkerUpdate()) {
         void checkForServiceWorkerUpdate();

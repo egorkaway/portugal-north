@@ -3,7 +3,6 @@ import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
-  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -11,9 +10,11 @@ import {
   View,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 import { OnboardingLiveActivityPreview } from '@/components/onboarding/OnboardingLiveActivityPreview';
+import { OnboardingStepIllustration } from '@/components/onboarding/OnboardingStepIllustration';
 import { OnboardingWidgetPreview } from '@/components/onboarding/OnboardingWidgetPreview';
-import { theme } from '@/constants/theme';
+import { brandTheme } from '@/constants/brandTheme';
 import { completeOnboarding, isOnboardingComplete } from '@/lib/onboardingStorage';
 import { ensureTripNotificationPermission } from '@/lib/tripNotifications';
 import { writeLastCoords } from '@/lib/tripStorage';
@@ -100,7 +101,7 @@ export default function OnboardingScreen() {
   if (checking) {
     return (
       <View style={styles.loading}>
-        <ActivityIndicator color={theme.primary} size="large" />
+        <ActivityIndicator color={brandTheme.green} size="large" />
       </View>
     );
   }
@@ -109,6 +110,7 @@ export default function OnboardingScreen() {
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
+      <StatusBar style="dark" />
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <View style={styles.dots}>
           {STEPS.map((id, index) => (
@@ -121,6 +123,7 @@ export default function OnboardingScreen() {
 
         {step === 'welcome' ? (
           <View style={styles.stepBody}>
+            <OnboardingStepIllustration step="welcome" />
             <Text style={styles.eyebrow}>Welcome</Text>
             <Text style={styles.title}>Plan train travel across Iberia</Text>
             <Text style={styles.body}>
@@ -137,6 +140,7 @@ export default function OnboardingScreen() {
 
         {step === 'location' ? (
           <View style={styles.stepBody}>
+            <OnboardingStepIllustration step="location" />
             <Text style={styles.eyebrow}>Location</Text>
             <Text style={styles.title}>Find stations near you</Text>
             <Text style={styles.body}>
@@ -148,6 +152,7 @@ export default function OnboardingScreen() {
 
         {step === 'notifications' ? (
           <View style={styles.stepBody}>
+            <OnboardingStepIllustration step="notifications" />
             <Text style={styles.eyebrow}>Notifications</Text>
             <Text style={styles.title}>Gentle trip reminders</Text>
             <Text style={styles.body}>
@@ -159,6 +164,7 @@ export default function OnboardingScreen() {
 
         {step === 'widgets' ? (
           <View style={styles.stepBody}>
+            <OnboardingStepIllustration step="widgets" />
             <Text style={styles.eyebrow}>At a glance</Text>
             <Text style={styles.title}>Widgets & Live Activity</Text>
             <Text style={styles.body}>
@@ -166,12 +172,7 @@ export default function OnboardingScreen() {
               also show a Live Activity on your Lock Screen and Dynamic Island.
             </Text>
             <OnboardingWidgetPreview props={EXAMPLE_TRIP} />
-            <OnboardingLiveActivityPreview
-              stationName="Lisboa Oriente"
-              countdown="18 min"
-              routeLine="IC 521 → Porto-Campanhã"
-              footer="Departs 14:32 · Platform 3"
-            />
+            <OnboardingLiveActivityPreview props={EXAMPLE_TRIP} />
             <Text style={styles.hint}>
               Long-press your Home Screen, tap +, search for VeryStays, and choose Train countdown.
             </Text>
@@ -222,8 +223,16 @@ export default function OnboardingScreen() {
           </Pressable>
         ) : null}
 
-        {Platform.OS === 'ios' && step !== 'widgets' ? (
-          <Text style={styles.footerNote}>You can change these anytime in Settings.</Text>
+        {step === 'location' ? (
+          <Text style={styles.footerNote}>
+            Optional. You can change location access later in Settings.
+          </Text>
+        ) : null}
+
+        {step === 'notifications' ? (
+          <Text style={styles.footerNote}>
+            Optional. You can change notification settings later in Settings.
+          </Text>
         ) : null}
       </View>
     </SafeAreaView>
@@ -233,13 +242,13 @@ export default function OnboardingScreen() {
 const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: theme.background,
+    backgroundColor: brandTheme.background,
   },
   loading: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: theme.background,
+    backgroundColor: brandTheme.background,
   },
   content: {
     paddingHorizontal: 24,
@@ -257,32 +266,32 @@ const styles = StyleSheet.create({
     width: 8,
     height: 8,
     borderRadius: 999,
-    backgroundColor: theme.border,
+    backgroundColor: brandTheme.border,
   },
   dotActive: {
-    backgroundColor: theme.primary,
+    backgroundColor: brandTheme.orange,
     width: 22,
   },
   stepBody: {
-    gap: 12,
+    gap: 16,
   },
   eyebrow: {
     fontSize: 13,
     fontWeight: '700',
-    color: theme.primaryMuted,
+    color: brandTheme.green,
     textTransform: 'uppercase',
     letterSpacing: 0.5,
   },
   title: {
     fontSize: 30,
     fontWeight: '800',
-    color: theme.primary,
+    color: brandTheme.text,
     lineHeight: 36,
   },
   body: {
     fontSize: 16,
     lineHeight: 24,
-    color: theme.primaryMuted,
+    color: brandTheme.textMuted,
   },
   bulletList: {
     gap: 8,
@@ -291,12 +300,12 @@ const styles = StyleSheet.create({
   bullet: {
     fontSize: 15,
     lineHeight: 22,
-    color: theme.primary,
+    color: brandTheme.text,
   },
   hint: {
     fontSize: 14,
     lineHeight: 20,
-    color: theme.primaryMuted,
+    color: brandTheme.textMuted,
     marginTop: 4,
   },
   footer: {
@@ -304,19 +313,19 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     gap: 10,
     borderTopWidth: 1,
-    borderTopColor: theme.border,
-    backgroundColor: theme.background,
+    borderTopColor: brandTheme.border,
+    backgroundColor: brandTheme.background,
   },
   primaryButton: {
-    backgroundColor: theme.primary,
+    backgroundColor: brandTheme.orange,
     borderRadius: 999,
     paddingVertical: 14,
     alignItems: 'center',
   },
   primaryButtonText: {
-    color: '#fff',
+    color: brandTheme.onOrange,
     fontSize: 16,
-    fontWeight: '700',
+    fontWeight: '800',
   },
   buttonDisabled: {
     opacity: 0.7,
@@ -324,6 +333,6 @@ const styles = StyleSheet.create({
   footerNote: {
     textAlign: 'center',
     fontSize: 12,
-    color: theme.primaryMuted,
+    color: brandTheme.textMuted,
   },
 });

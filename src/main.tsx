@@ -3,8 +3,8 @@ import { HelmetProvider } from "react-helmet-async";
 import { PostHogProvider } from "posthog-js/react";
 import { registerSW } from "virtual:pwa-register";
 import App from "./App.tsx";
+import { removeStaticAppShell } from "@/components/AppShellFallback";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { ensureLatestBuild } from "@/lib/appUpdate";
 import { initPostHog, isPostHogEnabled, posthog } from "./lib/posthog.ts";
 import "./index.css";
 
@@ -29,12 +29,6 @@ if ("serviceWorker" in navigator) {
   });
 }
 
-try {
-  initPostHog();
-} catch (error) {
-  console.warn("Analytics init failed", error);
-}
-
 const app = (
   <ErrorBoundary>
     <HelmetProvider>
@@ -43,13 +37,14 @@ const app = (
   </ErrorBoundary>
 );
 
-async function bootstrap() {
-  const reloading = await ensureLatestBuild();
-  if (reloading) return;
+createRoot(document.getElementById("root")!).render(
+  isPostHogEnabled ? <PostHogProvider client={posthog}>{app}</PostHogProvider> : app,
+);
 
-  createRoot(document.getElementById("root")!).render(
-    isPostHogEnabled ? <PostHogProvider client={posthog}>{app}</PostHogProvider> : app,
-  );
+removeStaticAppShell();
+
+try {
+  initPostHog();
+} catch (error) {
+  console.warn("Analytics init failed", error);
 }
-
-void bootstrap();

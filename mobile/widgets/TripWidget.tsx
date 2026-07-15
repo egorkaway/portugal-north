@@ -47,6 +47,20 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
     return remainder === 0 ? `${hours}h` : `${hours}h ${remainder}m`;
   }
 
+  function buildActiveFooter(
+    departureTime: string,
+    platform: string,
+    delayMinutes: number | null,
+  ): string {
+    const parts: string[] = [];
+    const time = departureTime.trim();
+    if (time) parts.push(`Departs ${time}`);
+    const platformLabel = platform.trim();
+    if (platformLabel) parts.push(`Platform ${platformLabel}`);
+    if (delayMinutes !== null && delayMinutes > 0) parts.push(`+${delayMinutes} min`);
+    return parts.length > 0 ? parts.join(' · ') : 'Open VeryStays';
+  }
+
   const input = rawProps && typeof rawProps === 'object' ? rawProps : {};
   const mode =
     input.mode === 'active' ||
@@ -77,6 +91,13 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
     typeof input.trainNumber === 'string' && input.trainNumber.trim()
       ? input.trainNumber.trim()
       : '';
+  const platform =
+    typeof input.platform === 'string' && input.platform.trim()
+      ? input.platform.trim()
+      : '';
+  const delayRaw = input.delayMinutes;
+  const delayMinutes =
+    typeof delayRaw === 'number' && delayRaw >= 0 ? Math.floor(delayRaw) : null;
   const countdownRaw = input.countdownMinutes;
   const countdownMinutes =
     typeof countdownRaw === 'number' && countdownRaw >= 0
@@ -104,7 +125,7 @@ const TripWidget = (rawProps: TripWidgetProps, environment: WidgetEnvironment) =
     label = stationName;
     title = compactCountdown;
     detail = subline;
-    footer = departureTime ? `Departs ${departureTime}` : 'Open VeryStays';
+    footer = buildActiveFooter(departureTime, platform, delayMinutes);
   } else if (mode === 'lastTaken') {
     label = 'Last trip';
     title = stationName;

@@ -9,6 +9,25 @@ export function compactCountdownLabel(countdownMinutes: number | null): string {
   return remainder === 0 ? `${hours}h` : `${hours}h ${remainder}m`;
 }
 
+export function buildActiveTripFooter(
+  departureTime: string,
+  platform: string | null,
+  delayMinutes: number | null,
+): string {
+  const parts: string[] = [];
+  const time = departureTime.trim();
+  if (time) parts.push(`Departs ${time}`);
+  const platformLabel = platform?.trim();
+  if (platformLabel) parts.push(`Platform ${platformLabel}`);
+  if (delayMinutes !== null && delayMinutes > 0) parts.push(`+${delayMinutes} min`);
+  return parts.length > 0 ? parts.join(' · ') : 'Open VeryStays';
+}
+
+export function buildLastTripFooter(departureTime: string): string {
+  const time = departureTime.trim();
+  return time ? `Departed ${time}` : 'Last train taken';
+}
+
 export type WidgetDisplayFields = {
   label: string;
   title: string;
@@ -43,12 +62,12 @@ export function getWidgetDisplayFields(props: TripWidgetProps): WidgetDisplayFie
     label = stationName;
     title = compactCountdown;
     detail = subline;
-    footer = departureTime ? `Departs ${departureTime}` : 'Open VeryStays';
+    footer = buildActiveTripFooter(departureTime, props.platform, props.delayMinutes);
   } else if (mode === 'lastTaken') {
     label = 'Last trip';
     title = stationName;
     detail = subline;
-    footer = departureTime ? `Departed ${departureTime}` : 'Last train taken';
+    footer = buildLastTripFooter(departureTime);
   } else if (mode === 'nearest') {
     label = 'Nearest';
     title = stationName;

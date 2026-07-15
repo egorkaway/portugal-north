@@ -1,10 +1,9 @@
-import { useCallback, useDeferredValue, useMemo, useRef, useState } from "react";
+import { lazy, Suspense, useCallback, useDeferredValue, useMemo, useRef, useState } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { getStationsForHomeScope } from "@/data/stationRegistry";
 import { StationCard } from "@/components/StationCard";
 import { StationGridSkeleton } from "@/components/StationGridSkeleton";
 import { StationListPagination } from "@/components/StationListPagination";
-import { StationRankings } from "@/components/StationRankings";
 import { CountrySelectorBar } from "@/components/CountrySelector";
 import { TrainFront } from "lucide-react";
 import { StationFilters } from "@/components/StationFilters";
@@ -30,6 +29,11 @@ import { sortTrainTypes } from "@/lib/trainTypes";
 import { paginate } from "@/lib/paginate";
 import NotFound from "@/pages/NotFound";
 
+const StationRankings = lazy(() =>
+  import("@/components/StationRankings").then((module) => ({
+    default: module.StationRankings,
+  })),
+);
 type VoteFilter = "up" | "down" | "none";
 type VisitedFilter = "visited" | "notVisited";
 
@@ -288,7 +292,9 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
         </main>
       </StationInteractionProvider>
 
-      <StationRankings />
+      <Suspense fallback={null}>
+        <StationRankings />
+      </Suspense>
 
       <SiteFooter country={footerCountryFromHomeScope(scope)} />
     </div>

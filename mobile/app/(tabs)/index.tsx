@@ -3,6 +3,7 @@ import { FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location';
 import { useRouter } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { AppBrandHeader } from '@/components/AppBrandHeader';
 import { StationCard } from '@/components/StationCard';
 import { BuildFooter } from '@/components/BuildFooter';
 import { StationFilters } from '@/components/StationFilters';
@@ -177,8 +178,7 @@ export default function HomeScreen() {
         onEndReachedThreshold={0.4}
         ListHeaderComponent={
           <View style={[styles.header, { paddingTop: insets.top + 4 }]}>
-            <Text style={styles.title}>VeryStays</Text>
-            <Text style={styles.subtitle}>Travel hubs across Iberian peninsula</Text>
+            <AppBrandHeader />
 
             <StationFilters
               searchQuery={searchQuery}
@@ -231,16 +231,7 @@ const styles = StyleSheet.create({
   },
   header: {
     paddingBottom: 12,
-    gap: 8,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: '800',
-    color: theme.primary,
-  },
-  subtitle: {
-    fontSize: 15,
-    color: theme.primaryMuted,
+    gap: 12,
   },
   count: {
     fontSize: 13,

@@ -1,19 +1,15 @@
 import { Platform, StyleSheet, Text, View } from 'react-native';
-import { widgetTheme } from '@/constants/widgetTheme';
+import { brandTheme } from '@/constants/brandTheme';
+import { getWidgetDisplayFields } from '@/lib/widgetDisplay';
+import type { TripWidgetProps } from '@/lib/types';
 
 type Props = {
-  stationName: string;
-  countdown: string;
-  routeLine: string;
-  footer: string;
+  props: TripWidgetProps;
 };
 
-export function OnboardingLiveActivityPreview({
-  stationName,
-  countdown,
-  routeLine,
-  footer,
-}: Props) {
+export function OnboardingLiveActivityPreview({ props }: Props) {
+  const fields = getWidgetDisplayFields(props);
+
   if (Platform.OS !== 'ios') {
     return (
       <View style={styles.wrap}>
@@ -36,14 +32,20 @@ export function OnboardingLiveActivityPreview({
           </View>
           <View style={styles.content}>
             <Text style={styles.station} numberOfLines={1}>
-              {stationName}
+              {fields.label}
             </Text>
-            <Text style={styles.countdown}>{countdown}</Text>
-            <Text style={styles.route} numberOfLines={1}>
-              {routeLine}
-            </Text>
-            <Text style={styles.footer} numberOfLines={1}>
-              {footer}
+            <Text style={styles.countdown}>{fields.title}</Text>
+            {fields.showDestination ? (
+              <Text style={styles.route} numberOfLines={1}>
+                {fields.destinationLine}
+              </Text>
+            ) : (
+              <Text style={styles.route} numberOfLines={1}>
+                {fields.detail}
+              </Text>
+            )}
+            <Text style={styles.footer} numberOfLines={2}>
+              {fields.footer}
             </Text>
           </View>
         </View>
@@ -59,21 +61,21 @@ const styles = StyleSheet.create({
   caption: {
     fontSize: 13,
     fontWeight: '700',
-    color: '#8FE3B8',
+    color: brandTheme.green,
     textTransform: 'uppercase',
     letterSpacing: 0.4,
   },
   unavailable: {
     fontSize: 14,
     lineHeight: 20,
-    color: '#C5D3DC',
+    color: brandTheme.textMuted,
   },
   card: {
-    backgroundColor: widgetTheme.primary,
+    backgroundColor: brandTheme.backgroundDeep,
     borderRadius: 18,
     padding: 14,
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.12)',
+    borderColor: brandTheme.border,
   },
   row: {
     flexDirection: 'row',
@@ -84,12 +86,12 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 10,
-    backgroundColor: 'rgba(255,255,255,0.12)',
+    backgroundColor: brandTheme.orange,
     alignItems: 'center',
     justifyContent: 'center',
   },
   iconText: {
-    color: widgetTheme.onPrimary,
+    color: brandTheme.onOrange,
     fontSize: 13,
     fontWeight: '800',
   },
@@ -98,24 +100,24 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   station: {
-    color: '#8FE3B8',
+    color: brandTheme.green,
     fontSize: 12,
     fontWeight: '800',
     textTransform: 'uppercase',
     letterSpacing: 0.3,
   },
   countdown: {
-    color: widgetTheme.onPrimary,
+    color: brandTheme.text,
     fontSize: 24,
     fontWeight: '800',
   },
   route: {
-    color: widgetTheme.mutedOnPrimary,
+    color: brandTheme.textMuted,
     fontSize: 14,
     fontWeight: '700',
   },
   footer: {
-    color: widgetTheme.onPrimary,
+    color: brandTheme.orangeLight,
     fontSize: 13,
     fontWeight: '700',
     marginTop: 2,

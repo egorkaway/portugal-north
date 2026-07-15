@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import { theme } from '@/constants/theme';
-import { getWidgetColors } from '@/constants/widgetTheme';
+import { brandTheme } from '@/constants/brandTheme';
 import { getWidgetDisplayFields } from '@/lib/widgetDisplay';
 import type { TripWidgetProps } from '@/lib/types';
 
@@ -10,35 +9,33 @@ type Props = {
 };
 
 export function OnboardingWidgetPreview({ props, label = 'Home-screen widget' }: Props) {
-  const colors = getWidgetColors('light');
   const fields = getWidgetDisplayFields(props);
 
   return (
     <View style={styles.wrap}>
       <Text style={styles.caption}>{label}</Text>
-      <View style={[styles.card, { backgroundColor: colors.background }]}>
+      <View style={styles.card}>
         <Text
           style={[
             styles.label,
-            { color: colors.label },
             fields.underlineStation ? styles.labelUnderline : null,
           ]}
         >
           {fields.label}
         </Text>
-        <Text style={[styles.title, { color: colors.primary }]} numberOfLines={2}>
+        <Text style={styles.title} numberOfLines={2}>
           {fields.title}
         </Text>
         {fields.showDestination ? (
-          <Text style={[styles.detailStrong, { color: colors.primary }]} numberOfLines={2}>
+          <Text style={styles.detailStrong} numberOfLines={2}>
             {fields.destinationLine}
           </Text>
         ) : (
-          <Text style={[styles.detail, { color: colors.detail }]} numberOfLines={2}>
+          <Text style={styles.detail} numberOfLines={2}>
             {fields.detail}
           </Text>
         )}
-        <Text style={[styles.footer, { color: colors.footer }]} numberOfLines={1}>
+        <Text style={styles.footer} numberOfLines={1}>
           {fields.footer}
         </Text>
       </View>
@@ -53,14 +50,15 @@ const styles = StyleSheet.create({
   caption: {
     fontSize: 13,
     fontWeight: '700',
-    color: theme.primaryMuted,
+    color: brandTheme.green,
     textTransform: 'uppercase',
     letterSpacing: 0.4,
   },
   card: {
     borderRadius: 20,
     borderWidth: 1,
-    borderColor: theme.border,
+    borderColor: brandTheme.border,
+    backgroundColor: brandTheme.backgroundDeep,
     padding: 14,
     gap: 4,
     minHeight: 120,
@@ -70,27 +68,32 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     textTransform: 'uppercase',
     letterSpacing: 0.3,
+    color: brandTheme.green,
   },
   labelUnderline: {
     textDecorationLine: 'underline',
-    textDecorationColor: '#059669',
+    textDecorationColor: brandTheme.orange,
   },
   title: {
     fontSize: 28,
     fontWeight: '800',
+    color: brandTheme.text,
   },
   detail: {
     fontSize: 14,
     lineHeight: 19,
     fontWeight: '600',
+    color: brandTheme.textMuted,
   },
   detailStrong: {
     fontSize: 14,
     fontWeight: '800',
+    color: brandTheme.text,
   },
   footer: {
     fontSize: 14,
     fontWeight: '800',
     marginTop: 4,
+    color: brandTheme.orangeLight,
   },
 });

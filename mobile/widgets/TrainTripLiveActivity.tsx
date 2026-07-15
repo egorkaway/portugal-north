@@ -22,7 +22,8 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
   const THEME = {
     primary: '#012841',
     onPrimary: '#FFFFFF',
-    mutedOnPrimary: '#B8C5CE',
+    label: '#8FE3B8',
+    detail: '#C5D3DC',
     accent: '#7EC8E3',
   } as const;
 
@@ -35,6 +36,27 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
     return remainder === 0 ? `${hours}h` : `${hours}h ${remainder}m`;
   }
 
+  function buildActiveFooter(
+    departureTime: string,
+    platform: string,
+    delayMinutes: number | null,
+  ): string {
+    const parts: string[] = [];
+    const time = departureTime.trim();
+    if (time) parts.push(`Departs ${time}`);
+    const platformLabel = platform.trim();
+    if (platformLabel) parts.push(`Platform ${platformLabel}`);
+    if (delayMinutes !== null && delayMinutes > 0) parts.push(`+${delayMinutes} min`);
+    return parts.length > 0 ? parts.join(' · ') : 'Open VeryStays';
+  }
+
+  const mode =
+    props.mode === 'active' ||
+    props.mode === 'lastTaken' ||
+    props.mode === 'nearest' ||
+    props.mode === 'browse'
+      ? props.mode
+      : 'active';
   const stationName =
     typeof props.stationName === 'string' && props.stationName.trim()
       ? props.stationName.trim()
@@ -54,11 +76,14 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
   const departureTime =
     typeof props.departureTime === 'string' && props.departureTime.trim()
       ? props.departureTime.trim()
-      : '—';
+      : '';
   const platform =
     typeof props.platform === 'string' && props.platform.trim()
       ? props.platform.trim()
       : '';
+  const delayRaw = props.delayMinutes;
+  const delayMinutes =
+    typeof delayRaw === 'number' && delayRaw >= 0 ? Math.floor(delayRaw) : null;
   const countdownRaw = props.countdownMinutes;
   const countdownMinutes =
     typeof countdownRaw === 'number' && countdownRaw >= 0
@@ -77,6 +102,23 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       : typeof props.headline === 'string' && props.headline.trim()
         ? props.headline.trim()
         : 'Now';
+
+  const destinationLine = destination
+    ? trainNumber
+      ? `${trainNumber} → ${destination}`
+      : destination
+    : '';
+  const showDestination =
+    destinationLine.length > 0 && (mode === 'active' || mode === 'lastTaken');
+  const stationLabel = mode === 'active' ? stationName : mode === 'lastTaken' ? 'Last trip' : 'VeryStays';
+  const footer =
+    mode === 'active'
+      ? buildActiveFooter(departureTime, platform, delayMinutes)
+      : mode === 'lastTaken'
+        ? departureTime
+          ? `Departed ${departureTime}`
+          : 'Last train taken'
+        : 'Open VeryStays';
 
   function renderCountdownText(
     size: number,
@@ -128,15 +170,10 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
     );
   }
 
-  const destinationLine = destination
-    ? trainNumber
-      ? `${trainNumber} → ${destination}`
-      : destination
-    : subline;
-
   const backgroundColor = THEME.primary;
   const primary = THEME.onPrimary;
-  const muted = environment.isLuminanceReduced ? '#D0D8DE' : THEME.mutedOnPrimary;
+  const labelColor = environment.isLuminanceReduced ? '#A8E8C8' : THEME.label;
+  const detailColor = environment.isLuminanceReduced ? '#D0D8DE' : THEME.detail;
   const accent = THEME.accent;
   const backgroundModifiers = [
     activityBackgroundTint(backgroundColor),
@@ -149,22 +186,52 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
         alignment="leading"
         modifiers={[
           ...backgroundModifiers,
-          padding({ all: 12 }),
+          padding({ all: 14 }),
         ]}
       >
-        <Text modifiers={[...leftTextModifiers(), font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
-          {stationName}
-        </Text>
-        {renderCountdownText(20, 'bold', primary)}
         <Text
           modifiers={[
             ...leftTextModifiers(),
-            font({ size: 12, weight: 'semibold' }),
-            foregroundStyle(primary),
-            lineLimit(3),
+            font({ size: 12, weight: 'bold' }),
+            foregroundStyle(labelColor),
+            lineLimit(2),
           ]}
         >
-          {destinationLine}
+          {stationLabel}
+        </Text>
+        {renderCountdownText(24, 'bold', primary)}
+        {showDestination ? (
+          <Text
+            modifiers={[
+              ...leftTextModifiers(),
+              font({ size: 14, weight: 'semibold' }),
+              foregroundStyle(detailColor),
+              lineLimit(2),
+            ]}
+          >
+            {destinationLine}
+          </Text>
+        ) : (
+          <Text
+            modifiers={[
+              ...leftTextModifiers(),
+              font({ size: 14, weight: 'semibold' }),
+              foregroundStyle(detailColor),
+              lineLimit(2),
+            ]}
+          >
+            {subline}
+          </Text>
+        )}
+        <Text
+          modifiers={[
+            ...leftTextModifiers(),
+            font({ size: 13, weight: 'bold' }),
+            foregroundStyle(primary),
+            lineLimit(2),
+          ]}
+        >
+          {footer}
         </Text>
       </VStack>
     ),
@@ -189,34 +256,69 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
     expandedLeading: (
       <VStack alignment="leading" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
         <Image systemName="tram.fill" color={accent} />
-        <Text modifiers={[...leftTextModifiers(), font({ size: 11 }), foregroundStyle(muted), lineLimit(2)]}>
-          {stationName}
+        <Text
+          modifiers={[
+            ...leftTextModifiers(),
+            font({ size: 11, weight: 'bold' }),
+            foregroundStyle(labelColor),
+            lineLimit(2),
+          ]}
+        >
+          {stationLabel}
         </Text>
       </VStack>
     ),
     expandedTrailing: (
       <VStack alignment="leading" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
         {renderCountdownText(24, 'bold', primary)}
-        <Text modifiers={[...leftTextModifiers(), font({ size: 12 }), foregroundStyle(muted), lineLimit(1)]}>{departureTime}</Text>
+        {departureTime ? (
+          <Text
+            modifiers={[
+              ...leftTextModifiers(),
+              font({ size: 12, weight: 'semibold' }),
+              foregroundStyle(detailColor),
+              lineLimit(1),
+            ]}
+          >
+            {departureTime}
+          </Text>
+        ) : null}
       </VStack>
     ),
     expandedBottom: (
       <VStack alignment="leading" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
-        <Text modifiers={[...leftTextModifiers(), font({ size: 13, weight: 'semibold' }), foregroundStyle(muted), lineLimit(2)]}>
-          {stationName}
-        </Text>
+        {showDestination ? (
+          <Text
+            modifiers={[
+              ...leftTextModifiers(),
+              font({ size: 13, weight: 'semibold' }),
+              foregroundStyle(primary),
+              lineLimit(2),
+            ]}
+          >
+            {destinationLine}
+          </Text>
+        ) : (
+          <Text
+            modifiers={[
+              ...leftTextModifiers(),
+              font({ size: 13, weight: 'semibold' }),
+              foregroundStyle(detailColor),
+              lineLimit(2),
+            ]}
+          >
+            {subline}
+          </Text>
+        )}
         <Text
           modifiers={[
             ...leftTextModifiers(),
-            font({ size: 12, weight: 'semibold' }),
+            font({ size: 12, weight: 'bold' }),
             foregroundStyle(primary),
-            lineLimit(4),
+            lineLimit(2),
           ]}
         >
-          {destinationLine}
-        </Text>
-        <Text modifiers={[...leftTextModifiers(), font({ size: 12 }), foregroundStyle(accent), lineLimit(1)]}>
-          {platform ? `Platform ${platform}` : 'Open VeryStays'}
+          {footer}
         </Text>
       </VStack>
     ),

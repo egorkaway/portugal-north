@@ -33,10 +33,192 @@
     <meta name="twitter:image" content="__SITE_URL__/og-image.jpg" />
     <meta name="twitter:image:alt" content="A vintage Portuguese train winding through the terraced vineyards of the Douro valley at golden hour." />
     <!--/seo-->
+    <style>
+      #static-app-shell {
+        min-height: 100vh;
+        background: #f5f7f8;
+        color: #1a2a32;
+        font-family: Inter, system-ui, -apple-system, sans-serif;
+      }
+      #static-app-shell .shell-hero {
+        position: relative;
+        overflow: hidden;
+        background: #1c756c;
+        color: #fff;
+        padding: 3rem 1rem;
+      }
+      @media (min-width: 768px) {
+        #static-app-shell .shell-hero {
+          padding: 7rem 1.5rem;
+        }
+      }
+      #static-app-shell .shell-hero-inner {
+        position: relative;
+        max-width: 64rem;
+        margin: 0 auto;
+      }
+      #static-app-shell .shell-title {
+        margin: 0 0 0.5rem;
+        font-family: "DM Serif Display", Georgia, serif;
+        font-size: clamp(1.875rem, 4vw, 3rem);
+        line-height: 1.1;
+        font-weight: 400;
+      }
+      #static-app-shell .shell-accent {
+        display: block;
+        width: 4rem;
+        height: 3px;
+        margin: 0.75rem 0 1rem;
+        border-radius: 999px;
+        background: #e8942e;
+      }
+      #static-app-shell .shell-subtitle {
+        margin: 0;
+        max-width: 42rem;
+        font-size: 1.125rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.9);
+      }
+      #static-app-shell .shell-main {
+        max-width: 64rem;
+        margin: 0 auto;
+        padding: 1.25rem 1rem 2rem;
+      }
+      #static-app-shell .shell-filter {
+        height: 2.5rem;
+        margin-bottom: 1rem;
+        border-radius: 0.75rem;
+        background: #e2e8ee;
+        animation: shell-pulse 1.4s ease-in-out infinite;
+      }
+      #static-app-shell .shell-status {
+        margin: 0 0 1rem;
+        font-size: 0.875rem;
+        color: #5c6f7a;
+      }
+      #static-app-shell .shell-grid {
+        display: grid;
+        gap: 0.75rem;
+      }
+      @media (min-width: 640px) {
+        #static-app-shell .shell-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 1rem;
+        }
+      }
+      @media (min-width: 1024px) {
+        #static-app-shell .shell-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+      #static-app-shell .shell-card {
+        overflow: hidden;
+        border: 1px solid #e2e8ee;
+        border-radius: 0.75rem;
+        background: #fff;
+      }
+      #static-app-shell .shell-card-image {
+        aspect-ratio: 16 / 9;
+        background: #e2e8ee;
+        animation: shell-pulse 1.4s ease-in-out infinite;
+      }
+      #static-app-shell .shell-card-body {
+        padding: 1rem 1.25rem 1.25rem;
+      }
+      #static-app-shell .shell-line {
+        height: 1.25rem;
+        margin-bottom: 0.75rem;
+        border-radius: 0.25rem;
+        background: #e2e8ee;
+        animation: shell-pulse 1.4s ease-in-out infinite;
+      }
+      #static-app-shell .shell-line.short {
+        width: 55%;
+      }
+      #static-app-shell .shell-line.shorter {
+        width: 38%;
+        height: 1rem;
+      }
+      @keyframes shell-pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.55;
+        }
+      }
+    </style>
   </head>
 
   <body>
     <div id="root"></div>
+    <div id="static-app-shell" aria-hidden="true">
+      <header class="shell-hero">
+        <div class="shell-hero-inner">
+          <h1 class="shell-title">Sustainable Iberian</h1>
+          <span class="shell-accent"></span>
+          <p class="shell-subtitle">
+            Train stations and airports across Portugal and Spain, with line info and budget hotels near
+            key stops.
+          </p>
+        </div>
+      </header>
+      <main class="shell-main">
+        <div class="shell-filter"></div>
+        <p class="shell-status">Loading stations…</p>
+        <div class="shell-grid">
+          <div class="shell-card">
+            <div class="shell-card-image"></div>
+            <div class="shell-card-body">
+              <div class="shell-line"></div>
+              <div class="shell-line short"></div>
+              <div class="shell-line shorter"></div>
+            </div>
+          </div>
+          <div class="shell-card">
+            <div class="shell-card-image"></div>
+            <div class="shell-card-body">
+              <div class="shell-line"></div>
+              <div class="shell-line short"></div>
+              <div class="shell-line shorter"></div>
+            </div>
+          </div>
+          <div class="shell-card">
+            <div class="shell-card-image"></div>
+            <div class="shell-card-body">
+              <div class="shell-line"></div>
+              <div class="shell-line short"></div>
+              <div class="shell-line shorter"></div>
+            </div>
+          </div>
+          <div class="shell-card">
+            <div class="shell-card-image"></div>
+            <div class="shell-card-body">
+              <div class="shell-line"></div>
+              <div class="shell-line short"></div>
+              <div class="shell-line shorter"></div>
+            </div>
+          </div>
+          <div class="shell-card">
+            <div class="shell-card-image"></div>
+            <div class="shell-card-body">
+              <div class="shell-line"></div>
+              <div class="shell-line short"></div>
+              <div class="shell-line shorter"></div>
+            </div>
+          </div>
+          <div class="shell-card">
+            <div class="shell-card-image"></div>
+            <div class="shell-card-body">
+              <div class="shell-line"></div>
+              <div class="shell-line short"></div>
+              <div class="shell-line shorter"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
     <script>
       (function () {
         var key = "pn_sw_recovery";
