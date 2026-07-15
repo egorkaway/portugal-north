@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 1,
     borderColor: brandTheme.border,
-    backgroundColor: brandTheme.backgroundDeep,
+    backgroundColor: brandTheme.surface,
     padding: 14,
     gap: 4,
     minHeight: 120,
@@ -94,6 +94,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '800',
     marginTop: 4,
-    color: brandTheme.orangeLight,
+    color: brandTheme.orange,
   },
 });

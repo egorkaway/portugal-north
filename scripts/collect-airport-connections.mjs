@@ -46,6 +46,13 @@ const delayArg = args.find((arg) => arg.startsWith("--delay"));
 const delayMs = delayArg
   ? Number.parseInt(delayArg.split("=")[1] ?? args[args.indexOf("--delay") + 1], 10)
   : 400;
+const mapsOnly = args.includes("--maps-only");
+const basemapArg = args.find((arg) => arg.startsWith("--basemap"));
+const defaultBasemapMode = basemapArg
+  ? basemapArg.includes("=")
+    ? basemapArg.split("=")[1]
+    : args[args.indexOf("--basemap") + 1] ?? "random"
+  : "random";
 
 const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
 
@@ -102,7 +109,49 @@ export async function collectAirportConnections(options = {}) {
     dryRun: isDryRun = dryRun,
     airportFilter: filter = airportFilter,
     delayMs: delay = delayMs,
+    mapsOnly: renderMapsOnly = mapsOnly,
+    basemapMode: basemapMode = defaultBasemapMode,
   } = options;
+
+  if (renderMapsOnly) {
+    const existing = loadExistingManifest();
+    let entries = Object.values(existing.airports ?? {});
+    if (filter) {
+      const needle = filter.toUpperCase();
+      entries = entries.filter(
+        (airport) =>
+          airport.iata === needle ||
+          airport.stationName?.toLowerCase().includes(filter.toLowerCase()) ||
+          airport.slug?.includes(filter.toLowerCase().replace(/\s+/g, "-")),
+      );
+    }
+    if (!entries.length) {
+      console.error("No airports matched in existing manifest.");
+      return { ok: 0, failed: 0, skipped: true };
+    }
+
+    mkdirSync(mapsOutDir, { recursive: true });
+    let ok = 0;
+    let failed = 0;
+    for (const entry of entries) {
+      try {
+        if (isDryRun) {
+          console.log(`[dry-run] ${entry.stationName} (${entry.iata})`);
+          ok += 1;
+          continue;
+        }
+        const png = await renderAirportConnectionsMap(entry, { siteUrl, basemapMode });
+        writeFileSync(join(mapsOutDir, `${entry.slug}-connections.png`), png.buffer);
+        ok += 1;
+        console.log(`Wrote ${entry.slug}-connections.png (${entry.iata}, ${png.basemapId})`);
+      } catch (error) {
+        failed += 1;
+        const message = error instanceof Error ? error.message : String(error);
+        console.error(`FAIL ${entry.iata}: ${message}`);
+      }
+    }
+    return { ok, failed, skipped: false };
+  }
 
   if (!process.env.AVIATIONSTACK_API_KEY?.trim()) {
     console.warn("AVIATIONSTACK_API_KEY not set — skipping airport connections collection.");
@@ -164,7 +213,7 @@ export async function collectAirportConnections(options = {}) {
       }
 
       mkdirSync(mapsOutDir, { recursive: true });
-      const png = await renderAirportConnectionsMap(entry, { siteUrl });
+      const png = await renderAirportConnectionsMap(entry, { siteUrl, basemapMode });
       writeFileSync(join(mapsOutDir, `${entry.slug}-connections.png`), png.buffer);
       airports[entry.iata] = entry;
       ok += 1;

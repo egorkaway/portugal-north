@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
     color: brandTheme.textMuted,
   },
   card: {
-    backgroundColor: brandTheme.backgroundDeep,
+    backgroundColor: brandTheme.panel,
     borderRadius: 18,
     padding: 14,
     borderWidth: 1,
@@ -100,19 +100,19 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   station: {
-    color: brandTheme.green,
+    color: brandTheme.greenBright,
     fontSize: 12,
     fontWeight: '800',
     textTransform: 'uppercase',
     letterSpacing: 0.3,
   },
   countdown: {
-    color: brandTheme.text,
+    color: brandTheme.panelText,
     fontSize: 24,
     fontWeight: '800',
   },
   route: {
-    color: brandTheme.textMuted,
+    color: brandTheme.panelMuted,
     fontSize: 14,
     fontWeight: '700',
   },

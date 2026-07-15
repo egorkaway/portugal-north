@@ -17,6 +17,3 @@ export const brandTheme = {
   panelMuted: '#B8D4C4',
   panelText: '#FFFFFF',
 } as const;
-
-/** @deprecated Use `brandTheme` — kept for onboarding imports during migration */
-export const onboardingTheme = brandTheme;

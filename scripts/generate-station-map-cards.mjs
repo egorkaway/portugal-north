@@ -7,13 +7,15 @@
  *   npm run maps:stations -- --station "Aveiro"
  *   npm run maps:stations -- --basemap=carto-voyager   # same style for all
  *   npm run maps:stations -- --basemap=random          # default: random per station
+ *   npm run maps:stations -- --region=lisbon           # Lisbon metro + LIS airport
  */
-import { mkdirSync, readdirSync, unlinkSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { parseAllStationsFromRepo } from "./lib/stationImageFetch.mjs";
 import { renderStationMapCard, stationToSlug } from "./lib/stationMapCard.mjs";
 import { BASEMAP_IDS, isBasemapId } from "./lib/mapBasemaps.mjs";
+import { matchesMapRegion } from "./lib/mapRegions.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "public/maps/stations");
@@ -30,6 +32,12 @@ const stationFilter = stationArg
   ? stationArg.includes("=")
     ? stationArg.split("=")[1]
     : args[args.indexOf("--station") + 1]
+  : null;
+const regionArg = args.find((a) => a.startsWith("--region"));
+const regionFilter = regionArg
+  ? regionArg.includes("=")
+    ? regionArg.split("=")[1]
+    : args[args.indexOf("--region") + 1] ?? null
   : null;
 const basemapArg = args.find((a) => a.startsWith("--basemap"));
 const basemapMode = basemapArg
@@ -48,6 +56,9 @@ if (basemapMode !== "random" && !isBasemapId(basemapMode)) {
 const stations = parseAllStationsFromRepo(root);
 
 let targets = stations.filter((s) => Number.isFinite(s.lat) && Number.isFinite(s.lng));
+if (regionFilter) {
+  targets = targets.filter((s) => matchesMapRegion(s, regionFilter.toLowerCase()));
+}
 if (stationFilter) {
   const needle = stationFilter.toLowerCase();
   targets = targets.filter(
@@ -106,7 +117,41 @@ async function renderOne(station) {
 
 let ok = 0;
 let failed = 0;
-const isFullRun = !stationFilter && !Number.isFinite(limit);
+const isFullRun = !stationFilter && !regionFilter && !Number.isFinite(limit);
+
+function loadExistingManifest() {
+  try {
+    return JSON.parse(readFileSync(join(outDir, "manifest.json"), "utf8"));
+  } catch {
+    return { stations: [] };
+  }
+}
+
+function mergeManifestEntries(existing, updated) {
+  const bySlug = new Map((existing.stations ?? []).map((entry) => [entry.slug, entry]));
+  for (const entry of updated) {
+    bySlug.set(entry.slug, entry);
+  }
+  return [...bySlug.values()].sort((a, b) => a.name.localeCompare(b.name));
+}
+
+function backfillManifestFromPngs(existing) {
+  const bySlug = new Map((existing.stations ?? []).map((entry) => [entry.slug, entry]));
+  for (const file of readdirSync(outDir)) {
+    if (!file.endsWith(".png")) continue;
+    const slug = file.slice(0, -4);
+    if (bySlug.has(slug)) continue;
+    const station = stations.find((entry) => stationToSlug(entry.name) === slug);
+    if (!station) continue;
+    bySlug.set(slug, {
+      name: station.name,
+      slug,
+      file: `/maps/stations/${slug}.png`,
+      pageUrl: `${siteUrl}/stations/${slug}`,
+    });
+  }
+  return { ...existing, stations: [...bySlug.values()] };
+}
 
 for (let i = 0; i < targets.length; i += CONCURRENCY) {
   const chunk = targets.slice(i, i + CONCURRENCY);
@@ -143,6 +188,11 @@ if (!dryRun) {
     }
   }
 
+  const existingManifest = backfillManifestFromPngs(loadExistingManifest());
+  const mergedStations = isFullRun
+    ? manifest
+    : mergeManifestEntries(existingManifest, manifest);
+
   writeFileSync(
     join(outDir, "manifest.json"),
     JSON.stringify(
@@ -152,8 +202,8 @@ if (!dryRun) {
         basemapMode,
         size: 1080,
         shape: "square",
-        count: manifest.length,
-        stations: manifest,
+        count: mergedStations.length,
+        stations: mergedStations,
       },
       null,
       2,

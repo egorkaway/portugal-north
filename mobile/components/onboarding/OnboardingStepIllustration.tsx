@@ -204,7 +204,7 @@ export function OnboardingStepIllustration({ step }: Props) {
 
 const styles = StyleSheet.create({
   frame: {
-    backgroundColor: brandTheme.surfaceRaised,
+    backgroundColor: brandTheme.surface,
     borderRadius: 20,
     borderWidth: 1,
     borderColor: brandTheme.border,
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
   },
   frameCompact: {
-    backgroundColor: brandTheme.surfaceRaised,
+    backgroundColor: brandTheme.surface,
     borderRadius: 20,
     borderWidth: 1,
     borderColor: brandTheme.border,
@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 999,
-    backgroundColor: 'rgba(255, 255, 255, 0.28)',
+    backgroundColor: brandTheme.border,
   },
   routeDotGreen: {
     backgroundColor: brandTheme.green,
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
   routeLine: {
     flex: 1,
     height: 2,
-    backgroundColor: 'rgba(255, 255, 255, 0.22)',
+    backgroundColor: brandTheme.border,
     marginHorizontal: 4,
   },
   routeLabels: {
@@ -301,7 +301,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderWidth: 1,
-    backgroundColor: 'rgba(255, 255, 255, 0.04)',
+    backgroundColor: brandTheme.background,
   },
   badgeGreen: {
     borderColor: brandTheme.green,
@@ -317,7 +317,7 @@ const styles = StyleSheet.create({
   mapBackdrop: {
     height: 110,
     borderRadius: 14,
-    backgroundColor: brandTheme.backgroundDeep,
+    backgroundColor: brandTheme.surfaceMuted,
     borderWidth: 1,
     borderColor: brandTheme.border,
     alignItems: 'center',
@@ -330,7 +330,7 @@ const styles = StyleSheet.create({
     right: 0,
     top: '50%',
     height: 1,
-    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+    backgroundColor: 'rgba(52, 88, 70, 0.1)',
   },
   mapGridLineVertical: {
     position: 'absolute',
@@ -338,20 +338,20 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: '50%',
     width: 1,
-    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+    backgroundColor: 'rgba(52, 88, 70, 0.1)',
   },
   mapPulseOuter: {
     position: 'absolute',
     width: 72,
     height: 72,
     borderRadius: 999,
-    backgroundColor: 'rgba(62, 207, 142, 0.18)',
+    backgroundColor: 'rgba(26, 143, 122, 0.15)',
   },
   mapPulseInner: {
     width: 44,
     height: 44,
     borderRadius: 999,
-    backgroundColor: brandTheme.greenDeep,
+    backgroundColor: brandTheme.green,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -362,7 +362,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 8,
-    backgroundColor: brandTheme.backgroundDeep,
+    backgroundColor: brandTheme.background,
     borderRadius: 12,
     paddingHorizontal: 10,
     paddingVertical: 8,
@@ -371,7 +371,7 @@ const styles = StyleSheet.create({
   },
   nearbyRowActive: {
     borderColor: brandTheme.green,
-    backgroundColor: 'rgba(62, 207, 142, 0.1)',
+    backgroundColor: 'rgba(26, 143, 122, 0.08)',
   },
   nearbyName: {
     flex: 1,
@@ -382,7 +382,7 @@ const styles = StyleSheet.create({
   nearbyDistance: {
     fontSize: 12,
     fontWeight: '700',
-    color: brandTheme.orangeLight,
+    color: brandTheme.orange,
   },
   phoneShell: {
     alignItems: 'center',
@@ -392,11 +392,11 @@ const styles = StyleSheet.create({
     width: 84,
     height: 22,
     borderRadius: 999,
-    backgroundColor: brandTheme.backgroundDeep,
+    backgroundColor: brandTheme.border,
   },
   notificationCard: {
     alignSelf: 'stretch',
-    backgroundColor: brandTheme.backgroundDeep,
+    backgroundColor: brandTheme.surface,
     borderRadius: 16,
     padding: 12,
     borderWidth: 1,
@@ -464,7 +464,7 @@ const styles = StyleSheet.create({
   },
   devicePhone: {
     flex: 1.1,
-    backgroundColor: brandTheme.backgroundDeep,
+    backgroundColor: brandTheme.panel,
     borderRadius: 16,
     padding: 10,
     gap: 8,
@@ -480,24 +480,24 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0.35)',
   },
   deviceWidgetTile: {
-    backgroundColor: 'rgba(255,255,255,0.1)',
+    backgroundColor: 'rgba(255,255,255,0.12)',
     borderRadius: 12,
     padding: 8,
     gap: 2,
   },
   deviceWidgetLabel: {
-    color: brandTheme.green,
+    color: brandTheme.greenBright,
     fontSize: 8,
     fontWeight: '800',
     letterSpacing: 0.3,
   },
   deviceWidgetCountdown: {
-    color: brandTheme.text,
+    color: brandTheme.panelText,
     fontSize: 18,
     fontWeight: '800',
   },
   deviceWidgetRoute: {
-    color: brandTheme.textMuted,
+    color: brandTheme.panelMuted,
     fontSize: 10,
     fontWeight: '700',
   },
@@ -526,7 +526,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.4,
   },
   deviceLockCard: {
-    backgroundColor: brandTheme.backgroundDeep,
+    backgroundColor: brandTheme.panel,
     borderRadius: 12,
     padding: 8,
     gap: 2,
@@ -534,18 +534,18 @@ const styles = StyleSheet.create({
     borderColor: brandTheme.border,
   },
   deviceLockStation: {
-    color: brandTheme.green,
+    color: brandTheme.greenBright,
     fontSize: 8,
     fontWeight: '800',
     letterSpacing: 0.3,
   },
   deviceLockCountdown: {
-    color: brandTheme.text,
+    color: brandTheme.panelText,
     fontSize: 16,
     fontWeight: '800',
   },
   deviceLockFooter: {
-    color: brandTheme.text,
+    color: brandTheme.panelText,
     fontSize: 9,
     fontWeight: '700',
   },
