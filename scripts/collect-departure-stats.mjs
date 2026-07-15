@@ -7,6 +7,7 @@
  *   npm run stats:departures -- --station "Porto-Campanhã"
  *   npm run stats:departures -- --dry-run
  *
+ * Also collects airport flight connections and syncs mobile/data (npm run sync:data).
  * Stations are shuffled each run so partial runs (--limit or timeouts) spread across the network.
  * Stops early after 5 consecutive API failures (e.g. CP outage or rate limit).
  */
@@ -169,6 +170,10 @@ if (!dryRun) {
   saveStore(store);
   const { collectAirportConnections } = await import("./collect-airport-connections.mjs");
   await collectAirportConnections({ rootDir: root, delayMs });
+
+  const { syncMobileData } = await import("../mobile/scripts/sync-data.mjs");
+  console.log("Syncing mobile bundled data…");
+  await syncMobileData();
 }
 
 const skipped = stoppedEarly ? targets.length - ok - failed : 0;
@@ -177,5 +182,5 @@ const earlyNote = stoppedEarly ? `, ${skipped} skipped after ${CONSECUTIVE_FAILU
 console.log(
   dryRun
     ? `Dry run: ${ok} station(s) planned (run #${store.runCount} not saved)`
-    : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed${earlyNote} → ${statsPath} (+ reliability scores)`,
+    : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed${earlyNote} → ${statsPath} (+ reliability scores, airport connections, mobile data)`,
 );

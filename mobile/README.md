@@ -12,7 +12,7 @@ Fully **native** iOS/Android app for [VeryStays](https://www.verystays.com) — 
 | **Rankings** | Reliability leaderboards (baked) + community votes (API) |
 | **Tickets** | Static ticket-buying guide with external links |
 
-Station detail opens as a stack screen: photo, summary, live departures (**Take** → Trip tab), hotels, maps link.
+Station detail opens as a stack screen: photo, summary, live departures (**Take** → Trip tab), flight connections (airports), hotels, maps link.
 
 ## What's offline vs online
 
@@ -21,6 +21,7 @@ Station detail opens as a stack screen: photo, summary, live departures (**Take*
 | 426 stations (lines, types, coords, country) | Station photos (CDN URLs) |
 | CP station codes | Live departures (`/api/departures`) |
 | Reliability scores | Community votes (`/api/votes`) |
+| Airport flight connections (destinations list + metadata) | Connection map images (CDN URLs) |
 | Hotel lists + booking URLs | Vote sync (POST `/api/votes`) |
 | Editorial summaries (EN) | Train journey stops (`/api/train-journey`) |
 
@@ -95,14 +96,14 @@ npm run ios:release
 
 ## Regenerate bundled data from the web repo
 
-Run from `mobile/` whenever `src/data/` or `public/data/reliability-scores.json` changes:
+Run from `mobile/` when you only need to refresh bundled JSON without a full stats run (e.g. first-time setup). After `npm run stats:departures` at the repo root, mobile data is synced automatically.
 
 ```bash
 npm run sync:data
 npm run sync:icons   # from public/icon-source.png → iOS AppIcon + assets
 ```
 
-This exports `stations-full.json`, images, hotels, summaries, reliability scores, and CP codes into `mobile/data/`.
+This exports `stations-full.json`, images, hotels, summaries, reliability scores, airport connections, and CP codes into `mobile/data/`.
 
 ## Troubleshooting
 

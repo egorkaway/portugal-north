@@ -2,7 +2,9 @@ import type { AirportConnectionsEntry } from "../../server/lib/airportConnection
 import { formatCountryName } from "../../server/lib/countryName";
 import { Download, Plane } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { useLocale } from "@/i18n/LocaleProvider";
+import { getAirportStationPathByIata } from "@/lib/airportStation";
 import {
   fetchAirportConnectionsManifest,
   getAirportConnectionsMapImagePath,
@@ -108,14 +110,34 @@ export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProp
       </a>
 
       <ol className="mt-6 space-y-3">
-        {entry.topDestinations.map((destination, index) => (
+        {entry.topDestinations.map((destination, index) => {
+          const destinationPath = getAirportStationPathByIata(destination.iata);
+          const lineColor = destination.lineColor ?? getFlightLineColor(destination.flightCount);
+          const lineWeight = destination.lineWeight ?? getFlightLineWeight(destination.flightCount);
+          const nameStyle = {
+            textDecorationColor: lineColor,
+            textDecorationThickness: `${lineWeight}px`,
+          } as const;
+          const nameClass =
+            "underline underline-offset-[3px] decoration-solid hover:opacity-80";
+
+          return (
           <li
             key={destination.iata}
             className="flex items-start justify-between gap-4 rounded-lg border border-border bg-card px-4 py-3"
           >
             <div className="min-w-0">
               <p className="font-medium text-foreground">
-                {index + 1}. {destination.name}
+                <span className="mr-1 text-muted-foreground">{index + 1}.</span>
+                {destinationPath ? (
+                  <Link to={destinationPath} className={nameClass} style={nameStyle}>
+                    {destination.name}
+                  </Link>
+                ) : (
+                  <span className={nameClass} style={nameStyle}>
+                    {destination.name}
+                  </span>
+                )}
                 <span className="ml-2 text-sm font-normal text-muted-foreground">
                   ({destination.iata})
                 </span>
@@ -132,7 +154,8 @@ export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProp
               })}
             </span>
           </li>
-        ))}
+          );
+        })}
       </ol>
     </section>
   );

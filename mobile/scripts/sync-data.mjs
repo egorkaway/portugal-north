@@ -10,7 +10,7 @@ async function importFromSrc(relativePath) {
   return import(url);
 }
 
-async function main() {
+export async function syncMobileData() {
   const [
     { allStations },
     { cpStationCodes },
@@ -45,6 +45,11 @@ async function main() {
   const reliabilityPath = path.join(repoRoot, "public/data/reliability-scores.json");
   const reliability = JSON.parse(fs.readFileSync(reliabilityPath, "utf8"));
 
+  const airportConnectionsPath = path.join(repoRoot, "public/data/airport-connections.json");
+  const airportConnections = fs.existsSync(airportConnectionsPath)
+    ? JSON.parse(fs.readFileSync(airportConnectionsPath, "utf8"))
+    : { generatedAt: "", runCount: 0, airportCount: 0, airports: {} };
+
   const { en } = await importFromSrc("src/i18n/messages/en.ts");
   const { buildTicketGuide } = await importFromSrc("src/data/ticketGuide.ts");
   const ticketGuide = buildTicketGuide(en.tickets);
@@ -56,16 +61,26 @@ async function main() {
   fs.writeFileSync(path.join(outDir, "hotels.json"), JSON.stringify(stationHotels));
   fs.writeFileSync(path.join(outDir, "summaries-en.json"), JSON.stringify(summaries));
   fs.writeFileSync(path.join(outDir, "reliability-scores.json"), JSON.stringify(reliability));
+  fs.writeFileSync(
+    path.join(outDir, "airport-connections.json"),
+    JSON.stringify(airportConnections),
+  );
   fs.writeFileSync(path.join(outDir, "ticket-guide.json"), JSON.stringify(ticketGuide, null, 2));
 
   console.log(
     `Synced ${stationsFull.length} stations, ${Object.keys(cpStationCodes).length} CP codes, ` +
       `${Object.keys(stationImages).length} images, ${Object.keys(stationHotels).length} hotel lists, ` +
-      `${Object.keys(summaries).length} summaries, ticket guide (${ticketGuide.countries.length} countries).`,
+      `${Object.keys(summaries).length} summaries, ` +
+      `${Object.keys(airportConnections.airports ?? {}).length} airport connection maps, ` +
+      `ticket guide (${ticketGuide.countries.length} countries).`,
   );
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exit(1);
-});
+const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];
+
+if (isMain) {
+  syncMobileData().catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });
+}

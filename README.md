@@ -177,9 +177,9 @@ Votes are stored locally (cookie on web, AsyncStorage on mobile) and optionally 
 
 ## Data
 
-Station and hotel data live in `src/data/` as TypeScript files. CP station codes are in `src/data/cpStationCodes.ts` (regenerate with `node scripts/map-cp-stations.mjs`). Reliability scores are collected offline (`npm run stats:departures`) and published to `public/data/reliability-scores.json`.
+Station and hotel data live in `src/data/` as TypeScript files. CP station codes are in `src/data/cpStationCodes.ts` (regenerate with `node scripts/map-cp-stations.mjs`). Reliability scores are collected offline (`npm run stats:departures`) and published to `public/data/reliability-scores.json`. The same command also refreshes airport connection maps and syncs `mobile/data/`.
 
-After changing web data, refresh the mobile bundle:
+For first-time mobile setup (before any stats run), you can still sync bundled data alone:
 
 ```bash
 cd mobile && npm run sync:data

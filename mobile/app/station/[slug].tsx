@@ -11,6 +11,7 @@ import {
   View,
 } from 'react-native';
 import { StationDeparturesBoard } from '@/components/StationDeparturesBoard';
+import { AirportConnectionsSection } from '@/components/AirportConnectionsSection';
 import { BuildFooter } from '@/components/BuildFooter';
 import { StationHotelList } from '@/components/StationHotelList';
 import { TrainTypeLabels } from '@/components/TrainTypeLabels';
@@ -18,6 +19,7 @@ import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
 import { VoteButtons } from '@/components/VoteButtons';
 import { theme } from '@/constants/theme';
 import { getReliabilityForStation, reliabilityScoreColor } from '@/lib/reliabilityScore';
+import { getAirportConnectionsEntry } from '@/lib/airportConnections';
 import {
   bakedReliabilityScores,
   getHotelsForStation,
@@ -90,6 +92,7 @@ export default function StationDetailScreen() {
   const reliability = getReliabilityForStation(bakedReliabilityScores, station.name);
   const hasCpCode = Boolean(getCpCode(station.name));
   const airport = isAirportStation(station);
+  const airportConnections = airport ? getAirportConnectionsEntry(station) : null;
 
   const handleVote = async (direction: 'up' | 'down') => {
     const { previous, next } = await castStationVote(station.name, direction);
@@ -177,6 +180,10 @@ export default function StationDetailScreen() {
             </Text>
           </View>
         </>
+      ) : null}
+
+      {airportConnections ? (
+        <AirportConnectionsSection entry={airportConnections} stationName={station.name} />
       ) : null}
 
       {hotels.length > 0 ? (

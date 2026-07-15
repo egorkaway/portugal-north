@@ -4,7 +4,7 @@ import { metroPortoStations } from "@/data/metroPortoStations";
 import { portugalAirports } from "@/data/portugal/airports";
 import { spainAirports } from "@/data/spain/airports";
 import { stations } from "@/data/stations";
-import { isAirportStation, showsTravelEsimPromo } from "@/lib/airportStation";
+import { isAirportStation, getAirportStationPathByIata, showsTravelEsimPromo } from "@/lib/airportStation";
 
 describe("isAirportStation", () => {
   it("matches Porto and Lisboa metro airport termini", () => {
@@ -29,5 +29,16 @@ describe("isAirportStation", () => {
     expect(isAirportStation(stations.find((s) => s.name === "Cais do Sodré (Metro)")!)).toBe(
       false,
     );
+  });
+});
+
+describe("getAirportStationPathByIata", () => {
+  it("returns station paths for catalog airports", () => {
+    expect(getAirportStationPathByIata("MAD")).toBe("/stations/madrid-barajas-airport-mad");
+    expect(getAirportStationPathByIata("lis")).toBe("/stations/lisbon-airport-lis");
+  });
+
+  it("returns undefined for airports outside the catalog", () => {
+    expect(getAirportStationPathByIata("JFK")).toBeUndefined();
   });
 });

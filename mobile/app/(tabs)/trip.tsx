@@ -37,6 +37,7 @@ import { subscribeTripChanges } from '@/lib/tripEvents';
 import { useTripCompletion } from '@/lib/useTripCompletion';
 import { useTripDepartureRecord } from '@/lib/useTripDepartureRecord';
 import { WidgetPreviewCard } from '@/components/WidgetPreviewCard';
+import { GetMapaPromoCard } from '@/components/GetMapaPromoCard';
 import { BuildFooter } from '@/components/BuildFooter';
 import { DEFAULT_WIDGET_PROPS } from '@/lib/widgetDefaults';
 import { syncTripWidgets } from '@/lib/widgetSync';
@@ -392,6 +393,7 @@ export default function TripScreen() {
         onRefresh={() => void refreshWidgetPreview()}
         refreshing={widgetRefreshing}
       />
+      {history.length > 0 ? <GetMapaPromoCard /> : null}
       <BuildFooter />
     </ScrollView>
   );
