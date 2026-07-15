@@ -31,7 +31,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'VeryStays',
+          title: 'Home',
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <SymbolView

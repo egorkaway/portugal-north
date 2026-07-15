@@ -148,12 +148,18 @@ function bookingUrlFor(tags, hotelName, station) {
 }
 
 function normName(name) {
-  return name
+  const tokens = name
     .normalize("NFD")
     .replace(/\p{M}/gu, "")
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, " ")
-    .trim();
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean);
+  // Drop generic lodging words so "Hotel Cardal" and "Cardal Hotel" collide.
+  const generic = new Set(["hotel", "hostel", "motel", "inn", "hoteis", "hoteles"]);
+  const core = tokens.filter((token) => !generic.has(token));
+  return (core.length ? core : tokens).sort().join(" ");
 }
 
 /** Strip metro suffixes and airport IATA; use town before hyphen for compound station names. */

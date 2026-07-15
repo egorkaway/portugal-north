@@ -21,11 +21,13 @@ export function AppBrandHeader({
           style={{ width: 22, height: 22 }}
         />
       </View>
-      <View style={styles.copy}>
+      <View style={styles.copy} pointerEvents="none">
         <Text style={styles.title}>{title}</Text>
         <View style={styles.accentBar} />
         <Text style={styles.subtitle}>{subtitle}</Text>
       </View>
+      {/* Balance the left icon so title + subtitle stay visually centered */}
+      <View style={styles.iconSpacer} />
     </View>
   );
 }
@@ -34,7 +36,6 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 10,
   },
   iconBadge: {
     width: 44,
@@ -43,16 +44,23 @@ const styles = StyleSheet.create({
     backgroundColor: brandTheme.green,
     alignItems: 'center',
     justifyContent: 'center',
+    zIndex: 1,
+  },
+  iconSpacer: {
+    width: 44,
+    height: 44,
   },
   copy: {
     flex: 1,
     gap: 2,
+    alignItems: 'center',
   },
   title: {
     fontSize: 18,
     lineHeight: 22,
     fontWeight: '800',
     color: brandTheme.text,
+    textAlign: 'center',
   },
   accentBar: {
     width: 36,
@@ -64,5 +72,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 16,
     color: brandTheme.textMuted,
+    textAlign: 'center',
   },
 });

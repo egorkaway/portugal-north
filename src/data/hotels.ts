@@ -12,7 +12,6 @@ export type StationHotels = Record<string, Hotel[]>;
 export const stationHotels: StationHotels = {
   "Pombal": [
     { name: "Hotel Cardal", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/hotel/pt/cardal.html" },
-    { name: "Cardal Hotel", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cardal%20Hotel%2C%20Pombal%2C%20Portugal&order=price" },
     { name: "Hotel Pombalense", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pombalense%2C%20Pombal%2C%20Portugal&order=price" },
   ],
   "Alfarelos": [
@@ -42,6 +41,8 @@ export const stationHotels: StationHotels = {
   ],
   "Canelas": [
     { name: "Motel Eclipse", distanceKm: 3.5, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Eclipse%2C%20Canelas%2C%20Portugal&order=price" },
+    { name: "Solar do Alambique", distanceKm: 4.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solar%20do%20Alambique%2C%20Canelas%2C%20Portugal&order=price" },
+    { name: "LAM Hotels", distanceKm: 4.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=LAM%20Hotels%2C%20Canelas%2C%20Portugal&order=price" },
   ],
   "Estarreja": [
     { name: "Residencial Estarreja", distanceKm: 0.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Estarreja%2C+Portugal&order=price" },
@@ -450,6 +451,8 @@ export const stationHotels: StationHotels = {
   ],
   "Ferradosa": [
     { name: "Quinta da Ferradosa", distanceKm: 1.3, priceFrom: 60, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferradosa%2C+S%C3%A3o+Xisto&order=price" },
+    { name: "Dourovou - Ecoturismo Fluvial", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dourovou%20-%20Ecoturismo%20Fluvial%2C%20Ferradosa%2C%20Portugal&order=price" },
+    { name: "Quinta de São Xisto", distanceKm: 5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20de%20S%C3%A3o%20Xisto%2C%20Ferradosa%2C%20Portugal&order=price" },
   ],
   "Vesúvio": [
     { name: "Quinta do Vesúvio", distanceKm: 1.6, priceFrom: 70, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ves%C3%BAvio%2C+Douro&order=price" },
@@ -792,9 +795,9 @@ export const stationHotels: StationHotels = {
     { name: "Quinta do Castanheiro", distanceKm: 4.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Castanheiro%2C%20Nelas%2C%20Portugal&order=price" },
   ],
   "Gouveia": [
-    { name: "Hotels near Gouveia", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gouveia%2C%20Portugal&order=price" },
-    { name: "Guest houses near Gouveia", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gouveia%2C%20Portugal&order=price" },
-    { name: "Budget stays near Gouveia", distanceKm: 1.5, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gouveia%2C%20Portugal&order=price" },
+    { name: "Quinta do Paço", distanceKm: 6.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Pa%C3%A7o%2C%20Gouveia%2C%20Portugal&order=price" },
+    { name: "Quinta dos Gata", distanceKm: 7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20dos%20Gata%2C%20Gouveia%2C%20Portugal&order=price" },
+    { name: "Inatel Vila Ruiva", distanceKm: 7.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Inatel%20Vila%20Ruiva%2C%20Gouveia%2C%20Portugal&order=price" },
   ],
   "Celorico da Beira": [
     { name: "Mira Serra", distanceKm: 4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mira%20Serra%2C%20Celorico%20da%20Beira%2C%20Portugal&order=price" },
@@ -964,6 +967,11 @@ export const stationHotels: StationHotels = {
     { name: "Hostel 18", distanceKm: 3.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%2018%2C%20Almourol%2C%20Portugal&order=price" },
     { name: "Casinha da Praça", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casinha%20da%20Pra%C3%A7a%2C%20Almourol%2C%20Portugal&order=price" },
   ],
+  "Alvega – Ortiga": [
+    { name: "Hotel Abrantur", distanceKm: 6.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Abrantur%2C%20Alvega%20%E2%80%93%20Ortiga%2C%20Portugal&order=price" },
+    { name: "Alamal River Club", distanceKm: 6.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alamal%20River%20Club%2C%20Alvega%20%E2%80%93%20Ortiga%2C%20Portugal&order=price" },
+    { name: "casas do lagar", distanceKm: 7.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=casas%20do%20lagar%2C%20Alvega%20%E2%80%93%20Ortiga%2C%20Portugal&order=price" },
+  ],
   "Arrifana": [
     { name: "Palacete Conde Dias Gracia", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Palacete%20Conde%20Dias%20Gracia%2C%20Arrifana%2C%20Portugal&order=price" },
     { name: "Hotel Meliá São João da Madeira", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Meli%C3%A1%20S%C3%A3o%20Jo%C3%A3o%20da%20Madeira%2C%20Arrifana%2C%20Portugal&order=price" },
@@ -994,6 +1002,11 @@ export const stationHotels: StationHotels = {
   ],
   "Bifurcacao de Lares": [
     { name: "Termas do Bicanho Palace Hotel & Spa", distanceKm: 4.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Termas%20do%20Bicanho%20Palace%20Hotel%20%26%20Spa%2C%20Bifurcacao%20de%20Lares%2C%20Portugal&order=price" },
+  ],
+  "Bombarral": [
+    { name: "Hotel Comendador", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Comendador%2C%20Bombarral%2C%20Portugal&order=price" },
+    { name: "Granja MJ", distanceKm: 4.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Granja%20MJ%2C%20Bombarral%2C%20Portugal&order=price" },
+    { name: "AR Country House (quinta do medronhal)", distanceKm: 5.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AR%20Country%20House%20(quinta%20do%20medronhal)%2C%20Bombarral%2C%20Portugal&order=price" },
   ],
   "Cabanoes": [
     { name: "Estalagem da Pateira", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Estalagem%20da%20Pateira%2C%20Cabanoes%2C%20Portugal&order=price" },
@@ -1094,8 +1107,18 @@ export const stationHotels: StationHotels = {
     { name: "Cork Train Station Guesthouse", distanceKm: 3.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cork%20Train%20Station%20Guesthouse%2C%20Lapa%2C%20Portugal&order=price" },
     { name: "Hotel La Fontaine", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Fontaine%2C%20Lapa%2C%20Portugal&order=price" },
   ],
+  "Lares": [
+    { name: "Quinta d'Anta Hotel Rural", distanceKm: 5.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20d'Anta%20Hotel%20Rural%2C%20Lares%2C%20Portugal&order=price" },
+    { name: "La Casa de Lylou", distanceKm: 5.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casa%20de%20Lylou%2C%20Lares%2C%20Portugal&order=price" },
+    { name: "Vila Branca", distanceKm: 5.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Branca%2C%20Lares%2C%20Portugal&order=price" },
+  ],
   "Litem": [
     { name: "Acquavilla House", distanceKm: 4.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Acquavilla%20House%2C%20Litem%2C%20Portugal&order=price" },
+  ],
+  "Lourical": [
+    { name: "Pensao Residencial Elisio", distanceKm: 6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensao%20Residencial%20Elisio%2C%20Lourical%2C%20Portugal&order=price" },
+    { name: "Casa do Marcelo", distanceKm: 6.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Marcelo%2C%20Lourical%2C%20Portugal&order=price" },
+    { name: "Casa Marcelo da Paião", distanceKm: 6.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Marcelo%20da%20Pai%C3%A3o%2C%20Lourical%2C%20Portugal&order=price" },
   ],
   "Macinhata": [
     { name: "Hotel Alameda", distanceKm: 2.9, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alameda%2C%20Macinhata%2C%20Portugal&order=price" },
@@ -1248,6 +1271,11 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Palace do Capitão", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Palace%20do%20Capit%C3%A3o%2C%20S%C3%A3o%20Martinho%20do%20Porto%2C%20Portugal&order=price" },
     { name: "Hotel Atlântica", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Atl%C3%A2ntica%2C%20S%C3%A3o%20Martinho%20do%20Porto%2C%20Portugal&order=price" },
   ],
+  "Sapataria": [
+    { name: "Quinta dos Machados Countryside Hotel & Spa", distanceKm: 7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20dos%20Machados%20Countryside%20Hotel%20%26%20Spa%2C%20Sapataria%2C%20Portugal&order=price" },
+    { name: "Dolce CampoReal Lisboa", distanceKm: 8.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dolce%20CampoReal%20Lisboa%2C%20Sapataria%2C%20Portugal&order=price" },
+    { name: "Hospedaria Anagri", distanceKm: 10.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20Anagri%2C%20Sapataria%2C%20Portugal&order=price" },
+  ],
   "Seiça – Ourém": [
     { name: "Casa dos Pinheiros", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20dos%20Pinheiros%2C%20Sei%C3%A7a%20%E2%80%93%20Our%C3%A9m%2C%20Portugal&order=price" },
     { name: "Quinta de Monchite", distanceKm: 1.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20de%20Monchite%2C%20Sei%C3%A7a%20%E2%80%93%20Our%C3%A9m%2C%20Portugal&order=price" },
@@ -1300,6 +1328,11 @@ export const stationHotels: StationHotels = {
     { name: "Your Hotel & Spa", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Your%20Hotel%20%26%20Spa%2C%20Valado%20%E2%80%93%20Nazar%C3%A9%20%E2%80%93%20Alcoba%C3%A7a%2C%20Portugal&order=price" },
     { name: "Quinta do Pinheiro", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Pinheiro%2C%20Valado%20%E2%80%93%20Nazar%C3%A9%20%E2%80%93%20Alcoba%C3%A7a%2C%20Portugal&order=price" },
   ],
+  "Vale de Figueira": [
+    { name: "Albergue de Peregrinos", distanceKm: 6.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%2C%20Vale%20de%20Figueira%2C%20Portugal&order=price" },
+    { name: "Quinta da Cabrita", distanceKm: 9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Cabrita%2C%20Vale%20de%20Figueira%2C%20Portugal&order=price" },
+    { name: "Flag hotel Santarém", distanceKm: 9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Flag%20hotel%20Santar%C3%A9m%2C%20Vale%20de%20Figueira%2C%20Portugal&order=price" },
+  ],
   "Vale de Santarem": [
     { name: "Refúgio da Quinta Nere Maitia", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ref%C3%BAgio%20da%20Quinta%20Nere%20Maitia%2C%20Vale%20de%20Santarem%2C%20Portugal&order=price" },
     { name: "Hotel Santarém", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Santar%C3%A9m%2C%20Vale%20de%20Santarem%2C%20Portugal&order=price" },
@@ -1314,6 +1347,21 @@ export const stationHotels: StationHotels = {
     { name: "Vilatejo", distanceKm: 0, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilatejo%2C%20Vila%20Franca%20de%20Xira%2C%20Portugal&order=price" },
     { name: "Hospedaria Maioral", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20Maioral%2C%20Vila%20Franca%20de%20Xira%2C%20Portugal&order=price" },
     { name: "Hostel DP", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20DP%2C%20Vila%20Franca%20de%20Xira%2C%20Portugal&order=price" },
+  ],
+  "Vila Nova da Rainha": [
+    { name: "Ouro", distanceKm: 5.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ouro%2C%20Vila%20Nova%20da%20Rainha%2C%20Portugal&order=price" },
+    { name: "Albergue Maria Rita", distanceKm: 6.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Maria%20Rita%2C%20Vila%20Nova%20da%20Rainha%2C%20Portugal&order=price" },
+    { name: "Residencial Flor da Primavera", distanceKm: 6.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Flor%20da%20Primavera%2C%20Vila%20Nova%20da%20Rainha%2C%20Portugal&order=price" },
+  ],
+  "Vila Nova de Ancos": [
+    { name: "Abade João", distanceKm: 8.3, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Abade%20Jo%C3%A3o%2C%20Vila%20Nova%20de%20Ancos%2C%20Portugal&order=price" },
+    { name: "Termas do Bicanho Palace Hotel & Spa", distanceKm: 9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Termas%20do%20Bicanho%20Palace%20Hotel%20%26%20Spa%2C%20Vila%20Nova%20de%20Ancos%2C%20Portugal&order=price" },
+    { name: "Hotel Garça Real", distanceKm: 11.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Gar%C3%A7a%20Real%2C%20Vila%20Nova%20de%20Ancos%2C%20Portugal&order=price" },
+  ],
+  "Zibreira": [
+    { name: "Dolce CampoReal Lisboa", distanceKm: 6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dolce%20CampoReal%20Lisboa%2C%20Zibreira%2C%20Portugal&order=price" },
+    { name: "Casa Perestrello", distanceKm: 6.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Perestrello%2C%20Zibreira%2C%20Portugal&order=price" },
+    { name: "Quinta dos Machados Countryside Hotel & Spa", distanceKm: 8.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20dos%20Machados%20Countryside%20Hotel%20%26%20Spa%2C%20Zibreira%2C%20Portugal&order=price" },
   ],
   "Agualva - Cacém": [
     { name: "Quinta do Scoto", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Scoto%2C%20Agualva%20-%20Cac%C3%A9m%2C%20Portugal&order=price" },
