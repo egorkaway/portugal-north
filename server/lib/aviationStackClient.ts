@@ -39,6 +39,13 @@ type AviationStackAirportsResponse = {
 
 const API_BASE = "http://api.aviationstack.com/v1";
 
+const MONTHLY_LIMIT_RE = /monthly\s+usage\s+limit/i;
+
+export function isAviationStackMonthlyLimitError(error: unknown): boolean {
+  const message = error instanceof Error ? error.message : String(error);
+  return MONTHLY_LIMIT_RE.test(message);
+}
+
 function getApiKey(): string {
   const key = process.env.AVIATIONSTACK_API_KEY?.trim();
   if (!key) {

@@ -22,9 +22,11 @@ import { renderAirportConnectionsMap } from "./lib/airportConnectionsMap.mjs";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 loadEnvFile(join(root, ".env"));
 
-const { fetchDeparturesFromAirport, fetchAirportByIata } = await import(
-  "../server/lib/aviationStackClient.ts"
-);
+const {
+  fetchDeparturesFromAirport,
+  fetchAirportByIata,
+  isAviationStackMonthlyLimitError,
+} = await import("../server/lib/aviationStackClient.ts");
 const {
   buildAirportConnections,
   mergeCatalogIntoCoordinates,
@@ -77,7 +79,8 @@ function loadExistingManifest() {
   }
 }
 
-async function resolveMissingCoordinates(groupedIatas, coordinates) {
+async function resolveMissingCoordinates(groupedIatas, coordinates, options = {}) {
+  const { delay = delayMs, onMonthlyLimit } = options;
   let updated = false;
   for (const iata of groupedIatas) {
     if (coordinates[iata]) continue;
@@ -95,12 +98,17 @@ async function resolveMissingCoordinates(groupedIatas, coordinates) {
       updated = true;
       console.log(`Cached coords for ${iata}`);
     } catch (error) {
+      if (isAviationStackMonthlyLimitError(error)) {
+        onMonthlyLimit?.(error);
+        return true;
+      }
       const message = error instanceof Error ? error.message : String(error);
       console.warn(`Skip ${iata} coords: ${message}`);
     }
-    if (delayMs > 0) await sleep(Math.max(200, delayMs / 2));
+    if (delay > 0) await sleep(Math.max(200, delay / 2));
   }
   if (updated) saveAirportCoordinateCache(cachePath, coordinates);
+  return false;
 }
 
 export async function collectAirportConnections(options = {}) {
@@ -181,8 +189,18 @@ export async function collectAirportConnections(options = {}) {
 
   let ok = 0;
   let failed = 0;
+  let monthlyLimitReached = false;
+
+  const stopForMonthlyLimit = (error) => {
+    monthlyLimitReached = true;
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`AviationStack monthly limit reached: ${message}`);
+    console.error("Stopping flights collection — no further AviationStack API calls this run.");
+  };
 
   for (const airport of catalog) {
+    if (monthlyLimitReached) break;
+
     const label = `${airport.stationName} (${airport.iata})`;
     if (isDryRun) {
       console.log(`[dry-run] ${label}`);
@@ -199,10 +217,14 @@ export async function collectAirportConnections(options = {}) {
             .filter((iata) => iata && iata !== airport.iata),
         ),
       ];
-      await resolveMissingCoordinates(
+      const hitMonthlyLimit = await resolveMissingCoordinates(
         groupedIatas.filter((iata) => !coordinates[iata]),
         coordinates,
+        { delay, onMonthlyLimit: stopForMonthlyLimit },
       );
+      if (hitMonthlyLimit) {
+        break;
+      }
       coordinates = mergeCatalogIntoCoordinates(catalog, loadAirportCoordinateCache(cachePath));
 
       const entry = buildAirportConnections(airport, flights, coordinates);
@@ -224,6 +246,10 @@ export async function collectAirportConnections(options = {}) {
       failed += 1;
       const message = error instanceof Error ? error.message : String(error);
       console.error(`FAIL ${label}: ${message}`);
+      if (isAviationStackMonthlyLimitError(error)) {
+        stopForMonthlyLimit(error);
+        break;
+      }
     }
 
     if (delay > 0) await sleep(delay);
@@ -241,15 +267,16 @@ export async function collectAirportConnections(options = {}) {
     console.log(`Wrote ${outJsonPath}`);
   }
 
-  return { ok, failed, skipped: false };
+  return { ok, failed, skipped: false, monthlyLimitReached };
 }
 
 const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];
 
 if (isMain) {
-  collectAirportConnections().then(({ ok, failed, skipped }) => {
+  collectAirportConnections().then(({ ok, failed, skipped, monthlyLimitReached }) => {
     if (skipped) process.exit(0);
-    console.log(`Done: ${ok} airport(s) updated, ${failed} failed`);
+    const limitNote = monthlyLimitReached ? " (stopped: AviationStack monthly limit)" : "";
+    console.log(`Done: ${ok} airport(s) updated, ${failed} failed${limitNote}`);
     process.exit(failed > 0 && ok === 0 ? 1 : 0);
   });
 }
