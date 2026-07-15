@@ -5,6 +5,7 @@ import {
   mergeCatalogIntoCoordinates,
 } from "../../server/lib/airportConnections";
 import { getFlightLineColor } from "../../server/lib/airportIata";
+import { formatCountryName } from "../../server/lib/countryName";
 
 describe("groupFlightsByDestination", () => {
   it("groups by arrival IATA and ignores self-loops", () => {
@@ -55,5 +56,20 @@ describe("buildAirportConnections", () => {
     expect(entry?.connections[0]?.lineColor).toBe(getFlightLineColor(3));
     expect(entry?.topDestinations).toHaveLength(2);
     expect(entry?.mapImage).toBe("/maps/airports/lisbon-airport-lis-connections.png");
+  });
+
+  it("expands ISO country codes to full names", () => {
+    const entry = buildAirportConnections(
+      airport,
+      [
+        { arrival: { iata: "FRA", airport: "Frankfurt" }, airline: { name: "Lufthansa" }, flight: { number: "1" } },
+      ],
+      {
+        ...coordinates,
+        FRA: { name: "Frankfurt Airport", country: "DE", lat: 50.0264, lng: 8.5431 },
+      },
+    );
+
+    expect(entry?.connections[0]?.country).toBe(formatCountryName("DE"));
   });
 });

@@ -47,6 +47,8 @@ const delayMs = delayArg
   ? Number.parseInt(delayArg.split("=")[1] ?? args[args.indexOf("--delay") + 1], 10)
   : 400;
 
+const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
@@ -162,7 +164,7 @@ export async function collectAirportConnections(options = {}) {
       }
 
       mkdirSync(mapsOutDir, { recursive: true });
-      const png = await renderAirportConnectionsMap(entry);
+      const png = await renderAirportConnectionsMap(entry, { siteUrl });
       writeFileSync(join(mapsOutDir, `${entry.slug}-connections.png`), png.buffer);
       airports[entry.iata] = entry;
       ok += 1;

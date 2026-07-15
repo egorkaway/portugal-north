@@ -5,6 +5,7 @@ import {
   isValidCoordinates,
   type AirportRecord,
 } from "./airportIata.js";
+import { formatCountryName } from "./countryName.js";
 import type { AviationStackFlight } from "./aviationStackClient.js";
 
 export type AirportFlightSample = {
@@ -93,7 +94,7 @@ export function buildAirportConnections(
     connections.push({
       iata,
       name: coords.name || bucket[0]?.arrival?.airport?.trim() || iata,
-      country: coords.country || "",
+      country: formatCountryName(coords.country || ""),
       lat: coords.lat,
       lng: coords.lng,
       flightCount,

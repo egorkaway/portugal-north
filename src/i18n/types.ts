@@ -76,6 +76,10 @@ export type Messages = {
     areaMapAlt: string;
     airportConnectionsTitle: string;
     airportConnectionsIntro: string;
+    airportConnectionsLegend: string;
+    airportConnectionsLegendBusy: string;
+    airportConnectionsLegendModerate: string;
+    airportConnectionsLegendLight: string;
     airportConnectionsMapAlt: string;
     downloadConnectionsMap: string;
     airportConnectionsFlights_one: string;

@@ -1,14 +1,24 @@
 import { Resvg } from "@resvg/resvg-js";
 import sharp from "sharp";
+import { formatMapUrlLabel } from "./stationMapCard.mjs";
 import { resolveBasemap } from "./mapBasemaps.mjs";
 import { stitchBoundsMap } from "./osmTiles.mjs";
 
 const CARD_SIZE = 1080;
-const FOOTER_HEIGHT = 220;
+const FOOTER_HEIGHT = 240;
 const MAP_HEIGHT = CARD_SIZE - FOOTER_HEIGHT;
+const TEXT_X = 48;
+const URL_FONT_SIZE = 36;
+const URL_CHAR_WIDTH = URL_FONT_SIZE * 0.5;
+const URL_MAX_CHARS = Math.floor((CARD_SIZE - TEXT_X * 2) / URL_CHAR_WIDTH);
 const BRAND_DARK = "#0f3d38";
 const BRAND_CREAM = "#f4f7f6";
 const BRAND_GOLD = "#e8a838";
+
+function formatAirportPageUrl(siteHost, slug) {
+  const fullUrl = `${siteHost}/stations/${slug}`;
+  return fullUrl.length <= URL_MAX_CHARS ? fullUrl : formatMapUrlLabel(siteHost, slug);
+}
 
 function escapeXml(value) {
   return value
@@ -22,10 +32,13 @@ function escapeXml(value) {
 function buildOverlaySvg({
   airportName,
   iata,
+  slug,
+  siteHost,
   origin,
   connections,
   project,
 }) {
+  const pageUrl = formatAirportPageUrl(siteHost, slug);
   const lineElements = connections
     .map((connection) => {
       const from = project(origin.lat, origin.lng);
@@ -50,13 +63,18 @@ function buildOverlaySvg({
   <circle cx="${originPoint.x}" cy="${originPoint.y}" r="9" fill="#0f766e" stroke="#ffffff" stroke-width="4" />
   <rect x="0" y="${MAP_HEIGHT - 4}" width="${CARD_SIZE}" height="4" fill="${BRAND_GOLD}" />
   <rect x="0" y="${MAP_HEIGHT}" width="${CARD_SIZE}" height="${FOOTER_HEIGHT}" fill="${BRAND_DARK}" />
-  <text x="48" y="${MAP_HEIGHT + 56}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">FLIGHT CONNECTIONS</text>
-  <text x="48" y="${MAP_HEIGHT + 108}" fill="${BRAND_CREAM}" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700">${escapeXml(airportName)}</text>
-  <text x="48" y="${MAP_HEIGHT + 148}" fill="${BRAND_CREAM}" font-family="Inter, system-ui, sans-serif" font-size="24" opacity="0.85">${escapeXml(iata)} · ${connections.length} destinations in sample</text>
+  <rect x="${TEXT_X}" y="${MAP_HEIGHT + 24}" width="72" height="5" rx="2.5" fill="${BRAND_GOLD}" />
+  <text x="${TEXT_X}" y="${MAP_HEIGHT + 56}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">FLIGHT CONNECTIONS</text>
+  <text x="${TEXT_X}" y="${MAP_HEIGHT + 104}" fill="${BRAND_CREAM}" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700">${escapeXml(airportName)}</text>
+  <text x="${TEXT_X}" y="${MAP_HEIGHT + 142}" fill="${BRAND_CREAM}" font-family="Inter, system-ui, sans-serif" font-size="24" opacity="0.85">${escapeXml(iata)} · ${connections.length} destinations in sample</text>
+  <text x="${TEXT_X}" y="${MAP_HEIGHT + 204}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="${URL_FONT_SIZE}" font-weight="700" letter-spacing="0.02em">${escapeXml(pageUrl)}</text>
 </svg>`;
 }
 
-export async function renderAirportConnectionsMap(entry, { basemapMode = "random" } = {}) {
+export async function renderAirportConnectionsMap(
+  entry,
+  { basemapMode = "random", siteUrl = "https://www.verystays.com" } = {},
+) {
   const points = [
     entry.origin,
     ...entry.connections.map((connection) => ({
@@ -66,6 +84,7 @@ export async function renderAirportConnectionsMap(entry, { basemapMode = "random
   ];
 
   const basemap = resolveBasemap(basemapMode);
+  const siteHost = siteUrl.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const { buffer: mapBuffer, project, basemapId } = await stitchBoundsMap({
     points,
     width: CARD_SIZE,
@@ -76,6 +95,8 @@ export async function renderAirportConnectionsMap(entry, { basemapMode = "random
   const overlaySvg = buildOverlaySvg({
     airportName: entry.stationName.replace(/\s*\([A-Z]{3}\)\s*$/, "").trim(),
     iata: entry.iata,
+    slug: entry.slug,
+    siteHost,
     origin: entry.origin,
     connections: entry.connections,
     project,

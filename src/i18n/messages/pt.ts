@@ -80,7 +80,12 @@ export const pt: Messages = {
     areaMapAlt: "Mapa da zona de {{name}}",
     airportConnectionsTitle: "Ligações aéreas",
     airportConnectionsIntro:
-      "Amostra de {{count}} partidas via AviationStack — {{destinations}} destinos mapeados.",
+      "{{destinations}} destinos com voos diretos na nossa última amostra de partidas.",
+    airportConnectionsLegend:
+      "As cores das linhas mostram a frequência de cada rota na amostra:",
+    airportConnectionsLegendBusy: "5+ voos",
+    airportConnectionsLegendModerate: "3–4 voos",
+    airportConnectionsLegendLight: "1–2 voos",
     airportConnectionsMapAlt: "Mapa de ligações aéreas a partir de {{name}}",
     downloadConnectionsMap: "Descarregar mapa de ligações",
     airportConnectionsFlights_one: "{{count}} voo",

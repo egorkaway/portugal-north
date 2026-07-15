@@ -1,4 +1,5 @@
 import type { AirportConnectionsEntry } from "../../server/lib/airportConnections";
+import { formatCountryName } from "../../server/lib/countryName";
 import { Download, Plane } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLocale } from "@/i18n/LocaleProvider";
@@ -8,13 +9,23 @@ import {
 } from "@/lib/airportConnections";
 import { stationToSlug } from "@/lib/stationSlug";
 import type { Station } from "@/data/stations";
+import {
+  getFlightLineColor,
+  getFlightLineWeight,
+} from "../../server/lib/airportIata";
 
 type AirportConnectionsPanelProps = {
   station: Station;
 };
 
+const CONNECTION_LEGEND = [
+  { key: "busy", minFlights: 5, labelKey: "station.airportConnectionsLegendBusy" },
+  { key: "moderate", minFlights: 3, labelKey: "station.airportConnectionsLegendModerate" },
+  { key: "light", minFlights: 1, labelKey: "station.airportConnectionsLegendLight" },
+] as const;
+
 export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProps) {
-  const { t } = useLocale();
+  const { t, plural, locale } = useLocale();
   const slug = stationToSlug(station.name);
   const [entry, setEntry] = useState<AirportConnectionsEntry | null>(null);
   const [loaded, setLoaded] = useState(false);
@@ -54,7 +65,6 @@ export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProp
       </div>
       <p className="mb-4 text-sm text-muted-foreground md:mb-6">
         {t("station.airportConnectionsIntro", {
-          count: entry.sampledFlights,
           destinations: entry.connections.length,
         })}
       </p>
@@ -69,6 +79,24 @@ export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProp
           loading="lazy"
           decoding="async"
         />
+      </div>
+      <div className="mt-3 max-w-md space-y-2 text-xs text-muted-foreground">
+        <p className="font-medium text-foreground">{t("station.airportConnectionsLegend")}</p>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          {CONNECTION_LEGEND.map((tier) => (
+            <span key={tier.key} className="inline-flex items-center gap-2">
+              <span
+                className="inline-block w-8 rounded-full"
+                style={{
+                  backgroundColor: getFlightLineColor(tier.minFlights),
+                  height: `${getFlightLineWeight(tier.minFlights)}px`,
+                }}
+                aria-hidden="true"
+              />
+              {t(tier.labelKey)}
+            </span>
+          ))}
+        </div>
       </div>
       <a
         href={mapPath}
@@ -93,11 +121,15 @@ export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProp
                 </span>
               </p>
               {destination.country ? (
-                <p className="text-sm text-muted-foreground">{destination.country}</p>
+                <p className="text-sm text-muted-foreground">
+                  {formatCountryName(destination.country, locale)}
+                </p>
               ) : null}
             </div>
             <span className="shrink-0 rounded-full bg-muted px-2.5 py-1 text-xs font-semibold text-foreground">
-              {t("station.airportConnectionsFlights", { count: destination.flightCount })}
+              {plural("station.airportConnectionsFlights", destination.flightCount, {
+                count: destination.flightCount,
+              })}
             </span>
           </li>
         ))}

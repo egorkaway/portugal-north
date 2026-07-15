@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T08:12:51.470Z",
+  "generatedAt": "2026-07-15T08:17:57.864Z",
   "runCount": 119,
   "airportCount": 32,
   "airports": {
@@ -183,10 +183,10 @@
         },
         {
           "iata": "BCN",
-          "name": "Barcelona-El Prat Airport",
-          "country": "Spain",
+          "name": "Josep Tarradellas Barcelona-El Prat Airport",
+          "country": "ES",
           "lat": 41.2971,
-          "lng": 2.0785,
+          "lng": 2.07846,
           "flightCount": 5,
           "flights": [
             {
@@ -230,30 +230,6 @@
           "lineWeight": 3
         },
         {
-          "iata": "ARN",
-          "name": "Stockholm-Arlanda Airport",
-          "country": "SE",
-          "lat": 59.64849,
-          "lng": 17.928829,
-          "flightCount": 3,
-          "flights": [
-            {
-              "airline": "SAS",
-              "number": "8900"
-            },
-            {
-              "airline": "Azores Airlines",
-              "number": "8062"
-            },
-            {
-              "airline": "Icelandair",
-              "number": "6402"
-            }
-          ],
-          "lineColor": "#ea580c",
-          "lineWeight": 3
-        },
-        {
           "iata": "BEL",
           "name": "Val de Cans/Júlio Cezar Ribeiro International Airport",
           "country": "BR",
@@ -276,6 +252,26 @@
           ],
           "lineColor": "#ea580c",
           "lineWeight": 3
+        },
+        {
+          "iata": "MAD",
+          "name": "Adolfo Suárez Madrid–Barajas Airport",
+          "country": "ES",
+          "lat": 40.493407,
+          "lng": -3.572249,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "American Airlines",
+              "number": "8543"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "1016"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
         },
         {
           "iata": "VXE",
@@ -318,6 +314,26 @@
           "lineWeight": 2
         },
         {
+          "iata": "HAM",
+          "name": "Hamburg Helmut Schmidt Airport",
+          "country": "DE",
+          "lat": 53.630402,
+          "lng": 9.98823,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Lufthansa",
+              "number": "6949"
+            },
+            {
+              "airline": "Azul",
+              "number": "7215"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "LUX",
           "name": "Luxembourg-Findel International Airport",
           "country": "LU",
@@ -332,26 +348,6 @@
             {
               "airline": "TAP Air Portugal",
               "number": "692"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "MAD",
-          "name": "Madrid-Barajas Airport",
-          "country": "Spain",
-          "lat": 40.4936,
-          "lng": -3.5664,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "American Airlines",
-              "number": "8543"
-            },
-            {
-              "airline": "TAP Air Portugal",
-              "number": "1016"
             }
           ],
           "lineColor": "#2563eb",
@@ -734,6 +730,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "ARN",
+          "name": "Stockholm-Arlanda Airport",
+          "country": "SE",
+          "lat": 59.64849,
+          "lng": 17.928829,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "SAS",
+              "number": "8900"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "TLS",
           "name": "Toulouse-Blagnac Airport",
           "country": "FR",
@@ -1001,10 +1013,10 @@
         },
         {
           "iata": "BCN",
-          "name": "Barcelona-El Prat Airport",
-          "country": "Spain",
+          "name": "Josep Tarradellas Barcelona-El Prat Airport",
+          "country": "ES",
           "lat": 41.2971,
-          "lng": 2.0785,
+          "lng": 2.07846,
           "flightCount": 5,
           "flights": [
             {
@@ -1048,24 +1060,24 @@
           "lineWeight": 3
         },
         {
-          "iata": "ARN",
-          "name": "Stockholm-Arlanda Airport",
-          "country": "SE",
-          "lat": 59.64849,
-          "lng": 17.928829,
+          "iata": "BEL",
+          "name": "Val de Cans/Júlio Cezar Ribeiro International Airport",
+          "country": "BR",
+          "lat": -1.379279,
+          "lng": -48.476207,
           "flightCount": 3,
           "flights": [
             {
-              "airline": "SAS",
-              "number": "8900"
+              "airline": "Turkish Airlines",
+              "number": "8464"
             },
             {
-              "airline": "Azores Airlines",
-              "number": "8062"
+              "airline": "Etihad Airways",
+              "number": "2774"
             },
             {
-              "airline": "Icelandair",
-              "number": "6402"
+              "airline": "Azul",
+              "number": "7155"
             }
           ],
           "lineColor": "#ea580c",
