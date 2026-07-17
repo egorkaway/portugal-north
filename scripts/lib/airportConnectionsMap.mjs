@@ -89,6 +89,8 @@ export async function renderAirportConnectionsMap(
     points,
     width: CARD_SIZE,
     height: MAP_HEIGHT,
+    paddingPx: 28,
+    maxZoom: 11,
     basemap,
   });
 

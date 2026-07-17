@@ -166,8 +166,9 @@ export async function stitchSquareMap({
   };
 }
 
-function pickZoomForPoints(points, width, height, paddingPx = 72) {
-  for (let zoom = 8; zoom >= 1; zoom -= 1) {
+function pickZoomForPoints(points, width, height, paddingPx = 72, maxZoom = 12) {
+  const startZoom = Math.max(1, Math.min(18, Math.floor(maxZoom)));
+  for (let zoom = startZoom; zoom >= 1; zoom -= 1) {
     const xs = points.map((point) => latLngToWorldPx(point.lat, point.lng, zoom).x);
     const ys = points.map((point) => latLngToWorldPx(point.lat, point.lng, zoom).y);
     const spanX = Math.max(...xs) - Math.min(...xs);
@@ -188,6 +189,7 @@ export async function stitchBoundsMap({
   width,
   height,
   paddingPx = 72,
+  maxZoom = 12,
   basemap = "carto-voyager",
 }) {
   const basemapConfig =
@@ -195,7 +197,7 @@ export async function stitchBoundsMap({
       ? getBasemap(isBasemapId(basemap) ? basemap : "carto-voyager")
       : basemap;
 
-  const zoom = pickZoomForPoints(points, width, height, paddingPx);
+  const zoom = pickZoomForPoints(points, width, height, paddingPx, maxZoom);
   const worldSize = worldSizePx(zoom);
 
   // Low-zoom world views are smaller than the card viewport; upscale the full world
