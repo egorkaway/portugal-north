@@ -14,7 +14,7 @@ import {
   PERIOD_TIMEZONE,
   buildEmptyPeriodsIndex,
   periodContaining,
-} from "./airportConnectionPeriods.mjs";
+} from "./snapshotPeriods.mjs";
 
 export function periodsIndexPath(rootDir) {
   return join(rootDir, "public/data/airport-connections-periods.json");

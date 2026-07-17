@@ -7,6 +7,10 @@ export type ReliabilityScoresManifest = {
   scores: Record<string, number>;
   /** Cumulative departures + arrivals in sampled windows (tiebreaker for rankings). */
   movements: Record<string, number>;
+  /** Snapshot calendar period (Europe/Lisbon open date). Archive-only for now. */
+  periodId?: string;
+  periodStart?: string;
+  periodEndExclusive?: string;
 };
 
 export const RELIABILITY_SCORE_MIN = 1;

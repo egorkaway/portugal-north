@@ -181,6 +181,8 @@ Station and hotel data live in `src/data/` as TypeScript files. CP station codes
 
 Airport destination maps are sampled from AviationStack and baked into `public/data/airport-connections.json` plus `public/maps/airports/*-connections.png`. They roll on a fixed calendar (Europe/Lisbon): **1 Jan, 7 Feb, 16 Mar, 22 Apr, 29 May, 5 Jul, 11 Aug, 17 Sep, 24 Oct** (same dates each year). On each open date the previous period is frozen under `public/data/airport-connections/periods/{YYYY-MM-DD}.json` and `public/maps/airports/periods/{YYYY-MM-DD}/`, then a new live period starts. Check status with `npm run maps:airport-connections -- --period-status`. Site/app always show the live (current period) paths.
 
+Reliability scores use the same calendar: on each open date the previous live `reliability-scores.json` is copied to `public/data/reliability-scores/periods/{YYYY-MM-DD}.json` (archive only — not shown in the UI yet). The live file keeps updating as usual.
+
 For first-time mobile setup (before any stats run), you can still sync bundled data alone:
 
 ```bash

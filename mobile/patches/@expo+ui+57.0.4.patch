@@ -1,0 +1,63 @@
+diff --git a/node_modules/@expo/ui/build/swift-ui/Text/index.d.ts b/node_modules/@expo/ui/build/swift-ui/Text/index.d.ts
+index a8843b7..aa13737 100644
+--- a/node_modules/@expo/ui/build/swift-ui/Text/index.d.ts
++++ b/node_modules/@expo/ui/build/swift-ui/Text/index.d.ts
+@@ -35,6 +35,15 @@ export interface TextProps extends CommonViewModifierProps {
+      * @platform tvos 16.0+
+      */
+     countsDown?: boolean;
++    /**
++     * Whether to always include an hours component. When `false`, hours appear only if
++     * the remaining duration is at least one hour — avoids a leading `0:` and trailing
++     * empty space in compact Dynamic Island timers.
++     * @default false
++     * @platform ios 16.0+
++     * @platform tvos 16.0+
++     */
++    showsHours?: boolean;
+     /**
+      * A date at which the timer should appear paused.
+      * @platform ios 16.0+
+diff --git a/node_modules/@expo/ui/ios/TextView.swift b/node_modules/@expo/ui/ios/TextView.swift
+index 7dfe0a9..38eccc9 100644
+--- a/node_modules/@expo/ui/ios/TextView.swift
++++ b/node_modules/@expo/ui/ios/TextView.swift
+@@ -25,6 +25,7 @@ public final class TextViewProps: UIBaseViewProps {
+   @Field public var timerInterval: ClosedRangeDate?
+   @Field public var countsDown: Bool?
+   @Field public var pauseTime: Date?
++  @Field public var showsHours: Bool?
+ 
+   // Override default frame alignment for text views
+   override var defaultFrameAlignment: Alignment { .leading }
+@@ -53,7 +54,8 @@ public struct TextView: ExpoSwiftUI.View {
+       text = Text(
+         timerInterval: ClosedRange(uncheckedBounds: (lower: lower, upper: upper)),
+         pauseTime: props.pauseTime,
+-        countsDown: props.countsDown ?? true
++        countsDown: props.countsDown ?? true,
++        showsHours: props.showsHours ?? false
+       )
+     } else if let date = props.date {
+       text = Text(date, style: props.dateStyle?.toSwiftUI() ?? .date)
+diff --git a/node_modules/@expo/ui/src/swift-ui/Text/index.tsx b/node_modules/@expo/ui/src/swift-ui/Text/index.tsx
+index 2351ee8..620c0ad 100644
+--- a/node_modules/@expo/ui/src/swift-ui/Text/index.tsx
++++ b/node_modules/@expo/ui/src/swift-ui/Text/index.tsx
+@@ -46,6 +46,16 @@ export interface TextProps extends CommonViewModifierProps {
+    */
+   countsDown?: boolean;
+ 
++  /**
++   * Whether to always include an hours component. When `false`, hours appear only if
++   * the remaining duration is at least one hour — avoids a leading `0:` and trailing
++   * empty space in compact Dynamic Island timers.
++   * @default false
++   * @platform ios 16.0+
++   * @platform tvos 16.0+
++   */
++  showsHours?: boolean;
++
+   /**
+    * A date at which the timer should appear paused.
+    * @platform ios 16.0+

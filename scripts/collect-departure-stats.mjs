@@ -30,6 +30,10 @@ const {
   recordStationSampleFailure,
 } = await import("../server/lib/departureStats.ts");
 const { buildReliabilityScoresManifest } = await import("../server/lib/reliabilityScore.ts");
+const {
+  ensureReliabilityPeriodSnapshot,
+  loadLiveReliabilityManifest,
+} = await import("./lib/reliabilityScorePeriodStore.mjs");
 
 const reliabilityPath = join(root, "public/data/reliability-scores.json");
 const CONSECUTIVE_FAILURE_LIMIT = 3;
@@ -70,11 +74,17 @@ function loadStore() {
 function saveStore(store) {
   mkdirSync(dirname(statsPath), { recursive: true });
   writeFileSync(statsPath, `${JSON.stringify(store, null, 2)}\n`);
+
+  const previousLive = loadLiveReliabilityManifest(root);
+  const nextLive = buildReliabilityScoresManifest(store);
+  const { stampedManifest } = ensureReliabilityPeriodSnapshot({
+    rootDir: root,
+    previousLiveManifest: previousLive,
+    nextLiveManifest: nextLive,
+  });
+
   mkdirSync(dirname(reliabilityPath), { recursive: true });
-  writeFileSync(
-    reliabilityPath,
-    `${JSON.stringify(buildReliabilityScoresManifest(store), null, 2)}\n`,
-  );
+  writeFileSync(reliabilityPath, `${JSON.stringify(stampedManifest, null, 2)}\n`);
 }
 
 function sleep(ms) {

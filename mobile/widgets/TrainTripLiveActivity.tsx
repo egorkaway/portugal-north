@@ -2,10 +2,12 @@ import { Image, Text, VStack } from '@expo/ui/swift-ui';
 import {
   activityBackgroundTint,
   background,
-  containerRelativeFrame,
+  fixedSize,
   font,
   foregroundStyle,
+  frame,
   lineLimit,
+  monospacedDigit,
   multilineTextAlignment,
   padding,
 } from '@expo/ui/swift-ui/modifiers';
@@ -120,54 +122,53 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
           : 'Last train taken'
         : 'Open VeryStays';
 
+  /** Compact Island is narrow — size the timer to MM:SS or H:MM:SS, not a stretched slot. */
+  function islandTimerWidth(): number {
+    if (!departureAt) return 44;
+    const remainingMs = Math.max(0, departureAt.getTime() - Date.now());
+    return remainingMs >= 60 * 60 * 1000 ? 58 : 44;
+  }
+
   function renderCountdownText(
     size: number,
     weight: 'bold' | 'semibold',
     color: string,
+    options?: { islandCompact?: boolean },
   ) {
+    const islandCompact = options?.islandCompact === true;
+    const textMods = [
+      ...(islandCompact
+        ? [multilineTextAlignment('trailing' as const)]
+        : leftTextModifiers()),
+      font({ weight, size }),
+      foregroundStyle(color),
+      lineLimit(1),
+      monospacedDigit(),
+      ...(islandCompact
+        ? [
+            fixedSize({ horizontal: true, vertical: true }),
+            frame({ width: islandTimerWidth(), alignment: 'trailing' as const }),
+          ]
+        : [fixedSize({ horizontal: true, vertical: true })]),
+    ];
+
     if (departureAt) {
       const now = new Date();
       if (departureAt.getTime() <= now.getTime()) {
-        return (
-          <Text
-            modifiers={[
-              ...leftTextModifiers(),
-              font({ weight, size }),
-              foregroundStyle(color),
-              lineLimit(1),
-            ]}
-          >
-            Now
-          </Text>
-        );
+        return <Text modifiers={textMods}>Now</Text>;
       }
 
       return (
         <Text
           timerInterval={{ lower: now, upper: departureAt }}
           countsDown={true}
-          modifiers={[
-            ...leftTextModifiers(),
-            font({ weight, size }),
-            foregroundStyle(color),
-            lineLimit(1),
-          ]}
+          showsHours={false}
+          modifiers={textMods}
         />
       );
     }
 
-    return (
-      <Text
-        modifiers={[
-          ...leftTextModifiers(),
-          font({ weight, size }),
-          foregroundStyle(color),
-          lineLimit(1),
-        ]}
-      >
-        {compactCountdown}
-      </Text>
-    );
+    return <Text modifiers={textMods}>{compactCountdown}</Text>;
   }
 
   const backgroundColor = THEME.primary;
@@ -236,20 +237,20 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       </VStack>
     ),
     compactLeading: (
-      <VStack modifiers={[...backgroundModifiers, containerRelativeFrame({ axes: 'both' }), padding({ all: 4 })]}>
+      <VStack modifiers={[...backgroundModifiers, padding({ all: 4 })]}>
         <Image systemName="tram.fill" color={accent} />
       </VStack>
     ),
     compactTrailing: (
       <VStack
-        alignment="leading"
-        modifiers={[...backgroundModifiers, containerRelativeFrame({ axes: 'both' }), padding({ all: 4 })]}
+        alignment="trailing"
+        modifiers={[...backgroundModifiers, padding({ trailing: 2, leading: 0, vertical: 2 })]}
       >
-        {renderCountdownText(14, 'bold', accent)}
+        {renderCountdownText(13, 'bold', accent, { islandCompact: true })}
       </VStack>
     ),
     minimal: (
-      <VStack modifiers={[...backgroundModifiers, containerRelativeFrame({ axes: 'both' }), padding({ all: 4 })]}>
+      <VStack modifiers={[...backgroundModifiers, padding({ all: 4 })]}>
         <Image systemName="tram.fill" color={accent} />
       </VStack>
     ),
@@ -269,12 +270,12 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       </VStack>
     ),
     expandedTrailing: (
-      <VStack alignment="leading" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
-        {renderCountdownText(24, 'bold', primary)}
+      <VStack alignment="trailing" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
+        {renderCountdownText(22, 'bold', primary)}
         {departureTime ? (
           <Text
             modifiers={[
-              ...leftTextModifiers(),
+              multilineTextAlignment('trailing'),
               font({ size: 12, weight: 'semibold' }),
               foregroundStyle(detailColor),
               lineLimit(1),

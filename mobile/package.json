@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
+    "patch-package": "^8.0.1",
     "typescript": "~6.0.3"
   },
   "scripts": {
@@ -47,7 +48,8 @@
     "prebuild": "expo prebuild",
     "prebuild:clean": "expo prebuild --clean",
     "sync:data": "node --import tsx ./scripts/sync-data.mjs",
-    "sync:icons": "node ./scripts/sync-icons.mjs"
+    "sync:icons": "node ./scripts/sync-icons.mjs",
+    "postinstall": "patch-package"
   },
   "private": true
 }

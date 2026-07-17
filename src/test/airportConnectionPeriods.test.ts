@@ -5,9 +5,9 @@ import {
   openDateForYear,
   periodContaining,
   periodOpenDates,
-} from "../../scripts/lib/airportConnectionPeriods.mjs";
+} from "../../scripts/lib/snapshotPeriods.mjs";
 
-describe("airportConnectionPeriods", () => {
+describe("snapshotPeriods", () => {
   it("has nine anchors", () => {
     expect(PERIOD_ANCHORS).toHaveLength(9);
     expect(periodOpenDates(2026)).toEqual([
