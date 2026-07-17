@@ -91,8 +91,8 @@ export const spainStations: Station[] = [
     country: "es",
     lines: ["Eje Atlántico", "Línea Ourense–León"],
     types: ["Regional", "Intercidades"],
-    lat: 42.3361,
-    lng: -7.8653,
+    lat: 42.3502,
+    lng: -7.8711,
   },
   {
     name: "Madrid-Chamartín",

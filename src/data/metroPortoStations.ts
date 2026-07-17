@@ -37,8 +37,8 @@ export const metroPortoStations: StationData[] = [
     name: "ISMAI",
     lines: ["Metro Linha C (Verde)"],
     types: ["Metro"],
-    lat: 41.2242,
-    lng: -8.6095,
+    lat: 41.2688,
+    lng: -8.6154,
   },
   {
     name: "Hospital São João (Metro)",
@@ -51,8 +51,8 @@ export const metroPortoStations: StationData[] = [
     name: "Vila d'Este",
     lines: ["Metro Linha D (Amarela)"],
     types: ["Metro"],
-    lat: 41.1885,
-    lng: -8.458,
+    lat: 41.0986,
+    lng: -8.5885,
   },
   {
     name: "Trindade (Metro)",
@@ -72,8 +72,8 @@ export const metroPortoStations: StationData[] = [
     name: "Fânzeres",
     lines: ["Metro Linha F (Laranja)"],
     types: ["Metro"],
-    lat: 41.1675,
-    lng: -8.522,
+    lat: 41.1713,
+    lng: -8.5428,
   },
   {
     name: "Senhora da Hora",

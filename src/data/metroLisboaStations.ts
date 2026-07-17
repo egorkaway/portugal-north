@@ -16,8 +16,8 @@ export const metroLisboaStations: StationData[] = [
     name: "Amadora Este",
     lines: ["Metro Lisboa Linha Azul"],
     types: ["Metro"],
-    lat: 38.762,
-    lng: -9.238,
+    lat: 38.7584,
+    lng: -9.2191,
   },
   {
     name: "Rato",
@@ -30,8 +30,8 @@ export const metroLisboaStations: StationData[] = [
     name: "Odivelas",
     lines: ["Metro Lisboa Linha Amarela"],
     types: ["Metro"],
-    lat: 38.803,
-    lng: -9.1835,
+    lat: 38.7933,
+    lng: -9.173,
   },
   {
     name: "Cais do Sodré (Metro)",
