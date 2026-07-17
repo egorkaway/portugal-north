@@ -130,6 +130,12 @@ function isAirportStation(station) {
   return station.types?.includes("Airport") || /\bairport\b/i.test(station.name);
 }
 
+function isMetroStation(station) {
+  if (station.types?.includes("Metro")) return true;
+  if (/\(metro\)/i.test(station.name)) return true;
+  return station.lines?.some((line) => /\bmetro\b/i.test(line)) ?? false;
+}
+
 function portugalStationsFromRepo(root) {
   return parseAllStationsFromRepo(root).filter((station) => station.country === "pt");
 }
@@ -388,7 +394,9 @@ export async function renderPortugalActivityMap(root, { siteUrl = "https://www.v
 
 export async function renderPortugalReliabilityMap(root, { siteUrl = "https://www.verystays.com", basemap = "carto-voyager" } = {}) {
   const manifest = loadReliabilityManifest(root);
-  const stations = portugalStationsFromRepo(root);
+  const stations = portugalStationsFromRepo(root).filter(
+    (station) => !isAirportStation(station) && !isMetroStation(station),
+  );
   const siteHost = siteHostFromUrl(siteUrl);
 
   const { buffer: mapBuffer, project } = await stitchPortugalMap(basemap);
