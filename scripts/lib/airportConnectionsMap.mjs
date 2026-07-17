@@ -75,6 +75,8 @@ export async function renderAirportConnectionsMap(
   entry,
   { basemapMode = "random", siteUrl = "https://www.verystays.com" } = {},
 ) {
+  // Frame to every sampled destination (and the origin). No outlier dropping —
+  // tightBounds crops to that extent so we do not pad beyond the flown network.
   const points = [
     entry.origin,
     ...entry.connections.map((connection) => ({
@@ -89,8 +91,10 @@ export async function renderAirportConnectionsMap(
     points,
     width: CARD_SIZE,
     height: MAP_HEIGHT,
-    paddingPx: 28,
+    paddingPx: 32,
     maxZoom: 11,
+    fit: "contain",
+    tightBounds: true,
     basemap,
   });
 
