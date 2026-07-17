@@ -24,6 +24,16 @@ export const AIRPORT_CONNECTIONS_BASEMAP_POOL = [
   "carto-voyager",
 ];
 
+/** Portugal overview PNGs: flat street maps only (no topo hillshade or satellite). */
+export const OVERVIEW_MAP_BASEMAP_POOL = [
+  "osm",
+  "carto-positron",
+  "carto-voyager",
+  "carto-voyager",
+];
+
+const OVERVIEW_MAP_EXCLUDED_BASEMAPS = new Set(["opentopomap", "satellite"]);
+
 export const BASEMAPS = {
   osm: {
     id: "osm",
@@ -81,6 +91,12 @@ export function randomAirportBasemap(random = Math.random) {
   return getBasemap(AIRPORT_CONNECTIONS_BASEMAP_POOL[index]);
 }
 
+/** Pick a basemap for Portugal overview PNGs (flat street styles only). */
+export function randomOverviewBasemap(random = Math.random) {
+  const index = Math.floor(random() * OVERVIEW_MAP_BASEMAP_POOL.length);
+  return getBasemap(OVERVIEW_MAP_BASEMAP_POOL[index]);
+}
+
 /**
  * @param {"random" | string} mode — "random" or a fixed basemap id
  */
@@ -100,6 +116,19 @@ export function resolveAirportBasemap(mode = "random") {
   }
   if (mode === "opentopomap") {
     throw new Error("opentopomap is not supported for airport connection maps");
+  }
+  return getBasemap(mode);
+}
+
+/**
+ * @param {"random" | string} mode — "random" or a fixed basemap id (opentopomap/satellite rejected)
+ */
+export function resolveOverviewBasemap(mode = "random") {
+  if (mode === "random") {
+    return randomOverviewBasemap();
+  }
+  if (OVERVIEW_MAP_EXCLUDED_BASEMAPS.has(mode)) {
+    throw new Error(`${mode} is not supported for overview maps`);
   }
   return getBasemap(mode);
 }

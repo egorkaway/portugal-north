@@ -3,6 +3,8 @@ import { useLocale } from "@/i18n/LocaleProvider";
 import {
   getOverviewMapDownloadFilename,
   getOverviewMapImagePath,
+  OVERVIEW_MAP_HEIGHT,
+  OVERVIEW_MAP_WIDTH,
   type OverviewMapKind,
 } from "@/lib/overviewMapImage";
 
@@ -43,9 +45,9 @@ export function MapOverviewImages() {
                 <img
                   src={src}
                   alt={t(map.altKey)}
-                  width={1080}
-                  height={1080}
-                  className="aspect-square w-full object-cover"
+                  width={OVERVIEW_MAP_WIDTH}
+                  height={OVERVIEW_MAP_HEIGHT}
+                  className="aspect-[4/5] w-full object-cover"
                   loading="lazy"
                   decoding="async"
                 />

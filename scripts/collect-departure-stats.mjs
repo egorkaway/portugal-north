@@ -174,6 +174,25 @@ if (!dryRun) {
   const { syncMobileData } = await import("../mobile/scripts/sync-data.mjs");
   console.log("Syncing mobile bundled data…");
   await syncMobileData();
+
+  const { renderPortugalActivityMap, renderPortugalReliabilityMap } = await import("./lib/portugalOverviewMap.mjs");
+  const { resolveOverviewBasemap } = await import("./lib/mapBasemaps.mjs");
+  const { mkdirSync, writeFileSync } = await import("node:fs");
+  const overviewDir = join(root, "public/maps/overview");
+  mkdirSync(overviewDir, { recursive: true });
+  const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
+  const basemap = resolveOverviewBasemap("random");
+  const overviewMaps = [
+    { filename: "portugal-activity.png", render: () => renderPortugalActivityMap(root, { siteUrl, basemap }) },
+    { filename: "portugal-reliability.png", render: () => renderPortugalReliabilityMap(root, { siteUrl, basemap }) },
+  ];
+  for (const map of overviewMaps) {
+    process.stdout.write(`Rendering overview ${map.filename}… `);
+    const buf = await map.render();
+    writeFileSync(join(overviewDir, map.filename), buf);
+    process.stdout.write(`done (${Math.round(buf.length / 1024)} KB)\n`);
+  }
+  console.log(`Overview maps used ${basemap.id}`);
 }
 
 const skipped = stoppedEarly ? targets.length - ok - failed : 0;

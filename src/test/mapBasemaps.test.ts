@@ -4,8 +4,10 @@ import {
   getBasemap,
   randomAirportBasemap,
   randomBasemap,
+  randomOverviewBasemap,
   resolveAirportBasemap,
   resolveBasemap,
+  resolveOverviewBasemap,
 } from "../../scripts/lib/mapBasemaps.mjs";
 
 describe("mapBasemaps", () => {
@@ -56,5 +58,21 @@ describe("mapBasemaps", () => {
   it("rejects opentopomap for airport connection maps", () => {
     expect(() => resolveAirportBasemap("opentopomap")).toThrow(/not supported/);
     expect(resolveAirportBasemap("carto-voyager").id).toBe("carto-voyager");
+  });
+
+  it("excludes opentopomap from overview map basemaps", () => {
+    const picks = new Set(
+      Array.from({ length: 40 }, (_, index) => randomOverviewBasemap(() => index / 40).id),
+    );
+    expect(picks.has("opentopomap")).toBe(false);
+    for (const id of picks) {
+      expect(["osm", "carto-positron", "carto-voyager"]).toContain(id);
+    }
+  });
+
+  it("rejects topo and satellite for overview maps", () => {
+    expect(() => resolveOverviewBasemap("opentopomap")).toThrow(/not supported/);
+    expect(() => resolveOverviewBasemap("satellite")).toThrow(/not supported/);
+    expect(resolveOverviewBasemap("carto-positron").id).toBe("carto-positron");
   });
 });
