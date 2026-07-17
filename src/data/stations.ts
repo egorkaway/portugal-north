@@ -21,7 +21,7 @@ const cpStations: StationData[] = [
   { name: "Trofa", lines: ["Linha do Minho"], types: ["Intercidades", "Regional", "Urban"], lat: 41.3389, lng: -8.5600 },
   { name: "Santo Tirso", lines: ["Linha do Minho"], types: ["Urban", "Regional"], lat: 41.3450, lng: -8.4775 },
   { name: "Famalicão", lines: ["Linha do Minho"], types: ["Alfa Pendular", "Intercidades", "Regional", "Urban"], lat: 41.4083, lng: -8.5219 },
-  { name: "Nine", lines: ["Linha do Minho", "Braga"], types: ["Alfa Pendular", "Intercidades", "Regional", "Urban"], lat: 41.4200, lng: -8.5100 },
+  { name: "Nine", lines: ["Linha do Minho", "Braga"], types: ["Alfa Pendular", "Intercidades", "Regional", "Urban"], lat: 41.4547, lng: -8.5443 },
   { name: "Braga", lines: ["Linha de Braga"], types: ["Alfa Pendular", "Intercidades", "Regional", "Urban"], lat: 41.5494, lng: -8.4344 },
   { name: "Lousado", lines: ["Linha de Guimarães"], types: ["Urban", "Regional"], lat: 41.3550, lng: -8.4950 },
   { name: "Guimarães", lines: ["Linha de Guimarães"], types: ["Intercidades", "Regional", "Urban"], lat: 41.4400, lng: -8.2961 },

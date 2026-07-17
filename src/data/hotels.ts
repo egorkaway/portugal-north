@@ -13,6 +13,7 @@ export const stationHotels: StationHotels = {
   "Pombal": [
     { name: "Hotel Cardal", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/hotel/pt/cardal.html" },
     { name: "Hotel Pombalense", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pombalense%2C%20Pombal%2C%20Portugal&order=price" },
+    { name: "Residência Pombalina", distanceKm: 0.3, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Resid%C3%AAncia%20Pombalina%2C%20Pombal%2C%20Portugal&order=price" },
   ],
   "Alfarelos": [
     { name: "Casa da Azenha", distanceKm: 1.5, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alfarelos%2C+Portugal&order=price" },
@@ -167,6 +168,7 @@ export const stationHotels: StationHotels = {
   "Salreu": [
     { name: "Casa Rural Salreu", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Salreu%2C+Estarreja%2C+Portugal&order=price" },
     { name: "Quinta do Rio Antuã", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Salreu%2C+Estarreja%2C+Portugal&order=price" },
+    { name: "LAM Hotels", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=LAM%20Hotels%2C%20Salreu%2C%20Portugal&order=price" },
   ],
   "Esmoriz": [
     { name: "Hotel Mar Azul", distanceKm: 1, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Esmoriz%2C+Portugal&order=price" },
@@ -285,6 +287,7 @@ export const stationHotels: StationHotels = {
   "Francelos": [
     { name: "Hotel Praia da Baía", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Francelos%2C+Portugal&order=price" },
     { name: "Hotel Ibis Porto Gaia", distanceKm: 2.2, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila+Nova+de+Gaia%2C+Portugal&order=price" },
+    { name: "Céu Azul", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=C%C3%A9u%20Azul%2C%20Francelos%2C%20Portugal&order=price" },
   ],
   "Miramar": [
     { name: "Hotel Praia da Baía", distanceKm: 0.5, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Miramar%2C+Vila+Nova+de+Gaia&order=price" },
@@ -313,6 +316,7 @@ export const stationHotels: StationHotels = {
   "Lamarosa": [
     { name: "Hotel dos Templários", distanceKm: 1.5, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torres+Novas%2C+Portugal&order=price" },
     { name: "Hotel Lusitano", distanceKm: 1.2, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torres+Novas%2C+Portugal&order=price" },
+    { name: "Casa Dos Vargos", distanceKm: 3.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Dos%20Vargos%2C%20Lamarosa%2C%20Portugal&order=price" },
   ],
   "Válega": [
     { name: "Casa da Igreja de Válega", distanceKm: 0.5, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Valega%2C+Portugal&order=price" },
@@ -332,10 +336,12 @@ export const stationHotels: StationHotels = {
   "Tamel": [
     { name: "Quinta de Tamel", distanceKm: 1, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tamel%2C+Barcelos&order=price" },
     { name: "Casa do Monte (Barcelos)", distanceKm: 1.8, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tamel%2C+Barcelos&order=price" },
+    { name: "Residencial Solar da Estação", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Solar%20da%20Esta%C3%A7%C3%A3o%2C%20Tamel%2C%20Portugal&order=price" },
   ],
   "Durrães": [
     { name: "Quinta de Durrães", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Durraes%2C+Portugal&order=price" },
     { name: "Casa do Lavrador", distanceKm: 1.5, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Durraes%2C+Portugal&order=price" },
+    { name: "Quinta de Malta", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20de%20Malta%2C%20Durr%C3%A3es%2C%20Portugal&order=price" },
   ],
   "Carreço": [
     { name: "Quinta do Paço d'Anha", distanceKm: 1.7, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Carreco%2C+Portugal&order=price" },
@@ -420,6 +426,8 @@ export const stationHotels: StationHotels = {
   ],
   "Sernada do Vouga": [
     { name: "Casa da Vereda", distanceKm: 1.5, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sernada+do+Vouga&order=price" },
+    { name: "Encosta dos Túneis - Turismo e Lazer", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Encosta%20dos%20T%C3%BAneis%20-%20Turismo%20e%20Lazer%2C%20Sernada%20do%20Vouga%2C%20Portugal&order=price" },
+    { name: "Quinta do Cabeço Trigal", distanceKm: 4.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Cabe%C3%A7o%20Trigal%2C%20Sernada%20do%20Vouga%2C%20Portugal&order=price" },
   ],
   "Macinhata do Vouga": [
     { name: "Casa do Vouga", distanceKm: 1.2, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Macinhata+do+Vouga&order=price" },
@@ -448,6 +456,7 @@ export const stationHotels: StationHotels = {
   ],
   "Pocinho": [
     { name: "Casa do Pocinho", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pocinho%2C+Portugal&order=price" },
+    { name: "Pousada de Juventude", distanceKm: 5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20de%20Juventude%2C%20Pocinho%2C%20Portugal&order=price" },
   ],
   "Ferradosa": [
     { name: "Quinta da Ferradosa", distanceKm: 1.3, priceFrom: 60, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ferradosa%2C+S%C3%A3o+Xisto&order=price" },
@@ -921,6 +930,7 @@ export const stationHotels: StationHotels = {
   "Tunes": [
     { name: "Vila Galé Albacora", distanceKm: 1.9, priceFrom: 65, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tunes%2C+Algarve&order=price" },
     { name: "Casa de Tunes", distanceKm: 0.8, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tunes%2C+Algarve&order=price" },
+    { name: "Pousada Moinho do Pedro", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20Moinho%20do%20Pedro%2C%20Tunes%2C%20Portugal&order=price" },
   ],
   "Lagos": [
     { name: "Lagos Avenida Hotel", distanceKm: 0.6, priceFrom: 70, bookingUrl: "https://www.booking.com/hotel/pt/lagos-avenida.html" },
@@ -1212,6 +1222,7 @@ export const stationHotels: StationHotels = {
   ],
   "Reveles": [
     { name: "Quinta d'Anta Hotel Rural", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20d'Anta%20Hotel%20Rural%2C%20Reveles%2C%20Portugal&order=price" },
+    { name: "Termas do Bicanho Palace Hotel & Spa", distanceKm: 5.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Termas%20do%20Bicanho%20Palace%20Hotel%20%26%20Spa%2C%20Reveles%2C%20Portugal&order=price" },
   ],
   "Riachos – Torres Novas – Golegã": [
     { name: "Albergue das Ademas", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20das%20Ademas%2C%20Riachos%20%E2%80%93%20Torres%20Novas%20%E2%80%93%20Goleg%C3%A3%2C%20Portugal&order=price" },
