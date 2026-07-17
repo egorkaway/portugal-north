@@ -35,11 +35,13 @@ function TripStopRow({
   stop,
   isOrigin,
   delayMinutes,
+  timetableDate,
   now,
 }: {
   stop: TrainJourneyStop;
   isOrigin: boolean;
   delayMinutes: number | null;
+  timetableDate: string;
   now: Date;
 }) {
   const { t } = useLocale();
@@ -48,7 +50,9 @@ function TripStopRow({
     ? (stop.departureTime ?? stop.arrivalTime)
     : (stop.arrivalTime ?? stop.departureTime);
   const minutesUntil =
-    clockTime !== null ? getMinutesUntilTime(clockTime, delayMinutes, now) : null;
+    clockTime !== null
+      ? getMinutesUntilTime(clockTime, delayMinutes, now, timetableDate)
+      : null;
   const countdownLabel =
     minutesUntil !== null
       ? isOrigin
@@ -128,7 +132,7 @@ const Trip = () => {
   useTripCompletion(trip, downstreamStops, delayMinutes, now);
 
   const departureMinutesUntil = trip
-    ? getMinutesUntilTime(trip.departureTime, delayMinutes, now)
+    ? getMinutesUntilTime(trip.departureTime, delayMinutes, now, trip.timetableDate)
     : null;
   const departureCountdown =
     departureMinutesUntil !== null && departureMinutesUntil > 0
@@ -138,7 +142,7 @@ const Trip = () => {
     ? getEffectiveDepartureClock(trip.departureTime, delayMinutes)
     : null;
   const minutesSinceDeparture = trip
-    ? getMinutesSinceDeparture(trip.departureTime, delayMinutes, now)
+    ? getMinutesSinceDeparture(trip.departureTime, delayMinutes, now, trip.timetableDate)
     : null;
   const hasDeparted = minutesSinceDeparture !== null;
   const showDepartedWithoutStops = hasDeparted && !hasConfirmedUpcomingStops;
@@ -265,6 +269,7 @@ const Trip = () => {
                         stop={stop}
                         isOrigin={index === 0}
                         delayMinutes={delayMinutes}
+                        timetableDate={trip.timetableDate}
                         now={now}
                       />
                     ))}

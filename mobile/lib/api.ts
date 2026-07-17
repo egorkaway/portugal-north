@@ -3,6 +3,7 @@ import type { PlannedDeparture, StationDeparture } from '@/lib/types';
 import type { GlobalRatings } from '@/lib/rankVotes';
 import { bakedReliabilityScores } from '@/lib/stationData';
 import type { ReliabilityScoresManifest } from '@/lib/stationData';
+import { INITIAL_DEPARTURES_LIMIT } from '@/lib/departureLimits';
 
 const API_BASE = 'https://www.verystays.com';
 
@@ -36,7 +37,7 @@ export function getCpStationCode(stationName: string): string | null {
 
 export async function fetchStationDepartures(
   stationName: string,
-  limit = 6,
+  limit = INITIAL_DEPARTURES_LIMIT,
 ): Promise<StationDeparture[]> {
   const code = getCpStationCode(stationName);
   if (!code) return [];

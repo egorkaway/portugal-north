@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { shouldClearActiveTrip } from "@/lib/departureCountdown";
 import type { CompletedTripRecord, PlannedDeparture } from "@/lib/types";
 import { lisbonDateAndTime } from "@/lib/lisbonTime";
 import { notifyTripChanged } from "@/lib/tripEvents";
@@ -16,6 +17,10 @@ export async function readActiveTrip(): Promise<PlannedDeparture | null> {
   try {
     const trip = JSON.parse(raw) as PlannedDeparture;
     if (!trip?.id || !trip.stationName || !trip.departureTime) return null;
+    if (shouldClearActiveTrip(trip)) {
+      await writeActiveTrip(null);
+      return null;
+    }
     return trip;
   } catch {
     return null;
@@ -101,8 +106,9 @@ export function buildPlannedDepartureId(
   trainNumber: string,
   time: string,
   destination: string,
+  timetableDate: string,
 ): string {
-  return `${stationName}|${trainNumber}|${time}|${destination}`;
+  return `${stationName}|${trainNumber}|${time}|${destination}|${timetableDate}`;
 }
 
 export async function setActiveTripFromDeparture(input: {
@@ -113,14 +119,17 @@ export async function setActiveTripFromDeparture(input: {
   serviceType: string;
   platform: string | null;
   delayMinutes: number | null;
+  timetableDate?: string;
 }): Promise<PlannedDeparture> {
   const { date } = lisbonDateAndTime();
+  const timetableDate = input.timetableDate ?? date;
   const trip: PlannedDeparture = {
     id: buildPlannedDepartureId(
       input.stationName,
       input.trainNumber,
       input.departureTime,
       input.destination,
+      timetableDate,
     ),
     stationName: input.stationName,
     trainNumber: input.trainNumber,
@@ -129,7 +138,7 @@ export async function setActiveTripFromDeparture(input: {
     serviceType: input.serviceType,
     platform: input.platform,
     delayMinutes: input.delayMinutes,
-    timetableDate: date,
+    timetableDate,
     selectedAt: new Date().toISOString(),
   };
   await writeActiveTrip(trip);
@@ -145,6 +154,7 @@ export async function takeActiveTrip(input: {
   serviceType: string;
   platform: string | null;
   delayMinutes: number | null;
+  timetableDate?: string;
 }): Promise<PlannedDeparture> {
   const trip = await setActiveTripFromDeparture(input);
   try {
@@ -165,8 +175,8 @@ export async function takeActiveTrip(input: {
 export async function clearActiveTrip(): Promise<void> {
   await writeActiveTrip(null);
   try {
-    const { syncTripWidgets } = await import("@/lib/widgetSync");
-    await syncTripWidgets();
+    const { clearTripWidgets } = await import("@/lib/widgetSync");
+    await clearTripWidgets();
   } catch (error) {
     console.warn("[trip] widget sync failed after clear", error);
   }

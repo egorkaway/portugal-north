@@ -249,6 +249,16 @@ export const gl: Messages = {
     airportVigo: "Vigo",
     airportAsturias: "Asturias",
     locateMe: "Mostrar a miña localización",
+    overviewTitle: "Descargar mapas xerais de Portugal",
+    overviewIntro:
+      "Mapas estáticos centrados en Portugal continental. O mapa de actividade coincide coa vista hexagonal de arriba; o de fiabilidade usa as mesmas puntuacións de puntualidade da app móbil.",
+    overviewActivityTitle: "Actividade das estacións",
+    overviewActivityAlt: "Mapa de Portugal continental con hexágonos H3 por actividade ferroviaria mostreada",
+    overviewActivityDownload: "Descargar mapa de actividade",
+    overviewReliabilityTitle: "Fiabilidade das estacións",
+    overviewReliabilityAlt:
+      "Mapa de Portugal continental con estacións por puntuación de puntualidade",
+    overviewReliabilityDownload: "Descargar mapa de fiabilidade",
   },
   tickets: {
     title: "Billetes e prezos",
@@ -264,7 +274,7 @@ export const gl: Messages = {
     portoVigoRenfeNote:
       "O Porto–Vigo (Celta): os billetes en liña véndense na Renfe, non na CP — non están dispoñibles na web nin na app da CP. As billeteiras das estacións CP aínda poden vender esta ruta.",
     portugalServiceAP:
-      "Alfa Pendular — o servizo máis rápido Lisboa–Porto; reserva con antelación para mellor prezo.",
+      "Alfa Pendular — o servizo máis rápido nos corredores principais (Lisboa–Porto, tamén Faro e Braga); reserva con antelación para mellor prezo.",
     portugalServiceIC: "Intercidades — trens interurbanos en Portugal.",
     portugalServiceR: "Regional — servizos locais e de liñas secundarias; a miúdo sen reserva.",
     portugalServiceU: "Urbano — redes suburbanas en Lisboa e Porto.",

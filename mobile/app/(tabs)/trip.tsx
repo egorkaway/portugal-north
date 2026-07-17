@@ -48,12 +48,14 @@ function TripStopRow({
   stop,
   isOrigin,
   delayMinutes,
+  timetableDate,
   now,
   onPressStation,
 }: {
   stop: TrainJourneyStop;
   isOrigin: boolean;
   delayMinutes: number | null;
+  timetableDate: string;
   now: Date;
   onPressStation: (stationName: string) => void;
 }) {
@@ -62,7 +64,9 @@ function TripStopRow({
     ? (stop.departureTime ?? stop.arrivalTime)
     : (stop.arrivalTime ?? stop.departureTime);
   const minutesUntil =
-    clockTime !== null ? getMinutesUntilTime(clockTime, delayMinutes, now) : null;
+    clockTime !== null
+      ? getMinutesUntilTime(clockTime, delayMinutes, now, timetableDate)
+      : null;
   const countdownLabel =
     minutesUntil !== null
       ? isOrigin
@@ -208,6 +212,7 @@ export default function TripScreen() {
       activeTrip.departureTime,
       delayMinutes,
       now,
+      activeTrip.timetableDate,
     );
     if (minutesSinceDeparture === null) {
       return history.filter((record) => record.id !== activeTrip.id);
@@ -240,7 +245,12 @@ export default function TripScreen() {
   }
 
   const departureMinutesUntil = activeTrip
-    ? getMinutesUntilTime(activeTrip.departureTime, delayMinutes, now)
+    ? getMinutesUntilTime(
+        activeTrip.departureTime,
+        delayMinutes,
+        now,
+        activeTrip.timetableDate,
+      )
     : null;
   const departureCountdown =
     departureMinutesUntil !== null && departureMinutesUntil > 0
@@ -250,7 +260,12 @@ export default function TripScreen() {
     ? getEffectiveDepartureClock(activeTrip.departureTime, delayMinutes)
     : null;
   const minutesSinceDeparture = activeTrip
-    ? getMinutesSinceDeparture(activeTrip.departureTime, delayMinutes, now)
+    ? getMinutesSinceDeparture(
+        activeTrip.departureTime,
+        delayMinutes,
+        now,
+        activeTrip.timetableDate,
+      )
     : null;
   const hasDeparted = minutesSinceDeparture !== null;
   const hasConfirmedUpcomingStops =
@@ -345,6 +360,7 @@ export default function TripScreen() {
                   stop={stop}
                   isOrigin={index === 0}
                   delayMinutes={delayMinutes}
+                  timetableDate={activeTrip.timetableDate}
                   now={now}
                   onPressStation={openStation}
                 />

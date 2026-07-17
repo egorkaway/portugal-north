@@ -1,5 +1,6 @@
 import { useSyncExternalStore } from "react";
 import { lisbonDateAndTime } from "@/lib/cpDeparturesParse";
+import { shouldClearActiveTrip } from "@/lib/departureCountdown";
 
 const LEGACY_STORAGE_KEY = "pn_planned_departures_v1";
 const ACTIVE_TRIP_STORAGE_KEY = "pn_active_trip_v2";
@@ -33,11 +34,22 @@ function subscribe(listener: () => void): () => void {
 function parseLegacyId(id: string, stationName: string): PlannedDeparture | null {
   const parts = id.split("|");
   if (parts.length < 4) return null;
-  const [, trainNumber, departureTime, destination] = parts;
+  const [, trainNumber, departureTime, destination, maybeDate] = parts;
   if (!trainNumber || !departureTime || !destination) return null;
   const { date } = lisbonDateAndTime();
+  const timetableDate =
+    maybeDate && /^\d{4}-\d{2}-\d{2}$/.test(maybeDate) ? maybeDate : date;
   return {
-    id,
+    id:
+      parts.length >= 5
+        ? id
+        : buildPlannedDepartureId(
+            stationName,
+            trainNumber,
+            departureTime,
+            destination,
+            timetableDate,
+          ),
     stationName,
     trainNumber,
     departureTime,
@@ -45,7 +57,7 @@ function parseLegacyId(id: string, stationName: string): PlannedDeparture | null
     serviceType: "—",
     platform: null,
     delayMinutes: null,
-    timetableDate: date,
+    timetableDate,
     selectedAt: new Date().toISOString(),
   };
 }
@@ -85,6 +97,10 @@ function readActiveTrip(): PlannedDeparture | null {
     ) {
       return null;
     }
+    if (shouldClearActiveTrip(trip)) {
+      writeActiveTrip(null);
+      return null;
+    }
     return trip;
   } catch {
     return null;
@@ -115,8 +131,9 @@ export function buildPlannedDepartureId(
   trainNumber: string,
   time: string,
   destination: string,
+  timetableDate: string,
 ): string {
-  return `${stationName}|${trainNumber}|${time}|${destination}`;
+  return `${stationName}|${trainNumber}|${time}|${destination}|${timetableDate}`;
 }
 
 export function useActiveTrip(): PlannedDeparture | null {
@@ -141,6 +158,8 @@ export function toggleActiveTrip(
     selectedAt?: string;
   },
 ): PlannedDeparture | null {
+  const { date } = lisbonDateAndTime();
+  const timetableDate = departure.timetableDate ?? date;
   const id =
     departure.id ??
     buildPlannedDepartureId(
@@ -148,6 +167,7 @@ export function toggleActiveTrip(
       departure.trainNumber,
       departure.departureTime,
       departure.destination,
+      timetableDate,
     );
   const current = readActiveTrip();
   if (current?.id === id) {
@@ -155,7 +175,6 @@ export function toggleActiveTrip(
     return null;
   }
 
-  const { date } = lisbonDateAndTime();
   const trip: PlannedDeparture = {
     id,
     stationName,
@@ -165,7 +184,7 @@ export function toggleActiveTrip(
     serviceType: departure.serviceType,
     platform: departure.platform,
     delayMinutes: departure.delayMinutes,
-    timetableDate: departure.timetableDate ?? date,
+    timetableDate,
     selectedAt: departure.selectedAt ?? new Date().toISOString(),
   };
   setActiveTrip(trip);

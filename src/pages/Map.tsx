@@ -3,6 +3,7 @@ import { PageHead } from "@/components/PageHead";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SitePageNavLinks } from "@/components/SitePageNavLinks";
 import { BuildNumberLabel } from "@/components/BuildNumberLabel";
+import { MapOverviewImages } from "@/components/MapOverviewImages";
 import { getMapPageMeta } from "@/lib/pageMeta";
 import { defaultHomePath } from "@/lib/homeRoute";
 import { useLocale } from "@/i18n/LocaleProvider";
@@ -47,6 +48,7 @@ const MapPage = () => {
           <Suspense fallback={<p className="text-sm text-muted-foreground">{t("map.loading")}</p>}>
             <StationActivityMap />
           </Suspense>
+          <MapOverviewImages />
           <BuildNumberLabel />
         </main>
 

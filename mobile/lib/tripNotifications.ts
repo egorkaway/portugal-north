@@ -61,6 +61,7 @@ export async function scheduleTripDepartureReminder(
     trip.departureTime,
     trip.delayMinutes,
     now,
+    trip.timetableDate,
   );
 
   if (minutesUntil === null || minutesUntil <= MIN_MINUTES_BEFORE_NOTIFY) {

@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it } from "vitest";
+import { lisbonDateAndTime } from "@/lib/cpDeparturesParse";
 import {
   clearActiveTrip,
   setActiveTrip,
@@ -7,18 +8,22 @@ import {
 } from "@/lib/plannedDepartures";
 import { deleteTripHistoryRecord, readTripHistory, recordTakenTrip } from "@/lib/trainTripHistory";
 
-const sampleTrip: PlannedDeparture = {
-  id: "Porto-Campanhã|542|17:10|Lisboa",
-  stationName: "Porto-Campanhã",
-  trainNumber: "542",
-  departureTime: "17:10",
-  destination: "Lisboa",
-  serviceType: "Urbano",
-  platform: "3",
-  delayMinutes: null,
-  timetableDate: "2026-06-30",
-  selectedAt: "2026-06-30T10:00:00.000Z",
-};
+function makeSampleTrip(overrides: Partial<PlannedDeparture> = {}): PlannedDeparture {
+  const { date } = lisbonDateAndTime();
+  const base: PlannedDeparture = {
+    id: `Porto-Campanhã|542|17:10|Lisboa|${date}`,
+    stationName: "Porto-Campanhã",
+    trainNumber: "542",
+    departureTime: "17:10",
+    destination: "Lisboa",
+    serviceType: "Urbano",
+    platform: "3",
+    delayMinutes: null,
+    timetableDate: date,
+    selectedAt: new Date().toISOString(),
+  };
+  return { ...base, ...overrides };
+}
 
 describe("planned departures", () => {
   beforeEach(() => {
@@ -27,6 +32,7 @@ describe("planned departures", () => {
   });
 
   it("stores a single active trip globally without adding history yet", () => {
+    const sampleTrip = makeSampleTrip();
     setActiveTrip(sampleTrip);
     expect(readTripHistory()).toHaveLength(0);
     const cleared = toggleActiveTrip("Porto-Campanhã", {
@@ -45,6 +51,7 @@ describe("planned departures", () => {
   });
 
   it("does not record taken trains until departure", () => {
+    const sampleTrip = makeSampleTrip();
     toggleActiveTrip("Porto-Campanhã", {
       trainNumber: sampleTrip.trainNumber,
       departureTime: sampleTrip.departureTime,
@@ -52,12 +59,14 @@ describe("planned departures", () => {
       serviceType: sampleTrip.serviceType,
       platform: sampleTrip.platform,
       delayMinutes: sampleTrip.delayMinutes,
+      timetableDate: sampleTrip.timetableDate,
     });
     const history = readTripHistory();
     expect(history).toHaveLength(0);
   });
 
   it("does not add history when stop tracking before departure", () => {
+    const sampleTrip = makeSampleTrip();
     toggleActiveTrip("Porto-Campanhã", {
       trainNumber: sampleTrip.trainNumber,
       departureTime: sampleTrip.departureTime,
@@ -65,12 +74,14 @@ describe("planned departures", () => {
       serviceType: sampleTrip.serviceType,
       platform: sampleTrip.platform,
       delayMinutes: sampleTrip.delayMinutes,
+      timetableDate: sampleTrip.timetableDate,
     });
     clearActiveTrip();
     expect(readTripHistory()).toHaveLength(0);
   });
 
   it("replaces an existing trip when selecting another train", () => {
+    const sampleTrip = makeSampleTrip();
     setActiveTrip(sampleTrip);
     const next = toggleActiveTrip("São Bento (Porto)", {
       trainNumber: "123",
@@ -79,8 +90,24 @@ describe("planned departures", () => {
       serviceType: "Regional",
       platform: null,
       delayMinutes: null,
+      timetableDate: sampleTrip.timetableDate,
     });
     expect(next?.stationName).toBe("São Bento (Porto)");
+    expect(next?.id).toContain(`|${sampleTrip.timetableDate}`);
+  });
+
+  it("includes timetableDate in the planned departure id", () => {
+    const { date } = lisbonDateAndTime();
+    const next = toggleActiveTrip("Porto-Campanhã", {
+      trainNumber: "542",
+      departureTime: "17:10",
+      destination: "Lisboa",
+      serviceType: "Urbano",
+      platform: "3",
+      delayMinutes: null,
+      timetableDate: date,
+    });
+    expect(next?.id).toBe(`Porto-Campanhã|542|17:10|Lisboa|${date}`);
   });
 });
 
@@ -90,6 +117,7 @@ describe("trip history", () => {
   });
 
   it("stores taken trips locally", () => {
+    const sampleTrip = makeSampleTrip();
     recordTakenTrip(sampleTrip, "Lisboa");
     const history = readTripHistory();
     expect(history).toHaveLength(1);
@@ -97,6 +125,7 @@ describe("trip history", () => {
   });
 
   it("deletes a taken trip record by id", () => {
+    const sampleTrip = makeSampleTrip();
     recordTakenTrip(sampleTrip, "Lisboa");
     expect(readTripHistory()).toHaveLength(1);
     deleteTripHistoryRecord(sampleTrip.id);

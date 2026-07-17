@@ -2,11 +2,17 @@ import { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
   Pressable,
+  StyleSheet,
   Text,
   View,
 } from 'react-native';
 import { stationSectionStyles as styles } from '@/components/stationSectionStyles';
 import { fetchStationDepartures } from '@/lib/api';
+import {
+  canLoadMoreDepartures,
+  INITIAL_DEPARTURES_LIMIT,
+  nextDeparturesLimit,
+} from '@/lib/departureLimits';
 import {
   formatDepartureCountdown,
   getMinutesUntilDeparture,
@@ -38,6 +44,7 @@ function buildOptimisticTrip(
       dep.trainNumber,
       dep.time,
       dep.destination,
+      date,
     ),
     stationName,
     trainNumber: dep.trainNumber,
@@ -57,21 +64,41 @@ export function StationDeparturesBoard({
   onTripChanged,
 }: Props) {
   const [departures, setDepartures] = useState<StationDeparture[]>([]);
+  const [limit, setLimit] = useState(INITIAL_DEPARTURES_LIMIT);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [now, setNow] = useState(new Date());
 
-  const load = useCallback(async () => {
-    setLoading(true);
-    const rows = await fetchStationDepartures(stationName, 8);
-    setDepartures(rows);
-    setLoading(false);
-  }, [stationName]);
+  const load = useCallback(
+    async (nextLimit: number, mode: 'initial' | 'more') => {
+      if (mode === 'initial') setLoading(true);
+      else setLoadingMore(true);
+
+      try {
+        const rows = await fetchStationDepartures(stationName, nextLimit);
+        setDepartures(rows);
+        setLimit(nextLimit);
+      } finally {
+        setLoading(false);
+        setLoadingMore(false);
+      }
+    },
+    [stationName],
+  );
 
   useEffect(() => {
-    void load();
+    setLimit(INITIAL_DEPARTURES_LIMIT);
+    void load(INITIAL_DEPARTURES_LIMIT, 'initial');
     const timer = setInterval(() => setNow(new Date()), 60_000);
     return () => clearInterval(timer);
   }, [load]);
+
+  const showLoadMore = !loading && canLoadMoreDepartures(limit, departures.length);
+
+  const handleLoadMore = () => {
+    if (loadingMore) return;
+    void load(nextDeparturesLimit(limit), 'more');
+  };
 
   const toggleTake = async (dep: StationDeparture) => {
     const optimisticTrip = buildOptimisticTrip(dep, stationName);
@@ -118,15 +145,22 @@ export function StationDeparturesBoard({
   return (
     <View style={styles.list}>
       {departures.map((dep) => {
+        const { date } = lisbonDateAndTime(now);
         const id = buildPlannedDepartureId(
           stationName,
           dep.trainNumber,
           dep.time,
           dep.destination,
+          date,
         );
         const taking = activeTrip?.id === id;
         const minutes = taking
-          ? getMinutesUntilDeparture(dep.time, dep.delayMinutes, now)
+          ? getMinutesUntilDeparture(
+              dep.time,
+              dep.delayMinutes,
+              now,
+              activeTrip?.timetableDate ?? date,
+            )
           : null;
 
         return (
@@ -172,6 +206,44 @@ export function StationDeparturesBoard({
           </View>
         );
       })}
+
+      {showLoadMore ? (
+        <Pressable
+          onPress={handleLoadMore}
+          disabled={loadingMore}
+          style={[localStyles.loadMore, loadingMore && localStyles.loadMoreDisabled]}
+          accessibilityRole="button"
+          accessibilityLabel="Show more trains"
+        >
+          {loadingMore ? (
+            <ActivityIndicator color={theme.primary} />
+          ) : (
+            <Text style={localStyles.loadMoreText}>Show more trains</Text>
+          )}
+        </Pressable>
+      ) : null}
     </View>
   );
 }
+
+const localStyles = StyleSheet.create({
+  loadMore: {
+    marginTop: 4,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: theme.border,
+    backgroundColor: theme.background,
+    paddingVertical: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 44,
+  },
+  loadMoreDisabled: {
+    opacity: 0.65,
+  },
+  loadMoreText: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: theme.primary,
+  },
+});

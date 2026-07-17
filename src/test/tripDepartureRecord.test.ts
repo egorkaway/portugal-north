@@ -5,7 +5,7 @@ import type { PlannedDeparture } from "@/lib/plannedDepartures";
 import { readTripHistory } from "@/lib/trainTripHistory";
 
 const sampleTrip: PlannedDeparture = {
-  id: "Porto-Campanhã|542|17:10|Lisboa",
+  id: "Porto-Campanhã|542|17:10|Lisboa|2026-06-30",
   stationName: "Porto-Campanhã",
   trainNumber: "542",
   departureTime: "17:10",

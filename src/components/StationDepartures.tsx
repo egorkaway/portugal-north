@@ -14,7 +14,9 @@ import {
   formatDepartureCountdown,
   getMinutesUntilDeparture,
 } from "@/lib/departureCountdown";
+import { lisbonDateAndTime } from "@/lib/cpDeparturesParse";
 import {
+  buildPlannedDepartureId,
   toggleActiveTrip,
   useActiveTrip,
 } from "@/lib/plannedDepartures";
@@ -28,6 +30,7 @@ function DepartureRow({
   platform,
   delayMinutes,
   taking,
+  timetableDate,
   onToggleTaking,
   now,
 }: {
@@ -39,13 +42,15 @@ function DepartureRow({
   platform: string | null;
   delayMinutes: number | null;
   taking: boolean;
+  timetableDate: string;
   onToggleTaking: (id: string) => void;
   now: Date;
 }) {
   const { t } = useLocale();
 
-  const minutesUntil =
-    taking ? getMinutesUntilDeparture(time, delayMinutes, now) : null;
+  const minutesUntil = taking
+    ? getMinutesUntilDeparture(time, delayMinutes, now, timetableDate)
+    : null;
   const countdownLabel =
     minutesUntil !== null ? formatDepartureCountdown(minutesUntil, { t }) : null;
 
@@ -103,12 +108,20 @@ export function StationDepartures({ stationName }: { stationName: string }) {
     setLimit(INITIAL_DEPARTURES_LIMIT);
   }, [stationName]);
 
+  const { date: today } = lisbonDateAndTime(now);
   const departures = useMemo(() => {
     return (data ?? []).map((dep) => ({
       ...dep,
-      id: `${stationName}|${dep.trainNumber}|${dep.time}|${dep.destination}`,
+      id: buildPlannedDepartureId(
+        stationName,
+        dep.trainNumber,
+        dep.time,
+        dep.destination,
+        today,
+      ),
+      timetableDate: today,
     }));
-  }, [data, stationName]);
+  }, [data, stationName, today]);
 
   const showLoadMore = !isLoading && !isError && canLoadMoreDepartures(limit, departures.length);
   const loadingMore = isFetching && !isLoading;
@@ -180,6 +193,7 @@ export function StationDepartures({ stationName }: { stationName: string }) {
                     serviceType: dep.serviceType,
                     platform: dep.platform,
                     delayMinutes: dep.delayMinutes,
+                    timetableDate: dep.timetableDate,
                   });
                 }}
                 now={now}

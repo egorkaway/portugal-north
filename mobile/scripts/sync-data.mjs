@@ -53,6 +53,7 @@ export async function syncMobileData() {
   const { en } = await importFromSrc("src/i18n/messages/en.ts");
   const { buildTicketGuide } = await importFromSrc("src/data/ticketGuide.ts");
   const ticketGuide = buildTicketGuide(en.tickets);
+  const { pexelsPhotoCredits } = await importFromSrc("src/data/pexelsPhotoCredits.ts");
 
   fs.writeFileSync(path.join(outDir, "stations.json"), JSON.stringify(stationsLite));
   fs.writeFileSync(path.join(outDir, "stations-full.json"), JSON.stringify(stationsFull));
@@ -66,12 +67,17 @@ export async function syncMobileData() {
     JSON.stringify(airportConnections),
   );
   fs.writeFileSync(path.join(outDir, "ticket-guide.json"), JSON.stringify(ticketGuide, null, 2));
+  fs.writeFileSync(
+    path.join(outDir, "pexelsPhotoCredits.json"),
+    JSON.stringify(pexelsPhotoCredits),
+  );
 
   console.log(
     `Synced ${stationsFull.length} stations, ${Object.keys(cpStationCodes).length} CP codes, ` +
       `${Object.keys(stationImages).length} images, ${Object.keys(stationHotels).length} hotel lists, ` +
       `${Object.keys(summaries).length} summaries, ` +
       `${Object.keys(airportConnections.airports ?? {}).length} airport connection maps, ` +
+      `${Object.keys(pexelsPhotoCredits).length} Pexels credits, ` +
       `ticket guide (${ticketGuide.countries.length} countries).`,
   );
 }

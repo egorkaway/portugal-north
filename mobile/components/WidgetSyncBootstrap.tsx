@@ -1,9 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
 import { AppState } from 'react-native';
-import { getMinutesUntilDeparture } from '@/lib/departureCountdown';
+import { subscribeTripChanges } from '@/lib/tripEvents';
 import { scheduleTripDepartureReminder } from '@/lib/tripNotifications';
 import { readActiveTrip } from '@/lib/tripStorage';
-import { onTripDeparted, seedWidgetTimeline, syncTripWidgets } from '@/lib/widgetSync';
+import {
+  getMsUntilEffectiveDeparture,
+  MAX_TIMER_MS,
+  onTripDeparted,
+  seedWidgetTimeline,
+  syncTripWidgets,
+} from '@/lib/widgetSync';
 
 /** Keeps widget + Live Activity in sync while the app is open. */
 export function WidgetSyncBootstrap() {
@@ -23,22 +29,30 @@ export function WidgetSyncBootstrap() {
     const scheduleDepartureSync = async () => {
       clearDepartureTimer();
       const trip = await readActiveTrip();
-      if (!trip) return;
+      if (!trip || cancelled) return;
 
-      const minutesUntil = getMinutesUntilDeparture(
-        trip.departureTime,
-        trip.delayMinutes,
-      );
-      if (minutesUntil === null) return;
+      const msUntil = getMsUntilEffectiveDeparture(trip);
+      if (msUntil === null) return;
 
-      if (minutesUntil <= 0) {
+      if (msUntil <= 0) {
         await syncTripWidgets();
+        await onTripDeparted();
         return;
       }
 
+      const delayMs = Math.min(msUntil + 500, MAX_TIMER_MS);
       departureTimerRef.current = setTimeout(() => {
-        void syncTripWidgets();
-      }, minutesUntil * 60_000 + 500);
+        void (async () => {
+          try {
+            await syncTripWidgets();
+            await onTripDeparted();
+            // Delay may have increased after enrich — reschedule if still active.
+            if (!cancelled) await scheduleDepartureSync();
+          } catch (error) {
+            console.warn('[widget] departure timer sync failed', error);
+          }
+        })();
+      }, delayMs);
     };
 
     const syncWidgets = async () => {
@@ -76,11 +90,16 @@ export function WidgetSyncBootstrap() {
       }
     });
 
+    const unsubscribeTripChanges = subscribeTripChanges(() => {
+      void syncWidgets();
+    });
+
     return () => {
       cancelled = true;
       clearInterval(interval);
       clearDepartureTimer();
       appStateSubscription.remove();
+      unsubscribeTripChanges();
     };
   }, []);
 

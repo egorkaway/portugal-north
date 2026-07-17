@@ -1,7 +1,9 @@
+import { useEffect } from "react";
 import { useNowMinute } from "@/hooks/useNowMinute";
 import { useStationDepartures } from "@/hooks/useStationDepartures";
 import { useTripDepartureRecord } from "@/hooks/useTripDepartureRecord";
-import { useActiveTrip } from "@/lib/plannedDepartures";
+import { shouldClearActiveTrip } from "@/lib/departureCountdown";
+import { clearActiveTrip, useActiveTrip } from "@/lib/plannedDepartures";
 
 /** Keeps active-trip side effects alive on every route (departure → history, etc.). */
 export function ActiveTripBootstrap() {
@@ -16,6 +18,12 @@ export function ActiveTripBootstrap() {
       dep.destination === trip?.destination,
   );
   const delayMinutes = liveDeparture?.delayMinutes ?? trip?.delayMinutes ?? null;
+
+  useEffect(() => {
+    if (trip && shouldClearActiveTrip(trip, now)) {
+      clearActiveTrip();
+    }
+  }, [trip, now]);
 
   useTripDepartureRecord(trip, delayMinutes, now);
 

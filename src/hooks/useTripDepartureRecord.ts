@@ -21,6 +21,7 @@ export function useTripDepartureRecord(
       trip.departureTime,
       delayMinutes,
       now,
+      trip.timetableDate,
     );
     if (minutesSinceDeparture === null) return;
     if (recordedRef.current === trip.id) return;

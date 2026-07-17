@@ -247,6 +247,16 @@ export const en: Messages = {
     airportVigo: "Vigo",
     airportAsturias: "Asturias",
     locateMe: "Show my location",
+    overviewTitle: "Download Portugal overview maps",
+    overviewIntro:
+      "Static maps focused on mainland Portugal. The activity map matches the hex view above; the reliability map uses the same on-time scores as our mobile app.",
+    overviewActivityTitle: "Station activity",
+    overviewActivityAlt: "Map of mainland Portugal with H3 hexes coloured by sampled train activity",
+    overviewActivityDownload: "Download activity map",
+    overviewReliabilityTitle: "Station reliability",
+    overviewReliabilityAlt:
+      "Map of mainland Portugal with stations coloured by on-time reliability score",
+    overviewReliabilityDownload: "Download reliability map",
   },
   tickets: {
     title: "Tickets & prices",
@@ -262,7 +272,7 @@ export const en: Messages = {
     portoVigoRenfeNote:
       "Porto–Vigo (Celta): online tickets are sold by Renfe, not CP — they are not available on the CP website or app. CP station ticket offices can still sell this route.",
     portugalServiceAP:
-      "Alfa Pendular — fastest Lisbon–Porto service; book ahead for the best price.",
+      "Alfa Pendular — fastest on main corridors (Lisbon–Porto, also Faro and Braga); book ahead for the best price.",
     portugalServiceIC: "Intercidades — intercity trains across Portugal.",
     portugalServiceR: "Regional — local and branch-line services; often no reservation.",
     portugalServiceU: "Urban — suburban networks around Lisbon and Porto.",

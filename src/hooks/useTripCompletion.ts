@@ -25,7 +25,12 @@ export function useTripCompletion(
     const arrivalTime = finalStop.arrivalTime ?? finalStop.departureTime;
     if (!arrivalTime) return;
 
-    const minutesUntil = getMinutesUntilTime(arrivalTime, delayMinutes, now);
+    const minutesUntil = getMinutesUntilTime(
+      arrivalTime,
+      delayMinutes,
+      now,
+      trip.timetableDate,
+    );
     if (minutesUntil === null || minutesUntil > 0) return;
     if (recordedRef.current === trip.id) return;
 

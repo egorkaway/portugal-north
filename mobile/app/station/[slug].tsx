@@ -14,6 +14,7 @@ import { StationDeparturesBoard } from '@/components/StationDeparturesBoard';
 import { AirportConnectionsSection } from '@/components/AirportConnectionsSection';
 import { BuildFooter } from '@/components/BuildFooter';
 import { StationHotelList } from '@/components/StationHotelList';
+import { StationImageCredit } from '@/components/StationImageCredit';
 import { TrainTypeLabels } from '@/components/TrainTypeLabels';
 import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
 import { VoteButtons } from '@/components/VoteButtons';
@@ -135,6 +136,7 @@ export default function StationDetailScreen() {
           <Text style={styles.heroPlaceholderText}>No photo yet</Text>
         </View>
       )}
+      {imageUrl ? <StationImageCredit imageUrl={imageUrl} /> : null}
 
       <View style={styles.headerRow}>
         <View style={styles.headerMain}>

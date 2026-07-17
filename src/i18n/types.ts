@@ -222,6 +222,14 @@ export type Messages = {
     airportVigo: string;
     airportAsturias: string;
     locateMe: string;
+    overviewTitle: string;
+    overviewIntro: string;
+    overviewActivityTitle: string;
+    overviewActivityAlt: string;
+    overviewActivityDownload: string;
+    overviewReliabilityTitle: string;
+    overviewReliabilityAlt: string;
+    overviewReliabilityDownload: string;
   };
   tickets: {
     title: string;

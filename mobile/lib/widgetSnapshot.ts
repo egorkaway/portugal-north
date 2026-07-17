@@ -3,6 +3,7 @@ import {
   getEffectiveDepartureClock,
   getDepartureTimestampMs,
   getMinutesUntilDeparture,
+  hasEffectiveDeparturePassed,
 } from "@/lib/departureCountdown";
 import { findNearestStation } from "@/lib/nearestStation";
 import { isLastTripStale } from "@/lib/widgetTrip";
@@ -30,6 +31,36 @@ function buildPromptNextTrainProps(nearestStationName: string | null): TripWidge
   });
 }
 
+function asCompletedTrip(
+  trip: PlannedDeparture,
+  now: Date,
+): CompletedTripRecord {
+  return {
+    ...trip,
+    completedAt: now.toISOString(),
+    finalStationName: trip.destination,
+  };
+}
+
+/**
+ * Widget/Live Activity props after a planned departure has left.
+ * Never keeps `mode: "active"` — that was leaving countdown stuck on "Now".
+ */
+export function buildPostDepartureWidgetProps(input: {
+  departedTrip: PlannedDeparture;
+  lastTaken: CompletedTripRecord | null;
+  nearestStationName: string | null;
+  now?: Date;
+}): TripWidgetProps {
+  const now = input.now ?? new Date();
+  return buildWidgetProps({
+    activeTrip: null,
+    lastTaken: input.lastTaken ?? asCompletedTrip(input.departedTrip, now),
+    nearestStationName: input.nearestStationName,
+    now,
+  });
+}
+
 export function buildWidgetProps(input: {
   activeTrip: PlannedDeparture | null;
   lastTaken: CompletedTripRecord | null;
@@ -39,17 +70,35 @@ export function buildWidgetProps(input: {
   const now = input.now ?? new Date();
 
   if (input.activeTrip) {
+    const departed = hasEffectiveDeparturePassed(
+      input.activeTrip.departureTime,
+      input.activeTrip.delayMinutes,
+      now,
+      input.activeTrip.timetableDate,
+    );
+
+    // Once the train has left, drop the active countdown immediately so the
+    // home-screen widget / Live Activity do not linger on "Now".
+    if (departed) {
+      return buildPostDepartureWidgetProps({
+        departedTrip: input.activeTrip,
+        lastTaken: input.lastTaken,
+        nearestStationName: input.nearestStationName,
+        now,
+      });
+    }
+
     const minutes = getMinutesUntilDeparture(
       input.activeTrip.departureTime,
       input.activeTrip.delayMinutes,
       now,
+      input.activeTrip.timetableDate,
     );
     const effective = getEffectiveDepartureClock(
       input.activeTrip.departureTime,
       input.activeTrip.delayMinutes,
     );
-    const countdown =
-      minutes === null ? null : minutes <= 0 ? 0 : minutes;
+    const countdown = minutes === null ? null : Math.max(0, minutes);
 
     return {
       mode: "active",
@@ -69,6 +118,7 @@ export function buildWidgetProps(input: {
         input.activeTrip.departureTime,
         input.activeTrip.delayMinutes,
         now,
+        input.activeTrip.timetableDate,
       ),
     };
   }
