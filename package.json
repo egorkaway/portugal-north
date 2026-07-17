@@ -11,6 +11,7 @@
     "social:stations": "node scripts/generate-social-station-cards.mjs",
     "maps:stations": "node scripts/generate-station-map-cards.mjs",
     "maps:overview": "node scripts/generate-portugal-overview-maps.mjs",
+    "maps:airport-connections": "node --import tsx scripts/collect-airport-connections.mjs",
     "berrymet:sync": "node scripts/sync-berrymet-cities.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",

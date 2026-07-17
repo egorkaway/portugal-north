@@ -3,9 +3,16 @@
  * Fetch AviationStack departures for catalog airports, bake connections JSON,
  * and render static connection map PNGs.
  *
+ * Periods: nine open dates per year (see airportConnectionPeriods.mjs). On each
+ * boundary the previous live bake is frozen under public/.../periods/{YYYY-MM-DD}/
+ * and a new live period starts.
+ *
  *   node --import tsx scripts/collect-airport-connections.mjs
  *   node --import tsx scripts/collect-airport-connections.mjs --airport LIS
  *   node --import tsx scripts/collect-airport-connections.mjs --dry-run
+ *   node --import tsx scripts/collect-airport-connections.mjs --maps-only
+ *   node --import tsx scripts/collect-airport-connections.mjs --period-status
+ *   node --import tsx scripts/collect-airport-connections.mjs --as-of=2026-08-11
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -18,6 +25,13 @@ import {
   saveAirportCoordinateCache,
 } from "./lib/airportCoordinates.mjs";
 import { renderAirportConnectionsMap } from "./lib/airportConnectionsMap.mjs";
+import { periodContaining, lisbonDateString } from "./lib/airportConnectionPeriods.mjs";
+import {
+  ensureAirportConnectionPeriodRoll,
+  liveMapsDir,
+  liveManifestPath,
+  loadPeriodsIndex,
+} from "./lib/airportConnectionPeriodStore.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 loadEnvFile(join(root, ".env"));
@@ -32,9 +46,7 @@ const {
   mergeCatalogIntoCoordinates,
 } = await import("../server/lib/airportConnections.ts");
 
-const outJsonPath = join(root, "public/data/airport-connections.json");
 const cachePath = join(root, "data/airport-iata-coordinates.json");
-const mapsOutDir = join(root, "public/maps/airports");
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
@@ -49,6 +61,13 @@ const delayMs = delayArg
   ? Number.parseInt(delayArg.split("=")[1] ?? args[args.indexOf("--delay") + 1], 10)
   : 400;
 const mapsOnly = args.includes("--maps-only");
+const periodStatus = args.includes("--period-status");
+const asOfArg = args.find((arg) => arg.startsWith("--as-of"));
+const asOfDate = asOfArg
+  ? asOfArg.includes("=")
+    ? asOfArg.split("=")[1]
+    : args[args.indexOf("--as-of") + 1]
+  : null;
 const basemapArg = args.find((arg) => arg.startsWith("--basemap"));
 const defaultBasemapMode = basemapArg
   ? basemapArg.includes("=")
@@ -62,21 +81,33 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-function loadRunCount() {
+function loadRunCount(rootDir) {
   try {
-    const stats = JSON.parse(readFileSync(join(root, "data/departure-stats.json"), "utf8"));
+    const stats = JSON.parse(readFileSync(join(rootDir, "data/departure-stats.json"), "utf8"));
     return typeof stats.runCount === "number" ? stats.runCount : 0;
   } catch {
     return 0;
   }
 }
 
-function loadExistingManifest() {
+function loadExistingManifest(rootDir) {
   try {
-    return JSON.parse(readFileSync(outJsonPath, "utf8"));
+    return JSON.parse(readFileSync(liveManifestPath(rootDir), "utf8"));
   } catch {
     return { airports: {} };
   }
+}
+
+function printPeriodStatus(rootDir, asOf) {
+  const asOfLabel = asOf ? lisbonDateString(asOf) : lisbonDateString();
+  const period = periodContaining(asOf ?? new Date());
+  const index = loadPeriodsIndex(rootDir);
+  const live = loadExistingManifest(rootDir);
+  console.log(`Timezone: ${index.timezone ?? "Europe/Lisbon"}`);
+  console.log(`As of: ${asOfLabel} → open period ${period.id} (until ${period.endExclusive})`);
+  console.log(`Index current: ${index.currentPeriodId ?? "(none)"}`);
+  console.log(`Live manifest periodId: ${live.periodId ?? "(none)"}`);
+  console.log(`Frozen periods: ${(index.periods ?? []).map((p) => p.id).join(", ") || "(none)"}`);
 }
 
 async function resolveMissingCoordinates(groupedIatas, coordinates, options = {}) {
@@ -119,10 +150,20 @@ export async function collectAirportConnections(options = {}) {
     delayMs: delay = delayMs,
     mapsOnly: renderMapsOnly = mapsOnly,
     basemapMode: basemapMode = defaultBasemapMode,
+    asOf = asOfDate,
+    periodStatusOnly = periodStatus,
   } = options;
 
+  if (periodStatusOnly) {
+    printPeriodStatus(rootDir, asOf);
+    return { ok: 0, failed: 0, skipped: true, periodStatus: true };
+  }
+
+  const mapsOutDir = liveMapsDir(rootDir);
+  const outJsonPath = liveManifestPath(rootDir);
+
   if (renderMapsOnly) {
-    const existing = loadExistingManifest();
+    const existing = loadExistingManifest(rootDir);
     let entries = Object.values(existing.airports ?? {});
     if (filter) {
       const needle = filter.toUpperCase();
@@ -166,6 +207,13 @@ export async function collectAirportConnections(options = {}) {
     return { ok: 0, failed: 0, skipped: true };
   }
 
+  const roll = ensureAirportConnectionPeriodRoll({
+    rootDir,
+    asOf: asOf ?? new Date(),
+    dryRun: isDryRun,
+  });
+  const period = roll.period;
+
   let catalog = loadAirportCatalog(rootDir);
   if (filter) {
     const needle = filter.toUpperCase();
@@ -184,8 +232,9 @@ export async function collectAirportConnections(options = {}) {
 
   const cache = await ensureAirportCoordinateCache(cachePath);
   let coordinates = mergeCatalogIntoCoordinates(catalog, cache);
-  const existing = loadExistingManifest();
-  const airports = { ...(existing.airports ?? {}) };
+  // After a period roll, start from an empty airport map so the new period does not
+  // inherit the previous network. Single-airport updates on an active period still merge.
+  const airports = { ...roll.airports };
 
   let ok = 0;
   let failed = 0;
@@ -255,25 +304,37 @@ export async function collectAirportConnections(options = {}) {
     if (delay > 0) await sleep(delay);
   }
 
-  if (!isDryRun && ok > 0) {
+  if (!isDryRun && (ok > 0 || roll.rolled)) {
     const manifest = {
       generatedAt: new Date().toISOString(),
-      runCount: loadRunCount(),
+      runCount: loadRunCount(rootDir),
       airportCount: Object.keys(airports).length,
+      periodId: period.id,
+      periodStart: period.start,
+      periodEndExclusive: period.endExclusive,
       airports,
     };
     mkdirSync(dirname(outJsonPath), { recursive: true });
     writeFileSync(outJsonPath, `${JSON.stringify(manifest, null, 2)}\n`);
-    console.log(`Wrote ${outJsonPath}`);
+    console.log(`Wrote ${outJsonPath} (period ${period.id})`);
   }
 
-  return { ok, failed, skipped: false, monthlyLimitReached };
+  return {
+    ok,
+    failed,
+    skipped: false,
+    monthlyLimitReached,
+    periodId: period.id,
+    rolled: roll.rolled,
+    frozen: roll.frozen,
+  };
 }
 
 const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];
 
 if (isMain) {
-  collectAirportConnections().then(({ ok, failed, skipped, monthlyLimitReached }) => {
+  collectAirportConnections().then(({ ok, failed, skipped, monthlyLimitReached, periodStatus: statusOnly }) => {
+    if (statusOnly) process.exit(0);
     if (skipped) process.exit(0);
     const limitNote = monthlyLimitReached ? " (stopped: AviationStack monthly limit)" : "";
     console.log(`Done: ${ok} airport(s) updated, ${failed} failed${limitNote}`);
