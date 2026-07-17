@@ -192,6 +192,7 @@ export type Messages = {
     mostReliable: string;
     leastReliable: string;
     downloadReliabilityCsv: string;
+    downloadStationCsv: string;
   };
   map: {
     title: string;

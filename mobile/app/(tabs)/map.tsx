@@ -1,6 +1,7 @@
 import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
+  Alert,
   Pressable,
   StyleSheet,
   Text,
@@ -10,7 +11,9 @@ import MapView, { Marker, type MarkerPressEvent } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { SymbolView } from 'expo-symbols';
 import { useNavigation, useRouter } from 'expo-router';
+import ViewShot from 'react-native-view-shot';
 import { useSystemColorScheme } from '@/components/useSystemColorScheme';
+import { MapShareBrandingFooter } from '@/components/MapShareBrandingFooter';
 import { theme } from '@/constants/theme';
 import { reliabilityScoreColor, formatReliabilityScore } from '@/lib/reliabilityScore';
 import {
@@ -18,6 +21,7 @@ import {
   bakedReliabilityScores,
   stationToSlug,
 } from '@/lib/stationData';
+import { shareCapturedMap } from '@/lib/shareMapImage';
 import { writeLastCoords } from '@/lib/tripStorage';
 
 /** Fits Iberian peninsula (≈35.8°N–44°N, 10°W–4°E) on portrait phones. */
@@ -43,9 +47,11 @@ export default function MapScreen() {
   const router = useRouter();
   const navigation = useNavigation();
   const mapRef = useRef<MapView>(null);
+  const shareViewRef = useRef<ViewShot>(null);
   const markerPressLock = useRef(false);
   const [selectedName, setSelectedName] = useState<string | null>(null);
   const [locating, setLocating] = useState(false);
+  const [sharing, setSharing] = useState(false);
   const [showsUserLocation, setShowsUserLocation] = useState(false);
 
   const markers = useMemo(
@@ -117,84 +123,121 @@ export default function MapScreen() {
     }
   }, []);
 
+  const shareMap = useCallback(async () => {
+    if (sharing) return;
+    setSharing(true);
+    setSelectedName(null);
+    try {
+      await shareCapturedMap(shareViewRef);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'Could not share the map.';
+      Alert.alert('Share failed', message);
+    } finally {
+      setSharing(false);
+    }
+  }, [sharing]);
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <Pressable
-          accessibilityRole="button"
-          accessibilityLabel="Locate me"
-          onPress={() => void locateUser()}
-          style={styles.locateButton}
-        >
-          {locating ? (
-            <ActivityIndicator size="small" color={theme.primary} />
-          ) : (
-            <SymbolView
-              name={{ ios: 'location.fill', android: 'my_location', web: 'my_location' }}
-              tintColor={theme.primary}
-              size={22}
-            />
-          )}
-        </Pressable>
+        <View style={styles.headerActions}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Share map"
+            disabled={sharing}
+            onPress={() => void shareMap()}
+            style={styles.headerButton}
+          >
+            {sharing ? (
+              <ActivityIndicator size="small" color={theme.primary} />
+            ) : (
+              <SymbolView
+                name={{ ios: 'square.and.arrow.up', android: 'share', web: 'share' }}
+                tintColor={theme.primary}
+                size={22}
+              />
+            )}
+          </Pressable>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Locate me"
+            onPress={() => void locateUser()}
+            style={styles.headerButton}
+          >
+            {locating ? (
+              <ActivityIndicator size="small" color={theme.primary} />
+            ) : (
+              <SymbolView
+                name={{ ios: 'location.fill', android: 'my_location', web: 'my_location' }}
+                tintColor={theme.primary}
+                size={22}
+              />
+            )}
+          </Pressable>
+        </View>
       ),
     });
-  }, [navigation, locateUser, locating]);
+  }, [navigation, locateUser, locating, shareMap, sharing]);
 
   const selected = markers.find((item) => item.station.name === selectedName);
   const mapAppearance = useSystemColorScheme();
 
   return (
     <View style={styles.container}>
-      <MapView
-        ref={mapRef}
-        style={styles.map}
-        initialRegion={IBERIAN_REGION}
-        userInterfaceStyle={mapAppearance}
-        showsUserLocation={showsUserLocation}
-        showsMyLocationButton={false}
-        onPress={clearSelection}
-        onMarkerPress={handleMarkerPress}
-      >
-        {markers.map(({ station, color, size }) => (
-          <Marker
-            key={station.name}
-            identifier={station.name}
-            coordinate={{ latitude: station.lat, longitude: station.lng }}
-            stopPropagation
-            tracksViewChanges={false}
-            onPress={() => selectStation(station.name)}
-          >
-            <View style={styles.markerHitArea} collapsable={false}>
-              <View style={styles.markerTouchTarget} />
-              <View
-                style={[
-                  styles.dot,
-                  {
-                    width: size,
-                    height: size,
-                    borderRadius: size / 2,
-                    backgroundColor: color,
-                  },
-                ]}
-              />
-            </View>
-          </Marker>
-        ))}
-      </MapView>
+      <ViewShot ref={shareViewRef} style={styles.shareCanvas} options={{ format: 'png', quality: 1 }}>
+        <MapView
+          ref={mapRef}
+          style={styles.map}
+          initialRegion={IBERIAN_REGION}
+          userInterfaceStyle={mapAppearance}
+          showsUserLocation={showsUserLocation}
+          showsMyLocationButton={false}
+          onPress={clearSelection}
+          onMarkerPress={handleMarkerPress}
+        >
+          {markers.map(({ station, color, size }) => (
+            <Marker
+              key={station.name}
+              identifier={station.name}
+              coordinate={{ latitude: station.lat, longitude: station.lng }}
+              stopPropagation
+              tracksViewChanges={false}
+              onPress={() => selectStation(station.name)}
+            >
+              <View style={styles.markerHitArea} collapsable={false}>
+                <View style={styles.markerTouchTarget} />
+                <View
+                  style={[
+                    styles.dot,
+                    {
+                      width: size,
+                      height: size,
+                      borderRadius: size / 2,
+                      backgroundColor: color,
+                    },
+                  ]}
+                />
+              </View>
+            </Marker>
+          ))}
+        </MapView>
 
-      <View style={styles.legend} pointerEvents="box-none">
-        <View style={styles.legendCard}>
-          <Text style={styles.legendTitle}>Reliability</Text>
-          <View style={styles.legendRow}>
-            <LegendSwatch color={reliabilityScoreColor(9)} label="8–10" />
-            <LegendSwatch color={reliabilityScoreColor(6)} label="5–7" />
-            <LegendSwatch color={reliabilityScoreColor(3)} label="0–4" />
-            <LegendSwatch color="#0284C7" label="Airport" />
+        <View style={styles.legend} pointerEvents="box-none">
+          <View style={styles.legendCard}>
+            <Text style={styles.legendTitle}>Reliability</Text>
+            <View style={styles.legendRow}>
+              <LegendSwatch color={reliabilityScoreColor(9)} label="8–10" />
+              <LegendSwatch color={reliabilityScoreColor(6)} label="5–7" />
+              <LegendSwatch color={reliabilityScoreColor(3)} label="0–4" />
+              <LegendSwatch color="#0284C7" label="Airport" />
+            </View>
           </View>
         </View>
-      </View>
 
-      {selected ? (
+        {sharing ? <MapShareBrandingFooter /> : null}
+      </ViewShot>
+
+      {selected && !sharing ? (
         <View style={styles.sheet}>
           <View style={styles.sheetHeader}>
             <Text style={styles.sheetTitle} numberOfLines={2}>
@@ -247,11 +290,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: theme.background,
   },
+  shareCanvas: {
+    flex: 1,
+  },
   map: {
     flex: 1,
   },
-  locateButton: {
+  headerActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
     marginRight: 4,
+    gap: 2,
+  },
+  headerButton: {
     width: 36,
     height: 36,
     alignItems: 'center',

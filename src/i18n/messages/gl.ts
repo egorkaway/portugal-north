@@ -218,6 +218,7 @@ export const gl: Messages = {
     mostReliable: "Top 10 máis fiábeis",
     leastReliable: "Top 10 menos fiábeis",
     downloadReliabilityCsv: "Descargar CSV",
+    downloadStationCsv: "Descargar CSV",
   },
   map: {
     title: "Mapa de actividade das estacións",

@@ -218,6 +218,7 @@ export const ca: Messages = {
     mostReliable: "Top 10 més fiables",
     leastReliable: "Top 10 menys fiables",
     downloadReliabilityCsv: "Descarregar CSV",
+    downloadStationCsv: "Descarregar CSV",
   },
   map: {
     title: "Mapa d'activitat d'estacions",

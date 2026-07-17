@@ -14,12 +14,70 @@ export type RankedStation = {
   down: number;
 };
 
+export type StationRankingRow = {
+  rank: number;
+  name: string;
+  up: number;
+  down: number;
+  net: number;
+};
+
 export function getTopUpvoted(ratings: GlobalRatings, limit = 3): RankedStation[] {
   return rankTopUp(ratings, limit).map(({ id, up, down }) => ({ name: id, up, down }));
 }
 
 export function getTopDownvoted(ratings: GlobalRatings, limit = 3): RankedStation[] {
   return rankTopDown(ratings, limit).map(({ id, up, down }) => ({ name: id, up, down }));
+}
+
+/** All stations with votes, ranked by upvotes then net score (matches leaderboard sort). */
+export function buildStationRankingRows(ratings: GlobalRatings): StationRankingRow[] {
+  return Object.entries(ratings)
+    .filter(([, counts]) => counts.up > 0 || counts.down > 0)
+    .sort(
+      ([nameA, a], [nameB, b]) =>
+        b.up - a.up ||
+        b.up - b.down - (a.up - a.down) ||
+        nameA.localeCompare(nameB),
+    )
+    .map(([name, counts], index) => ({
+      rank: index + 1,
+      name,
+      up: counts.up,
+      down: counts.down,
+      net: counts.up - counts.down,
+    }));
+}
+
+function escapeCsvField(value: string | number): string {
+  const text = String(value);
+  if (/[",\n\r]/.test(text)) return `"${text.replace(/"/g, '""')}"`;
+  return text;
+}
+
+export function stationRankingsToCsv(rows: StationRankingRow[]): string {
+  const lines = ["rank,station,upvotes,downvotes,net"];
+  for (const row of rows) {
+    lines.push(
+      [row.rank, escapeCsvField(row.name), row.up, row.down, row.net].join(","),
+    );
+  }
+  return `${lines.join("\n")}\n`;
+}
+
+export function downloadStationRankingsCsv(
+  rows: StationRankingRow[],
+  filename = "station-rankings.csv",
+): void {
+  const blob = new Blob([stationRankingsToCsv(rows)], {
+    type: "text/csv;charset=utf-8",
+  });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  link.click();
+  URL.revokeObjectURL(url);
 }
 
 /** Nearest first from a WGS84 origin. Stable for ties (original list order, then name). */

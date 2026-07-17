@@ -1,10 +1,12 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildStationRankingRows,
   getTopDownvoted,
   getTopUpvoted,
   orderStationsForHome,
   sortStationsByCommunityUpvotes,
   sortStationsByDistance,
+  stationRankingsToCsv,
 } from "@/lib/rankStations";
 import { distanceKm } from "@/lib/geo";
 import type { Station } from "@/data/stations";
@@ -30,6 +32,29 @@ describe("rankStations", () => {
     });
 
     expect(ranked.map((s) => s.name)).toEqual(["Charlie", "Alpha", "Bravo"]);
+  });
+
+  it("builds ranked CSV rows for every station with votes", () => {
+    const rows = buildStationRankingRows({
+      Alpha: { up: 2, down: 1 },
+      Bravo: { up: 5, down: 0 },
+      Charlie: { up: 0, down: 0 },
+      "Station, Inc.": { up: 1, down: 3 },
+    });
+
+    expect(rows.map((row) => row.name)).toEqual(["Bravo", "Alpha", "Station, Inc."]);
+    expect(rows[0]).toMatchObject({ rank: 1, up: 5, down: 0, net: 5 });
+  });
+
+  it("serialises station rankings to CSV", () => {
+    const csv = stationRankingsToCsv([
+      { rank: 1, name: "Bravo", up: 5, down: 0, net: 5 },
+      { rank: 2, name: "Station, Inc.", up: 1, down: 3, net: -2 },
+    ]);
+
+    expect(csv).toContain("rank,station,upvotes,downvotes,net");
+    expect(csv).toContain("1,Bravo,5,0,5");
+    expect(csv).toContain('2,"Station, Inc.",1,3,-2');
   });
 
   it("sorts stations nearest-first from an origin", () => {

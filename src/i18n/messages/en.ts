@@ -216,6 +216,7 @@ export const en: Messages = {
     mostReliable: "Top 10 most reliable",
     leastReliable: "Top 10 least reliable",
     downloadReliabilityCsv: "Download CSV",
+    downloadStationCsv: "Download CSV",
   },
   map: {
     title: "Station activity map",

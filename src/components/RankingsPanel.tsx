@@ -1,9 +1,15 @@
-import { AlertCircle, BedDouble, RefreshCw, ThumbsDown, ThumbsUp, TrainFront } from "lucide-react";
+import { AlertCircle, BedDouble, Download, RefreshCw, ThumbsDown, ThumbsUp, TrainFront } from "lucide-react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
 import { getTopDownvotedHotels, getTopUpvotedHotels } from "@/lib/rankHotels";
-import { getTopDownvoted, getTopUpvoted } from "@/lib/rankStations";
+import {
+  buildStationRankingRows,
+  downloadStationRankingsCsv,
+  getTopDownvoted,
+  getTopUpvoted,
+} from "@/lib/rankStations";
 import { OfflineRatingsBanner } from "@/components/OfflineRatingsBanner";
 import { ratingsErrorMessage } from "@/lib/votesApi";
 import { stationToSlug } from "@/lib/stationSlug";
@@ -214,18 +220,35 @@ export function RankingsPanel({
     href: h.stationName ? `/stations/${stationToSlug(h.stationName)}` : undefined,
   }));
 
+  const stationCsvRows = stationRatings ? buildStationRankingRows(stationRatings) : [];
+
   return (
     <div className="space-y-6 md:space-y-10">
       <OfflineRatingsBanner source={data?.source} />
       <section aria-labelledby={stationsOnly ? undefined : "station-rankings-heading"}>
-        {!stationsOnly && (
-          <div className="mb-4 flex items-center gap-2">
-            <TrainFront className="h-5 w-5 text-primary" aria-hidden="true" />
-            <h2 id="station-rankings-heading" className="font-display text-2xl text-foreground">
-              {t("rankings.stationRankings")}
-            </h2>
-          </div>
-        )}
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          {!stationsOnly ? (
+            <div className="flex items-center gap-2">
+              <TrainFront className="h-5 w-5 text-primary" aria-hidden="true" />
+              <h2 id="station-rankings-heading" className="font-display text-2xl text-foreground">
+                {t("rankings.stationRankings")}
+              </h2>
+            </div>
+          ) : (
+            <div />
+          )}
+          {stationCsvRows.length > 0 ? (
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => downloadStationRankingsCsv(stationCsvRows)}
+            >
+              <Download className="h-4 w-4" aria-hidden="true" />
+              {t("rankings.downloadStationCsv")}
+            </Button>
+          ) : null}
+        </div>
         {stationTotals && (
           <p className="mb-3 text-sm text-muted-foreground md:mb-4">
             {stationTotals.itemsWithVotes === 0
