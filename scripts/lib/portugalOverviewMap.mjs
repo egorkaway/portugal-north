@@ -50,9 +50,9 @@ function movementsToActivityTier(movements, minMovements, maxMovements) {
   return "quiet";
 }
 
-function activityTierToH3Resolution(tier) {
-  // Coarser than the interactive web map so hexes read on static PNGs.
-  return tier === "quiet" ? 8 : 6;
+function activityTierToH3Resolution(_tier) {
+  // One mid size for all tiers — readable hexes without mismatched blobs.
+  return 6;
 }
 
 function movementRatio(movements, minMovements, maxMovements) {
@@ -65,27 +65,27 @@ function hexPathStyle(tier, movements, minMovements, maxMovements) {
   switch (tier) {
     case "busy":
       return {
-        fill: "hsl(145 58% 50%)",
-        fillOpacity: 0.55 - t * 0.14,
-        stroke: "hsl(145 82% 26%)",
-        strokeWidth: 3.5,
+        fill: "#ef4444",
+        fillOpacity: 0.62 + t * 0.18,
+        stroke: "#ffffff",
+        strokeWidth: 2.5,
       };
     case "mid":
       return {
-        fill: "hsl(210 52% 46%)",
-        fillOpacity: 0.45 + t * 0.22,
-        stroke: "hsl(210 72% 18%)",
-        strokeWidth: 3,
+        fill: "#22c55e",
+        fillOpacity: 0.52 + t * 0.2,
+        stroke: "#ffffff",
+        strokeWidth: 2,
       };
     case "quiet":
       return {
-        fill: "hsl(275 48% 34%)",
-        fillOpacity: 0.78 + (1 - t) * 0.18,
-        stroke: "hsl(275 68% 10%)",
-        strokeWidth: 3,
+        fill: "#7c3aed",
+        fillOpacity: 0.42 + (1 - t) * 0.16,
+        stroke: "#ffffff",
+        strokeWidth: 1.75,
       };
     default:
-      return { fill: "#888", fillOpacity: 0.5, stroke: "#333", strokeWidth: 1 };
+      return { fill: "#888", fillOpacity: 0.5, stroke: "#fff", strokeWidth: 1 };
   }
 }
 
@@ -120,10 +120,10 @@ function reliabilityScoreColor(score) {
 }
 
 function markerRadius(movements) {
-  if (movements >= 500) return 14;
-  if (movements >= 200) return 11;
-  if (movements >= 50) return 9;
-  return 7;
+  if (movements >= 500) return 20;
+  if (movements >= 200) return 16;
+  if (movements >= 50) return 13;
+  return 10;
 }
 
 function isAirportStation(station) {
@@ -135,45 +135,71 @@ function portugalStationsFromRepo(root) {
 }
 
 const OVERLAY = {
-  padX: 22,
-  padY: 18,
-  titleFontSize: 26,
-  labelFontSize: 22,
-  urlFontSize: 22,
-  swatchSize: 20,
+  padX: 26,
+  padY: 22,
+  titleFontSize: 34,
+  labelFontSize: 24,
+  urlFontSize: 30,
+  swatchSize: 22,
   swatchGap: 10,
   boxX: 16,
-  boxY: CARD_HEIGHT - 140 - 16,
-  boxH: 140,
-  cornerRadius: 14,
+  boxY: CARD_HEIGHT - 168 - 16,
+  boxH: 168,
+  cornerRadius: 16,
 };
 
 function buildCornerOverlayShell({ boxW, title, legendMarkup, pageUrl }) {
   const { padX, padY, titleFontSize, urlFontSize, boxX, boxY, boxH, cornerRadius } = OVERLAY;
+  // Helvetica Bold + light stroke so Resvg actually renders weight (font-weight alone is unreliable).
+  const boldFont = "Helvetica Bold, Arial Black, Arial Bold, sans-serif";
   return `
   <rect x="${boxX}" y="${boxY}" width="${boxW}" height="${boxH}" rx="${cornerRadius}"
         fill="${OVERLAY_BG}" stroke="${OVERLAY_BORDER}" stroke-width="1.5" />
   <text x="${boxX + padX}" y="${boxY + padY + titleFontSize}"
-        fill="${BRAND_DARK}" font-family="Inter, system-ui, sans-serif"
-        font-size="${titleFontSize}" font-weight="700" letter-spacing="0.06em">${escapeXml(title)}</text>
+        fill="${BRAND_DARK}" stroke="${BRAND_DARK}" stroke-width="1.1" paint-order="stroke fill"
+        font-family="${boldFont}"
+        font-size="${titleFontSize}" font-weight="900" letter-spacing="0.04em">${escapeXml(title)}</text>
   ${legendMarkup}
   <text x="${boxX + padX}" y="${boxY + boxH - padY}"
-        fill="${OVERLAY_TEXT}" font-family="Inter, system-ui, sans-serif"
-        font-size="${urlFontSize}" font-weight="700" letter-spacing="0.02em">${escapeXml(pageUrl)}</text>`;
+        fill="${OVERLAY_TEXT}" stroke="${OVERLAY_TEXT}" stroke-width="0.9" paint-order="stroke fill"
+        font-family="${boldFont}"
+        font-size="${urlFontSize}" font-weight="900" letter-spacing="0.01em">${escapeXml(pageUrl)}</text>`;
+}
+
+function estimateOverlayTextWidth(text, fontSize) {
+  return text.length * fontSize * 0.58;
+}
+
+function overlayBoxWidth({ title, pageUrl, legendInnerWidth }) {
+  const { padX, titleFontSize, urlFontSize } = OVERLAY;
+  return Math.ceil(
+    Math.max(
+      legendInnerWidth + padX * 2,
+      estimateOverlayTextWidth(title, titleFontSize) + padX * 2,
+      estimateOverlayTextWidth(pageUrl, urlFontSize) + padX * 2,
+    ),
+  );
 }
 
 /** Corner overlay pill: title + legend items + URL */
 function buildActivityCornerOverlay(siteHost) {
   const pageUrl = `${siteHost}/map`;
+  const title = "Station activity";
   const items = [
-    { label: "Busiest", fill: "hsl(145 58% 50%)", stroke: "hsl(145 82% 26%)" },
-    { label: "Mid", fill: "hsl(210 52% 46%)", stroke: "hsl(210 72% 18%)" },
-    { label: "Quietest", fill: "hsl(275 48% 34%)", stroke: "hsl(275 68% 10%)" },
+    { label: "Busiest", fill: "#ef4444", stroke: "#b91c1c" },
+    { label: "Mid", fill: "#22c55e", stroke: "#15803d" },
+    { label: "Quietest", fill: "#7c3aed", stroke: "#5b21b6" },
   ];
 
   const { padX, padY, titleFontSize, labelFontSize, swatchSize, swatchGap, boxX, boxY } = OVERLAY;
-  const itemSpacing = 132;
-  const legendY = boxY + padY + titleFontSize + 20;
+  const itemSpacing = 122;
+  const legendY = boxY + padY + titleFontSize + 22;
+  const maxLabelWidth = Math.max(
+    ...items.map((item) => estimateOverlayTextWidth(item.label, labelFontSize)),
+  );
+  const legendInnerWidth =
+    (items.length - 1) * itemSpacing + swatchSize + swatchGap + maxLabelWidth;
+  const boxW = overlayBoxWidth({ title, pageUrl, legendInnerWidth });
 
   const legendMarkup = items
     .map((item, i) => {
@@ -188,8 +214,8 @@ function buildActivityCornerOverlay(siteHost) {
     .join("");
 
   return buildCornerOverlayShell({
-    boxW: 500,
-    title: "STATION ACTIVITY",
+    boxW,
+    title,
     legendMarkup,
     pageUrl,
   });
@@ -197,6 +223,7 @@ function buildActivityCornerOverlay(siteHost) {
 
 function buildReliabilityCornerOverlay(siteHost) {
   const pageUrl = `${siteHost}/map`;
+  const title = "Station reliability";
   const items = [
     { label: "8–10", color: RELIABILITY_COLORS.high },
     { label: "5–7", color: RELIABILITY_COLORS.mid },
@@ -205,8 +232,14 @@ function buildReliabilityCornerOverlay(siteHost) {
 
   const { padX, padY, titleFontSize, labelFontSize, swatchGap, boxX, boxY } = OVERLAY;
   const r = 10;
-  const itemSpacing = 112;
-  const legendY = boxY + padY + titleFontSize + 20 + r;
+  const itemSpacing = 100;
+  const legendY = boxY + padY + titleFontSize + 22 + r;
+  const maxLabelWidth = Math.max(
+    ...items.map((item) => estimateOverlayTextWidth(item.label, labelFontSize)),
+  );
+  const legendInnerWidth =
+    (items.length - 1) * itemSpacing + r * 2 + swatchGap + maxLabelWidth;
+  const boxW = overlayBoxWidth({ title, pageUrl, legendInnerWidth });
 
   const legendMarkup = items
     .map((item, i) => {
@@ -220,15 +253,15 @@ function buildReliabilityCornerOverlay(siteHost) {
     .join("");
 
   return buildCornerOverlayShell({
-    boxW: 430,
-    title: "STATION RELIABILITY",
+    boxW,
+    title,
     legendMarkup,
     pageUrl,
   });
 }
 
-/** Expand hex outlines in pixel space so stations read on the overview PNG. */
-const HEX_PIXEL_SCALE = 1.4;
+/** Slight grow so hexes stay readable without looking bloated. */
+const HEX_PIXEL_SCALE = 1.2;
 
 function boundaryToSvgPoints(boundary, project) {
   const points = boundary.map(([lat, lng]) => project(lat, lng));
@@ -277,7 +310,7 @@ function buildReliabilityOverlaySvg({ stations, scores, movements, project, site
             ? RELIABILITY_COLORS.airport
             : RELIABILITY_COLORS.unknown;
       const radius = markerRadius(stationMovements);
-      return `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" stroke="#ffffff" stroke-width="2.5" />`;
+      return `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" stroke="#ffffff" stroke-width="3" />`;
     })
     .join("");
 
@@ -302,8 +335,11 @@ function portugalBoundsPoints() {
   ];
 }
 
-/** Extra viewport width stitched on the left, then cropped — shifts land right so the overlay sits over ocean. */
-const MAP_SHIFT_PX = 320;
+/**
+ * Extra viewport width stitched, then crop the RIGHT edge (Spain).
+ * Keeps more Atlantic on the left so the bottom-left overlay sits over ocean.
+ */
+const MAP_SHIFT_PX = 420;
 
 /** Stitch a 4:5 portrait map fitted to mainland Portugal bounds. */
 async function stitchPortugalMap(basemap = "carto-voyager") {
@@ -316,16 +352,12 @@ async function stitchPortugalMap(basemap = "carto-voyager") {
   });
 
   const cropped = await sharp(buffer)
-    .extract({ left: MAP_SHIFT_PX, top: 0, width: CARD_WIDTH, height: CARD_HEIGHT })
+    .extract({ left: 0, top: 0, width: CARD_WIDTH, height: CARD_HEIGHT })
     .png()
     .toBuffer();
 
-  const projectShifted = (lat, lng) => {
-    const point = project(lat, lng);
-    return { x: point.x - MAP_SHIFT_PX, y: point.y };
-  };
-
-  return { buffer: cropped, project: projectShifted };
+  // project() is already relative to the full stitch; left crop keeps x as-is.
+  return { buffer: cropped, project };
 }
 
 export async function renderPortugalActivityMap(root, { siteUrl = "https://www.verystays.com", basemap = "carto-voyager" } = {}) {
