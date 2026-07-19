@@ -19,6 +19,7 @@ export const en: Messages = {
     tickets: "Tickets",
     map: "Map",
     trip: "Trip",
+    lines: "Lines",
     mobile: "Mobile navigation",
     main: "Main navigation",
   },
@@ -118,6 +119,31 @@ export const en: Messages = {
       "Based on cumulative delays from our live departure samples across the network.",
     reliabilityScale: "10 = fewest delays in our data · 1 = most delays",
     reliabilityLoading: "Loading reliability score…",
+  },
+  lines: {
+    title: "Train lines",
+    subtitle: "Every line in our data, the stations on it, and which trains stop there",
+    intro:
+      "Browse Portugal's railway lines — plus the cross-border and metro lines in our data. Each line lists its stations with the train services that call there.",
+    backToLines: "Back to lines",
+    portugalHeading: "Portugal railway lines",
+    spainHeading: "Cross-border & Spanish lines",
+    metroHeading: "Metro lines",
+    stationCount_one: "{{count}} station",
+    stationCount_other: "{{count}} stations",
+    lineCount_one: "{{count}} line",
+    lineCount_other: "{{count}} lines",
+    servicesLabel: "Services",
+    historicBadge: "Historic",
+    orderingNote:
+      "Stations are listed in approximate geographic order along the line, not the official stopping sequence.",
+    servicesNote:
+      "Service types are those recorded for each station in our data and may not reflect every train on every day.",
+    stationsHeading: "Stations on this line",
+    alsoOn: "Also on",
+    noServiceData: "No service-type data",
+    emptyLine: "No stations recorded for this line yet.",
+    viewAllLines: "View all lines",
   },
   departures: {
     title: "Next departures",
@@ -468,6 +494,18 @@ export const en: Messages = {
         "How to buy train tickets in Portugal and Spain — CP, Renfe, metro passes, commuter networks, and what affects fares.",
       ogDescription:
         "CP and Renfe tickets plus Porto, Lisbon, Madrid, and Barcelona metro passes.",
+    },
+    lines: {
+      title: "Train Lines & Stations | Sustainable Iberian",
+      description:
+        "Browse every train line in Portugal (plus cross-border and metro lines), the stations on each line, and which services — Alfa Pendular, Intercidades, Regional, Urban — stop there.",
+      ogDescription:
+        "Train lines across Portugal with the stations on each line and the services that stop there.",
+      lineTitle: "{{line}} — Stations & Train Services | {{site}}",
+      lineDescription:
+        "All {{count}} stations on {{line}} and the train services that stop there: {{services}}.",
+      lineOgDescription:
+        "{{line}}: {{count}} stations and services — {{services}}.",
     },
     map: {
       title: "Station Activity Map | Sustainable Iberian",

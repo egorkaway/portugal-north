@@ -19,6 +19,7 @@ export const pt: Messages = {
     tickets: "Bilhetes",
     map: "Mapa",
     trip: "Viagem",
+    lines: "Linhas",
     mobile: "Navegação móvel",
     main: "Navegação principal",
   },
@@ -119,6 +120,31 @@ export const pt: Messages = {
       "Com base nos atrasos acumulados das nossas amostras de partidas em tempo real na rede.",
     reliabilityScale: "10 = menos atrasos nos nossos dados · 1 = mais atrasos",
     reliabilityLoading: "A carregar pontuação de fiabilidade…",
+  },
+  lines: {
+    title: "Linhas ferroviárias",
+    subtitle: "Todas as linhas nos nossos dados, as estações de cada uma e que comboios param",
+    intro:
+      "Explore as linhas ferroviárias de Portugal — e ainda as linhas transfronteiriças e de metro dos nossos dados. Cada linha mostra as suas estações com os serviços que aí param.",
+    backToLines: "Voltar às linhas",
+    portugalHeading: "Linhas ferroviárias de Portugal",
+    spainHeading: "Linhas transfronteiriças e de Espanha",
+    metroHeading: "Linhas de metro",
+    stationCount_one: "{{count}} estação",
+    stationCount_other: "{{count}} estações",
+    lineCount_one: "{{count}} linha",
+    lineCount_other: "{{count}} linhas",
+    servicesLabel: "Serviços",
+    historicBadge: "Histórica",
+    orderingNote:
+      "As estações estão listadas por ordem geográfica aproximada ao longo da linha, não pela sequência oficial de paragens.",
+    servicesNote:
+      "Os tipos de serviço são os registados para cada estação nos nossos dados e podem não refletir todos os comboios em todos os dias.",
+    stationsHeading: "Estações desta linha",
+    alsoOn: "Também em",
+    noServiceData: "Sem dados de tipo de serviço",
+    emptyLine: "Ainda não há estações registadas nesta linha.",
+    viewAllLines: "Ver todas as linhas",
   },
   departures: {
     title: "Próximas partidas",
@@ -470,6 +496,18 @@ export const pt: Messages = {
         "Como comprar bilhetes de comboio em Portugal e Espanha — CP, Renfe, passes de metro e redes de suburbanos.",
       ogDescription:
         "Bilhetes CP e Renfe, passes de metro no Porto, Lisboa, Madrid e Barcelona.",
+    },
+    lines: {
+      title: "Linhas Ferroviárias e Estações | Mobilidade Ibérica",
+      description:
+        "Explore todas as linhas ferroviárias de Portugal (e ainda linhas transfronteiriças e de metro), as estações de cada linha e que serviços — Alfa Pendular, Intercidades, Regional, Urbano — aí param.",
+      ogDescription:
+        "Linhas ferroviárias de Portugal com as estações de cada linha e os serviços que aí param.",
+      lineTitle: "{{line}} — Estações e Serviços | {{site}}",
+      lineDescription:
+        "Todas as {{count}} estações da {{line}} e os serviços que aí param: {{services}}.",
+      lineOgDescription:
+        "{{line}}: {{count}} estações e serviços — {{services}}.",
     },
     map: {
       title: "Mapa de Atividade | Mobilidade Ibérica",

@@ -1,13 +1,9 @@
+import { cpAuthHeaders, getCpTravelConfig } from "./cpConfig.js";
 import { lisbonDateAndTime } from "./cpDeparturesParse.js";
 import {
   fetchCpTrainJourneyFallback,
   type FetchTrainJourneyFallbackParams,
 } from "./cpTrainJourneyFallback.js";
-
-const CP_OAUTH_URL = "https://api.cp.pt/cp-api/oauth/token";
-const CP_SIV_BASE = "https://api.cp.pt/cp-api/siv";
-const OAUTH_BASIC = "Y3AtbW9iaWxlOnBhc3M="; // cp-mobile:pass
-const TOKEN_TTL_MS = 50 * 60 * 1000;
 
 export type TrainJourneyStop = {
   stationCode: string;
@@ -49,37 +45,6 @@ type SivTrainResponse = {
   serviceCode?: { designation?: string };
   trainStops?: SivTrainStop[];
 };
-
-let tokenCache: { token: string; fetchedAt: number } | null = null;
-
-async function getSivAccessToken(): Promise<string> {
-  if (tokenCache && Date.now() - tokenCache.fetchedAt < TOKEN_TTL_MS) {
-    return tokenCache.token;
-  }
-
-  const body = new URLSearchParams({ grant_type: "client_credentials" });
-  const res = await fetch(CP_OAUTH_URL, {
-    method: "POST",
-    headers: {
-      Authorization: `Basic ${OAUTH_BASIC}`,
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body,
-    cache: "no-store",
-  });
-
-  if (!res.ok) {
-    throw new Error(`cp_oauth_http_${res.status}`);
-  }
-
-  const data = (await res.json()) as { access_token?: string };
-  if (!data.access_token) {
-    throw new Error("cp_oauth_missing_token");
-  }
-
-  tokenCache = { token: data.access_token, fetchedAt: Date.now() };
-  return data.access_token;
-}
 
 function normalizeClock(value: string | null | undefined): string | null {
   if (!value || typeof value !== "string") return null;
@@ -133,13 +98,11 @@ export async function fetchCpTrainJourney(
     throw new Error("invalid_timetable_date");
   }
 
-  const token = await getSivAccessToken();
-  const url = `${CP_SIV_BASE}/trains/${encodeURIComponent(normalizedTrain)}/timetable/${timetableDate}`;
+  const config = await getCpTravelConfig();
+  const base = config.travelApiUrl.replace(/\/$/, "");
+  const url = `${base}/trains/${encodeURIComponent(normalizedTrain)}/timetable/${timetableDate}`;
   const res = await fetch(url, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: "application/json",
-    },
+    headers: cpAuthHeaders(config),
     cache: "no-store",
   });
 

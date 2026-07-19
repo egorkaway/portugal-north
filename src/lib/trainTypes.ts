@@ -23,6 +23,22 @@ export function getTrainTypeAbbrev(type: string): string {
   return TRAIN_TYPE_ABBREV[type] ?? type;
 }
 
+/** Badge colour classes per service type, shared across station and line pages. */
+export const TRAIN_TYPE_BADGE_CLASSES: Record<string, string> = {
+  Airport: "bg-sky-600 text-white",
+  "Alfa Pendular": "bg-primary text-primary-foreground",
+  Intercidades: "bg-secondary text-secondary-foreground",
+  Regional: "bg-accent text-accent-foreground",
+  Urban: "bg-muted text-muted-foreground",
+  Internacional: "bg-teal-600 text-white",
+  Metro: "bg-violet-600 text-white",
+  "Inactive / Historic": "bg-muted text-muted-foreground opacity-60",
+};
+
+export function getTrainTypeBadgeClass(type: string): string {
+  return TRAIN_TYPE_BADGE_CLASSES[type] ?? "bg-muted text-muted-foreground";
+}
+
 export function sortTrainTypes(types: string[]): string[] {
   const order = new Map(TRAIN_TYPE_ORDER.map((t, i) => [t, i]));
   return [...types].sort((a, b) => {

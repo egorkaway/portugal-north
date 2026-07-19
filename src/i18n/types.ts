@@ -22,6 +22,7 @@ export type Messages = {
     tickets: string;
     map: string;
     trip: string;
+    lines: string;
     mobile: string;
     main: string;
   };
@@ -110,6 +111,28 @@ export type Messages = {
     reliabilityBody: string;
     reliabilityScale: string;
     reliabilityLoading: string;
+  };
+  lines: {
+    title: string;
+    subtitle: string;
+    intro: string;
+    backToLines: string;
+    portugalHeading: string;
+    spainHeading: string;
+    metroHeading: string;
+    stationCount_one: string;
+    stationCount_other: string;
+    lineCount_one: string;
+    lineCount_other: string;
+    servicesLabel: string;
+    historicBadge: string;
+    orderingNote: string;
+    servicesNote: string;
+    stationsHeading: string;
+    alsoOn: string;
+    noServiceData: string;
+    emptyLine: string;
+    viewAllLines: string;
   };
   departures: {
     title: string;
@@ -389,6 +412,14 @@ export type Messages = {
     home: { title: string; description: string };
     rankings: { title: string; description: string; ogDescription: string };
     tickets: { title: string; description: string; ogDescription: string };
+    lines: {
+      title: string;
+      description: string;
+      ogDescription: string;
+      lineTitle: string;
+      lineDescription: string;
+      lineOgDescription: string;
+    };
     map: { title: string; description: string; ogDescription: string };
     trip: { title: string; description: string; ogDescription: string };
     privacy: { title: string; description: string; ogDescription: string };
