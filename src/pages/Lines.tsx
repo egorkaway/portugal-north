@@ -8,7 +8,7 @@ import { getLinesPageMeta } from "@/lib/pageMeta";
 import { buildLinesStructuredData } from "@/lib/structuredData";
 import { defaultHomePath } from "@/lib/homeRoute";
 import { useLocale } from "@/i18n/LocaleProvider";
-import { getLinePath, getTrainLines, type TrainLine } from "@/lib/trainLines";
+import { getLinePath, getRailLines, type TrainLine } from "@/lib/trainLines";
 import { getTrainTypeBadgeClass } from "@/lib/trainTypes";
 
 function LineCard({ line }: { line: TrainLine }) {
@@ -67,10 +67,9 @@ function LineSection({ title, lines }: { title: string; lines: TrainLine[] }) {
 
 const Lines = () => {
   const { t, locale } = useLocale();
-  const lines = getTrainLines();
-  const railPt = lines.filter((l) => l.category === "rail" && l.country === "pt");
-  const railEs = lines.filter((l) => l.category === "rail" && l.country === "es");
-  const metro = lines.filter((l) => l.category === "metro");
+  const lines = getRailLines();
+  const railPt = lines.filter((l) => l.country === "pt");
+  const railEs = lines.filter((l) => l.country === "es");
 
   return (
     <>
@@ -106,7 +105,6 @@ const Lines = () => {
 
           <LineSection title={t("lines.portugalHeading")} lines={railPt} />
           <LineSection title={t("lines.spainHeading")} lines={railEs} />
-          <LineSection title={t("lines.metroHeading")} lines={metro} />
 
           <p className="mt-2 text-xs text-muted-foreground">{t("lines.orderingNote")}</p>
         </main>

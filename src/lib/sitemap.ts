@@ -1,7 +1,7 @@
 import { allStations } from "../data/stationRegistry";
 import { getHomeSitemapPaths } from "./homeRoute";
 import { getStationPath } from "./stationSlug";
-import { getLinePath, getTrainLines } from "./trainLines";
+import { getLinePath, getRailLines } from "./trainLines";
 
 export type SitemapEntry = {
   path: string;
@@ -23,7 +23,7 @@ export function getSitemapEntries(): SitemapEntry[] {
     { path: "/map", changefreq: "weekly", priority: "0.75" },
     { path: "/lines", changefreq: "weekly", priority: "0.75" },
     { path: "/privacy", changefreq: "monthly", priority: "0.5" },
-    ...getTrainLines().map((line) => ({
+    ...getRailLines().map((line) => ({
       path: getLinePath(line),
       changefreq: "weekly" as const,
       priority: "0.65",

@@ -2,14 +2,14 @@ import { describe, expect, it } from "vitest";
 import { buildSitemapXml, getSitemapEntries } from "@/lib/sitemap";
 import { allStations } from "@/data/stationRegistry";
 import { getHomeSitemapPaths } from "@/lib/homeRoute";
-import { getTrainLines } from "@/lib/trainLines";
+import { getRailLines } from "@/lib/trainLines";
 
 describe("sitemap", () => {
   it("includes home pages, rankings, tickets, map, lines, privacy, and every station page", () => {
     const entries = getSitemapEntries();
     const homePages = getHomeSitemapPaths();
     expect(entries).toHaveLength(
-      homePages.length + 5 + getTrainLines().length + allStations.length,
+      homePages.length + 5 + getRailLines().length + allStations.length,
     );
     expect(entries[0].path).toBe("/all");
     expect(entries.some((e) => e.path === "/all/2")).toBe(true);

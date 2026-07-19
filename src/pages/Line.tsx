@@ -8,7 +8,7 @@ import { buildLinePageMeta } from "@/lib/pageMeta";
 import { buildLineStructuredData } from "@/lib/structuredData";
 import { useLocale } from "@/i18n/LocaleProvider";
 import {
-  getLinesForStation,
+  getListedLinesForStation,
   getTrainLineBySlug,
 } from "@/lib/trainLines";
 import { getStationPath } from "@/lib/stationSlug";
@@ -86,7 +86,7 @@ const Line = () => {
           ) : (
             <ol className="space-y-2">
               {line.stations.map((station, index) => {
-                const others = getLinesForStation(station).filter(
+                const others = getListedLinesForStation(station).filter(
                   (l) => l.slug !== line.slug,
                 );
                 return (

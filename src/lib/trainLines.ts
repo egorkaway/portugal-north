@@ -181,3 +181,8 @@ export function getLinesForStation(station: Station): TrainLine[] {
   }
   return result;
 }
+
+/** Listed lines for a station (excludes metro until data is complete). */
+export function getListedLinesForStation(station: Station): TrainLine[] {
+  return getLinesForStation(station).filter((line) => line.category === "rail");
+}

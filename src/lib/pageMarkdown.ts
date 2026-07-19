@@ -17,7 +17,7 @@ import { getStationBySlug, getStationPath, stationToSlug } from "@/lib/stationSl
 import {
   getLinePath,
   getTrainLineBySlug,
-  getTrainLines,
+  getRailLines,
   type TrainLine,
 } from "@/lib/trainLines";
 import type { PrerenderRoute } from "@/lib/prerenderRoutes";
@@ -145,7 +145,7 @@ A CP ticket does not include metro rides unless CP sells an explicit combined pr
 
 export function buildLinesMarkdown(meta: PageMeta, siteUrl: string): string {
   const base = siteUrl.replace(/\/$/, "");
-  const lines = getTrainLines();
+  const lines = getRailLines();
 
   const renderGroup = (group: typeof lines): string =>
     group
@@ -155,9 +155,8 @@ export function buildLinesMarkdown(meta: PageMeta, siteUrl: string): string {
       )
       .join("\n");
 
-  const railPt = lines.filter((l) => l.category === "rail" && l.country === "pt");
-  const railEs = lines.filter((l) => l.category === "rail" && l.country === "es");
-  const metro = lines.filter((l) => l.category === "metro");
+  const railPt = lines.filter((l) => l.country === "pt");
+  const railEs = lines.filter((l) => l.country === "es");
 
   const body = `${yamlFrontmatter({
     title: meta.title,
@@ -176,10 +175,6 @@ ${renderGroup(railPt)}
 ## Cross-border & Spanish lines
 
 ${renderGroup(railEs)}
-
-## Metro lines
-
-${renderGroup(metro)}
 `;
 
   return appendJsonLdBlock(body, buildLinesStructuredData(lines));
