@@ -9,7 +9,11 @@ import {
   View,
 } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
+import { WidgetPreviewCard } from '@/components/WidgetPreviewCard';
+import { GetMapaPromoCard } from '@/components/GetMapaPromoCard';
+import { BuildFooter } from '@/components/BuildFooter';
 import { theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import {
   fetchStationDepartures,
   fetchTrainJourney,
@@ -36,9 +40,6 @@ import {
 import { subscribeTripChanges } from '@/lib/tripEvents';
 import { useTripCompletion } from '@/lib/useTripCompletion';
 import { useTripDepartureRecord } from '@/lib/useTripDepartureRecord';
-import { WidgetPreviewCard } from '@/components/WidgetPreviewCard';
-import { GetMapaPromoCard } from '@/components/GetMapaPromoCard';
-import { BuildFooter } from '@/components/BuildFooter';
 import { DEFAULT_WIDGET_PROPS } from '@/lib/widgetDefaults';
 import { syncTripWidgets } from '@/lib/widgetSync';
 import type { CompletedTripRecord, PlannedDeparture, TripWidgetProps } from '@/lib/types';
@@ -51,6 +52,7 @@ function TripStopRow({
   timetableDate,
   now,
   onPressStation,
+  t,
 }: {
   stop: TrainJourneyStop;
   isOrigin: boolean;
@@ -58,6 +60,7 @@ function TripStopRow({
   timetableDate: string;
   now: Date;
   onPressStation: (stationName: string) => void;
+  t: (path: string, params?: Record<string, string | number>) => string;
 }) {
   const stationName = getStationNameByCpCode(stop.stationCode) ?? stop.stationName;
   const clockTime = isOrigin
@@ -70,16 +73,16 @@ function TripStopRow({
   const countdownLabel =
     minutesUntil !== null
       ? isOrigin
-        ? formatDepartureCountdown(minutesUntil)
-        : formatArrivalCountdown(minutesUntil)
+        ? formatDepartureCountdown(minutesUntil, t)
+        : formatArrivalCountdown(minutesUntil, t)
       : null;
 
   return (
     <Pressable style={styles.stopRow} onPress={() => onPressStation(stationName)}>
       <Text style={styles.stopName}>{stationName}</Text>
       <Text style={styles.stopMeta}>
-        {isOrigin ? 'Departs' : 'Arrives'} {clockTime ?? '—'}
-        {stop.platform ? ` · Platform ${stop.platform}` : ''}
+        {clockTime ?? '—'}
+        {stop.platform ? ` · ${t('trip.platform', { platform: stop.platform })}` : ''}
       </Text>
       {countdownLabel ? <Text style={styles.stopCountdown}>{countdownLabel}</Text> : null}
     </Pressable>
@@ -88,6 +91,7 @@ function TripStopRow({
 
 export default function TripScreen() {
   const router = useRouter();
+  const { t } = useLocale();
   const [activeTrip, setActiveTrip] = useState<PlannedDeparture | null>(null);
   const [history, setHistory] = useState<CompletedTripRecord[]>([]);
   const [journey, setJourney] = useState<Awaited<ReturnType<typeof fetchTrainJourney>>>(null);
@@ -254,7 +258,7 @@ export default function TripScreen() {
     : null;
   const departureCountdown =
     departureMinutesUntil !== null && departureMinutesUntil > 0
-      ? formatDepartureCountdown(departureMinutesUntil)
+      ? formatDepartureCountdown(departureMinutesUntil, t)
       : null;
   const effectiveDepartureTime = activeTrip
     ? getEffectiveDepartureClock(activeTrip.departureTime, delayMinutes)
@@ -272,7 +276,9 @@ export default function TripScreen() {
     !journeyLoading && !journeyError && Boolean(journey) && downstreamStops.length > 1;
   const showDepartedWithoutStops = hasDeparted && !hasConfirmedUpcomingStops;
   const departureTimeAgoLabel =
-    minutesSinceDeparture !== null ? formatDepartureTimeAgo(minutesSinceDeparture) : null;
+    minutesSinceDeparture !== null
+      ? formatDepartureTimeAgo(minutesSinceDeparture, t)
+      : null;
 
   return (
     <ScrollView
@@ -282,21 +288,18 @@ export default function TripScreen() {
     >
       {!activeTrip ? (
         <View style={styles.emptyCard}>
-          <Text style={styles.emptyTitle}>No trip tracked</Text>
-          <Text style={styles.emptyBody}>
-            Open a station, pick a departure from the live board, and tap Take. Your countdown
-            will appear here and on the home-screen widget.
-          </Text>
+          <Text style={styles.emptyTitle}>{t('trip.emptyTitle')}</Text>
+          <Text style={styles.emptyBody}>{t('trip.emptyBody')}</Text>
         </View>
       ) : (
         <View style={styles.activeSection}>
           <View style={styles.card}>
             <View style={styles.cardHeader}>
               <Text style={styles.cardLabel}>
-                {showDepartedWithoutStops ? 'Departed' : 'Departure countdown'}
+                {showDepartedWithoutStops ? t('trip.departed') : t('nav.trip')}
               </Text>
               <Pressable style={styles.stopButton} onPress={() => void clearTrip()}>
-                <Text style={styles.stopButtonText}>Stop tracking</Text>
+                <Text style={styles.stopButtonText}>{t('trip.stopTracking')}</Text>
               </Pressable>
             </View>
 
@@ -307,9 +310,9 @@ export default function TripScreen() {
             {showDepartedWithoutStops ? (
               <>
                 <Text style={styles.countdown}>
-                  {effectiveDepartureTime
-                    ? `Departed at ${effectiveDepartureTime}`
-                    : `Departed at ${activeTrip.departureTime}`}
+                  {t('trip.departedAt', {
+                    time: effectiveDepartureTime ?? activeTrip.departureTime,
+                  })}
                 </Text>
                 {departureTimeAgoLabel ? (
                   <Text style={styles.timeAgo}>{departureTimeAgoLabel}</Text>
@@ -320,30 +323,34 @@ export default function TripScreen() {
                 <Text style={styles.countdown}>
                   {departureCountdown ??
                     (hasDeparted
-                      ? effectiveDepartureTime
-                        ? `Departed at ${effectiveDepartureTime}`
-                        : `Departed at ${activeTrip.departureTime}`
+                      ? t('trip.departedAt', {
+                          time: effectiveDepartureTime ?? activeTrip.departureTime,
+                        })
                       : activeTrip.departureTime)}
                 </Text>
                 <Text style={styles.meta}>
-                  Departs {activeTrip.departureTime}
-                  {delayMinutes !== null && delayMinutes > 0 ? ` · +${delayMinutes} min delay` : ''}
+                  {activeTrip.departureTime}
+                  {delayMinutes !== null && delayMinutes > 0
+                    ? ` · ${t('trip.delayMin', { minutes: delayMinutes })}`
+                    : ''}
                 </Text>
                 {effectiveDepartureTime &&
                 delayMinutes !== null &&
                 delayMinutes > 0 &&
                 effectiveDepartureTime !== activeTrip.departureTime ? (
-                  <Text style={styles.meta}>Expected {effectiveDepartureTime}</Text>
+                  <Text style={styles.meta}>
+                    {t('trip.expectedDeparture', { time: effectiveDepartureTime })}
+                  </Text>
                 ) : null}
               </>
             )}
 
             <Text style={styles.trainLine}>
-              Train {activeTrip.trainNumber} → {activeTrip.destination}
+              {activeTrip.trainNumber} → {activeTrip.destination}
             </Text>
             <Text style={styles.meta}>
               {serviceType}
-              {platform ? ` · Platform ${platform}` : ''}
+              {platform ? ` · ${t('trip.platform', { platform })}` : ''}
             </Text>
           </View>
 
@@ -353,7 +360,7 @@ export default function TripScreen() {
 
           {hasConfirmedUpcomingStops ? (
             <View style={styles.stopsSection}>
-              <Text style={styles.sectionTitle}>Upcoming stops</Text>
+              <Text style={styles.sectionTitle}>{t('trip.upcomingStops')}</Text>
               {downstreamStops.map((stop, index) => (
                 <TripStopRow
                   key={`${stop.stationCode}-${index}`}
@@ -363,6 +370,7 @@ export default function TripScreen() {
                   timetableDate={activeTrip.timetableDate}
                   now={now}
                   onPressStation={openStation}
+                  t={t}
                 />
               ))}
             </View>
@@ -371,9 +379,9 @@ export default function TripScreen() {
       )}
 
       <View style={styles.historySection}>
-        <Text style={styles.sectionTitle}>Past trips</Text>
+        <Text style={styles.sectionTitle}>{t('trip.pastTrips')}</Text>
         {pastTrips.length === 0 ? (
-          <Text style={styles.historyEmpty}>Trips you take will appear here.</Text>
+          <Text style={styles.historyEmpty}>{t('trip.emptyBody')}</Text>
         ) : (
           pastTrips.map((record) => (
             <View key={record.id} style={styles.historyCard}>
@@ -386,10 +394,10 @@ export default function TripScreen() {
                 </Text>
                 <View style={styles.historyLinks}>
                   <Pressable onPress={() => openStation(record.stationName)}>
-                    <Text style={styles.historyLink}>Origin station</Text>
+                    <Text style={styles.historyLink}>{t('trip.origin')}</Text>
                   </Pressable>
                   <Pressable onPress={() => openStation(record.finalStationName)}>
-                    <Text style={styles.historyLink}>Final stop</Text>
+                    <Text style={styles.historyLink}>{t('trip.finalStop')}</Text>
                   </Pressable>
                 </View>
               </View>
@@ -397,7 +405,7 @@ export default function TripScreen() {
                 style={styles.deleteButton}
                 onPress={() => void deleteHistory(record.id)}
               >
-                <Text style={styles.deleteButtonText}>Delete</Text>
+                <Text style={styles.deleteButtonText}>{t('common.delete')}</Text>
               </Pressable>
             </View>
           ))

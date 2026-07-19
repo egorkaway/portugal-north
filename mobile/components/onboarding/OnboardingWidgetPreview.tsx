@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { brandTheme } from '@/constants/brandTheme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { getWidgetDisplayFields } from '@/lib/widgetDisplay';
 import type { TripWidgetProps } from '@/lib/types';
 
@@ -8,12 +9,13 @@ type Props = {
   label?: string;
 };
 
-export function OnboardingWidgetPreview({ props, label = 'Home-screen widget' }: Props) {
+export function OnboardingWidgetPreview({ props, label }: Props) {
+  const { t } = useLocale();
   const fields = getWidgetDisplayFields(props);
 
   return (
     <View style={styles.wrap}>
-      <Text style={styles.caption}>{label}</Text>
+      <Text style={styles.caption}>{label ?? t('widget.title')}</Text>
       <View style={styles.card}>
         <Text
           style={[

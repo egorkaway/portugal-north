@@ -1,5 +1,6 @@
 import { Linking, Pressable, StyleSheet, Text } from 'react-native';
 import { theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import {
   attributionForImageUrl,
   shouldShowStationImageCredit,
@@ -10,12 +11,14 @@ type Props = {
 };
 
 export function StationImageCredit({ imageUrl }: Props) {
+  const { t } = useLocale();
+
   if (!shouldShowStationImageCredit(imageUrl)) return null;
 
   const attribution = attributionForImageUrl(imageUrl);
   const label =
     attribution.creator.type === 'Person'
-      ? `Photo by ${attribution.creator.name}`
+      ? t('station.photoCreditBy', { author: attribution.creator.name })
       : attribution.creditText;
   const href = attribution.authorUrl ?? attribution.sourceUrl;
 

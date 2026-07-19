@@ -1,5 +1,6 @@
 import { Linking, Pressable, Text, View } from 'react-native';
 import { stationSectionStyles as styles } from '@/components/stationSectionStyles';
+import { useLocale } from '@/i18n/LocaleProvider';
 import type { Hotel } from '@/lib/stationData';
 
 type Props = {
@@ -7,6 +8,8 @@ type Props = {
 };
 
 export function StationHotelList({ hotels }: Props) {
+  const { t } = useLocale();
+
   return (
     <View style={styles.list}>
       {hotels.map((hotel) => (
@@ -20,14 +23,16 @@ export function StationHotelList({ hotels }: Props) {
               {hotel.name}
             </Text>
             <Text style={styles.cardMeta}>
-              {hotel.distanceKm.toFixed(1)} km from station
+              {t('hotel.kmFromStation', { km: hotel.distanceKm.toFixed(1) })}
             </Text>
-            <Text style={styles.cardMeta}>from €{hotel.priceFrom}/night</Text>
+            <Text style={styles.cardMeta}>
+              {t('hotel.fromPerNight', { price: hotel.priceFrom })}
+            </Text>
           </View>
           <View style={styles.cardAside}>
             <Text style={styles.cardPrice}>€{hotel.priceFrom}</Text>
             <View style={styles.actionButton}>
-              <Text style={styles.actionButtonText}>View</Text>
+              <Text style={styles.actionButtonText}>{t('hotel.view')}</Text>
             </View>
           </View>
         </Pressable>

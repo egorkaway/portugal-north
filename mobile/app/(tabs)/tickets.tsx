@@ -1,6 +1,7 @@
 import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { BuildFooter } from '@/components/BuildFooter';
 import { theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import ticketGuide from '@/data/ticket-guide.json';
 
 type TicketLink = {
@@ -20,9 +21,11 @@ type TicketCountry = {
 const countries = ticketGuide.countries as TicketCountry[];
 
 export default function TicketsScreen() {
+  const { t } = useLocale();
+
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <Text style={styles.title}>Tickets</Text>
+      <Text style={styles.title}>{t('tickets.title')}</Text>
       <Text style={styles.subtitle}>{ticketGuide.subtitle}</Text>
 
       {countries.map((country) => (
@@ -33,6 +36,10 @@ export default function TicketsScreen() {
           crossBorderNote={country.crossBorderNote}
           serviceBullets={country.serviceBullets}
           links={country.links}
+          howToBuyTitle={t('tickets.howToBuy')}
+          serviceTypesTitle={t('tickets.serviceTypes')}
+          usefulLinksTitle={t('tickets.usefulLinks')}
+          openLabel={t('tickets.open')}
         />
       ))}
 
@@ -48,19 +55,27 @@ function CountrySection({
   crossBorderNote,
   serviceBullets,
   links,
+  howToBuyTitle,
+  serviceTypesTitle,
+  usefulLinksTitle,
+  openLabel,
 }: {
   country: string;
   howToBuy: string;
   crossBorderNote?: string;
   serviceBullets: string[];
   links: TicketLink[];
+  howToBuyTitle: string;
+  serviceTypesTitle: string;
+  usefulLinksTitle: string;
+  openLabel: string;
 }) {
   return (
     <View style={styles.countryBlock}>
       <Text style={styles.countryTitle}>{country}</Text>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>How to buy</Text>
+        <Text style={styles.sectionTitle}>{howToBuyTitle}</Text>
         <Text style={styles.body}>{howToBuy}</Text>
         {crossBorderNote ? (
           <View style={styles.noteCard}>
@@ -70,14 +85,14 @@ function CountrySection({
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Service types</Text>
+        <Text style={styles.sectionTitle}>{serviceTypesTitle}</Text>
         {serviceBullets.map((text) => (
           <Bullet key={text} text={text} />
         ))}
       </View>
 
       <View style={styles.section}>
-        <Text style={styles.sectionTitle}>Useful links</Text>
+        <Text style={styles.sectionTitle}>{usefulLinksTitle}</Text>
         {links.map((link) => (
           <Pressable
             key={link.url}
@@ -86,7 +101,7 @@ function CountrySection({
           >
             <Text style={styles.linkTitle}>{link.title}</Text>
             <Text style={styles.linkBody}>{link.body}</Text>
-            <Text style={styles.linkAction}>Open</Text>
+            <Text style={styles.linkAction}>{openLabel}</Text>
           </Pressable>
         ))}
       </View>

@@ -15,6 +15,7 @@ import ViewShot from 'react-native-view-shot';
 import { useSystemColorScheme } from '@/components/useSystemColorScheme';
 import { MapShareBrandingFooter } from '@/components/MapShareBrandingFooter';
 import { theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { reliabilityScoreColor, formatReliabilityScore } from '@/lib/reliabilityScore';
 import {
   allStations,
@@ -46,6 +47,7 @@ function markerSize(movements: number): number {
 export default function MapScreen() {
   const router = useRouter();
   const navigation = useNavigation();
+  const { t } = useLocale();
   const mapRef = useRef<MapView>(null);
   const shareViewRef = useRef<ViewShot>(null);
   const markerPressLock = useRef(false);
@@ -128,14 +130,19 @@ export default function MapScreen() {
     setSharing(true);
     setSelectedName(null);
     try {
-      await shareCapturedMap(shareViewRef);
+      await shareCapturedMap(shareViewRef, {
+        dialogTitle: t('map.shareMap'),
+        unavailableTitle: t('map.shareFailedTitle'),
+        unavailableBody: t('map.sharingUnavailable'),
+      });
     } catch (error) {
-      const message = error instanceof Error ? error.message : 'Could not share the map.';
-      Alert.alert('Share failed', message);
+      const message =
+        error instanceof Error ? error.message : t('map.shareFailedBody');
+      Alert.alert(t('map.shareFailedTitle'), message);
     } finally {
       setSharing(false);
     }
-  }, [sharing]);
+  }, [sharing, t]);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -143,7 +150,7 @@ export default function MapScreen() {
         <View style={styles.headerActions}>
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel="Share map"
+            accessibilityLabel={t('map.shareA11y')}
             disabled={sharing}
             onPress={() => void shareMap()}
             style={styles.headerButton}
@@ -160,7 +167,7 @@ export default function MapScreen() {
           </Pressable>
           <Pressable
             accessibilityRole="button"
-            accessibilityLabel="Locate me"
+            accessibilityLabel={t('map.locateA11y')}
             onPress={() => void locateUser()}
             style={styles.headerButton}
           >
@@ -177,7 +184,7 @@ export default function MapScreen() {
         </View>
       ),
     });
-  }, [navigation, locateUser, locating, shareMap, sharing]);
+  }, [navigation, locateUser, locating, shareMap, sharing, t]);
 
   const selected = markers.find((item) => item.station.name === selectedName);
   const mapAppearance = useSystemColorScheme();
@@ -224,12 +231,12 @@ export default function MapScreen() {
 
         <View style={styles.legend} pointerEvents="box-none">
           <View style={styles.legendCard}>
-            <Text style={styles.legendTitle}>Reliability</Text>
+            <Text style={styles.legendTitle}>{t('map.legendTitle')}</Text>
             <View style={styles.legendRow}>
-              <LegendSwatch color={reliabilityScoreColor(9)} label="8–10" />
-              <LegendSwatch color={reliabilityScoreColor(6)} label="5–7" />
-              <LegendSwatch color={reliabilityScoreColor(3)} label="0–4" />
-              <LegendSwatch color="#0284C7" label="Airport" />
+              <LegendSwatch color={reliabilityScoreColor(9)} label={t('map.legendHigh')} />
+              <LegendSwatch color={reliabilityScoreColor(6)} label={t('map.legendMid')} />
+              <LegendSwatch color={reliabilityScoreColor(3)} label={t('map.legendLow')} />
+              <LegendSwatch color="#0284C7" label={t('map.legendAirport')} />
             </View>
           </View>
         </View>
@@ -245,7 +252,7 @@ export default function MapScreen() {
             </Text>
             <Pressable
               accessibilityRole="button"
-              accessibilityLabel="Close station card"
+              accessibilityLabel={t('map.closeA11y')}
               onPress={() => setSelectedName(null)}
               style={styles.sheetClose}
               hitSlop={8}
@@ -261,14 +268,14 @@ export default function MapScreen() {
           <Text style={styles.sheetMeta}>{selected.station.lines.join(' · ')}</Text>
           {selected.score !== null ? (
             <Text style={styles.sheetScore}>
-              Reliability {formatReliabilityScore(selected.score)}/10 · {selected.movements} movements/day
+              {t('map.legendTitle')} {formatReliabilityScore(selected.score)}/10
             </Text>
           ) : null}
           <Pressable
             style={styles.sheetButton}
             onPress={() => router.push(`/station/${stationToSlug(selected.station.name)}`)}
           >
-            <Text style={styles.sheetButtonText}>Open station</Text>
+            <Text style={styles.sheetButtonText}>{t('map.openStation')}</Text>
           </Pressable>
         </View>
       ) : null}

@@ -2,6 +2,7 @@ import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { TrainTypeDot } from '@/components/TrainTypeDot';
 import { VoteButtons } from '@/components/VoteButtons';
 import { sortTrainTypes, theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { formatDistance } from '@/lib/geo';
 import { getStationImageUrl, type Station } from '@/lib/stationData';
 import type { Vote } from '@/lib/voteStorage';
@@ -25,6 +26,7 @@ export function StationCard({
   onVote,
   onToggleVisited,
 }: Props) {
+  const { t } = useLocale();
   const imageUrl = getStationImageUrl(station.name);
 
   return (
@@ -33,7 +35,7 @@ export function StationCard({
         <Image source={{ uri: imageUrl }} style={styles.image} resizeMode="cover" />
       ) : (
         <View style={[styles.image, styles.imagePlaceholder]}>
-          <Text style={styles.placeholderText}>No photo</Text>
+          <Text style={styles.placeholderText}>{t('home.noPhoto')}</Text>
         </View>
       )}
 
@@ -71,7 +73,7 @@ export function StationCard({
           style={[styles.visitedChip, visited && styles.visitedChipActive]}
         >
           <Text style={[styles.visitedText, visited && styles.visitedTextActive]}>
-            {visited ? 'Visited' : 'Mark visited'}
+            {visited ? t('home.visitedBadge') : t('home.markVisited')}
           </Text>
         </Pressable>
       </View>

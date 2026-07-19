@@ -8,6 +8,7 @@ import { StationCard } from '@/components/StationCard';
 import { BuildFooter } from '@/components/BuildFooter';
 import { StationFilters } from '@/components/StationFilters';
 import { PAGE_SIZE, sortTrainTypes, theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { fetchGlobalRatings } from '@/lib/api';
 import { orderStationsForHome, stationDistancesKm } from '@/lib/rankStations';
 import { stationMatchesSearch } from '@/lib/searchText';
@@ -27,6 +28,7 @@ type VisitedFilter = 'visited' | 'notVisited';
 export default function HomeScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
+  const { t, plural } = useLocale();
   const [searchQuery, setSearchQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);
@@ -208,12 +210,17 @@ export default function HomeScreen() {
             />
 
             <Text style={styles.count}>
-              {filtered.length} stations
-              {visible.length < filtered.length ? ` · showing ${visible.length}` : ''}
+              {plural('home.stationCount', filtered.length)}
+              {visible.length < filtered.length
+                ? ` · ${t('home.showingCount', { count: visible.length })}`
+                : ''}
             </Text>
           </View>
         }
         ListFooterComponent={<BuildFooter />}
+        ListEmptyComponent={
+          <Text style={styles.count}>{t('home.noResults')}</Text>
+        }
         contentContainerStyle={styles.listContent}
       />
     </View>

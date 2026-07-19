@@ -15,6 +15,7 @@ import { OnboardingLiveActivityPreview } from '@/components/onboarding/Onboardin
 import { OnboardingStepIllustration } from '@/components/onboarding/OnboardingStepIllustration';
 import { OnboardingWidgetPreview } from '@/components/onboarding/OnboardingWidgetPreview';
 import { brandTheme } from '@/constants/brandTheme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { completeOnboarding, isOnboardingComplete } from '@/lib/onboardingStorage';
 import { ensureTripNotificationPermission } from '@/lib/tripNotifications';
 import { writeLastCoords } from '@/lib/tripStorage';
@@ -38,6 +39,7 @@ const EXAMPLE_TRIP: TripWidgetProps = {
 
 export default function OnboardingScreen() {
   const router = useRouter();
+  const { t } = useLocale();
   const [stepIndex, setStepIndex] = useState(0);
   const [busy, setBusy] = useState(false);
   const [checking, setChecking] = useState(true);
@@ -124,16 +126,13 @@ export default function OnboardingScreen() {
         {step === 'welcome' ? (
           <View style={styles.stepBody}>
             <OnboardingStepIllustration step="welcome" />
-            <Text style={styles.eyebrow}>Welcome</Text>
-            <Text style={styles.title}>Plan train travel across Iberia</Text>
-            <Text style={styles.body}>
-              VeryStays helps you browse stations and airports, check live departures, track your
-              trip with a countdown, explore reliability rankings, and find budget stays near hubs.
-            </Text>
+            <Text style={styles.eyebrow}>{t('onboarding.welcomeEyebrow')}</Text>
+            <Text style={styles.title}>{t('onboarding.welcomeTitle')}</Text>
+            <Text style={styles.body}>{t('onboarding.welcomeBody')}</Text>
             <View style={styles.bulletList}>
-              <Text style={styles.bullet}>· 426 stations across Portugal and Spain</Text>
-              <Text style={styles.bullet}>· Live CP departures and trip tracking</Text>
-              <Text style={styles.bullet}>· Maps, rankings, and ticket guidance</Text>
+              <Text style={styles.bullet}>· {t('onboarding.welcomeBullet1')}</Text>
+              <Text style={styles.bullet}>· {t('onboarding.welcomeBullet2')}</Text>
+              <Text style={styles.bullet}>· {t('onboarding.welcomeBullet3')}</Text>
             </View>
           </View>
         ) : null}
@@ -141,41 +140,30 @@ export default function OnboardingScreen() {
         {step === 'location' ? (
           <View style={styles.stepBody}>
             <OnboardingStepIllustration step="location" />
-            <Text style={styles.eyebrow}>Location</Text>
-            <Text style={styles.title}>Find stations near you</Text>
-            <Text style={styles.body}>
-              Location is optional, but it lets VeryStays sort stations by distance and show your
-              nearest hub on the home-screen widget when you do not have an active trip.
-            </Text>
+            <Text style={styles.eyebrow}>{t('onboarding.locationEyebrow')}</Text>
+            <Text style={styles.title}>{t('onboarding.locationTitle')}</Text>
+            <Text style={styles.body}>{t('onboarding.locationBody')}</Text>
           </View>
         ) : null}
 
         {step === 'notifications' ? (
           <View style={styles.stepBody}>
             <OnboardingStepIllustration step="notifications" />
-            <Text style={styles.eyebrow}>Notifications</Text>
-            <Text style={styles.title}>Gentle trip reminders</Text>
-            <Text style={styles.body}>
-              When you tap Take on a departure, we can remind you a few minutes before the train
-              leaves so you have time to reach the platform.
-            </Text>
+            <Text style={styles.eyebrow}>{t('onboarding.notificationsEyebrow')}</Text>
+            <Text style={styles.title}>{t('onboarding.notificationsTitle')}</Text>
+            <Text style={styles.body}>{t('onboarding.notificationsBody')}</Text>
           </View>
         ) : null}
 
         {step === 'widgets' ? (
           <View style={styles.stepBody}>
             <OnboardingStepIllustration step="widgets" />
-            <Text style={styles.eyebrow}>At a glance</Text>
-            <Text style={styles.title}>Widgets & Live Activity</Text>
-            <Text style={styles.body}>
-              Add the Train countdown widget to your Home Screen. On iPhone, tracking a trip can
-              also show a Live Activity on your Lock Screen and Dynamic Island.
-            </Text>
+            <Text style={styles.eyebrow}>{t('onboarding.widgetsEyebrow')}</Text>
+            <Text style={styles.title}>{t('onboarding.widgetsTitle')}</Text>
+            <Text style={styles.body}>{t('onboarding.widgetsBody')}</Text>
             <OnboardingWidgetPreview props={EXAMPLE_TRIP} />
             <OnboardingLiveActivityPreview props={EXAMPLE_TRIP} />
-            <Text style={styles.hint}>
-              Long-press your Home Screen, tap +, search for VeryStays, and choose Train countdown.
-            </Text>
+            <Text style={styles.hint}>{t('onboarding.widgetsHint')}</Text>
           </View>
         ) : null}
       </ScrollView>
@@ -183,7 +171,7 @@ export default function OnboardingScreen() {
       <View style={styles.footer}>
         {step === 'welcome' ? (
           <Pressable style={styles.primaryButton} onPress={advance} disabled={busy}>
-            <Text style={styles.primaryButtonText}>Continue</Text>
+            <Text style={styles.primaryButtonText}>{t('common.continue')}</Text>
           </Pressable>
         ) : null}
 
@@ -194,7 +182,7 @@ export default function OnboardingScreen() {
             disabled={busy}
           >
             <Text style={styles.primaryButtonText}>
-              {busy ? 'Requesting…' : 'Continue'}
+              {busy ? t('common.requesting') : t('onboarding.enableLocation')}
             </Text>
           </Pressable>
         ) : null}
@@ -206,7 +194,7 @@ export default function OnboardingScreen() {
             disabled={busy}
           >
             <Text style={styles.primaryButtonText}>
-              {busy ? 'Requesting…' : 'Continue'}
+              {busy ? t('common.requesting') : t('onboarding.enableNotifications')}
             </Text>
           </Pressable>
         ) : null}
@@ -218,21 +206,17 @@ export default function OnboardingScreen() {
             disabled={busy}
           >
             <Text style={styles.primaryButtonText}>
-              {busy ? 'Starting…' : 'Get started'}
+              {busy ? t('common.requesting') : t('onboarding.finish')}
             </Text>
           </Pressable>
         ) : null}
 
         {step === 'location' ? (
-          <Text style={styles.footerNote}>
-            Optional. You can change location access later in Settings.
-          </Text>
+          <Text style={styles.footerNote}>{t('onboarding.locationFooter')}</Text>
         ) : null}
 
         {step === 'notifications' ? (
-          <Text style={styles.footerNote}>
-            Optional. You can change notification settings later in Settings.
-          </Text>
+          <Text style={styles.footerNote}>{t('onboarding.notificationsFooter')}</Text>
         ) : null}
       </View>
     </SafeAreaView>

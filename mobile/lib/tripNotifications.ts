@@ -1,5 +1,6 @@
 import { Platform } from 'react-native';
 import * as Notifications from 'expo-notifications';
+import { createTranslator, resolveAppLocale, type Locale } from '@/i18n';
 import {
   getEffectiveDepartureClock,
   getMinutesUntilDeparture,
@@ -11,12 +12,20 @@ export const TRIP_DEPARTURE_REMINDER_ID = 'trip-departure-reminder';
 const MIN_MINUTES_BEFORE_NOTIFY = 5;
 const NOTIFY_MINUTES_BEFORE_DEPARTURE = 3;
 
-export function buildTripDepartureReminderMessage(trip: PlannedDeparture): string {
+export function buildTripDepartureReminderMessage(
+  trip: PlannedDeparture,
+  locale: Locale = 'en',
+): string {
+  const { t } = createTranslator(locale);
   const departureClock =
     getEffectiveDepartureClock(trip.departureTime, trip.delayMinutes) ??
     trip.departureTime;
 
-  return `We hope you managed to get to the ${departureClock} train that is taking you from ${trip.stationName} to ${trip.destination}.`;
+  return t('tripNotify.body', {
+    time: departureClock,
+    origin: trip.stationName,
+    destination: trip.destination,
+  });
 }
 
 export async function ensureTripNotificationPermission(): Promise<boolean> {
@@ -52,6 +61,7 @@ export async function cancelTripDepartureReminder(): Promise<void> {
 export async function scheduleTripDepartureReminder(
   trip: PlannedDeparture,
   now = new Date(),
+  locale?: Locale,
 ): Promise<void> {
   if (Platform.OS === 'web') return;
 
@@ -78,9 +88,12 @@ export async function scheduleTripDepartureReminder(
     return;
   }
 
+  const resolvedLocale = await resolveAppLocale(locale);
+  const { t } = createTranslator(resolvedLocale);
+
   if (Platform.OS === 'android') {
     await Notifications.setNotificationChannelAsync('trip-reminders', {
-      name: 'Trip reminders',
+      name: t('tripNotify.channelName'),
       importance: Notifications.AndroidImportance.HIGH,
     });
   }
@@ -91,8 +104,8 @@ export async function scheduleTripDepartureReminder(
     await Notifications.scheduleNotificationAsync({
       identifier: TRIP_DEPARTURE_REMINDER_ID,
       content: {
-        title: 'Train departing soon',
-        body: buildTripDepartureReminderMessage(trip),
+        title: t('tripNotify.title'),
+        body: buildTripDepartureReminderMessage(trip, resolvedLocale),
         sound: true,
         ...(Platform.OS === 'android'
           ? { channelId: 'trip-reminders' }

@@ -1,4 +1,5 @@
-import { Alert, InteractionManager, type RefObject } from 'react-native';
+import { type RefObject } from 'react';
+import { Alert, InteractionManager } from 'react-native';
 import { captureRef } from 'react-native-view-shot';
 import * as Sharing from 'expo-sharing';
 
@@ -14,12 +15,24 @@ async function waitForNextPaint() {
   await new Promise((resolve) => setTimeout(resolve, 120));
 }
 
+type ShareMapCopy = {
+  dialogTitle?: string;
+  unavailableTitle?: string;
+  unavailableBody?: string;
+};
+
 /**
  * Capture a map view (with branding footer already visible) and open the system share sheet.
  */
-export async function shareCapturedMap(viewRef: CaptureTarget): Promise<void> {
+export async function shareCapturedMap(
+  viewRef: CaptureTarget,
+  copy: ShareMapCopy = {},
+): Promise<void> {
   if (!(await Sharing.isAvailableAsync())) {
-    Alert.alert('Sharing unavailable', 'Sharing is not available on this device.');
+    Alert.alert(
+      copy.unavailableTitle ?? 'Sharing unavailable',
+      copy.unavailableBody ?? 'Sharing is not available on this device.',
+    );
     return;
   }
 
@@ -34,6 +47,6 @@ export async function shareCapturedMap(viewRef: CaptureTarget): Promise<void> {
   await Sharing.shareAsync(uri, {
     mimeType: 'image/png',
     UTI: 'public.png',
-    dialogTitle: 'Share map',
+    dialogTitle: copy.dialogTitle ?? 'Share map',
   });
 }

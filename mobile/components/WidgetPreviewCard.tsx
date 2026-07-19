@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { theme } from '@/constants/theme';
 import { getWidgetColors } from '@/constants/widgetTheme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { getWidgetDisplayFields } from '@/lib/widgetDisplay';
 import type { TripWidgetProps } from '@/lib/types';
 
@@ -11,15 +12,14 @@ type WidgetPreviewCardProps = {
 };
 
 export function WidgetPreviewCard({ props, onRefresh, refreshing }: WidgetPreviewCardProps) {
+  const { t } = useLocale();
   const colors = getWidgetColors('light');
   const fields = getWidgetDisplayFields(props);
 
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>Home-screen widget</Text>
-      <Text style={styles.sectionBody}>
-        Add the Train countdown widget to your Home Screen to see your trip at a glance.
-      </Text>
+      <Text style={styles.sectionTitle}>{t('widget.title')}</Text>
+      <Text style={styles.sectionBody}>{t('widget.howTo')}</Text>
 
       <View style={[styles.preview, { backgroundColor: colors.background }]}>
         <Text
@@ -49,14 +49,10 @@ export function WidgetPreviewCard({ props, onRefresh, refreshing }: WidgetPrevie
       </View>
 
       <View style={styles.instructions}>
-        <Text style={styles.instructionsTitle}>How to add the widget</Text>
-        <Text style={styles.instructionStep}>1. Long-press the Home Screen background.</Text>
-        <Text style={styles.instructionStep}>2. Tap + in the top corner.</Text>
-        <Text style={styles.instructionStep}>3. Search for VeryStays.</Text>
-        <Text style={styles.instructionStep}>4. Choose Train countdown, pick a size, then Add Widget.</Text>
-        <Text style={styles.instructionStep}>
-          5. Open VeryStays once so the widget can sync your trip data.
-        </Text>
+        <Text style={styles.instructionsTitle}>{t('widget.howTo')}</Text>
+        <Text style={styles.instructionStep}>1. {t('widget.step1')}</Text>
+        <Text style={styles.instructionStep}>2. {t('widget.step2')}</Text>
+        <Text style={styles.instructionStep}>3. {t('widget.step3')}</Text>
       </View>
 
       <Pressable
@@ -65,7 +61,7 @@ export function WidgetPreviewCard({ props, onRefresh, refreshing }: WidgetPrevie
         disabled={refreshing}
       >
         <Text style={styles.refreshButtonText}>
-          {refreshing ? 'Refreshing widget…' : 'Refresh widget'}
+          {refreshing ? t('common.requesting') : t('trip.refreshWidget')}
         </Text>
       </Pressable>
     </View>

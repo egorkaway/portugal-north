@@ -17,6 +17,11 @@
 		E423F4BB14E5A60C183030DB /* libPods-VeryStays.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CB0E029E566F9AC05D37A7 /* libPods-VeryStays.a */; };
 		E98EDD7D531A483B85150388 /* index.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7161DEAC9DE4423B5E772D2 /* index.swift */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
+		97DE64FA05364FAAB8261652 /* StationCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96F898A56E9863241DEFB8D3 /* StationCatalog.swift */; };
+		1D891E32CD6CE9CF076B43C6 /* StationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5B005679C9FA9F6C56AEC7 /* StationEntity.swift */; };
+		D570C9F276B52E035E65266F /* OpenStationIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597BFDB6ABE93D7785392175 /* OpenStationIntent.swift */; };
+		67F59795535FAD68EAB50A59 /* VeryStaysShortcuts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928903D63397EF2897C8F38B /* VeryStaysShortcuts.swift */; };
+		17E6CF01F0D84C9FA2301B3A /* stations-siri.json in Resources */ = {isa = PBXBuildFile; fileRef = DCF4FA6B79752234B10412BA /* stations-siri.json */; };
 		F9B5E3C8EF324A3A8EB9B001 /* ExpoWidgetsTarget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 64A74D1E9C30456CAD4012AE /* ExpoWidgetsTarget.appex */; };
 		FC4D33538FB9D21201ACCEAC /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44031DEA7786181A777FD5D /* ExpoModulesProvider.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +70,11 @@
 		E06BABD505B57FF636DBADB1 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-VeryStays/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = VeryStays/AppDelegate.swift; sourceTree = "<group>"; };
+		96F898A56E9863241DEFB8D3 /* StationCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StationCatalog.swift; path = VeryStays/AppIntents/StationCatalog.swift; sourceTree = "<group>"; };
+		8B5B005679C9FA9F6C56AEC7 /* StationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StationEntity.swift; path = VeryStays/AppIntents/StationEntity.swift; sourceTree = "<group>"; };
+		597BFDB6ABE93D7785392175 /* OpenStationIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OpenStationIntent.swift; path = VeryStays/AppIntents/OpenStationIntent.swift; sourceTree = "<group>"; };
+		928903D63397EF2897C8F38B /* VeryStaysShortcuts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VeryStaysShortcuts.swift; path = VeryStays/AppIntents/VeryStaysShortcuts.swift; sourceTree = "<group>"; };
+		DCF4FA6B79752234B10412BA /* stations-siri.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "stations-siri.json"; path = VeryStays/Resources/stations-siri.json; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* VeryStays-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VeryStays-Bridging-Header.h"; path = "VeryStays/VeryStays-Bridging-Header.h"; sourceTree = "<group>"; };
 		F6FDF7EC3BE6D47E97950ECB /* Pods-VeryStays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeryStays.debug.xcconfig"; path = "Target Support Files/Pods-VeryStays/Pods-VeryStays.debug.xcconfig"; sourceTree = "<group>"; };
 		F7161DEAC9DE4423B5E772D2 /* index.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; path = index.swift; sourceTree = "<group>"; };
@@ -94,6 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				F11748412D0307B40044C1D9 /* AppDelegate.swift */,
+				96F898A56E9863241DEFB8D3 /* StationCatalog.swift */,
+				8B5B005679C9FA9F6C56AEC7 /* StationEntity.swift */,
+				597BFDB6ABE93D7785392175 /* OpenStationIntent.swift */,
+				928903D63397EF2897C8F38B /* VeryStaysShortcuts.swift */,
+				DCF4FA6B79752234B10412BA /* stations-siri.json */,
 				F11748442D0722820044C1D9 /* VeryStays-Bridging-Header.h */,
 				BB2F792B24A3F905000567C9 /* Supporting */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -288,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17E6CF01F0D84C9FA2301B3A /* stations-siri.json in Resources */,
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
@@ -511,6 +527,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */,
+				97DE64FA05364FAAB8261652 /* StationCatalog.swift in Sources */,
+				1D891E32CD6CE9CF076B43C6 /* StationEntity.swift in Sources */,
+				D570C9F276B52E035E65266F /* OpenStationIntent.swift in Sources */,
+				67F59795535FAD68EAB50A59 /* VeryStaysShortcuts.swift in Sources */,
 				1A6CEB73857B413B196EBECE /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,7 +563,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = VeryStays/VeryStays.entitlements;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = 64S9VXX8MT;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -583,7 +603,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = VeryStays/VeryStays.entitlements;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = 64S9VXX8MT;
 				INFOPLIST_FILE = VeryStays/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -616,7 +636,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = ExpoWidgetsTarget/ExpoWidgetsTarget.entitlements;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = 64S9VXX8MT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpoWidgetsTarget/Info.plist;
@@ -775,7 +795,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = ExpoWidgetsTarget/ExpoWidgetsTarget.entitlements;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_TEAM = 64S9VXX8MT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpoWidgetsTarget/Info.plist;

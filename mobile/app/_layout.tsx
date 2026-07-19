@@ -14,6 +14,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Colors from '@/constants/Colors';
 import { theme } from '@/constants/theme';
 import { WidgetSyncBootstrap } from '@/components/WidgetSyncBootstrap';
+import { LocaleProvider, useLocale } from '@/i18n/LocaleProvider';
 import { isOnboardingComplete } from '@/lib/onboardingStorage';
 import { seedWidgetTimeline } from '@/lib/widgetSync';
 
@@ -59,24 +60,30 @@ export default function RootLayout() {
     return null;
   }
 
-  return <RootLayoutNav />;
+  return (
+    <LocaleProvider>
+      <RootLayoutNav />
+    </LocaleProvider>
+  );
 }
 
 function RootLayoutNav() {
   const light = Colors.light;
   const router = useRouter();
+  const { t, ready } = useLocale();
   const [bootState, setBootState] = useState<'loading' | 'ready'>('loading');
 
   useEffect(() => {
+    if (!ready) return;
     void isOnboardingComplete().then((complete) => {
       if (!complete) {
         router.replace('/onboarding');
       }
       setBootState('ready');
     });
-  }, [router]);
+  }, [router, ready]);
 
-  if (bootState === 'loading') {
+  if (bootState === 'loading' || !ready) {
     return (
       <View
         style={{
@@ -109,8 +116,8 @@ function RootLayoutNav() {
           <Stack.Screen
             name="station/[slug]"
             options={{
-              title: 'Station',
-              headerBackTitle: 'Back',
+              title: t('nav.station'),
+              headerBackTitle: t('nav.back'),
             }}
           />
           <Stack.Screen name="modal" options={{ presentation: 'modal' }} />

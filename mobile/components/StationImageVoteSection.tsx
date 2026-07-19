@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { theme } from '@/constants/theme';
 import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { fetchGlobalRatings, syncStationImageVoteToServer } from '@/lib/api';
 import {
   castStationImageVote,
@@ -17,11 +18,16 @@ type Props = {
   imageUrl: string;
 };
 
-function formatCommunityLine(up: number, down: number): string | null {
+function formatCommunityLine(
+  up: number,
+  down: number,
+  yesLabel: string,
+  noLabel: string,
+): string | null {
   if (up === 0 && down === 0) return null;
   const parts: string[] = [];
-  if (up > 0) parts.push(`${up} yes`);
-  if (down > 0) parts.push(`${down} no`);
+  if (up > 0) parts.push(`${up} ${yesLabel}`);
+  if (down > 0) parts.push(`${down} ${noLabel}`);
   return parts.join(' · ');
 }
 
@@ -30,6 +36,7 @@ function formatCommunityLine(up: number, down: number): string | null {
  * Copy assumes the hero photo is scrolled out of view.
  */
 export function StationImageVoteSection({ stationName, imageUrl }: Props) {
+  const { t } = useLocale();
   const [vote, setVote] = useState<ImageVoteDirection | null>(null);
   const [communityLine, setCommunityLine] = useState<string | null>(null);
   const [ready, setReady] = useState(false);
@@ -49,11 +56,15 @@ export function StationImageVoteSection({ stationName, imageUrl }: Props) {
     try {
       const global = await fetchGlobalRatings();
       const totals = global.imageRatings[stationName];
-      setCommunityLine(totals ? formatCommunityLine(totals.up, totals.down) : null);
+      setCommunityLine(
+        totals
+          ? formatCommunityLine(totals.up, totals.down, t('common.yes'), t('common.no'))
+          : null,
+      );
     } catch {
       setCommunityLine(null);
     }
-  }, [imageUrl, stationName]);
+  }, [imageUrl, stationName, t]);
 
   useEffect(() => {
     void load();
@@ -70,36 +81,42 @@ export function StationImageVoteSection({ stationName, imageUrl }: Props) {
   return (
     <View style={styles.wrap}>
       <Text style={styles.question}>
-        Does the photo at the top of this page represent {stationName}?
+        {t('station.photoQuestion', { name: stationName })}
       </Text>
       <View
         style={styles.row}
         accessibilityRole="radiogroup"
-        accessibilityLabel="Rate whether the station photo at the top represents the station"
+        accessibilityLabel={t('station.ratePhotoA11y')}
       >
         <Pressable
           accessibilityRole="button"
           accessibilityState={{ selected: vote === 'up' }}
-          accessibilityLabel="Yes, the photo represents the station"
+          accessibilityLabel={t('station.photoYesA11y')}
           onPress={() => void handleVote('up')}
           style={[styles.chip, vote === 'up' && styles.chipGoodActive]}
         >
-          <Text style={[styles.chipText, vote === 'up' && styles.chipTextActive]}>Yes</Text>
+          <Text style={[styles.chipText, vote === 'up' && styles.chipTextActive]}>
+            {t('station.photoYes')}
+          </Text>
         </Pressable>
         <Pressable
           accessibilityRole="button"
           accessibilityState={{ selected: vote === 'down' }}
-          accessibilityLabel="No, the photo does not represent the station"
+          accessibilityLabel={t('station.photoNoA11y')}
           onPress={() => void handleVote('down')}
           style={[styles.chip, vote === 'down' && styles.chipBadActive]}
         >
-          <Text style={[styles.chipText, vote === 'down' && styles.chipTextActive]}>No</Text>
+          <Text style={[styles.chipText, vote === 'down' && styles.chipTextActive]}>
+            {t('station.photoNo')}
+          </Text>
         </Pressable>
       </View>
       {communityLine ? (
-        <Text style={styles.community}>Community: {communityLine}</Text>
+        <Text style={styles.community}>
+          {t('station.photoCommunity', { summary: communityLine })}
+        </Text>
       ) : (
-        <Text style={styles.hint}>Helps us pick better station photos.</Text>
+        <Text style={styles.hint}>{t('station.photoHint')}</Text>
       )}
     </View>
   );

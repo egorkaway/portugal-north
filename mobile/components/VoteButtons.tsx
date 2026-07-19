@@ -2,6 +2,7 @@ import type { ComponentProps } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { SymbolView } from 'expo-symbols';
 import { theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import type { Vote } from '@/lib/voteStorage';
 
 type SymbolName = ComponentProps<typeof SymbolView>['name'];
@@ -18,13 +19,14 @@ type Props = {
 };
 
 export function VoteButtons({ vote, onVote, compact = false }: Props) {
+  const { t } = useLocale();
   const iconSize = compact ? 14 : 16;
 
   return (
     <View style={[styles.row, compact && styles.rowCompact]}>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel="Upvote"
+        accessibilityLabel={t('home.upvoted')}
         accessibilityState={{ selected: vote === 'up' }}
         onPress={() => onVote('up')}
         style={[styles.button, compact && styles.buttonCompact, vote === 'up' && styles.buttonUpActive]}
@@ -38,7 +40,7 @@ export function VoteButtons({ vote, onVote, compact = false }: Props) {
       </Pressable>
       <Pressable
         accessibilityRole="button"
-        accessibilityLabel="Downvote"
+        accessibilityLabel={t('home.downvoted')}
         accessibilityState={{ selected: vote === 'down' }}
         onPress={() => onVote('down')}
         style={[

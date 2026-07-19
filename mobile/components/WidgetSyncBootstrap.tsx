@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { AppState } from 'react-native';
+import { useLocale } from '@/i18n/LocaleProvider';
+import { scheduleEngagementReminders } from '@/lib/engagementNotifications';
+import { ensureStationsSpotlightIndex } from '@/lib/spotlightIndex';
 import { subscribeTripChanges } from '@/lib/tripEvents';
 import { scheduleTripDepartureReminder } from '@/lib/tripNotifications';
 import { readActiveTrip } from '@/lib/tripStorage';
@@ -13,6 +16,7 @@ import {
 
 /** Keeps widget + Live Activity in sync while the app is open. */
 export function WidgetSyncBootstrap() {
+  const { locale } = useLocale();
   const [, setTick] = useState(0);
   const departureTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -67,15 +71,29 @@ export function WidgetSyncBootstrap() {
       if (!cancelled) setTick((value) => value + 1);
     };
 
-    const bootstrap = async () => {
-      await syncWidgets();
+    const scheduleLocalReminders = async () => {
       try {
         const trip = await readActiveTrip();
         if (trip) {
-          await scheduleTripDepartureReminder(trip);
+          await scheduleTripDepartureReminder(trip, new Date(), locale);
         }
       } catch (error) {
         console.warn('[trip] reminder bootstrap failed', error);
+      }
+      try {
+        await scheduleEngagementReminders(new Date(), locale);
+      } catch (error) {
+        console.warn('[engagement] reminder bootstrap failed', error);
+      }
+    };
+
+    const bootstrap = async () => {
+      await syncWidgets();
+      await scheduleLocalReminders();
+      try {
+        await ensureStationsSpotlightIndex();
+      } catch (error) {
+        console.warn('[spotlight] bootstrap failed', error);
       }
     };
 
@@ -87,6 +105,9 @@ export function WidgetSyncBootstrap() {
     const appStateSubscription = AppState.addEventListener('change', (state) => {
       if (state === 'active' || state === 'background') {
         void syncWidgets();
+      }
+      if (state === 'active') {
+        void scheduleLocalReminders();
       }
     });
 
@@ -101,7 +122,7 @@ export function WidgetSyncBootstrap() {
       appStateSubscription.remove();
       unsubscribeTripChanges();
     };
-  }, []);
+  }, [locale]);
 
   return null;
 }

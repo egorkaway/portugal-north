@@ -31,6 +31,8 @@ PODS:
     - Yoga
   - ExpoAsset (57.0.3):
     - ExpoModulesCore
+  - ExpoCoreSpotlight (1.0.0):
+    - ExpoModulesCore
   - ExpoDomWebView (57.0.0):
     - ExpoModulesCore
   - ExpoFileSystem (57.0.0):
@@ -2354,6 +2356,7 @@ DEPENDENCIES:
   - EXConstants (from `../node_modules/expo-constants/ios`)
   - Expo (from `../node_modules/expo`)
   - ExpoAsset (from `../node_modules/expo-asset/ios`)
+  - ExpoCoreSpotlight (from `../node_modules/expo-core-spotlight/ios`)
   - "ExpoDomWebView (from `../node_modules/@expo/dom-webview/ios`)"
   - ExpoFileSystem (from `../node_modules/expo-file-system/ios/ExpoFileSystem.podspec`)
   - ExpoFont (from `../node_modules/expo-font/ios/ExpoFont.podspec`)
@@ -2469,6 +2472,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo"
   ExpoAsset:
     :path: "../node_modules/expo-asset/ios"
+  ExpoCoreSpotlight:
+    :path: "../node_modules/expo-core-spotlight/ios"
   ExpoDomWebView:
     :path: "../node_modules/@expo/dom-webview/ios"
   ExpoFileSystem:
@@ -2684,6 +2689,7 @@ SPEC CHECKSUMS:
   EXConstants: d069b4a2dd469d5a3a4d3d7b09757e708fda8f64
   Expo: cfb5f1189dfb9bd5ccc7701ceb2879d326c253e9
   ExpoAsset: 586e89aeaab2e23bfa90b9dce4d7d5e36815c039
+  ExpoCoreSpotlight: 52dc4b6729b85f28440347ad9297f2e6bdf25762
   ExpoDomWebView: 73ba90107a5acc0017a09b06e66d8eb238e089b8
   ExpoFileSystem: ffcd56066188802f263254b6b2e60f74b6a0bdae
   ExpoFont: 35fd7ad72f697d3a9656545909972d8b9f60d5da

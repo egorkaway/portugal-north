@@ -2,21 +2,15 @@ import { useRouter } from 'expo-router';
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
 import { theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { formatCountryName } from '@/lib/countryName';
 import {
-  formatFlightCount,
   getAirportConnectionsMapImageUrl,
   getAirportStationSlugByIata,
   getFlightLineColor,
   getFlightLineWeight,
   type AirportConnectionsEntry,
 } from '@/lib/airportConnections';
-
-const LEGEND = [
-  { key: 'busy', minFlights: 5, label: '5+ flights' },
-  { key: 'moderate', minFlights: 3, label: '3–4 flights' },
-  { key: 'light', minFlights: 1, label: '1–2 flights' },
-] as const;
 
 type Props = {
   entry: AirportConnectionsEntry;
@@ -56,31 +50,34 @@ function DestinationName({
 
 export function AirportConnectionsSection({ entry, stationName }: Props) {
   const router = useRouter();
+  const { t, plural } = useLocale();
 
   if (entry.topDestinations.length === 0) return null;
 
   const mapUrl = getAirportConnectionsMapImageUrl(entry.slug);
+  const legend = [
+    { key: 'busy', minFlights: 5, label: t('airport.legendBusy') },
+    { key: 'moderate', minFlights: 3, label: t('airport.legendModerate') },
+    { key: 'light', minFlights: 1, label: t('airport.legendLight') },
+  ] as const;
 
   return (
     <View style={styles.section}>
-      <Text style={styles.sectionTitle}>Flight connections</Text>
+      <Text style={styles.sectionTitle}>{t('airport.title')}</Text>
       <Text style={styles.sectionIntro}>
-        {entry.connections.length} destinations with direct flights in our latest departure
-        sample.
+        {t('airport.intro', { destinations: entry.connections.length })}
       </Text>
 
       <Image
         source={{ uri: mapUrl }}
         style={styles.mapImage}
         resizeMode="cover"
-        accessibilityLabel={`Flight connections map from ${stationName}`}
+        accessibilityLabel={`${t('airport.title')} · ${stationName}`}
       />
 
-      <Text style={styles.legendTitle}>
-        Line colors show how often each route appeared in the sample:
-      </Text>
+      <Text style={styles.legendTitle}>{t('airport.legend')}</Text>
       <View style={styles.legendRow}>
-        {LEGEND.map((tier) => (
+        {legend.map((tier) => (
           <View key={tier.key} style={styles.legendItem}>
             <View
               style={[
@@ -125,7 +122,7 @@ export function AirportConnectionsSection({ entry, stationName }: Props) {
               </View>
               <View style={styles.countBadge}>
                 <Text style={styles.countText}>
-                  {formatFlightCount(destination.flightCount)}
+                  {plural('airport.flights', destination.flightCount)}
                 </Text>
               </View>
             </View>

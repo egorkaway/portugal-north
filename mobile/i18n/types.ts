@@ -1,0 +1,236 @@
+export const LOCALES = ['en', 'pt', 'es', 'gl', 'ca', 'uk', 'ru'] as const;
+export type Locale = (typeof LOCALES)[number];
+
+export type MobileMessages = {
+
+  lang: {
+    label: string;
+    en: string;
+    pt: string;
+    es: string;
+    gl: string;
+    ca: string;
+    uk: string;
+    ru: string;
+  };
+  nav: {
+    home: string;
+    map: string;
+    trip: string;
+    rankings: string;
+    tickets: string;
+    station: string;
+    back: string;
+  };
+  common: {
+    continue: string;
+    requesting: string;
+    skip: string;
+    open: string;
+    view: string;
+    delete: string;
+    yes: string;
+    no: string;
+    goBack: string;
+    build: string;
+  };
+  brand: {
+    name: string;
+    subtitle: string;
+  };
+  home: {
+    searchPlaceholder: string;
+    sortByDistance: string;
+    sortedByDistance: string;
+    locating: string;
+    nearMe: string;
+    allVotes: string;
+    upvoted: string;
+    downvoted: string;
+    notVoted: string;
+    allVisits: string;
+    visited: string;
+    notVisited: string;
+    stationCount_one: string;
+    stationCount_other: string;
+    showingCount: string;
+    noResults: string;
+    noPhoto: string;
+    markVisited: string;
+    visitedBadge: string;
+  };
+  station: {
+    notFound: string;
+    markVisited: string;
+    visited: string;
+    liveDepartures: string;
+    reliabilityTitle: string;
+    reliabilityBody: string;
+    budgetStays: string;
+    hotelsIntro: string;
+    openAppleMaps: string;
+    searchBooking: string;
+    photoQuestion: string;
+    photoYes: string;
+    photoNo: string;
+    photoHint: string;
+    photoCommunity: string;
+    photoCreditBy: string;
+    ratePhotoA11y: string;
+    photoYesA11y: string;
+    photoNoA11y: string;
+  };
+  departures: {
+    unavailable: string;
+    none: string;
+    train: string;
+    platform: string;
+    delayMin: string;
+    take: string;
+    taking: string;
+    loadMore: string;
+    loadingMore: string;
+  };
+  countdown: {
+    leavingNow: string;
+    leavesIn: string;
+    leavesInHours: string;
+    leavesInHoursOnly: string;
+    arrivingNow: string;
+    arrivesIn: string;
+    arrivesInHours: string;
+    arrivesInHoursOnly: string;
+    minutesAgo: string;
+    minutesAgoHours: string;
+    minutesAgoHoursOnly: string;
+  };
+  airport: {
+    title: string;
+    intro: string;
+    legend: string;
+    legendBusy: string;
+    legendModerate: string;
+    legendLight: string;
+    flights_one: string;
+    flights_other: string;
+  };
+  trip: {
+    emptyTitle: string;
+    emptyBody: string;
+    departed: string;
+    departedAt: string;
+    expectedDeparture: string;
+    stopTracking: string;
+    upcomingStops: string;
+    loadingStops: string;
+    stopsUnavailable: string;
+    pastTrips: string;
+    origin: string;
+    finalStop: string;
+    delayMin: string;
+    platform: string;
+    refreshWidget: string;
+  };
+  widget: {
+    title: string;
+    howTo: string;
+    step1: string;
+    step2: string;
+    step3: string;
+  };
+  mapa: {
+    title: string;
+    body: string;
+    cta: string;
+  };
+  map: {
+    legendTitle: string;
+    legendHigh: string;
+    legendMid: string;
+    legendLow: string;
+    legendAirport: string;
+    openStation: string;
+    locateA11y: string;
+    shareA11y: string;
+    closeA11y: string;
+    shareFailedTitle: string;
+    shareFailedBody: string;
+    shareMap: string;
+    sharingUnavailable: string;
+  };
+  rankings: {
+    title: string;
+    subtitle: string;
+    mostReliable: string;
+    leastReliable: string;
+    topUpvotedStations: string;
+    mostDownvotedStations: string;
+    topUpvotedHotels: string;
+    mostDownvotedHotels: string;
+    votesUnavailable: string;
+  };
+  tickets: {
+    title: string;
+    howToBuy: string;
+    serviceTypes: string;
+    usefulLinks: string;
+    open: string;
+  };
+  hotel: {
+    kmFromStation: string;
+    fromPerNight: string;
+    view: string;
+  };
+  onboarding: {
+    welcomeEyebrow: string;
+    welcomeTitle: string;
+    welcomeBody: string;
+    welcomeBullet1: string;
+    welcomeBullet2: string;
+    welcomeBullet3: string;
+    locationEyebrow: string;
+    locationTitle: string;
+    locationBody: string;
+    notificationsEyebrow: string;
+    notificationsTitle: string;
+    notificationsBody: string;
+    widgetsEyebrow: string;
+    widgetsTitle: string;
+    widgetsBody: string;
+    widgetsHint: string;
+    enableLocation: string;
+    enableNotifications: string;
+    finish: string;
+    notificationsFooter: string;
+    locationFooter: string;
+  };
+  engagement: {
+    channelName: string;
+    mapWanderTitle: string;
+    mapWanderBody: string;
+    liveCountdownTitle: string;
+    liveCountdownBody: string;
+    budgetStaysTitle: string;
+    budgetStaysBody: string;
+    reliabilityTitle: string;
+    reliabilityBody: string;
+    visitedTitle: string;
+    visitedBody: string;
+    nearestTitle: string;
+    nearestBody: string;
+    airportTitle: string;
+    airportBody: string;
+    widgetTitle: string;
+    widgetBody: string;
+  };
+  notFound: {
+    title: string;
+    message: string;
+    home: string;
+  };
+  tripNotify: {
+    title: string;
+    body: string;
+    channelName: string;
+  };
+};

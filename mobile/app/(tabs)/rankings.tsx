@@ -11,6 +11,7 @@ import {
 import { useRouter } from 'expo-router';
 import { BuildFooter } from '@/components/BuildFooter';
 import { theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { fetchGlobalRatings } from '@/lib/api';
 import { getTopDownvotedHotels, getTopUpvotedHotels } from '@/lib/rankHotels';
 import { getTopDownvoted, getTopUpvoted } from '@/lib/rankVotes';
@@ -24,6 +25,7 @@ import { bakedReliabilityScores, stationToSlug } from '@/lib/stationData';
 
 export default function RankingsScreen() {
   const router = useRouter();
+  const { t } = useLocale();
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [ratings, setRatings] = useState<{
@@ -81,12 +83,10 @@ export default function RankingsScreen() {
       contentContainerStyle={styles.content}
       refreshControl={<RefreshControl refreshing={refreshing} onRefresh={() => void onRefresh()} />}
     >
-      <Text style={styles.title}>Rankings</Text>
-      <Text style={styles.subtitle}>
-        On-time reliability from CP data, plus community votes for stations and hotels.
-      </Text>
+      <Text style={styles.title}>{t('rankings.title')}</Text>
+      <Text style={styles.subtitle}>{t('rankings.subtitle')}</Text>
 
-      <RankingSection title="Most reliable stations">
+      <RankingSection title={t('rankings.mostReliable')}>
         {topReliability.map((item, index) => (
           <RankingRow
             key={item.name}
@@ -99,7 +99,7 @@ export default function RankingsScreen() {
         ))}
       </RankingSection>
 
-      <RankingSection title="Least reliable stations">
+      <RankingSection title={t('rankings.leastReliable')}>
         {bottomReliability.map((item, index) => (
           <RankingRow
             key={item.name}
@@ -113,10 +113,10 @@ export default function RankingsScreen() {
       </RankingSection>
 
       {!ratings.configured ? (
-        <Text style={styles.note}>Community votes are unavailable right now.</Text>
+        <Text style={styles.note}>{t('rankings.votesUnavailable')}</Text>
       ) : (
         <>
-          <RankingSection title="Most upvoted stations">
+          <RankingSection title={t('rankings.topUpvotedStations')}>
             {topStations.map((item, index) => (
               <RankingRow
                 key={item.id}
@@ -128,7 +128,7 @@ export default function RankingsScreen() {
             ))}
           </RankingSection>
 
-          <RankingSection title="Most downvoted stations">
+          <RankingSection title={t('rankings.mostDownvotedStations')}>
             {bottomStations.map((item, index) => (
               <RankingRow
                 key={item.id}
@@ -140,7 +140,7 @@ export default function RankingsScreen() {
             ))}
           </RankingSection>
 
-          <RankingSection title="Most upvoted hotels">
+          <RankingSection title={t('rankings.topUpvotedHotels')}>
             {topHotels.map((item, index) => (
               <RankingRow
                 key={item.id}
@@ -153,7 +153,7 @@ export default function RankingsScreen() {
             ))}
           </RankingSection>
 
-          <RankingSection title="Most downvoted hotels">
+          <RankingSection title={t('rankings.mostDownvotedHotels')}>
             {bottomHotels.map((item, index) => (
               <RankingRow
                 key={item.id}

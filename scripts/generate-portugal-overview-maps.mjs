@@ -35,7 +35,7 @@ const outputs = [
 
 for (const output of outputs) {
   const started = Date.now();
-  process.stdout.write(`Rendering ${output.filename}… `);
+  process.stdout.write(`Rendering ${output.filename} (${basemap.id})… `);
   const buffer = await output.render();
   const path = join(outDir, output.filename);
   writeFileSync(path, buffer);

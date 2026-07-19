@@ -20,6 +20,7 @@ import { TrainTypeLabels } from '@/components/TrainTypeLabels';
 import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
 import { VoteButtons } from '@/components/VoteButtons';
 import { theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { getReliabilityForStation, reliabilityScoreColor, formatReliabilityScore } from '@/lib/reliabilityScore';
 import { getAirportConnectionsEntry } from '@/lib/airportConnections';
 import {
@@ -46,6 +47,7 @@ import type { PlannedDeparture } from '@/lib/types';
 export default function StationDetailScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const router = useRouter();
+  const { t } = useLocale();
   const station = slug ? getStationBySlug(slug) : undefined;
 
   const [vote, setVote] = useState<'up' | 'down' | null>(null);
@@ -80,9 +82,9 @@ export default function StationDetailScreen() {
   if (!station) {
     return (
       <View style={styles.centered}>
-        <Text style={styles.title}>Station not found</Text>
+        <Text style={styles.title}>{t('station.notFound')}</Text>
         <Pressable style={styles.button} onPress={() => router.back()}>
-          <Text style={styles.buttonText}>Go back</Text>
+          <Text style={styles.buttonText}>{t('common.goBack')}</Text>
         </Pressable>
       </View>
     );
@@ -134,7 +136,7 @@ export default function StationDetailScreen() {
         <Image source={{ uri: imageUrl }} style={styles.hero} resizeMode="cover" />
       ) : (
         <View style={[styles.hero, styles.heroPlaceholder]}>
-          <Text style={styles.heroPlaceholderText}>No photo yet</Text>
+          <Text style={styles.heroPlaceholderText}>{t('home.noPhoto')}</Text>
         </View>
       )}
 
@@ -153,7 +155,7 @@ export default function StationDetailScreen() {
         style={[styles.visitedButton, visited && styles.visitedButtonActive]}
       >
         <Text style={[styles.visitedButtonText, visited && styles.visitedButtonTextActive]}>
-          {visited ? 'Visited' : 'Mark as visited'}
+          {visited ? t('station.visited') : t('station.markVisited')}
         </Text>
       </Pressable>
 
@@ -161,7 +163,7 @@ export default function StationDetailScreen() {
 
       {!airport && hasCpCode ? (
         <>
-          <Text style={styles.sectionTitle}>Live departures</Text>
+          <Text style={styles.sectionTitle}>{t('station.liveDepartures')}</Text>
           <StationDeparturesBoard
             stationName={station.name}
             activeTrip={activeTrip}
@@ -172,13 +174,13 @@ export default function StationDetailScreen() {
 
       {!airport && reliability.score !== null ? (
         <>
-          <Text style={styles.sectionTitle}>On-time reliability</Text>
+          <Text style={styles.sectionTitle}>{t('station.reliabilityTitle')}</Text>
           <View style={styles.reliabilityCard}>
             <Text style={[styles.reliabilityScore, { color: reliabilityScoreColor(reliability.score) }]}>
               {formatReliabilityScore(reliability.score)}/10
             </Text>
             <Text style={styles.reliabilityMeta}>
-              Based on cumulative delays from live departure data.
+              {t('station.reliabilityBody')}
             </Text>
           </View>
         </>
@@ -190,13 +192,21 @@ export default function StationDetailScreen() {
 
       {hotels.length > 0 ? (
         <>
-          <Text style={styles.sectionTitle}>Budget stays nearby</Text>
+          <Text style={styles.sectionTitle}>{t('station.budgetStays')}</Text>
           <Text style={styles.sectionIntro}>
-            Curated budget hotels within walking distance of the station.
+            {t('station.hotelsIntro')}
           </Text>
           <StationHotelList hotels={hotels.slice(0, 5)} />
         </>
       ) : null}
+
+      <Pressable style={styles.mapsButton} onPress={openMaps}>
+        <Text style={styles.mapsButtonText}>{t('station.openAppleMaps')}</Text>
+      </Pressable>
+
+      <Pressable style={styles.bookingButton} onPress={openBookingSearch}>
+        <Text style={styles.bookingButtonText}>{t('station.searchBooking')}</Text>
+      </Pressable>
 
       {imageUrl ? (
         <View style={styles.photoFeedback}>
@@ -204,14 +214,6 @@ export default function StationDetailScreen() {
           <StationImageCredit imageUrl={imageUrl} />
         </View>
       ) : null}
-
-      <Pressable style={styles.mapsButton} onPress={openMaps}>
-        <Text style={styles.mapsButtonText}>Open in Apple Maps</Text>
-      </Pressable>
-
-      <Pressable style={styles.bookingButton} onPress={openBookingSearch}>
-        <Text style={styles.bookingButtonText}>Search on Booking</Text>
-      </Pressable>
 
       <Text style={styles.coords}>
         {station.lat.toFixed(5)}, {station.lng.toFixed(5)}

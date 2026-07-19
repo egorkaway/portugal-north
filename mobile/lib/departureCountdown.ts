@@ -161,13 +161,26 @@ export function shouldClearActiveTrip(
   return now.getTime() - selectedMs > LEGACY_ACTIVE_TRIP_MAX_AGE_MS;
 }
 
-export function formatDepartureCountdown(minutes: number): string {
-  if (minutes <= 0) return 'Leaving now';
-  if (minutes < 60) return `Leaves in ${minutes} min`;
+type TranslateFn = (path: string, params?: Record<string, string | number>) => string;
+
+export function formatDepartureCountdown(
+  minutes: number,
+  t?: TranslateFn,
+): string {
+  if (minutes <= 0) return t ? t('countdown.leavingNow') : 'Leaving now';
+  if (minutes < 60) {
+    return t
+      ? t('countdown.leavesIn', { minutes })
+      : `Leaves in ${minutes} min`;
+  }
   const hours = Math.floor(minutes / 60);
   const remainder = minutes % 60;
-  if (remainder === 0) return `Leaves in ${hours}h`;
-  return `Leaves in ${hours}h ${remainder}m`;
+  if (remainder === 0) {
+    return t ? t('countdown.leavesInHoursOnly', { hours }) : `Leaves in ${hours}h`;
+  }
+  return t
+    ? t('countdown.leavesInHours', { hours, minutes: remainder })
+    : `Leaves in ${hours}h ${remainder}m`;
 }
 
 /** Compact countdown for widgets, Live Activity, and Dynamic Island. */
@@ -180,19 +193,41 @@ export function formatWidgetCountdown(minutes: number): string {
   return `${hours}h ${remainder}m`;
 }
 
-export function formatArrivalCountdown(minutes: number): string {
-  if (minutes <= 0) return 'Arriving now';
-  if (minutes < 60) return `Arrives in ${minutes} min`;
+export function formatArrivalCountdown(
+  minutes: number,
+  t?: TranslateFn,
+): string {
+  if (minutes <= 0) return t ? t('countdown.arrivingNow') : 'Arriving now';
+  if (minutes < 60) {
+    return t
+      ? t('countdown.arrivesIn', { minutes })
+      : `Arrives in ${minutes} min`;
+  }
   const hours = Math.floor(minutes / 60);
   const remainder = minutes % 60;
-  if (remainder === 0) return `Arrives in ${hours}h`;
-  return `Arrives in ${hours}h ${remainder}m`;
+  if (remainder === 0) {
+    return t ? t('countdown.arrivesInHoursOnly', { hours }) : `Arrives in ${hours}h`;
+  }
+  return t
+    ? t('countdown.arrivesInHours', { hours, minutes: remainder })
+    : `Arrives in ${hours}h ${remainder}m`;
 }
 
-export function formatDepartureTimeAgo(minutesAgo: number): string {
-  if (minutesAgo < 60) return `${minutesAgo} min ago`;
+export function formatDepartureTimeAgo(
+  minutesAgo: number,
+  t?: TranslateFn,
+): string {
+  if (minutesAgo < 60) {
+    return t
+      ? t('countdown.minutesAgo', { minutes: minutesAgo })
+      : `${minutesAgo} min ago`;
+  }
   const hours = Math.floor(minutesAgo / 60);
   const minutes = minutesAgo % 60;
-  if (minutes === 0) return `${hours}h ago`;
-  return `${hours}h ${minutes}m ago`;
+  if (minutes === 0) {
+    return t ? t('countdown.minutesAgoHoursOnly', { hours }) : `${hours}h ago`;
+  }
+  return t
+    ? t('countdown.minutesAgoHours', { hours, minutes })
+    : `${hours}h ${minutes}m ago`;
 }

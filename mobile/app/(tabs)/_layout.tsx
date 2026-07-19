@@ -3,12 +3,14 @@ import { Tabs } from 'expo-router';
 
 import Colors from '@/constants/Colors';
 import { useClientOnlyValue } from '@/components/useClientOnlyValue';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { useActiveTrip } from '@/lib/useActiveTrip';
 
 const lightColors = Colors.light;
 
 export default function TabLayout() {
   const activeTrip = useActiveTrip();
+  const { t } = useLocale();
 
   return (
     <Tabs
@@ -31,7 +33,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          title: t('nav.home'),
           headerShown: false,
           tabBarIcon: ({ color }) => (
             <SymbolView
@@ -45,7 +47,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="map"
         options={{
-          title: 'Map',
+          title: t('nav.map'),
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'map.fill', android: 'map', web: 'map' }}
@@ -58,7 +60,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="trip"
         options={{
-          title: 'Trip',
+          title: t('nav.trip'),
           tabBarBadge: activeTrip ? ' ' : undefined,
           tabBarIcon: ({ color }) => (
             <SymbolView
@@ -72,7 +74,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="rankings"
         options={{
-          title: 'Rankings',
+          title: t('nav.rankings'),
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'chart.bar.fill', android: 'bar_chart', web: 'bar_chart' }}
@@ -85,7 +87,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="tickets"
         options={{
-          title: 'Tickets',
+          title: t('nav.tickets'),
           tabBarIcon: ({ color }) => (
             <SymbolView
               name={{ ios: 'ticket.fill', android: 'confirmation_number', web: 'confirmation_number' }}

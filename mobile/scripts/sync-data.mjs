@@ -72,13 +72,38 @@ export async function syncMobileData() {
     JSON.stringify(pexelsPhotoCredits),
   );
 
+  const stationToSlug = (name) =>
+    name
+      .normalize("NFD")
+      .replace(/\p{M}/gu, "")
+      .toLowerCase()
+      .replace(/[()]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "");
+
+  const siriCatalog = stationsFull.map((station) => ({
+    id: stationToSlug(station.name),
+    name: station.name,
+    lines: station.lines.slice(0, 4),
+    country: station.country,
+  }));
+  fs.writeFileSync(path.join(outDir, "stations-siri.json"), JSON.stringify(siriCatalog));
+
+  const iosResourcesDir = path.join(__dirname, "../ios/VeryStays/Resources");
+  fs.mkdirSync(iosResourcesDir, { recursive: true });
+  fs.writeFileSync(
+    path.join(iosResourcesDir, "stations-siri.json"),
+    JSON.stringify(siriCatalog),
+  );
+
   console.log(
     `Synced ${stationsFull.length} stations, ${Object.keys(cpStationCodes).length} CP codes, ` +
       `${Object.keys(stationImages).length} images, ${Object.keys(stationHotels).length} hotel lists, ` +
       `${Object.keys(summaries).length} summaries, ` +
       `${Object.keys(airportConnections.airports ?? {}).length} airport connection maps, ` +
       `${Object.keys(pexelsPhotoCredits).length} Pexels credits, ` +
-      `ticket guide (${ticketGuide.countries.length} countries).`,
+      `ticket guide (${ticketGuide.countries.length} countries), ` +
+      `Siri catalog (${siriCatalog.length}).`,
   );
 }
 

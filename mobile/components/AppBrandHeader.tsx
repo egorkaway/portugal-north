@@ -1,16 +1,16 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { SymbolView } from 'expo-symbols';
 import { brandTheme } from '@/constants/brandTheme';
+import { useLocale } from '@/i18n/LocaleProvider';
 
 type Props = {
   title?: string;
   subtitle?: string;
 };
 
-export function AppBrandHeader({
-  title = 'VeryStays',
-  subtitle = 'Travel hubs across Iberian peninsula',
-}: Props) {
+export function AppBrandHeader({ title, subtitle }: Props) {
+  const { t } = useLocale();
+
   return (
     <View style={styles.row}>
       <View style={styles.iconBadge}>
@@ -22,9 +22,9 @@ export function AppBrandHeader({
         />
       </View>
       <View style={styles.copy} pointerEvents="none">
-        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.title}>{title ?? t('brand.name')}</Text>
         <View style={styles.accentBar} />
-        <Text style={styles.subtitle}>{subtitle}</Text>
+        <Text style={styles.subtitle}>{subtitle ?? t('brand.subtitle')}</Text>
       </View>
       {/* Balance the left icon so title + subtitle stay visually centered */}
       <View style={styles.iconSpacer} />

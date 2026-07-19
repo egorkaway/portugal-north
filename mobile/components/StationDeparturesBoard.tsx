@@ -7,6 +7,8 @@ import {
   View,
 } from 'react-native';
 import { stationSectionStyles as styles } from '@/components/stationSectionStyles';
+import { theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { fetchStationDepartures } from '@/lib/api';
 import {
   canLoadMoreDepartures,
@@ -25,7 +27,6 @@ import {
   takeActiveTrip,
 } from '@/lib/tripStorage';
 import type { PlannedDeparture, StationDeparture } from '@/lib/types';
-import { theme } from '@/constants/theme';
 
 type Props = {
   stationName: string;
@@ -63,6 +64,7 @@ export function StationDeparturesBoard({
   activeTrip,
   onTripChanged,
 }: Props) {
+  const { t } = useLocale();
   const [departures, setDepartures] = useState<StationDeparture[]>([]);
   const [limit, setLimit] = useState(INITIAL_DEPARTURES_LIMIT);
   const [loading, setLoading] = useState(true);
@@ -139,7 +141,7 @@ export function StationDeparturesBoard({
   }
 
   if (departures.length === 0) {
-    return <Text style={styles.empty}>No live departures for this station.</Text>;
+    return <Text style={styles.empty}>{t('departures.none')}</Text>;
   }
 
   return (
@@ -169,19 +171,19 @@ export function StationDeparturesBoard({
               <Text style={styles.cardTitle}>
                 {dep.time}
                 {minutes !== null ? (
-                  <Text> {formatDepartureCountdown(minutes)}</Text>
+                  <Text> {formatDepartureCountdown(minutes, t)}</Text>
                 ) : null}
               </Text>
               <Text style={styles.cardSubtitle} numberOfLines={1}>
                 → {dep.destination}
               </Text>
               <Text style={styles.cardMeta}>
-                {dep.serviceType} · Train {dep.trainNumber}
-                {dep.platform ? ` · Platform ${dep.platform}` : ''}
+                {dep.serviceType} · {t('departures.train')} {dep.trainNumber}
+                {dep.platform ? ` · ${t('departures.platform')} ${dep.platform}` : ''}
               </Text>
               {dep.delayMinutes !== null ? (
                 <Text style={[styles.cardMeta, { color: theme.danger, fontWeight: '600' }]}>
-                  +{dep.delayMinutes} min delay
+                  {t('departures.delayMin', { minutes: dep.delayMinutes })}
                 </Text>
               ) : null}
             </View>
@@ -199,7 +201,7 @@ export function StationDeparturesBoard({
                     taking && { color: '#fff' },
                   ]}
                 >
-                  {taking ? 'Taking' : 'Take'}
+                  {taking ? t('departures.taking') : t('departures.take')}
                 </Text>
               </Pressable>
             </View>
@@ -213,12 +215,12 @@ export function StationDeparturesBoard({
           disabled={loadingMore}
           style={[localStyles.loadMore, loadingMore && localStyles.loadMoreDisabled]}
           accessibilityRole="button"
-          accessibilityLabel="Show more trains"
+          accessibilityLabel={t('departures.loadMore')}
         >
           {loadingMore ? (
             <ActivityIndicator color={theme.primary} />
           ) : (
-            <Text style={localStyles.loadMoreText}>Show more trains</Text>
+            <Text style={localStyles.loadMoreText}>{t('departures.loadMore')}</Text>
           )}
         </Pressable>
       ) : null}

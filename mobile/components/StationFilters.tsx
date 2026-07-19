@@ -11,6 +11,7 @@ import {
 import { SymbolView } from 'expo-symbols';
 import { TrainTypeDot } from '@/components/TrainTypeDot';
 import { theme } from '@/constants/theme';
+import { useLocale } from '@/i18n/LocaleProvider';
 import { getTrainTypeAbbrev } from '@/lib/trainTypes';
 
 type VoteFilter = 'up' | 'down' | 'none';
@@ -97,7 +98,13 @@ export function StationFilters({
   loadingLocation,
   onRequestLocation,
 }: Props) {
-  const locationLabel = sortByDistance ? 'Sorted by distance' : 'Near me';
+  const { t } = useLocale();
+  const locationLabel = sortByDistance
+    ? t('home.sortedByDistance')
+    : loadingLocation
+      ? t('home.locating')
+      : t('home.nearMe');
+  const searchLabel = t('home.searchPlaceholder');
 
   return (
     <View style={styles.container}>
@@ -113,12 +120,12 @@ export function StationFilters({
           <TextInput
             value={searchQuery}
             onChangeText={onSearchChange}
-            placeholder="Search stations or lines"
+            placeholder={searchLabel}
             placeholderTextColor={theme.primaryMuted}
             style={styles.search}
             autoCapitalize="none"
             autoCorrect={false}
-            accessibilityLabel="Search stations or lines"
+            accessibilityLabel={searchLabel}
           />
         </View>
         <Pressable
@@ -162,22 +169,22 @@ export function StationFilters({
         <FilterChip
           active={voteFilter === 'up'}
           onPress={() => onVoteFilterToggle('up')}
-          label="Upvoted"
-          accessibilityLabel="Upvoted"
+          label={t('home.upvoted')}
+          accessibilityLabel={t('home.upvoted')}
           icon={{ name: ICONS.thumbsUp }}
         />
         <FilterChip
           active={voteFilter === 'down'}
           onPress={() => onVoteFilterToggle('down')}
-          label="Downvoted"
-          accessibilityLabel="Downvoted"
+          label={t('home.downvoted')}
+          accessibilityLabel={t('home.downvoted')}
           icon={{ name: ICONS.thumbsDown }}
         />
         <FilterChip
           active={voteFilter === 'none'}
           onPress={() => onVoteFilterToggle('none')}
-          label="Not voted yet"
-          accessibilityLabel="Not voted yet"
+          label={t('home.notVoted')}
+          accessibilityLabel={t('home.notVoted')}
           icon={{ name: ICONS.circle }}
         />
 
@@ -187,16 +194,16 @@ export function StationFilters({
           active={visitedFilter === 'visited'}
           activeStyle={styles.chipActiveVisited}
           onPress={() => onVisitedFilterToggle('visited')}
-          label="Visited"
-          accessibilityLabel="Visited"
+          label={t('home.visited')}
+          accessibilityLabel={t('home.visited')}
           icon={{ name: ICONS.check }}
         />
         <FilterChip
           active={visitedFilter === 'notVisited'}
           activeStyle={styles.chipActiveVisited}
           onPress={() => onVisitedFilterToggle('notVisited')}
-          label="Not visited yet"
-          accessibilityLabel="Not visited yet"
+          label={t('home.notVisited')}
+          accessibilityLabel={t('home.notVisited')}
           icon={{ name: ICONS.mapPin }}
         />
       </ScrollView>
