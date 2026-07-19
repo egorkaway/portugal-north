@@ -150,6 +150,12 @@ const Tickets = () => {
                 <h3 className="text-lg font-semibold md:text-xl">{t("tickets.metroTitle")}</h3>
                 <p className="text-muted-foreground">{t("tickets.metroIntro")}</p>
                 <p className="text-sm text-muted-foreground">{t("tickets.metroCombineNote")}</p>
+                <p className="mt-3 rounded-lg border border-border bg-muted p-4 text-sm text-muted-foreground">
+                  {t("tickets.portugalLocalCardNote")}
+                </p>
+                <p className="mt-3 rounded-lg border border-border bg-muted p-4 text-sm text-muted-foreground">
+                  {t("tickets.portugalResidentPassNote")}
+                </p>
 
                 <div className="mt-4 grid gap-3 md:grid-cols-2">
                   <div className="rounded-lg border border-violet-600/20 bg-card p-4">

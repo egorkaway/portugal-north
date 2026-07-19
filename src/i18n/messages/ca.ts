@@ -347,7 +347,7 @@ export const ca: Messages = {
     tipAdvance: "Compra amb antelació quan puguis (sobretot AP/IC).",
     tipFlexibility: "Sigues flexible amb dia/hora — petits canvis poden afectar preu/disponibilitat.",
     tipRailPass: "Si fas molts trajectes llargs, compara amb passis (si aplica).",
-    tipUrban: "Per trajectes curts, Urbà/Regional sol tenir millor valor.",
+    tipUrban: "Per trajectes curts, Urbà/Regional sol tenir millor valor — i cada persona necessita la seva targeta.",
     disclaimer:
       "Això no és informació oficial de preus. Confirma sempre tarifes i normes actuals a la CP.",
     metroTitle: "Metro i transport local (Porto i Lisboa)",
@@ -355,13 +355,17 @@ export const ca: Messages = {
       "Els metros urbans tenen bitllets a part dels trens de CP. Al Porto i a Lisboa el preu depèn de les zones que travessis, no només del color de la línia.",
     metroCombineNote:
       "El bitllet de CP no inclou el metro. Fes servir Andante o navegante® al tram de metro, llevat de producte combinat explícit de CP.",
+    portugalLocalCardNote:
+      "Als trens locals i de rodalies (i al metro), cada viatger necessita la seva pròpia targeta de viatge. No es poden carregar bitllets de diverses persones en una sola targeta si viatgeu en grup. Valida sempre el bitllet o la targeta abans de pujar — als validadors o torniquets.",
+    portugalResidentPassNote:
+      "Els abonaments més llargs (sovint de 30 o 90 dies) de vegades estan reservats a residents i poden exigir identificació local o empadronament. Els turistes solen tenir només bitllets ocasionals o títols curts d’1 a 3 dies — comprova què pots comprar abans de comptar amb un abonament mensual.",
     metroPortoTitle: "Porto: Andante",
     metroPortoBody:
       "Andante cobreix el Metro do Porto, autobusos STCP i altres operadors a l'àrea metropolitana. Compra la targeta recarregable a estacions de metro o Lojas Andante i carrega viatges, passis diaris o títols mensuals.",
     metroPortoZones:
       "Les tarifes segueixen zones (Z1–Z8 al mapa metropolità). Una zona és el mínim; aeroport, Matosinhos i Póvoa de Varzim sovint creuen més zones.",
     metroPortoTips:
-      "Valida als torniquets en entrar. Hi ha bitllets ocasionals en paper, però la targeta és més pràctica per a diversos viatges el mateix dia.",
+      "Una targeta per persona — no compartiu un sol Andante en grup. Valida als torniquets o validadors en entrar.",
     metroPortoAndanteLink: "Informació Andante",
     metroPortoTariffsLink: "Tarifes Metro do Porto",
     metroLisboaTitle: "Lisboa: navegante®",
@@ -370,7 +374,7 @@ export const ca: Messages = {
     metroLisboaZones:
       "Els títols es venen per anells de zones (p. ex. Navegante Municipal al nucli, Metropolitano per anells més amplis). Aeroport, Amadora i Odivelas sovint requereixen un passi més gran que un salt a la Baixa.",
     metroLisboaTips:
-      "Carrega viatges ocasionals o passis diaris a les màquines; hi ha targetes personalitzades a estacions principals (navegante® na Hora).",
+      "Una targeta per persona — no es poden posar bitllets de diversos viatgers en una sola navegante®. Carrega viatges a les màquines i valida abans de viatjar.",
     metroLisboaNaveganteLink: "navegante®",
     metroLisboaTariffsLink: "Tarifes Metropolitano de Lisboa",
     metroDisclaimer:

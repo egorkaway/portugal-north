@@ -347,7 +347,7 @@ export const es: Messages = {
     tipAdvance: "Compra con antelación cuando puedas (sobre todo AP/IC).",
     tipFlexibility: "Sé flexible con día/hora — pequeños cambios pueden afectar precio/disponibilidad.",
     tipRailPass: "Si haces muchos trayectos largos, compara con pases (si aplica).",
-    tipUrban: "Para trayectos cortos, Urban/Regional suele ser mejor valor.",
+    tipUrban: "Para trayectos cortos, Urban/Regional suele ser mejor valor — y cada persona necesita su propia tarjeta.",
     disclaimer:
       "Esto no es información oficial de precios. Confirma siempre tarifas y reglas actuales en CP.",
     metroTitle: "Metro y transporte local (Oporto y Lisboa)",
@@ -355,13 +355,17 @@ export const es: Messages = {
       "Los metros urbanos tienen billetes aparte de los trenes de CP. En Oporto y Lisboa el precio depende de las zonas que cruces, no solo del color de la línea.",
     metroCombineNote:
       "El billete de CP no incluye el metro. Usa Andante o navegante® en el trayecto de metro, salvo producto combinado explícito de CP.",
+    portugalLocalCardNote:
+      "En trenes locales y de cercanías (y en el metro), cada viajero necesita su propia tarjeta de viaje. No se pueden cargar billetes de varias personas en una sola tarjeta si viajáis en grupo. Valida siempre el billete o la tarjeta antes de subir — en los validadores o tornos.",
+    portugalResidentPassNote:
+      "Los abonos más largos (a menudo de 30 o 90 días) a veces están reservados a residentes y pueden exigir identificación local o empadronamiento. Los turistas suelen tener solo billetes ocasionales o títulos cortos de 1 a 3 días — comprueba qué puedes comprar antes de contar con un abono mensual.",
     metroPortoTitle: "Oporto: Andante",
     metroPortoBody:
       "Andante cubre el Metro de Oporto, autobuses STCP y otros operadores en el área metropolitana. Compra la tarjeta recargable en estaciones de metro o Lojas Andante y carga viajes, pases diarios o títulos mensuales.",
     metroPortoZones:
       "Las tarifas siguen zonas (Z1–Z8 en el mapa metropolitano). Una zona es lo mínimo; aeropuerto, Matosinhos y Póvoa de Varzim suelen cruzar más zonas.",
     metroPortoTips:
-      "Valida en los tornos al entrar. Hay billetes ocasionales en papel, pero la tarjeta es más práctica para varios viajes en un día.",
+      "Una tarjeta por persona — no compartáis un solo Andante en grupo. Valida en los tornos o validadores al entrar.",
     metroPortoAndanteLink: "Información Andante",
     metroPortoTariffsLink: "Tarifas Metro do Porto",
     metroLisboaTitle: "Lisboa: navegante®",
@@ -370,7 +374,7 @@ export const es: Messages = {
     metroLisboaZones:
       "Los títulos se venden por anillos de zonas (p. ej. Navegante Municipal en el centro, Metropolitano para anillos más amplios). Aeropuerto, Amadora y Odivelas suelen requerir un pase mayor que un salto en Baixa.",
     metroLisboaTips:
-      "Carga viajes ocasionales o pases diarios en las máquinas; hay tarjetas personalizadas en estaciones principales (navegante® na Hora).",
+      "Una tarjeta por persona — no se pueden poner billetes de varios viajeros en una sola navegante®. Carga viajes en las máquinas y valida antes de viajar.",
     metroLisboaNaveganteLink: "navegante®",
     metroLisboaTariffsLink: "Tarifas Metropolitano de Lisboa",
     metroDisclaimer:

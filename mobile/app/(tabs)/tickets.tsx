@@ -16,6 +16,8 @@ type TicketCountry = {
   country: string;
   howToBuy: string;
   crossBorderNote?: string;
+  localCardNote?: string;
+  residentPassNote?: string;
   serviceBullets: string[];
   links: TicketLink[];
 };
@@ -59,6 +61,8 @@ export default function TicketsScreen() {
           country={country.country}
           howToBuy={country.howToBuy}
           crossBorderNote={country.crossBorderNote}
+          localCardNote={country.localCardNote}
+          residentPassNote={country.residentPassNote}
           serviceBullets={country.serviceBullets}
           links={country.links}
           howToBuyTitle={t('tickets.howToBuy')}
@@ -99,6 +103,8 @@ function CountrySection({
   country,
   howToBuy,
   crossBorderNote,
+  localCardNote,
+  residentPassNote,
   serviceBullets,
   links,
   howToBuyTitle,
@@ -109,6 +115,8 @@ function CountrySection({
   country: string;
   howToBuy: string;
   crossBorderNote?: string;
+  localCardNote?: string;
+  residentPassNote?: string;
   serviceBullets: string[];
   links: TicketLink[];
   howToBuyTitle: string;
@@ -126,6 +134,16 @@ function CountrySection({
         {crossBorderNote ? (
           <View style={styles.noteCard}>
             <Text style={styles.noteText}>{crossBorderNote}</Text>
+          </View>
+        ) : null}
+        {localCardNote ? (
+          <View style={styles.noteCard}>
+            <Text style={styles.noteText}>{localCardNote}</Text>
+          </View>
+        ) : null}
+        {residentPassNote ? (
+          <View style={styles.noteCard}>
+            <Text style={styles.noteText}>{residentPassNote}</Text>
           </View>
         ) : null}
       </View>

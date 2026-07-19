@@ -307,6 +307,8 @@ export type Messages = {
     metroTitle: string;
     metroIntro: string;
     metroCombineNote: string;
+    portugalLocalCardNote: string;
+    portugalResidentPassNote: string;
     metroPortoTitle: string;
     metroPortoBody: string;
     metroPortoZones: string;

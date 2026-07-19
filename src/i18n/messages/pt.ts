@@ -347,7 +347,7 @@ export const pt: Messages = {
     tipAdvance: "Compre mais cedo quando possível (sobretudo AP/IC).",
     tipFlexibility: "Seja flexível com dia/hora — pequenas mudanças podem alterar preço/disponibilidade.",
     tipRailPass: "Se fizer muitas viagens longas, compare com passes (quando aplicável).",
-    tipUrban: "Para deslocações curtas, Urbano/Regional costuma ter melhor valor.",
+    tipUrban: "Para deslocações curtas, Urbano/Regional costuma ter melhor valor — e cada pessoa precisa do seu cartão.",
     disclaimer:
       "Isto não é informação oficial de preços. Confirme sempre tarifas e regras atuais no site da CP.",
     metroTitle: "Metro e transportes locais (Porto e Lisboa)",
@@ -355,13 +355,17 @@ export const pt: Messages = {
       "Os metros urbanos têm bilhetes à parte dos comboios da CP. No Porto e em Lisboa o preço depende das zonas que atravessa, não só da cor da linha.",
     metroCombineNote:
       "O bilhete da CP não inclui o metro. Use Andante ou navegante® no troço de metro, salvo produto combinado explícito da CP.",
+    portugalLocalCardNote:
+      "Nos comboios locais e suburbanos (e no metro), cada pessoa precisa do seu próprio cartão de viagem. Não dá para carregar bilhetes de várias pessoas no mesmo cartão quando viajam em grupo. Valide sempre o bilhete ou cartão antes de entrar — nos validadores ou nas cancelas.",
+    portugalResidentPassNote:
+      "Passes mais longos (muitas vezes de 30 ou 90 dias) estão por vezes reservados a residentes e podem exigir identificação local ou comprovativo de morada. Os turistas costumam só ter acesso a bilhetes ocasionais ou títulos curtos de 1 a 3 dias — confirme o que pode comprar antes de contar com um passe mensal.",
     metroPortoTitle: "Porto: Andante",
     metroPortoBody:
       "O Andante serve o Metro do Porto, autocarros da STCP e outros operadores na Área Metropolitana do Porto. Compre o cartão recarregável nas estações de metro ou Lojas Andante e carregue viagens, passes diários ou títulos mensais.",
     metroPortoZones:
       "As tarifas seguem zonas (Z1–Z8 no mapa metropolitano). Uma zona é o mínimo; aeroporto, Matosinhos e Póvoa de Varzim costumam passar mais zonas.",
     metroPortoTips:
-      "Valide nas catracas à entrada. Há bilhetes ocasionais em papel, mas o cartão é mais prático para várias viagens no mesmo dia.",
+      "Um cartão por pessoa — não partilhe um único Andante em grupo. Valide nas cancelas ou validadores à entrada.",
     metroPortoAndanteLink: "Informação Andante",
     metroPortoTariffsLink: "Tarifários Metro do Porto",
     metroLisboaTitle: "Lisboa: navegante®",
@@ -370,7 +374,7 @@ export const pt: Messages = {
     metroLisboaZones:
       "Os títulos vendem-se por anéis de zonas (ex.: Navegante Municipal no núcleo urbano, Metropolitano para anéis mais largos). Aeroporto, Amadora e Odivelas muitas vezes exigem um passe maior que um salto na Baixa.",
     metroLisboaTips:
-      "Carregue viagens ocasionais ou passes diários nas máquinas; cartões personalizados estão disponíveis nas estações principais (navegante® na Hora).",
+      "Um cartão por pessoa — não pode colocar bilhetes de vários viajantes no mesmo navegante®. Carregue viagens nas máquinas e valide antes de viajar.",
     metroLisboaNaveganteLink: "navegante®",
     metroLisboaTariffsLink: "Tarifários Metropolitano de Lisboa",
     metroDisclaimer:

@@ -346,7 +346,7 @@ export const en: Messages = {
     tipAdvance: "Book earlier when you can (especially AP/IC on popular routes).",
     tipFlexibility: "Be flexible with time/day — small shifts can change price/availability.",
     tipRailPass: "If you’re doing many long rides, compare against rail passes (when applicable).",
-    tipUrban: "For short city hops, Urban/Regional tickets can be the best value.",
+    tipUrban: "For short city hops, Urban/Regional tickets can be the best value — and each person needs their own card.",
     disclaimer:
       "This is a practical overview, not official pricing. Always confirm current fares and rules on CP before you travel.",
     metroTitle: "Metro & local transit (Porto & Lisbon)",
@@ -354,13 +354,17 @@ export const en: Messages = {
       "City metros use separate tickets from CP trains. Both Porto and Lisbon use zone-based fares — what you pay depends on how many zones you cross, not the line colour alone.",
     metroCombineNote:
       "A CP ticket does not include metro rides. Use Andante or navegante® for the metro leg unless CP sells an explicit combined product for your trip.",
+    portugalLocalCardNote:
+      "For local and suburban trains (and metro), each traveller needs their own travel card. You cannot load several people’s tickets onto one card when a group is travelling together. Always validate your ticket or card before boarding — at the validators or gates.",
+    portugalResidentPassNote:
+      "Longer passes (often 30 or 90 days) are sometimes reserved for residents and may require local ID or proof of address. Tourists usually only get occasional tickets or short 1–3 day titles — check what you can buy before you plan around a monthly pass.",
     metroPortoTitle: "Porto: Andante",
     metroPortoBody:
       "Andante covers Metro do Porto, STCP buses, and other operators in the Porto metropolitan area. Get a rechargeable card at metro stations or Lojas Andante, then load single trips, day passes, or monthly titles.",
     metroPortoZones:
       "Fares follow zones (Z1–Z8 on the metropolitan map). One zone is the cheapest; airport, Matosinhos, and Póvoa de Varzim trips often cross more zones.",
     metroPortoTips:
-      "Validate at the gates when you enter. Occasional paper tickets exist, but the card is easier if you make several rides in a day.",
+      "One card per person — do not share a single Andante for a group. Validate at the gates or validators when you enter.",
     metroPortoAndanteLink: "Andante card info",
     metroPortoTariffsLink: "Metro do Porto fares",
     metroLisboaTitle: "Lisbon: navegante®",
@@ -369,7 +373,7 @@ export const en: Messages = {
     metroLisboaZones:
       "Titles are sold by zone rings (e.g. Navegante Municipal for the city core, Metropolitano for wider rings). Airport, Amadora, and Odivelas often need a larger pass than a short hop in Baixa.",
     metroLisboaTips:
-      "Load occasional trips or day passes at station machines; personalised cards are available at major stations (navegante® na Hora).",
+      "One card per person — you cannot put several travellers’ tickets on one navegante® card. Load trips at station machines and validate before you travel.",
     metroLisboaNaveganteLink: "navegante®",
     metroLisboaTariffsLink: "Metropolitano de Lisboa fares",
     metroDisclaimer:
