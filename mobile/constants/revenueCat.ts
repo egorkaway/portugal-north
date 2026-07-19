@@ -8,14 +8,23 @@
  * - Attach a Paywall to the current Offering in the RevenueCat dashboard
  *
  * API keys are public SDK keys (safe in the client).
- * Currently using RevenueCat *test* keys so StoreKit / billing failures must
- * never crash the app. Swap to App Store / Play production keys before release.
+ *
+ * `test_…` keys are RevenueCat Test Store keys. The native SDK **fatally
+ * aborts** if they are used in a Release build (TestFlight / App Store).
+ * We only configure the SDK with test keys in Debug (`__DEV__`); Release
+ * builds skip purchases until you paste real `appl_…` / `goog_…` keys here.
  */
 export const REVENUECAT_API_KEYS = {
+  /** Debug-only Test Store key until an App Store (`appl_…`) key is set. */
   ios: 'test_SUliVovThJXraTvMAywLjwjCczj',
-  /** Replace with the Google Play public SDK key when Android billing is enabled. */
+  /** Debug-only Test Store key until a Play (`goog_…`) key is set. */
   android: 'test_SUliVovThJXraTvMAywLjwjCczj',
 } as const;
+
+/** True for RevenueCat Test Store keys (`test_…`). Unsafe in Release. */
+export function isRevenueCatTestStoreKey(apiKey: string): boolean {
+  return apiKey.trim().toLowerCase().startsWith('test_');
+}
 
 /** Entitlement identifier — must match RevenueCat dashboard exactly. */
 export const PRO_ENTITLEMENT_ID = 'iberian.travel Pro';

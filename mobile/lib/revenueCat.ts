@@ -10,6 +10,7 @@ import {
   MONTHLY_PACKAGE_ID,
   PRO_ENTITLEMENT_ID,
   REVENUECAT_API_KEYS,
+  isRevenueCatTestStoreKey,
 } from '@/constants/revenueCat';
 
 /** Soft timeout so paywalls never block onboarding / navigation forever. */
@@ -71,6 +72,10 @@ function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise
 /**
  * Configure RevenueCat once. Never throws — failures leave purchases unavailable
  * so the rest of the app keeps working on simulators, offline devices, etc.
+ *
+ * Important: Test Store keys (`test_…`) must never be passed to
+ * Purchases.configure in Release — the native SDK calls fatalError and kills
+ * the process (not a catchable JS exception).
  */
 export async function configurePurchases(): Promise<boolean> {
   if (configureSucceeded) return true;
@@ -88,7 +93,15 @@ export async function configurePurchases(): Promise<boolean> {
       Platform.OS === 'ios' ? REVENUECAT_API_KEYS.ios : REVENUECAT_API_KEYS.android;
 
     if (!apiKey || apiKey.trim().length === 0) {
-      console.warn('[purchases] missing API key — skipping configure');
+      if (__DEV__) {
+        console.warn('[purchases] missing API key — skipping configure');
+      }
+      return false;
+    }
+
+    // Native SDK aborts the process if a Test Store key is used in Release.
+    // Skip configure entirely so TestFlight/Release builds stay stable.
+    if (isRevenueCatTestStoreKey(apiKey) && !__DEV__) {
       return false;
     }
 
