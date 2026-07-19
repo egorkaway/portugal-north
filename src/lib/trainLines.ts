@@ -63,6 +63,10 @@ function categoryFor(name: string): LineCategory {
  * Order stations along the dominant geographic axis of the line. We don't have
  * the official stopping sequence in static data, so this is a best-effort
  * approximation (and is surfaced as such in the UI copy).
+ *
+ * For predominantly north–south lines we list northern stations first (top of
+ * the page) and southern stations last, matching how these lines read on a map.
+ * For predominantly east–west lines we keep a west→east order.
  */
 function orderStationsAlongLine(stations: Station[]): Station[] {
   if (stations.length <= 2) return [...stations];
@@ -74,9 +78,10 @@ function orderStationsAlongLine(stations: Station[]): Station[] {
     (Math.max(...lngs) - Math.min(...lngs)) * Math.cos((meanLat * Math.PI) / 180);
   const byLat = spanLat >= spanLng;
   return [...stations].sort((a, b) => {
-    const primary = byLat ? a.lat - b.lat : a.lng - b.lng;
+    // North-first for N–S lines (descending latitude); west→east for E–W lines.
+    const primary = byLat ? b.lat - a.lat : a.lng - b.lng;
     if (Math.abs(primary) > 1e-9) return primary;
-    return byLat ? a.lng - b.lng : a.lat - b.lat;
+    return byLat ? a.lng - b.lng : b.lat - a.lat;
   });
 }
 

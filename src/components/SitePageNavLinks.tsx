@@ -20,10 +20,10 @@ export function SitePageNavLinks({
   const { t } = useLocale();
 
   const links = [
-    { key: "lines" as const, to: "/lines", label: t("nav.lines"), icon: Route },
     { key: "rankings" as const, to: "/rankings", label: t("nav.rankings"), icon: BarChart3 },
-    { key: "tickets" as const, to: "/tickets", label: t("nav.tickets"), icon: Ticket },
     { key: "map" as const, to: "/map", label: t("nav.map"), icon: Map },
+    { key: "lines" as const, to: "/lines", label: t("nav.lines"), icon: Route },
+    { key: "tickets" as const, to: "/tickets", label: t("nav.tickets"), icon: Ticket },
   ].filter((link) => !hide.includes(link.key));
 
   if (links.length === 0) return null;
