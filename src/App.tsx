@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { withShellDismiss } from "@/components/AppShellFallback";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import { DeferredClientBootstraps } from "@/components/DeferredClientBootstraps";
+import { RevenueCatProvider } from "@/components/RevenueCatProvider";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
 import HomeRedirect from "./pages/HomeRedirect.tsx";
 import Index from "./pages/Index.tsx";
@@ -35,41 +36,43 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <LocaleProvider>
-        <TooltipProvider>
-          <Toaster />
-          <Sonner />
-          <BrowserRouter>
-            <ScrollToTop />
-            <DeferredClientBootstraps />
-            <div className="pb-24 sm:pb-0">
-              <Suspense fallback={null}>
-                <Routes>
-                  <Route path="/" element={<HomeRedirect />} />
-                  <Route path="/all" element={<Index />} />
-                  <Route path="/all/:page" element={<Index />} />
-                  <Route path="/pt" element={<Index />} />
-                  <Route path="/pt/:page" element={<Index />} />
-                  <Route path="/es" element={<Index />} />
-                  <Route path="/es/:page" element={<Index />} />
-                  <Route path="/rankings" element={<Rankings />} />
-                  <Route path="/tickets" element={<Tickets />} />
-                  <Route path="/map" element={<MapPage />} />
-                  <Route path="/trip" element={<Trip />} />
-                  <Route path="/lines" element={<Lines />} />
-                  <Route path="/lines/:slug" element={<Line />} />
-                  <Route path="/privacy" element={<Privacy />} />
-                  <Route path="/stations/:slug" element={<Station />} />
-                  {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </Suspense>
-            </div>
-            <MobileBottomNav />
-          </BrowserRouter>
-          <Suspense fallback={null}>
-            <Analytics />
-          </Suspense>
-        </TooltipProvider>
+        <RevenueCatProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Sonner />
+            <BrowserRouter>
+              <ScrollToTop />
+              <DeferredClientBootstraps />
+              <div className="pb-24 sm:pb-0">
+                <Suspense fallback={null}>
+                  <Routes>
+                    <Route path="/" element={<HomeRedirect />} />
+                    <Route path="/all" element={<Index />} />
+                    <Route path="/all/:page" element={<Index />} />
+                    <Route path="/pt" element={<Index />} />
+                    <Route path="/pt/:page" element={<Index />} />
+                    <Route path="/es" element={<Index />} />
+                    <Route path="/es/:page" element={<Index />} />
+                    <Route path="/rankings" element={<Rankings />} />
+                    <Route path="/tickets" element={<Tickets />} />
+                    <Route path="/map" element={<MapPage />} />
+                    <Route path="/trip" element={<Trip />} />
+                    <Route path="/lines" element={<Lines />} />
+                    <Route path="/lines/:slug" element={<Line />} />
+                    <Route path="/privacy" element={<Privacy />} />
+                    <Route path="/stations/:slug" element={<Station />} />
+                    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
+                </Suspense>
+              </div>
+              <MobileBottomNav />
+            </BrowserRouter>
+            <Suspense fallback={null}>
+              <Analytics />
+            </Suspense>
+          </TooltipProvider>
+        </RevenueCatProvider>
       </LocaleProvider>
     </QueryClientProvider>
   );
