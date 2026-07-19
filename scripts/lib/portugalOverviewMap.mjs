@@ -142,22 +142,30 @@ function portugalStationsFromRepo(root) {
 
 const OVERLAY = {
   padX: 26,
-  padY: 22,
+  padY: 26,
+  /** Extra space under the URL baseline for descenders (g, y, p). */
+  padBottomExtra: 10,
   titleFontSize: 34,
   labelFontSize: 24,
   urlFontSize: 30,
   swatchSize: 22,
   swatchGap: 10,
+  /** Equal clear space between consecutive horizontal legend items. */
+  legendItemGap: 28,
+  titleToLegendGap: 24,
+  legendToUrlGap: 28,
   boxX: 16,
-  boxY: CARD_HEIGHT - 168 - 16,
-  boxH: 168,
+  boxBottomPad: 16,
   cornerRadius: 16,
+  /** Bold + stroke + letter-spacing run wider than the width estimate. */
+  textWidthPad: 36,
 };
 
-function buildCornerOverlayShell({ boxW, title, legendMarkup, pageUrl }) {
-  const { padX, padY, titleFontSize, urlFontSize, boxX, boxY, boxH, cornerRadius } = OVERLAY;
+function buildCornerOverlayShell({ boxW, boxH, boxY, title, legendMarkup, pageUrl }) {
+  const { padX, padY, padBottomExtra, titleFontSize, urlFontSize, boxX, cornerRadius } = OVERLAY;
   // Helvetica Bold + light stroke so Resvg actually renders weight (font-weight alone is unreliable).
   const boldFont = "Helvetica Bold, Arial Black, Arial Bold, sans-serif";
+  const urlBaselineY = boxY + boxH - padY - padBottomExtra;
   return `
   <rect x="${boxX}" y="${boxY}" width="${boxW}" height="${boxH}" rx="${cornerRadius}"
         fill="${OVERLAY_BG}" stroke="${OVERLAY_BORDER}" stroke-width="1.5" />
@@ -166,28 +174,86 @@ function buildCornerOverlayShell({ boxW, title, legendMarkup, pageUrl }) {
         font-family="${boldFont}"
         font-size="${titleFontSize}" font-weight="900" letter-spacing="0.04em">${escapeXml(title)}</text>
   ${legendMarkup}
-  <text x="${boxX + padX}" y="${boxY + boxH - padY}"
+  <text x="${boxX + padX}" y="${urlBaselineY}"
         fill="${OVERLAY_TEXT}" stroke="${OVERLAY_TEXT}" stroke-width="0.9" paint-order="stroke fill"
         font-family="${boldFont}"
         font-size="${urlFontSize}" font-weight="900" letter-spacing="0.01em">${escapeXml(pageUrl)}</text>`;
 }
 
-function estimateOverlayTextWidth(text, fontSize) {
-  return text.length * fontSize * 0.58;
+function estimateOverlayTextWidth(text, fontSize, letterSpacingEm = 0) {
+  // Approximate Helvetica/Inter advance widths (em units).
+  let em = 0;
+  for (const ch of text) {
+    if (ch === " " || ch === "·") em += 0.28;
+    else if (ch === "–" || ch === "-" || ch === "—") em += 0.35;
+    else if ("ilIjtfr.,'".includes(ch)) em += 0.3;
+    else if ("mwMW@%".includes(ch)) em += 0.9;
+    else if ("ABCDEFGHJKLMNOPQRSTUVXYZ".includes(ch)) em += 0.72;
+    else if ("abcdeghknopqsu vxyz".includes(ch)) em += 0.56;
+    else em += 0.55;
+  }
+  if (text.length > 1 && letterSpacingEm) {
+    em += letterSpacingEm * (text.length - 1);
+  }
+  // Bold + paint-order stroke render wider than the raw advance estimate.
+  return em * fontSize * 1.08;
 }
 
 function overlayBoxWidth({ title, pageUrl, legendInnerWidth }) {
-  const { padX, titleFontSize, urlFontSize } = OVERLAY;
+  const { padX, titleFontSize, urlFontSize, textWidthPad } = OVERLAY;
   return Math.ceil(
     Math.max(
       legendInnerWidth + padX * 2,
-      estimateOverlayTextWidth(title, titleFontSize) + padX * 2,
-      estimateOverlayTextWidth(pageUrl, urlFontSize) + padX * 2,
+      estimateOverlayTextWidth(title, titleFontSize, 0.04) + padX * 2 + textWidthPad,
+      estimateOverlayTextWidth(pageUrl, urlFontSize, 0.01) + padX * 2 + textWidthPad,
     ),
   );
 }
 
-/** Corner overlay pill: title + legend items + URL */
+function overlayBoxHeight(legendInnerHeight) {
+  const {
+    padY,
+    padBottomExtra,
+    titleFontSize,
+    urlFontSize,
+    titleToLegendGap,
+    legendToUrlGap,
+  } = OVERLAY;
+  return Math.ceil(
+    padY +
+      titleFontSize +
+      titleToLegendGap +
+      legendInnerHeight +
+      legendToUrlGap +
+      urlFontSize +
+      padY +
+      padBottomExtra,
+  );
+}
+
+/**
+ * Lay out legend items left-to-right with equal gaps between items.
+ * @param {{ label: string }[]} items
+ * @param {number} swatchAdvance width from swatch left to label start
+ * @param {number} swatchHeight vertical size of the swatch
+ */
+function layoutHorizontalLegendItems(items, swatchAdvance, swatchHeight) {
+  const { labelFontSize, legendItemGap } = OVERLAY;
+  let x = 0;
+  const laidOut = items.map((item) => {
+    const labelWidth = estimateOverlayTextWidth(item.label, labelFontSize);
+    const itemWidth = swatchAdvance + labelWidth;
+    const placed = { ...item, x, labelWidth, itemWidth };
+    x += itemWidth + legendItemGap;
+    return placed;
+  });
+  const legendInnerWidth = laidOut.length
+    ? laidOut[laidOut.length - 1].x + laidOut[laidOut.length - 1].itemWidth
+    : 0;
+  return { laidOut, legendInnerWidth, legendInnerHeight: swatchHeight };
+}
+
+/** Corner overlay pill: title + horizontal legend + URL */
 function buildActivityCornerOverlay(siteHost) {
   const pageUrl = `${siteHost}/map`;
   const title = "Station activity";
@@ -197,23 +263,35 @@ function buildActivityCornerOverlay(siteHost) {
     { label: "Quietest", fill: "#7c3aed", stroke: "#5b21b6" },
   ];
 
-  const { padX, padY, titleFontSize, labelFontSize, swatchSize, swatchGap, boxX, boxY } = OVERLAY;
-  const itemSpacing = 122;
-  const legendY = boxY + padY + titleFontSize + 22;
-  const maxLabelWidth = Math.max(
-    ...items.map((item) => estimateOverlayTextWidth(item.label, labelFontSize)),
+  const {
+    padX,
+    padY,
+    titleFontSize,
+    labelFontSize,
+    swatchSize,
+    swatchGap,
+    boxX,
+    boxBottomPad,
+    titleToLegendGap,
+  } = OVERLAY;
+  const swatchAdvance = swatchSize + swatchGap;
+  const { laidOut, legendInnerWidth, legendInnerHeight } = layoutHorizontalLegendItems(
+    items,
+    swatchAdvance,
+    swatchSize,
   );
-  const legendInnerWidth =
-    (items.length - 1) * itemSpacing + swatchSize + swatchGap + maxLabelWidth;
   const boxW = overlayBoxWidth({ title, pageUrl, legendInnerWidth });
+  const boxH = overlayBoxHeight(legendInnerHeight);
+  const boxY = CARD_HEIGHT - boxH - boxBottomPad;
+  const legendY = boxY + padY + titleFontSize + titleToLegendGap;
 
-  const legendMarkup = items
-    .map((item, i) => {
-      const x = boxX + padX + i * itemSpacing;
+  const legendMarkup = laidOut
+    .map((item) => {
+      const x = boxX + padX + item.x;
       return `
         <rect x="${x}" y="${legendY}" width="${swatchSize}" height="${swatchSize}" rx="4"
               fill="${item.fill}" stroke="${item.stroke}" stroke-width="2" />
-        <text x="${x + swatchSize + swatchGap}" y="${legendY + swatchSize - 2}"
+        <text x="${x + swatchAdvance}" y="${legendY + swatchSize - 2}"
               fill="${OVERLAY_TEXT}" font-family="Inter, system-ui, sans-serif"
               font-size="${labelFontSize}" font-weight="600">${escapeXml(item.label)}</text>`;
     })
@@ -221,6 +299,8 @@ function buildActivityCornerOverlay(siteHost) {
 
   return buildCornerOverlayShell({
     boxW,
+    boxH,
+    boxY,
     title,
     legendMarkup,
     pageUrl,
@@ -231,25 +311,37 @@ function buildReliabilityCornerOverlay(siteHost) {
   const pageUrl = `${siteHost}/map`;
   const title = "Station reliability";
   const items = [
-    { label: "8–10", color: RELIABILITY_COLORS.high },
-    { label: "5–7", color: RELIABILITY_COLORS.mid },
-    { label: "0–4", color: RELIABILITY_COLORS.low },
+    { label: "High", color: RELIABILITY_COLORS.high },
+    { label: "Mid", color: RELIABILITY_COLORS.mid },
+    { label: "Low", color: RELIABILITY_COLORS.low },
   ];
 
-  const { padX, padY, titleFontSize, labelFontSize, swatchGap, boxX, boxY } = OVERLAY;
+  const {
+    padX,
+    padY,
+    titleFontSize,
+    labelFontSize,
+    swatchGap,
+    boxX,
+    boxBottomPad,
+    titleToLegendGap,
+  } = OVERLAY;
   const r = 10;
-  const itemSpacing = 100;
-  const legendY = boxY + padY + titleFontSize + 22 + r;
-  const maxLabelWidth = Math.max(
-    ...items.map((item) => estimateOverlayTextWidth(item.label, labelFontSize)),
+  const swatchHeight = r * 2;
+  const swatchAdvance = swatchHeight + swatchGap;
+  const { laidOut, legendInnerWidth, legendInnerHeight } = layoutHorizontalLegendItems(
+    items,
+    swatchAdvance,
+    swatchHeight,
   );
-  const legendInnerWidth =
-    (items.length - 1) * itemSpacing + r * 2 + swatchGap + maxLabelWidth;
   const boxW = overlayBoxWidth({ title, pageUrl, legendInnerWidth });
+  const boxH = overlayBoxHeight(legendInnerHeight);
+  const boxY = CARD_HEIGHT - boxH - boxBottomPad;
+  const legendY = boxY + padY + titleFontSize + titleToLegendGap + r;
 
-  const legendMarkup = items
-    .map((item, i) => {
-      const cx = boxX + padX + r + i * itemSpacing;
+  const legendMarkup = laidOut
+    .map((item) => {
+      const cx = boxX + padX + item.x + r;
       return `
         <circle cx="${cx}" cy="${legendY}" r="${r}" fill="${item.color}" stroke="${OVERLAY_BORDER}" stroke-width="2" />
         <text x="${cx + r + swatchGap}" y="${legendY + r - 2}"
@@ -260,6 +352,8 @@ function buildReliabilityCornerOverlay(siteHost) {
 
   return buildCornerOverlayShell({
     boxW,
+    boxH,
+    boxY,
     title,
     legendMarkup,
     pageUrl,

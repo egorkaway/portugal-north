@@ -15,6 +15,7 @@ import { AirportConnectionsSection } from '@/components/AirportConnectionsSectio
 import { BuildFooter } from '@/components/BuildFooter';
 import { StationHotelList } from '@/components/StationHotelList';
 import { StationImageCredit } from '@/components/StationImageCredit';
+import { StationImageVoteSection } from '@/components/StationImageVoteSection';
 import { TrainTypeLabels } from '@/components/TrainTypeLabels';
 import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
 import { VoteButtons } from '@/components/VoteButtons';
@@ -136,7 +137,6 @@ export default function StationDetailScreen() {
           <Text style={styles.heroPlaceholderText}>No photo yet</Text>
         </View>
       )}
-      {imageUrl ? <StationImageCredit imageUrl={imageUrl} /> : null}
 
       <View style={styles.headerRow}>
         <View style={styles.headerMain}>
@@ -196,6 +196,13 @@ export default function StationDetailScreen() {
           </Text>
           <StationHotelList hotels={hotels.slice(0, 5)} />
         </>
+      ) : null}
+
+      {imageUrl ? (
+        <View style={styles.photoFeedback}>
+          <StationImageVoteSection stationName={station.name} imageUrl={imageUrl} />
+          <StationImageCredit imageUrl={imageUrl} />
+        </View>
       ) : null}
 
       <Pressable style={styles.mapsButton} onPress={openMaps}>
@@ -328,9 +335,13 @@ const styles = StyleSheet.create({
     color: theme.primaryMuted,
     textAlign: 'left',
   },
+  photoFeedback: {
+    marginTop: 20,
+    gap: 10,
+  },
   mapsButton: {
     marginHorizontal: STATION_SECTION_PADDING,
-    marginTop: 20,
+    marginTop: 16,
     backgroundColor: theme.primary,
     borderRadius: 999,
     paddingVertical: 12,

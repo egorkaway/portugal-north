@@ -100,24 +100,41 @@ export function formatMapUrlLabel(siteHost, slug) {
 export function buildMapOverlaySvg({ stationName, slug, siteHost, markerX, markerY, primaryLine }) {
   const pageUrl = formatMapUrlLabel(siteHost, slug);
   const titleLines = wrapTitle(stationName);
+  const titleLineDy = 40;
   const titleTspans = titleLines
     .map((line, index) => {
-      const dy = index === 0 ? 0 : 44;
+      const dy = index === 0 ? 0 : titleLineDy;
       return `<tspan x="${TEXT_X}" dy="${dy}">${escapeXml(line)}</tspan>`;
     })
     .join("");
 
-  const lineLabel = primaryLine
-    ? `<text x="${TEXT_X}" y="892" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="600" letter-spacing="0.06em">${escapeXml(primaryLine.toUpperCase())}</text>`
-    : "";
+  // Bottom-up layout so padding under the URL stays tight and the footer
+  // only claims as much height as the text block needs.
+  const padBottom = 28;
+  const gapTitleToUrl = 30;
+  const gapLineToTitle = 26;
+  const gapGoldToContent = 16;
+  const padTop = 20;
+  const goldH = 5;
+  const fadeH = 36;
+  const lineFontSize = 24;
 
-  const titleY = primaryLine ? 948 : 912;
-  const urlY = titleLines.length > 1 ? 1048 : 1012;
+  const urlY = CARD_SIZE - padBottom;
+  const titleY =
+    urlY - gapTitleToUrl - Math.max(0, titleLines.length - 1) * titleLineDy;
+  const lineY = primaryLine ? titleY - gapLineToTitle : null;
+  const firstTextY = lineY ?? titleY;
+  const firstTextSize = lineY != null ? lineFontSize : 42;
+  const goldY = firstTextY - firstTextSize - gapGoldToContent;
+  const footerTop = goldY - padTop;
+  const footerHeight = CARD_SIZE - footerTop;
+
+  const lineLabel = primaryLine
+    ? `<text x="${TEXT_X}" y="${lineY}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="${lineFontSize}" font-weight="600" letter-spacing="0.06em">${escapeXml(primaryLine.toUpperCase())}</text>`
+    : "";
 
   const pinR = 14;
   const pinY = markerY - pinR * 2;
-  const footerTop = 820;
-  const footerHeight = 260;
 
   return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${CARD_SIZE}" height="${CARD_SIZE}" viewBox="0 0 ${CARD_SIZE} ${CARD_SIZE}">
@@ -135,9 +152,9 @@ export function buildMapOverlaySvg({ stationName, slug, siteHost, markerX, marke
     <circle cx="${markerX}" cy="${pinY + pinR}" r="5" fill="${BRAND_CREAM}"/>
     <path d="M ${markerX} ${pinY + pinR + pinR} L ${markerX - 10} ${pinY + pinR - 2} L ${markerX + 10} ${pinY + pinR - 2} Z" fill="${BRAND_PRIMARY}" stroke="${BRAND_CREAM}" stroke-width="2"/>
   </g>
-  <rect x="0" y="${footerTop - 48}" width="${CARD_SIZE}" height="${footerHeight + 48}" fill="url(#footerFade)"/>
+  <rect x="0" y="${footerTop - fadeH}" width="${CARD_SIZE}" height="${footerHeight + fadeH}" fill="url(#footerFade)"/>
   <rect x="0" y="${footerTop}" width="${CARD_SIZE}" height="${footerHeight}" fill="${BRAND_DARK}"/>
-  <rect x="${TEXT_X}" y="844" width="72" height="5" rx="2.5" fill="${BRAND_GOLD}"/>
+  <rect x="${TEXT_X}" y="${goldY}" width="72" height="${goldH}" rx="2.5" fill="${BRAND_GOLD}"/>
   ${lineLabel}
   <text x="${TEXT_X}" y="${titleY}" fill="${BRAND_CREAM}" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700">
     ${titleTspans}

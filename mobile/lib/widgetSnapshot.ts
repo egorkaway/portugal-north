@@ -5,7 +5,7 @@ import {
   getMinutesUntilDeparture,
   hasEffectiveDeparturePassed,
 } from "@/lib/departureCountdown";
-import { findNearestStation } from "@/lib/nearestStation";
+import { findNearestStation, stationHasLiveDepartures } from "@/lib/nearestStation";
 import { isLastTripStale } from "@/lib/widgetTrip";
 import { DEFAULT_WIDGET_PROPS, normalizeWidgetProps } from "@/lib/widgetDefaults";
 import type { CompletedTripRecord, PlannedDeparture, TripWidgetProps } from "@/lib/types";
@@ -13,14 +13,21 @@ import type { CompletedTripRecord, PlannedDeparture, TripWidgetProps } from "@/l
 /** Busiest CP hub — sensible default when location is unavailable. */
 const FEATURED_STATION = "Porto-Campanhã";
 
+/** Only name a station in widget copy when it has live departures. */
+function departureStationName(name: string | null | undefined): string | null {
+  if (!name?.trim()) return null;
+  return stationHasLiveDepartures(name) ? name.trim() : null;
+}
+
 function buildPromptNextTrainProps(nearestStationName: string | null): TripWidgetProps {
+  const named = departureStationName(nearestStationName);
   return normalizeWidgetProps({
     mode: "browse",
     headline: "Take your next train",
-    subline: nearestStationName
-      ? `Open departures at ${nearestStationName}`
+    subline: named
+      ? `Open departures at ${named}`
       : "Open VeryStays and tap Take on a departure",
-    stationName: nearestStationName ?? FEATURED_STATION,
+    stationName: named ?? FEATURED_STATION,
     countdownMinutes: null,
     trainNumber: "",
     departureTime: "",
@@ -144,12 +151,23 @@ export function buildWidgetProps(input: {
   }
 
   if (input.nearestStationName) {
+    const named = departureStationName(input.nearestStationName);
+    if (!named) {
+      return normalizeWidgetProps({
+        ...DEFAULT_WIDGET_PROPS,
+        mode: "browse",
+        headline: FEATURED_STATION,
+        subline: "VeryStays · browse 426 stations",
+        stationName: FEATURED_STATION,
+      });
+    }
+
     return {
       mode: "nearest",
-      headline: input.nearestStationName,
+      headline: named,
       subline: "Nearest station",
       countdownMinutes: null,
-      stationName: input.nearestStationName,
+      stationName: named,
       trainNumber: "",
       departureTime: "",
       destination: "",

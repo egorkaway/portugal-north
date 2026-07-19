@@ -82,6 +82,18 @@ export async function syncStationVoteToServer(
   });
 }
 
+export async function syncStationImageVoteToServer(
+  stationName: string,
+  previous: 'up' | 'down' | null,
+  next: 'up' | 'down' | null,
+): Promise<void> {
+  await fetch(`${API_BASE}/api/votes`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ stationImage: stationName, previous, next }),
+  });
+}
+
 export async function fetchTrainJourney(input: {
   trainNumber: string;
   timetableDate: string;

@@ -38,7 +38,6 @@ export function StationImageCredit({ imageUrl }: Props) {
 const styles = StyleSheet.create({
   credit: {
     marginHorizontal: 16,
-    marginTop: 8,
     fontSize: 12,
     lineHeight: 16,
     color: theme.primaryMuted,
