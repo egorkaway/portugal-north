@@ -7,20 +7,25 @@ import {
   useState,
   type ReactNode,
 } from 'react';
-import { AppState, type AppStateStatus, Platform } from 'react-native';
+import { AppState, type AppStateStatus } from 'react-native';
 import {
   configurePurchases,
-  getCustomerInfo,
+  getCustomerInfoSafe,
   isProEntitlementActive,
+  isPurchasesReady,
+  isPurchasesSupportedPlatform,
   presentProPaywall,
   presentProPaywallIfNeeded,
-  restorePurchases,
+  restorePurchasesSafe,
   type CustomerInfo,
   Purchases,
 } from '@/lib/revenueCat';
 
 type PurchasesContextValue = {
+  /** Bootstrap finished (success or soft-failure). Safe to navigate. */
   ready: boolean;
+  /** SDK configured and usable for paywalls / entitlements. */
+  available: boolean;
   customerInfo: CustomerInfo | null;
   isPro: boolean;
   refresh: () => Promise<CustomerInfo | null>;
@@ -32,7 +37,8 @@ type PurchasesContextValue = {
 const PurchasesContext = createContext<PurchasesContextValue | null>(null);
 
 export function PurchasesProvider({ children }: { children: ReactNode }) {
-  const [ready, setReady] = useState(Platform.OS !== 'ios' && Platform.OS !== 'android');
+  const [ready, setReady] = useState(!isPurchasesSupportedPlatform());
+  const [available, setAvailable] = useState(false);
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo | null>(null);
 
   const applyInfo = useCallback((info: CustomerInfo | null) => {
@@ -40,34 +46,28 @@ export function PurchasesProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const refresh = useCallback(async () => {
-    try {
-      const info = await getCustomerInfo();
-      applyInfo(info);
-      return info;
-    } catch (error) {
-      console.warn('[purchases] refresh failed', error);
-      return null;
-    }
+    if (!isPurchasesReady()) return null;
+    const info = await getCustomerInfoSafe();
+    applyInfo(info);
+    return info;
   }, [applyInfo]);
 
   const restore = useCallback(async () => {
-    try {
-      const info = await restorePurchases();
-      applyInfo(info);
-      return info;
-    } catch (error) {
-      console.warn('[purchases] restore failed', error);
-      return null;
-    }
+    if (!isPurchasesReady()) return null;
+    const info = await restorePurchasesSafe();
+    applyInfo(info);
+    return info;
   }, [applyInfo]);
 
   const presentPaywall = useCallback(async () => {
+    if (!isPurchasesReady()) return false;
     const unlocked = await presentProPaywall();
     await refresh();
     return unlocked;
   }, [refresh]);
 
   const presentPaywallIfNeeded = useCallback(async () => {
+    if (!isPurchasesReady()) return false;
     const unlocked = await presentProPaywallIfNeeded();
     await refresh();
     return unlocked;
@@ -81,20 +81,28 @@ export function PurchasesProvider({ children }: { children: ReactNode }) {
     };
 
     const bootstrap = async () => {
-      if (Platform.OS !== 'ios' && Platform.OS !== 'android') {
-        setReady(true);
+      if (!isPurchasesSupportedPlatform()) {
+        if (!cancelled) {
+          setAvailable(false);
+          setReady(true);
+        }
         return;
       }
 
       try {
-        await configurePurchases();
+        const ok = await configurePurchases();
         if (cancelled) return;
 
-        Purchases.addCustomerInfoUpdateListener(onCustomerInfo);
-        const info = await getCustomerInfo();
-        if (!cancelled) applyInfo(info);
+        setAvailable(ok);
+
+        if (ok) {
+          Purchases.addCustomerInfoUpdateListener(onCustomerInfo);
+          const info = await getCustomerInfoSafe();
+          if (!cancelled) applyInfo(info);
+        }
       } catch (error) {
-        console.warn('[purchases] configure failed', error);
+        console.warn('[purchases] bootstrap failed', error);
+        if (!cancelled) setAvailable(false);
       } finally {
         if (!cancelled) setReady(true);
       }
@@ -116,6 +124,7 @@ export function PurchasesProvider({ children }: { children: ReactNode }) {
   const value = useMemo<PurchasesContextValue>(
     () => ({
       ready,
+      available,
       customerInfo,
       isPro: isProEntitlementActive(customerInfo),
       refresh,
@@ -123,7 +132,7 @@ export function PurchasesProvider({ children }: { children: ReactNode }) {
       presentPaywall,
       presentPaywallIfNeeded,
     }),
-    [ready, customerInfo, refresh, restore, presentPaywall, presentPaywallIfNeeded],
+    [ready, available, customerInfo, refresh, restore, presentPaywall, presentPaywallIfNeeded],
   );
 
   return (

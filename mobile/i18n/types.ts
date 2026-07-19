@@ -186,6 +186,7 @@ export type MobileMessages = {
     proActiveTitle: string;
     proActiveBody: string;
     proManage: string;
+    proUnavailable: string;
   };
   hotel: {
     kmFromStation: string;

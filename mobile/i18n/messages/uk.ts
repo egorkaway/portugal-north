@@ -185,6 +185,7 @@ export const uk: MobileMessages = {
     proActiveTitle: 'У вас є Pro',
     proActiveBody: 'Дякуємо за підтримку VeryStays. Відкрийте paywall у будь-який час, щоб переглянути свій план.',
     proManage: 'Керувати підпискою',
+    proUnavailable: 'Покупки недоступні',
   },
   hotel: {
     kmFromStation: '{{km}} км від станції',

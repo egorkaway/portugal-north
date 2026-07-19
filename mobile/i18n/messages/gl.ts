@@ -185,6 +185,7 @@ export const gl: MobileMessages = {
     proActiveTitle: 'Tes Pro',
     proActiveBody: 'Grazas por apoiar VeryStays. Abre o paywall en calquera momento para revisar o teu plan.',
     proManage: 'Xestionar subscrición',
+    proUnavailable: 'Compras non dispoñibles',
   },
   hotel: {
     kmFromStation: '{{km}} km da estación',

@@ -185,6 +185,7 @@ export const ca: MobileMessages = {
     proActiveTitle: 'Tens Pro',
     proActiveBody: 'Gràcies per donar suport a VeryStays. Obre el paywall en qualsevol moment per revisar el teu pla.',
     proManage: 'Gestionar subscripció',
+    proUnavailable: 'Compres no disponibles',
   },
   hotel: {
     kmFromStation: '{{km}} km de l’estació',

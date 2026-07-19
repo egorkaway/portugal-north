@@ -7,8 +7,9 @@
  * - Package identifier on the current Offering: `monthly` (or `$rc_monthly`)
  * - Attach a Paywall to the current Offering in the RevenueCat dashboard
  *
- * API keys are public SDK keys (safe in the client). Use App Store / Play
- * production keys when shipping; this is the Apple test key for now.
+ * API keys are public SDK keys (safe in the client).
+ * Currently using RevenueCat *test* keys so StoreKit / billing failures must
+ * never crash the app. Swap to App Store / Play production keys before release.
  */
 export const REVENUECAT_API_KEYS = {
   ios: 'test_SUliVovThJXraTvMAywLjwjCczj',

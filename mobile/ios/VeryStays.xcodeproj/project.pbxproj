@@ -21,6 +21,7 @@
 		DDA8ABF7AB784F3AA2E8E48C /* TripWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69913D11C7384B10A23FE1A8 /* TripWidget.swift */; };
 		E423F4BB14E5A60C183030DB /* libPods-VeryStays.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CB0E029E566F9AC05D37A7 /* libPods-VeryStays.a */; };
 		E98EDD7D531A483B85150388 /* index.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7161DEAC9DE4423B5E772D2 /* index.swift */; };
+		F4A81B2C0E7D4F9A9C1D2E3F /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A81B2C0E7D4F9A9C1D2E3E /* StoreKit.framework */; };
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 		F9B5E3C8EF324A3A8EB9B001 /* ExpoWidgetsTarget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 64A74D1E9C30456CAD4012AE /* ExpoWidgetsTarget.appex */; };
 		FC4D33538FB9D21201ACCEAC /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44031DEA7786181A777FD5D /* ExpoModulesProvider.swift */; };
@@ -74,6 +75,7 @@
 		DCF4FA6B79752234B10412BA /* stations-siri.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = "stations-siri.json"; path = "VeryStays/Resources/stations-siri.json"; sourceTree = "<group>"; };
 		E06BABD505B57FF636DBADB1 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-VeryStays/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F4A81B2C0E7D4F9A9C1D2E3E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F11748412D0307B40044C1D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = VeryStays/AppDelegate.swift; sourceTree = "<group>"; };
 		F11748442D0722820044C1D9 /* VeryStays-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VeryStays-Bridging-Header.h"; path = "VeryStays/VeryStays-Bridging-Header.h"; sourceTree = "<group>"; };
 		F6FDF7EC3BE6D47E97950ECB /* Pods-VeryStays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeryStays.debug.xcconfig"; path = "Target Support Files/Pods-VeryStays/Pods-VeryStays.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A81B2C0E7D4F9A9C1D2E3F /* StoreKit.framework in Frameworks */,
 				E423F4BB14E5A60C183030DB /* libPods-VeryStays.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				F4A81B2C0E7D4F9A9C1D2E3E /* StoreKit.framework */,
 				0DD8122A72DCCFFC422BC61A /* libPods-ExpoWidgetsTarget.a */,
 				B7CB0E029E566F9AC05D37A7 /* libPods-VeryStays.a */,
 			);
@@ -273,6 +277,11 @@
 				TargetAttributes = {
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1250;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					7F47BEDC4586426EAEAEC625 = {
 						LastSwiftMigration = 1250;

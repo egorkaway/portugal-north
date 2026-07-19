@@ -24,18 +24,29 @@ const countries = ticketGuide.countries as TicketCountry[];
 
 export default function TicketsScreen() {
   const { t } = useLocale();
-  const { isPro, presentPaywall } = usePurchases();
+  const { ready, available, isPro, presentPaywall } = usePurchases();
   const [paywallBusy, setPaywallBusy] = useState(false);
 
   const openPaywall = async () => {
-    if (paywallBusy) return;
+    if (paywallBusy || !available) return;
     setPaywallBusy(true);
     try {
       await presentPaywall();
+    } catch (error) {
+      console.warn('[tickets] paywall failed', error);
     } finally {
       setPaywallBusy(false);
     }
   };
+
+  const proButtonDisabled = paywallBusy || !available;
+  const proButtonLabel = !ready
+    ? t('tickets.proCta')
+    : !available
+      ? t('tickets.proUnavailable')
+      : isPro
+        ? t('tickets.proManage')
+        : t('tickets.proCta');
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -67,16 +78,14 @@ export default function TicketsScreen() {
           {isPro ? t('tickets.proActiveBody') : t('tickets.proBody')}
         </Text>
         <Pressable
-          style={[styles.proButton, paywallBusy ? styles.proButtonDisabled : null]}
-          disabled={paywallBusy}
+          style={[styles.proButton, proButtonDisabled ? styles.proButtonDisabled : null]}
+          disabled={proButtonDisabled}
           onPress={() => void openPaywall()}
         >
-          {paywallBusy ? (
+          {paywallBusy || !ready ? (
             <ActivityIndicator color="#fff" />
           ) : (
-            <Text style={styles.proButtonText}>
-              {isPro ? t('tickets.proManage') : t('tickets.proCta')}
-            </Text>
+            <Text style={styles.proButtonText}>{proButtonLabel}</Text>
           )}
         </Pressable>
       </View>

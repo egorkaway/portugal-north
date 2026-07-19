@@ -18,6 +18,7 @@ import { brandTheme } from '@/constants/brandTheme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { usePurchases } from '@/components/PurchasesProvider';
 import { completeOnboarding, isOnboardingComplete } from '@/lib/onboardingStorage';
+import { waitForPurchasesBootstrap } from '@/lib/revenueCat';
 import { ensureTripNotificationPermission } from '@/lib/tripNotifications';
 import { writeLastCoords } from '@/lib/tripStorage';
 import type { TripWidgetProps } from '@/lib/types';
@@ -65,6 +66,8 @@ export default function OnboardingScreen() {
     setBusy(true);
     try {
       await completeOnboarding();
+      // Brief wait for RevenueCat bootstrap; never block leaving onboarding.
+      await waitForPurchasesBootstrap(2500);
       try {
         await presentPaywallIfNeeded();
       } catch (error) {

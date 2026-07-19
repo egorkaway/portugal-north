@@ -185,6 +185,7 @@ export const pt: MobileMessages = {
     proActiveTitle: 'Tem Pro',
     proActiveBody: 'Obrigado por apoiar o VeryStays. Abra o paywall a qualquer momento para rever o seu plano.',
     proManage: 'Gerir subscrição',
+    proUnavailable: 'Compras indisponíveis',
   },
   hotel: {
     kmFromStation: '{{km}} km da estação',
