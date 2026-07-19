@@ -5,6 +5,7 @@ import { allStations } from "@/data/stationRegistry";
 import { getHomeSitemapPaths } from "@/lib/homeRoute";
 import { portugalStations } from "@/data/stations";
 import { getHotelsForStation } from "@/lib/stationHotels";
+import { getTrainLines } from "@/lib/trainLines";
 
 describe("buildSeoHeadHtml", () => {
   it("includes unique title and description in output", () => {
@@ -39,7 +40,9 @@ describe("getPrerenderRoutes", () => {
   it("generates one HTML file per station plus core pages", () => {
     const routes = getPrerenderRoutes();
     const homeExtra = getHomeSitemapPaths().length;
-    expect(routes.length).toBe(allStations.length + 7 + homeExtra);
+    expect(routes.length).toBe(
+      allStations.length + 8 + homeExtra + getTrainLines().length,
+    );
     const porto = portugalStations.find((s) => s.name === "Porto-Campanhã");
     expect(porto).toBeDefined();
     const meta = buildStationPageMeta(porto!, getHotelsForStation(porto!.name));

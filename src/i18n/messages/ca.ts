@@ -19,6 +19,7 @@ export const ca: Messages = {
     tickets: "Bitllets",
     map: "Mapa",
     trip: "Viatge",
+    lines: "Línies",
     mobile: "Navegació mòbil",
     main: "Navegació principal",
   },
@@ -119,6 +120,31 @@ export const ca: Messages = {
       "Basada en els retards acumulats de les nostres mostres de sortides en temps real a la xarxa.",
     reliabilityScale: "10 = menys retards en les nostres dades · 1 = més retards",
     reliabilityLoading: "Carregant puntuació de fiabilitat…",
+  },
+  lines: {
+    title: "Línies ferroviàries",
+    subtitle: "Totes les línies de les nostres dades, les estacions de cadascuna i quins trens hi paren",
+    intro:
+      "Explora les línies ferroviàries de Portugal — a més de les línies transfrontereres i de metro de les nostres dades. Cada línia mostra les seves estacions amb els serveis que hi paren.",
+    backToLines: "Torna a les línies",
+    portugalHeading: "Línies ferroviàries de Portugal",
+    spainHeading: "Línies transfrontereres i d'Espanya",
+    metroHeading: "Línies de metro",
+    stationCount_one: "{{count}} estació",
+    stationCount_other: "{{count}} estacions",
+    lineCount_one: "{{count}} línia",
+    lineCount_other: "{{count}} línies",
+    servicesLabel: "Serveis",
+    historicBadge: "Històrica",
+    orderingNote:
+      "Les estacions es mostren en ordre geogràfic aproximat al llarg de la línia, no en la seqüència oficial de parades.",
+    servicesNote:
+      "Els tipus de servei són els registrats per a cada estació a les nostres dades i poden no reflectir tots els trens cada dia.",
+    stationsHeading: "Estacions d'aquesta línia",
+    alsoOn: "També a",
+    noServiceData: "Sense dades de tipus de servei",
+    emptyLine: "Encara no hi ha estacions registrades en aquesta línia.",
+    viewAllLines: "Mostra totes les línies",
   },
   departures: {
     title: "Pròximes sortides",
@@ -470,6 +496,18 @@ export const ca: Messages = {
         "Com comprar bitllets de tren a Portugal i Espanya — CP, Renfe, passes de metro i xarxes de rodalies.",
       ogDescription:
         "Bitllets CP i Renfe més passes de metro al Porto, Lisboa, Madrid i Barcelona.",
+    },
+    lines: {
+      title: "Línies Ferroviàries i Estacions | Viatge Ibèric Sostenible",
+      description:
+        "Explora totes les línies ferroviàries de Portugal (a més de línies transfrontereres i de metro), les estacions de cada línia i quins serveis — Alfa Pendular, Intercidades, Regional, Urbà — hi paren.",
+      ogDescription:
+        "Línies ferroviàries de Portugal amb les estacions de cada línia i els serveis que hi paren.",
+      lineTitle: "{{line}} — Estacions i Serveis | {{site}}",
+      lineDescription:
+        "Les {{count}} estacions de {{line}} i els serveis que hi paren: {{services}}.",
+      lineOgDescription:
+        "{{line}}: {{count}} estacions i serveis — {{services}}.",
     },
     map: {
       title: "Mapa d'Activitat | Viatge Ibèric Sostenible",

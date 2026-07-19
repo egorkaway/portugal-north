@@ -9,6 +9,7 @@ import { attributionForImageUrl, siteLogoAttribution } from "./imageAttribution"
 import type { HomeScope } from "./countries";
 import { DEFAULT_HOME_SCOPE } from "./countries";
 import { buildHomePath } from "./homeRoute";
+import { getLinePath, type TrainLine } from "./trainLines";
 
 const SITE_NAME = "Sustainable Iberian";
 
@@ -219,6 +220,72 @@ export function buildHomeStructuredData(scope: HomeScope = DEFAULT_HOME_SCOPE): 
           name: station.name,
           url: absoluteUrl(getStationPath(station)),
         })),
+      },
+    ],
+  };
+}
+
+export function buildLinesStructuredData(lines: TrainLine[]): JsonLd {
+  const path = "/lines";
+  const pageUrl = absoluteUrl(path);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Home", path: buildHomePath(DEFAULT_HOME_SCOPE) },
+        { name: "Train lines", path },
+      ]),
+      {
+        "@type": "CollectionPage",
+        "@id": pageUrl,
+        url: pageUrl,
+        name: "Train lines | Sustainable Iberian",
+        isPartOf: { "@id": `${absoluteUrl("/")}#website` },
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: lines.length,
+          itemListElement: lines.map((line, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: line.name,
+            url: absoluteUrl(getLinePath(line)),
+          })),
+        },
+      },
+    ],
+  };
+}
+
+export function buildLineStructuredData(line: TrainLine): JsonLd {
+  const path = getLinePath(line);
+  const pageUrl = absoluteUrl(path);
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildBreadcrumbList([
+        { name: "Home", path: buildHomePath(DEFAULT_HOME_SCOPE) },
+        { name: "Train lines", path: "/lines" },
+        { name: line.name, path },
+      ]),
+      {
+        "@type": "CollectionPage",
+        "@id": pageUrl,
+        url: pageUrl,
+        name: `${line.name} — stations & services`,
+        isPartOf: { "@id": `${absoluteUrl("/")}#website` },
+        mainEntity: {
+          "@type": "ItemList",
+          name: `Stations on ${line.name}`,
+          numberOfItems: line.stations.length,
+          itemListElement: line.stations.map((station, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: station.name,
+            url: absoluteUrl(getStationPath(station)),
+          })),
+        },
       },
     ],
   };

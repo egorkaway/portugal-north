@@ -9,6 +9,8 @@ import {
   getMapPageMeta,
   getTripPageMeta,
   getPrivacyPageMeta,
+  getLinesPageMeta,
+  buildLinePageMeta,
   buildSeoHeadHtml,
   buildStationPageMeta,
   type PageMeta,
@@ -17,6 +19,7 @@ import {
 export { buildSeoHeadHtml };
 import { stationToSlug } from "@/lib/stationSlug";
 import { getHomeSitemapPaths, homePathToOutFile, parseHomeCanonicalPath } from "@/lib/homeRoute";
+import { getTrainLines } from "@/lib/trainLines";
 
 export type PrerenderRoute = {
   /** Path relative to dist/ (e.g. index.html, stations/porto/index.html). */
@@ -31,9 +34,17 @@ export function getPrerenderRoutes(): PrerenderRoute[] {
     { outFile: "tickets/index.html", meta: getTicketsPageMeta("en") },
     { outFile: "map/index.html", meta: getMapPageMeta("en") },
     { outFile: "trip/index.html", meta: getTripPageMeta("en") },
+    { outFile: "lines/index.html", meta: getLinesPageMeta("en") },
     { outFile: "privacy/index.html", meta: getPrivacyPageMeta("en") },
     { outFile: "404.html", meta: NOT_FOUND_PAGE_META },
   ];
+
+  for (const line of getTrainLines()) {
+    routes.push({
+      outFile: `lines/${line.slug}/index.html`,
+      meta: buildLinePageMeta(line, "en"),
+    });
+  }
 
   for (const path of getHomeSitemapPaths()) {
     const parsed = parseHomeCanonicalPath(path);

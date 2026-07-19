@@ -8,12 +8,25 @@ import {
   type PageMeta,
   getTicketsPageMeta,
   getTripPageMeta,
+  getLinesPageMeta,
+  buildLinePageMeta,
 } from "@/lib/pageMeta";
 import { parseHomeCanonicalPath, buildHomePath } from "@/lib/homeRoute";
 import { formatLineList, formatServiceTypes } from "@/lib/stationMeta";
 import { getStationBySlug, getStationPath, stationToSlug } from "@/lib/stationSlug";
+import {
+  getLinePath,
+  getTrainLineBySlug,
+  getTrainLines,
+  type TrainLine,
+} from "@/lib/trainLines";
 import type { PrerenderRoute } from "@/lib/prerenderRoutes";
-import { buildHomeStructuredData, buildStationStructuredData } from "@/lib/structuredData";
+import {
+  buildHomeStructuredData,
+  buildLineStructuredData,
+  buildLinesStructuredData,
+  buildStationStructuredData,
+} from "@/lib/structuredData";
 import { getHotelsForStation } from "@/lib/stationHotels";
 import { getStationShareImageUrl } from "@/lib/stationImage";
 import { formatDistance } from "@/lib/geo";
@@ -128,6 +141,87 @@ Shared by [Metropolitano de Lisboa](https://www.metrolisboa.pt/) and Carris/Fert
 
 A CP ticket does not include metro rides unless CP sells an explicit combined product for your journey.
 `;
+}
+
+export function buildLinesMarkdown(meta: PageMeta, siteUrl: string): string {
+  const base = siteUrl.replace(/\/$/, "");
+  const lines = getTrainLines();
+
+  const renderGroup = (group: typeof lines): string =>
+    group
+      .map(
+        (line) =>
+          `- [${line.name}](${base}${getLinePath(line)}) — ${line.stations.length} stations (${line.serviceTypes.join(", ") || "n/a"})`,
+      )
+      .join("\n");
+
+  const railPt = lines.filter((l) => l.category === "rail" && l.country === "pt");
+  const railEs = lines.filter((l) => l.category === "rail" && l.country === "es");
+  const metro = lines.filter((l) => l.category === "metro");
+
+  const body = `${yamlFrontmatter({
+    title: meta.title,
+    description: meta.description,
+    image: meta.ogImagePath ? `${base}${meta.ogImagePath}` : undefined,
+  })}# ${meta.title}
+
+${meta.description}
+
+Stations are listed in approximate geographic order along each line, not the official stopping sequence. Service types are those recorded for each station in our data.
+
+## Portugal railway lines
+
+${renderGroup(railPt)}
+
+## Cross-border & Spanish lines
+
+${renderGroup(railEs)}
+
+## Metro lines
+
+${renderGroup(metro)}
+`;
+
+  return appendJsonLdBlock(body, buildLinesStructuredData(lines));
+}
+
+export function buildLineMarkdown(
+  line: TrainLine,
+  meta: PageMeta,
+  siteUrl: string,
+): string {
+  const base = siteUrl.replace(/\/$/, "");
+  const stationLines = line.stations
+    .map((station) => {
+      const types = station.types.join(", ") || "n/a";
+      return `- [${station.name}](${base}${getStationPath(station)}) — ${types}`;
+    })
+    .join("\n");
+
+  const body = `${yamlFrontmatter({
+    title: meta.title,
+    description: meta.description,
+    image: meta.ogImagePath ? `${base}${meta.ogImagePath}` : undefined,
+  })}# ${line.name}
+
+${meta.description}
+
+- **${line.stations.length}** stations in our data
+- Services: ${line.serviceTypes.join(", ") || "n/a"}
+
+Stations are listed in approximate geographic order along the line, not the official stopping sequence. Service types are those recorded for each station in our data.
+
+## Stations
+
+${stationLines || "_No stations recorded for this line yet._"}
+
+## Links
+
+- [All train lines](${base}/lines)
+- [All stations (Portugal & Spain)](${base}/all)
+`;
+
+  return appendJsonLdBlock(body, buildLineStructuredData(line));
 }
 
 export function buildTripMarkdown(meta: PageMeta, siteUrl: string): string {
@@ -269,8 +363,19 @@ export function buildMarkdownForRoute(route: PrerenderRoute, siteUrl: string): s
     }
   }
 
+  const lineMatch = meta.canonicalPath.match(/^\/lines\/([^/]+)$/);
+  if (lineMatch) {
+    const line = getTrainLineBySlug(lineMatch[1]);
+    if (line) {
+      return buildLineMarkdown(line, meta, siteUrl);
+    }
+  }
+
   if (parseHomeCanonicalPath(meta.canonicalPath)) {
     return buildHomeMarkdown(meta, siteUrl);
+  }
+  if (meta.canonicalPath === "/lines") {
+    return buildLinesMarkdown(meta, siteUrl);
   }
   if (meta.canonicalPath === "/rankings") {
     return buildRankingsMarkdown(meta, siteUrl);
@@ -314,6 +419,16 @@ export function buildMarkdownForPath(pathname: string, siteUrl: string): string 
     const hotels = getHotelsForStation(station.name);
     const meta = buildStationPageMeta(station, hotels, getStationShareImageUrl(station.name));
     return buildStationMarkdown(station, meta, hotels, siteUrl);
+  }
+
+  const lineMatch = normalized.match(/^\/lines\/([^/]+)$/);
+  if (lineMatch) {
+    const line = getTrainLineBySlug(lineMatch[1]);
+    if (!line) return null;
+    return buildLineMarkdown(line, buildLinePageMeta(line, "en"), siteUrl);
+  }
+  if (normalized === "/lines") {
+    return buildLinesMarkdown(getLinesPageMeta("en"), siteUrl);
   }
 
   if (normalized === "/rankings") {

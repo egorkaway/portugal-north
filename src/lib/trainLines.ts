@@ -1,7 +1,7 @@
-import { allStations } from "@/data/stationRegistry";
-import type { Station } from "@/data/stationTypes";
-import type { CountryCode } from "@/lib/countries";
-import { sortTrainTypes } from "@/lib/trainTypes";
+import { allStations } from "../data/stationRegistry";
+import type { Station } from "../data/stationTypes";
+import type { CountryCode } from "./countries";
+import { sortTrainTypes } from "./trainTypes";
 
 /**
  * The `lines[]` field on stations is hand-maintained and has a few quirks:
@@ -159,4 +159,20 @@ export function getTrainLineBySlug(slug: string): TrainLine | undefined {
 
 export function getLinePath(line: Pick<TrainLine, "slug">): string {
   return `/lines/${line.slug}`;
+}
+
+/** The lines (with their own page) a station belongs to, deduped by slug. */
+export function getLinesForStation(station: Station): TrainLine[] {
+  const seen = new Set<string>();
+  const result: TrainLine[] = [];
+  for (const raw of station.lines) {
+    const name = normalizeLineName(raw);
+    if (!name) continue;
+    const line = getTrainLineBySlug(lineToSlug(name));
+    if (line && !seen.has(line.slug)) {
+      seen.add(line.slug);
+      result.push(line);
+    }
+  }
+  return result;
 }

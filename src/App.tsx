@@ -26,6 +26,8 @@ const Tickets = lazyPage(() => import("./pages/Tickets.tsx"));
 const MapPage = lazyPage(() => import("./pages/Map.tsx"));
 const Privacy = lazyPage(() => import("./pages/Privacy.tsx"));
 const Trip = lazyPage(() => import("./pages/Trip.tsx"));
+const Lines = lazyPage(() => import("./pages/Lines.tsx"));
+const Line = lazyPage(() => import("./pages/Line.tsx"));
 
 const queryClient = new QueryClient();
 
@@ -53,6 +55,8 @@ const App = () => {
                   <Route path="/tickets" element={<Tickets />} />
                   <Route path="/map" element={<MapPage />} />
                   <Route path="/trip" element={<Trip />} />
+                  <Route path="/lines" element={<Lines />} />
+                  <Route path="/lines/:slug" element={<Line />} />
                   <Route path="/privacy" element={<Privacy />} />
                   <Route path="/stations/:slug" element={<Station />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

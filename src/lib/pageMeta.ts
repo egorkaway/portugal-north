@@ -5,11 +5,13 @@ import { createTranslator } from "@/i18n";
 import type { HomeScope } from "@/lib/countries";
 import { buildHomePath } from "@/lib/homeRoute";
 import {
+  formatServiceTypes,
   getStationMetaDescription,
   getStationOgDescription,
   getStationPageTitle,
 } from "@/lib/stationMeta";
 import { stationToSlug } from "@/lib/stationSlug";
+import { getLinePath, type TrainLine } from "@/lib/trainLines";
 
 export type PageMeta = {
   title: string;
@@ -53,6 +55,36 @@ export function getTicketsPageMeta(locale: Locale = "en"): PageMeta {
     description: messages.meta.tickets.description,
     canonicalPath: "/tickets",
     ogDescription: messages.meta.tickets.ogDescription,
+    ogImagePath: "/og-image.jpg",
+  };
+}
+
+export function getLinesPageMeta(locale: Locale = "en"): PageMeta {
+  const { messages } = createTranslator(locale);
+  return {
+    title: messages.meta.lines.title,
+    description: messages.meta.lines.description,
+    canonicalPath: "/lines",
+    ogDescription: messages.meta.lines.ogDescription,
+    ogImagePath: "/og-image.jpg",
+  };
+}
+
+export function buildLinePageMeta(line: TrainLine, locale: Locale = "en"): PageMeta {
+  const tr = createTranslator(locale);
+  const services =
+    formatServiceTypes(line.serviceTypes, locale) || tr.t("meta.cpTrains");
+  const params = {
+    line: line.name,
+    site: tr.t("meta.siteName"),
+    count: line.stations.length,
+    services,
+  };
+  return {
+    title: tr.t("meta.lines.lineTitle", params),
+    description: tr.t("meta.lines.lineDescription", params),
+    canonicalPath: getLinePath(line),
+    ogDescription: tr.t("meta.lines.lineOgDescription", params),
     ogImagePath: "/og-image.jpg",
   };
 }
