@@ -13,7 +13,7 @@ import {
   detectDeviceLocale,
   type Locale,
   type Translator,
-} from '@/i18n';
+} from '@/i18n/index';
 
 type LocaleContextValue = {
   locale: Locale;
@@ -25,12 +25,20 @@ type LocaleContextValue = {
 
 const LocaleContext = createContext<LocaleContextValue | null>(null);
 
+function safeDetectDeviceLocale(): Locale {
+  try {
+    return detectDeviceLocale();
+  } catch {
+    return 'en';
+  }
+}
+
 export function LocaleProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocale] = useState<Locale>(() => detectDeviceLocale());
+  const [locale, setLocale] = useState<Locale>(() => safeDetectDeviceLocale());
   const [ready, setReady] = useState(false);
 
   const refreshFromDevice = useCallback(() => {
-    setLocale(detectDeviceLocale());
+    setLocale(safeDetectDeviceLocale());
   }, []);
 
   useEffect(() => {

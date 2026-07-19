@@ -45,6 +45,8 @@ PODS:
     - ExpoModulesCore
   - ExpoLinking (57.0.2):
     - ExpoModulesCore
+  - ExpoLocalization (17.0.9):
+    - ExpoModulesCore
   - ExpoLocation (57.0.2):
     - ExpoModulesCore
   - ExpoLogBox (57.0.0):
@@ -108,6 +110,11 @@ PODS:
   - hermes-engine (250829098.0.14):
     - hermes-engine/Pre-built (= 250829098.0.14)
   - hermes-engine/Pre-built (250829098.0.14)
+  - PurchasesHybridCommon (18.21.0):
+    - RevenueCat (= 5.80.3)
+  - PurchasesHybridCommonUI (18.21.0):
+    - PurchasesHybridCommon (= 18.21.0)
+    - RevenueCatUI (= 5.80.3)
   - RCTDeprecation (0.86.0)
   - RCTRequired (0.86.0)
   - RCTSwiftUI (0.86.0)
@@ -2066,6 +2073,9 @@ PODS:
     - React-utils (= 0.86.0)
     - ReactNativeDependencies
   - ReactNativeDependencies (0.86.0)
+  - RevenueCat (5.80.3)
+  - RevenueCatUI (5.80.3):
+    - RevenueCat (= 5.80.3)
   - RNCAsyncStorage (2.2.0):
     - hermes-engine
     - RCTRequired
@@ -2132,6 +2142,12 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
+  - RNPaywalls (10.4.3):
+    - PurchasesHybridCommonUI (= 18.21.0)
+    - React-Core
+  - RNPurchases (10.4.3):
+    - PurchasesHybridCommon (= 18.21.0)
+    - React-Core
   - RNReanimated (4.5.0):
     - hermes-engine
     - RCTRequired
@@ -2363,6 +2379,7 @@ DEPENDENCIES:
   - ExpoGlassEffect (from `../node_modules/expo-glass-effect/ios`)
   - ExpoKeepAwake (from `../node_modules/expo-keep-awake/ios`)
   - ExpoLinking (from `../node_modules/expo-linking/ios`)
+  - ExpoLocalization (from `../node_modules/expo-localization/ios`)
   - ExpoLocation (from `../node_modules/expo-location/ios/ExpoLocation.podspec`)
   - "ExpoLogBox (from `../node_modules/@expo/log-box`)"
   - ExpoModulesCore (from `../node_modules/expo-modules-core/ExpoModulesCore.podspec`)
@@ -2458,10 +2475,19 @@ DEPENDENCIES:
   - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNCMaskedView (from `../node_modules/@react-native-masked-view/masked-view`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNPaywalls (from `../node_modules/react-native-purchases-ui`)
+  - RNPurchases (from `../node_modules/react-native-purchases`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNWorklets (from `../node_modules/react-native-worklets`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
+
+SPEC REPOS:
+  trunk:
+    - PurchasesHybridCommon
+    - PurchasesHybridCommonUI
+    - RevenueCat
+    - RevenueCatUI
 
 EXTERNAL SOURCES:
   EXApplication:
@@ -2486,6 +2512,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-keep-awake/ios"
   ExpoLinking:
     :path: "../node_modules/expo-linking/ios"
+  ExpoLocalization:
+    :path: "../node_modules/expo-localization/ios"
   ExpoLocation:
     :podspec: "../node_modules/expo-location/ios/ExpoLocation.podspec"
   ExpoLogBox:
@@ -2675,6 +2703,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-masked-view/masked-view"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNPaywalls:
+    :path: "../node_modules/react-native-purchases-ui"
+  RNPurchases:
+    :path: "../node_modules/react-native-purchases"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -2696,6 +2728,7 @@ SPEC CHECKSUMS:
   ExpoGlassEffect: 72e96f2f6cae69f970238b80656d869d1a9a98ff
   ExpoKeepAwake: 8a96e2075b75641001f55393d7e6600a5b808f09
   ExpoLinking: 24c7525db6e8ab5c347890b3498857babde8b306
+  ExpoLocalization: d936ff63557366e2e487264f5b495b1f0637fabd
   ExpoLocation: f0127974a6e1edfb1ea255f55604addb51d020b5
   ExpoLogBox: b39a76aab749833d58111c3be1264bb90f3b92d4
   ExpoModulesCore: a5450c88a430692251dc6c5ebe50e801c66815b4
@@ -2712,6 +2745,8 @@ SPEC CHECKSUMS:
   ExpoWidgets: a8df3d883894d8ef874ba1bed67df1cd6b81b1b8
   FBLazyVector: b3e7ad108f0d882e30445c5527d774e3fd432f3d
   hermes-engine: f42d5de39484ca17655108a8cef5e7ed766a4840
+  PurchasesHybridCommon: 097af88db3cb39b415bef2f3140e6b3324899756
+  PurchasesHybridCommonUI: 860a7cc1cf1d16b7c68cc03923003acf5e84c74c
   RCTDeprecation: 2a74a2c57675e64419bd89078efde81f7c1de90b
   RCTRequired: 30451112e6fef4e6f31b4e7eee0845156e35e4b0
   RCTSwiftUI: 5aaf0b07e747ba749dc6acc94d8bd41eea4b570f
@@ -2787,9 +2822,13 @@ SPEC CHECKSUMS:
   ReactCodegen: afe0d436ee089d7bea6418429d8312b1d23a6801
   ReactCommon: d5c1bb4427bf51c443de5926aac332c89ddd9363
   ReactNativeDependencies: fa0a54b3f5319ae0e3b9aff32bfee7a424b88e66
+  RevenueCat: 72d1e14966339bf38c41d9b2841ef64c8fd79646
+  RevenueCatUI: d46a19d3a0d95919d2de453427480aea9593e873
   RNCAsyncStorage: 2ad919e88b8bc2cd80e8697ce66d04d006743283
   RNCMaskedView: eb2b2e538afa907f05a5848a1a1ac26092e6fec9
   RNGestureHandler: 953af68599a35f425ea962dda2ee15ee4e3ca719
+  RNPaywalls: 619df9b4ea7c284d060d75c6eb1d15efeef6bf3b
+  RNPurchases: 33dbce0054a0833a8c20c8d6244e971dfedaa0c3
   RNReanimated: a9bf68fb5f19ce1c363b7d1413dcf8ee323185b8
   RNScreens: f94000b3cb1eb14cbb8d08dd6074fdd6ccf0e6b0
   RNWorklets: ae7f2b95d75b903387e6359583f2fd67bc9a93ff

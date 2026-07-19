@@ -130,6 +130,11 @@ export type MobileMessages = {
     delayMin: string;
     platform: string;
     refreshWidget: string;
+    shareA11y: string;
+    shareTrip: string;
+    shareFailedTitle: string;
+    shareFailedBody: string;
+    sharingUnavailable: string;
   };
   widget: {
     title: string;
@@ -175,6 +180,12 @@ export type MobileMessages = {
     serviceTypes: string;
     usefulLinks: string;
     open: string;
+    proTitle: string;
+    proBody: string;
+    proCta: string;
+    proActiveTitle: string;
+    proActiveBody: string;
+    proManage: string;
   };
   hotel: {
     kmFromStation: string;

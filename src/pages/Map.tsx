@@ -2,7 +2,6 @@ import { lazy, Suspense } from "react";
 import { PageHead } from "@/components/PageHead";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SitePageNavLinks } from "@/components/SitePageNavLinks";
-import { BuildNumberLabel } from "@/components/BuildNumberLabel";
 import { MapOverviewImages } from "@/components/MapOverviewImages";
 import { getMapPageMeta } from "@/lib/pageMeta";
 import { defaultHomePath } from "@/lib/homeRoute";
@@ -49,7 +48,6 @@ const MapPage = () => {
             <StationActivityMap />
           </Suspense>
           <MapOverviewImages />
-          <BuildNumberLabel />
         </main>
 
         <SiteFooter showIntro={false} />

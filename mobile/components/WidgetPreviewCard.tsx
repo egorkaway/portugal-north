@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { theme } from '@/constants/theme';
 import { getWidgetColors } from '@/constants/widgetTheme';
 import { useLocale } from '@/i18n/LocaleProvider';
@@ -7,11 +7,9 @@ import type { TripWidgetProps } from '@/lib/types';
 
 type WidgetPreviewCardProps = {
   props: TripWidgetProps;
-  onRefresh: () => void;
-  refreshing?: boolean;
 };
 
-export function WidgetPreviewCard({ props, onRefresh, refreshing }: WidgetPreviewCardProps) {
+export function WidgetPreviewCard({ props }: WidgetPreviewCardProps) {
   const { t } = useLocale();
   const colors = getWidgetColors('light');
   const fields = getWidgetDisplayFields(props);
@@ -54,16 +52,6 @@ export function WidgetPreviewCard({ props, onRefresh, refreshing }: WidgetPrevie
         <Text style={styles.instructionStep}>2. {t('widget.step2')}</Text>
         <Text style={styles.instructionStep}>3. {t('widget.step3')}</Text>
       </View>
-
-      <Pressable
-        style={[styles.refreshButton, refreshing ? styles.refreshButtonDisabled : null]}
-        onPress={onRefresh}
-        disabled={refreshing}
-      >
-        <Text style={styles.refreshButtonText}>
-          {refreshing ? t('common.requesting') : t('trip.refreshWidget')}
-        </Text>
-      </Pressable>
     </View>
   );
 }
@@ -151,20 +139,5 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 18,
     color: theme.primaryMuted,
-  },
-  refreshButton: {
-    alignSelf: 'flex-start',
-    backgroundColor: theme.primary,
-    borderRadius: 999,
-    paddingHorizontal: 14,
-    paddingVertical: 10,
-  },
-  refreshButtonDisabled: {
-    opacity: 0.7,
-  },
-  refreshButtonText: {
-    color: '#fff',
-    fontWeight: '700',
-    fontSize: 14,
   },
 });

@@ -16,6 +16,7 @@ import { OnboardingStepIllustration } from '@/components/onboarding/OnboardingSt
 import { OnboardingWidgetPreview } from '@/components/onboarding/OnboardingWidgetPreview';
 import { brandTheme } from '@/constants/brandTheme';
 import { useLocale } from '@/i18n/LocaleProvider';
+import { usePurchases } from '@/components/PurchasesProvider';
 import { completeOnboarding, isOnboardingComplete } from '@/lib/onboardingStorage';
 import { ensureTripNotificationPermission } from '@/lib/tripNotifications';
 import { writeLastCoords } from '@/lib/tripStorage';
@@ -40,6 +41,7 @@ const EXAMPLE_TRIP: TripWidgetProps = {
 export default function OnboardingScreen() {
   const router = useRouter();
   const { t } = useLocale();
+  const { presentPaywallIfNeeded } = usePurchases();
   const [stepIndex, setStepIndex] = useState(0);
   const [busy, setBusy] = useState(false);
   const [checking, setChecking] = useState(true);
@@ -63,6 +65,11 @@ export default function OnboardingScreen() {
     setBusy(true);
     try {
       await completeOnboarding();
+      try {
+        await presentPaywallIfNeeded();
+      } catch (error) {
+        console.warn('[onboarding] paywall failed', error);
+      }
       router.replace('/(tabs)');
     } finally {
       setBusy(false);

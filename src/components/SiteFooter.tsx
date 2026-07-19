@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ExternalLink, Footprints, Languages, Smartphone } from "lucide-react";
 import footerDouro from "@/assets/footer-douro.jpg";
+import { BuildNumberLabel } from "@/components/BuildNumberLabel";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { useFooterCountry } from "@/hooks/useFooterCountry";
@@ -140,6 +141,8 @@ export function SiteFooter({
               )}
             </div>
           </div>
+
+          <BuildNumberLabel className="mt-2 border-0 pt-0 text-primary-foreground/50" />
         </div>
       </div>
     </footer>

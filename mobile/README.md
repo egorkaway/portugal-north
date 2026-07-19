@@ -14,7 +14,33 @@ Fully **native** iOS/Android app for [VeryStays](https://www.verystays.com) — 
 
 Station detail opens as a stack screen: photo, summary, live departures (**Take** → Trip tab), flight connections (airports), hotels, maps link.
 
-First launch shows a short onboarding flow (welcome, location, notifications, widgets).
+First launch shows a short onboarding flow (welcome, location, notifications, widgets). After onboarding, the RevenueCat paywall is shown if Pro is not active. The Tickets tab also has a Pro button at the bottom.
+
+## RevenueCat (subscriptions)
+
+Packages: `react-native-purchases` + `react-native-purchases-ui` (installed via `npx expo install`).
+
+| Constant | Value |
+|----------|--------|
+| Entitlement | `iberian.travel Pro` |
+| Package | `monthly` (falls back to `$rc_monthly` / offering.monthly) |
+| API key | Apple test key in [`constants/revenueCat.ts`](constants/revenueCat.ts) |
+
+**Dashboard checklist**
+
+1. Create entitlement **`iberian.travel Pro`**
+2. Create App Store monthly product and attach it to that entitlement
+3. Add package **`monthly`** on the **current** Offering
+4. Design a Paywall on that Offering ([Paywalls](https://www.revenuecat.com/docs/tools/paywalls))
+5. In Xcode: enable **In-App Purchase** on the VeryStays target (Signing & Capabilities)
+
+**App wiring**
+
+- [`PurchasesProvider`](components/PurchasesProvider.tsx) configures the SDK at launch and tracks `isPro`
+- Onboarding finish → `presentPaywallIfNeeded` for `iberian.travel Pro`
+- Tickets → **View Pro plans** / **Manage subscription** → `presentPaywall`
+
+After installing or upgrading the native modules, run `npm run ios:pods` and rebuild (`ios:archive` / `ios:release`).
 
 ## What's offline vs online
 

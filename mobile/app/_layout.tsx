@@ -15,6 +15,7 @@ import Colors from '@/constants/Colors';
 import { theme } from '@/constants/theme';
 import { WidgetSyncBootstrap } from '@/components/WidgetSyncBootstrap';
 import { LocaleProvider, useLocale } from '@/i18n/LocaleProvider';
+import { PurchasesProvider } from '@/components/PurchasesProvider';
 import { isOnboardingComplete } from '@/lib/onboardingStorage';
 import { seedWidgetTimeline } from '@/lib/widgetSync';
 
@@ -62,7 +63,9 @@ export default function RootLayout() {
 
   return (
     <LocaleProvider>
-      <RootLayoutNav />
+      <PurchasesProvider>
+        <RootLayoutNav />
+      </PurchasesProvider>
     </LocaleProvider>
   );
 }

@@ -1,6 +1,7 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
+  Alert,
   Pressable,
   RefreshControl,
   ScrollView,
@@ -9,9 +10,12 @@ import {
   View,
 } from 'react-native';
 import { useFocusEffect, useRouter } from 'expo-router';
+import { SymbolView } from 'expo-symbols';
+import ViewShot from 'react-native-view-shot';
 import { WidgetPreviewCard } from '@/components/WidgetPreviewCard';
 import { GetMapaPromoCard } from '@/components/GetMapaPromoCard';
 import { BuildFooter } from '@/components/BuildFooter';
+import { TripShareBrandingFooter } from '@/components/TripShareBrandingFooter';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import {
@@ -30,6 +34,7 @@ import {
   getMinutesUntilTime,
 } from '@/lib/departureCountdown';
 import { downstreamStopsFrom } from '@/lib/trainJourney';
+import { shareCapturedView } from '@/lib/shareMapImage';
 import { stationToSlug } from '@/lib/stationData';
 import {
   clearActiveTrip,
@@ -44,6 +49,8 @@ import { DEFAULT_WIDGET_PROPS } from '@/lib/widgetDefaults';
 import { syncTripWidgets } from '@/lib/widgetSync';
 import type { CompletedTripRecord, PlannedDeparture, TripWidgetProps } from '@/lib/types';
 import type { TrainJourneyStop } from '@/lib/api';
+
+const TRIP_SHARE_URL = 'https://www.verystays.com/trip';
 
 function TripStopRow({
   stop,
@@ -102,9 +109,10 @@ export default function TripScreen() {
   const [serviceType, setServiceType] = useState<string>('—');
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
-  const [widgetRefreshing, setWidgetRefreshing] = useState(false);
+  const [sharing, setSharing] = useState(false);
   const [widgetPreviewProps, setWidgetPreviewProps] = useState<TripWidgetProps>(DEFAULT_WIDGET_PROPS);
   const [now, setNow] = useState(new Date());
+  const shareViewRef = useRef<ViewShot>(null);
 
   const reload = useCallback(async () => {
     const trip = await readActiveTrip();
@@ -156,13 +164,8 @@ export default function TripScreen() {
   }, []);
 
   const refreshWidgetPreview = useCallback(async () => {
-    setWidgetRefreshing(true);
-    try {
-      const props = await syncTripWidgets(now);
-      setWidgetPreviewProps(props);
-    } finally {
-      setWidgetRefreshing(false);
-    }
+    const props = await syncTripWidgets(now);
+    setWidgetPreviewProps(props);
   }, [now]);
 
   useEffect(() => {
@@ -231,6 +234,25 @@ export default function TripScreen() {
     await reload();
   };
 
+  const shareTrip = useCallback(async () => {
+    if (sharing) return;
+    setSharing(true);
+    try {
+      await shareCapturedView(shareViewRef, {
+        dialogTitle: t('trip.shareTrip'),
+        unavailableTitle: t('trip.shareFailedTitle'),
+        unavailableBody: t('trip.sharingUnavailable'),
+        message: TRIP_SHARE_URL,
+      });
+    } catch (error) {
+      const message =
+        error instanceof Error ? error.message : t('trip.shareFailedBody');
+      Alert.alert(t('trip.shareFailedTitle'), message);
+    } finally {
+      setSharing(false);
+    }
+  }, [sharing, t]);
+
   const deleteHistory = async (tripId: string) => {
     await deleteTripHistoryRecord(tripId);
     setHistory(await readTripHistory());
@@ -293,66 +315,92 @@ export default function TripScreen() {
         </View>
       ) : (
         <View style={styles.activeSection}>
-          <View style={styles.card}>
-            <View style={styles.cardHeader}>
-              <Text style={styles.cardLabel}>
-                {showDepartedWithoutStops ? t('trip.departed') : t('nav.trip')}
-              </Text>
-              <Pressable style={styles.stopButton} onPress={() => void clearTrip()}>
-                <Text style={styles.stopButtonText}>{t('trip.stopTracking')}</Text>
+          <ViewShot
+            ref={shareViewRef}
+            style={styles.shareCanvas}
+            options={{ format: 'png', quality: 1 }}
+          >
+            <View
+              style={[styles.card, sharing ? styles.cardSharing : null]}
+              collapsable={false}
+            >
+              <View style={styles.cardHeader}>
+                <Text style={styles.cardLabel}>
+                  {showDepartedWithoutStops ? t('trip.departed') : t('nav.trip')}
+                </Text>
+                {!sharing ? (
+                  <View style={styles.cardActions}>
+                    <Pressable
+                      accessibilityRole="button"
+                      accessibilityLabel={t('trip.shareA11y')}
+                      onPress={() => void shareTrip()}
+                      style={styles.shareButton}
+                    >
+                      <SymbolView
+                        name={{ ios: 'square.and.arrow.up', android: 'share', web: 'share' }}
+                        tintColor={theme.primary}
+                        size={18}
+                      />
+                    </Pressable>
+                    <Pressable style={styles.stopButton} onPress={() => void clearTrip()}>
+                      <Text style={styles.stopButtonText}>{t('trip.stopTracking')}</Text>
+                    </Pressable>
+                  </View>
+                ) : null}
+              </View>
+
+              <Pressable onPress={() => openStation(activeTrip.stationName)}>
+                <Text style={styles.stationLink}>{activeTrip.stationName}</Text>
               </Pressable>
-            </View>
 
-            <Pressable onPress={() => openStation(activeTrip.stationName)}>
-              <Text style={styles.stationLink}>{activeTrip.stationName}</Text>
-            </Pressable>
-
-            {showDepartedWithoutStops ? (
-              <>
-                <Text style={styles.countdown}>
-                  {t('trip.departedAt', {
-                    time: effectiveDepartureTime ?? activeTrip.departureTime,
-                  })}
-                </Text>
-                {departureTimeAgoLabel ? (
-                  <Text style={styles.timeAgo}>{departureTimeAgoLabel}</Text>
-                ) : null}
-              </>
-            ) : (
-              <>
-                <Text style={styles.countdown}>
-                  {departureCountdown ??
-                    (hasDeparted
-                      ? t('trip.departedAt', {
-                          time: effectiveDepartureTime ?? activeTrip.departureTime,
-                        })
-                      : activeTrip.departureTime)}
-                </Text>
-                <Text style={styles.meta}>
-                  {activeTrip.departureTime}
-                  {delayMinutes !== null && delayMinutes > 0
-                    ? ` · ${t('trip.delayMin', { minutes: delayMinutes })}`
-                    : ''}
-                </Text>
-                {effectiveDepartureTime &&
-                delayMinutes !== null &&
-                delayMinutes > 0 &&
-                effectiveDepartureTime !== activeTrip.departureTime ? (
-                  <Text style={styles.meta}>
-                    {t('trip.expectedDeparture', { time: effectiveDepartureTime })}
+              {showDepartedWithoutStops ? (
+                <>
+                  <Text style={styles.countdown}>
+                    {t('trip.departedAt', {
+                      time: effectiveDepartureTime ?? activeTrip.departureTime,
+                    })}
                   </Text>
-                ) : null}
-              </>
-            )}
+                  {departureTimeAgoLabel ? (
+                    <Text style={styles.timeAgo}>{departureTimeAgoLabel}</Text>
+                  ) : null}
+                </>
+              ) : (
+                <>
+                  <Text style={styles.countdown}>
+                    {departureCountdown ??
+                      (hasDeparted
+                        ? t('trip.departedAt', {
+                            time: effectiveDepartureTime ?? activeTrip.departureTime,
+                          })
+                        : activeTrip.departureTime)}
+                  </Text>
+                  <Text style={styles.meta}>
+                    {activeTrip.departureTime}
+                    {delayMinutes !== null && delayMinutes > 0
+                      ? ` · ${t('trip.delayMin', { minutes: delayMinutes })}`
+                      : ''}
+                  </Text>
+                  {effectiveDepartureTime &&
+                  delayMinutes !== null &&
+                  delayMinutes > 0 &&
+                  effectiveDepartureTime !== activeTrip.departureTime ? (
+                    <Text style={styles.meta}>
+                      {t('trip.expectedDeparture', { time: effectiveDepartureTime })}
+                    </Text>
+                  ) : null}
+                </>
+              )}
 
-            <Text style={styles.trainLine}>
-              {activeTrip.trainNumber} → {activeTrip.destination}
-            </Text>
-            <Text style={styles.meta}>
-              {serviceType}
-              {platform ? ` · ${t('trip.platform', { platform })}` : ''}
-            </Text>
-          </View>
+              <Text style={styles.trainLine}>
+                {activeTrip.trainNumber} → {activeTrip.destination}
+              </Text>
+              <Text style={styles.meta}>
+                {serviceType}
+                {platform ? ` · ${t('trip.platform', { platform })}` : ''}
+              </Text>
+            </View>
+            {sharing ? <TripShareBrandingFooter /> : null}
+          </ViewShot>
 
           {journeyLoading ? (
             <ActivityIndicator color={theme.primary} style={styles.journeyLoading} />
@@ -412,11 +460,7 @@ export default function TripScreen() {
         )}
       </View>
 
-      <WidgetPreviewCard
-        props={widgetPreviewProps}
-        onRefresh={() => void refreshWidgetPreview()}
-        refreshing={widgetRefreshing}
-      />
+      <WidgetPreviewCard props={widgetPreviewProps} />
       {history.length > 0 ? <GetMapaPromoCard /> : null}
       <BuildFooter />
     </ScrollView>
@@ -468,11 +512,21 @@ const styles = StyleSheet.create({
     padding: 16,
     gap: 6,
   },
+  cardSharing: {
+    borderBottomLeftRadius: 0,
+    borderBottomRightRadius: 0,
+    borderBottomWidth: 0,
+  },
   cardHeader: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
     gap: 12,
+  },
+  cardActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
   },
   cardLabel: {
     fontSize: 12,
@@ -480,6 +534,20 @@ const styles = StyleSheet.create({
     color: theme.primaryMuted,
     textTransform: 'uppercase',
     letterSpacing: 0.4,
+  },
+  shareButton: {
+    width: 34,
+    height: 34,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: theme.border,
+    backgroundColor: theme.background,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  shareCanvas: {
+    borderRadius: 16,
+    overflow: 'hidden',
   },
   stopButton: {
     borderWidth: 1,

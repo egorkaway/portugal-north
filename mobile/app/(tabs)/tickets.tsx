@@ -1,5 +1,7 @@
-import { Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
 import { BuildFooter } from '@/components/BuildFooter';
+import { usePurchases } from '@/components/PurchasesProvider';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import ticketGuide from '@/data/ticket-guide.json';
@@ -22,6 +24,18 @@ const countries = ticketGuide.countries as TicketCountry[];
 
 export default function TicketsScreen() {
   const { t } = useLocale();
+  const { isPro, presentPaywall } = usePurchases();
+  const [paywallBusy, setPaywallBusy] = useState(false);
+
+  const openPaywall = async () => {
+    if (paywallBusy) return;
+    setPaywallBusy(true);
+    try {
+      await presentPaywall();
+    } finally {
+      setPaywallBusy(false);
+    }
+  };
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -44,6 +58,29 @@ export default function TicketsScreen() {
       ))}
 
       <Text style={styles.disclaimer}>{ticketGuide.disclaimer}</Text>
+
+      <View style={styles.proCard}>
+        <Text style={styles.proTitle}>
+          {isPro ? t('tickets.proActiveTitle') : t('tickets.proTitle')}
+        </Text>
+        <Text style={styles.proBody}>
+          {isPro ? t('tickets.proActiveBody') : t('tickets.proBody')}
+        </Text>
+        <Pressable
+          style={[styles.proButton, paywallBusy ? styles.proButtonDisabled : null]}
+          disabled={paywallBusy}
+          onPress={() => void openPaywall()}
+        >
+          {paywallBusy ? (
+            <ActivityIndicator color="#fff" />
+          ) : (
+            <Text style={styles.proButtonText}>
+              {isPro ? t('tickets.proManage') : t('tickets.proCta')}
+            </Text>
+          )}
+        </Pressable>
+      </View>
+
       <BuildFooter />
     </ScrollView>
   );
@@ -211,5 +248,41 @@ const styles = StyleSheet.create({
     fontSize: 13,
     lineHeight: 20,
     color: theme.primaryMuted,
+  },
+  proCard: {
+    backgroundColor: theme.card,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: theme.border,
+    padding: 16,
+    gap: 8,
+  },
+  proTitle: {
+    fontSize: 18,
+    fontWeight: '800',
+    color: theme.primary,
+  },
+  proBody: {
+    fontSize: 14,
+    lineHeight: 20,
+    color: theme.primaryMuted,
+  },
+  proButton: {
+    marginTop: 6,
+    alignSelf: 'stretch',
+    backgroundColor: theme.primary,
+    borderRadius: 12,
+    paddingVertical: 14,
+    alignItems: 'center',
+    justifyContent: 'center',
+    minHeight: 48,
+  },
+  proButtonDisabled: {
+    opacity: 0.7,
+  },
+  proButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '700',
   },
 });

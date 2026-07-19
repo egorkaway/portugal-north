@@ -9,7 +9,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { RankingsPanel } from "@/components/RankingsPanel";
 import { ReliabilityRankingsPanel } from "@/components/ReliabilityRankingsPanel";
 import { MapOverviewImages } from "@/components/MapOverviewImages";
-import { BuildNumberLabel } from "@/components/BuildNumberLabel";
 import { buildRankingsStructuredData } from "@/lib/structuredData";
 import { defaultHomePath } from "@/lib/homeRoute";
 
@@ -52,7 +51,6 @@ const Rankings = () => {
 
           <RankingsPanel alwaysShow showDetailedError />
           <MapOverviewImages />
-          <BuildNumberLabel />
         </main>
 
         <SiteFooter showIntro={false} />
