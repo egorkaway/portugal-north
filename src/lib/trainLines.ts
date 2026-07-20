@@ -147,8 +147,17 @@ export function getTrainLines(): TrainLine[] {
   return cachedLines;
 }
 
+/** Lines shown on /lines and in sitemap: active rail with 2+ stations. */
+export function isListedRailLine(line: TrainLine): boolean {
+  return (
+    line.category === "rail" &&
+    !line.historic &&
+    line.stations.length > 1
+  );
+}
+
 export function getRailLines(): TrainLine[] {
-  return getTrainLines().filter((line) => line.category === "rail");
+  return getTrainLines().filter(isListedRailLine);
 }
 
 export function getMetroLines(): TrainLine[] {
@@ -182,7 +191,7 @@ export function getLinesForStation(station: Station): TrainLine[] {
   return result;
 }
 
-/** Listed lines for a station (excludes metro until data is complete). */
+/** Listed lines for a station (excludes metro, historic, and single-station lines). */
 export function getListedLinesForStation(station: Station): TrainLine[] {
-  return getLinesForStation(station).filter((line) => line.category === "rail");
+  return getLinesForStation(station).filter(isListedRailLine);
 }
