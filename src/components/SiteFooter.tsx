@@ -50,6 +50,12 @@ export function SiteFooter({
 
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-primary-foreground/80">
             <Link
+              to="/lines"
+              className="underline underline-offset-4 transition-colors hover:text-primary-foreground"
+            >
+              {t("nav.lines")}
+            </Link>
+            <Link
               to="/privacy"
               className="underline underline-offset-4 transition-colors hover:text-primary-foreground"
             >

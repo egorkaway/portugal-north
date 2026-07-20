@@ -95,7 +95,7 @@ const Lines = () => {
                   <p className="mt-1 text-sm text-primary-foreground/85">{t("lines.subtitle")}</p>
                 </div>
               </div>
-              <SitePageNavLinks variant="hero" hide={["lines"]} className="shrink-0" />
+              <SitePageNavLinks variant="hero" className="shrink-0" />
             </div>
           </div>
         </header>

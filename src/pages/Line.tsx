@@ -58,7 +58,7 @@ const Line = () => {
                   </p>
                 </div>
               </div>
-              <SitePageNavLinks variant="hero" hide={["lines"]} className="shrink-0" />
+              <SitePageNavLinks variant="hero" className="shrink-0" />
             </div>
           </div>
         </header>
