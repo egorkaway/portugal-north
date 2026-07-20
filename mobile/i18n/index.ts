@@ -22,21 +22,16 @@ export function isLocale(value: string): value is Locale {
   return (LOCALES as readonly string[]).includes(value);
 }
 
-/** Prefer supported device languages; default to English. */
+/** Prefer first supported device / per-app language; default to English. */
 export function detectDeviceLocale(): Locale {
   const candidates = getLocales()
     .flatMap((entry) => [entry.languageTag, entry.languageCode])
     .filter((value): value is string => Boolean(value));
 
   for (const tag of candidates) {
-    const lower = tag.toLowerCase();
-    const base = lower.split('-')[0];
-    if (base === 'pt') return 'pt';
-    if (base === 'es') return 'es';
-    if (base === 'gl') return 'gl';
-    if (base === 'ca') return 'ca';
-    if (base === 'uk') return 'uk';
-    if (base === 'ru') return 'ru';
+    const base = tag.toLowerCase().split('-')[0];
+    // Include `en` so an English per-app preference is not skipped for a later device locale.
+    if (isLocale(base)) return base;
   }
   return 'en';
 }
@@ -61,10 +56,11 @@ function getNested(messages: MobileMessages, path: string): string | undefined {
 
 export function createTranslator(locale: Locale) {
   const messages = getMessages(locale);
+  const fallback = locale === 'en' ? null : catalogs.en;
 
   function t(path: string, params?: TranslateParams): string {
-    const template = getNested(messages, path);
-    if (!template) return path;
+    const template =
+      getNested(messages, path) ?? (fallback ? getNested(fallback, path) : undefined) ?? path;
     if (!params) return template;
     return template.replace(/\{\{(\w+)\}\}/g, (_, key: string) =>
       params[key] !== undefined ? String(params[key]) : `{{${key}}}`,

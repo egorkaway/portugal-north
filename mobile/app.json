@@ -10,15 +10,34 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": false,
-      "buildNumber": "42",
+      "buildNumber": "43",
       "bundleIdentifier": "com.iberian.travel",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
         "NSSupportsLiveActivities": true,
         "NSSupportsLiveActivitiesFrequentUpdates": true,
         "UIRequiresFullScreen": true,
+        "CFBundleAllowMixedLocalizations": true,
+        "CFBundleLocalizations": [
+          "en",
+          "pt",
+          "es",
+          "gl",
+          "ca",
+          "uk",
+          "ru"
+        ],
         "NSLocationWhenInUseUsageDescription": "VeryStays uses your location to show the nearest train station on the home-screen widget when you have no upcoming trip."
       }
+    },
+    "locales": {
+      "en": "./locales/en.json",
+      "pt": "./locales/pt.json",
+      "es": "./locales/es.json",
+      "gl": "./locales/gl.json",
+      "ca": "./locales/ca.json",
+      "uk": "./locales/uk.json",
+      "ru": "./locales/ru.json"
     },
     "android": {
       "package": "com.iberian.travel",
@@ -29,7 +48,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "versionCode": 42
+      "versionCode": 43
     },
     "web": {
       "bundler": "metro",
@@ -81,7 +100,32 @@
       "./plugins/withWidgetContainerBackground.js",
       "expo-sharing",
       "expo-core-spotlight",
-      "expo-localization",
+      [
+        "expo-localization",
+        {
+          "supportedLocales": {
+            "ios": [
+              "en",
+              "pt",
+              "es",
+              "gl",
+              "ca",
+              "uk",
+              "ru"
+            ],
+            "android": [
+              "en",
+              "pt",
+              "es",
+              "gl",
+              "ca",
+              "uk",
+              "ru"
+            ]
+          }
+        }
+      ],
+      "./plugins/withKnownRegions.js",
       "./plugins/withAppIntents.js"
     ],
     "experiments": {

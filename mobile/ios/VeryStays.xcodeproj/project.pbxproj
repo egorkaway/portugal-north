@@ -25,6 +25,13 @@
 		F11748422D0307B40044C1D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11748412D0307B40044C1D9 /* AppDelegate.swift */; };
 		F9B5E3C8EF324A3A8EB9B001 /* ExpoWidgetsTarget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 64A74D1E9C30456CAD4012AE /* ExpoWidgetsTarget.appex */; };
 		FC4D33538FB9D21201ACCEAC /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A44031DEA7786181A777FD5D /* ExpoModulesProvider.swift */; };
+		1CFC1DE2153A4DCCB00BE23D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A54BA6025EB643F38269ED86 /* InfoPlist.strings */; };
+		94FFB0388FCC46818A73D9D2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 727A676541E5405F96EA25B0 /* InfoPlist.strings */; };
+		C8ACC22E1D8F4308B8491A15 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8CFA0B3081324FF3A6446455 /* InfoPlist.strings */; };
+		BF000E67734C497E8E5D2A63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3AB6C4575B344FE793C7B140 /* InfoPlist.strings */; };
+		BC243E807F3E4E868FBB5845 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7AEDE8FB5DBB4FA9B4554501 /* InfoPlist.strings */; };
+		263E1A9B11AB452BB6B3831F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFBE87A53544445196755137 /* InfoPlist.strings */; };
+		91357D561EBC46A28ACD5CBA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2B9037EF7895413EB1745FFB /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +87,13 @@
 		F11748442D0722820044C1D9 /* VeryStays-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "VeryStays-Bridging-Header.h"; path = "VeryStays/VeryStays-Bridging-Header.h"; sourceTree = "<group>"; };
 		F6FDF7EC3BE6D47E97950ECB /* Pods-VeryStays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeryStays.debug.xcconfig"; path = "Target Support Files/Pods-VeryStays/Pods-VeryStays.debug.xcconfig"; sourceTree = "<group>"; };
 		F7161DEAC9DE4423B5E772D2 /* index.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; path = index.swift; sourceTree = "<group>"; };
+		A54BA6025EB643F38269ED86 /* InfoPlist.strings */ = {isa = PBXFileReference; name = "InfoPlist.strings"; path = "en.lproj/InfoPlist.strings"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.strings; explicitFileType = undefined; includeInIndex = 0; };
+		727A676541E5405F96EA25B0 /* InfoPlist.strings */ = {isa = PBXFileReference; name = "InfoPlist.strings"; path = "pt.lproj/InfoPlist.strings"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.strings; explicitFileType = undefined; includeInIndex = 0; };
+		8CFA0B3081324FF3A6446455 /* InfoPlist.strings */ = {isa = PBXFileReference; name = "InfoPlist.strings"; path = "es.lproj/InfoPlist.strings"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.strings; explicitFileType = undefined; includeInIndex = 0; };
+		3AB6C4575B344FE793C7B140 /* InfoPlist.strings */ = {isa = PBXFileReference; name = "InfoPlist.strings"; path = "gl.lproj/InfoPlist.strings"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.strings; explicitFileType = undefined; includeInIndex = 0; };
+		7AEDE8FB5DBB4FA9B4554501 /* InfoPlist.strings */ = {isa = PBXFileReference; name = "InfoPlist.strings"; path = "ca.lproj/InfoPlist.strings"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.strings; explicitFileType = undefined; includeInIndex = 0; };
+		AFBE87A53544445196755137 /* InfoPlist.strings */ = {isa = PBXFileReference; name = "InfoPlist.strings"; path = "uk.lproj/InfoPlist.strings"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.strings; explicitFileType = undefined; includeInIndex = 0; };
+		2B9037EF7895413EB1745FFB /* InfoPlist.strings */ = {isa = PBXFileReference; name = "InfoPlist.strings"; path = "ru.lproj/InfoPlist.strings"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = text.plist.strings; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,10 +230,80 @@
 			isa = PBXGroup;
 			children = (
 				BB2F792C24A3F905000567C9 /* Expo.plist */,
+				D42C84AA2B1C4C9888A92B9B /* en.lproj */,
+				A1990C9C192945BAAF452DC8 /* pt.lproj */,
+				49194412B3834CB9A0B59A09 /* es.lproj */,
+				64E4713AB35849B59F1594F6 /* gl.lproj */,
+				E19B76B8452A49D7ACDADDBB /* ca.lproj */,
+				FF42ECF1A4E14F32A19AD3BB /* uk.lproj */,
+				DAD53D4FBC024A07AE4E7BD6 /* ru.lproj */,
 			);
 			name = Supporting;
 			path = VeryStays/Supporting;
 			sourceTree = "<group>";
+		};
+		D42C84AA2B1C4C9888A92B9B /* en.lproj */ = {
+			isa = "PBXGroup";
+			children = (
+				A54BA6025EB643F38269ED86 /* InfoPlist.strings */,
+			);
+			name = en.lproj;
+			sourceTree = "<group>";
+			path = "";
+		};
+		A1990C9C192945BAAF452DC8 /* pt.lproj */ = {
+			isa = "PBXGroup";
+			children = (
+				727A676541E5405F96EA25B0 /* InfoPlist.strings */,
+			);
+			name = pt.lproj;
+			sourceTree = "<group>";
+			path = "";
+		};
+		49194412B3834CB9A0B59A09 /* es.lproj */ = {
+			isa = "PBXGroup";
+			children = (
+				8CFA0B3081324FF3A6446455 /* InfoPlist.strings */,
+			);
+			name = es.lproj;
+			sourceTree = "<group>";
+			path = "";
+		};
+		64E4713AB35849B59F1594F6 /* gl.lproj */ = {
+			isa = "PBXGroup";
+			children = (
+				3AB6C4575B344FE793C7B140 /* InfoPlist.strings */,
+			);
+			name = gl.lproj;
+			sourceTree = "<group>";
+			path = "";
+		};
+		E19B76B8452A49D7ACDADDBB /* ca.lproj */ = {
+			isa = "PBXGroup";
+			children = (
+				7AEDE8FB5DBB4FA9B4554501 /* InfoPlist.strings */,
+			);
+			name = ca.lproj;
+			sourceTree = "<group>";
+			path = "";
+		};
+		FF42ECF1A4E14F32A19AD3BB /* uk.lproj */ = {
+			isa = "PBXGroup";
+			children = (
+				AFBE87A53544445196755137 /* InfoPlist.strings */,
+			);
+			name = uk.lproj;
+			sourceTree = "<group>";
+			path = "";
+		};
+		DAD53D4FBC024A07AE4E7BD6 /* ru.lproj */ = {
+			isa = "PBXGroup";
+			children = (
+				2B9037EF7895413EB1745FFB /* InfoPlist.strings */,
+			);
+			name = ru.lproj;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -295,6 +379,12 @@
 			knownRegions = (
 				en,
 				Base,
+				pt,
+				es,
+				gl,
+				ca,
+				uk,
+				ru,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
@@ -317,6 +407,13 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
 				BF5D08F4756DEEA12B18372E /* PrivacyInfo.xcprivacy in Resources */,
+				1CFC1DE2153A4DCCB00BE23D /* InfoPlist.strings in Resources */,
+				94FFB0388FCC46818A73D9D2 /* InfoPlist.strings in Resources */,
+				C8ACC22E1D8F4308B8491A15 /* InfoPlist.strings in Resources */,
+				BF000E67734C497E8E5D2A63 /* InfoPlist.strings in Resources */,
+				BC243E807F3E4E868FBB5845 /* InfoPlist.strings in Resources */,
+				263E1A9B11AB452BB6B3831F /* InfoPlist.strings in Resources */,
+				91357D561EBC46A28ACD5CBA /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,7 +677,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = VeryStays/VeryStays.entitlements;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_TEAM = 64S9VXX8MT;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -620,7 +717,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = VeryStays/VeryStays.entitlements;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_TEAM = 64S9VXX8MT;
 				INFOPLIST_FILE = VeryStays/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -653,7 +750,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = ExpoWidgetsTarget/ExpoWidgetsTarget.entitlements;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_TEAM = 64S9VXX8MT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpoWidgetsTarget/Info.plist;
@@ -812,7 +909,7 @@
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				CODE_SIGN_ENTITLEMENTS = ExpoWidgetsTarget/ExpoWidgetsTarget.entitlements;
-				CURRENT_PROJECT_VERSION = 42;
+				CURRENT_PROJECT_VERSION = 43;
 				DEVELOPMENT_TEAM = 64S9VXX8MT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ExpoWidgetsTarget/Info.plist;
