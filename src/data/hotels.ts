@@ -205,10 +205,20 @@ export const stationHotels: StationHotels = {
     { name: "Albergue", distanceKm: 5.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%2C%20Tourencinho%2C%20Portugal&order=price" },
     { name: "Aguiar da Pena", distanceKm: 8.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aguiar%20da%20Pena%2C%20Tourencinho%2C%20Portugal&order=price" },
   ],
+  "Zimão": [
+    { name: "Casa da Eira", distanceKm: 2.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Eira%2C%20Zim%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Albergue", distanceKm: 2.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%2C%20Zim%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Aguiar da Pena", distanceKm: 5.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aguiar%20da%20Pena%2C%20Zim%C3%A3o%2C%20Portugal&order=price" },
+  ],
   "Parada de Aguiar": [
     { name: "Casa da Eira", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Eira%2C%20Parada%20de%20Aguiar%2C%20Portugal&order=price" },
     { name: "Albergue", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%2C%20Parada%20de%20Aguiar%2C%20Portugal&order=price" },
     { name: "Aguiar da Pena", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aguiar%20da%20Pena%2C%20Parada%20de%20Aguiar%2C%20Portugal&order=price" },
+  ],
+  "Vila Pouca de Aguiar": [
+    { name: "Aguiar da Pena", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aguiar%20da%20Pena%2C%20Vila%20Pouca%20de%20Aguiar%2C%20Portugal&order=price" },
+    { name: "Albergue", distanceKm: 3.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%2C%20Vila%20Pouca%20de%20Aguiar%2C%20Portugal&order=price" },
+    { name: "Casa da Eira", distanceKm: 3.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Eira%2C%20Vila%20Pouca%20de%20Aguiar%2C%20Portugal&order=price" },
   ],
   "Nuzedo": [
     { name: "Residencial São Martinho", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20S%C3%A3o%20Martinho%2C%20Nuzedo%2C%20Portugal&order=price" },
@@ -229,6 +239,56 @@ export const stationHotels: StationHotels = {
     { name: "Primavera Perfume Hotel", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Primavera%20Perfume%20Hotel%2C%20Loivos%2C%20Portugal&order=price" },
     { name: "Vidago Palace Hotel", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vidago%20Palace%20Hotel%2C%20Loivos%2C%20Portugal&order=price" },
     { name: "Residencial", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%2C%20Loivos%2C%20Portugal&order=price" },
+  ],
+  "Oura": [
+    { name: "Primavera Perfume Hotel", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Primavera%20Perfume%20Hotel%2C%20Oura%2C%20Portugal&order=price" },
+    { name: "Vidago Palace Hotel", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vidago%20Palace%20Hotel%2C%20Oura%2C%20Portugal&order=price" },
+    { name: "Residencial", distanceKm: 2.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%2C%20Oura%2C%20Portugal&order=price" },
+  ],
+  "Sálus": [
+    { name: "Primavera Perfume Hotel", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Primavera%20Perfume%20Hotel%2C%20S%C3%A1lus%2C%20Portugal&order=price" },
+    { name: "Vidago Palace Hotel", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vidago%20Palace%20Hotel%2C%20S%C3%A1lus%2C%20Portugal&order=price" },
+    { name: "Residencial", distanceKm: 1.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%2C%20S%C3%A1lus%2C%20Portugal&order=price" },
+  ],
+  "Vidago": [
+    { name: "Primavera Perfume Hotel", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Primavera%20Perfume%20Hotel%2C%20Vidago%2C%20Portugal&order=price" },
+    { name: "Vidago Palace Hotel", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vidago%20Palace%20Hotel%2C%20Vidago%2C%20Portugal&order=price" },
+    { name: "Residencial", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%2C%20Vidago%2C%20Portugal&order=price" },
+  ],
+  "Campilho": [
+    { name: "Residencial", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%2C%20Campilho%2C%20Portugal&order=price" },
+    { name: "Dormidas O Resineiro", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dormidas%20O%20Resineiro%2C%20Campilho%2C%20Portugal&order=price" },
+    { name: "Vidago Palace Hotel", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vidago%20Palace%20Hotel%2C%20Campilho%2C%20Portugal&order=price" },
+  ],
+  "Vilarinho das Paranheiras": [
+    { name: "Residencial", distanceKm: 2.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%2C%20Vilarinho%20das%20Paranheiras%2C%20Portugal&order=price" },
+    { name: "Dormidas O Resineiro", distanceKm: 2.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dormidas%20O%20Resineiro%2C%20Vilarinho%20das%20Paranheiras%2C%20Portugal&order=price" },
+    { name: "Vidago Palace Hotel", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vidago%20Palace%20Hotel%2C%20Vilarinho%20das%20Paranheiras%2C%20Portugal&order=price" },
+  ],
+  "Peneda": [
+    { name: "Casas Novas Countryside Hotel Spa & Events", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20Novas%20Countryside%20Hotel%20Spa%20%26%20Events%2C%20Peneda%2C%20Portugal&order=price" },
+    { name: "Residencial Zé Luis", distanceKm: 5.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Z%C3%A9%20Luis%2C%20Peneda%2C%20Portugal&order=price" },
+    { name: "Residencial", distanceKm: 5.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%2C%20Peneda%2C%20Portugal&order=price" },
+  ],
+  "Vilela do Tâmega": [
+    { name: "Casas Novas Countryside Hotel Spa & Events", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20Novas%20Countryside%20Hotel%20Spa%20%26%20Events%2C%20Vilela%20do%20T%C3%A2mega%2C%20Portugal&order=price" },
+    { name: "Residencial Zé Luis", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Z%C3%A9%20Luis%2C%20Vilela%20do%20T%C3%A2mega%2C%20Portugal&order=price" },
+    { name: "Albergaria Borges", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergaria%20Borges%2C%20Vilela%20do%20T%C3%A2mega%2C%20Portugal&order=price" },
+  ],
+  "Tâmega": [
+    { name: "Residencial Zé Luis", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Z%C3%A9%20Luis%2C%20T%C3%A2mega%2C%20Portugal&order=price" },
+    { name: "Albergaria Borges", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergaria%20Borges%2C%20T%C3%A2mega%2C%20Portugal&order=price" },
+    { name: "Hotel Rural Quinta de Samaiões", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20Quinta%20de%20Samai%C3%B5es%2C%20T%C3%A2mega%2C%20Portugal&order=price" },
+  ],
+  "Fonte Nova": [
+    { name: "Hotel Premium Chaves - Aquae Flaviae", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Premium%20Chaves%20-%20Aquae%20Flaviae%2C%20Fonte%20Nova%2C%20Portugal&order=price" },
+    { name: "Guest House Chaves", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guest%20House%20Chaves%2C%20Fonte%20Nova%2C%20Portugal&order=price" },
+    { name: "Petrus Hotel", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Petrus%20Hotel%2C%20Fonte%20Nova%2C%20Portugal&order=price" },
+  ],
+  "Chaves": [
+    { name: "Forte de São Francisco Hotel", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Forte%20de%20S%C3%A3o%20Francisco%20Hotel%2C%20Chaves%2C%20Portugal&order=price" },
+    { name: "Flávia Pensão Hotelaria", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Fl%C3%A1via%20Pens%C3%A3o%20Hotelaria%2C%20Chaves%2C%20Portugal&order=price" },
+    { name: "Residencial Bem Estar", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Bem%20Estar%2C%20Chaves%2C%20Portugal&order=price" },
   ],
   "Barcelos": [
     { name: "Residencial Arantes", distanceKm: 0.8, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcelos%2C+Portugal&order=price" },
