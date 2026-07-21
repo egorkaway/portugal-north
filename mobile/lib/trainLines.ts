@@ -1,48 +1,44 @@
-import { allStations } from "../data/stationRegistry";
-import type { Station } from "../data/stationTypes";
-import type { CountryCode } from "./countries";
-import { sortTrainTypes } from "./trainTypes";
+import { sortTrainTypes } from '@/constants/theme';
+import { allStations, stationToSlug, type CountryCode, type Station } from '@/lib/stationData';
 
 /**
- * The `lines[]` field on stations is hand-maintained and has a few quirks:
- * some stations use a short alias for a line, and one entry uses a service
- * type ("Urban") where a line name should be. We normalize those here so the
- * line pages derive cleanly from the same station data used everywhere else.
+ * The `lines[]` field on stations is hand-maintained and has a few quirks.
+ * Keep in sync with `src/lib/trainLines.ts`.
  */
 const LINE_ALIASES: Record<string, string> = {
-  Minho: "Linha do Minho",
-  Douro: "Linha do Douro",
-  Braga: "Linha de Braga",
-  "Linha do Sul (historic terminus)": "Linha do Sul",
+  Minho: 'Linha do Minho',
+  Douro: 'Linha do Douro',
+  Braga: 'Linha de Braga',
+  'Linha do Sul (historic terminus)': 'Linha do Sul',
 };
 
-/** Tokens that appear in `lines[]` but are not real line names. */
-const NON_LINE_TOKENS = new Set(["Urban"]);
+const NON_LINE_TOKENS = new Set(['Urban']);
 
-export type LineCategory = "rail" | "metro";
+export type LineCategory = 'rail' | 'metro';
 
-export interface TrainLine {
-  /** Canonical display name, e.g. "Linha do Minho". */
+export type TrainLine = {
   name: string;
   slug: string;
   category: LineCategory;
-  /** Country most stations on the line belong to (for footer/grouping). */
   country: CountryCode;
   historic: boolean;
-  /** Stations ordered in approximate geographic order along the line. */
   stations: Station[];
-  /** All service types recorded across the line's stations, canonically sorted. */
   serviceTypes: string[];
-}
+};
+
+export type StationLineLink = {
+  name: string;
+  slug: string | null;
+};
 
 export function lineToSlug(name: string): string {
   return name
-    .normalize("NFD")
-    .replace(/\p{M}/gu, "")
+    .normalize('NFD')
+    .replace(/\p{M}/gu, '')
     .toLowerCase()
-    .replace(/[()]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
+    .replace(/[()]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 function normalizeLineName(raw: string): string | null {
@@ -52,22 +48,13 @@ function normalizeLineName(raw: string): string | null {
 }
 
 function isAirportStation(station: Station): boolean {
-  return station.types.includes("Airport");
+  return station.types.includes('Airport');
 }
 
 function categoryFor(name: string): LineCategory {
-  return /^metro\b/i.test(name) ? "metro" : "rail";
+  return /^metro\b/i.test(name) ? 'metro' : 'rail';
 }
 
-/**
- * Order stations along the dominant geographic axis of the line. We don't have
- * the official stopping sequence in static data, so this is a best-effort
- * approximation (and is surfaced as such in the UI copy).
- *
- * For predominantly north–south lines we list northern stations first (top of
- * the page) and southern stations last, matching how these lines read on a map.
- * For predominantly east–west lines we keep a west→east order.
- */
 function orderStationsAlongLine(stations: Station[]): Station[] {
   if (stations.length <= 2) return [...stations];
   const lats = stations.map((s) => s.lat);
@@ -78,7 +65,6 @@ function orderStationsAlongLine(stations: Station[]): Station[] {
     (Math.max(...lngs) - Math.min(...lngs)) * Math.cos((meanLat * Math.PI) / 180);
   const byLat = spanLat >= spanLng;
   return [...stations].sort((a, b) => {
-    // North-first for N–S lines (descending latitude); west→east for E–W lines.
     const primary = byLat ? b.lat - a.lat : a.lng - b.lng;
     if (Math.abs(primary) > 1e-9) return primary;
     return byLat ? a.lng - b.lng : b.lat - a.lat;
@@ -97,7 +83,6 @@ function buildTrainLines(): TrainLine[] {
   const groups = new Map<string, Station[]>();
 
   for (const station of allStations) {
-    // Airport "lines" are IATA codes (LIS, OPO, MAD…); they are not rail lines.
     if (isAirportStation(station)) continue;
     const seen = new Set<string>();
     for (const raw of station.lines) {
@@ -129,7 +114,7 @@ function buildTrainLines(): TrainLine[] {
   }
 
   lines.sort((a, b) => {
-    if (a.category !== b.category) return a.category === "rail" ? -1 : 1;
+    if (a.category !== b.category) return a.category === 'rail' ? -1 : 1;
     if (b.stations.length !== a.stations.length) {
       return b.stations.length - a.stations.length;
     }
@@ -147,21 +132,12 @@ export function getTrainLines(): TrainLine[] {
   return cachedLines;
 }
 
-/** Lines shown on /lines and in sitemap: active rail with 2+ stations. */
 export function isListedRailLine(line: TrainLine): boolean {
-  return (
-    line.category === "rail" &&
-    !line.historic &&
-    line.stations.length > 1
-  );
+  return line.category === 'rail' && !line.historic && line.stations.length > 1;
 }
 
 export function getRailLines(): TrainLine[] {
   return getTrainLines().filter(isListedRailLine);
-}
-
-export function getMetroLines(): TrainLine[] {
-  return getTrainLines().filter((line) => line.category === "metro");
 }
 
 export function getTrainLineBySlug(slug: string): TrainLine | undefined {
@@ -171,11 +147,6 @@ export function getTrainLineBySlug(slug: string): TrainLine | undefined {
   return cachedBySlug.get(slug);
 }
 
-export function getLinePath(line: Pick<TrainLine, "slug">): string {
-  return `/lines/${line.slug}`;
-}
-
-/** The lines (with their own page) a station belongs to, deduped by slug. */
 export function getLinesForStation(station: Station): TrainLine[] {
   const seen = new Set<string>();
   const result: TrainLine[] = [];
@@ -191,22 +162,11 @@ export function getLinesForStation(station: Station): TrainLine[] {
   return result;
 }
 
-/** Listed lines for a station (excludes metro, historic, and single-station lines). */
 export function getListedLinesForStation(station: Station): TrainLine[] {
   return getLinesForStation(station).filter(isListedRailLine);
 }
 
-export type StationLineLink = {
-  /** Canonical display name. */
-  name: string;
-  /** `/lines/...` when this line has its own page; otherwise null (show as plain text). */
-  path: string | null;
-};
-
-/**
- * Station line names in data order, with paths for lines that have their own page.
- * Prefer listed rail pages when available; otherwise any derived line page.
- */
+/** Line names for a station, with slugs when a line page exists. */
 export function getStationLineLinks(station: Station): StationLineLink[] {
   const listed = new Map(
     getListedLinesForStation(station).map((line) => [line.slug, line]),
@@ -225,9 +185,13 @@ export function getStationLineLinks(station: Station): StationLineLink[] {
     const line = listed.get(slug) ?? anyPage.get(slug);
     items.push({
       name: line?.name ?? name,
-      path: line ? getLinePath(line) : null,
+      slug: line?.slug ?? null,
     });
   }
 
   return items;
+}
+
+export function getStationPathFromName(name: string): string {
+  return `/station/${stationToSlug(name)}`;
 }

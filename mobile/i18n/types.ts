@@ -20,6 +20,8 @@ export type MobileMessages = {
     rankings: string;
     tickets: string;
     station: string;
+    lines: string;
+    line: string;
     back: string;
   };
   common: {
@@ -58,6 +60,7 @@ export type MobileMessages = {
     noPhoto: string;
     markVisited: string;
     visitedBadge: string;
+    browseLines: string;
   };
   station: {
     notFound: string;
@@ -79,6 +82,20 @@ export type MobileMessages = {
     ratePhotoA11y: string;
     photoYesA11y: string;
     photoNoA11y: string;
+  };
+  lines: {
+    intro: string;
+    portugalHeading: string;
+    spainHeading: string;
+    stationCount_one: string;
+    stationCount_other: string;
+    servicesNote: string;
+    stationsHeading: string;
+    alsoOn: string;
+    emptyLine: string;
+    orderingNote: string;
+    viewAllLines: string;
+    notFound: string;
   };
   departures: {
     unavailable: string;

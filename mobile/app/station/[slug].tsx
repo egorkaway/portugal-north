@@ -1,4 +1,4 @@
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useLocalSearchParams, useRouter, type Href } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import {
   ActivityIndicator,
@@ -33,6 +33,7 @@ import {
   getBookingSearchUrl,
   isAirportStation,
 } from '@/lib/stationData';
+import { getStationLineLinks } from '@/lib/trainLines';
 import {
   castStationVote,
   readStationVotes,
@@ -97,6 +98,7 @@ export default function StationDetailScreen() {
   const hasCpCode = Boolean(getCpCode(station.name));
   const airport = isAirportStation(station);
   const airportConnections = airport ? getAirportConnectionsEntry(station) : null;
+  const lineLinks = getStationLineLinks(station);
 
   const handleVote = async (direction: 'up' | 'down') => {
     const { previous, next } = await castStationVote(station.name, direction);
@@ -143,7 +145,23 @@ export default function StationDetailScreen() {
       <View style={styles.headerRow}>
         <View style={styles.headerMain}>
           <Text style={styles.title}>{station.name}</Text>
-          <Text style={styles.lines}>{station.lines.join(' · ')}</Text>
+          <View style={styles.linesRow}>
+            {lineLinks.map((item, index) => (
+              <Text key={`${item.name}-${index}`} style={styles.lines}>
+                {index > 0 ? <Text style={styles.linesSep}> · </Text> : null}
+                {item.slug ? (
+                  <Text
+                    style={styles.lineLink}
+                    onPress={() => router.push(`/lines/${item.slug}` as Href)}
+                  >
+                    {item.name}
+                  </Text>
+                ) : (
+                  item.name
+                )}
+              </Text>
+            ))}
+          </View>
         </View>
         <VoteButtons vote={vote} onVote={(direction) => void handleVote(direction)} />
       </View>
@@ -268,9 +286,24 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     color: theme.primary,
   },
+  linesRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignItems: 'center',
+  },
   lines: {
     fontSize: 14,
     color: theme.primaryMuted,
+  },
+  linesSep: {
+    fontSize: 14,
+    color: theme.primaryMuted,
+  },
+  lineLink: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: theme.primary,
+    textDecorationLine: 'underline',
   },
   visitedButton: {
     marginHorizontal: 16,

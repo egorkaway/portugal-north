@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Pressable, RefreshControl, StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location';
-import { useRouter } from 'expo-router';
+import { useRouter, type Href } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppBrandHeader } from '@/components/AppBrandHeader';
 import { StationCard } from '@/components/StationCard';
@@ -215,6 +215,15 @@ export default function HomeScreen() {
                 ? ` · ${t('home.showingCount', { count: visible.length })}`
                 : ''}
             </Text>
+
+            <Pressable
+              onPress={() => router.push('/lines' as Href)}
+              accessibilityRole="button"
+              accessibilityLabel={t('nav.lines')}
+              style={styles.linesLink}
+            >
+              <Text style={styles.linesLinkText}>{t('home.browseLines')}</Text>
+            </Pressable>
           </View>
         }
         ListFooterComponent={<BuildFooter />}
@@ -243,5 +252,15 @@ const styles = StyleSheet.create({
   count: {
     fontSize: 13,
     color: theme.primaryMuted,
+  },
+  linesLink: {
+    alignSelf: 'flex-start',
+    paddingVertical: 2,
+  },
+  linesLinkText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: theme.primary,
+    textDecorationLine: 'underline',
   },
 });

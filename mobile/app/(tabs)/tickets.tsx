@@ -1,10 +1,11 @@
 import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { BuildFooter } from '@/components/BuildFooter';
 import { usePurchases } from '@/components/PurchasesProvider';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
-import ticketGuide from '@/data/ticket-guide.json';
+import type { Locale } from '@/i18n/types';
+import ticketGuides from '@/data/ticket-guides.json';
 
 type TicketLink = {
   title: string;
@@ -22,12 +23,23 @@ type TicketCountry = {
   links: TicketLink[];
 };
 
-const countries = ticketGuide.countries as TicketCountry[];
+type TicketGuide = {
+  subtitle: string;
+  disclaimer: string;
+  countries: TicketCountry[];
+};
+
+const guidesByLocale = ticketGuides as Record<string, TicketGuide>;
+
+function guideForLocale(locale: Locale): TicketGuide {
+  return guidesByLocale[locale] ?? guidesByLocale.en;
+}
 
 export default function TicketsScreen() {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const { ready, available, isPro, presentPaywall } = usePurchases();
   const [paywallBusy, setPaywallBusy] = useState(false);
+  const guide = useMemo(() => guideForLocale(locale), [locale]);
 
   const openPaywall = async () => {
     if (paywallBusy || !available) return;
@@ -53,9 +65,9 @@ export default function TicketsScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text style={styles.title}>{t('tickets.title')}</Text>
-      <Text style={styles.subtitle}>{ticketGuide.subtitle}</Text>
+      <Text style={styles.subtitle}>{guide.subtitle}</Text>
 
-      {countries.map((country) => (
+      {guide.countries.map((country) => (
         <CountrySection
           key={country.country}
           country={country.country}
@@ -72,7 +84,7 @@ export default function TicketsScreen() {
         />
       ))}
 
-      <Text style={styles.disclaimer}>{ticketGuide.disclaimer}</Text>
+      <Text style={styles.disclaimer}>{guide.disclaimer}</Text>
 
       <View style={styles.proCard}>
         <Text style={styles.proTitle}>

@@ -8,6 +8,7 @@ import { buildLinePageMeta } from "@/lib/pageMeta";
 import { buildLineStructuredData } from "@/lib/structuredData";
 import { useLocale } from "@/i18n/LocaleProvider";
 import {
+  getLinePath,
   getListedLinesForStation,
   getTrainLineBySlug,
 } from "@/lib/trainLines";
@@ -90,10 +91,13 @@ const Line = () => {
                   (l) => l.slug !== line.slug,
                 );
                 return (
-                  <li key={station.name}>
+                  <li
+                    key={station.name}
+                    className="rounded-lg border border-border bg-card transition-colors hover:border-primary/40 hover:bg-muted/40"
+                  >
                     <Link
                       to={getStationPath(station)}
-                      className="group flex items-start gap-3 rounded-lg border border-border bg-card p-3 transition-colors hover:border-primary/40 hover:bg-muted/40 md:p-4"
+                      className="group flex items-start gap-3 p-3 md:p-4"
                     >
                       <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-semibold text-muted-foreground">
                         {index + 1}
@@ -119,17 +123,30 @@ const Line = () => {
                             ))
                           )}
                         </span>
-                        {others.length > 0 ? (
-                          <span className="mt-1.5 block text-xs text-muted-foreground">
-                            {t("lines.alsoOn")}: {others.map((o) => o.name).join(" · ")}
-                          </span>
-                        ) : null}
                       </span>
                       <ChevronRight
                         className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary"
                         aria-hidden="true"
                       />
                     </Link>
+                    {others.length > 0 ? (
+                      <p className="border-t border-border/70 px-3 pb-3 pt-0 text-xs text-muted-foreground md:px-4 md:pb-4">
+                        <span className="pl-9">
+                          {t("lines.alsoOn")}:{" "}
+                          {others.map((other, otherIndex) => (
+                            <span key={other.slug}>
+                              {otherIndex > 0 ? " · " : null}
+                              <Link
+                                to={getLinePath(other)}
+                                className="font-medium text-primary underline-offset-2 hover:underline"
+                              >
+                                {other.name}
+                              </Link>
+                            </span>
+                          ))}
+                        </span>
+                      </p>
+                    ) : null}
                   </li>
                 );
               })}

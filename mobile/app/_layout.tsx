@@ -123,6 +123,20 @@ function RootLayoutNav() {
               headerBackTitle: t('nav.back'),
             }}
           />
+          <Stack.Screen
+            name="lines/index"
+            options={{
+              title: t('nav.lines'),
+              headerBackTitle: t('nav.back'),
+            }}
+          />
+          <Stack.Screen
+            name="lines/[slug]"
+            options={{
+              title: t('nav.line'),
+              headerBackTitle: t('nav.back'),
+            }}
+          />
           <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
         </Stack>
       </ThemeProvider>

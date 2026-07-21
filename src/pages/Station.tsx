@@ -45,6 +45,7 @@ import {
   shouldShowStationImageCredit,
 } from "@/lib/stationImageAttribution";
 import { StationImageCredit } from "@/components/StationImageCredit";
+import { getStationLineLinks } from "@/lib/trainLines";
 
 const typeColors: Record<string, string> = {
   Airport: "bg-sky-600 text-white",
@@ -73,6 +74,7 @@ const Station = () => {
   const berrymetCityLink = getBerrymetCityLink(station);
   const stationSummary = getStationSummary(station.name, locale);
   const LineIcon = airportStation ? Plane : Train;
+  const lineLinks = getStationLineLinks(station);
   const metroLink = getMetroOperatorLink(station);
   const imageUrl = getStationImageUrl(station.name);
   const shareImageUrl = getStationShareImageUrl(station.name);
@@ -114,9 +116,29 @@ const Station = () => {
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <h1 className="font-display text-2xl md:text-4xl">{station.name}</h1>
-                <p className="mt-1 flex items-center gap-2 text-sm text-primary-foreground/85 md:mt-2">
+                <p className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-primary-foreground/85 md:mt-2">
                   <LineIcon className="h-4 w-4 shrink-0" aria-hidden="true" />
-                  {station.lines.join(" · ")}
+                  <span className="min-w-0">
+                    {lineLinks.length === 0
+                      ? null
+                      : lineLinks.map((item, index) => (
+                          <span key={`${item.name}-${index}`}>
+                            {index > 0 ? (
+                              <span className="text-primary-foreground/50"> · </span>
+                            ) : null}
+                            {item.path ? (
+                              <Link
+                                to={item.path}
+                                className="underline decoration-primary-foreground/40 underline-offset-2 transition-colors hover:text-primary-foreground hover:decoration-primary-foreground"
+                              >
+                                {item.name}
+                              </Link>
+                            ) : (
+                              item.name
+                            )}
+                          </span>
+                        ))}
+                  </span>
                 </p>
               </div>
               <div className="flex shrink-0 flex-col items-end gap-2">

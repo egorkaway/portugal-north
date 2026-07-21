@@ -50,9 +50,30 @@ export async function syncMobileData() {
     ? JSON.parse(fs.readFileSync(airportConnectionsPath, "utf8"))
     : { generatedAt: "", runCount: 0, airportCount: 0, airports: {} };
 
-  const { en } = await importFromSrc("src/i18n/messages/en.ts");
   const { buildTicketGuide } = await importFromSrc("src/data/ticketGuide.ts");
-  const ticketGuide = buildTicketGuide(en.tickets);
+  const ticketLocales = await Promise.all([
+    importFromSrc("src/i18n/messages/en.ts").then((m) => ["en", m.en]),
+    importFromSrc("src/i18n/messages/pt.ts").then((m) => ["pt", m.pt]),
+    importFromSrc("src/i18n/messages/es.ts").then((m) => ["es", m.es]),
+    importFromSrc("src/i18n/messages/gl.ts").then((m) => ["gl", m.gl]),
+    importFromSrc("src/i18n/messages/ca.ts").then((m) => ["ca", m.ca]),
+  ]);
+
+  const ticketGuides = Object.fromEntries(
+    ticketLocales.map(([code, messages]) => [code, buildTicketGuide(messages.tickets)]),
+  );
+
+  // Mobile-only locales (not on the website yet).
+  for (const code of ["uk", "ru"]) {
+    const overridePath = path.join(__dirname, `../i18n/ticketGuide/${code}.ts`);
+    if (fs.existsSync(overridePath)) {
+      const mod = await import(pathToFileURL(overridePath).href);
+      const guide = mod.ticketGuideUk ?? mod.ticketGuideRu ?? mod.default;
+      if (guide) ticketGuides[code] = guide;
+    }
+    if (!ticketGuides[code]) ticketGuides[code] = ticketGuides.en;
+  }
+
   const { pexelsPhotoCredits } = await importFromSrc("src/data/pexelsPhotoCredits.ts");
 
   fs.writeFileSync(path.join(outDir, "stations.json"), JSON.stringify(stationsLite));
@@ -66,7 +87,12 @@ export async function syncMobileData() {
     path.join(outDir, "airport-connections.json"),
     JSON.stringify(airportConnections),
   );
-  fs.writeFileSync(path.join(outDir, "ticket-guide.json"), JSON.stringify(ticketGuide, null, 2));
+  fs.writeFileSync(path.join(outDir, "ticket-guides.json"), JSON.stringify(ticketGuides, null, 2));
+  // Keep a single-locale English file for any older imports / tooling.
+  fs.writeFileSync(
+    path.join(outDir, "ticket-guide.json"),
+    JSON.stringify(ticketGuides.en, null, 2),
+  );
   fs.writeFileSync(
     path.join(outDir, "pexelsPhotoCredits.json"),
     JSON.stringify(pexelsPhotoCredits),
@@ -102,7 +128,7 @@ export async function syncMobileData() {
       `${Object.keys(summaries).length} summaries, ` +
       `${Object.keys(airportConnections.airports ?? {}).length} airport connection maps, ` +
       `${Object.keys(pexelsPhotoCredits).length} Pexels credits, ` +
-      `ticket guide (${ticketGuide.countries.length} countries), ` +
+      `ticket guides (${Object.keys(ticketGuides).join(", ")}), ` +
       `Siri catalog (${siriCatalog.length}).`,
   );
 }

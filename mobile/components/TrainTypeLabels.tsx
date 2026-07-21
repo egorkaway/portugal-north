@@ -5,13 +5,15 @@ import { sortTrainTypes } from '@/constants/theme';
 
 type Props = {
   types: string[];
+  /** Drop outer horizontal padding when nested in cards. */
+  compact?: boolean;
 };
 
-export function TrainTypeLabels({ types }: Props) {
+export function TrainTypeLabels({ types, compact = false }: Props) {
   const sorted = sortTrainTypes(types);
 
   return (
-    <View style={styles.list}>
+    <View style={[styles.list, compact && styles.listCompact]}>
       {sorted.map((type) => (
         <View key={type} style={styles.item}>
           <TrainTypeDot type={type} />
@@ -29,6 +31,11 @@ const styles = StyleSheet.create({
     gap: 10,
     paddingHorizontal: 16,
     paddingTop: 12,
+  },
+  listCompact: {
+    paddingHorizontal: 0,
+    paddingTop: 0,
+    gap: 8,
   },
   item: {
     flexDirection: 'row',
