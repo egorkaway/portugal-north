@@ -54,16 +54,14 @@ function FilterChip({
       onClick={onClick}
       className={cn(
         "inline-flex shrink-0 items-center justify-center rounded-full border font-medium transition-colors",
-        "text-xs leading-none sm:text-[11px] md:text-xs",
+        "text-[11px] leading-none md:text-xs",
         compact
-          ? "size-11 gap-0 p-0 sm:size-auto sm:h-auto sm:w-auto sm:gap-1 sm:px-2 sm:py-1 md:px-2.5"
-          : "min-h-11 gap-1.5 px-3 py-2 sm:min-h-0 sm:gap-1 sm:px-2 sm:py-1 md:px-2.5",
+          ? "size-8 gap-0 p-0 sm:size-auto sm:h-auto sm:w-auto sm:gap-1 sm:px-2 sm:py-1 md:px-2.5"
+          : "gap-1 px-2 py-1 md:px-2.5",
         active ? activeClassName : chipInactive,
       )}
     >
-      {Icon && (
-        <Icon className="size-4 shrink-0 sm:size-3" aria-hidden="true" />
-      )}
+      {Icon && <Icon className="size-3 shrink-0" aria-hidden="true" />}
       <span
         className={cn(
           compact && "sr-only sm:not-sr-only sm:static sm:max-w-none",
@@ -86,7 +84,7 @@ function FilterChip({
 function FilterDivider() {
   return (
     <span
-      className="mx-0.5 hidden h-3 w-px shrink-0 bg-border sm:inline-block"
+      className="mx-0.5 inline-block h-3 w-px shrink-0 bg-border"
       aria-hidden="true"
     />
   );
@@ -202,7 +200,7 @@ export function StationFilters({
         </div>
 
         <div
-          className="flex flex-wrap items-center gap-1.5 sm:gap-1 md:gap-1.5"
+          className="-mx-3 flex flex-nowrap items-center gap-1.5 overflow-x-auto overscroll-x-contain px-3 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:gap-1 md:mx-0 md:flex-wrap md:gap-1.5 md:overflow-visible md:px-0"
           role="group"
           aria-label={t("home.filtersLabel")}
         >
