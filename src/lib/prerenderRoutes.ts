@@ -19,7 +19,7 @@ import {
 export { buildSeoHeadHtml };
 import { stationToSlug } from "@/lib/stationSlug";
 import { getHomeSitemapPaths, homePathToOutFile, parseHomeCanonicalPath } from "@/lib/homeRoute";
-import { getTrainLines } from "@/lib/trainLines";
+import { getRailLines } from "@/lib/trainLines";
 
 export type PrerenderRoute = {
   /** Path relative to dist/ (e.g. index.html, stations/porto/index.html). */
@@ -39,7 +39,7 @@ export function getPrerenderRoutes(): PrerenderRoute[] {
     { outFile: "404.html", meta: NOT_FOUND_PAGE_META },
   ];
 
-  for (const line of getTrainLines()) {
+  for (const line of getRailLines()) {
     routes.push({
       outFile: `lines/${line.slug}/index.html`,
       meta: buildLinePageMeta(line, "en"),

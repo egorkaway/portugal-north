@@ -5,7 +5,7 @@ import { allStations } from "@/data/stationRegistry";
 import { getHomeSitemapPaths } from "@/lib/homeRoute";
 import { portugalStations } from "@/data/stations";
 import { getHotelsForStation } from "@/lib/stationHotels";
-import { getTrainLines } from "@/lib/trainLines";
+import { getRailLines } from "@/lib/trainLines";
 
 describe("buildSeoHeadHtml", () => {
   it("includes unique title and description in output", () => {
@@ -41,7 +41,7 @@ describe("getPrerenderRoutes", () => {
     const routes = getPrerenderRoutes();
     const homeExtra = getHomeSitemapPaths().length;
     expect(routes.length).toBe(
-      allStations.length + 8 + homeExtra + getTrainLines().length,
+      allStations.length + 8 + homeExtra + getRailLines().length,
     );
     const porto = portugalStations.find((s) => s.name === "Porto-Campanhã");
     expect(porto).toBeDefined();

@@ -204,15 +204,12 @@ export type StationLineLink = {
 };
 
 /**
- * Station line names in data order, with paths for lines that have their own page.
- * Prefer listed rail pages when available; otherwise any derived line page.
+ * Station line names in data order, with paths only for listed rail line pages
+ * (excludes metro, historic, and single-station lines).
  */
 export function getStationLineLinks(station: Station): StationLineLink[] {
   const listed = new Map(
     getListedLinesForStation(station).map((line) => [line.slug, line]),
-  );
-  const anyPage = new Map(
-    getLinesForStation(station).map((line) => [line.slug, line]),
   );
   const items: StationLineLink[] = [];
   const seen = new Set<string>();
@@ -222,7 +219,7 @@ export function getStationLineLinks(station: Station): StationLineLink[] {
     if (!name || seen.has(name)) continue;
     seen.add(name);
     const slug = lineToSlug(name);
-    const line = listed.get(slug) ?? anyPage.get(slug);
+    const line = listed.get(slug);
     items.push({
       name: line?.name ?? name,
       path: line ? getLinePath(line) : null,

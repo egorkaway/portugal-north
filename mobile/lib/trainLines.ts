@@ -166,13 +166,10 @@ export function getListedLinesForStation(station: Station): TrainLine[] {
   return getLinesForStation(station).filter(isListedRailLine);
 }
 
-/** Line names for a station, with slugs when a line page exists. */
+/** Line names for a station, with slugs only for listed rail line pages. */
 export function getStationLineLinks(station: Station): StationLineLink[] {
   const listed = new Map(
     getListedLinesForStation(station).map((line) => [line.slug, line]),
-  );
-  const anyPage = new Map(
-    getLinesForStation(station).map((line) => [line.slug, line]),
   );
   const items: StationLineLink[] = [];
   const seen = new Set<string>();
@@ -182,7 +179,7 @@ export function getStationLineLinks(station: Station): StationLineLink[] {
     if (!name || seen.has(name)) continue;
     seen.add(name);
     const slug = lineToSlug(name);
-    const line = listed.get(slug) ?? anyPage.get(slug);
+    const line = listed.get(slug);
     items.push({
       name: line?.name ?? name,
       slug: line?.slug ?? null,
