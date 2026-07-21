@@ -145,6 +145,91 @@ export const stationHotels: StationHotels = {
     { name: "Original Douro Hotel", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/hotel/pt/original-douro.html" },
     { name: "Residencial Douro", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/pt/residencial-douro.html" },
   ],
+  "Corgo": [
+    { name: "Torel Quinta da Vacaria - Douro Valley", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torel%20Quinta%20da%20Vacaria%20-%20Douro%20Valley%2C%20Corgo%2C%20Portugal&order=price" },
+    { name: "Imperio Hotel", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Imperio%20Hotel%2C%20Corgo%2C%20Portugal&order=price" },
+    { name: "Hotel Régua Douro", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20R%C3%A9gua%20Douro%2C%20Corgo%2C%20Portugal&order=price" },
+  ],
+  "Tanha": [
+    { name: "Quinta da Pitarrela", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Pitarrela%2C%20Tanha%2C%20Portugal&order=price" },
+    { name: "Torel Quinta da Vacaria - Douro Valley", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torel%20Quinta%20da%20Vacaria%20-%20Douro%20Valley%2C%20Tanha%2C%20Portugal&order=price" },
+    { name: "Imperio Hotel", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Imperio%20Hotel%2C%20Tanha%2C%20Portugal&order=price" },
+  ],
+  "Alvações": [
+    { name: "Quinta da Pitarrela", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Pitarrela%2C%20Alva%C3%A7%C3%B5es%2C%20Portugal&order=price" },
+    { name: "O Mercadinho", distanceKm: 3.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=O%20Mercadinho%2C%20Alva%C3%A7%C3%B5es%2C%20Portugal&order=price" },
+    { name: "Quinta da Pousada", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Pousada%2C%20Alva%C3%A7%C3%B5es%2C%20Portugal&order=price" },
+  ],
+  "Povoação": [
+    { name: "Quinta do Vale de Ermida", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Vale%20de%20Ermida%2C%20Povoa%C3%A7%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Quinta da Pousada", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Pousada%2C%20Povoa%C3%A7%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Albergue do Caminho Português Interior de Santiago", distanceKm: 2.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20do%20Caminho%20Portugu%C3%AAs%20Interior%20de%20Santiago%2C%20Povoa%C3%A7%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Carrazedo": [
+    { name: "Quinta do Vale de Ermida", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Vale%20de%20Ermida%2C%20Carrazedo%2C%20Portugal&order=price" },
+    { name: "Quinta da Telheira", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Telheira%2C%20Carrazedo%2C%20Portugal&order=price" },
+    { name: "Quinta da Corujeira", distanceKm: 1.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Corujeira%2C%20Carrazedo%2C%20Portugal&order=price" },
+  ],
+  "Cruzeiro": [
+    { name: "Quinta da Cumieira", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Cumieira%2C%20Cruzeiro%2C%20Portugal&order=price" },
+    { name: "MW by Trius Hotel & Spa", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=MW%20by%20Trius%20Hotel%20%26%20Spa%2C%20Cruzeiro%2C%20Portugal&order=price" },
+    { name: "Quinta da Corujeira", distanceKm: 2.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Corujeira%2C%20Cruzeiro%2C%20Portugal&order=price" },
+  ],
+  "Vila Real": [
+    { name: "Casa da Guia", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Guia%2C%20Vila%20Real%2C%20Portugal&order=price" },
+    { name: "Casas do Corgo", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20do%20Corgo%2C%20Vila%20Real%2C%20Portugal&order=price" },
+    { name: "Hotel Miracorgo", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Miracorgo%2C%20Vila%20Real%2C%20Portugal&order=price" },
+  ],
+  "Abambres": [
+    { name: "Residencial Maria do Carmo", distanceKm: 0.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Maria%20do%20Carmo%2C%20Abambres%2C%20Portugal&order=price" },
+    { name: "Casa Agrícola da Levada Eco Village", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Agr%C3%ADcola%20da%20Levada%20Eco%20Village%2C%20Abambres%2C%20Portugal&order=price" },
+    { name: "Quinta de Santo António", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20de%20Santo%20Ant%C3%B3nio%2C%20Abambres%2C%20Portugal&order=price" },
+  ],
+  "Cigarrosa": [
+    { name: "Residencial Costa", distanceKm: 1.4, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Costa%2C%20Cigarrosa%2C%20Portugal&order=price" },
+    { name: "Quinta da Menina Guesthouse", distanceKm: 2.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Menina%20Guesthouse%2C%20Cigarrosa%2C%20Portugal&order=price" },
+    { name: "Casa Agrícola da Levada Eco Village", distanceKm: 3.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Agr%C3%ADcola%20da%20Levada%20Eco%20Village%2C%20Cigarrosa%2C%20Portugal&order=price" },
+  ],
+  "Fortunho": [
+    { name: "Quinta da Menina Guesthouse", distanceKm: 2.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Menina%20Guesthouse%2C%20Fortunho%2C%20Portugal&order=price" },
+    { name: "Residencial Costa", distanceKm: 3.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Costa%2C%20Fortunho%2C%20Portugal&order=price" },
+    { name: "Casa Coto", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Coto%2C%20Fortunho%2C%20Portugal&order=price" },
+  ],
+  "Samardã": [
+    { name: "Quinta da Menina Guesthouse", distanceKm: 4.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Menina%20Guesthouse%2C%20Samard%C3%A3%2C%20Portugal&order=price" },
+    { name: "Casa Coto", distanceKm: 6.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Coto%2C%20Samard%C3%A3%2C%20Portugal&order=price" },
+    { name: "Residencial Costa", distanceKm: 6.5, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Costa%2C%20Samard%C3%A3%2C%20Portugal&order=price" },
+  ],
+  "Tourencinho": [
+    { name: "Casa da Eira", distanceKm: 5.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Eira%2C%20Tourencinho%2C%20Portugal&order=price" },
+    { name: "Albergue", distanceKm: 5.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%2C%20Tourencinho%2C%20Portugal&order=price" },
+    { name: "Aguiar da Pena", distanceKm: 8.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aguiar%20da%20Pena%2C%20Tourencinho%2C%20Portugal&order=price" },
+  ],
+  "Parada de Aguiar": [
+    { name: "Casa da Eira", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Eira%2C%20Parada%20de%20Aguiar%2C%20Portugal&order=price" },
+    { name: "Albergue", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%2C%20Parada%20de%20Aguiar%2C%20Portugal&order=price" },
+    { name: "Aguiar da Pena", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aguiar%20da%20Pena%2C%20Parada%20de%20Aguiar%2C%20Portugal&order=price" },
+  ],
+  "Nuzedo": [
+    { name: "Residencial São Martinho", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20S%C3%A3o%20Martinho%2C%20Nuzedo%2C%20Portugal&order=price" },
+    { name: "Casa Fontes", distanceKm: 3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Fontes%2C%20Nuzedo%2C%20Portugal&order=price" },
+    { name: "Café Restaurante Hospedaria 'O Machado'", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caf%C3%A9%20Restaurante%20Hospedaria%20'O%20Machado'%2C%20Nuzedo%2C%20Portugal&order=price" },
+  ],
+  "Pedras Salgadas": [
+    { name: "Residencial São Martinho", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20S%C3%A3o%20Martinho%2C%20Pedras%20Salgadas%2C%20Portugal&order=price" },
+    { name: "Casa Fontes", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Fontes%2C%20Pedras%20Salgadas%2C%20Portugal&order=price" },
+    { name: "Pedras Salgadas Hotel", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pedras%20Salgadas%20Hotel%2C%20Pedras%20Salgadas%2C%20Portugal&order=price" },
+  ],
+  "Sabroso": [
+    { name: "Pedras Salgadas Spa & Nature Park", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pedras%20Salgadas%20Spa%20%26%20Nature%20Park%2C%20Sabroso%2C%20Portugal&order=price" },
+    { name: "Pedras Salgadas Hotel", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pedras%20Salgadas%20Hotel%2C%20Sabroso%2C%20Portugal&order=price" },
+    { name: "Residencial São Martinho", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20S%C3%A3o%20Martinho%2C%20Sabroso%2C%20Portugal&order=price" },
+  ],
+  "Loivos": [
+    { name: "Primavera Perfume Hotel", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Primavera%20Perfume%20Hotel%2C%20Loivos%2C%20Portugal&order=price" },
+    { name: "Vidago Palace Hotel", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vidago%20Palace%20Hotel%2C%20Loivos%2C%20Portugal&order=price" },
+    { name: "Residencial", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%2C%20Loivos%2C%20Portugal&order=price" },
+  ],
   "Barcelos": [
     { name: "Residencial Arantes", distanceKm: 0.8, priceFrom: 28, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcelos%2C+Portugal&order=price" },
     { name: "Hotel Dom Nuno", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Dom%20Nuno%2C%20Barcelos%2C%20Portugal&order=price" },
@@ -1759,6 +1844,21 @@ export const stationHotels: StationHotels = {
     { name: "Hostal Cándido", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20C%C3%A1ndido%2C%20Ourense%2C%20Spain&order=price" },
     { name: "Hotel Zarampallo", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Zarampallo%2C%20Ourense%2C%20Spain&order=price" },
     { name: "Albergue de Peregrinos Eligio Rivas Quintas", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Eligio%20Rivas%20Quintas%2C%20Ourense%2C%20Spain&order=price" },
+  ],
+  "A Gudiña-Porta de Galicia": [
+    { name: "Albergue de Peregrinos", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%2C%20A%20Gudi%C3%B1a-Porta%20de%20Galicia%2C%20Spain&order=price" },
+    { name: "Óscar", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=%C3%93scar%2C%20A%20Gudi%C3%B1a-Porta%20de%20Galicia%2C%20Spain&order=price" },
+    { name: "Hostal A Madrileña", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20A%20Madrile%C3%B1a%2C%20A%20Gudi%C3%B1a-Porta%20de%20Galicia%2C%20Spain&order=price" },
+  ],
+  "Sanabria Alta Velocidad": [
+    { name: "Casa A Devesa de Sanabria", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20A%20Devesa%20de%20Sanabria%2C%20Sanabria%20Alta%20Velocidad%2C%20Spain&order=price" },
+    { name: "Hotel J. Enrimary", distanceKm: 4.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20J.%20Enrimary%2C%20Sanabria%20Alta%20Velocidad%2C%20Spain&order=price" },
+    { name: "Tierra de Lobos", distanceKm: 5.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tierra%20de%20Lobos%2C%20Sanabria%20Alta%20Velocidad%2C%20Spain&order=price" },
+  ],
+  "Zamora": [
+    { name: "Hotel AC Zamora", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20AC%20Zamora%2C%20Zamora%2C%20Spain&order=price" },
+    { name: "Infinium", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Infinium%2C%20Zamora%2C%20Spain&order=price" },
+    { name: "Hostal Gemi", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Gemi%2C%20Zamora%2C%20Spain&order=price" },
   ],
   "Madrid-Chamartín": [
     { name: "Hotel The One", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20The%20One%2C%20Madrid-Chamart%C3%ADn%2C%20Spain&order=price" },
