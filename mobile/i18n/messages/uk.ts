@@ -169,6 +169,7 @@ export const uk: MobileMessages = {
     legendHigh: 'Висока',
     legendMid: 'Середня',
     legendLow: 'Низька',
+    legendNoData: 'Немає даних',
     legendAirport: 'Аеропорт',
     openStation: 'Відкрити станцію',
     locateA11y: 'Центрувати карту на моєму розташуванні',

@@ -236,6 +236,7 @@ export default function MapScreen() {
               <LegendSwatch color={reliabilityScoreColor(9)} label={t('map.legendHigh')} />
               <LegendSwatch color={reliabilityScoreColor(6)} label={t('map.legendMid')} />
               <LegendSwatch color={reliabilityScoreColor(3)} label={t('map.legendLow')} />
+              <LegendSwatch color="#94A3B8" label={t('map.legendNoData')} />
               <LegendSwatch color="#0284C7" label={t('map.legendAirport')} />
             </View>
           </View>

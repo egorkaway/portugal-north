@@ -169,6 +169,7 @@ export const gl: MobileMessages = {
     legendHigh: 'Alta',
     legendMid: 'Media',
     legendLow: 'Baixa',
+    legendNoData: 'Sen datos',
     legendAirport: 'Aeroporto',
     openStation: 'Abrir estación',
     locateA11y: 'Centrar o mapa na miña localización',

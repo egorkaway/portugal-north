@@ -169,6 +169,7 @@ export const es: MobileMessages = {
     legendHigh: 'Alta',
     legendMid: 'Media',
     legendLow: 'Baja',
+    legendNoData: 'Sin datos',
     legendAirport: 'Aeropuerto',
     openStation: 'Abrir estación',
     locateA11y: 'Centrar el mapa en mi ubicación',

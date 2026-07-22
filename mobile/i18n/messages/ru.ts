@@ -169,6 +169,7 @@ export const ru: MobileMessages = {
     legendHigh: 'Высокая',
     legendMid: 'Средняя',
     legendLow: 'Низкая',
+    legendNoData: 'Нет данных',
     legendAirport: 'Аэропорт',
     openStation: 'Открыть станцию',
     locateA11y: 'Центрировать карту на моём местоположении',

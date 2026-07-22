@@ -170,6 +170,7 @@ export type MobileMessages = {
     legendHigh: string;
     legendMid: string;
     legendLow: string;
+    legendNoData: string;
     legendAirport: string;
     openStation: string;
     locateA11y: string;
