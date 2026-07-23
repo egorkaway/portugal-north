@@ -146,14 +146,6 @@ export const europeDestinationAirports: Station[] = [
     lng: 4.48444,
   },
   {
-    name: "EuroAirport Basel–Mulhouse–Freiburg (BSL)",
-    country: "fr",
-    lines: ["BSL"],
-    types: ["Airport Destination"],
-    lat: 47.60068,
-    lng: 7.521117,
-  },
-  {
     name: "Budapest Liszt Ferenc International Airport (BUD)",
     country: "hu",
     lines: ["BUD"],
@@ -546,22 +538,6 @@ export const europeDestinationAirports: Station[] = [
     lng: 8.72811,
   },
   {
-    name: "Naples International Airport (NAP)",
-    country: "it",
-    lines: ["NAP"],
-    types: ["Airport Destination"],
-    lat: 40.886002,
-    lng: 14.2908,
-  },
-  {
-    name: "Nice-Côte d'Azur Airport (NCE)",
-    country: "fr",
-    lines: ["NCE"],
-    types: ["Airport Destination"],
-    lat: 43.658401,
-    lng: 7.21587,
-  },
-  {
     name: "Newcastle International Airport (NCL)",
     country: "gb",
     lines: ["NCL"],
@@ -600,14 +576,6 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 49.498699,
     lng: 11.078056,
-  },
-  {
-    name: "Olbia Costa Smeralda Airport (OLB)",
-    country: "it",
-    lines: ["OLB"],
-    types: ["Airport Destination"],
-    lat: 40.898953,
-    lng: 9.518457,
   },
   {
     name: "Cork International Airport (ORK)",
@@ -768,14 +736,6 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 58.876701,
     lng: 5.63778,
-  },
-  {
-    name: "Strasbourg Airport (SXB)",
-    country: "fr",
-    lines: ["SXB"],
-    types: ["Airport Destination"],
-    lat: 48.5383,
-    lng: 7.62823,
   },
   {
     name: "Tenerife Norte-Ciudad de La Laguna Airport (TFN)",

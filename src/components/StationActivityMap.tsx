@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Download } from "lucide-react";
 import { MapContainer, TileLayer } from "react-leaflet";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,10 @@ import {
   buildMapActivityHexData,
 } from "@/lib/mapActivityStations";
 import { buildMapLabelPoints } from "@/lib/mapLabels";
+import {
+  fetchAirportMapVisibility,
+  getHiddenAirportIatasSync,
+} from "@/lib/airportMapVisibility";
 import {
   IBERIAN_MAP_BOUNDS,
   IBERIAN_MAP_CENTER,
@@ -67,6 +71,18 @@ const AIRPORT_LABEL_KEYS = {
 export default function StationActivityMap() {
   const { t } = useLocale();
   const { data, isLoading, isError } = useReliabilityScores();
+  const [hiddenAirportIatas, setHiddenAirportIatas] = useState<Set<string>>(() => new Set());
+
+  useEffect(() => {
+    let cancelled = false;
+    fetchAirportMapVisibility().then((manifest) => {
+      if (cancelled) return;
+      setHiddenAirportIatas(getHiddenAirportIatasSync(manifest));
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const hexData = useMemo(() => {
     if (!data?.movements) return null;
@@ -77,8 +93,8 @@ export default function StationActivityMap() {
     const airportLabels = Object.fromEntries(
       Object.entries(AIRPORT_LABEL_KEYS).map(([iata, key]) => [iata, t(key)]),
     ) as Record<string, string>;
-    return buildMapLabelPoints(stations, airportLabels);
-  }, [t]);
+    return buildMapLabelPoints(stations, airportLabels, { hiddenAirportIatas });
+  }, [t, hiddenAirportIatas]);
 
   if (isLoading) {
     return <p className="text-sm text-muted-foreground">{t("map.loading")}</p>;

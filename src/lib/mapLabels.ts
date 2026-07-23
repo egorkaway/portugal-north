@@ -67,10 +67,15 @@ const MAP_AIRPORTS = [...portugalAirports, ...spainMapAirports];
 export function buildMapLabelPoints(
   stations: { name: string; lat: number; lng: number }[],
   airportLabels: Record<string, string>,
+  options: { hiddenAirportIatas?: Iterable<string> } = {},
 ): MapLabelPoint[] {
   const stationByName = new Map(stations.map((station) => [station.name, station]));
+  const hidden = new Set(
+    [...(options.hiddenAirportIatas ?? [])].map((iata) => iata.trim().toUpperCase()),
+  );
 
   const airportPoints: MapLabelPoint[] = MAP_AIRPORTS.flatMap((airport) => {
+    if (hidden.has(airport.iata)) return [];
     const label = airportLabels[airport.iata];
     if (!label) return [];
 

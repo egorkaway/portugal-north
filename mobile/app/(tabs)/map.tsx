@@ -22,6 +22,7 @@ import {
   bakedReliabilityScores,
   stationToSlug,
 } from '@/lib/stationData';
+import { isAirportHiddenFromMapMarkers } from '@/lib/airportMapVisibility';
 import { shareCapturedMap } from '@/lib/shareMapImage';
 import { writeLastCoords } from '@/lib/tripStorage';
 
@@ -58,7 +59,9 @@ export default function MapScreen() {
 
   const markers = useMemo(
     () =>
-      allStations.map((station) => {
+      allStations
+        .filter((station) => !isAirportHiddenFromMapMarkers(station))
+        .map((station) => {
         const score = bakedReliabilityScores.scores[station.name] ?? null;
         const movements = bakedReliabilityScores.movements[station.name] ?? 0;
         return {

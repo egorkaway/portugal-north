@@ -39,6 +39,10 @@ import {
   loadPeriodsIndex,
 } from "./lib/airportConnectionPeriodStore.mjs";
 import {
+  loadAirportMapVisibility,
+  saveAirportMapVisibility,
+} from "./lib/airportMapVisibilityStore.mjs";
+import {
   collectDestinationIatasFromManifest,
   upsertEuropeDestinationAirports,
 } from "./lib/europeDestinationAirports.mjs";
@@ -58,6 +62,10 @@ const {
   buildAirportConnections,
   mergeCatalogIntoCoordinates,
 } = await import("../server/lib/airportConnections.ts");
+const {
+  recordAirportConnectionsEmpty,
+  recordAirportConnectionsOk,
+} = await import("../server/lib/airportMapVisibility.ts");
 
 const cachePath = join(root, "data/airport-iata-coordinates.json");
 
@@ -285,6 +293,8 @@ export async function collectAirportConnections(options = {}) {
   let failed = 0;
   let quotaExhausted = false;
   let lastProvider = null;
+  let mapVisibility = loadAirportMapVisibility(rootDir);
+  let mapVisibilityDirty = false;
 
   const stopForQuota = (error) => {
     quotaExhausted = true;
@@ -326,9 +336,25 @@ export async function collectAirportConnections(options = {}) {
       const entry = buildAirportConnections(airport, flights, coordinates);
       if (!entry) {
         console.warn(`No mappable connections for ${label}`);
+        const before = mapVisibility.airports[airport.iata]?.consecutiveEmptyPeriods ?? 0;
+        mapVisibility = recordAirportConnectionsEmpty(mapVisibility, airport.iata, period.id);
+        mapVisibilityDirty = true;
+        const after = mapVisibility.airports[airport.iata];
+        if (after?.hiddenFromMap && !(before >= (mapVisibility.hideAfterEmptyPeriods ?? 3))) {
+          console.warn(
+            `Hiding ${airport.iata} from map after ${after.consecutiveEmptyPeriods} empty periods`,
+          );
+        } else if (!after?.hiddenFromMap) {
+          console.warn(
+            `Empty streak ${airport.iata}: ${after?.consecutiveEmptyPeriods ?? 0}/${mapVisibility.hideAfterEmptyPeriods}`,
+          );
+        }
         failed += 1;
         continue;
       }
+
+      mapVisibility = recordAirportConnectionsOk(mapVisibility, airport.iata, period.id);
+      mapVisibilityDirty = true;
 
       mkdirSync(mapsOutDir, { recursive: true });
       const png = await renderAirportConnectionsMap(entry, { siteUrl, basemapMode });
@@ -349,6 +375,14 @@ export async function collectAirportConnections(options = {}) {
     }
 
     if (delay > 0) await sleep(delay);
+  }
+
+  if (!isDryRun && mapVisibilityDirty) {
+    saveAirportMapVisibility(rootDir, mapVisibility);
+    const hidden = Object.values(mapVisibility.airports).filter((a) => a.hiddenFromMap).length;
+    console.log(
+      `Wrote ${join(rootDir, "public/data/airport-map-visibility.json")} (${hidden} hub(s) hidden from map)`,
+    );
   }
 
   let europeDestinations = { count: 0, iatas: [] };

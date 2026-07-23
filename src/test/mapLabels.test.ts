@@ -55,4 +55,13 @@ describe("buildMapLabelPoints", () => {
     expect(points.find((point) => point.id === "airport-BCN")?.minZoomToShow).toBe(7);
     expect(points.find((point) => point.id === "airport-OPO")?.minZoomToShow).toBeUndefined();
   });
+
+  it("omits airports marked hidden from the map", () => {
+    const points = buildMapLabelPoints(stations, airportLabels, {
+      hiddenAirportIatas: ["FAO", "BCN"],
+    });
+    expect(points.find((point) => point.id === "airport-FAO")).toBeUndefined();
+    expect(points.find((point) => point.id === "airport-BCN")).toBeUndefined();
+    expect(points.find((point) => point.id === "airport-LIS")).toBeDefined();
+  });
 });

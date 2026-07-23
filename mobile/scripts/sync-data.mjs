@@ -50,6 +50,11 @@ export async function syncMobileData() {
     ? JSON.parse(fs.readFileSync(airportConnectionsPath, "utf8"))
     : { generatedAt: "", runCount: 0, airportCount: 0, airports: {} };
 
+  const airportMapVisibilityPath = path.join(repoRoot, "public/data/airport-map-visibility.json");
+  const airportMapVisibility = fs.existsSync(airportMapVisibilityPath)
+    ? JSON.parse(fs.readFileSync(airportMapVisibilityPath, "utf8"))
+    : { generatedAt: "", hideAfterEmptyPeriods: 3, airports: {} };
+
   const { buildTicketGuide } = await importFromSrc("src/data/ticketGuide.ts");
   const ticketLocales = await Promise.all([
     importFromSrc("src/i18n/messages/en.ts").then((m) => ["en", m.en]),
@@ -86,6 +91,10 @@ export async function syncMobileData() {
   fs.writeFileSync(
     path.join(outDir, "airport-connections.json"),
     JSON.stringify(airportConnections),
+  );
+  fs.writeFileSync(
+    path.join(outDir, "airport-map-visibility.json"),
+    JSON.stringify(airportMapVisibility),
   );
   fs.writeFileSync(path.join(outDir, "ticket-guides.json"), JSON.stringify(ticketGuides, null, 2));
   // Keep a single-locale English file for any older imports / tooling.

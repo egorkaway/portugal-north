@@ -181,6 +181,8 @@ Station and hotel data live in `src/data/` as TypeScript files. CP station codes
 
 Airport destination maps are sampled from AviationStack (AirLabs Schedules as quota fallback) and baked into `public/data/airport-connections.json` plus `public/maps/airports/*-connections.png`. They roll on a fixed calendar (Europe/Lisbon): **1 Jan, 7 Feb, 16 Mar, 22 Apr, 29 May, 5 Jul, 11 Aug, 17 Sep, 24 Oct** (same dates each year). On each open date the previous period is frozen under `public/data/airport-connections/periods/{YYYY-MM-DD}.json` and `public/maps/airports/periods/{YYYY-MM-DD}/`, then a new live period starts. Check status with `npm run maps:airport-connections -- --period-status`. Site/app always show the live (current period) paths. Set `AVIATIONSTACK_API_KEY` and/or `AIRLABS_API_KEY` in `.env`.
 
+If a hub airport returns **No mappable connections** for **3 consecutive periods** (~several months), it is marked in `public/data/airport-map-visibility.json` and **hidden on the map** (web labels + mobile markers). Collection still runs so it can reappear after a successful bake.
+
 **Europe destination airports:** when connection collection finds a European destination that is not already an Iberian hub (`portugal/airports.ts` / `spain/airports.ts`), it upserts a station into `src/data/europe/airports.ts` with type `Airport Destination`. Those appear on the map (and under the Airport filter on `/all`) but are **never** used as departure hubs — `loadAirportCatalog` only reads PT/ES, so we do not sample outbound flights or render connection maps from them. Non-mainland ES/PT (Canaries, Balearics, Azores, Madeira, Ceuta, Melilla) can become destinations; mainland Iberia hubs stay hub-only. Backfill from the live connections JSON with:
 
 ```bash
