@@ -6,7 +6,7 @@ import {
   type AirportRecord,
 } from "./airportIata.js";
 import { formatCountryName } from "./countryName.js";
-import type { AviationStackFlight } from "./aviationStackClient.js";
+import type { AirportDepartureFlight } from "./airportDepartureFlight.js";
 
 export type AirportFlightSample = {
   airline: string;
@@ -55,10 +55,10 @@ export type CoordinateLookup = Record<
 >;
 
 export function groupFlightsByDestination(
-  flights: AviationStackFlight[],
+  flights: AirportDepartureFlight[],
   originIata: string,
-): Map<string, AviationStackFlight[]> {
-  const grouped = new Map<string, AviationStackFlight[]>();
+): Map<string, AirportDepartureFlight[]> {
+  const grouped = new Map<string, AirportDepartureFlight[]>();
 
   for (const flight of flights) {
     const dest = flight.arrival?.iata?.trim().toUpperCase();
@@ -71,7 +71,7 @@ export function groupFlightsByDestination(
   return grouped;
 }
 
-function sampleFlights(flights: AviationStackFlight[], limit = 3): AirportFlightSample[] {
+function sampleFlights(flights: AirportDepartureFlight[], limit = 3): AirportFlightSample[] {
   return flights.slice(0, limit).map((flight) => ({
     airline: flight.airline?.name?.trim() || "Unknown airline",
     number: flight.flight?.number?.trim() || flight.flight?.iata?.trim() || "—",
@@ -80,7 +80,7 @@ function sampleFlights(flights: AviationStackFlight[], limit = 3): AirportFlight
 
 export function buildAirportConnections(
   airport: AirportCatalogEntry,
-  flights: AviationStackFlight[],
+  flights: AirportDepartureFlight[],
   coordinates: CoordinateLookup,
 ): AirportConnectionsEntry | null {
   const grouped = groupFlightsByDestination(flights, airport.iata);

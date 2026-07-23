@@ -68,7 +68,8 @@ export default function MapScreen() {
           color:
             score !== null
               ? reliabilityScoreColor(score)
-              : station.types.includes('Airport')
+              : station.types.includes('Airport') ||
+                  station.types.includes('Airport Destination')
                 ? '#0284C7'
                 : '#94A3B8',
           size: markerSize(movements),

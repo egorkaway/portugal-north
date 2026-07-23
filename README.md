@@ -16,7 +16,7 @@ The repo contains the **web app** (Vite + React, deployed on Vercel) and a **nat
 
 Each station page includes:
 
-- **Service type badges** — Alfa Pendular, Intercidades, Regional, Urban, Metro, Airport, etc.
+- **Service type badges** — Alfa Pendular, Intercidades, Regional, Urban, Metro, Airport, Airport Destination, etc.
 - **Live departures** — up to three upcoming trains via CP (Portugal), where a CP station code exists
 - **On-time reliability** — score from CP departure statistics (baked into the site; see Rankings)
 - **Budget stays nearby** — curated hotels within ~2 km, with Booking.com links
@@ -179,7 +179,15 @@ Votes are stored locally (cookie on web, AsyncStorage on mobile) and optionally 
 
 Station and hotel data live in `src/data/` as TypeScript files. CP station codes are in `src/data/cpStationCodes.ts` (regenerate with `node scripts/map-cp-stations.mjs`). Reliability scores are collected offline (`npm run stats:departures`) and published to `public/data/reliability-scores.json`. The same command also refreshes airport connection maps and syncs `mobile/data/`.
 
-Airport destination maps are sampled from AviationStack and baked into `public/data/airport-connections.json` plus `public/maps/airports/*-connections.png`. They roll on a fixed calendar (Europe/Lisbon): **1 Jan, 7 Feb, 16 Mar, 22 Apr, 29 May, 5 Jul, 11 Aug, 17 Sep, 24 Oct** (same dates each year). On each open date the previous period is frozen under `public/data/airport-connections/periods/{YYYY-MM-DD}.json` and `public/maps/airports/periods/{YYYY-MM-DD}/`, then a new live period starts. Check status with `npm run maps:airport-connections -- --period-status`. Site/app always show the live (current period) paths.
+Airport destination maps are sampled from AviationStack (AirLabs Schedules as quota fallback) and baked into `public/data/airport-connections.json` plus `public/maps/airports/*-connections.png`. They roll on a fixed calendar (Europe/Lisbon): **1 Jan, 7 Feb, 16 Mar, 22 Apr, 29 May, 5 Jul, 11 Aug, 17 Sep, 24 Oct** (same dates each year). On each open date the previous period is frozen under `public/data/airport-connections/periods/{YYYY-MM-DD}.json` and `public/maps/airports/periods/{YYYY-MM-DD}/`, then a new live period starts. Check status with `npm run maps:airport-connections -- --period-status`. Site/app always show the live (current period) paths. Set `AVIATIONSTACK_API_KEY` and/or `AIRLABS_API_KEY` in `.env`.
+
+**Europe destination airports:** when connection collection finds a European destination that is not already an Iberian hub (`portugal/airports.ts` / `spain/airports.ts`), it upserts a station into `src/data/europe/airports.ts` with type `Airport Destination`. Those appear on the map (and under the Airport filter on `/all`) but are **never** used as departure hubs — `loadAirportCatalog` only reads PT/ES, so we do not sample outbound flights or render connection maps from them. Non-mainland ES/PT (Canaries, Balearics, Azores, Madeira, Ceuta, Melilla) can become destinations; mainland Iberia hubs stay hub-only. Backfill from the live connections JSON with:
+
+```bash
+npm run maps:airport-connections -- --backfill-europe-destinations
+```
+
+Then sync mobile: `cd mobile && npm run sync:data`.
 
 Reliability scores use the same calendar: on each open date the previous live `reliability-scores.json` is copied to `public/data/reliability-scores/periods/{YYYY-MM-DD}.json` (archive only — not shown in the UI yet). The live file keeps updating as usual.
 

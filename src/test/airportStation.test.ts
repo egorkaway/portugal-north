@@ -41,4 +41,14 @@ describe("getAirportStationPathByIata", () => {
   it("returns undefined for airports outside the catalog", () => {
     expect(getAirportStationPathByIata("JFK")).toBeUndefined();
   });
+
+  it("links Europe destination airports when present", async () => {
+    const { europeDestinationAirports } = await import("@/data/europe/airports");
+    if (europeDestinationAirports.length === 0) return;
+    const sample = europeDestinationAirports[0]!;
+    const iata = sample.lines[0]!;
+    expect(getAirportStationPathByIata(iata)).toMatch(/^\/stations\//);
+    expect(showsTravelEsimPromo(sample)).toBe(false);
+    expect(isAirportStation(sample)).toBe(true);
+  });
 });

@@ -2,6 +2,7 @@ import { theme } from '@/constants/theme';
 
 const TRAIN_TYPE_ABBREV: Record<string, string> = {
   Airport: 'Airport',
+  'Airport Destination': 'Airport',
   'Alfa Pendular': 'AP',
   Intercidades: 'IC',
   Regional: 'R',
@@ -13,6 +14,7 @@ const TRAIN_TYPE_ABBREV: Record<string, string> = {
 /** Matches web `typeColors` in StationCard / Station page. */
 const TRAIN_TYPE_COLORS: Record<string, string> = {
   Airport: '#0284C7',
+  'Airport Destination': '#0EA5E9',
   'Alfa Pendular': theme.primary,
   Intercidades: '#E89B3C',
   Regional: theme.accent,

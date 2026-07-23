@@ -1,6 +1,8 @@
 import { allStations } from "../data/stationRegistry";
 import type { Station } from "../data/stationTypes";
+import { stationHasAirportType } from "./airportTypes";
 import type { CountryCode } from "./countries";
+import { isCountryCode } from "./countries";
 import { sortTrainTypes } from "./trainTypes";
 
 /**
@@ -52,7 +54,7 @@ function normalizeLineName(raw: string): string | null {
 }
 
 function isAirportStation(station: Station): boolean {
-  return station.types.includes("Airport");
+  return stationHasAirportType(station);
 }
 
 function categoryFor(name: string): LineCategory {
@@ -88,9 +90,11 @@ function orderStationsAlongLine(stations: Station[]): Station[] {
 function dominantCountry(stations: Station[]): CountryCode {
   const counts = new Map<CountryCode, number>();
   for (const station of stations) {
+    if (!isCountryCode(station.country)) continue;
     counts.set(station.country, (counts.get(station.country) ?? 0) + 1);
   }
-  return [...counts.entries()].sort((a, b) => b[1] - a[1])[0][0];
+  const ranked = [...counts.entries()].sort((a, b) => b[1] - a[1]);
+  return ranked[0]?.[0] ?? "pt";
 }
 
 function buildTrainLines(): TrainLine[] {

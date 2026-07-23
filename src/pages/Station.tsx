@@ -38,6 +38,7 @@ import { NearestLongDistanceStations } from "@/components/NearestLongDistanceSta
 import { NearestStations } from "@/components/NearestStations";
 import { getBerrymetCityLink } from "@/lib/berrymetCity";
 import { buildHomePath } from "@/lib/homeRoute";
+import { homeScopeForStationCountry, isCountryCode } from "@/lib/countries";
 import { getStationSummary } from "@/lib/stationSummary";
 import { getStationMapImagePath } from "@/lib/stationMapImage";
 import {
@@ -46,16 +47,8 @@ import {
 } from "@/lib/stationImageAttribution";
 import { StationImageCredit } from "@/components/StationImageCredit";
 import { getStationLineLinks } from "@/lib/trainLines";
-
-const typeColors: Record<string, string> = {
-  Airport: "bg-sky-600 text-white",
-  "Alfa Pendular": "bg-primary text-primary-foreground",
-  "Intercidades": "bg-secondary text-secondary-foreground",
-  "Regional": "bg-accent text-accent-foreground",
-  "Urban": "bg-muted text-muted-foreground",
-  Metro: "bg-violet-600 text-white",
-  "Inactive / Historic": "bg-muted text-muted-foreground opacity-60",
-};
+import { TRAIN_TYPE_BADGE_CLASSES } from "@/lib/trainTypes";
+import { isAirportHubStation } from "@/lib/airportTypes";
 
 const Station = () => {
   const { t, locale } = useLocale();
@@ -106,7 +99,7 @@ const Station = () => {
           <div className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
             <div className="mb-3 sm:mb-4">
               <Link
-                to={buildHomePath(station.country)}
+                to={buildHomePath(homeScopeForStationCountry(station.country))}
                 className="inline-flex items-center gap-2 text-sm text-primary-foreground/80 transition-colors hover:text-primary-foreground"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
@@ -182,7 +175,7 @@ const Station = () => {
             {station.types.map((type) => (
               <span
                 key={type}
-                className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${typeColors[type] || "bg-muted text-muted-foreground"}`}
+                className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${TRAIN_TYPE_BADGE_CLASSES[type] || "bg-muted text-muted-foreground"}`}
               >
                 {type}
               </span>
@@ -203,7 +196,7 @@ const Station = () => {
           {!airportStation ? <StationDepartures stationName={station.name} /> : null}
           {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}
           <NearestLongDistanceStations station={station} />
-          {airportStation ? <AirportConnectionsPanel station={station} /> : null}
+          {isAirportHubStation(station) ? <AirportConnectionsPanel station={station} /> : null}
           <NearestStations station={station} />
 
           <div className="mb-6 flex flex-wrap gap-2 md:mb-10">
@@ -315,7 +308,10 @@ const Station = () => {
           </p>
         </main>
 
-        <SiteFooter showIntro={false} country={station.country} />
+        <SiteFooter
+          showIntro={false}
+          country={isCountryCode(station.country) ? station.country : undefined}
+        />
       </div>
     </>
   );

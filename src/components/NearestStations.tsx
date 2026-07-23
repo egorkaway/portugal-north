@@ -6,16 +6,9 @@ import { getNearestStations } from "@/lib/nearestStations";
 import { shouldShowNearestLongDistance } from "@/lib/nearestLongDistanceStations";
 import { getStationPath } from "@/lib/stationSlug";
 import { useLocale } from "@/i18n/LocaleProvider";
+import { TRAIN_TYPE_BADGE_CLASSES } from "@/lib/trainTypes";
 
-const typeColors: Record<string, string> = {
-  Airport: "bg-sky-600 text-white",
-  "Alfa Pendular": "bg-primary text-primary-foreground",
-  Intercidades: "bg-secondary text-secondary-foreground",
-  Regional: "bg-accent text-accent-foreground",
-  Urban: "bg-muted text-muted-foreground",
-  Metro: "bg-violet-600 text-white",
-  "Inactive / Historic": "bg-muted text-muted-foreground opacity-60",
-};
+const typeColors = TRAIN_TYPE_BADGE_CLASSES;
 
 export function NearestStations({ station }: { station: Station }) {
   const { t } = useLocale();

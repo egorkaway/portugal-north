@@ -7,8 +7,12 @@ export const BERRYMET_BASE_URL = "https://berrymet.com";
 /** Max distance from station to berrymet city centre for showing a weather link. */
 export const BERRYMET_CITY_MAX_DISTANCE_KM = 30;
 
-function berrymetCountryForStation(station: Pick<Station, "country">): BerrymetCity["country"] {
-  return station.country === "es" ? "ES" : "PT";
+function berrymetCountryForStation(
+  station: Pick<Station, "country">,
+): BerrymetCity["country"] | null {
+  if (station.country === "es") return "ES";
+  if (station.country === "pt") return "PT";
+  return null;
 }
 
 export type BerrymetCityLink = {
@@ -21,6 +25,7 @@ export function getBerrymetCityLink(
   station: Pick<Station, "name" | "country" | "lat" | "lng">,
 ): BerrymetCityLink | null {
   const country = berrymetCountryForStation(station);
+  if (!country) return null;
   let nearest: BerrymetCity | null = null;
   let nearestDistance = Infinity;
 

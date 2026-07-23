@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Fetch AviationStack departures for catalog airports, bake connections JSON,
- * and render static connection map PNGs.
+ * Fetch airport departures (AviationStack, with AirLabs Schedules fallback),
+ * bake connections JSON, and render static connection map PNGs.
  *
  * Periods: nine open dates per year (see airportConnectionPeriods.mjs). On each
  * boundary the previous live bake is frozen under public/.../periods/{YYYY-MM-DD}/
@@ -13,6 +13,12 @@
  *   node --import tsx scripts/collect-airport-connections.mjs --maps-only
  *   node --import tsx scripts/collect-airport-connections.mjs --period-status
  *   node --import tsx scripts/collect-airport-connections.mjs --as-of=2026-08-11
+ *   node --import tsx scripts/collect-airport-connections.mjs --backfill-europe-destinations
+ *
+ * After a successful bake (or with --backfill-europe-destinations), European
+ * destinations not in the PT/ES hub catalog are upserted into
+ * src/data/europe/airports.ts as "Airport Destination" stations (map only;
+ * no outbound collection).
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -32,6 +38,10 @@ import {
   liveManifestPath,
   loadPeriodsIndex,
 } from "./lib/airportConnectionPeriodStore.mjs";
+import {
+  collectDestinationIatasFromManifest,
+  upsertEuropeDestinationAirports,
+} from "./lib/europeDestinationAirports.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 loadEnvFile(join(root, ".env"));
@@ -39,8 +49,11 @@ loadEnvFile(join(root, ".env"));
 const {
   fetchDeparturesFromAirport,
   fetchAirportByIata,
-  isAviationStackMonthlyLimitError,
-} = await import("../server/lib/aviationStackClient.ts");
+  hasAirportFlightProvider,
+  isAirportFlightQuotaExhaustedError,
+  resetAirportFlightProvider,
+  availableAirportFlightProviders,
+} = await import("../server/lib/airportFlightProvider.ts");
 const {
   buildAirportConnections,
   mergeCatalogIntoCoordinates,
@@ -62,6 +75,7 @@ const delayMs = delayArg
   : 400;
 const mapsOnly = args.includes("--maps-only");
 const periodStatus = args.includes("--period-status");
+const backfillEuropeDestinations = args.includes("--backfill-europe-destinations");
 const asOfArg = args.find((arg) => arg.startsWith("--as-of"));
 const asOfDate = asOfArg
   ? asOfArg.includes("=")
@@ -111,7 +125,7 @@ function printPeriodStatus(rootDir, asOf) {
 }
 
 async function resolveMissingCoordinates(groupedIatas, coordinates, options = {}) {
-  const { delay = delayMs, onMonthlyLimit } = options;
+  const { delay = delayMs, onQuotaExhausted } = options;
   let updated = false;
   for (const iata of groupedIatas) {
     if (coordinates[iata]) continue;
@@ -129,8 +143,8 @@ async function resolveMissingCoordinates(groupedIatas, coordinates, options = {}
       updated = true;
       console.log(`Cached coords for ${iata}`);
     } catch (error) {
-      if (isAviationStackMonthlyLimitError(error)) {
-        onMonthlyLimit?.(error);
+      if (isAirportFlightQuotaExhaustedError(error)) {
+        onQuotaExhausted?.(error);
         return true;
       }
       const message = error instanceof Error ? error.message : String(error);
@@ -152,6 +166,7 @@ export async function collectAirportConnections(options = {}) {
     basemapMode: basemapMode = defaultBasemapMode,
     asOf = asOfDate,
     periodStatusOnly = periodStatus,
+    backfillEurope = backfillEuropeDestinations,
   } = options;
 
   if (periodStatusOnly) {
@@ -161,6 +176,29 @@ export async function collectAirportConnections(options = {}) {
 
   const mapsOutDir = liveMapsDir(rootDir);
   const outJsonPath = liveManifestPath(rootDir);
+
+  if (backfillEurope) {
+    await ensureAirportCoordinateCache(cachePath);
+    const existing = loadExistingManifest(rootDir);
+    const destIatas = collectDestinationIatasFromManifest(existing);
+    const result = upsertEuropeDestinationAirports(
+      rootDir,
+      destIatas,
+      loadAirportCoordinateCache(cachePath),
+      { dryRun: isDryRun },
+    );
+    console.log(
+      `${isDryRun ? "[dry-run] " : ""}Backfilled ${result.count} Europe destination airport(s) from live connections (${destIatas.size} unique destinations)`,
+    );
+    return {
+      ok: result.count,
+      failed: 0,
+      skipped: false,
+      backfillEurope: true,
+      europeDestinationCount: result.count,
+      europeDestinationIatas: result.iatas,
+    };
+  }
 
   if (renderMapsOnly) {
     const existing = loadExistingManifest(rootDir);
@@ -202,10 +240,17 @@ export async function collectAirportConnections(options = {}) {
     return { ok, failed, skipped: false };
   }
 
-  if (!process.env.AVIATIONSTACK_API_KEY?.trim()) {
-    console.warn("AVIATIONSTACK_API_KEY not set — skipping airport connections collection.");
+  if (!hasAirportFlightProvider()) {
+    console.warn(
+      "AVIATIONSTACK_API_KEY / AIRLABS_API_KEY not set — skipping airport connections collection.",
+    );
     return { ok: 0, failed: 0, skipped: true };
   }
+
+  resetAirportFlightProvider();
+  console.log(
+    `Airport flight providers: ${availableAirportFlightProviders().join(" → ")}`,
+  );
 
   const roll = ensureAirportConnectionPeriodRoll({
     rootDir,
@@ -238,17 +283,18 @@ export async function collectAirportConnections(options = {}) {
 
   let ok = 0;
   let failed = 0;
-  let monthlyLimitReached = false;
+  let quotaExhausted = false;
+  let lastProvider = null;
 
-  const stopForMonthlyLimit = (error) => {
-    monthlyLimitReached = true;
+  const stopForQuota = (error) => {
+    quotaExhausted = true;
     const message = error instanceof Error ? error.message : String(error);
-    console.error(`AviationStack monthly limit reached: ${message}`);
-    console.error("Stopping flights collection — no further AviationStack API calls this run.");
+    console.error(`Flight API monthly limit reached: ${message}`);
+    console.error("Stopping flights collection — no further departure API calls this run.");
   };
 
   for (const airport of catalog) {
-    if (monthlyLimitReached) break;
+    if (quotaExhausted) break;
 
     const label = `${airport.stationName} (${airport.iata})`;
     if (isDryRun) {
@@ -258,7 +304,8 @@ export async function collectAirportConnections(options = {}) {
     }
 
     try {
-      const flights = await fetchDeparturesFromAirport(airport.iata, 100);
+      const { flights, provider } = await fetchDeparturesFromAirport(airport.iata, 100);
+      lastProvider = provider;
       const groupedIatas = [
         ...new Set(
           flights
@@ -266,12 +313,12 @@ export async function collectAirportConnections(options = {}) {
             .filter((iata) => iata && iata !== airport.iata),
         ),
       ];
-      const hitMonthlyLimit = await resolveMissingCoordinates(
+      const hitQuota = await resolveMissingCoordinates(
         groupedIatas.filter((iata) => !coordinates[iata]),
         coordinates,
-        { delay, onMonthlyLimit: stopForMonthlyLimit },
+        { delay, onQuotaExhausted: stopForQuota },
       );
-      if (hitMonthlyLimit) {
+      if (hitQuota) {
         break;
       }
       coordinates = mergeCatalogIntoCoordinates(catalog, loadAirportCoordinateCache(cachePath));
@@ -289,20 +336,22 @@ export async function collectAirportConnections(options = {}) {
       airports[entry.iata] = entry;
       ok += 1;
       console.log(
-        `OK ${label}: ${entry.connections.length} destinations from ${entry.sampledFlights} sampled flights (${png.basemapId})`,
+        `OK ${label}: ${entry.connections.length} destinations from ${entry.sampledFlights} sampled flights via ${provider} (${png.basemapId})`,
       );
     } catch (error) {
       failed += 1;
       const message = error instanceof Error ? error.message : String(error);
       console.error(`FAIL ${label}: ${message}`);
-      if (isAviationStackMonthlyLimitError(error)) {
-        stopForMonthlyLimit(error);
+      if (isAirportFlightQuotaExhaustedError(error)) {
+        stopForQuota(error);
         break;
       }
     }
 
     if (delay > 0) await sleep(delay);
   }
+
+  let europeDestinations = { count: 0, iatas: [] };
 
   if (!isDryRun && (ok > 0 || roll.rolled)) {
     const manifest = {
@@ -312,21 +361,38 @@ export async function collectAirportConnections(options = {}) {
       periodId: period.id,
       periodStart: period.start,
       periodEndExclusive: period.endExclusive,
+      flightProvider: lastProvider,
       airports,
     };
     mkdirSync(dirname(outJsonPath), { recursive: true });
     writeFileSync(outJsonPath, `${JSON.stringify(manifest, null, 2)}\n`);
     console.log(`Wrote ${outJsonPath} (period ${period.id})`);
+
+    // Upsert Europe destination stations from this run's (and prior live) destinations.
+    // Hubs only are in loadAirportCatalog — destinations never get outbound collection.
+    const destIatas = collectDestinationIatasFromManifest(manifest);
+    europeDestinations = upsertEuropeDestinationAirports(
+      rootDir,
+      destIatas,
+      loadAirportCoordinateCache(cachePath),
+      { dryRun: isDryRun },
+    );
+    console.log(
+      `Europe destination airports: ${europeDestinations.count} (from ${destIatas.size} unique destinations)`,
+    );
   }
 
   return {
     ok,
     failed,
     skipped: false,
-    monthlyLimitReached,
+    monthlyLimitReached: quotaExhausted,
+    quotaExhausted,
+    lastProvider,
     periodId: period.id,
     rolled: roll.rolled,
     frozen: roll.frozen,
+    europeDestinationCount: europeDestinations.count,
   };
 }
 
@@ -336,7 +402,7 @@ if (isMain) {
   collectAirportConnections().then(({ ok, failed, skipped, monthlyLimitReached, periodStatus: statusOnly }) => {
     if (statusOnly) process.exit(0);
     if (skipped) process.exit(0);
-    const limitNote = monthlyLimitReached ? " (stopped: AviationStack monthly limit)" : "";
+    const limitNote = monthlyLimitReached ? " (stopped: flight API monthly limit)" : "";
     console.log(`Done: ${ok} airport(s) updated, ${failed} failed${limitNote}`);
     process.exit(failed > 0 && ok === 0 ? 1 : 0);
   });

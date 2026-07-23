@@ -27,6 +27,10 @@ import { buildHomePath, isHomePath, parseHomeCanonicalPath } from "@/lib/homeRou
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
 import { stationMatchesSearch } from "@/lib/searchText";
 import { sortTrainTypes } from "@/lib/trainTypes";
+import {
+  normalizeStationTypeForFilter,
+  stationMatchesTypeFilter,
+} from "@/lib/airportTypes";
 import { paginate } from "@/lib/paginate";
 import NotFound from "@/pages/NotFound";
 
@@ -52,7 +56,12 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
     [deferredScope],
   );
   const allTypes = useMemo(
-    () => sortTrainTypes([...new Set(countryStations.flatMap((s) => s.types))]),
+    () =>
+      sortTrainTypes([
+        ...new Set(
+          countryStations.flatMap((s) => s.types.map(normalizeStationTypeForFilter)),
+        ),
+      ]),
     [countryStations],
   );
   const [activeFilter, setActiveFilter] = useState<string | null>(null);
@@ -96,7 +105,7 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
   const filtered = useMemo(() => {
     const matches = countryStations.filter((s) => {
       const matchesSearch = stationMatchesSearch(s, searchQuery);
-      const matchesFilter = !activeFilter || s.types.includes(activeFilter);
+      const matchesFilter = stationMatchesTypeFilter(s, activeFilter);
       const v = votes[s.name];
       const matchesVote =
         !voteFilter ||

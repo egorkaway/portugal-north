@@ -2,6 +2,8 @@ import { metroLisboaStations } from "./metroLisboaStations";
 import { metroPortoStations } from "./metroPortoStations";
 export type { Station, StationData } from "./stationTypes";
 import type { Station, StationData } from "./stationTypes";
+import { stationCountryDisplayName } from "../lib/countries";
+import { stationHasAirportType } from "../lib/airportTypes";
 
 const cpStations: StationData[] = [
   { name: "Pombal", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 39.9153, lng: -8.6283 },
@@ -419,8 +421,8 @@ export const portugalStations: Station[] = [
 export const stations = portugalStations;
 
 export function getAppleMapsUrl(station: Station): string {
-  const countryName = station.country === "es" ? "Spain" : "Portugal";
-  const kind = station.types.includes("Airport") ? "airport" : "station";
+  const countryName = stationCountryDisplayName(station.country);
+  const kind = stationHasAirportType(station) ? "airport" : "station";
   return `https://maps.apple.com/?q=${encodeURIComponent(station.name + " " + kind + " " + countryName)}&ll=${station.lat},${station.lng}&z=15`;
 }
 
@@ -429,6 +431,6 @@ export function getOSMUrl(station: Station): string {
 }
 
 export function getBookingSearchUrl(station: Station): string {
-  const countryName = station.country === "es" ? "Spain" : "Portugal";
+  const countryName = stationCountryDisplayName(station.country);
   return `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(station.name + ", " + countryName)}&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price`;
 }

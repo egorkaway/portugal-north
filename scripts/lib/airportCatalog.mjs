@@ -26,6 +26,12 @@ function parseAirportStations(ts, countryCode) {
   );
 }
 
+/**
+ * Iberian hub airports only (Portugal + Spain catalog). Used for departure
+ * sampling and connection maps. Europe destination airports in
+ * `src/data/europe/airports.ts` are intentionally excluded — we never collect
+ * outbound flights from them.
+ */
 export function loadAirportCatalog(root) {
   const read = (rel) => readFileSync(join(root, rel), "utf8");
   return [

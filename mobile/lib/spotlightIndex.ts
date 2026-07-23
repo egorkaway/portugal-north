@@ -15,7 +15,17 @@ const INDEX_PAYLOAD_VERSION = '1';
 const INDEX_CHUNK_SIZE = 80;
 
 function countryLabel(country: Station['country']): string {
-  return country === 'es' ? 'Spain' : 'Portugal';
+  if (country === 'es') return 'Spain';
+  if (country === 'pt') return 'Portugal';
+  const iso = String(country).trim().toUpperCase();
+  if (/^[A-Z]{2}$/.test(iso)) {
+    try {
+      return new Intl.DisplayNames(['en'], { type: 'region' }).of(iso) ?? String(country);
+    } catch {
+      return String(country);
+    }
+  }
+  return String(country);
 }
 
 export function buildStationSpotlightItem(station: Station): CoreSpotlightItem {
@@ -32,9 +42,14 @@ export function buildStationSpotlightItem(station: Station): CoreSpotlightItem {
     ...station.lines,
     ...station.types,
     countryLabel(station.country),
-    station.country === 'pt' ? 'Portugal' : 'España',
+    station.country === 'pt'
+      ? 'Portugal'
+      : station.country === 'es'
+        ? 'España'
+        : countryLabel(station.country),
     'train',
     'station',
+    'airport',
     'VeryStays',
   ].filter(Boolean);
 

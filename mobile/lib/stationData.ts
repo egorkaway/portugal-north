@@ -13,7 +13,8 @@ export type Station = {
   types: string[];
   lat: number;
   lng: number;
-  country: CountryCode;
+  /** Iberian hubs: pt/es. Europe destinations: ISO 3166-1 alpha-2 lowercase. */
+  country: CountryCode | string;
 };
 
 export type Hotel = {
@@ -80,10 +81,29 @@ export function getCpCode(stationName: string): string | null {
 }
 
 export function getBookingSearchUrl(station: Station): string {
-  const countryName = station.country === 'es' ? 'Spain' : 'Portugal';
+  const countryName = stationCountryDisplayName(station.country);
   return `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(station.name + ', ' + countryName)}&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price`;
 }
 
 export function isAirportStation(station: Station): boolean {
-  return station.types.includes('Airport');
+  return stationHasAirportType(station);
+}
+
+function stationCountryDisplayName(country: string): string {
+  if (country === 'es') return 'Spain';
+  if (country === 'pt') return 'Portugal';
+  const iso = country.trim().toUpperCase();
+  if (/^[A-Z]{2}$/.test(iso)) {
+    try {
+      const name = new Intl.DisplayNames(['en'], { type: 'region' }).of(iso);
+      if (name) return name;
+    } catch {
+      // fall through
+    }
+  }
+  return country;
+}
+
+function stationHasAirportType(station: { types: string[] }): boolean {
+  return station.types.includes('Airport') || station.types.includes('Airport Destination');
 }

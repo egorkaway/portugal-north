@@ -89,3 +89,24 @@ export function footerCountryFromHomeScope(scope: HomeScope): CountryCode {
 export function countrySearchLabel(country: CountryCode): string {
   return country === "es" ? "Spain" : "Portugal";
 }
+
+/** Home path scope for a station (Europe destinations fall back to `/all`). */
+export function homeScopeForStationCountry(country: string): HomeScope {
+  return isCountryCode(country) ? country : "all";
+}
+
+/** Display name for booking/maps queries (ISO codes → English region name). */
+export function stationCountryDisplayName(country: string, locale = "en"): string {
+  if (country === "pt") return "Portugal";
+  if (country === "es") return "Spain";
+  const iso = country.trim().toUpperCase();
+  if (/^[A-Z]{2}$/.test(iso)) {
+    try {
+      const name = new Intl.DisplayNames([locale], { type: "region" }).of(iso);
+      if (name) return name;
+    } catch {
+      // fall through
+    }
+  }
+  return country;
+}

@@ -7,7 +7,7 @@ import { createTranslator } from "@/i18n";
 import { getStationMetaDescription, getStationPageTitle } from "./stationMeta";
 import { attributionForImageUrl, siteLogoAttribution } from "./imageAttribution";
 import type { HomeScope } from "./countries";
-import { DEFAULT_HOME_SCOPE } from "./countries";
+import { DEFAULT_HOME_SCOPE, homeScopeForStationCountry } from "./countries";
 import { buildHomePath } from "./homeRoute";
 import { getLinePath, type TrainLine } from "./trainLines";
 
@@ -132,7 +132,7 @@ export function buildStationStructuredData(options: {
 
   const graph: JsonLd[] = [
     buildBreadcrumbList([
-      { name: "Home", path: buildHomePath(station.country) },
+      { name: "Home", path: buildHomePath(homeScopeForStationCountry(station.country)) },
       { name: station.name, path },
     ]),
     {

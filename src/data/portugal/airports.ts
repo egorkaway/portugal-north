@@ -1,6 +1,9 @@
 import type { Station } from "../stationTypes";
 
-/** Main international airports in mainland Portugal (shown to end users). */
+/** Main international airports in mainland Portugal (shown to end users).
+ *  Hub airports: outbound connections are sampled from these. European
+ *  destinations reached from hubs live in `src/data/europe/airports.ts`.
+ */
 export const portugalAirports: Station[] = [
   {
     name: "Lisbon Airport (LIS)",

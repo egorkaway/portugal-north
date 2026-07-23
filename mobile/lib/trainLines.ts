@@ -48,7 +48,9 @@ function normalizeLineName(raw: string): string | null {
 }
 
 function isAirportStation(station: Station): boolean {
-  return station.types.includes('Airport');
+  return (
+    station.types.includes('Airport') || station.types.includes('Airport Destination')
+  );
 }
 
 function categoryFor(name: string): LineCategory {
@@ -74,9 +76,10 @@ function orderStationsAlongLine(stations: Station[]): Station[] {
 function dominantCountry(stations: Station[]): CountryCode {
   const counts = new Map<CountryCode, number>();
   for (const station of stations) {
+    if (station.country !== 'pt' && station.country !== 'es') continue;
     counts.set(station.country, (counts.get(station.country) ?? 0) + 1);
   }
-  return [...counts.entries()].sort((a, b) => b[1] - a[1])[0][0];
+  return [...counts.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? 'pt';
 }
 
 function buildTrainLines(): TrainLine[] {

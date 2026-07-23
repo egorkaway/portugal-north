@@ -1,6 +1,7 @@
 import { portugalStations, type Station } from "@/data/stations";
 import { distanceKm } from "@/lib/geo";
 import { sortStationsByDistance } from "@/lib/rankStations";
+import { isAirportDestinationStation, isAirportHubStation } from "@/lib/airportTypes";
 
 const LONG_DISTANCE_TYPES = new Set(["Alfa Pendular", "Intercidades"]);
 
@@ -10,7 +11,8 @@ export function hasLongDistanceService(station: Station): boolean {
 
 /** True when the stop has no AP/IC and is not a historic-only entry. */
 export function shouldShowNearestLongDistance(station: Station): boolean {
-  if (station.types.includes("Airport")) {
+  if (isAirportDestinationStation(station)) return false;
+  if (isAirportHubStation(station)) {
     return station.country === "pt";
   }
   if (hasLongDistanceService(station)) return false;

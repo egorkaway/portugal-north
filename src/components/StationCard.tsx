@@ -14,16 +14,10 @@ import { getStationPath } from "@/lib/stationSlug";
 import { VoteButtons } from "@/components/VoteButtons";
 import { VisitedButton } from "@/components/VisitedButton";
 import { useLocale } from "@/i18n/LocaleProvider";
+import { stationHasAirportType } from "@/lib/airportTypes";
+import { TRAIN_TYPE_BADGE_CLASSES } from "@/lib/trainTypes";
 
-const typeColors: Record<string, string> = {
-  Airport: "bg-sky-600 text-white",
-  "Alfa Pendular": "bg-primary text-primary-foreground",
-  "Intercidades": "bg-secondary text-secondary-foreground",
-  "Regional": "bg-accent text-accent-foreground",
-  "Urban": "bg-muted text-muted-foreground",
-  Metro: "bg-violet-600 text-white",
-  "Inactive / Historic": "bg-muted text-muted-foreground opacity-60",
-};
+const typeColors = TRAIN_TYPE_BADGE_CLASSES;
 
 function StationCardWithHooks({
   station,
@@ -90,7 +84,7 @@ const StationCardView = memo(function StationCardView({
   const hotels = getHotelsForStation(station.name);
   const imageUrl = getStationImageUrl(station.name);
   const stationPath = getStationPath(station);
-  const isAirport = station.types.includes("Airport");
+  const isAirport = stationHasAirportType(station);
   const LineIcon = isAirport ? Plane : Train;
 
   return (

@@ -17,6 +17,7 @@ export const TRAIN_TYPE_ORDER = [
   'Urban',
   'Metro',
   'Airport',
+  'Airport Destination',
   'Inactive / Historic',
 ] as const;
 

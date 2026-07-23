@@ -1,6 +1,7 @@
 /** Canonical order for filter chips and badges. */
 export const TRAIN_TYPE_ORDER = [
   "Airport",
+  "Airport Destination",
   "Alfa Pendular",
   "Intercidades",
   "Regional",
@@ -11,6 +12,7 @@ export const TRAIN_TYPE_ORDER = [
 
 const TRAIN_TYPE_ABBREV: Record<string, string> = {
   Airport: "Airport",
+  "Airport Destination": "Airport",
   "Alfa Pendular": "AP",
   Intercidades: "IC",
   Regional: "R",
@@ -26,6 +28,7 @@ export function getTrainTypeAbbrev(type: string): string {
 /** Badge colour classes per service type, shared across station and line pages. */
 export const TRAIN_TYPE_BADGE_CLASSES: Record<string, string> = {
   Airport: "bg-sky-600 text-white",
+  "Airport Destination": "bg-sky-500 text-white",
   "Alfa Pendular": "bg-primary text-primary-foreground",
   Intercidades: "bg-secondary text-secondary-foreground",
   Regional: "bg-accent text-accent-foreground",

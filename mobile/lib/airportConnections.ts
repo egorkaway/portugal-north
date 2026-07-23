@@ -38,7 +38,12 @@ export const bakedAirportConnections = airportConnections as AirportConnectionsM
 const airportSlugByIata = new Map<string, string>();
 
 for (const station of allStations) {
-  if (!station.types.includes('Airport')) continue;
+  if (
+    !station.types.includes('Airport') &&
+    !station.types.includes('Airport Destination')
+  ) {
+    continue;
+  }
   const fromLine = station.lines[0]?.trim().toUpperCase();
   const iata =
     (fromLine && /^[A-Z]{3}$/.test(fromLine) ? fromLine : null) ??
