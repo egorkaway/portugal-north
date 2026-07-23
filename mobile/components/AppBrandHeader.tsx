@@ -10,6 +10,8 @@ type Props = {
 
 export function AppBrandHeader({ title, subtitle }: Props) {
   const { t } = useLocale();
+  const brandName = title ?? t('brand.name');
+  const veryMatch = /^(Very)(.*)$/.exec(brandName);
 
   return (
     <View style={styles.row}>
@@ -22,8 +24,24 @@ export function AppBrandHeader({ title, subtitle }: Props) {
         />
       </View>
       <View style={styles.copy} pointerEvents="none">
-        <Text style={styles.title}>{title ?? t('brand.name')}</Text>
-        <View style={styles.accentBar} />
+        {veryMatch ? (
+          <View
+            style={styles.wordmark}
+            accessibilityRole="header"
+            accessibilityLabel={brandName}
+          >
+            <View style={styles.veryGroup}>
+              <Text style={styles.title}>{veryMatch[1]}</Text>
+              <View style={styles.accentBar} />
+            </View>
+            <Text style={styles.title}>{veryMatch[2]}</Text>
+          </View>
+        ) : (
+          <>
+            <Text style={styles.title}>{brandName}</Text>
+            <View style={[styles.accentBar, styles.accentBarFallback]} />
+          </>
+        )}
         <Text style={styles.subtitle}>{subtitle ?? t('brand.subtitle')}</Text>
       </View>
       {/* Balance the left icon so title + subtitle stay visually centered */}
@@ -55,6 +73,13 @@ const styles = StyleSheet.create({
     gap: 2,
     alignItems: 'center',
   },
+  wordmark: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+  },
+  veryGroup: {
+    alignItems: 'stretch',
+  },
   title: {
     fontSize: 18,
     lineHeight: 22,
@@ -63,10 +88,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   accentBar: {
-    width: 36,
     height: 2,
     borderRadius: 999,
     backgroundColor: brandTheme.green,
+    marginTop: 2,
+  },
+  accentBarFallback: {
+    width: 36,
+    alignSelf: 'center',
   },
   subtitle: {
     fontSize: 12,
