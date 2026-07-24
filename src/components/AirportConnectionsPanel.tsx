@@ -31,6 +31,7 @@ export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProp
   const slug = stationToSlug(station.name);
   const [entry, setEntry] = useState<AirportConnectionsEntry | null>(null);
   const [loaded, setLoaded] = useState(false);
+  const [mapMissing, setMapMissing] = useState(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -71,43 +72,48 @@ export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProp
         })}
       </p>
 
-      <div className="max-w-md overflow-hidden rounded-lg border border-border bg-muted">
-        <img
-          src={mapPath}
-          alt={t("station.airportConnectionsMapAlt", { name: station.name })}
-          width={1080}
-          height={1080}
-          className="aspect-square w-full object-cover"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-      <div className="mt-3 max-w-md space-y-2 text-xs text-muted-foreground">
-        <p className="font-medium text-foreground">{t("station.airportConnectionsLegend")}</p>
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-          {CONNECTION_LEGEND.map((tier) => (
-            <span key={tier.key} className="inline-flex items-center gap-2">
-              <span
-                className="inline-block w-8 rounded-full"
-                style={{
-                  backgroundColor: getFlightLineColor(tier.minFlights),
-                  height: `${getFlightLineWeight(tier.minFlights)}px`,
-                }}
-                aria-hidden="true"
-              />
-              {t(tier.labelKey)}
-            </span>
-          ))}
-        </div>
-      </div>
-      <a
-        href={mapPath}
-        download={`${entry.slug}-connections.png`}
-        className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-      >
-        <Download className="h-4 w-4" aria-hidden="true" />
-        {t("station.downloadConnectionsMap")}
-      </a>
+      {!mapMissing ? (
+        <>
+          <div className="max-w-md overflow-hidden rounded-lg border border-border bg-muted">
+            <img
+              src={mapPath}
+              alt={t("station.airportConnectionsMapAlt", { name: station.name })}
+              width={1080}
+              height={1080}
+              className="aspect-square w-full object-cover"
+              loading="lazy"
+              decoding="async"
+              onError={() => setMapMissing(true)}
+            />
+          </div>
+          <div className="mt-3 max-w-md space-y-2 text-xs text-muted-foreground">
+            <p className="font-medium text-foreground">{t("station.airportConnectionsLegend")}</p>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+              {CONNECTION_LEGEND.map((tier) => (
+                <span key={tier.key} className="inline-flex items-center gap-2">
+                  <span
+                    className="inline-block w-8 rounded-full"
+                    style={{
+                      backgroundColor: getFlightLineColor(tier.minFlights),
+                      height: `${getFlightLineWeight(tier.minFlights)}px`,
+                    }}
+                    aria-hidden="true"
+                  />
+                  {t(tier.labelKey)}
+                </span>
+              ))}
+            </div>
+          </div>
+          <a
+            href={mapPath}
+            download={`${entry.slug}-connections.png`}
+            className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
+          >
+            <Download className="h-4 w-4" aria-hidden="true" />
+            {t("station.downloadConnectionsMap")}
+          </a>
+        </>
+      ) : null}
 
       <ol className="mt-6 space-y-3">
         {entry.topDestinations.map((destination, index) => {

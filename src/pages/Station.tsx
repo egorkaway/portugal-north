@@ -1,4 +1,4 @@
-import { ArrowLeft, BedDouble, CloudSun, MapPin, Train, Plane, ExternalLink, Navigation, History, Download } from "lucide-react";
+import { ArrowLeft, BedDouble, CloudSun, MapPin, Train, Plane, ExternalLink, Navigation, History } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import {
   getAppleMapsUrl,
@@ -36,11 +36,11 @@ import { StationYesimPromo } from "@/components/StationYesimPromo";
 import { AirportConnectionsPanel } from "@/components/AirportConnectionsPanel";
 import { NearestLongDistanceStations } from "@/components/NearestLongDistanceStations";
 import { NearestStations } from "@/components/NearestStations";
+import { StationAreaMap } from "@/components/StationAreaMap";
 import { getBerrymetCityLink } from "@/lib/berrymetCity";
 import { buildHomePath } from "@/lib/homeRoute";
 import { homeScopeForStationCountry, isCountryCode } from "@/lib/countries";
 import { getStationSummary } from "@/lib/stationSummary";
-import { getStationMapImagePath } from "@/lib/stationMapImage";
 import {
   getStationPhotoAlt,
   shouldShowStationImageCredit,
@@ -277,30 +277,7 @@ const Station = () => {
 
           {showYesimPromo ? <StationYesimPromo /> : null}
 
-          <section className="mt-8 md:mt-10" aria-labelledby="area-map-heading">
-            <h2 id="area-map-heading" className="sr-only">
-              {t("station.downloadAreaMap")}
-            </h2>
-            <div className="max-w-md overflow-hidden rounded-lg border border-border bg-muted">
-              <img
-                src={getStationMapImagePath(station.name)}
-                alt={stationSummary ?? t("station.areaMapAlt", { name: station.name })}
-                width={1080}
-                height={1080}
-                className="aspect-square w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <a
-              href={getStationMapImagePath(station.name)}
-              download={`${slug}.png`}
-              className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-primary transition-colors hover:text-primary/80"
-            >
-              <Download className="h-4 w-4" aria-hidden="true" />
-              {t("station.downloadAreaMap")}
-            </a>
-          </section>
+          <StationAreaMap station={station} summary={stationSummary} />
 
           <p className="mt-5 flex items-center gap-1 text-xs text-muted-foreground md:mt-8">
             <Navigation className="h-3 w-3" aria-hidden="true" />

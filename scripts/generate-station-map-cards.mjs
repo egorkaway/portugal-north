@@ -8,14 +8,17 @@
  *   npm run maps:stations -- --basemap=carto-voyager   # same style for all
  *   npm run maps:stations -- --basemap=random          # default: random per station
  *   npm run maps:stations -- --region=lisbon           # Lisbon metro + LIS airport
+ *   npm run maps:stations -- --missing-only            # skip stations that already have a PNG
+ *   npm run maps:stations -- --skip-europe             # skip Europe destination airports
  */
-import { mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { parseAllStationsFromRepo } from "./lib/stationImageFetch.mjs";
+import { parseAllStationsFromRepo, parseStations } from "./lib/stationImageFetch.mjs";
 import { renderStationMapCard, stationToSlug } from "./lib/stationMapCard.mjs";
 import { BASEMAP_IDS, isBasemapId } from "./lib/mapBasemaps.mjs";
 import { matchesMapRegion } from "./lib/mapRegions.mjs";
+import { writeStationMapAvailability } from "./write-station-map-availability.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, "public/maps/stations");
@@ -23,6 +26,8 @@ const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").repla
 
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
+const missingOnly = args.includes("--missing-only");
+const skipEurope = args.includes("--skip-europe");
 const limitArg = args.find((a) => a.startsWith("--limit"));
 const limit = limitArg
   ? Number.parseInt(limitArg.split("=")[1] ?? args[args.indexOf("--limit") + 1], 10)
@@ -54,8 +59,14 @@ if (basemapMode !== "random" && !isBasemapId(basemapMode)) {
 }
 
 const stations = parseAllStationsFromRepo(root);
+const europeNames = new Set(
+  parseStations(readFileSync(join(root, "src/data/europe/airports.ts"), "utf8")).map((s) => s.name),
+);
 
 let targets = stations.filter((s) => Number.isFinite(s.lat) && Number.isFinite(s.lng));
+if (skipEurope) {
+  targets = targets.filter((s) => !europeNames.has(s.name));
+}
 if (regionFilter) {
   targets = targets.filter((s) => matchesMapRegion(s, regionFilter.toLowerCase()));
 }
@@ -68,11 +79,22 @@ if (stationFilter) {
       stationToSlug(s.name).includes(needle.replace(/\s+/g, "-")),
   );
 }
+if (missingOnly) {
+  targets = targets.filter((s) => !existsSync(join(outDir, `${stationToSlug(s.name)}.png`)));
+}
 if (Number.isFinite(limit) && limit > 0) {
   targets = targets.slice(0, limit);
 }
 
 if (!targets.length) {
+  if (missingOnly) {
+    console.log("No missing station maps.");
+    if (!dryRun) {
+      const availability = writeStationMapAvailability(root);
+      console.log(`Availability index: ${availability.count} slug(s)`);
+    }
+    process.exit(0);
+  }
   console.error("No stations matched.");
   process.exit(1);
 }
@@ -117,7 +139,9 @@ async function renderOne(station) {
 
 let ok = 0;
 let failed = 0;
-const isFullRun = !stationFilter && !regionFilter && !Number.isFinite(limit);
+// Only prune orphan PNGs on a true full regenerate — never when filtering or backfilling.
+const isFullRun =
+  !stationFilter && !regionFilter && !Number.isFinite(limit) && !missingOnly && !skipEurope;
 
 function loadExistingManifest() {
   try {
@@ -209,6 +233,9 @@ if (!dryRun) {
       2,
     ),
   );
+
+  const availability = writeStationMapAvailability(root);
+  console.log(`Availability index: ${availability.count} slug(s)`);
 }
 
 console.log(

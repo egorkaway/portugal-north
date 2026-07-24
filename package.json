@@ -10,6 +10,7 @@
     "icons": "node scripts/generate-icons.mjs",
     "social:stations": "node scripts/generate-social-station-cards.mjs",
     "maps:stations": "node scripts/generate-station-map-cards.mjs",
+    "maps:stations:availability": "node scripts/write-station-map-availability.mjs",
     "maps:overview": "node scripts/generate-portugal-overview-maps.mjs",
     "maps:airport-connections": "node --import tsx scripts/collect-airport-connections.mjs",
     "berrymet:sync": "node scripts/sync-berrymet-cities.mjs",
