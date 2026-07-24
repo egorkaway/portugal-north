@@ -7,7 +7,9 @@
  *   npm run stats:departures -- --station "Porto-Campanhã"
  *   npm run stats:departures -- --dry-run
  *
- * Also collects airport flight connections and syncs mobile/data (npm run sync:data).
+ * Also collects airport flight connections, logs temperatures (Open-Meteo) only for
+ * stations that successfully returned departure data (after departures),
+ * and syncs mobile/data (npm run sync:data).
  * Stations are shuffled each run so partial runs (--limit or timeouts) spread across the network.
  * Stops early after 3 consecutive API failures (e.g. CP outage or rate limit).
  */
@@ -18,6 +20,7 @@ import { loadEnvFile, parseAllStationsFromRepo } from "./lib/stationImageFetch.m
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const statsPath = join(root, "data/departure-stats.json");
+const temperatureLogPath = join(root, "data/station-temperature-log.ndjson");
 
 loadEnvFile(join(root, ".env"));
 
@@ -134,6 +137,8 @@ let ok = 0;
 let failed = 0;
 let consecutiveFailures = 0;
 let stoppedEarly = false;
+/** Stations with a successful departure sample this run — weather is logged only for these. */
+const sampledStations = [];
 
 for (const { station, cpCode } of targets) {
   const label = `${station.name} (${cpCode})`;
@@ -151,6 +156,7 @@ for (const { station, cpCode } of targets) {
       timetable.timetableDate,
     );
     mergeStationSnapshot(store, station.name, cpCode, snapshot);
+    sampledStations.push(station);
     ok += 1;
     consecutiveFailures = 0;
     console.log(
@@ -178,6 +184,31 @@ for (const { station, cpCode } of targets) {
 
 if (!dryRun) {
   saveStore(store);
+
+  if (sampledStations.length > 0) {
+    try {
+      const { collectAndAppendStationTemperatures } = await import(
+        "../server/lib/stationTemperatureLog.ts"
+      );
+      console.log(
+        `Collecting temperatures for ${sampledStations.length} station(s) with departure data via Open-Meteo…`,
+      );
+      const weather = await collectAndAppendStationTemperatures({
+        stations: sampledStations,
+        logPath: temperatureLogPath,
+        delayMs: 150,
+      });
+      console.log(
+        `Temperatures: ${weather.ok} logged, ${weather.failed} missed → ${temperatureLogPath}`,
+      );
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      console.error(`Temperature log skipped: ${message}`);
+    }
+  } else {
+    console.log("No successful departure samples — skipping temperature log.");
+  }
+
   const { collectAirportConnections } = await import("./collect-airport-connections.mjs");
   await collectAirportConnections({ rootDir: root, delayMs });
 
@@ -211,5 +242,5 @@ const earlyNote = stoppedEarly ? `, ${skipped} skipped after ${CONSECUTIVE_FAILU
 console.log(
   dryRun
     ? `Dry run: ${ok} station(s) planned (run #${store.runCount} not saved)`
-    : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed${earlyNote} → ${statsPath} (+ reliability scores, airport connections, mobile data)`,
+    : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed${earlyNote} → ${statsPath} (+ reliability scores, temperatures, airport connections, mobile data)`,
 );

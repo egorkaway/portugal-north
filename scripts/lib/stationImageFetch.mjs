@@ -45,6 +45,7 @@ export function parseAllStationsFromRepo(root) {
     ...parseStations(read("src/data/portugal/airports.ts")).map((station) => ({ ...station, country: "pt" })),
     ...parseStations(read("src/data/spain/stations.ts")).map((station) => ({ ...station, country: "es" })),
     ...parseStations(read("src/data/spain/airports.ts")).map((station) => ({ ...station, country: "es" })),
+    ...parseStations(read("src/data/europe/airports.ts")),
     ...parseStations(read("src/data/metroPortoStations.ts")).map((station) => ({ ...station, country: "pt" })),
     ...parseStations(read("src/data/metroLisboaStations.ts")).map((station) => ({ ...station, country: "pt" })),
   ];

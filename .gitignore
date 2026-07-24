@@ -29,3 +29,6 @@ dist-ssr
 *.sw?
 .vercel
 .env*
+
+# Growing ops logs (not published to the site/app)
+data/station-temperature-log.ndjson
