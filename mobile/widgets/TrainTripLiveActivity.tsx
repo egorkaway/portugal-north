@@ -1,11 +1,8 @@
 import { Image, Text, VStack } from '@expo/ui/swift-ui';
 import {
   activityBackgroundTint,
-  background,
-  fixedSize,
   font,
   foregroundStyle,
-  frame,
   lineLimit,
   monospacedDigit,
   multilineTextAlignment,
@@ -14,6 +11,12 @@ import {
 import { createLiveActivity, type LiveActivityEnvironment } from 'expo-widgets';
 import type { TripWidgetProps } from '@/lib/types';
 
+/**
+ * Lock Screen / Dynamic Island Live Activity.
+ *
+ * Keep modifiers minimal: `background()` / `containerBackground` / `fixedSize`+`frame`
+ * have previously blanked widget surfaces in release builds. Tint only the banner.
+ */
 const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivityEnvironment) => {
   'widget';
 
@@ -122,34 +125,18 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
           : 'Last train taken'
         : 'Open VeryStays';
 
-  /** Compact Island is narrow — size the timer to MM:SS or H:MM:SS, not a stretched slot. */
-  function islandTimerWidth(): number {
-    if (!departureAt) return 44;
-    const remainingMs = Math.max(0, departureAt.getTime() - Date.now());
-    return remainingMs >= 60 * 60 * 1000 ? 58 : 44;
-  }
-
   function renderCountdownText(
     size: number,
     weight: 'bold' | 'semibold',
     color: string,
-    options?: { islandCompact?: boolean },
+    alignment: 'leading' | 'trailing' = 'leading',
   ) {
-    const islandCompact = options?.islandCompact === true;
     const textMods = [
-      ...(islandCompact
-        ? [multilineTextAlignment('trailing' as const)]
-        : leftTextModifiers()),
+      multilineTextAlignment(alignment),
       font({ weight, size }),
       foregroundStyle(color),
       lineLimit(1),
       monospacedDigit(),
-      ...(islandCompact
-        ? [
-            fixedSize({ horizontal: true, vertical: true }),
-            frame({ width: islandTimerWidth(), alignment: 'trailing' as const }),
-          ]
-        : [fixedSize({ horizontal: true, vertical: true })]),
     ];
 
     if (departureAt) {
@@ -176,17 +163,13 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
   const labelColor = environment.isLuminanceReduced ? '#A8E8C8' : THEME.label;
   const detailColor = environment.isLuminanceReduced ? '#D0D8DE' : THEME.detail;
   const accent = THEME.accent;
-  const backgroundModifiers = [
-    activityBackgroundTint(backgroundColor),
-    background(backgroundColor),
-  ] as const;
 
   return {
     banner: (
       <VStack
         alignment="leading"
         modifiers={[
-          ...backgroundModifiers,
+          activityBackgroundTint(backgroundColor),
           padding({ all: 14 }),
         ]}
       >
@@ -236,26 +219,11 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
         </Text>
       </VStack>
     ),
-    compactLeading: (
-      <VStack modifiers={[...backgroundModifiers, padding({ all: 4 })]}>
-        <Image systemName="tram.fill" color={accent} />
-      </VStack>
-    ),
-    compactTrailing: (
-      <VStack
-        alignment="trailing"
-        modifiers={[...backgroundModifiers, padding({ trailing: 2, leading: 0, vertical: 2 })]}
-      >
-        {renderCountdownText(13, 'bold', accent, { islandCompact: true })}
-      </VStack>
-    ),
-    minimal: (
-      <VStack modifiers={[...backgroundModifiers, padding({ all: 4 })]}>
-        <Image systemName="tram.fill" color={accent} />
-      </VStack>
-    ),
+    compactLeading: <Image systemName="tram.fill" color={accent} />,
+    compactTrailing: renderCountdownText(13, 'bold', accent, 'trailing'),
+    minimal: <Image systemName="tram.fill" color={accent} />,
     expandedLeading: (
-      <VStack alignment="leading" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
+      <VStack alignment="leading" modifiers={[padding({ all: 8 })]}>
         <Image systemName="tram.fill" color={accent} />
         <Text
           modifiers={[
@@ -270,8 +238,8 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       </VStack>
     ),
     expandedTrailing: (
-      <VStack alignment="trailing" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
-        {renderCountdownText(22, 'bold', primary)}
+      <VStack alignment="trailing" modifiers={[padding({ all: 8 })]}>
+        {renderCountdownText(22, 'bold', primary, 'trailing')}
         {departureTime ? (
           <Text
             modifiers={[
@@ -287,7 +255,7 @@ const TrainTripLiveActivity = (props: TripWidgetProps, environment: LiveActivity
       </VStack>
     ),
     expandedBottom: (
-      <VStack alignment="leading" modifiers={[...backgroundModifiers, padding({ all: 8 })]}>
+      <VStack alignment="leading" modifiers={[padding({ all: 8 })]}>
         {showDestination ? (
           <Text
             modifiers={[

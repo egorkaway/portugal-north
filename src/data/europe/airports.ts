@@ -82,6 +82,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -6.2158298492399995,
   },
   {
+    name: "Bergen Airport, Flesland (BGO)",
+    country: "no",
+    lines: ["BGO"],
+    types: ["Airport Destination"],
+    lat: 60.2934,
+    lng: 5.21814,
+  },
+  {
     name: "Il Caravaggio International Airport (BGY)",
     country: "it",
     lines: ["BGY"],
@@ -298,6 +306,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 8.0805,
   },
   {
+    name: "Florence Airport, Peretola (FLR)",
+    country: "it",
+    lines: ["FLR"],
+    types: ["Airport Destination"],
+    lat: 43.808558,
+    lng: 11.202822,
+  },
+  {
     name: "Memmingen Allgau Airport (FMM)",
     country: "de",
     lines: ["FMM"],
@@ -338,6 +354,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -4.43306,
   },
   {
+    name: "Genoa Cristoforo Colombo Airport (GOA)",
+    country: "it",
+    lines: ["GOA"],
+    types: ["Airport Destination"],
+    lat: 44.412039,
+    lng: 8.840732,
+  },
+  {
     name: "Göteborg Landvetter Airport (GOT)",
     country: "se",
     lines: ["GOT"],
@@ -376,6 +400,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 60.318363,
     lng: 24.963341,
+  },
+  {
+    name: "Horta Airport (HOR)",
+    country: "pt",
+    lines: ["HOR"],
+    types: ["Airport Destination"],
+    lat: 38.519901275634766,
+    lng: -28.715900421142578,
   },
   {
     name: "Ibiza Airport (IBZ)",
@@ -592,6 +624,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 40.886002,
     lng: 14.2908,
+  },
+  {
+    name: "Nice-Côte d'Azur Airport (NCE)",
+    country: "fr",
+    lines: ["NCE"],
+    types: ["Airport Destination"],
+    lat: 43.658401,
+    lng: 7.21587,
   },
   {
     name: "Newcastle International Airport (NCL)",
@@ -818,6 +858,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 9.22196,
   },
   {
+    name: "Stavanger Airport, Sola (SVG)",
+    country: "no",
+    lines: ["SVG"],
+    types: ["Airport Destination"],
+    lat: 58.876701,
+    lng: 5.63778,
+  },
+  {
     name: "Lajes Airport (TER)",
     country: "pt",
     lines: ["TER"],
@@ -952,6 +1000,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 51.103719,
     lng: 16.882096,
+  },
+  {
+    name: "Zagreb Franjo Tuđman International Airport (ZAG)",
+    country: "hr",
+    lines: ["ZAG"],
+    types: ["Airport Destination"],
+    lat: 45.742901,
+    lng: 16.0688,
   },
   {
     name: "Zürich Airport (ZRH)",
