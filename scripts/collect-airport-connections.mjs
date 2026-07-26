@@ -3,9 +3,10 @@
  * Fetch airport departures (AviationStack, with AirLabs Schedules fallback),
  * bake connections JSON, and render static connection map PNGs.
  *
- * Periods: nine open dates per year (see airportConnectionPeriods.mjs). On each
- * boundary the previous live bake is frozen under public/.../periods/{YYYY-MM-DD}/
- * and a new live period starts.
+ * Periods: nine open dates per year (see snapshotPeriods.mjs). Within an open
+ * period, each bake unions new destinations into the live list (never drops).
+ * On each open-date boundary the previous live bake is frozen under
+ * public/.../periods/{YYYY-MM-DD}/ and a new live period starts empty.
  *
  *   node --import tsx scripts/collect-airport-connections.mjs
  *   node --import tsx scripts/collect-airport-connections.mjs --airport LIS
@@ -60,6 +61,7 @@ const {
 } = await import("../server/lib/airportFlightProvider.ts");
 const {
   buildAirportConnections,
+  mergeAirportConnectionsEntries,
   mergeCatalogIntoCoordinates,
 } = await import("../server/lib/airportConnections.ts");
 const {
@@ -286,7 +288,7 @@ export async function collectAirportConnections(options = {}) {
   const cache = await ensureAirportCoordinateCache(cachePath);
   let coordinates = mergeCatalogIntoCoordinates(catalog, cache);
   // After a period roll, start from an empty airport map so the new period does not
-  // inherit the previous network. Single-airport updates on an active period still merge.
+  // inherit the previous network. Within an open period, re-samples union destinations.
   const airports = { ...roll.airports };
 
   let ok = 0;
@@ -333,8 +335,16 @@ export async function collectAirportConnections(options = {}) {
       }
       coordinates = mergeCatalogIntoCoordinates(catalog, loadAirportCoordinateCache(cachePath));
 
-      const entry = buildAirportConnections(airport, flights, coordinates);
-      if (!entry) {
+      const previous = airports[airport.iata];
+      const sample = buildAirportConnections(airport, flights, coordinates);
+      if (!sample) {
+        if (previous?.connections?.length) {
+          console.warn(
+            `No mappable connections in this sample for ${label}; keeping ${previous.connections.length} destination(s) from this period`,
+          );
+          ok += 1;
+          continue;
+        }
         console.warn(`No mappable connections for ${label}`);
         const before = mapVisibility.airports[airport.iata]?.consecutiveEmptyPeriods ?? 0;
         mapVisibility = recordAirportConnectionsEmpty(mapVisibility, airport.iata, period.id);
@@ -353,6 +363,11 @@ export async function collectAirportConnections(options = {}) {
         continue;
       }
 
+      const entry = mergeAirportConnectionsEntries(previous, sample);
+      const added = previous
+        ? entry.connections.length - previous.connections.length
+        : entry.connections.length;
+
       mapVisibility = recordAirportConnectionsOk(mapVisibility, airport.iata, period.id);
       mapVisibilityDirty = true;
 
@@ -362,7 +377,9 @@ export async function collectAirportConnections(options = {}) {
       airports[entry.iata] = entry;
       ok += 1;
       console.log(
-        `OK ${label}: ${entry.connections.length} destinations from ${entry.sampledFlights} sampled flights via ${provider} (${png.basemapId})`,
+        `OK ${label}: ${entry.connections.length} destinations` +
+          (previous ? ` (+${Math.max(0, added)} new this sample)` : "") +
+          ` from ${entry.sampledFlights} sampled flights via ${provider} (${png.basemapId})`,
       );
     } catch (error) {
       failed += 1;

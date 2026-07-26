@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   buildAirportConnections,
   groupFlightsByDestination,
+  mergeAirportConnectionsEntries,
   mergeCatalogIntoCoordinates,
 } from "../../server/lib/airportConnections";
 import { getFlightLineColor } from "../../server/lib/airportIata";
@@ -73,5 +74,58 @@ describe("buildAirportConnections", () => {
     );
 
     expect(entry?.connections[0]?.country).toBe(formatCountryName("DE"));
+  });
+});
+
+describe("mergeAirportConnectionsEntries", () => {
+  const airport = {
+    stationName: "Lisbon Airport (LIS)",
+    slug: "lisbon-airport-lis",
+    iata: "LIS",
+    name: "Lisbon Airport",
+    lat: 38.7813,
+    lng: -9.1359,
+    countryCode: "pt" as const,
+  };
+
+  const coordinates = mergeCatalogIntoCoordinates([airport], {
+    MAD: { name: "Madrid-Barajas", country: "Spain", lat: 40.4936, lng: -3.5664 },
+    OPO: { name: "Porto", country: "Portugal", lat: 41.2481, lng: -8.6814 },
+    BCN: { name: "Barcelona", country: "Spain", lat: 41.2971, lng: 2.0785 },
+  });
+
+  it("unions destinations within a period and keeps prior routes", () => {
+    const first = buildAirportConnections(
+      airport,
+      [
+        { arrival: { iata: "MAD" }, airline: { name: "TAP" }, flight: { number: "100" } },
+        { arrival: { iata: "OPO" }, airline: { name: "TAP" }, flight: { number: "200" } },
+      ],
+      coordinates,
+    );
+    const second = buildAirportConnections(
+      airport,
+      [
+        { arrival: { iata: "MAD" }, airline: { name: "Iberia" }, flight: { number: "300" } },
+        { arrival: { iata: "MAD" }, airline: { name: "Iberia" }, flight: { number: "301" } },
+        { arrival: { iata: "BCN" }, airline: { name: "Vueling" }, flight: { number: "400" } },
+      ],
+      coordinates,
+    );
+
+    const merged = mergeAirportConnectionsEntries(first, second!);
+    expect(merged.connections.map((c) => c.iata).sort()).toEqual(["BCN", "MAD", "OPO"]);
+    expect(merged.connections.find((c) => c.iata === "MAD")?.flightCount).toBe(2);
+    expect(merged.connections.find((c) => c.iata === "OPO")?.flightCount).toBe(1);
+    expect(merged.sampledFlights).toBe((first?.sampledFlights ?? 0) + (second?.sampledFlights ?? 0));
+  });
+
+  it("returns the next entry when there is no previous period data", () => {
+    const next = buildAirportConnections(
+      airport,
+      [{ arrival: { iata: "MAD" }, airline: { name: "TAP" }, flight: { number: "1" } }],
+      coordinates,
+    );
+    expect(mergeAirportConnectionsEntries(null, next!)).toEqual(next);
   });
 });

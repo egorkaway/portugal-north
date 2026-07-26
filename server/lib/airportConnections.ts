@@ -122,6 +122,74 @@ export function buildAirportConnections(
   };
 }
 
+function mergeFlightSamples(
+  previous: AirportFlightSample[],
+  next: AirportFlightSample[],
+  limit = 3,
+): AirportFlightSample[] {
+  const seen = new Set<string>();
+  const merged: AirportFlightSample[] = [];
+  for (const sample of [...previous, ...next]) {
+    const key = `${sample.airline}|${sample.number}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    merged.push(sample);
+    if (merged.length >= limit) break;
+  }
+  return merged;
+}
+
+/**
+ * Union destinations across samples within the same open period.
+ * Destinations are never dropped; flightCount keeps the peak observed count.
+ * Callers start a fresh entry only after a period roll (empty previous).
+ */
+export function mergeAirportConnectionsEntries(
+  previous: AirportConnectionsEntry | null | undefined,
+  next: AirportConnectionsEntry,
+): AirportConnectionsEntry {
+  if (!previous || previous.iata !== next.iata) return next;
+
+  const byIata = new Map<string, AirportConnection>();
+  for (const connection of previous.connections) {
+    byIata.set(connection.iata, connection);
+  }
+
+  for (const connection of next.connections) {
+    const existing = byIata.get(connection.iata);
+    if (!existing) {
+      byIata.set(connection.iata, connection);
+      continue;
+    }
+
+    const flightCount = Math.max(existing.flightCount, connection.flightCount);
+    byIata.set(connection.iata, {
+      ...existing,
+      name: connection.name || existing.name,
+      country: connection.country || existing.country,
+      lat: connection.lat,
+      lng: connection.lng,
+      flightCount,
+      flights: mergeFlightSamples(existing.flights, connection.flights),
+      lineColor: getFlightLineColor(flightCount),
+      lineWeight: getFlightLineWeight(flightCount),
+    });
+  }
+
+  const connections = [...byIata.values()].sort(
+    (a, b) => b.flightCount - a.flightCount || a.name.localeCompare(b.name),
+  );
+
+  return {
+    ...next,
+    origin: next.origin ?? previous.origin,
+    sampledFlights: previous.sampledFlights + next.sampledFlights,
+    connections,
+    topDestinations: connections.slice(0, 10),
+    mapImage: next.mapImage || previous.mapImage,
+  };
+}
+
 export function mergeCatalogIntoCoordinates(
   catalog: AirportCatalogEntry[],
   coordinates: CoordinateLookup,
