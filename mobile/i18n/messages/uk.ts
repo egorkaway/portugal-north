@@ -274,5 +274,7 @@ export const uk: MobileMessages = {
     title: 'Поїзд скоро відправляється',
     body: 'Сподіваємося, ви встигли на поїзд о {{time}}, що везе вас з {{origin}} до {{destination}}.',
     channelName: 'Нагадування про поїздку',
+    departedTitle: 'Поїзд вирушив',
+    departedBody: 'Гарної подорожі з {{origin}} до {{destination}}.',
   },
 };

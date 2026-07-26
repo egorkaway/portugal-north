@@ -262,5 +262,7 @@ export type MobileMessages = {
     title: string;
     body: string;
     channelName: string;
+    departedTitle: string;
+    departedBody: string;
   };
 };

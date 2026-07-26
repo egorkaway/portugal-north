@@ -274,5 +274,7 @@ export const es: MobileMessages = {
     title: 'Tren a punto de salir',
     body: 'Esperamos que hayas llegado al tren de las {{time}} que te lleva de {{origin}} a {{destination}}.',
     channelName: 'Recordatorios de viaje',
+    departedTitle: 'Tren salió',
+    departedBody: 'Buen viaje de {{origin}} a {{destination}}.',
   },
 };

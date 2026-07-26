@@ -274,5 +274,7 @@ export const ru: MobileMessages = {
     title: 'Поезд скоро отправляется',
     body: 'Надеемся, вы успели на поезд в {{time}}, который везёт вас из {{origin}} в {{destination}}.',
     channelName: 'Напоминания о поездке',
+    departedTitle: 'Поезд отправился',
+    departedBody: 'Хорошей поездки из {{origin}} в {{destination}}.',
   },
 };

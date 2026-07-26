@@ -274,5 +274,7 @@ export const ca: MobileMessages = {
     title: 'Tren a punt de sortir',
     body: 'Esperem que hagis arribat al tren de les {{time}} que et porta de {{origin}} a {{destination}}.',
     channelName: 'Recordatoris de viatge',
+    departedTitle: 'El tren ha sortit',
+    departedBody: 'Bon viatge de {{origin}} a {{destination}}.',
   },
 };

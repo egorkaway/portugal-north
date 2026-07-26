@@ -274,5 +274,7 @@ export const en: MobileMessages = {
     title: 'Train departing soon',
     body: 'We hope you managed to get to the {{time}} train that is taking you from {{origin}} to {{destination}}.',
     channelName: 'Trip reminders',
+    departedTitle: 'Train departed',
+    departedBody: 'Have a good trip from {{origin}} to {{destination}}.',
   },
 };

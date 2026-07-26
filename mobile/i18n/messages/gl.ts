@@ -274,5 +274,7 @@ export const gl: MobileMessages = {
     title: 'Tren a piques de saír',
     body: 'Agardamos que chegases ao tren das {{time}} que te leva de {{origin}} a {{destination}}.',
     channelName: 'Recordatorios de viaxe',
+    departedTitle: 'O tren saíu',
+    departedBody: 'Boa viaxe de {{origin}} a {{destination}}.',
   },
 };

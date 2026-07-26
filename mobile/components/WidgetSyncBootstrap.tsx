@@ -1,18 +1,33 @@
 import { useEffect, useRef, useState } from 'react';
 import { AppState } from 'react-native';
+import * as Notifications from 'expo-notifications';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { scheduleEngagementReminders } from '@/lib/engagementNotifications';
+import {
+  isLiveActivityEndNotification,
+} from '@/lib/liveActivityEndSchedule';
 import { ensureStationsSpotlightIndex } from '@/lib/spotlightIndex';
 import { subscribeTripChanges } from '@/lib/tripEvents';
 import { scheduleTripDepartureReminder } from '@/lib/tripNotifications';
 import { readActiveTrip } from '@/lib/tripStorage';
 import {
+  endAllLiveActivities,
   getMsUntilEffectiveDeparture,
   MAX_TIMER_MS,
   onTripDeparted,
   seedWidgetTimeline,
   syncTripWidgets,
 } from '@/lib/widgetSync';
+
+async function handleLiveActivityEndSignal(): Promise<void> {
+  try {
+    await endAllLiveActivities();
+    await onTripDeparted();
+    await syncTripWidgets();
+  } catch (error) {
+    console.warn('[live-activity] end-from-notification failed', error);
+  }
+}
 
 /** Keeps widget + Live Activity in sync while the app is open. */
 export function WidgetSyncBootstrap() {
@@ -44,7 +59,8 @@ export function WidgetSyncBootstrap() {
         return;
       }
 
-      const delayMs = Math.min(msUntil + 500, MAX_TIMER_MS);
+      // Fire slightly after departure so the native countdown can reach 0:00.
+      const delayMs = Math.min(msUntil + 1_500, MAX_TIMER_MS);
       departureTimerRef.current = setTimeout(() => {
         void (async () => {
           try {
@@ -91,6 +107,14 @@ export function WidgetSyncBootstrap() {
       await syncWidgets();
       await scheduleLocalReminders();
       try {
+        const lastResponse = await Notifications.getLastNotificationResponseAsync();
+        if (lastResponse && isLiveActivityEndNotification(lastResponse.notification)) {
+          await handleLiveActivityEndSignal();
+        }
+      } catch (error) {
+        console.warn('[live-activity] last-response check failed', error);
+      }
+      try {
         await ensureStationsSpotlightIndex();
       } catch (error) {
         console.warn('[spotlight] bootstrap failed', error);
@@ -115,12 +139,24 @@ export function WidgetSyncBootstrap() {
       void syncWidgets();
     });
 
+    const receivedSub = Notifications.addNotificationReceivedListener((notification) => {
+      if (!isLiveActivityEndNotification(notification)) return;
+      void handleLiveActivityEndSignal();
+    });
+
+    const responseSub = Notifications.addNotificationResponseReceivedListener((response) => {
+      if (!isLiveActivityEndNotification(response.notification)) return;
+      void handleLiveActivityEndSignal();
+    });
+
     return () => {
       cancelled = true;
       clearInterval(interval);
       clearDepartureTimer();
       appStateSubscription.remove();
       unsubscribeTripChanges();
+      receivedSub.remove();
+      responseSub.remove();
     };
   }, [locale]);
 

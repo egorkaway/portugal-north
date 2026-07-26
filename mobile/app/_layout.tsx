@@ -16,16 +16,30 @@ import { theme } from '@/constants/theme';
 import { WidgetSyncBootstrap } from '@/components/WidgetSyncBootstrap';
 import { LocaleProvider, useLocale } from '@/i18n/LocaleProvider';
 import { PurchasesProvider } from '@/components/PurchasesProvider';
+import { isLiveActivityEndNotification } from '@/lib/liveActivityEndSchedule';
 import { isOnboardingComplete } from '@/lib/onboardingStorage';
-import { seedWidgetTimeline } from '@/lib/widgetSync';
+import { endAllLiveActivities, onTripDeparted, seedWidgetTimeline } from '@/lib/widgetSync';
 
 Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowBanner: true,
-    shouldShowList: true,
-    shouldPlaySound: true,
-    shouldSetBadge: false,
-  }),
+  handleNotification: async (notification) => {
+    if (isLiveActivityEndNotification(notification)) {
+      // End the Live Activity as soon as this fires while the app can run JS.
+      void endAllLiveActivities().then(() => onTripDeparted());
+      return {
+        shouldShowBanner: false,
+        shouldShowList: false,
+        shouldPlaySound: false,
+        shouldSetBadge: false,
+      };
+    }
+
+    return {
+      shouldShowBanner: true,
+      shouldShowList: true,
+      shouldPlaySound: true,
+      shouldSetBadge: false,
+    };
+  },
 });
 
 export {

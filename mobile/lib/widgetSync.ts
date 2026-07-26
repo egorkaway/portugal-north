@@ -8,6 +8,10 @@ import {
   getMinutesUntilDeparture,
   hasEffectiveDeparturePassed,
 } from '@/lib/departureCountdown';
+import {
+  cancelLiveActivityEndNotification,
+  scheduleLiveActivityEndNotification,
+} from '@/lib/liveActivityEndSchedule';
 import { DEFAULT_WIDGET_PROPS, normalizeWidgetProps } from '@/lib/widgetDefaults';
 import {
   readActiveTrip,
@@ -187,6 +191,7 @@ async function enrichActiveTripDelay(): Promise<PlannedDeparture | null> {
 
 export async function endAllLiveActivities(): Promise<void> {
   const factory = getLiveActivityFactory();
+  await cancelLiveActivityEndNotification();
   if (!factory) return;
 
   const instances = factory.getInstances();
@@ -226,7 +231,8 @@ async function syncLiveActivity(
       now,
       activeTrip.timetableDate,
     ) ||
-    (normalized.countdownMinutes !== null && normalized.countdownMinutes <= 0);
+    (normalized.countdownMinutes !== null && normalized.countdownMinutes <= 0) ||
+    (normalized.departureAtMs !== null && normalized.departureAtMs <= now.getTime());
 
   if (departed) {
     await endAllLiveActivities();
@@ -246,13 +252,16 @@ async function syncLiveActivity(
         console.warn('[live-activity] restart failed', startError);
       }
     }
-    return;
+  } else {
+    try {
+      factory.start(normalized, 'verystays://trip');
+    } catch (error) {
+      console.warn('[live-activity] start failed', error);
+    }
   }
 
-  try {
-    factory.start(normalized, 'verystays://trip');
-  } catch (error) {
-    console.warn('[live-activity] start failed', error);
+  if (activeTrip && normalized.departureAtMs) {
+    await scheduleLiveActivityEndNotification(activeTrip, normalized.departureAtMs, now);
   }
 }
 
@@ -325,18 +334,27 @@ export async function onTripDeparted(): Promise<void> {
     return;
   }
 
+  const now = new Date();
   const minutes = getMinutesUntilDeparture(
     trip.departureTime,
     trip.delayMinutes,
-    new Date(),
+    now,
     trip.timetableDate,
   );
-  if (minutes === null || minutes > 0) return;
+  const departureAtMs = getDepartureTimestampMs(
+    trip.departureTime,
+    trip.delayMinutes,
+    now,
+    trip.timetableDate,
+  );
+  const departedByClock = minutes !== null && minutes <= 0;
+  const departedByTimestamp = departureAtMs !== null && departureAtMs <= now.getTime();
+  if (!departedByClock && !departedByTimestamp) return;
 
   // Hide countdown / end Live Activity right away (storage may still keep the trip).
   await syncTripWidgets();
 
-  if (minutes > -CLEAR_ACTIVE_TRIP_AFTER_MINUTES) return;
+  if (minutes !== null && minutes > -CLEAR_ACTIVE_TRIP_AFTER_MINUTES) return;
 
   const { recordTakenTrip, writeActiveTrip } = await import('@/lib/tripStorage');
   await recordTakenTrip(trip);

@@ -346,6 +346,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -13.8638,
   },
   {
+    name: "Gdańsk Lech Wałęsa Airport (GDN)",
+    country: "pl",
+    lines: ["GDN"],
+    types: ["Airport Destination"],
+    lat: 54.377602,
+    lng: 18.4662,
+  },
+  {
     name: "Glasgow Airport (GLA)",
     country: "gb",
     lines: ["GLA"],
@@ -402,12 +410,28 @@ export const europeDestinationAirports: Station[] = [
     lng: 24.963341,
   },
   {
+    name: "Frankfurt-Hahn Airport (HHN)",
+    country: "de",
+    lines: ["HHN"],
+    types: ["Airport Destination"],
+    lat: 49.946353,
+    lng: 7.261734,
+  },
+  {
     name: "Horta Airport (HOR)",
     country: "pt",
     lines: ["HOR"],
     types: ["Airport Destination"],
     lat: 38.519901275634766,
     lng: -28.715900421142578,
+  },
+  {
+    name: "Iaşi International Airport (IAS)",
+    country: "ro",
+    lines: ["IAS"],
+    types: ["Airport Destination"],
+    lat: 47.179633,
+    lng: 27.621431,
   },
   {
     name: "Ibiza Airport (IBZ)",
@@ -448,6 +472,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 50.077702,
     lng: 19.7848,
+  },
+  {
+    name: "Katowice Wojciech Korfanty International Airport (KTW)",
+    country: "pl",
+    lines: ["KTW"],
+    types: ["Airport Destination"],
+    lat: 50.476015,
+    lng: 19.080705,
   },
   {
     name: "Kaunas International Airport (KUN)",
@@ -920,6 +952,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 37.9114,
     lng: 12.488,
+  },
+  {
+    name: "Trondheim Airport, Værnes (TRD)",
+    country: "no",
+    lines: ["TRD"],
+    types: ["Airport Destination"],
+    lat: 63.457802,
+    lng: 10.924,
   },
   {
     name: "Sandefjord Airport, Torp (TRF)",

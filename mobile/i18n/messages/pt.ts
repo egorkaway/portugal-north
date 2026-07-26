@@ -274,5 +274,7 @@ export const pt: MobileMessages = {
     title: 'Comboio a partir em breve',
     body: 'Esperamos que tenha conseguido chegar ao comboio das {{time}} que o leva de {{origin}} para {{destination}}.',
     channelName: 'Lembretes de viagem',
+    departedTitle: 'Comboio partiu',
+    departedBody: 'Boa viagem de {{origin}} para {{destination}}.',
   },
 };
