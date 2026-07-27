@@ -87,3 +87,46 @@ export function getAirportConnectionsEntry(station: Station): AirportConnections
     ) ?? null
   );
 }
+
+export type IberianHubFlyingToDestination = {
+  iata: string;
+  stationName: string;
+  slug: string;
+  flightCount: number;
+};
+
+/**
+ * Iberian hubs with sampled flights to a destination airport.
+ * Derived from hub→destination lists in airport-connections.json.
+ */
+export function getIberianHubsFlyingTo(
+  destinationIata: string,
+  manifest: AirportConnectionsManifest = bakedAirportConnections,
+): IberianHubFlyingToDestination[] {
+  const dest = destinationIata.trim().toUpperCase();
+  if (!/^[A-Z]{3}$/.test(dest)) return [];
+
+  const hubs: IberianHubFlyingToDestination[] = [];
+  for (const hub of Object.values(manifest.airports ?? {})) {
+    const connection = hub.connections?.find(
+      (entry) => entry.iata.trim().toUpperCase() === dest,
+    );
+    if (!connection) continue;
+    hubs.push({
+      iata: hub.iata,
+      stationName: hub.stationName,
+      slug: hub.slug || getAirportStationSlugByIata(hub.iata) || stationToSlug(hub.stationName),
+      flightCount: connection.flightCount,
+    });
+  }
+
+  return hubs.sort(
+    (a, b) => b.flightCount - a.flightCount || a.stationName.localeCompare(b.stationName),
+  );
+}
+
+export function destinationIataFromStation(station: Station): string | null {
+  const fromLine = station.lines[0]?.trim().toUpperCase();
+  if (fromLine && /^[A-Z]{3}$/.test(fromLine)) return fromLine;
+  return station.name.match(IATA_IN_NAME_RE)?.[1] ?? null;
+}

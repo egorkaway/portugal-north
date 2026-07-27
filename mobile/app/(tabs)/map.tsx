@@ -3,6 +3,7 @@ import {
   ActivityIndicator,
   Alert,
   Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -23,6 +24,10 @@ import {
   stationToSlug,
 } from '@/lib/stationData';
 import { isAirportHiddenFromMapMarkers } from '@/lib/airportMapVisibility';
+import {
+  destinationIataFromStation,
+  getIberianHubsFlyingTo,
+} from '@/lib/airportConnections';
 import { shareCapturedMap } from '@/lib/shareMapImage';
 import { writeLastCoords } from '@/lib/tripStorage';
 
@@ -48,7 +53,7 @@ function markerSize(movements: number): number {
 export default function MapScreen() {
   const router = useRouter();
   const navigation = useNavigation();
-  const { t } = useLocale();
+  const { t, plural } = useLocale();
   const mapRef = useRef<MapView>(null);
   const shareViewRef = useRef<ViewShot>(null);
   const markerPressLock = useRef(false);
@@ -191,6 +196,11 @@ export default function MapScreen() {
   }, [navigation, locateUser, locating, shareMap, sharing, t]);
 
   const selected = markers.find((item) => item.station.name === selectedName);
+  const inboundHubs = useMemo(() => {
+    if (!selected?.station.types.includes('Airport Destination')) return [];
+    const iata = destinationIataFromStation(selected.station);
+    return iata ? getIberianHubsFlyingTo(iata) : [];
+  }, [selected]);
   const mapAppearance = useSystemColorScheme();
 
   return (
@@ -276,14 +286,51 @@ export default function MapScreen() {
               {t('map.legendTitle')} {formatReliabilityScore(selected.score)}/10
             </Text>
           ) : null}
-          {!selected.station.types.includes('Airport Destination') ? (
+          {selected.station.types.includes('Airport Destination') ? (
+            inboundHubs.length > 0 ? (
+              <View style={styles.inboundBlock}>
+                <Text style={styles.inboundTitle}>{t('map.flightsFromIberia')}</Text>
+                <ScrollView
+                  style={styles.inboundList}
+                  nestedScrollEnabled
+                  keyboardShouldPersistTaps="handled"
+                >
+                  {inboundHubs.map((hub) => (
+                    <Pressable
+                      key={hub.iata}
+                      style={styles.inboundRow}
+                      onPress={() => router.push(`/station/${hub.slug}`)}
+                      accessibilityRole="button"
+                      accessibilityLabel={`${hub.stationName}. ${t('map.openDetails')}`}
+                    >
+                      <View style={styles.inboundTextWrap}>
+                        <Text style={styles.inboundHub} numberOfLines={1}>
+                          {hub.stationName}
+                        </Text>
+                        <Text style={styles.inboundMeta}>
+                          {plural('airport.flights', hub.flightCount)}
+                        </Text>
+                      </View>
+                      <Text style={styles.inboundCta}>{t('map.openDetails')}</Text>
+                    </Pressable>
+                  ))}
+                </ScrollView>
+              </View>
+            ) : (
+              <Text style={styles.sheetMeta}>{t('map.noIberianFlights')}</Text>
+            )
+          ) : (
             <Pressable
               style={styles.sheetButton}
               onPress={() => router.push(`/station/${stationToSlug(selected.station.name)}`)}
             >
-              <Text style={styles.sheetButtonText}>{t('map.openStation')}</Text>
+              <Text style={styles.sheetButtonText}>
+                {selected.station.types.includes('Airport')
+                  ? t('map.openDetails')
+                  : t('map.openStation')}
+              </Text>
             </Pressable>
-          ) : null}
+          )}
         </View>
       ) : null}
     </View>
@@ -426,5 +473,44 @@ const styles = StyleSheet.create({
   sheetButtonText: {
     color: '#fff',
     fontWeight: '700',
+  },
+  inboundBlock: {
+    marginTop: 8,
+    gap: 8,
+  },
+  inboundList: {
+    maxHeight: 220,
+  },
+  inboundTitle: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: theme.primary,
+  },
+  inboundRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 12,
+    paddingVertical: 8,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: theme.border,
+  },
+  inboundTextWrap: {
+    flex: 1,
+    gap: 2,
+  },
+  inboundHub: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: theme.primary,
+  },
+  inboundMeta: {
+    fontSize: 12,
+    color: theme.primaryMuted,
+  },
+  inboundCta: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: theme.primary,
   },
 });

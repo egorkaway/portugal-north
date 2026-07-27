@@ -173,6 +173,9 @@ export type MobileMessages = {
     legendNoData: string;
     legendAirport: string;
     openStation: string;
+    openDetails: string;
+    flightsFromIberia: string;
+    noIberianFlights: string;
     locateA11y: string;
     shareA11y: string;
     closeA11y: string;

@@ -76,6 +76,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@paggiarofrancesco",
     photoPageUrl: "https://www.pexels.com/photo/train-station-953125/",
   },
+  "1002691": {
+    photographer: "Juan Pablo Serrano",
+    photographerUrl: "https://www.pexels.com/@juanpphotoandvideo",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photograph-of-train-rail-1002691/",
+  },
   "1192438": {
     photographer: "Natã Romualdo",
     photographerUrl: "https://www.pexels.com/@nataromualdo",
@@ -215,6 +220,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Sinitta Leunen",
     photographerUrl: "https://www.pexels.com/@sinileunen",
     photoPageUrl: "https://www.pexels.com/photo/city-railroad-behind-fence-under-blue-sky-5604037/",
+  },
+  "5661285": {
+    photographer: "Juliana Polizel",
+    photographerUrl: "https://www.pexels.com/@polizelj",
+    photoPageUrl: "https://www.pexels.com/photo/a-man-wearing-a-beige-uniform-beside-a-train-5661285/",
   },
   "5734899": {
     photographer: "Jorge Urosa",
@@ -1621,6 +1631,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@walter-cunha-2158705182",
     photoPageUrl: "https://www.pexels.com/photo/gran-via-metro-entrance-in-madrid-city-35551070/",
   },
+  "35727855": {
+    photographer: "Zak Mir",
+    photographerUrl: "https://www.pexels.com/@zak-mir-2158162344",
+    photoPageUrl: "https://www.pexels.com/photo/high-speed-train-at-barcelona-station-platform-35727855/",
+  },
   "35750902": {
     photographer: "Sergei  Gussev",
     photographerUrl: "https://www.pexels.com/@sergei",
@@ -1745,5 +1760,10 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Liane Ferreira",
     photographerUrl: "https://www.pexels.com/@liane-ferreira-1033991071",
     photoPageUrl: "https://www.pexels.com/photo/charming-historical-village-scene-in-montalegre-37899453/",
+  },
+  "37899454": {
+    photographer: "Liane Ferreira",
+    photographerUrl: "https://www.pexels.com/@liane-ferreira-1033991071",
+    photoPageUrl: "https://www.pexels.com/photo/ancient-stone-mill-stream-in-montalegre-portugal-37899454/",
   },
 };
