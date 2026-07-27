@@ -23,6 +23,14 @@ export function isAirportDestinationStation(station: { types: string[] }): boole
   return station.types.includes(AIRPORT_DESTINATION_TYPE);
 }
 
+/**
+ * Destinations stay in map/flight data but have no standalone station pages
+ * or list entries (Iberian hubs and rail stops only).
+ */
+export function hasPublicStationPage(station: { types: string[] }): boolean {
+  return !isAirportDestinationStation(station);
+}
+
 /** Coalesce destination airports under the Airport filter chip. */
 export function normalizeStationTypeForFilter(type: string): string {
   return type === AIRPORT_DESTINATION_TYPE ? AIRPORT_TYPE : type;

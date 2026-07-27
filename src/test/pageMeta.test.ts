@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { buildSeoHeadHtml, buildStationPageMeta, getHomePageMeta } from "@/lib/pageMeta";
 import { getPrerenderRoutes } from "@/lib/prerenderRoutes";
-import { allStations } from "@/data/stationRegistry";
+import { pageStations } from "@/data/stationRegistry";
 import { getHomeSitemapPaths } from "@/lib/homeRoute";
 import { portugalStations } from "@/data/stations";
 import { getHotelsForStation } from "@/lib/stationHotels";
@@ -37,11 +37,14 @@ describe("buildSeoHeadHtml", () => {
 });
 
 describe("getPrerenderRoutes", () => {
-  it("generates one HTML file per station plus core pages", () => {
+  it("generates one HTML file per public station plus core pages", () => {
     const routes = getPrerenderRoutes();
     const homeExtra = getHomeSitemapPaths().length;
     expect(routes.length).toBe(
-      allStations.length + 8 + homeExtra + getRailLines().length,
+      pageStations.length + 8 + homeExtra + getRailLines().length,
+    );
+    expect(routes.some((r) => r.outFile.includes("amsterdam-airport-schiphol-ams"))).toBe(
+      false,
     );
     const porto = portugalStations.find((s) => s.name === "Porto-Campanhã");
     expect(porto).toBeDefined();

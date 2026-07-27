@@ -1,6 +1,6 @@
 import type { Hotel } from "@/data/hotels";
 import { stations, type Station, getAppleMapsUrl, getBookingSearchUrl, getOSMUrl } from "@/data/stations";
-import { allStations } from "@/data/stationRegistry";
+import { pageStations } from "@/data/stationRegistry";
 import {
   RANKINGS_PAGE_META,
   buildStationPageMeta,
@@ -64,7 +64,7 @@ export function buildHomeMarkdown(meta: PageMeta, siteUrl: string): string {
 
 ${meta.description}
 
-- **${allStations.length}** train stations and airports across Portugal and Spain
+- **${pageStations.length}** train stations and airports across Portugal and Spain
 - Line and service-type filters (Alfa Pendular, Intercidades, Regional, Urban)
 - Budget hotel suggestions within walking distance of major stops
 - Community upvote/downvote totals for stations and hotels

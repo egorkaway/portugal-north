@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildSitemapXml, getSitemapEntries } from "@/lib/sitemap";
-import { allStations } from "@/data/stationRegistry";
+import { pageStations } from "@/data/stationRegistry";
 import { getHomeSitemapPaths } from "@/lib/homeRoute";
 import { getRailLines } from "@/lib/trainLines";
 
@@ -9,7 +9,7 @@ describe("sitemap", () => {
     const entries = getSitemapEntries();
     const homePages = getHomeSitemapPaths();
     expect(entries).toHaveLength(
-      homePages.length + 5 + getRailLines().length + allStations.length,
+      homePages.length + 5 + getRailLines().length + pageStations.length,
     );
     expect(entries[0].path).toBe("/all");
     expect(entries.some((e) => e.path === "/all/2")).toBe(true);
@@ -24,6 +24,9 @@ describe("sitemap", () => {
     expect(entries.some((e) => e.path === "/lines/linha-do-minho")).toBe(true);
     expect(entries.some((e) => e.path === "/stations/porto-campanha")).toBe(true);
     expect(entries.some((e) => e.path === "/stations/vigo-guixar")).toBe(true);
+    expect(entries.some((e) => e.path === "/stations/amsterdam-airport-schiphol-ams")).toBe(
+      false,
+    );
   });
 
   it("builds valid XML with absolute URLs", () => {

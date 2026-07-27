@@ -1,5 +1,6 @@
-import { allStations } from "../data/stationRegistry";
+import { pageStations } from "../data/stationRegistry";
 import type { Station } from "../data/stationTypes";
+import { hasPublicStationPage } from "./airportTypes";
 
 export function stationToSlug(name: string): string {
   return name
@@ -11,8 +12,9 @@ export function stationToSlug(name: string): string {
     .replace(/^-|-$/g, "");
 }
 
+/** Only Iberian hubs/stops — Europe destination airports have no public pages. */
 const stationBySlug = new Map(
-  allStations.map((station) => [stationToSlug(station.name), station]),
+  pageStations.map((station) => [stationToSlug(station.name), station]),
 );
 
 export function getStationBySlug(slug: string): Station | undefined {
@@ -21,4 +23,10 @@ export function getStationBySlug(slug: string): Station | undefined {
 
 export function getStationPath(station: Station): string {
   return `/stations/${stationToSlug(station.name)}`;
+}
+
+/** Path when the station has a public page; otherwise undefined (map-only destinations). */
+export function getPublicStationPath(station: Station): string | undefined {
+  if (!hasPublicStationPage(station)) return undefined;
+  return getStationPath(station);
 }

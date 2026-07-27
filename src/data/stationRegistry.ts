@@ -1,4 +1,5 @@
 import type { CountryCode, HomeScope } from "../lib/countries";
+import { hasPublicStationPage } from "../lib/airportTypes";
 import { portugalStations } from "./stations";
 import { portugalAirports } from "./portugal/airports";
 import { spainStations } from "./spain/stations";
@@ -13,8 +14,9 @@ export const stationsByCountry: Record<CountryCode, Station[]> = {
 };
 
 /**
- * All map/list stations: Iberian hubs/stops plus European destination airports
- * reached by direct flights from PT/ES hubs (no outbound collection from those).
+ * Full catalog for maps / flight tracking: Iberian hubs/stops plus European
+ * destination airports reached by direct flights from PT/ES hubs.
+ * Destinations are not listed and have no `/stations/:slug` pages.
  */
 export const allStations: Station[] = [
   ...stationsByCountry.pt,
@@ -22,12 +24,14 @@ export const allStations: Station[] = [
   ...europeDestinationAirports,
 ];
 
+/** Stations that get list entries, search hits, and public station pages. */
+export const pageStations: Station[] = allStations.filter(hasPublicStationPage);
+
 export function getStationsForCountry(country: CountryCode): Station[] {
   return stationsByCountry[country];
 }
 
 export function getStationsForHomeScope(scope: HomeScope): Station[] {
-  // Destination airports only appear in the combined "all" scope.
-  if (scope === "all") return allStations;
+  if (scope === "all") return pageStations;
   return getStationsForCountry(scope);
 }

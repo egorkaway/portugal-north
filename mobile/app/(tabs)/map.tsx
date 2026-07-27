@@ -276,12 +276,14 @@ export default function MapScreen() {
               {t('map.legendTitle')} {formatReliabilityScore(selected.score)}/10
             </Text>
           ) : null}
-          <Pressable
-            style={styles.sheetButton}
-            onPress={() => router.push(`/station/${stationToSlug(selected.station.name)}`)}
-          >
-            <Text style={styles.sheetButtonText}>{t('map.openStation')}</Text>
-          </Pressable>
+          {!selected.station.types.includes('Airport Destination') ? (
+            <Pressable
+              style={styles.sheetButton}
+              onPress={() => router.push(`/station/${stationToSlug(selected.station.name)}`)}
+            >
+              <Text style={styles.sheetButtonText}>{t('map.openStation')}</Text>
+            </Pressable>
+          ) : null}
         </View>
       ) : null}
     </View>

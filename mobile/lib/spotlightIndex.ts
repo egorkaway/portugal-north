@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
 import ExpoCoreSpotlight, { type CoreSpotlightItem } from 'expo-core-spotlight';
 import {
-  allStations,
+  pageStations,
   getSummaryForStation,
   stationToSlug,
   type Station,
@@ -66,13 +66,13 @@ export function buildStationSpotlightItem(station: Station): CoreSpotlightItem {
 }
 
 export function buildStationSpotlightItems(
-  stations: readonly Station[] = allStations,
+  stations: readonly Station[] = pageStations,
 ): CoreSpotlightItem[] {
   return stations.map(buildStationSpotlightItem);
 }
 
 function indexVersionToken(): string {
-  return `${INDEX_PAYLOAD_VERSION}:${allStations.length}`;
+  return `${INDEX_PAYLOAD_VERSION}:${pageStations.length}`;
 }
 
 async function indexInChunks(items: CoreSpotlightItem[]): Promise<void> {

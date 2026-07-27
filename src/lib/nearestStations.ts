@@ -1,4 +1,4 @@
-import { allStations } from "@/data/stationRegistry";
+import { pageStations } from "@/data/stationRegistry";
 import type { Station } from "@/data/stationTypes";
 import { distanceKm } from "@/lib/geo";
 import { sortStationsByDistance } from "@/lib/rankStations";
@@ -9,7 +9,7 @@ export type NearestStation = {
 };
 
 export function getNearestStations(station: Station, limit = 2): NearestStation[] {
-  const candidates = allStations.filter((candidate) => candidate.name !== station.name);
+  const candidates = pageStations.filter((candidate) => candidate.name !== station.name);
 
   return sortStationsByDistance(candidates, station)
     .slice(0, limit)

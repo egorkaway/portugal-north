@@ -35,6 +35,12 @@ export type ReliabilityScoresManifest = {
 };
 
 export const allStations = stationsFull as Station[];
+
+/** Iberian hubs/stops only — Europe destination airports stay in `allStations` for maps. */
+export const pageStations = allStations.filter(
+  (station) => !station.types.includes('Airport Destination'),
+);
+
 export const bakedStationImages = stationImages as Record<string, string>;
 export const bakedHotels = hotels as Record<string, Hotel[]>;
 export const bakedSummariesEn = summariesEn as Record<string, string>;
@@ -42,7 +48,7 @@ export const bakedReliabilityScores = reliabilityScores as ReliabilityScoresMani
 export const bakedCpCodes = cpStationCodes as Record<string, string>;
 
 const stationBySlug = new Map(
-  allStations.map((station) => [stationToSlug(station.name), station]),
+  pageStations.map((station) => [stationToSlug(station.name), station]),
 );
 
 export function stationToSlug(name: string): string {
@@ -60,8 +66,8 @@ export function getStationBySlug(slug: string): Station | undefined {
 }
 
 export function getStationsForScope(scope: HomeScope): Station[] {
-  if (scope === 'all') return allStations;
-  return allStations.filter((station) => station.country === scope);
+  if (scope === 'all') return pageStations;
+  return pageStations.filter((station) => station.country === scope);
 }
 
 export function getStationImageUrl(stationName: string): string | null {

@@ -12,7 +12,7 @@ import { useLocale } from '@/i18n/LocaleProvider';
 import { fetchGlobalRatings } from '@/lib/api';
 import { orderStationsForHome, stationDistancesKm } from '@/lib/rankStations';
 import { stationMatchesSearch } from '@/lib/searchText';
-import { allStations, stationToSlug, type Station } from '@/lib/stationData';
+import { pageStations, stationToSlug, type Station } from '@/lib/stationData';
 import {
   castStationVote,
   readStationVotes,
@@ -45,7 +45,7 @@ export default function HomeScreen() {
   const [refreshing, setRefreshing] = useState(false);
   const [loadingLocation, setLoadingLocation] = useState(false);
 
-  const countryStations = allStations;
+  const countryStations = pageStations;
   const allTypes = useMemo(
     () => sortTrainTypes([...new Set(countryStations.flatMap((s) => s.types))]),
     [countryStations],

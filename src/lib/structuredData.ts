@@ -1,6 +1,6 @@
 import type { Hotel } from "../data/hotels";
 import type { Station } from "../data/stations";
-import { allStations } from "../data/stationRegistry";
+import { pageStations } from "../data/stationRegistry";
 import { getStationPath } from "./stationSlug";
 import { absoluteUrl, SITE_URL } from "./site";
 import { createTranslator } from "@/i18n";
@@ -159,8 +159,8 @@ export function buildHomeStructuredData(scope: HomeScope = DEFAULT_HOME_SCOPE): 
   const homeUrl = absoluteUrl(buildHomePath(scope));
   const stations =
     scope === "all"
-      ? allStations
-      : allStations.filter((station) => station.country === scope);
+      ? pageStations
+      : pageStations.filter((station) => station.country === scope);
 
   return {
     "@context": "https://schema.org",

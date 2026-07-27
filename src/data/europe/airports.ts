@@ -34,6 +34,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 4.76389,
   },
   {
+    name: "Antwerp International Airport (Deurne) (ANR)",
+    country: "be",
+    lines: ["ANR"],
+    types: ["Airport Destination"],
+    lat: 51.190667,
+    lng: 4.463153,
+  },
+  {
     name: "Stockholm-Arlanda Airport (ARN)",
     country: "se",
     lines: ["ARN"],
@@ -192,6 +200,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 49.454399,
     lng: 2.11278,
+  },
+  {
+    name: "Cagliari Elmas Airport (CAG)",
+    country: "it",
+    lines: ["CAG"],
+    types: ["Airport Destination"],
+    lat: 39.251499,
+    lng: 9.05428,
   },
   {
     name: "Charles de Gaulle International Airport (CDG)",
@@ -530,6 +546,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 9.27674,
   },
   {
+    name: "Linz-Hörsching Airport (LNZ)",
+    country: "at",
+    lines: ["LNZ"],
+    types: ["Airport Destination"],
+    lat: 48.235362,
+    lng: 14.188128,
+  },
+  {
     name: "Gran Canaria Airport (LPA)",
     country: "es",
     lines: ["LPA"],
@@ -568,6 +592,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 49.626845,
     lng: 6.212134,
+  },
+  {
+    name: "Lublin Airport (LUZ)",
+    country: "pl",
+    lines: ["LUZ"],
+    types: ["Airport Destination"],
+    lat: 51.240157,
+    lng: 22.713461,
   },
   {
     name: "Lyon Saint-Exupéry Airport (LYS)",
@@ -674,6 +706,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -1.689577,
   },
   {
+    name: "Ireland West Airport Knock (NOC)",
+    country: "ie",
+    lines: ["NOC"],
+    types: ["Airport Destination"],
+    lat: 53.910439,
+    lng: -8.817002,
+  },
+  {
     name: "Weeze (Niederrhein) Airport (NRN)",
     country: "de",
     lines: ["NRN"],
@@ -728,6 +768,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 60.193901,
     lng: 11.1004,
+  },
+  {
+    name: "Ostend-Bruges International Airport (OST)",
+    country: "be",
+    lines: ["OST"],
+    types: ["Airport Destination"],
+    lat: 51.1998,
+    lng: 2.874673,
   },
   {
     name: "Bucharest Henri Coandă International Airport (OTP)",
@@ -1018,6 +1066,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 16.5697,
   },
   {
+    name: "Vilnius International Airport (VNO)",
+    country: "lt",
+    lines: ["VNO"],
+    types: ["Airport Destination"],
+    lat: 54.634102,
+    lng: 25.285801,
+  },
+  {
     name: "Warsaw Chopin Airport (WAW)",
     country: "pl",
     lines: ["WAW"],
@@ -1040,6 +1096,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 51.103719,
     lng: 16.882096,
+  },
+  {
+    name: "Chalons Vatry airport (XCR)",
+    country: "fr",
+    lines: ["XCR"],
+    types: ["Airport Destination"],
+    lat: 48.77333,
+    lng: 4.20611,
   },
   {
     name: "Zagreb Franjo Tuđman International Airport (ZAG)",

@@ -21,8 +21,10 @@ function extractAirportIata(station: Pick<Station, "name" | "lines">): string | 
 
 const airportStationPathByIata = new Map<string, string>();
 
+// Only Iberian hubs get station-page links. Europe destinations stay in flight
+// data / maps but are not navigable from connection lists.
 for (const station of allStations) {
-  if (!stationHasAirportType(station)) continue;
+  if (!isAirportHubStation(station)) continue;
   const iata = extractAirportIata(station);
   if (!iata) continue;
   airportStationPathByIata.set(iata, `/stations/${stationToSlug(station.name)}`);

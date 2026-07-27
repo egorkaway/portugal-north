@@ -47,7 +47,7 @@ describe("stationRegistry", () => {
     expect(new Set(slugs).size).toBe(slugs.length);
   });
 
-  it("keeps Europe destination airports out of PT/ES country lists", () => {
+  it("keeps Europe destination airports out of lists and station pages", () => {
     const ptIatas = new Set(
       getStationsForCountry("pt")
         .filter((s) => s.types.includes("Airport"))
@@ -62,14 +62,16 @@ describe("stationRegistry", () => {
       expect(airport.types).toEqual([AIRPORT_DESTINATION_TYPE]);
       expect(ptIatas.has(airport.lines[0])).toBe(false);
       expect(esIatas.has(airport.lines[0])).toBe(false);
+      expect(getStationBySlug(stationToSlug(airport.name))).toBeUndefined();
     }
     expect(getStationsForHomeScope("pt")).not.toEqual(
       expect.arrayContaining(europeDestinationAirports),
     );
+    expect(getStationsForHomeScope("all")).not.toEqual(
+      expect.arrayContaining(europeDestinationAirports),
+    );
     if (europeDestinationAirports.length > 0) {
-      expect(getStationsForHomeScope("all")).toEqual(
-        expect.arrayContaining(europeDestinationAirports),
-      );
+      expect(allStations).toEqual(expect.arrayContaining(europeDestinationAirports));
     }
   });
 });
