@@ -51,6 +51,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pixabay",
     photoPageUrl: "https://www.pexels.com/photo/view-of-building-interior-258523/",
   },
+  "326011": {
+    photographer: "Pixabay",
+    photographerUrl: "https://www.pexels.com/@pixabay",
+    photoPageUrl: "https://www.pexels.com/photo/railroad-tracks-against-sky-326011/",
+  },
   "421129": {
     photographer: "Nicolas Postiglioni",
     photographerUrl: "https://www.pexels.com/@postiglioni",
@@ -195,6 +200,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "CHEN",
     photographerUrl: "https://www.pexels.com/@view2020",
     photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-empty-stairway-with-metal-roofing-5382159/",
+  },
+  "5441764": {
+    photographer: "Paloma Clarice",
+    photographerUrl: "https://www.pexels.com/@palomaclaricefotografia",
+    photoPageUrl: "https://www.pexels.com/photo/high-angle-shot-of-a-train-5441764/",
   },
   "5441770": {
     photographer: "Paloma Clarice",
@@ -560,6 +570,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Anderson Hildebrando",
     photographerUrl: "https://www.pexels.com/@anderson-hildebrando-27563768",
     photoPageUrl: "https://www.pexels.com/photo/high-angle-view-of-train-station-13921741/",
+  },
+  "14148163": {
+    photographer: "Breno Cardoso",
+    photographerUrl: "https://www.pexels.com/@breno-cardoso-149064345",
+    photoPageUrl: "https://www.pexels.com/photo/woman-in-blue-dress-sitting-on-train-rail-14148163/",
   },
   "14383715": {
     photographer: "Emilio Sánchez  Hernández",
@@ -1110,6 +1125,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Miguel  Monte",
     photographerUrl: "https://www.pexels.com/@miguel-monte-411136289",
     photoPageUrl: "https://www.pexels.com/photo/urban-train-in-aveiro-station-close-up-28406417/",
+  },
+  "29144892": {
+    photographer: "Liane Ferreira",
+    photographerUrl: "https://www.pexels.com/@liane-ferreira-1033991071",
+    photoPageUrl: "https://www.pexels.com/photo/impressive-bridge-reflecting-in-aceredo-reservoir-29144892/",
   },
   "29145818": {
     photographer: "Gabii Fernandez",

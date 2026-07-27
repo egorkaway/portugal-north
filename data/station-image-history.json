@@ -33,6 +33,23 @@
       }
     ]
   },
+  "Areosa": {
+    "rejectedUrls": [
+      "https://images.pexels.com/photos/36536130/pexels-photo-36536130.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    ],
+    "refreshes": [
+      {
+        "at": "2026-07-27T20:00:13.459Z",
+        "from": "https://images.pexels.com/photos/36536130/pexels-photo-36536130.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://images.pexels.com/photos/326011/pexels-photo-326011.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 2
+        }
+      }
+    ]
+  },
   "Arroteia": {
     "rejectedUrls": [
       "https://images.pexels.com/photos/26977327/pexels-photo-26977327.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
@@ -159,13 +176,24 @@
   },
   "Caxarias": {
     "rejectedUrls": [
-      "https://images.pexels.com/photos/26770818/pexels-photo-26770818.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+      "https://images.pexels.com/photos/26770818/pexels-photo-26770818.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "https://images.pexels.com/photos/22047476/pexels-photo-22047476.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
     ],
     "refreshes": [
       {
         "at": "2026-07-10T18:12:12.225Z",
         "from": "https://images.pexels.com/photos/26770818/pexels-photo-26770818.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
         "to": "https://images.pexels.com/photos/22047476/pexels-photo-22047476.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 1
+        }
+      },
+      {
+        "at": "2026-07-27T20:00:11.491Z",
+        "from": "https://images.pexels.com/photos/22047476/pexels-photo-22047476.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://images.pexels.com/photos/29144892/pexels-photo-29144892.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
         "reason": "forced",
         "votesAtRefresh": {
           "up": 0,
@@ -312,7 +340,8 @@
   },
   "Gondarém": {
     "rejectedUrls": [
-      "https://images.pexels.com/photos/20445879/pexels-photo-20445879.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+      "https://images.pexels.com/photos/20445879/pexels-photo-20445879.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "https://images.pexels.com/photos/26770818/pexels-photo-26770818.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
     ],
     "refreshes": [
       {
@@ -323,6 +352,16 @@
         "votesAtRefresh": {
           "up": 0,
           "down": 1
+        }
+      },
+      {
+        "at": "2026-07-27T20:00:16.976Z",
+        "from": "https://images.pexels.com/photos/26770818/pexels-photo-26770818.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://images.pexels.com/photos/14148163/pexels-photo-14148163.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 2
         }
       }
     ]
@@ -623,6 +662,23 @@
         "at": "2026-07-27T07:29:35.004Z",
         "from": "https://images.pexels.com/photos/29406935/pexels-photo-29406935.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
         "to": "https://images.pexels.com/photos/19925519/pexels-photo-19925519.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 1
+        }
+      }
+    ]
+  },
+  "São Pedro da Torre": {
+    "rejectedUrls": [
+      "https://images.pexels.com/photos/37089601/pexels-photo-37089601.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    ],
+    "refreshes": [
+      {
+        "at": "2026-07-27T20:00:14.658Z",
+        "from": "https://images.pexels.com/photos/37089601/pexels-photo-37089601.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://images.pexels.com/photos/5441764/pexels-photo-5441764.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
         "reason": "forced",
         "votesAtRefresh": {
           "up": 0,

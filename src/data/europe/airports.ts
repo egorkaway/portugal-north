@@ -554,6 +554,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -0.459909,
   },
   {
+    name: "Lille Airport (LIL)",
+    country: "fr",
+    lines: ["LIL"],
+    types: ["Airport Destination"],
+    lat: 50.566564,
+    lng: 3.102429,
+  },
+  {
     name: "Milano Linate Airport (LIN)",
     country: "it",
     lines: ["LIN"],
@@ -728,6 +736,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 53.910439,
     lng: -8.817002,
+  },
+  {
+    name: "Cornwall Airport Newquay (NQY)",
+    country: "gb",
+    lines: ["NQY"],
+    types: ["Airport Destination"],
+    lat: 50.440601,
+    lng: -4.99541,
   },
   {
     name: "Weeze (Niederrhein) Airport (NRN)",
@@ -914,6 +930,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 18.331499,
   },
   {
+    name: "Thessaloniki Macedonia International Airport (SKG)",
+    country: "gr",
+    lines: ["SKG"],
+    types: ["Airport Destination"],
+    lat: 40.51928,
+    lng: 22.970009,
+  },
+  {
     name: "Santa Maria Airport (SMA)",
     country: "pt",
     lines: ["SMA"],
@@ -968,6 +992,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 48.689899,
     lng: 9.22196,
+  },
+  {
+    name: "Lamezia Terme Sant'Eufemia International Airport (SUF)",
+    country: "it",
+    lines: ["SUF"],
+    types: ["Airport Destination"],
+    lat: 38.906214,
+    lng: 16.246007,
   },
   {
     name: "Stavanger Airport, Sola (SVG)",

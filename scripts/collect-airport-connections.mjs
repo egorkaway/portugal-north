@@ -5,6 +5,8 @@
  *
  * Periods: nine open dates per year (see snapshotPeriods.mjs). Within an open
  * period, each bake unions new destinations into the live list (never drops).
+ * Connection map PNGs regenerate only when destination count changes (or the
+ * PNG is missing); use --maps-only to force re-render.
  * On each open-date boundary the previous live bake is frozen under
  * public/.../periods/{YYYY-MM-DD}/ and a new live period starts empty.
  *
@@ -21,7 +23,7 @@
  * src/data/europe/airports.ts as "Airport Destination" stations (map only;
  * no outbound collection).
  */
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadEnvFile } from "./lib/stationImageFetch.mjs";
@@ -367,19 +369,30 @@ export async function collectAirportConnections(options = {}) {
       const added = previous
         ? entry.connections.length - previous.connections.length
         : entry.connections.length;
+      const mapPath = join(mapsOutDir, `${entry.slug}-connections.png`);
+      // Same destination count → geometry unchanged (period merges only add, never drop).
+      // Skip expensive tile stitch/render unless the PNG is missing.
+      const shouldRenderMap =
+        !previous ||
+        entry.connections.length !== previous.connections.length ||
+        !existsSync(mapPath);
 
       mapVisibility = recordAirportConnectionsOk(mapVisibility, airport.iata, period.id);
       mapVisibilityDirty = true;
 
-      mkdirSync(mapsOutDir, { recursive: true });
-      const png = await renderAirportConnectionsMap(entry, { siteUrl, basemapMode });
-      writeFileSync(join(mapsOutDir, `${entry.slug}-connections.png`), png.buffer);
+      let basemapNote = "map unchanged";
+      if (shouldRenderMap) {
+        mkdirSync(mapsOutDir, { recursive: true });
+        const png = await renderAirportConnectionsMap(entry, { siteUrl, basemapMode });
+        writeFileSync(mapPath, png.buffer);
+        basemapNote = png.basemapId;
+      }
       airports[entry.iata] = entry;
       ok += 1;
       console.log(
         `OK ${label}: ${entry.connections.length} destinations` +
           (previous ? ` (+${Math.max(0, added)} new this sample)` : "") +
-          ` from ${entry.sampledFlights} sampled flights via ${provider} (${png.basemapId})`,
+          ` from ${entry.sampledFlights} sampled flights via ${provider} (${basemapNote})`,
       );
     } catch (error) {
       failed += 1;
