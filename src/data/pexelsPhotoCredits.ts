@@ -161,6 +161,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@arthur-forti-967563",
     photoPageUrl: "https://www.pexels.com/photo/an-empty-train-station-4525230/",
   },
+  "4562736": {
+    photographer: "Pok Rie",
+    photographerUrl: "https://www.pexels.com/@pok-rie-33563",
+    photoPageUrl: "https://www.pexels.com/photo/railway-between-picturesque-lush-forest-in-countryside-4562736/",
+  },
   "4888205": {
     photographer: "Burak The Weekender",
     photographerUrl: "https://www.pexels.com/@weekendplayer",
@@ -536,6 +541,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",
     photoPageUrl: "https://www.pexels.com/photo/photo-of-a-lake-with-brown-water-on-a-shore-14383715/",
   },
+  "14508798": {
+    photographer: "정규송 Nui MALAMA",
+    photographerUrl: "https://www.pexels.com/@nui-malama-169330637",
+    photoPageUrl: "https://www.pexels.com/photo/railway-on-the-seaside-14508798/",
+  },
   "14621007": {
     photographer: "A P",
     photographerUrl: "https://www.pexels.com/@a-p-363022294",
@@ -610,6 +620,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Emmanuel Codden",
     photographerUrl: "https://www.pexels.com/@ehma",
     photoPageUrl: "https://www.pexels.com/photo/steel-structure-of-a-round-roof-over-the-escalators-15982756/",
+  },
+  "16086936": {
+    photographer: "Nevtuğ  Yalçın",
+    photographerUrl: "https://www.pexels.com/@nevtug-yalcin-491138436",
+    photoPageUrl: "https://www.pexels.com/photo/mosaic-on-building-wall-16086936/",
   },
   "16239930": {
     photographer: "Egor Kunovsky",
@@ -1271,6 +1286,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/modern-train-at-jerez-de-la-frontera-station-31799312/",
   },
+  "31800279": {
+    photographer: "Riccardo Toso",
+    photographerUrl: "https://www.pexels.com/@riccardo-toso-2151342566",
+    photoPageUrl: "https://www.pexels.com/photo/charming-lisbon-street-with-historic-tram-31800279/",
+  },
   "31804316": {
     photographer: "Kaue Barbier",
     photographerUrl: "https://www.pexels.com/@kaue-barbier-710715348",
@@ -1381,6 +1401,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@charles-edward-cansino-2149014986",
     photoPageUrl: "https://www.pexels.com/photo/captivating-black-and-white-subway-movement-shot-33147868/",
   },
+  "33354908": {
+    photographer: "Brendan Rühli",
+    photographerUrl: "https://www.pexels.com/@brendanruehli",
+    photoPageUrl: "https://www.pexels.com/photo/abandoned-railway-yard-with-industrial-building-33354908/",
+  },
   "33355462": {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
@@ -1480,6 +1505,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Davide Negro",
     photographerUrl: "https://www.pexels.com/@davide-negro-2157018402",
     photoPageUrl: "https://www.pexels.com/photo/modern-subway-station-with-yellow-ceiling-tiles-34504895/",
+  },
+  "34532038": {
+    photographer: "Tânia Roques",
+    photographerUrl: "https://www.pexels.com/@troquesphotography",
+    photoPageUrl: "https://www.pexels.com/photo/moorish-architecture-at-loule-market-portugal-34532038/",
   },
   "34747986": {
     photographer: "Tommy K",
