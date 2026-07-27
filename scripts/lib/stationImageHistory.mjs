@@ -90,3 +90,18 @@ export function recordRefresh(history, stationName, refresh) {
 export function rejectedUrlsForStation(history, stationName) {
   return new Set(history[stationName]?.rejectedUrls ?? []);
 }
+
+/**
+ * Every URL ever removed from any station — never reassign these elsewhere.
+ * @param {StationImageHistory} history
+ * @returns {Set<string>}
+ */
+export function allRejectedUrls(history) {
+  const urls = new Set();
+  for (const entry of Object.values(history)) {
+    for (const url of entry?.rejectedUrls ?? []) {
+      if (typeof url === "string" && url.startsWith("http")) urls.add(url);
+    }
+  }
+  return urls;
+}

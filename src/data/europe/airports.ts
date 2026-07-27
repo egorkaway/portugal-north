@@ -266,6 +266,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -3.34333,
   },
   {
+    name: "Dubrovnik Ruđer Bošković Airport (DBV)",
+    country: "hr",
+    lines: ["DBV"],
+    types: ["Airport Destination"],
+    lat: 42.562247,
+    lng: 18.265543,
+  },
+  {
     name: "Dublin Airport (DUB)",
     country: "ie",
     lines: ["DUB"],
@@ -472,6 +480,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 37.435101,
     lng: 25.348101,
+  },
+  {
+    name: "Kerry Airport (KIR)",
+    country: "ie",
+    lines: ["KIR"],
+    types: ["Airport Destination"],
+    lat: 52.180901,
+    lng: -9.52378,
   },
   {
     name: "Chisinau International Airport (KIV)",
@@ -890,6 +906,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 0.693627,
   },
   {
+    name: "Sarajevo International Airport (SJJ)",
+    country: "ba",
+    lines: ["SJJ"],
+    types: ["Airport Destination"],
+    lat: 43.8246,
+    lng: 18.331499,
+  },
+  {
     name: "Santa Maria Airport (SMA)",
     country: "pt",
     lines: ["SMA"],
@@ -912,6 +936,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 42.696357,
     lng: 23.417671,
+  },
+  {
+    name: "Southampton Airport (SOU)",
+    country: "gb",
+    lines: ["SOU"],
+    types: ["Airport Destination"],
+    lat: 50.950298,
+    lng: -1.3568,
   },
   {
     name: "Split Saint Jerome Airport (SPU)",
@@ -944,6 +976,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 58.876701,
     lng: 5.63778,
+  },
+  {
+    name: "Salzburg Airport (SZG)",
+    country: "at",
+    lines: ["SZG"],
+    types: ["Airport Destination"],
+    lat: 47.793301,
+    lng: 13.0043,
   },
   {
     name: "Lajes Airport (TER)",

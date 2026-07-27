@@ -29,16 +29,18 @@ import {
 import { fetchLiveVotes } from "./lib/fetchLiveVotes.mjs";
 import {
   addRejectedUrl,
+  allRejectedUrls,
   readImageHistory,
   recordRefresh,
-  rejectedUrlsForStation,
   writeImageHistory,
 } from "./lib/stationImageHistory.mjs";
 import {
   loadEnvFile,
+  markImageUsed,
   parseImageMap,
   parseAllStationsFromRepo,
   resolveStationImage,
+  seedUsedImages,
   sleep,
   writeImageMap,
 } from "./lib/stationImageFetch.mjs";
@@ -219,7 +221,12 @@ async function main() {
   const stationByName = new Map(stations.map((s) => [s.name, s]));
   const imageMap = parseImageMap(readFileSync(imagesPath, "utf8"));
   const history = await loadHistory();
-  const usedGlobally = new Set(Object.values(imageMap));
+  // Ban every currently assigned photo and every historically rejected photo
+  // (any station) so refreshes never reassign a removed image elsewhere.
+  const usedGlobally = seedUsedImages([
+    ...Object.values(imageMap),
+    ...allRejectedUrls(history),
+  ]);
   const pexelsCredits = loadPexelsCredits(creditsPath);
 
   /** @type {string[]} */
@@ -234,7 +241,8 @@ async function main() {
     }
 
     addRejectedUrl(history, name, currentUrl);
-    const usedUrls = new Set([...usedGlobally, ...rejectedUrlsForStation(history, name)]);
+    markImageUsed(usedGlobally, currentUrl);
+    const usedUrls = new Set(usedGlobally);
 
     try {
       const result = await resolveStationImage(station, {
@@ -253,8 +261,7 @@ async function main() {
 
       if (!dryRun) {
         imageMap[name] = result.url;
-        usedGlobally.delete(currentUrl);
-        usedGlobally.add(result.url);
+        markImageUsed(usedGlobally, result.url);
         recordRefresh(history, name, {
           from: currentUrl,
           to: result.url,

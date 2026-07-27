@@ -16,6 +16,7 @@ import {
   parseImageMap,
   parseAllStationsFromRepo,
   resolveStationImage,
+  seedUsedImages,
   sleep,
   updateImageInMap,
   writeImageMap,
@@ -26,11 +27,13 @@ import {
   upsertPexelsCredit,
   writePexelsCredits,
 } from "./lib/pexelsCredits.mjs";
+import { allRejectedUrls, readImageHistory } from "./lib/stationImageHistory.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const stationsPath = join(root, "src/data/stations.ts");
 const imagesPath = join(root, "src/data/stationImages.ts");
 const creditsPath = join(root, "src/data/pexelsPhotoCredits.ts");
+const historyPath = join(root, "data/station-image-history.json");
 
 loadEnvFile(join(root, ".env"));
 const apiKey = process.env.PEXELS_API_KEY;
@@ -46,6 +49,7 @@ if (!apiKey) {
 
 const stations = parseAllStationsFromRepo(root);
 const imageMap = parseImageMap(readFileSync(imagesPath, "utf8"));
+const history = readImageHistory(historyPath);
 const targets = onlyStation
   ? stations.filter((station) => station.name === onlyStation)
   : stations.filter((station) => !imageMap[station.name]);
@@ -59,7 +63,7 @@ console.log(
   `Resolving images for ${targets.length} station(s)${pexelsOnly ? " (Pexels only)" : ""}...`,
 );
 
-const usedUrls = new Set(Object.values(imageMap));
+const usedUrls = seedUsedImages([...Object.values(imageMap), ...allRejectedUrls(history)]);
 const pexelsCredits = loadPexelsCredits(creditsPath);
 let added = 0;
 

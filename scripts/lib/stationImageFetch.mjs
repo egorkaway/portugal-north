@@ -1,5 +1,30 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { pexelsPhotoIdFromUrl } from "./pexelsCredits.mjs";
+
+/** Exact URL plus Pexels photo-id key so query-param variants still collide. */
+export function imageOccupationKeys(url) {
+  if (!url || typeof url !== "string") return [];
+  const keys = [url];
+  const photoId = pexelsPhotoIdFromUrl(url);
+  if (photoId) keys.push(`pexels:${photoId}`);
+  return keys;
+}
+
+export function markImageUsed(used, url) {
+  for (const key of imageOccupationKeys(url)) used.add(key);
+}
+
+export function isImageUsed(used, url) {
+  return imageOccupationKeys(url).some((key) => used.has(key));
+}
+
+/** @param {Iterable<string>} urls */
+export function seedUsedImages(urls) {
+  const used = new Set();
+  for (const url of urls) markImageUsed(used, url);
+  return used;
+}
 
 export function loadEnvFile(envPath) {
   try {
@@ -288,17 +313,19 @@ export async function pexelsPickUnique(query, stationName, usedUrls, apiKey, { p
   for (let offset = 0; offset < photos.length; offset++) {
     const photo = photos[(start + offset) % photos.length];
     const candidate = photo?.src?.large;
-    if (candidate && !usedUrls.has(candidate)) {
-      usedUrls.add(candidate);
-      return {
-        url: candidate,
-        credit: {
-          photographer: photo.photographer ?? "",
-          photographerUrl: photo.photographer_url ?? "",
-          photoPageUrl: photo.url ?? "",
-        },
-      };
-    }
+    if (!candidate) continue;
+    const idKey = photo.id != null ? `pexels:${photo.id}` : null;
+    if (usedUrls.has(candidate) || (idKey && usedUrls.has(idKey))) continue;
+    markImageUsed(usedUrls, candidate);
+    if (idKey) usedUrls.add(idKey);
+    return {
+      url: candidate,
+      credit: {
+        photographer: photo.photographer ?? "",
+        photographerUrl: photo.photographer_url ?? "",
+        photoPageUrl: photo.url ?? "",
+      },
+    };
   }
   return null;
 }
@@ -310,8 +337,8 @@ export async function resolveStationImage(station, { apiKey, usedUrls, pexelsOnl
       for (const title of wikiTitlesForStation(station)) {
         const { thumb, rateLimited } = await wikiThumb(title, lang);
         if (rateLimited) break;
-        if (thumb && !usedUrls.has(thumb)) {
-          usedUrls.add(thumb);
+        if (thumb && !isImageUsed(usedUrls, thumb)) {
+          markImageUsed(usedUrls, thumb);
           return { url: thumb, source: `wikimedia-${lang}` };
         }
         await sleep(1200);

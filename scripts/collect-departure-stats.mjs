@@ -7,7 +7,8 @@
  *   npm run stats:departures -- --station "Porto-Campanhã"
  *   npm run stats:departures -- --dry-run
  *
- * Also collects airport flight connections, logs temperatures (Open-Meteo) only for
+ * Also collects airport flight connections (skipped if last run was < 3 hours ago),
+ * logs temperatures (Open-Meteo) only for
  * stations that successfully returned departure data (after departures),
  * and syncs mobile/data (npm run sync:data).
  * Stations are shuffled each run so partial runs (--limit or timeouts) spread across the network.
@@ -17,6 +18,7 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadEnvFile, parseAllStationsFromRepo } from "./lib/stationImageFetch.mjs";
+import { shouldRecheckAirportDestinations } from "./lib/airportRecheckPolicy.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const statsPath = join(root, "data/departure-stats.json");
@@ -131,7 +133,18 @@ if (!targets.length) {
 }
 
 const store = loadStore();
+const previousLastRunAt = store.lastRunAt;
+const recheckAirports = shouldRecheckAirportDestinations(previousLastRunAt);
 beginDepartureStatsRun(store);
+
+if (!recheckAirports) {
+  const minutesAgo = Math.round(
+    (Date.now() - Date.parse(previousLastRunAt)) / 60_000,
+  );
+  console.log(
+    `Last departure-stats run was ${minutesAgo} min ago (< 3 h) — sampling trains only, skipping airport destinations.`,
+  );
+}
 
 let ok = 0;
 let failed = 0;
@@ -209,8 +222,12 @@ if (!dryRun) {
     console.log("No successful departure samples — skipping temperature log.");
   }
 
-  const { collectAirportConnections } = await import("./collect-airport-connections.mjs");
-  await collectAirportConnections({ rootDir: root, delayMs });
+  if (recheckAirports) {
+    const { collectAirportConnections } = await import("./collect-airport-connections.mjs");
+    await collectAirportConnections({ rootDir: root, delayMs });
+  } else {
+    console.log("Skipping airport destination recheck (last run < 3 hours ago).");
+  }
 
   const { syncMobileData } = await import("../mobile/scripts/sync-data.mjs");
   console.log("Syncing mobile bundled data…");
@@ -238,9 +255,10 @@ if (!dryRun) {
 
 const skipped = stoppedEarly ? targets.length - ok - failed : 0;
 const earlyNote = stoppedEarly ? `, ${skipped} skipped after ${CONSECUTIVE_FAILURE_LIMIT} consecutive failures` : "";
+const airportNote = recheckAirports ? "airport connections" : "airports skipped (<3h)";
 
 console.log(
   dryRun
     ? `Dry run: ${ok} station(s) planned (run #${store.runCount} not saved)`
-    : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed${earlyNote} → ${statsPath} (+ reliability scores, temperatures, airport connections, mobile data)`,
+    : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed${earlyNote} → ${statsPath} (+ reliability scores, temperatures, ${airportNote}, mobile data)`,
 );

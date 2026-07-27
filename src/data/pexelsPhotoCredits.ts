@@ -566,6 +566,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@jan-van-der-wolf-11680885",
     photoPageUrl: "https://www.pexels.com/photo/benches-in-a-railway-station-14844696/",
   },
+  "14924416": {
+    photographer: "Vladimir Srajber",
+    photographerUrl: "https://www.pexels.com/@vladimirsrajber",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-a-bullet-train-14924416/",
+  },
   "14924423": {
     photographer: "Vladimir Srajber",
     photographerUrl: "https://www.pexels.com/@vladimirsrajber",

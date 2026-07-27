@@ -15,13 +15,16 @@ import {
   parseImageMap,
   parseStations,
   resolveStationImage,
+  seedUsedImages,
   sleep,
   writeImageMap,
 } from "./lib/stationImageFetch.mjs";
+import { allRejectedUrls, readImageHistory } from "./lib/stationImageHistory.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const stationsPath = join(root, "src/data/stations.ts");
 const imagesPath = join(root, "src/data/stationImages.ts");
+const historyPath = join(root, "data/station-image-history.json");
 
 loadEnvFile(join(root, ".env"));
 const apiKey = process.env.PEXELS_API_KEY;
@@ -36,6 +39,7 @@ if (!apiKey) {
 const stations = parseStations(readFileSync(stationsPath, "utf8"));
 const stationByName = new Map(stations.map((station) => [station.name, station]));
 const imageMap = parseImageMap(readFileSync(imagesPath, "utf8"));
+const history = readImageHistory(historyPath);
 
 const duplicateGroups = findDuplicateGroups(imageMap).filter(([url]) =>
   onlyPexels ? url.includes("pexels.com") : true,
@@ -47,11 +51,12 @@ console.log(
   `${duplicateGroups.length} duplicate URL group(s), ${toFix.length} station(s) to re-resolve${dryRun ? " (dry run)" : ""}.`,
 );
 
-const usedUrls = new Set(
-  Object.entries(imageMap)
+const usedUrls = seedUsedImages([
+  ...Object.entries(imageMap)
     .filter(([name]) => !toFix.includes(name))
     .map(([, url]) => url),
-);
+  ...allRejectedUrls(history),
+]);
 
 let updated = 0;
 let failed = 0;

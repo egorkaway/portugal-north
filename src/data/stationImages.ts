@@ -433,7 +433,7 @@ export const stationImages: Record<string, string> = {
   "Vigo Airport (VGO)": "https://images.pexels.com/photos/15656110/pexels-photo-15656110.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Vigo-Guixar": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Vigo_01-04f.JPG/960px-Vigo_01-04f.JPG",
   "Vigo-Urzáiz": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Vigo_-_Estaci%C3%B3n_de_ADIF_de_Vigo-Urz%C3%A1iz_1.jpg/960px-Vigo_-_Estaci%C3%B3n_de_ADIF_de_Vigo-Urz%C3%A1iz_1.jpg",
-  "Vila d'Este": "https://images.pexels.com/photos/17252889/pexels-photo-17252889.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Vila d'Este": "https://images.pexels.com/photos/14924416/pexels-photo-14924416.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Vila da Feira": "https://images.pexels.com/photos/26754646/pexels-photo-26754646.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Vila das Aves": "https://images.pexels.com/photos/36654959/pexels-photo-36654959.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Vila Franca de Xira": "https://images.pexels.com/photos/10861622/pexels-photo-10861622.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
