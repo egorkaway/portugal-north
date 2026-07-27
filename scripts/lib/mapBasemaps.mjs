@@ -16,21 +16,11 @@ export const RANDOM_BASEMAP_POOL = [
   "opentopomap",
 ];
 
-/** Airport connection maps: no terrain/hillshade tiles (poor at regional/world zoom). */
-export const AIRPORT_CONNECTIONS_BASEMAP_POOL = [
-  "osm",
-  "carto-positron",
-  "carto-voyager",
-  "carto-voyager",
-];
+/** Airport connection maps stay on OSM for a consistent regional/world look. */
+export const AIRPORT_CONNECTIONS_BASEMAP_ID = "osm";
 
-/** Portugal overview PNGs: flat street maps only (no topo hillshade or satellite). */
-export const OVERVIEW_MAP_BASEMAP_POOL = [
-  "osm",
-  "carto-positron",
-  "carto-voyager",
-  "carto-voyager",
-];
+/** Portugal overview PNGs stay on OSM for a consistent public download style. */
+export const OVERVIEW_MAP_BASEMAP_ID = "osm";
 
 const OVERVIEW_MAP_EXCLUDED_BASEMAPS = new Set(["opentopomap", "satellite"]);
 
@@ -85,16 +75,14 @@ export function randomBasemap(random = Math.random) {
   return getBasemap(RANDOM_BASEMAP_POOL[index]);
 }
 
-/** Pick a basemap for airport connection maps (excludes opentopomap). */
-export function randomAirportBasemap(random = Math.random) {
-  const index = Math.floor(random() * AIRPORT_CONNECTIONS_BASEMAP_POOL.length);
-  return getBasemap(AIRPORT_CONNECTIONS_BASEMAP_POOL[index]);
+/** Airport connection maps are fixed to OSM (legacy "random" mode alias). */
+export function randomAirportBasemap(_random = Math.random) {
+  return getBasemap(AIRPORT_CONNECTIONS_BASEMAP_ID);
 }
 
-/** Pick a basemap for Portugal overview PNGs (flat street styles only). */
-export function randomOverviewBasemap(random = Math.random) {
-  const index = Math.floor(random() * OVERVIEW_MAP_BASEMAP_POOL.length);
-  return getBasemap(OVERVIEW_MAP_BASEMAP_POOL[index]);
+/** Overview PNGs are fixed to OSM (legacy "random" mode alias). */
+export function randomOverviewBasemap(_random = Math.random) {
+  return getBasemap(OVERVIEW_MAP_BASEMAP_ID);
 }
 
 /**
@@ -108,7 +96,7 @@ export function resolveBasemap(mode = "random") {
 }
 
 /**
- * @param {"random" | string} mode — "random" or a fixed basemap id (opentopomap rejected)
+ * @param {"random" | string} mode — "random" aliases to OSM; opentopomap rejected
  */
 export function resolveAirportBasemap(mode = "random") {
   if (mode === "random") {
@@ -121,7 +109,7 @@ export function resolveAirportBasemap(mode = "random") {
 }
 
 /**
- * @param {"random" | string} mode — "random" or a fixed basemap id (opentopomap/satellite rejected)
+ * @param {"random" | string} mode — "random" aliases to OSM; opentopomap/satellite rejected
  */
 export function resolveOverviewBasemap(mode = "random") {
   if (mode === "random") {

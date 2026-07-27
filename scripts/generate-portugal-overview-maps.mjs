@@ -20,7 +20,7 @@ const outDir = join(root, "public/maps/overview");
 const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
 
 mkdirSync(outDir, { recursive: true });
-const basemap = resolveOverviewBasemap("random");
+const basemap = resolveOverviewBasemap("osm");
 
 const outputs = [
   {

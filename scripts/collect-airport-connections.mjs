@@ -96,8 +96,8 @@ const basemapArg = args.find((arg) => arg.startsWith("--basemap"));
 const defaultBasemapMode = basemapArg
   ? basemapArg.includes("=")
     ? basemapArg.split("=")[1]
-    : args[args.indexOf("--basemap") + 1] ?? "random"
-  : "random";
+    : args[args.indexOf("--basemap") + 1] ?? "osm"
+  : "osm";
 
 const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
 

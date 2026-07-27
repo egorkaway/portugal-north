@@ -222,7 +222,7 @@ if (!dryRun) {
   const overviewDir = join(root, "public/maps/overview");
   mkdirSync(overviewDir, { recursive: true });
   const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
-  const basemap = resolveOverviewBasemap("random");
+  const basemap = resolveOverviewBasemap("osm");
   const overviewMaps = [
     { filename: "portugal-activity.png", render: () => renderPortugalActivityMap(root, { siteUrl, basemap }) },
     { filename: "portugal-reliability.png", render: () => renderPortugalReliabilityMap(root, { siteUrl, basemap }) },

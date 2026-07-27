@@ -45,32 +45,28 @@ describe("mapBasemaps", () => {
     expect(counts.opentopomap).toBeGreaterThan(counts["carto-voyager"]);
   });
 
-  it("excludes opentopomap from airport connection basemaps", () => {
+  it("keeps airport connection basemaps fixed to osm", () => {
     const picks = new Set(
       Array.from({ length: 40 }, (_, index) => randomAirportBasemap(() => index / 40).id),
     );
-    expect(picks.has("opentopomap")).toBe(false);
-    for (const id of picks) {
-      expect(["osm", "carto-positron", "carto-voyager"]).toContain(id);
-    }
+    expect(picks).toEqual(new Set(["osm"]));
   });
 
-  it("rejects opentopomap for airport connection maps", () => {
+  it("keeps explicit airport connection basemaps but rejects opentopomap", () => {
+    expect(resolveAirportBasemap("random").id).toBe("osm");
     expect(() => resolveAirportBasemap("opentopomap")).toThrow(/not supported/);
     expect(resolveAirportBasemap("carto-voyager").id).toBe("carto-voyager");
   });
 
-  it("excludes opentopomap from overview map basemaps", () => {
+  it("keeps overview map basemaps fixed to osm", () => {
     const picks = new Set(
       Array.from({ length: 40 }, (_, index) => randomOverviewBasemap(() => index / 40).id),
     );
-    expect(picks.has("opentopomap")).toBe(false);
-    for (const id of picks) {
-      expect(["osm", "carto-positron", "carto-voyager"]).toContain(id);
-    }
+    expect(picks).toEqual(new Set(["osm"]));
   });
 
-  it("rejects topo and satellite for overview maps", () => {
+  it("keeps explicit overview basemaps but rejects topo and satellite", () => {
+    expect(resolveOverviewBasemap("random").id).toBe("osm");
     expect(() => resolveOverviewBasemap("opentopomap")).toThrow(/not supported/);
     expect(() => resolveOverviewBasemap("satellite")).toThrow(/not supported/);
     expect(resolveOverviewBasemap("carto-positron").id).toBe("carto-positron");
