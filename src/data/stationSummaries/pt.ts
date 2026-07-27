@@ -646,8 +646,6 @@ export const stationSummariesPt: Record<string, string> = {
     "Paragem na Linha do Leste perto de Abrantes na margem sul do Tejo. Comboios regionais servem o corredor Santarém–Castelo Branco — paragem ribeirinha tranquila para turismo no país dos castelos e passeios no Ribatejo com ligações para Tomar e Entroncamento.",
   "Caldas de Moledo":
     "Paragem na linha do Douro entre Godim e Ferrão no alto vale do Douro. Comboios regionais ligam Marco de Canaveses ao país do vinho — paragem paroquial tranquila para visitas a quintas e passeios no país termal com ligações para Pinhão e o corredor do Porto.",
-  "Caldas de Vizela":
-    "Paragem na Linha de Guimarães na vila termal entre Vizela e Guimarães. Comboios urbanos e regionais ligam a cidade berço ao cinturão norte do Porto — paragem prática para termas e turismo no vale do Ave com ligações frequentes de pendulares para Santo Tirso.",
   Ferrão:
     "Paragem na linha do Douro entre Tua e Pinhão no coração das terras vinícolas em socalcos com serviços Intercidades e regionais. Comboios ligam o Porto a Pocinho e ao desfiladeiro oriental — paragem panorâmica para visitas a quintas e cruzeiros no rio com ligações de longo curso em ambas as direções.",
   Guia:

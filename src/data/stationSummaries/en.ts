@@ -58,7 +58,7 @@
  * Batch 62: Senhora da Agonia, Tua, Aguieira, Barca da Amieira – Envendos, Carreço
  * Batch 63: Famalicão da Nazaré, Godim, Lagos, Mirão, Mouriscas - A
  * Batch 64: Pala, Pataias, Praia do Ribatejo, São Martinho do Porto, Tancos
- * Batch 65: Valado – Nazaré – Alcobaça, Alferrarede, Caldas de Moledo, Caldas de Vizela, Ferrão
+ * Batch 65: Valado – Nazaré – Alcobaça, Alferrarede, Caldas de Moledo, Ferrão
  * Batch 66: Guia, Leiria, Pocinho, Porto Rei, Sernada do Vouga
  * Batch 67: Vendas Novas, Vila Real de Santo António, Barqueiros, Beja, Covilhã
  * Batch 68: Elvas, Oliveira de Azeméis, Pinhão, Salir do Porto, Esqueiró
@@ -713,8 +713,6 @@ export const stationSummariesEn: Record<string, string> = {
     "Linha do Leste halt near Abrantes on the Tejo south bank. Regional trains serve the Santarém–Castelo Branco corridor — a quiet riverside stop for castle-country touring and Ribatejo walks with connections towards Tomar and Entroncamento.",
   "Caldas de Moledo":
     "Douro-line halt between Godim and Ferrão in the upper Douro valley. Regional trains link Marco de Canaveses with the wine country — a quiet parish stop for quinta visits and thermal-country walks with connections towards Pinhão and the Porto corridor.",
-  "Caldas de Vizela":
-    "Halt on the Linha de Guimarães at the spa town between Vizela and Guimarães. Urban and regional trains link the cradle city with the Porto northern belt — a practical stop for thermal baths and Ave valley touring with frequent commuter connections towards Santo Tirso.",
   Ferrão:
     "Douro-line halt between Tua and Pinhão in the heart of the terraced wine lands with Intercidades and regional services. Trains link Porto with Pocinho and the eastern gorge — a scenic stop for quinta visits and river cruises with long-distance connections in both directions.",
   Guia:

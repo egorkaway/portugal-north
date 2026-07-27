@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { formatMapUrlLabel, pickZoom, siteHostFromUrl } from "../../scripts/lib/stationMapCard.mjs";
+import {
+  baselineGap,
+  formatMapUrlLabel,
+  mapFooterTextLayout,
+  pickZoom,
+  siteHostFromUrl,
+} from "../../scripts/lib/stationMapCard.mjs";
 
 describe("stationMapCard formatMapUrlLabel", () => {
   it("keeps the full path when it fits", () => {
@@ -43,5 +49,28 @@ describe("stationMapCard pickZoom", () => {
     expect(
       pickZoom({ name: "Campanhã (Metro Porto)", lines: ["Metro do Porto"], lat: 0, lng: 0 }),
     ).toBe(17);
+  });
+});
+
+describe("mapFooterTextLayout", () => {
+  it("keeps line, title, and URL baselines from colliding", () => {
+    const layout = mapFooterTextLayout({ titleLineCount: 1, hasLineLabel: true });
+    expect(layout.lineY).toBeLessThan(layout.titleY);
+    expect(layout.titleY).toBeLessThan(layout.urlY);
+    expect(layout.titleY - layout.lineY!).toBeGreaterThanOrEqual(
+      baselineGap(layout.lineFontSize, layout.titleFontSize),
+    );
+    expect(layout.urlY - layout.titleLastY).toBeGreaterThanOrEqual(
+      baselineGap(layout.titleFontSize, layout.urlFontSize),
+    );
+  });
+
+  it("keeps wrapped title lines spaced by titleLineDy", () => {
+    const layout = mapFooterTextLayout({ titleLineCount: 2, hasLineLabel: true });
+    expect(layout.titleLastY - layout.titleY).toBe(layout.titleLineDy);
+    expect(layout.titleLineDy).toBeGreaterThanOrEqual(layout.titleFontSize);
+    expect(layout.urlY - layout.titleLastY).toBeGreaterThanOrEqual(
+      baselineGap(layout.titleFontSize, layout.urlFontSize),
+    );
   });
 });

@@ -646,8 +646,6 @@ export const stationSummariesEs: Record<string, string> = {
     "Parada en la Línea del Este cerca de Abrantes en la margen sur del Tajo. Trenes regionales sirven el corredor Santarém–Castelo Branco — parada fluvial tranquila para turismo en el país de los castillos y paseos en el Ribatejo con conexiones hacia Tomar y Entroncamento.",
   "Caldas de Moledo":
     "Parada en la línea del Duero entre Godim y Ferrão en el alto valle del Duero. Trenes regionales enlazan Marco de Canaveses con el país del vino — parada parroquial tranquila para visitas a quintas y paseos por el país termal con conexiones hacia Pinhão y el corredor de Oporto.",
-  "Caldas de Vizela":
-    "Parada en la Línea de Guimarães en la villa termal entre Vizela y Guimarães. Trenes urbanos y regionales enlazan la ciudad cuna con el cinturón norte de Oporto — parada práctica para termas y turismo en el valle del Ave con conexiones frecuentes de cercanías hacia Santo Tirso.",
   Ferrão:
     "Parada en la línea del Duero entre Tua y Pinhão en el corazón de las tierras vinícolas en terrazas con servicios Intercidades y regionales. Trenes enlazan Oporto con Pocinho y el desfiladero oriental — parada panorámica para visitas a quintas y cruceros fluviales con conexiones de larga distancia en ambas direcciones.",
   Guia:

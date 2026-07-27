@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 /**
  * Generate 1080×1080 square PNG area maps for each station (map tiles + brand overlay).
+ * Re-run for a station whenever its lat/lng changes so the pin matches the live page.
  *
  *   npm run maps:stations
  *   npm run maps:stations -- --limit 5

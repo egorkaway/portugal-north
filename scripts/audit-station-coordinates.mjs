@@ -2,6 +2,9 @@
 /**
  * Audit station/airport coordinates against OpenStreetMap railway/aerodrome nodes.
  *
+ * After fixing coordinates (here or by hand), regenerate area maps:
+ *   npm run maps:stations -- --station "Station Name"
+ *
  *   node scripts/audit-station-coordinates.mjs --report
  *   node scripts/audit-station-coordinates.mjs --fix --threshold=1
  *   node scripts/audit-station-coordinates.mjs --fix --threshold=1 --write-list
@@ -315,6 +318,14 @@ if (!reportOnly && mismatches.length) {
     console.log(`Updated ${n} in ${file}`);
   }
   console.log(`\nApplied ${total} coordinate fix(es).`);
+  console.log(
+    `Regenerate area maps for updated stations, e.g.:\n` +
+      mismatches
+        .slice(0, 5)
+        .map((m) => `  npm run maps:stations -- --station "${m.name}"`)
+        .join("\n") +
+      (mismatches.length > 5 ? `\n  …and ${mismatches.length - 5} more` : ""),
+  );
 } else if (reportOnly) {
   console.log("\nReport only. Re-run with --fix to apply updates.");
 }

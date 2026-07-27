@@ -646,8 +646,6 @@ export const stationSummariesGl: Record<string, string> = {
     "Parada na Liña do Leste preto de Abrantes na marxe sur do Tajo. Trens rexionais serven o corredor Santarém–Castelo Branco — parada fluvial tranquila para turismo no país dos castelos e paseos no Ribatejo con ligazóns cara Tomar e Entroncamento.",
   "Caldas de Moledo":
     "Parada na liña do Douro entre Godim e Ferrão no alto val do Douro. Trens rexionais ligan Marco de Canaveses ao país do viño — parada parroquial tranquila para visitas a quintas e paseos polo país termal con ligazóns cara Pinhão e o corredor de O Porto.",
-  "Caldas de Vizela":
-    "Parada na Liña de Guimarães na vila termal entre Vizela e Guimarães. Trens urbanos e rexionais ligan a cidade berce ao cinturón norte de O Porto — parada práctica para termas e turismo no val do Ave con ligazóns frecuentes de cercanías cara Santo Tirso.",
   Ferrão:
     "Parada na liña do Douro entre Tua e Pinhão no corazón das terras vinícolas en socalcos con servizos Intercidades e rexionais. Trens ligan O Porto a Pocinho e ao desfiladeiro oriental — parada panorámica para visitas a quintas e cruceiros no río con ligazóns de longo percorrido en ambas as direccións.",
   Guia:

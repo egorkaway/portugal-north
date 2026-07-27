@@ -65,7 +65,6 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Cais do Sodré": "94-69005",
   "Caldas da Rainha": "94-63008",
   "Caldas de Moledo": "94-9399",
-  "Caldas de Vizela": "94-9399",
   "Caminha": "94-18242",
   "Campolide": "94-60004",
   "Canelas": "94-38117",

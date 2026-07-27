@@ -14,13 +14,62 @@ const BRAND_PRIMARY = "#1c7a6f";
 const BRAND_GOLD = "#e8a838";
 const BRAND_CREAM = "#f4f7f6";
 const TEXT_X = 56;
+const TITLE_FONT_SIZE = 42;
 const URL_FONT_SIZE = 52;
+const LINE_FONT_SIZE = 24;
+/** Vertical step between wrapped title baselines (must clear TITLE_FONT_SIZE). */
+const TITLE_LINE_DY = Math.round(TITLE_FONT_SIZE * 1.1);
 const URL_RIGHT_MARGIN = 56;
-/** Rough avg glyph width for Inter bold at 52px (incl. letter-spacing). */
+/** Rough avg glyph width for Inter bold at URL size (incl. letter-spacing). */
 const URL_CHAR_WIDTH = URL_FONT_SIZE * 0.5;
 const URL_MAX_CHARS = Math.floor((CARD_SIZE - TEXT_X - URL_RIGHT_MARGIN) / URL_CHAR_WIDTH);
 const AIRPORT_NAME_RE = /\b(aeroporto|aeropuerto|airport)\b/i;
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "../..");
+
+/**
+ * Minimum baseline-to-baseline gap so the upper line’s descenders and the
+ * lower line’s ascenders do not collide (Latin metrics + padding).
+ */
+export function baselineGap(upperFontSize, lowerFontSize, padding = 14) {
+  return Math.ceil(upperFontSize * 0.25 + lowerFontSize * 0.85 + padding);
+}
+
+/**
+ * Bottom-up footer text positions for the station map overlay.
+ * @param {{ titleLineCount: number, hasLineLabel: boolean }} opts
+ */
+export function mapFooterTextLayout({ titleLineCount, hasLineLabel }) {
+  const padBottom = 28;
+  const padTop = 20;
+  const goldH = 5;
+  const gapGoldToContent = 16;
+  const lines = Math.max(1, titleLineCount);
+
+  const urlY = CARD_SIZE - padBottom;
+  const titleLastY = urlY - baselineGap(TITLE_FONT_SIZE, URL_FONT_SIZE);
+  const titleY = titleLastY - (lines - 1) * TITLE_LINE_DY;
+  const lineY = hasLineLabel ? titleY - baselineGap(LINE_FONT_SIZE, TITLE_FONT_SIZE) : null;
+  const firstTextY = lineY ?? titleY;
+  const firstTextSize = lineY != null ? LINE_FONT_SIZE : TITLE_FONT_SIZE;
+  const goldY = firstTextY - firstTextSize - gapGoldToContent;
+  const footerTop = goldY - padTop;
+
+  return {
+    urlY,
+    titleY,
+    titleLastY,
+    titleLineDy: TITLE_LINE_DY,
+    lineY,
+    goldY,
+    goldH,
+    footerTop,
+    footerHeight: CARD_SIZE - footerTop,
+    fadeH: 36,
+    lineFontSize: LINE_FONT_SIZE,
+    titleFontSize: TITLE_FONT_SIZE,
+    urlFontSize: URL_FONT_SIZE,
+  };
+}
 
 let topTrafficStationNames = null;
 
@@ -100,37 +149,19 @@ export function formatMapUrlLabel(siteHost, slug) {
 export function buildMapOverlaySvg({ stationName, slug, siteHost, markerX, markerY, primaryLine }) {
   const pageUrl = formatMapUrlLabel(siteHost, slug);
   const titleLines = wrapTitle(stationName);
-  const titleLineDy = 40;
+  const layout = mapFooterTextLayout({
+    titleLineCount: titleLines.length,
+    hasLineLabel: Boolean(primaryLine),
+  });
   const titleTspans = titleLines
     .map((line, index) => {
-      const dy = index === 0 ? 0 : titleLineDy;
+      const dy = index === 0 ? 0 : layout.titleLineDy;
       return `<tspan x="${TEXT_X}" dy="${dy}">${escapeXml(line)}</tspan>`;
     })
     .join("");
 
-  // Bottom-up layout so padding under the URL stays tight and the footer
-  // only claims as much height as the text block needs.
-  const padBottom = 28;
-  const gapTitleToUrl = 30;
-  const gapLineToTitle = 26;
-  const gapGoldToContent = 16;
-  const padTop = 20;
-  const goldH = 5;
-  const fadeH = 36;
-  const lineFontSize = 24;
-
-  const urlY = CARD_SIZE - padBottom;
-  const titleY =
-    urlY - gapTitleToUrl - Math.max(0, titleLines.length - 1) * titleLineDy;
-  const lineY = primaryLine ? titleY - gapLineToTitle : null;
-  const firstTextY = lineY ?? titleY;
-  const firstTextSize = lineY != null ? lineFontSize : 42;
-  const goldY = firstTextY - firstTextSize - gapGoldToContent;
-  const footerTop = goldY - padTop;
-  const footerHeight = CARD_SIZE - footerTop;
-
   const lineLabel = primaryLine
-    ? `<text x="${TEXT_X}" y="${lineY}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="${lineFontSize}" font-weight="600" letter-spacing="0.06em">${escapeXml(primaryLine.toUpperCase())}</text>`
+    ? `<text x="${TEXT_X}" y="${layout.lineY}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="${layout.lineFontSize}" font-weight="600" letter-spacing="0.06em">${escapeXml(primaryLine.toUpperCase())}</text>`
     : "";
 
   const pinR = 14;
@@ -152,14 +183,14 @@ export function buildMapOverlaySvg({ stationName, slug, siteHost, markerX, marke
     <circle cx="${markerX}" cy="${pinY + pinR}" r="5" fill="${BRAND_CREAM}"/>
     <path d="M ${markerX} ${pinY + pinR + pinR} L ${markerX - 10} ${pinY + pinR - 2} L ${markerX + 10} ${pinY + pinR - 2} Z" fill="${BRAND_PRIMARY}" stroke="${BRAND_CREAM}" stroke-width="2"/>
   </g>
-  <rect x="0" y="${footerTop - fadeH}" width="${CARD_SIZE}" height="${footerHeight + fadeH}" fill="url(#footerFade)"/>
-  <rect x="0" y="${footerTop}" width="${CARD_SIZE}" height="${footerHeight}" fill="${BRAND_DARK}"/>
-  <rect x="${TEXT_X}" y="${goldY}" width="72" height="${goldH}" rx="2.5" fill="${BRAND_GOLD}"/>
+  <rect x="0" y="${layout.footerTop - layout.fadeH}" width="${CARD_SIZE}" height="${layout.footerHeight + layout.fadeH}" fill="url(#footerFade)"/>
+  <rect x="0" y="${layout.footerTop}" width="${CARD_SIZE}" height="${layout.footerHeight}" fill="${BRAND_DARK}"/>
+  <rect x="${TEXT_X}" y="${layout.goldY}" width="72" height="${layout.goldH}" rx="2.5" fill="${BRAND_GOLD}"/>
   ${lineLabel}
-  <text x="${TEXT_X}" y="${titleY}" fill="${BRAND_CREAM}" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700">
+  <text x="${TEXT_X}" y="${layout.titleY}" fill="${BRAND_CREAM}" font-family="Georgia, 'Times New Roman', serif" font-size="${layout.titleFontSize}" font-weight="700">
     ${titleTspans}
   </text>
-  <text x="${TEXT_X}" y="${urlY}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="52" font-weight="700" letter-spacing="0.02em">${escapeXml(pageUrl)}</text>
+  <text x="${TEXT_X}" y="${layout.urlY}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="${layout.urlFontSize}" font-weight="700" letter-spacing="0.02em">${escapeXml(pageUrl)}</text>
 </svg>`;
 }
 

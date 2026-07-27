@@ -83,7 +83,6 @@ export const stationMapAvailability: ReadonlySet<string> = new Set([
   "cais-do-sodre-metro",
   "caldas-da-rainha",
   "caldas-de-moledo",
-  "caldas-de-vizela",
   "caminha",
   "campanha-metro",
   "campilho",

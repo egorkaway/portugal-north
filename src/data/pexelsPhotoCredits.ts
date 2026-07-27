@@ -166,6 +166,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pok-rie-33563",
     photoPageUrl: "https://www.pexels.com/photo/railway-between-picturesque-lush-forest-in-countryside-4562736/",
   },
+  "4618179": {
+    photographer: "Tom Fisk",
+    photographerUrl: "https://www.pexels.com/@tomfisk",
+    photoPageUrl: "https://www.pexels.com/photo/trains-on-railway-4618179/",
+  },
   "4888205": {
     photographer: "Burak The Weekender",
     photographerUrl: "https://www.pexels.com/@weekendplayer",
@@ -361,6 +366,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@magda-ehlers-pexels",
     photoPageUrl: "https://www.pexels.com/photo/concrete-bridge-with-rusty-metal-railings-9685974/",
   },
+  "9753515": {
+    photographer: "Wallace Chuck",
+    photographerUrl: "https://www.pexels.com/@chuck",
+    photoPageUrl: "https://www.pexels.com/photo/an-aerial-shot-of-a-travelling-train-9753515/",
+  },
   "9989485": {
     photographer: "Enric Cruz López",
     photographerUrl: "https://www.pexels.com/@enric-cruz-lopez",
@@ -425,6 +435,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Tony Mrst",
     photographerUrl: "https://www.pexels.com/@tony-mrst-93331",
     photoPageUrl: "https://www.pexels.com/photo/rows-of-trains-11114138/",
+  },
+  "11242365": {
+    photographer: "Rangoni Gianluca",
+    photographerUrl: "https://www.pexels.com/@rangoni-gianluca-41700784",
+    photoPageUrl: "https://www.pexels.com/photo/clouds-over-railway-in-city-11242365/",
   },
   "11461447": {
     photographer: "Simeon Stoilov",
@@ -570,6 +585,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "F1lter 88",
     photographerUrl: "https://www.pexels.com/@f1lter-88-3830791",
     photoPageUrl: "https://www.pexels.com/photo/view-of-railway-tracks-14808160/",
+  },
+  "14844685": {
+    photographer: "Jan van der Wolf",
+    photographerUrl: "https://www.pexels.com/@jan-van-der-wolf-11680885",
+    photoPageUrl: "https://www.pexels.com/photo/benches-inside-a-train-station-14844685/",
   },
   "14844696": {
     photographer: "Jan van der Wolf",
@@ -796,6 +816,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@masi-461420600",
     photoPageUrl: "https://www.pexels.com/photo/man-waiting-on-platform-of-subway-in-barcelona-19091956/",
   },
+  "19094087": {
+    photographer: "Alex Agrico",
+    photographerUrl: "https://www.pexels.com/@sofus",
+    photoPageUrl: "https://www.pexels.com/photo/trains-on-an-abandoned-train-station-19094087/",
+  },
   "19272882": {
     photographer: "Zeynep Sude  Emek",
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
@@ -956,6 +981,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@altamar",
     photoPageUrl: "https://www.pexels.com/photo/man-walking-at-railway-station-23720159/",
   },
+  "23915497": {
+    photographer: "Dominik Gawlik",
+    photographerUrl: "https://www.pexels.com/@dominik-gawlik-267672553",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-railway-bridge-in-forest-23915497/",
+  },
   "24389510": {
     photographer: "Zeynep Sude  Emek",
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
@@ -1055,6 +1085,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Fabio Akamine",
     photographerUrl: "https://www.pexels.com/@fabio-akamine-1315530474",
     photoPageUrl: "https://www.pexels.com/photo/station-of-light-27989403/",
+  },
+  "28301064": {
+    photographer: "Sergei  Gussev",
+    photographerUrl: "https://www.pexels.com/@sergei",
+    photoPageUrl: "https://www.pexels.com/photo/viaducto-del-pintor-fierros-bridge-in-the-mountains-near-valdes-asturias-spain-june-2023-28301064/",
   },
   "28404749": {
     photographer: "J Mateus",
