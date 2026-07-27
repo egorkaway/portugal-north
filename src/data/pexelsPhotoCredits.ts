@@ -46,6 +46,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@tphotography",
     photoPageUrl: "https://www.pexels.com/photo/people-walking-on-train-station-greyscale-photography-215388/",
   },
+  "258523": {
+    photographer: "Pixabay",
+    photographerUrl: "https://www.pexels.com/@pixabay",
+    photoPageUrl: "https://www.pexels.com/photo/view-of-building-interior-258523/",
+  },
   "421129": {
     photographer: "Nicolas Postiglioni",
     photographerUrl: "https://www.pexels.com/@postiglioni",
@@ -141,6 +146,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@bastien-neves-2459695",
     photoPageUrl: "https://www.pexels.com/photo/a-gray-and-white-escalator-between-trains-in-train-station-4082005/",
   },
+  "4082184": {
+    photographer: "Bastien Neves",
+    photographerUrl: "https://www.pexels.com/@bastien-neves-2459695",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-a-train-station-roofing-in-lyon-france-4082184/",
+  },
   "4525217": {
     photographer: "Arthur Forti",
     photographerUrl: "https://www.pexels.com/@arthur-forti-967563",
@@ -155,6 +165,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Burak The Weekender",
     photographerUrl: "https://www.pexels.com/@weekendplayer",
     photoPageUrl: "https://www.pexels.com/photo/photograph-of-a-train-station-4888205/",
+  },
+  "4980902": {
+    photographer: "Roman Kokoev",
+    photographerUrl: "https://www.pexels.com/@roman-kokoev-1245913",
+    photoPageUrl: "https://www.pexels.com/photo/people-in-train-station-at-night-4980902/",
   },
   "5263901": {
     photographer: "Nokoko Art",
@@ -321,6 +336,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@renato-rocca-2397962",
     photoPageUrl: "https://www.pexels.com/photo/white-and-gray-train-station-8308104/",
   },
+  "9180935": {
+    photographer: "Cátia Matos",
+    photographerUrl: "https://www.pexels.com/@catiamatos",
+    photoPageUrl: "https://www.pexels.com/photo/a-person-waiting-on-a-bus-stop-9180935/",
+  },
   "9314258": {
     photographer: "Jules T",
     photographerUrl: "https://www.pexels.com/@jules-t-364556",
@@ -440,6 +460,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Taha Yasir Yöney",
     photographerUrl: "https://www.pexels.com/@tahayasiryoney",
     photoPageUrl: "https://www.pexels.com/photo/mirror-with-the-reflection-of-a-train-12595493/",
+  },
+  "12623919": {
+    photographer: "Cosmin  ChiWu",
+    photographerUrl: "https://www.pexels.com/@cosmin-chiwu-170428941",
+    photoPageUrl: "https://www.pexels.com/photo/people-on-railway-platform-12623919/",
   },
   "12687699": {
     photographer: "Lucia Barreiros  Silva",
@@ -575,6 +600,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Wolfgang Weiser",
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
     photoPageUrl: "https://www.pexels.com/photo/modern-railway-station-15714409/",
+  },
+  "15982756": {
+    photographer: "Emmanuel Codden",
+    photographerUrl: "https://www.pexels.com/@ehma",
+    photoPageUrl: "https://www.pexels.com/photo/steel-structure-of-a-round-roof-over-the-escalators-15982756/",
   },
   "16239930": {
     photographer: "Egor Kunovsky",
@@ -781,6 +811,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@nurullah-bulut-339538941",
     photoPageUrl: "https://www.pexels.com/photo/train-at-railway-station-on-foggy-morning-19856836/",
   },
+  "19925519": {
+    photographer: "Alex Agrico",
+    photographerUrl: "https://www.pexels.com/@sofus",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-locomotives-in-black-and-white-19925519/",
+  },
   "20007199": {
     photographer: "Aleksander Dumała",
     photographerUrl: "https://www.pexels.com/@stitch",
@@ -870,6 +905,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Uiliam Nörnberg",
     photographerUrl: "https://www.pexels.com/@uiliamnornberg",
     photoPageUrl: "https://www.pexels.com/photo/back-view-of-people-standing-at-museum-21033165/",
+  },
+  "21038347": {
+    photographer: "Samirah A.",
+    photographerUrl: "https://www.pexels.com/@samirah-a-388300865",
+    photoPageUrl: "https://www.pexels.com/photo/train-at-subway-station-in-madrid-in-spain-21038347/",
   },
   "21287074": {
     photographer: "Tiago Alvar",
@@ -1325,6 +1365,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Regan Dsouza",
     photographerUrl: "https://www.pexels.com/@regan-dsouza-1315522347",
     photoPageUrl: "https://www.pexels.com/photo/historic-stone-structure-in-avila-spain-32979182/",
+  },
+  "33065902": {
+    photographer: "Ana Hidalgo Burgos",
+    photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-4848204",
+    photoPageUrl: "https://www.pexels.com/photo/yellow-maintenance-train-at-la-encina-station-33065902/",
   },
   "33147868": {
     photographer: "Charles Edward Cansino",
