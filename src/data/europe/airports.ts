@@ -210,6 +210,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 9.05428,
   },
   {
+    name: "Carcassonne Salvaza Airport (CCF)",
+    country: "fr",
+    lines: ["CCF"],
+    types: ["Airport Destination"],
+    lat: 43.216,
+    lng: 2.30632,
+  },
+  {
     name: "Charles de Gaulle International Airport (CDG)",
     country: "fr",
     lines: ["CDG"],
@@ -504,6 +512,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 50.077702,
     lng: 19.7848,
+  },
+  {
+    name: "Kristiansand Airport (KRS)",
+    country: "no",
+    lines: ["KRS"],
+    types: ["Airport Destination"],
+    lat: 58.204201,
+    lng: 8.08537,
   },
   {
     name: "Katowice Wojciech Korfanty International Airport (KTW)",
