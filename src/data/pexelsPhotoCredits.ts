@@ -106,6 +106,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@wendywei",
     photoPageUrl: "https://www.pexels.com/photo/white-concrete-house-surrounded-by-trees-1551119/",
   },
+  "1653078": {
+    photographer: "Alotrobo",
+    photographerUrl: "https://www.pexels.com/@aloismoubax",
+    photoPageUrl: "https://www.pexels.com/photo/train-station-1653078/",
+  },
   "1855369": {
     photographer: "Elina Sazonova",
     photographerUrl: "https://www.pexels.com/@elina-sazonova",
@@ -1671,6 +1676,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@sergei",
     photoPageUrl: "https://www.pexels.com/photo/sunset-over-rocky-coastline-at-vila-praia-de-ancora-35872756/",
   },
+  "36095712": {
+    photographer: "Karlheinz Strohmaier",
+    photographerUrl: "https://www.pexels.com/@karlheinz-strohmaier-2153257497",
+    photoPageUrl: "https://www.pexels.com/photo/old-cargo-train-in-motion-on-railway-tracks-36095712/",
+  },
   "36195919": {
     photographer: "Wolfgang Weiser",
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
@@ -1785,5 +1795,10 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Liane Ferreira",
     photographerUrl: "https://www.pexels.com/@liane-ferreira-1033991071",
     photoPageUrl: "https://www.pexels.com/photo/ancient-stone-mill-stream-in-montalegre-portugal-37899454/",
+  },
+  "38479643": {
+    photographer: "Cristiano Ferrari films",
+    photographerUrl: "https://www.pexels.com/@cristiano-ferrari-films-2162783697",
+    photoPageUrl: "https://www.pexels.com/photo/black-and-white-railway-tracks-in-scenic-landscape-38479643/",
   },
 };
