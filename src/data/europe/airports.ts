@@ -18,6 +18,22 @@ export const europeDestinationAirports: Station[] = [
     lng: 9.84993,
   },
   {
+    name: "Aarhus Airport (AAR)",
+    country: "dk",
+    lines: ["AAR"],
+    types: ["Airport Destination"],
+    lat: 56.303331,
+    lng: 10.618286,
+  },
+  {
+    name: "Aberdeen International Airport (ABZ)",
+    country: "gb",
+    lines: ["ABZ"],
+    types: ["Airport Destination"],
+    lat: 57.2019,
+    lng: -2.19778,
+  },
+  {
     name: "César Manrique-Lanzarote Airport (ACE)",
     country: "es",
     lines: ["ACE"],
@@ -546,6 +562,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -1.66057,
   },
   {
+    name: "Lübeck Blankensee Airport (LBC)",
+    country: "de",
+    lines: ["LBC"],
+    types: ["Airport Destination"],
+    lat: 53.805401,
+    lng: 10.7192,
+  },
+  {
     name: "London City Airport (LCY)",
     country: "gb",
     lines: ["LCY"],
@@ -986,6 +1010,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -1.3568,
   },
   {
+    name: "La Palma Airport (SPC)",
+    country: "es",
+    lines: ["SPC"],
+    types: ["Airport Destination"],
+    lat: 28.626499,
+    lng: -17.7556,
+  },
+  {
     name: "Split Saint Jerome Airport (SPU)",
     country: "hr",
     lines: ["SPU"],
@@ -1024,6 +1056,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 58.876701,
     lng: 5.63778,
+  },
+  {
+    name: "Strasbourg Airport (SXB)",
+    country: "fr",
+    lines: ["SXB"],
+    types: ["Airport Destination"],
+    lat: 48.5383,
+    lng: 7.62823,
   },
   {
     name: "Salzburg Airport (SZG)",
