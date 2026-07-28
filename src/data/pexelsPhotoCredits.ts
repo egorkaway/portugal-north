@@ -21,6 +21,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pixabay",
     photoPageUrl: "https://www.pexels.com/photo/train-tracks-winding-a-mill-37868/",
   },
+  "47224": {
+    photographer: "Kaique Rocha",
+    photographerUrl: "https://www.pexels.com/@hikaique",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photography-man-walking-on-hallway-47224/",
+  },
   "57639": {
     photographer: "Kaique Rocha",
     photographerUrl: "https://www.pexels.com/@hikaique",
@@ -95,6 +100,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Cátia Matos",
     photographerUrl: "https://www.pexels.com/@catiamatos",
     photoPageUrl: "https://www.pexels.com/photo/black-plastic-basket-of-fruits-1052477/",
+  },
+  "1075839": {
+    photographer: "Pille  Kirsi",
+    photographerUrl: "https://www.pexels.com/@pille-kirsi-222198",
+    photoPageUrl: "https://www.pexels.com/photo/people-walking-on-hallway-1075839/",
   },
   "1192438": {
     photographer: "Natã Romualdo",
@@ -316,6 +326,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@leon-natan-2996182",
     photoPageUrl: "https://www.pexels.com/photo/high-angle-shot-of-trains-on-trucks-6409084/",
   },
+  "6492079": {
+    photographer: "Magda Ehlers",
+    photographerUrl: "https://www.pexels.com/@magda-ehlers-pexels",
+    photoPageUrl: "https://www.pexels.com/photo/a-train-track-near-green-plants-6492079/",
+  },
   "6589185": {
     photographer: "Luca Sammarco",
     photographerUrl: "https://www.pexels.com/@samma97",
@@ -350,6 +365,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Um Novo Olhar",
     photographerUrl: "https://www.pexels.com/@tilac",
     photoPageUrl: "https://www.pexels.com/photo/photo-of-an-illuminated-castle-6793608/",
+  },
+  "6942510": {
+    photographer: "Mikhail Nilov",
+    photographerUrl: "https://www.pexels.com/@mikhail-nilov",
+    photoPageUrl: "https://www.pexels.com/photo/arches-of-an-ancient-building-ruins-6942510/",
   },
   "7190713": {
     photographer: "Tom Fisk",
@@ -536,6 +556,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@markus-winkler-1430818",
     photoPageUrl: "https://www.pexels.com/photo/a-train-on-the-rail-track-12188483/",
   },
+  "12362183": {
+    photographer: "Simão Moreira",
+    photographerUrl: "https://www.pexels.com/@simaomoreira",
+    photoPageUrl: "https://www.pexels.com/photo/green-trees-near-the-church-building-12362183/",
+  },
   "12464217": {
     photographer: "K",
     photographerUrl: "https://www.pexels.com/@kelly",
@@ -611,6 +636,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@myersmc16",
     photoPageUrl: "https://www.pexels.com/photo/concrete-bridge-across-the-river-13540081/",
   },
+  "13690003": {
+    photographer: "Zetong Li",
+    photographerUrl: "https://www.pexels.com/@zetong-li-880728",
+    photoPageUrl: "https://www.pexels.com/photo/aerial-view-of-railway-tracks-and-a-salt-pond-13690003/",
+  },
   "13778131": {
     photographer: "Kazi Omar Sany",
     photographerUrl: "https://www.pexels.com/@kazi-omar-sany-219259388",
@@ -620,6 +650,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Anderson Hildebrando",
     photographerUrl: "https://www.pexels.com/@anderson-hildebrando-27563768",
     photoPageUrl: "https://www.pexels.com/photo/high-angle-view-of-train-station-13921741/",
+  },
+  "13983001": {
+    photographer: "Henrique Guimarães",
+    photographerUrl: "https://www.pexels.com/@henrique-guimaraes-337906737",
+    photoPageUrl: "https://www.pexels.com/photo/empty-island-platforms-at-krakow-train-station-poland-13983001/",
   },
   "14148163": {
     photographer: "Breno Cardoso",
@@ -695,6 +730,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Chirill Ceban",
     photographerUrl: "https://www.pexels.com/@bitkidd",
     photoPageUrl: "https://www.pexels.com/photo/photo-of-the-inside-of-the-sul-e-sueste-station-in-lisbon-portugal-15259476/",
+  },
+  "15485530": {
+    photographer: "Zeynep Sude  Emek",
+    photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
+    photoPageUrl: "https://www.pexels.com/photo/a-man-wearing-a-gray-jacket-during-winter-15485530/",
   },
   "15656110": {
     photographer: "Jose Antonio Gallego Vázquez",
@@ -906,6 +946,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
     photoPageUrl: "https://www.pexels.com/photo/maglova-kremer-in-turkey-19272882/",
   },
+  "19341889": {
+    photographer: "Marcelo Brigato",
+    photographerUrl: "https://www.pexels.com/@marcelo-brigato-1868038",
+    photoPageUrl: "https://www.pexels.com/photo/santos-touristic-tram-in-brazil-19341889/",
+  },
   "19353350": {
     photographer: "Roza",
     photographerUrl: "https://www.pexels.com/@roza-53442428",
@@ -1091,6 +1136,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@uiliamnornberg",
     photoPageUrl: "https://www.pexels.com/photo/the-interior-of-sao-bento-railway-station-25236769/",
   },
+  "25695948": {
+    photographer: "Harry Shum",
+    photographerUrl: "https://www.pexels.com/@harry-shum-17627821",
+    photoPageUrl: "https://www.pexels.com/photo/tram-on-luis-i-bridge-in-porto-25695948/",
+  },
   "26582301": {
     photographer: "Uiliam Nörnberg",
     photographerUrl: "https://www.pexels.com/@uiliamnornberg",
@@ -1196,6 +1246,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@jordan-besson-2051439001",
     photoPageUrl: "https://www.pexels.com/photo/rustic-train-on-vintage-railway-track-29189116/",
   },
+  "29189147": {
+    photographer: "jordan besson",
+    photographerUrl: "https://www.pexels.com/@jordan-besson-2051439001",
+    photoPageUrl: "https://www.pexels.com/photo/scenic-railway-perspective-on-a-sunny-day-29189147/",
+  },
   "29210896": {
     photographer: "El gringo photo",
     photographerUrl: "https://www.pexels.com/@el-gringo-photo-116752370",
@@ -1261,6 +1316,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@fotografias-de-el-puerto-de-santa-maria-2148829485",
     photoPageUrl: "https://www.pexels.com/photo/modern-train-at-el-puerto-de-santa-maria-station-30647464/",
   },
+  "30648823": {
+    photographer: "Fotografías de El Puerto  de Santa María",
+    photographerUrl: "https://www.pexels.com/@fotografias-de-el-puerto-de-santa-maria-2148829485",
+    photoPageUrl: "https://www.pexels.com/photo/modern-train-at-el-puerto-de-santa-maria-station-30648823/",
+  },
   "30730154": {
     photographer: "Jean-Paul Wettstein",
     photographerUrl: "https://www.pexels.com/@jean-paul-wettstein-677916508",
@@ -1270,6 +1330,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/high-speed-train-at-la-rinconada-station-spain-30742438/",
+  },
+  "30765103": {
+    photographer: "Gökhan Çınar",
+    photographerUrl: "https://www.pexels.com/@gokhancinar",
+    photoPageUrl: "https://www.pexels.com/photo/istanbul-sirkeci-train-station-architecture-30765103/",
   },
   "30776801": {
     photographer: "Antonio Garcia Prats",
@@ -1621,6 +1686,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@spiros-kakos-1083421",
     photoPageUrl: "https://www.pexels.com/photo/abandoned-graffiti-covered-train-car-in-black-and-white-34055632/",
   },
+  "34189741": {
+    photographer: "Bob Jenkin",
+    photographerUrl: "https://www.pexels.com/@bob-jenkin-2007649943",
+    photoPageUrl: "https://www.pexels.com/photo/lisbon-tram-in-historic-alfama-district-on-a-sunny-day-34189741/",
+  },
   "34268986": {
     photographer: "K",
     photographerUrl: "https://www.pexels.com/@kelly",
@@ -1645,6 +1715,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Tânia Roques",
     photographerUrl: "https://www.pexels.com/@troquesphotography",
     photoPageUrl: "https://www.pexels.com/photo/moorish-architecture-at-loule-market-portugal-34532038/",
+  },
+  "34643947": {
+    photographer: "Pedro Vinicius Garrett",
+    photographerUrl: "https://www.pexels.com/@garrett",
+    photoPageUrl: "https://www.pexels.com/photo/sunset-at-nossa-senhora-da-nazare-sanctuary-34643947/",
   },
   "34747986": {
     photographer: "Tommy K",
@@ -1736,6 +1811,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@sergei",
     photoPageUrl: "https://www.pexels.com/photo/sunny-beach-at-espinho-with-ocean-waves-35750902/",
   },
+  "35791500": {
+    photographer: "Efrem  Efre",
+    photographerUrl: "https://www.pexels.com/@efrem-efre-2786187",
+    photoPageUrl: "https://www.pexels.com/photo/historic-tram-in-lisbon-s-praca-do-comercio-35791500/",
+  },
   "35855262": {
     photographer: "Sergei  Gussev",
     photographerUrl: "https://www.pexels.com/@sergei",
@@ -1811,6 +1891,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@mike-art-visual-creator-photography-and-video-2159421235",
     photoPageUrl: "https://www.pexels.com/photo/scenic-aerial-view-of-algarve-coastline-in-portugal-36768620/",
   },
+  "36826247": {
+    photographer: "Nikos B",
+    photographerUrl: "https://www.pexels.com/@nikos-b-554391302",
+    photoPageUrl: "https://www.pexels.com/photo/rustic-railway-tracks-in-lush-spring-landscape-36826247/",
+  },
   "36834750": {
     photographer: "Mike Mijares",
     photographerUrl: "https://www.pexels.com/@mike-mijares-78163062",
@@ -1841,6 +1926,16 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@lajos-kristof-kantor-2158796893",
     photoPageUrl: "https://www.pexels.com/photo/aerial-view-of-lisbon-with-aqueduct-and-cityscape-37122717/",
   },
+  "37273305": {
+    photographer: "Leandro  Cardoso",
+    photographerUrl: "https://www.pexels.com/@leandro-cardoso-2160921693",
+    photoPageUrl: "https://www.pexels.com/photo/silhouette-of-people-in-sao-paulo-train-station-37273305/",
+  },
+  "37292594": {
+    photographer: "Luci Couto",
+    photographerUrl: "https://www.pexels.com/@luci-couto-2159021232",
+    photoPageUrl: "https://www.pexels.com/photo/silhouette-in-historic-train-station-terminal-37292594/",
+  },
   "37365781": {
     photographer: "Gustavo Aguiar",
     photographerUrl: "https://www.pexels.com/@gustavo-aguiar-2161164324",
@@ -1865,6 +1960,16 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Liane Ferreira",
     photographerUrl: "https://www.pexels.com/@liane-ferreira-1033991071",
     photoPageUrl: "https://www.pexels.com/photo/ancient-stone-mill-stream-in-montalegre-portugal-37899454/",
+  },
+  "38001261": {
+    photographer: "Heinz Reisenhofer",
+    photographerUrl: "https://www.pexels.com/@heinz-reisenhofer-2155138929",
+    photoPageUrl: "https://www.pexels.com/photo/sunset-at-train-station-in-vienna-austria-38001261/",
+  },
+  "38194047": {
+    photographer: "Anh Nguyen",
+    photographerUrl: "https://www.pexels.com/@anh-nguyen-517648218",
+    photoPageUrl: "https://www.pexels.com/photo/gothic-revival-architecture-in-breslau-poland-38194047/",
   },
   "38479643": {
     photographer: "Cristiano Ferrari films",
