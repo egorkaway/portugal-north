@@ -121,7 +121,7 @@ export const pt: MobileMessages = {
   },
   airport: {
     title: 'Ligações aéreas',
-    intro: '{{destinations}} destinos com voos diretos recolhidos até agora neste período (combinando as nossas amostras de partidas).',
+    intro: '{{destinations}} destinos com voos diretos recolhidos até agora.',
     legend: 'As cores das linhas mostram a frequência de cada rota nas amostras deste período:',
     legendBusy: '5+ voos',
     legendModerate: '3–4 voos',

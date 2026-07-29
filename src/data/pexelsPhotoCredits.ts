@@ -396,6 +396,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@mauroignaciotorres",
     photoPageUrl: "https://www.pexels.com/photo/sunlit-bridge-at-sunset-7513577/",
   },
+  "7542089": {
+    photographer: "Kh-ali-l i",
+    photographerUrl: "https://www.pexels.com/@kh-ali-li",
+    photoPageUrl: "https://www.pexels.com/photo/people-waiting-for-train-on-platform-7542089/",
+  },
   "7545887": {
     photographer: "Gül Işık",
     photographerUrl: "https://www.pexels.com/@ekrulila",
@@ -766,6 +771,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@egor-kunovsky-167146440",
     photoPageUrl: "https://www.pexels.com/photo/green-downtown-area-with-train-coming-out-of-the-tunnel-16239930/",
   },
+  "16285018": {
+    photographer: "German Engelgardt",
+    photographerUrl: "https://www.pexels.com/@german-engelgardt-150603118",
+    photoPageUrl: "https://www.pexels.com/photo/view-of-a-staircase-16285018/",
+  },
   "16318677": {
     photographer: "Kostas Dimopoulos",
     photographerUrl: "https://www.pexels.com/@kostas-dimopoulos-119583302",
@@ -836,6 +846,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@eduardogn",
     photoPageUrl: "https://www.pexels.com/photo/view-of-passenger-trains-at-the-sao-bento-railway-station-in-porto-portugal-17252889/",
   },
+  "17274280": {
+    photographer: "Joaquin Carfagna",
+    photographerUrl: "https://www.pexels.com/@joaquin-carfagna-3131171",
+    photoPageUrl: "https://www.pexels.com/photo/silhouettes-of-travelers-waiting-at-the-train-station-17274280/",
+  },
   "17312345": {
     photographer: "Matteo Basile",
     photographerUrl: "https://www.pexels.com/@matteobasilephoto",
@@ -895,6 +910,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "KJ Brix",
     photographerUrl: "https://www.pexels.com/@kjbromme",
     photoPageUrl: "https://www.pexels.com/photo/train-station-in-city-17936879/",
+  },
+  "18133890": {
+    photographer: "Ercan uğur Yaşar",
+    photographerUrl: "https://www.pexels.com/@ercan-ugur-yasar-706128234",
+    photoPageUrl: "https://www.pexels.com/photo/people-on-platform-of-subway-18133890/",
   },
   "18187514": {
     photographer: "Anderson Pereira",
@@ -1596,6 +1616,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@brendanruehli",
     photoPageUrl: "https://www.pexels.com/photo/abandoned-railway-yard-with-industrial-building-33354908/",
   },
+  "33355421": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/old-train-at-estacion-linares-baeza-spain-33355421/",
+  },
   "33355462": {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
@@ -1701,6 +1726,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@open-borders",
     photoPageUrl: "https://www.pexels.com/photo/passengers-on-a-train-in-france-interior-view-34359748/",
   },
+  "34372180": {
+    photographer: "DANIEL GOMEZ",
+    photographerUrl: "https://www.pexels.com/@dg1streetphoto",
+    photoPageUrl: "https://www.pexels.com/photo/contemplative-woman-waiting-at-subway-station-34372180/",
+  },
   "34420498": {
     photographer: "Vladimir Srajber",
     photographerUrl: "https://www.pexels.com/@vladimirsrajber",
@@ -1800,6 +1830,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Walter Cunha",
     photographerUrl: "https://www.pexels.com/@walter-cunha-2158705182",
     photoPageUrl: "https://www.pexels.com/photo/gran-via-metro-entrance-in-madrid-city-35551070/",
+  },
+  "35717117": {
+    photographer: "Balázs Nemes",
+    photographerUrl: "https://www.pexels.com/@balazs-nemes",
+    photoPageUrl: "https://www.pexels.com/photo/commuters-at-nyugati-railway-station-in-budapest-35717117/",
   },
   "35727855": {
     photographer: "Zak Mir",
