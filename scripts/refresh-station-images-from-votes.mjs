@@ -245,10 +245,12 @@ async function main() {
     const usedUrls = new Set(usedGlobally);
 
     try {
+      // Forced refreshes try Wikimedia first (often the real station photo).
+      // Vote-driven Pexels swaps stay Pexels-only to avoid Wiki rate limits.
       const result = await resolveStationImage(station, {
         apiKey,
         usedUrls,
-        pexelsOnly: currentUrl.includes("pexels.com"),
+        pexelsOnly: currentUrl.includes("pexels.com") && !forceRefresh,
       });
 
       if (!result || result.url === currentUrl) {

@@ -105,10 +105,41 @@ function stripDiacritics(text) {
   return text.normalize("NFD").replace(/\p{M}/gu, "");
 }
 
+/** Drop mode suffixes like "(Metro)" so locality is the stop name, not "Metro". */
+export function stationBaseName(name) {
+  return name.replace(/\s*\((?:Metro(?:\s+[^)]*)?|CP|Renfe)\)\s*$/i, "").trim();
+}
+
+function isGenericParenLabel(label) {
+  return /^(metro|cp|renfe)(\s|$)/i.test(stripDiacritics(label).trim());
+}
+
 function localityFromName(name) {
-  const paren = name.match(/\(([^)]+)\)/);
-  if (paren) return paren[1].replace(/\s+area$/i, "").trim();
-  return name.split(/[-–]/)[0].trim();
+  const base = stationBaseName(name);
+  const paren = base.match(/\(([^)]+)\)/);
+  if (paren) {
+    const inner = paren[1].replace(/\s+area$/i, "").trim();
+    if (!isGenericParenLabel(inner)) return inner;
+  }
+  return base.split(/[-–]/)[0].trim();
+}
+
+export function isMetroStation(station) {
+  if (/\(metro\b/i.test(station.name)) return true;
+  return station.lines?.some((line) => /\bmetro\b/i.test(line)) ?? false;
+}
+
+/** @returns {"porto" | "lisbon" | null} */
+export function metroSystemForStation(station) {
+  if (!isMetroStation(station)) return null;
+  const lines = station.lines ?? [];
+  if (lines.some((line) => /lisboa|metropolitano/i.test(line))) return "lisbon";
+  const { lat, lng } = station;
+  if (Number.isFinite(lat) && Number.isFinite(lng)) {
+    if (lat >= 38.5 && lat <= 39.2 && lng <= -8.8) return "lisbon";
+    if (lat >= 40.9) return "porto";
+  }
+  return "porto";
 }
 
 /** Place names to search when train-specific Pexels queries fail. */
@@ -116,20 +147,24 @@ export function locationNamesFromStation(station) {
   const { name, lat, lng, country = "pt" } = station;
   const names = new Set();
   const plainName = stripDiacritics(name);
+  const base = stationBaseName(name);
 
-  const paren = name.match(/\(([^)]+)\)/);
-  if (paren) names.add(paren[1].replace(/\s+area$/i, "").trim());
+  const paren = base.match(/\(([^)]+)\)/);
+  if (paren) {
+    const inner = paren[1].replace(/\s+area$/i, "").trim();
+    if (!isGenericParenLabel(inner)) names.add(inner);
+  }
 
-  const isNamedStop = /^(senhora|sao|hospital|apeadeiro)\b/i.test(plainName);
+  const isNamedStop = /^(senhora|sao|hospital|apeadeiro|estadio)\b/i.test(plainName);
 
   if (!isNamedStop) {
-    const deTown = name.match(
+    const deTown = base.match(
       /\b(?:de|da|do)\s+([A-Za-zÀ-ÿ][A-Za-zÀ-ÿ\s]{2,}?)(?=\s*\(|\s*[-–]|$)/i,
     );
     if (deTown) names.add(deTown[1].trim());
 
     if (!paren) {
-      const beforeHyphen = name.split(/[-–]/)[0].trim();
+      const beforeHyphen = base.split(/[-–]/)[0].trim();
       if (beforeHyphen.length >= 4 && !isGenericStationLabel(beforeHyphen)) {
         names.add(beforeHyphen);
       }
@@ -180,12 +215,47 @@ const LINE_QUERY_HINTS = {
   "Linha de Sintra": ["Sintra train", "suburban train Lisbon"],
 };
 
+/** Safe Iberian atmosphere queries when stop-specific photos are scarce. */
+function universalAtmosphereQueries(station) {
+  const region = regionFromCoords(station.lat, station.lng, station.country ?? "pt");
+  const metro = metroSystemForStation(station);
+  if (metro === "porto" || region === "Porto") {
+    return [
+      "Metro do Porto",
+      "Porto metro Portugal",
+      "light rail Porto Portugal",
+      "Porto Portugal city",
+      "Ribeira Porto Portugal",
+      "Douro river Porto",
+    ];
+  }
+  if (metro === "lisbon" || region === "Lisbon") {
+    return [
+      "Lisbon metro Portugal",
+      "Metropolitano de Lisboa",
+      "Lisbon tram Portugal",
+      "Lisbon Portugal city",
+      "yellow tram Lisbon",
+    ];
+  }
+  if (station.country === "es") {
+    return ["Spanish railway station", "Renfe train Spain", "Spain train platform"];
+  }
+  return [
+    "Portuguese railway station",
+    "Comboios de Portugal train",
+    "train platform Portugal",
+    "Portugal countryside railway",
+  ];
+}
+
 /** Train-focused Pexels queries (tried first). */
 export function buildPexelsQueries(station) {
   const { country = "pt" } = station;
   const locality = localityFromName(station.name);
   const region = regionFromCoords(station.lat, station.lng, country);
   const plain = stripDiacritics(locality);
+  const metro = metroSystemForStation(station);
 
   if (country === "es") {
     const queries = new Set([
@@ -204,7 +274,29 @@ export function buildPexelsQueries(station) {
         queries.add("Galicia train station Spain");
       }
     }
+    for (const q of universalAtmosphereQueries(station)) queries.add(q);
     return [...queries];
+  }
+
+  if (metro === "porto") {
+    return [
+      `${locality} Metro do Porto`,
+      `Estação ${locality} Porto metro`,
+      "Metro do Porto station",
+      "Porto metro Portugal",
+      "light rail Porto Portugal",
+      ...universalAtmosphereQueries(station),
+    ];
+  }
+
+  if (metro === "lisbon") {
+    return [
+      `${locality} Lisbon metro`,
+      `${locality} Metropolitano de Lisboa`,
+      "Lisbon metro Portugal",
+      "Metropolitano de Lisboa station",
+      ...universalAtmosphereQueries(station),
+    ];
   }
 
   const queries = new Set([
@@ -216,7 +308,7 @@ export function buildPexelsQueries(station) {
     "Portuguese railway station",
   ]);
 
-  for (const line of station.lines) {
+  for (const line of station.lines ?? []) {
     for (const hint of LINE_QUERY_HINTS[line] ?? []) {
       queries.add(hint);
     }
@@ -225,6 +317,7 @@ export function buildPexelsQueries(station) {
     if (line.includes("Urban")) queries.add("urban train Portugal");
   }
 
+  for (const q of universalAtmosphereQueries(station)) queries.add(q);
   return [...queries];
 }
 
@@ -243,6 +336,7 @@ export function buildLocationPexelsQueries(station) {
     queries.add(`${place} town ${nation}`);
   }
 
+  for (const q of universalAtmosphereQueries(station)) queries.add(q);
   return [...queries];
 }
 
@@ -271,12 +365,41 @@ export async function wikiThumb(title, lang = "pt") {
   }
 }
 
-const wikiTitlesPt = (stationName) => [
-  `Apeadeiro de ${stationName}`,
-  `Estação Ferroviária de ${stationName}`,
-  `Estação Ferroviária da ${stationName}`,
-  `${stationName} train station`,
-];
+const wikiTitlesPt = (station) => {
+  const name = station.name;
+  const base = stationBaseName(name);
+  const titles = [];
+  const metro = metroSystemForStation(station);
+
+  if (metro === "porto") {
+    titles.push(`Estação ${base} (Metro do Porto)`);
+    titles.push(`Estação ${base}`);
+    // Common wiki naming variants
+    if (/^Hospital São João$/i.test(base)) {
+      titles.push("Estação Hospital de São João (Metro do Porto)");
+      titles.push("Estação Hospital de São João");
+    }
+    if (/^Senhora da Hora$/i.test(base)) {
+      titles.push("Estação Senhora da Hora");
+    }
+  } else if (metro === "lisbon") {
+    titles.push(`Estação ${base} (Metropolitano de Lisboa)`);
+    titles.push(`${base} (Metropolitano de Lisboa)`);
+    titles.push(`Estação ${base}`);
+  }
+
+  titles.push(
+    `Apeadeiro de ${base}`,
+    `Apeadeiro de ${name}`,
+    `Estação Ferroviária de ${base}`,
+    `Estação Ferroviária da ${base}`,
+    `Estação Ferroviária de ${name}`,
+    `${base} train station`,
+    `${name} train station`,
+  );
+
+  return [...new Set(titles)];
+};
 
 const wikiTitlesEs = (stationName) => {
   const base = stationName.replace(/-Sants$/, " Sants").replace(/-Chamartín$/, " Chamartín");
@@ -289,7 +412,7 @@ const wikiTitlesEs = (stationName) => {
 };
 
 export function wikiTitlesForStation(station) {
-  return station.country === "es" ? wikiTitlesEs(station.name) : wikiTitlesPt(station.name);
+  return station.country === "es" ? wikiTitlesEs(station.name) : wikiTitlesPt(station);
 }
 
 export async function pexelsPickUnique(query, stationName, usedUrls, apiKey, { perPage = 40 } = {}) {
