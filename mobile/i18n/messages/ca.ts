@@ -121,8 +121,8 @@ export const ca: MobileMessages = {
   },
   airport: {
     title: 'Connexions aèries',
-    intro: '{{destinations}} destinacions amb vols directes en la nostra última mostra de sortides.',
-    legend: 'Els colors de les línies mostren la freqüència de cada ruta a la mostra:',
+    intro: '{{destinations}} destinacions amb vols directes recollides fins ara en aquest període (combinant les nostres mostres de sortides).',
+    legend: 'Els colors de les línies mostren la freqüència de cada ruta a les mostres d\'aquest període:',
     legendBusy: '5+ vols',
     legendModerate: '3–4 vols',
     legendLight: '1–2 vols',

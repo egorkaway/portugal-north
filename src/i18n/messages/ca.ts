@@ -81,9 +81,9 @@ export const ca: Messages = {
     areaMapAlt: "Mapa de la zona de {{name}}",
     airportConnectionsTitle: "Connexions aèries",
     airportConnectionsIntro:
-      "{{destinations}} destinacions amb vols directes en la nostra última mostra de sortides.",
+      "{{destinations}} destinacions amb vols directes recollides fins ara en aquest període (combinant les nostres mostres de sortides).",
     airportConnectionsLegend:
-      "Els colors de les línies mostren la freqüència de cada ruta a la mostra:",
+      "Els colors de les línies mostren la freqüència de cada ruta a les mostres d'aquest període:",
     airportConnectionsLegendBusy: "5+ vols",
     airportConnectionsLegendModerate: "3–4 vols",
     airportConnectionsLegendLight: "1–2 vols",

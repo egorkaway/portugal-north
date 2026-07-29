@@ -121,8 +121,8 @@ export const en: MobileMessages = {
   },
   airport: {
     title: 'Flight connections',
-    intro: '{{destinations}} destinations with direct flights in our latest departure sample.',
-    legend: 'Line colors show how often each route appeared in the sample:',
+    intro: '{{destinations}} destinations with direct flights collected so far this period (combined from our departure samples).',
+    legend: 'Line colors show how often each route appeared across samples this period:',
     legendBusy: '5+ flights',
     legendModerate: '3–4 flights',
     legendLight: '1–2 flights',

@@ -121,8 +121,8 @@ export const gl: MobileMessages = {
   },
   airport: {
     title: 'Conexións aéreas',
-    intro: '{{destinations}} destinos con voos directos na nosa última mostra de saídas.',
-    legend: 'As cores das liñas mostran a frecuencia de cada ruta na mostra:',
+    intro: '{{destinations}} destinos con voos directos recollidos ata agora neste período (combinando as nosas mostras de saídas).',
+    legend: 'As cores das liñas mostran a frecuencia de cada ruta nas mostras deste período:',
     legendBusy: '5+ voos',
     legendModerate: '3–4 voos',
     legendLight: '1–2 voos',

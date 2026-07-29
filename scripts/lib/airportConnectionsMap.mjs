@@ -66,7 +66,7 @@ function buildOverlaySvg({
   <rect x="${TEXT_X}" y="${MAP_HEIGHT + 24}" width="72" height="5" rx="2.5" fill="${BRAND_GOLD}" />
   <text x="${TEXT_X}" y="${MAP_HEIGHT + 56}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">FLIGHT CONNECTIONS</text>
   <text x="${TEXT_X}" y="${MAP_HEIGHT + 104}" fill="${BRAND_CREAM}" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700">${escapeXml(airportName)}</text>
-  <text x="${TEXT_X}" y="${MAP_HEIGHT + 142}" fill="${BRAND_CREAM}" font-family="Inter, system-ui, sans-serif" font-size="24" opacity="0.85">${escapeXml(iata)} · ${connections.length} destinations in sample</text>
+  <text x="${TEXT_X}" y="${MAP_HEIGHT + 142}" fill="${BRAND_CREAM}" font-family="Inter, system-ui, sans-serif" font-size="24" opacity="0.85">${escapeXml(iata)} · ${connections.length} destinations this period</text>
   <text x="${TEXT_X}" y="${MAP_HEIGHT + 204}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="${URL_FONT_SIZE}" font-weight="700" letter-spacing="0.02em">${escapeXml(pageUrl)}</text>
 </svg>`;
 }
