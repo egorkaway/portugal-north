@@ -326,7 +326,6 @@ export const stationMapAvailability: ReadonlySet<string> = new Set([
   "reveles",
   "riachos-torres-novas-golega",
   "rio-de-mouro",
-  "rio-mau",
   "rio-meao",
   "rio-tinto",
   "roma-areeiro",

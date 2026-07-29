@@ -556,9 +556,6 @@ export const stationHotels: StationHotels = {
     { name: "Casa de Pousada", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila+Mea%2C+Amarante&order=price" },
     { name: "Monverde Wine Experience", distanceKm: 1.9, priceFrom: 90, bookingUrl: "https://www.booking.com/hotel/pt/monverde-wine-experience.html" },
   ],
-  "Rio Mau": [
-    { name: "Casa do Ribeiro", distanceKm: 1.3, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rio+Mau%2C+Vila+do+Conde&order=price" },
-  ],
   "Águeda": [
     { name: "Pensão Celeste", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Celeste%2C%20%C3%81gueda%2C%20Portugal&order=price" },
     { name: "Albergue de Peregrinos Santo António de Águeda/Celeste", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Santo%20Ant%C3%B3nio%20de%20%C3%81gueda%2FCeleste%2C%20%C3%81gueda%2C%20Portugal&order=price" },

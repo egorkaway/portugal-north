@@ -769,8 +769,7 @@ export const stationSummariesEn: Record<string, string> = {
     "Historic terminus of the narrow-gauge Linha do Tua in Trás-os-Montes, closed to passengers since the late twentieth century. The town centre and Tua riverside walks survive as a heritage destination — reach it by road or bus from Bragança or Macedo de Cavaleiros for northeastern Portugal touring.",
   Coimbra:
     "Former city-centre terminus of the Ramal de Coimbra, closed when long-distance traffic moved to Coimbra-B. The riverside building beside the Mondego is a heritage landmark — all regular CP services today use Coimbra-B on the Linha do Norte a short bus ride away.",
-  "Rio Mau":
-    "Douro-line halt between Penafiel and Amarante in the Sousa valley fringe. Regional trains link Porto with the upper Douro corridor — a low-profile parish stop for countryside stays east of the metropolitan belt with connections towards Marco de Canaveses.",
+
   Lousada:
     "Douro-line town stop between Penafiel and Amarante on the eastern approach to the Marão hills. Urban and regional trains run towards Campanhã and the wine country — practical for lower-cost lodging in the Sousa valley with a direct suburban link into Porto.",
   Bragança:

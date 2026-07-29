@@ -362,6 +362,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -1.32806,
   },
   {
+    name: "Exeter International Airport (EXT)",
+    country: "gb",
+    lines: ["EXT"],
+    types: ["Airport Destination"],
+    lat: 50.734261,
+    lng: -3.413984,
+  },
+  {
     name: "Rome–Fiumicino Leonardo da Vinci International Airport (FCO)",
     country: "it",
     lines: ["FCO"],
@@ -528,6 +536,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 37.435101,
     lng: 25.348101,
+  },
+  {
+    name: "Keflavik International Airport (KEF)",
+    country: "is",
+    lines: ["KEF"],
+    types: ["Airport Destination"],
+    lat: 63.985001,
+    lng: -22.6056,
   },
   {
     name: "Kerry Airport (KIR)",

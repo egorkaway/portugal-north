@@ -19,6 +19,8 @@ export type StationDepartureStats = {
 export type DepartureStatsStore = {
   runCount: number;
   lastRunAt: string | null;
+  /** When airport destination sampling last ran from departure-stats (not train-only runs). */
+  lastAirportConnectionsAt: string | null;
   stations: Record<string, StationDepartureStats>;
 };
 
@@ -26,6 +28,7 @@ export function createEmptyDepartureStatsStore(): DepartureStatsStore {
   return {
     runCount: 0,
     lastRunAt: null,
+    lastAirportConnectionsAt: null,
     stations: {},
   };
 }
@@ -111,6 +114,10 @@ export function loadDepartureStatsStore(raw: unknown): DepartureStatsStore {
   return {
     runCount: typeof parsed.runCount === "number" ? parsed.runCount : 0,
     lastRunAt: typeof parsed.lastRunAt === "string" ? parsed.lastRunAt : null,
+    lastAirportConnectionsAt:
+      typeof parsed.lastAirportConnectionsAt === "string"
+        ? parsed.lastAirportConnectionsAt
+        : null,
     stations:
       parsed.stations && typeof parsed.stations === "object" ? parsed.stations : {},
   };

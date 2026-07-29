@@ -7,7 +7,8 @@
  *   npm run stats:departures -- --station "Porto-Campanhã"
  *   npm run stats:departures -- --dry-run
  *
- * Also collects airport flight connections (skipped if last run was < 3 hours ago),
+ * Also collects airport flight connections (skipped if the last airport check
+ * was < 3 hours ago — train-only runs do not count),
  * logs temperatures (Open-Meteo) only for
  * stations that successfully returned departure data (after departures),
  * and syncs mobile/data (npm run sync:data).
@@ -76,6 +77,19 @@ function loadStore() {
   }
 }
 
+/** Prefer store field; fall back to airport-connections.json for installs predating the field. */
+function resolveLastAirportConnectionsAt(store) {
+  if (store.lastAirportConnectionsAt) return store.lastAirportConnectionsAt;
+  try {
+    const manifest = JSON.parse(
+      readFileSync(join(root, "public/data/airport-connections.json"), "utf8"),
+    );
+    return typeof manifest.generatedAt === "string" ? manifest.generatedAt : null;
+  } catch {
+    return null;
+  }
+}
+
 function saveStore(store) {
   mkdirSync(dirname(statsPath), { recursive: true });
   writeFileSync(statsPath, `${JSON.stringify(store, null, 2)}\n`);
@@ -133,16 +147,16 @@ if (!targets.length) {
 }
 
 const store = loadStore();
-const previousLastRunAt = store.lastRunAt;
-const recheckAirports = shouldRecheckAirportDestinations(previousLastRunAt);
+const previousAirportAt = resolveLastAirportConnectionsAt(store);
+const recheckAirports = shouldRecheckAirportDestinations(previousAirportAt);
 beginDepartureStatsRun(store);
 
 if (!recheckAirports) {
   const minutesAgo = Math.round(
-    (Date.now() - Date.parse(previousLastRunAt)) / 60_000,
+    (Date.now() - Date.parse(previousAirportAt)) / 60_000,
   );
   console.log(
-    `Last departure-stats run was ${minutesAgo} min ago (< 3 h) — sampling trains only, skipping airport destinations.`,
+    `Last airport destination check was ${minutesAgo} min ago (< 3 h) — sampling trains only, skipping airport destinations.`,
   );
 }
 
@@ -225,8 +239,10 @@ if (!dryRun) {
   if (recheckAirports) {
     const { collectAirportConnections } = await import("./collect-airport-connections.mjs");
     await collectAirportConnections({ rootDir: root, delayMs });
+    store.lastAirportConnectionsAt = new Date().toISOString();
+    saveStore(store);
   } else {
-    console.log("Skipping airport destination recheck (last run < 3 hours ago).");
+    console.log("Skipping airport destination recheck (last airport check < 3 hours ago).");
   }
 
   const { syncMobileData } = await import("../mobile/scripts/sync-data.mjs");

@@ -121,7 +121,6 @@ const cpStations: StationData[] = [
   { name: "Cete", lines: ["Linha do Douro"], types: ["Urban", "Regional"], lat: 41.1722, lng: -8.3541 },
   { name: "Recarei-Sobreira", lines: ["Linha do Douro"], types: ["Urban", "Regional"], lat: 41.1538, lng: -8.3992 },
   { name: "Vila Meã", lines: ["Linha do Douro"], types: ["Regional", "Urban"], lat: 41.2461, lng: -8.1848 },
-  { name: "Rio Mau", lines: ["Linha do Douro"], types: ["Regional"], lat: 41.1644, lng: -8.0786 },
   { name: "Águeda", lines: ["Linha do Vouga (historic)"], types: ["Regional", "Inactive / Historic"], lat: 40.5775, lng: -8.4467 },
   { name: "Sernada do Vouga", lines: ["Linha do Vouga (historic)"], types: ["Regional", "Inactive / Historic"], lat: 40.6722, lng: -8.4527 },
   { name: "Macinhata do Vouga", lines: ["Linha do Vouga (historic)"], types: ["Regional", "Inactive / Historic"], lat: 40.6500, lng: -8.4639 },

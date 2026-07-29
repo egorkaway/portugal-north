@@ -702,8 +702,7 @@ export const stationSummariesGl: Record<string, string> = {
     "Terminal histórico da Liña do Tua de vía estreita en Trás-os-Montes, pechada a pasaxeiros desde finais do século XX. O centro da vila e os paseos xunto ao Tua mantéñense como destino patrimonial — chegue por estrada ou autobús desde Bragança ou Macedo de Cavaleiros.",
   Coimbra:
     "Antigo terminal urbano do Ramal de Coimbra, pechado cando o tráfico de longo percorrido pasou a Coimbra-B. O edificio fluvial xunto ao Mondego é un referente patrimonial — todos os servizos regulares da CP usan hoxe Coimbra-B na Liña do Norte, a poucos minutos de autobús.",
-  "Rio Mau":
-    "Parada na liña do Douro entre Penafiel e Amarante na franxa do val do Sousa. Trens rexionais ligan O Porto co corredor do alto Douro — parada parroquial discreta para estadías rurais ao leste da área metropolitana con ligazóns cara Marco de Canaveses.",
+
   Lousada:
     "Parada urbana na liña do Douro entre Penafiel e Amarante na aproximación á serra do Marão. Trens urbanos e rexionais seguen cara Campanhã e o país do viño — práctica para aloxamento económico no val do Sousa con ligazón suburbana directa a O Porto.",
   Bragança:

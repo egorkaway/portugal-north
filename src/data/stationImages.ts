@@ -326,7 +326,6 @@ export const stationImages: Record<string, string> = {
   "Reveles": "https://images.pexels.com/photos/30647464/pexels-photo-30647464.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Riachos – Torres Novas – Golegã": "https://images.pexels.com/photos/37659052/pexels-photo-37659052.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Rio de Mouro": "https://images.pexels.com/photos/1551119/pexels-photo-1551119.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-  "Rio Mau": "https://images.pexels.com/photos/1559/rails-railroads-railways-train-station.jpg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Rio Meão": "https://images.pexels.com/photos/28406417/pexels-photo-28406417.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Rio Tinto": "https://images.pexels.com/photos/14383715/pexels-photo-14383715.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Roma - Areeiro": "https://images.pexels.com/photos/4082005/pexels-photo-4082005.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
