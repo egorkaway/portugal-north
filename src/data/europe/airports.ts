@@ -554,6 +554,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 12.2798,
   },
   {
+    name: "Graz Airport (GRZ)",
+    country: "at",
+    lines: ["GRZ"],
+    types: ["Airport Destination"],
+    lat: 46.9911,
+    lng: 15.4396,
+  },
+  {
     name: "Geneva International Airport (GVA)",
     country: "ch",
     lines: ["GVA"],
