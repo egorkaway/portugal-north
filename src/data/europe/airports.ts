@@ -66,6 +66,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 4.463153,
   },
   {
+    name: "Marche Airport (AOI)",
+    country: "it",
+    lines: ["AOI"],
+    types: ["Airport Destination"],
+    lat: 43.616299,
+    lng: 13.3623,
+  },
+  {
     name: "Stockholm-Arlanda Airport (ARN)",
     country: "se",
     lines: ["ARN"],
@@ -736,6 +744,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 48.962276,
     lng: 2.436539,
+  },
+  {
+    name: "Łódź Władysław Reymont Airport (LCJ)",
+    country: "pl",
+    lines: ["LCJ"],
+    types: ["Airport Destination"],
+    lat: 51.721901,
+    lng: 19.3981,
   },
   {
     name: "London City Airport (LCY)",
