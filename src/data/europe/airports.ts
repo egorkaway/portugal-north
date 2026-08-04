@@ -42,6 +42,22 @@ export const europeDestinationAirports: Station[] = [
     lng: -13.6052,
   },
   {
+    name: "Ålesund Airport (AES)",
+    country: "no",
+    lines: ["AES"],
+    types: ["Airport Destination"],
+    lat: 62.560443,
+    lng: 6.110845,
+  },
+  {
+    name: "Alghero-Fertilia Airport (AHO)",
+    country: "it",
+    lines: ["AHO"],
+    types: ["Airport Destination"],
+    lat: 40.632099,
+    lng: 8.29077,
+  },
+  {
     name: "Ajaccio Napoléon Bonaparte airport (AJA)",
     country: "fr",
     lines: ["AJA"],
@@ -96,6 +112,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 44.503133,
     lng: 26.102944,
+  },
+  {
+    name: "Bacău George Enescu International  Airport (BCM)",
+    country: "ro",
+    lines: ["BCM"],
+    types: ["Airport Destination"],
+    lat: 46.5219,
+    lng: 26.910299,
   },
   {
     name: "Belgrade Nikola Tesla Airport (BEG)",
@@ -384,6 +408,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 42.562247,
     lng: 18.265543,
+  },
+  {
+    name: "Dole Tavaux Airport (DLE)",
+    country: "fr",
+    lines: ["DLE"],
+    types: ["Airport Destination"],
+    lat: 47.038955,
+    lng: 5.427589,
   },
   {
     name: "Dublin Airport (DUB)",
@@ -1496,6 +1528,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 45.809898,
     lng: 21.3379,
+  },
+  {
+    name: "Tours Val de Loire Airport (TUF)",
+    country: "fr",
+    lines: ["TUF"],
+    types: ["Airport Destination"],
+    lat: 47.432201,
+    lng: 0.727606,
   },
   {
     name: "Varna Airport (VAR)",
