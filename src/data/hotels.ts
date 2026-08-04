@@ -1794,18 +1794,39 @@ export const stationHotels: StationHotels = {
     { name: "Lugar Saloio Sintra", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lugar%20Saloio%20Sintra%2C%20Mira%20Sintra-Mele%C3%A7as%2C%20Portugal&order=price" },
   ],
   "Vila Velha de Ródão": [
-    { name: "Budget stays near Vila Velha de Ródão", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Velha%20de%20R%C3%B3d%C3%A3o%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
-    { name: "Guest houses near Vila Velha de Ródão", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Velha%20de%20R%C3%B3d%C3%A3o%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
-    { name: "Hotels near Vila Velha de Ródão", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Velha%20de%20R%C3%B3d%C3%A3o%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
+    { name: "Vilaportuguesa", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilaportuguesa%2C%20Vila%20Velha%20de%20R%C3%B3d%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Rupestre Arts Hotel Ródão", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rupestre%20Arts%20Hotel%20R%C3%B3d%C3%A3o%2C%20Vila%20Velha%20de%20R%C3%B3d%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Lpa Pereira Hotel Restaurante", distanceKm: 7.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lpa%20Pereira%20Hotel%20Restaurante%2C%20Vila%20Velha%20de%20R%C3%B3d%C3%A3o%2C%20Portugal&order=price" },
   ],
   "Tojeirinha": [
-    { name: "Budget stays near Tojeirinha", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tojeirinha%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
-    { name: "Guest houses near Tojeirinha", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tojeirinha%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
-    { name: "Hotels near Tojeirinha", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tojeirinha%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
+    { name: "Casa da Meia Encosta", distanceKm: 7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Meia%20Encosta%2C%20Tojeirinha%2C%20Portugal&order=price" },
+    { name: "Vilaportuguesa", distanceKm: 7.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilaportuguesa%2C%20Tojeirinha%2C%20Portugal&order=price" },
+    { name: "Rupestre Arts Hotel Ródão", distanceKm: 7.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rupestre%20Arts%20Hotel%20R%C3%B3d%C3%A3o%2C%20Tojeirinha%2C%20Portugal&order=price" },
+  ],
+  "Retaxo": [
+    { name: "Pousada da Juventude", distanceKm: 9.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20da%20Juventude%2C%20Retaxo%2C%20Portugal&order=price" },
+    { name: "Guest House Esplanada", distanceKm: 9.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guest%20House%20Esplanada%2C%20Retaxo%2C%20Portugal&order=price" },
+    { name: "Hotel Rainha Dona Amélia", distanceKm: 9.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rainha%20Dona%20Am%C3%A9lia%2C%20Retaxo%2C%20Portugal&order=price" },
+  ],
+  "Sarnadas": [
+    { name: "Herdade da Urgueira", distanceKm: 9.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Herdade%20da%20Urgueira%2C%20Sarnadas%2C%20Portugal&order=price" },
+    { name: "Budget stays near Sarnadas", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sarnadas%2C%20Portugal&order=price" },
+    { name: "Guest houses near Sarnadas", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sarnadas%2C%20Portugal&order=price" },
+  ],
+  "Alcains": [
+    { name: "Casa 3", distanceKm: 11.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%203%2C%20Alcains%2C%20Portugal&order=price" },
+    { name: "Império do Rei", distanceKm: 11.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Imp%C3%A9rio%20do%20Rei%2C%20Alcains%2C%20Portugal&order=price" },
+    { name: "Casa 92", distanceKm: 11.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%2092%2C%20Alcains%2C%20Portugal&order=price" },
+  ],
+  "Lardosa": [
+    { name: "Casa Petrus Guterri", distanceKm: 10.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Petrus%20Guterri%2C%20Lardosa%2C%20Portugal&order=price" },
+    { name: "Budget stays near Lardosa", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lardosa%2C%20Portugal&order=price" },
+    { name: "Guest houses near Lardosa", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lardosa%2C%20Portugal&order=price" },
   ],
   "Soalheira": [
-    { name: "Casa Petrus Guterri", distanceKm: 6.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Petrus%20Guterri%2C%20Soalheira%2C%20Portugal&order=price" },
-    { name: "Natura Glamping (Gardunha)", distanceKm: 9.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Natura%20Glamping%20(Gardunha)%2C%20Soalheira%2C%20Portugal&order=price" },
+    { name: "Budget stays near Soalheira", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Soalheira%2C%20Portugal&order=price" },
+    { name: "Guest houses near Soalheira", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Soalheira%2C%20Portugal&order=price" },
+    { name: "Hotels near Soalheira", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Soalheira%2C%20Portugal&order=price" },
   ],
   "Castelo Novo": [
     { name: "Casa Petrus Guterri", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Petrus%20Guterri%2C%20Castelo%20Novo%2C%20Portugal&order=price" },
@@ -1856,6 +1877,26 @@ export const stationHotels: StationHotels = {
     { name: "Casa Da Chandeirinha", distanceKm: 2.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Da%20Chandeirinha%2C%20Belmonte-Manteigas%2C%20Portugal&order=price" },
     { name: "Pousada Convento de Belmonte", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20Convento%20de%20Belmonte%2C%20Belmonte-Manteigas%2C%20Portugal&order=price" },
     { name: "Município De Belmonte", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Munic%C3%ADpio%20De%20Belmonte%2C%20Belmonte-Manteigas%2C%20Portugal&order=price" },
+  ],
+  "Caria": [
+    { name: "Casa Da Chandeirinha", distanceKm: 2.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Da%20Chandeirinha%2C%20Caria%2C%20Portugal&order=price" },
+    { name: "Pousada Convento de Belmonte", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20Convento%20de%20Belmonte%2C%20Caria%2C%20Portugal&order=price" },
+    { name: "Casa dos Caseiros", distanceKm: 5.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20dos%20Caseiros%2C%20Caria%2C%20Portugal&order=price" },
+  ],
+  "Maçainhas": [
+    { name: "Solar Rubina", distanceKm: 5.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solar%20Rubina%2C%20Ma%C3%A7ainhas%2C%20Portugal&order=price" },
+    { name: "Belsol", distanceKm: 6.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Belsol%2C%20Ma%C3%A7ainhas%2C%20Portugal&order=price" },
+    { name: "Casa Rafael", distanceKm: 6.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rafael%2C%20Ma%C3%A7ainhas%2C%20Portugal&order=price" },
+  ],
+  "Benespera": [
+    { name: "Belsol", distanceKm: 10.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Belsol%2C%20Benespera%2C%20Portugal&order=price" },
+    { name: "Solar Rubina", distanceKm: 10.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solar%20Rubina%2C%20Benespera%2C%20Portugal&order=price" },
+    { name: "Casa Rafael", distanceKm: 10.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rafael%2C%20Benespera%2C%20Portugal&order=price" },
+  ],
+  "Sabugal": [
+    { name: "Pensão Aliança", distanceKm: 3.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Alian%C3%A7a%2C%20Sabugal%2C%20Portugal&order=price" },
+    { name: "Hotel Santos", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Santos%2C%20Sabugal%2C%20Portugal&order=price" },
+    { name: "HI Pousada da Juventude da Guarda", distanceKm: 3.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=HI%20Pousada%20da%20Juventude%20da%20Guarda%2C%20Sabugal%2C%20Portugal&order=price" },
   ],
   "Abrantes": [
     { name: "Hotel de Turismo de Abrantes", distanceKm: 1.5, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Abrantes&order=price" },

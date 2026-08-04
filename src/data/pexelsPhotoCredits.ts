@@ -2161,10 +2161,20 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@aliakdemir",
     photoPageUrl: "https://www.pexels.com/photo/aerial-view-of-historic-arched-aqueduct-37453759/",
   },
+  "37453768": {
+    photographer: "Ali Akdemir",
+    photographerUrl: "https://www.pexels.com/@aliakdemir",
+    photoPageUrl: "https://www.pexels.com/photo/ancient-aqueduct-bridge-over-serene-landscape-37453768/",
+  },
   "37639177": {
     photographer: "Rodrigo Guimarães",
     photographerUrl: "https://www.pexels.com/@rodrigo-guimaraes-2160793271",
     photoPageUrl: "https://www.pexels.com/photo/silhouettes-in-foggy-tunnel-with-train-37639177/",
+  },
+  "37764656": {
+    photographer: "Yana Oleksiuk",
+    photographerUrl: "https://www.pexels.com/@yana-oleksiuk-2161225765",
+    photoPageUrl: "https://www.pexels.com/photo/historic-funicular-in-prague-s-lush-greenery-37764656/",
   },
   "37899453": {
     photographer: "Liane Ferreira",
@@ -2201,6 +2211,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@anh-nguyen-517648218",
     photoPageUrl: "https://www.pexels.com/photo/gothic-revival-architecture-in-breslau-poland-38194047/",
   },
+  "38390768": {
+    photographer: "Milo Deckert",
+    photographerUrl: "https://www.pexels.com/@milodeckert",
+    photoPageUrl: "https://www.pexels.com/photo/lively-day-at-praca-do-comercio-in-lisbon-38390768/",
+  },
   "38479643": {
     photographer: "Cristiano Ferrari films",
     photographerUrl: "https://www.pexels.com/@cristiano-ferrari-films-2162783697",
@@ -2215,5 +2230,10 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Malcoln Oliveira",
     photographerUrl: "https://www.pexels.com/@malcolnphoto",
     photoPageUrl: "https://www.pexels.com/photo/charming-historical-train-station-in-minas-gerais-38814600/",
+  },
+  "38844111": {
+    photographer: "Jerson Martins",
+    photographerUrl: "https://www.pexels.com/@jerson-martins-1514473344",
+    photoPageUrl: "https://www.pexels.com/photo/historic-rio-das-velhas-train-station-at-sunset-38844111/",
   },
 };

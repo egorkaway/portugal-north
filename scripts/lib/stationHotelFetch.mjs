@@ -231,6 +231,7 @@ out center tags;`;
         "User-Agent": USER_AGENT,
       },
       body: `data=${encodeURIComponent(query)}`,
+      signal: AbortSignal.timeout(55000),
     });
 
     if (attemptRes.ok) {
