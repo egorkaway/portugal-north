@@ -3,7 +3,7 @@ import { stationHotels, type Hotel } from "@/data/hotels";
 
 /** Auto-generated Booking search placeholders, not real properties. */
 const PLACEHOLDER_HOTEL_NAME =
-  /^(Hotels|Guest houses|Budget stays) near /i;
+  /^(Hotels|Guest houses|Budget stays) near |^(Budget hotels|Guest houses|Hostels) · /i;
 
 export function isPlaceholderHotel(hotel: Hotel): boolean {
   return PLACEHOLDER_HOTEL_NAME.test(hotel.name);

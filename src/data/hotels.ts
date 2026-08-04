@@ -1793,6 +1793,70 @@ export const stationHotels: StationHotels = {
     { name: "Casa de Meleças", distanceKm: 1.2, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mele%C3%A7as%2C+Sintra&order=price" },
     { name: "Lugar Saloio Sintra", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lugar%20Saloio%20Sintra%2C%20Mira%20Sintra-Mele%C3%A7as%2C%20Portugal&order=price" },
   ],
+  "Vila Velha de Ródão": [
+    { name: "Budget stays near Vila Velha de Ródão", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Velha%20de%20R%C3%B3d%C3%A3o%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
+    { name: "Guest houses near Vila Velha de Ródão", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Velha%20de%20R%C3%B3d%C3%A3o%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
+    { name: "Hotels near Vila Velha de Ródão", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Velha%20de%20R%C3%B3d%C3%A3o%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
+  ],
+  "Tojeirinha": [
+    { name: "Budget stays near Tojeirinha", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tojeirinha%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
+    { name: "Guest houses near Tojeirinha", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tojeirinha%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
+    { name: "Hotels near Tojeirinha", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tojeirinha%2C%20Portugal&nflt=distance%3D2000%3Bprice%3DUSD-min-60-1&order=price" },
+  ],
+  "Soalheira": [
+    { name: "Casa Petrus Guterri", distanceKm: 6.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Petrus%20Guterri%2C%20Soalheira%2C%20Portugal&order=price" },
+    { name: "Natura Glamping (Gardunha)", distanceKm: 9.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Natura%20Glamping%20(Gardunha)%2C%20Soalheira%2C%20Portugal&order=price" },
+  ],
+  "Castelo Novo": [
+    { name: "Casa Petrus Guterri", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Petrus%20Guterri%2C%20Castelo%20Novo%2C%20Portugal&order=price" },
+    { name: "Natura Glamping (Gardunha)", distanceKm: 5.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Natura%20Glamping%20(Gardunha)%2C%20Castelo%20Novo%2C%20Portugal&order=price" },
+    { name: "Cerca Design", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cerca%20Design%2C%20Castelo%20Novo%2C%20Portugal&order=price" },
+  ],
+  "Alpedrinha": [
+    { name: "Natura Glamping (Gardunha)", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Natura%20Glamping%20(Gardunha)%2C%20Alpedrinha%2C%20Portugal&order=price" },
+    { name: "Casa Petrus Guterri", distanceKm: 3.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Petrus%20Guterri%2C%20Alpedrinha%2C%20Portugal&order=price" },
+    { name: "Cerca Design", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cerca%20Design%2C%20Alpedrinha%2C%20Portugal&order=price" },
+  ],
+  "Vale de Prazeres": [
+    { name: "Cerca Design", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cerca%20Design%2C%20Vale%20de%20Prazeres%2C%20Portugal&order=price" },
+    { name: "Natura Glamping (Gardunha)", distanceKm: 5.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Natura%20Glamping%20(Gardunha)%2C%20Vale%20de%20Prazeres%2C%20Portugal&order=price" },
+    { name: "Estalagem da Neve", distanceKm: 6.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Estalagem%20da%20Neve%2C%20Vale%20de%20Prazeres%2C%20Portugal&order=price" },
+  ],
+  "Fatela-Penamacor": [
+    { name: "Cerca Design", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cerca%20Design%2C%20Fatela-Penamacor%2C%20Portugal&order=price" },
+    { name: "Alambique Hotel Resort & Spa", distanceKm: 7.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alambique%20Hotel%20Resort%20%26%20Spa%2C%20Fatela-Penamacor%2C%20Portugal&order=price" },
+    { name: "Fundão Palace Hotel", distanceKm: 7.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Fund%C3%A3o%20Palace%20Hotel%2C%20Fatela-Penamacor%2C%20Portugal&order=price" },
+  ],
+  "Alcaide": [
+    { name: "Cerca Design", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cerca%20Design%2C%20Alcaide%2C%20Portugal&order=price" },
+    { name: "Natura Glamping (Gardunha)", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Natura%20Glamping%20(Gardunha)%2C%20Alcaide%2C%20Portugal&order=price" },
+    { name: "Estalagem da Neve", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Estalagem%20da%20Neve%2C%20Alcaide%2C%20Portugal&order=price" },
+  ],
+  "Donas": [
+    { name: "Cerca Design", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cerca%20Design%2C%20Donas%2C%20Portugal&order=price" },
+    { name: "Estalagem da Neve", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Estalagem%20da%20Neve%2C%20Donas%2C%20Portugal&order=price" },
+    { name: "Tarouca", distanceKm: 2.2, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tarouca%2C%20Donas%2C%20Portugal&order=price" },
+  ],
+  "Fundão": [
+    { name: "Hotel Samasa", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Samasa%2C%20Fund%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Tarouca", distanceKm: 0.4, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tarouca%2C%20Fund%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Rivoli", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rivoli%2C%20Fund%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Alcaria": [
+    { name: "Fundão Palace Hotel", distanceKm: 3.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Fund%C3%A3o%20Palace%20Hotel%2C%20Alcaria%2C%20Portugal&order=price" },
+    { name: "Terrace Serra", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Terrace%20Serra%2C%20Alcaria%2C%20Portugal&order=price" },
+    { name: "Alambique Hotel Resort & Spa", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alambique%20Hotel%20Resort%20%26%20Spa%2C%20Alcaria%2C%20Portugal&order=price" },
+  ],
+  "Tortosendo": [
+    { name: "Terrace Serra", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Terrace%20Serra%2C%20Tortosendo%2C%20Portugal&order=price" },
+    { name: "Quinta de Seves", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20de%20Seves%2C%20Tortosendo%2C%20Portugal&order=price" },
+    { name: "Puralã - Wool Valley Hotel & SPA", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pural%C3%A3%20-%20Wool%20Valley%20Hotel%20%26%20SPA%2C%20Tortosendo%2C%20Portugal&order=price" },
+  ],
+  "Belmonte-Manteigas": [
+    { name: "Casa Da Chandeirinha", distanceKm: 2.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Da%20Chandeirinha%2C%20Belmonte-Manteigas%2C%20Portugal&order=price" },
+    { name: "Pousada Convento de Belmonte", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20Convento%20de%20Belmonte%2C%20Belmonte-Manteigas%2C%20Portugal&order=price" },
+    { name: "Município De Belmonte", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Munic%C3%ADpio%20De%20Belmonte%2C%20Belmonte-Manteigas%2C%20Portugal&order=price" },
+  ],
   "Abrantes": [
     { name: "Hotel de Turismo de Abrantes", distanceKm: 1.5, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Abrantes&order=price" },
     { name: "Residencial Aliança", distanceKm: 0.8, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Abrantes&order=price" },

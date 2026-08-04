@@ -7,6 +7,9 @@
  * period, each bake unions new destinations into the live list (never drops).
  * Connection map PNGs regenerate only when destination count changes (or the
  * PNG is missing); use --maps-only to force re-render.
+ * Hubs that have never recorded flights are hidden on the map and only
+ * re-sampled during the first 2 weeks after each period opens (unless
+ * --airport is set). Previously active hubs still hide after 3 empty periods.
  * On each open-date boundary the previous live bake is frozen under
  * public/.../periods/{YYYY-MM-DD}/ and a new live period starts empty.
  *
@@ -69,6 +72,9 @@ const {
 const {
   recordAirportConnectionsEmpty,
   recordAirportConnectionsOk,
+  shouldSampleAirportHub,
+  hideNeverRecordedAirports,
+  airportHasRecordedFlights,
 } = await import("../server/lib/airportMapVisibility.ts");
 
 const cachePath = join(root, "data/airport-iata-coordinates.json");
@@ -295,10 +301,14 @@ export async function collectAirportConnections(options = {}) {
 
   let ok = 0;
   let failed = 0;
+  let skippedNeverSeen = 0;
   let quotaExhausted = false;
   let lastProvider = null;
-  let mapVisibility = loadAirportMapVisibility(rootDir);
-  let mapVisibilityDirty = false;
+  let mapVisibilityLoaded = loadAirportMapVisibility(rootDir);
+  let mapVisibility = hideNeverRecordedAirports(mapVisibilityLoaded);
+  let mapVisibilityDirty = mapVisibility !== mapVisibilityLoaded;
+  const todayYmd = lisbonDateString(asOf ?? new Date());
+  const forceAirport = Boolean(filter);
 
   const stopForQuota = (error) => {
     quotaExhausted = true;
@@ -311,6 +321,24 @@ export async function collectAirportConnections(options = {}) {
     if (quotaExhausted) break;
 
     const label = `${airport.stationName} (${airport.iata})`;
+    const visibilityEntry = mapVisibility.airports[airport.iata];
+    const previous = airports[airport.iata];
+    const sampleThisHub = shouldSampleAirportHub({
+      visibilityEntry,
+      hasLiveConnections: Boolean(previous?.connections?.length),
+      force: forceAirport,
+      periodStart: period.start,
+      todayYmd,
+    });
+
+    if (!sampleThisHub) {
+      skippedNeverSeen += 1;
+      console.log(
+        `Skip ${label}: never recorded flights — outside 2-week recheck window after ${period.start}`,
+      );
+      continue;
+    }
+
     if (isDryRun) {
       console.log(`[dry-run] ${label}`);
       ok += 1;
@@ -337,7 +365,6 @@ export async function collectAirportConnections(options = {}) {
       }
       coordinates = mergeCatalogIntoCoordinates(catalog, loadAirportCoordinateCache(cachePath));
 
-      const previous = airports[airport.iata];
       const sample = buildAirportConnections(airport, flights, coordinates);
       if (!sample) {
         if (previous?.connections?.length) {
@@ -348,13 +375,16 @@ export async function collectAirportConnections(options = {}) {
           continue;
         }
         console.warn(`No mappable connections for ${label}`);
-        const before = mapVisibility.airports[airport.iata]?.consecutiveEmptyPeriods ?? 0;
+        const neverRecorded = !airportHasRecordedFlights(visibilityEntry);
+        const beforeHidden = Boolean(visibilityEntry?.hiddenFromMap);
         mapVisibility = recordAirportConnectionsEmpty(mapVisibility, airport.iata, period.id);
         mapVisibilityDirty = true;
         const after = mapVisibility.airports[airport.iata];
-        if (after?.hiddenFromMap && !(before >= (mapVisibility.hideAfterEmptyPeriods ?? 3))) {
+        if (after?.hiddenFromMap && !beforeHidden) {
           console.warn(
-            `Hiding ${airport.iata} from map after ${after.consecutiveEmptyPeriods} empty periods`,
+            neverRecorded
+              ? `Hiding ${airport.iata} from map (no flights ever recorded)`
+              : `Hiding ${airport.iata} from map after ${after.consecutiveEmptyPeriods} empty periods`,
           );
         } else if (!after?.hiddenFromMap) {
           console.warn(
@@ -450,6 +480,7 @@ export async function collectAirportConnections(options = {}) {
     ok,
     failed,
     skipped: false,
+    skippedNeverSeen,
     monthlyLimitReached: quotaExhausted,
     quotaExhausted,
     lastProvider,
@@ -463,11 +494,15 @@ export async function collectAirportConnections(options = {}) {
 const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];
 
 if (isMain) {
-  collectAirportConnections().then(({ ok, failed, skipped, monthlyLimitReached, periodStatus: statusOnly }) => {
+  collectAirportConnections().then(
+    ({ ok, failed, skipped, skippedNeverSeen, monthlyLimitReached, periodStatus: statusOnly }) => {
     if (statusOnly) process.exit(0);
     if (skipped) process.exit(0);
     const limitNote = monthlyLimitReached ? " (stopped: flight API monthly limit)" : "";
-    console.log(`Done: ${ok} airport(s) updated, ${failed} failed${limitNote}`);
+    const skipNote = skippedNeverSeen
+      ? `, ${skippedNeverSeen} never-seen hub(s) skipped (outside 2-week window)`
+      : "";
+    console.log(`Done: ${ok} airport(s) updated, ${failed} failed${skipNote}${limitNote}`);
     process.exit(failed > 0 && ok === 0 ? 1 : 0);
   });
 }

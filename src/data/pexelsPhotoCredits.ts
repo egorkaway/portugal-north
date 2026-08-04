@@ -141,6 +141,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pawel-l-435199",
     photoPageUrl: "https://www.pexels.com/photo/man-standing-beside-train-rail-1423636/",
   },
+  "1534560": {
+    photographer: "Lisa from Pexels",
+    photographerUrl: "https://www.pexels.com/@fotios-photos",
+    photoPageUrl: "https://www.pexels.com/photo/people-at-city-1534560/",
+  },
   "1551119": {
     photographer: "Wendy Wei",
     photographerUrl: "https://www.pexels.com/@wendywei",
@@ -160,6 +165,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "lucas souza",
     photographerUrl: "https://www.pexels.com/@llucams",
     photoPageUrl: "https://www.pexels.com/photo/train-station-2002165/",
+  },
+  "2352291": {
+    photographer: "Lucas Pezeta",
+    photographerUrl: "https://www.pexels.com/@lucaspezeta",
+    photoPageUrl: "https://www.pexels.com/photo/red-and-silver-train-2352291/",
   },
   "2379943": {
     photographer: "Marcelo Dias",
@@ -416,6 +426,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@mauroignaciotorres",
     photoPageUrl: "https://www.pexels.com/photo/sunlit-bridge-at-sunset-7513577/",
   },
+  "7515524": {
+    photographer: "Magda Ehlers",
+    photographerUrl: "https://www.pexels.com/@magda-ehlers-pexels",
+    photoPageUrl: "https://www.pexels.com/photo/railway-near-mountain-7515524/",
+  },
   "7542089": {
     photographer: "Kh-ali-l i",
     photographerUrl: "https://www.pexels.com/@kh-ali-li",
@@ -485,6 +500,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Wallace Chuck",
     photographerUrl: "https://www.pexels.com/@chuck",
     photoPageUrl: "https://www.pexels.com/photo/an-aerial-shot-of-a-travelling-train-9753515/",
+  },
+  "9938927": {
+    photographer: "Zafer Erdoğan",
+    photographerUrl: "https://www.pexels.com/@zafer-erdogan-49915050",
+    photoPageUrl: "https://www.pexels.com/photo/view-of-a-railway-station-9938927/",
   },
   "9989485": {
     photographer: "Enric Cruz López",
@@ -605,6 +625,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "K",
     photographerUrl: "https://www.pexels.com/@kelly",
     photoPageUrl: "https://www.pexels.com/photo/railroad-between-a-cropland-12464217/",
+  },
+  "12567451": {
+    photographer: "Vladimir Srajber",
+    photographerUrl: "https://www.pexels.com/@vladimirsrajber",
+    photoPageUrl: "https://www.pexels.com/photo/people-getting-into-the-train-12567451/",
   },
   "12595493": {
     photographer: "Taha Yasir Yöney",
@@ -1041,6 +1066,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@masoodaslami",
     photoPageUrl: "https://www.pexels.com/photo/westpark-subway-station-in-munich-germany-19429415/",
   },
+  "19657293": {
+    photographer: "Bilal Furkan KOŞAR",
+    photographerUrl: "https://www.pexels.com/@bilalfurkankosar",
+    photoPageUrl: "https://www.pexels.com/photo/people-on-train-station-19657293/",
+  },
   "19753039": {
     photographer: "Sami TÜRK",
     photographerUrl: "https://www.pexels.com/@trksami",
@@ -1165,6 +1195,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Tiago Alvar",
     photographerUrl: "https://www.pexels.com/@tiagoalvar",
     photoPageUrl: "https://www.pexels.com/photo/placa-de-bous-in-valencia-in-spain-21287074/",
+  },
+  "21550330": {
+    photographer: "J MAD",
+    photographerUrl: "https://www.pexels.com/@juicemitapfelndrin",
+    photoPageUrl: "https://www.pexels.com/photo/train-standing-in-a-station-21550330/",
   },
   "22047476": {
     photographer: "Efrem  Efre",
@@ -1361,6 +1396,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@feratgraphy",
     photoPageUrl: "https://www.pexels.com/photo/empty-train-station-platform-at-sunset-29451991/",
   },
+  "29508384": {
+    photographer: "Mustafa Akın",
+    photographerUrl: "https://www.pexels.com/@msaimakin",
+    photoPageUrl: "https://www.pexels.com/photo/freight-train-on-industrial-railway-track-29508384/",
+  },
   "29546156": {
     photographer: "Emre  Simsek",
     photographerUrl: "https://www.pexels.com/@emre-simsek-27565013",
@@ -1511,6 +1551,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@vadym-alyekseyenko-137433856",
     photoPageUrl: "https://www.pexels.com/photo/train-and-construction-equipment-at-railway-crossing-31762054/",
   },
+  "31762055": {
+    photographer: "Vadym Alyekseyenko",
+    photographerUrl: "https://www.pexels.com/@vadym-alyekseyenko-137433856",
+    photoPageUrl: "https://www.pexels.com/photo/railway-crossing-with-stop-sign-and-train-31762055/",
+  },
   "31797305": {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
@@ -1601,6 +1646,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@saksham-vikram-2148641748",
     photoPageUrl: "https://www.pexels.com/photo/high-speed-train-at-a-deserted-railway-station-32467298/",
   },
+  "32542772": {
+    photographer: "Deniz ŞENGÜL",
+    photographerUrl: "https://www.pexels.com/@dsengul77",
+    photoPageUrl: "https://www.pexels.com/photo/passengers-reflecting-through-a-train-window-32542772/",
+  },
   "32546134": {
     photographer: "Lara Santos",
     photographerUrl: "https://www.pexels.com/@larasantosartedesign",
@@ -1645,6 +1695,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Alessandro Antonio Serra",
     photographerUrl: "https://www.pexels.com/@alessandro-antonio-serra-2148929360",
     photoPageUrl: "https://www.pexels.com/photo/yellow-railway-maintenance-vehicle-at-train-station-32771498/",
+  },
+  "32780882": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/modern-train-at-cadiz-railway-station-32780882/",
   },
   "32780885": {
     photographer: "Antonio Garcia Prats",
@@ -1700,6 +1755,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Brendan Rühli",
     photographerUrl: "https://www.pexels.com/@brendanruehli",
     photoPageUrl: "https://www.pexels.com/photo/abandoned-railway-yard-with-industrial-building-33354908/",
+  },
+  "33355420": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/historic-estacion-linares-baeza-railway-scene-33355420/",
   },
   "33355421": {
     photographer: "Antonio Garcia Prats",
@@ -1830,6 +1890,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Vladimir Srajber",
     photographerUrl: "https://www.pexels.com/@vladimirsrajber",
     photoPageUrl: "https://www.pexels.com/photo/traveler-waiting-at-kutina-train-station-at-sunset-34420498/",
+  },
+  "34493897": {
+    photographer: "Jerson Martins",
+    photographerUrl: "https://www.pexels.com/@jerson-martins-1514473344",
+    photoPageUrl: "https://www.pexels.com/photo/historic-locomotive-at-train-depot-under-blue-sky-34493897/",
   },
   "34504895": {
     photographer: "Davide Negro",
@@ -2071,6 +2136,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@talha-kilic-517654077",
     photoPageUrl: "https://www.pexels.com/photo/vibrant-train-station-scene-in-budapest-37243144/",
   },
+  "37270089": {
+    photographer: "Wesley  Novais",
+    photographerUrl: "https://www.pexels.com/@wesley-novais-2150620479",
+    photoPageUrl: "https://www.pexels.com/photo/scenic-aerial-view-of-small-town-and-hills-37270089/",
+  },
   "37273305": {
     photographer: "Leandro  Cardoso",
     photographerUrl: "https://www.pexels.com/@leandro-cardoso-2160921693",
@@ -2111,6 +2181,21 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@heinz-reisenhofer-2155138929",
     photoPageUrl: "https://www.pexels.com/photo/sunset-at-train-station-in-vienna-austria-38001261/",
   },
+  "38010689": {
+    photographer: "Reinaldo Simoes",
+    photographerUrl: "https://www.pexels.com/@reinaldo",
+    photoPageUrl: "https://www.pexels.com/photo/charming-rooftops-in-viana-do-castelo-portugal-38010689/",
+  },
+  "38055444": {
+    photographer: "Ana Hidalgo Burgos",
+    photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-4848204",
+    photoPageUrl: "https://www.pexels.com/photo/train-station-scene-in-murcia-spain-38055444/",
+  },
+  "38151921": {
+    photographer: "Emin Alper",
+    photographerUrl: "https://www.pexels.com/@emin-alper-2161785125",
+    photoPageUrl: "https://www.pexels.com/photo/man-waving-at-train-station-platform-in-aydin-38151921/",
+  },
   "38194047": {
     photographer: "Anh Nguyen",
     photographerUrl: "https://www.pexels.com/@anh-nguyen-517648218",
@@ -2120,5 +2205,15 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Cristiano Ferrari films",
     photographerUrl: "https://www.pexels.com/@cristiano-ferrari-films-2162783697",
     photoPageUrl: "https://www.pexels.com/photo/black-and-white-railway-tracks-in-scenic-landscape-38479643/",
+  },
+  "38780454": {
+    photographer: "Sergei  Gussev",
+    photographerUrl: "https://www.pexels.com/@sergei",
+    photoPageUrl: "https://www.pexels.com/photo/dom-luis-i-bridge-spanning-douro-river-porto-38780454/",
+  },
+  "38814600": {
+    photographer: "Malcoln Oliveira",
+    photographerUrl: "https://www.pexels.com/@malcolnphoto",
+    photoPageUrl: "https://www.pexels.com/photo/charming-historical-train-station-in-minas-gerais-38814600/",
   },
 };

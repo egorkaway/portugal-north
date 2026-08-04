@@ -1,5 +1,3 @@
-import { stations } from "./stations";
-
 /** CP travel-api station codes (`94-xxxx`). Regenerate: node scripts/map-cp-stations.mjs */
 export const cpStationCodes: Partial<Record<string, string>> = {
   "Abrantes": "94-52001",
@@ -13,8 +11,11 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Aguim": "94-37093",
   "Albergaria dos Doze": "94-34439",
   "Albufeira-Ferreiras": "94-78063",
+  "Alcaide": "94-53504",
+  "Alcains": "94-53140",
   "Alcantara - Mar": "94-69039",
   "Alcantara - Terra": "94-67025",
+  "Alcaria": "94-53629",
   "Alegria": "94-11064",
   "Alfarelos": "94-35006",
   "Alferrarede": "94-52068",
@@ -23,6 +24,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Alhandra": "94-31237",
   "Alhos Vedros": "94-95075",
   "Almourol": "94-51102",
+  "Alpedrinha": "94-53355",
   "Alvarães": "94-6338",
   "Alvega – Ortiga": "94-52209",
   "Alverca": "94-31187",
@@ -50,7 +52,9 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Barroselas": "94-6304",
   "Beja": "94-75002",
   "Belém": "94-69054",
+  "Belmonte-Manteigas": "94-54197",
   "Belver": "94-52282",
+  "Benespera": "94-54338",
   "Benfica": "94-60046",
   "Bifurcacao de Lares": "94-64022",
   "Bobadela": "94-31070",
@@ -71,6 +75,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Caniços": "94-28100",
   "Carapecos": "94-6197",
   "Carcavelos": "94-69187",
+  "Caria": "94-54148",
   "Carrascal – Delongo": "94-40030",
   "Carreço": "94-18085",
   "Carregado": "94-31336",
@@ -82,6 +87,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Cascais": "94-69260",
   "Castanheira do Ribatejo": "94-31310",
   "Castelo Branco": "94-53009",
+  "Castelo Novo": "94-53314",
   "Cavaco": "94-44172",
   "Caxarias": "94-34330",
   "Caxias": "94-69120",
@@ -103,6 +109,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Curvaceiras": "94-40063",
   "Darque": "94-6387",
   "Dois Portos": "94-62380",
+  "Donas": "94-53520",
   "Durrães": "94-6262",
   "Eirol": "94-42119",
   "Eixo": "94-42077",
@@ -126,6 +133,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Famalicão da Nazaré": "94-63180",
   "Faria": "94-44271",
   "Faro": "94-73007",
+  "Fatela-Penamacor": "94-53462",
   "Feliteira": "94-62364",
   "Ferradosa": "94-11114",
   "Ferrão": "94-10165",
@@ -136,6 +144,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Fornos de Algodres": "94-48249",
   "Francelos": "94-39081",
   "Fratel": "94-52571",
+  "Fundão": "94-53546",
   "Fungalvaz": "94-34199",
   "General Torres": "94-39172",
   "Giesteira": "94-28159",
@@ -152,6 +161,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Lagos": "94-90464",
   "Lamarosa": "94-34090",
   "Lapa": "94-44057",
+  "Lardosa": "94-53215",
   "Lares": "94-64055",
   "Lavradio": "94-95042",
   "Leandro": "94-4036",
@@ -167,6 +177,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Lourical": "94-63875",
   "Louro": "94-5116",
   "Lousado": "94-5009",
+  "Maçainhas": "94-54262",
   "Macinhata": "94-42325",
   "Macinhata do Vouga": "94-42259",
   "Madalena": "94-39123",
@@ -252,6 +263,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Recesinhos": "94-8441",
   "Rede": "94-9357",
   "Reguengo - Vale da Pedra - Pontevel": "94-33084",
+  "Retaxo": "94-52845",
   "Reveles": "94-65128",
   "Riachos – Torres Novas – Golegã": "94-32466",
   "Rio de Mouro": "94-61044",
@@ -260,6 +272,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Roma - Areeiro": "94-66035",
   "Ruílhe": "94-29074",
   "Runa": "94-62422",
+  "Sabugal": "94-54429",
   "Sacavem": "94-31062",
   "Salir do Porto": "94-63107",
   "Salreu": "94-38125",
@@ -287,6 +300,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "São Pedro da Torre": "94-18440",
   "São Romão": "94-4077",
   "Sapataria": "94-62299",
+  "Sarnadas": "94-52803",
   "Seiça – Ourém": "94-34264",
   "Seixas": "94-18275",
   "Senhora da Agonia": "94-18234",
@@ -301,6 +315,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Silves": "94-90183",
   "Simoes": "94-34744",
   "Sintra": "94-61101",
+  "Soalheira": "94-53264",
   "Soudos - Vila Nova": "94-40014",
   "Soure": "94-34801",
   "Souselas": "94-36087",
@@ -312,8 +327,10 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Taveiro": "94-35139",
   "Tavira": "94-73320",
   "Terronhas": "94-8136",
+  "Tojeirinha": "94-52738",
   "Tomar": "94-40154",
   "Torres Vedras": "94-62471",
+  "Tortosendo": "94-53678",
   "Tramagal": "94-51243",
   "Trancoso": "94-8151",
   "Travagem": "94-4010",
@@ -324,6 +341,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Valadares": "94-39115",
   "Valado – Nazaré – Alcobaça": "94-63263",
   "Vale de Figueira": "94-32284",
+  "Vale de Prazeres": "94-53397",
   "Vale de Santarem": "94-32102",
   "Válega": "94-38240",
   "Valença": "94-7005",
@@ -343,6 +361,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Vila Nova de Gaia-Devesas": "94-39164",
   "Vila Praia de Âncora": "94-18150",
   "Vila Real de Santo António": "94-73569",
+  "Vila Velha de Ródão": "94-52647",
   "Vilar Formoso": "94-49460",
   "Vilela-Fornos": "94-36053",
   "Virtudes": "94-33043",
@@ -350,18 +369,6 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Zibreira": "94-62331",
 };
 
-function isInactiveOnlyStation(stationName: string): boolean {
-  const station = stations.find((s) => s.name === stationName);
-  return (
-    station !== undefined &&
-    station.types.length > 0 &&
-    station.types.every((type) => type === "Inactive / Historic")
-  );
-}
-
 export function getCpStationCode(stationName: string): string | undefined {
-  if (isInactiveOnlyStation(stationName)) {
-    return undefined;
-  }
   return cpStationCodes[stationName];
 }

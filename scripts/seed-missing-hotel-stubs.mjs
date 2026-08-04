@@ -25,9 +25,9 @@ function bookingUrl(stationName) {
 function stubHotels(stationName) {
   const url = bookingUrl(stationName);
   return [
-    { name: `Budget hotels · ${stationName}`, distanceKm: 0.8, priceFrom: 35, bookingUrl: url },
-    { name: `Guest houses · ${stationName}`, distanceKm: 1.1, priceFrom: 30, bookingUrl: url },
-    { name: `Hostels · ${stationName}`, distanceKm: 1.4, priceFrom: 25, bookingUrl: url },
+    { name: `Budget stays near ${stationName}`, distanceKm: 0.8, priceFrom: 35, bookingUrl: url },
+    { name: `Guest houses near ${stationName}`, distanceKm: 1.1, priceFrom: 30, bookingUrl: url },
+    { name: `Hotels near ${stationName}`, distanceKm: 1.4, priceFrom: 25, bookingUrl: url },
   ];
 }
 

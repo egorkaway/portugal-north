@@ -3,10 +3,15 @@
 import { writeFileSync } from "node:fs";
 import { isRejectedHotel } from "./rejectedHotels.mjs";
 
-const OVERPASS_URL = "https://overpass-api.de/api/interpreter";
+const OVERPASS_URLS = [
+  "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+  "https://overpass-api.de/api/interpreter",
+  "https://overpass.kumi.systems/api/interpreter",
+];
 const USER_AGENT = "portugal-north-hotel-fetch/1.0 (https://www.verystays.com)";
 
-const PLACEHOLDER_NAME = /^(Hotels|Guest houses|Budget stays) near /i;
+const PLACEHOLDER_NAME =
+  /^(Hotels|Guest houses|Budget stays) near |^(Budget hotels|Guest houses|Hostels) · /i;
 
 const TOURISM_TYPES = new Set([
   "hotel",
@@ -215,10 +220,11 @@ out center tags;`;
 
   let res = null;
   let lastError = null;
-  for (let attempt = 0; attempt < 4; attempt++) {
+  for (let attempt = 0; attempt < 6; attempt++) {
     if (attempt > 0) await sleep(3000 * attempt);
+    const overpassUrl = OVERPASS_URLS[attempt % OVERPASS_URLS.length];
 
-    const attemptRes = await fetch(OVERPASS_URL, {
+    const attemptRes = await fetch(overpassUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -232,7 +238,7 @@ out center tags;`;
       break;
     }
     lastError = new Error(`overpass_http_${attemptRes.status}`);
-    if (attemptRes.status !== 429 && attemptRes.status !== 504) break;
+    if (attemptRes.status !== 429 && attemptRes.status !== 504) continue;
   }
 
   if (!res) throw lastError ?? new Error("overpass_failed");

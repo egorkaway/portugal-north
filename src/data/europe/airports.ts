@@ -274,6 +274,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 2.11278,
   },
   {
+    name: "Ignacy Jan Paderewski Bydgoszcz Airport (BZG)",
+    country: "pl",
+    lines: ["BZG"],
+    types: ["Airport Destination"],
+    lat: 53.096802,
+    lng: 17.977699,
+  },
+  {
     name: "Cagliari Elmas Airport (CAG)",
     country: "it",
     lines: ["CAG"],
@@ -656,6 +664,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 37.435101,
     lng: 25.348101,
+  },
+  {
+    name: "Santorini International Airport (JTR)",
+    country: "gr",
+    lines: ["JTR"],
+    types: ["Airport Destination"],
+    lat: 36.400045,
+    lng: 25.478638,
   },
   {
     name: "Keflavik International Airport (KEF)",
@@ -1528,6 +1544,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 59.589401,
     lng: 16.6336,
+  },
+  {
+    name: "Växjö Kronoberg Airport (VXO)",
+    country: "se",
+    lines: ["VXO"],
+    types: ["Airport Destination"],
+    lat: 56.929100036621094,
+    lng: 14.727999687194824,
   },
   {
     name: "Warsaw Chopin Airport (WAW)",
