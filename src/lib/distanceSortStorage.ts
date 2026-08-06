@@ -1,6 +1,9 @@
 /** localStorage key for homepage "Sort by distance" preference. */
 export const DISTANCE_SORT_STORAGE_KEY = "portugal-by-train-distance-sort";
 
+/** sessionStorage: opt-out of distance sort for this browser tab only. */
+export const DISTANCE_SORT_SESSION_OFF_KEY = "portugal-by-train-distance-sort-session-off";
+
 /** Cached WGS84 fix used to sort immediately while Safari resolves GPS. */
 export const LAST_COORDS_STORAGE_KEY = "portugal-by-train-last-coords";
 
@@ -8,6 +11,7 @@ const COORDS_MAX_AGE_MS = 30 * 60 * 1000;
 
 export type StoredCoords = { lat: number; lng: number; at: number };
 
+/** True when distance sort was previously enabled (coords may be cached). */
 export function readDistanceSortEnabled(): boolean {
   if (typeof localStorage === "undefined") return false;
   return localStorage.getItem(DISTANCE_SORT_STORAGE_KEY) === "1";
@@ -18,7 +22,23 @@ export function writeDistanceSortEnabled(enabled: boolean): void {
   if (enabled) {
     localStorage.setItem(DISTANCE_SORT_STORAGE_KEY, "1");
   } else {
+    // Clearing means “no sticky on” — never persist an opt-out across sessions.
     localStorage.removeItem(DISTANCE_SORT_STORAGE_KEY);
+  }
+}
+
+/** Session-only: user turned distance sort off until the next cold start. */
+export function readDistanceSortSessionOptOut(): boolean {
+  if (typeof sessionStorage === "undefined") return false;
+  return sessionStorage.getItem(DISTANCE_SORT_SESSION_OFF_KEY) === "1";
+}
+
+export function writeDistanceSortSessionOptOut(optedOut: boolean): void {
+  if (typeof sessionStorage === "undefined") return;
+  if (optedOut) {
+    sessionStorage.setItem(DISTANCE_SORT_SESSION_OFF_KEY, "1");
+  } else {
+    sessionStorage.removeItem(DISTANCE_SORT_SESSION_OFF_KEY);
   }
 }
 

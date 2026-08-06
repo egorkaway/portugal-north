@@ -1,7 +1,18 @@
+import { useState } from "react";
 import { ArrowLeft, Clock, MapPin, TrainFront, Trash2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { PageHead } from "@/components/PageHead";
 import { SiteFooter } from "@/components/SiteFooter";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
 import { getCpStationCode } from "@/data/cpStationCodes";
 import { useNowMinute } from "@/hooks/useNowMinute";
 import { useStationDepartures } from "@/hooks/useStationDepartures";
@@ -25,6 +36,8 @@ import { getStationPath } from "@/lib/stationSlug";
 import { deleteTripHistoryRecord, useTripHistory } from "@/lib/trainTripHistory";
 import { allStations } from "@/data/stationRegistry";
 import type { TrainJourneyStop } from "@/lib/trainJourney";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 function stationPagePath(stationName: string): string | null {
   const station = allStations.find((entry) => entry.name === stationName);
@@ -92,6 +105,10 @@ const Trip = () => {
   const trip = useActiveTrip();
   const history = useTripHistory();
   const now = useNowMinute();
+  const [pendingDeleteId, setPendingDeleteId] = useState<string | null>(null);
+  const pendingDelete = pendingDeleteId
+    ? history.find((record) => record.id === pendingDeleteId) ?? null
+    : null;
 
   const { data: departures } = useStationDepartures(trip?.stationName ?? "", 10);
   const originCode = trip ? getCpStationCode(trip.stationName) : undefined;
@@ -318,7 +335,7 @@ const Trip = () => {
 
                       <button
                         type="button"
-                        onClick={() => deleteTripHistoryRecord(record.id)}
+                        onClick={() => setPendingDeleteId(record.id)}
                         className="inline-flex items-center justify-center gap-2 self-start rounded-md border border-border px-3 py-2 text-sm font-semibold text-foreground hover:bg-muted"
                       >
                         <Trash2 className="h-4 w-4" aria-hidden="true" />
@@ -331,6 +348,40 @@ const Trip = () => {
             )}
           </section>
         </main>
+
+        <AlertDialog
+          open={pendingDeleteId !== null}
+          onOpenChange={(open) => {
+            if (!open) setPendingDeleteId(null);
+          }}
+        >
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>{t("trip.historyDeleteConfirmTitle")}</AlertDialogTitle>
+              <AlertDialogDescription>
+                {pendingDelete
+                  ? t("trip.historyDeleteConfirmBody", {
+                      train: pendingDelete.trainNumber,
+                      origin: pendingDelete.stationName,
+                      destination: pendingDelete.finalStationName,
+                    })
+                  : t("trip.historyDeleteConfirmBodyGeneric")}
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>{t("trip.historyDeleteConfirmCancel")}</AlertDialogCancel>
+              <AlertDialogAction
+                className={cn(buttonVariants({ variant: "destructive" }))}
+                onClick={() => {
+                  if (pendingDeleteId) deleteTripHistoryRecord(pendingDeleteId);
+                  setPendingDeleteId(null);
+                }}
+              >
+                {t("trip.historyDelete")}
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
 
         <div className="hidden sm:block">
           <SiteFooter showIntro={false} />

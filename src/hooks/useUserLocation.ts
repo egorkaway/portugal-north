@@ -1,11 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
-  clearLastCoords,
   readDistanceSortEnabled,
+  readDistanceSortSessionOptOut,
   readLastCoords,
   writeDistanceSortEnabled,
+  writeDistanceSortSessionOptOut,
   writeLastCoords,
 } from "@/lib/distanceSortStorage";
+import { getLocationPermissionStatus } from "@/lib/pwaPermissions";
 import { startUserGeolocation, type UserCoords } from "@/lib/userGeolocation";
 
 export type { UserCoords } from "@/lib/userGeolocation";
@@ -17,19 +19,25 @@ export type UserLocationState =
   | { status: "unsupported" }
   | { status: "error" };
 
+function initialDistanceSortOn(): boolean {
+  if (readDistanceSortSessionOptOut()) return false;
+  return readDistanceSortEnabled();
+}
+
 function initialCoords(): UserCoords | null {
-  if (!readDistanceSortEnabled()) return null;
+  if (!initialDistanceSortOn()) return null;
   const cached = readLastCoords();
   return cached ? { lat: cached.lat, lng: cached.lng } : null;
 }
 
 export function useUserLocation() {
-  const [distanceSortOn, setDistanceSortOn] = useState(() => readDistanceSortEnabled());
+  const [distanceSortOn, setDistanceSortOn] = useState(initialDistanceSortOn);
   const [coords, setCoords] = useState<UserCoords | null>(initialCoords);
   const [state, setState] = useState<UserLocationState>({ status: "idle" });
   const requestGenerationRef = useRef(0);
   const activeRequestRef = useRef<{ cancel: () => void } | null>(null);
   const didBackgroundRefreshRef = useRef(false);
+  const didAutoEnableRef = useRef(false);
 
   const stopActiveRequest = useCallback(() => {
     activeRequestRef.current?.cancel();
@@ -40,8 +48,8 @@ export function useUserLocation() {
     requestGenerationRef.current += 1;
     stopActiveRequest();
     setDistanceSortOn(false);
-    writeDistanceSortEnabled(false);
-    clearLastCoords();
+    writeDistanceSortSessionOptOut(true);
+    // Keep cached coords for the next cold start; only clear in-memory sort state.
     setCoords(null);
     setState({ status: "idle" });
   }, [stopActiveRequest]);
@@ -84,6 +92,22 @@ export function useUserLocation() {
     [stopActiveRequest],
   );
 
+  const enableDistanceSort = useCallback(
+    (options?: { background?: boolean }) => {
+      writeDistanceSortSessionOptOut(false);
+      setDistanceSortOn(true);
+      writeDistanceSortEnabled(true);
+      const cached = readLastCoords();
+      if (cached) {
+        setCoords({ lat: cached.lat, lng: cached.lng });
+        locateNow({ background: true });
+        return;
+      }
+      locateNow({ background: options?.background });
+    },
+    [locateNow],
+  );
+
   const requestLocation = useCallback(() => {
     if (distanceSortOn) {
       if (state.status === "loading") {
@@ -106,10 +130,35 @@ export function useUserLocation() {
       return;
     }
 
-    setDistanceSortOn(true);
-    writeDistanceSortEnabled(true);
-    locateNow();
-  }, [distanceSortOn, state.status, coords, cancelRequest, locateNow]);
+    enableDistanceSort();
+  }, [
+    distanceSortOn,
+    state.status,
+    coords,
+    cancelRequest,
+    locateNow,
+    enableDistanceSort,
+  ]);
+
+  // When location is already granted, default to distance sort (unless opted out this session).
+  useEffect(() => {
+    if (didAutoEnableRef.current) return;
+    didAutoEnableRef.current = true;
+
+    if (readDistanceSortSessionOptOut()) return;
+    if (readDistanceSortEnabled()) return;
+
+    let cancelled = false;
+    void getLocationPermissionStatus().then((status) => {
+      if (cancelled || status !== "granted") return;
+      if (readDistanceSortSessionOptOut()) return;
+      enableDistanceSort({ background: true });
+    });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [enableDistanceSort]);
 
   useEffect(() => {
     if (didBackgroundRefreshRef.current) return;
@@ -127,4 +176,4 @@ export function useUserLocation() {
     requestLocation,
     cancelRequest,
   };
-};
+}

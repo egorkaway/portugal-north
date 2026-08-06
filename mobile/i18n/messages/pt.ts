@@ -29,6 +29,7 @@ export const pt: MobileMessages = {
     open: 'Abrir',
     view: 'Ver',
     delete: 'Apagar',
+    cancel: 'Cancelar',
     yes: 'Sim',
     no: 'Não',
     goBack: 'Voltar atrás',
@@ -141,6 +142,9 @@ export const pt: MobileMessages = {
     loadingStops: 'A carregar paragens…',
     stopsUnavailable: 'Lista de paragens indisponível de momento.',
     pastTrips: 'Viagens anteriores',
+    historyDeleteConfirmTitle: 'Apagar esta viagem?',
+    historyDeleteConfirmBody:
+      'Remover {{train}} ({{origin}} → {{destination}}) do historial? Esta ação não pode ser anulada.',
     origin: 'Origem',
     finalStop: 'Final',
     delayMin: '+{{minutes}} min',

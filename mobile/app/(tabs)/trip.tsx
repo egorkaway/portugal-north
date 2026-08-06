@@ -258,6 +258,27 @@ export default function TripScreen() {
     setHistory(await readTripHistory());
   };
 
+  const confirmDeleteHistory = (record: { id: string; trainNumber: string; stationName: string; finalStationName: string }) => {
+    Alert.alert(
+      t('trip.historyDeleteConfirmTitle'),
+      t('trip.historyDeleteConfirmBody', {
+        train: record.trainNumber,
+        origin: record.stationName,
+        destination: record.finalStationName,
+      }),
+      [
+        { text: t('common.cancel'), style: 'cancel' },
+        {
+          text: t('common.delete'),
+          style: 'destructive',
+          onPress: () => {
+            void deleteHistory(record.id);
+          },
+        },
+      ],
+    );
+  };
+
   const openStation = (stationName: string) => {
     router.push(`/station/${stationToSlug(stationName)}`);
   };
@@ -451,7 +472,7 @@ export default function TripScreen() {
               </View>
               <Pressable
                 style={styles.deleteButton}
-                onPress={() => void deleteHistory(record.id)}
+                onPress={() => confirmDeleteHistory(record)}
               >
                 <Text style={styles.deleteButtonText}>{t('common.delete')}</Text>
               </Pressable>

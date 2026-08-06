@@ -29,6 +29,7 @@ export const es: MobileMessages = {
     open: 'Abrir',
     view: 'Ver',
     delete: 'Eliminar',
+    cancel: 'Cancelar',
     yes: 'Sí',
     no: 'No',
     goBack: 'Volver atrás',
@@ -141,6 +142,9 @@ export const es: MobileMessages = {
     loadingStops: 'Cargando paradas…',
     stopsUnavailable: 'Lista de paradas no disponible ahora mismo.',
     pastTrips: 'Viajes anteriores',
+    historyDeleteConfirmTitle: '¿Eliminar este viaje?',
+    historyDeleteConfirmBody:
+      '¿Quitar {{train}} ({{origin}} → {{destination}}) del historial? Esta acción no se puede deshacer.',
     origin: 'Origen',
     finalStop: 'Final',
     delayMin: '+{{minutes}} min',

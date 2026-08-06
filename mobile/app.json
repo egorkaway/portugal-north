@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": false,
-      "buildNumber": "53",
+      "buildNumber": "54",
       "bundleIdentifier": "com.iberian.travel",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
@@ -48,7 +48,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "versionCode": 53
+      "versionCode": 54
     },
     "web": {
       "bundler": "metro",
@@ -126,7 +126,9 @@
         }
       ],
       "./plugins/withKnownRegions.js",
-      "./plugins/withAppIntents.js"
+      "./plugins/withAppIntents.js",
+      "expo-status-bar",
+      "expo-web-browser"
     ],
     "experiments": {
       "typedRoutes": true

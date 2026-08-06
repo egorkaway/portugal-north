@@ -191,6 +191,11 @@ export const ca: Messages = {
     historyOriginLink: "Veure estació d'origen",
     historyFinalLink: "Veure estació final",
     historyDelete: "Esborrar",
+    historyDeleteConfirmTitle: "Vols esborrar aquest viatge?",
+    historyDeleteConfirmBody:
+      "Vols treure {{train}} ({{origin}} → {{destination}}) de l'historial? Aquesta acció no es pot desfer.",
+    historyDeleteConfirmBodyGeneric: "Vols treure aquest viatge de l'historial? Aquesta acció no es pot desfer.",
+    historyDeleteConfirmCancel: "Cancel·lar",
   },
   rankings: {
     title: "Rankings de la comunitat",

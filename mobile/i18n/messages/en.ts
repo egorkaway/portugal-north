@@ -29,6 +29,7 @@ export const en: MobileMessages = {
     open: 'Open',
     view: 'View',
     delete: 'Delete',
+    cancel: 'Cancel',
     yes: 'Yes',
     no: 'No',
     goBack: 'Go back',
@@ -141,6 +142,9 @@ export const en: MobileMessages = {
     loadingStops: 'Loading stops…',
     stopsUnavailable: 'Stop list unavailable right now.',
     pastTrips: 'Past trips',
+    historyDeleteConfirmTitle: 'Delete this trip?',
+    historyDeleteConfirmBody:
+      'Remove {{train}} ({{origin}} → {{destination}}) from your history? This can’t be undone.',
     origin: 'Origin',
     finalStop: 'Final',
     delayMin: '+{{minutes}} min',

@@ -31,6 +31,7 @@ export type MobileMessages = {
     open: string;
     view: string;
     delete: string;
+    cancel: string;
     yes: string;
     no: string;
     goBack: string;
@@ -142,6 +143,8 @@ export type MobileMessages = {
     loadingStops: string;
     stopsUnavailable: string;
     pastTrips: string;
+    historyDeleteConfirmTitle: string;
+    historyDeleteConfirmBody: string;
     origin: string;
     finalStop: string;
     delayMin: string;

@@ -191,6 +191,11 @@ export const gl: Messages = {
     historyOriginLink: "Ver estación de orixe",
     historyFinalLink: "Ver estación final",
     historyDelete: "Eliminar",
+    historyDeleteConfirmTitle: "Eliminar esta viaxe?",
+    historyDeleteConfirmBody:
+      "Quitar {{train}} ({{origin}} → {{destination}}) do historial? Esta acción non se pode desfacer.",
+    historyDeleteConfirmBodyGeneric: "Quitar esta viaxe do historial? Esta acción non se pode desfacer.",
+    historyDeleteConfirmCancel: "Cancelar",
   },
   rankings: {
     title: "Rankings da comunidade",

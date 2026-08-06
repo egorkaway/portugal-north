@@ -191,6 +191,11 @@ export const es: Messages = {
     historyOriginLink: "Ver estación de origen",
     historyFinalLink: "Ver estación final",
     historyDelete: "Eliminar",
+    historyDeleteConfirmTitle: "¿Eliminar este viaje?",
+    historyDeleteConfirmBody:
+      "¿Quitar {{train}} ({{origin}} → {{destination}}) del historial? Esta acción no se puede deshacer.",
+    historyDeleteConfirmBodyGeneric: "¿Quitar este viaje del historial? Esta acción no se puede deshacer.",
+    historyDeleteConfirmCancel: "Cancelar",
   },
   rankings: {
     title: "Rankings de la comunidad",

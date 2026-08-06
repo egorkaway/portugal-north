@@ -1,31 +1,43 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import {
   DISTANCE_SORT_STORAGE_KEY,
+  DISTANCE_SORT_SESSION_OFF_KEY,
   LAST_COORDS_STORAGE_KEY,
   clearLastCoords,
   readDistanceSortEnabled,
+  readDistanceSortSessionOptOut,
   readLastCoords,
   writeDistanceSortEnabled,
+  writeDistanceSortSessionOptOut,
   writeLastCoords,
 } from "@/lib/distanceSortStorage";
 
-function mockLocalStorage() {
-  const store = new Map<string, string>();
+function mockStorage() {
+  const local = new Map<string, string>();
+  const session = new Map<string, string>();
   vi.stubGlobal("localStorage", {
-    getItem: (key: string) => store.get(key) ?? null,
+    getItem: (key: string) => local.get(key) ?? null,
     setItem: (key: string, value: string) => {
-      store.set(key, value);
+      local.set(key, value);
     },
     removeItem: (key: string) => {
-      store.delete(key);
+      local.delete(key);
     },
   });
-  return store;
+  vi.stubGlobal("sessionStorage", {
+    getItem: (key: string) => session.get(key) ?? null,
+    setItem: (key: string, value: string) => {
+      session.set(key, value);
+    },
+    removeItem: (key: string) => {
+      session.delete(key);
+    },
+  });
 }
 
 describe("distanceSortStorage", () => {
   beforeEach(() => {
-    mockLocalStorage();
+    mockStorage();
   });
 
   it("defaults to disabled", () => {
@@ -38,11 +50,19 @@ describe("distanceSortStorage", () => {
     expect(readDistanceSortEnabled()).toBe(true);
   });
 
-  it("clears preference when disabled", () => {
+  it("clears sticky on when disabled (no cross-session opt-out)", () => {
     writeDistanceSortEnabled(true);
     writeDistanceSortEnabled(false);
     expect(localStorage.getItem(DISTANCE_SORT_STORAGE_KEY)).toBeNull();
     expect(readDistanceSortEnabled()).toBe(false);
+  });
+
+  it("stores session opt-out separately from sticky preference", () => {
+    writeDistanceSortSessionOptOut(true);
+    expect(sessionStorage.getItem(DISTANCE_SORT_SESSION_OFF_KEY)).toBe("1");
+    expect(readDistanceSortSessionOptOut()).toBe(true);
+    writeDistanceSortSessionOptOut(false);
+    expect(readDistanceSortSessionOptOut()).toBe(false);
   });
 
   it("returns false when localStorage is unavailable", () => {

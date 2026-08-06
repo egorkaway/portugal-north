@@ -29,6 +29,7 @@ export const ru: MobileMessages = {
     open: 'Открыть',
     view: 'Смотреть',
     delete: 'Удалить',
+    cancel: 'Отмена',
     yes: 'Да',
     no: 'Нет',
     goBack: 'Вернуться',
@@ -141,6 +142,9 @@ export const ru: MobileMessages = {
     loadingStops: 'Загрузка остановок…',
     stopsUnavailable: 'Список остановок сейчас недоступен.',
     pastTrips: 'Прошлые поездки',
+    historyDeleteConfirmTitle: 'Удалить эту поездку?',
+    historyDeleteConfirmBody:
+      'Убрать {{train}} ({{origin}} → {{destination}}) из истории? Это действие нельзя отменить.',
     origin: 'Отправление',
     finalStop: 'Конечная',
     delayMin: '+{{minutes}} мин',

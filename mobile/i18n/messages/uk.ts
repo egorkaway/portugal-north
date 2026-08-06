@@ -29,6 +29,7 @@ export const uk: MobileMessages = {
     open: 'Відкрити',
     view: 'Переглянути',
     delete: 'Видалити',
+    cancel: 'Скасувати',
     yes: 'Так',
     no: 'Ні',
     goBack: 'Повернутися',
@@ -141,6 +142,9 @@ export const uk: MobileMessages = {
     loadingStops: 'Завантаження зупинок…',
     stopsUnavailable: 'Список зупинок зараз недоступний.',
     pastTrips: 'Минулі поїздки',
+    historyDeleteConfirmTitle: 'Видалити цю поїздку?',
+    historyDeleteConfirmBody:
+      'Прибрати {{train}} ({{origin}} → {{destination}}) з історії? Цю дію не можна скасувати.',
     origin: 'Відправлення',
     finalStop: 'Кінцева',
     delayMin: '+{{minutes}} хв',

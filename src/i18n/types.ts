@@ -173,6 +173,15 @@ export type Messages = {
     arrivesInHours: string;
     arrivesInHoursOnly: string;
     arrivingNow: string;
+    historyTitle: string;
+    historyEmpty: string;
+    historyOriginLink: string;
+    historyFinalLink: string;
+    historyDelete: string;
+    historyDeleteConfirmTitle: string;
+    historyDeleteConfirmBody: string;
+    historyDeleteConfirmBodyGeneric: string;
+    historyDeleteConfirmCancel: string;
   };
   rankings: {
     title: string;

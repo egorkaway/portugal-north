@@ -29,6 +29,7 @@ export const gl: MobileMessages = {
     open: 'Abrir',
     view: 'Ver',
     delete: 'Eliminar',
+    cancel: 'Cancelar',
     yes: 'Si',
     no: 'Non',
     goBack: 'Volver atrás',
@@ -141,6 +142,9 @@ export const gl: MobileMessages = {
     loadingStops: 'A cargar paradas…',
     stopsUnavailable: 'Lista de paradas non dispoñible agora mesmo.',
     pastTrips: 'Viaxes anteriores',
+    historyDeleteConfirmTitle: 'Eliminar esta viaxe?',
+    historyDeleteConfirmBody:
+      'Quitar {{train}} ({{origin}} → {{destination}}) do historial? Esta acción non se pode desfacer.',
     origin: 'Orixe',
     finalStop: 'Final',
     delayMin: '+{{minutes}} min',

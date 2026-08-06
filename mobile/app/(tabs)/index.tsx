@@ -10,6 +10,10 @@ import { StationFilters } from '@/components/StationFilters';
 import { PAGE_SIZE, sortTrainTypes, theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { fetchGlobalRatings } from '@/lib/api';
+import {
+  readDistanceSortSessionOptOut,
+  writeDistanceSortSessionOptOut,
+} from '@/lib/distanceSortStorage';
 import { orderStationsForHome, stationDistancesKm } from '@/lib/rankStations';
 import { stationMatchesSearch } from '@/lib/searchText';
 import { pageStations, stationToSlug, type Station } from '@/lib/stationData';
@@ -20,7 +24,7 @@ import {
   toggleVisited,
 } from '@/lib/voteStorage';
 import { syncStationVoteToServer } from '@/lib/api';
-import { writeLastCoords } from '@/lib/tripStorage';
+import { readLastCoords, writeLastCoords } from '@/lib/tripStorage';
 
 type VoteFilter = 'up' | 'down' | 'none';
 type VisitedFilter = 'visited' | 'notVisited';
@@ -65,6 +69,55 @@ export default function HomeScreen() {
   useEffect(() => {
     void loadMeta();
   }, [loadMeta]);
+
+  const enableDistanceSort = useCallback(async (options?: { requestPermission?: boolean }) => {
+    setLoadingLocation(true);
+    try {
+      const permission = options?.requestPermission
+        ? await Location.requestForegroundPermissionsAsync()
+        : await Location.getForegroundPermissionsAsync();
+      if (permission.status !== 'granted') {
+        setSortByDistance(false);
+        return false;
+      }
+
+      writeDistanceSortSessionOptOut(false);
+
+      const cached = await readLastCoords();
+      if (cached) {
+        setCoords({ lat: cached.lat, lng: cached.lng });
+        setSortByDistance(true);
+      }
+
+      const position = await Location.getCurrentPositionAsync({});
+      const next = { lat: position.coords.latitude, lng: position.coords.longitude };
+      setCoords(next);
+      setSortByDistance(true);
+      await writeLastCoords(next);
+      return true;
+    } catch {
+      setSortByDistance(false);
+      return false;
+    } finally {
+      setLoadingLocation(false);
+    }
+  }, []);
+
+  // Default to distance sort when location is already granted (unless opted out this session).
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      if (readDistanceSortSessionOptOut()) return;
+
+      const { status } = await Location.getForegroundPermissionsAsync();
+      if (cancelled || status !== 'granted') return;
+      if (readDistanceSortSessionOptOut()) return;
+      await enableDistanceSort();
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [enableDistanceSort]);
 
   const filtered = useMemo(() => {
     const matches = countryStations.filter((station) => {
@@ -120,26 +173,13 @@ export default function HomeScreen() {
   };
 
   const requestLocation = async () => {
-    if (sortByDistance && coords) {
+    if (sortByDistance) {
       setSortByDistance(false);
+      writeDistanceSortSessionOptOut(true);
       return;
     }
 
-    setLoadingLocation(true);
-    try {
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        setSortByDistance(false);
-        return;
-      }
-      const position = await Location.getCurrentPositionAsync({});
-      const next = { lat: position.coords.latitude, lng: position.coords.longitude };
-      setCoords(next);
-      setSortByDistance(true);
-      await writeLastCoords(next);
-    } finally {
-      setLoadingLocation(false);
-    }
+    await enableDistanceSort({ requestPermission: true });
   };
 
   const handleVote = async (stationName: string, direction: 'up' | 'down') => {

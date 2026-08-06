@@ -191,6 +191,11 @@ export const en: Messages = {
     historyOriginLink: "View origin station",
     historyFinalLink: "View final station",
     historyDelete: "Delete",
+    historyDeleteConfirmTitle: "Delete this trip?",
+    historyDeleteConfirmBody:
+      "Remove {{train}} ({{origin}} → {{destination}}) from your history? This can’t be undone.",
+    historyDeleteConfirmBodyGeneric: "Remove this trip from your history? This can’t be undone.",
+    historyDeleteConfirmCancel: "Cancel",
   },
   rankings: {
     title: "Community rankings",

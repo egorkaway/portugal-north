@@ -29,6 +29,7 @@ export const ca: MobileMessages = {
     open: 'Obrir',
     view: 'Veure',
     delete: 'Esborrar',
+    cancel: 'Cancel·lar',
     yes: 'Sí',
     no: 'No',
     goBack: 'Tornar enrere',
@@ -141,6 +142,9 @@ export const ca: MobileMessages = {
     loadingStops: 'Carregant parades…',
     stopsUnavailable: 'Llista de parades no disponible ara mateix.',
     pastTrips: 'Viatges anteriors',
+    historyDeleteConfirmTitle: 'Vols esborrar aquest viatge?',
+    historyDeleteConfirmBody:
+      "Vols treure {{train}} ({{origin}} → {{destination}}) de l'historial? Aquesta acció no es pot desfer.",
     origin: 'Origen',
     finalStop: 'Final',
     delayMin: '+{{minutes}} min',
