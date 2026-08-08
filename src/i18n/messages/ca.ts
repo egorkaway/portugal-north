@@ -120,6 +120,11 @@ export const ca: Messages = {
       "Basada en els retards acumulats de les nostres mostres de sortides en temps real a la xarxa.",
     reliabilityScale: "10 = menys retards en les nostres dades · 1 = més retards",
     reliabilityLoading: "Carregant puntuació de fiabilitat…",
+    monthlyTempTitle: "Temperatures d'aquest mes",
+    monthlyTempBody:
+      "Mitjana de mínimes i màximes a partir de les nostres mostres recents de temperatura en aquesta estació.",
+    monthlyTempSummary: "Mín. mitjana {{low}}°C aquest mes / màx. mitjana {{high}}°C aquest mes",
+    monthlyTempMeta: "{{days}} dies · {{samples}} mostres",
   },
   lines: {
     title: "Línies ferroviàries",

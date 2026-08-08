@@ -120,6 +120,11 @@ export const pt: Messages = {
       "Com base nos atrasos acumulados das nossas amostras de partidas em tempo real na rede.",
     reliabilityScale: "10 = menos atrasos nos nossos dados · 1 = mais atrasos",
     reliabilityLoading: "A carregar pontuação de fiabilidade…",
+    monthlyTempTitle: "Temperaturas deste mês",
+    monthlyTempBody:
+      "Mínima e máxima médias a partir das nossas amostras recentes de temperatura nesta estação.",
+    monthlyTempSummary: "Mín. média {{low}}°C este mês / máx. média {{high}}°C este mês",
+    monthlyTempMeta: "{{days}} dias · {{samples}} amostras",
   },
   lines: {
     title: "Linhas ferroviárias",

@@ -111,6 +111,10 @@ export type Messages = {
     reliabilityBody: string;
     reliabilityScale: string;
     reliabilityLoading: string;
+    monthlyTempTitle: string;
+    monthlyTempBody: string;
+    monthlyTempSummary: string;
+    monthlyTempMeta: string;
   };
   lines: {
     title: string;

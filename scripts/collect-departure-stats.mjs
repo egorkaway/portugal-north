@@ -10,7 +10,11 @@
  * Also collects airport flight connections (skipped if the last airport check
  * was < 3 hours ago — train-only runs do not count),
  * logs temperatures (Open-Meteo) only for
- * stations that successfully returned departure data (after departures),
+ * stations that successfully returned departure data (after each OK sample),
+ * and prints this month's avg low / avg high on OK/FAIL lines only when the
+ * temperature fetch for this run succeeded,
+ * publishes public/data/station-monthly-temperatures.json for station pages
+ * (client hides when the Lisbon month rolls over or samples ≤ 9),
  * and syncs mobile/data (npm run sync:data).
  * Stations are shuffled each run so partial runs (--limit or timeouts) spread across the network.
  * Stops early after 3 consecutive API failures (e.g. CP outage or rate limit).
@@ -164,8 +168,38 @@ let ok = 0;
 let failed = 0;
 let consecutiveFailures = 0;
 let stoppedEarly = false;
-/** Stations with a successful departure sample this run — weather is logged only for these. */
-const sampledStations = [];
+let temperaturesLogged = 0;
+let temperaturesMissed = 0;
+
+const {
+  collectAndAppendStationTemperatures,
+  readStationTemperatureLog,
+  computeStationMonthlyTemperatureAverages,
+  formatStationMonthlyTemperatureOkSuffix,
+  lisbonYearMonth,
+} = await import("../server/lib/stationTemperatureLog.ts");
+
+async function temperatureSuffixForStation(station) {
+  try {
+    const weather = await collectAndAppendStationTemperatures({
+      stations: [station],
+      logPath: temperatureLogPath,
+      delayMs: 0,
+    });
+    temperaturesLogged += weather.ok;
+    temperaturesMissed += weather.failed;
+    if (weather.ok <= 0) return "";
+    const tempAvg = computeStationMonthlyTemperatureAverages({
+      readings: readStationTemperatureLog(temperatureLogPath),
+      yearMonth: lisbonYearMonth(),
+      stationNames: [station.name],
+    })[0];
+    return tempAvg ? ` - ${formatStationMonthlyTemperatureOkSuffix(tempAvg)}` : "";
+  } catch {
+    temperaturesMissed += 1;
+    return "";
+  }
+}
 
 for (const { station, cpCode } of targets) {
   const label = `${station.name} (${cpCode})`;
@@ -183,18 +217,19 @@ for (const { station, cpCode } of targets) {
       timetable.timetableDate,
     );
     mergeStationSnapshot(store, station.name, cpCode, snapshot);
-    sampledStations.push(station);
     ok += 1;
     consecutiveFailures = 0;
+    const tempSuffix = await temperatureSuffixForStation(station);
     console.log(
-      `OK ${label}: +${snapshot.totals.departures} dep, +${snapshot.totals.arrivals} arr, +${snapshot.totals.delayMinutes} delay min`,
+      `OK ${label}: +${snapshot.totals.departures} dep, +${snapshot.totals.arrivals} arr, +${snapshot.totals.delayMinutes} delay min${tempSuffix}`,
     );
   } catch (error) {
     failed += 1;
     consecutiveFailures += 1;
     const message = error instanceof Error ? error.message : String(error);
     recordStationSampleFailure(store, station.name, cpCode, message);
-    console.error(`FAIL ${label}: ${message}`);
+    const tempSuffix = await temperatureSuffixForStation(station);
+    console.error(`FAIL ${label}: ${message}${tempSuffix}`);
     if (consecutiveFailures >= CONSECUTIVE_FAILURE_LIMIT) {
       stoppedEarly = true;
       console.error(
@@ -212,28 +247,38 @@ for (const { station, cpCode } of targets) {
 if (!dryRun) {
   saveStore(store);
 
-  if (sampledStations.length > 0) {
-    try {
-      const { collectAndAppendStationTemperatures } = await import(
-        "../server/lib/stationTemperatureLog.ts"
-      );
-      console.log(
-        `Collecting temperatures for ${sampledStations.length} station(s) with departure data via Open-Meteo…`,
-      );
-      const weather = await collectAndAppendStationTemperatures({
-        stations: sampledStations,
-        logPath: temperatureLogPath,
-        delayMs: 150,
-      });
-      console.log(
-        `Temperatures: ${weather.ok} logged, ${weather.failed} missed → ${temperatureLogPath}`,
-      );
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      console.error(`Temperature log skipped: ${message}`);
-    }
+  if (temperaturesLogged > 0 || temperaturesMissed > 0) {
+    console.log(
+      `Temperatures: ${temperaturesLogged} logged, ${temperaturesMissed} missed → ${temperatureLogPath}`,
+    );
   } else {
-    console.log("No successful departure samples — skipping temperature log.");
+    console.log("No temperature samples this run.");
+  }
+
+  try {
+    const {
+      buildStationMonthlyTemperaturesManifest,
+      writeStationMonthlyTemperaturesManifest,
+      readStationTemperatureLog,
+      lisbonYearMonth,
+    } = await import("../server/lib/stationTemperatureLog.ts");
+    const yearMonth = lisbonYearMonth();
+    const activeStationNames = Object.entries(store.stations)
+      .filter(([, entry]) => entry.successfulSamples > 0)
+      .map(([name]) => name);
+    const manifest = buildStationMonthlyTemperaturesManifest({
+      readings: readStationTemperatureLog(temperatureLogPath),
+      yearMonth,
+      stationNames: activeStationNames,
+    });
+    const monthlyTempPath = join(root, "public/data/station-monthly-temperatures.json");
+    writeStationMonthlyTemperaturesManifest(monthlyTempPath, manifest);
+    console.log(
+      `Published monthly temperatures for ${Object.keys(manifest.stations).length} station(s) (${yearMonth}) → ${monthlyTempPath}`,
+    );
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`Monthly temperature publish skipped: ${message}`);
   }
 
   if (recheckAirports) {

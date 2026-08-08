@@ -2,6 +2,9 @@ import { describe, expect, it } from "vitest";
 import { parseOpenMeteoCurrentTemperatures } from "../../server/lib/openMeteoClient";
 import {
   appendStationTemperatureReadings,
+  computeStationMonthlyTemperatureAverages,
+  formatStationMonthlyTemperatureLogLines,
+  formatStationMonthlyTemperatureOkSuffix,
   readStationTemperatureLog,
   writeStationTemperatureLog,
 } from "../../server/lib/stationTemperatureLog";
@@ -77,5 +80,91 @@ describe("stationTemperatureLog", () => {
     } finally {
       rmSync(dir, { recursive: true, force: true });
     }
+  });
+});
+
+describe("computeStationMonthlyTemperatureAverages", () => {
+  it("averages daily lows and highs for the Lisbon calendar month", () => {
+    const averages = computeStationMonthlyTemperatureAverages({
+      yearMonth: "2026-08",
+      stationNames: ["Porto-Campanhã", "Lisboa Oriente"],
+      readings: [
+        {
+          recordedAt: "2026-08-01T08:00:00.000Z",
+          observedAt: "2026-08-01T08:00",
+          station: "Porto-Campanhã",
+          lat: 41.15,
+          lng: -8.61,
+          tempC: 18,
+          source: "open-meteo",
+        },
+        {
+          recordedAt: "2026-08-01T16:00:00.000Z",
+          observedAt: "2026-08-01T16:00",
+          station: "Porto-Campanhã",
+          lat: 41.15,
+          lng: -8.61,
+          tempC: 26,
+          source: "open-meteo",
+        },
+        {
+          recordedAt: "2026-08-02T09:00:00.000Z",
+          observedAt: "2026-08-02T09:00",
+          station: "Porto-Campanhã",
+          lat: 41.15,
+          lng: -8.61,
+          tempC: 20,
+          source: "open-meteo",
+        },
+        {
+          recordedAt: "2026-08-02T17:00:00.000Z",
+          observedAt: "2026-08-02T17:00",
+          station: "Porto-Campanhã",
+          lat: 41.15,
+          lng: -8.61,
+          tempC: 28,
+          source: "open-meteo",
+        },
+        // Outside month / inactive station — ignored
+        {
+          recordedAt: "2026-07-31T12:00:00.000Z",
+          observedAt: "2026-07-31T12:00",
+          station: "Porto-Campanhã",
+          lat: 41.15,
+          lng: -8.61,
+          tempC: 99,
+          source: "open-meteo",
+        },
+        {
+          recordedAt: "2026-08-01T12:00:00.000Z",
+          observedAt: "2026-08-01T12:00",
+          station: "Ghost Station",
+          lat: 0,
+          lng: 0,
+          tempC: 40,
+          source: "open-meteo",
+        },
+      ],
+    });
+
+    expect(averages).toEqual([
+      {
+        station: "Porto-Campanhã",
+        yearMonth: "2026-08",
+        avgLowC: 19,
+        avgHighC: 27,
+        dayCount: 2,
+        sampleCount: 4,
+      },
+    ]);
+
+    const lines = formatStationMonthlyTemperatureLogLines(averages);
+    expect(lines[0]).toContain("August 2026");
+    expect(lines[1]).toContain(
+      "avg low 19°C this month / avg high 27°C this month (2 day(s), 4 sample(s))",
+    );
+    expect(formatStationMonthlyTemperatureOkSuffix(averages[0]!)).toBe(
+      "avg low 19°C this month / avg high 27°C this month (2 day(s), 4 sample(s))",
+    );
   });
 });

@@ -120,6 +120,11 @@ export const en: Messages = {
       "Based on cumulative delays from our live departure samples across the network.",
     reliabilityScale: "10 = fewest delays in our data · 1 = most delays",
     reliabilityLoading: "Loading reliability score…",
+    monthlyTempTitle: "Temperatures this month",
+    monthlyTempBody:
+      "Average low and high from our recent temperature samples at this station.",
+    monthlyTempSummary: "Avg low {{low}}°C this month / avg high {{high}}°C this month",
+    monthlyTempMeta: "{{days}} days · {{samples}} samples",
   },
   lines: {
     title: "Train lines",

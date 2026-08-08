@@ -16,6 +16,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SitePageNavLinks } from "@/components/SitePageNavLinks";
 import { StationDepartures } from "@/components/StationDepartures";
 import { StationReliabilityCard } from "@/components/StationReliabilityCard";
+import { StationMonthlyTemperatureCard } from "@/components/StationMonthlyTemperatureCard";
 import { StationViewTracker } from "@/components/StationViewTracker";
 import { StationImageVote } from "@/components/StationImageVote";
 import { StationPhoto } from "@/components/StationPhoto";
@@ -194,6 +195,7 @@ const Station = () => {
           ) : null}
 
           {!airportStation ? <StationDepartures stationName={station.name} /> : null}
+          {!airportStation ? <StationMonthlyTemperatureCard stationName={station.name} /> : null}
           {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}
           <NearestLongDistanceStations station={station} />
           {isAirportHubStation(station) ? <AirportConnectionsPanel station={station} /> : null}

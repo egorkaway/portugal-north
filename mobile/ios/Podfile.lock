@@ -110,10 +110,10 @@ PODS:
   - hermes-engine (250829098.0.16):
     - hermes-engine/Pre-built (= 250829098.0.16)
   - hermes-engine/Pre-built (250829098.0.16)
-  - PurchasesHybridCommon (18.28.0):
+  - PurchasesHybridCommon (18.29.0):
     - RevenueCat (= 5.83.0)
-  - PurchasesHybridCommonUI (18.28.0):
-    - PurchasesHybridCommon (= 18.28.0)
+  - PurchasesHybridCommonUI (18.29.0):
+    - PurchasesHybridCommon (= 18.29.0)
     - RevenueCatUI (= 5.83.0)
   - RCTDeprecation (0.86.2)
   - RCTRequired (0.86.2)
@@ -2142,11 +2142,11 @@ PODS:
     - ReactCommon/turbomodule/core
     - ReactNativeDependencies
     - Yoga
-  - RNPaywalls (10.6.0):
-    - PurchasesHybridCommonUI (= 18.28.0)
+  - RNPaywalls (10.7.0):
+    - PurchasesHybridCommonUI (= 18.29.0)
     - React-Core
-  - RNPurchases (10.6.0):
-    - PurchasesHybridCommon (= 18.28.0)
+  - RNPurchases (10.7.0):
+    - PurchasesHybridCommon (= 18.29.0)
     - React-Core
   - RNReanimated (4.5.1):
     - hermes-engine
@@ -2745,8 +2745,8 @@ SPEC CHECKSUMS:
   ExpoWidgets: 9c8bbca0729679ce69e90c1aefea40daf2e35590
   FBLazyVector: 3c3be9a019176b5699455f7f66c5444b78a411c6
   hermes-engine: 6cce48184863752e7eb036009d6b92998c600f15
-  PurchasesHybridCommon: 8563d6a7d832332beb9b30478dbe56eeaa0dd425
-  PurchasesHybridCommonUI: 32f7edc00832b451d2fcbcf8ace064a5b8e936de
+  PurchasesHybridCommon: 94a0fde86cfecdc487fb64667b68f527af930265
+  PurchasesHybridCommonUI: f502ea0b5aefe81e8054af70be64688c8a51fd51
   RCTDeprecation: bccb6545c26db881ecddfd83a3f9ea82aba1605f
   RCTRequired: b2f74764d596fc0051f00fee94b49bf41a6f7f5a
   RCTSwiftUI: c6d6a31b849b9dfa64c33b55dc91ac15dd55774c
@@ -2827,8 +2827,8 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: 2ad919e88b8bc2cd80e8697ce66d04d006743283
   RNCMaskedView: eb2b2e538afa907f05a5848a1a1ac26092e6fec9
   RNGestureHandler: 953af68599a35f425ea962dda2ee15ee4e3ca719
-  RNPaywalls: 521dca2a0ec8f1ad7c01def6086ee203cec2501b
-  RNPurchases: 12e86319fe5bfef8ee171f15843628f17446450f
+  RNPaywalls: 766f341527f7f6c4174a4bc5448d83d12a762a06
+  RNPurchases: d646405958082374e8b3cb5d6398318114750804
   RNReanimated: fcf6a8cdd698fb09a811a8d6c5bcfe36575d965d
   RNScreens: c1a06fd73d0581a2a28a160577be393f579662b9
   RNWorklets: 43af89f696342f91118a2f1f3a879056e2f47331

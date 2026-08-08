@@ -25,6 +25,201 @@ export type StationTemperatureCollectResult = {
   recordedAt: string;
 };
 
+export type StationMonthlyTemperatureAverage = {
+  station: string;
+  /** Calendar month in Europe/Lisbon, `YYYY-MM`. */
+  yearMonth: string;
+  avgLowC: number;
+  avgHighC: number;
+  /** Distinct Lisbon calendar days with at least one sample. */
+  dayCount: number;
+  sampleCount: number;
+};
+
+const LISBON_TZ = "Europe/Lisbon";
+
+/** Lisbon calendar `YYYY-MM-DD` / `YYYY-MM` from an Open-Meteo / ISO timestamp. */
+export function lisbonCalendarParts(isoLike: string): { yearMonth: string; day: string } | null {
+  const raw = isoLike.trim();
+  if (!raw) return null;
+  const parsed = new Date(/Z$|[+-]\d{2}:\d{2}$/.test(raw) ? raw : `${raw}Z`);
+  if (Number.isNaN(parsed.getTime())) return null;
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: LISBON_TZ,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(parsed);
+  const year = parts.find((part) => part.type === "year")?.value;
+  const month = parts.find((part) => part.type === "month")?.value;
+  const day = parts.find((part) => part.type === "day")?.value;
+  if (!year || !month || !day) return null;
+  return { yearMonth: `${year}-${month}`, day: `${year}-${month}-${day}` };
+}
+
+export function lisbonYearMonth(date = new Date()): string {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: LISBON_TZ,
+    year: "numeric",
+    month: "2-digit",
+  }).formatToParts(date);
+  const year = parts.find((part) => part.type === "year")?.value;
+  const month = parts.find((part) => part.type === "month")?.value;
+  return `${year}-${month}`;
+}
+
+/**
+ * Per station: mean of daily minima / daily maxima within `yearMonth` (Lisbon).
+ * Sparse ops snapshots — not true meteorological daily extremes.
+ */
+export function computeStationMonthlyTemperatureAverages(options: {
+  readings: StationTemperatureReading[];
+  yearMonth: string;
+  /** When set, only these station names (e.g. active train-sample stations). */
+  stationNames?: Iterable<string>;
+}): StationMonthlyTemperatureAverage[] {
+  const yearMonth = options.yearMonth.trim();
+  const allow =
+    options.stationNames == null
+      ? null
+      : new Set([...options.stationNames].map((name) => name.trim()).filter(Boolean));
+
+  /** station → day → temps */
+  const byStationDay = new Map<string, Map<string, number[]>>();
+
+  for (const reading of options.readings) {
+    if (allow && !allow.has(reading.station)) continue;
+    if (!Number.isFinite(reading.tempC)) continue;
+    const parts = lisbonCalendarParts(reading.observedAt || reading.recordedAt);
+    if (!parts || parts.yearMonth !== yearMonth) continue;
+
+    let days = byStationDay.get(reading.station);
+    if (!days) {
+      days = new Map();
+      byStationDay.set(reading.station, days);
+    }
+    const bucket = days.get(parts.day);
+    if (bucket) bucket.push(reading.tempC);
+    else days.set(parts.day, [reading.tempC]);
+  }
+
+  const rows: StationMonthlyTemperatureAverage[] = [];
+  for (const [station, days] of byStationDay) {
+    if (!days.size) continue;
+    const dailyLows: number[] = [];
+    const dailyHighs: number[] = [];
+    let sampleCount = 0;
+    for (const temps of days.values()) {
+      sampleCount += temps.length;
+      dailyLows.push(Math.min(...temps));
+      dailyHighs.push(Math.max(...temps));
+    }
+    const avgLowC =
+      Math.round((dailyLows.reduce((sum, value) => sum + value, 0) / dailyLows.length) * 10) / 10;
+    const avgHighC =
+      Math.round((dailyHighs.reduce((sum, value) => sum + value, 0) / dailyHighs.length) * 10) / 10;
+    rows.push({
+      station,
+      yearMonth,
+      avgLowC,
+      avgHighC,
+      dayCount: days.size,
+      sampleCount,
+    });
+  }
+
+  rows.sort((a, b) => a.station.localeCompare(b.station, "en"));
+  return rows;
+}
+
+export function formatStationMonthlyTemperatureOkSuffix(
+  average: StationMonthlyTemperatureAverage,
+): string {
+  return (
+    `avg low ${average.avgLowC}°C this month / avg high ${average.avgHighC}°C this month` +
+    ` (${average.dayCount} day(s), ${average.sampleCount} sample(s))`
+  );
+}
+
+export function formatStationMonthlyTemperatureLogLines(
+  averages: StationMonthlyTemperatureAverage[],
+): string[] {
+  if (!averages.length) return [];
+  const yearMonth = averages[0]?.yearMonth ?? "";
+  const [year, month] = yearMonth.split("-");
+  const monthLabel =
+    year && month
+      ? new Date(Date.UTC(Number(year), Number(month) - 1, 1)).toLocaleString("en", {
+          month: "long",
+          year: "numeric",
+          timeZone: "UTC",
+        })
+      : yearMonth;
+
+  const lines = [
+    `${monthLabel} temperature averages (${averages.length} station(s) with train samples; daily min/max from Open-Meteo snapshots):`,
+  ];
+  for (const row of averages) {
+    lines.push(`  ${row.station}: ${formatStationMonthlyTemperatureOkSuffix(row)}`);
+  }
+  return lines;
+}
+
+/** Public web threshold: more than nine samples this month. */
+export const STATION_MONTHLY_TEMP_MIN_SAMPLES = 10;
+
+export type StationMonthlyTemperaturesManifest = {
+  generatedAt: string;
+  yearMonth: string;
+  stations: Record<
+    string,
+    {
+      avgLowC: number;
+      avgHighC: number;
+      dayCount: number;
+      sampleCount: number;
+    }
+  >;
+};
+
+export function buildStationMonthlyTemperaturesManifest(options: {
+  readings: StationTemperatureReading[];
+  yearMonth: string;
+  stationNames?: Iterable<string>;
+  generatedAt?: string;
+  minSamples?: number;
+}): StationMonthlyTemperaturesManifest {
+  const minSamples = options.minSamples ?? STATION_MONTHLY_TEMP_MIN_SAMPLES;
+  const averages = computeStationMonthlyTemperatureAverages({
+    readings: options.readings,
+    yearMonth: options.yearMonth,
+    stationNames: options.stationNames,
+  });
+  const stations: StationMonthlyTemperaturesManifest["stations"] = {};
+  for (const row of averages) {
+    if (row.sampleCount < minSamples) continue;
+    stations[row.station] = {
+      avgLowC: row.avgLowC,
+      avgHighC: row.avgHighC,
+      dayCount: row.dayCount,
+      sampleCount: row.sampleCount,
+    };
+  }
+  return {
+    generatedAt: options.generatedAt ?? new Date().toISOString(),
+    yearMonth: options.yearMonth,
+    stations,
+  };
+}
+
+export function writeStationMonthlyTemperaturesManifest(
+  outPath: string,
+  manifest: StationMonthlyTemperaturesManifest,
+): void {
+  mkdirSync(dirname(outPath), { recursive: true });
+  writeFileSync(outPath, `${JSON.stringify(manifest, null, 2)}\n`, "utf8");
+}
+
 type StationLike = {
   name: string;
   lat: number;
