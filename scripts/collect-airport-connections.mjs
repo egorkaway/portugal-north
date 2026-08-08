@@ -260,7 +260,7 @@ export async function collectAirportConnections(options = {}) {
 
   if (!hasAirportFlightProvider()) {
     console.warn(
-      "AVIATIONSTACK_API_KEY / AIRLABS_API_KEY not set — skipping airport connections collection.",
+      "No airport flight provider available — skipping airport connections collection.",
     );
     return { ok: 0, failed: 0, skipped: true };
   }

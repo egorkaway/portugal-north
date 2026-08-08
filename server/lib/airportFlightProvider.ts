@@ -1,8 +1,9 @@
 import type { AirportDepartureFlight, AirportMeta } from "./airportDepartureFlight.js";
 import * as airLabs from "./airLabsClient.js";
 import * as aviationStack from "./aviationStackClient.js";
+import * as openSky from "./openSkyClient.js";
 
-export type AirportFlightProviderId = "aviationstack" | "airlabs";
+export type AirportFlightProviderId = "aviationstack" | "airlabs" | "opensky";
 
 export type FetchDeparturesResult = {
   flights: AirportDepartureFlight[];
@@ -32,9 +33,17 @@ const providers: Record<AirportFlightProviderId, Provider> = {
     fetchDepartures: airLabs.fetchDeparturesFromAirport,
     fetchAirport: airLabs.fetchAirportByIata,
   },
+  opensky: {
+    id: "opensky",
+    // Anonymous OpenSky — no key required.
+    hasKey: () => true,
+    isExhaustedError: openSky.isOpenSkyMonthlyLimitError,
+    fetchDepartures: openSky.fetchDeparturesFromAirport,
+    fetchAirport: openSky.fetchAirportByIata,
+  },
 };
 
-/** Sticky preferred provider for a single collector run (AviationStack → AirLabs fallback). */
+/** Sticky preferred provider for a single collector run (AviationStack → AirLabs → OpenSky). */
 let activeProvider: AirportFlightProviderId | null = null;
 
 export function resetAirportFlightProvider(): void {
@@ -56,15 +65,16 @@ function preferredProviderOrder(): AirportFlightProviderId[] {
   if (activeProvider && available.includes(activeProvider)) {
     return [activeProvider, ...available.filter((id) => id !== activeProvider)];
   }
-  // Prefer AviationStack when both keys are present; AirLabs is the quota fallback.
-  const ordered: AirportFlightProviderId[] = ["aviationstack", "airlabs"];
+  // Prefer paid schedule APIs; OpenSky is the no-key last resort.
+  const ordered: AirportFlightProviderId[] = ["aviationstack", "airlabs", "opensky"];
   return ordered.filter((id) => available.includes(id));
 }
 
 export function isAirportFlightQuotaExhaustedError(error: unknown): boolean {
   return (
     aviationStack.isAviationStackMonthlyLimitError(error) ||
-    airLabs.isAirLabsMonthlyLimitError(error)
+    airLabs.isAirLabsMonthlyLimitError(error) ||
+    openSky.isOpenSkyMonthlyLimitError(error)
   );
 }
 
@@ -73,7 +83,7 @@ async function withProviderFallback<T>(
 ): Promise<{ value: T; provider: AirportFlightProviderId }> {
   const order = preferredProviderOrder();
   if (!order.length) {
-    throw new Error("No flight API key set (AVIATIONSTACK_API_KEY or AIRLABS_API_KEY)");
+    throw new Error("No flight API available (AviationStack, AirLabs, or OpenSky)");
   }
 
   let lastError: unknown;
