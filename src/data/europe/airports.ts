@@ -122,6 +122,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 26.910299,
   },
   {
+    name: "Brindisi Airport (BDS)",
+    country: "it",
+    lines: ["BDS"],
+    types: ["Airport Destination"],
+    lat: 40.6576,
+    lng: 17.947001,
+  },
+  {
     name: "Belgrade Nikola Tesla Airport (BEG)",
     country: "rs",
     lines: ["BEG"],
@@ -792,6 +800,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 48.962276,
     lng: 2.436539,
+  },
+  {
+    name: "Larnaca International Airport (LCA)",
+    country: "cy",
+    lines: ["LCA"],
+    types: ["Airport Destination"],
+    lat: 34.875099,
+    lng: 33.624901,
   },
   {
     name: "Łódź Władysław Reymont Airport (LCJ)",
