@@ -161,10 +161,10 @@ describe("computeStationMonthlyTemperatureAverages", () => {
     const lines = formatStationMonthlyTemperatureLogLines(averages);
     expect(lines[0]).toContain("August 2026");
     expect(lines[1]).toContain(
-      "avg low 19°C this month / avg high 27°C this month (2 day(s), 4 sample(s))",
+      "average low 19°C this month / average high 27°C this month (2 day(s), 4 sample(s))",
     );
     expect(formatStationMonthlyTemperatureOkSuffix(averages[0]!)).toBe(
-      "avg low 19°C this month / avg high 27°C this month (2 day(s), 4 sample(s))",
+      "average low 19°C this month / average high 27°C this month (2 day(s), 4 sample(s))",
     );
   });
 });

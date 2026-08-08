@@ -123,8 +123,9 @@ export const en: Messages = {
     monthlyTempTitle: "Temperatures this month",
     monthlyTempBody:
       "Average low and high from our recent temperature samples at this station.",
-    monthlyTempSummary: "Avg low {{low}}°C this month / avg high {{high}}°C this month",
-    monthlyTempMeta: "{{days}} days · {{samples}} samples",
+    monthlyTempAvgLow: "Average low",
+    monthlyTempAvgHigh: "average high",
+    monthlyTempThisMonth: "this month",
   },
   lines: {
     title: "Train lines",

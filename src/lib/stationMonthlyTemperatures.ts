@@ -44,6 +44,13 @@ export function shouldDisplayStationMonthlyTemperature(
   return entry.sampleCount >= STATION_MONTHLY_TEMP_MIN_SAMPLES;
 }
 
+/** Cool blues under 20°C, warm reds over 30°C, default otherwise. */
+export function monthlyTemperatureTone(tempC: number): string {
+  if (tempC < 20) return "text-sky-600 dark:text-sky-400";
+  if (tempC > 30) return "text-orange-600 dark:text-orange-400";
+  return "text-foreground";
+}
+
 export async function fetchStationMonthlyTemperatures(): Promise<StationMonthlyTemperaturesManifest> {
   const res = await fetch("/data/station-monthly-temperatures.json", { cache: "no-store" });
   if (!res.ok) {

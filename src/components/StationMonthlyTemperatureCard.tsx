@@ -1,5 +1,6 @@
 import { Thermometer } from "lucide-react";
 import { useStationMonthlyTemperature } from "@/hooks/useStationMonthlyTemperature";
+import { monthlyTemperatureTone } from "@/lib/stationMonthlyTemperatures";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 export function StationMonthlyTemperatureCard({ stationName }: { stationName: string }) {
@@ -20,17 +21,14 @@ export function StationMonthlyTemperatureCard({ stationName }: { stationName: st
             {t("station.monthlyTempTitle")}
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">{t("station.monthlyTempBody")}</p>
-          <p className="mt-4 text-lg font-medium tabular-nums text-foreground md:text-xl">
-            {t("station.monthlyTempSummary", {
-              low: String(entry.avgLowC),
-              high: String(entry.avgHighC),
-            })}
-          </p>
-          <p className="mt-2 text-xs text-muted-foreground">
-            {t("station.monthlyTempMeta", {
-              days: String(entry.dayCount),
-              samples: String(entry.sampleCount),
-            })}
+          <p className="mt-4 text-lg font-medium tabular-nums md:text-xl">
+            {t("station.monthlyTempAvgLow")}{" "}
+            <span className={monthlyTemperatureTone(entry.avgLowC)}>{entry.avgLowC}°C</span>{" "}
+            {t("station.monthlyTempThisMonth")}
+            {" / "}
+            {t("station.monthlyTempAvgHigh")}{" "}
+            <span className={monthlyTemperatureTone(entry.avgHighC)}>{entry.avgHighC}°C</span>{" "}
+            {t("station.monthlyTempThisMonth")}
           </p>
         </div>
       </div>

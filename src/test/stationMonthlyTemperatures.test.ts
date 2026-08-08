@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   lisbonYearMonth,
+  monthlyTemperatureTone,
   shouldDisplayStationMonthlyTemperature,
   type StationMonthlyTemperaturesManifest,
 } from "@/lib/stationMonthlyTemperatures";
@@ -32,6 +33,15 @@ describe("shouldDisplayStationMonthlyTemperature", () => {
     expect(
       shouldDisplayStationMonthlyTemperature(manifest, "Beja", new Date("2026-11-01T12:00:00Z")),
     ).toBe(false);
+  });
+});
+
+describe("monthlyTemperatureTone", () => {
+  it("colors cool and hot temperatures", () => {
+    expect(monthlyTemperatureTone(19.9)).toContain("sky");
+    expect(monthlyTemperatureTone(20)).toContain("foreground");
+    expect(monthlyTemperatureTone(30)).toContain("foreground");
+    expect(monthlyTemperatureTone(30.1)).toContain("orange");
   });
 });
 
