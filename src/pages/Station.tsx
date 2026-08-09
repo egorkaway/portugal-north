@@ -195,8 +195,8 @@ const Station = () => {
           ) : null}
 
           {!airportStation ? <StationDepartures stationName={station.name} /> : null}
-          {!airportStation ? <StationMonthlyTemperatureCard stationName={station.name} /> : null}
           {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}
+          {!airportStation ? <StationMonthlyTemperatureCard stationName={station.name} /> : null}
           <NearestLongDistanceStations station={station} />
           {isAirportHubStation(station) ? <AirportConnectionsPanel station={station} /> : null}
           <NearestStations station={station} />

@@ -105,6 +105,21 @@ In Xcode: **Product → Archive** (Release scheme), then **Distribute App**.
 npm run ios:archive
 ```
 
+## Android release (Play Store)
+
+`android/` is generated (gitignored). Keep version/build identical to iOS via the shared sync (`expo.version` + `build-number.json`).
+
+```bash
+cd mobile
+npm run sync:data
+npm run android:prebuild
+cd .. && npm run sync:build   # stamps versionName + versionCode into gradle (same as iOS)
+cd mobile
+npm run android:bundle   # → android/app/build/outputs/bundle/release/app-release.aab
+# or: npm run android:assemble  # APK
+npm run android:open     # Android Studio
+```
+
 ## Debug build (optional)
 
 ```bash
