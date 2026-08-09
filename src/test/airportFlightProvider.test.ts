@@ -96,7 +96,7 @@ describe("airportFlightProvider", () => {
     expect(availableAirportFlightProviders()).toEqual(["airlabs", "opensky"]);
   });
 
-  it("falls back to AirLabs when AviationStack hits monthly limit", async () => {
+  it("falls back to AviationStack when AirLabs hits monthly limit", async () => {
     vi.stubEnv("AVIATIONSTACK_API_KEY", "as_test");
     vi.stubEnv("AIRLABS_API_KEY", "al_test");
     vi.stubGlobal("AbortSignal", {
@@ -106,27 +106,28 @@ describe("airportFlightProvider", () => {
 
     const fetchMock = vi.fn(async (input: RequestInfo | URL) => {
       const url = String(input);
+      if (url.includes("airlabs.co")) {
+        return {
+          ok: true,
+          json: async () => ({
+            error: {
+              code: "month_limit_exceeded",
+              message: "The monthly request limit has been exceeded.",
+            },
+          }),
+        };
+      }
       if (url.includes("aviationstack.com")) {
         return {
           ok: true,
           json: async () => ({
-            error: { message: "Your monthly usage limit has been reached." },
-          }),
-        };
-      }
-      if (url.includes("airlabs.co/api/v9/schedules")) {
-        return {
-          ok: true,
-          json: async () => ({
-            response: [
+            data: [
               {
-                airline_iata: "TP",
-                flight_iata: "TP456",
-                flight_number: "456",
-                dep_iata: "LIS",
-                arr_iata: "MAD",
-                dep_time: "2026-07-23 10:00",
-                status: "scheduled",
+                flight_date: "2026-07-23",
+                departure: { iata: "LIS" },
+                arrival: { iata: "MAD" },
+                airline: { name: "TAP", iata: "TP" },
+                flight: { number: "456", iata: "TP456" },
               },
             ],
           }),
@@ -140,7 +141,7 @@ describe("airportFlightProvider", () => {
     const result = await fetchDeparturesFromAirport("LIS", 10);
     warn.mockRestore();
 
-    expect(result.provider).toBe("airlabs");
+    expect(result.provider).toBe("aviationstack");
     expect(result.flights).toHaveLength(1);
     expect(result.flights[0]?.arrival?.iata).toBe("MAD");
     expect(fetchMock).toHaveBeenCalledTimes(2);
@@ -156,19 +157,22 @@ describe("airportFlightProvider", () => {
 
     const fetchMock = vi.fn(async (input: RequestInfo | URL) => {
       const url = String(input);
+      if (url.includes("airlabs.co")) {
+        return {
+          ok: true,
+          json: async () => ({
+            error: {
+              code: "month_limit_exceeded",
+              message: "The monthly request limit has been exceeded.",
+            },
+          }),
+        };
+      }
       if (url.includes("aviationstack.com")) {
         return {
           ok: true,
           json: async () => ({
             error: { message: "Your monthly usage limit has been reached." },
-          }),
-        };
-      }
-      if (url.includes("airlabs.co")) {
-        return {
-          ok: true,
-          json: async () => ({
-            error: { code: "month_limit_exceeded", message: "The monthly request limit has been exceeded." },
           }),
         };
       }

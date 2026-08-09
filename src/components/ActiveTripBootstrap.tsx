@@ -25,7 +25,8 @@ export function ActiveTripBootstrap() {
     }
   }, [trip, now]);
 
-  useTripDepartureRecord(trip, delayMinutes, now);
+  const platform = liveDeparture?.platform ?? trip?.platform ?? null;
+  useTripDepartureRecord(trip, delayMinutes, now, platform);
 
   return null;
 }

@@ -357,7 +357,20 @@ export async function onTripDeparted(): Promise<void> {
   if (minutes !== null && minutes > -CLEAR_ACTIVE_TRIP_AFTER_MINUTES) return;
 
   const { recordTakenTrip, writeActiveTrip } = await import('@/lib/tripStorage');
-  await recordTakenTrip(trip);
+  let live: { delayMinutes?: number | null; platform?: string | null } | undefined;
+  try {
+    const departures = await fetchStationDepartures(trip.stationName, 10);
+    const matched = matchLiveDeparture(trip, departures);
+    if (matched) {
+      live = {
+        delayMinutes: matched.delayMinutes ?? trip.delayMinutes,
+        platform: matched.platform ?? trip.platform,
+      };
+    }
+  } catch {
+    // fall back to stored trip snapshot
+  }
+  await recordTakenTrip(trip, trip.destination, live);
   await writeActiveTrip(null);
   await syncTripWidgets();
 }

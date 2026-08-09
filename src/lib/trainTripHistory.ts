@@ -1,12 +1,34 @@
 import type { PlannedDeparture } from "@/lib/plannedDepartures";
 import { useSyncExternalStore } from "react";
+import { getEffectiveDepartureClock } from "@/lib/departureCountdown";
 
 const STORAGE_KEY = "pn_trip_history_v1";
 
 export type CompletedTripRecord = PlannedDeparture & {
   completedAt: string;
   finalStationName: string;
+  /** Effective leave clock (HH:mm) when different from scheduled `departureTime`. */
+  actualDepartureTime?: string | null;
 };
+
+export type RecordTakenTripLive = {
+  delayMinutes?: number | null;
+  platform?: string | null;
+};
+
+/** Derive history fields from scheduled time + latest live delay/platform. */
+export function resolveTakenTripHistoryFields(
+  trip: Pick<PlannedDeparture, "departureTime" | "platform" | "delayMinutes">,
+  live?: RecordTakenTripLive,
+): Pick<CompletedTripRecord, "actualDepartureTime" | "platform" | "delayMinutes"> {
+  const delayMinutes =
+    live?.delayMinutes !== undefined ? live.delayMinutes : trip.delayMinutes;
+  const platform = live?.platform !== undefined ? live.platform : trip.platform;
+  const effective = getEffectiveDepartureClock(trip.departureTime, delayMinutes ?? null);
+  const actualDepartureTime =
+    effective && effective !== trip.departureTime ? effective : null;
+  return { actualDepartureTime, platform: platform ?? null, delayMinutes: delayMinutes ?? null };
+}
 
 const listeners = new Set<() => void>();
 let cache: CompletedTripRecord[] | undefined;
@@ -58,11 +80,21 @@ function getSnapshot(): CompletedTripRecord[] {
 export function recordTakenTrip(
   trip: PlannedDeparture,
   finalStationName: string = trip.destination,
+  live?: RecordTakenTripLive,
 ): void {
   const records = readHistory();
   const existing = records.find((record) => record.id === trip.id);
   const completedAt = existing?.completedAt ?? new Date().toISOString();
-  const next: CompletedTripRecord = { ...trip, completedAt, finalStationName };
+  const fields = resolveTakenTripHistoryFields(trip, live);
+  const next: CompletedTripRecord = {
+    ...trip,
+    completedAt,
+    finalStationName,
+    platform: fields.platform ?? existing?.platform ?? trip.platform,
+    delayMinutes: fields.delayMinutes ?? existing?.delayMinutes ?? trip.delayMinutes,
+    actualDepartureTime:
+      fields.actualDepartureTime ?? existing?.actualDepartureTime ?? null,
+  };
   const withoutDuplicate = records.filter((record) => record.id !== trip.id);
   writeHistory([next, ...withoutDuplicate].slice(0, 100));
   emit();

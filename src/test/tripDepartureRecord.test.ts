@@ -38,4 +38,16 @@ describe("useTripDepartureRecord", () => {
     expect(readTripHistory()).toHaveLength(1);
     expect(readTripHistory()[0]?.trainNumber).toBe("542");
   });
+
+  it("stores actual leave time and live platform when delayed", () => {
+    const now = new Date("2026-06-30T16:25:00.000Z"); // 17:25 Lisbon summer
+
+    renderHook(() => useTripDepartureRecord(sampleTrip, 10, now, "7"));
+
+    const record = readTripHistory()[0];
+    expect(record?.departureTime).toBe("17:10");
+    expect(record?.actualDepartureTime).toBe("17:20");
+    expect(record?.platform).toBe("7");
+    expect(record?.delayMinutes).toBe(10);
+  });
 });

@@ -210,8 +210,8 @@ export default function TripScreen() {
     });
   }, [journey, originCode, activeTrip, platform]);
 
-  useTripDepartureRecord(activeTrip, delayMinutes, now, onTripCompleted);
-  useTripCompletion(activeTrip, downstreamStops, delayMinutes, now, onTripCompleted);
+  useTripDepartureRecord(activeTrip, delayMinutes, now, onTripCompleted, platform);
+  useTripCompletion(activeTrip, downstreamStops, delayMinutes, now, onTripCompleted, platform);
 
   const pastTrips = useMemo(() => {
     if (!activeTrip) return history;
@@ -459,7 +459,8 @@ export default function TripScreen() {
                   {record.trainNumber} · {record.stationName} → {record.finalStationName}
                 </Text>
                 <Text style={styles.historyMeta}>
-                  {record.timetableDate} · {record.departureTime}
+                  {record.timetableDate} · {record.actualDepartureTime ?? record.departureTime}
+                  {record.platform ? ` · ${t('departures.platform')} ${record.platform}` : ''}
                 </Text>
                 <View style={styles.historyLinks}>
                   <Pressable onPress={() => openStation(record.stationName)}>

@@ -14,6 +14,8 @@ export type PlannedDeparture = {
 export type CompletedTripRecord = PlannedDeparture & {
   completedAt: string;
   finalStationName: string;
+  /** Effective leave clock (HH:mm) when different from scheduled `departureTime`. */
+  actualDepartureTime?: string | null;
 };
 
 export type StationLite = {

@@ -19,19 +19,19 @@ type Provider = {
 };
 
 const providers: Record<AirportFlightProviderId, Provider> = {
-  aviationstack: {
-    id: "aviationstack",
-    hasKey: () => Boolean(process.env.AVIATIONSTACK_API_KEY?.trim()),
-    isExhaustedError: aviationStack.isAviationStackMonthlyLimitError,
-    fetchDepartures: aviationStack.fetchDeparturesFromAirport,
-    fetchAirport: aviationStack.fetchAirportByIata,
-  },
   airlabs: {
     id: "airlabs",
     hasKey: () => Boolean(process.env.AIRLABS_API_KEY?.trim()),
     isExhaustedError: airLabs.isAirLabsMonthlyLimitError,
     fetchDepartures: airLabs.fetchDeparturesFromAirport,
     fetchAirport: airLabs.fetchAirportByIata,
+  },
+  aviationstack: {
+    id: "aviationstack",
+    hasKey: () => Boolean(process.env.AVIATIONSTACK_API_KEY?.trim()),
+    isExhaustedError: aviationStack.isAviationStackMonthlyLimitError,
+    fetchDepartures: aviationStack.fetchDeparturesFromAirport,
+    fetchAirport: aviationStack.fetchAirportByIata,
   },
   opensky: {
     id: "opensky",
@@ -43,7 +43,10 @@ const providers: Record<AirportFlightProviderId, Provider> = {
   },
 };
 
-/** Sticky preferred provider for a single collector run (AviationStack → AirLabs → OpenSky). */
+/** AirLabs → AviationStack → OpenSky (no-key last resort). */
+const PROVIDER_ORDER: AirportFlightProviderId[] = ["airlabs", "aviationstack", "opensky"];
+
+/** Sticky preferred provider for a single collector run. */
 let activeProvider: AirportFlightProviderId | null = null;
 
 export function resetAirportFlightProvider(): void {
@@ -51,9 +54,7 @@ export function resetAirportFlightProvider(): void {
 }
 
 export function availableAirportFlightProviders(): AirportFlightProviderId[] {
-  return (Object.keys(providers) as AirportFlightProviderId[]).filter((id) =>
-    providers[id].hasKey(),
-  );
+  return PROVIDER_ORDER.filter((id) => providers[id].hasKey());
 }
 
 export function hasAirportFlightProvider(): boolean {
@@ -65,9 +66,7 @@ function preferredProviderOrder(): AirportFlightProviderId[] {
   if (activeProvider && available.includes(activeProvider)) {
     return [activeProvider, ...available.filter((id) => id !== activeProvider)];
   }
-  // Prefer paid schedule APIs; OpenSky is the no-key last resort.
-  const ordered: AirportFlightProviderId[] = ["aviationstack", "airlabs", "opensky"];
-  return ordered.filter((id) => available.includes(id));
+  return available;
 }
 
 export function isAirportFlightQuotaExhaustedError(error: unknown): boolean {

@@ -142,7 +142,7 @@ export function buildWidgetProps(input: {
       countdownMinutes: null,
       stationName: input.lastTaken.stationName,
       trainNumber: input.lastTaken.trainNumber,
-      departureTime: input.lastTaken.departureTime,
+      departureTime: input.lastTaken.actualDepartureTime ?? input.lastTaken.departureTime,
       destination: input.lastTaken.finalStationName,
       delayMinutes: input.lastTaken.delayMinutes,
       platform: input.lastTaken.platform,

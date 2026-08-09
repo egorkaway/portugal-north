@@ -8,6 +8,7 @@ export function useTripDepartureRecord(
   delayMinutes: number | null,
   now: Date,
   onRecorded: () => void,
+  platform: string | null = null,
 ): void {
   const recordedRef = useRef<string | null>(null);
 
@@ -28,7 +29,7 @@ export function useTripDepartureRecord(
 
     recordedRef.current = trip.id;
     void (async () => {
-      await recordTakenTrip(trip);
+      await recordTakenTrip(trip, trip.destination, { delayMinutes, platform });
       // Defensive: refresh widget / end Live Activity as soon as the Trip
       // screen notices departure (bootstrap also schedules this).
       try {
@@ -39,5 +40,5 @@ export function useTripDepartureRecord(
       }
       onRecorded();
     })();
-  }, [trip, delayMinutes, now, onRecorded]);
+  }, [trip, delayMinutes, platform, now, onRecorded]);
 }

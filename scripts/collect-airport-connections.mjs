@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Fetch airport departures (AviationStack, with AirLabs Schedules fallback),
+ * Fetch airport departures (AirLabs → AviationStack → OpenSky fallback),
  * bake connections JSON, and render static connection map PNGs.
  *
  * Periods: nine open dates per year (see snapshotPeriods.mjs). Within an open

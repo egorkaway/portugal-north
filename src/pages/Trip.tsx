@@ -146,7 +146,7 @@ const Trip = () => {
   const hasConfirmedUpcomingStops =
     !isLoading && !isError && Boolean(journey) && downstreamStops.length > 1;
 
-  useTripCompletion(trip, downstreamStops, delayMinutes, now);
+  useTripCompletion(trip, downstreamStops, delayMinutes, now, platform);
 
   const departureMinutesUntil = trip
     ? getMinutesUntilTime(trip.departureTime, delayMinutes, now, trip.timetableDate)
@@ -315,7 +315,11 @@ const Trip = () => {
                           {record.trainNumber} · {record.stationName} → {record.finalStationName}
                         </p>
                         <p className="mt-1 text-sm text-muted-foreground tabular-nums">
-                          {record.timetableDate} · {record.departureTime}
+                          {record.timetableDate} ·{" "}
+                          {record.actualDepartureTime ?? record.departureTime}
+                          {record.platform
+                            ? ` · ${t("departures.platform")} ${record.platform}`
+                            : ""}
                         </p>
                         {(originPath || finalPath) ? (
                           <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">

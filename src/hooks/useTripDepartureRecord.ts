@@ -8,6 +8,7 @@ export function useTripDepartureRecord(
   trip: PlannedDeparture | null,
   delayMinutes: number | null,
   now: Date,
+  platform: string | null = null,
 ): void {
   const recordedRef = useRef<string | null>(null);
 
@@ -27,6 +28,6 @@ export function useTripDepartureRecord(
     if (recordedRef.current === trip.id) return;
 
     recordedRef.current = trip.id;
-    recordTakenTrip(trip);
-  }, [trip, delayMinutes, now]);
+    recordTakenTrip(trip, trip.destination, { delayMinutes, platform });
+  }, [trip, delayMinutes, platform, now]);
 }

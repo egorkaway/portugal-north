@@ -1,5 +1,5 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import { shouldClearActiveTrip } from "@/lib/departureCountdown";
+import { getEffectiveDepartureClock, shouldClearActiveTrip } from "@/lib/departureCountdown";
 import type { CompletedTripRecord, PlannedDeparture } from "@/lib/types";
 import { lisbonDateAndTime } from "@/lib/lisbonTime";
 import { notifyTripChanged } from "@/lib/tripEvents";
@@ -10,6 +10,24 @@ const TRIP_HISTORY_KEY = "pn_trip_history_v1";
 const LAST_COORDS_KEY = "portugal-by-train-last-coords";
 
 export type StoredCoords = { lat: number; lng: number; at: number };
+
+export type RecordTakenTripLive = {
+  delayMinutes?: number | null;
+  platform?: string | null;
+};
+
+export function resolveTakenTripHistoryFields(
+  trip: Pick<PlannedDeparture, "departureTime" | "platform" | "delayMinutes">,
+  live?: RecordTakenTripLive,
+): Pick<CompletedTripRecord, "actualDepartureTime" | "platform" | "delayMinutes"> {
+  const delayMinutes =
+    live?.delayMinutes !== undefined ? live.delayMinutes : trip.delayMinutes;
+  const platform = live?.platform !== undefined ? live.platform : trip.platform;
+  const effective = getEffectiveDepartureClock(trip.departureTime, delayMinutes ?? null);
+  const actualDepartureTime =
+    effective && effective !== trip.departureTime ? effective : null;
+  return { actualDepartureTime, platform: platform ?? null, delayMinutes: delayMinutes ?? null };
+}
 
 export async function readActiveTrip(): Promise<PlannedDeparture | null> {
   const raw = await AsyncStorage.getItem(ACTIVE_TRIP_KEY);
@@ -61,11 +79,21 @@ export async function readTripHistory(): Promise<CompletedTripRecord[]> {
 export async function recordTakenTrip(
   trip: PlannedDeparture,
   finalStationName = trip.destination,
+  live?: RecordTakenTripLive,
 ): Promise<void> {
   const records = await readTripHistory();
   const existing = records.find((record) => record.id === trip.id);
   const completedAt = existing?.completedAt ?? new Date().toISOString();
-  const next: CompletedTripRecord = { ...trip, completedAt, finalStationName };
+  const fields = resolveTakenTripHistoryFields(trip, live);
+  const next: CompletedTripRecord = {
+    ...trip,
+    completedAt,
+    finalStationName,
+    platform: fields.platform ?? existing?.platform ?? trip.platform,
+    delayMinutes: fields.delayMinutes ?? existing?.delayMinutes ?? trip.delayMinutes,
+    actualDepartureTime:
+      fields.actualDepartureTime ?? existing?.actualDepartureTime ?? null,
+  };
   const withoutDuplicate = records.filter((record) => record.id !== trip.id);
   await AsyncStorage.setItem(
     TRIP_HISTORY_KEY,

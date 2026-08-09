@@ -10,6 +10,7 @@ export function useTripCompletion(
   delayMinutes: number | null,
   now: Date,
   onCompleted: () => void,
+  platform: string | null = null,
 ): void {
   const recordedRef = useRef<string | null>(null);
 
@@ -36,9 +37,9 @@ export function useTripCompletion(
 
     recordedRef.current = trip.id;
     void (async () => {
-      await recordTakenTrip(trip, finalStop.stationName);
+      await recordTakenTrip(trip, finalStop.stationName, { delayMinutes, platform });
       await clearActiveTrip();
       onCompleted();
     })();
-  }, [trip, downstreamStops, delayMinutes, now, onCompleted]);
+  }, [trip, downstreamStops, delayMinutes, platform, now, onCompleted]);
 }

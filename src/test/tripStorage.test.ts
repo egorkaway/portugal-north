@@ -124,6 +124,16 @@ describe("trip history", () => {
     expect(history[0]?.finalStationName).toBe("Lisboa");
   });
 
+  it("stores actual departure time when delay makes leave time differ", () => {
+    const sampleTrip = makeSampleTrip({ delayMinutes: null, platform: null });
+    recordTakenTrip(sampleTrip, "Lisboa", { delayMinutes: 15, platform: "5" });
+    const record = readTripHistory()[0];
+    expect(record?.departureTime).toBe("17:10");
+    expect(record?.actualDepartureTime).toBe("17:25");
+    expect(record?.platform).toBe("5");
+    expect(record?.delayMinutes).toBe(15);
+  });
+
   it("deletes a taken trip record by id", () => {
     const sampleTrip = makeSampleTrip();
     recordTakenTrip(sampleTrip, "Lisboa");

@@ -10,6 +10,7 @@ export function useTripCompletion(
   downstreamStops: TrainJourneyStop[],
   delayMinutes: number | null,
   now: Date,
+  platform: string | null = null,
 ): void {
   const recordedRef = useRef<string | null>(null);
 
@@ -35,7 +36,7 @@ export function useTripCompletion(
     if (recordedRef.current === trip.id) return;
 
     recordedRef.current = trip.id;
-    recordTakenTrip(trip, finalStop.stationName);
+    recordTakenTrip(trip, finalStop.stationName, { delayMinutes, platform });
     clearActiveTrip();
-  }, [trip, downstreamStops, delayMinutes, now]);
+  }, [trip, downstreamStops, delayMinutes, platform, now]);
 }
