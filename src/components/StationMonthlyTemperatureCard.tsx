@@ -21,15 +21,17 @@ export function StationMonthlyTemperatureCard({ stationName }: { stationName: st
             {t("station.monthlyTempTitle")}
           </h2>
           <p className="mt-1 text-sm text-muted-foreground">{t("station.monthlyTempBody")}</p>
-          <p className="mt-3 text-base font-medium leading-snug tabular-nums md:text-lg">
-            {t("station.monthlyTempAvgLow")}{" "}
-            <span className={monthlyTemperatureTone(entry.avgLowC)}>{entry.avgLowC}°C</span>{" "}
-            {t("station.monthlyTempThisMonth")}
-            {" / "}
-            {t("station.monthlyTempAvgHigh")}{" "}
-            <span className={monthlyTemperatureTone(entry.avgHighC)}>{entry.avgHighC}°C</span>{" "}
-            {t("station.monthlyTempThisMonth")}
-          </p>
+          <p className="mt-3 text-sm font-medium text-foreground">{t("station.monthlyTempThisMonth")}</p>
+          <ul className="mt-1 list-disc space-y-1 pl-5 text-base font-medium tabular-nums md:text-lg">
+            <li>
+              {t("station.monthlyTempAvgHigh")}{" "}
+              <span className={monthlyTemperatureTone(entry.avgHighC)}>{entry.avgHighC}°C</span>
+            </li>
+            <li>
+              {t("station.monthlyTempAvgLow")}{" "}
+              <span className={monthlyTemperatureTone(entry.avgLowC)}>{entry.avgLowC}°C</span>
+            </li>
+          </ul>
         </div>
       </div>
     </section>

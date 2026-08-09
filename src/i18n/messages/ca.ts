@@ -124,8 +124,8 @@ export const ca: Messages = {
     monthlyTempBody:
       "Mitjana de mínimes i màximes a partir de les nostres mostres recents de temperatura en aquesta estació.",
     monthlyTempAvgLow: "Mínima mitjana",
-    monthlyTempAvgHigh: "màxima mitjana",
-    monthlyTempThisMonth: "aquest mes",
+    monthlyTempAvgHigh: "Màxima mitjana",
+    monthlyTempThisMonth: "Aquest mes:",
   },
   lines: {
     title: "Línies ferroviàries",

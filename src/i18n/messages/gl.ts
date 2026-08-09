@@ -124,8 +124,8 @@ export const gl: Messages = {
     monthlyTempBody:
       "Media de mínimas e máximas a partir das nosas mostras recentes de temperatura nesta estación.",
     monthlyTempAvgLow: "Mínima media",
-    monthlyTempAvgHigh: "máxima media",
-    monthlyTempThisMonth: "este mes",
+    monthlyTempAvgHigh: "Máxima media",
+    monthlyTempThisMonth: "Este mes:",
   },
   lines: {
     title: "Liñas ferroviarias",

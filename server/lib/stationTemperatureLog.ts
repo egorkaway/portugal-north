@@ -136,7 +136,7 @@ export function formatStationMonthlyTemperatureOkSuffix(
   average: StationMonthlyTemperatureAverage,
 ): string {
   return (
-    `average low ${average.avgLowC}°C this month / average high ${average.avgHighC}°C this month` +
+    `this month average low ${average.avgLowC}°C / high ${average.avgHighC}°C` +
     ` (${average.dayCount} day(s), ${average.sampleCount} sample(s))`
   );
 }
