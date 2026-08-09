@@ -196,7 +196,6 @@ const Station = () => {
 
           {!airportStation ? <StationDepartures stationName={station.name} /> : null}
           {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}
-          {!airportStation ? <StationMonthlyTemperatureCard stationName={station.name} /> : null}
           <NearestLongDistanceStations station={station} />
           {isAirportHubStation(station) ? <AirportConnectionsPanel station={station} /> : null}
           <NearestStations station={station} />
@@ -280,6 +279,11 @@ const Station = () => {
           {showYesimPromo ? <StationYesimPromo /> : null}
 
           <StationAreaMap station={station} summary={stationSummary} />
+          {!airportStation ? (
+            <div className="mt-4 max-w-md md:mt-5">
+              <StationMonthlyTemperatureCard stationName={station.name} />
+            </div>
+          ) : null}
 
           <p className="mt-5 flex items-center gap-1 text-xs text-muted-foreground md:mt-8">
             <Navigation className="h-3 w-3" aria-hidden="true" />
