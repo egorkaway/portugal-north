@@ -222,23 +222,33 @@ export const en: MobileMessages = {
     welcomeTitle: 'Iberian stations in your pocket',
     welcomeBody:
       'Browse Portugal and Spain hubs, track a train, and keep countdowns on your Lock Screen and Home Screen.',
+    welcomeBodyAndroid:
+      'Browse Portugal and Spain hubs, check live departures, and track the train you plan to take.',
     welcomeBullet1: 'Find stations and live departures',
     welcomeBullet2: 'Track a trip with Live Activity',
+    welcomeBullet2Android: 'Track an upcoming departure in the app',
     welcomeBullet3: 'Add the Train countdown widget',
+    welcomeBullet3Android: 'See stations sorted near you',
     locationEyebrow: 'Location',
     locationTitle: 'Find stations near you',
     locationBody:
       'Location is optional, but it lets VeryStays sort stations by distance and show your nearest hub on the home-screen widget.',
+    locationBodyAndroid:
+      'Location is optional, but it lets VeryStays sort stations by distance on the home screen.',
     notificationsEyebrow: 'Notifications',
     notificationsTitle: 'Gentle trip reminders',
     notificationsBody:
       'When you tap Take on a departure, we can remind you a few minutes before the train leaves.',
     widgetsEyebrow: 'At a glance',
     widgetsTitle: 'Widgets & Live Activity',
+    widgetsTitleAndroid: 'Trip countdown',
     widgetsBody:
       'Add the Train countdown widget to your Home Screen. Tracking a trip can also show a Live Activity on Lock Screen and Dynamic Island.',
+    widgetsBodyAndroid:
+      'When you tap Take on a departure, VeryStays keeps a countdown for your trip so you can leave for the station on time.',
     widgetsHint:
       'Long-press your Home Screen, tap +, search for VeryStays, and choose Train countdown.',
+    widgetsHintAndroid: 'Open any station with live departures, then tap Take on the train you want.',
     enableLocation: 'Continue',
     enableNotifications: 'Continue',
     finish: 'Get started',

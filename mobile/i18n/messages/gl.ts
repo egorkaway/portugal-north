@@ -222,23 +222,34 @@ export const gl: MobileMessages = {
     welcomeTitle: 'Estacións ibéricas no peto',
     welcomeBody:
       'Explora hubs de Portugal e España, segue un tren e mantén contas atrás na pantalla de bloqueo e na de inicio.',
+    welcomeBodyAndroid:
+      'Explora hubs de Portugal e España, consulta saídas en directo e segue o tren que vas coller.',
     welcomeBullet1: 'Atopa estacións e saídas en directo',
     welcomeBullet2: 'Segue unha viaxe con Live Activity',
+    welcomeBullet2Android: 'Segue unha saída na app',
     welcomeBullet3: 'Engade o widget Conta atrás do tren',
+    welcomeBullet3Android: 'Ve estacións ordenadas preto de ti',
     locationEyebrow: 'Localización',
     locationTitle: 'Atopa estacións preto de ti',
     locationBody:
       'A localización é opcional, pero permite a VeryStays ordenar estacións por distancia e mostrar o hub máis próximo no widget da pantalla de inicio.',
+    locationBodyAndroid:
+      'A localización é opcional, pero permite a VeryStays ordenar estacións por distancia na pantalla de inicio.',
     notificationsEyebrow: 'Notificacións',
     notificationsTitle: 'Recordatorios suaves de viaxe',
     notificationsBody:
       'Cando premas Vou coller nunha saída, podemos lembrarche uns minutos antes de que saia o tren.',
     widgetsEyebrow: 'Dun vistazo',
     widgetsTitle: 'Widgets e Live Activity',
+    widgetsTitleAndroid: 'Conta atrás da viaxe',
     widgetsBody:
       'Engade o widget Conta atrás do tren á pantalla de inicio. Ao seguir unha viaxe, tamén pode aparecer unha Live Activity na pantalla de bloqueo e na Dynamic Island.',
+    widgetsBodyAndroid:
+      'Cando premas Vou coller nunha saída, VeryStays mantén unha conta atrás da viaxe para saíres a tempo cara á estación.',
     widgetsHint:
       'Mantén premida a pantalla de inicio, toca +, busca VeryStays e escolle Conta atrás do tren.',
+    widgetsHintAndroid:
+      'Abre unha estación con saídas en directo e preme Vou coller no tren que queiras.',
     enableLocation: 'Continuar',
     enableNotifications: 'Continuar',
     finish: 'Comezar',

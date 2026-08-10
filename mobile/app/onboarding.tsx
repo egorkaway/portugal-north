@@ -3,6 +3,7 @@ import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import {
   ActivityIndicator,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -18,6 +19,7 @@ import { brandTheme } from '@/constants/brandTheme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { usePurchases } from '@/components/PurchasesProvider';
 import { completeOnboarding, isOnboardingComplete } from '@/lib/onboardingStorage';
+import { getCurrentCoords } from '@/lib/currentLocation';
 import { waitForPurchasesBootstrap } from '@/lib/revenueCat';
 import { ensureTripNotificationPermission } from '@/lib/tripNotifications';
 import { writeLastCoords } from '@/lib/tripStorage';
@@ -84,15 +86,9 @@ export default function OnboardingScreen() {
     try {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status === 'granted') {
-        try {
-          const position = await Location.getCurrentPositionAsync({});
-          await writeLastCoords({
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          });
-        } catch {
-          // Permission granted but fix unavailable — still continue.
-        }
+        // Don't block onboarding on a GPS fix — emulators often hang here.
+        const coords = await getCurrentCoords({ timeoutMs: 5_000 });
+        if (coords) await writeLastCoords(coords);
       }
       advance();
     } finally {
@@ -119,6 +115,7 @@ export default function OnboardingScreen() {
   }
 
   const step = STEPS[stepIndex];
+  const isIos = Platform.OS === 'ios';
 
   return (
     <SafeAreaView style={styles.safe} edges={['top', 'bottom']}>
@@ -138,11 +135,17 @@ export default function OnboardingScreen() {
             <OnboardingStepIllustration step="welcome" />
             <Text style={styles.eyebrow}>{t('onboarding.welcomeEyebrow')}</Text>
             <Text style={styles.title}>{t('onboarding.welcomeTitle')}</Text>
-            <Text style={styles.body}>{t('onboarding.welcomeBody')}</Text>
+            <Text style={styles.body}>
+              {t(isIos ? 'onboarding.welcomeBody' : 'onboarding.welcomeBodyAndroid')}
+            </Text>
             <View style={styles.bulletList}>
               <Text style={styles.bullet}>· {t('onboarding.welcomeBullet1')}</Text>
-              <Text style={styles.bullet}>· {t('onboarding.welcomeBullet2')}</Text>
-              <Text style={styles.bullet}>· {t('onboarding.welcomeBullet3')}</Text>
+              <Text style={styles.bullet}>
+                · {t(isIos ? 'onboarding.welcomeBullet2' : 'onboarding.welcomeBullet2Android')}
+              </Text>
+              <Text style={styles.bullet}>
+                · {t(isIos ? 'onboarding.welcomeBullet3' : 'onboarding.welcomeBullet3Android')}
+              </Text>
             </View>
           </View>
         ) : null}
@@ -152,7 +155,9 @@ export default function OnboardingScreen() {
             <OnboardingStepIllustration step="location" />
             <Text style={styles.eyebrow}>{t('onboarding.locationEyebrow')}</Text>
             <Text style={styles.title}>{t('onboarding.locationTitle')}</Text>
-            <Text style={styles.body}>{t('onboarding.locationBody')}</Text>
+            <Text style={styles.body}>
+              {t(isIos ? 'onboarding.locationBody' : 'onboarding.locationBodyAndroid')}
+            </Text>
           </View>
         ) : null}
 
@@ -169,11 +174,17 @@ export default function OnboardingScreen() {
           <View style={styles.stepBody}>
             <OnboardingStepIllustration step="widgets" />
             <Text style={styles.eyebrow}>{t('onboarding.widgetsEyebrow')}</Text>
-            <Text style={styles.title}>{t('onboarding.widgetsTitle')}</Text>
-            <Text style={styles.body}>{t('onboarding.widgetsBody')}</Text>
-            <OnboardingWidgetPreview props={EXAMPLE_TRIP} />
-            <OnboardingLiveActivityPreview props={EXAMPLE_TRIP} />
-            <Text style={styles.hint}>{t('onboarding.widgetsHint')}</Text>
+            <Text style={styles.title}>
+              {t(isIos ? 'onboarding.widgetsTitle' : 'onboarding.widgetsTitleAndroid')}
+            </Text>
+            <Text style={styles.body}>
+              {t(isIos ? 'onboarding.widgetsBody' : 'onboarding.widgetsBodyAndroid')}
+            </Text>
+            {isIos ? <OnboardingWidgetPreview props={EXAMPLE_TRIP} /> : null}
+            {isIos ? <OnboardingLiveActivityPreview props={EXAMPLE_TRIP} /> : null}
+            <Text style={styles.hint}>
+              {t(isIos ? 'onboarding.widgetsHint' : 'onboarding.widgetsHintAndroid')}
+            </Text>
           </View>
         ) : null}
       </ScrollView>

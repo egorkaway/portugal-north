@@ -222,23 +222,34 @@ export const pt: MobileMessages = {
     welcomeTitle: 'Estações ibéricas no bolso',
     welcomeBody:
       'Explore hubs em Portugal e Espanha, acompanhe um comboio e mantenha contagens no ecrã de bloqueio e no ecrã principal.',
+    welcomeBodyAndroid:
+      'Explore hubs em Portugal e Espanha, consulte partidas em direto e acompanhe o comboio que vai apanhar.',
     welcomeBullet1: 'Encontre estações e partidas em direto',
     welcomeBullet2: 'Acompanhe uma viagem com Live Activity',
+    welcomeBullet2Android: 'Acompanhe uma partida no ecrã da app',
     welcomeBullet3: 'Adicione o widget Contagem do comboio',
+    welcomeBullet3Android: 'Veja estações ordenadas perto de si',
     locationEyebrow: 'Localização',
     locationTitle: 'Encontre estações perto de si',
     locationBody:
       'A localização é opcional, mas permite ao VeryStays ordenar estações por distância e mostrar o hub mais próximo no widget do ecrã principal.',
+    locationBodyAndroid:
+      'A localização é opcional, mas permite ao VeryStays ordenar estações por distância no ecrã principal.',
     notificationsEyebrow: 'Notificações',
     notificationsTitle: 'Lembretes suaves de viagem',
     notificationsBody:
       'Quando tocar em Vou apanhar numa partida, podemos lembrá-lo alguns minutos antes do comboio sair.',
     widgetsEyebrow: 'Num relance',
     widgetsTitle: 'Widgets e Live Activity',
+    widgetsTitleAndroid: 'Contagem da viagem',
     widgetsBody:
       'Adicione o widget Contagem do comboio ao ecrã principal. Ao acompanhar uma viagem, também pode aparecer uma Live Activity no ecrã de bloqueio e na Dynamic Island.',
+    widgetsBodyAndroid:
+      'Quando tocar em Vou apanhar numa partida, o VeryStays mantém uma contagem da viagem para sair a tempo para a estação.',
     widgetsHint:
       'Mantenha premido o ecrã principal, toque em +, pesquise VeryStays e escolha Contagem do comboio.',
+    widgetsHintAndroid:
+      'Abra uma estação com partidas em direto e toque em Vou apanhar no comboio que quer.',
     enableLocation: 'Continuar',
     enableNotifications: 'Continuar',
     finish: 'Começar',

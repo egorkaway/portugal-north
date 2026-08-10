@@ -2,6 +2,7 @@ import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  Platform,
   Pressable,
   ScrollView,
   StyleSheet,
@@ -15,8 +16,10 @@ import { useNavigation, useRouter } from 'expo-router';
 import ViewShot from 'react-native-view-shot';
 import { useSystemColorScheme } from '@/components/useSystemColorScheme';
 import { MapShareBrandingFooter } from '@/components/MapShareBrandingFooter';
+import { OsmWebMap, type OsmWebMapHandle } from '@/components/OsmWebMap';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
+import { getCurrentCoords } from '@/lib/currentLocation';
 import { reliabilityScoreColor, formatReliabilityScore } from '@/lib/reliabilityScore';
 import {
   allStations,
@@ -43,6 +46,9 @@ const IBERIAN_REGION = {
 const MARKER_HIT_SIZE = 52;
 const MARKER_PRESS_LOCK_MS = 120;
 
+/** Android uses free OSM/Carto tiles — no Google Maps API. iOS keeps Apple Maps. */
+const USE_OSM_MAP = Platform.OS === 'android';
+
 function markerSize(movements: number): number {
   if (movements >= 500) return 14;
   if (movements >= 200) return 11;
@@ -54,7 +60,8 @@ export default function MapScreen() {
   const router = useRouter();
   const navigation = useNavigation();
   const { t, plural } = useLocale();
-  const mapRef = useRef<MapView>(null);
+  const appleMapRef = useRef<MapView>(null);
+  const osmMapRef = useRef<OsmWebMapHandle>(null);
   const shareViewRef = useRef<ViewShot>(null);
   const markerPressLock = useRef(false);
   const [selectedName, setSelectedName] = useState<string | null>(null);
@@ -67,23 +74,35 @@ export default function MapScreen() {
       allStations
         .filter((station) => !isAirportHiddenFromMapMarkers(station))
         .map((station) => {
-        const score = bakedReliabilityScores.scores[station.name] ?? null;
-        const movements = bakedReliabilityScores.movements[station.name] ?? 0;
-        return {
-          station,
-          score,
-          movements,
-          color:
-            score !== null
-              ? reliabilityScoreColor(score)
-              : station.types.includes('Airport') ||
-                  station.types.includes('Airport Destination')
-                ? '#0284C7'
-                : '#94A3B8',
-          size: markerSize(movements),
-        };
-      }),
+          const score = bakedReliabilityScores.scores[station.name] ?? null;
+          const movements = bakedReliabilityScores.movements[station.name] ?? 0;
+          return {
+            station,
+            score,
+            movements,
+            color:
+              score !== null
+                ? reliabilityScoreColor(score)
+                : station.types.includes('Airport') ||
+                    station.types.includes('Airport Destination')
+                  ? '#0284C7'
+                  : '#94A3B8',
+            size: markerSize(movements),
+          };
+        }),
     [],
+  );
+
+  const osmMarkers = useMemo(
+    () =>
+      markers.map(({ station, color, size }) => ({
+        id: station.name,
+        lat: station.lat,
+        lng: station.lng,
+        color,
+        size,
+      })),
+    [markers],
   );
 
   const selectStation = useCallback((stationName: string) => {
@@ -115,20 +134,23 @@ export default function MapScreen() {
       const { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') return;
 
-      const position = await Location.getCurrentPositionAsync({});
-      const { latitude, longitude } = position.coords;
+      const coords = await getCurrentCoords();
+      if (!coords) return;
 
       setShowsUserLocation(true);
-      mapRef.current?.animateToRegion(
-        {
-          latitude,
-          longitude,
-          latitudeDelta: 0.45,
-          longitudeDelta: 0.45,
-        },
-        500,
-      );
-      await writeLastCoords({ lat: latitude, lng: longitude });
+      const region = {
+        latitude: coords.lat,
+        longitude: coords.lng,
+        latitudeDelta: 0.45,
+        longitudeDelta: 0.45,
+      };
+      if (USE_OSM_MAP) {
+        osmMapRef.current?.setUserLocation(coords);
+        osmMapRef.current?.animateToRegion(region, 500);
+      } else {
+        appleMapRef.current?.animateToRegion(region, 500);
+      }
+      await writeLastCoords(coords);
     } finally {
       setLocating(false);
     }
@@ -206,42 +228,54 @@ export default function MapScreen() {
   return (
     <View style={styles.container}>
       <ViewShot ref={shareViewRef} style={styles.shareCanvas} options={{ format: 'png', quality: 1 }}>
-        <MapView
-          ref={mapRef}
-          style={styles.map}
-          initialRegion={IBERIAN_REGION}
-          userInterfaceStyle={mapAppearance}
-          showsUserLocation={showsUserLocation}
-          showsMyLocationButton={false}
-          onPress={clearSelection}
-          onMarkerPress={handleMarkerPress}
-        >
-          {markers.map(({ station, color, size }) => (
-            <Marker
-              key={station.name}
-              identifier={station.name}
-              coordinate={{ latitude: station.lat, longitude: station.lng }}
-              stopPropagation
-              tracksViewChanges={false}
-              onPress={() => selectStation(station.name)}
-            >
-              <View style={styles.markerHitArea} collapsable={false}>
-                <View style={styles.markerTouchTarget} />
-                <View
-                  style={[
-                    styles.dot,
-                    {
-                      width: size,
-                      height: size,
-                      borderRadius: size / 2,
-                      backgroundColor: color,
-                    },
-                  ]}
-                />
-              </View>
-            </Marker>
-          ))}
-        </MapView>
+        {USE_OSM_MAP ? (
+          <OsmWebMap
+            ref={osmMapRef}
+            style={styles.map}
+            initialRegion={IBERIAN_REGION}
+            markers={osmMarkers}
+            darkMode={mapAppearance === 'dark'}
+            onMarkerPress={selectStation}
+            onMapPress={clearSelection}
+          />
+        ) : (
+          <MapView
+            ref={appleMapRef}
+            style={styles.map}
+            initialRegion={IBERIAN_REGION}
+            userInterfaceStyle={mapAppearance}
+            showsUserLocation={showsUserLocation}
+            showsMyLocationButton={false}
+            onPress={clearSelection}
+            onMarkerPress={handleMarkerPress}
+          >
+            {markers.map(({ station, color, size }) => (
+              <Marker
+                key={station.name}
+                identifier={station.name}
+                coordinate={{ latitude: station.lat, longitude: station.lng }}
+                stopPropagation
+                tracksViewChanges={false}
+                onPress={() => selectStation(station.name)}
+              >
+                <View style={styles.markerHitArea} collapsable={false}>
+                  <View style={styles.markerTouchTarget} />
+                  <View
+                    style={[
+                      styles.dot,
+                      {
+                        width: size,
+                        height: size,
+                        borderRadius: size / 2,
+                        backgroundColor: color,
+                      },
+                    ]}
+                  />
+                </View>
+              </Marker>
+            ))}
+          </MapView>
+        )}
 
         <View style={styles.legend} pointerEvents="box-none">
           <View style={styles.legendCard}>

@@ -14,6 +14,7 @@ import {
   readDistanceSortSessionOptOut,
   writeDistanceSortSessionOptOut,
 } from '@/lib/distanceSortStorage';
+import { getCurrentCoords } from '@/lib/currentLocation';
 import { orderStationsForHome, stationDistancesKm } from '@/lib/rankStations';
 import { stationMatchesSearch } from '@/lib/searchText';
 import { pageStations, stationToSlug, type Station } from '@/lib/stationData';
@@ -89,8 +90,12 @@ export default function HomeScreen() {
         setSortByDistance(true);
       }
 
-      const position = await Location.getCurrentPositionAsync({});
-      const next = { lat: position.coords.latitude, lng: position.coords.longitude };
+      const next = await getCurrentCoords();
+      if (!next) {
+        // Permission granted but no fix yet — keep using cache if we have it.
+        if (!cached) setSortByDistance(false);
+        return Boolean(cached);
+      }
       setCoords(next);
       setSortByDistance(true);
       await writeLastCoords(next);

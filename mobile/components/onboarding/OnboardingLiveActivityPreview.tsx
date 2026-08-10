@@ -11,15 +11,7 @@ export function OnboardingLiveActivityPreview({ props }: Props) {
   const fields = getWidgetDisplayFields(props);
 
   if (Platform.OS !== 'ios') {
-    return (
-      <View style={styles.wrap}>
-        <Text style={styles.caption}>Live Activity</Text>
-        <Text style={styles.unavailable}>
-          Live Activities are available on iPhone. Android users can use the home-screen widget
-          instead.
-        </Text>
-      </View>
-    );
+    return null;
   }
 
   return (

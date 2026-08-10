@@ -222,23 +222,34 @@ export const es: MobileMessages = {
     welcomeTitle: 'Estaciones ibéricas en el bolsillo',
     welcomeBody:
       'Explora hubs de Portugal y España, sigue un tren y mantén cuentas atrás en la pantalla de bloqueo y en la de inicio.',
+    welcomeBodyAndroid:
+      'Explora hubs de Portugal y España, consulta salidas en directo y sigue el tren que vas a tomar.',
     welcomeBullet1: 'Encuentra estaciones y salidas en directo',
     welcomeBullet2: 'Sigue un viaje con Live Activity',
+    welcomeBullet2Android: 'Sigue una salida en la app',
     welcomeBullet3: 'Añade el widget Cuenta atrás del tren',
+    welcomeBullet3Android: 'Ve estaciones ordenadas cerca de ti',
     locationEyebrow: 'Ubicación',
     locationTitle: 'Encuentra estaciones cerca de ti',
     locationBody:
       'La ubicación es opcional, pero permite a VeryStays ordenar estaciones por distancia y mostrar tu hub más cercano en el widget de la pantalla de inicio.',
+    locationBodyAndroid:
+      'La ubicación es opcional, pero permite a VeryStays ordenar estaciones por distancia en la pantalla de inicio.',
     notificationsEyebrow: 'Notificaciones',
     notificationsTitle: 'Recordatorios suaves de viaje',
     notificationsBody:
       'Cuando pulses Lo tomo en una salida, podemos recordártelo unos minutos antes de que salga el tren.',
     widgetsEyebrow: 'De un vistazo',
     widgetsTitle: 'Widgets y Live Activity',
+    widgetsTitleAndroid: 'Cuenta atrás del viaje',
     widgetsBody:
       'Añade el widget Cuenta atrás del tren a la pantalla de inicio. Al seguir un viaje, también puede aparecer una Live Activity en la pantalla de bloqueo y en Dynamic Island.',
+    widgetsBodyAndroid:
+      'Cuando pulses Lo tomo en una salida, VeryStays mantiene una cuenta atrás del viaje para que salgas a tiempo hacia la estación.',
     widgetsHint:
       'Mantén pulsada la pantalla de inicio, toca +, busca VeryStays y elige Cuenta atrás del tren.',
+    widgetsHintAndroid:
+      'Abre una estación con salidas en directo y pulsa Lo tomo en el tren que quieras.',
     enableLocation: 'Continuar',
     enableNotifications: 'Continuar',
     finish: 'Empezar',

@@ -222,23 +222,34 @@ export const uk: MobileMessages = {
     welcomeTitle: 'Іберійські станції у вашій кишені',
     welcomeBody:
       'Переглядайте вузли Португалії та Іспанії, стежте за поїздом і тримайте зворотний відлік на екрані блокування та головному екрані.',
+    welcomeBodyAndroid:
+      'Переглядайте вузли Португалії та Іспанії, дивіться відправлення наживо та стежте за поїздом, яким плануєте їхати.',
     welcomeBullet1: 'Знаходьте станції та відправлення наживо',
     welcomeBullet2: 'Стежте за поїздкою з Live Activity',
+    welcomeBullet2Android: 'Стежте за відправленням у застосунку',
     welcomeBullet3: 'Додайте віджет Train countdown',
+    welcomeBullet3Android: 'Бачте станції, відсортовані поруч із вами',
     locationEyebrow: 'Геолокація',
     locationTitle: 'Знайдіть станції поруч',
     locationBody:
       'Геолокація необов’язкова, але дозволяє VeryStays сортувати станції за відстанню та показувати найближчий вузол у віджеті на головному екрані.',
+    locationBodyAndroid:
+      'Геолокація необов’язкова, але дозволяє VeryStays сортувати станції за відстанню на головному екрані.',
     notificationsEyebrow: 'Сповіщення',
     notificationsTitle: 'М’які нагадування про поїздку',
     notificationsBody:
       'Коли ви натиснете «Їду» біля відправлення, ми можемо нагадати за кілька хвилин до відходу поїзда.',
     widgetsEyebrow: 'З першого погляду',
     widgetsTitle: 'Віджети та Live Activity',
+    widgetsTitleAndroid: 'Зворотний відлік поїздки',
     widgetsBody:
       'Додайте віджет Train countdown на головний екран. Стеження за поїздкою також може показувати Live Activity на екрані блокування та Dynamic Island.',
+    widgetsBodyAndroid:
+      'Коли ви натиснете «Їду» біля відправлення, VeryStays тримає зворотний відлік поїздки, щоб ви вчасно вирушили на станцію.',
     widgetsHint:
       'Утримуйте головний екран, натисніть +, знайдіть VeryStays і оберіть Train countdown.',
+    widgetsHintAndroid:
+      'Відкрийте станцію з відправленнями наживо й натисніть «Їду» біля потрібного поїзда.',
     enableLocation: 'Продовжити',
     enableNotifications: 'Продовжити',
     finish: 'Почати',

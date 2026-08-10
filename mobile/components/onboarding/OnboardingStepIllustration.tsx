@@ -1,5 +1,5 @@
 import { ComponentProps } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import { SymbolView } from 'expo-symbols';
 import { brandTheme } from '@/constants/brandTheme';
 
@@ -165,11 +165,13 @@ function NotificationsIllustration() {
 }
 
 function WidgetsIllustration() {
+  const showLockScreen = Platform.OS === 'ios';
+
   return (
     <View style={styles.frameCompact}>
       <View style={styles.deviceRow}>
         <View style={styles.devicePhone}>
-          <View style={styles.deviceIsland} />
+          {showLockScreen ? <View style={styles.deviceIsland} /> : null}
           <View style={styles.deviceWidgetTile}>
             <Text style={styles.deviceWidgetLabel}>LISBOA ORIENTE</Text>
             <Text style={styles.deviceWidgetCountdown}>18 min</Text>
@@ -182,14 +184,16 @@ function WidgetsIllustration() {
           </View>
         </View>
 
-        <View style={styles.deviceLock}>
-          <Text style={styles.deviceLockCaption}>Lock Screen</Text>
-          <View style={styles.deviceLockCard}>
-            <Text style={styles.deviceLockStation}>LISBOA ORIENTE</Text>
-            <Text style={styles.deviceLockCountdown}>18 min</Text>
-            <Text style={styles.deviceLockFooter}>Departs 14:32 · Platform 3</Text>
+        {showLockScreen ? (
+          <View style={styles.deviceLock}>
+            <Text style={styles.deviceLockCaption}>Lock Screen</Text>
+            <View style={styles.deviceLockCard}>
+              <Text style={styles.deviceLockStation}>LISBOA ORIENTE</Text>
+              <Text style={styles.deviceLockCountdown}>18 min</Text>
+              <Text style={styles.deviceLockFooter}>Departs 14:32 · Platform 3</Text>
+            </View>
           </View>
-        </View>
+        ) : null}
       </View>
     </View>
   );

@@ -222,23 +222,34 @@ export const ca: MobileMessages = {
     welcomeTitle: 'Estacions ibèriques a la butxaca',
     welcomeBody:
       'Explora hubs de Portugal i Espanya, segueix un tren i mantén comptes enrere a la pantalla de bloqueig i a la d’inici.',
+    welcomeBodyAndroid:
+      'Explora hubs de Portugal i Espanya, consulta sortides en directe i segueix el tren que agafaràs.',
     welcomeBullet1: 'Troba estacions i sortides en directe',
     welcomeBullet2: 'Segueix un viatge amb Live Activity',
+    welcomeBullet2Android: 'Segueix una sortida a l’app',
     welcomeBullet3: 'Afegeix el widget Compte enrere del tren',
+    welcomeBullet3Android: 'Veus estacions ordenades a prop teu',
     locationEyebrow: 'Ubicació',
     locationTitle: 'Troba estacions a prop teu',
     locationBody:
       'La ubicació és opcional, però permet a VeryStays ordenar estacions per distància i mostrar el hub més proper al widget de la pantalla d’inici.',
+    locationBodyAndroid:
+      'La ubicació és opcional, però permet a VeryStays ordenar estacions per distància a la pantalla d’inici.',
     notificationsEyebrow: 'Notificacions',
     notificationsTitle: 'Recordatoris suaus de viatge',
     notificationsBody:
       'Quan premis L’agafo en una sortida, et podem recordar uns minuts abans que surti el tren.',
     widgetsEyebrow: 'D’un cop d’ull',
     widgetsTitle: 'Widgets i Live Activity',
+    widgetsTitleAndroid: 'Compte enrere del viatge',
     widgetsBody:
       'Afegeix el widget Compte enrere del tren a la pantalla d’inici. En seguir un viatge, també pot aparèixer una Live Activity a la pantalla de bloqueig i a Dynamic Island.',
+    widgetsBodyAndroid:
+      'Quan premis L’agafo en una sortida, VeryStays manté un compte enrere del viatge perquè surtis a temps cap a l’estació.',
     widgetsHint:
       'Mantén premuda la pantalla d’inici, toca +, cerca VeryStays i tria Compte enrere del tren.',
+    widgetsHintAndroid:
+      'Obre una estació amb sortides en directe i prem L’agafo al tren que vulguis.',
     enableLocation: 'Continuar',
     enableNotifications: 'Continuar',
     finish: 'Començar',
