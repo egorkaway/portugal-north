@@ -122,7 +122,7 @@ export const ca: Messages = {
     reliabilityLoading: "Carregant puntuació de fiabilitat…",
     monthlyTempTitle: "Temperatures d'aquest mes",
     monthlyTempBody:
-      "Mitjana de mínimes i màximes a partir de les nostres mostres recents de temperatura en aquesta estació.",
+      "Mitjanes a partir de les nostres mostres recents de temperatura en aquesta estació.",
     monthlyTempAvgLow: "Mínima mitjana",
     monthlyTempAvgHigh: "Màxima mitjana",
     monthlyTempThisMonth: "Aquest mes:",

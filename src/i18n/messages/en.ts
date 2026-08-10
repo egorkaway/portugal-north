@@ -122,7 +122,7 @@ export const en: Messages = {
     reliabilityLoading: "Loading reliability score…",
     monthlyTempTitle: "Temperatures this month",
     monthlyTempBody:
-      "Average low and high from our recent temperature samples at this station.",
+      "Averages from our recent temperature samples at this station.",
     monthlyTempAvgLow: "Average low",
     monthlyTempAvgHigh: "Average high",
     monthlyTempThisMonth: "This month:",

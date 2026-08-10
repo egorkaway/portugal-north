@@ -122,7 +122,7 @@ export const es: Messages = {
     reliabilityLoading: "Cargando puntuación de fiabilidad…",
     monthlyTempTitle: "Temperaturas de este mes",
     monthlyTempBody:
-      "Media de mínimas y máximas a partir de nuestras muestras recientes de temperatura en esta estación.",
+      "Medias a partir de nuestras muestras recientes de temperatura en esta estación.",
     monthlyTempAvgLow: "Mínima media",
     monthlyTempAvgHigh: "Máxima media",
     monthlyTempThisMonth: "Este mes:",
