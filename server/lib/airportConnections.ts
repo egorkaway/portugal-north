@@ -40,7 +40,13 @@ export type AirportConnectionsManifest = {
   generatedAt: string;
   runCount: number;
   airportCount: number;
+  periodId?: string;
+  periodStart?: string;
+  periodEndExclusive?: string;
   airports: Record<string, AirportConnectionsEntry>;
+  /** Previous open period used while hubs are still unsampled in the live period. */
+  fallbackPeriodId?: string | null;
+  fallbackAirports?: Record<string, AirportConnectionsEntry>;
 };
 
 export type AirportCatalogEntry = AirportRecord & {

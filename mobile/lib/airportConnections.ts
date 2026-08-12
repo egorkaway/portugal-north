@@ -30,7 +30,10 @@ export type AirportConnectionsManifest = {
   generatedAt: string;
   runCount: number;
   airportCount: number;
+  periodId?: string;
   airports: Record<string, AirportConnectionsEntry>;
+  fallbackPeriodId?: string | null;
+  fallbackAirports?: Record<string, AirportConnectionsEntry>;
 };
 
 export const bakedAirportConnections = airportConnections as AirportConnectionsManifest;
@@ -48,6 +51,31 @@ for (const station of allStations) {
     station.name.match(IATA_IN_NAME_RE)?.[1] ??
     null;
   if (iata) airportSlugByIata.set(iata, stationToSlug(station.name));
+}
+
+function findAirportEntry(
+  airports: Record<string, AirportConnectionsEntry> | undefined,
+  {
+    iata,
+    slug,
+    stationName,
+  }: {
+    iata?: string;
+    slug?: string;
+    stationName?: string;
+  },
+): AirportConnectionsEntry | null {
+  if (!airports) return null;
+  const code = iata?.trim().toUpperCase();
+  if (code && airports[code]?.connections?.length) return airports[code];
+  return (
+    Object.values(airports).find(
+      (airport) =>
+        Boolean(airport.connections?.length) &&
+        ((slug && airport.slug === slug) ||
+          (stationName && airport.stationName === stationName)),
+    ) ?? null
+  );
 }
 
 export function getFlightLineColor(flightCount: number): string {
@@ -70,21 +98,31 @@ export function getAirportStationSlugByIata(iata: string): string | undefined {
   return airportSlugByIata.get(iata.trim().toUpperCase());
 }
 
-export function getAirportConnectionsMapImageUrl(slug: string): string {
-  return `${SITE_BASE}/maps/airports/${slug}-connections.png`;
+export function getAirportConnectionsMapImageUrl(
+  entryOrSlug: AirportConnectionsEntry | string,
+): string {
+  if (typeof entryOrSlug === 'string') {
+    return `${SITE_BASE}/maps/airports/${entryOrSlug}-connections.png`;
+  }
+  if (entryOrSlug.mapImage?.startsWith('http')) return entryOrSlug.mapImage;
+  if (entryOrSlug.mapImage?.startsWith('/')) return `${SITE_BASE}${entryOrSlug.mapImage}`;
+  return `${SITE_BASE}/maps/airports/${entryOrSlug.slug}-connections.png`;
 }
 
 export function getAirportConnectionsEntry(station: Station): AirportConnectionsEntry | null {
   const iata = station.lines[0]?.trim().toUpperCase();
-  if (iata && bakedAirportConnections.airports[iata]) {
-    return bakedAirportConnections.airports[iata];
-  }
-
   const slug = stationToSlug(station.name);
   return (
-    Object.values(bakedAirportConnections.airports).find(
-      (entry) => entry.slug === slug || entry.stationName === station.name,
-    ) ?? null
+    findAirportEntry(bakedAirportConnections.airports, {
+      iata,
+      slug,
+      stationName: station.name,
+    }) ??
+    findAirportEntry(bakedAirportConnections.fallbackAirports, {
+      iata,
+      slug,
+      stationName: station.name,
+    })
   );
 }
 
@@ -106,21 +144,25 @@ export function getIberianHubsFlyingTo(
   const dest = destinationIata.trim().toUpperCase();
   if (!/^[A-Z]{3}$/.test(dest)) return [];
 
-  const hubs: IberianHubFlyingToDestination[] = [];
-  for (const hub of Object.values(manifest.airports ?? {})) {
-    const connection = hub.connections?.find(
-      (entry) => entry.iata.trim().toUpperCase() === dest,
-    );
-    if (!connection) continue;
-    hubs.push({
-      iata: hub.iata,
-      stationName: hub.stationName,
-      slug: hub.slug || getAirportStationSlugByIata(hub.iata) || stationToSlug(hub.stationName),
-      flightCount: connection.flightCount,
-    });
+  const hubsByIata = new Map<string, IberianHubFlyingToDestination>();
+  const sources = [manifest.airports ?? {}, manifest.fallbackAirports ?? {}];
+  for (const airports of sources) {
+    for (const hub of Object.values(airports)) {
+      if (hubsByIata.has(hub.iata)) continue;
+      const connection = hub.connections?.find(
+        (entry) => entry.iata.trim().toUpperCase() === dest,
+      );
+      if (!connection) continue;
+      hubsByIata.set(hub.iata, {
+        iata: hub.iata,
+        stationName: hub.stationName,
+        slug: hub.slug || getAirportStationSlugByIata(hub.iata) || stationToSlug(hub.stationName),
+        flightCount: connection.flightCount,
+      });
+    }
   }
 
-  return hubs.sort(
+  return [...hubsByIata.values()].sort(
     (a, b) => b.flightCount - a.flightCount || a.stationName.localeCompare(b.stationName),
   );
 }

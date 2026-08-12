@@ -40,8 +40,8 @@ describe("airportConnectionPeriodStore", () => {
               stationName: "Faro Airport (FAO)",
               slug: "faro-airport-fao",
               iata: "FAO",
-              connections: [],
-              topDestinations: [],
+              connections: [{ iata: "LIS", name: "Lisbon", flightCount: 2 }],
+              topDestinations: [{ iata: "LIS", name: "Lisbon", flightCount: 2 }],
               mapImage: "/maps/airports/faro-airport-fao-connections.png",
             },
           },
@@ -101,9 +101,38 @@ describe("airportConnectionPeriodStore", () => {
     expect(frozen.periodId).toBe("2026-07-05");
     expect(frozen.airports.FAO.iata).toBe("FAO");
     expect(typeof frozen.frozenAt).toBe("string");
+    expect(frozen.fallbackAirports).toBeUndefined();
 
     const index = loadPeriodsIndex(rootDir);
     expect(index.currentPeriodId).toBe("2026-08-11");
     expect(index.periods.map((p) => p.id)).toContain("2026-07-05");
+  });
+
+  it("builds display fallback from the previous frozen period until hubs are re-sampled", async () => {
+    const { buildAirportConnectionsPeriodFallback } = await import(
+      "../../scripts/lib/airportConnectionPeriodStore.mjs"
+    );
+    const rootDir = makeRoot();
+    ensureAirportConnectionPeriodRoll({ rootDir, asOf: "2026-08-11" });
+
+    const empty = buildAirportConnectionsPeriodFallback(rootDir, {}, "2026-08-11");
+    expect(empty.fallbackPeriodId).toBe("2026-07-05");
+    expect(empty.fallbackAirports.FAO?.mapImage).toBe(
+      "/maps/airports/periods/2026-07-05/faro-airport-fao-connections.png",
+    );
+
+    const afterSample = buildAirportConnectionsPeriodFallback(
+      rootDir,
+      {
+        FAO: {
+          iata: "FAO",
+          slug: "faro-airport-fao",
+          connections: [{ iata: "LIS" }],
+        },
+      },
+      "2026-08-11",
+    );
+    expect(afterSample.fallbackPeriodId).toBeNull();
+    expect(afterSample.fallbackAirports).toEqual({});
   });
 });

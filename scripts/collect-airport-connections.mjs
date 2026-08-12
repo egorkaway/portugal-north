@@ -13,6 +13,8 @@
  * from AirLabs/AviationStack only — empty OpenSky samples do not count.
  * On each open-date boundary the previous live bake is frozen under
  * public/.../periods/{YYYY-MM-DD}/ and a new live period starts empty.
+ * Until a hub gets a fresh sample, the live JSON keeps previous-period
+ * destinations/maps under fallbackAirports for display.
  *
  *   node --import tsx scripts/collect-airport-connections.mjs
  *   node --import tsx scripts/collect-airport-connections.mjs --airport LIS
@@ -41,6 +43,7 @@ import { renderAirportConnectionsMap } from "./lib/airportConnectionsMap.mjs";
 import { periodContaining, lisbonDateString } from "./lib/airportConnectionPeriods.mjs";
 import {
   ensureAirportConnectionPeriodRoll,
+  buildAirportConnectionsPeriodFallback,
   liveMapsDir,
   liveManifestPath,
   loadPeriodsIndex,
@@ -455,7 +458,15 @@ export async function collectAirportConnections(options = {}) {
 
   let europeDestinations = { count: 0, iatas: [] };
 
-  if (!isDryRun && (ok > 0 || roll.rolled)) {
+  // Always refresh live JSON after a collect so previous-period display fallback
+  // stays available until hubs are re-sampled (even when this run got 0 OK).
+  if (!isDryRun) {
+    const { fallbackPeriodId, fallbackAirports } = buildAirportConnectionsPeriodFallback(
+      rootDir,
+      airports,
+      period.id,
+      roll.index,
+    );
     const manifest = {
       generatedAt: new Date().toISOString(),
       runCount: loadRunCount(rootDir),
@@ -465,10 +476,17 @@ export async function collectAirportConnections(options = {}) {
       periodEndExclusive: period.endExclusive,
       flightProvider: lastProvider,
       airports,
+      fallbackPeriodId,
+      fallbackAirports,
     };
     mkdirSync(dirname(outJsonPath), { recursive: true });
     writeFileSync(outJsonPath, `${JSON.stringify(manifest, null, 2)}\n`);
     console.log(`Wrote ${outJsonPath} (period ${period.id})`);
+    if (fallbackPeriodId) {
+      console.log(
+        `Display fallback: ${Object.keys(fallbackAirports).length} hub(s) from period ${fallbackPeriodId} until re-sampled`,
+      );
+    }
 
     // Upsert Europe destination stations from this run's (and prior live) destinations.
     // Hubs only are in loadAirportCatalog — destinations never get outbound collection.

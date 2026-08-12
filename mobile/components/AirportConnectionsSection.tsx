@@ -54,7 +54,7 @@ export function AirportConnectionsSection({ entry, stationName }: Props) {
 
   if (entry.topDestinations.length === 0) return null;
 
-  const mapUrl = getAirportConnectionsMapImageUrl(entry.slug);
+  const mapUrl = getAirportConnectionsMapImageUrl(entry);
   const legend = [
     { key: 'busy', minFlights: 5, label: t('airport.legendBusy') },
     { key: 'moderate', minFlights: 3, label: t('airport.legendModerate') },

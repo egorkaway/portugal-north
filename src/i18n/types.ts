@@ -62,7 +62,8 @@ export type Messages = {
     switchingCountry: string;
     showingRange: string;
     paginationLabel: string;
-    pageOf: string;
+    pageOfBefore: string;
+    goToLastPage: string;
     previousPage: string;
     nextPage: string;
   };

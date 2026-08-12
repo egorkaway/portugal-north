@@ -77,8 +77,14 @@ export function freezeLivePeriodArtifacts(rootDir, periodId, liveManifest) {
   mkdirSync(join(rootDir, "public/data/airport-connections/periods"), { recursive: true });
   mkdirSync(mapsOut, { recursive: true });
 
+  // Freeze only real current-period samples — not previous-period display fallbacks.
+  const {
+    fallbackPeriodId: _fallbackPeriodId,
+    fallbackAirports: _fallbackAirports,
+    ...liveWithoutFallback
+  } = liveManifest;
   const snapshot = {
-    ...liveManifest,
+    ...liveWithoutFallback,
     periodId,
     periodStart: periodMeta.start,
     periodEndExclusive: periodMeta.endExclusive,
@@ -205,5 +211,70 @@ export function ensureAirportConnectionPeriodRoll({ rootDir, asOf = new Date(), 
     rolled: true,
     frozen,
     index,
+  };
+}
+
+/**
+ * Most recent frozen period that is not the live/current period.
+ * @param {{ periods?: Array<{ id: string, start?: string }> }} index
+ * @param {string | null | undefined} currentPeriodId
+ * @returns {string | null}
+ */
+export function latestFrozenPeriodId(index, currentPeriodId) {
+  const periods = Array.isArray(index?.periods) ? index.periods : [];
+  const candidates = periods
+    .filter((entry) => entry?.id && entry.id !== currentPeriodId)
+    .sort((a, b) => String(b.start || b.id).localeCompare(String(a.start || a.id)));
+  return candidates[0]?.id ?? null;
+}
+
+/**
+ * Hubs still missing from the current period keep previous-period destinations/maps
+ * until a fresh sample is baked.
+ *
+ * @param {string} rootDir
+ * @param {Record<string, object>} currentAirports
+ * @param {string | null | undefined} currentPeriodId
+ * @param {{ periods?: Array<{ id: string, start?: string }> } | null} [index]
+ * @returns {{ fallbackPeriodId: string | null, fallbackAirports: Record<string, object> }}
+ */
+export function buildAirportConnectionsPeriodFallback(
+  rootDir,
+  currentAirports,
+  currentPeriodId,
+  index = null,
+) {
+  const periodsIndex = index ?? loadPeriodsIndex(rootDir);
+  const fallbackPeriodId = latestFrozenPeriodId(periodsIndex, currentPeriodId);
+  if (!fallbackPeriodId) {
+    return { fallbackPeriodId: null, fallbackAirports: {} };
+  }
+
+  const frozenPath = frozenManifestPath(rootDir, fallbackPeriodId);
+  if (!existsSync(frozenPath)) {
+    return { fallbackPeriodId: null, fallbackAirports: {} };
+  }
+
+  let frozen;
+  try {
+    frozen = JSON.parse(readFileSync(frozenPath, "utf8"));
+  } catch {
+    return { fallbackPeriodId: null, fallbackAirports: {} };
+  }
+
+  const fallbackAirports = {};
+  for (const [iata, entry] of Object.entries(frozen.airports ?? {})) {
+    const live = currentAirports?.[iata];
+    if (live?.connections?.length) continue;
+    if (!entry?.connections?.length || !entry.slug) continue;
+    fallbackAirports[iata] = {
+      ...entry,
+      mapImage: `/maps/airports/periods/${fallbackPeriodId}/${entry.slug}-connections.png`,
+    };
+  }
+
+  return {
+    fallbackPeriodId: Object.keys(fallbackAirports).length ? fallbackPeriodId : null,
+    fallbackAirports,
   };
 }

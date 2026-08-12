@@ -8,6 +8,7 @@ import { getAirportStationPathByIata } from "@/lib/airportStation";
 import {
   fetchAirportConnectionsManifest,
   getAirportConnectionsMapImagePath,
+  resolveAirportConnectionsEntry,
 } from "@/lib/airportConnections";
 import { stationToSlug } from "@/lib/stationSlug";
 import type { Station } from "@/data/stations";
@@ -38,13 +39,13 @@ export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProp
     fetchAirportConnectionsManifest().then((manifest) => {
       if (cancelled) return;
       const iata = station.lines[0]?.toUpperCase();
-      const match =
-        (iata && manifest?.airports[iata]) ||
-        Object.values(manifest?.airports ?? {}).find(
-          (airport) => airport.slug === slug || airport.stationName === station.name,
-        ) ||
-        null;
-      setEntry(match);
+      setEntry(
+        resolveAirportConnectionsEntry(manifest, {
+          iata,
+          slug,
+          stationName: station.name,
+        }),
+      );
       setLoaded(true);
     });
     return () => {
@@ -56,7 +57,7 @@ export function AirportConnectionsPanel({ station }: AirportConnectionsPanelProp
     return null;
   }
 
-  const mapPath = getAirportConnectionsMapImagePath(entry.slug);
+  const mapPath = getAirportConnectionsMapImagePath(entry);
 
   return (
     <section className="mb-8 md:mb-10" aria-labelledby="airport-connections-heading">

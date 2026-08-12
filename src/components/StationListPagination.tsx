@@ -24,7 +24,21 @@ export function StationListPagination({
       className={cn("mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center", className)}
     >
       <p className="text-sm text-muted-foreground sm:order-2 sm:px-4">
-        {t("home.pageOf", { current: currentPage, total: totalPages })}
+        {t("home.pageOfBefore", { current: currentPage })}{" "}
+        <button
+          type="button"
+          disabled={currentPage >= totalPages}
+          onClick={() => onPageChange(totalPages)}
+          aria-label={t("home.goToLastPage", { page: totalPages })}
+          className={cn(
+            "rounded-sm font-medium tabular-nums underline-offset-2",
+            currentPage >= totalPages
+              ? "cursor-default font-normal"
+              : "text-foreground underline hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring",
+          )}
+        >
+          {totalPages}
+        </button>
       </p>
       <div className="flex w-full items-center justify-center gap-2 sm:order-1 sm:w-auto">
         <button
