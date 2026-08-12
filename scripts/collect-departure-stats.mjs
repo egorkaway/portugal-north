@@ -16,6 +16,8 @@
  * publishes public/data/station-monthly-temperatures.json for station pages
  * (client hides when the Lisbon month rolls over or samples ≤ 9),
  * and syncs mobile/data (npm run sync:data).
+ * Overview PNGs (portugal-activity / portugal-reliability) regenerate only when
+ * at least one station sample succeeds.
  * Stations are shuffled each run so partial runs (--limit or timeouts) spread across the network.
  * Stops early after 3 consecutive API failures (e.g. CP outage or rate limit).
  */
@@ -294,24 +296,30 @@ if (!dryRun) {
   console.log("Syncing mobile bundled data…");
   await syncMobileData();
 
-  const { renderPortugalActivityMap, renderPortugalReliabilityMap } = await import("./lib/portugalOverviewMap.mjs");
-  const { resolveOverviewBasemap } = await import("./lib/mapBasemaps.mjs");
-  const { mkdirSync, writeFileSync } = await import("node:fs");
-  const overviewDir = join(root, "public/maps/overview");
-  mkdirSync(overviewDir, { recursive: true });
-  const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
-  const basemap = resolveOverviewBasemap("osm");
-  const overviewMaps = [
-    { filename: "portugal-activity.png", render: () => renderPortugalActivityMap(root, { siteUrl, basemap }) },
-    { filename: "portugal-reliability.png", render: () => renderPortugalReliabilityMap(root, { siteUrl, basemap }) },
-  ];
-  for (const map of overviewMaps) {
-    process.stdout.write(`Rendering overview ${map.filename}… `);
-    const buf = await map.render();
-    writeFileSync(join(overviewDir, map.filename), buf);
-    process.stdout.write(`done (${Math.round(buf.length / 1024)} KB)\n`);
+  if (ok === 0) {
+    console.log(
+      "Skipping portugal-activity.png / portugal-reliability.png — no successful station samples this run.",
+    );
+  } else {
+    const { renderPortugalActivityMap, renderPortugalReliabilityMap } = await import("./lib/portugalOverviewMap.mjs");
+    const { resolveOverviewBasemap } = await import("./lib/mapBasemaps.mjs");
+    const { mkdirSync, writeFileSync } = await import("node:fs");
+    const overviewDir = join(root, "public/maps/overview");
+    mkdirSync(overviewDir, { recursive: true });
+    const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
+    const basemap = resolveOverviewBasemap("osm");
+    const overviewMaps = [
+      { filename: "portugal-activity.png", render: () => renderPortugalActivityMap(root, { siteUrl, basemap }) },
+      { filename: "portugal-reliability.png", render: () => renderPortugalReliabilityMap(root, { siteUrl, basemap }) },
+    ];
+    for (const map of overviewMaps) {
+      process.stdout.write(`Rendering overview ${map.filename}… `);
+      const buf = await map.render();
+      writeFileSync(join(overviewDir, map.filename), buf);
+      process.stdout.write(`done (${Math.round(buf.length / 1024)} KB)\n`);
+    }
+    console.log(`Overview maps used ${basemap.id}`);
   }
-  console.log(`Overview maps used ${basemap.id}`);
 }
 
 const skipped = stoppedEarly ? targets.length - ok - failed : 0;
