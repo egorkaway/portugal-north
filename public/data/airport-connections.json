@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-14T12:01:26.168Z",
-  "runCount": 328,
+  "generatedAt": "2026-08-14T17:40:44.408Z",
+  "runCount": 332,
   "airportCount": 30,
   "periodId": "2026-08-11",
   "periodStart": "2026-08-11",
@@ -1726,7 +1726,7 @@
         "lat": 41.2481,
         "lng": -8.6814
       },
-      "sampledFlights": 249,
+      "sampledFlights": 315,
       "connections": [
         {
           "iata": "BCN",
@@ -1801,6 +1801,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "ORY",
+          "name": "Paris-Orly Airport",
+          "country": "France",
+          "lat": 48.729499,
+          "lng": 2.358963,
+          "flightCount": 5,
+          "flights": [
+            {
+              "airline": "Transavia France",
+              "number": "7621"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "452"
+            },
+            {
+              "airline": "Transavia France",
+              "number": "7623"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "LUX",
           "name": "Luxembourg-Findel International Airport",
           "country": "Luxembourg",
@@ -1849,30 +1873,6 @@
           "lineWeight": 3
         },
         {
-          "iata": "ORY",
-          "name": "Paris-Orly Airport",
-          "country": "France",
-          "lat": 48.729499,
-          "lng": 2.358963,
-          "flightCount": 4,
-          "flights": [
-            {
-              "airline": "Transavia France",
-              "number": "7621"
-            },
-            {
-              "airline": "TAP Air Portugal",
-              "number": "452"
-            },
-            {
-              "airline": "Transavia France",
-              "number": "7623"
-            }
-          ],
-          "lineColor": "#7c3aed",
-          "lineWeight": 3
-        },
-        {
           "iata": "BRU",
           "name": "Brussels Airport",
           "country": "Belgium",
@@ -1891,6 +1891,30 @@
             {
               "airline": "Brussels",
               "number": "3810"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
+          "iata": "CPH",
+          "name": "Copenhagen Kastrup Airport",
+          "country": "Denmark",
+          "lat": 55.617900848389,
+          "lng": 12.656000137329,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "8898"
+            },
+            {
+              "airline": "SAS",
+              "number": "2774"
+            },
+            {
+              "airline": "Norwegian Air Shuttle",
+              "number": "3613"
             }
           ],
           "lineColor": "#7c3aed",
@@ -1945,6 +1969,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "STN",
+          "name": "London Stansted Airport",
+          "country": "United Kingdom",
+          "lat": 51.884998,
+          "lng": 0.235,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "7699"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "520"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "1262"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "LYS",
           "name": "Lyon Saint-Exupéry Airport",
           "country": "France",
@@ -1963,6 +2011,30 @@
             {
               "airline": "Transavia France",
               "number": "7833"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
+          "iata": "PMI",
+          "name": "Palma de Mallorca Airport",
+          "country": "Spain",
+          "lat": 39.551701,
+          "lng": 2.73881,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "6750"
+            },
+            {
+              "airline": "Iberia",
+              "number": "8150"
+            },
+            {
+              "airline": "Air Nostrum",
+              "number": "8150"
             }
           ],
           "lineColor": "#7c3aed",
@@ -2065,6 +2137,26 @@
           "lineWeight": 2
         },
         {
+          "iata": "BLL",
+          "name": "Billund Airport",
+          "country": "Denmark",
+          "lat": 55.740335,
+          "lng": 9.157019,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Norwegian Air Sweden",
+              "number": "3867"
+            },
+            {
+              "airline": "Norwegian Air Shuttle",
+              "number": "3867"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "ACE",
           "name": "César Manrique-Lanzarote Airport",
           "country": "Spain",
@@ -2103,26 +2195,6 @@
             {
               "airline": "Air France",
               "number": "1529"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "CPH",
-          "name": "Copenhagen Kastrup Airport",
-          "country": "Denmark",
-          "lat": 55.617900848389,
-          "lng": 12.656000137329,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "Ryanair",
-              "number": "8898"
-            },
-            {
-              "airline": "SAS",
-              "number": "2774"
             }
           ],
           "lineColor": "#2563eb",
@@ -2203,26 +2275,6 @@
             {
               "airline": "Azores",
               "number": "183"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "STN",
-          "name": "London Stansted Airport",
-          "country": "United Kingdom",
-          "lat": 51.884998,
-          "lng": 0.235,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "Ryanair",
-              "number": "7699"
-            },
-            {
-              "airline": "Ryanair",
-              "number": "520"
             }
           ],
           "lineColor": "#2563eb",
@@ -2327,6 +2379,10 @@
             {
               "airline": "Volotea",
               "number": "2241"
+            },
+            {
+              "airline": "easyJet",
+              "number": "6853"
             }
           ],
           "lineColor": "#2563eb",
@@ -2347,6 +2403,10 @@
             {
               "airline": "United",
               "number": "145"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "211"
             }
           ],
           "lineColor": "#2563eb",
@@ -2403,6 +2463,10 @@
             {
               "airline": "Ryanair",
               "number": "2028"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "2943"
             }
           ],
           "lineColor": "#2563eb",
@@ -2435,6 +2499,22 @@
             {
               "airline": "Vueling",
               "number": "2703"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "BHX",
+          "name": "Birmingham Airport",
+          "country": "United Kingdom",
+          "lat": 52.453899,
+          "lng": -1.74803,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "8513"
             }
           ],
           "lineColor": "#2563eb",
@@ -2571,6 +2651,42 @@
             {
               "airline": "Ryanair",
               "number": "9325"
+            },
+            {
+              "airline": "Eurowings",
+              "number": "607"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "DJE",
+          "name": "Djerba Zarzis International Airport",
+          "country": "Tunisia",
+          "lat": 33.873719,
+          "lng": 10.7773,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Nouvelair Tunisie",
+              "number": "6851"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "DUB",
+          "name": "Dublin Airport",
+          "country": "Ireland",
+          "lat": 53.428713,
+          "lng": -6.262121,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "7073"
             }
           ],
           "lineColor": "#2563eb",
@@ -2643,6 +2759,10 @@
             {
               "airline": "Ryanair",
               "number": "5486"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "8275"
             }
           ],
           "lineColor": "#2563eb",
@@ -2691,6 +2811,10 @@
             {
               "airline": "Ryanair",
               "number": "4041"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "4637"
             }
           ],
           "lineColor": "#2563eb",
@@ -2727,6 +2851,10 @@
             {
               "airline": "Azores",
               "number": "171"
+            },
+            {
+              "airline": "Azores",
+              "number": "173"
             }
           ],
           "lineColor": "#2563eb",
@@ -2781,6 +2909,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "AGP",
+          "name": "Málaga-Costa del Sol Airport",
+          "country": "Spain",
+          "lat": 36.6749,
+          "lng": -4.4991,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "5047"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "MLA",
           "name": "Malta International Airport",
           "country": "Malta",
@@ -2807,6 +2951,10 @@
             {
               "airline": "Ryanair",
               "number": "2248"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "6532"
             }
           ],
           "lineColor": "#2563eb",
@@ -2845,6 +2993,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "CMN",
+          "name": "Mohammed V International Airport",
+          "country": "Morocco",
+          "lat": 33.3675,
+          "lng": -7.58997,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Royal Air Maroc",
+              "number": "997"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "YUL",
           "name": "Montreal / Pierre Elliott Trudeau International Airport",
           "country": "Canada",
@@ -2871,6 +3035,38 @@
             {
               "airline": "Jet2",
               "number": "1934"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "OSL",
+          "name": "Oslo-Gardermoen International Airport",
+          "country": "Norway",
+          "lat": 60.193901,
+          "lng": 11.1004,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Norwegian Air Shuttle",
+              "number": "1831"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "PSA",
+          "name": "Pisa International Airport",
+          "country": "Italy",
+          "lat": 43.683899,
+          "lng": 10.3927,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "1040"
             }
           ],
           "lineColor": "#2563eb",
@@ -2989,6 +3185,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "VLC",
+          "name": "Valencia Airport",
+          "country": "Spain",
+          "lat": 39.4893,
+          "lng": -0.4816,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "2646"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "VIE",
           "name": "Vienna International Airport",
           "country": "Austria",
@@ -3031,6 +3243,10 @@
             {
               "airline": "LOT - Polish",
               "number": "428"
+            },
+            {
+              "airline": "Wizz Air",
+              "number": "1596"
             }
           ],
           "lineColor": "#2563eb",
@@ -3111,6 +3327,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "ORY",
+          "name": "Paris-Orly Airport",
+          "country": "France",
+          "lat": 48.729499,
+          "lng": 2.358963,
+          "flightCount": 5,
+          "flights": [
+            {
+              "airline": "Transavia France",
+              "number": "7621"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "452"
+            },
+            {
+              "airline": "Transavia France",
+              "number": "7623"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "LUX",
           "name": "Luxembourg-Findel International Airport",
           "country": "Luxembourg",
@@ -3159,30 +3399,6 @@
           "lineWeight": 3
         },
         {
-          "iata": "ORY",
-          "name": "Paris-Orly Airport",
-          "country": "France",
-          "lat": 48.729499,
-          "lng": 2.358963,
-          "flightCount": 4,
-          "flights": [
-            {
-              "airline": "Transavia France",
-              "number": "7621"
-            },
-            {
-              "airline": "TAP Air Portugal",
-              "number": "452"
-            },
-            {
-              "airline": "Transavia France",
-              "number": "7623"
-            }
-          ],
-          "lineColor": "#7c3aed",
-          "lineWeight": 3
-        },
-        {
           "iata": "BRU",
           "name": "Brussels Airport",
           "country": "Belgium",
@@ -3201,6 +3417,30 @@
             {
               "airline": "Brussels",
               "number": "3810"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
+          "iata": "CPH",
+          "name": "Copenhagen Kastrup Airport",
+          "country": "Denmark",
+          "lat": 55.617900848389,
+          "lng": 12.656000137329,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "8898"
+            },
+            {
+              "airline": "SAS",
+              "number": "2774"
+            },
+            {
+              "airline": "Norwegian Air Shuttle",
+              "number": "3613"
             }
           ],
           "lineColor": "#7c3aed",
@@ -3253,30 +3493,6 @@
           ],
           "lineColor": "#7c3aed",
           "lineWeight": 3
-        },
-        {
-          "iata": "LYS",
-          "name": "Lyon Saint-Exupéry Airport",
-          "country": "France",
-          "lat": 45.725996,
-          "lng": 5.090139,
-          "flightCount": 3,
-          "flights": [
-            {
-              "airline": "easyJet",
-              "number": "4428"
-            },
-            {
-              "airline": "EasyJet Europe",
-              "number": "4428"
-            },
-            {
-              "airline": "Transavia France",
-              "number": "7833"
-            }
-          ],
-          "lineColor": "#7c3aed",
-          "lineWeight": 3
         }
       ],
       "mapImage": "/maps/airports/porto-airport-opo-connections.png"
@@ -3289,7 +3505,7 @@
         "lat": 37.0144,
         "lng": -7.9659
       },
-      "sampledFlights": 143,
+      "sampledFlights": 186,
       "connections": [
         {
           "iata": "DUB",
@@ -3436,6 +3652,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "LPL",
+          "name": "Liverpool John Lennon Airport",
+          "country": "United Kingdom",
+          "lat": 53.334863,
+          "lng": -2.849637,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "easyJet",
+              "number": "3424"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "6951"
+            },
+            {
+              "airline": "easyJet",
+              "number": "3428"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "LTN",
           "name": "London Luton Airport",
           "country": "United Kingdom",
@@ -3454,6 +3694,30 @@
             {
               "airline": "Jet2",
               "number": "3832"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
+          "iata": "MAD",
+          "name": "Madrid-Barajas Airport",
+          "country": "Spain",
+          "lat": 40.4936,
+          "lng": -3.5664,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "1473"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "1473"
+            },
+            {
+              "airline": "Iberia",
+              "number": "558"
             }
           ],
           "lineColor": "#7c3aed",
@@ -3498,6 +3762,10 @@
             {
               "airline": "Delta Air Lines",
               "number": "7500"
+            },
+            {
+              "airline": "Transavia",
+              "number": "5358"
             }
           ],
           "lineColor": "#2563eb",
@@ -3616,6 +3884,30 @@
           "lineWeight": 2
         },
         {
+          "iata": "EIN",
+          "name": "Eindhoven Airport",
+          "country": "Netherlands",
+          "lat": 51.4500999451,
+          "lng": 5.37452983856,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "5768"
+            },
+            {
+              "airline": "Transavia",
+              "number": "6606"
+            },
+            {
+              "airline": "Transavia",
+              "number": "5512"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "GVA",
           "name": "Geneva International Airport",
           "country": "Switzerland",
@@ -3640,6 +3932,30 @@
           "lineWeight": 2
         },
         {
+          "iata": "LBA",
+          "name": "Leeds Bradford Airport",
+          "country": "United Kingdom",
+          "lat": 53.865898,
+          "lng": -1.66057,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Jet2",
+              "number": "252"
+            },
+            {
+              "airline": "Jet2",
+              "number": "248"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "2504"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "LHR",
           "name": "London Heathrow Airport",
           "country": "United Kingdom",
@@ -3654,6 +3970,10 @@
             {
               "airline": "British",
               "number": "513"
+            },
+            {
+              "airline": "British",
+              "number": "515"
             }
           ],
           "lineColor": "#2563eb",
@@ -3754,6 +4074,10 @@
             {
               "airline": "Vueling",
               "number": "8485"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "6421"
             }
           ],
           "lineColor": "#2563eb",
@@ -3786,6 +4110,10 @@
             {
               "airline": "Ryanair",
               "number": "254"
+            },
+            {
+              "airline": "Eurowings",
+              "number": "8693"
             }
           ],
           "lineColor": "#2563eb",
@@ -3886,22 +4214,10 @@
             {
               "airline": "Jet2",
               "number": "770"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "EIN",
-          "name": "Eindhoven Airport",
-          "country": "Netherlands",
-          "lat": 51.4500999451,
-          "lng": 5.37452983856,
-          "flightCount": 1,
-          "flights": [
+            },
             {
               "airline": "Ryanair",
-              "number": "5768"
+              "number": "5668"
             }
           ],
           "lineColor": "#2563eb",
@@ -3950,6 +4266,10 @@
             {
               "airline": "Jet2",
               "number": "174"
+            },
+            {
+              "airline": "easyJet",
+              "number": "3164"
             }
           ],
           "lineColor": "#2563eb",
@@ -4020,16 +4340,16 @@
           "lineWeight": 2
         },
         {
-          "iata": "LBA",
-          "name": "Leeds Bradford Airport",
-          "country": "United Kingdom",
-          "lat": 53.865898,
-          "lng": -1.66057,
+          "iata": "KTW",
+          "name": "Katowice Wojciech Korfanty International Airport",
+          "country": "Poland",
+          "lat": 50.476015,
+          "lng": 19.080705,
           "flightCount": 1,
           "flights": [
             {
-              "airline": "Jet2",
-              "number": "252"
+              "airline": "Wizz Air",
+              "number": "1088"
             }
           ],
           "lineColor": "#2563eb",
@@ -4056,26 +4376,6 @@
           "lineWeight": 2
         },
         {
-          "iata": "LPL",
-          "name": "Liverpool John Lennon Airport",
-          "country": "United Kingdom",
-          "lat": 53.334863,
-          "lng": -2.849637,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "easyJet",
-              "number": "3424"
-            },
-            {
-              "airline": "Ryanair",
-              "number": "6951"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
           "iata": "LCY",
           "name": "London City Airport",
           "country": "United Kingdom",
@@ -4086,6 +4386,54 @@
             {
               "airline": "British",
               "number": "8482"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "LUX",
+          "name": "Luxembourg-Findel International Airport",
+          "country": "Luxembourg",
+          "lat": 49.626845,
+          "lng": 6.212134,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Luxair",
+              "number": "786"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "LYS",
+          "name": "Lyon Saint-Exupéry Airport",
+          "country": "France",
+          "lat": 45.725996,
+          "lng": 5.090139,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Transavia France",
+              "number": "7801"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "RAK",
+          "name": "Marrakesh Menara Airport",
+          "country": "Morocco",
+          "lat": 31.604807,
+          "lng": -8.035788,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "9458"
             }
           ],
           "lineColor": "#2563eb",
@@ -4124,6 +4472,38 @@
           "lineWeight": 2
         },
         {
+          "iata": "NTE",
+          "name": "Nantes Atlantique Airport",
+          "country": "France",
+          "lat": 47.153198,
+          "lng": -1.61073,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Transavia France",
+              "number": "7829"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "OSL",
+          "name": "Oslo-Gardermoen International Airport",
+          "country": "Norway",
+          "lat": 60.193901,
+          "lng": 11.1004,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Norwegian Air Shuttle",
+              "number": "1823"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "OPO",
           "name": "Porto Airport",
           "country": "Portugal",
@@ -4138,6 +4518,10 @@
             {
               "airline": "Ryanair",
               "number": "5487"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "8274"
             }
           ],
           "lineColor": "#2563eb",
@@ -4202,6 +4586,22 @@
             {
               "airline": "Ryanair",
               "number": "5780"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "ZRH",
+          "name": "Zürich Airport",
+          "country": "Switzerland",
+          "lat": 47.458056,
+          "lng": 8.548056,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Edelweiss Air",
+              "number": "269"
             }
           ],
           "lineColor": "#2563eb",
@@ -4354,6 +4754,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "LPL",
+          "name": "Liverpool John Lennon Airport",
+          "country": "United Kingdom",
+          "lat": 53.334863,
+          "lng": -2.849637,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "easyJet",
+              "number": "3424"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "6951"
+            },
+            {
+              "airline": "easyJet",
+              "number": "3428"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "LTN",
           "name": "London Luton Airport",
           "country": "United Kingdom",
@@ -4372,6 +4796,30 @@
             {
               "airline": "Jet2",
               "number": "3832"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
+          "iata": "MAD",
+          "name": "Madrid-Barajas Airport",
+          "country": "Spain",
+          "lat": 40.4936,
+          "lng": -3.5664,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "1473"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "1473"
+            },
+            {
+              "airline": "Iberia",
+              "number": "558"
             }
           ],
           "lineColor": "#7c3aed",
@@ -4400,50 +4848,6 @@
           ],
           "lineColor": "#7c3aed",
           "lineWeight": 3
-        },
-        {
-          "iata": "AMS",
-          "name": "Amsterdam Airport Schiphol",
-          "country": "Netherlands",
-          "lat": 52.308601,
-          "lng": 4.76389,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "Transavia",
-              "number": "5354"
-            },
-            {
-              "airline": "Delta Air Lines",
-              "number": "7500"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "BFS",
-          "name": "Belfast International Airport",
-          "country": "United Kingdom",
-          "lat": 54.6575012207,
-          "lng": -6.2158298492399995,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "easyJet",
-              "number": "7505"
-            },
-            {
-              "airline": "easyJet",
-              "number": "3044"
-            },
-            {
-              "airline": "Ryanair",
-              "number": "9561"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
         }
       ],
       "mapImage": "/maps/airports/faro-airport-fao-connections.png"
@@ -4456,8 +4860,32 @@
         "lat": 40.4936,
         "lng": -3.5664
       },
-      "sampledFlights": 300,
+      "sampledFlights": 400,
       "connections": [
+        {
+          "iata": "PMI",
+          "name": "Palma de Mallorca Airport",
+          "country": "Spain",
+          "lat": 39.551701,
+          "lng": 2.73881,
+          "flightCount": 17,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "404"
+            },
+            {
+              "airline": "Vueling",
+              "number": "5026"
+            },
+            {
+              "airline": "Iberia",
+              "number": "1651"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
         {
           "iata": "AMS",
           "name": "Amsterdam Airport Schiphol",
@@ -4603,24 +5031,24 @@
           "lineWeight": 4
         },
         {
-          "iata": "PMI",
-          "name": "Palma de Mallorca Airport",
-          "country": "Spain",
-          "lat": 39.551701,
-          "lng": 2.73881,
+          "iata": "OPO",
+          "name": "Porto Airport",
+          "country": "Portugal",
+          "lat": 41.2481,
+          "lng": -8.6814,
           "flightCount": 8,
           "flights": [
             {
-              "airline": "Ryanair",
-              "number": "404"
+              "airline": "Aeromexico",
+              "number": "6908"
             },
             {
-              "airline": "Vueling",
-              "number": "5026"
+              "airline": "Azul",
+              "number": "7869"
             },
             {
-              "airline": "Iberia",
-              "number": "1651"
+              "airline": "Air Europa",
+              "number": "1147"
             }
           ],
           "lineColor": "#b91c1c",
@@ -4645,6 +5073,30 @@
             {
               "airline": "Azul",
               "number": "7894"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
+          "iata": "LIS",
+          "name": "Lisbon Airport",
+          "country": "Portugal",
+          "lat": 38.7813,
+          "lng": -9.1359,
+          "flightCount": 7,
+          "flights": [
+            {
+              "airline": "Azul",
+              "number": "7855"
+            },
+            {
+              "airline": "Air Europa",
+              "number": "1159"
+            },
+            {
+              "airline": "Aeromexico",
+              "number": "6898"
             }
           ],
           "lineColor": "#b91c1c",
@@ -4867,6 +5319,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "TLS",
+          "name": "Toulouse-Blagnac Airport",
+          "country": "France",
+          "lat": 43.629101,
+          "lng": 1.36382,
+          "flightCount": 5,
+          "flights": [
+            {
+              "airline": "Qatar",
+              "number": "6951"
+            },
+            {
+              "airline": "Cathay Pacific",
+              "number": "1899"
+            },
+            {
+              "airline": "LATAM",
+              "number": "1747"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "BLQ",
           "name": "Bologna Guglielmo Marconi Airport",
           "country": "Italy",
@@ -4963,6 +5439,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "BOG",
+          "name": "El Dorado International Airport",
+          "country": "Colombia",
+          "lat": 4.70159,
+          "lng": -74.1469,
+          "flightCount": 4,
+          "flights": [
+            {
+              "airline": "Avianca",
+              "number": "11"
+            },
+            {
+              "airline": "Etihad",
+              "number": "2603"
+            },
+            {
+              "airline": "Turkish",
+              "number": "8467"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "FLR",
           "name": "Florence Airport, Peretola",
           "country": "Italy",
@@ -5035,30 +5535,6 @@
           "lineWeight": 3
         },
         {
-          "iata": "OPO",
-          "name": "Porto Airport",
-          "country": "Portugal",
-          "lat": 41.2481,
-          "lng": -8.6814,
-          "flightCount": 4,
-          "flights": [
-            {
-              "airline": "Aeromexico",
-              "number": "6908"
-            },
-            {
-              "airline": "Azul",
-              "number": "7869"
-            },
-            {
-              "airline": "Air Europa",
-              "number": "1147"
-            }
-          ],
-          "lineColor": "#7c3aed",
-          "lineWeight": 3
-        },
-        {
           "iata": "ALC",
           "name": "Alicante-Elche Airport",
           "country": "Spain",
@@ -5083,6 +5559,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "OVD",
+          "name": "Asturias Airport",
+          "country": "Spain",
+          "lat": 43.5636,
+          "lng": -6.0347,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Air Europa",
+              "number": "7403"
+            },
+            {
+              "airline": "SAS",
+              "number": "8391"
+            },
+            {
+              "airline": "ITA",
+              "number": "2439"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "HEL",
           "name": "Helsinki Vantaa Airport",
           "country": "Finland",
@@ -5101,30 +5601,6 @@
             {
               "airline": "Finnair",
               "number": "1662"
-            }
-          ],
-          "lineColor": "#7c3aed",
-          "lineWeight": 3
-        },
-        {
-          "iata": "LIS",
-          "name": "Lisbon Airport",
-          "country": "Portugal",
-          "lat": 38.7813,
-          "lng": -9.1359,
-          "flightCount": 3,
-          "flights": [
-            {
-              "airline": "Azul",
-              "number": "7855"
-            },
-            {
-              "airline": "Air Europa",
-              "number": "1159"
-            },
-            {
-              "airline": "Aeromexico",
-              "number": "6898"
             }
           ],
           "lineColor": "#7c3aed",
@@ -5323,6 +5799,54 @@
           "lineWeight": 2
         },
         {
+          "iata": "MUC",
+          "name": "Munich Airport",
+          "country": "Germany",
+          "lat": 48.353802,
+          "lng": 11.7861,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Lufthansa",
+              "number": "1807"
+            },
+            {
+              "airline": "Lufthansa",
+              "number": "1805"
+            },
+            {
+              "airline": "Avianca",
+              "number": "6506"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "SVQ",
+          "name": "Seville Airport",
+          "country": "Spain",
+          "lat": 37.418,
+          "lng": -5.8931,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Air Europa",
+              "number": "5051"
+            },
+            {
+              "airline": "Air Europa",
+              "number": "5053"
+            },
+            {
+              "airline": "ITA",
+              "number": "2438"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "AUH",
           "name": "Zayed International Airport",
           "country": "United Arab Emirates",
@@ -5379,6 +5903,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "BEG",
+          "name": "Belgrade Nikola Tesla Airport",
+          "country": "Serbia",
+          "lat": 44.818401,
+          "lng": 20.309099,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Air Serbia",
+              "number": "573"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "BER",
           "name": "Berlin Brandenburg Airport",
           "country": "Germany",
@@ -5389,6 +5929,22 @@
             {
               "airline": "Ryanair",
               "number": "2528"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "DSS",
+          "name": "Blaise Diagne International Airport",
+          "country": "Senegal",
+          "lat": 14.670878,
+          "lng": -17.072829,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "921"
             }
           ],
           "lineColor": "#2563eb",
@@ -5409,6 +5965,22 @@
             {
               "airline": "Ryanair",
               "number": "2948"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "OTP",
+          "name": "Bucharest Henri Coandă International Airport",
+          "country": "Romania",
+          "lat": 44.571792,
+          "lng": 26.103285,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Wizz Air Malta",
+              "number": "3172"
             }
           ],
           "lineColor": "#2563eb",
@@ -5447,6 +6019,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "DUB",
+          "name": "Dublin Airport",
+          "country": "Ireland",
+          "lat": 53.428713,
+          "lng": -6.262121,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "7157"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "DUS",
           "name": "Düsseldorf Airport",
           "country": "Germany",
@@ -5457,6 +6045,10 @@
             {
               "airline": "Iberia",
               "number": "1394"
+            },
+            {
+              "airline": "Eurowings",
+              "number": "9511"
             }
           ],
           "lineColor": "#2563eb",
@@ -5531,6 +6123,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "FAO",
+          "name": "Faro Airport",
+          "country": "Portugal",
+          "lat": 37.0144,
+          "lng": -7.9659,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "557"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "FUE",
           "name": "Fuerteventura Airport",
           "country": "Spain",
@@ -5541,6 +6149,10 @@
             {
               "airline": "Ryanair",
               "number": "5468"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "5490"
             }
           ],
           "lineColor": "#2563eb",
@@ -5573,6 +6185,26 @@
             {
               "airline": "Iberia",
               "number": "613"
+            },
+            {
+              "airline": "Iberia",
+              "number": "1293"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "BGY",
+          "name": "Il Caravaggio International Airport",
+          "country": "Italy",
+          "lat": 45.669362,
+          "lng": 9.708851,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "5983"
             }
           ],
           "lineColor": "#2563eb",
@@ -5589,6 +6221,10 @@
             {
               "airline": "Plus Ultra",
               "number": "301"
+            },
+            {
+              "airline": "Iberia",
+              "number": "125"
             }
           ],
           "lineColor": "#2563eb",
@@ -5683,6 +6319,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "MLA",
+          "name": "Malta International Airport",
+          "country": "Malta",
+          "lat": 35.845932,
+          "lng": 14.491546,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "267"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "RAK",
           "name": "Marrakesh Menara Airport",
           "country": "Morocco",
@@ -5715,6 +6367,38 @@
           "lineWeight": 2
         },
         {
+          "iata": "MIA",
+          "name": "Miami International Airport",
+          "country": "United States",
+          "lat": 25.796011,
+          "lng": -80.289751,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "337"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "MIR",
+          "name": "Monastir Habib Bourguiba International Airport",
+          "country": "Tunisia",
+          "lat": 35.75809860229492,
+          "lng": 10.75469970703125,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Evelop",
+              "number": "753"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "YUL",
           "name": "Montreal / Pierre Elliott Trudeau International Airport",
           "country": "Canada",
@@ -5725,22 +6409,6 @@
             {
               "airline": "Air Canada",
               "number": "835"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "MUC",
-          "name": "Munich Airport",
-          "country": "Germany",
-          "lat": 48.353802,
-          "lng": 11.7861,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "Lufthansa",
-              "number": "1807"
             }
           ],
           "lineColor": "#2563eb",
@@ -5829,22 +6497,6 @@
             {
               "airline": "Iberia",
               "number": "269"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "SVQ",
-          "name": "Seville Airport",
-          "country": "Spain",
-          "lat": 37.418,
-          "lng": -5.8931,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "Air Europa",
-              "number": "5051"
             }
           ],
           "lineColor": "#2563eb",
@@ -5968,6 +6620,30 @@
         }
       ],
       "topDestinations": [
+        {
+          "iata": "PMI",
+          "name": "Palma de Mallorca Airport",
+          "country": "Spain",
+          "lat": 39.551701,
+          "lng": 2.73881,
+          "flightCount": 17,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "404"
+            },
+            {
+              "airline": "Vueling",
+              "number": "5026"
+            },
+            {
+              "airline": "Iberia",
+              "number": "1651"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
         {
           "iata": "AMS",
           "name": "Amsterdam Airport Schiphol",
@@ -6113,24 +6789,24 @@
           "lineWeight": 4
         },
         {
-          "iata": "PMI",
-          "name": "Palma de Mallorca Airport",
-          "country": "Spain",
-          "lat": 39.551701,
-          "lng": 2.73881,
+          "iata": "OPO",
+          "name": "Porto Airport",
+          "country": "Portugal",
+          "lat": 41.2481,
+          "lng": -8.6814,
           "flightCount": 8,
           "flights": [
             {
-              "airline": "Ryanair",
-              "number": "404"
+              "airline": "Aeromexico",
+              "number": "6908"
             },
             {
-              "airline": "Vueling",
-              "number": "5026"
+              "airline": "Azul",
+              "number": "7869"
             },
             {
-              "airline": "Iberia",
-              "number": "1651"
+              "airline": "Air Europa",
+              "number": "1147"
             }
           ],
           "lineColor": "#b91c1c",
@@ -6161,48 +6837,24 @@
           "lineWeight": 4
         },
         {
-          "iata": "MRS",
-          "name": "Marseille Provence Airport",
-          "country": "France",
-          "lat": 43.438088,
-          "lng": 5.2125,
-          "flightCount": 6,
+          "iata": "LIS",
+          "name": "Lisbon Airport",
+          "country": "Portugal",
+          "lat": 38.7813,
+          "lng": -9.1359,
+          "flightCount": 7,
           "flights": [
             {
-              "airline": "Klasjet",
-              "number": "J 1903"
-            },
-            {
-              "airline": "Finnair",
-              "number": "4779"
-            },
-            {
-              "airline": "Vueling",
-              "number": "5771"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "VGO",
-          "name": "Vigo Airport",
-          "country": "Spain",
-          "lat": 42.2318,
-          "lng": -8.6268,
-          "flightCount": 6,
-          "flights": [
-            {
-              "airline": "Etihad",
-              "number": "7590"
+              "airline": "Azul",
+              "number": "7855"
             },
             {
               "airline": "Air Europa",
-              "number": "7308"
+              "number": "1159"
             },
             {
               "airline": "Aeromexico",
-              "number": "6942"
+              "number": "6898"
             }
           ],
           "lineColor": "#b91c1c",
@@ -6219,7 +6871,7 @@
         "lat": 41.2971,
         "lng": 2.0785
       },
-      "sampledFlights": 300,
+      "sampledFlights": 400,
       "connections": [
         {
           "iata": "AMS",
@@ -6270,6 +6922,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "IBZ",
+          "name": "Ibiza Airport",
+          "country": "Spain",
+          "lat": 38.872898,
+          "lng": 1.37312,
+          "flightCount": 9,
+          "flights": [
+            {
+              "airline": "Level",
+              "number": "5329"
+            },
+            {
+              "airline": "Qatar",
+              "number": "3577"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5092"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "CDG",
           "name": "Charles de Gaulle International Airport",
           "country": "France",
@@ -6288,6 +6964,30 @@
             {
               "airline": "Air France",
               "number": "1449"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
+          "iata": "JFK",
+          "name": "John F. Kennedy International Airport",
+          "country": "United States",
+          "lat": 40.639447,
+          "lng": -73.779317,
+          "flightCount": 8,
+          "flights": [
+            {
+              "airline": "British",
+              "number": "1557"
+            },
+            {
+              "airline": "Finnair",
+              "number": "3821"
+            },
+            {
+              "airline": "American",
+              "number": "67"
             }
           ],
           "lineColor": "#b91c1c",
@@ -6318,6 +7018,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "LHR",
+          "name": "London Heathrow Airport",
+          "country": "United Kingdom",
+          "lat": 51.470748,
+          "lng": -0.459909,
+          "flightCount": 8,
+          "flights": [
+            {
+              "airline": "JAL",
+              "number": "7766"
+            },
+            {
+              "airline": "American",
+              "number": "6812"
+            },
+            {
+              "airline": "British",
+              "number": "473"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "PMI",
           "name": "Palma de Mallorca Airport",
           "country": "Spain",
@@ -6336,30 +7060,6 @@
             {
               "airline": "Level",
               "number": "5389"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "LHR",
-          "name": "London Heathrow Airport",
-          "country": "United Kingdom",
-          "lat": 51.470748,
-          "lng": -0.459909,
-          "flightCount": 6,
-          "flights": [
-            {
-              "airline": "JAL",
-              "number": "7766"
-            },
-            {
-              "airline": "American",
-              "number": "6812"
-            },
-            {
-              "airline": "British",
-              "number": "473"
             }
           ],
           "lineColor": "#b91c1c",
@@ -6390,6 +7090,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "BER",
+          "name": "Berlin Brandenburg Airport",
+          "country": "Germany",
+          "lat": 52.361738,
+          "lng": 13.502341,
+          "flightCount": 5,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "1882"
+            },
+            {
+              "airline": "Qatar",
+              "number": "4684"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5024"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "BHX",
           "name": "Birmingham Airport",
           "country": "United Kingdom",
@@ -6414,6 +7138,54 @@
           "lineWeight": 4
         },
         {
+          "iata": "ACE",
+          "name": "César Manrique-Lanzarote Airport",
+          "country": "Spain",
+          "lat": 28.945499,
+          "lng": -13.6052,
+          "flightCount": 5,
+          "flights": [
+            {
+              "airline": "Qatar",
+              "number": "3514"
+            },
+            {
+              "airline": "Level",
+              "number": "5240"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5418"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
+          "iata": "DBV",
+          "name": "Dubrovnik Ruđer Bošković Airport",
+          "country": "Croatia",
+          "lat": 42.562247,
+          "lng": 18.265543,
+          "flightCount": 5,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "7720"
+            },
+            {
+              "airline": "Level",
+              "number": "5574"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5598"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "DOH",
           "name": "Hamad International Airport",
           "country": "Qatar",
@@ -6432,30 +7204,6 @@
             {
               "airline": "Virgin Australia",
               "number": "6079"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "JFK",
-          "name": "John F. Kennedy International Airport",
-          "country": "United States",
-          "lat": 40.639447,
-          "lng": -73.779317,
-          "flightCount": 5,
-          "flights": [
-            {
-              "airline": "British",
-              "number": "1557"
-            },
-            {
-              "airline": "Finnair",
-              "number": "3821"
-            },
-            {
-              "airline": "American",
-              "number": "67"
             }
           ],
           "lineColor": "#b91c1c",
@@ -6504,6 +7252,54 @@
             {
               "airline": "Vueling",
               "number": "3700"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
+          "iata": "MXP",
+          "name": "Milan Malpensa International Airport",
+          "country": "Italy",
+          "lat": 45.6306,
+          "lng": 8.72811,
+          "flightCount": 5,
+          "flights": [
+            {
+              "airline": "Wizz Air Malta",
+              "number": "6316"
+            },
+            {
+              "airline": "LATAM",
+              "number": "5775"
+            },
+            {
+              "airline": "Qatar",
+              "number": "3565"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
+          "iata": "NAP",
+          "name": "Naples International Airport",
+          "country": "Italy",
+          "lat": 40.886002,
+          "lng": 14.2908,
+          "flightCount": 5,
+          "flights": [
+            {
+              "airline": "easyJet",
+              "number": "7157"
+            },
+            {
+              "airline": "EasyJet Europe",
+              "number": "7157"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "58"
             }
           ],
           "lineColor": "#b91c1c",
@@ -6582,30 +7378,6 @@
           "lineWeight": 4
         },
         {
-          "iata": "BER",
-          "name": "Berlin Brandenburg Airport",
-          "country": "Germany",
-          "lat": 52.361738,
-          "lng": 13.502341,
-          "flightCount": 4,
-          "flights": [
-            {
-              "airline": "Vueling",
-              "number": "1882"
-            },
-            {
-              "airline": "Qatar",
-              "number": "4684"
-            },
-            {
-              "airline": "Iberia",
-              "number": "5024"
-            }
-          ],
-          "lineColor": "#7c3aed",
-          "lineWeight": 3
-        },
-        {
           "iata": "BLQ",
           "name": "Bologna Guglielmo Marconi Airport",
           "country": "Italy",
@@ -6630,24 +7402,24 @@
           "lineWeight": 3
         },
         {
-          "iata": "ACE",
-          "name": "César Manrique-Lanzarote Airport",
-          "country": "Spain",
-          "lat": 28.945499,
-          "lng": -13.6052,
+          "iata": "DUB",
+          "name": "Dublin Airport",
+          "country": "Ireland",
+          "lat": 53.428713,
+          "lng": -6.262121,
           "flightCount": 4,
           "flights": [
             {
-              "airline": "Qatar",
-              "number": "3514"
+              "airline": "Vueling",
+              "number": "8722"
             },
             {
               "airline": "Level",
-              "number": "5240"
+              "number": "5721"
             },
             {
               "airline": "Iberia",
-              "number": "5418"
+              "number": "5660"
             }
           ],
           "lineColor": "#7c3aed",
@@ -6822,30 +7594,6 @@
           "lineWeight": 3
         },
         {
-          "iata": "IBZ",
-          "name": "Ibiza Airport",
-          "country": "Spain",
-          "lat": 38.872898,
-          "lng": 1.37312,
-          "flightCount": 4,
-          "flights": [
-            {
-              "airline": "Level",
-              "number": "5329"
-            },
-            {
-              "airline": "Qatar",
-              "number": "3577"
-            },
-            {
-              "airline": "Iberia",
-              "number": "5092"
-            }
-          ],
-          "lineColor": "#7c3aed",
-          "lineWeight": 3
-        },
-        {
           "iata": "MUC",
           "name": "Munich Airport",
           "country": "Germany",
@@ -6990,6 +7738,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "STR",
+          "name": "Stuttgart Airport",
+          "country": "Germany",
+          "lat": 48.689899,
+          "lng": 9.22196,
+          "flightCount": 4,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "1866"
+            },
+            {
+              "airline": "Qatar",
+              "number": "3712"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5384"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "VGO",
           "name": "Vigo Airport",
           "country": "Spain",
@@ -7062,30 +7834,6 @@
           "lineWeight": 3
         },
         {
-          "iata": "NAP",
-          "name": "Naples International Airport",
-          "country": "Italy",
-          "lat": 40.886002,
-          "lng": 14.2908,
-          "flightCount": 3,
-          "flights": [
-            {
-              "airline": "easyJet",
-              "number": "7157"
-            },
-            {
-              "airline": "EasyJet Europe",
-              "number": "7157"
-            },
-            {
-              "airline": "Ryanair",
-              "number": "58"
-            }
-          ],
-          "lineColor": "#7c3aed",
-          "lineWeight": 3
-        },
-        {
           "iata": "SEA",
           "name": "Seattle–Tacoma International Airport",
           "country": "United States",
@@ -7148,6 +7896,54 @@
             {
               "airline": "EasyJet Europe",
               "number": "7101"
+            },
+            {
+              "airline": "EasyJet Europe",
+              "number": "7103"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "GVA",
+          "name": "Geneva International Airport",
+          "country": "Switzerland",
+          "lat": 46.238098,
+          "lng": 6.10895,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "easyJet",
+              "number": "7109"
+            },
+            {
+              "airline": "EasyJet Europe",
+              "number": "7109"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "HAM",
+          "name": "Hamburg Helmut Schmidt Airport",
+          "country": "Germany",
+          "lat": 53.630402,
+          "lng": 9.98823,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Eurowings",
+              "number": "7521"
+            },
+            {
+              "airline": "Eurowings",
+              "number": "7525"
+            },
+            {
+              "airline": "Vueling",
+              "number": "1822"
             }
           ],
           "lineColor": "#2563eb",
@@ -7168,6 +7964,26 @@
             {
               "airline": "British",
               "number": "8760"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "SOU",
+          "name": "Southampton Airport",
+          "country": "United Kingdom",
+          "lat": 50.950298,
+          "lng": -1.3568,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "easyJet",
+              "number": "7119"
+            },
+            {
+              "airline": "EasyJet Europe",
+              "number": "7119"
             }
           ],
           "lineColor": "#2563eb",
@@ -7252,6 +8068,26 @@
             {
               "airline": "Wizz Air",
               "number": "2376"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "8394"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "RMO",
+          "name": "Chişinău International Airport",
+          "country": "Moldova",
+          "lat": 46.92774,
+          "lng": 28.931704,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "SkyUp Airlines",
+              "number": "406"
             }
           ],
           "lineColor": "#2563eb",
@@ -7330,22 +8166,6 @@
           "lineWeight": 2
         },
         {
-          "iata": "HAM",
-          "name": "Hamburg Helmut Schmidt Airport",
-          "country": "Germany",
-          "lat": 53.630402,
-          "lng": 9.98823,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "Eurowings",
-              "number": "7521"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
           "iata": "BGY",
           "name": "Il Caravaggio International Airport",
           "country": "Italy",
@@ -7356,6 +8176,22 @@
             {
               "airline": "Ryanair",
               "number": "3320"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "IST",
+          "name": "İstanbul Airport",
+          "country": "Türkiye",
+          "lat": 41.274874,
+          "lng": 28.732136,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Turkish",
+              "number": "1856"
             }
           ],
           "lineColor": "#2563eb",
@@ -7404,6 +8240,10 @@
             {
               "airline": "Wizz Air UK",
               "number": "5362"
+            },
+            {
+              "airline": "easyJet",
+              "number": "2370"
             }
           ],
           "lineColor": "#2563eb",
@@ -7446,16 +8286,32 @@
           "lineWeight": 2
         },
         {
-          "iata": "MXP",
-          "name": "Milan Malpensa International Airport",
-          "country": "Italy",
-          "lat": 45.6306,
-          "lng": 8.72811,
+          "iata": "RAK",
+          "name": "Marrakesh Menara Airport",
+          "country": "Morocco",
+          "lat": 31.604807,
+          "lng": -8.035788,
           "flightCount": 1,
           "flights": [
             {
-              "airline": "Wizz Air Malta",
-              "number": "6316"
+              "airline": "Ryanair",
+              "number": "2239"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "NDR",
+          "name": "Nador Al Aaroui International Airport",
+          "country": "Morocco",
+          "lat": 34.9888,
+          "lng": -3.02821,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "2233"
             }
           ],
           "lineColor": "#2563eb",
@@ -7488,6 +8344,38 @@
             {
               "airline": "Norwegian Air Shuttle",
               "number": "1741"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "RBA",
+          "name": "Rabat-Salé Airport",
+          "country": "Morocco",
+          "lat": 34.051498,
+          "lng": -6.75152,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Air Arabia Maroc",
+              "number": "398"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "SZG",
+          "name": "Salzburg Airport",
+          "country": "Austria",
+          "lat": 47.793301,
+          "lng": 13.0043,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Eurowings",
+              "number": "4399"
             }
           ],
           "lineColor": "#2563eb",
@@ -7552,6 +8440,10 @@
             {
               "airline": "Austrian",
               "number": "402"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "7351"
             }
           ],
           "lineColor": "#2563eb",
@@ -7640,6 +8532,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "IBZ",
+          "name": "Ibiza Airport",
+          "country": "Spain",
+          "lat": 38.872898,
+          "lng": 1.37312,
+          "flightCount": 9,
+          "flights": [
+            {
+              "airline": "Level",
+              "number": "5329"
+            },
+            {
+              "airline": "Qatar",
+              "number": "3577"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5092"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "CDG",
           "name": "Charles de Gaulle International Airport",
           "country": "France",
@@ -7658,6 +8574,30 @@
             {
               "airline": "Air France",
               "number": "1449"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
+          "iata": "JFK",
+          "name": "John F. Kennedy International Airport",
+          "country": "United States",
+          "lat": 40.639447,
+          "lng": -73.779317,
+          "flightCount": 8,
+          "flights": [
+            {
+              "airline": "British",
+              "number": "1557"
+            },
+            {
+              "airline": "Finnair",
+              "number": "3821"
+            },
+            {
+              "airline": "American",
+              "number": "67"
             }
           ],
           "lineColor": "#b91c1c",
@@ -7688,6 +8628,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "LHR",
+          "name": "London Heathrow Airport",
+          "country": "United Kingdom",
+          "lat": 51.470748,
+          "lng": -0.459909,
+          "flightCount": 8,
+          "flights": [
+            {
+              "airline": "JAL",
+              "number": "7766"
+            },
+            {
+              "airline": "American",
+              "number": "6812"
+            },
+            {
+              "airline": "British",
+              "number": "473"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "PMI",
           "name": "Palma de Mallorca Airport",
           "country": "Spain",
@@ -7706,30 +8670,6 @@
             {
               "airline": "Level",
               "number": "5389"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "LHR",
-          "name": "London Heathrow Airport",
-          "country": "United Kingdom",
-          "lat": 51.470748,
-          "lng": -0.459909,
-          "flightCount": 6,
-          "flights": [
-            {
-              "airline": "JAL",
-              "number": "7766"
-            },
-            {
-              "airline": "American",
-              "number": "6812"
-            },
-            {
-              "airline": "British",
-              "number": "473"
             }
           ],
           "lineColor": "#b91c1c",
@@ -7760,72 +8700,24 @@
           "lineWeight": 4
         },
         {
-          "iata": "BHX",
-          "name": "Birmingham Airport",
-          "country": "United Kingdom",
-          "lat": 52.453899,
-          "lng": -1.74803,
+          "iata": "BER",
+          "name": "Berlin Brandenburg Airport",
+          "country": "Germany",
+          "lat": 52.361738,
+          "lng": 13.502341,
           "flightCount": 5,
           "flights": [
-            {
-              "airline": "Ryanair",
-              "number": "3792"
-            },
             {
               "airline": "Vueling",
-              "number": "8754"
+              "number": "1882"
             },
             {
-              "airline": "British",
-              "number": "8060"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "DOH",
-          "name": "Hamad International Airport",
-          "country": "Qatar",
-          "lat": 25.273056,
-          "lng": 51.608056,
-          "flightCount": 5,
-          "flights": [
-            {
               "airline": "Qatar",
-              "number": "138"
+              "number": "4684"
             },
             {
               "airline": "Iberia",
-              "number": "6202"
-            },
-            {
-              "airline": "Virgin Australia",
-              "number": "6079"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "JFK",
-          "name": "John F. Kennedy International Airport",
-          "country": "United States",
-          "lat": 40.639447,
-          "lng": -73.779317,
-          "flightCount": 5,
-          "flights": [
-            {
-              "airline": "British",
-              "number": "1557"
-            },
-            {
-              "airline": "Finnair",
-              "number": "3821"
-            },
-            {
-              "airline": "American",
-              "number": "67"
+              "number": "5024"
             }
           ],
           "lineColor": "#b91c1c",
@@ -7842,7 +8734,7 @@
         "lat": 36.6749,
         "lng": -4.4991
       },
-      "sampledFlights": 300,
+      "sampledFlights": 400,
       "connections": [
         {
           "iata": "BCN",
@@ -7893,6 +8785,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "LGW",
+          "name": "London Gatwick Airport",
+          "country": "United Kingdom",
+          "lat": 51.148744,
+          "lng": -0.185739,
+          "flightCount": 8,
+          "flights": [
+            {
+              "airline": "easyJet",
+              "number": "8068"
+            },
+            {
+              "airline": "Wizz Air UK",
+              "number": "5724"
+            },
+            {
+              "airline": "British",
+              "number": "2641"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "MLN",
           "name": "Melilla Airport",
           "country": "Spain",
@@ -7917,6 +8833,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "TFN",
+          "name": "Tenerife Norte-Ciudad de La Laguna Airport",
+          "country": "Spain",
+          "lat": 28.482752,
+          "lng": -16.341707,
+          "flightCount": 6,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "5799"
+            },
+            {
+              "airline": "Vueling",
+              "number": "3274"
+            },
+            {
+              "airline": "Vueling",
+              "number": "3268"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "AMS",
           "name": "Amsterdam Airport Schiphol",
           "country": "Netherlands",
@@ -7935,30 +8875,6 @@
             {
               "airline": "Delta Air Lines",
               "number": "7505"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "LGW",
-          "name": "London Gatwick Airport",
-          "country": "United Kingdom",
-          "lat": 51.148744,
-          "lng": -0.185739,
-          "flightCount": 5,
-          "flights": [
-            {
-              "airline": "easyJet",
-              "number": "8068"
-            },
-            {
-              "airline": "Wizz Air UK",
-              "number": "5724"
-            },
-            {
-              "airline": "British",
-              "number": "2641"
             }
           ],
           "lineColor": "#b91c1c",
@@ -8061,6 +8977,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "BIO",
+          "name": "Bilbao Airport",
+          "country": "Spain",
+          "lat": 43.3011,
+          "lng": -2.9106,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "5885"
+            },
+            {
+              "airline": "Vueling",
+              "number": "2610"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5905"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "BRU",
           "name": "Brussels Airport",
           "country": "Belgium",
@@ -8109,6 +9049,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "JCU",
+          "name": "Ceuta Heliport",
+          "country": "Spain",
+          "lat": 35.892657,
+          "lng": -5.306321,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Hélity",
+              "number": "Y 248"
+            },
+            {
+              "airline": "Hélity",
+              "number": "Y 250"
+            },
+            {
+              "airline": "Hélity",
+              "number": "Y 252"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "CPH",
           "name": "Copenhagen Kastrup Airport",
           "country": "Denmark",
@@ -8127,6 +9091,102 @@
             {
               "airline": "Norwegian Air Shuttle",
               "number": "3671"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
+          "iata": "LPA",
+          "name": "Gran Canaria Airport",
+          "country": "Spain",
+          "lat": 27.9319,
+          "lng": -15.3866,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "3068"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5618"
+            },
+            {
+              "airline": "Vueling",
+              "number": "3064"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
+          "iata": "MAN",
+          "name": "Manchester Airport",
+          "country": "United Kingdom",
+          "lat": 53.349375,
+          "lng": -2.279521,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Jet2",
+              "number": "810"
+            },
+            {
+              "airline": "easyJet",
+              "number": "7001"
+            },
+            {
+              "airline": "EasyJet Europe",
+              "number": "7001"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
+          "iata": "RAK",
+          "name": "Marrakesh Menara Airport",
+          "country": "Morocco",
+          "lat": 31.604807,
+          "lng": -8.035788,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "3909"
+            },
+            {
+              "airline": "easyJet",
+              "number": "7041"
+            },
+            {
+              "airline": "EasyJet Europe",
+              "number": "7041"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
+          "iata": "PMI",
+          "name": "Palma de Mallorca Airport",
+          "country": "Spain",
+          "lat": 39.551701,
+          "lng": 2.73881,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "3144"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5730"
+            },
+            {
+              "airline": "Vueling",
+              "number": "3148"
             }
           ],
           "lineColor": "#7c3aed",
@@ -8215,30 +9275,10 @@
             {
               "airline": "EasyJet Europe",
               "number": "5106"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "BIO",
-          "name": "Bilbao Airport",
-          "country": "Spain",
-          "lat": 43.3011,
-          "lng": -2.9106,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "Iberia",
-              "number": "5885"
             },
             {
-              "airline": "Vueling",
-              "number": "2610"
-            },
-            {
-              "airline": "Iberia",
-              "number": "5905"
+              "airline": "Eurowings",
+              "number": "8537"
             }
           ],
           "lineColor": "#2563eb",
@@ -8279,6 +9319,10 @@
             {
               "airline": "Ryanair",
               "number": "2267"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "2297"
             }
           ],
           "lineColor": "#2563eb",
@@ -8349,30 +9393,6 @@
           "lineWeight": 2
         },
         {
-          "iata": "JCU",
-          "name": "Ceuta Heliport",
-          "country": "Spain",
-          "lat": 35.892657,
-          "lng": -5.306321,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "Hélity",
-              "number": "Y 248"
-            },
-            {
-              "airline": "Hélity",
-              "number": "Y 250"
-            },
-            {
-              "airline": "Hélity",
-              "number": "Y 252"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
           "iata": "EDI",
           "name": "Edinburgh Airport",
           "country": "United Kingdom",
@@ -8387,6 +9407,10 @@
             {
               "airline": "Jet2",
               "number": "760"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "5664"
             }
           ],
           "lineColor": "#2563eb",
@@ -8453,30 +9477,6 @@
           "lineWeight": 2
         },
         {
-          "iata": "LPA",
-          "name": "Gran Canaria Airport",
-          "country": "Spain",
-          "lat": 27.9319,
-          "lng": -15.3866,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "Vueling",
-              "number": "3068"
-            },
-            {
-              "airline": "Iberia",
-              "number": "5618"
-            },
-            {
-              "airline": "Vueling",
-              "number": "3064"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
           "iata": "HAU",
           "name": "Haugesund Airport, Karmøy",
           "country": "Norway",
@@ -8511,6 +9511,10 @@
             {
               "airline": "Norwegian Air Shuttle",
               "number": "2883"
+            },
+            {
+              "airline": "Norwegian Air Sweden",
+              "number": "2889"
             }
           ],
           "lineColor": "#2563eb",
@@ -8571,6 +9575,10 @@
             {
               "airline": "British",
               "number": "425"
+            },
+            {
+              "airline": "British",
+              "number": "427"
             }
           ],
           "lineColor": "#2563eb",
@@ -8631,6 +9639,10 @@
             {
               "airline": "Air Arabia Maroc",
               "number": "386"
+            },
+            {
+              "airline": "Royal Air Maroc",
+              "number": "985"
             }
           ],
           "lineColor": "#2563eb",
@@ -8651,6 +9663,10 @@
             {
               "airline": "easyJet",
               "number": "7049"
+            },
+            {
+              "airline": "Volotea",
+              "number": "2215"
             }
           ],
           "lineColor": "#2563eb",
@@ -8691,6 +9707,30 @@
             {
               "airline": "Jet2",
               "number": "558"
+            },
+            {
+              "airline": "easyJet",
+              "number": "5602"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "NCE",
+          "name": "Nice-Côte d'Azur Airport",
+          "country": "France",
+          "lat": 43.658401,
+          "lng": 7.21587,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "2232"
+            },
+            {
+              "airline": "Vueling",
+              "number": "5632"
             }
           ],
           "lineColor": "#2563eb",
@@ -8715,30 +9755,6 @@
             {
               "airline": "Norwegian Air Shuttle",
               "number": "5022"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "PMI",
-          "name": "Palma de Mallorca Airport",
-          "country": "Spain",
-          "lat": 39.551701,
-          "lng": 2.73881,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "Vueling",
-              "number": "3144"
-            },
-            {
-              "airline": "Iberia",
-              "number": "5730"
-            },
-            {
-              "airline": "Vueling",
-              "number": "3148"
             }
           ],
           "lineColor": "#2563eb",
@@ -8833,26 +9849,6 @@
           "lineWeight": 2
         },
         {
-          "iata": "TFN",
-          "name": "Tenerife Norte-Ciudad de La Laguna Airport",
-          "country": "Spain",
-          "lat": 28.482752,
-          "lng": -16.341707,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "Iberia",
-              "number": "5799"
-            },
-            {
-              "airline": "Vueling",
-              "number": "3274"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
           "iata": "VIE",
           "name": "Vienna International Airport",
           "country": "Austria",
@@ -8871,6 +9867,26 @@
             {
               "airline": "Ryanair",
               "number": "591"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "NRN",
+          "name": "Weeze (Niederrhein) Airport",
+          "country": "Germany",
+          "lat": 51.601362,
+          "lng": 6.141228,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "8613"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "8635"
             }
           ],
           "lineColor": "#2563eb",
@@ -8941,6 +9957,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "BRI",
+          "name": "Bari Karol Wojtyła International Airport",
+          "country": "Italy",
+          "lat": 41.138901,
+          "lng": 16.760599,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "1335"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "BVA",
           "name": "Beauvais-Tillé airport",
           "country": "France",
@@ -8967,6 +9999,22 @@
             {
               "airline": "Ryanair",
               "number": "3913"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "BOD",
+          "name": "Bordeaux–Mérignac Airport",
+          "country": "France",
+          "lat": 44.82865,
+          "lng": -0.715356,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Volotea",
+              "number": "3842"
             }
           ],
           "lineColor": "#2563eb",
@@ -9031,6 +10079,26 @@
             {
               "airline": "Air France",
               "number": "1747"
+            },
+            {
+              "airline": "Air France",
+              "number": "1729"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "CGN",
+          "name": "Cologne Bonn Airport",
+          "country": "Germany",
+          "lat": 50.865898,
+          "lng": 7.14274,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Eurowings",
+              "number": "535"
             }
           ],
           "lineColor": "#2563eb",
@@ -9067,6 +10135,10 @@
             {
               "airline": "Ryanair",
               "number": "7740"
+            },
+            {
+              "airline": "Aer Lingus",
+              "number": "887"
             }
           ],
           "lineColor": "#2563eb",
@@ -9099,6 +10171,10 @@
             {
               "airline": "Eurowings",
               "number": "9535"
+            },
+            {
+              "airline": "Eurowings",
+              "number": "9537"
             }
           ],
           "lineColor": "#2563eb",
@@ -9143,6 +10219,22 @@
             {
               "airline": "Ryanair",
               "number": "5672"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "EXT",
+          "name": "Exeter International Airport",
+          "country": "United Kingdom",
+          "lat": 50.734261,
+          "lng": -3.413984,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "3523"
             }
           ],
           "lineColor": "#2563eb",
@@ -9227,6 +10319,26 @@
             {
               "airline": "Jet2",
               "number": "134"
+            },
+            {
+              "airline": "easyJet",
+              "number": "3106"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "PIK",
+          "name": "Glasgow Prestwick Airport",
+          "country": "United Kingdom",
+          "lat": 55.501499,
+          "lng": -4.577182,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "656"
             }
           ],
           "lineColor": "#2563eb",
@@ -9345,6 +10457,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "KRK",
+          "name": "Kraków John Paul II International Airport",
+          "country": "Poland",
+          "lat": 50.077702,
+          "lng": 19.7848,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Wizz Air",
+              "number": "2074"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "KWI",
           "name": "Kuwait International Airport",
           "country": "Kuwait",
@@ -9371,6 +10499,10 @@
             {
               "airline": "Jet2",
               "number": "202"
+            },
+            {
+              "airline": "Jet2",
+              "number": "266"
             }
           ],
           "lineColor": "#2563eb",
@@ -9419,6 +10551,10 @@
             {
               "airline": "easyJet",
               "number": "2336"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "6644"
             }
           ],
           "lineColor": "#2563eb",
@@ -9455,38 +10591,42 @@
             {
               "airline": "Ryanair",
               "number": "8169"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "MAN",
-          "name": "Manchester Airport",
-          "country": "United Kingdom",
-          "lat": 53.349375,
-          "lng": -2.279521,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "Jet2",
-              "number": "810"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "RAK",
-          "name": "Marrakesh Menara Airport",
-          "country": "Morocco",
-          "lat": 31.604807,
-          "lng": -8.035788,
-          "flightCount": 1,
-          "flights": [
+            },
             {
               "airline": "Ryanair",
-              "number": "3909"
+              "number": "8165"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "LUX",
+          "name": "Luxembourg-Findel International Airport",
+          "country": "Luxembourg",
+          "lat": 49.626845,
+          "lng": 6.212134,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Luxair",
+              "number": "662"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "BTS",
+          "name": "M. R. Štefánik Airport",
+          "country": "Slovakia",
+          "lat": 48.1702,
+          "lng": 17.2127,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Wizz Air",
+              "number": "7026"
             }
           ],
           "lineColor": "#2563eb",
@@ -9503,6 +10643,22 @@
             {
               "airline": "Ryanair",
               "number": "2541"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "MAH",
+          "name": "Menorca Airport",
+          "country": "Spain",
+          "lat": 39.862598,
+          "lng": 4.21865,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "6511"
             }
           ],
           "lineColor": "#2563eb",
@@ -9535,6 +10691,10 @@
             {
               "airline": "Lufthansa",
               "number": "1833"
+            },
+            {
+              "airline": "Lufthansa",
+              "number": "1835"
             }
           ],
           "lineColor": "#2563eb",
@@ -9567,6 +10727,22 @@
             {
               "airline": "Ryanair",
               "number": "5094"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "OST",
+          "name": "Ostend-Bruges International Airport",
+          "country": "Belgium",
+          "lat": 51.1998,
+          "lng": 2.874673,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "TUI  Belgium",
+              "number": "1072"
             }
           ],
           "lineColor": "#2563eb",
@@ -9615,6 +10791,10 @@
             {
               "airline": "Transavia",
               "number": "5022"
+            },
+            {
+              "airline": "Transavia",
+              "number": "5026"
             }
           ],
           "lineColor": "#2563eb",
@@ -9631,6 +10811,38 @@
             {
               "airline": "Ryanair",
               "number": "4539"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "SNN",
+          "name": "Shannon Airport",
+          "country": "Ireland",
+          "lat": 52.702,
+          "lng": -8.92482,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "2849"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "STR",
+          "name": "Stuttgart Airport",
+          "country": "Germany",
+          "lat": 48.689899,
+          "lng": 9.22196,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Eurowings",
+              "number": "2537"
             }
           ],
           "lineColor": "#2563eb",
@@ -9669,6 +10881,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "PRG",
+          "name": "Václav Havel Airport Prague",
+          "country": "Czechia",
+          "lat": 50.100874,
+          "lng": 14.259911,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "SmartWings",
+              "number": "1153"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "VLC",
           "name": "Valencia Airport",
           "country": "Spain",
@@ -9701,6 +10929,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "VIT",
+          "name": "Vitoria Airport",
+          "country": "Spain",
+          "lat": 42.8828,
+          "lng": -2.7245,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "4241"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "WAW",
           "name": "Warsaw Chopin Airport",
           "country": "Poland",
@@ -9711,6 +10955,10 @@
             {
               "airline": "LOT - Polish",
               "number": "440"
+            },
+            {
+              "airline": "Wizz Air",
+              "number": "1360"
             }
           ],
           "lineColor": "#2563eb",
@@ -9727,22 +10975,6 @@
             {
               "airline": "Ryanair",
               "number": "4059"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "NRN",
-          "name": "Weeze (Niederrhein) Airport",
-          "country": "Germany",
-          "lat": 51.601362,
-          "lng": 6.141228,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "Ryanair",
-              "number": "8613"
             }
           ],
           "lineColor": "#2563eb",
@@ -9815,6 +11047,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "LGW",
+          "name": "London Gatwick Airport",
+          "country": "United Kingdom",
+          "lat": 51.148744,
+          "lng": -0.185739,
+          "flightCount": 8,
+          "flights": [
+            {
+              "airline": "easyJet",
+              "number": "8068"
+            },
+            {
+              "airline": "Wizz Air UK",
+              "number": "5724"
+            },
+            {
+              "airline": "British",
+              "number": "2641"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "MLN",
           "name": "Melilla Airport",
           "country": "Spain",
@@ -9839,6 +11095,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "TFN",
+          "name": "Tenerife Norte-Ciudad de La Laguna Airport",
+          "country": "Spain",
+          "lat": 28.482752,
+          "lng": -16.341707,
+          "flightCount": 6,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "5799"
+            },
+            {
+              "airline": "Vueling",
+              "number": "3274"
+            },
+            {
+              "airline": "Vueling",
+              "number": "3268"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "AMS",
           "name": "Amsterdam Airport Schiphol",
           "country": "Netherlands",
@@ -9857,30 +11137,6 @@
             {
               "airline": "Delta Air Lines",
               "number": "7505"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "LGW",
-          "name": "London Gatwick Airport",
-          "country": "United Kingdom",
-          "lat": 51.148744,
-          "lng": -0.185739,
-          "flightCount": 5,
-          "flights": [
-            {
-              "airline": "easyJet",
-              "number": "8068"
-            },
-            {
-              "airline": "Wizz Air UK",
-              "number": "5724"
-            },
-            {
-              "airline": "British",
-              "number": "2641"
             }
           ],
           "lineColor": "#b91c1c",
@@ -9981,30 +11237,6 @@
           ],
           "lineColor": "#7c3aed",
           "lineWeight": 3
-        },
-        {
-          "iata": "BRU",
-          "name": "Brussels Airport",
-          "country": "Belgium",
-          "lat": 50.901402,
-          "lng": 4.48444,
-          "flightCount": 3,
-          "flights": [
-            {
-              "airline": "TUI  Belgium",
-              "number": "1012"
-            },
-            {
-              "airline": "Brussels",
-              "number": "3734"
-            },
-            {
-              "airline": "Transavia",
-              "number": "9034"
-            }
-          ],
-          "lineColor": "#7c3aed",
-          "lineWeight": 3
         }
       ],
       "mapImage": "/maps/airports/malaga-costa-del-sol-airport-agp-connections.png"
@@ -10017,7 +11249,7 @@
         "lat": 38.2822,
         "lng": -0.5582
       },
-      "sampledFlights": 287,
+      "sampledFlights": 367,
       "connections": [
         {
           "iata": "BCN",
@@ -10356,6 +11588,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "LBA",
+          "name": "Leeds Bradford Airport",
+          "country": "United Kingdom",
+          "lat": 53.865898,
+          "lng": -1.66057,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "2660"
+            },
+            {
+              "airline": "Jet2",
+              "number": "272"
+            },
+            {
+              "airline": "Jet2",
+              "number": "430"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "STN",
           "name": "London Stansted Airport",
           "country": "United Kingdom",
@@ -10526,6 +11782,30 @@
             {
               "airline": "Norwegian Air Sweden",
               "number": "5370"
+            },
+            {
+              "airline": "Norwegian Air Shuttle",
+              "number": "3663"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "DUB",
+          "name": "Dublin Airport",
+          "country": "Ireland",
+          "lat": 53.428713,
+          "lng": -6.262121,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "7063"
+            },
+            {
+              "airline": "Aer Lingus",
+              "number": "575"
             }
           ],
           "lineColor": "#2563eb",
@@ -10610,30 +11890,30 @@
             {
               "airline": "Iberia",
               "number": "2450"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5760"
             }
           ],
           "lineColor": "#2563eb",
           "lineWeight": 2
         },
         {
-          "iata": "LBA",
-          "name": "Leeds Bradford Airport",
-          "country": "United Kingdom",
-          "lat": 53.865898,
-          "lng": -1.66057,
+          "iata": "KTW",
+          "name": "Katowice Wojciech Korfanty International Airport",
+          "country": "Poland",
+          "lat": 50.476015,
+          "lng": 19.080705,
           "flightCount": 2,
           "flights": [
             {
               "airline": "Ryanair",
-              "number": "2660"
+              "number": "3597"
             },
             {
-              "airline": "Jet2",
-              "number": "272"
-            },
-            {
-              "airline": "Jet2",
-              "number": "430"
+              "airline": "Wizz Air",
+              "number": "1080"
             }
           ],
           "lineColor": "#2563eb",
@@ -10682,6 +11962,26 @@
             {
               "airline": "Ryanair",
               "number": "8426"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "SEN",
+          "name": "London Southend Airport",
+          "country": "United Kingdom",
+          "lat": 51.570562,
+          "lng": 0.693627,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "easyJet",
+              "number": "5519"
+            },
+            {
+              "airline": "EasyJet Europe",
+              "number": "5519"
             }
           ],
           "lineColor": "#2563eb",
@@ -10884,6 +12184,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "ANR",
+          "name": "Antwerp International Airport (Deurne)",
+          "country": "Belgium",
+          "lat": 51.190667,
+          "lng": 4.463153,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "TUI  Belgium",
+              "number": "1102"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "OVD",
           "name": "Asturias Airport",
           "country": "Spain",
@@ -10894,6 +12210,42 @@
             {
               "airline": "Volotea",
               "number": "3603"
+            },
+            {
+              "airline": "Volotea",
+              "number": "3585"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "CLJ",
+          "name": "Avram Iancu Cluj International Airport",
+          "country": "Romania",
+          "lat": 46.786042,
+          "lng": 23.685733,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Wizz Air Malta",
+              "number": "3414"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "BVA",
+          "name": "Beauvais-Tillé airport",
+          "country": "France",
+          "lat": 49.454399,
+          "lng": 2.11278,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "9034"
             }
           ],
           "lineColor": "#2563eb",
@@ -10978,6 +12330,42 @@
             {
               "airline": "Ryanair",
               "number": "9941"
+            },
+            {
+              "airline": "Wizz Air",
+              "number": "2498"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "ACE",
+          "name": "César Manrique-Lanzarote Airport",
+          "country": "Spain",
+          "lat": 28.945499,
+          "lng": -13.6052,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "4697"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "RMO",
+          "name": "Chişinău International Airport",
+          "country": "Moldova",
+          "lat": 46.92774,
+          "lng": 28.931704,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "SkyUp Airlines",
+              "number": "414"
             }
           ],
           "lineColor": "#2563eb",
@@ -10994,6 +12382,10 @@
             {
               "airline": "Eurowings",
               "number": "531"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "1356"
             }
           ],
           "lineColor": "#2563eb",
@@ -11046,6 +12438,10 @@
             {
               "airline": "Ryanair",
               "number": "7522"
+            },
+            {
+              "airline": "Transavia",
+              "number": "6626"
             }
           ],
           "lineColor": "#2563eb",
@@ -11078,6 +12474,38 @@
             {
               "airline": "Lufthansa",
               "number": "1175"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "HHN",
+          "name": "Frankfurt-Hahn Airport",
+          "country": "Germany",
+          "lat": 49.946353,
+          "lng": 7.261734,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "2662"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "GDN",
+          "name": "Gdańsk Lech Wałęsa Airport",
+          "country": "Poland",
+          "lat": 54.377602,
+          "lng": 18.4662,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "1426"
             }
           ],
           "lineColor": "#2563eb",
@@ -11142,6 +12570,10 @@
             {
               "airline": "Ryanair",
               "number": "218"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "3507"
             }
           ],
           "lineColor": "#2563eb",
@@ -11232,6 +12664,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "LIS",
+          "name": "Lisbon Airport",
+          "country": "Portugal",
+          "lat": 38.7813,
+          "lng": -9.1359,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "TAP Air Portugal",
+              "number": "1125"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "BTS",
           "name": "M. R. Štefánik Airport",
           "country": "Slovakia",
@@ -11242,6 +12690,26 @@
             {
               "airline": "Wizz Air",
               "number": "7024"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "5698"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "RAK",
+          "name": "Marrakesh Menara Airport",
+          "country": "Morocco",
+          "lat": 31.604807,
+          "lng": -8.035788,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "2558"
             }
           ],
           "lineColor": "#2563eb",
@@ -11258,6 +12726,10 @@
             {
               "airline": "Ryanair",
               "number": "6454"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "6496"
             }
           ],
           "lineColor": "#2563eb",
@@ -11346,6 +12818,26 @@
             {
               "airline": "Air Algerie",
               "number": "2017"
+            },
+            {
+              "airline": "Air Algerie",
+              "number": "2021"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "OST",
+          "name": "Ostend-Bruges International Airport",
+          "country": "Belgium",
+          "lat": 51.1998,
+          "lng": 2.874673,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "TUI  Belgium",
+              "number": "1172"
             }
           ],
           "lineColor": "#2563eb",
@@ -11378,6 +12870,10 @@
             {
               "airline": "Ryanair",
               "number": "2029"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "2942"
             }
           ],
           "lineColor": "#2563eb",
@@ -11548,6 +13044,38 @@
           "lineWeight": 2
         },
         {
+          "iata": "STR",
+          "name": "Stuttgart Airport",
+          "country": "Germany",
+          "lat": 48.689899,
+          "lng": 9.22196,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Eurowings",
+              "number": "2835"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "TLS",
+          "name": "Toulouse-Blagnac Airport",
+          "country": "France",
+          "lat": 43.629101,
+          "lng": 1.36382,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "1060"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "TSF",
           "name": "Treviso Airport",
           "country": "Italy",
@@ -11580,6 +13108,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "VIT",
+          "name": "Vitoria Airport",
+          "country": "Spain",
+          "lat": 42.8828,
+          "lng": -2.7245,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "8755"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "WMI",
           "name": "Warsaw Modlin Airport",
           "country": "Poland",
@@ -11606,6 +13150,10 @@
             {
               "airline": "Ryanair",
               "number": "6213"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "8524"
             }
           ],
           "lineColor": "#2563eb",
@@ -11880,7 +13428,7 @@
         "lat": 39.4893,
         "lng": -0.4816
       },
-      "sampledFlights": 210,
+      "sampledFlights": 251,
       "connections": [
         {
           "iata": "MAD",
@@ -12051,6 +13599,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "GVA",
+          "name": "Geneva International Airport",
+          "country": "Switzerland",
+          "lat": 46.238098,
+          "lng": 6.10895,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Easyjet Switzerland",
+              "number": "1372"
+            },
+            {
+              "airline": "easyJet",
+              "number": "1372"
+            },
+            {
+              "airline": "SWISS",
+              "number": "2131"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "FCO",
           "name": "Rome–Fiumicino Leonardo da Vinci International Airport",
           "country": "Italy",
@@ -12121,6 +13693,26 @@
           ],
           "lineColor": "#7c3aed",
           "lineWeight": 3
+        },
+        {
+          "iata": "BIO",
+          "name": "Bilbao Airport",
+          "country": "Spain",
+          "lat": 43.3011,
+          "lng": -2.9106,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "5861"
+            },
+            {
+              "airline": "Vueling",
+              "number": "3973"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
         },
         {
           "iata": "CDG",
@@ -12221,6 +13813,10 @@
             {
               "airline": "Transavia",
               "number": "5102"
+            },
+            {
+              "airline": "Transavia",
+              "number": "5106"
             }
           ],
           "lineColor": "#2563eb",
@@ -12271,26 +13867,6 @@
           "lineWeight": 2
         },
         {
-          "iata": "GVA",
-          "name": "Geneva International Airport",
-          "country": "Switzerland",
-          "lat": 46.238098,
-          "lng": 6.10895,
-          "flightCount": 2,
-          "flights": [
-            {
-              "airline": "Easyjet Switzerland",
-              "number": "1372"
-            },
-            {
-              "airline": "easyJet",
-              "number": "1372"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
           "iata": "LPA",
           "name": "Gran Canaria Airport",
           "country": "Spain",
@@ -12305,6 +13881,10 @@
             {
               "airline": "Vueling",
               "number": "1176"
+            },
+            {
+              "airline": "Binter Canarias",
+              "number": "5803"
             }
           ],
           "lineColor": "#2563eb",
@@ -12369,6 +13949,30 @@
             {
               "airline": "Vueling",
               "number": "5840"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "7401"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "PRG",
+          "name": "Václav Havel Airport Prague",
+          "country": "Czechia",
+          "lat": 50.100874,
+          "lng": 14.259911,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "SmartWings",
+              "number": "1055"
+            },
+            {
+              "airline": "Eurowings",
+              "number": "3015"
             }
           ],
           "lineColor": "#2563eb",
@@ -12409,6 +14013,10 @@
             {
               "airline": "Volotea",
               "number": "3601"
+            },
+            {
+              "airline": "Volotea",
+              "number": "3583"
             }
           ],
           "lineColor": "#2563eb",
@@ -12489,6 +14097,10 @@
             {
               "airline": "Dan Air",
               "number": "528"
+            },
+            {
+              "airline": "Wizz Air Malta",
+              "number": "3186"
             }
           ],
           "lineColor": "#2563eb",
@@ -12505,6 +14117,10 @@
             {
               "airline": "Ryanair",
               "number": "2300"
+            },
+            {
+              "airline": "Wizz Air",
+              "number": "2386"
             }
           ],
           "lineColor": "#2563eb",
@@ -12695,6 +14311,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "LHR",
+          "name": "London Heathrow Airport",
+          "country": "United Kingdom",
+          "lat": 51.470748,
+          "lng": -0.459909,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "British",
+              "number": "409"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "LTN",
           "name": "London Luton Airport",
           "country": "United Kingdom",
@@ -12721,6 +14353,10 @@
             {
               "airline": "Ryanair",
               "number": "642"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "1735"
             }
           ],
           "lineColor": "#2563eb",
@@ -12769,6 +14405,22 @@
             {
               "airline": "Ryanair",
               "number": "7218"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "MAN",
+          "name": "Manchester Airport",
+          "country": "United Kingdom",
+          "lat": 53.349375,
+          "lng": -2.279521,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "640"
             }
           ],
           "lineColor": "#2563eb",
@@ -12839,6 +14491,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "OPO",
+          "name": "Porto Airport",
+          "country": "Portugal",
+          "lat": 41.2481,
+          "lng": -8.6814,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "2645"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "RTM",
           "name": "Rotterdam The Hague Airport",
           "country": "Netherlands",
@@ -12897,6 +14565,10 @@
             {
               "airline": "Ryanair",
               "number": "212"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "5539"
             }
           ],
           "lineColor": "#2563eb",
@@ -12919,6 +14591,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "TIA",
+          "name": "Tirana International Airport Mother Teresa",
+          "country": "Albania",
+          "lat": 41.4147,
+          "lng": 19.7206,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Wizz Air Malta",
+              "number": "5156"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "TSF",
           "name": "Treviso Airport",
           "country": "Italy",
@@ -12929,6 +14617,22 @@
             {
               "airline": "Ryanair",
               "number": "6249"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "TRS",
+          "name": "Trieste Airport",
+          "country": "Italy",
+          "lat": 45.827862,
+          "lng": 13.466672,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "617"
             }
           ],
           "lineColor": "#2563eb",
@@ -12961,6 +14665,38 @@
             {
               "airline": "Wizz Air Malta",
               "number": "6746"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "VIE",
+          "name": "Vienna International Airport",
+          "country": "Austria",
+          "lat": 48.110298,
+          "lng": 16.5697,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "803"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "WAW",
+          "name": "Warsaw Chopin Airport",
+          "country": "Poland",
+          "lat": 52.165699,
+          "lng": 20.9671,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Wizz Air",
+              "number": "1338"
             }
           ],
           "lineColor": "#2563eb",
@@ -13137,6 +14873,30 @@
           "lineWeight": 3
         },
         {
+          "iata": "GVA",
+          "name": "Geneva International Airport",
+          "country": "Switzerland",
+          "lat": 46.238098,
+          "lng": 6.10895,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Easyjet Switzerland",
+              "number": "1372"
+            },
+            {
+              "airline": "easyJet",
+              "number": "1372"
+            },
+            {
+              "airline": "SWISS",
+              "number": "2131"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "FCO",
           "name": "Rome–Fiumicino Leonardo da Vinci International Airport",
           "country": "Italy",
@@ -13179,30 +14939,6 @@
             {
               "airline": "Ryanair",
               "number": "2395"
-            }
-          ],
-          "lineColor": "#7c3aed",
-          "lineWeight": 3
-        },
-        {
-          "iata": "TFN",
-          "name": "Tenerife Norte-Ciudad de La Laguna Airport",
-          "country": "Spain",
-          "lat": 28.482752,
-          "lng": -16.341707,
-          "flightCount": 3,
-          "flights": [
-            {
-              "airline": "Iberia",
-              "number": "5675"
-            },
-            {
-              "airline": "Vueling",
-              "number": "3102"
-            },
-            {
-              "airline": "Binter Canarias",
-              "number": "5805"
             }
           ],
           "lineColor": "#7c3aed",
@@ -16459,7 +18195,7 @@
         "lat": 42.2318,
         "lng": -8.6268
       },
-      "sampledFlights": 38,
+      "sampledFlights": 45,
       "connections": [
         {
           "iata": "MAD",
@@ -16520,6 +18256,22 @@
             {
               "airline": "Binter Canarias",
               "number": "5213"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "TFN",
+          "name": "Tenerife Norte-Ciudad de La Laguna Airport",
+          "country": "Spain",
+          "lat": 28.482752,
+          "lng": -16.341707,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Binter Canarias",
+              "number": "5223"
             }
           ],
           "lineColor": "#2563eb",
@@ -16586,6 +18338,22 @@
             {
               "airline": "Binter Canarias",
               "number": "5213"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "TFN",
+          "name": "Tenerife Norte-Ciudad de La Laguna Airport",
+          "country": "Spain",
+          "lat": 28.482752,
+          "lng": -16.341707,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Binter Canarias",
+              "number": "5223"
             }
           ],
           "lineColor": "#2563eb",
@@ -16602,7 +18370,7 @@
         "lat": 43.3021,
         "lng": -8.3772
       },
-      "sampledFlights": 43,
+      "sampledFlights": 56,
       "connections": [
         {
           "iata": "MAD",
@@ -16651,6 +18419,22 @@
           ],
           "lineColor": "#7c3aed",
           "lineWeight": 3
+        },
+        {
+          "iata": "LPA",
+          "name": "Gran Canaria Airport",
+          "country": "Spain",
+          "lat": 27.9319,
+          "lng": -15.3866,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Binter Canarias",
+              "number": "5203"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
         }
       ],
       "topDestinations": [
@@ -16701,6 +18485,22 @@
           ],
           "lineColor": "#7c3aed",
           "lineWeight": 3
+        },
+        {
+          "iata": "LPA",
+          "name": "Gran Canaria Airport",
+          "country": "Spain",
+          "lat": 27.9319,
+          "lng": -15.3866,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Binter Canarias",
+              "number": "5203"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
         }
       ],
       "mapImage": "/maps/airports/a-coruna-airport-lcg-connections.png"
@@ -16713,7 +18513,7 @@
         "lat": 43.4271,
         "lng": -3.82
       },
-      "sampledFlights": 34,
+      "sampledFlights": 43,
       "connections": [
         {
           "iata": "MAD",
@@ -16810,6 +18610,54 @@
             {
               "airline": "Ryanair",
               "number": "7153"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "LPA",
+          "name": "Gran Canaria Airport",
+          "country": "Spain",
+          "lat": 27.9319,
+          "lng": -15.3866,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Binter Canarias",
+              "number": "5473"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "STN",
+          "name": "London Stansted Airport",
+          "country": "United Kingdom",
+          "lat": 51.884998,
+          "lng": 0.235,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "2613"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "SVQ",
+          "name": "Seville Airport",
+          "country": "Spain",
+          "lat": 37.418,
+          "lng": -5.8931,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Volotea",
+              "number": "3268"
             }
           ],
           "lineColor": "#2563eb",
@@ -16928,6 +18776,54 @@
             {
               "airline": "Ryanair",
               "number": "7153"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "LPA",
+          "name": "Gran Canaria Airport",
+          "country": "Spain",
+          "lat": 27.9319,
+          "lng": -15.3866,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Binter Canarias",
+              "number": "5473"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "STN",
+          "name": "London Stansted Airport",
+          "country": "United Kingdom",
+          "lat": 51.884998,
+          "lng": 0.235,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "2613"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "SVQ",
+          "name": "Seville Airport",
+          "country": "Spain",
+          "lat": 37.418,
+          "lng": -5.8931,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Volotea",
+              "number": "3268"
             }
           ],
           "lineColor": "#2563eb",
@@ -17175,7 +19071,7 @@
         "lat": 42.77,
         "lng": -1.6463
       },
-      "sampledFlights": 25,
+      "sampledFlights": 29,
       "connections": [
         {
           "iata": "MAD",
@@ -17212,6 +19108,22 @@
             {
               "airline": "Binter Canarias",
               "number": "5423"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "LGW",
+          "name": "London Gatwick Airport",
+          "country": "United Kingdom",
+          "lat": 51.148744,
+          "lng": -0.185739,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Avies",
+              "number": "191"
             }
           ],
           "lineColor": "#2563eb",
@@ -17258,6 +19170,22 @@
           ],
           "lineColor": "#2563eb",
           "lineWeight": 2
+        },
+        {
+          "iata": "LGW",
+          "name": "London Gatwick Airport",
+          "country": "United Kingdom",
+          "lat": 51.148744,
+          "lng": -0.185739,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Avies",
+              "number": "191"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
         }
       ],
       "mapImage": "/maps/airports/pamplona-airport-pna-connections.png"
@@ -17270,7 +19198,7 @@
         "lat": 38.8913,
         "lng": -6.8213
       },
-      "sampledFlights": 6,
+      "sampledFlights": 8,
       "connections": [
         {
           "iata": "BCN",
@@ -17287,6 +19215,26 @@
             {
               "airline": "Iberia",
               "number": "2335"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "MAD",
+          "name": "Madrid-Barajas Airport",
+          "country": "Spain",
+          "lat": 40.4936,
+          "lng": -3.5664,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Qatar",
+              "number": "6912"
+            },
+            {
+              "airline": "Iberia",
+              "number": "2333"
             }
           ],
           "lineColor": "#2563eb",
@@ -17325,6 +19273,26 @@
             {
               "airline": "Iberia",
               "number": "2335"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "MAD",
+          "name": "Madrid-Barajas Airport",
+          "country": "Spain",
+          "lat": 40.4936,
+          "lng": -3.5664,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Qatar",
+              "number": "6912"
+            },
+            {
+              "airline": "Iberia",
+              "number": "2333"
             }
           ],
           "lineColor": "#2563eb",
@@ -17357,7 +19325,7 @@
         "lat": 36.8439,
         "lng": -2.37
       },
-      "sampledFlights": 34,
+      "sampledFlights": 39,
       "connections": [
         {
           "iata": "BCN",
@@ -17454,6 +19422,38 @@
             {
               "airline": "Iberia",
               "number": "2286"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "SVQ",
+          "name": "Seville Airport",
+          "country": "Spain",
+          "lat": 37.418,
+          "lng": -5.8931,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "2302"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "PRG",
+          "name": "Václav Havel Airport Prague",
+          "country": "Czechia",
+          "lat": 50.100874,
+          "lng": 14.259911,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "SmartWings",
+              "number": "1159"
             }
           ],
           "lineColor": "#2563eb",
@@ -17560,6 +19560,38 @@
           ],
           "lineColor": "#2563eb",
           "lineWeight": 2
+        },
+        {
+          "iata": "SVQ",
+          "name": "Seville Airport",
+          "country": "Spain",
+          "lat": 37.418,
+          "lng": -5.8931,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "2302"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "PRG",
+          "name": "Václav Havel Airport Prague",
+          "country": "Czechia",
+          "lat": 50.100874,
+          "lng": 14.259911,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "SmartWings",
+              "number": "1159"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
         }
       ],
       "mapImage": "/maps/airports/almeria-airport-lei-connections.png"
@@ -17572,7 +19604,7 @@
         "lat": 37.1887,
         "lng": -3.7774
       },
-      "sampledFlights": 31,
+      "sampledFlights": 38,
       "connections": [
         {
           "iata": "BCN",
@@ -17597,6 +19629,30 @@
           ],
           "lineColor": "#b91c1c",
           "lineWeight": 4
+        },
+        {
+          "iata": "MAD",
+          "name": "Madrid-Barajas Airport",
+          "country": "Spain",
+          "lat": 40.4936,
+          "lng": -3.5664,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "1028"
+            },
+            {
+              "airline": "Iberia",
+              "number": "1022"
+            },
+            {
+              "airline": "Vueling",
+              "number": "5588"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
         },
         {
           "iata": "PMI",
@@ -17673,26 +19729,6 @@
             {
               "airline": "Volotea",
               "number": "3545"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "MAD",
-          "name": "Madrid-Barajas Airport",
-          "country": "Spain",
-          "lat": 40.4936,
-          "lng": -3.5664,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "Iberia",
-              "number": "1028"
-            },
-            {
-              "airline": "Iberia",
-              "number": "1022"
             }
           ],
           "lineColor": "#2563eb",
@@ -17741,6 +19777,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "MAD",
+          "name": "Madrid-Barajas Airport",
+          "country": "Spain",
+          "lat": 40.4936,
+          "lng": -3.5664,
+          "flightCount": 3,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "1028"
+            },
+            {
+              "airline": "Iberia",
+              "number": "1022"
+            },
+            {
+              "airline": "Vueling",
+              "number": "5588"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
+        {
           "iata": "PMI",
           "name": "Palma de Mallorca Airport",
           "country": "Spain",
@@ -17815,26 +19875,6 @@
             {
               "airline": "Volotea",
               "number": "3545"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "MAD",
-          "name": "Madrid-Barajas Airport",
-          "country": "Spain",
-          "lat": 40.4936,
-          "lng": -3.5664,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "Iberia",
-              "number": "1028"
-            },
-            {
-              "airline": "Iberia",
-              "number": "1022"
             }
           ],
           "lineColor": "#2563eb",
@@ -17867,7 +19907,7 @@
         "lat": 36.7446,
         "lng": -6.0601
       },
-      "sampledFlights": 33,
+      "sampledFlights": 35,
       "connections": [
         {
           "iata": "BCN",
@@ -17892,6 +19932,26 @@
           ],
           "lineColor": "#7c3aed",
           "lineWeight": 3
+        },
+        {
+          "iata": "BIO",
+          "name": "Bilbao Airport",
+          "country": "Spain",
+          "lat": 43.3011,
+          "lng": -2.9106,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "2621"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5034"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
         },
         {
           "iata": "MAD",
@@ -18092,6 +20152,26 @@
           "lineWeight": 3
         },
         {
+          "iata": "BIO",
+          "name": "Bilbao Airport",
+          "country": "Spain",
+          "lat": 43.3011,
+          "lng": -2.9106,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "2621"
+            },
+            {
+              "airline": "Iberia",
+              "number": "5034"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "MAD",
           "name": "Madrid-Barajas Airport",
           "country": "Spain",
@@ -18230,22 +20310,6 @@
           ],
           "lineColor": "#2563eb",
           "lineWeight": 2
-        },
-        {
-          "iata": "TFN",
-          "name": "Tenerife Norte-Ciudad de La Laguna Airport",
-          "country": "Spain",
-          "lat": 28.482752,
-          "lng": -16.341707,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "Binter Canarias",
-              "number": "5723"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
         }
       ],
       "mapImage": "/maps/airports/jerez-airport-xry-connections.png"
@@ -18258,7 +20322,7 @@
         "lat": 41.1474,
         "lng": 1.1672
       },
-      "sampledFlights": 22,
+      "sampledFlights": 29,
       "connections": [
         {
           "iata": "BHX",
@@ -18273,8 +20337,8 @@
               "number": "8088"
             },
             {
-              "airline": "Ryanair",
-              "number": "8088"
+              "airline": "Jet2",
+              "number": "1282"
             }
           ],
           "lineColor": "#2563eb",
@@ -18295,6 +20359,26 @@
             {
               "airline": "Jet2",
               "number": "930"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "ORY",
+          "name": "Paris-Orly Airport",
+          "country": "France",
+          "lat": 48.729499,
+          "lng": 2.358963,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "8027"
+            },
+            {
+              "airline": "Vueling",
+              "number": "8027"
             }
           ],
           "lineColor": "#2563eb",
@@ -18343,6 +20427,10 @@
             {
               "airline": "Ryanair",
               "number": "438"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "1115"
             }
           ],
           "lineColor": "#2563eb",
@@ -18417,6 +20505,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "LPL",
+          "name": "Liverpool John Lennon Airport",
+          "country": "United Kingdom",
+          "lat": 53.334863,
+          "lng": -2.849637,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "6953"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "LGW",
           "name": "London Gatwick Airport",
           "country": "United Kingdom",
@@ -18427,6 +20531,26 @@
             {
               "airline": "Jet2",
               "number": "3170"
+            },
+            {
+              "airline": "easyJet",
+              "number": "8066"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "STN",
+          "name": "London Stansted Airport",
+          "country": "United Kingdom",
+          "lat": 51.884998,
+          "lng": 0.235,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "3843"
             }
           ],
           "lineColor": "#2563eb",
@@ -18463,8 +20587,8 @@
               "number": "8088"
             },
             {
-              "airline": "Ryanair",
-              "number": "8088"
+              "airline": "Jet2",
+              "number": "1282"
             }
           ],
           "lineColor": "#2563eb",
@@ -18485,6 +20609,26 @@
             {
               "airline": "Jet2",
               "number": "930"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "ORY",
+          "name": "Paris-Orly Airport",
+          "country": "France",
+          "lat": 48.729499,
+          "lng": 2.358963,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "8027"
+            },
+            {
+              "airline": "Vueling",
+              "number": "8027"
             }
           ],
           "lineColor": "#2563eb",
@@ -18533,6 +20677,10 @@
             {
               "airline": "Ryanair",
               "number": "438"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "1115"
             }
           ],
           "lineColor": "#2563eb",
@@ -18605,22 +20753,6 @@
           ],
           "lineColor": "#2563eb",
           "lineWeight": 2
-        },
-        {
-          "iata": "LGW",
-          "name": "London Gatwick Airport",
-          "country": "United Kingdom",
-          "lat": 51.148744,
-          "lng": -0.185739,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "Jet2",
-              "number": "3170"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
         }
       ],
       "mapImage": "/maps/airports/reus-airport-reu-connections.png"
@@ -18633,7 +20765,7 @@
         "lat": 41.901,
         "lng": 2.7605
       },
-      "sampledFlights": 30,
+      "sampledFlights": 40,
       "connections": [
         {
           "iata": "DMM",
@@ -18712,6 +20844,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "AMS",
+          "name": "Amsterdam Airport Schiphol",
+          "country": "Netherlands",
+          "lat": 52.308601,
+          "lng": 4.76389,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Transavia",
+              "number": "5764"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "BHX",
           "name": "Birmingham Airport",
           "country": "United Kingdom",
@@ -18722,6 +20870,10 @@
             {
               "airline": "Jet2",
               "number": "1236"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "4415"
             }
           ],
           "lineColor": "#2563eb",
@@ -18754,6 +20906,42 @@
             {
               "airline": "Ryanair",
               "number": "1671"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "6901"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "WRO",
+          "name": "Copernicus Wrocław Airport",
+          "country": "Poland",
+          "lat": 51.103719,
+          "lng": 16.882096,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "7591"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "ORK",
+          "name": "Cork International Airport",
+          "country": "Ireland",
+          "lat": 51.841301,
+          "lng": -8.49111,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "9040"
             }
           ],
           "lineColor": "#2563eb",
@@ -18770,6 +20958,10 @@
             {
               "airline": "Jet2",
               "number": "612"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "1663"
             }
           ],
           "lineColor": "#2563eb",
@@ -18808,6 +21000,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "FKB",
+          "name": "Karlsruhe Baden-Baden Airport",
+          "country": "Germany",
+          "lat": 48.7794,
+          "lng": 8.0805,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "9209"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "LBA",
           "name": "Leeds Bradford Airport",
           "country": "United Kingdom",
@@ -18834,6 +21042,10 @@
             {
               "airline": "Jet2",
               "number": "942"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "3213"
             }
           ],
           "lineColor": "#2563eb",
@@ -18982,6 +21194,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "AMS",
+          "name": "Amsterdam Airport Schiphol",
+          "country": "Netherlands",
+          "lat": 52.308601,
+          "lng": 4.76389,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Transavia",
+              "number": "5764"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "BHX",
           "name": "Birmingham Airport",
           "country": "United Kingdom",
@@ -18992,6 +21220,10 @@
             {
               "airline": "Jet2",
               "number": "1236"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "4415"
             }
           ],
           "lineColor": "#2563eb",
@@ -19024,54 +21256,42 @@
             {
               "airline": "Ryanair",
               "number": "1671"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "EMA",
-          "name": "East Midlands Airport",
-          "country": "United Kingdom",
-          "lat": 52.8311,
-          "lng": -1.32806,
-          "flightCount": 1,
-          "flights": [
+            },
             {
-              "airline": "Jet2",
-              "number": "612"
+              "airline": "Ryanair",
+              "number": "6901"
             }
           ],
           "lineColor": "#2563eb",
           "lineWeight": 2
         },
         {
-          "iata": "EIN",
-          "name": "Eindhoven Airport",
-          "country": "Netherlands",
-          "lat": 51.4500999451,
-          "lng": 5.37452983856,
+          "iata": "WRO",
+          "name": "Copernicus Wrocław Airport",
+          "country": "Poland",
+          "lat": 51.103719,
+          "lng": 16.882096,
           "flightCount": 1,
           "flights": [
             {
               "airline": "Ryanair",
-              "number": "2120"
+              "number": "7591"
             }
           ],
           "lineColor": "#2563eb",
           "lineWeight": 2
         },
         {
-          "iata": "HHN",
-          "name": "Frankfurt-Hahn Airport",
-          "country": "Germany",
-          "lat": 49.946353,
-          "lng": 7.261734,
+          "iata": "ORK",
+          "name": "Cork International Airport",
+          "country": "Ireland",
+          "lat": 51.841301,
+          "lng": -8.49111,
           "flightCount": 1,
           "flights": [
             {
               "airline": "Ryanair",
-              "number": "981"
+              "number": "9040"
             }
           ],
           "lineColor": "#2563eb",
@@ -19199,7 +21419,7 @@
         "lat": 40.2139,
         "lng": 0.0733
       },
-      "sampledFlights": 6,
+      "sampledFlights": 7,
       "connections": [
         {
           "iata": "BLQ",
@@ -19244,6 +21464,22 @@
             {
               "airline": "Ryanair",
               "number": "2562"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "MAD",
+          "name": "Madrid-Barajas Airport",
+          "country": "Spain",
+          "lat": 40.4936,
+          "lng": -3.5664,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "2319"
             }
           ],
           "lineColor": "#2563eb",
@@ -19316,6 +21552,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "MAD",
+          "name": "Madrid-Barajas Airport",
+          "country": "Spain",
+          "lat": 40.4936,
+          "lng": -3.5664,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Iberia",
+              "number": "2319"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "PMI",
           "name": "Palma de Mallorca Airport",
           "country": "Spain",
@@ -19342,7 +21594,7 @@
         "lat": 37.803,
         "lng": -1.125
       },
-      "sampledFlights": 18,
+      "sampledFlights": 21,
       "connections": [
         {
           "iata": "STN",
@@ -19413,6 +21665,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "EMA",
+          "name": "East Midlands Airport",
+          "country": "United Kingdom",
+          "lat": 52.8311,
+          "lng": -1.32806,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "471"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "PIK",
           "name": "Glasgow Prestwick Airport",
           "country": "United Kingdom",
@@ -19423,6 +21691,22 @@
             {
               "airline": "Ryanair",
               "number": "7843"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "LPA",
+          "name": "Gran Canaria Airport",
+          "country": "Spain",
+          "lat": 27.9319,
+          "lng": -15.3866,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Binter Canarias",
+              "number": "5703"
             }
           ],
           "lineColor": "#2563eb",
@@ -19547,6 +21831,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "EMA",
+          "name": "East Midlands Airport",
+          "country": "United Kingdom",
+          "lat": 52.8311,
+          "lng": -1.32806,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "471"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "PIK",
           "name": "Glasgow Prestwick Airport",
           "country": "United Kingdom",
@@ -19557,6 +21857,22 @@
             {
               "airline": "Ryanair",
               "number": "7843"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "LPA",
+          "name": "Gran Canaria Airport",
+          "country": "Spain",
+          "lat": 27.9319,
+          "lng": -15.3866,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Binter Canarias",
+              "number": "5703"
             }
           ],
           "lineColor": "#2563eb",
@@ -19859,8 +22175,32 @@
         "lat": 42.589,
         "lng": -5.6556
       },
-      "sampledFlights": 2,
+      "sampledFlights": 6,
       "connections": [
+        {
+          "iata": "BCN",
+          "name": "Barcelona-El Prat Airport",
+          "country": "Spain",
+          "lat": 41.2971,
+          "lng": 2.0785,
+          "flightCount": 4,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "5871"
+            },
+            {
+              "airline": "Qatar",
+              "number": "6959"
+            },
+            {
+              "airline": "Level",
+              "number": "3101"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
         {
           "iata": "LPA",
           "name": "Gran Canaria Airport",
@@ -19879,6 +22219,30 @@
         }
       ],
       "topDestinations": [
+        {
+          "iata": "BCN",
+          "name": "Barcelona-El Prat Airport",
+          "country": "Spain",
+          "lat": 41.2971,
+          "lng": 2.0785,
+          "flightCount": 4,
+          "flights": [
+            {
+              "airline": "Vueling",
+              "number": "5871"
+            },
+            {
+              "airline": "Qatar",
+              "number": "6959"
+            },
+            {
+              "airline": "Level",
+              "number": "3101"
+            }
+          ],
+          "lineColor": "#7c3aed",
+          "lineWeight": 3
+        },
         {
           "iata": "LPA",
           "name": "Gran Canaria Airport",
@@ -19906,8 +22270,40 @@
         "lat": 42.8828,
         "lng": -2.7245
       },
-      "sampledFlights": 2,
+      "sampledFlights": 4,
       "connections": [
+        {
+          "iata": "ALC",
+          "name": "Alicante-Elche Airport",
+          "country": "Spain",
+          "lat": 38.2822,
+          "lng": -0.5582,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "8756"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "AGP",
+          "name": "Málaga-Costa del Sol Airport",
+          "country": "Spain",
+          "lat": 36.6749,
+          "lng": -4.4991,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "4242"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
         {
           "iata": "PMI",
           "name": "Palma de Mallorca Airport",
@@ -19942,6 +22338,38 @@
         }
       ],
       "topDestinations": [
+        {
+          "iata": "ALC",
+          "name": "Alicante-Elche Airport",
+          "country": "Spain",
+          "lat": 38.2822,
+          "lng": -0.5582,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "8756"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "AGP",
+          "name": "Málaga-Costa del Sol Airport",
+          "country": "Spain",
+          "lat": 36.6749,
+          "lng": -4.4991,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "4242"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
         {
           "iata": "PMI",
           "name": "Palma de Mallorca Airport",

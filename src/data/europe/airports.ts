@@ -250,6 +250,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 7.14274,
   },
   {
+    name: "Avram Iancu Cluj International Airport (CLJ)",
+    country: "ro",
+    lines: ["CLJ"],
+    types: ["Airport Destination"],
+    lat: 46.786042,
+    lng: 23.685733,
+  },
+  {
     name: "Copenhagen Kastrup Airport (CPH)",
     country: "dk",
     lines: ["CPH"],
@@ -280,6 +288,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 51.396702,
     lng: -3.34333,
+  },
+  {
+    name: "Dubrovnik Ruđer Bošković Airport (DBV)",
+    country: "hr",
+    lines: ["DBV"],
+    types: ["Airport Destination"],
+    lat: 42.562247,
+    lng: 18.265543,
   },
   {
     name: "Deauville Normandie airport (DOL)",
@@ -898,6 +914,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 23.970711,
   },
   {
+    name: "Chişinău International Airport (RMO)",
+    country: "md",
+    lines: ["RMO"],
+    types: ["Airport Destination"],
+    lat: 46.92774,
+    lng: 28.931704,
+  },
+  {
     name: "Rotterdam The Hague Airport (RTM)",
     country: "nl",
     lines: ["RTM"],
@@ -928,6 +952,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 42.696357,
     lng: 23.417671,
+  },
+  {
+    name: "Southampton Airport (SOU)",
+    country: "gb",
+    lines: ["SOU"],
+    types: ["Airport Destination"],
+    lat: 50.950298,
+    lng: -1.3568,
   },
   {
     name: "Split Saint Jerome Airport (SPU)",
@@ -970,6 +1002,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 5.63778,
   },
   {
+    name: "Salzburg Airport (SZG)",
+    country: "at",
+    lines: ["SZG"],
+    types: ["Airport Destination"],
+    lat: 47.793301,
+    lng: 13.0043,
+  },
+  {
     name: "Lajes Airport (TER)",
     country: "pt",
     lines: ["TER"],
@@ -994,6 +1034,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -16.5725,
   },
   {
+    name: "Tirana International Airport Mother Teresa (TIA)",
+    country: "al",
+    lines: ["TIA"],
+    types: ["Airport Destination"],
+    lat: 41.4147,
+    lng: 19.7206,
+  },
+  {
     name: "Toulouse-Blagnac Airport (TLS)",
     country: "fr",
     lines: ["TLS"],
@@ -1016,6 +1064,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 45.200802,
     lng: 7.64963,
+  },
+  {
+    name: "Trieste Airport (TRS)",
+    country: "it",
+    lines: ["TRS"],
+    types: ["Airport Destination"],
+    lat: 45.827862,
+    lng: 13.466672,
   },
   {
     name: "Treviso Airport (TSF)",
