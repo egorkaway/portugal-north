@@ -26,6 +26,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 10.618286,
   },
   {
+    name: "Aberdeen International Airport (ABZ)",
+    country: "gb",
+    lines: ["ABZ"],
+    types: ["Airport Destination"],
+    lat: 57.2019,
+    lng: -2.19778,
+  },
+  {
     name: "César Manrique-Lanzarote Airport (ACE)",
     country: "es",
     lines: ["ACE"],
@@ -394,6 +402,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 18.4662,
   },
   {
+    name: "Gibraltar Airport (GIB)",
+    country: "gi",
+    lines: ["GIB"],
+    types: ["Airport Destination"],
+    lat: 36.151679,
+    lng: -5.34978,
+  },
+  {
     name: "Glasgow Airport (GLA)",
     country: "gb",
     lines: ["GLA"],
@@ -432,6 +448,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 53.630402,
     lng: 9.98823,
+  },
+  {
+    name: "Haugesund Airport, Karmøy (HAU)",
+    country: "no",
+    lines: ["HAU"],
+    types: ["Airport Destination"],
+    lat: 59.345299,
+    lng: 5.20836,
   },
   {
     name: "Helsinki Vantaa Airport (HEL)",
@@ -544,6 +568,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 45.445099,
     lng: 9.27674,
+  },
+  {
+    name: "Linz-Hörsching Airport (LNZ)",
+    country: "at",
+    lines: ["LNZ"],
+    types: ["Airport Destination"],
+    lat: 48.235362,
+    lng: 14.188128,
   },
   {
     name: "Gran Canaria Airport (LPA)",
@@ -706,6 +738,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 11.078056,
   },
   {
+    name: "Norwich Airport (NWI)",
+    country: "gb",
+    lines: ["NWI"],
+    types: ["Airport Destination"],
+    lat: 52.6758,
+    lng: 1.28278,
+  },
+  {
     name: "Olbia Costa Smeralda Airport (OLB)",
     country: "it",
     lines: ["OLB"],
@@ -786,6 +826,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -4.577182,
   },
   {
+    name: "Pico Airport (PIX)",
+    country: "pt",
+    lines: ["PIX"],
+    types: ["Airport Destination"],
+    lat: 38.554298,
+    lng: -28.441299,
+  },
+  {
     name: "Palma de Mallorca Airport (PMI)",
     country: "es",
     lines: ["PMI"],
@@ -824,6 +872,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 43.683899,
     lng: 10.3927,
+  },
+  {
+    name: "Abruzzo Airport (PSR)",
+    country: "it",
+    lines: ["PSR"],
+    types: ["Airport Destination"],
+    lat: 42.431079,
+    lng: 14.182981,
   },
   {
     name: "Porto Santo Airport (PXO)",
@@ -906,6 +962,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 16.246007,
   },
   {
+    name: "Stavanger Airport, Sola (SVG)",
+    country: "no",
+    lines: ["SVG"],
+    types: ["Airport Destination"],
+    lat: 58.876701,
+    lng: 5.63778,
+  },
+  {
     name: "Lajes Airport (TER)",
     country: "pt",
     lines: ["TER"],
@@ -936,6 +1000,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 43.629101,
     lng: 1.36382,
+  },
+  {
+    name: "Sandefjord Airport, Torp (TRF)",
+    country: "no",
+    lines: ["TRF"],
+    types: ["Airport Destination"],
+    lat: 59.186699,
+    lng: 10.2586,
   },
   {
     name: "Turin Airport (TRN)",
@@ -984,6 +1056,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 54.634102,
     lng: 25.285801,
+  },
+  {
+    name: "Stockholm Västerås Airport (VST)",
+    country: "se",
+    lines: ["VST"],
+    types: ["Airport Destination"],
+    lat: 59.589401,
+    lng: 16.6336,
   },
   {
     name: "Warsaw Chopin Airport (WAW)",

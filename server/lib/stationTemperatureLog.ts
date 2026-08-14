@@ -273,7 +273,8 @@ export function writeStationTemperatureLog(
 
 /**
  * Fetch current temperatures for stations and append to the NDJSON log.
- * Used for train stations (after a timetable sample attempt) and Iberian airport hubs.
+ * Used for train stations after a timetable sample attempt, and for Iberian
+ * airport hubs after a successful flight sample.
  * Matches readings back to stations by request order (Open-Meteo multi-point).
  */
 export async function collectAndAppendStationTemperatures(options: {

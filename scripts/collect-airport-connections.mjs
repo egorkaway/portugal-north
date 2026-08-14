@@ -14,6 +14,8 @@
  * public/.../periods/{YYYY-MM-DD}/ and a new live period starts empty.
  * Until a hub gets a fresh sample, the live JSON keeps previous-period
  * destinations/maps under fallbackAirports for display.
+ * Open-Meteo temperatures are logged only after a successful flight sample
+ * (same as train stations: no temp log when the update is skipped or fails).
  *
  *   node --import tsx scripts/collect-airport-connections.mjs
  *   node --import tsx scripts/collect-airport-connections.mjs --airport LIS
@@ -79,6 +81,13 @@ const {
   hideNeverRecordedAirports,
   airportHasRecordedFlights,
 } = await import("../server/lib/airportMapVisibility.ts");
+const {
+  collectAndAppendStationTemperatures,
+  readStationTemperatureLog,
+  computeStationMonthlyTemperatureAverages,
+  formatStationMonthlyTemperatureOkSuffix,
+  lisbonYearMonth,
+} = await import("../server/lib/stationTemperatureLog.ts");
 
 const cachePath = join(root, "data/airport-iata-coordinates.json");
 
@@ -175,6 +184,36 @@ async function resolveMissingCoordinates(groupedIatas, coordinates, options = {}
   }
   if (updated) saveAirportCoordinateCache(cachePath, coordinates);
   return false;
+}
+
+async function temperatureSuffixForAirport(airport, rootDir) {
+  try {
+    const weather = await collectAndAppendStationTemperatures({
+      stations: [
+        {
+          name: airport.stationName,
+          lat: airport.lat,
+          lng: airport.lng,
+          country: airport.countryCode,
+        },
+      ],
+      logPath: join(rootDir, "data/station-temperature-log.ndjson"),
+      delayMs: 0,
+    });
+    if (weather.ok <= 0) return { suffix: "", logged: 0, missed: weather.failed };
+    const tempAvg = computeStationMonthlyTemperatureAverages({
+      readings: readStationTemperatureLog(join(rootDir, "data/station-temperature-log.ndjson")),
+      yearMonth: lisbonYearMonth(),
+      stationNames: [airport.stationName],
+    })[0];
+    return {
+      suffix: tempAvg ? ` - ${formatStationMonthlyTemperatureOkSuffix(tempAvg)}` : "",
+      logged: weather.ok,
+      missed: weather.failed,
+    };
+  } catch {
+    return { suffix: "", logged: 0, missed: 1 };
+  }
 }
 
 export async function collectAirportConnections(options = {}) {
@@ -307,6 +346,8 @@ export async function collectAirportConnections(options = {}) {
   let skippedNeverSeen = 0;
   let quotaExhausted = false;
   let lastProvider = null;
+  let temperaturesLogged = 0;
+  let temperaturesMissed = 0;
   let mapVisibilityLoaded = loadAirportMapVisibility(rootDir);
   let mapVisibility = hideNeverRecordedAirports(mapVisibilityLoaded);
   let mapVisibilityDirty = mapVisibility !== mapVisibilityLoaded;
@@ -371,8 +412,11 @@ export async function collectAirportConnections(options = {}) {
       const sample = buildAirportConnections(airport, flights, coordinates);
       if (!sample) {
         if (previous?.connections?.length) {
+          const temp = await temperatureSuffixForAirport(airport, rootDir);
+          temperaturesLogged += temp.logged;
+          temperaturesMissed += temp.missed;
           console.warn(
-            `No mappable connections in this sample for ${label}; keeping ${previous.connections.length} destination(s) from this period`,
+            `No mappable connections in this sample for ${label}; keeping ${previous.connections.length} destination(s) from this period${temp.suffix}`,
           );
           ok += 1;
           continue;
@@ -422,10 +466,13 @@ export async function collectAirportConnections(options = {}) {
       }
       airports[entry.iata] = entry;
       ok += 1;
+      const temp = await temperatureSuffixForAirport(airport, rootDir);
+      temperaturesLogged += temp.logged;
+      temperaturesMissed += temp.missed;
       console.log(
         `OK ${label}: ${entry.connections.length} destinations` +
           (previous ? ` (+${Math.max(0, added)} new this sample)` : "") +
-          ` from ${entry.sampledFlights} sampled flights via ${provider} (${basemapNote})`,
+          ` from ${entry.sampledFlights} sampled flights via ${provider} (${basemapNote})${temp.suffix}`,
       );
     } catch (error) {
       failed += 1;
@@ -491,6 +538,12 @@ export async function collectAirportConnections(options = {}) {
     );
     console.log(
       `Europe destination airports: ${europeDestinations.count} (from ${destIatas.size} unique destinations)`,
+    );
+  }
+
+  if (!isDryRun && (temperaturesLogged > 0 || temperaturesMissed > 0)) {
+    console.log(
+      `Airport temperatures: ${temperaturesLogged} logged, ${temperaturesMissed} missed`,
     );
   }
 
