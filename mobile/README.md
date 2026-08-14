@@ -109,16 +109,20 @@ npm run ios:archive
 
 `android/` is generated (gitignored). Keep version/build identical to iOS via the shared sync (`expo.version` + `build-number.json`).
 
+**Upload signing:** create `credentials/upload-keystore.jks` + `credentials/keystore.properties` once (see `credentials/README.md`). The `withAndroidUploadSigning` config plugin wires them into release builds after prebuild.
+
 ```bash
 cd mobile
 npm run sync:data
 npm run android:prebuild
 cd .. && npm run sync:build   # stamps versionName + versionCode into gradle (same as iOS)
 cd mobile
-npm run android:bundle   # → android/app/build/outputs/bundle/release/app-release.aab
-# or: npm run android:assemble  # APK
+npm run android:bundle   # → android/app/build/outputs/bundle/release/VeryStays-<version>-<build>.aab
+# or: npm run android:assemble  # → .../apk/release/VeryStays-<version>-<build>.apk
 npm run android:open     # Android Studio
 ```
+
+Artifact filenames include `versionName` and `versionCode` (e.g. `VeryStays-1.0-56.aab`) via `plugins/withAndroidReleaseArtifactNames.js`. Gradle also keeps the default `app-release.aab` / `app-release.apk` for tooling; use the `VeryStays-…` file for uploads and archives.
 
 ## Debug build (optional)
 
