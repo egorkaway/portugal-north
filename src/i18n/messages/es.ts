@@ -467,6 +467,12 @@ export const es: Messages = {
     title: "Por las vías de Portugal",
     subtitle:
       "Del Douro brumoso a la costa atlántica, con paradas clave y un lugar donde dormir cerca.",
+    titleSpain: "Por las vías de España",
+    subtitleSpain:
+      "De la meseta al Mediterráneo, con paradas clave y un lugar donde dormir cerca.",
+    titleIberia: "Por las vías de Iberia",
+    subtitleIberia:
+      "Por Portugal y España — paradas clave y un lugar donde dormir cerca.",
     disclaimer: "No recomendamos estos hoteles, pero si te gustan, queremos saberlo.",
     alsoFromUs: "También nuestros",
     caminoTitle: "My Personal Camino de Santiago",

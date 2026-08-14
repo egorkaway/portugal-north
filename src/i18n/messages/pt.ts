@@ -467,6 +467,12 @@ export const pt: Messages = {
     title: "Pelos carris de Portugal",
     subtitle:
       "Do Douro enevoado à costa atlântica, com paragens-chave e um sítio para dormir perto.",
+    titleSpain: "Pelos carris de Espanha",
+    subtitleSpain:
+      "Da meseta ao Mediterrâneo, com paragens-chave e um sítio para dormir perto.",
+    titleIberia: "Pelos carris da Ibéria",
+    subtitleIberia:
+      "Por Portugal e Espanha — paragens-chave e um sítio para dormir perto.",
     disclaimer: "Não recomendamos estes hotéis, mas se gostar, queremos saber.",
     alsoFromUs: "Também nossos",
     caminoTitle: "My Personal Camino de Santiago",

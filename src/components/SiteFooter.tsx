@@ -4,18 +4,27 @@ import footerDouro from "@/assets/footer-douro.jpg";
 import { BuildNumberLabel } from "@/components/BuildNumberLabel";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useLocale } from "@/i18n/LocaleProvider";
-import { useFooterCountry } from "@/hooks/useFooterCountry";
-import type { CountryCode } from "@/lib/countries";
+import {
+  footerIntroMessageKeys,
+  useFooterCountry,
+  useFooterHomeScope,
+} from "@/hooks/useFooterCountry";
+import type { CountryCode, HomeScope } from "@/lib/countries";
 
 export function SiteFooter({
   showIntro = true,
   country: countryOverride,
+  scope: scopeOverride,
 }: {
   showIntro?: boolean;
   country?: CountryCode;
+  /** Home list scope — drives Portugal / Spain / Iberia intro copy. */
+  scope?: HomeScope;
 }) {
   const { t } = useLocale();
   const country = useFooterCountry(countryOverride);
+  const introScope = useFooterHomeScope(scopeOverride);
+  const introKeys = footerIntroMessageKeys(introScope);
 
   return (
     <footer className="relative mt-8 overflow-hidden text-primary-foreground md:mt-12">
@@ -31,9 +40,9 @@ export function SiteFooter({
       <div className="relative mx-auto max-w-5xl px-4 py-10 text-center md:px-6 md:py-16">
         {showIntro && (
           <>
-            <h2 className="font-display text-3xl md:text-4xl mb-3">{t("footer.title")}</h2>
+            <h2 className="font-display text-3xl md:text-4xl mb-3">{t(introKeys.title)}</h2>
             <p className="text-primary-foreground/90 max-w-xl mx-auto mb-6">
-              {t("footer.subtitle")}
+              {t(introKeys.subtitle)}
             </p>
             <p className="text-primary-foreground/70 text-sm">{t("footer.disclaimer")}</p>
           </>

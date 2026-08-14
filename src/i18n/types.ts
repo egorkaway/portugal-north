@@ -404,6 +404,10 @@ export type Messages = {
   footer: {
     title: string;
     subtitle: string;
+    titleSpain: string;
+    subtitleSpain: string;
+    titleIberia: string;
+    subtitleIberia: string;
     disclaimer: string;
     alsoFromUs: string;
     caminoTitle: string;

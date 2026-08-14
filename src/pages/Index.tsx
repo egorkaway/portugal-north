@@ -307,7 +307,7 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
         <StationRankings />
       </Suspense>
 
-      <SiteFooter country={footerCountryFromHomeScope(scope)} />
+      <SiteFooter scope={scope} country={footerCountryFromHomeScope(scope)} />
     </div>
   );
 }

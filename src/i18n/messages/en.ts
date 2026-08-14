@@ -466,6 +466,12 @@ export const en: Messages = {
     title: "Ride the rails of Portugal",
     subtitle:
       "From the misty Douro Valley to the Atlantic coast, with key stops and a place to sleep nearby.",
+    titleSpain: "Ride the rails of Spain",
+    subtitleSpain:
+      "From the meseta to the Mediterranean, with key stops and a place to sleep nearby.",
+    titleIberia: "Ride the rails of Iberia",
+    subtitleIberia:
+      "Across Portugal and Spain — key stops and a place to sleep nearby.",
     disclaimer: "We do not recommend these hotels, but if you do, we want to know.",
     alsoFromUs: "Also from us",
     caminoTitle: "My Personal Camino de Santiago",

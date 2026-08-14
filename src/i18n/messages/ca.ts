@@ -467,6 +467,12 @@ export const ca: Messages = {
     title: "Per les vies de Portugal",
     subtitle:
       "Del Douro ennuvolat a la costa atlàntica, amb parades clau i un lloc on dormir a prop.",
+    titleSpain: "Per les vies d'Espanya",
+    subtitleSpain:
+      "De la meseta al Mediterrani, amb parades clau i un lloc on dormir a prop.",
+    titleIberia: "Per les vies d'Ibèria",
+    subtitleIberia:
+      "Per Portugal i Espanya — parades clau i un lloc on dormir a prop.",
     disclaimer: "No recomanem aquests hotels, però si t'agraden, volem saber-ho.",
     alsoFromUs: "També nostres",
     caminoTitle: "My Personal Camino de Santiago",

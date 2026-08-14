@@ -467,6 +467,12 @@ export const gl: Messages = {
     title: "Polas vías de Portugal",
     subtitle:
       "Do Douro brumoso á costa atlántica, con paradas clave e un lugar onde durmir preto.",
+    titleSpain: "Polas vías de España",
+    subtitleSpain:
+      "Da meseta ao Mediterráneo, con paradas clave e un lugar onde durmir preto.",
+    titleIberia: "Polas vías de Iberia",
+    subtitleIberia:
+      "Por Portugal e España — paradas clave e un lugar onde durmir preto.",
     disclaimer: "Non recomendamos estes hoteis, pero se che gustan, queremos sabelo.",
     alsoFromUs: "Tamén nosos",
     caminoTitle: "My Personal Camino de Santiago",
