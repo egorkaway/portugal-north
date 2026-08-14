@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Fetch airport departures (AirLabs → AviationStack → OpenSky fallback),
+ * Fetch airport departures (AirLabs → AviationStack → AeroDataBox fallback),
  * bake connections JSON, and render static connection map PNGs.
  *
  * Periods: nine open dates per year (see snapshotPeriods.mjs). Within an open
@@ -9,8 +9,7 @@
  * PNG is missing); use --maps-only to force re-render.
  * Hubs that have never recorded flights are hidden on the map and only
  * re-sampled during the first 2 weeks after each period opens (unless
- * --airport is set). Previously active hubs still hide after 3 empty periods
- * from AirLabs/AviationStack only — empty OpenSky samples do not count.
+ * --airport is set). Previously active hubs still hide after 3 empty periods.
  * On each open-date boundary the previous live bake is frozen under
  * public/.../periods/{YYYY-MM-DD}/ and a new live period starts empty.
  * Until a hub gets a fresh sample, the live JSON keeps previous-period
@@ -376,13 +375,6 @@ export async function collectAirportConnections(options = {}) {
             `No mappable connections in this sample for ${label}; keeping ${previous.connections.length} destination(s) from this period`,
           );
           ok += 1;
-          continue;
-        }
-        if (provider === "opensky") {
-          console.warn(
-            `No mappable connections for ${label} via opensky — not counting toward inactive-airport streak (OpenSky is incomplete)`,
-          );
-          failed += 1;
           continue;
         }
         console.warn(`No mappable connections for ${label}`);

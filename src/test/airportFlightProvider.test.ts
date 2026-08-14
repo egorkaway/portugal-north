@@ -4,16 +4,15 @@ import {
   mapAirLabsScheduleToDeparture,
 } from "../../server/lib/airLabsClient";
 import {
+  isAeroDataBoxMonthlyLimitError,
+  mapAeroDataBoxFlightToDeparture,
+} from "../../server/lib/aeroDataBoxClient";
+import {
   availableAirportFlightProviders,
   fetchDeparturesFromAirport,
   hasAirportFlightProvider,
   resetAirportFlightProvider,
 } from "../../server/lib/airportFlightProvider";
-import { iataToIcao, icaoToIata } from "../../server/lib/airportIcaoMap";
-import {
-  isOpenSkyQuotaError,
-  mapOpenSkyFlightToDeparture,
-} from "../../server/lib/openSkyClient";
 
 describe("airLabsClient", () => {
   it("maps schedules into the shared departure shape", () => {
@@ -43,35 +42,50 @@ describe("airLabsClient", () => {
   });
 });
 
-describe("openSkyClient", () => {
-  it("maps ICAO arrival airports into IATA departures", () => {
-    expect(iataToIcao("LIS")).toBe("LPPT");
-    expect(icaoToIata("LEMD")).toBe("MAD");
+describe("aeroDataBoxClient", () => {
+  it("maps FIDS departures into the shared departure shape", () => {
     expect(
-      mapOpenSkyFlightToDeparture(
+      mapAeroDataBoxFlightToDeparture(
         {
-          firstSeen: 1_700_000_000,
-          estArrivalAirport: "LEMD",
-          callsign: "TAP123  ",
+          number: "FR 7936",
+          status: "Departed",
+          departure: { scheduledTime: { utc: "2026-08-13 18:10Z" } },
+          arrival: {
+            airport: { icao: "EDDN", iata: "NUE", name: "Nuremberg" },
+          },
+          airline: { name: "Ryanair", iata: "FR", icao: "RYR" },
         },
-        "LIS",
+        "OPO",
       ),
-    ).toMatchObject({
-      departure: { iata: "LIS" },
-      arrival: { iata: "MAD" },
-      airline: { name: "TAP" },
-      flight: { number: "TAP123" },
+    ).toEqual({
+      flight_date: "2026-08-13",
+      flight_status: "Departed",
+      departure: { iata: "OPO" },
+      arrival: { iata: "NUE", airport: "Nuremberg" },
+      airline: { name: "Ryanair", iata: "FR" },
+      flight: { number: "7936", iata: "FR7936" },
     });
-    expect(
-      mapOpenSkyFlightToDeparture({ estArrivalAirport: null, callsign: "TAP1" }, "LIS"),
-    ).toBeNull();
   });
 
-  it("detects OpenSky rate-limit errors", () => {
-    expect(isOpenSkyQuotaError(new Error("opensky_http_429: rate limit"))).toBe(true);
-    expect(isOpenSkyQuotaError(new Error("opensky_http_403: cannot access historical flights"))).toBe(
-      true,
-    );
+  it("skips cargo and missing arrival IATA", () => {
+    expect(
+      mapAeroDataBoxFlightToDeparture(
+        { isCargo: true, arrival: { airport: { iata: "MAD" } } },
+        "OPO",
+      ),
+    ).toBeNull();
+    expect(mapAeroDataBoxFlightToDeparture({ arrival: { airport: {} } }, "OPO")).toBeNull();
+  });
+
+  it("detects AeroDataBox monthly quota errors", () => {
+    expect(
+      isAeroDataBoxMonthlyLimitError(new Error("You have exceeded your MONTHLY quota")),
+    ).toBe(true);
+    expect(
+      isAeroDataBoxMonthlyLimitError(
+        new Error("You have exceeded the rate limit per second for your plan"),
+      ),
+    ).toBe(false);
   });
 });
 
@@ -82,23 +96,26 @@ describe("airportFlightProvider", () => {
     vi.unstubAllGlobals();
   });
 
-  it("always includes OpenSky even without paid keys", () => {
+  it("requires at least one configured flight API key", () => {
     vi.stubEnv("AVIATIONSTACK_API_KEY", "");
     vi.stubEnv("AIRLABS_API_KEY", "");
-    expect(hasAirportFlightProvider()).toBe(true);
-    expect(availableAirportFlightProviders()).toEqual(["opensky"]);
+    vi.stubEnv("AERODATABOX_RAPIDAPI_KEY", "");
+    expect(hasAirportFlightProvider()).toBe(false);
+    expect(availableAirportFlightProviders()).toEqual([]);
   });
 
-  it("reports available providers from env keys plus OpenSky", () => {
+  it("reports available providers from env keys", () => {
     vi.stubEnv("AVIATIONSTACK_API_KEY", "");
     vi.stubEnv("AIRLABS_API_KEY", "al_test");
+    vi.stubEnv("AERODATABOX_RAPIDAPI_KEY", "adb_test");
     expect(hasAirportFlightProvider()).toBe(true);
-    expect(availableAirportFlightProviders()).toEqual(["airlabs", "opensky"]);
+    expect(availableAirportFlightProviders()).toEqual(["airlabs", "aerodatabox"]);
   });
 
   it("falls back to AviationStack when AirLabs hits monthly limit", async () => {
     vi.stubEnv("AVIATIONSTACK_API_KEY", "as_test");
     vi.stubEnv("AIRLABS_API_KEY", "al_test");
+    vi.stubEnv("AERODATABOX_RAPIDAPI_KEY", "");
     vi.stubGlobal("AbortSignal", {
       ...AbortSignal,
       timeout: () => undefined,
@@ -147,9 +164,10 @@ describe("airportFlightProvider", () => {
     expect(fetchMock).toHaveBeenCalledTimes(2);
   });
 
-  it("falls back to OpenSky when both paid providers are exhausted", async () => {
+  it("falls back to AeroDataBox when both paid providers are exhausted", async () => {
     vi.stubEnv("AVIATIONSTACK_API_KEY", "as_test");
     vi.stubEnv("AIRLABS_API_KEY", "al_test");
+    vi.stubEnv("AERODATABOX_RAPIDAPI_KEY", "adb_test");
     vi.stubGlobal("AbortSignal", {
       ...AbortSignal,
       timeout: () => undefined,
@@ -176,20 +194,22 @@ describe("airportFlightProvider", () => {
           }),
         };
       }
-      if (url.includes("opensky-network.org/api/flights/departure")) {
+      if (url.includes("aerodatabox.p.rapidapi.com/flights/airports")) {
         return {
           ok: true,
           status: 200,
           text: async () =>
-            JSON.stringify([
-              {
-                icao24: "abc",
-                firstSeen: 1_700_000_000,
-                estDepartureAirport: "LPPT",
-                estArrivalAirport: "LEMD",
-                callsign: "TAP456  ",
-              },
-            ]),
+            JSON.stringify({
+              departures: [
+                {
+                  number: "TP 456",
+                  status: "Scheduled",
+                  departure: { scheduledTime: { utc: "2026-07-23 10:00Z" } },
+                  arrival: { airport: { iata: "MAD", name: "Madrid" } },
+                  airline: { name: "TAP", iata: "TP" },
+                },
+              ],
+            }),
         };
       }
       throw new Error(`unexpected fetch: ${url}`);
@@ -199,7 +219,7 @@ describe("airportFlightProvider", () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     const result = await fetchDeparturesFromAirport("LIS", 10);
 
-    expect(result.provider).toBe("opensky");
+    expect(result.provider).toBe("aerodatabox");
     expect(result.flights).toHaveLength(1);
     expect(result.flights[0]?.arrival?.iata).toBe("MAD");
     expect(warn).toHaveBeenCalled();

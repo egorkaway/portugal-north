@@ -9,8 +9,8 @@
  *
  * Also collects airport flight connections (skipped if the last airport check
  * was < 3 hours ago — train-only runs do not count),
- * logs temperatures (Open-Meteo) only for
- * stations that successfully returned departure data (after each OK sample),
+ * logs temperatures (Open-Meteo) for stations that returned a departure sample
+ * attempt (OK or FAIL) and for Iberian airport hubs each run,
  * and prints this month's avg low / avg high on OK/FAIL lines only when the
  * temperature fetch for this run succeeded,
  * publishes public/data/station-monthly-temperatures.json for station pages
@@ -247,6 +247,38 @@ for (const { station, cpCode } of targets) {
 }
 
 if (!dryRun) {
+  // Iberian airport hubs have no CP timetable samples — log Open-Meteo temps once per run.
+  try {
+    const { loadAirportCatalog } = await import("./lib/airportCatalog.mjs");
+    let airportStations = loadAirportCatalog(root).map((airport) => ({
+      name: airport.stationName,
+      lat: airport.lat,
+      lng: airport.lng,
+      country: airport.countryCode,
+    }));
+    if (stationFilter) {
+      const needle = stationFilter.toLowerCase();
+      airportStations = airportStations.filter((airport) =>
+        airport.name.toLowerCase().includes(needle),
+      );
+    }
+    if (airportStations.length) {
+      const weather = await collectAndAppendStationTemperatures({
+        stations: airportStations,
+        logPath: temperatureLogPath,
+        delayMs: Math.min(delayMs, 200),
+      });
+      temperaturesLogged += weather.ok;
+      temperaturesMissed += weather.failed;
+      console.log(
+        `Airport temperatures: ${weather.ok} logged, ${weather.failed} missed (${airportStations.length} hub(s))`,
+      );
+    }
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`Airport temperature collection skipped: ${message}`);
+  }
+
   saveStore(store);
 
   if (temperaturesLogged > 0 || temperaturesMissed > 0) {
@@ -264,10 +296,14 @@ if (!dryRun) {
       readStationTemperatureLog,
       lisbonYearMonth,
     } = await import("../server/lib/stationTemperatureLog.ts");
+    const { loadAirportCatalog } = await import("./lib/airportCatalog.mjs");
     const yearMonth = lisbonYearMonth();
-    const activeStationNames = Object.entries(store.stations)
-      .filter(([, entry]) => entry.successfulSamples > 0)
-      .map(([name]) => name);
+    const activeStationNames = new Set([
+      ...Object.entries(store.stations)
+        .filter(([, entry]) => entry.successfulSamples > 0)
+        .map(([name]) => name),
+      ...loadAirportCatalog(root).map((airport) => airport.stationName),
+    ]);
     const manifest = buildStationMonthlyTemperaturesManifest({
       readings: readStationTemperatureLog(temperatureLogPath),
       yearMonth,

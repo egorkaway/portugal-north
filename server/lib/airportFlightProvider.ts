@@ -1,9 +1,9 @@
 import type { AirportDepartureFlight, AirportMeta } from "./airportDepartureFlight.js";
 import * as airLabs from "./airLabsClient.js";
 import * as aviationStack from "./aviationStackClient.js";
-import * as openSky from "./openSkyClient.js";
+import * as aeroDataBox from "./aeroDataBoxClient.js";
 
-export type AirportFlightProviderId = "aviationstack" | "airlabs" | "opensky";
+export type AirportFlightProviderId = "aviationstack" | "airlabs" | "aerodatabox";
 
 export type FetchDeparturesResult = {
   flights: AirportDepartureFlight[];
@@ -33,18 +33,17 @@ const providers: Record<AirportFlightProviderId, Provider> = {
     fetchDepartures: aviationStack.fetchDeparturesFromAirport,
     fetchAirport: aviationStack.fetchAirportByIata,
   },
-  opensky: {
-    id: "opensky",
-    // Anonymous OpenSky — no key required.
-    hasKey: () => true,
-    isExhaustedError: openSky.isOpenSkyMonthlyLimitError,
-    fetchDepartures: openSky.fetchDeparturesFromAirport,
-    fetchAirport: openSky.fetchAirportByIata,
+  aerodatabox: {
+    id: "aerodatabox",
+    hasKey: () => Boolean(process.env.AERODATABOX_RAPIDAPI_KEY?.trim()),
+    isExhaustedError: aeroDataBox.isAeroDataBoxMonthlyLimitError,
+    fetchDepartures: aeroDataBox.fetchDeparturesFromAirport,
+    fetchAirport: aeroDataBox.fetchAirportByIata,
   },
 };
 
-/** AirLabs → AviationStack → OpenSky (no-key last resort). */
-const PROVIDER_ORDER: AirportFlightProviderId[] = ["airlabs", "aviationstack", "opensky"];
+/** AirLabs → AviationStack → AeroDataBox (free RapidAPI last resort). */
+const PROVIDER_ORDER: AirportFlightProviderId[] = ["airlabs", "aviationstack", "aerodatabox"];
 
 /** Sticky preferred provider for a single collector run. */
 let activeProvider: AirportFlightProviderId | null = null;
@@ -73,7 +72,7 @@ export function isAirportFlightQuotaExhaustedError(error: unknown): boolean {
   return (
     aviationStack.isAviationStackMonthlyLimitError(error) ||
     airLabs.isAirLabsMonthlyLimitError(error) ||
-    openSky.isOpenSkyMonthlyLimitError(error)
+    aeroDataBox.isAeroDataBoxMonthlyLimitError(error)
   );
 }
 
@@ -82,7 +81,7 @@ async function withProviderFallback<T>(
 ): Promise<{ value: T; provider: AirportFlightProviderId }> {
   const order = preferredProviderOrder();
   if (!order.length) {
-    throw new Error("No flight API available (AviationStack, AirLabs, or OpenSky)");
+    throw new Error("No flight API available (AirLabs, AviationStack, or AeroDataBox)");
   }
 
   let lastError: unknown;

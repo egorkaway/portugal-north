@@ -157,7 +157,7 @@ export function formatStationMonthlyTemperatureLogLines(
       : yearMonth;
 
   const lines = [
-    `${monthLabel} temperature averages (${averages.length} station(s) with train samples; daily min/max from Open-Meteo snapshots):`,
+    `${monthLabel} temperature averages (${averages.length} station(s) with samples; daily min/max from Open-Meteo snapshots):`,
   ];
   for (const row of averages) {
     lines.push(`  ${row.station}: ${formatStationMonthlyTemperatureOkSuffix(row)}`);
@@ -273,7 +273,7 @@ export function writeStationTemperatureLog(
 
 /**
  * Fetch current temperatures for stations and append to the NDJSON log.
- * Callers should pass only stations that already have a successful departure sample.
+ * Used for train stations (after a timetable sample attempt) and Iberian airport hubs.
  * Matches readings back to stations by request order (Open-Meteo multi-point).
  */
 export async function collectAndAppendStationTemperatures(options: {
