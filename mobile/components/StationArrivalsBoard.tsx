@@ -181,7 +181,9 @@ export function StationArrivalsBoard({
           <View key={id} style={styles.card}>
             <View style={styles.cardMain}>
               <Text style={styles.cardTitle}>
-                {arr.time}
+                {arr.departureTime && arr.departureTime !== arr.time
+                  ? `${arr.time} → ${arr.departureTime}`
+                  : arr.time}
                 {countdown ? <Text> {countdown}</Text> : null}
               </Text>
               <Text style={styles.cardSubtitle} numberOfLines={1}>
