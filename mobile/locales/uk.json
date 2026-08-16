@@ -1,7 +1,9 @@
 {
   "ios": {
     "CFBundleDisplayName": "VeryStays",
-    "NSLocationWhenInUseUsageDescription": "VeryStays використовує ваше місцезнаходження, щоб показувати найближчу залізничну станцію на віджеті головного екрана, коли у вас немає найближчої поїздки."
+    "NSLocationWhenInUseUsageDescription": "VeryStays використовує ваше місцезнаходження, щоб сортувати станції за відстанню, показувати найближчу на віджеті та помічати прибуття на завантажені вокзали.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "VeryStays використовує ваше місцезнаходження у фоні, щоб сповіщати про прибуття на великі вокзали — навіть коли застосунок закрито.",
+    "NSLocationAlwaysUsageDescription": "VeryStays використовує ваше місцезнаходження у фоні, щоб сповіщати про прибуття на великі вокзали — навіть коли застосунок закрито."
   },
   "android": {
     "app_name": "VeryStays"

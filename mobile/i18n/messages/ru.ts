@@ -20,6 +20,7 @@ export const ru: MobileMessages = {
     lines: 'Линии',
     line: 'Линия',
     station: 'Станция',
+    privacy: 'Конфиденциальность',
     back: 'Назад',
   },
   common: {
@@ -220,6 +221,7 @@ export const ru: MobileMessages = {
     proActiveBody: 'Спасибо за поддержку VeryStays. Откройте paywall в любое время, чтобы просмотреть свой план.',
     proManage: 'Управлять подпиской',
     proUnavailable: 'Покупки недоступны',
+    privacyPolicy: 'Политика конфиденциальности',
   },
   hotel: {
     kmFromStation: '{{km}} км от станции',
@@ -241,13 +243,13 @@ export const ru: MobileMessages = {
     locationEyebrow: 'Геолокация',
     locationTitle: 'Найдите станции рядом',
     locationBody:
-      'Геолокация необязательна, но позволяет VeryStays сортировать станции по расстоянию и показывать ближайший узел в виджете на домашнем экране.',
+      'Геолокация необязательна. Она сортирует станции по расстоянию, питает виджет ближайшей станции и — с разрешением Всегда — может уведомлять о прибытии на крупные вокзалы.',
     locationBodyAndroid:
       'Геолокация необязательна, но позволяет VeryStays сортировать станции по расстоянию на домашнем экране.',
     notificationsEyebrow: 'Уведомления',
     notificationsTitle: 'Мягкие напоминания о поездке',
     notificationsBody:
-      'Когда вы нажмёте «Еду» у отправления, мы можем напомнить за несколько минут до отхода поезда.',
+      'Когда вы нажимаете Взять на отправлении, мы можем напомнить за несколько минут до выхода поезда. С геолокацией Всегда также можем уведомлять о прибытии на загруженные станции.',
     widgetsEyebrow: 'С первого взгляда',
     widgetsTitle: 'Виджеты и Live Activity',
     widgetsTitleAndroid: 'Обратный отсчёт поездки',
@@ -303,5 +305,12 @@ export const ru: MobileMessages = {
     channelName: 'Напоминания о поездке',
     departedTitle: 'Поезд отправился',
     departedBody: 'Хорошей поездки из {{origin}} в {{destination}}.',
+  },
+  arrivalNotify: {
+    title: 'Вы на вокзале',
+    body: 'Добро пожаловать на {{station}}. Откройте VeryStays для живых отправлений.',
+    airportTitle: 'Вы в аэропорту',
+    airportBody: 'Добро пожаловать в {{station}}. Откройте VeryStays для стыковок и отправлений.',
+    channelName: 'Прибытие на станцию',
   },
 };

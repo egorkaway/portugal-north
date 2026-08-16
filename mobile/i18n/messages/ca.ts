@@ -20,6 +20,7 @@ export const ca: MobileMessages = {
     lines: 'Línies',
     line: 'Línia',
     station: 'Estació',
+    privacy: 'Privacitat',
     back: 'Enrere',
   },
   common: {
@@ -220,6 +221,7 @@ export const ca: MobileMessages = {
     proActiveBody: 'Gràcies per donar suport a VeryStays. Obre el paywall en qualsevol moment per revisar el teu pla.',
     proManage: 'Gestionar subscripció',
     proUnavailable: 'Compres no disponibles',
+    privacyPolicy: 'Política de privacitat',
   },
   hotel: {
     kmFromStation: '{{km}} km de l’estació',
@@ -241,13 +243,13 @@ export const ca: MobileMessages = {
     locationEyebrow: 'Ubicació',
     locationTitle: 'Troba estacions a prop teu',
     locationBody:
-      'La ubicació és opcional, però permet a VeryStays ordenar estacions per distància i mostrar el hub més proper al widget de la pantalla d’inici.',
+      'La ubicació és opcional. Ordena estacions per distància, alimenta el widget de l\'estació més propera i — amb Sempre permès — et pot avisar quan arribes a grans estacions.',
     locationBodyAndroid:
       'La ubicació és opcional, però permet a VeryStays ordenar estacions per distància a la pantalla d’inici.',
     notificationsEyebrow: 'Notificacions',
     notificationsTitle: 'Recordatoris suaus de viatge',
     notificationsBody:
-      'Quan premis L’agafo en una sortida, et podem recordar uns minuts abans que surti el tren.',
+      'Quan prems Agafar en una sortida, et podem recordar minuts abans que surti el tren. Amb ubicació Sempre activa, també et podem avisar quan arribes a estacions concurrides.',
     widgetsEyebrow: 'D’un cop d’ull',
     widgetsTitle: 'Widgets i Live Activity',
     widgetsTitleAndroid: 'Compte enrere del viatge',
@@ -303,5 +305,12 @@ export const ca: MobileMessages = {
     channelName: 'Recordatoris de viatge',
     departedTitle: 'El tren ha sortit',
     departedBody: 'Bon viatge de {{origin}} a {{destination}}.',
+  },
+  arrivalNotify: {
+    title: 'Ets a l\'estació',
+    body: 'Benvingut a {{station}}. Obre VeryStays per a sortides en directe.',
+    airportTitle: 'Ets a l\'aeroport',
+    airportBody: 'Benvingut a {{station}}. Obre VeryStays per a enllaços i sortides.',
+    channelName: 'Arribades a l\'estació',
   },
 };

@@ -20,6 +20,7 @@ export const pt: MobileMessages = {
     lines: 'Linhas',
     line: 'Linha',
     station: 'Estação',
+    privacy: 'Privacidade',
     back: 'Voltar',
   },
   common: {
@@ -220,6 +221,7 @@ export const pt: MobileMessages = {
     proActiveBody: 'Obrigado por apoiar o VeryStays. Abra o paywall a qualquer momento para rever o seu plano.',
     proManage: 'Gerir subscrição',
     proUnavailable: 'Compras indisponíveis',
+    privacyPolicy: 'Política de privacidade',
   },
   hotel: {
     kmFromStation: '{{km}} km da estação',
@@ -241,13 +243,13 @@ export const pt: MobileMessages = {
     locationEyebrow: 'Localização',
     locationTitle: 'Encontre estações perto de si',
     locationBody:
-      'A localização é opcional, mas permite ao VeryStays ordenar estações por distância e mostrar o hub mais próximo no widget do ecrã principal.',
+      'A localização é opcional. Ordena estações por distância, alimenta o widget da estação mais próxima e — com Sempre permitido — pode notificá-lo quando chega a grandes estações.',
     locationBodyAndroid:
       'A localização é opcional, mas permite ao VeryStays ordenar estações por distância no ecrã principal.',
     notificationsEyebrow: 'Notificações',
     notificationsTitle: 'Lembretes suaves de viagem',
     notificationsBody:
-      'Quando tocar em Vou apanhar numa partida, podemos lembrá-lo alguns minutos antes do comboio sair.',
+      'Quando toca em Apanhar numa partida, podemos lembrá-lo minutos antes do comboio sair. Com localização Sempre activa, também podemos avisar quando chega a estações movimentadas.',
     widgetsEyebrow: 'Num relance',
     widgetsTitle: 'Widgets e Live Activity',
     widgetsTitleAndroid: 'Contagem da viagem',
@@ -303,5 +305,12 @@ export const pt: MobileMessages = {
     channelName: 'Lembretes de viagem',
     departedTitle: 'Comboio partiu',
     departedBody: 'Boa viagem de {{origin}} para {{destination}}.',
+  },
+  arrivalNotify: {
+    title: 'Está na estação',
+    body: 'Bem-vindo a {{station}}. Abra o VeryStays para partidas em direto.',
+    airportTitle: 'Está no aeroporto',
+    airportBody: 'Bem-vindo a {{station}}. Abra o VeryStays para ligações e partidas.',
+    channelName: 'Chegadas à estação',
   },
 };

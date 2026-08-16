@@ -6,6 +6,7 @@ import { scheduleEngagementReminders } from '@/lib/engagementNotifications';
 import {
   isLiveActivityEndNotification,
 } from '@/lib/liveActivityEndSchedule';
+import { refreshStationArrivalGeofences } from '@/lib/stationArrivalGeofence';
 import { ensureStationsSpotlightIndex } from '@/lib/spotlightIndex';
 import { subscribeTripChanges } from '@/lib/tripEvents';
 import { scheduleTripDepartureReminder } from '@/lib/tripNotifications';
@@ -119,6 +120,11 @@ export function WidgetSyncBootstrap() {
       } catch (error) {
         console.warn('[spotlight] bootstrap failed', error);
       }
+      try {
+        await refreshStationArrivalGeofences();
+      } catch (error) {
+        console.warn('[geofence] bootstrap failed', error);
+      }
     };
 
     void bootstrap();
@@ -132,6 +138,9 @@ export function WidgetSyncBootstrap() {
       }
       if (state === 'active') {
         void scheduleLocalReminders();
+        void refreshStationArrivalGeofences().catch((error) => {
+          console.warn('[geofence] foreground refresh failed', error);
+        });
       }
     });
 

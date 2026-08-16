@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": false,
-      "buildNumber": "57",
+      "buildNumber": "58",
       "bundleIdentifier": "com.iberian.travel",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
@@ -27,7 +27,12 @@
           "uk",
           "ru"
         ],
-        "NSLocationWhenInUseUsageDescription": "VeryStays uses your location to show the nearest train station on the home-screen widget when you have no upcoming trip."
+        "NSLocationWhenInUseUsageDescription": "VeryStays uses your location to sort stations by distance, power the nearest-station widget, and watch for arrivals at busy hubs.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "VeryStays uses your location in the background to notify you when you arrive at major train stations — even when the app is closed.",
+        "NSLocationAlwaysUsageDescription": "VeryStays uses your location in the background to notify you when you arrive at major train stations — even when the app is closed.",
+        "UIBackgroundModes": [
+          "location"
+        ]
       }
     },
     "locales": {
@@ -48,7 +53,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "versionCode": 57
+      "versionCode": 58
     },
     "web": {
       "bundler": "metro",
@@ -69,10 +74,15 @@
       [
         "expo-location",
         {
-          "locationWhenInUsePermission": "VeryStays uses your location to show the nearest train station on the home-screen widget when you have no upcoming trip."
+          "locationWhenInUsePermission": "VeryStays uses your location to sort stations by distance, power the nearest-station widget, and watch for arrivals at busy hubs.",
+          "locationAlwaysAndWhenInUsePermission": "VeryStays uses your location in the background to notify you when you arrive at major train stations — even when the app is closed.",
+          "locationAlwaysPermission": "VeryStays uses your location in the background to notify you when you arrive at major train stations — even when the app is closed.",
+          "isIosBackgroundLocationEnabled": true,
+          "isAndroidBackgroundLocationEnabled": false
         }
       ],
       "expo-notifications",
+      "expo-task-manager",
       [
         "expo-widgets",
         {

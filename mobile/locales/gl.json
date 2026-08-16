@@ -1,7 +1,9 @@
 {
   "ios": {
     "CFBundleDisplayName": "VeryStays",
-    "NSLocationWhenInUseUsageDescription": "VeryStays usa a túa localización para amosar a estación de tren máis próxima no widget da pantalla de inicio cando non tes ningunha viaxe próxima."
+    "NSLocationWhenInUseUsageDescription": "VeryStays usa a túa localización para ordenar estacións por distancia, alimentar o widget da estación máis próxima e detectar chegadas a hubs concurridos.",
+    "NSLocationAlwaysAndWhenInUseUsageDescription": "VeryStays usa a túa localización en segundo plano para avisarte cando chegas a grandes estacións — mesmo coa app pechada.",
+    "NSLocationAlwaysUsageDescription": "VeryStays usa a túa localización en segundo plano para avisarte cando chegas a grandes estacións — mesmo coa app pechada."
   },
   "android": {
     "app_name": "VeryStays"

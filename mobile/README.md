@@ -16,6 +16,12 @@ Station detail opens as a stack screen: photo, summary, live departures (**Take*
 
 First launch shows a short onboarding flow (welcome, location, notifications, widgets). After onboarding, the RevenueCat paywall is shown if Pro is not active. The Tickets tab also has a Pro button at the bottom.
 
+## Station arrival geofences (iOS)
+
+On iOS, with **Always** location + notification permission, the app monitors the **18 nearest** of the **99 busiest** train stations plus **Portuguese airports** within ~100 km (baked as [`data/geofence-stations.json`](data/geofence-stations.json) via `npm run sync:data`). Airports use a larger ~450 m radius and are pinned ahead of train stations when nearby. Entering a region fires a local notification that opens the station/airport page. Cooldown: 6 hours per place. Refresh runs on launch and when returning to the foreground.
+
+Requires a native rebuild after the `expo-location` / `expo-task-manager` config change (`npx expo prebuild` or Xcode archive).
+
 ## RevenueCat (subscriptions)
 
 Packages: `react-native-purchases` + `react-native-purchases-ui` (installed via `npx expo install`).

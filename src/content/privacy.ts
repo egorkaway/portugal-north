@@ -17,9 +17,9 @@ export type PrivacyContent = {
 const en: PrivacyContent = {
   title: "Privacy policy",
   subtitle: "How Sustainable Iberian (verystays.com) handles your interactions",
-  lastUpdated: "Last updated: 28 May 2026",
+  lastUpdated: "Last updated: 16 August 2026",
   intro:
-    "Sustainable Iberian is a free travel guide at verystays.com. We do not ask you to create an account. This policy explains what happens when you vote, filter stations, use live departures, or browse the site.",
+    "Sustainable Iberian is a free travel guide at verystays.com, with optional VeryStays mobile apps. We do not ask you to create an account to use the guide. This policy explains what happens when you vote, filter stations, use live departures, browse the site, or — if you install the app — optionally support development with an in-app purchase.",
   sections: [
     {
       id: "collect",
@@ -64,8 +64,17 @@ const en: PrivacyContent = {
       title: "Analytics",
       paragraphs: [
         "We use Vercel Analytics for privacy-friendly, aggregate traffic metrics on the site.",
-        "We also use PostHog to understand how the guide is used: page views, station pages opened, and vote actions (type of vote and station/hotel names, not free-text you type). PostHog receives a random anonymous ID stored in your browser; we do not use PostHog to collect passwords or payment data because the site has no login or checkout.",
+        "We also use PostHog to understand how the guide is used: page views, station pages opened, and vote actions (type of vote and station/hotel names, not free-text you type). PostHog receives a random anonymous ID stored in your browser; we do not use PostHog to collect passwords or payment card details.",
         "You can limit analytics by blocking third-party scripts in your browser or using standard tracking protection.",
+      ],
+    },
+    {
+      id: "mobile-purchases",
+      title: "Mobile app and optional purchases",
+      paragraphs: [
+        "If you download the VeryStays mobile app, the guide remains usable without paying. If you choose to support development with an in-app purchase or subscription, we use the RevenueCat SDK to manage and track that purchase status (for example, whether Pro is active and restore/entitlement state).",
+        "Payment card details are handled by Apple App Store or Google Play — not by us directly. RevenueCat processes purchase and subscription events so we can unlock features you paid for and understand support conversions. RevenueCat’s own privacy policy applies to their processing: https://www.revenuecat.com/privacy",
+        "You can use the app without purchasing. Store purchases can be managed or cancelled in your Apple or Google account settings.",
       ],
     },
     {
@@ -74,6 +83,7 @@ const en: PrivacyContent = {
       paragraphs: [
         "Hotel links go to Booking.com (or similar search URLs we generate). Map links open Apple Maps or OpenStreetMap. Ticket and metro pages link to CP, Andante, Metropolitano de Lisboa, and other official operators. Those sites have their own privacy policies and may set their own cookies when you leave verystays.com.",
         "Station photos may load from Wikimedia Commons or Pexels CDNs. Installing the site as a PWA uses a service worker that caches pages for offline use; that cache stays on your device.",
+        "In the mobile apps, RevenueCat (see “Mobile app and optional purchases”) and the Apple/Google billing systems may run when you open purchase flows.",
       ],
     },
     {
@@ -99,9 +109,9 @@ const en: PrivacyContent = {
 const pt: PrivacyContent = {
   title: "Política de privacidade",
   subtitle: "Como Mobilidade Ibérica (verystays.com) trata as suas interações",
-  lastUpdated: "Última atualização: 28 de maio de 2026",
+  lastUpdated: "Última atualização: 16 de agosto de 2026",
   intro:
-    "Mobilidade Ibérica é um guia de viagens gratuito em verystays.com. Não pedimos registo. Esta política explica o que acontece quando vota, filtra estações, consulta partidas em direto ou navega no site.",
+    "Mobilidade Ibérica é um guia de viagens gratuito em verystays.com, com apps móveis VeryStays opcionais. Não pedimos registo para usar o guia. Esta política explica o que acontece quando vota, filtra estações, consulta partidas em direto, navega no site ou — se instalar a app — optar por apoiar o desenvolvimento com uma compra na aplicação.",
   sections: [
     {
       id: "collect",
@@ -146,8 +156,17 @@ const pt: PrivacyContent = {
       title: "Analytics",
       paragraphs: [
         "Usamos Vercel Analytics para métricas agregadas de tráfego.",
-        "Também usamos PostHog para perceber o uso do guia: páginas vistas, estações abertas e acções de voto (tipo e nomes de estação/hotel, sem texto livre). O PostHog recebe um ID anónimo no browser; não recolhemos passwords nem pagamentos porque não há login nem checkout.",
+        "Também usamos PostHog para perceber o uso do guia: páginas vistas, estações abertas e acções de voto (tipo e nomes de estação/hotel, sem texto livre). O PostHog recebe um ID anónimo no browser; não recolhemos passwords nem dados de cartão de pagamento via PostHog.",
         "Pode limitar analytics bloqueando scripts de terceiros ou usando protecção de rastreio.",
+      ],
+    },
+    {
+      id: "mobile-purchases",
+      title: "App móvel e compras opcionais",
+      paragraphs: [
+        "Se descarregar a app móvel VeryStays, o guia continua utilizável sem pagar. Se optar por apoiar o desenvolvimento com uma compra ou subscrição na app, usamos o SDK da RevenueCat para gerir e acompanhar o estado dessa compra (por exemplo, se o Pro está activo e restauros/entitlements).",
+        "Os dados do cartão de pagamento são tratados pela Apple App Store ou Google Play — não por nós directamente. A RevenueCat processa eventos de compra e subscrição para desbloquear funcionalidades pagas e perceber conversões de apoio. Aplica-se a política de privacidade da RevenueCat: https://www.revenuecat.com/privacy",
+        "Pode usar a app sem comprar. Compras nas lojas podem ser geridas ou canceladas nas definições da conta Apple ou Google.",
       ],
     },
     {
@@ -156,6 +175,7 @@ const pt: PrivacyContent = {
       paragraphs: [
         "Ligações a hotéis vão para Booking.com (ou pesquisas que geramos). Mapas abrem Apple Maps ou OpenStreetMap. A página de bilhetes liga à CP, Andante, Metropolitano de Lisboa e outros operadores oficiais. Esses sites têm políticas próprias e podem definir cookies quando sair de verystays.com.",
         "Fotos podem vir de Wikimedia Commons ou Pexels. Instalar como PWA usa um service worker que guarda páginas em cache no dispositivo.",
+        "Nas apps móveis, a RevenueCat (ver «App móvel e compras opcionais») e os sistemas de faturação da Apple/Google podem correr quando abrir fluxos de compra.",
       ],
     },
     {
@@ -183,9 +203,9 @@ const es: PrivacyContent = {
   ...en,
   title: "Política de privacidad",
   subtitle: "Cómo Viaje Ibérico Sostenible (verystays.com) trata tus interacciones",
-  lastUpdated: "Última actualización: 28 de mayo de 2026",
+  lastUpdated: "Última actualización: 16 de agosto de 2026",
   intro:
-    "Viaje Ibérico Sostenible es una guía gratuita en verystays.com. No pedimos cuenta. Esta política explica qué ocurre cuando votas, filtras estaciones, consultas salidas en directo o navegas.",
+    "Viaje Ibérico Sostenible es una guía gratuita en verystays.com, con apps móviles VeryStays opcionales. No pedimos cuenta para usar la guía. Esta política explica qué ocurre cuando votas, filtras estaciones, consultas salidas en directo, navegas o — si instalas la app — decides apoyar el desarrollo con una compra integrada.",
   sections: en.sections.map((section) => {
     const map: Record<string, { title: string; paragraphs: string[] }> = {
       collect: {
@@ -225,8 +245,16 @@ const es: PrivacyContent = {
         title: "Analítica",
         paragraphs: [
           "Usamos Vercel Analytics para tráfico agregado.",
-          "También usamos PostHog para páginas vistas, estaciones abiertas y votos (tipo y nombres, sin texto libre) con un ID anónimo. No hay login ni pagos en el sitio.",
+          "También usamos PostHog para páginas vistas, estaciones abiertas y votos (tipo y nombres, sin texto libre) con un ID anónimo. No usamos PostHog para contraseñas ni datos de tarjeta.",
           "Puedes limitar analítica bloqueando scripts o con protección de rastreo.",
+        ],
+      },
+      "mobile-purchases": {
+        title: "App móvil y compras opcionales",
+        paragraphs: [
+          "Si descargas la app móvil VeryStays, la guía sigue siendo usable sin pagar. Si eliges apoyar el desarrollo con una compra o suscripción, usamos el SDK de RevenueCat para gestionar y registrar el estado de esa compra (por ejemplo, si Pro está activo y restauraciones/entitlements).",
+          "Los datos de la tarjeta los tratan Apple App Store o Google Play, no nosotros directamente. RevenueCat procesa eventos de compra y suscripción para desbloquear lo que hayas pagado. Su política de privacidad: https://www.revenuecat.com/privacy",
+          "Puedes usar la app sin comprar. Las compras se gestionan o cancelan en la cuenta de Apple o Google.",
         ],
       },
       "third-parties": {
@@ -234,6 +262,7 @@ const es: PrivacyContent = {
         paragraphs: [
           "Enlaces a Booking.com, mapas (Apple/OSM) y operadores oficiales (CP, Andante, etc.). Esos sitios tienen sus propias políticas.",
           "Imágenes desde Wikimedia o Pexels. La PWA cachea páginas en tu dispositivo.",
+          "En las apps móviles, RevenueCat (véase «App móvil y compras opcionales») y la facturación de Apple/Google pueden ejecutarse al abrir compras.",
         ],
       },
       retention: {
@@ -259,18 +288,18 @@ const ca: PrivacyContent = {
   ...es,
   title: "Política de privacitat",
   subtitle: "Com Viatge Ibèric Sostenible (verystays.com) tracta les teves interaccions",
-  lastUpdated: "Darrera actualització: 28 de maig de 2026",
+  lastUpdated: "Darrera actualització: 16 d’agost de 2026",
   intro:
-    "Viatge Ibèric Sostenible és una guia gratuïta a verystays.com. No demanem compte. Aquesta política explica què passa quan votes, filtres estacions o consultes sortides en directe.",
+    "Viatge Ibèric Sostenible és una guia gratuïta a verystays.com, amb apps mòbils VeryStays opcionals. No demanem compte per usar la guia. Aquesta política explica què passa quan votes, filtres estacions, consultes sortides en directe o — si instal·les l’app — decides donar suport al desenvolupament amb una compra integrada.",
 };
 
 const gl: PrivacyContent = {
   ...es,
   title: "Política de privacidade",
   subtitle: "Como Viaxe Ibérica Sostible (verystays.com) trata as túas interaccións",
-  lastUpdated: "Última actualización: 28 de maio de 2026",
+  lastUpdated: "Última actualización: 16 de agosto de 2026",
   intro:
-    "Viaxe Ibérica Sostible é unha guía gratuíta en verystays.com. Non pedimos conta. Esta política explica o que ocorre cando votas, filtras estacións ou consultas saídas en directo.",
+    "Viaxe Ibérica Sostible é unha guía gratuíta en verystays.com, con apps móbiles VeryStays opcionais. Non pedimos conta para usar a guía. Esta política explica o que ocorre cando votas, filtras estacións, consultas saídas en directo ou — se instalas a app — decides apoiar o desenvolvemento cunha compra integrada.",
 };
 
 export const privacyByLocale: Record<Locale, PrivacyContent> = {

@@ -1,5 +1,6 @@
 import { ActivityIndicator, Linking, Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useMemo, useState } from 'react';
+import { useRouter } from 'expo-router';
 import { BuildFooter } from '@/components/BuildFooter';
 import { usePurchases } from '@/components/PurchasesProvider';
 import { theme } from '@/constants/theme';
@@ -37,6 +38,7 @@ function guideForLocale(locale: Locale): TicketGuide {
 
 export default function TicketsScreen() {
   const { t, locale } = useLocale();
+  const router = useRouter();
   const { ready, available, isPro, presentPaywall } = usePurchases();
   const [paywallBusy, setPaywallBusy] = useState(false);
   const guide = useMemo(() => guideForLocale(locale), [locale]);
@@ -105,6 +107,14 @@ export default function TicketsScreen() {
           )}
         </Pressable>
       </View>
+
+      <Pressable
+        accessibilityRole="link"
+        onPress={() => router.push('/privacy')}
+        style={styles.privacyLink}
+      >
+        <Text style={styles.privacyLinkText}>{t('tickets.privacyPolicy')}</Text>
+      </Pressable>
 
       <BuildFooter />
     </ScrollView>
@@ -323,5 +333,15 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: '700',
+  },
+  privacyLink: {
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  privacyLinkText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: theme.primaryMuted,
+    textDecorationLine: 'underline',
   },
 });

@@ -20,6 +20,7 @@ export const en: MobileMessages = {
     lines: 'Lines',
     line: 'Line',
     station: 'Station',
+    privacy: 'Privacy',
     back: 'Back',
   },
   common: {
@@ -220,6 +221,7 @@ export const en: MobileMessages = {
     proActiveBody: 'Thanks for supporting VeryStays. Open the paywall anytime to review your plan.',
     proManage: 'Manage subscription',
     proUnavailable: 'Purchases unavailable',
+    privacyPolicy: 'Privacy policy',
   },
   hotel: {
     kmFromStation: '{{km}} km from station',
@@ -241,13 +243,13 @@ export const en: MobileMessages = {
     locationEyebrow: 'Location',
     locationTitle: 'Find stations near you',
     locationBody:
-      'Location is optional, but it lets VeryStays sort stations by distance and show your nearest hub on the home-screen widget.',
+      'Location is optional. It sorts stations by distance, powers the nearest-station widget, and — with Always allowed — can notify you when you arrive at major train hubs.',
     locationBodyAndroid:
       'Location is optional, but it lets VeryStays sort stations by distance on the home screen.',
     notificationsEyebrow: 'Notifications',
     notificationsTitle: 'Gentle trip reminders',
     notificationsBody:
-      'When you tap Take on a departure, we can remind you a few minutes before the train leaves.',
+      'When you tap Take on a departure, we can remind you a few minutes before the train leaves. With location Always on, we can also nudge you when you arrive at busy stations.',
     widgetsEyebrow: 'At a glance',
     widgetsTitle: 'Widgets & Live Activity',
     widgetsTitleAndroid: 'Trip countdown',
@@ -302,5 +304,12 @@ export const en: MobileMessages = {
     channelName: 'Trip reminders',
     departedTitle: 'Train departed',
     departedBody: 'Have a good trip from {{origin}} to {{destination}}.',
+  },
+  arrivalNotify: {
+    title: 'You are at the station',
+    body: 'Welcome to {{station}}. Open VeryStays for live departures.',
+    airportTitle: 'You are at the airport',
+    airportBody: 'Welcome to {{station}}. Open VeryStays for connections and departures.',
+    channelName: 'Station arrivals',
   },
 };

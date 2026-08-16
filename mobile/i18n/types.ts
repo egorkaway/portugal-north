@@ -22,6 +22,7 @@ export type MobileMessages = {
     station: string;
     lines: string;
     line: string;
+    privacy: string;
     back: string;
   };
   common: {
@@ -220,6 +221,7 @@ export type MobileMessages = {
     proActiveBody: string;
     proManage: string;
     proUnavailable: string;
+    privacyPolicy: string;
   };
   hotel: {
     kmFromStation: string;
@@ -286,5 +288,12 @@ export type MobileMessages = {
     channelName: string;
     departedTitle: string;
     departedBody: string;
+  };
+  arrivalNotify: {
+    title: string;
+    body: string;
+    airportTitle: string;
+    airportBody: string;
+    channelName: string;
   };
 };

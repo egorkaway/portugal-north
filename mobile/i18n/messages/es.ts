@@ -20,6 +20,7 @@ export const es: MobileMessages = {
     lines: 'Líneas',
     line: 'Línea',
     station: 'Estación',
+    privacy: 'Privacidad',
     back: 'Volver',
   },
   common: {
@@ -220,6 +221,7 @@ export const es: MobileMessages = {
     proActiveBody: 'Gracias por apoyar VeryStays. Abre el paywall en cualquier momento para revisar tu plan.',
     proManage: 'Gestionar suscripción',
     proUnavailable: 'Compras no disponibles',
+    privacyPolicy: 'Política de privacidad',
   },
   hotel: {
     kmFromStation: '{{km}} km de la estación',
@@ -241,13 +243,13 @@ export const es: MobileMessages = {
     locationEyebrow: 'Ubicación',
     locationTitle: 'Encuentra estaciones cerca de ti',
     locationBody:
-      'La ubicación es opcional, pero permite a VeryStays ordenar estaciones por distancia y mostrar tu hub más cercano en el widget de la pantalla de inicio.',
+      'La ubicación es opcional. Ordena estaciones por distancia, alimenta el widget de la estación más cercana y — con Siempre permitido — puede avisarte al llegar a grandes estaciones.',
     locationBodyAndroid:
       'La ubicación es opcional, pero permite a VeryStays ordenar estaciones por distancia en la pantalla de inicio.',
     notificationsEyebrow: 'Notificaciones',
     notificationsTitle: 'Recordatorios suaves de viaje',
     notificationsBody:
-      'Cuando pulses Lo tomo en una salida, podemos recordártelo unos minutos antes de que salga el tren.',
+      'Cuando pulses Tomar en una salida, podemos recordártelo minutos antes de que salga el tren. Con ubicación Siempre activa, también podemos avisarte al llegar a estaciones concurridas.',
     widgetsEyebrow: 'De un vistazo',
     widgetsTitle: 'Widgets y Live Activity',
     widgetsTitleAndroid: 'Cuenta atrás del viaje',
@@ -303,5 +305,12 @@ export const es: MobileMessages = {
     channelName: 'Recordatorios de viaje',
     departedTitle: 'Tren salió',
     departedBody: 'Buen viaje de {{origin}} a {{destination}}.',
+  },
+  arrivalNotify: {
+    title: 'Estás en la estación',
+    body: 'Bienvenido a {{station}}. Abre VeryStays para salidas en directo.',
+    airportTitle: 'Estás en el aeropuerto',
+    airportBody: 'Bienvenido a {{station}}. Abre VeryStays para conexiones y salidas.',
+    channelName: 'Llegadas a la estación',
   },
 };

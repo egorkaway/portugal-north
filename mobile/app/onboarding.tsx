@@ -21,6 +21,10 @@ import { usePurchases } from '@/components/PurchasesProvider';
 import { completeOnboarding, isOnboardingComplete } from '@/lib/onboardingStorage';
 import { getCurrentCoords } from '@/lib/currentLocation';
 import { waitForPurchasesBootstrap } from '@/lib/revenueCat';
+import {
+  ensureStationArrivalLocationPermission,
+  refreshStationArrivalGeofences,
+} from '@/lib/stationArrivalGeofence';
 import { ensureTripNotificationPermission } from '@/lib/tripNotifications';
 import { writeLastCoords } from '@/lib/tripStorage';
 import type { TripWidgetProps } from '@/lib/types';
@@ -84,11 +88,19 @@ export default function OnboardingScreen() {
   const requestLocation = async () => {
     setBusy(true);
     try {
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status === 'granted') {
-        // Don't block onboarding on a GPS fix — emulators often hang here.
+      if (Platform.OS === 'ios') {
+        const alwaysGranted = await ensureStationArrivalLocationPermission();
         const coords = await getCurrentCoords({ timeoutMs: 5_000 });
         if (coords) await writeLastCoords(coords);
+        if (alwaysGranted) {
+          await refreshStationArrivalGeofences();
+        }
+      } else {
+        const { status } = await Location.requestForegroundPermissionsAsync();
+        if (status === 'granted') {
+          const coords = await getCurrentCoords({ timeoutMs: 5_000 });
+          if (coords) await writeLastCoords(coords);
+        }
       }
       advance();
     } finally {

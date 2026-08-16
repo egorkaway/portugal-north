@@ -1,5 +1,7 @@
 import '@/widgets/TripWidget';
 import '@/widgets/TrainTripLiveActivity';
+// Define the geofence TaskManager task at startup (required before startGeofencingAsync).
+import '@/lib/stationArrivalGeofence';
 
 import { useFonts } from 'expo-font';
 import * as Notifications from 'expo-notifications';
@@ -19,6 +21,7 @@ import { PurchasesProvider } from '@/components/PurchasesProvider';
 import { isLiveActivityEndNotification } from '@/lib/liveActivityEndSchedule';
 import { isOnboardingComplete } from '@/lib/onboardingStorage';
 import { endAllLiveActivities, onTripDeparted, seedWidgetTimeline } from '@/lib/widgetSync';
+import { getStationSlugFromArrivalNotification } from '@/lib/stationArrivalNotifications';
 
 Notifications.setNotificationHandler({
   handleNotification: async (notification) => {
@@ -100,6 +103,15 @@ function RootLayoutNav() {
     });
   }, [router, ready]);
 
+  useEffect(() => {
+    const sub = Notifications.addNotificationResponseReceivedListener((response) => {
+      const slug = getStationSlugFromArrivalNotification(response.notification);
+      if (!slug) return;
+      router.push(`/station/${slug}`);
+    });
+    return () => sub.remove();
+  }, [router]);
+
   if (bootState === 'loading' || !ready) {
     return (
       <View
@@ -148,6 +160,13 @@ function RootLayoutNav() {
             name="lines/[slug]"
             options={{
               title: t('nav.line'),
+              headerBackTitle: t('nav.back'),
+            }}
+          />
+          <Stack.Screen
+            name="privacy"
+            options={{
+              title: t('nav.privacy'),
               headerBackTitle: t('nav.back'),
             }}
           />

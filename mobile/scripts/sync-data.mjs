@@ -107,6 +107,22 @@ export async function syncMobileData() {
     JSON.stringify(pexelsPhotoCredits),
   );
 
+  const { privacyByLocale } = await importFromSrc("src/content/privacy.ts");
+  const privacyPayload = {
+    en: privacyByLocale.en,
+    pt: privacyByLocale.pt,
+    es: privacyByLocale.es,
+    ca: privacyByLocale.ca,
+    gl: privacyByLocale.gl,
+    // Mobile-only locales fall back to English on the website policy text.
+    uk: privacyByLocale.en,
+    ru: privacyByLocale.en,
+  };
+  fs.writeFileSync(
+    path.join(outDir, "privacy-by-locale.json"),
+    JSON.stringify(privacyPayload),
+  );
+
   const stationToSlug = (name) =>
     name
       .normalize("NFD")
@@ -131,6 +147,92 @@ export async function syncMobileData() {
     JSON.stringify(siriCatalog),
   );
 
+  // Top-N busiest train stations + all Portuguese airports for iOS arrival geofences.
+  const GEOFENCE_TOP_N = 99;
+  const GEOFENCE_RADIUS_METERS = 180;
+  const GEOFENCE_AIRPORT_RADIUS_METERS = 450;
+  const departureStatsPath = path.join(repoRoot, "data/departure-stats.json");
+  let geofenceStations = [];
+  if (fs.existsSync(departureStatsPath)) {
+    const departureStats = JSON.parse(fs.readFileSync(departureStatsPath, "utf8"));
+    const byName = new Map(stationsFull.map((station) => [station.name, station]));
+    geofenceStations = Object.entries(departureStats.stations ?? {})
+      .map(([name, entry]) => {
+        const station = byName.get(name);
+        if (!station) return null;
+        // Airports are merged separately below (not in departure-stats).
+        if ((station.types ?? []).some((t) => t === "Airport" || t === "Airport Destination")) {
+          return null;
+        }
+        const departuresNextHour = entry?.totals?.departuresNextHour ?? 0;
+        const successfulSamples = entry?.successfulSamples ?? 0;
+        if (successfulSamples <= 0 || departuresNextHour <= 0) return null;
+        return {
+          name,
+          slug: stationToSlug(name),
+          lat: station.lat,
+          lng: station.lng,
+          country: station.country,
+          kind: "station",
+          departuresNextHour,
+        };
+      })
+      .filter(Boolean)
+      .sort((a, b) => {
+        if (b.departuresNextHour !== a.departuresNextHour) {
+          return b.departuresNextHour - a.departuresNextHour;
+        }
+        return a.name.localeCompare(b.name);
+      })
+      .slice(0, GEOFENCE_TOP_N)
+      .map((station, index) => ({ ...station, rank: index + 1 }));
+  }
+
+  const portugalAirports = stationsFull
+    .filter(
+      (station) =>
+        station.country === "pt" &&
+        (station.types ?? []).some((t) => t === "Airport" || t === "Airport Destination"),
+    )
+    .map((station) => {
+      const iata = (station.lines ?? []).find((line) => /^[A-Z]{3}$/.test(line)) ?? null;
+      return {
+        name: station.name,
+        slug: stationToSlug(station.name),
+        lat: station.lat,
+        lng: station.lng,
+        country: station.country,
+        kind: "airport",
+        iata,
+        radiusMeters: GEOFENCE_AIRPORT_RADIUS_METERS,
+        departuresNextHour: 0,
+        rank: null,
+      };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  const bySlug = new Map(geofenceStations.map((station) => [station.slug, station]));
+  for (const airport of portugalAirports) {
+    bySlug.set(airport.slug, airport);
+  }
+  geofenceStations = [...bySlug.values()];
+
+  const geofencePayload = {
+    generatedAt: new Date().toISOString(),
+    source:
+      "data/departure-stats.json#totals.departuresNextHour + Portuguese Airport / Airport Destination hubs",
+    count: geofenceStations.length,
+    stationCount: geofenceStations.filter((s) => s.kind !== "airport").length,
+    airportCount: geofenceStations.filter((s) => s.kind === "airport").length,
+    radiusMeters: GEOFENCE_RADIUS_METERS,
+    airportRadiusMeters: GEOFENCE_AIRPORT_RADIUS_METERS,
+    stations: geofenceStations,
+  };
+  fs.writeFileSync(
+    path.join(outDir, "geofence-stations.json"),
+    JSON.stringify(geofencePayload),
+  );
+
   console.log(
     `Synced ${stationsFull.length} stations, ${Object.keys(cpStationCodes).length} CP codes, ` +
       `${Object.keys(stationImages).length} images, ${Object.keys(stationHotels).length} hotel lists, ` +
@@ -138,7 +240,9 @@ export async function syncMobileData() {
       `${Object.keys(airportConnections.airports ?? {}).length} airport connection maps, ` +
       `${Object.keys(pexelsPhotoCredits).length} Pexels credits, ` +
       `ticket guides (${Object.keys(ticketGuides).join(", ")}), ` +
-      `Siri catalog (${siriCatalog.length}).`,
+      `Siri catalog (${siriCatalog.length}), ` +
+      `geofence (${geofencePayload.stationCount} stations + ${geofencePayload.airportCount} PT airports), ` +
+      `privacy locales (${Object.keys(privacyPayload).join(", ")}).`,
   );
 }
 
