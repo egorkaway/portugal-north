@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-08-16T14:21:09.793Z",
-  "runCount": 344,
+  "generatedAt": "2026-08-16T21:08:03.476Z",
+  "runCount": 354,
   "airportCount": 32,
   "periodId": "2026-08-11",
   "periodStart": "2026-08-11",
   "periodEndExclusive": "2026-09-17",
-  "flightProvider": "aerodatabox",
+  "flightProvider": null,
   "airports": {
     "LIS": {
       "stationName": "Lisbon Airport (LIS)",
@@ -15,7 +15,7 @@
         "lat": 38.7813,
         "lng": -9.1359
       },
-      "sampledFlights": 700,
+      "sampledFlights": 800,
       "connections": [
         {
           "iata": "LHR",
@@ -90,6 +90,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "AMS",
+          "name": "Amsterdam Airport Schiphol",
+          "country": "Netherlands",
+          "lat": 52.308601,
+          "lng": 4.76389,
+          "flightCount": 10,
+          "flights": [
+            {
+              "airline": "Aeromexico",
+              "number": "6404"
+            },
+            {
+              "airline": "WestJet",
+              "number": "5257"
+            },
+            {
+              "airline": "Delta Air Lines",
+              "number": "9614"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "CDG",
           "name": "Charles de Gaulle International Airport",
           "country": "France",
@@ -138,6 +162,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "ORY",
+          "name": "Paris-Orly Airport",
+          "country": "France",
+          "lat": 48.729499,
+          "lng": 2.358963,
+          "flightCount": 10,
+          "flights": [
+            {
+              "airline": "TAP Air Portugal",
+              "number": "428"
+            },
+            {
+              "airline": "Azul",
+              "number": "7484"
+            },
+            {
+              "airline": "Azores",
+              "number": "8936"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "BCN",
           "name": "Barcelona-El Prat Airport",
           "country": "Spain",
@@ -156,54 +204,6 @@
             {
               "airline": "TAP Air Portugal",
               "number": "1030"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "AMS",
-          "name": "Amsterdam Airport Schiphol",
-          "country": "Netherlands",
-          "lat": 52.308601,
-          "lng": 4.76389,
-          "flightCount": 8,
-          "flights": [
-            {
-              "airline": "Aeromexico",
-              "number": "6404"
-            },
-            {
-              "airline": "WestJet",
-              "number": "5257"
-            },
-            {
-              "airline": "Delta Air Lines",
-              "number": "9614"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "ORY",
-          "name": "Paris-Orly Airport",
-          "country": "France",
-          "lat": 48.729499,
-          "lng": 2.358963,
-          "flightCount": 8,
-          "flights": [
-            {
-              "airline": "TAP Air Portugal",
-              "number": "428"
-            },
-            {
-              "airline": "Azul",
-              "number": "7484"
-            },
-            {
-              "airline": "Azores",
-              "number": "8936"
             }
           ],
           "lineColor": "#b91c1c",
@@ -584,6 +584,10 @@
             {
               "airline": "Delta Air Lines",
               "number": "125"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "215"
             }
           ],
           "lineColor": "#2563eb",
@@ -718,6 +722,26 @@
           "lineWeight": 2
         },
         {
+          "iata": "JFK",
+          "name": "John F. Kennedy International Airport",
+          "country": "United States",
+          "lat": 40.639447,
+          "lng": -73.779317,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "Delta Air Lines",
+              "number": "273"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "209"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "MAH",
           "name": "Menorca Airport",
           "country": "Spain",
@@ -776,6 +800,10 @@
             {
               "airline": "Air Transat",
               "number": "681"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "253"
             }
           ],
           "lineColor": "#2563eb",
@@ -820,6 +848,10 @@
             {
               "airline": "United",
               "number": "65"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "203"
             }
           ],
           "lineColor": "#2563eb",
@@ -922,6 +954,30 @@
           "lineWeight": 2
         },
         {
+          "iata": "ARN",
+          "name": "Stockholm-Arlanda Airport",
+          "country": "Sweden",
+          "lat": 59.64849,
+          "lng": 17.928829,
+          "flightCount": 2,
+          "flights": [
+            {
+              "airline": "TAP Air Portugal",
+              "number": "780"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "782"
+            },
+            {
+              "airline": "Norwegian Air Sweden",
+              "number": "4278"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "PRG",
           "name": "Václav Havel Airport Prague",
           "country": "Czechia",
@@ -976,6 +1032,10 @@
             {
               "airline": "TAP Air Portugal",
               "number": "1122"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "9748"
             }
           ],
           "lineColor": "#2563eb",
@@ -1038,6 +1098,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "BHX",
+          "name": "Birmingham Airport",
+          "country": "United Kingdom",
+          "lat": 52.453899,
+          "lng": -1.74803,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "3704"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "BLQ",
           "name": "Bologna Guglielmo Marconi Airport",
           "country": "Italy",
@@ -1080,6 +1156,10 @@
             {
               "airline": "Ryanair",
               "number": "1301"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "3609"
             }
           ],
           "lineColor": "#2563eb",
@@ -1134,6 +1214,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "SSA",
+          "name": "Deputado Luiz Eduardo Magalhães International Airport",
+          "country": "Brazil",
+          "lat": -12.908611,
+          "lng": -38.322498,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "TAP Air Portugal",
+              "number": "29"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "NBJ",
           "name": "Dr. Antonio Agostinho Neto International Airport",
           "country": "Angola",
@@ -1168,6 +1264,42 @@
             {
               "airline": "TAP Air Portugal",
               "number": "542"
+            },
+            {
+              "airline": "Eurowings",
+              "number": "9603"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "EDI",
+          "name": "Edinburgh Airport",
+          "country": "United Kingdom",
+          "lat": 55.950145,
+          "lng": -3.372288,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "easyJet",
+              "number": "3322"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "EIN",
+          "name": "Eindhoven Airport",
+          "country": "Netherlands",
+          "lat": 51.4500999451,
+          "lng": 5.37452983856,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Transavia",
+              "number": "6204"
             }
           ],
           "lineColor": "#2563eb",
@@ -1300,6 +1432,10 @@
             {
               "airline": "TAP Air Portugal",
               "number": "560"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "564"
             }
           ],
           "lineColor": "#2563eb",
@@ -1358,22 +1494,6 @@
           "lineWeight": 2
         },
         {
-          "iata": "JFK",
-          "name": "John F. Kennedy International Airport",
-          "country": "United States",
-          "lat": 40.639447,
-          "lng": -73.779317,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "Delta Air Lines",
-              "number": "273"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
           "iata": "ACC",
           "name": "Kotoka International Airport",
           "country": "Ghana",
@@ -1384,6 +1504,22 @@
             {
               "airline": "TAP Air Portugal",
               "number": "1527"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "KRK",
+          "name": "Kraków John Paul II International Airport",
+          "country": "Poland",
+          "lat": 50.077702,
+          "lng": 19.7848,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Ryanair",
+              "number": "4024"
             }
           ],
           "lineColor": "#2563eb",
@@ -1510,6 +1646,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "MPM",
+          "name": "Maputo Airport",
+          "country": "Mozambique",
+          "lat": -25.920799,
+          "lng": 32.572601,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "TAP Air Portugal",
+              "number": "281"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "RAK",
           "name": "Marrakesh Menara Airport",
           "country": "Morocco",
@@ -1556,6 +1708,10 @@
             {
               "airline": "TAP Air Portugal",
               "number": "223"
+            },
+            {
+              "airline": "TAP Air Portugal",
+              "number": "225"
             }
           ],
           "lineColor": "#2563eb",
@@ -1576,6 +1732,26 @@
             {
               "airline": "TAP Air Portugal",
               "number": "1438"
+            },
+            {
+              "airline": "Royal Air Maroc",
+              "number": "983"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "NTE",
+          "name": "Nantes Atlantique Airport",
+          "country": "France",
+          "lat": 47.153198,
+          "lng": -1.61073,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "easyJet",
+              "number": "7619"
             }
           ],
           "lineColor": "#2563eb",
@@ -1754,6 +1930,38 @@
           "lineWeight": 2
         },
         {
+          "iata": "NAT",
+          "name": "Rio Grande do Norte/São Gonçalo do Amarante–Governador Aluízio Alves International Airport",
+          "country": "Brazil",
+          "lat": -5.769822,
+          "lng": -35.36661,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "TAP Air Portugal",
+              "number": "9"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
+          "iata": "RTM",
+          "name": "Rotterdam The Hague Airport",
+          "country": "Netherlands",
+          "lat": 51.956902,
+          "lng": 4.43722,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Transavia",
+              "number": "5244"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "GRU",
           "name": "São Paulo/Guarulhos–Governor André Franco Montoro International Airport",
           "country": "Brazil",
@@ -1784,26 +1992,6 @@
             {
               "airline": "TAP Air Portugal",
               "number": "1104"
-            }
-          ],
-          "lineColor": "#2563eb",
-          "lineWeight": 2
-        },
-        {
-          "iata": "ARN",
-          "name": "Stockholm-Arlanda Airport",
-          "country": "Sweden",
-          "lat": 59.64849,
-          "lng": 17.928829,
-          "flightCount": 1,
-          "flights": [
-            {
-              "airline": "TAP Air Portugal",
-              "number": "780"
-            },
-            {
-              "airline": "TAP Air Portugal",
-              "number": "782"
             }
           ],
           "lineColor": "#2563eb",
@@ -1856,6 +2044,10 @@
             {
               "airline": "TAP Air Portugal",
               "number": "492"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "1798"
             }
           ],
           "lineColor": "#2563eb",
@@ -2028,6 +2220,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "AMS",
+          "name": "Amsterdam Airport Schiphol",
+          "country": "Netherlands",
+          "lat": 52.308601,
+          "lng": 4.76389,
+          "flightCount": 10,
+          "flights": [
+            {
+              "airline": "Aeromexico",
+              "number": "6404"
+            },
+            {
+              "airline": "WestJet",
+              "number": "5257"
+            },
+            {
+              "airline": "Delta Air Lines",
+              "number": "9614"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "CDG",
           "name": "Charles de Gaulle International Airport",
           "country": "France",
@@ -2076,6 +2292,30 @@
           "lineWeight": 4
         },
         {
+          "iata": "ORY",
+          "name": "Paris-Orly Airport",
+          "country": "France",
+          "lat": 48.729499,
+          "lng": 2.358963,
+          "flightCount": 10,
+          "flights": [
+            {
+              "airline": "TAP Air Portugal",
+              "number": "428"
+            },
+            {
+              "airline": "Azul",
+              "number": "7484"
+            },
+            {
+              "airline": "Azores",
+              "number": "8936"
+            }
+          ],
+          "lineColor": "#b91c1c",
+          "lineWeight": 4
+        },
+        {
           "iata": "BCN",
           "name": "Barcelona-El Prat Airport",
           "country": "Spain",
@@ -2094,54 +2334,6 @@
             {
               "airline": "TAP Air Portugal",
               "number": "1030"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "AMS",
-          "name": "Amsterdam Airport Schiphol",
-          "country": "Netherlands",
-          "lat": 52.308601,
-          "lng": 4.76389,
-          "flightCount": 8,
-          "flights": [
-            {
-              "airline": "Aeromexico",
-              "number": "6404"
-            },
-            {
-              "airline": "WestJet",
-              "number": "5257"
-            },
-            {
-              "airline": "Delta Air Lines",
-              "number": "9614"
-            }
-          ],
-          "lineColor": "#b91c1c",
-          "lineWeight": 4
-        },
-        {
-          "iata": "ORY",
-          "name": "Paris-Orly Airport",
-          "country": "France",
-          "lat": 48.729499,
-          "lng": 2.358963,
-          "flightCount": 8,
-          "flights": [
-            {
-              "airline": "TAP Air Portugal",
-              "number": "428"
-            },
-            {
-              "airline": "Azul",
-              "number": "7484"
-            },
-            {
-              "airline": "Azores",
-              "number": "8936"
             }
           ],
           "lineColor": "#b91c1c",
@@ -2206,7 +2398,7 @@
         "lat": 41.2481,
         "lng": -8.6814
       },
-      "sampledFlights": 643,
+      "sampledFlights": 700,
       "connections": [
         {
           "iata": "BCN",
@@ -3701,6 +3893,22 @@
           "lineWeight": 2
         },
         {
+          "iata": "KTW",
+          "name": "Katowice Wojciech Korfanty International Airport",
+          "country": "Poland",
+          "lat": 50.476015,
+          "lng": 19.080705,
+          "flightCount": 1,
+          "flights": [
+            {
+              "airline": "Wizz Air",
+              "number": "1086"
+            }
+          ],
+          "lineColor": "#2563eb",
+          "lineWeight": 2
+        },
+        {
           "iata": "KRK",
           "name": "Kraków John Paul II International Airport",
           "country": "Poland",
@@ -3807,6 +4015,10 @@
             {
               "airline": "Ryanair",
               "number": "5047"
+            },
+            {
+              "airline": "Ryanair",
+              "number": "7634"
             }
           ],
           "lineColor": "#2563eb",

@@ -243,13 +243,13 @@ export const es: MobileMessages = {
     locationEyebrow: 'Ubicación',
     locationTitle: 'Encuentra estaciones cerca de ti',
     locationBody:
-      'La ubicación es opcional. Ordena estaciones por distancia, alimenta el widget de la estación más cercana y — con Siempre permitido — puede avisarte al llegar a grandes estaciones.',
+      'La ubicación es opcional. Ordena estaciones por distancia, alimenta el widget de la estación más cercana y puede avisarte al llegar a grandes hubs. Siempre funciona mejor en segundo plano; Al usar la app aún ayuda con la app abierta.',
     locationBodyAndroid:
       'La ubicación es opcional, pero permite a VeryStays ordenar estaciones por distancia en la pantalla de inicio.',
     notificationsEyebrow: 'Notificaciones',
     notificationsTitle: 'Recordatorios suaves de viaje',
     notificationsBody:
-      'Cuando pulses Tomar en una salida, podemos recordártelo minutos antes de que salga el tren. Con ubicación Siempre activa, también podemos avisarte al llegar a estaciones concurridas.',
+      'Cuando pulses Tomar en una salida, podemos recordártelo minutos antes de que salga el tren. La ubicación también puede avisarte al llegar a estaciones concurridas — Siempre funciona mejor con la app cerrada.',
     widgetsEyebrow: 'De un vistazo',
     widgetsTitle: 'Widgets y Live Activity',
     widgetsTitleAndroid: 'Cuenta atrás del viaje',

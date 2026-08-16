@@ -374,7 +374,7 @@ export const stationImages: Record<string, string> = {
   "São Bento (Porto)": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Porto_-_S%C3%A3o_Bento.JPG/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Porto_-_S%C3%A3o_Bento.JPG",
   "São Frutuoso": "https://images.pexels.com/photos/1192438/pexels-photo-1192438.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "São Gemil": "https://images.pexels.com/photos/5441770/pexels-photo-5441770.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-  "São João da Madeira": "https://images.pexels.com/photos/37122738/pexels-photo-37122738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "São João da Madeira": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Esta%C3%A7%C3%A3o_de_S%C3%A3o_Jo%C3%A3o_da_Madeira_%282023%29.jpg/960px-Esta%C3%A7%C3%A3o_de_S%C3%A3o_Jo%C3%A3o_da_Madeira_%282023%29.jpg",
   "São João de Ver": "https://images.pexels.com/photos/31797305/pexels-photo-31797305.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "São João Loure": "https://images.pexels.com/photos/2379943/pexels-photo-2379943.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "São Mamede de Infesta": "https://images.pexels.com/photos/19925519/pexels-photo-19925519.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",

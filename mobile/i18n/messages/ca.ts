@@ -243,13 +243,13 @@ export const ca: MobileMessages = {
     locationEyebrow: 'Ubicació',
     locationTitle: 'Troba estacions a prop teu',
     locationBody:
-      'La ubicació és opcional. Ordena estacions per distància, alimenta el widget de l\'estació més propera i — amb Sempre permès — et pot avisar quan arribes a grans estacions.',
+      'La ubicació és opcional. Ordena estacions per distància, alimenta el widget de l\'estació més propera i et pot avisar quan arribes a grans hubs. Sempre funciona millor en segon pla; En usar l\'app encara ajuda amb l\'app oberta.',
     locationBodyAndroid:
       'La ubicació és opcional, però permet a VeryStays ordenar estacions per distància a la pantalla d’inici.',
     notificationsEyebrow: 'Notificacions',
     notificationsTitle: 'Recordatoris suaus de viatge',
     notificationsBody:
-      'Quan prems Agafar en una sortida, et podem recordar minuts abans que surti el tren. Amb ubicació Sempre activa, també et podem avisar quan arribes a estacions concurrides.',
+      'Quan prems Agafar en una sortida, et podem recordar minuts abans que surti el tren. La ubicació també et pot avisar quan arribes a estacions concurrides — Sempre funciona millor amb l\'app tancada.',
     widgetsEyebrow: 'D’un cop d’ull',
     widgetsTitle: 'Widgets i Live Activity',
     widgetsTitleAndroid: 'Compte enrere del viatge',

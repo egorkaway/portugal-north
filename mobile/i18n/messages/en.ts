@@ -243,13 +243,13 @@ export const en: MobileMessages = {
     locationEyebrow: 'Location',
     locationTitle: 'Find stations near you',
     locationBody:
-      'Location is optional. It sorts stations by distance, powers the nearest-station widget, and — with Always allowed — can notify you when you arrive at major train hubs.',
+      'Location is optional. It sorts stations by distance, powers the nearest-station widget, and can nudge you when you arrive at major hubs. Always works best in the background; While Using still helps when the app is open.',
     locationBodyAndroid:
       'Location is optional, but it lets VeryStays sort stations by distance on the home screen.',
     notificationsEyebrow: 'Notifications',
     notificationsTitle: 'Gentle trip reminders',
     notificationsBody:
-      'When you tap Take on a departure, we can remind you a few minutes before the train leaves. With location Always on, we can also nudge you when you arrive at busy stations.',
+      'When you tap Take on a departure, we can remind you a few minutes before the train leaves. Location can also nudge you when you arrive at busy stations — Always works best with the app closed.',
     widgetsEyebrow: 'At a glance',
     widgetsTitle: 'Widgets & Live Activity',
     widgetsTitleAndroid: 'Trip countdown',

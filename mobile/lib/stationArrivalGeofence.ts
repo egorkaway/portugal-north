@@ -122,9 +122,16 @@ export async function hasStationArrivalBackgroundPermission(): Promise<boolean> 
   return background.status === Location.PermissionStatus.GRANTED;
 }
 
+/** Foreground (When In Use) is enough to register fences; Always improves delivery. */
+export async function hasStationArrivalGeofencePermission(): Promise<boolean> {
+  if (Platform.OS === 'web') return false;
+  const foreground = await Location.getForegroundPermissionsAsync();
+  return foreground.status === Location.PermissionStatus.GRANTED;
+}
+
 /**
- * Request When-In-Use first, then Always (required for iOS region monitoring
- * while the app is backgrounded / suspended).
+ * Request When-In-Use first, then Always (best for closed-app region events).
+ * Returns true if at least When In Use is granted so we can still try geofencing.
  */
 export async function ensureStationArrivalLocationPermission(): Promise<boolean> {
   if (Platform.OS === 'web') return false;
@@ -134,13 +141,17 @@ export async function ensureStationArrivalLocationPermission(): Promise<boolean>
     return false;
   }
 
-  if (Platform.OS !== 'ios') {
-    // Android background location is a separate Play-policy step; keep iOS-first.
-    return false;
+  if (Platform.OS === 'ios') {
+    // Prefer Always, but do not require it — When In Use may still fire enter
+    // events while the app is foregrounded or briefly after.
+    try {
+      await Location.requestBackgroundPermissionsAsync();
+    } catch (error) {
+      console.warn('[geofence] Always permission request failed', error);
+    }
   }
 
-  const background = await Location.requestBackgroundPermissionsAsync();
-  return background.status === Location.PermissionStatus.GRANTED;
+  return true;
 }
 
 /**
@@ -190,7 +201,7 @@ export async function refreshStationArrivalGeofences(): Promise<void> {
   const stations = getArrivalGeofenceStations();
   if (stations.length === 0) return;
 
-  const allowed = await hasStationArrivalBackgroundPermission();
+  const allowed = await hasStationArrivalGeofencePermission();
   if (!allowed) return;
 
   const coords = await getCurrentCoords({ timeoutMs: 6_000 });

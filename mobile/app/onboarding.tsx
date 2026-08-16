@@ -89,10 +89,10 @@ export default function OnboardingScreen() {
     setBusy(true);
     try {
       if (Platform.OS === 'ios') {
-        const alwaysGranted = await ensureStationArrivalLocationPermission();
+        const locationGranted = await ensureStationArrivalLocationPermission();
         const coords = await getCurrentCoords({ timeoutMs: 5_000 });
         if (coords) await writeLastCoords(coords);
-        if (alwaysGranted) {
+        if (locationGranted) {
           await refreshStationArrivalGeofences();
         }
       } else {

@@ -991,6 +991,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@anderson-pereira-707727212",
     photoPageUrl: "https://www.pexels.com/photo/tram-on-street-18187514/",
   },
+  "18214383": {
+    photographer: "Eliel Souza",
+    photographerUrl: "https://www.pexels.com/@eliel-souza-475047835",
+    photoPageUrl: "https://www.pexels.com/photo/luz-railway-station-in-sao-paulo-brazil-18214383/",
+  },
   "18280334": {
     photographer: "Bruno Silva",
     photographerUrl: "https://www.pexels.com/@onorblog",
@@ -2136,6 +2141,16 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@lajos-kristof-kantor-2158796893",
     photoPageUrl: "https://www.pexels.com/photo/aerial-view-of-lisbon-with-aqueduct-and-cityscape-37122717/",
   },
+  "37164900": {
+    photographer: "Filipa Moreira",
+    photographerUrl: "https://www.pexels.com/@filipa-moreira-2149871975",
+    photoPageUrl: "https://www.pexels.com/photo/charming-portuguese-train-station-view-37164900/",
+  },
+  "37195500": {
+    photographer: "Filipa Moreira",
+    photographerUrl: "https://www.pexels.com/@filipa-moreira-2149871975",
+    photoPageUrl: "https://www.pexels.com/photo/scenic-train-crossing-iron-bridge-in-portugal-37195500/",
+  },
   "37243144": {
     photographer: "Talha Kılıç",
     photographerUrl: "https://www.pexels.com/@talha-kilic-517654077",
@@ -2161,6 +2176,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@gustavo-aguiar-2161164324",
     photoPageUrl: "https://www.pexels.com/photo/commuter-train-at-sao-paulo-station-37365781/",
   },
+  "37418140": {
+    photographer: "Paolo Bici",
+    photographerUrl: "https://www.pexels.com/@paolobici",
+    photoPageUrl: "https://www.pexels.com/photo/commuters-waiting-at-loreto-metro-station-milan-37418140/",
+  },
   "37453759": {
     photographer: "Ali Akdemir",
     photographerUrl: "https://www.pexels.com/@aliakdemir",
@@ -2171,15 +2191,30 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@aliakdemir",
     photoPageUrl: "https://www.pexels.com/photo/ancient-aqueduct-bridge-over-serene-landscape-37453768/",
   },
+  "37626003": {
+    photographer: "Michael Westen",
+    photographerUrl: "https://www.pexels.com/@michael-westen-838156860",
+    photoPageUrl: "https://www.pexels.com/photo/historic-aqueduct-in-vila-do-conde-portugal-37626003/",
+  },
   "37639177": {
     photographer: "Rodrigo Guimarães",
     photographerUrl: "https://www.pexels.com/@rodrigo-guimaraes-2160793271",
     photoPageUrl: "https://www.pexels.com/photo/silhouettes-in-foggy-tunnel-with-train-37639177/",
   },
+  "37659052": {
+    photographer: "Pedro Silva",
+    photographerUrl: "https://www.pexels.com/@pedro-silva-473904579",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architecture-of-oriente-station-in-lisboa-37659052/",
+  },
   "37764656": {
     photographer: "Yana Oleksiuk",
     photographerUrl: "https://www.pexels.com/@yana-oleksiuk-2161225765",
     photoPageUrl: "https://www.pexels.com/photo/historic-funicular-in-prague-s-lush-greenery-37764656/",
+  },
+  "37774483": {
+    photographer: "Muhammed Hanefi",
+    photographerUrl: "https://www.pexels.com/@muhammed-hanefi-778129632",
+    photoPageUrl: "https://www.pexels.com/photo/quiet-train-station-platform-during-sunset-37774483/",
   },
   "37899453": {
     photographer: "Liane Ferreira",
@@ -2190,6 +2225,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Liane Ferreira",
     photographerUrl: "https://www.pexels.com/@liane-ferreira-1033991071",
     photoPageUrl: "https://www.pexels.com/photo/ancient-stone-mill-stream-in-montalegre-portugal-37899454/",
+  },
+  "37929326": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/modern-train-station-in-cadiz-spain-37929326/",
   },
   "38001261": {
     photographer: "Heinz Reisenhofer",
@@ -2210,6 +2250,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Emin Alper",
     photographerUrl: "https://www.pexels.com/@emin-alper-2161785125",
     photoPageUrl: "https://www.pexels.com/photo/man-waving-at-train-station-platform-in-aydin-38151921/",
+  },
+  "38169158": {
+    photographer: "Bingqian Li",
+    photographerUrl: "https://www.pexels.com/@bingqian-li-230971044",
+    photoPageUrl: "https://www.pexels.com/photo/gare-du-nord-platform-with-trains-in-paris-38169158/",
   },
   "38194047": {
     photographer: "Anh Nguyen",

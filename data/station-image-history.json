@@ -1493,6 +1493,41 @@
       }
     ]
   },
+  "São João da Madeira": {
+    "rejectedUrls": [
+      "https://images.pexels.com/photos/37122738/pexels-photo-37122738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/S%C3%A3o_Jo%C3%A3o_da_Madeira.JPG/960px-S%C3%A3o_Jo%C3%A3o_da_Madeira.JPG?utm_source=pt.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "https://images.pexels.com/photos/18214383/pexels-photo-18214383.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
+    ],
+    "refreshes": [
+      {
+        "at": "2026-08-16T21:21:17.278Z",
+        "from": "https://images.pexels.com/photos/37122738/pexels-photo-37122738.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/S%C3%A3o_Jo%C3%A3o_da_Madeira.JPG/960px-S%C3%A3o_Jo%C3%A3o_da_Madeira.JPG?utm_source=pt.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 0
+        }
+      },
+      {
+        "at": "2026-08-16T21:28:24.219Z",
+        "from": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/S%C3%A3o_Jo%C3%A3o_da_Madeira.JPG/960px-S%C3%A3o_Jo%C3%A3o_da_Madeira.JPG?utm_source=pt.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+        "to": "https://images.pexels.com/photos/18214383/pexels-photo-18214383.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "reason": "forced",
+        "votesAtRefresh": {
+          "up": 0,
+          "down": 0
+        }
+      },
+      {
+        "at": "2026-08-16T21:29:55.911Z",
+        "from": "https://images.pexels.com/photos/18214383/pexels-photo-18214383.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+        "to": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Esta%C3%A7%C3%A3o_de_S%C3%A3o_Jo%C3%A3o_da_Madeira_%282023%29.jpg/960px-Esta%C3%A7%C3%A3o_de_S%C3%A3o_Jo%C3%A3o_da_Madeira_%282023%29.jpg",
+        "reason": "manual-wikimedia-actual-station"
+      }
+    ]
+  },
   "São Mamede de Infesta": {
     "rejectedUrls": [
       "https://images.pexels.com/photos/29406935/pexels-photo-29406935.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
