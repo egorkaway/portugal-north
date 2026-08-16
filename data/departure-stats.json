@@ -1,7 +1,7 @@
 {
-  "runCount": 335,
-  "lastRunAt": "2026-08-15T08:33:57.870Z",
-  "lastAirportConnectionsAt": "2026-08-15T08:41:39.880Z",
+  "runCount": 336,
+  "lastRunAt": "2026-08-16T05:32:53.052Z",
+  "lastAirportConnectionsAt": "2026-08-16T05:41:01.316Z",
   "stations": {
     "Pombal": {
       "cpCode": "94-34645",
@@ -507,8 +507,8 @@
       "cpCode": "94-28068",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 160,
-          "arrivalsNextHour": 159,
+          "departuresNextHour": 161,
+          "arrivalsNextHour": 160,
           "delayMinutes": 103
         },
         "Intercidades": {
@@ -518,13 +518,13 @@
         }
       },
       "totals": {
-        "departuresNextHour": 170,
-        "arrivalsNextHour": 169,
+        "departuresNextHour": 171,
+        "arrivalsNextHour": 170,
         "delayMinutes": 238
       },
-      "successfulSamples": 97,
+      "successfulSamples": 98,
       "failedSamples": 3,
-      "lastSampleAt": "2026-08-15T08:35:33.525Z",
+      "lastSampleAt": "2026-08-16T05:34:06.526Z",
       "lastError": null
     },
     "Famalicão": {
@@ -765,9 +765,9 @@
         "delayMinutes": 1293
       },
       "successfulSamples": 90,
-      "failedSamples": 6,
+      "failedSamples": 7,
       "lastSampleAt": "2026-08-15T08:37:02.421Z",
-      "lastError": null
+      "lastError": "Unexpected end of JSON input"
     },
     "Livração": {
       "cpCode": "94-8474",
@@ -904,8 +904,8 @@
       "cpCode": "94-38075",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 290,
-          "arrivalsNextHour": 289,
+          "departuresNextHour": 292,
+          "arrivalsNextHour": 291,
           "delayMinutes": 588
         },
         "Regional": {
@@ -915,13 +915,13 @@
         }
       },
       "totals": {
-        "departuresNextHour": 299,
-        "arrivalsNextHour": 298,
+        "departuresNextHour": 301,
+        "arrivalsNextHour": 300,
         "delayMinutes": 658
       },
-      "successfulSamples": 97,
+      "successfulSamples": 98,
       "failedSamples": 7,
-      "lastSampleAt": "2026-08-15T08:34:43.140Z",
+      "lastSampleAt": "2026-08-16T05:34:12.788Z",
       "lastError": null
     },
     "Salreu": {
@@ -1464,19 +1464,19 @@
       "cpCode": "94-39073",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 292,
-          "arrivalsNextHour": 291,
+          "departuresNextHour": 294,
+          "arrivalsNextHour": 293,
           "delayMinutes": 410
         }
       },
       "totals": {
-        "departuresNextHour": 292,
-        "arrivalsNextHour": 291,
+        "departuresNextHour": 294,
+        "arrivalsNextHour": 293,
         "delayMinutes": 410
       },
-      "successfulSamples": 99,
+      "successfulSamples": 100,
       "failedSamples": 8,
-      "lastSampleAt": "2026-08-14T19:41:45.073Z",
+      "lastSampleAt": "2026-08-16T05:32:53.685Z",
       "lastError": null
     },
     "Aguda": {
@@ -1718,9 +1718,9 @@
         "arrivalsNextHour": 51,
         "delayMinutes": 112
       },
-      "successfulSamples": 91,
+      "successfulSamples": 92,
       "failedSamples": 9,
-      "lastSampleAt": "2026-08-15T08:35:28.757Z",
+      "lastSampleAt": "2026-08-16T05:32:55.554Z",
       "lastError": null
     },
     "Areosa": {
@@ -1829,9 +1829,9 @@
         "delayMinutes": 378
       },
       "successfulSamples": 101,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-08-15T08:35:55.979Z",
-      "lastError": null
+      "lastError": "Unexpected end of JSON input"
     },
     "Avanca": {
       "cpCode": "94-38216",
@@ -1967,24 +1967,24 @@
       "cpCode": "94-8433",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 199,
-          "arrivalsNextHour": 199,
+          "departuresNextHour": 200,
+          "arrivalsNextHour": 200,
           "delayMinutes": 220
         },
         "Regional": {
-          "departuresNextHour": 2,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 15
+          "departuresNextHour": 3,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 19
         }
       },
       "totals": {
-        "departuresNextHour": 201,
-        "arrivalsNextHour": 201,
-        "delayMinutes": 235
+        "departuresNextHour": 203,
+        "arrivalsNextHour": 203,
+        "delayMinutes": 239
       },
-      "successfulSamples": 95,
+      "successfulSamples": 96,
       "failedSamples": 6,
-      "lastSampleAt": "2026-08-14T14:08:10.620Z",
+      "lastSampleAt": "2026-08-16T05:34:02.888Z",
       "lastError": null
     },
     "Águeda": {
@@ -2512,19 +2512,19 @@
       "cpCode": "94-5108",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 240,
-          "arrivalsNextHour": 242,
+          "departuresNextHour": 242,
+          "arrivalsNextHour": 244,
           "delayMinutes": 225
         }
       },
       "totals": {
-        "departuresNextHour": 240,
-        "arrivalsNextHour": 242,
+        "departuresNextHour": 242,
+        "arrivalsNextHour": 244,
         "delayMinutes": 225
       },
-      "successfulSamples": 106,
+      "successfulSamples": 107,
       "failedSamples": 8,
-      "lastSampleAt": "2026-08-15T08:34:19.157Z",
+      "lastSampleAt": "2026-08-16T05:34:10.638Z",
       "lastError": null
     },
     "Portela": {
@@ -3368,19 +3368,19 @@
       "cpCode": "94-39123",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 324,
-          "arrivalsNextHour": 322,
+          "departuresNextHour": 326,
+          "arrivalsNextHour": 324,
           "delayMinutes": 493
         }
       },
       "totals": {
-        "departuresNextHour": 324,
-        "arrivalsNextHour": 322,
+        "departuresNextHour": 326,
+        "arrivalsNextHour": 324,
         "delayMinutes": 493
       },
-      "successfulSamples": 108,
+      "successfulSamples": 109,
       "failedSamples": 6,
-      "lastSampleAt": "2026-08-15T08:34:26.265Z",
+      "lastSampleAt": "2026-08-16T05:33:25.537Z",
       "lastError": null
     },
     "Silvalde": {
@@ -3631,9 +3631,9 @@
         "arrivalsNextHour": 71,
         "delayMinutes": 322
       },
-      "successfulSamples": 105,
+      "successfulSamples": 106,
       "failedSamples": 7,
-      "lastSampleAt": "2026-08-15T08:35:44.027Z",
+      "lastSampleAt": "2026-08-16T05:34:46.940Z",
       "lastError": null
     },
     "Lisboa Santa Apolónia": {
@@ -3794,19 +3794,19 @@
       "cpCode": "94-68122",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 326,
-          "arrivalsNextHour": 332,
+          "departuresNextHour": 328,
+          "arrivalsNextHour": 334,
           "delayMinutes": 138
         }
       },
       "totals": {
-        "departuresNextHour": 326,
-        "arrivalsNextHour": 332,
+        "departuresNextHour": 328,
+        "arrivalsNextHour": 334,
         "delayMinutes": 138
       },
-      "successfulSamples": 92,
+      "successfulSamples": 93,
       "failedSamples": 13,
-      "lastSampleAt": "2026-08-15T08:34:06.473Z",
+      "lastSampleAt": "2026-08-16T05:34:11.553Z",
       "lastError": null
     },
     "Entroncamento": {
@@ -4481,9 +4481,9 @@
         "arrivalsNextHour": 41,
         "delayMinutes": 0
       },
-      "successfulSamples": 96,
+      "successfulSamples": 97,
       "failedSamples": 3,
-      "lastSampleAt": "2026-08-15T08:35:45.846Z",
+      "lastSampleAt": "2026-08-16T05:34:09.995Z",
       "lastError": null
     },
     "Barquinha": {
@@ -6351,27 +6351,27 @@
         "delayMinutes": 205
       },
       "successfulSamples": 92,
-      "failedSamples": 8,
+      "failedSamples": 9,
       "lastSampleAt": "2026-08-14T14:08:06.457Z",
-      "lastError": null
+      "lastError": "Unexpected end of JSON input"
     },
     "Algés": {
       "cpCode": "94-69088",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 1005,
-          "arrivalsNextHour": 1002,
+          "departuresNextHour": 1008,
+          "arrivalsNextHour": 1006,
           "delayMinutes": 482
         }
       },
       "totals": {
-        "departuresNextHour": 1005,
-        "arrivalsNextHour": 1002,
+        "departuresNextHour": 1008,
+        "arrivalsNextHour": 1006,
         "delayMinutes": 482
       },
-      "successfulSamples": 107,
+      "successfulSamples": 108,
       "failedSamples": 4,
-      "lastSampleAt": "2026-08-15T08:35:59.394Z",
+      "lastSampleAt": "2026-08-16T05:32:54.655Z",
       "lastError": null
     },
     "Algueirão - Mem Martins": {
@@ -6846,9 +6846,9 @@
         "arrivalsNextHour": 281,
         "delayMinutes": 225
       },
-      "successfulSamples": 89,
+      "successfulSamples": 90,
       "failedSamples": 5,
-      "lastSampleAt": "2026-08-15T08:36:54.845Z",
+      "lastSampleAt": "2026-08-16T05:34:08.404Z",
       "lastError": null
     },
     "Massama - Barcarena": {
@@ -6998,9 +6998,9 @@
         "arrivalsNextHour": 682,
         "delayMinutes": 289
       },
-      "successfulSamples": 105,
+      "successfulSamples": 106,
       "failedSamples": 3,
-      "lastSampleAt": "2026-08-15T08:34:24.201Z",
+      "lastSampleAt": "2026-08-16T05:34:09.292Z",
       "lastError": null
     },
     "Palmela": {
@@ -7075,17 +7075,17 @@
         "delayMinutes": 971
       },
       "successfulSamples": 107,
-      "failedSamples": 7,
+      "failedSamples": 8,
       "lastSampleAt": "2026-08-15T08:35:00.615Z",
-      "lastError": null
+      "lastError": "Unexpected end of JSON input"
     },
     "Povoa": {
       "cpCode": "94-31146",
       "byTrainType": {
         "Urbano": {
-          "departuresNextHour": 704,
-          "arrivalsNextHour": 713,
-          "delayMinutes": 736
+          "departuresNextHour": 706,
+          "arrivalsNextHour": 715,
+          "delayMinutes": 739
         },
         "Regional": {
           "departuresNextHour": 181,
@@ -7094,13 +7094,13 @@
         }
       },
       "totals": {
-        "departuresNextHour": 885,
-        "arrivalsNextHour": 894,
-        "delayMinutes": 1230
+        "departuresNextHour": 887,
+        "arrivalsNextHour": 896,
+        "delayMinutes": 1233
       },
-      "successfulSamples": 97,
+      "successfulSamples": 98,
       "failedSamples": 4,
-      "lastSampleAt": "2026-08-15T08:35:54.502Z",
+      "lastSampleAt": "2026-08-16T05:34:07.526Z",
       "lastError": null
     },
     "Praça do Quebedo": {

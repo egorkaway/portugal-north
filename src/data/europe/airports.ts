@@ -186,6 +186,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 16.760599,
   },
   {
+    name: "Brno-Tuřany Airport (BRQ)",
+    country: "cz",
+    lines: ["BRQ"],
+    types: ["Airport Destination"],
+    lat: 49.151276,
+    lng: 16.693972,
+  },
+  {
     name: "Bristol Airport (BRS)",
     country: "gb",
     lines: ["BRS"],
@@ -416,6 +424,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 32.697812,
     lng: -16.774613,
+  },
+  {
+    name: "Nîmes-Arles-Camargue Airport (FNI)",
+    country: "fr",
+    lines: ["FNI"],
+    types: ["Airport Destination"],
+    lat: 43.757401,
+    lng: 4.41635,
   },
   {
     name: "Frankfurt Main Airport (FRA)",
@@ -978,6 +994,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 4.43722,
   },
   {
+    name: "Rzeszów-Jasionka Airport (RZE)",
+    country: "pl",
+    lines: ["RZE"],
+    types: ["Airport Destination"],
+    lat: 50.109791,
+    lng: 22.024155,
+  },
+  {
     name: "London Southend Airport (SEN)",
     country: "gb",
     lines: ["SEN"],
@@ -1186,12 +1210,28 @@ export const europeDestinationAirports: Station[] = [
     lng: 25.285801,
   },
   {
+    name: "Verona Villafranca Valerio Catullo Airport (VRN)",
+    country: "it",
+    lines: ["VRN"],
+    types: ["Airport Destination"],
+    lat: 45.394955,
+    lng: 10.887303,
+  },
+  {
     name: "Stockholm Västerås Airport (VST)",
     country: "se",
     lines: ["VST"],
     types: ["Airport Destination"],
     lat: 59.589401,
     lng: 16.6336,
+  },
+  {
+    name: "Växjö Kronoberg Airport (VXO)",
+    country: "se",
+    lines: ["VXO"],
+    types: ["Airport Destination"],
+    lat: 56.929100036621094,
+    lng: 14.727999687194824,
   },
   {
     name: "Warsaw Chopin Airport (WAW)",
