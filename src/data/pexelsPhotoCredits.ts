@@ -776,6 +776,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@vladimirsrajber",
     photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-a-bullet-train-14924416/",
   },
+  "14924421": {
+    photographer: "Vladimir Srajber",
+    photographerUrl: "https://www.pexels.com/@vladimirsrajber",
+    photoPageUrl: "https://www.pexels.com/photo/a-photo-of-a-train-14924421/",
+  },
   "14924423": {
     photographer: "Vladimir Srajber",
     photographerUrl: "https://www.pexels.com/@vladimirsrajber",
@@ -2215,6 +2220,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Milo Deckert",
     photographerUrl: "https://www.pexels.com/@milodeckert",
     photoPageUrl: "https://www.pexels.com/photo/lively-day-at-praca-do-comercio-in-lisbon-38390768/",
+  },
+  "38413221": {
+    photographer: "Jose Cruz",
+    photographerUrl: "https://www.pexels.com/@cruz-in-portugal",
+    photoPageUrl: "https://www.pexels.com/photo/traditional-portuguese-house-with-red-roof-in-summer-sun-38413221/",
   },
   "38479643": {
     photographer: "Cristiano Ferrari films",

@@ -474,6 +474,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -4.43306,
   },
   {
+    name: "Genoa Cristoforo Colombo Airport (GOA)",
+    country: "it",
+    lines: ["GOA"],
+    types: ["Airport Destination"],
+    lat: 44.412039,
+    lng: 8.840732,
+  },
+  {
     name: "Göteborg Landvetter Airport (GOT)",
     country: "se",
     lines: ["GOT"],
@@ -752,6 +760,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 54.509201,
     lng: -1.42941,
+  },
+  {
+    name: "Montpellier-Méditerranée Airport (MPL)",
+    country: "fr",
+    lines: ["MPL"],
+    types: ["Airport Destination"],
+    lat: 43.576199,
+    lng: 3.96301,
   },
   {
     name: "Marseille Provence Airport (MRS)",
@@ -1216,6 +1232,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 45.648399,
     lng: 12.1944,
+  },
+  {
+    name: "Timișoara Traian Vuia International Airport (TSR)",
+    country: "ro",
+    lines: ["TSR"],
+    types: ["Airport Destination"],
+    lat: 45.809898,
+    lng: 21.3379,
   },
   {
     name: "Tours Val de Loire Airport (TUF)",

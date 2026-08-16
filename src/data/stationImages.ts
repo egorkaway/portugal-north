@@ -10,7 +10,7 @@ export const stationImages: Record<string, string> = {
   "Aeroporto (Metro Lisboa)": "https://images.pexels.com/photos/32819765/pexels-photo-32819765.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Afife": "https://images.pexels.com/photos/35239401/pexels-photo-35239401.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Agualva - Cacém": "https://images.pexels.com/photos/953125/pexels-photo-953125.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-  "Águas Santas - Palmilheira": "https://images.pexels.com/photos/34240791/pexels-photo-34240791.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Águas Santas - Palmilheira": "https://images.pexels.com/photos/14924421/pexels-photo-14924421.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Aguda": "https://images.pexels.com/photos/36675216/pexels-photo-36675216.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Águeda": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Esta%C3%A7%C3%A3o_de_%C3%81gueda%2C_2008.12.25.jpg/960px-Esta%C3%A7%C3%A3o_de_%C3%81gueda%2C_2008.12.25.jpg",
   "Aguieira": "https://images.pexels.com/photos/6942510/pexels-photo-6942510.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
