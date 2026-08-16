@@ -37,7 +37,9 @@ export function useTripCompletion(
 
     recordedRef.current = trip.id;
     void (async () => {
-      await recordTakenTrip(trip, finalStop.stationName, { delayMinutes, platform });
+      if (trip.purpose !== "meet") {
+        await recordTakenTrip(trip, finalStop.stationName, { delayMinutes, platform });
+      }
       await clearActiveTrip();
       onCompleted();
     })();

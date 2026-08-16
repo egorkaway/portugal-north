@@ -107,6 +107,15 @@ export const ru: MobileMessages = {
     loadMore: 'Показать ещё поезда',
     loadingMore: 'Загрузка…',
   },
+  arrivals: {
+    title: 'Ближайшие прибытия',
+    none: 'Нет прибытий в ближайшие часы.',
+    fromOrigin: 'из {{origin}}',
+    continuesTo: 'из {{origin}} → {{destination}}',
+    terminates: 'конечная',
+    meet: 'Встретить',
+    meeting: 'Встречаю',
+  },
   countdown: {
     leavingNow: 'Отправляется сейчас',
     leavesIn: 'Через {{minutes}} мин',
@@ -133,7 +142,7 @@ export const ru: MobileMessages = {
   trip: {
     emptyTitle: 'Нет активной поездки',
     emptyBody:
-      'Откройте станцию, нажмите «Еду» у отправления — и обратный отсчёт появится здесь.',
+      'Откройте станцию, нажмите «Еду» у отправления или транзитного прибытия, или «Встретить» у конечного — и обратный отсчёт появится здесь.',
     departed: 'Отправился',
     departedAt: 'Отправился в {{time}}',
     expectedDeparture: 'Ожидаемое отправление {{time}}',

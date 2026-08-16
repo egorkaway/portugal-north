@@ -36,6 +36,32 @@ export type StationDeparture = {
   delayMinutes: number | null;
 };
 
+/** Upcoming arrival at this station (may continue or terminate here). */
+export type StationArrival = {
+  trainNumber: string;
+  time: string;
+  origin: string;
+  destination: string;
+  serviceType: string;
+  platform: string | null;
+  delayMinutes: number | null;
+  /** True when this stop has no onward departure (train ends here). */
+  terminatesHere: boolean;
+  /** Onward departure time when the train continues from this station. */
+  departureTime: string | null;
+};
+
+export type TrainDelayObservation = {
+  trainNumber: string;
+  serviceType: string;
+  delayMinutes: number;
+  arrivalTime: string | null;
+  departureTime: string | null;
+  /** Whether this observation is tied to an arrival in the next hour. */
+  hasArrival: boolean;
+  hasDeparture: boolean;
+};
+
 export type TrainTypeHourCounts = {
   departures: number;
   arrivals: number;
@@ -170,6 +196,10 @@ function timeSortKey(stop: CpStationStop): string {
   return stop.departureTime ?? "99:99";
 }
 
+function arrivalSortKey(stop: CpStationStop): string {
+  return stop.arrivalTime ?? "99:99";
+}
+
 /** Next departures at a station (trains leaving this stop). */
 export function parseUpcomingDepartures(
   response: CpTimetableResponse,
@@ -189,4 +219,68 @@ export function parseUpcomingDepartures(
       platform: stop.platform ?? null,
       delayMinutes: typeof stop.delay === "number" && stop.delay > 0 ? stop.delay : null,
     }));
+}
+
+/** Next arrivals at a station (trains arriving here; may terminate or continue). */
+export function parseUpcomingArrivals(
+  response: CpTimetableResponse,
+  limit = 3,
+): StationArrival[] {
+  const stops = response.stationStops ?? [];
+
+  return stops
+    .filter((stop) => Boolean(stop.arrivalTime))
+    .sort((a, b) => arrivalSortKey(a).localeCompare(arrivalSortKey(b)))
+    .slice(0, limit)
+    .map((stop) => {
+      const departureTime = stop.departureTime?.trim() || null;
+      return {
+        trainNumber: String(stop.trainNumber),
+        time: stop.arrivalTime ?? "—",
+        origin: stop.trainOrigin?.designation ?? "—",
+        destination: stop.trainDestination?.designation ?? "—",
+        serviceType: stop.trainService?.designation ?? "—",
+        platform: stop.platform ?? null,
+        delayMinutes: typeof stop.delay === "number" && stop.delay > 0 ? stop.delay : null,
+        terminatesHere: !departureTime,
+        departureTime,
+      };
+    });
+}
+
+/**
+ * Per-train delay observations for stops with an arrival in the next hour.
+ * Used to build a train-level delay log (usual lateness on arrival at this station).
+ */
+export function extractTrainDelayObservations(
+  response: CpTimetableResponse,
+  now = new Date(),
+  timetableDate = lisbonDateAndTime(now).date,
+): TrainDelayObservation[] {
+  const observations: TrainDelayObservation[] = [];
+
+  for (const stop of response.stationStops ?? []) {
+    const arrivalTime = stop.arrivalTime?.trim() || null;
+    const departureTime = stop.departureTime?.trim() || null;
+    const hasArrival = Boolean(
+      arrivalTime && isWithinNextHour(arrivalTime, now, timetableDate),
+    );
+    if (!hasArrival) continue;
+
+    const hasDeparture = Boolean(
+      departureTime && isWithinNextHour(departureTime, now, timetableDate),
+    );
+
+    observations.push({
+      trainNumber: String(stop.trainNumber),
+      serviceType: serviceTypeFor(stop),
+      delayMinutes: delayMinutesFor(stop),
+      arrivalTime,
+      departureTime,
+      hasArrival: true,
+      hasDeparture,
+    });
+  }
+
+  return observations;
 }

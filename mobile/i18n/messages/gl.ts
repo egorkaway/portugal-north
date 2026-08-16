@@ -107,6 +107,15 @@ export const gl: MobileMessages = {
     loadMore: 'Mostrar máis trens',
     loadingMore: 'A cargar…',
   },
+  arrivals: {
+    title: 'Próximas chegadas',
+    none: 'Non hai chegadas nas próximas horas.',
+    fromOrigin: 'desde {{origin}}',
+    continuesTo: 'desde {{origin}} → {{destination}}',
+    terminates: 'termina aquí',
+    meet: 'Recibir',
+    meeting: 'Recibindo',
+  },
   countdown: {
     leavingNow: 'Saíndo agora',
     leavesIn: 'Sae en {{minutes}} min',
@@ -133,7 +142,7 @@ export const gl: MobileMessages = {
   trip: {
     emptyTitle: 'Sen viaxe activa',
     emptyBody:
-      'Abre unha estación, preme Vou coller nunha saída e a conta atrás aparecerá aquí.',
+      'Abre unha estación, preme Vou coller nunha saída ou chegada que continúa, ou Recibir nunha chegada final, e a conta atrás aparecerá aquí.',
     departed: 'Partiu',
     departedAt: 'Partiu ás {{time}}',
     expectedDeparture: 'Saída prevista ás {{time}}',

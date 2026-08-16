@@ -148,6 +148,7 @@ export async function setActiveTripFromDeparture(input: {
   platform: string | null;
   delayMinutes: number | null;
   timetableDate?: string;
+  purpose?: "take" | "meet";
 }): Promise<PlannedDeparture> {
   const { date } = lisbonDateAndTime();
   const timetableDate = input.timetableDate ?? date;
@@ -168,6 +169,7 @@ export async function setActiveTripFromDeparture(input: {
     delayMinutes: input.delayMinutes,
     timetableDate,
     selectedAt: new Date().toISOString(),
+    purpose: input.purpose ?? "take",
   };
   await writeActiveTrip(trip);
   return trip;
@@ -183,6 +185,7 @@ export async function takeActiveTrip(input: {
   platform: string | null;
   delayMinutes: number | null;
   timetableDate?: string;
+  purpose?: "take" | "meet";
 }): Promise<PlannedDeparture> {
   const trip = await setActiveTripFromDeparture(input);
   try {

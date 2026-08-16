@@ -16,6 +16,11 @@ export type PlannedDeparture = {
   delayMinutes: number | null;
   timetableDate: string;
   selectedAt: string;
+  /**
+   * `take` (default): boarding this train — recorded in trip history after departure.
+   * `meet`: waiting for a terminating arrival — same countdown, no trip history.
+   */
+  purpose?: "take" | "meet";
 };
 
 const listeners = new Set<() => void>();
@@ -186,6 +191,7 @@ export function toggleActiveTrip(
     delayMinutes: departure.delayMinutes,
     timetableDate,
     selectedAt: departure.selectedAt ?? new Date().toISOString(),
+    purpose: departure.purpose ?? "take",
   };
   setActiveTrip(trip);
   return trip;

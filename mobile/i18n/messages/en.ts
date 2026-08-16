@@ -107,6 +107,15 @@ export const en: MobileMessages = {
     loadMore: 'Show more trains',
     loadingMore: 'Loading…',
   },
+  arrivals: {
+    title: 'Next arrivals',
+    none: 'No arrivals in the next few hours.',
+    fromOrigin: 'from {{origin}}',
+    continuesTo: 'from {{origin}} → {{destination}}',
+    terminates: 'terminates here',
+    meet: 'Meet',
+    meeting: 'Meeting',
+  },
   countdown: {
     leavingNow: 'Leaving now',
     leavesIn: 'Leaves in {{minutes}} min',
@@ -133,7 +142,7 @@ export const en: MobileMessages = {
   trip: {
     emptyTitle: 'No active trip',
     emptyBody:
-      'Open a station, tap Take on a departure, and your countdown will appear here.',
+      'Open a station, tap Take on a departure or continuing arrival, or Meet on a terminating arrival, and your countdown will appear here.',
     departed: 'Departed',
     departedAt: 'Departed at {{time}}',
     expectedDeparture: 'Expected departure {{time}}',

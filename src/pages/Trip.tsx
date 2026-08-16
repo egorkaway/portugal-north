@@ -15,7 +15,7 @@ import {
 } from "@/components/ui/alert-dialog";
 import { getCpStationCode } from "@/data/cpStationCodes";
 import { useNowMinute } from "@/hooks/useNowMinute";
-import { useStationDepartures } from "@/hooks/useStationDepartures";
+import { useStationArrivals, useStationDepartures } from "@/hooks/useStationDepartures";
 import { useTrainJourney } from "@/hooks/useTrainJourney";
 import { useTripCompletion } from "@/hooks/useTripCompletion";
 import { useLocale } from "@/i18n/LocaleProvider";
@@ -110,12 +110,14 @@ const Trip = () => {
     ? history.find((record) => record.id === pendingDeleteId) ?? null
     : null;
 
+  const isMeet = trip?.purpose === "meet";
   const { data: departures } = useStationDepartures(trip?.stationName ?? "", 10);
+  const { data: arrivals } = useStationArrivals(trip?.stationName ?? "", 10);
   const originCode = trip ? getCpStationCode(trip.stationName) : undefined;
   const { data: journey, isLoading, isError } = useTrainJourney(
-    trip?.trainNumber ?? null,
-    trip?.timetableDate ?? null,
-    trip && originCode
+    isMeet ? null : (trip?.trainNumber ?? null),
+    isMeet ? null : (trip?.timetableDate ?? null),
+    !isMeet && trip && originCode
       ? {
           originStationCode: originCode,
           departureTime: trip.departureTime,
@@ -130,12 +132,20 @@ const Trip = () => {
       dep.time === trip?.departureTime &&
       dep.destination === trip?.destination,
   );
-  const delayMinutes = liveDeparture?.delayMinutes ?? trip?.delayMinutes ?? null;
-  const platform = liveDeparture?.platform ?? trip?.platform ?? null;
-  const serviceType = liveDeparture?.serviceType ?? trip?.serviceType ?? "—";
+  const liveArrival = arrivals?.find(
+    (arr) =>
+      arr.trainNumber === trip?.trainNumber &&
+      (arr.time === trip?.departureTime || arr.departureTime === trip?.departureTime),
+  );
+  const delayMinutes =
+    liveDeparture?.delayMinutes ?? liveArrival?.delayMinutes ?? trip?.delayMinutes ?? null;
+  const platform =
+    liveDeparture?.platform ?? liveArrival?.platform ?? trip?.platform ?? null;
+  const serviceType =
+    liveDeparture?.serviceType ?? liveArrival?.serviceType ?? trip?.serviceType ?? "—";
 
   const downstreamStops =
-    journey && originCode && trip
+    !isMeet && journey && originCode && trip
       ? downstreamStopsFrom(journey, originCode, {
           stationName: trip.stationName,
           departureTime: trip.departureTime,
@@ -144,16 +154,18 @@ const Trip = () => {
       : [];
 
   const hasConfirmedUpcomingStops =
-    !isLoading && !isError && Boolean(journey) && downstreamStops.length > 1;
+    !isMeet && !isLoading && !isError && Boolean(journey) && downstreamStops.length > 1;
 
-  useTripCompletion(trip, downstreamStops, delayMinutes, now, platform);
+  useTripCompletion(isMeet ? null : trip, downstreamStops, delayMinutes, now, platform);
 
   const departureMinutesUntil = trip
     ? getMinutesUntilTime(trip.departureTime, delayMinutes, now, trip.timetableDate)
     : null;
   const departureCountdown =
     departureMinutesUntil !== null && departureMinutesUntil > 0
-      ? formatDepartureCountdown(departureMinutesUntil, { t })
+      ? isMeet
+        ? formatArrivalCountdown(departureMinutesUntil, { t })
+        : formatDepartureCountdown(departureMinutesUntil, { t })
       : null;
   const effectiveDepartureTime = trip
     ? getEffectiveDepartureClock(trip.departureTime, delayMinutes)
@@ -207,7 +219,13 @@ const Trip = () => {
               <section className="rounded-lg border border-border bg-card p-5 md:p-6">
                 <div className="flex items-start justify-between gap-4">
                   <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
-                    {showDepartedWithoutStops ? t("trip.departed") : t("trip.departureCountdown")}
+                    {showDepartedWithoutStops
+                      ? isMeet
+                        ? t("trip.arrived")
+                        : t("trip.departed")
+                      : isMeet
+                        ? t("trip.arrivalCountdown")
+                        : t("trip.departureCountdown")}
                   </p>
                   <button
                     type="button"
@@ -230,8 +248,12 @@ const Trip = () => {
                   <>
                     <p className="mt-2 break-words font-display text-3xl text-primary tabular-nums sm:text-4xl md:text-5xl">
                       {effectiveDepartureTime
-                        ? t("trip.departedAt", { time: effectiveDepartureTime })
-                        : t("trip.departureAt", { time: trip.departureTime })}
+                        ? isMeet
+                          ? t("trip.arrivedAt", { time: effectiveDepartureTime })
+                          : t("trip.departedAt", { time: effectiveDepartureTime })
+                        : isMeet
+                          ? t("trip.arrivalAt", { time: trip.departureTime })
+                          : t("trip.departureAt", { time: trip.departureTime })}
                     </p>
                     {departureTimeAgoLabel ? (
                       <p className="mt-1 text-lg font-semibold text-foreground tabular-nums">
@@ -245,12 +267,18 @@ const Trip = () => {
                       {departureCountdown ??
                         (hasDeparted
                           ? effectiveDepartureTime
-                            ? t("trip.departedAt", { time: effectiveDepartureTime })
-                            : t("trip.departureAt", { time: trip.departureTime })
+                            ? isMeet
+                              ? t("trip.arrivedAt", { time: effectiveDepartureTime })
+                              : t("trip.departedAt", { time: effectiveDepartureTime })
+                            : isMeet
+                              ? t("trip.arrivalAt", { time: trip.departureTime })
+                              : t("trip.departureAt", { time: trip.departureTime })
                           : trip.departureTime)}
                     </p>
                     <p className="mt-1 break-words text-sm text-muted-foreground tabular-nums">
-                      {t("trip.departureAt", { time: trip.departureTime })}
+                      {isMeet
+                        ? t("trip.arrivalAt", { time: trip.departureTime })
+                        : t("trip.departureAt", { time: trip.departureTime })}
                       {delayMinutes !== null && delayMinutes > 0
                         ? ` · ${t("departures.delayMin", { minutes: delayMinutes })}`
                         : null}
@@ -260,13 +288,17 @@ const Trip = () => {
                     delayMinutes > 0 &&
                     effectiveDepartureTime !== trip.departureTime ? (
                       <p className="mt-0.5 break-words text-sm text-muted-foreground tabular-nums">
-                        {t("trip.expectedDeparture", { time: effectiveDepartureTime })}
+                        {isMeet
+                          ? t("trip.expectedArrival", { time: effectiveDepartureTime })
+                          : t("trip.expectedDeparture", { time: effectiveDepartureTime })}
                       </p>
                     ) : null}
                   </>
                 )}
                 <p className="mt-3 break-words text-base text-foreground sm:text-lg">
-                  {t("departures.train")} {trip.trainNumber} → {trip.destination}
+                  {isMeet
+                    ? `${t("departures.train")} ${trip.trainNumber} · ${t("arrivals.fromOrigin", { origin: trip.destination })}`
+                    : `${t("departures.train")} ${trip.trainNumber} → ${trip.destination}`}
                 </p>
                 <p className="mt-1 break-words text-sm text-muted-foreground">
                   {serviceType}

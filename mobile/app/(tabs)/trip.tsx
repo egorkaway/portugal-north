@@ -19,9 +19,11 @@ import { TripShareBrandingFooter } from '@/components/TripShareBrandingFooter';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import {
+  fetchStationArrivals,
   fetchStationDepartures,
   fetchTrainJourney,
   getCpStationCode,
+  matchLiveArrival,
   matchLiveDeparture,
 } from '@/lib/api';
 import { getStationNameByCpCode } from '@/lib/cpStationLookup';
@@ -128,13 +130,28 @@ export default function TripScreen() {
     }
 
     const departures = await fetchStationDepartures(trip.stationName, 10);
-    const live = matchLiveDeparture(trip, departures);
-    const nextDelay = live?.delayMinutes ?? trip.delayMinutes ?? null;
-    const nextPlatform = live?.platform ?? trip.platform ?? null;
-    const nextServiceType = live?.serviceType ?? trip.serviceType ?? '—';
+    const arrivals =
+      trip.purpose === 'meet'
+        ? await fetchStationArrivals(trip.stationName, 10)
+        : [];
+    const liveDep = matchLiveDeparture(trip, departures);
+    const liveArr = matchLiveArrival(trip, arrivals);
+    const nextDelay =
+      liveDep?.delayMinutes ?? liveArr?.delayMinutes ?? trip.delayMinutes ?? null;
+    const nextPlatform =
+      liveDep?.platform ?? liveArr?.platform ?? trip.platform ?? null;
+    const nextServiceType =
+      liveDep?.serviceType ?? liveArr?.serviceType ?? trip.serviceType ?? '—';
     setDelayMinutes(nextDelay);
     setPlatform(nextPlatform);
     setServiceType(nextServiceType);
+
+    if (trip.purpose === 'meet') {
+      setJourney(null);
+      setJourneyError(false);
+      setJourneyLoading(false);
+      return;
+    }
 
     const originCode = getCpStationCode(trip.stationName);
     if (!originCode) {
@@ -202,7 +219,7 @@ export default function TripScreen() {
 
   const originCode = activeTrip ? getCpStationCode(activeTrip.stationName) : null;
   const downstreamStops = useMemo(() => {
-    if (!journey || !originCode || !activeTrip) return [];
+    if (activeTrip?.purpose === 'meet' || !journey || !originCode || !activeTrip) return [];
     return downstreamStopsFrom(journey, originCode, {
       stationName: activeTrip.stationName,
       departureTime: activeTrip.departureTime,
@@ -291,6 +308,7 @@ export default function TripScreen() {
     );
   }
 
+  const isMeet = activeTrip?.purpose === 'meet';
   const departureMinutesUntil = activeTrip
     ? getMinutesUntilTime(
         activeTrip.departureTime,
@@ -301,7 +319,9 @@ export default function TripScreen() {
     : null;
   const departureCountdown =
     departureMinutesUntil !== null && departureMinutesUntil > 0
-      ? formatDepartureCountdown(departureMinutesUntil, t)
+      ? isMeet
+        ? formatArrivalCountdown(departureMinutesUntil, t)
+        : formatDepartureCountdown(departureMinutesUntil, t)
       : null;
   const effectiveDepartureTime = activeTrip
     ? getEffectiveDepartureClock(activeTrip.departureTime, delayMinutes)
@@ -413,7 +433,9 @@ export default function TripScreen() {
               )}
 
               <Text style={styles.trainLine}>
-                {activeTrip.trainNumber} → {activeTrip.destination}
+                {isMeet
+                  ? `${activeTrip.trainNumber} · ${t('arrivals.fromOrigin', { origin: activeTrip.destination })}`
+                  : `${activeTrip.trainNumber} → ${activeTrip.destination}`}
               </Text>
               <Text style={styles.meta}>
                 {serviceType}

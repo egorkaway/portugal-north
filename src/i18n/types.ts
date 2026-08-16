@@ -157,15 +157,29 @@ export type Messages = {
     loadMore: string;
     loadingMore: string;
   };
+  arrivals: {
+    title: string;
+    unavailable: string;
+    none: string;
+    fromOrigin: string;
+    continuesTo: string;
+    terminates: string;
+    meet: string;
+    meeting: string;
+  };
   trip: {
     title: string;
     subtitle: string;
     emptyTitle: string;
     emptyBody: string;
     departureCountdown: string;
+    arrivalCountdown: string;
     departed: string;
+    arrived: string;
     departedAt: string;
+    arrivedAt: string;
     expectedDeparture: string;
+    expectedArrival: string;
     minutesAgo: string;
     minutesAgoHours: string;
     minutesAgoHoursOnly: string;

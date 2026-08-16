@@ -9,6 +9,8 @@ export type PlannedDeparture = {
   delayMinutes: number | null;
   timetableDate: string;
   selectedAt: string;
+  /** "meet" = countdown/live only; do not add to trip history. */
+  purpose?: "take" | "meet";
 };
 
 export type CompletedTripRecord = PlannedDeparture & {
@@ -48,4 +50,16 @@ export type StationDeparture = {
   serviceType: string;
   platform: string | null;
   delayMinutes: number | null;
+};
+
+export type StationArrival = {
+  trainNumber: string;
+  time: string;
+  origin: string;
+  destination: string;
+  serviceType: string;
+  platform: string | null;
+  delayMinutes: number | null;
+  terminatesHere: boolean;
+  departureTime: string | null;
 };

@@ -107,6 +107,15 @@ export const pt: MobileMessages = {
     loadMore: 'Mostrar mais comboios',
     loadingMore: 'A carregar…',
   },
+  arrivals: {
+    title: 'Próximas chegadas',
+    none: 'Sem chegadas nas próximas horas.',
+    fromOrigin: 'de {{origin}}',
+    continuesTo: 'de {{origin}} → {{destination}}',
+    terminates: 'termina aqui',
+    meet: 'Encontrar',
+    meeting: 'A encontrar',
+  },
   countdown: {
     leavingNow: 'A sair agora',
     leavesIn: 'Parte em {{minutes}} min',
@@ -133,7 +142,7 @@ export const pt: MobileMessages = {
   trip: {
     emptyTitle: 'Sem viagem ativa',
     emptyBody:
-      'Abra uma estação, toque em Vou apanhar numa partida e a contagem decrescente aparecerá aqui.',
+      'Abra uma estação, toque em Vou apanhar numa partida ou chegada que continua, ou em Encontrar numa chegada final, e a contagem aparecerá aqui.',
     departed: 'Partiu',
     departedAt: 'Partiu às {{time}}',
     expectedDeparture: 'Partida prevista às {{time}}',

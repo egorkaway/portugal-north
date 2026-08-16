@@ -39,6 +39,19 @@ describe("useTripDepartureRecord", () => {
     expect(readTripHistory()[0]?.trainNumber).toBe("542");
   });
 
+  it("does not record Meet trips in history", () => {
+    const now = new Date("2026-06-30T16:15:00.000Z"); // 17:15 Lisbon summer
+    const meetTrip: PlannedDeparture = {
+      ...sampleTrip,
+      purpose: "meet",
+      destination: "Lisboa Oriente",
+    };
+
+    renderHook(() => useTripDepartureRecord(meetTrip, null, now));
+
+    expect(readTripHistory()).toHaveLength(0);
+  });
+
   it("stores actual leave time and live platform when delayed", () => {
     const now = new Date("2026-06-30T16:25:00.000Z"); // 17:25 Lisbon summer
 

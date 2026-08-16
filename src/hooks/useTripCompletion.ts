@@ -36,7 +36,9 @@ export function useTripCompletion(
     if (recordedRef.current === trip.id) return;
 
     recordedRef.current = trip.id;
-    recordTakenTrip(trip, finalStop.stationName, { delayMinutes, platform });
+    if (trip.purpose !== "meet") {
+      recordTakenTrip(trip, finalStop.stationName, { delayMinutes, platform });
+    }
     clearActiveTrip();
   }, [trip, downstreamStops, delayMinutes, platform, now]);
 }

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { getMinutesSinceDeparture } from "@/lib/departureCountdown";
-import type { PlannedDeparture } from "@/lib/plannedDepartures";
+import { clearActiveTrip, type PlannedDeparture } from "@/lib/plannedDepartures";
 import { recordTakenTrip } from "@/lib/trainTripHistory";
 
 /** Add the active trip to Taken trains once its effective departure time has passed. */
@@ -28,6 +28,11 @@ export function useTripDepartureRecord(
     if (recordedRef.current === trip.id) return;
 
     recordedRef.current = trip.id;
+    // Meet: countdown only — clear when the train arrives; never write trip history.
+    if (trip.purpose === "meet") {
+      clearActiveTrip();
+      return;
+    }
     recordTakenTrip(trip, trip.destination, { delayMinutes, platform });
   }, [trip, delayMinutes, platform, now]);
 }

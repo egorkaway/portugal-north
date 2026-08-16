@@ -586,12 +586,28 @@ export const europeDestinationAirports: Station[] = [
     lng: 19.080705,
   },
   {
+    name: "Kaunas International Airport (KUN)",
+    country: "lt",
+    lines: ["KUN"],
+    types: ["Airport Destination"],
+    lat: 54.963965,
+    lng: 24.08582,
+  },
+  {
     name: "Leeds Bradford Airport (LBA)",
     country: "gb",
     lines: ["LBA"],
     types: ["Airport Destination"],
     lat: 53.865898,
     lng: -1.66057,
+  },
+  {
+    name: "Larnaca International Airport (LCA)",
+    country: "cy",
+    lines: ["LCA"],
+    types: ["Airport Destination"],
+    lat: 34.875099,
+    lng: 33.624901,
   },
   {
     name: "London City Airport (LCY)",
@@ -616,6 +632,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 51.470748,
     lng: -0.459909,
+  },
+  {
+    name: "Limoges Airport (LIG)",
+    country: "fr",
+    lines: ["LIG"],
+    types: ["Airport Destination"],
+    lat: 45.862801,
+    lng: 1.17944,
   },
   {
     name: "Lille Airport (LIL)",
@@ -656,6 +680,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 53.334863,
     lng: -2.849637,
+  },
+  {
+    name: "La Rochelle Île de Ré Airport (LRH)",
+    country: "fr",
+    lines: ["LRH"],
+    types: ["Airport Destination"],
+    lat: 46.179199,
+    lng: -1.19528,
   },
   {
     name: "London Luton Airport (LTN)",
@@ -1136,6 +1168,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 43.629101,
     lng: 1.36382,
+  },
+  {
+    name: "Vincenzo Florio Airport Trapani-Birgi (TPS)",
+    country: "it",
+    lines: ["TPS"],
+    types: ["Airport Destination"],
+    lat: 37.9114,
+    lng: 12.488,
   },
   {
     name: "Trondheim Airport, Værnes (TRD)",

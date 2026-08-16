@@ -109,6 +109,15 @@ export type MobileMessages = {
     loadMore: string;
     loadingMore: string;
   };
+  arrivals: {
+    title: string;
+    none: string;
+    fromOrigin: string;
+    continuesTo: string;
+    terminates: string;
+    meet: string;
+    meeting: string;
+  };
   countdown: {
     leavingNow: string;
     leavesIn: string;

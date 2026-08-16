@@ -1,5 +1,5 @@
 import cpStationCodes from '@/data/cpStationCodes.json';
-import type { PlannedDeparture, StationDeparture } from '@/lib/types';
+import type { PlannedDeparture, StationArrival, StationDeparture } from '@/lib/types';
 import type { GlobalRatings } from '@/lib/rankVotes';
 import { bakedReliabilityScores } from '@/lib/stationData';
 import type { ReliabilityScoresManifest } from '@/lib/stationData';
@@ -35,19 +35,41 @@ export function getCpStationCode(stationName: string): string | null {
   return codes[stationName] ?? null;
 }
 
+export async function fetchStationBoard(
+  stationName: string,
+  limit = INITIAL_DEPARTURES_LIMIT,
+): Promise<{ departures: StationDeparture[]; arrivals: StationArrival[] }> {
+  const code = getCpStationCode(stationName);
+  if (!code) return { departures: [], arrivals: [] };
+
+  const url = `${API_BASE}/api/departures?code=${encodeURIComponent(code)}&limit=${limit}`;
+  const res = await fetch(url);
+  if (!res.ok) return { departures: [], arrivals: [] };
+
+  const data = (await res.json()) as {
+    departures?: StationDeparture[];
+    arrivals?: StationArrival[];
+  };
+  return {
+    departures: data.departures ?? [],
+    arrivals: data.arrivals ?? [],
+  };
+}
+
 export async function fetchStationDepartures(
   stationName: string,
   limit = INITIAL_DEPARTURES_LIMIT,
 ): Promise<StationDeparture[]> {
-  const code = getCpStationCode(stationName);
-  if (!code) return [];
+  const board = await fetchStationBoard(stationName, limit);
+  return board.departures;
+}
 
-  const url = `${API_BASE}/api/departures?code=${encodeURIComponent(code)}&limit=${limit}`;
-  const res = await fetch(url);
-  if (!res.ok) return [];
-
-  const data = (await res.json()) as { departures?: StationDeparture[] };
-  return data.departures ?? [];
+export async function fetchStationArrivals(
+  stationName: string,
+  limit = INITIAL_DEPARTURES_LIMIT,
+): Promise<StationArrival[]> {
+  const board = await fetchStationBoard(stationName, limit);
+  return board.arrivals;
 }
 
 export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
@@ -129,5 +151,16 @@ export function matchLiveDeparture(
       dep.trainNumber === trip.trainNumber &&
       dep.time === trip.departureTime &&
       dep.destination === trip.destination,
+  );
+}
+
+export function matchLiveArrival(
+  trip: PlannedDeparture,
+  arrivals: StationArrival[],
+): StationArrival | undefined {
+  return arrivals.find(
+    (arr) =>
+      arr.trainNumber === trip.trainNumber &&
+      (arr.time === trip.departureTime || arr.departureTime === trip.departureTime),
   );
 }

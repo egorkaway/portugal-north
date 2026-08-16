@@ -10,6 +10,7 @@ import {
   Text,
   View,
 } from 'react-native';
+import { StationArrivalsBoard } from '@/components/StationArrivalsBoard';
 import { StationDeparturesBoard } from '@/components/StationDeparturesBoard';
 import { AirportConnectionsSection } from '@/components/AirportConnectionsSection';
 import { BuildFooter } from '@/components/BuildFooter';
@@ -202,6 +203,14 @@ export default function StationDetailScreen() {
             </Text>
           </View>
         </>
+      ) : null}
+
+      {!airport && hasCpCode ? (
+        <StationArrivalsBoard
+          stationName={station.name}
+          activeTrip={activeTrip}
+          onTripChanged={(trip) => void handleTripChanged(trip)}
+        />
       ) : null}
 
       {airportConnections ? (

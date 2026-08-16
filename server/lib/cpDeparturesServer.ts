@@ -1,7 +1,9 @@
 import {
   lisbonDateAndTime,
+  parseUpcomingArrivals,
   parseUpcomingDepartures,
   type CpTimetableResponse,
+  type StationArrival,
   type StationDeparture,
 } from "./cpDeparturesParse.js";
 import { cpAuthHeaders, getCpTravelConfig } from "./cpConfig.js";
@@ -12,6 +14,11 @@ export type CpStationTimetable = {
   stationCode: string;
   timetableDate: string;
   response: CpTimetableResponse;
+};
+
+export type CpStationBoard = {
+  departures: StationDeparture[];
+  arrivals: StationArrival[];
 };
 
 async function fetchCpStationTimetableResponse(
@@ -26,8 +33,7 @@ async function fetchCpStationTimetableResponse(
   const config = await getCpTravelConfig();
   const { date: today, time: nowTime } = lisbonDateAndTime();
   const date = timetableDate ?? today;
-  const start =
-    startTime ?? (date === today ? nowTime : "00:00");
+  const start = startTime ?? (date === today ? nowTime : "00:00");
   const base = config.travelApiUrl.replace(/\/$/, "");
   const url = `${base}/stations/${encodeURIComponent(stationCode)}/timetable/${date}?start=${encodeURIComponent(start)}`;
 
@@ -52,10 +58,29 @@ export async function fetchCpStationTimetable(
   return fetchCpStationTimetableResponse(stationCode, timetableDate, startTime);
 }
 
+export async function fetchCpStationBoard(
+  stationCode: string,
+  limit = 3,
+): Promise<CpStationBoard> {
+  const { response } = await fetchCpStationTimetableResponse(stationCode);
+  return {
+    departures: parseUpcomingDepartures(response, limit),
+    arrivals: parseUpcomingArrivals(response, limit),
+  };
+}
+
 export async function fetchCpStationDepartures(
   stationCode: string,
   limit = 3,
 ): Promise<StationDeparture[]> {
-  const { response } = await fetchCpStationTimetableResponse(stationCode);
-  return parseUpcomingDepartures(response, limit);
+  const board = await fetchCpStationBoard(stationCode, limit);
+  return board.departures;
+}
+
+export async function fetchCpStationArrivals(
+  stationCode: string,
+  limit = 3,
+): Promise<StationArrival[]> {
+  const board = await fetchCpStationBoard(stationCode, limit);
+  return board.arrivals;
 }

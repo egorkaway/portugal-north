@@ -12,6 +12,7 @@
  * logs temperatures (Open-Meteo) for train stations that returned a departure
  * sample attempt (OK or FAIL). Airport hub temperatures are logged only during
  * a flight-connections collect, after a successful flight sample,
+ * appends per-train arrival delay samples to data/train-delay-log.ndjson,
  * and prints this month's avg low / avg high on OK/FAIL lines only when the
  * temperature fetch for this run succeeded,
  * publishes public/data/station-monthly-temperatures.json for station pages
@@ -31,17 +32,23 @@ import { shouldRecheckAirportDestinations } from "./lib/airportRecheckPolicy.mjs
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const statsPath = join(root, "data/departure-stats.json");
 const temperatureLogPath = join(root, "data/station-temperature-log.ndjson");
+const trainDelayLogPath = join(root, "data/train-delay-log.ndjson");
 
 loadEnvFile(join(root, ".env"));
 
 const { fetchCpStationTimetable } = await import("../server/lib/cpDeparturesServer.ts");
-const { parseTrainsInNextHour } = await import("../server/lib/cpDeparturesParse.ts");
+const { extractTrainDelayObservations, parseTrainsInNextHour } = await import(
+  "../server/lib/cpDeparturesParse.ts"
+);
 const {
   beginDepartureStatsRun,
   loadDepartureStatsStore,
   mergeStationSnapshot,
   recordStationSampleFailure,
 } = await import("../server/lib/departureStats.ts");
+const { appendTrainDelayLog, trainDelayEntriesFromObservations } = await import(
+  "../server/lib/trainDelayLog.ts"
+);
 const { buildReliabilityScoresManifest } = await import("../server/lib/reliabilityScore.ts");
 const {
   ensureReliabilityPeriodSnapshot,
@@ -220,11 +227,26 @@ for (const { station, cpCode } of targets) {
       timetable.timetableDate,
     );
     mergeStationSnapshot(store, station.name, cpCode, snapshot);
+
+    const delayEntries = trainDelayEntriesFromObservations({
+      station: station.name,
+      cpCode,
+      observations: extractTrainDelayObservations(
+        timetable.response,
+        new Date(),
+        timetable.timetableDate,
+      ),
+    });
+    appendTrainDelayLog(trainDelayLogPath, delayEntries);
+
     ok += 1;
     consecutiveFailures = 0;
     const tempSuffix = await temperatureSuffixForStation(station);
+    const delayNote = delayEntries.length
+      ? `, ${delayEntries.length} train delay sample(s)`
+      : "";
     console.log(
-      `OK ${label}: +${snapshot.totals.departures} dep, +${snapshot.totals.arrivals} arr, +${snapshot.totals.delayMinutes} delay min${tempSuffix}`,
+      `OK ${label}: +${snapshot.totals.departures} dep, +${snapshot.totals.arrivals} arr, +${snapshot.totals.delayMinutes} delay min${delayNote}${tempSuffix}`,
     );
   } catch (error) {
     failed += 1;

@@ -107,6 +107,15 @@ export const uk: MobileMessages = {
     loadMore: 'Показати більше поїздів',
     loadingMore: 'Завантаження…',
   },
+  arrivals: {
+    title: 'Наступні прибуття',
+    none: 'Немає прибуттів протягом кількох годин.',
+    fromOrigin: 'з {{origin}}',
+    continuesTo: 'з {{origin}} → {{destination}}',
+    terminates: 'кінцева',
+    meet: 'Зустріти',
+    meeting: 'Зустрічаю',
+  },
   countdown: {
     leavingNow: 'Відправляється зараз',
     leavesIn: 'Через {{minutes}} хв',
@@ -133,7 +142,7 @@ export const uk: MobileMessages = {
   trip: {
     emptyTitle: 'Немає активної поїздки',
     emptyBody:
-      'Відкрийте станцію, натисніть «Їду» біля відправлення — і зворотний відлік з’явиться тут.',
+      'Відкрийте станцію, натисніть «Їду» біля відправлення чи транзитного прибуття, або «Зустріти» біля кінцевого — і зворотний відлік з’явиться тут.',
     departed: 'Відправився',
     departedAt: 'Відправився о {{time}}',
     expectedDeparture: 'Очікуване відправлення {{time}}',

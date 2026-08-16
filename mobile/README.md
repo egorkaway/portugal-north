@@ -12,7 +12,7 @@ Fully **native** iOS/Android app for [VeryStays](https://www.verystays.com) — 
 | **Rankings** | Reliability leaderboards (baked) + community votes (API) |
 | **Tickets** | Static ticket-buying guide with external links |
 
-Station detail opens as a stack screen: photo, summary, live departures (**Take** → Trip tab), flight connections (airports), hotels, maps link.
+Station detail opens as a stack screen: photo, summary, live departures (**Take** → Trip tab), on-time reliability, next arrivals (**Take** for continuing trains / **Meet** for terminations — Meet uses the same countdown and Live Activity but is not saved to trip history), flight connections (airports), hotels, maps link.
 
 First launch shows a short onboarding flow (welcome, location, notifications, widgets). After onboarding, the RevenueCat paywall is shown if Pro is not active. The Tickets tab also has a Pro button at the bottom.
 

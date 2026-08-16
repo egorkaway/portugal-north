@@ -107,6 +107,15 @@ export const ca: MobileMessages = {
     loadMore: 'Mostrar més trens',
     loadingMore: 'Carregant…',
   },
+  arrivals: {
+    title: 'Properes arribades',
+    none: 'No hi ha arribades en les properes hores.',
+    fromOrigin: 'des de {{origin}}',
+    continuesTo: 'des de {{origin}} → {{destination}}',
+    terminates: 'acaba aquí',
+    meet: 'Rebre',
+    meeting: 'Rebent',
+  },
   countdown: {
     leavingNow: 'Surt ara',
     leavesIn: 'Surt en {{minutes}} min',
@@ -133,7 +142,7 @@ export const ca: MobileMessages = {
   trip: {
     emptyTitle: 'Cap viatge actiu',
     emptyBody:
-      'Obre una estació, prem L’agafo en una sortida i el compte enrere apareixerà aquí.',
+      'Obre una estació, prem L’agafo en una sortida o arribada que continua, o Rebre en una arribada final, i el compte enrere apareixerà aquí.',
     departed: 'Ha sortit',
     departedAt: 'Ha sortit a les {{time}}',
     expectedDeparture: 'Sortida prevista a les {{time}}',

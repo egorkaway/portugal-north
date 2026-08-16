@@ -1,7 +1,7 @@
 import { Platform } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Location from 'expo-location';
-import { fetchStationDepartures, matchLiveDeparture } from '@/lib/api';
+import { fetchStationArrivals, fetchStationDepartures, matchLiveArrival, matchLiveDeparture } from '@/lib/api';
 import {
   formatWidgetCountdown,
   getDepartureTimestampMs,
@@ -175,14 +175,28 @@ async function enrichActiveTripDelay(): Promise<PlannedDeparture | null> {
 
   try {
     const departures = await fetchStationDepartures(trip.stationName, 10);
-    const live = matchLiveDeparture(trip, departures);
-    if (!live) return trip;
+    const liveDep = matchLiveDeparture(trip, departures);
+    if (liveDep) {
+      return {
+        ...trip,
+        delayMinutes: liveDep.delayMinutes,
+        platform: liveDep.platform ?? trip.platform,
+      };
+    }
 
-    return {
-      ...trip,
-      delayMinutes: live.delayMinutes,
-      platform: live.platform ?? trip.platform,
-    };
+    if (trip.purpose === "meet") {
+      const arrivals = await fetchStationArrivals(trip.stationName, 10);
+      const liveArr = matchLiveArrival(trip, arrivals);
+      if (liveArr) {
+        return {
+          ...trip,
+          delayMinutes: liveArr.delayMinutes,
+          platform: liveArr.platform ?? trip.platform,
+        };
+      }
+    }
+
+    return trip;
   } catch (error) {
     console.warn('[widget] delay enrich failed; using stored trip', error);
     return trip;
@@ -370,7 +384,9 @@ export async function onTripDeparted(): Promise<void> {
   } catch {
     // fall back to stored trip snapshot
   }
-  await recordTakenTrip(trip, trip.destination, live);
+  if (trip.purpose !== "meet") {
+    await recordTakenTrip(trip, trip.destination, live);
+  }
   await writeActiveTrip(null);
   await syncTripWidgets();
 }

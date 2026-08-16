@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { fetchCpStationDepartures } from "../server/lib/cpDeparturesServer.js";
+import { fetchCpStationBoard } from "../server/lib/cpDeparturesServer.js";
 
-const MAX_DEPARTURES_LIMIT = 10;
+const MAX_BOARD_LIMIT = 10;
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "GET") {
@@ -12,23 +12,28 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   const code = typeof req.query.code === "string" ? req.query.code : "";
   const limitRaw = typeof req.query.limit === "string" ? Number(req.query.limit) : 3;
   const limit = Number.isFinite(limitRaw)
-    ? Math.min(MAX_DEPARTURES_LIMIT, Math.max(1, limitRaw))
+    ? Math.min(MAX_BOARD_LIMIT, Math.max(1, limitRaw))
     : 3;
 
   if (!code) {
-    return res.status(400).json({ error: "missing_code", departures: [] });
+    return res.status(400).json({ error: "missing_code", departures: [], arrivals: [] });
   }
 
   try {
-    const departures = await fetchCpStationDepartures(code, limit);
+    const board = await fetchCpStationBoard(code, limit);
     res.setHeader("Cache-Control", "s-maxage=60, stale-while-revalidate=120");
-    return res.status(200).json({ departures, configured: true });
+    return res.status(200).json({
+      departures: board.departures,
+      arrivals: board.arrivals,
+      configured: true,
+    });
   } catch (error) {
     const message = error instanceof Error ? error.message : "unknown";
     const status = message === "invalid_station_code" ? 400 : 502;
     return res.status(status).json({
       error: message,
       departures: [],
+      arrivals: [],
       configured: true,
     });
   }
