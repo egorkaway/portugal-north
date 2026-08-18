@@ -5,6 +5,9 @@ export type RankedReliabilityStation = {
   score: number;
 };
 
+export const SPAIN_RELIABILITY_RANKING_LIMIT = 3;
+export const SPAIN_RELIABILITY_MIN_MOVEMENTS = 5;
+
 function compareReliabilityRank(
   nameA: string,
   scoreA: number,
@@ -46,6 +49,31 @@ export function getBottomReliabilityStations(
     )
     .slice(0, limit)
     .map(([name, score]) => ({ name, score }));
+}
+
+export function filterScoresByMinMovements(
+  scores: Record<string, number>,
+  movements: Record<string, number>,
+  minMovements: number,
+): Record<string, number> {
+  const next: Record<string, number> = {};
+  for (const [name, score] of Object.entries(scores)) {
+    if ((movements[name] ?? 0) >= minMovements) next[name] = score;
+  }
+  return next;
+}
+
+export function buildSpainReliabilityRankings(
+  scores: Record<string, number>,
+  movements: Record<string, number> = {},
+  limit = SPAIN_RELIABILITY_RANKING_LIMIT,
+  minMovements = SPAIN_RELIABILITY_MIN_MOVEMENTS,
+): { top: RankedReliabilityStation[]; bottom: RankedReliabilityStation[] } {
+  const filtered = filterScoresByMinMovements(scores, movements, minMovements);
+  return {
+    top: getTopReliabilityStations(filtered, movements, limit),
+    bottom: getBottomReliabilityStations(filtered, movements, limit),
+  };
 }
 
 export function reliabilityScoreColor(score: number): string {

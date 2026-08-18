@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { JsonLd } from "@/components/JsonLd";
 import { RankingsPanel } from "@/components/RankingsPanel";
 import { ReliabilityRankingsPanel } from "@/components/ReliabilityRankingsPanel";
+import { SpainReliabilityRankingsPanel } from "@/components/SpainReliabilityRankingsPanel";
 import { TrainReliabilitySpotlightPanel } from "@/components/TrainReliabilitySpotlightPanel";
 import { MapOverviewImages } from "@/components/MapOverviewImages";
 import { buildRankingsStructuredData } from "@/lib/structuredData";
@@ -47,6 +48,7 @@ const Rankings = () => {
 
         <main className="mx-auto max-w-5xl px-4 py-6 md:px-6 md:py-10">
           <ReliabilityRankingsPanel />
+          <SpainReliabilityRankingsPanel />
           <TrainReliabilitySpotlightPanel />
 
           <p className="mb-5 text-muted-foreground md:mb-8">{t("rankings.intro")}</p>

@@ -3,6 +3,7 @@ import stationImages from '@/data/stationImages.json';
 import hotels from '@/data/hotels.json';
 import summariesEn from '@/data/summaries-en.json';
 import reliabilityScores from '@/data/reliability-scores.json';
+import spainReliabilityScores from '@/data/spain-reliability-scores.json';
 import trainReliabilitySpotlight from '@/data/train-reliability-spotlight.json';
 import cpStationCodes from '@/data/cpStationCodes.json';
 
@@ -70,6 +71,7 @@ export const bakedStationImages = stationImages as Record<string, string>;
 export const bakedHotels = hotels as Record<string, Hotel[]>;
 export const bakedSummariesEn = summariesEn as Record<string, string>;
 export const bakedReliabilityScores = reliabilityScores as ReliabilityScoresManifest;
+export const bakedSpainReliabilityScores = spainReliabilityScores as ReliabilityScoresManifest;
 
 export type TrainSpotlightEntry = {
   trainNumber: string;

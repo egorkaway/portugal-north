@@ -1,6 +1,7 @@
 /** Discover hotels near stations via OpenStreetMap (Overpass API). */
 
-import { writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import { isRejectedHotel } from "./rejectedHotels.mjs";
 
 const OVERPASS_URLS = [
@@ -64,7 +65,30 @@ export function parseHotelMap(ts) {
   return map;
 }
 
+export function readPinnedHotelMap(hotelsPath) {
+  const pinnedPath = join(dirname(hotelsPath), "pinnedHotels.ts");
+  if (!existsSync(pinnedPath)) return {};
+  return parseHotelMap(readFileSync(pinnedPath, "utf8"));
+}
+
+export function isPinnedHotel(pinned, stationName, hotelName) {
+  const key = normName(hotelName);
+  return (pinned[stationName] ?? []).some((hotel) => normName(hotel.name) === key);
+}
+
+/** Keep hand-picked listings at the front of each station list. */
+export function mergePinnedHotels(map, pinned) {
+  for (const [stationName, pins] of Object.entries(pinned ?? {})) {
+    if (!pins?.length) continue;
+    const existing = map[stationName] ?? [];
+    const pinKeys = new Set(pins.map((hotel) => normName(hotel.name)));
+    map[stationName] = [...pins, ...existing.filter((hotel) => !pinKeys.has(normName(hotel.name)))];
+  }
+  return map;
+}
+
 export function writeHotelMap(hotelsPath, map, stationOrder) {
+  mergePinnedHotels(map, readPinnedHotelMap(hotelsPath));
   const orderNames = stationOrder?.map((s) => s.name) ?? [];
   const mapKeys = Object.keys(map).filter((n) => map[n]?.length);
   const names = orderNames.length

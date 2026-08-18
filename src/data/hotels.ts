@@ -2298,6 +2298,81 @@ export const stationHotels: StationHotels = {
     { name: "Hotel D'Pedro", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20D'Pedro%2C%20San%20Isidro-Albatera-Catral%2C%20Spain&order=price" },
     { name: "B&B La Huerta - Albatera - Spanje", distanceKm: 7.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20La%20Huerta%20-%20Albatera%20-%20Spanje%2C%20San%20Isidro-Albatera-Catral%2C%20Spain&order=price" },
   ],
+  "Universidad de Alicante": [
+    { name: "Hotel Villa Universitaria", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Villa%20Universitaria%2C%20Universidad%20de%20Alicante%2C%20Spain&order=price" },
+    { name: "Casa Antonio", distanceKm: 1.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Antonio%2C%20Universidad%20de%20Alicante%2C%20Spain&order=price" },
+    { name: "Albergue de transeuntes 'Nazaret'", distanceKm: 3.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20transeuntes%20'Nazaret'%2C%20Universidad%20de%20Alicante%2C%20Spain&order=price" },
+  ],
+  "Cartagena": [
+    { name: "Hotel Los Habaneros", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Los%20Habaneros%2C%20Cartagena%2C%20Spain&order=price" },
+    { name: "Loop INN", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Loop%20INN%2C%20Cartagena%2C%20Spain&order=price" },
+    { name: "Residencia Universitaria Calle Caballero", distanceKm: 0.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Universitaria%20Calle%20Caballero%2C%20Cartagena%2C%20Spain&order=price" },
+  ],
+  "Pinar de las Rozas": [
+    { name: "B&B Hotel Madrid Pinar de Las Rozas", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotel%20Madrid%20Pinar%20de%20Las%20Rozas%2C%20Pinar%20de%20las%20Rozas%2C%20Spain&order=price" },
+    { name: "Gran Hotel Attica 21 Las Rozas", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gran%20Hotel%20Attica%2021%20Las%20Rozas%2C%20Pinar%20de%20las%20Rozas%2C%20Spain&order=price" },
+    { name: "Hotel B&B Las Rozas", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20B%26B%20Las%20Rozas%2C%20Pinar%20de%20las%20Rozas%2C%20Spain&order=price" },
+  ],
+  "Los Molinos-Guadarrama": [
+    { name: "Alborada", distanceKm: 1.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alborada%2C%20Los%20Molinos-Guadarrama%2C%20Spain&order=price" },
+    { name: "Albergue Villa Marista", distanceKm: 1.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Villa%20Marista%2C%20Los%20Molinos-Guadarrama%2C%20Spain&order=price" },
+    { name: "Mansión Longinos", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mansi%C3%B3n%20Longinos%2C%20Los%20Molinos-Guadarrama%2C%20Spain&order=price" },
+  ],
+  "Salamanca": [
+    { name: "Pensión Virginia", distanceKm: 0, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Virginia%2C%20Salamanca%2C%20Spain&order=price" },
+    { name: "Hostal Los Infantes", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Los%20Infantes%2C%20Salamanca%2C%20Spain&order=price" },
+    { name: "Pensión Isabel", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Isabel%2C%20Salamanca%2C%20Spain&order=price" },
+  ],
+  "Azuqueca": [
+    { name: "Miralcampo", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Miralcampo%2C%20Azuqueca%2C%20Spain&order=price" },
+    { name: "Azuqueca", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Azuqueca%2C%20Azuqueca%2C%20Spain&order=price" },
+    { name: "Motel Venus", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Venus%2C%20Azuqueca%2C%20Spain&order=price" },
+  ],
+  "Talavera de la Reina": [
+    { name: "Hostal Velarde", distanceKm: 0.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Velarde%2C%20Talavera%20de%20la%20Reina%2C%20Spain&order=price" },
+    { name: "Hotel Be Live City", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Be%20Live%20City%2C%20Talavera%20de%20la%20Reina%2C%20Spain&order=price" },
+    { name: "Hotel Perales", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Perales%2C%20Talavera%20de%20la%20Reina%2C%20Spain&order=price" },
+  ],
+  "Manresa": [
+    { name: "Alberg de la Joventut del Carme i Residència d'estudiants", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20de%20la%20Joventut%20del%20Carme%20i%20Resid%C3%A8ncia%20d'estudiants%2C%20Manresa%2C%20Spain&order=price" },
+    { name: "Hostal La Masia", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Masia%2C%20Manresa%2C%20Spain&order=price" },
+    { name: "l'Hotelet", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=l'Hotelet%2C%20Manresa%2C%20Spain&order=price" },
+  ],
+  "Tres Cantos": [
+    { name: "Exe Tres Cantos", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Tres%20Cantos%2C%20Tres%20Cantos%2C%20Spain&order=price" },
+    { name: "Eurostars Madrid Foro", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostars%20Madrid%20Foro%2C%20Tres%20Cantos%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos Tres Cantos", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Tres%20Cantos%2C%20Tres%20Cantos%2C%20Spain&order=price" },
+  ],
+  "Gijón-Sanz Crespo": [
+    { name: "Hotel Silken Ciudad de Gijón", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Silken%20Ciudad%20de%20Gij%C3%B3n%2C%20Gij%C3%B3n-Sanz%20Crespo%2C%20Spain&order=price" },
+    { name: "La Polar", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Polar%2C%20Gij%C3%B3n-Sanz%20Crespo%2C%20Spain&order=price" },
+    { name: "Hotel Valdés", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vald%C3%A9s%2C%20Gij%C3%B3n-Sanz%20Crespo%2C%20Spain&order=price" },
+  ],
+  "L'Aldea-Amposta-Tortosa": [
+    { name: "HCC Montsia", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=HCC%20Montsia%2C%20L'Aldea-Amposta-Tortosa%2C%20Spain&order=price" },
+    { name: "Ciutat d'Amposta", distanceKm: 6.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ciutat%20d'Amposta%2C%20L'Aldea-Amposta-Tortosa%2C%20Spain&order=price" },
+    { name: "Hotel Berenguer IV", distanceKm: 9.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Berenguer%20IV%2C%20L'Aldea-Amposta-Tortosa%2C%20Spain&order=price" },
+  ],
+  "Ormáiztegui": [
+    { name: "Troi Landetxea", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Troi%20Landetxea%2C%20Orm%C3%A1iztegui%2C%20Spain&order=price" },
+    { name: "Lierni Garakoa", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lierni%20Garakoa%2C%20Orm%C3%A1iztegui%2C%20Spain&order=price" },
+    { name: "Mutiloako Ostatua", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mutiloako%20Ostatua%2C%20Orm%C3%A1iztegui%2C%20Spain&order=price" },
+  ],
+  "Zabalburu": [
+    { name: "Ekoos Hostel Bilbao", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ekoos%20Hostel%20Bilbao%2C%20Zabalburu%2C%20Spain&order=price" },
+    { name: "Lidar", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lidar%2C%20Zabalburu%2C%20Spain&order=price" },
+    { name: "Guitar Hostel", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guitar%20Hostel%2C%20Zabalburu%2C%20Spain&order=price" },
+  ],
+  "Avilés-Apeadero": [
+    { name: "Hotel Alda Palacio Valdés", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alda%20Palacio%20Vald%C3%A9s%2C%20Avil%C3%A9s-Apeadero%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos Pedro Solìs", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Pedro%20Sol%C3%ACs%2C%20Avil%C3%A9s-Apeadero%2C%20Spain&order=price" },
+    { name: "Hotel Don Pedro", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Don%20Pedro%2C%20Avil%C3%A9s-Apeadero%2C%20Spain&order=price" },
+  ],
+  "Ciudad Real": [
+    { name: "El Molino", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Molino%2C%20Ciudad%20Real%2C%20Spain&order=price" },
+    { name: "Escudero", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Escudero%2C%20Ciudad%20Real%2C%20Spain&order=price" },
+    { name: "Hotel Silken Alfonso X", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Silken%20Alfonso%20X%2C%20Ciudad%20Real%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

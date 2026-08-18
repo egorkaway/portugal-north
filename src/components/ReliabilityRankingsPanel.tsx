@@ -14,7 +14,7 @@ import {
 } from "@/lib/reliabilityScore";
 import { stationToSlug } from "@/lib/stationSlug";
 
-function ReliabilityRankingList({
+export function ReliabilityRankingList({
   title,
   emptyLabel,
   items,

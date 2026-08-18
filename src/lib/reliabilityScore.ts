@@ -6,15 +6,18 @@ export type ReliabilityScoresManifest = {
   movements: Record<string, number>;
 };
 
-export async function fetchReliabilityScores(): Promise<ReliabilityScoresManifest> {
-  const res = await fetch("/data/reliability-scores.json", { cache: "no-store" });
-  if (!res.ok) {
-    throw new Error(`reliability-scores.json returned ${res.status}`);
-  }
+/** Spain ranking lists; Portugal keeps top/bottom 10. */
+export const SPAIN_RELIABILITY_RANKING_LIMIT = 3;
 
-  const data = (await res.json()) as Partial<ReliabilityScoresManifest>;
+/** Same bar as train spotlight: skip 1–4 observation stations in Spain rankings. */
+export const SPAIN_RELIABILITY_MIN_MOVEMENTS = 5;
+
+function parseReliabilityScoresManifest(
+  data: Partial<ReliabilityScoresManifest>,
+  source: string,
+): ReliabilityScoresManifest {
   if (!data.scores || typeof data.scores !== "object") {
-    throw new Error("reliability-scores.json is missing scores");
+    throw new Error(`${source} is missing scores`);
   }
 
   return {
@@ -24,6 +27,51 @@ export async function fetchReliabilityScores(): Promise<ReliabilityScoresManifes
     scores: data.scores,
     movements:
       data.movements && typeof data.movements === "object" ? data.movements : {},
+  };
+}
+
+async function fetchReliabilityScoresFrom(path: string): Promise<ReliabilityScoresManifest> {
+  const res = await fetch(path, { cache: "no-store" });
+  if (!res.ok) {
+    throw new Error(`${path} returned ${res.status}`);
+  }
+
+  return parseReliabilityScoresManifest(
+    (await res.json()) as Partial<ReliabilityScoresManifest>,
+    path,
+  );
+}
+
+export async function fetchReliabilityScores(): Promise<ReliabilityScoresManifest> {
+  return fetchReliabilityScoresFrom("/data/reliability-scores.json");
+}
+
+export async function fetchSpainReliabilityScores(): Promise<ReliabilityScoresManifest> {
+  return fetchReliabilityScoresFrom("/data/spain-reliability-scores.json");
+}
+
+export function filterScoresByMinMovements(
+  scores: Record<string, number>,
+  movements: Record<string, number>,
+  minMovements: number,
+): Record<string, number> {
+  const next: Record<string, number> = {};
+  for (const [name, score] of Object.entries(scores)) {
+    if ((movements[name] ?? 0) >= minMovements) next[name] = score;
+  }
+  return next;
+}
+
+export function buildSpainReliabilityRankings(
+  scores: Record<string, number>,
+  movements: Record<string, number> = {},
+  limit = SPAIN_RELIABILITY_RANKING_LIMIT,
+  minMovements = SPAIN_RELIABILITY_MIN_MOVEMENTS,
+): { top: RankedReliabilityStation[]; bottom: RankedReliabilityStation[] } {
+  const filtered = filterScoresByMinMovements(scores, movements, minMovements);
+  return {
+    top: getTopReliabilityStations(filtered, movements, limit),
+    bottom: getBottomReliabilityStations(filtered, movements, limit),
   };
 }
 

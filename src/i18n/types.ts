@@ -243,6 +243,11 @@ export type Messages = {
     noReliabilityData: string;
     mostReliable: string;
     leastReliable: string;
+    spainReliabilityRankings: string;
+    spainReliabilityIntro: string;
+    spainReliabilityUnavailable: string;
+    spainMostReliable: string;
+    spainLeastReliable: string;
     downloadReliabilityCsv: string;
     downloadStationCsv: string;
     trainSpotlightTitle: string;

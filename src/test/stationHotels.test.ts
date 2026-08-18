@@ -44,4 +44,13 @@ describe("getHotelsForStation", () => {
   it("returns empty list when only placeholders exist", () => {
     expect(getHotelsForStation("Soalheira")).toEqual([]);
   });
+
+  it("keeps the pinned Luan Café Lanhelas listing on Esqueiró", () => {
+    const hotels = getHotelsForStation("Esqueiró");
+    expect(hotels[0]).toMatchObject({
+      name: "Luan Café Lanhelas",
+      bookingUrl: "https://www.booking.com/hotel/pt/luan-cafe-lanhelas.html",
+    });
+    expect(getHotelsForStation("Esqueiro")[0]?.name).toBe("Luan Café Lanhelas");
+  });
 });

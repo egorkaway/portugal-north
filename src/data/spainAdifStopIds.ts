@@ -149,6 +149,30 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Pinar de las Rozas": ["10100"],
 
+  "Los Molinos-Guadarrama": ["12005"],
+
+  "Salamanca": ["30100"],
+
+  "Azuqueca": ["70105"],
+
+  "Talavera de la Reina": ["35200"],
+
+  "Manresa": ["78600"],
+
+  "Tres Cantos": ["17004"],
+
+  "Gijón-Sanz Crespo": ["15410"],
+
+  "L'Aldea-Amposta-Tortosa": ["65402"],
+
+  "Ormáiztegui": ["11402"],
+
+  "Zabalburu": ["13205"],
+
+  "Avilés-Apeadero": ["05221", "16403"],
+
+  "Ciudad Real": ["37200"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

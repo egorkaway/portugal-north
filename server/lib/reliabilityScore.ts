@@ -76,9 +76,19 @@ export function scaleReliabilityScore(
   );
 }
 
+export type ReliabilityScoreOptions = {
+  /** Skip stations with fewer sampled movements than this (0 = any positive count). */
+  minMovements?: number;
+};
+
+/** Spain rankings gate thin samples; Portugal has a long CP history so it stays at 0. */
+export const SPAIN_RELIABILITY_MIN_MOVEMENTS = 5;
+
 export function computeReliabilityScores(
   store: DepartureStatsStore,
+  options: ReliabilityScoreOptions = {},
 ): Record<string, number> {
+  const minMovements = options.minMovements ?? 0;
   const entries: { name: string; movements: number }[] = [];
 
   for (const [name, stats] of Object.entries(store.stations)) {
@@ -86,6 +96,7 @@ export function computeReliabilityScores(
     const movements =
       stats.totals.departuresNextHour + stats.totals.arrivalsNextHour;
     if (movements <= 0) continue;
+    if (movements < minMovements) continue;
     entries.push({ name, movements });
   }
 
@@ -126,8 +137,9 @@ export function computeReliabilityScores(
 
 export function buildReliabilityScoresManifest(
   store: DepartureStatsStore,
+  options: ReliabilityScoreOptions = {},
 ): ReliabilityScoresManifest {
-  const scores = computeReliabilityScores(store);
+  const scores = computeReliabilityScores(store, options);
   const movements: Record<string, number> = {};
 
   for (const [name, stats] of Object.entries(store.stations)) {

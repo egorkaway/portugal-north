@@ -202,6 +202,8 @@ export const gl: MobileMessages = {
     subtitle: 'Fiabilidade e votos da comunidade en estacións e hoteis.',
     mostReliable: 'Máis fiábeis',
     leastReliable: 'Menos fiábeis',
+    spainMostReliable: 'Máis fiábeis (España)',
+    spainLeastReliable: 'Menos fiábeis (España)',
     topUpvotedStations: 'Estacións máis votadas positivamente',
     mostDownvotedStations: 'Estacións máis votadas negativamente',
     topUpvotedHotels: 'Hoteis máis votados positivamente',

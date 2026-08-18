@@ -9,9 +9,9 @@ import { useLocale } from "@/i18n/LocaleProvider";
 
 export function StationReliabilityCard({ stationName }: { stationName: string }) {
   const { t } = useLocale();
-  const { score, hasCpCode, isLoading, isError } = useReliabilityScore(stationName);
+  const { score, hasScoreSource, isLoading, isError } = useReliabilityScore(stationName);
 
-  if (!hasCpCode || isError) return null;
+  if (!hasScoreSource || isError) return null;
   if (isLoading) {
     return (
       <section

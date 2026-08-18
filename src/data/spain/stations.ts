@@ -725,4 +725,112 @@ export const spainStations: Station[] = [
     lng: -3.8822,
   },
 
+  {
+    name: "Los Molinos-Guadarrama",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.7066,
+    lng: -4.0672,
+  },
+
+  {
+    name: "Salamanca",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 40.9722,
+    lng: -5.649,
+  },
+
+  {
+    name: "Azuqueca",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5611,
+    lng: -3.2654,
+  },
+
+  {
+    name: "Talavera de la Reina",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.9707,
+    lng: -4.8265,
+  },
+
+  {
+    name: "Manresa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7204,
+    lng: 1.8265,
+  },
+
+  {
+    name: "Tres Cantos",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.5987,
+    lng: -3.7156,
+  },
+
+  {
+    name: "Gijón-Sanz Crespo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5377,
+    lng: -5.6758,
+  },
+
+  {
+    name: "L'Aldea-Amposta-Tortosa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.7536,
+    lng: 0.6143,
+  },
+
+  {
+    name: "Ormáiztegui",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.0403,
+    lng: -2.2565,
+  },
+
+  {
+    name: "Zabalburu",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2568,
+    lng: -2.9323,
+  },
+
+  {
+    name: "Avilés-Apeadero",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5546,
+    lng: -5.9174,
+  },
+
+  {
+    name: "Ciudad Real",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.9853,
+    lng: -3.9136,
+  },
+
 ];

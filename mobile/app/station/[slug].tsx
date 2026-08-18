@@ -27,6 +27,7 @@ import { getAirportConnectionsEntry } from '@/lib/airportConnections';
 import { remoteImageSource } from '@/lib/remoteImage';
 import {
   bakedReliabilityScores,
+  bakedSpainReliabilityScores,
   getHotelsForStation,
   getStationBySlug,
   getStationImageUrl,
@@ -96,7 +97,10 @@ export default function StationDetailScreen() {
   const imageUrl = getStationImageUrl(station.name);
   const summary = getSummaryForStation(station.name);
   const hotels = getHotelsForStation(station.name);
-  const reliability = getReliabilityForStation(bakedReliabilityScores, station.name);
+  const reliability = getReliabilityForStation(
+    station.country === 'es' ? bakedSpainReliabilityScores : bakedReliabilityScores,
+    station.name,
+  );
   const hasCpCode = Boolean(getCpCode(station.name));
   const airport = isAirportStation(station);
   const airportConnections = airport ? getAirportConnectionsEntry(station) : null;

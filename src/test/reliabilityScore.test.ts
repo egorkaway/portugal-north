@@ -123,4 +123,27 @@ describe("computeReliabilityScores", () => {
     expect(scores["Outlier"]).toBeLessThan(5);
     expect(scores["Poor 8"]).toBeLessThan(5);
   });
+
+  it("can ignore stations below a min-movements gate", () => {
+    const store = createEmptyDepartureStatsStore();
+
+    mergeStationSnapshot(store, "Thin", "94-1", {
+      observedAt: "2026-06-20T10:00:00.000Z",
+      byTrainType: { Regional: { departures: 2, arrivals: 0, delayMinutes: 0 } },
+      totals: { departures: 2, arrivals: 0, delayMinutes: 0 },
+    });
+    mergeStationSnapshot(store, "Enough", "94-2", {
+      observedAt: "2026-06-20T10:00:00.000Z",
+      byTrainType: { Regional: { departures: 10, arrivals: 0, delayMinutes: 20 } },
+      totals: { departures: 10, arrivals: 0, delayMinutes: 20 },
+    });
+
+    expect(computeReliabilityScores(store)).toEqual({
+      Thin: 10,
+      Enough: 1,
+    });
+    expect(computeReliabilityScores(store, { minMovements: 5 })).toEqual({
+      Enough: 10,
+    });
+  });
 });

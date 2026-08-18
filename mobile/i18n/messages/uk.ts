@@ -202,6 +202,8 @@ export const uk: MobileMessages = {
     subtitle: 'Пунктуальність і голоси спільноти за станції та готелі.',
     mostReliable: 'Найпунктуальніші',
     leastReliable: 'Найменш пунктуальні',
+    spainMostReliable: 'Найпунктуальніші (Іспанія)',
+    spainLeastReliable: 'Найменш пунктуальні (Іспанія)',
     topUpvotedStations: 'Станції з найбільшою кількістю плюсів',
     mostDownvotedStations: 'Станції з найбільшою кількістю мінусів',
     topUpvotedHotels: 'Готелі з найбільшою кількістю плюсів',

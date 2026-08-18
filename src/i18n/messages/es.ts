@@ -269,6 +269,13 @@ export const es: Messages = {
     noReliabilityData: "Aún no hay datos de fiabilidad.",
     mostReliable: "Top 10 más fiables",
     leastReliable: "Top 10 menos fiables",
+    spainReliabilityRankings: "Rankings de fiabilidad en España",
+    spainReliabilityIntro:
+      "Basado en los retrasos acumulados de nuestras muestras Renfe en tiempo real. Las estaciones necesitan al menos 5 observaciones. 10 = menos retrasos en los datos españoles; 1 = más retrasos. Independiente del ranking portugués.",
+    spainReliabilityUnavailable:
+      "Los rankings de fiabilidad de España no están disponibles temporalmente.",
+    spainMostReliable: "Top 3 más fiables (España)",
+    spainLeastReliable: "Top 3 menos fiables (España)",
     downloadReliabilityCsv: "Descargar CSV",
     downloadStationCsv: "Descargar CSV",
     trainSpotlightTitle: "Trenes destacados",

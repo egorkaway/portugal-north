@@ -86,6 +86,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pixabay",
     photoPageUrl: "https://www.pexels.com/photo/gray-steel-entrance-gate-in-middle-of-hallway-462341/",
   },
+  "753510": {
+    photographer: "Francesco Paggiaro",
+    photographerUrl: "https://www.pexels.com/@paggiarofrancesco",
+    photoPageUrl: "https://www.pexels.com/photo/white-and-red-train-in-underground-753510/",
+  },
   "808961": {
     photographer: "João  Jesus",
     photographerUrl: "https://www.pexels.com/@joaojesusdesign",
@@ -155,6 +160,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Alotrobo",
     photographerUrl: "https://www.pexels.com/@aloismoubax",
     photoPageUrl: "https://www.pexels.com/photo/train-station-1653078/",
+  },
+  "1675189": {
+    photographer: "Ricky Esquivel",
+    photographerUrl: "https://www.pexels.com/@rickyrecap",
+    photoPageUrl: "https://www.pexels.com/photo/green-steel-rod-1675189/",
   },
   "1855369": {
     photographer: "Elina Sazonova",
@@ -491,6 +501,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@catiamatos",
     photoPageUrl: "https://www.pexels.com/photo/a-person-waiting-on-a-bus-stop-9180935/",
   },
+  "9186557": {
+    photographer: "Rathaphon Nanthapreecha",
+    photographerUrl: "https://www.pexels.com/@bank",
+    photoPageUrl: "https://www.pexels.com/photo/a-black-train-on-a-subway-station-9186557/",
+  },
   "9314258": {
     photographer: "Jules T",
     photographerUrl: "https://www.pexels.com/@jules-t-364556",
@@ -680,6 +695,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Tauseef Khaliq",
     photographerUrl: "https://www.pexels.com/@tauseefkhaliq",
     photoPageUrl: "https://www.pexels.com/photo/an-empty-railway-12702911/",
+  },
+  "12794793": {
+    photographer: "AirTeo | Air Travel",
+    photographerUrl: "https://www.pexels.com/@airteo",
+    photoPageUrl: "https://www.pexels.com/photo/view-of-escalator-at-the-dubai-metro-station-dubai-united-arab-emirates-12794793/",
   },
   "12841279": {
     photographer: "yx b",
@@ -900,6 +920,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Kostas Dimopoulos",
     photographerUrl: "https://www.pexels.com/@kostas-dimopoulos-119583302",
     photoPageUrl: "https://www.pexels.com/photo/platform-of-old-railway-station-16318677/",
+  },
+  "16452298": {
+    photographer: "Pedro Rebelo Pereira",
+    photographerUrl: "https://www.pexels.com/@pedro-rebelo-pereira-337908766",
+    photoPageUrl: "https://www.pexels.com/photo/tourists-in-entrance-to-sul-e-sueste-terminal-in-lisbon-portugal-16452298/",
   },
   "16549950": {
     photographer: "Masood Aslami",
@@ -1556,6 +1581,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@gokhancinar",
     photoPageUrl: "https://www.pexels.com/photo/istanbul-sirkeci-train-station-architecture-30765103/",
   },
+  "30765106": {
+    photographer: "Gökhan Çınar",
+    photographerUrl: "https://www.pexels.com/@gokhancinar",
+    photoPageUrl: "https://www.pexels.com/photo/scenic-view-of-sirkeci-train-station-in-istanbul-30765106/",
+  },
   "30776801": {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
@@ -2036,6 +2066,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@rainer-rohtla-2157494180",
     photoPageUrl: "https://www.pexels.com/photo/historic-lisbon-trams-in-traditional-depot-34753107/",
   },
+  "34805965": {
+    photographer: "Emilio Sánchez  Hernández",
+    photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",
+    photoPageUrl: "https://www.pexels.com/photo/valencia-estacion-del-norte-train-station-exterior-34805965/",
+  },
   "34879574": {
     photographer: "Oleksiy Yeshtokyn,🌻🇺🇦🌻",
     photographerUrl: "https://www.pexels.com/@oleksiy-yeshtokyn-2147541276",
@@ -2120,6 +2155,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Walter Cunha",
     photographerUrl: "https://www.pexels.com/@walter-cunha-2158705182",
     photoPageUrl: "https://www.pexels.com/photo/gran-via-metro-entrance-in-madrid-city-35551070/",
+  },
+  "35646857": {
+    photographer: "Jonathan Fuentes",
+    photographerUrl: "https://www.pexels.com/@jonathan-fuentes-2158022177",
+    photoPageUrl: "https://www.pexels.com/photo/historic-building-in-mexican-mining-museum-35646857/",
   },
   "35717117": {
     photographer: "Balázs Nemes",
@@ -2365,6 +2405,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Ana Hidalgo Burgos",
     photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-4848204",
     photoPageUrl: "https://www.pexels.com/photo/train-station-scene-in-murcia-spain-38055444/",
+  },
+  "38069564": {
+    photographer: "pierre matile",
+    photographerUrl: "https://www.pexels.com/@open-borders",
+    photoPageUrl: "https://www.pexels.com/photo/railway-workers-at-basel-train-station-38069564/",
   },
   "38151921": {
     photographer: "Emin Alper",

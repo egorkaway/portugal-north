@@ -202,6 +202,8 @@ export const pt: MobileMessages = {
     subtitle: 'Fiabilidade e votos da comunidade em estações e hotéis.',
     mostReliable: 'Mais fiáveis',
     leastReliable: 'Menos fiáveis',
+    spainMostReliable: 'Mais fiáveis (Espanha)',
+    spainLeastReliable: 'Menos fiáveis (Espanha)',
     topUpvotedStations: 'Estações mais votadas positivamente',
     mostDownvotedStations: 'Estações mais votadas negativamente',
     topUpvotedHotels: 'Hotéis mais votados positivamente',

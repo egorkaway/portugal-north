@@ -6,8 +6,9 @@
  *   npm run stats:spain
  *   npm run stats:spain -- --dry-run
  *
- * Writes data/spain-departure-stats.json (committed snapshots) and appends
- * data/spain-train-delay-log.ndjson (local ops log, gitignored).
+ * Writes data/spain-departure-stats.json (committed snapshots),
+ * public/data/spain-reliability-scores.json (separate Spain 1–10 scores),
+ * and appends data/spain-train-delay-log.ndjson (local ops log, gitignored).
  * Also invoked from collect-departure-stats.mjs so the launchd loop picks it up.
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
@@ -79,12 +80,25 @@ export async function collectSpainReliability(options = {}) {
     mkdirSync(dirname(statsPath), { recursive: true });
     writeFileSync(statsPath, `${JSON.stringify(store, null, 2)}\n`);
     appendSpainTrainDelayLog(delayLogPath, delayEntries);
+
+    const { buildReliabilityScoresManifest, SPAIN_RELIABILITY_MIN_MOVEMENTS } = await import(
+      "../server/lib/reliabilityScore.ts"
+    );
+    const spainReliabilityPath = join(root, "public/data/spain-reliability-scores.json");
+    const manifest = buildReliabilityScoresManifest(store, {
+      minMovements: SPAIN_RELIABILITY_MIN_MOVEMENTS,
+    });
+    mkdirSync(dirname(spainReliabilityPath), { recursive: true });
+    writeFileSync(spainReliabilityPath, `${JSON.stringify(manifest, null, 2)}\n`);
   }
 
   const matchedObs = observations.length - unmatched;
   console.log(
     `${dryRun ? "Dry run: " : ""}Spain reliability run #${store.runCount}: ${observations.length} trip update(s), ${matchedObs} at catalog stations (${matchedStations} station(s)), ${unmatched} unmatched stop(s) → ${statsPath}`,
   );
+  if (!dryRun) {
+    console.log(`Spain reliability scores → ${join(root, "public/data/spain-reliability-scores.json")}`);
+  }
 
   return {
     ok: true,

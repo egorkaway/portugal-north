@@ -202,6 +202,8 @@ export type MobileMessages = {
     subtitle: string;
     mostReliable: string;
     leastReliable: string;
+    spainMostReliable: string;
+    spainLeastReliable: string;
     topUpvotedStations: string;
     mostDownvotedStations: string;
     topUpvotedHotels: string;

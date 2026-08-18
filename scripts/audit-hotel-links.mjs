@@ -28,7 +28,13 @@ import {
   readRejectedHotels,
   writeRejectedHotels,
 } from "./lib/rejectedHotels.mjs";
-import { parseHotelMap, sleep, writeHotelMap } from "./lib/stationHotelFetch.mjs";
+import {
+  isPinnedHotel,
+  parseHotelMap,
+  readPinnedHotelMap,
+  sleep,
+  writeHotelMap,
+} from "./lib/stationHotelFetch.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const hotelsPath = join(root, "src/data/hotels.ts");
@@ -58,6 +64,7 @@ const hotelsTs = readFileSync(hotelsPath, "utf8");
 const metroTs = readFileSync(metroHotelsPath, "utf8");
 const stations = parseAllStationsFromRepo(root);
 const hotelMap = parseHotelMap(hotelsTs);
+const pinnedHotels = readPinnedHotelMap(hotelsPath);
 const rejectedHotels = readRejectedHotels(rejectedHotelsPath);
 
 let entries = parseAllHotelEntries(hotelsTs, metroTs).filter((entry) =>
@@ -136,7 +143,10 @@ if (broken.length === 0) {
   process.exit(0);
 }
 
-const removable = broken.filter(({ entry }) => entry.source === "hotels.ts");
+const removable = broken.filter(
+  ({ entry }) =>
+    entry.source === "hotels.ts" && !isPinnedHotel(pinnedHotels, entry.stationName, entry.name),
+);
 const manualFix = broken.filter(({ entry }) => entry.source !== "hotels.ts");
 
 if (manualFix.length) {
@@ -147,6 +157,7 @@ if (manualFix.length) {
 }
 
 for (const { entry, result } of broken) {
+  if (isPinnedHotel(pinnedHotels, entry.stationName, entry.name)) continue;
   addRejectedHotel(rejectedHotels, {
     stationName: entry.stationName,
     hotelName: entry.name,

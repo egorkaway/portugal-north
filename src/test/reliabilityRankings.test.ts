@@ -1,10 +1,16 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   buildReliabilityRankingRows,
+  buildSpainReliabilityRankings,
+  filterScoresByMinMovements,
   formatReliabilityScore,
   getBottomReliabilityStations,
   getTopReliabilityStations,
   reliabilityRankingsToCsv,
+  SPAIN_RELIABILITY_MIN_MOVEMENTS,
+  SPAIN_RELIABILITY_RANKING_LIMIT,
 } from "@/lib/reliabilityScore";
 
 describe("reliability rankings", () => {
@@ -83,5 +89,69 @@ describe("reliability rankings", () => {
     expect(csv).toContain("rank,station,reliability_score,movements");
     expect(csv).toContain("1,São Bento (Porto),10,85");
     expect(csv).toContain('2,"Station, Inc.",8,12');
+  });
+
+  it("drops stations below the Spain observation gate", () => {
+    const filtered = filterScoresByMinMovements(
+      { Quiet: 10, Busy: 8, Thin: 9 },
+      { Quiet: 12, Busy: 40, Thin: 2 },
+      SPAIN_RELIABILITY_MIN_MOVEMENTS,
+    );
+    expect(filtered).toEqual({ Quiet: 10, Busy: 8 });
+  });
+
+  it("builds a separate Spain top and bottom 3 from gated scores", () => {
+    const scores: Record<string, number> = {
+      "A Coruña": 10,
+      Pontevedra: 9,
+      Ourense: 8,
+      "Barcelona-Sants": 3,
+      "Zaragoza Delicias": 2,
+      "València-Estació del Nord": 1,
+      "One sample halt": 10,
+    };
+    const movements = {
+      "A Coruña": 26,
+      Pontevedra: 23,
+      Ourense: 41,
+      "Barcelona-Sants": 224,
+      "Zaragoza Delicias": 56,
+      "València-Estació del Nord": 35,
+      "One sample halt": 1,
+    };
+
+    const { top, bottom } = buildSpainReliabilityRankings(scores, movements);
+
+    expect(SPAIN_RELIABILITY_RANKING_LIMIT).toBe(3);
+    expect(top).toHaveLength(3);
+    expect(bottom).toHaveLength(3);
+    expect(top.map((row) => row.name)).toEqual(["A Coruña", "Pontevedra", "Ourense"]);
+    expect(bottom.map((row) => row.name)).toEqual([
+      "València-Estació del Nord",
+      "Zaragoza Delicias",
+      "Barcelona-Sants",
+    ]);
+    expect(top.some((row) => row.name === "One sample halt")).toBe(false);
+    expect(bottom.some((row) => row.name === "One sample halt")).toBe(false);
+  });
+
+  it("keeps published Spain scores separate from Portugal and above the observation gate", () => {
+    const portugal = JSON.parse(
+      readFileSync(join(process.cwd(), "public/data/reliability-scores.json"), "utf8"),
+    ) as { scores: Record<string, number> };
+    const spain = JSON.parse(
+      readFileSync(join(process.cwd(), "public/data/spain-reliability-scores.json"), "utf8"),
+    ) as { scores: Record<string, number>; movements: Record<string, number> };
+
+    const overlap = Object.keys(spain.scores).filter((name) => name in portugal.scores);
+    expect(overlap).toEqual([]);
+    expect(Object.keys(spain.scores).length).toBeGreaterThanOrEqual(6);
+    expect(Object.values(spain.movements).every((count) => count >= SPAIN_RELIABILITY_MIN_MOVEMENTS)).toBe(
+      true,
+    );
+
+    const { top, bottom } = buildSpainReliabilityRankings(spain.scores, spain.movements);
+    expect(top).toHaveLength(3);
+    expect(bottom).toHaveLength(3);
   });
 });

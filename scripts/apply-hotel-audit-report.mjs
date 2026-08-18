@@ -15,7 +15,7 @@ import {
   readRejectedHotels,
   writeRejectedHotels,
 } from "./lib/rejectedHotels.mjs";
-import { parseHotelMap, writeHotelMap } from "./lib/stationHotelFetch.mjs";
+import { isPinnedHotel, parseHotelMap, readPinnedHotelMap, writeHotelMap } from "./lib/stationHotelFetch.mjs";
 
 /** @typedef {{ stationName: string, hotelName: string, source: string, reason: string, bookingUrl: string }} BrokenEntry */
 
@@ -85,6 +85,7 @@ function main() {
   const broken = parseAuditReport(report);
   const stations = parseAllStationsFromRepo(root);
   const hotelMap = parseHotelMap(readFileSync(hotelsPath, "utf8"));
+  const pinnedHotels = readPinnedHotelMap(hotelsPath);
   const metroMap = parseMetroHotelMap(readFileSync(metroPath, "utf8"));
   const rejected = readRejectedHotels(rejectedPath);
 
@@ -93,6 +94,8 @@ function main() {
 
   let hotelsRemoved = 0;
   for (const target of brokenHotels) {
+    if (isPinnedHotel(pinnedHotels, target.stationName, target.hotelName)) continue;
+
     const current = hotelMap[target.stationName] ?? [];
     const next = current.filter((hotel) => !matchesBrokenHotel(hotel, target));
     if (next.length !== current.length) {
