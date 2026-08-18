@@ -57,4 +57,31 @@ describe("stationHotelFetch", () => {
     const parsed = parseHotelMap(readFileSync(hotelsPath, "utf8"));
     expect(parsed["Esqueiró"][0]?.name).toBe("Luan Café Lanhelas");
   });
+
+  it("drops Cerveira pousada aliases when the HI listing is pinned", () => {
+    const pinned = readPinnedHotelMap("src/data/hotels.ts");
+    const map = mergePinnedHotels(
+      {
+        "Vila Nova de Cerveira": [
+          {
+            name: "Pousada de Vila Nova de Cerveira",
+            distanceKm: 0.7,
+            priceFrom: 25,
+            bookingUrl: "https://www.booking.com/hotel/pt/pousada-de-vila-nova-de-cerveira.html",
+          },
+          {
+            name: "Minho Belo",
+            distanceKm: 0.6,
+            priceFrom: 38,
+            bookingUrl: "https://www.booking.com/searchresults.html?ss=Minho",
+          },
+        ],
+      },
+      pinned,
+    );
+    expect(map["Vila Nova de Cerveira"].map((hotel) => hotel.name)).toEqual([
+      "HI Vila Nova de Cerveira - Pousada de Juventude",
+      "Minho Belo",
+    ]);
+  });
 });

@@ -35,4 +35,25 @@ describe("publicStationVotes", () => {
     });
     expect(filtered.hotelRatings).toEqual({});
   });
+
+  it("merges aliased Cerveira pousada vote keys", () => {
+    const filtered = filterCommunityVotesForPublicStations({
+      ratings: {},
+      hotelRatings: {
+        "Vila Nova de Cerveira::Pousada de Juventude Vila Nova de Cerveira": { up: 1, down: 0 },
+        "Vila Nova de Cerveira::Pousada de Vila Nova de Cerveira": { up: 2, down: 1 },
+      },
+      imageRatings: {},
+      hotelClosedReports: {
+        "Vila Nova de Cerveira::Pousada de Vila Nova de Cerveira": { reports: 1 },
+      },
+    });
+
+    expect(filtered.hotelRatings).toEqual({
+      "Vila Nova de Cerveira::HI Vila Nova de Cerveira - Pousada de Juventude": { up: 3, down: 1 },
+    });
+    expect(filtered.hotelClosedReports).toEqual({
+      "Vila Nova de Cerveira::HI Vila Nova de Cerveira - Pousada de Juventude": { reports: 1 },
+    });
+  });
 });
