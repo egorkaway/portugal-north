@@ -280,8 +280,6 @@ export const pt: Messages = {
     mostDelayedTrain: "Comboio mais atrasado",
     trainSpotlightTrainLabel: "Comboio {{number}} · {{serviceType}}",
     trainSpotlightAvgDelay: "{{avg}} min de atraso médio",
-    trainSpotlightObservations: "{{count}} amostras",
-    trainSpotlightStations: "{{count}} estações",
     trainSpotlightRotating: "Roda com a amostra n.º {{runCount}} até os dados estabilizarem",
     trainSpotlightMajorStations: "Via",
   },

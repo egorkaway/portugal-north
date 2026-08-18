@@ -280,8 +280,6 @@ export const ca: Messages = {
     mostDelayedTrain: "Tren més endarrerit",
     trainSpotlightTrainLabel: "Tren {{number}} · {{serviceType}}",
     trainSpotlightAvgDelay: "{{avg}} min de retard mitjà",
-    trainSpotlightObservations: "{{count}} mostres",
-    trainSpotlightStations: "{{count}} estacions",
     trainSpotlightRotating: "Rota amb la mostra núm. {{runCount}} fins estabilitzar les dades",
     trainSpotlightMajorStations: "Via",
   },

@@ -211,7 +211,6 @@ export const en: MobileMessages = {
     mostReliableTrain: 'Most reliable train',
     mostDelayedTrain: 'Most delayed train',
     trainSpotlightAvgDelay: '{{avg}} min avg delay',
-    trainSpotlightObservations: '{{count}} samples',
     trainSpotlightRotating: 'Rotates with sample run #{{runCount}}',
     trainSpotlightMajorStations: 'Via',
   },

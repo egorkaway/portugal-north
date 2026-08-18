@@ -211,7 +211,6 @@ export const ca: MobileMessages = {
     mostReliableTrain: 'Tren més fiable',
     mostDelayedTrain: 'Tren més endarrerit',
     trainSpotlightAvgDelay: '{{avg}} min de retard mitjà',
-    trainSpotlightObservations: '{{count}} mostres',
     trainSpotlightRotating: 'Rota amb la mostra núm. {{runCount}}',
     trainSpotlightMajorStations: 'Via',
   },

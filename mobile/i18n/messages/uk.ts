@@ -211,7 +211,6 @@ export const uk: MobileMessages = {
     mostReliableTrain: 'Найнадійніший потяг',
     mostDelayedTrain: 'Найбільш запізнений потяг',
     trainSpotlightAvgDelay: '{{avg}} хв середнього запізнення',
-    trainSpotlightObservations: '{{count}} зразків',
     trainSpotlightRotating: 'Змінюється з вибіркою №{{runCount}}',
     trainSpotlightMajorStations: 'Через',
   },

@@ -280,8 +280,6 @@ export const es: Messages = {
     mostDelayedTrain: "Tren más retrasado",
     trainSpotlightTrainLabel: "Tren {{number}} · {{serviceType}}",
     trainSpotlightAvgDelay: "{{avg}} min de retraso medio",
-    trainSpotlightObservations: "{{count}} muestras",
-    trainSpotlightStations: "{{count}} estaciones",
     trainSpotlightRotating: "Rota con la muestra n.º {{runCount}} hasta estabilizar los datos",
     trainSpotlightMajorStations: "Vía",
   },

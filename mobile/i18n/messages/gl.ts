@@ -211,7 +211,6 @@ export const gl: MobileMessages = {
     mostReliableTrain: 'Tren máis fiábel',
     mostDelayedTrain: 'Tren máis atrasado',
     trainSpotlightAvgDelay: '{{avg}} min de atraso medio',
-    trainSpotlightObservations: '{{count}} mostras',
     trainSpotlightRotating: 'Rota coa mostra n.º {{runCount}}',
     trainSpotlightMajorStations: 'Vía',
   },

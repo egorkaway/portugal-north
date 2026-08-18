@@ -211,7 +211,6 @@ export type MobileMessages = {
     mostReliableTrain: string;
     mostDelayedTrain: string;
     trainSpotlightAvgDelay: string;
-    trainSpotlightObservations: string;
     trainSpotlightRotating: string;
     trainSpotlightMajorStations: string;
   };

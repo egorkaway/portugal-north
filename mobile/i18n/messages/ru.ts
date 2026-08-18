@@ -211,7 +211,6 @@ export const ru: MobileMessages = {
     mostReliableTrain: 'Самый надёжный поезд',
     mostDelayedTrain: 'Самый задержанный поезд',
     trainSpotlightAvgDelay: '{{avg}} мин средней задержки',
-    trainSpotlightObservations: '{{count}} выборок',
     trainSpotlightRotating: 'Меняется с выборкой №{{runCount}}',
     trainSpotlightMajorStations: 'Через',
   },

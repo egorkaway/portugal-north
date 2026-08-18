@@ -279,8 +279,6 @@ export const en: Messages = {
     mostDelayedTrain: "Most delayed train",
     trainSpotlightTrainLabel: "Train {{number}} · {{serviceType}}",
     trainSpotlightAvgDelay: "{{avg}} min avg delay",
-    trainSpotlightObservations: "{{count}} samples",
-    trainSpotlightStations: "{{count}} stations",
     trainSpotlightRotating: "Rotates with sample run #{{runCount}} until data stabilises",
     trainSpotlightMajorStations: "Via",
   },

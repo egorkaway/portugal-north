@@ -130,16 +130,11 @@ export default function RankingsScreen() {
               valueColor={trainSpotlightDelayColor(trainSpotlight.mostReliable.avgDelayMinutes)}
               majorStations={trainSpotlight.mostReliable.majorStations}
               onStationPress={(name) => router.push(`/station/${stationToSlug(name)}`)}
-              subtitle={[
-                t('rankings.trainSpotlightObservations', {
-                  count: trainSpotlight.mostReliable.observations,
-                }),
+              subtitle={
                 trainSpotlight.mostReliable.selectionMode === 'rotating'
                   ? t('rankings.trainSpotlightRotating', { runCount: trainSpotlight.runCount })
-                  : null,
-              ]
-                .filter(Boolean)
-                .join(' · ')}
+                  : undefined
+              }
             />
           ) : null}
           {trainSpotlight.mostDelayed ? (
@@ -153,9 +148,6 @@ export default function RankingsScreen() {
               valueColor={trainSpotlightDelayColor(trainSpotlight.mostDelayed.avgDelayMinutes)}
               majorStations={trainSpotlight.mostDelayed.majorStations}
               onStationPress={(name) => router.push(`/station/${stationToSlug(name)}`)}
-              subtitle={t('rankings.trainSpotlightObservations', {
-                count: trainSpotlight.mostDelayed.observations,
-              })}
             />
           ) : null}
         </RankingSection>

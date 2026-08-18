@@ -60,11 +60,6 @@ function TrainSpotlightCard({
               avg: formatTrainSpotlightDelay(entry.avgDelayMinutes),
             })}
           </p>
-          <p className="mt-2 text-xs text-muted-foreground">
-            {t("rankings.trainSpotlightObservations", { count: entry.observations })}
-            {" · "}
-            {t("rankings.trainSpotlightStations", { count: entry.stationsSampled })}
-          </p>
           {note ? <p className="mt-2 text-xs text-muted-foreground">{note}</p> : null}
           <MajorStationsList stations={entry.majorStations} />
         </div>
