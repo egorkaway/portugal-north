@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.verystays.stats-departures</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/bin/bash</string>
+		<string>/Users/egor/Dev/portugal-north/scripts/run-departure-stats-loop.sh</string>
+	</array>
+	<key>WorkingDirectory</key>
+	<string>/Users/egor/Dev/portugal-north</string>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>ProcessType</key>
+	<string>Background</string>
+	<key>Nice</key>
+	<integer>10</integer>
+	<key>StandardOutPath</key>
+	<string>/Users/egor/Library/Logs/verystays-stats-departures.launchd.out.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/egor/Library/Logs/verystays-stats-departures.launchd.err.log</string>
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/opt/homebrew/opt/node@20/bin:/usr/bin:/bin:/usr/sbin</string>
+	</dict>
+</dict>
+</plist>
