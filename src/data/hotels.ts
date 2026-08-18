@@ -2238,6 +2238,66 @@ export const stationHotels: StationHotels = {
     { name: "Tidex", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tidex%2C%20Torredembarra%2C%20Spain&order=price" },
     { name: "Morros", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Morros%2C%20Torredembarra%2C%20Spain&order=price" },
   ],
+  "Galapagar-La Navata": [
+    { name: "El Aparthotel", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Aparthotel%2C%20Galapagar-La%20Navata%2C%20Spain&order=price" },
+    { name: "Hostal Lady Ana María", distanceKm: 4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Lady%20Ana%20Mar%C3%ADa%2C%20Galapagar-La%20Navata%2C%20Spain&order=price" },
+    { name: "Hostal Santa Bárbara", distanceKm: 4.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Santa%20B%C3%A1rbara%2C%20Galapagar-La%20Navata%2C%20Spain&order=price" },
+  ],
+  "Elche/Elx-Carrús": [
+    { name: "Hostal María", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Mar%C3%ADa%2C%20Elche%2FElx-Carr%C3%BAs%2C%20Spain&order=price" },
+    { name: "Hostal Residencial Candilejas", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Residencial%20Candilejas%2C%20Elche%2FElx-Carr%C3%BAs%2C%20Spain&order=price" },
+    { name: "Hotel Elche Centro", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Elche%20Centro%2C%20Elche%2FElx-Carr%C3%BAs%2C%20Spain&order=price" },
+  ],
+  "La Corredoria": [
+    { name: "Hotel IDH Ángel", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20IDH%20%C3%81ngel%2C%20La%20Corredoria%2C%20Spain&order=price" },
+    { name: "Hotel Casa Camila", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Casa%20Camila%2C%20La%20Corredoria%2C%20Spain&order=price" },
+    { name: "Hotel El Retiro de Cardea", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Retiro%20de%20Cardea%2C%20La%20Corredoria%2C%20Spain&order=price" },
+  ],
+  "Medina del Campo": [
+    { name: "HostelFrío", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=HostelFr%C3%ADo%2C%20Medina%20del%20Campo%2C%20Spain&order=price" },
+    { name: "Hostal El Orensano", distanceKm: 0.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20Orensano%2C%20Medina%20del%20Campo%2C%20Spain&order=price" },
+    { name: "Hotel-Restaurante Reina Isabel", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel-Restaurante%20Reina%20Isabel%2C%20Medina%20del%20Campo%2C%20Spain&order=price" },
+  ],
+  "Ávila": [
+    { name: "Hotel Don Carmelo", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Don%20Carmelo%2C%20%C3%81vila%2C%20Spain&order=price" },
+    { name: "Exe Reina Isabel", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Reina%20Isabel%2C%20%C3%81vila%2C%20Spain&order=price" },
+    { name: "Hotel Santa Teresa", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Santa%20Teresa%2C%20%C3%81vila%2C%20Spain&order=price" },
+  ],
+  "Dos Hermanas": [
+    { name: "Hostal El emigrante", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20emigrante%2C%20Dos%20Hermanas%2C%20Spain&order=price" },
+    { name: "Leflet", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Leflet%2C%20Dos%20Hermanas%2C%20Spain&order=price" },
+    { name: "Hotel Mare", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mare%2C%20Dos%20Hermanas%2C%20Spain&order=price" },
+  ],
+  "Llodio": [
+    { name: "Valle de Ayala", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Valle%20de%20Ayala%2C%20Llodio%2C%20Spain&order=price" },
+    { name: "Hotel Errekagain", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Errekagain%2C%20Llodio%2C%20Spain&order=price" },
+    { name: "Kutxatxuri", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Kutxatxuri%2C%20Llodio%2C%20Spain&order=price" },
+  ],
+  "El Berrón": [
+    { name: "Hotel Cruz de La Victoria", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cruz%20de%20La%20Victoria%2C%20El%20Berr%C3%B3n%2C%20Spain&order=price" },
+    { name: "Hotel del Nora", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20del%20Nora%2C%20El%20Berr%C3%B3n%2C%20Spain&order=price" },
+    { name: "Hotel La Casona del Conde", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Casona%20del%20Conde%2C%20El%20Berr%C3%B3n%2C%20Spain&order=price" },
+  ],
+  "Llamaquique": [
+    { name: "Budget stays near Llamaquique", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Llamaquique%2C%20Spain&order=price" },
+    { name: "Guest houses near Llamaquique", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Llamaquique%2C%20Spain&order=price" },
+    { name: "Hotels near Llamaquique", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Llamaquique%2C%20Spain&order=price" },
+  ],
+  "Tarragona": [
+    { name: "Catalunya Express", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Catalunya%20Express%2C%20Tarragona%2C%20Spain&order=price" },
+    { name: "Hostal Europa", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Europa%2C%20Tarragona%2C%20Spain&order=price" },
+    { name: "Tarragona Hostel", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tarragona%20Hostel%2C%20Tarragona%2C%20Spain&order=price" },
+  ],
+  "Valdebebas": [
+    { name: "Hotel 101", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20101%2C%20Valdebebas%2C%20Spain&order=price" },
+    { name: "Calido Living - Valdebebas", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Calido%20Living%20-%20Valdebebas%2C%20Valdebebas%2C%20Spain&order=price" },
+    { name: "Ibis Styles Madrid Airport Valdebebas", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Styles%20Madrid%20Airport%20Valdebebas%2C%20Valdebebas%2C%20Spain&order=price" },
+  ],
+  "San Isidro-Albatera-Catral": [
+    { name: "La Laguna de Catral", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Laguna%20de%20Catral%2C%20San%20Isidro-Albatera-Catral%2C%20Spain&order=price" },
+    { name: "Hotel D'Pedro", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20D'Pedro%2C%20San%20Isidro-Albatera-Catral%2C%20Spain&order=price" },
+    { name: "B&B La Huerta - Albatera - Spanje", distanceKm: 7.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20La%20Huerta%20-%20Albatera%20-%20Spanje%2C%20San%20Isidro-Albatera-Catral%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

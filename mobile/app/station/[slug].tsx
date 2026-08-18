@@ -24,6 +24,7 @@ import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { getReliabilityForStation, reliabilityScoreColor, formatReliabilityScore } from '@/lib/reliabilityScore';
 import { getAirportConnectionsEntry } from '@/lib/airportConnections';
+import { remoteImageSource } from '@/lib/remoteImage';
 import {
   bakedReliabilityScores,
   getHotelsForStation,
@@ -136,7 +137,7 @@ export default function StationDetailScreen() {
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       {imageUrl ? (
-        <Image source={{ uri: imageUrl }} style={styles.hero} resizeMode="cover" />
+        <Image source={remoteImageSource(imageUrl)} style={styles.hero} resizeMode="cover" />
       ) : (
         <View style={[styles.hero, styles.heroPlaceholder]}>
           <Text style={styles.heroPlaceholderText}>{t('home.noPhoto')}</Text>

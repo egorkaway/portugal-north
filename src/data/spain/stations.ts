@@ -590,4 +590,139 @@ export const spainStations: Station[] = [
     lng: 1.4058,
   },
 
+  {
+    name: "Galapagar-La Navata",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.6003,
+    lng: -3.9823,
+  },
+
+  {
+    name: "Elche/Elx-Carrús",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.269,
+    lng: -0.7064,
+  },
+
+  {
+    name: "La Corredoria",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3881,
+    lng: -5.8273,
+  },
+
+  {
+    name: "Medina del Campo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.3176,
+    lng: -4.9099,
+  },
+
+  {
+    name: "Ávila",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.6573,
+    lng: -4.6833,
+  },
+
+  {
+    name: "Dos Hermanas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.2872,
+    lng: -5.9235,
+  },
+
+  {
+    name: "Llodio",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.1424,
+    lng: -2.9607,
+  },
+
+  {
+    name: "El Berrón",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3827,
+    lng: -5.7027,
+  },
+
+  {
+    name: "Llamaquique",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3588,
+    lng: -5.8573,
+  },
+
+  {
+    name: "Tarragona",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1116,
+    lng: 1.2532,
+  },
+
+  {
+    name: "Valdebebas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.4821,
+    lng: -3.6163,
+  },
+
+  {
+    name: "San Isidro-Albatera-Catral",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.167,
+    lng: -0.8381,
+  },
+
+  {
+    name: "Universidad de Alicante",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.3842,
+    lng: -0.5284,
+  },
+
+  {
+    name: "Cartagena",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.605,
+    lng: -0.9751,
+  },
+
+  {
+    name: "Pinar de las Rozas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5223,
+    lng: -3.8822,
+  },
+
 ];

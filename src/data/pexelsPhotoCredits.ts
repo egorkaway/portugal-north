@@ -911,6 +911,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@efe-ersoy-393937500",
     photoPageUrl: "https://www.pexels.com/photo/tram-in-lisbon-16655081/",
   },
+  "16673166": {
+    photographer: "思清 卞",
+    photographerUrl: "https://www.pexels.com/@549590071",
+    photoPageUrl: "https://www.pexels.com/photo/train-leaving-cologne-central-station-16673166/",
+  },
   "16690134": {
     photographer: "Arina Dmitrieva",
     photographerUrl: "https://www.pexels.com/@arina-dmitrieva-66352626",
@@ -1720,6 +1725,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Betül  Güneş",
     photographerUrl: "https://www.pexels.com/@betul-gunes-1793145775",
     photoPageUrl: "https://www.pexels.com/photo/busy-train-station-platform-at-daytime-32116770/",
+  },
+  "32145274": {
+    photographer: "Noland Live",
+    photographerUrl: "https://www.pexels.com/@nolandlive",
+    photoPageUrl: "https://www.pexels.com/photo/barcelona-port-ferry-terminal-with-green-hill-view-32145274/",
   },
   "32230393": {
     photographer: "Sebastien Devocelle",

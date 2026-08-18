@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-18T20:05:50.058Z",
-  "runCount": 379,
+  "generatedAt": "2026-08-18T20:33:50.042Z",
+  "runCount": 384,
   "mostDelayed": {
     "trainNumber": "516",
     "serviceType": "Intercidades",
@@ -15,16 +15,16 @@
     ]
   },
   "mostReliable": {
-    "trainNumber": "15244",
+    "trainNumber": "15550",
     "serviceType": "Urbano",
     "avgDelayMinutes": 0,
-    "observations": 36,
-    "stationsSampled": 24,
+    "observations": 40,
+    "stationsSampled": 20,
     "majorStations": [
-      "Porto-Campanhã",
-      "Contumil",
       "Ermesinde",
-      "Rio Tinto"
+      "Rio Tinto",
+      "Paredes",
+      "Cete"
     ],
     "selectionMode": "stable",
     "poolSize": 1

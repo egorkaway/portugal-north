@@ -20,8 +20,19 @@ const targets = [
     __dirname,
     "../ios/VeryStays/Images.xcassets/AppIcon.appiconset/App-Icon-1024x1024@1x.png",
   ),
-  path.join(__dirname, "../assets/images/android-icon-foreground.png"),
 ];
+
+const androidForegroundPath = path.join(
+  __dirname,
+  "../assets/images/android-icon-foreground.png",
+);
+
+/**
+ * Android adaptive icons crop to a ~66% circle. Full-bleed artwork loses the
+ * Iberian coastline; keep the map inside the safe zone.
+ */
+const ANDROID_FOREGROUND_SCALE = 0.66;
+const ANDROID_ICON_BG = { r: 1, g: 40, b: 65, alpha: 1 };
 
 const splashIconPath = path.join(__dirname, "../assets/images/splash-icon.png");
 
@@ -66,6 +77,32 @@ async function writeSplashImageset(input) {
   }
 }
 
+async function writeAndroidForeground(input) {
+  const size = 1024;
+  const inner = Math.round(size * ANDROID_FOREGROUND_SCALE);
+  const artwork = await sharp(input)
+    .resize(inner, inner, {
+      fit: "contain",
+      background: ANDROID_ICON_BG,
+    })
+    .png()
+    .toBuffer();
+
+  fs.mkdirSync(path.dirname(androidForegroundPath), { recursive: true });
+  await sharp({
+    create: {
+      width: size,
+      height: size,
+      channels: 4,
+      background: ANDROID_ICON_BG,
+    },
+  })
+    .composite([{ input: artwork, gravity: "centre" }])
+    .png({ compressionLevel: 9 })
+    .toFile(androidForegroundPath);
+  console.log(`Wrote ${path.relative(repoRoot, androidForegroundPath)}`);
+}
+
 async function fromRaster(input) {
   for (const target of targets) {
     fs.mkdirSync(path.dirname(target), { recursive: true });
@@ -76,6 +113,7 @@ async function fromRaster(input) {
     console.log(`Wrote ${path.relative(repoRoot, target)}`);
   }
 
+  await writeAndroidForeground(input);
   await writeRoundedSplashPng(input, 1024, splashIconPath);
 
   await writeSplashImageset(input);

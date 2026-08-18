@@ -4,6 +4,7 @@ import { VoteButtons } from '@/components/VoteButtons';
 import { sortTrainTypes, theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { formatDistance } from '@/lib/geo';
+import { remoteImageSource } from '@/lib/remoteImage';
 import { getStationImageUrl, type Station } from '@/lib/stationData';
 import type { Vote } from '@/lib/voteStorage';
 
@@ -32,7 +33,7 @@ export function StationCard({
   return (
     <Pressable style={styles.card} onPress={onPress}>
       {imageUrl ? (
-        <Image source={{ uri: imageUrl }} style={styles.image} resizeMode="cover" />
+        <Image source={remoteImageSource(imageUrl)} style={styles.image} resizeMode="cover" />
       ) : (
         <View style={[styles.image, styles.imagePlaceholder]}>
           <Text style={styles.placeholderText}>{t('home.noPhoto')}</Text>

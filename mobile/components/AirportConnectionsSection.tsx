@@ -4,6 +4,7 @@ import { STATION_SECTION_PADDING } from '@/components/stationSectionStyles';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { formatCountryName } from '@/lib/countryName';
+import { remoteImageSource } from '@/lib/remoteImage';
 import {
   getAirportConnectionsMapImageUrl,
   getAirportStationSlugByIata,
@@ -69,7 +70,7 @@ export function AirportConnectionsSection({ entry, stationName }: Props) {
       </Text>
 
       <Image
-        source={{ uri: mapUrl }}
+        source={remoteImageSource(mapUrl)}
         style={styles.mapImage}
         resizeMode="cover"
         accessibilityLabel={`${t('airport.title')} · ${stationName}`}

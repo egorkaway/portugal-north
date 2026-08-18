@@ -119,6 +119,36 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Torredembarra": ["71503"],
 
+  "Galapagar-La Navata": ["10104"],
+
+  "Elche/Elx-Carrús": ["62102"],
+
+  "La Corredoria": ["15217"],
+
+  "Medina del Campo": ["10500"],
+
+  "Ávila": ["10400"],
+
+  "Dos Hermanas": ["51103"],
+
+  "Llodio": ["13106"],
+
+  "El Berrón": ["05509"],
+
+  "Llamaquique": ["15218"],
+
+  "Tarragona": ["71500"],
+
+  "Valdebebas": ["98304"],
+
+  "San Isidro-Albatera-Catral": ["62100"],
+
+  "Universidad de Alicante": ["60914"],
+
+  "Cartagena": ["61307"],
+
+  "Pinar de las Rozas": ["10100"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
