@@ -134,4 +134,28 @@ export const spainStations: Station[] = [
     lat: 41.3794,
     lng: 2.1403,
   },
+  {
+    name: "Barcelona-Passeig de Gràcia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.3921,
+    lng: 2.1653,
+  },
+  {
+    name: "Madrid-Puerta de Atocha",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 40.4064,
+    lng: -3.6909,
+  },
+  {
+    name: "Tafalla",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.5258,
+    lng: -1.6715,
+  },
 ];

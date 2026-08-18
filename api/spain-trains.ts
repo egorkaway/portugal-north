@@ -1,11 +1,13 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import {
+  RENFE_VEHICLE_POSITIONS_CERCANIAS,
+  RENFE_VEHICLE_POSITIONS_LONG_DISTANCE,
+} from "../src/lib/spainRenfeFeeds.js";
+import {
   mergeSpainTrainFeeds,
   type SpainTrainsManifest,
 } from "../src/lib/spainTrainPositions.js";
 
-const CERCANIAS_URL = "https://gtfsrt.renfe.com/vehicle_positions.json";
-const LONG_DISTANCE_URL = "https://gtfsrt.renfe.com/vehicle_positions_LD.json";
 const FETCH_TIMEOUT_MS = 8_000;
 
 async function fetchJson(url: string): Promise<unknown> {
@@ -35,8 +37,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const [cercanias, longDistance] = await Promise.all([
-    fetchFeedOrNull(CERCANIAS_URL),
-    fetchFeedOrNull(LONG_DISTANCE_URL),
+    fetchFeedOrNull(RENFE_VEHICLE_POSITIONS_CERCANIAS),
+    fetchFeedOrNull(RENFE_VEHICLE_POSITIONS_LONG_DISTANCE),
   ]);
 
   if (!cercanias && !longDistance) {

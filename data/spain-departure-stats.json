@@ -1,0 +1,198 @@
+{
+  "runCount": 4,
+  "lastRunAt": "2026-08-18T16:33:59.753Z",
+  "lastAirportConnectionsAt": null,
+  "stations": {
+    "Barcelona-Sants": {
+      "cpCode": "71801",
+      "byTrainType": {
+        "Cercanías": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 13,
+          "delayMinutes": 706
+        },
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 41,
+          "delayMinutes": 143
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 54,
+        "delayMinutes": 849
+      },
+      "successfulSamples": 4,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T16:33:59.753Z",
+      "lastError": null
+    },
+    "Madrid-Chamartín": {
+      "cpCode": "17000",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 32,
+          "delayMinutes": 150
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 177
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 12
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 45,
+        "delayMinutes": 339
+      },
+      "successfulSamples": 4,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T16:33:59.753Z",
+      "lastError": null
+    },
+    "Santiago de Compostela": {
+      "cpCode": "31400",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 20,
+          "delayMinutes": 32
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 20,
+        "delayMinutes": 32
+      },
+      "successfulSamples": 4,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T16:33:59.753Z",
+      "lastError": null
+    },
+    "Zamora": {
+      "cpCode": "30200",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 12,
+          "delayMinutes": 176
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 12,
+        "delayMinutes": 176
+      },
+      "successfulSamples": 4,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T16:33:59.753Z",
+      "lastError": null
+    },
+    "Vilagarcía de Arousa": {
+      "cpCode": "23008",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 5
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 5
+      },
+      "successfulSamples": 4,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T16:33:59.753Z",
+      "lastError": null
+    },
+    "Vigo-Urzáiz": {
+      "cpCode": "08223",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T16:27:45.914Z",
+      "lastError": null
+    },
+    "Pontevedra": {
+      "cpCode": "23004",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 0
+      },
+      "successfulSamples": 1,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T16:27:45.914Z",
+      "lastError": null
+    },
+    "A Coruña": {
+      "cpCode": "31412",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 10
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 10
+      },
+      "successfulSamples": 1,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T16:27:45.914Z",
+      "lastError": null
+    },
+    "Ourense": {
+      "cpCode": "22100",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 15
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 3,
+        "delayMinutes": 15
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T16:33:59.753Z",
+      "lastError": null
+    }
+  }
+}

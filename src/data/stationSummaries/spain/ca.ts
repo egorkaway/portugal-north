@@ -26,6 +26,12 @@ export const spainSummariesCa: Record<string, string> = {
     "Terminal septentrional d'alta velocitat de Madrid i porta d'entrada dels Intercidades cap a Galícia al corredor AVE. Metro i rodalies s'estenen per la capital — feu servir aquesta parada per a sortides de llarga distància a l'oest cap a Santiago de Compostela i A Coruña.",
   "Barcelona-Sants":
     "Principal estació de llarga distància de Catalunya, amb Intercidades que connecten l'eix mediterrani amb la resta d'Espanya. Sants està al metro i a rodalies — el hub pràctic de Barcelona per a bitllets transcontinentals més enllà de les xarxes regionals Rodalies.",
+  "A Gudiña-Porta de Galicia":
+    "Apeadero d'alta velocitat al corredor Madrid–Galícia vora la frontera gallega, conegut com Porta de Galicia. Els Intercidades paren entre Sanabria i Ourense — una parada de muntanya més que un hub urbà.",
+  "Sanabria Alta Velocidad":
+    "Estació d'alta velocitat vora Puebla de Sanabria a la línia AVE Madrid–Galícia. Els Intercidades uneixen Castella i Lleó amb Galícia — útil per als llacs de Sanabria sense transbordar a Zamora.",
+  Zamora:
+    "Ciutat de l'altiplà castellà a la línia d'alta velocitat Madrid–Galícia, amb Intercidades cap a Ourense, Santiago i la capital. El casc històric queda a poca distància de l'estació — una pausa natural entre Madrid i Galícia.",
   "Madrid-Barajas Airport (MAD)":
     "Aeroport més concorregut d'Espanya i principal porta internacional, al nord-est de Madrid amb metro i autobusos de llarga distància a Chamartín i Atocha. El hub aeri natural per travessar la península — reserveu temps extra entre terminals en vols de connexió.",
   "Barcelona-El Prat Airport (BCN)":
@@ -96,4 +102,11 @@ export const spainSummariesCa: Record<string, string> = {
     "Petit aeroport aragonès a prop dels monuments mudèjars de Terol, amb accés per carretera al centre de la ciutat. Servei regular escàs — els visitants solen fer servir Saragossa o València per a connexions més fàcils.",
   "Ciudad Real Airport (CQM)":
     "Aeroport de l'altiplà central al sud de Ciudad Real amb enllaços per carretera al corredor d'alta velocitat Madrid–Andalusia. Trànsit comercial limitat després de les primeres ambicions d'alta velocitat — confirmeu horaris en vigor abans de planificar al voltant seu.",
+  "Barcelona-Passeig de Gràcia":
+    "Barcelona-Passeig de Gràcia és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+  "Madrid-Puerta de Atocha":
+    "Madrid-Puerta de Atocha és una estació de Renfe de llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+  "Tafalla":
+    "Tafalla és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

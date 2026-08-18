@@ -26,6 +26,12 @@ export const spainSummariesEn: Record<string, string> = {
     "Madrid's northern high-speed terminal and gateway for Intercidades trains to Galicia on the AVE corridor. Metro and suburban links fan out across the capital — use this stop for long-distance departures west to Santiago de Compostela and A Coruña.",
   "Barcelona-Sants":
     "Catalonia's main long-distance station, with Intercidades services linking the Mediterranean axis to the rest of Spain. Sants sits on metro and commuter rail — the practical Barcelona hub for cross-country tickets beyond regional Rodalies networks.",
+  "A Gudiña-Porta de Galicia":
+    "High-speed halt on the Madrid–Galicia corridor at the Galician border, branded Porta de Galicia. Intercidades trains call between Sanabria and Ourense — a remote mountain stop rather than a city hub.",
+  "Sanabria Alta Velocidad":
+    "Purpose-built high-speed station near Puebla de Sanabria on the Madrid–Galicia AVE line. Intercidades services link Castile and León with Galicia — useful for the Sanabria lake country without changing in Zamora.",
+  Zamora:
+    "Castilian plateau city on the Madrid–Galicia high-speed line, with Intercidades trains toward Ourense, Santiago, and the capital. The historic centre is a short ride from the station — a natural pause between Madrid and Galicia.",
   "Madrid-Barajas Airport (MAD)":
     "Spain's busiest airport and main international gateway, northeast of Madrid with metro and long-distance bus links to Chamartín and Atocha. The natural air hub for crossing the peninsula — allow extra time between terminals on connecting flights.",
   "Barcelona-El Prat Airport (BCN)":
@@ -96,4 +102,11 @@ export const spainSummariesEn: Record<string, string> = {
     "Small Aragonese airport near Teruel's Mudéjar monuments, with road access to the city centre. Sparse scheduled service — visitors often use Zaragoza or Valencia for easier connections.",
   "Ciudad Real Airport (CQM)":
     "Central plateau airport south of Ciudad Real with road links toward the Madrid–Andalusia high-speed corridor. Limited commercial traffic after early high-speed ambitions — check live schedules before planning around it.",
+  "Barcelona-Passeig de Gràcia":
+    "Barcelona-Passeig de Gràcia is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+  "Madrid-Puerta de Atocha":
+    "Madrid-Puerta de Atocha is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+  "Tafalla":
+    "Tafalla is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

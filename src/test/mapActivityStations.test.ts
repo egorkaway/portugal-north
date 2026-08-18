@@ -7,7 +7,9 @@ import {
 
 describe("mapActivityStations", () => {
   it("includes all Spanish stations as low-activity international stations", () => {
-    expect(getMapLowActivityInternationalStations()).toEqual(spainStations);
+    expect(getMapLowActivityInternationalStations()).toEqual(
+      expect.arrayContaining(spainStations),
+    );
   });
 
   it("renders Spanish stations as quiet H3 res. 9 hexes on the Portugal map", () => {

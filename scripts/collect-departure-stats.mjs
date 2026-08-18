@@ -12,6 +12,9 @@
  * logs temperatures (Open-Meteo) for train stations that returned a departure
  * sample attempt (OK or FAIL). Airport hub temperatures are logged only during
  * a flight-connections collect, after a successful flight sample,
+ * samples Renfe trip updates into data/spain-departure-stats.json +
+ * data/spain-train-delay-log.ndjson (Spanish catalog stations / trains),
+ * adds up to 3 new Spanish stations (with images and hotels) from those samples,
  * appends per-train arrival delay samples to data/train-delay-log.ndjson,
  * and prints this month's avg low / avg high on OK/FAIL lines only when the
  * temperature fetch for this run succeeded,
@@ -284,6 +287,24 @@ for (const { station, cpCode } of targets) {
 
 if (!dryRun) {
   saveStore(store);
+
+  try {
+    const { collectSpainReliability } = await import("./collect-spain-reliability.mjs");
+    await collectSpainReliability();
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`Spain reliability collect skipped: ${message}`);
+  }
+
+  if (!args.includes("--skip-spain-expand")) {
+    try {
+      const { expandSpainStations } = await import("./expand-spain-stations.mjs");
+      await expandSpainStations({ limit: 3 });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      console.error(`Spain station expand skipped: ${message}`);
+    }
+  }
 
   if (temperaturesLogged > 0 || temperaturesMissed > 0) {
     console.log(

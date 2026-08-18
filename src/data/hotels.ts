@@ -2028,6 +2028,21 @@ export const stationHotels: StationHotels = {
     { name: "Meeting Point Hostels", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Meeting%20Point%20Hostels%2C%20Barcelona-Sants%2C%20Spain&order=price" },
     { name: "Hotel AC Sants", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20AC%20Sants%2C%20Barcelona-Sants%2C%20Spain&order=price" },
   ],
+  "Barcelona-Passeig de Gràcia": [
+    { name: "Barcelona City Hotel(Hotel Universal)", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcelona%20City%20Hotel(Hotel%20Universal)%2C%20Barcelona-Passeig%20de%20Gr%C3%A0cia%2C%20Spain&order=price" },
+    { name: "Safestay Passeig de Gracia Barcelona", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Safestay%20Passeig%20de%20Gracia%20Barcelona%2C%20Barcelona-Passeig%20de%20Gr%C3%A0cia%2C%20Spain&order=price" },
+    { name: "Room Mate Anna Hotel", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Room%20Mate%20Anna%20Hotel%2C%20Barcelona-Passeig%20de%20Gr%C3%A0cia%2C%20Spain&order=price" },
+  ],
+  "Madrid-Puerta de Atocha": [
+    { name: "Hostal Argentina", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Argentina%2C%20Madrid-Puerta%20de%20Atocha%2C%20Spain&order=price" },
+    { name: "Hostal Alegría", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Alegr%C3%ADa%2C%20Madrid-Puerta%20de%20Atocha%2C%20Spain&order=price" },
+    { name: "Hostal Mediodía", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Mediod%C3%ADa%2C%20Madrid-Puerta%20de%20Atocha%2C%20Spain&order=price" },
+  ],
+  "Tafalla": [
+    { name: "Nuestra Señora de Ujue", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nuestra%20Se%C3%B1ora%20de%20Ujue%2C%20Tafalla%2C%20Spain&order=price" },
+    { name: "Hostal Arotza", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Arotza%2C%20Tafalla%2C%20Spain&order=price" },
+    { name: "Hotel Beratxa", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Beratxa%2C%20Tafalla%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

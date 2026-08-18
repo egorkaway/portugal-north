@@ -251,6 +251,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@roman-kokoev-1245913",
     photoPageUrl: "https://www.pexels.com/photo/people-in-train-station-at-night-4980902/",
   },
+  "5142435": {
+    photographer: "Michael Erhardsson",
+    photographerUrl: "https://www.pexels.com/@michael-erhardsson-3438583",
+    photoPageUrl: "https://www.pexels.com/photo/interior-of-london-kings-cross-station-5142435/",
+  },
   "5191330": {
     photographer: "József Varga",
     photographerUrl: "https://www.pexels.com/@vargajoska",
@@ -1366,6 +1371,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@miguel-monte-411136289",
     photoPageUrl: "https://www.pexels.com/photo/urban-train-in-aveiro-station-close-up-28406417/",
   },
+  "28601256": {
+    photographer: "Alimurat Üral",
+    photographerUrl: "https://www.pexels.com/@alimuart",
+    photoPageUrl: "https://www.pexels.com/photo/blurred-motion-of-subway-train-at-station-28601256/",
+  },
   "29144892": {
     photographer: "Liane Ferreira",
     photographerUrl: "https://www.pexels.com/@liane-ferreira-1033991071",
@@ -1760,6 +1770,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Charles Edward Cansino",
     photographerUrl: "https://www.pexels.com/@charles-edward-cansino-2149014986",
     photoPageUrl: "https://www.pexels.com/photo/captivating-black-and-white-subway-movement-shot-33147868/",
+  },
+  "33353923": {
+    photographer: "Chris Oberman",
+    photographerUrl: "https://www.pexels.com/@chris-oberman-2154680251",
+    photoPageUrl: "https://www.pexels.com/photo/amsterdam-central-station-with-yellow-trains-33353923/",
   },
   "33354908": {
     photographer: "Brendan Rühli",
