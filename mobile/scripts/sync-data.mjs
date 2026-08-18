@@ -45,6 +45,11 @@ export async function syncMobileData() {
   const reliabilityPath = path.join(repoRoot, "public/data/reliability-scores.json");
   const reliability = JSON.parse(fs.readFileSync(reliabilityPath, "utf8"));
 
+  const trainSpotlightPath = path.join(repoRoot, "public/data/train-reliability-spotlight.json");
+  const trainSpotlight = fs.existsSync(trainSpotlightPath)
+    ? JSON.parse(fs.readFileSync(trainSpotlightPath, "utf8"))
+    : { generatedAt: "", runCount: 0, mostDelayed: null, mostReliable: null };
+
   const airportConnectionsPath = path.join(repoRoot, "public/data/airport-connections.json");
   const airportConnections = fs.existsSync(airportConnectionsPath)
     ? JSON.parse(fs.readFileSync(airportConnectionsPath, "utf8"))
@@ -88,6 +93,10 @@ export async function syncMobileData() {
   fs.writeFileSync(path.join(outDir, "hotels.json"), JSON.stringify(stationHotels));
   fs.writeFileSync(path.join(outDir, "summaries-en.json"), JSON.stringify(summaries));
   fs.writeFileSync(path.join(outDir, "reliability-scores.json"), JSON.stringify(reliability));
+  fs.writeFileSync(
+    path.join(outDir, "train-reliability-spotlight.json"),
+    JSON.stringify(trainSpotlight),
+  );
   fs.writeFileSync(
     path.join(outDir, "airport-connections.json"),
     JSON.stringify(airportConnections),

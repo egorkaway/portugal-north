@@ -14,35 +14,36 @@ import type { Station } from "@/data/stations";
 describe("rankStations", () => {
   it("returns top 3 upvoted stations by up count", () => {
     const ranked = getTopUpvoted({
-      Alpha: { up: 2, down: 0 },
-      Bravo: { up: 5, down: 1 },
-      Charlie: { up: 5, down: 0 },
-      Delta: { up: 1, down: 0 },
+      Aveiro: { up: 2, down: 0 },
+      "Porto-Campanhã": { up: 5, down: 1 },
+      Faro: { up: 5, down: 0 },
+      Coimbra: { up: 1, down: 0 },
     });
 
-    expect(ranked.map((s) => s.name)).toEqual(["Charlie", "Bravo", "Alpha"]);
+    expect(ranked.map((s) => s.name)).toEqual(["Faro", "Porto-Campanhã", "Aveiro"]);
   });
 
   it("returns top 3 downvoted stations by down count", () => {
     const ranked = getTopDownvoted({
-      Alpha: { up: 0, down: 4 },
-      Bravo: { up: 1, down: 2 },
-      Charlie: { up: 0, down: 7 },
-      Delta: { up: 0, down: 1 },
+      Aveiro: { up: 0, down: 4 },
+      "Porto-Campanhã": { up: 1, down: 2 },
+      Faro: { up: 0, down: 7 },
+      Coimbra: { up: 0, down: 1 },
+      "London Stansted Airport (STN)": { up: 0, down: 99 },
     });
 
-    expect(ranked.map((s) => s.name)).toEqual(["Charlie", "Alpha", "Bravo"]);
+    expect(ranked.map((s) => s.name)).toEqual(["Faro", "Aveiro", "Porto-Campanhã"]);
   });
 
   it("builds ranked CSV rows for every station with votes", () => {
     const rows = buildStationRankingRows({
-      Alpha: { up: 2, down: 1 },
-      Bravo: { up: 5, down: 0 },
-      Charlie: { up: 0, down: 0 },
-      "Station, Inc.": { up: 1, down: 3 },
+      Aveiro: { up: 2, down: 1 },
+      "Porto-Campanhã": { up: 5, down: 0 },
+      Faro: { up: 0, down: 0 },
+      Braga: { up: 1, down: 3 },
     });
 
-    expect(rows.map((row) => row.name)).toEqual(["Bravo", "Alpha", "Station, Inc."]);
+    expect(rows.map((row) => row.name)).toEqual(["Porto-Campanhã", "Aveiro", "Braga"]);
     expect(rows[0]).toMatchObject({ rank: 1, up: 5, down: 0, net: 5 });
   });
 

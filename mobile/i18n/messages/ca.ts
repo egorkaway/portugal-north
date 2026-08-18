@@ -207,6 +207,13 @@ export const ca: MobileMessages = {
     topUpvotedHotels: 'Hotels més votats positivament',
     mostDownvotedHotels: 'Hotels més votats negativament',
     votesUnavailable: 'Els vots de la comunitat no estan disponibles temporalment.',
+    trainSpotlightTitle: 'Trens destacats',
+    mostReliableTrain: 'Tren més fiable',
+    mostDelayedTrain: 'Tren més endarrerit',
+    trainSpotlightAvgDelay: '{{avg}} min de retard mitjà',
+    trainSpotlightObservations: '{{count}} mostres',
+    trainSpotlightRotating: 'Rota amb la mostra núm. {{runCount}}',
+    trainSpotlightMajorStations: 'Via',
   },
   tickets: {
     title: 'Bitllets',

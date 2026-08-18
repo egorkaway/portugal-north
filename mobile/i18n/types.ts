@@ -207,6 +207,13 @@ export type MobileMessages = {
     topUpvotedHotels: string;
     mostDownvotedHotels: string;
     votesUnavailable: string;
+    trainSpotlightTitle: string;
+    mostReliableTrain: string;
+    mostDelayedTrain: string;
+    trainSpotlightAvgDelay: string;
+    trainSpotlightObservations: string;
+    trainSpotlightRotating: string;
+    trainSpotlightMajorStations: string;
   };
   tickets: {
     title: string;

@@ -207,6 +207,13 @@ export const es: MobileMessages = {
     topUpvotedHotels: 'Hoteles más votados positivamente',
     mostDownvotedHotels: 'Hoteles más votados negativamente',
     votesUnavailable: 'Los votos de la comunidad no están disponibles temporalmente.',
+    trainSpotlightTitle: 'Trenes destacados',
+    mostReliableTrain: 'Tren más fiable',
+    mostDelayedTrain: 'Tren más retrasado',
+    trainSpotlightAvgDelay: '{{avg}} min de retraso medio',
+    trainSpotlightObservations: '{{count}} muestras',
+    trainSpotlightRotating: 'Rota con la muestra n.º {{runCount}}',
+    trainSpotlightMajorStations: 'Vía',
   },
   tickets: {
     title: 'Billetes',

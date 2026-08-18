@@ -24,6 +24,8 @@
     "images:refresh-from-votes": "node scripts/refresh-station-images-from-votes.mjs",
     "images:refresh-from-votes:dry": "node scripts/refresh-station-images-from-votes.mjs --dry-run",
     "images:sync-pexels-credits": "node scripts/sync-pexels-credits.mjs",
+    "votes:prune-destination-airports": "node --import tsx scripts/prune-destination-airport-votes.mjs",
+    "votes:prune-destination-airports:dry": "node --import tsx scripts/prune-destination-airport-votes.mjs --dry-run",
     "hotels:audit-links": "node scripts/audit-hotel-links.mjs --report",
     "hotels:audit-links:fix": "node scripts/audit-hotel-links.mjs --fix",
     "hotels:audit-links:dry": "node scripts/audit-hotel-links.mjs --dry-run",

@@ -245,6 +245,18 @@ export type Messages = {
     leastReliable: string;
     downloadReliabilityCsv: string;
     downloadStationCsv: string;
+    trainSpotlightTitle: string;
+    trainSpotlightIntro: string;
+    trainSpotlightLoading: string;
+    trainSpotlightNoData: string;
+    mostReliableTrain: string;
+    mostDelayedTrain: string;
+    trainSpotlightTrainLabel: string;
+    trainSpotlightAvgDelay: string;
+    trainSpotlightObservations: string;
+    trainSpotlightStations: string;
+    trainSpotlightRotating: string;
+    trainSpotlightMajorStations: string;
   };
   map: {
     title: string;

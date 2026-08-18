@@ -3,6 +3,7 @@ import {
   getTopUpvoted as rankTopUp,
 } from "@/lib/rankVotes";
 import { distanceKm } from "@/lib/geo";
+import { pickPublicStationRatings } from "@/lib/publicStationRatings";
 import type { GlobalRatings } from "@/lib/voteTypes";
 import type { Station } from "@/data/stations";
 
@@ -23,16 +24,24 @@ export type StationRankingRow = {
 };
 
 export function getTopUpvoted(ratings: GlobalRatings, limit = 3): RankedStation[] {
-  return rankTopUp(ratings, limit).map(({ id, up, down }) => ({ name: id, up, down }));
+  return rankTopUp(pickPublicStationRatings(ratings), limit).map(({ id, up, down }) => ({
+    name: id,
+    up,
+    down,
+  }));
 }
 
 export function getTopDownvoted(ratings: GlobalRatings, limit = 3): RankedStation[] {
-  return rankTopDown(ratings, limit).map(({ id, up, down }) => ({ name: id, up, down }));
+  return rankTopDown(pickPublicStationRatings(ratings), limit).map(({ id, up, down }) => ({
+    name: id,
+    up,
+    down,
+  }));
 }
 
 /** All stations with votes, ranked by upvotes then net score (matches leaderboard sort). */
 export function buildStationRankingRows(ratings: GlobalRatings): StationRankingRow[] {
-  return Object.entries(ratings)
+  return Object.entries(pickPublicStationRatings(ratings))
     .filter(([, counts]) => counts.up > 0 || counts.down > 0)
     .sort(
       ([nameA, a], [nameB, b]) =>

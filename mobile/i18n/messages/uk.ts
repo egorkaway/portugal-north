@@ -207,6 +207,13 @@ export const uk: MobileMessages = {
     topUpvotedHotels: 'Готелі з найбільшою кількістю плюсів',
     mostDownvotedHotels: 'Готелі з найбільшою кількістю мінусів',
     votesUnavailable: 'Голоси спільноти тимчасово недоступні.',
+    trainSpotlightTitle: 'Потяги в фокусі',
+    mostReliableTrain: 'Найнадійніший потяг',
+    mostDelayedTrain: 'Найбільш запізнений потяг',
+    trainSpotlightAvgDelay: '{{avg}} хв середнього запізнення',
+    trainSpotlightObservations: '{{count}} зразків',
+    trainSpotlightRotating: 'Змінюється з вибіркою №{{runCount}}',
+    trainSpotlightMajorStations: 'Через',
   },
   tickets: {
     title: 'Квитки',

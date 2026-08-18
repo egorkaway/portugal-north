@@ -50,12 +50,17 @@ const { appendTrainDelayLog, trainDelayEntriesFromObservations } = await import(
   "../server/lib/trainDelayLog.ts"
 );
 const { buildReliabilityScoresManifest } = await import("../server/lib/reliabilityScore.ts");
+const { buildTrainReliabilitySpotlightManifest, stationTrafficFromDepartureStats } = await import(
+  "../server/lib/trainReliabilitySpotlight.ts"
+);
+const { readTrainDelayLog } = await import("../server/lib/trainDelayLog.ts");
 const {
   ensureReliabilityPeriodSnapshot,
   loadLiveReliabilityManifest,
 } = await import("./lib/reliabilityScorePeriodStore.mjs");
 
 const reliabilityPath = join(root, "public/data/reliability-scores.json");
+const trainSpotlightPath = join(root, "public/data/train-reliability-spotlight.json");
 const CONSECUTIVE_FAILURE_LIMIT = 3;
 
 const args = process.argv.slice(2);
@@ -118,6 +123,14 @@ function saveStore(store) {
 
   mkdirSync(dirname(reliabilityPath), { recursive: true });
   writeFileSync(reliabilityPath, `${JSON.stringify(stampedManifest, null, 2)}\n`);
+
+  const trainSpotlight = buildTrainReliabilitySpotlightManifest({
+    entries: readTrainDelayLog(trainDelayLogPath),
+    runCount: store.runCount,
+    stationTraffic: stationTrafficFromDepartureStats(store.stations),
+  });
+  mkdirSync(dirname(trainSpotlightPath), { recursive: true });
+  writeFileSync(trainSpotlightPath, `${JSON.stringify(trainSpotlight, null, 2)}\n`);
 }
 
 function sleep(ms) {

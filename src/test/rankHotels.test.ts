@@ -24,6 +24,7 @@ describe("rankHotels", () => {
     const ranked = getTopDownvotedHotels({
       "Aveiro::Hotel A": { up: 0, down: 4 },
       "Porto-Campanhã::Hotel B": { up: 1, down: 2 },
+      "London City Airport (LCY)::Hotel C": { up: 0, down: 99 },
     });
 
     expect(ranked.map((h) => h.hotelName)).toEqual(["Hotel A", "Hotel B"]);

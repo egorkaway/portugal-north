@@ -207,6 +207,13 @@ export const ru: MobileMessages = {
     topUpvotedHotels: 'Отели с наибольшим числом плюсов',
     mostDownvotedHotels: 'Отели с наибольшим числом минусов',
     votesUnavailable: 'Голоса сообщества временно недоступны.',
+    trainSpotlightTitle: 'Поезда в фокусе',
+    mostReliableTrain: 'Самый надёжный поезд',
+    mostDelayedTrain: 'Самый задержанный поезд',
+    trainSpotlightAvgDelay: '{{avg}} мин средней задержки',
+    trainSpotlightObservations: '{{count}} выборок',
+    trainSpotlightRotating: 'Меняется с выборкой №{{runCount}}',
+    trainSpotlightMajorStations: 'Через',
   },
   tickets: {
     title: 'Билеты',

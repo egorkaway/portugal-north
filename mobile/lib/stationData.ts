@@ -3,6 +3,7 @@ import stationImages from '@/data/stationImages.json';
 import hotels from '@/data/hotels.json';
 import summariesEn from '@/data/summaries-en.json';
 import reliabilityScores from '@/data/reliability-scores.json';
+import trainReliabilitySpotlight from '@/data/train-reliability-spotlight.json';
 import cpStationCodes from '@/data/cpStationCodes.json';
 
 export type CountryCode = 'pt' | 'es';
@@ -41,10 +42,56 @@ export const pageStations = allStations.filter(
   (station) => !station.types.includes('Airport Destination'),
 );
 
+const publicStationNames = new Set(pageStations.map((station) => station.name));
+
+export function pickPublicStationRatings(
+  ratings: Record<string, { up: number; down: number }>,
+): Record<string, { up: number; down: number }> {
+  const next: Record<string, { up: number; down: number }> = {};
+  for (const [name, counts] of Object.entries(ratings)) {
+    if (publicStationNames.has(name)) next[name] = counts;
+  }
+  return next;
+}
+
+export function pickPublicHotelRatings(
+  ratings: Record<string, { up: number; down: number }>,
+): Record<string, { up: number; down: number }> {
+  const next: Record<string, { up: number; down: number }> = {};
+  for (const [key, counts] of Object.entries(ratings)) {
+    const sep = key.indexOf('::');
+    const stationName = sep > 0 ? key.slice(0, sep) : '';
+    if (publicStationNames.has(stationName)) next[key] = counts;
+  }
+  return next;
+}
+
 export const bakedStationImages = stationImages as Record<string, string>;
 export const bakedHotels = hotels as Record<string, Hotel[]>;
 export const bakedSummariesEn = summariesEn as Record<string, string>;
 export const bakedReliabilityScores = reliabilityScores as ReliabilityScoresManifest;
+
+export type TrainSpotlightEntry = {
+  trainNumber: string;
+  serviceType: string;
+  avgDelayMinutes: number;
+  observations: number;
+  stationsSampled: number;
+  majorStations: string[];
+};
+
+export type TrainReliabilitySpotlightManifest = {
+  generatedAt: string;
+  runCount: number;
+  mostDelayed: TrainSpotlightEntry | null;
+  mostReliable: (TrainSpotlightEntry & {
+    selectionMode: 'stable' | 'rotating';
+    poolSize: number;
+  }) | null;
+};
+
+export const bakedTrainReliabilitySpotlight =
+  trainReliabilitySpotlight as TrainReliabilitySpotlightManifest;
 export const bakedCpCodes = cpStationCodes as Record<string, string>;
 
 const stationBySlug = new Map(

@@ -7,6 +7,10 @@ import {
   enqueueVoteSync,
   type QueuedVotePayload,
 } from "@/lib/voteSyncQueue";
+import {
+  pickPublicHotelRatings,
+  pickPublicStationRatings,
+} from "@/lib/publicStationRatings";
 import type {
   GlobalRatings,
   GlobalRatingsResult,
@@ -133,12 +137,21 @@ export async function syncHotelClosedReportToServer(
   return postVote({ hotelClosed: hotelKey, previous: wasReported, next: isReported });
 }
 
+function sanitizeRatingsResult(result: GlobalRatingsResult): GlobalRatingsResult {
+  return {
+    ...result,
+    ratings: pickPublicStationRatings(result.ratings),
+    hotelRatings: pickPublicHotelRatings(result.hotelRatings),
+    imageRatings: pickPublicStationRatings(result.imageRatings),
+  };
+}
+
 function offlineRatingsFallback(): GlobalRatingsResult | null {
   const cached = loadOfflineRatingsCache();
-  if (cached) return cached;
+  if (cached) return sanitizeRatingsResult(cached);
 
   const device = buildRatingsFromDeviceVotes();
-  if (hasDeviceVotes(device)) return device;
+  if (hasDeviceVotes(device)) return sanitizeRatingsResult(device);
 
   return null;
 }
@@ -199,21 +212,21 @@ export async function fetchGlobalRatings(): Promise<GlobalRatingsResult> {
   if (data.configured === false) {
     const fallback = offlineRatingsFallback();
     if (fallback) return fallback;
-    return {
+    return sanitizeRatingsResult({
       ratings: data.ratings ?? {},
       hotelRatings: data.hotelRatings ?? {},
       imageRatings: data.imageRatings ?? {},
       configured: false,
-    };
+    });
   }
 
-  const result: GlobalRatingsResult = {
+  const result: GlobalRatingsResult = sanitizeRatingsResult({
     ratings: data.ratings ?? {},
     hotelRatings: data.hotelRatings ?? {},
     imageRatings: data.imageRatings ?? {},
     configured: true,
     source: "network",
-  };
+  });
   saveOfflineRatingsCache(result);
   return result;
 }

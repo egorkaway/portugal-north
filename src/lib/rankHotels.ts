@@ -1,4 +1,5 @@
 import { getTopDownvoted, getTopUpvoted } from "@/lib/rankVotes";
+import { pickPublicHotelRatings } from "@/lib/publicStationRatings";
 import type { GlobalRatings } from "@/lib/voteTypes";
 
 export type RankedHotel = {
@@ -36,9 +37,9 @@ function toRankedHotel(item: { id: string; up: number; down: number }): RankedHo
 }
 
 export function getTopUpvotedHotels(ratings: GlobalRatings, limit = 3): RankedHotel[] {
-  return getTopUpvoted(ratings, limit).map(toRankedHotel);
+  return getTopUpvoted(pickPublicHotelRatings(ratings), limit).map(toRankedHotel);
 }
 
 export function getTopDownvotedHotels(ratings: GlobalRatings, limit = 3): RankedHotel[] {
-  return getTopDownvoted(ratings, limit).map(toRankedHotel);
+  return getTopDownvoted(pickPublicHotelRatings(ratings), limit).map(toRankedHotel);
 }

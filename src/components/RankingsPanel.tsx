@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useGlobalRatings } from "@/hooks/useGlobalStationRatings";
 import { getTopDownvotedHotels, getTopUpvotedHotels } from "@/lib/rankHotels";
+import { pickPublicHotelRatings, pickPublicStationRatings } from "@/lib/publicStationRatings";
 import {
   buildStationRankingRows,
   downloadStationRankingsCsv,
@@ -130,8 +131,8 @@ export function RankingsPanel({
   const queryClient = useQueryClient();
   const { data, isLoading, isError, error, isFetching } = useGlobalRatings();
 
-  const stationRatings = data?.ratings;
-  const hotelRatings = data?.hotelRatings;
+  const stationRatings = data?.ratings ? pickPublicStationRatings(data.ratings) : undefined;
+  const hotelRatings = data?.hotelRatings ? pickPublicHotelRatings(data.hotelRatings) : undefined;
   const topStationsUp = stationRatings
     ? getTopUpvoted(stationRatings).map((station) => ({
         ...station,

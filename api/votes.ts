@@ -13,6 +13,11 @@ import {
   isValidVoteChange,
   readAllCommunityVotes,
 } from "../server/lib/voteLogic.js";
+import {
+  filterCommunityVotesForPublicStations,
+  isVotableHotelKey,
+  isVotableStationName,
+} from "../server/lib/publicStationVotes.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "GET") {
@@ -39,9 +44,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     try {
       const { ratings, hotelRatings, imageRatings, hotelClosedReports } =
         await readAllCommunityVotes();
+      const publicVotes = filterCommunityVotesForPublicStations({
+        ratings,
+        hotelRatings,
+        imageRatings,
+        hotelClosedReports,
+      });
       return res
         .status(200)
-        .json({ ratings, hotelRatings, imageRatings, hotelClosedReports, configured: true });
+        .json({ ...publicVotes, configured: true });
     } catch {
       return res.status(503).json({
         ratings: {},
@@ -81,6 +92,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       if (hotelClosed !== undefined) {
         if (
           !isValidHotelKey(hotelClosed) ||
+          !isVotableHotelKey(hotelClosed) ||
           !isValidReportedFlag(previous) ||
           !isValidReportedFlag(next) ||
           !isValidClosedReportChange(previous, next)
@@ -103,7 +115,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
 
       if (hotelKey !== undefined) {
-        if (!isValidHotelKey(hotelKey)) {
+        if (!isValidHotelKey(hotelKey) || !isVotableHotelKey(hotelKey)) {
           return res.status(400).json({ ok: false, reason: "invalid_payload" });
         }
         const stored = await applyHotelVoteDelta(hotelKey, prevDirection, nextDirection);
@@ -111,7 +123,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
 
       if (stationImage !== undefined) {
-        if (!isValidName(stationImage)) {
+        if (!isValidName(stationImage) || !isVotableStationName(stationImage)) {
           return res.status(400).json({ ok: false, reason: "invalid_payload" });
         }
         const stored = await applyStationImageVoteDelta(
@@ -122,7 +134,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return res.status(200).json({ ok: stored });
       }
 
-      if (!isValidName(station)) {
+      if (!isValidName(station) || !isVotableStationName(station)) {
         return res.status(400).json({ ok: false, reason: "invalid_payload" });
       }
       const stored = await applyStationVoteDelta(station, prevDirection, nextDirection);
