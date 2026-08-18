@@ -12,6 +12,12 @@ describe("mapActivityStations", () => {
     );
   });
 
+  it("still draws Spanish hexes when Portugal movement data is missing", () => {
+    const { cells } = buildMapActivityHexData({});
+    expect(cells.length).toBeGreaterThan(0);
+    expect(cells.some((cell) => cell.stationName === spainStations[0]?.name)).toBe(true);
+  });
+
   it("renders Spanish stations as quiet H3 res. 9 hexes on the Portugal map", () => {
     const { cells } = buildMapActivityHexData({
       "Porto-Campanhã": 247,

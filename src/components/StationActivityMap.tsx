@@ -72,7 +72,7 @@ const AIRPORT_LABEL_KEYS = {
 
 export default function StationActivityMap() {
   const { t } = useLocale();
-  const { data, isLoading, isError } = useReliabilityScores();
+  const { data, isError } = useReliabilityScores();
   const { data: spainTrains } = useSpainTrains();
   const [hiddenAirportIatas, setHiddenAirportIatas] = useState<Set<string>>(() => new Set());
 
@@ -87,10 +87,10 @@ export default function StationActivityMap() {
     };
   }, []);
 
-  const hexData = useMemo(() => {
-    if (!data?.movements) return null;
-    return buildMapActivityHexData(data.movements);
-  }, [data?.movements]);
+  const hexData = useMemo(
+    () => buildMapActivityHexData(data?.movements ?? {}),
+    [data?.movements],
+  );
 
   const labelPoints = useMemo(() => {
     const airportLabels = Object.fromEntries(
@@ -99,11 +99,7 @@ export default function StationActivityMap() {
     return buildMapLabelPoints(stations, airportLabels, { hiddenAirportIatas });
   }, [t, hiddenAirportIatas]);
 
-  if (isLoading) {
-    return <p className="text-sm text-muted-foreground">{t("map.loading")}</p>;
-  }
-
-  if (isError || !hexData || hexData.cells.length === 0) {
+  if (hexData.cells.length === 0 && isError) {
     return <p className="text-sm text-muted-foreground">{t("map.unavailable")}</p>;
   }
 

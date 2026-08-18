@@ -8,7 +8,7 @@ import {
   type SpainTrainsManifest,
 } from "../src/lib/spainTrainPositions.js";
 
-const FETCH_TIMEOUT_MS = 8_000;
+const FETCH_TIMEOUT_MS = 4_000;
 
 async function fetchJson(url: string): Promise<unknown> {
   const res = await fetch(url, {
@@ -43,8 +43,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (!cercanias && !longDistance) {
     res.setHeader("Cache-Control", "s-maxage=15, stale-while-revalidate=30");
-    return res.status(502).json({
-      error: "renfe_unavailable",
+    return res.status(200).json({
       fetchedAt: new Date().toISOString(),
       trainCount: 0,
       trains: [],

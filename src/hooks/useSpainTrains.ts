@@ -7,6 +7,6 @@ export function useSpainTrains() {
     queryFn: fetchSpainTrains,
     refetchInterval: 20_000,
     staleTime: 15_000,
-    retry: 1,
+    retry: false,
   });
 }
