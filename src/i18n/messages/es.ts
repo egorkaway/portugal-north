@@ -261,14 +261,14 @@ export const es: Messages = {
     deviceFallbackOffline:
       "Sin conexión — mostrando rankings solo con tus votos en este dispositivo.",
     buildInfo: "Build {{buildNumber}}",
-    reliabilityRankings: "Rankings de fiabilidad",
+    reliabilityRankings: "Rankings de fiabilidad en Portugal",
     reliabilityIntro:
-      "Basado en los retrasos acumulados de nuestras muestras de salidas CP en tiempo real. 10 = menos retrasos en nuestros datos; 1 = más retrasos.",
+      "Basado en los retrasos acumulados de nuestras muestras de salidas CP en tiempo real en Portugal. 10 = menos retrasos en nuestros datos; 1 = más retrasos.",
     reliabilityLoading: "Cargando rankings de fiabilidad…",
-    reliabilityUnavailable: "Los rankings de fiabilidad no están disponibles temporalmente.",
+    reliabilityUnavailable: "Los rankings de fiabilidad de Portugal no están disponibles temporalmente.",
     noReliabilityData: "Aún no hay datos de fiabilidad.",
-    mostReliable: "Top 10 más fiables",
-    leastReliable: "Top 10 menos fiables",
+    mostReliable: "Top 10 más fiables (Portugal)",
+    leastReliable: "Top 10 menos fiables (Portugal)",
     spainReliabilityRankings: "Rankings de fiabilidad en España",
     spainReliabilityIntro:
       "Basado en los retrasos acumulados de nuestras muestras Renfe en tiempo real. Las estaciones necesitan al menos 5 observaciones. 10 = menos retrasos en los datos españoles; 1 = más retrasos. Independiente del ranking portugués.",
@@ -278,9 +278,9 @@ export const es: Messages = {
     spainLeastReliable: "Top 3 menos fiables (España)",
     downloadReliabilityCsv: "Descargar CSV",
     downloadStationCsv: "Descargar CSV",
-    trainSpotlightTitle: "Trenes destacados",
+    trainSpotlightTitle: "Trenes destacados en Portugal",
     trainSpotlightIntro:
-      "Un tren elegido a partir de nuestras muestras de retrasos en llegada. El más fiable rota en cada muestra hasta tener datos suficientes.",
+      "Un tren elegido a partir de nuestras muestras de retrasos en llegada de CP en Portugal. El más fiable rota en cada muestra hasta tener datos suficientes.",
     trainSpotlightLoading: "Cargando trenes destacados…",
     trainSpotlightNoData: "Aún no hay muestras suficientes de trenes.",
     mostReliableTrain: "Tren más fiable",

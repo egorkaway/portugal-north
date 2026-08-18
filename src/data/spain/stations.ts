@@ -887,4 +887,58 @@ export const spainStations: Station[] = [
     lng: -5.7908,
   },
 
+  {
+    name: "València-Joaquín Sorolla",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.4591,
+    lng: -0.3829,
+  },
+
+  {
+    name: "Lora del Río",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.6613,
+    lng: -5.5296,
+  },
+
+  {
+    name: "Maçanet-Massanes",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7724,
+    lng: 2.6739,
+  },
+
+  {
+    name: "Bilbao-Intermod. Abando Indalecio Prieto",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2601,
+    lng: -2.9286,
+  },
+
+  {
+    name: "Ciempozuelos",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.1592,
+    lng: -3.6102,
+  },
+
+  {
+    name: "Santander",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4584,
+    lng: -3.811,
+  },
+
 ];

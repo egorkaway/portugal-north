@@ -2,6 +2,7 @@
 
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
+import { canonicalHotelName, foldHotelName } from "./hotelVoteAliases.mjs";
 import { isRejectedHotel } from "./rejectedHotels.mjs";
 
 const OVERPASS_URLS = [
@@ -82,7 +83,18 @@ export function mergePinnedHotels(map, pinned) {
     if (!pins?.length) continue;
     const existing = map[stationName] ?? [];
     const pinKeys = new Set(pins.map((hotel) => normName(hotel.name)));
-    map[stationName] = [...pins, ...existing.filter((hotel) => !pinKeys.has(normName(hotel.name)))];
+    const pinCanonicals = new Set(
+      pins.map((hotel) => foldHotelName(canonicalHotelName(stationName, hotel.name))),
+    );
+    map[stationName] = [
+      ...pins,
+      ...existing.filter((hotel) => {
+        if (pinKeys.has(normName(hotel.name))) return false;
+        return !pinCanonicals.has(
+          foldHotelName(canonicalHotelName(stationName, hotel.name)),
+        );
+      }),
+    ];
   }
   return map;
 }
@@ -320,12 +332,21 @@ function mergeCandidates(existing, batch) {
   return merged;
 }
 
-function pickHotels(candidates, existingKeys, limit, { stationName, rejected = null } = {}) {
+function pickHotels(
+  candidates,
+  existingKeys,
+  limit,
+  { stationName, rejected = null, existingCanonicals = null } = {},
+) {
   const added = [];
   for (const candidate of candidates) {
     if (added.length >= limit) break;
     const key = normName(candidate.name);
     if (existingKeys.has(key)) continue;
+    if (stationName && existingCanonicals) {
+      const canonical = foldHotelName(canonicalHotelName(stationName, candidate.name));
+      if (existingCanonicals.has(canonical)) continue;
+    }
     if (
       rejected &&
       stationName &&
@@ -334,6 +355,9 @@ function pickHotels(candidates, existingKeys, limit, { stationName, rejected = n
       continue;
     }
     existingKeys.add(key);
+    if (stationName && existingCanonicals) {
+      existingCanonicals.add(foldHotelName(canonicalHotelName(stationName, candidate.name)));
+    }
     added.push({
       name: candidate.name,
       distanceKm: candidate.distanceKm,
@@ -355,6 +379,9 @@ export async function resolveHotelsForStation(
 
   const radiusSteps = radiusStepsForStation(curated.length, target);
   const existingKeys = new Set(curated.map((h) => normName(h.name)));
+  const existingCanonicals = new Set(
+    curated.map((h) => foldHotelName(canonicalHotelName(station.name, h.name))),
+  );
   let candidates = [];
   let radiusM = radiusSteps[0] ?? 2000;
   const added = [];
@@ -366,6 +393,7 @@ export async function resolveHotelsForStation(
     const next = pickHotels(candidates, existingKeys, needed - added.length, {
       stationName: station.name,
       rejected,
+      existingCanonicals,
     });
     added.push(...next);
     if (added.length >= needed) break;
@@ -379,6 +407,7 @@ export async function resolveHotelsForStation(
       const next = pickHotels(candidates, existingKeys, needed - added.length, {
         stationName: station.name,
         rejected,
+        existingCanonicals,
       });
       added.push(...next);
       if (added.length) source = "town_center";

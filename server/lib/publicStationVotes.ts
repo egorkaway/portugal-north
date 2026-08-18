@@ -1,4 +1,8 @@
 import { europeDestinationAirports } from "../../src/data/europe/airports.js";
+import {
+  mergeAliasedHotelClosedReports,
+  mergeAliasedHotelRatings,
+} from "../../src/lib/hotelVoteAliases.js";
 import type { GlobalRatings, HotelClosedReports } from "./voteLogic.js";
 import type { CommunityVotesBlob } from "./blobVotes.js";
 
@@ -48,9 +52,13 @@ export function filterCommunityVotesForPublicStations(
 ): CommunityVotesBlob {
   return {
     ratings: omitDestinationAirportRatings(data.ratings),
-    hotelRatings: omitDestinationAirportKeyedRecords(data.hotelRatings),
+    hotelRatings: mergeAliasedHotelRatings(
+      omitDestinationAirportKeyedRecords(data.hotelRatings),
+    ),
     imageRatings: omitDestinationAirportRatings(data.imageRatings),
-    hotelClosedReports: omitDestinationAirportKeyedRecords(data.hotelClosedReports),
+    hotelClosedReports: mergeAliasedHotelClosedReports(
+      omitDestinationAirportKeyedRecords(data.hotelClosedReports),
+    ),
   };
 }
 

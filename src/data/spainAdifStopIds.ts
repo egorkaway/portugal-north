@@ -185,6 +185,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Utrera": ["51200"],
 
+  "València-Joaquín Sorolla": ["03216"],
+
+  "Lora del Río": ["50600"],
+
+  "Maçanet-Massanes": ["79200"],
+
+  "Bilbao-Intermod. Abando Indalecio Prieto": ["13200"],
+
+  "Ciempozuelos": ["60105"],
+
+  "Santander": ["14223"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

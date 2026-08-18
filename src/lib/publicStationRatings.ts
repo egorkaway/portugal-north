@@ -1,4 +1,5 @@
 import { pageStations } from "@/data/stationRegistry";
+import { mergeAliasedHotelRatings } from "@/lib/hotelVoteAliases";
 import type { GlobalRatings } from "@/lib/voteTypes";
 
 /** Stations that still have public pages (Iberian rail + PT/ES hub airports). */
@@ -23,10 +24,10 @@ export function pickPublicStationRatings(ratings: GlobalRatings): GlobalRatings 
 }
 
 /** Hotel / closed-report keys are `stationName::hotelName`. */
-export function pickPublicHotelRatings<T>(ratings: Record<string, T>): Record<string, T> {
-  const next: Record<string, T> = {};
+export function pickPublicHotelRatings(ratings: GlobalRatings): GlobalRatings {
+  const next: GlobalRatings = {};
   for (const [key, value] of Object.entries(ratings)) {
     if (publicStationNames.has(hotelStationName(key))) next[key] = value;
   }
-  return next;
+  return mergeAliasedHotelRatings(next);
 }

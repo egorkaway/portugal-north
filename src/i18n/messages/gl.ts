@@ -261,14 +261,14 @@ export const gl: Messages = {
     deviceFallbackOffline:
       "Sen conexión — móstranse rankings só cos teus votos neste dispositivo.",
     buildInfo: "Build {{buildNumber}}",
-    reliabilityRankings: "Rankings de fiabilidade",
+    reliabilityRankings: "Rankings de fiabilidade en Portugal",
     reliabilityIntro:
-      "Baseado nos atrasos acumulados das nosas mostras de saídas CP en tempo real. 10 = menos atrasos nos nosos datos; 1 = máis atrasos.",
+      "Baseado nos atrasos acumulados das nosas mostras de saídas CP en tempo real en Portugal. 10 = menos atrasos nos nosos datos; 1 = máis atrasos.",
     reliabilityLoading: "Cargando rankings de fiabilidade…",
-    reliabilityUnavailable: "Os rankings de fiabilidade non están dispoñibles temporalmente.",
+    reliabilityUnavailable: "Os rankings de fiabilidade de Portugal non están dispoñibles temporalmente.",
     noReliabilityData: "Aínda non hai datos de fiabilidade.",
-    mostReliable: "Top 10 máis fiábeis",
-    leastReliable: "Top 10 menos fiábeis",
+    mostReliable: "Top 10 máis fiábeis (Portugal)",
+    leastReliable: "Top 10 menos fiábeis (Portugal)",
     spainReliabilityRankings: "Rankings de fiabilidade en España",
     spainReliabilityIntro:
       "Baseado nos atrasos acumulados das nosas mostras Renfe en tempo real. As estacións precisan polo menos 5 observacións. 10 = menos atrasos nos datos españois; 1 = máis atrasos. Separado do ranking portugués.",
@@ -278,9 +278,9 @@ export const gl: Messages = {
     spainLeastReliable: "Top 3 menos fiábeis (España)",
     downloadReliabilityCsv: "Descargar CSV",
     downloadStationCsv: "Descargar CSV",
-    trainSpotlightTitle: "Destacados de trens",
+    trainSpotlightTitle: "Destacados de trens en Portugal",
     trainSpotlightIntro:
-      "Un tren escollido a partir das nosas mostras de atrasos á chegada. O máis fiábel rota en cada mostra ata ter datos abondos.",
+      "Un tren escollido a partir das nosas mostras de atrasos á chegada da CP en Portugal. O máis fiábel rota en cada mostra ata ter datos abondos.",
     trainSpotlightLoading: "Cargando destacados de trens…",
     trainSpotlightNoData: "Aínda non hai mostras abondas de trens.",
     mostReliableTrain: "Tren máis fiábel",

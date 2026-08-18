@@ -1,3 +1,4 @@
+import { canonicalHotelVoteKey, parseHotelKeyedRecord, mergeAliasedHotelClosedReports, mergeAliasedHotelRatings } from "../../src/lib/hotelVoteAliases.js";
 import {
   readCommunityVotesFromBlob,
   writeCommunityVotesToBlob,
@@ -57,13 +58,24 @@ export async function applyStationVoteDelta(
   return true;
 }
 
+function canonicalStoredHotelKey(hotelKey: string): string {
+  const { stationName, hotelName } = parseHotelKeyedRecord(hotelKey);
+  return stationName ? canonicalHotelVoteKey(stationName, hotelName) : hotelKey;
+}
+
 export async function applyHotelVoteDelta(
   hotelKey: string,
   previous: VoteDirection | null,
   next: VoteDirection | null,
 ): Promise<boolean> {
   const data = await readCommunityVotesFromBlob();
-  const updated = applyDeltaInMemory(data.hotelRatings, hotelKey, previous, next);
+  const merged = mergeAliasedHotelRatings(data.hotelRatings);
+  const updated = applyDeltaInMemory(
+    merged,
+    canonicalStoredHotelKey(hotelKey),
+    previous,
+    next,
+  );
   await writeCommunityVotesToBlob({ ...data, hotelRatings: updated });
   return true;
 }
@@ -115,9 +127,10 @@ export async function applyHotelClosedReportDelta(
   isReported: boolean,
 ): Promise<boolean> {
   const data = await readCommunityVotesFromBlob();
+  const merged = mergeAliasedHotelClosedReports(data.hotelClosedReports);
   const updated = applyClosedReportDeltaInMemory(
-    data.hotelClosedReports,
-    hotelKey,
+    merged,
+    canonicalStoredHotelKey(hotelKey),
     wasReported,
     isReported,
   );

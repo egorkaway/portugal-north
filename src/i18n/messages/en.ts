@@ -260,14 +260,14 @@ export const en: Messages = {
     deviceFallbackOffline:
       "You're offline — showing rankings from your votes on this device only.",
     buildInfo: "Build {{buildNumber}}",
-    reliabilityRankings: "Reliability rankings",
+    reliabilityRankings: "Portugal reliability rankings",
     reliabilityIntro:
-      "Based on cumulative delays from our live CP departure samples. 10 means fewest delays in our data; 1 means most.",
+      "Based on cumulative delays from our live CP departure samples across Portugal. 10 means fewest delays in our data; 1 means most.",
     reliabilityLoading: "Loading reliability rankings…",
-    reliabilityUnavailable: "Reliability rankings are temporarily unavailable.",
+    reliabilityUnavailable: "Portugal reliability rankings are temporarily unavailable.",
     noReliabilityData: "No reliability data yet.",
-    mostReliable: "Top 10 most reliable",
-    leastReliable: "Top 10 least reliable",
+    mostReliable: "Top 10 most reliable (Portugal)",
+    leastReliable: "Top 10 least reliable (Portugal)",
     spainReliabilityRankings: "Spain reliability rankings",
     spainReliabilityIntro:
       "Based on cumulative delays from our live Renfe trip-update samples. Stations need at least 5 observations. 10 means fewest delays in our Spanish data; 1 means most. Separate from the Portuguese ranking.",
@@ -276,9 +276,9 @@ export const en: Messages = {
     spainLeastReliable: "Top 3 least reliable (Spain)",
     downloadReliabilityCsv: "Download CSV",
     downloadStationCsv: "Download CSV",
-    trainSpotlightTitle: "Train spotlight",
+    trainSpotlightTitle: "Portugal train spotlight",
     trainSpotlightIntro:
-      "Single train picks from our live arrival delay samples. The reliable pick rotates each sample run until one train has enough data to stay on top.",
+      "Single train picks from our live CP arrival delay samples across Portugal. The reliable pick rotates each sample run until one train has enough data to stay on top.",
     trainSpotlightLoading: "Loading train spotlight…",
     trainSpotlightNoData: "Not enough train samples yet.",
     mostReliableTrain: "Most reliable train",

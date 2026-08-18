@@ -1,3 +1,4 @@
+import { canonicalHotelVoteKey, mergeAliasedHotelRatings } from '@/lib/hotelVoteAliases';
 import { getTopDownvoted, getTopUpvoted } from '@/lib/rankVotes';
 import type { GlobalRatings } from '@/lib/rankVotes';
 
@@ -10,7 +11,7 @@ export type RankedHotel = {
 };
 
 export function hotelVoteKey(stationName: string, hotelName: string): string {
-  return `${stationName}::${hotelName}`;
+  return canonicalHotelVoteKey(stationName, hotelName);
 }
 
 export function parseHotelVoteKey(key: string): { stationName: string; hotelName: string } {
@@ -36,9 +37,9 @@ function toRankedHotel(item: { id: string; up: number; down: number }): RankedHo
 }
 
 export function getTopUpvotedHotels(ratings: GlobalRatings, limit = 10): RankedHotel[] {
-  return getTopUpvoted(ratings, limit).map(toRankedHotel);
+  return getTopUpvoted(mergeAliasedHotelRatings(ratings), limit).map(toRankedHotel);
 }
 
 export function getTopDownvotedHotels(ratings: GlobalRatings, limit = 10): RankedHotel[] {
-  return getTopDownvoted(ratings, limit).map(toRankedHotel);
+  return getTopDownvoted(mergeAliasedHotelRatings(ratings), limit).map(toRankedHotel);
 }

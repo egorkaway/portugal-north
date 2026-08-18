@@ -6,6 +6,7 @@ import reliabilityScores from '@/data/reliability-scores.json';
 import spainReliabilityScores from '@/data/spain-reliability-scores.json';
 import trainReliabilitySpotlight from '@/data/train-reliability-spotlight.json';
 import cpStationCodes from '@/data/cpStationCodes.json';
+import { canonicalHotelName, mergeAliasedHotelRatings } from '@/lib/hotelVoteAliases';
 
 export type CountryCode = 'pt' | 'es';
 
@@ -64,7 +65,7 @@ export function pickPublicHotelRatings(
     const stationName = sep > 0 ? key.slice(0, sep) : '';
     if (publicStationNames.has(stationName)) next[key] = counts;
   }
-  return next;
+  return mergeAliasedHotelRatings(next);
 }
 
 export const bakedStationImages = stationImages as Record<string, string>;
@@ -124,7 +125,16 @@ export function getStationImageUrl(stationName: string): string | null {
 }
 
 export function getHotelsForStation(stationName: string): Hotel[] {
-  return bakedHotels[stationName] ?? [];
+  const hotels = bakedHotels[stationName] ?? [];
+  const seen = new Set<string>();
+  const out: Hotel[] = [];
+  for (const hotel of hotels) {
+    const name = canonicalHotelName(stationName, hotel.name);
+    if (seen.has(name)) continue;
+    seen.add(name);
+    out.push(name === hotel.name ? hotel : { ...hotel, name });
+  }
+  return out;
 }
 
 export function getSummaryForStation(stationName: string): string | null {

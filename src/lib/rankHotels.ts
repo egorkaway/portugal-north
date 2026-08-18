@@ -1,9 +1,10 @@
+import { canonicalHotelVoteKey } from "@/lib/hotelVoteAliases";
+import { pickPublicHotelRatings } from "@/lib/publicStationRatings";
 import {
   COMMUNITY_LEADERBOARD_LIMIT,
   getTopDownvoted,
   getTopUpvoted,
 } from "@/lib/rankVotes";
-import { pickPublicHotelRatings } from "@/lib/publicStationRatings";
 import type { GlobalRatings } from "@/lib/voteTypes";
 
 export type RankedHotel = {
@@ -15,7 +16,7 @@ export type RankedHotel = {
 };
 
 export function hotelVoteKey(stationName: string, hotelName: string): string {
-  return `${stationName}::${hotelName}`;
+  return canonicalHotelVoteKey(stationName, hotelName);
 }
 
 export function parseHotelVoteKey(key: string): { stationName: string; hotelName: string } {

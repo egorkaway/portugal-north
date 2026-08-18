@@ -261,14 +261,14 @@ export const pt: Messages = {
     deviceFallbackOffline:
       "Está offline — a mostrar rankings apenas com os seus votos neste dispositivo.",
     buildInfo: "Build {{buildNumber}}",
-    reliabilityRankings: "Rankings de fiabilidade",
+    reliabilityRankings: "Rankings de fiabilidade em Portugal",
     reliabilityIntro:
-      "Com base nos atrasos acumulados das nossas amostras de partidas CP em tempo real. 10 = menos atrasos nos nossos dados; 1 = mais atrasos.",
+      "Com base nos atrasos acumulados das nossas amostras de partidas CP em tempo real em Portugal. 10 = menos atrasos nos nossos dados; 1 = mais atrasos.",
     reliabilityLoading: "A carregar rankings de fiabilidade…",
-    reliabilityUnavailable: "Os rankings de fiabilidade estão temporariamente indisponíveis.",
+    reliabilityUnavailable: "Os rankings de fiabilidade de Portugal estão temporariamente indisponíveis.",
     noReliabilityData: "Ainda não há dados de fiabilidade.",
-    mostReliable: "Top 10 mais fiáveis",
-    leastReliable: "Top 10 menos fiáveis",
+    mostReliable: "Top 10 mais fiáveis (Portugal)",
+    leastReliable: "Top 10 menos fiáveis (Portugal)",
     spainReliabilityRankings: "Rankings de fiabilidade em Espanha",
     spainReliabilityIntro:
       "Com base nos atrasos acumulados das nossas amostras Renfe em tempo real. As estações precisam de pelo menos 5 observações. 10 = menos atrasos nos dados espanhóis; 1 = mais atrasos. Separado do ranking português.",
@@ -278,9 +278,9 @@ export const pt: Messages = {
     spainLeastReliable: "Top 3 menos fiáveis (Espanha)",
     downloadReliabilityCsv: "Descarregar CSV",
     downloadStationCsv: "Descarregar CSV",
-    trainSpotlightTitle: "Destaques de comboios",
+    trainSpotlightTitle: "Destaques de comboios em Portugal",
     trainSpotlightIntro:
-      "Uma escolha de comboio a partir das nossas amostras de atrasos na chegada. O comboio mais fiável roda a cada amostra até haver dados suficientes.",
+      "Uma escolha de comboio a partir das nossas amostras de atrasos na chegada da CP em Portugal. O comboio mais fiável roda a cada amostra até haver dados suficientes.",
     trainSpotlightLoading: "A carregar destaques de comboios…",
     trainSpotlightNoData: "Ainda não há amostras suficientes de comboios.",
     mostReliableTrain: "Comboio mais fiável",

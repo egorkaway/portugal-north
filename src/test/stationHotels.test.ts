@@ -53,4 +53,12 @@ describe("getHotelsForStation", () => {
     });
     expect(getHotelsForStation("Esqueiro")[0]?.name).toBe("Luan Café Lanhelas");
   });
+
+  it("shows one Cerveira pousada under the Hostelling International name", () => {
+    const names = getHotelsForStation("Vila Nova de Cerveira").map((hotel) => hotel.name);
+    expect(names).toContain("HI Vila Nova de Cerveira - Pousada de Juventude");
+    expect(names.filter((name) => /cerveira/i.test(name) && /pousada|juventude/i.test(name))).toEqual([
+      "HI Vila Nova de Cerveira - Pousada de Juventude",
+    ]);
+  });
 });

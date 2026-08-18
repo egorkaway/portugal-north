@@ -352,4 +352,22 @@ export const spainSummariesEn: Record<string, string> = {
   "Utrera":
     "Utrera is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "València-Joaquín Sorolla":
+    "València-Joaquín Sorolla is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Lora del Río":
+    "Lora del Río is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Maçanet-Massanes":
+    "Maçanet-Massanes is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Bilbao-Intermod. Abando Indalecio Prieto":
+    "Bilbao-Intermod. Abando Indalecio Prieto is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Ciempozuelos":
+    "Ciempozuelos is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Santander":
+    "Santander is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

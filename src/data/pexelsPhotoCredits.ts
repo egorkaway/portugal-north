@@ -361,6 +361,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@plato-terentev-3804555",
     photoPageUrl: "https://www.pexels.com/photo/railway-platform-with-people-and-trains-6238500/",
   },
+  "6339243": {
+    photographer: "Santiago  Boada",
+    photographerUrl: "https://www.pexels.com/@santiagob",
+    photoPageUrl: "https://www.pexels.com/photo/railway-under-town-on-hill-6339243/",
+  },
   "6399438": {
     photographer: "Santiago  Boada",
     photographerUrl: "https://www.pexels.com/@santiagob",
@@ -1131,6 +1136,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@sonny-vermeer-505472791",
     photoPageUrl: "https://www.pexels.com/photo/beautiful-nature-around-ponte-de-lima-portugal-19127312/",
   },
+  "19149275": {
+    photographer: "Beyzaa Yurtkuran",
+    photographerUrl: "https://www.pexels.com/@beyzaa-yurtkuran-279977530",
+    photoPageUrl: "https://www.pexels.com/photo/railway-tracks-passing-through-the-fields-19149275/",
+  },
   "19272882": {
     photographer: "Zeynep Sude  Emek",
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
@@ -1795,6 +1805,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Lara Santos",
     photographerUrl: "https://www.pexels.com/@larasantosartedesign",
     photoPageUrl: "https://www.pexels.com/photo/empty-train-carriage-with-modern-interior-design-32546136/",
+  },
+  "32561490": {
+    photographer: "Rafael Minguet Delgado",
+    photographerUrl: "https://www.pexels.com/@thales13",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architectural-design-in-valencia-spain-32561490/",
   },
   "32599871": {
     photographer: "Liuuu _61",

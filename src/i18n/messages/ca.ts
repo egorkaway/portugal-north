@@ -261,14 +261,14 @@ export const ca: Messages = {
     deviceFallbackOffline:
       "Sense connexió — es mostren rankings només amb els teus vots en aquest dispositiu.",
     buildInfo: "Build {{buildNumber}}",
-    reliabilityRankings: "Rankings de fiabilitat",
+    reliabilityRankings: "Rankings de fiabilitat a Portugal",
     reliabilityIntro:
-      "Basat en els retards acumulats de les nostres mostres de sortides CP en temps real. 10 = menys retards en les nostres dades; 1 = més retards.",
+      "Basat en els retards acumulats de les nostres mostres de sortides CP en temps real a Portugal. 10 = menys retards en les nostres dades; 1 = més retards.",
     reliabilityLoading: "Carregant rankings de fiabilitat…",
-    reliabilityUnavailable: "Els rankings de fiabilitat no estan disponibles temporalment.",
+    reliabilityUnavailable: "Els rankings de fiabilitat de Portugal no estan disponibles temporalment.",
     noReliabilityData: "Encara no hi ha dades de fiabilitat.",
-    mostReliable: "Top 10 més fiables",
-    leastReliable: "Top 10 menys fiables",
+    mostReliable: "Top 10 més fiables (Portugal)",
+    leastReliable: "Top 10 menys fiables (Portugal)",
     spainReliabilityRankings: "Rankings de fiabilitat a Espanya",
     spainReliabilityIntro:
       "Basat en els retards acumulats de les nostres mostres Renfe en temps real. Les estacions necessiten almenys 5 observacions. 10 = menys retards en les dades espanyoles; 1 = més retards. Independent del ranking portuguès.",
@@ -278,9 +278,9 @@ export const ca: Messages = {
     spainLeastReliable: "Top 3 menys fiables (Espanya)",
     downloadReliabilityCsv: "Descarregar CSV",
     downloadStationCsv: "Descarregar CSV",
-    trainSpotlightTitle: "Trens destacats",
+    trainSpotlightTitle: "Trens destacats a Portugal",
     trainSpotlightIntro:
-      "Un tren triat a partir de les nostres mostres de retards a l'arribada. El més fiable rota a cada mostra fins tenir prou dades.",
+      "Un tren triat a partir de les nostres mostres de retards a l'arribada de CP a Portugal. El més fiable rota a cada mostra fins tenir prou dades.",
     trainSpotlightLoading: "Carregant trens destacats…",
     trainSpotlightNoData: "Encara no hi ha prou mostres de trens.",
     mostReliableTrain: "Tren més fiable",
