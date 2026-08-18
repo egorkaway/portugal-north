@@ -2103,6 +2103,141 @@ export const stationHotels: StationHotels = {
     { name: "Hotel zenit valencia", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20zenit%20valencia%2C%20Val%C3%A8ncia-Estaci%C3%B3%20del%20Nord%2C%20Spain&order=price" },
     { name: "Hotel SH Colón", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20SH%20Col%C3%B3n%2C%20Val%C3%A8ncia-Estaci%C3%B3%20del%20Nord%2C%20Spain&order=price" },
   ],
+  "Burgos-Rosa Manzano": [
+    { name: "Pensión Numancia", distanceKm: 1.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Numancia%2C%20Burgos-Rosa%20Manzano%2C%20Spain&order=price" },
+    { name: "Acanto", distanceKm: 1.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Acanto%2C%20Burgos-Rosa%20Manzano%2C%20Spain&order=price" },
+    { name: "Hostal Arlanzón", distanceKm: 1.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Arlanz%C3%B3n%2C%20Burgos-Rosa%20Manzano%2C%20Spain&order=price" },
+  ],
+  "Madrid-Nuevos Ministerios": [
+    { name: "Hostal Siesta & Go Nuevos Ministerios", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Siesta%20%26%20Go%20Nuevos%20Ministerios%2C%20Madrid-Nuevos%20Ministerios%2C%20Spain&order=price" },
+    { name: "Canopy by Hilton Madrid Castellana", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Canopy%20by%20Hilton%20Madrid%20Castellana%2C%20Madrid-Nuevos%20Ministerios%2C%20Spain&order=price" },
+    { name: "NYX Hotel", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=NYX%20Hotel%2C%20Madrid-Nuevos%20Ministerios%2C%20Spain&order=price" },
+  ],
+  "Fuenlabrada": [
+    { name: "Hotel LCB Fuenlabrada", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20LCB%20Fuenlabrada%2C%20Fuenlabrada%2C%20Spain&order=price" },
+    { name: "Hostal Castilla", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Castilla%2C%20Fuenlabrada%2C%20Spain&order=price" },
+    { name: "castilla", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=castilla%2C%20Fuenlabrada%2C%20Spain&order=price" },
+  ],
+  "Aravaca": [
+    { name: "Aravaca Village", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aravaca%20Village%2C%20Aravaca%2C%20Spain&order=price" },
+    { name: "AC Hotel", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AC%20Hotel%2C%20Aravaca%2C%20Spain&order=price" },
+    { name: "TH Aravaca", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=TH%20Aravaca%2C%20Aravaca%2C%20Spain&order=price" },
+  ],
+  "Oviedo": [
+    { name: "Hotel Favila", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Favila%2C%20Oviedo%2C%20Spain&order=price" },
+    { name: "Pensión González", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Gonz%C3%A1lez%2C%20Oviedo%2C%20Spain&order=price" },
+    { name: "HiHome Hostel", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=HiHome%20Hostel%2C%20Oviedo%2C%20Spain&order=price" },
+  ],
+  "Cáceres": [
+    { name: "Neptuno", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Neptuno%2C%20C%C3%A1ceres%2C%20Spain&order=price" },
+    { name: "Hostal Neptuno", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Neptuno%2C%20C%C3%A1ceres%2C%20Spain&order=price" },
+    { name: "Hostal Argentina", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Argentina%2C%20C%C3%A1ceres%2C%20Spain&order=price" },
+  ],
+  "Calzada de Asturias": [
+    { name: "Hotel Arbeyal", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Arbeyal%2C%20Calzada%20de%20Asturias%2C%20Spain&order=price" },
+    { name: "Hotel 44", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%2044%2C%20Calzada%20de%20Asturias%2C%20Spain&order=price" },
+    { name: "Hotel Camagüey", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Camag%C3%BCey%2C%20Calzada%20de%20Asturias%2C%20Spain&order=price" },
+  ],
+  "Asamblea de Madrid-Entrevías": [
+    { name: "Ibis Budget - Madrid Calle 30", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Budget%20-%20Madrid%20Calle%2030%2C%20Asamblea%20de%20Madrid-Entrev%C3%ADas%2C%20Spain&order=price" },
+    { name: "Velvet Hostels Madrid", distanceKm: 1.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Velvet%20Hostels%20Madrid%2C%20Asamblea%20de%20Madrid-Entrev%C3%ADas%2C%20Spain&order=price" },
+    { name: "Hotel Catalonia El Retiro", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Catalonia%20El%20Retiro%2C%20Asamblea%20de%20Madrid-Entrev%C3%ADas%2C%20Spain&order=price" },
+  ],
+  "Castelló de la Plana": [
+    { name: "Hotel Luz", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Luz%2C%20Castell%C3%B3%20de%20la%20Plana%2C%20Spain&order=price" },
+    { name: "Pension Dina", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pension%20Dina%2C%20Castell%C3%B3%20de%20la%20Plana%2C%20Spain&order=price" },
+    { name: "Zaymar", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Zaymar%2C%20Castell%C3%B3%20de%20la%20Plana%2C%20Spain&order=price" },
+  ],
+  "Zaragoza-Portillo": [
+    { name: "La Ferroviaria", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Ferroviaria%2C%20Zaragoza-Portillo%2C%20Spain&order=price" },
+    { name: "Nuevo Hotel Orús", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nuevo%20Hotel%20Or%C3%BAs%2C%20Zaragoza-Portillo%2C%20Spain&order=price" },
+    { name: "Hotel NH Sport", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20NH%20Sport%2C%20Zaragoza-Portillo%2C%20Spain&order=price" },
+  ],
+  "Segovia-Guiomar": [
+    { name: "Hotel Cándido", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20C%C3%A1ndido%2C%20Segovia-Guiomar%2C%20Spain&order=price" },
+    { name: "Hotel Santana", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Santana%2C%20Segovia-Guiomar%2C%20Spain&order=price" },
+    { name: "La casa de David", distanceKm: 3.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20casa%20de%20David%2C%20Segovia-Guiomar%2C%20Spain&order=price" },
+  ],
+  "Barcelona El Clot": [
+    { name: "Catalonia Atenas", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Catalonia%20Atenas%2C%20Barcelona%20El%20Clot%2C%20Spain&order=price" },
+    { name: "Hotel Catalonia Sagrada Familia", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Catalonia%20Sagrada%20Familia%2C%20Barcelona%20El%20Clot%2C%20Spain&order=price" },
+    { name: "Leonardo Boutique Hotel Barcelona Sagrada Familia", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Leonardo%20Boutique%20Hotel%20Barcelona%20Sagrada%20Familia%2C%20Barcelona%20El%20Clot%2C%20Spain&order=price" },
+  ],
+  "Getafe-Sector 3": [
+    { name: "Sara", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sara%2C%20Getafe-Sector%203%2C%20Spain&order=price" },
+    { name: "hotel ibis Fuenlabrada", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=hotel%20ibis%20Fuenlabrada%2C%20Getafe-Sector%203%2C%20Spain&order=price" },
+    { name: "Ibis Hotel", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Hotel%2C%20Getafe-Sector%203%2C%20Spain&order=price" },
+  ],
+  "La Garena": [
+    { name: "Travelodge Alcalá de Henares", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Travelodge%20Alcal%C3%A1%20de%20Henares%2C%20La%20Garena%2C%20Spain&order=price" },
+    { name: "Metropol Rooms Alcalá", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Metropol%20Rooms%20Alcal%C3%A1%2C%20La%20Garena%2C%20Spain&order=price" },
+    { name: "Isla de la Garena", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Isla%20de%20la%20Garena%2C%20La%20Garena%2C%20Spain&order=price" },
+  ],
+  "Sant Celoni": [
+    { name: "Budget stays near Sant Celoni", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sant%20Celoni%2C%20Spain&order=price" },
+    { name: "Guest houses near Sant Celoni", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sant%20Celoni%2C%20Spain&order=price" },
+    { name: "Hotels near Sant Celoni", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sant%20Celoni%2C%20Spain&order=price" },
+  ],
+  "Alfafar-Benetússer": [
+    { name: "Hotel Benetússer", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Benet%C3%BAsser%2C%20Alfafar-Benet%C3%BAsser%2C%20Spain&order=price" },
+    { name: "Hotel Albufera", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Albufera%2C%20Alfafar-Benet%C3%BAsser%2C%20Spain&order=price" },
+    { name: "Aparthotel Albufera", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Albufera%2C%20Alfafar-Benet%C3%BAsser%2C%20Spain&order=price" },
+  ],
+  "Cuenca-Fernando Zóbel": [
+    { name: "Budget stays near Cuenca-Fernando Zóbel", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cuenca-Fernando%20Z%C3%B3bel%2C%20Spain&order=price" },
+    { name: "Guest houses near Cuenca-Fernando Zóbel", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cuenca-Fernando%20Z%C3%B3bel%2C%20Spain&order=price" },
+    { name: "Hotels near Cuenca-Fernando Zóbel", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cuenca-Fernando%20Z%C3%B3bel%2C%20Spain&order=price" },
+  ],
+  "Jerez de la Frontera": [
+    { name: "Hotel YIT Casa Grande", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20YIT%20Casa%20Grande%2C%20Jerez%20de%20la%20Frontera%2C%20Spain&order=price" },
+    { name: "Palacio Corredera", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Palacio%20Corredera%2C%20Jerez%20de%20la%20Frontera%2C%20Spain&order=price" },
+    { name: "Hotel La Albarizuela", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Albarizuela%2C%20Jerez%20de%20la%20Frontera%2C%20Spain&order=price" },
+  ],
+  "Palencia": [
+    { name: "Eurostars Diana Palace", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostars%20Diana%20Palace%2C%20Palencia%2C%20Spain&order=price" },
+    { name: "Hostal Algodón", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Algod%C3%B3n%2C%20Palencia%2C%20Spain&order=price" },
+    { name: "Hotel Alda Centro Palencia", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alda%20Centro%20Palencia%2C%20Palencia%2C%20Spain&order=price" },
+  ],
+  "Sant Gabriel": [
+    { name: "Travelodge Alicante Puerto", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Travelodge%20Alicante%20Puerto%2C%20Sant%20Gabriel%2C%20Spain&order=price" },
+    { name: "Hotel AC Alicante", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20AC%20Alicante%2C%20Sant%20Gabriel%2C%20Spain&order=price" },
+    { name: "Albergue Juvenil de la Florida", distanceKm: 1.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Juvenil%20de%20la%20Florida%2C%20Sant%20Gabriel%2C%20Spain&order=price" },
+  ],
+  "Villalba de Guadarrama": [
+    { name: "El Aparthotel", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Aparthotel%2C%20Villalba%20de%20Guadarrama%2C%20Spain&order=price" },
+    { name: "Hostal Lady Ana María", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Lady%20Ana%20Mar%C3%ADa%2C%20Villalba%20de%20Guadarrama%2C%20Spain&order=price" },
+    { name: "Hostal Santa Bárbara", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Santa%20B%C3%A1rbara%2C%20Villalba%20de%20Guadarrama%2C%20Spain&order=price" },
+  ],
+  "Fuente de la Mora": [
+    { name: "Hotel Zentral Castellana Norte", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Zentral%20Castellana%20Norte%2C%20Fuente%20de%20la%20Mora%2C%20Spain&order=price" },
+    { name: "Pinar Plaza", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pinar%20Plaza%2C%20Fuente%20de%20la%20Mora%2C%20Spain&order=price" },
+    { name: "El Mirador de Chamartín", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Mirador%20de%20Chamart%C3%ADn%2C%20Fuente%20de%20la%20Mora%2C%20Spain&order=price" },
+  ],
+  "Sant Vicent Centre": [
+    { name: "Casa Antonio", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Antonio%2C%20Sant%20Vicent%20Centre%2C%20Spain&order=price" },
+    { name: "Hotel Villa Universitaria", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Villa%20Universitaria%2C%20Sant%20Vicent%20Centre%2C%20Spain&order=price" },
+    { name: "Finca Lo del Abuelo Rubén", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20Lo%20del%20Abuelo%20Rub%C3%A9n%2C%20Sant%20Vicent%20Centre%2C%20Spain&order=price" },
+  ],
+  "Albacete-Los Llanos": [
+    { name: "Europa", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Europa%2C%20Albacete-Los%20Llanos%2C%20Spain&order=price" },
+    { name: "Hotel Castilla", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Castilla%2C%20Albacete-Los%20Llanos%2C%20Spain&order=price" },
+    { name: "Hostal Atienzar", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Atienzar%2C%20Albacete-Los%20Llanos%2C%20Spain&order=price" },
+  ],
+  "Infiesto": [
+    { name: "La Posada de Barro", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Posada%20de%20Barro%2C%20Infiesto%2C%20Spain&order=price" },
+    { name: "Hotel Piloñés", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pilo%C3%B1%C3%A9s%2C%20Infiesto%2C%20Spain&order=price" },
+    { name: "Apartamentos turísticos La Pontiga", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20tur%C3%ADsticos%20La%20Pontiga%2C%20Infiesto%2C%20Spain&order=price" },
+  ],
+  "Parque Principado": [
+    { name: "Los Abedules", distanceKm: 1.3, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Los%20Abedules%2C%20Parque%20Principado%2C%20Spain&order=price" },
+    { name: "Hotel IDH Ángel", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20IDH%20%C3%81ngel%2C%20Parque%20Principado%2C%20Spain&order=price" },
+    { name: "Hotel Las Lomas", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Lomas%2C%20Parque%20Principado%2C%20Spain&order=price" },
+  ],
+  "Torredembarra": [
+    { name: "Hostal Coca", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Coca%2C%20Torredembarra%2C%20Spain&order=price" },
+    { name: "Tidex", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tidex%2C%20Torredembarra%2C%20Spain&order=price" },
+    { name: "Morros", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Morros%2C%20Torredembarra%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

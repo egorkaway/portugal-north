@@ -346,6 +346,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@alexandradiniz",
     photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-train-rail-6130875/",
   },
+  "6238500": {
+    photographer: "Plato Terentev",
+    photographerUrl: "https://www.pexels.com/@plato-terentev-3804555",
+    photoPageUrl: "https://www.pexels.com/photo/railway-platform-with-people-and-trains-6238500/",
+  },
   "6399438": {
     photographer: "Santiago  Boada",
     photographerUrl: "https://www.pexels.com/@santiagob",
@@ -555,6 +560,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Alexey Demidov",
     photographerUrl: "https://www.pexels.com/@alexeydemidov",
     photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-a-railway-line-beside-an-abandoned-building-10542168/",
+  },
+  "10593265": {
+    photographer: "Behrouz Alimardani",
+    photographerUrl: "https://www.pexels.com/@behrouz-alimardani-152148858",
+    photoPageUrl: "https://www.pexels.com/photo/trains-on-railroad-tracks-10593265/",
   },
   "10662407": {
     photographer: "Rostyslav Savchyn",
@@ -826,6 +836,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@bitkidd",
     photoPageUrl: "https://www.pexels.com/photo/photo-of-the-inside-of-the-sul-e-sueste-station-in-lisbon-portugal-15259476/",
   },
+  "15440674": {
+    photographer: "Paul Seling",
+    photographerUrl: "https://www.pexels.com/@paulseling",
+    photoPageUrl: "https://www.pexels.com/photo/view-of-a-passenger-train-carriage-at-a-railway-station-15440674/",
+  },
   "15485530": {
     photographer: "Zeynep Sude  Emek",
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
@@ -845,6 +860,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Wolfgang Weiser",
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
     photoPageUrl: "https://www.pexels.com/photo/modern-railway-station-15714409/",
+  },
+  "15976674": {
+    photographer: "Eliel Souza",
+    photographerUrl: "https://www.pexels.com/@eliel-souza-475047835",
+    photoPageUrl: "https://www.pexels.com/photo/tunnel-and-train-station-15976674/",
   },
   "15982756": {
     photographer: "Emmanuel Codden",
@@ -1111,6 +1131,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@bilalfurkankosar",
     photoPageUrl: "https://www.pexels.com/photo/people-on-train-station-19657293/",
   },
+  "19698841": {
+    photographer: "Sümeyye  Başbil",
+    photographerUrl: "https://www.pexels.com/@sumeyyebasbil",
+    photoPageUrl: "https://www.pexels.com/photo/interior-of-a-railway-station-in-turkey-19698841/",
+  },
   "19753039": {
     photographer: "Sami TÜRK",
     photographerUrl: "https://www.pexels.com/@trksami",
@@ -1165,6 +1190,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Sergio Scandroglio",
     photographerUrl: "https://www.pexels.com/@563ska",
     photoPageUrl: "https://www.pexels.com/photo/vintage-steam-locomotive-20221587/",
+  },
+  "20273577": {
+    photographer: "Jakub Pabis",
+    photographerUrl: "https://www.pexels.com/@jakub-pabis-147246622",
+    photoPageUrl: "https://www.pexels.com/photo/abandoned-building-in-murcia-in-spain-20273577/",
   },
   "20293197": {
     photographer: "Alisa Velieva",
@@ -1471,6 +1501,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@brunorock",
     photoPageUrl: "https://www.pexels.com/photo/high-speed-train-in-snowy-landscape-at-dusk-29858703/",
   },
+  "29864109": {
+    photographer: "Andres Alaniz",
+    photographerUrl: "https://www.pexels.com/@andres-alaniz-461433202",
+    photoPageUrl: "https://www.pexels.com/photo/charming-vintage-train-station-in-mendoza-29864109/",
+  },
   "30068944": {
     photographer: "İrem Yılmaztürk",
     photographerUrl: "https://www.pexels.com/@i-rem-yilmazturk-1831111582",
@@ -1480,6 +1515,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Sebastian Luna",
     photographerUrl: "https://www.pexels.com/@sebastian-luna-736234668",
     photoPageUrl: "https://www.pexels.com/photo/foggy-night-at-berlin-train-station-30113635/",
+  },
+  "30254825": {
+    photographer: "berobscura",
+    photographerUrl: "https://www.pexels.com/@berobscura-1679175123",
+    photoPageUrl: "https://www.pexels.com/photo/black-and-white-street-scene-in-istanbul-30254825/",
   },
   "30615685": {
     photographer: "Mihaela Claudia  Puscas",
@@ -1901,6 +1941,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@junior-diniz-photographer-in-lisbon-2051893",
     photoPageUrl: "https://www.pexels.com/photo/street-view-of-iconic-lisbon-trams-with-graffiti-33768022/",
   },
+  "33804880": {
+    photographer: "ᛟᛞᚨᛚᚹ ᚨᚱᚲᛟᚾᛊᚲᛁ",
+    photographerUrl: "https://www.pexels.com/@odalv",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-steam-locomotive-on-railway-track-outdoors-33804880/",
+  },
   "33809979": {
     photographer: "ᛟᛞᚨᛚᚹ ᚨᚱᚲᛟᚾᛊᚲᛁ",
     photographerUrl: "https://www.pexels.com/@odalv",
@@ -2026,6 +2071,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@geert",
     photoPageUrl: "https://www.pexels.com/photo/sunny-outdoor-coffee-with-cake-in-portuguese-vineyard-35239401/",
   },
+  "35289361": {
+    photographer: "Nitin  Yadav",
+    photographerUrl: "https://www.pexels.com/@niksbro2404",
+    photoPageUrl: "https://www.pexels.com/photo/quiet-railway-station-with-passing-train-35289361/",
+  },
   "35388184": {
     photographer: "Travel Photographer",
     photographerUrl: "https://www.pexels.com/@travel-photographer-127255675",
@@ -2090,6 +2140,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Sergei  Gussev",
     photographerUrl: "https://www.pexels.com/@sergei",
     photoPageUrl: "https://www.pexels.com/photo/sunset-over-rocky-coastline-at-vila-praia-de-ancora-35872756/",
+  },
+  "36056485": {
+    photographer: "Diego  HG",
+    photographerUrl: "https://www.pexels.com/@diego-hg-2157656524",
+    photoPageUrl: "https://www.pexels.com/photo/busy-barcelona-train-station-with-modern-architecture-36056485/",
   },
   "36095712": {
     photographer: "Karlheinz Strohmaier",

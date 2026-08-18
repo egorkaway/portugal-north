@@ -293,4 +293,301 @@ export const spainStations: Station[] = [
     lng: -0.3772,
   },
 
+  {
+    name: "Burgos-Rosa Manzano",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.3712,
+    lng: -3.6663,
+  },
+
+  {
+    name: "Madrid-Nuevos Ministerios",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4466,
+    lng: -3.6923,
+  },
+
+  {
+    name: "Fuenlabrada",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.2834,
+    lng: -3.7994,
+  },
+
+  {
+    name: "Aravaca",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4485,
+    lng: -3.7856,
+  },
+
+  {
+    name: "Oviedo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3664,
+    lng: -5.8548,
+  },
+
+  {
+    name: "Cáceres",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.4611,
+    lng: -6.3857,
+  },
+
+  {
+    name: "Calzada de Asturias",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5354,
+    lng: -5.6972,
+  },
+
+  {
+    name: "Asamblea de Madrid-Entrevías",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.3819,
+    lng: -3.668,
+  },
+
+  {
+    name: "Castelló de la Plana",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.9885,
+    lng: -0.0523,
+  },
+
+  {
+    name: "Zaragoza-Portillo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6527,
+    lng: -0.8959,
+  },
+
+  {
+    name: "Segovia-Guiomar",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 40.9106,
+    lng: -4.0946,
+  },
+
+  {
+    name: "Barcelona El Clot",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.4093,
+    lng: 2.1872,
+  },
+
+  {
+    name: "Getafe-Sector 3",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.2884,
+    lng: -3.7375,
+  },
+
+  {
+    name: "La Garena",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4805,
+    lng: -3.393,
+  },
+
+  {
+    name: "Sant Celoni",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6858,
+    lng: 2.4907,
+  },
+
+  {
+    name: "Móstoles",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3287,
+    lng: -3.8636,
+  },
+
+  {
+    name: "Aranjuez",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.035,
+    lng: -3.6183,
+  },
+
+  {
+    name: "Vilanova i la Geltrú",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.2203,
+    lng: 1.7308,
+  },
+
+  {
+    name: "Alfafar-Benetússer",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.4224,
+    lng: -0.3926,
+  },
+
+  {
+    name: "Cuenca-Fernando Zóbel",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 40.0352,
+    lng: -2.1444,
+  },
+
+  {
+    name: "Jerez de la Frontera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.68,
+    lng: -6.1266,
+  },
+
+  {
+    name: "Lleida-Pirineus",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6201,
+    lng: 0.6337,
+  },
+
+  {
+    name: "Alicante/Alacant-Terminal",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.3447,
+    lng: -0.4955,
+  },
+
+  {
+    name: "El Escorial",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5854,
+    lng: -4.1324,
+  },
+
+  {
+    name: "Palencia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.0157,
+    lng: -4.5341,
+  },
+
+  {
+    name: "Sant Gabriel",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.3291,
+    lng: -0.5087,
+  },
+
+  {
+    name: "Villalba de Guadarrama",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.6265,
+    lng: -4.008,
+  },
+
+  {
+    name: "Fuente de la Mora",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.4847,
+    lng: -3.6631,
+  },
+
+  {
+    name: "Sant Vicent Centre",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.3947,
+    lng: -0.5287,
+  },
+
+  {
+    name: "Albacete-Los Llanos",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.9994,
+    lng: -1.8484,
+  },
+
+  {
+    name: "Infiesto",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3518,
+    lng: -5.3692,
+  },
+
+  {
+    name: "Parque Principado",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3866,
+    lng: -5.8088,
+  },
+
+  {
+    name: "Torredembarra",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1428,
+    lng: 1.4058,
+  },
+
 ];

@@ -1,6 +1,6 @@
 {
-  "runCount": 6,
-  "lastRunAt": "2026-08-18T17:48:53.242Z",
+  "runCount": 12,
+  "lastRunAt": "2026-08-18T20:05:50.552Z",
   "lastAirportConnectionsAt": null,
   "stations": {
     "Barcelona-Sants": {
@@ -8,23 +8,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 21,
-          "delayMinutes": 787
+          "arrivalsNextHour": 48,
+          "delayMinutes": 940
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 55,
-          "delayMinutes": 345
+          "arrivalsNextHour": 103,
+          "delayMinutes": 1539
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 76,
-        "delayMinutes": 1132
+        "arrivalsNextHour": 151,
+        "delayMinutes": 2479
       },
-      "successfulSamples": 6,
+      "successfulSamples": 12,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Madrid-Chamartín": {
@@ -32,43 +32,58 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 58,
-          "delayMinutes": 210
+          "arrivalsNextHour": 96,
+          "delayMinutes": 394
         },
         "Cercanías C7": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 12,
-          "delayMinutes": 301
+          "arrivalsNextHour": 29,
+          "delayMinutes": 846
         },
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 12,
-          "delayMinutes": 22
+          "arrivalsNextHour": 29,
+          "delayMinutes": 51
         },
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 2
+          "arrivalsNextHour": 4,
+          "delayMinutes": 8
         },
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 18
+          "arrivalsNextHour": 8,
+          "delayMinutes": 30
         },
         "Cercanías C4B": {
           "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 28
+        },
+        "Cercanías C4A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 24
+        },
+        "Cercanías C8A": {
+          "departuresNextHour": 0,
           "arrivalsNextHour": 1,
-          "delayMinutes": 6
+          "delayMinutes": 3
+        },
+        "Cercanías C8B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 11
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 87,
-        "delayMinutes": 559
+        "arrivalsNextHour": 174,
+        "delayMinutes": 1395
       },
-      "successfulSamples": 6,
+      "successfulSamples": 12,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Santiago de Compostela": {
@@ -76,18 +91,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 23,
-          "delayMinutes": 35
+          "arrivalsNextHour": 56,
+          "delayMinutes": 153
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 23,
-        "delayMinutes": 35
+        "arrivalsNextHour": 56,
+        "delayMinutes": 153
       },
-      "successfulSamples": 6,
+      "successfulSamples": 12,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Zamora": {
@@ -95,18 +110,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 17,
-          "delayMinutes": 199
+          "arrivalsNextHour": 34,
+          "delayMinutes": 301
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 17,
-        "delayMinutes": 199
+        "arrivalsNextHour": 34,
+        "delayMinutes": 301
       },
-      "successfulSamples": 6,
+      "successfulSamples": 12,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Vilagarcía de Arousa": {
@@ -114,18 +129,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 6,
-          "delayMinutes": 9
+          "arrivalsNextHour": 12,
+          "delayMinutes": 42
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 6,
-        "delayMinutes": 9
+        "arrivalsNextHour": 12,
+        "delayMinutes": 42
       },
-      "successfulSamples": 6,
+      "successfulSamples": 12,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Vigo-Urzáiz": {
@@ -152,18 +167,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 10
+          "arrivalsNextHour": 6,
+          "delayMinutes": 31
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 4,
-        "delayMinutes": 10
+        "arrivalsNextHour": 6,
+        "delayMinutes": 31
       },
-      "successfulSamples": 3,
+      "successfulSamples": 5,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "A Coruña": {
@@ -171,18 +186,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 6,
-          "delayMinutes": 16
+          "arrivalsNextHour": 9,
+          "delayMinutes": 19
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 6,
-        "delayMinutes": 16
+        "arrivalsNextHour": 9,
+        "delayMinutes": 19
       },
-      "successfulSamples": 3,
+      "successfulSamples": 6,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T18:02:02.364Z",
       "lastError": null
     },
     "Ourense": {
@@ -190,18 +205,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 5,
-          "delayMinutes": 62
+          "arrivalsNextHour": 19,
+          "delayMinutes": 184
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 5,
-        "delayMinutes": 62
+        "arrivalsNextHour": 19,
+        "delayMinutes": 184
       },
-      "successfulSamples": 5,
+      "successfulSamples": 9,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Barcelona-Passeig de Gràcia": {
@@ -209,23 +224,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 10,
-          "delayMinutes": 120
+          "arrivalsNextHour": 30,
+          "delayMinutes": 252
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 7
+          "arrivalsNextHour": 9,
+          "delayMinutes": 109
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 11,
-        "delayMinutes": 127
+        "arrivalsNextHour": 39,
+        "delayMinutes": 361
       },
-      "successfulSamples": 2,
+      "successfulSamples": 8,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Padrón": {
@@ -252,18 +267,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 21,
-          "delayMinutes": 161
+          "arrivalsNextHour": 66,
+          "delayMinutes": 562
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 21,
-        "delayMinutes": 161
+        "arrivalsNextHour": 66,
+        "delayMinutes": 562
       },
-      "successfulSamples": 2,
+      "successfulSamples": 8,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Sant Vicenç de Calders": {
@@ -271,23 +286,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 20
+          "arrivalsNextHour": 6,
+          "delayMinutes": 63
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 21
+          "arrivalsNextHour": 13,
+          "delayMinutes": 201
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 3,
-        "delayMinutes": 41
+        "arrivalsNextHour": 19,
+        "delayMinutes": 264
       },
-      "successfulSamples": 1,
+      "successfulSamples": 7,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Valladolid-Campo Grande": {
@@ -295,18 +310,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 10,
-          "delayMinutes": 164
+          "arrivalsNextHour": 58,
+          "delayMinutes": 654
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 10,
-        "delayMinutes": 164
+        "arrivalsNextHour": 58,
+        "delayMinutes": 654
       },
-      "successfulSamples": 1,
+      "successfulSamples": 7,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Sanabria Alta Velocidad": {
@@ -314,18 +329,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 14
+          "arrivalsNextHour": 4,
+          "delayMinutes": 55
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 1,
-        "delayMinutes": 14
+        "arrivalsNextHour": 4,
+        "delayMinutes": 55
       },
-      "successfulSamples": 1,
+      "successfulSamples": 4,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T18:02:02.364Z",
       "lastError": null
     },
     "Zaragoza Delicias": {
@@ -333,18 +348,23 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 10,
-          "delayMinutes": 344
+          "arrivalsNextHour": 52,
+          "delayMinutes": 1406
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 7
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 10,
-        "delayMinutes": 344
+        "arrivalsNextHour": 53,
+        "delayMinutes": 1413
       },
-      "successfulSamples": 1,
+      "successfulSamples": 7,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     },
     "Córdoba-Julio Anguita": {
@@ -352,22 +372,803 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
+          "arrivalsNextHour": 32,
+          "delayMinutes": 479
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 32,
+        "delayMinutes": 479
+      },
+      "successfulSamples": 7,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Girona": {
+      "cpCode": "79300",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 0
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T18:02:02.364Z",
+      "lastError": null
+    },
+    "Sevilla-Santa Justa": {
+      "cpCode": "51003",
+      "byTrainType": {
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 19,
+          "delayMinutes": 66
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 50
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 9
+        },
+        "Cercanías C5": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 6
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 25,
+        "delayMinutes": 131
+      },
+      "successfulSamples": 6,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Valdecilla la Marga": {
+      "cpCode": "05602",
+      "byTrainType": {
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 2
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
           "arrivalsNextHour": 4,
-          "delayMinutes": 26
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 12,
+        "delayMinutes": 2
+      },
+      "successfulSamples": 6,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Orihuela-Miguel Hernández": {
+      "cpCode": "62002",
+      "byTrainType": {
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 11
+        },
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 18,
+          "delayMinutes": 432
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 19,
+        "delayMinutes": 443
+      },
+      "successfulSamples": 6,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Alhama de Murcia": {
+      "cpCode": "06002",
+      "byTrainType": {
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 217
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 5,
+        "delayMinutes": 217
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Madrid-Recoletos": {
+      "cpCode": "18001",
+      "byTrainType": {
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 101
+        },
+        "Cercanías C8B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 0
+        },
+        "Cercanías C8A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 261
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 13,
+        "delayMinutes": 362
+      },
+      "successfulSamples": 6,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Madrid-Príncipe Pío": {
+      "cpCode": "10000",
+      "byTrainType": {
+        "Cercanías C10": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 2
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T18:02:02.364Z",
+      "lastError": null
+    },
+    "León": {
+      "cpCode": "15100",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 13,
+          "delayMinutes": 76
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 13,
+        "delayMinutes": 76
+      },
+      "successfulSamples": 6,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Camp de Tarragona": {
+      "cpCode": "04104",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 18,
+          "delayMinutes": 426
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 18,
+        "delayMinutes": 426
+      },
+      "successfulSamples": 6,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Tafalla": {
+      "cpCode": "80108",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 61
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 3,
+        "delayMinutes": 61
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T18:02:02.364Z",
+      "lastError": null
+    },
+    "Madrid-Nuevos Ministerios": {
+      "cpCode": "18002",
+      "byTrainType": {
+        "Cercanías C4A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 68
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 22
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 6
+        },
+        "Cercanías C8B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 2
+        },
+        "Cercanías C4B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 1
+        },
+        "Cercanías C8A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 22,
+        "delayMinutes": 100
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Fuenlabrada": {
+      "cpCode": "35002",
+      "byTrainType": {
+        "Cercanías C5": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 17,
+          "delayMinutes": 139
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 17,
+        "delayMinutes": 139
+      },
+      "successfulSamples": 5,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Burgos-Rosa Manzano": {
+      "cpCode": "11014",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 13,
+          "delayMinutes": 53
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 13,
+        "delayMinutes": 53
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T19:21:32.772Z",
+      "lastError": null
+    },
+    "Oviedo": {
+      "cpCode": "15211",
+      "byTrainType": {
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 69
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 73
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Aravaca": {
+      "cpCode": "10001",
+      "byTrainType": {
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 11,
+          "delayMinutes": 398
+        },
+        "Cercanías C10": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 5
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 13,
+        "delayMinutes": 403
+      },
+      "successfulSamples": 4,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "València-Estació del Nord": {
+      "cpCode": "65000",
+      "byTrainType": {
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 332
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 12
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 10,
+        "delayMinutes": 344
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Castelló de la Plana": {
+      "cpCode": "65300",
+      "byTrainType": {
+        "Cercanías C6": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 27
+        },
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 5,
+        "delayMinutes": 27
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Calzada de Asturias": {
+      "cpCode": "15401",
+      "byTrainType": {
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 1
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 3,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Asamblea de Madrid-Entrevías": {
+      "cpCode": "70002",
+      "byTrainType": {
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
         "arrivalsNextHour": 4,
+        "delayMinutes": 2
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Castejón de Ebro": {
+      "cpCode": "81200",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 38
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 38
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:02:10.668Z",
+      "lastError": null
+    },
+    "Cáceres": {
+      "cpCode": "35400",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 7,
+          "delayMinutes": 26
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 7,
         "delayMinutes": 26
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Barcelona El Clot": {
+      "cpCode": "79009",
+      "byTrainType": {
+        "Cercanías": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 49
+        },
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 2
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 7,
+        "delayMinutes": 51
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Sant Celoni": {
+      "cpCode": "79104",
+      "byTrainType": {
+        "Cercanías": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 6
+        },
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 7
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 13
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "La Garena": {
+      "cpCode": "70111",
+      "byTrainType": {
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 21
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 3
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 24
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Getafe-Sector 3": {
+      "cpCode": "37011",
+      "byTrainType": {
+        "Cercanías C4A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 2
+        },
+        "Cercanías C4B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 198
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 7,
+        "delayMinutes": 200
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Zaragoza-Portillo": {
+      "cpCode": "70806",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 34
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 34
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Segovia-Guiomar": {
+      "cpCode": "08004",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 89
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 8,
+        "delayMinutes": 89
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Redondela": {
+      "cpCode": "22300",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 16
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 16
       },
       "successfulSamples": 1,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:02:10.668Z",
       "lastError": null
     },
-    "Girona": {
-      "cpCode": "79300",
+    "Jerez de la Frontera": {
+      "cpCode": "51300",
+      "byTrainType": {
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 7
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 7
+      },
+      "successfulSamples": 1,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Alfafar-Benetússer": {
+      "cpCode": "64203",
+      "byTrainType": {
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 0
+      },
+      "successfulSamples": 1,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Vilanova i la Geltrú": {
+      "cpCode": "71700",
+      "byTrainType": {
+        "Cercanías": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
+        },
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 1
+      },
+      "successfulSamples": 1,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Móstoles": {
+      "cpCode": "35606",
+      "byTrainType": {
+        "Cercanías C5": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 6,
+          "delayMinutes": 47
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 47
+      },
+      "successfulSamples": 1,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Vigo-Guixar": {
+      "cpCode": "22308",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 15
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 1,
+        "delayMinutes": 15
+      },
+      "successfulSamples": 1,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Cuenca-Fernando Zóbel": {
+      "cpCode": "03208",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 10
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 10
+      },
+      "successfulSamples": 1,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
+      "lastError": null
+    },
+    "Aranjuez": {
+      "cpCode": "60200",
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
@@ -382,7 +1183,7 @@
       },
       "successfulSamples": 1,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-18T17:48:53.241Z",
+      "lastSampleAt": "2026-08-18T20:05:50.552Z",
       "lastError": null
     }
   }

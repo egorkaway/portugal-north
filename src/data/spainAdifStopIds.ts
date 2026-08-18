@@ -53,6 +53,72 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "València-Estació del Nord": ["65000"],
 
+  "Burgos-Rosa Manzano": ["11014"],
+
+  "Madrid-Nuevos Ministerios": ["18002"],
+
+  "Fuenlabrada": ["35002"],
+
+  "Aravaca": ["10001"],
+
+  "Oviedo": ["15211"],
+
+  "Cáceres": ["35400"],
+
+  "Calzada de Asturias": ["15401"],
+
+  "Asamblea de Madrid-Entrevías": ["70002"],
+
+  "Castelló de la Plana": ["65300"],
+
+  "Zaragoza-Portillo": ["70806"],
+
+  "Segovia-Guiomar": ["08004"],
+
+  "Barcelona El Clot": ["79009"],
+
+  "Getafe-Sector 3": ["37011"],
+
+  "La Garena": ["70111"],
+
+  "Sant Celoni": ["79104"],
+
+  "Móstoles": ["35606"],
+
+  "Aranjuez": ["60200"],
+
+  "Vilanova i la Geltrú": ["71700"],
+
+  "Alfafar-Benetússer": ["64203"],
+
+  "Cuenca-Fernando Zóbel": ["03208"],
+
+  "Jerez de la Frontera": ["51300"],
+
+  "Lleida-Pirineus": ["78400"],
+
+  "Alicante/Alacant-Terminal": ["60911"],
+
+  "El Escorial": ["10203"],
+
+  "Palencia": ["14100"],
+
+  "Sant Gabriel": ["62109"],
+
+  "Villalba de Guadarrama": ["10200"],
+
+  "Fuente de la Mora": ["98003"],
+
+  "Sant Vicent Centre": ["60913"],
+
+  "Albacete-Los Llanos": ["60600"],
+
+  "Infiesto": ["05533", "05534"],
+
+  "Parque Principado": ["05504"],
+
+  "Torredembarra": ["71503"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
