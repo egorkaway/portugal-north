@@ -9,6 +9,7 @@ import {
   normHotelName,
   normalizeBookingUrl,
   normalizeRejectedHotels,
+  readRejectedHotels,
 } from "../../scripts/lib/rejectedHotels.mjs";
 
 describe("bookingLinkCheck", () => {
@@ -88,5 +89,23 @@ describe("rejectedHotels", () => {
     expect(
       normalizeBookingUrl("https://www.booking.com/hotel/pt/cardal.html?aid=123"),
     ).toBe("https://www.booking.com/hotel/pt/cardal.html");
+  });
+
+  it("blocks Cerveira pousada aliases so fetch cannot re-add them", () => {
+    const data = readRejectedHotels("scripts/data/rejected-hotels.json");
+    expect(
+      isRejectedHotel(data, "Vila Nova de Cerveira", "Pousada de Vila Nova de Cerveira"),
+    ).toBe(true);
+    expect(
+      isRejectedHotel(data, "Vila Nova de Cerveira", "Pousada de Juventude Vila Nova de Cerveira"),
+    ).toBe(true);
+    expect(
+      isRejectedHotel(
+        data,
+        "Vila Nova de Cerveira",
+        "HI Vila Nova de Cerveira - Pousada de Juventude",
+        "https://www.booking.com/hotel/pt/pousada-de-juventude-de-vila-nova-de-cerveira.html",
+      ),
+    ).toBe(false);
   });
 });
