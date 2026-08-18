@@ -271,6 +271,11 @@ export type Messages = {
     viewStation: string;
     downloadGeoJson: string;
     legendAirports: string;
+    legendSpainCercanias: string;
+    legendSpainLongDistance: string;
+    spainTrainCercanias: string;
+    spainTrainLongDistance: string;
+    spainTrainTooltip: string;
     airportLis: string;
     airportPorto: string;
     airportFaro: string;

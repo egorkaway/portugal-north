@@ -6,8 +6,10 @@ import { MapFitBounds } from "@/components/MapFitBounds";
 import { MapHexLayer } from "@/components/MapHexLayer";
 import { MapLocateControl } from "@/components/MapLocateControl";
 import { MapPointLabels } from "@/components/MapPointLabels";
+import { SpainTrainsLayer } from "@/components/SpainTrainsLayer";
 import { stations } from "@/data/stations";
 import { useReliabilityScores } from "@/hooks/useReliabilityScore";
+import { useSpainTrains } from "@/hooks/useSpainTrains";
 import { useLocale } from "@/i18n/LocaleProvider";
 import {
   buildMapActivityHexData,
@@ -71,6 +73,7 @@ const AIRPORT_LABEL_KEYS = {
 export default function StationActivityMap() {
   const { t } = useLocale();
   const { data, isLoading, isError } = useReliabilityScores();
+  const { data: spainTrains } = useSpainTrains();
   const [hiddenAirportIatas, setHiddenAirportIatas] = useState<Set<string>>(() => new Set());
 
   useEffect(() => {
@@ -140,6 +143,9 @@ export default function StationActivityMap() {
             maxMovements={maxMovements}
           />
           <MapPointLabels points={labelPoints} />
+          {spainTrains?.trains.length ? (
+            <SpainTrainsLayer trains={spainTrains.trains} />
+          ) : null}
         </MapContainer>
       </div>
 
@@ -179,6 +185,14 @@ export default function StationActivityMap() {
             aria-hidden="true"
           />
           {t("map.legendAirports")}
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <span aria-hidden="true">🚂</span>
+          {t("map.legendSpainCercanias")}
+        </span>
+        <span className="inline-flex items-center gap-2">
+          <span aria-hidden="true">🚆</span>
+          {t("map.legendSpainLongDistance")}
         </span>
       </div>
     </div>

@@ -124,6 +124,20 @@ All colors MUST be HSL.
   border-color: hsl(25 88% 45%);
 }
 
+.leaflet-div-icon.spain-train-emoji {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  filter: drop-shadow(0 1px 1px hsl(200 25% 12% / 0.45));
+}
+
+.leaflet-div-icon.spain-train-emoji--long {
+  font-size: 20px;
+  line-height: 24px;
+}
+
 .leaflet-tooltip.map-hex-tooltip,
 .leaflet-tooltip.map-hex-tooltip.leaflet-interactive {
   margin: 0;

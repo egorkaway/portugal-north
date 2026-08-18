@@ -624,6 +624,7 @@ export const stationHotels: StationHotels = {
     { name: "Hostel Albergue. Casa Gwendoline", distanceKm: 2.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20Albergue.%20Casa%20Gwendoline%2C%20Gondar%C3%A9m%2C%20Portugal&order=price" },
   ],
   "Esqueiró": [
+    { name: "Luan Café Lanhelas", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/hotel/pt/luan-cafe-lanhelas.html" },
     { name: "Vila D'Artes", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20D'Artes%2C%20Esqueir%C3%B3%2C%20Portugal&order=price" },
     { name: "Albergue S. Bento", distanceKm: 2.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20S.%20Bento%2C%20Esqueir%C3%B3%2C%20Portugal&order=price" },
     { name: "Casas da Azenha", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20da%20Azenha%2C%20Esqueir%C3%B3%2C%20Portugal&order=price" },
