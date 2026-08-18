@@ -2043,6 +2043,66 @@ export const stationHotels: StationHotels = {
     { name: "Hostal Arotza", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Arotza%2C%20Tafalla%2C%20Spain&order=price" },
     { name: "Hotel Beratxa", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Beratxa%2C%20Tafalla%2C%20Spain&order=price" },
   ],
+  "Castejón de Ebro": [
+    { name: "Hostal Lozano", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Lozano%2C%20Castej%C3%B3n%20de%20Ebro%2C%20Spain&order=price" },
+    { name: "Europa", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Europa%2C%20Castej%C3%B3n%20de%20Ebro%2C%20Spain&order=price" },
+    { name: "Hotel ElVilla Castejón", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ElVilla%20Castej%C3%B3n%2C%20Castej%C3%B3n%20de%20Ebro%2C%20Spain&order=price" },
+  ],
+  "Girona": [
+    { name: "Europa", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Europa%2C%20Girona%2C%20Spain&order=price" },
+    { name: "Flateli Lorenzana 35 C", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Flateli%20Lorenzana%2035%20C%2C%20Girona%2C%20Spain&order=price" },
+    { name: "Hotel Bestprice Girona", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bestprice%20Girona%2C%20Girona%2C%20Spain&order=price" },
+  ],
+  "Valladolid-Campo Grande": [
+    { name: "Budget stays near Valladolid-Campo Grande", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Valladolid-Campo%20Grande%2C%20Spain&order=price" },
+    { name: "Guest houses near Valladolid-Campo Grande", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Valladolid-Campo%20Grande%2C%20Spain&order=price" },
+    { name: "Hotels near Valladolid-Campo Grande", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Valladolid-Campo%20Grande%2C%20Spain&order=price" },
+  ],
+  "Sant Vicenç de Calders": [
+    { name: "Iren mar", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Iren%20mar%2C%20Sant%20Vicen%C3%A7%20de%20Calders%2C%20Spain&order=price" },
+    { name: "Natura Park", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Natura%20Park%2C%20Sant%20Vicen%C3%A7%20de%20Calders%2C%20Spain&order=price" },
+    { name: "Alberg Coma-ruga Xanascat", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20Coma-ruga%20Xanascat%2C%20Sant%20Vicen%C3%A7%20de%20Calders%2C%20Spain&order=price" },
+  ],
+  "Zaragoza Delicias": [
+    { name: "Eurostars Zaragoza", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostars%20Zaragoza%2C%20Zaragoza%20Delicias%2C%20Spain&order=price" },
+    { name: "Exe Plaza Delicias", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Plaza%20Delicias%2C%20Zaragoza%20Delicias%2C%20Spain&order=price" },
+    { name: "Hotel Zentral AVE", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Zentral%20AVE%2C%20Zaragoza%20Delicias%2C%20Spain&order=price" },
+  ],
+  "Córdoba-Julio Anguita": [
+    { name: "Hotel AC Córdoba", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20AC%20C%C3%B3rdoba%2C%20C%C3%B3rdoba-Julio%20Anguita%2C%20Spain&order=price" },
+    { name: "Sercotel Córdoba Medina Azahara", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20C%C3%B3rdoba%20Medina%20Azahara%2C%20C%C3%B3rdoba-Julio%20Anguita%2C%20Spain&order=price" },
+    { name: "Hotel Cisne", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cisne%2C%20C%C3%B3rdoba-Julio%20Anguita%2C%20Spain&order=price" },
+  ],
+  "León": [
+    { name: "Crisol Riosol", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Crisol%20Riosol%2C%20Le%C3%B3n%2C%20Spain&order=price" },
+    { name: "Pensión Blanca B&B", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Blanca%20B%26B%2C%20Le%C3%B3n%2C%20Spain&order=price" },
+    { name: "Hostal Orejas", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Orejas%2C%20Le%C3%B3n%2C%20Spain&order=price" },
+  ],
+  "Madrid-Príncipe Pío": [
+    { name: "Florida Norte", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Florida%20Norte%2C%20Madrid-Pr%C3%ADncipe%20P%C3%ADo%2C%20Spain&order=price" },
+    { name: "Madfor", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Madfor%2C%20Madrid-Pr%C3%ADncipe%20P%C3%ADo%2C%20Spain&order=price" },
+    { name: "Petit Hostel Palacio Real", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Petit%20Hostel%20Palacio%20Real%2C%20Madrid-Pr%C3%ADncipe%20P%C3%ADo%2C%20Spain&order=price" },
+  ],
+  "Madrid-Recoletos": [
+    { name: "AC Hotel Recoletos", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AC%20Hotel%20Recoletos%2C%20Madrid-Recoletos%2C%20Spain&order=price" },
+    { name: "VP Jardín de Recoletos", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=VP%20Jard%C3%ADn%20de%20Recoletos%2C%20Madrid-Recoletos%2C%20Spain&order=price" },
+    { name: "NH Collection Madrid Colón", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=NH%20Collection%20Madrid%20Col%C3%B3n%2C%20Madrid-Recoletos%2C%20Spain&order=price" },
+  ],
+  "Camp de Tarragona": [
+    { name: "Mas Miró", distanceKm: 2.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mas%20Mir%C3%B3%2C%20Camp%20de%20Tarragona%2C%20Spain&order=price" },
+    { name: "Hotel Morell", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Morell%2C%20Camp%20de%20Tarragona%2C%20Spain&order=price" },
+    { name: "Hotel Avenida", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Avenida%2C%20Camp%20de%20Tarragona%2C%20Spain&order=price" },
+  ],
+  "Valdecilla la Marga": [
+    { name: "Ibis Styles", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Styles%2C%20Valdecilla%20la%20Marga%2C%20Spain&order=price" },
+    { name: "Lucy", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lucy%2C%20Valdecilla%20la%20Marga%2C%20Spain&order=price" },
+    { name: "Hotel Náutico Santander", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20N%C3%A1utico%20Santander%2C%20Valdecilla%20la%20Marga%2C%20Spain&order=price" },
+  ],
+  "València-Estació del Nord": [
+    { name: "Casa de Raquel", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20de%20Raquel%2C%20Val%C3%A8ncia-Estaci%C3%B3%20del%20Nord%2C%20Spain&order=price" },
+    { name: "Hotel zenit valencia", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20zenit%20valencia%2C%20Val%C3%A8ncia-Estaci%C3%B3%20del%20Nord%2C%20Spain&order=price" },
+    { name: "Hotel SH Colón", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20SH%20Col%C3%B3n%2C%20Val%C3%A8ncia-Estaci%C3%B3%20del%20Nord%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

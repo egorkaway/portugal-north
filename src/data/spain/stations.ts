@@ -158,4 +158,139 @@ export const spainStations: Station[] = [
     lat: 42.5258,
     lng: -1.6715,
   },
+  {
+    name: "Castejón de Ebro",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.1727,
+    lng: -1.6921,
+  },
+
+  {
+    name: "Girona",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.9794,
+    lng: 2.8169,
+  },
+
+  {
+    name: "Valladolid-Campo Grande",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6422,
+    lng: -4.727,
+  },
+
+  {
+    name: "Sant Vicenç de Calders",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1862,
+    lng: 1.5248,
+  },
+
+  {
+    name: "Zaragoza Delicias",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6587,
+    lng: -0.9113,
+  },
+
+  {
+    name: "Córdoba-Julio Anguita",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.8883,
+    lng: -4.7895,
+  },
+
+  {
+    name: "Sevilla-Santa Justa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.3925,
+    lng: -5.9749,
+  },
+
+  {
+    name: "Orihuela-Miguel Hernández",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.0779,
+    lng: -0.9446,
+  },
+
+  {
+    name: "Alhama de Murcia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.8494,
+    lng: -1.4145,
+  },
+
+  {
+    name: "León",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.596,
+    lng: -5.5824,
+  },
+
+  {
+    name: "Madrid-Príncipe Pío",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4215,
+    lng: -3.719,
+  },
+
+  {
+    name: "Madrid-Recoletos",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4234,
+    lng: -3.6909,
+  },
+
+  {
+    name: "Camp de Tarragona",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 41.1921,
+    lng: 1.2727,
+  },
+
+  {
+    name: "Valdecilla la Marga",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4529,
+    lng: -3.8282,
+  },
+
+  {
+    name: "València-Estació del Nord",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.4669,
+    lng: -0.3772,
+  },
+
 ];

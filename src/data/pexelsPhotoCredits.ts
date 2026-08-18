@@ -361,6 +361,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@magda-ehlers-pexels",
     photoPageUrl: "https://www.pexels.com/photo/a-train-track-near-green-plants-6492079/",
   },
+  "6497207": {
+    photographer: "Sinitta Leunen",
+    photographerUrl: "https://www.pexels.com/@sinileunen",
+    photoPageUrl: "https://www.pexels.com/photo/people-walking-in-the-railway-station-6497207/",
+  },
   "6589185": {
     photographer: "Luca Sammarco",
     photographerUrl: "https://www.pexels.com/@samma97",
@@ -511,6 +516,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@zafer-erdogan-49915050",
     photoPageUrl: "https://www.pexels.com/photo/view-of-a-railway-station-9938927/",
   },
+  "9953781": {
+    photographer: "Daniel Sperindeo",
+    photographerUrl: "https://www.pexels.com/@daniel-sperindeo-1106409",
+    photoPageUrl: "https://www.pexels.com/photo/italian-metro-station-9953781/",
+  },
   "9989485": {
     photographer: "Enric Cruz López",
     photographerUrl: "https://www.pexels.com/@enric-cruz-lopez",
@@ -530,6 +540,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Sami  Aksu",
     photographerUrl: "https://www.pexels.com/@sami-aksu-48867324",
     photoPageUrl: "https://www.pexels.com/photo/train-on-rail-tracks-10195639/",
+  },
+  "10466862": {
+    photographer: "antonio filigno",
+    photographerUrl: "https://www.pexels.com/@antonio-filigno-159809",
+    photoPageUrl: "https://www.pexels.com/photo/metropolis-in-spain-10466862/",
   },
   "10519883": {
     photographer: "Ömer DÖNER",
@@ -686,6 +701,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@sena-kecicioglu-98047644",
     photoPageUrl: "https://www.pexels.com/photo/train-at-a-train-station-13198726/",
   },
+  "13363096": {
+    photographer: "Emilio Sánchez  Hernández",
+    photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",
+    photoPageUrl: "https://www.pexels.com/photo/houses-and-church-in-town-13363096/",
+  },
   "13433436": {
     photographer: "Kaan Durmuş",
     photographerUrl: "https://www.pexels.com/@kaandurmus",
@@ -835,6 +855,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Nevtuğ  Yalçın",
     photographerUrl: "https://www.pexels.com/@nevtug-yalcin-491138436",
     photoPageUrl: "https://www.pexels.com/photo/mosaic-on-building-wall-16086936/",
+  },
+  "16111908": {
+    photographer: "Joaquin Carfagna",
+    photographerUrl: "https://www.pexels.com/@joaquin-carfagna-3131171",
+    photoPageUrl: "https://www.pexels.com/photo/facade-of-orenes-gran-casino-castellon-16111908/",
   },
   "16212714": {
     photographer: "Engin Sezer",
@@ -1686,6 +1711,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@liuuu-_61-2383408",
     photoPageUrl: "https://www.pexels.com/photo/busy-subway-station-with-moving-trains-32599871/",
   },
+  "32600803": {
+    photographer: "Yaşar Başkurt",
+    photographerUrl: "https://www.pexels.com/@yasar-baskurt-706180077",
+    photoPageUrl: "https://www.pexels.com/photo/charming-rustic-house-in-tranquil-countryside-32600803/",
+  },
   "32630875": {
     photographer: "Gabriel Grip",
     photographerUrl: "https://www.pexels.com/@legrip",
@@ -1695,6 +1725,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "okan  koçer",
     photographerUrl: "https://www.pexels.com/@okan-kocer-2152337177",
     photoPageUrl: "https://www.pexels.com/photo/straight-railway-tracks-with-power-lines-outdoors-32652128/",
+  },
+  "32669240": {
+    photographer: "Nemika F",
+    photographerUrl: "https://www.pexels.com/@nemika-f-1241784841",
+    photoPageUrl: "https://www.pexels.com/photo/senior-couple-walking-at-a-sunny-train-station-32669240/",
   },
   "32724691": {
     photographer: "Kaue Barbier",
@@ -1990,6 +2025,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Geert Rozendom",
     photographerUrl: "https://www.pexels.com/@geert",
     photoPageUrl: "https://www.pexels.com/photo/sunny-outdoor-coffee-with-cake-in-portuguese-vineyard-35239401/",
+  },
+  "35388184": {
+    photographer: "Travel Photographer",
+    photographerUrl: "https://www.pexels.com/@travel-photographer-127255675",
+    photoPageUrl: "https://www.pexels.com/photo/quiet-madrid-subway-station-at-night-35388184/",
   },
   "35389341": {
     photographer: "Filipa Moreira",
@@ -2305,5 +2345,10 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Jerson Martins",
     photographerUrl: "https://www.pexels.com/@jerson-martins-1514473344",
     photoPageUrl: "https://www.pexels.com/photo/historic-rio-das-velhas-train-station-at-sunset-38844111/",
+  },
+  "38978616": {
+    photographer: "Explora Andalucia",
+    photographerUrl: "https://www.pexels.com/@explora-andalucia-2162577091",
+    photoPageUrl: "https://www.pexels.com/photo/modern-train-station-in-sevilla-spain-38978616/",
   },
 };

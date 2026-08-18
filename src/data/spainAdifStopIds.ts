@@ -23,6 +23,36 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
   "Barcelona-Passeig de Gràcia": ["71802"],
   "Madrid-Puerta de Atocha": ["60000"],
   Tafalla: ["80108"],
+  "Castejón de Ebro": ["81200"],
+
+  "Girona": ["79300"],
+
+  "Valladolid-Campo Grande": ["10600"],
+
+  "Sant Vicenç de Calders": ["71600"],
+
+  "Zaragoza Delicias": ["04040"],
+
+  "Córdoba-Julio Anguita": ["50500"],
+
+  "Sevilla-Santa Justa": ["51003"],
+
+  "Orihuela-Miguel Hernández": ["62002"],
+
+  "Alhama de Murcia": ["06002"],
+
+  "León": ["15100"],
+
+  "Madrid-Príncipe Pío": ["10000"],
+
+  "Madrid-Recoletos": ["18001"],
+
+  "Camp de Tarragona": ["04104"],
+
+  "Valdecilla la Marga": ["05602"],
+
+  "València-Estació del Nord": ["65000"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
