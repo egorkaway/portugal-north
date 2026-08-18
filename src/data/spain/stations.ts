@@ -833,4 +833,58 @@ export const spainStations: Station[] = [
     lng: -3.9136,
   },
 
+  {
+    name: "Pamplona/Iruña",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.8249,
+    lng: -1.6614,
+  },
+
+  {
+    name: "San Sebastián-Donostia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3177,
+    lng: -1.9767,
+  },
+
+  {
+    name: "Zaragoza-Goya",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6439,
+    lng: -0.8913,
+  },
+
+  {
+    name: "Xàtiva",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.9921,
+    lng: -0.5245,
+  },
+
+  {
+    name: "Torrelodones",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5746,
+    lng: -3.9566,
+  },
+
+  {
+    name: "Utrera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.1848,
+    lng: -5.7908,
+  },
+
 ];

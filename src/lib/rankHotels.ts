@@ -1,4 +1,8 @@
-import { getTopDownvoted, getTopUpvoted } from "@/lib/rankVotes";
+import {
+  COMMUNITY_LEADERBOARD_LIMIT,
+  getTopDownvoted,
+  getTopUpvoted,
+} from "@/lib/rankVotes";
 import { pickPublicHotelRatings } from "@/lib/publicStationRatings";
 import type { GlobalRatings } from "@/lib/voteTypes";
 
@@ -36,10 +40,16 @@ function toRankedHotel(item: { id: string; up: number; down: number }): RankedHo
   };
 }
 
-export function getTopUpvotedHotels(ratings: GlobalRatings, limit = 3): RankedHotel[] {
+export function getTopUpvotedHotels(
+  ratings: GlobalRatings,
+  limit = COMMUNITY_LEADERBOARD_LIMIT,
+): RankedHotel[] {
   return getTopUpvoted(pickPublicHotelRatings(ratings), limit).map(toRankedHotel);
 }
 
-export function getTopDownvotedHotels(ratings: GlobalRatings, limit = 3): RankedHotel[] {
+export function getTopDownvotedHotels(
+  ratings: GlobalRatings,
+  limit = COMMUNITY_LEADERBOARD_LIMIT,
+): RankedHotel[] {
   return getTopDownvoted(pickPublicHotelRatings(ratings), limit).map(toRankedHotel);
 }

@@ -1,5 +1,8 @@
 import type { GlobalRatings } from "@/lib/voteTypes";
 
+/** Displayed size for community vote leaderboards (stations and hotels). */
+export const COMMUNITY_LEADERBOARD_LIMIT = 5;
+
 export type RankedItem = {
   id: string;
   name: string;
@@ -7,7 +10,10 @@ export type RankedItem = {
   down: number;
 };
 
-export function getTopUpvoted(ratings: GlobalRatings, limit = 3): RankedItem[] {
+export function getTopUpvoted(
+  ratings: GlobalRatings,
+  limit = COMMUNITY_LEADERBOARD_LIMIT,
+): RankedItem[] {
   return Object.entries(ratings)
     .filter(([, counts]) => counts.up > 0)
     .sort(
@@ -20,7 +26,10 @@ export function getTopUpvoted(ratings: GlobalRatings, limit = 3): RankedItem[] {
     .map(([id, counts]) => ({ id, name: id, ...counts }));
 }
 
-export function getTopDownvoted(ratings: GlobalRatings, limit = 3): RankedItem[] {
+export function getTopDownvoted(
+  ratings: GlobalRatings,
+  limit = COMMUNITY_LEADERBOARD_LIMIT,
+): RankedItem[] {
   return Object.entries(ratings)
     .filter(([, counts]) => counts.down > 0)
     .sort(

@@ -496,6 +496,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@fatma-cakir-69810614",
     photoPageUrl: "https://www.pexels.com/photo/footsteps-on-the-snow-beside-the-train-8356409/",
   },
+  "8628930": {
+    photographer: "Anastasia  Kostyleva",
+    photographerUrl: "https://www.pexels.com/@anastasia-kostyleva-76907665",
+    photoPageUrl: "https://www.pexels.com/photo/windows-of-abandoned-warehouse-8628930/",
+  },
   "9180935": {
     photographer: "Cátia Matos",
     photographerUrl: "https://www.pexels.com/@catiamatos",
@@ -825,6 +830,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Jan van der Wolf",
     photographerUrl: "https://www.pexels.com/@jan-van-der-wolf-11680885",
     photoPageUrl: "https://www.pexels.com/photo/benches-in-a-railway-station-14844696/",
+  },
+  "14916418": {
+    photographer: "Bilakis",
+    photographerUrl: "https://www.pexels.com/@bilakis",
+    photoPageUrl: "https://www.pexels.com/photo/railway-station-platform-14916418/",
   },
   "14924416": {
     photographer: "Vladimir Srajber",

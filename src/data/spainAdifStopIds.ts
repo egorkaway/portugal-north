@@ -173,6 +173,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Ciudad Real": ["37200"],
 
+  "Pamplona/Iruña": ["80100"],
+
+  "San Sebastián-Donostia": ["11511"],
+
+  "Zaragoza-Goya": ["70807"],
+
+  "Xàtiva": ["64100"],
+
+  "Torrelodones": ["10103"],
+
+  "Utrera": ["51200"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

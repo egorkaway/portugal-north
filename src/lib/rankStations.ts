@@ -1,4 +1,5 @@
 import {
+  COMMUNITY_LEADERBOARD_LIMIT,
   getTopDownvoted as rankTopDown,
   getTopUpvoted as rankTopUp,
 } from "@/lib/rankVotes";
@@ -23,7 +24,10 @@ export type StationRankingRow = {
   net: number;
 };
 
-export function getTopUpvoted(ratings: GlobalRatings, limit = 3): RankedStation[] {
+export function getTopUpvoted(
+  ratings: GlobalRatings,
+  limit = COMMUNITY_LEADERBOARD_LIMIT,
+): RankedStation[] {
   return rankTopUp(pickPublicStationRatings(ratings), limit).map(({ id, up, down }) => ({
     name: id,
     up,
@@ -31,7 +35,10 @@ export function getTopUpvoted(ratings: GlobalRatings, limit = 3): RankedStation[
   }));
 }
 
-export function getTopDownvoted(ratings: GlobalRatings, limit = 3): RankedStation[] {
+export function getTopDownvoted(
+  ratings: GlobalRatings,
+  limit = COMMUNITY_LEADERBOARD_LIMIT,
+): RankedStation[] {
   return rankTopDown(pickPublicStationRatings(ratings), limit).map(({ id, up, down }) => ({
     name: id,
     up,

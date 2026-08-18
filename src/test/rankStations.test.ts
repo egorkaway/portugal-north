@@ -12,27 +12,45 @@ import { distanceKm } from "@/lib/geo";
 import type { Station } from "@/data/stations";
 
 describe("rankStations", () => {
-  it("returns top 3 upvoted stations by up count", () => {
+  it("returns top 5 upvoted stations by up count", () => {
     const ranked = getTopUpvoted({
       Aveiro: { up: 2, down: 0 },
       "Porto-Campanhã": { up: 5, down: 1 },
       Faro: { up: 5, down: 0 },
       Coimbra: { up: 1, down: 0 },
+      Braga: { up: 3, down: 0 },
+      Guarda: { up: 4, down: 0 },
+      Beja: { up: 1, down: 1 },
     });
 
-    expect(ranked.map((s) => s.name)).toEqual(["Faro", "Porto-Campanhã", "Aveiro"]);
+    expect(ranked.map((s) => s.name)).toEqual([
+      "Faro",
+      "Porto-Campanhã",
+      "Guarda",
+      "Braga",
+      "Aveiro",
+    ]);
   });
 
-  it("returns top 3 downvoted stations by down count", () => {
+  it("returns top 5 downvoted stations by down count", () => {
     const ranked = getTopDownvoted({
       Aveiro: { up: 0, down: 4 },
       "Porto-Campanhã": { up: 1, down: 2 },
       Faro: { up: 0, down: 7 },
       Coimbra: { up: 0, down: 1 },
+      Braga: { up: 0, down: 5 },
+      Guarda: { up: 0, down: 3 },
+      Beja: { up: 0, down: 1 },
       "London Stansted Airport (STN)": { up: 0, down: 99 },
     });
 
-    expect(ranked.map((s) => s.name)).toEqual(["Faro", "Aveiro", "Porto-Campanhã"]);
+    expect(ranked.map((s) => s.name)).toEqual([
+      "Faro",
+      "Braga",
+      "Aveiro",
+      "Guarda",
+      "Porto-Campanhã",
+    ]);
   });
 
   it("builds ranked CSV rows for every station with votes", () => {

@@ -2373,6 +2373,26 @@ export const stationHotels: StationHotels = {
     { name: "Escudero", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Escudero%2C%20Ciudad%20Real%2C%20Spain&order=price" },
     { name: "Hotel Silken Alfonso X", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Silken%20Alfonso%20X%2C%20Ciudad%20Real%2C%20Spain&order=price" },
   ],
+  "Pamplona/Iruña": [
+    { name: "Hotel Pamplona Plaza", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pamplona%20Plaza%2C%20Pamplona%2FIru%C3%B1a%2C%20Spain&order=price" },
+    { name: "Hotel Alda Centro Pamplona", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alda%20Centro%20Pamplona%2C%20Pamplona%2FIru%C3%B1a%2C%20Spain&order=price" },
+    { name: "Albergue Diocesano Betania", distanceKm: 1.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Diocesano%20Betania%2C%20Pamplona%2FIru%C3%B1a%2C%20Spain&order=price" },
+  ],
+  "San Sebastián-Donostia": [
+    { name: "Hotel Beverly Park", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Beverly%20Park%2C%20San%20Sebasti%C3%A1n-Donostia%2C%20Spain&order=price" },
+    { name: "Hotel Terminus", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Terminus%2C%20San%20Sebasti%C3%A1n-Donostia%2C%20Spain&order=price" },
+    { name: "Atotxa rooms", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Atotxa%20rooms%2C%20San%20Sebasti%C3%A1n-Donostia%2C%20Spain&order=price" },
+  ],
+  "Zaragoza-Goya": [
+    { name: "Hotel Gran Vía", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Gran%20V%C3%ADa%2C%20Zaragoza-Goya%2C%20Spain&order=price" },
+    { name: "Hostal Castilla", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Castilla%2C%20Zaragoza-Goya%2C%20Spain&order=price" },
+    { name: "Hotel Zaragoza Royal", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Zaragoza%20Royal%2C%20Zaragoza-Goya%2C%20Spain&order=price" },
+  ],
+  "Xàtiva": [
+    { name: "Hotel Vernisa", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vernisa%2C%20X%C3%A0tiva%2C%20Spain&order=price" },
+    { name: "Casa Camino al Castillo", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Camino%20al%20Castillo%2C%20X%C3%A0tiva%2C%20Spain&order=price" },
+    { name: "Albergue turistico 'El Palau'", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20turistico%20'El%20Palau'%2C%20X%C3%A0tiva%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
