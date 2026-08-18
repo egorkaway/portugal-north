@@ -504,6 +504,7 @@ export const stationImages: Record<string, string> = {
   "Tui": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tuy_-_Estaci%C3%B3n_de_tren_2.JPG/960px-Tuy_-_Estaci%C3%B3n_de_tren_2.JPG",
   "Tunes": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Tunes_Railway_Station_16_September_2015_%281%29.JPG/960px-Tunes_Railway_Station_16_September_2015_%281%29.JPG",
   "Universidad de Alicante": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Apeadero_Universidad_de_Alicante.jpg/960px-Apeadero_Universidad_de_Alicante.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "Utrera": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Estaci%C3%B3n_de_Utrera_-_IMG_20250710_211631.jpg/960px-Estaci%C3%B3n_de_Utrera_-_IMG_20250710_211631.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Valadares": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Valadares.jpg/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_de_Valadares.jpg",
   "Valado – Nazaré – Alcobaça": "https://images.pexels.com/photos/17755286/pexels-photo-17755286.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Valdebebas": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Intercambiador_de_Valdebebas_%282%29.jpg/960px-Intercambiador_de_Valdebebas_%282%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

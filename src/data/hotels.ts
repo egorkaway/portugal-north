@@ -2393,6 +2393,11 @@ export const stationHotels: StationHotels = {
     { name: "Casa Camino al Castillo", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Camino%20al%20Castillo%2C%20X%C3%A0tiva%2C%20Spain&order=price" },
     { name: "Albergue turistico 'El Palau'", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20turistico%20'El%20Palau'%2C%20X%C3%A0tiva%2C%20Spain&order=price" },
   ],
+  "Torrelodones": [
+    { name: "Hotel Pax Torrelodones", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pax%20Torrelodones%2C%20Torrelodones%2C%20Spain&order=price" },
+    { name: "CASA CYRIL", distanceKm: 4.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=CASA%20CYRIL%2C%20Torrelodones%2C%20Spain&order=price" },
+    { name: "Yusta", distanceKm: 4.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Yusta%2C%20Torrelodones%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
