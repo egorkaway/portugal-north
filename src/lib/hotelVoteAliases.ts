@@ -96,7 +96,3 @@ export function mergeAliasedHotelClosedReports<T extends { reports: number }>(
     reports: current.reports + incoming.reports,
   }));
 }
-
-export function isAliasHotelName(stationName: string, hotelName: string): boolean {
-  return canonicalHotelName(stationName, hotelName) !== hotelName;
-}

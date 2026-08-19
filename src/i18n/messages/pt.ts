@@ -311,6 +311,7 @@ export const pt: Messages = {
     spainTrainCercanias: "Cercanías",
     spainTrainLongDistance: "Longa distância",
     spainTrainTooltip: "{{label}} · {{kind}}",
+    spainTrainTo: "para",
     airportLis: "Lisboa Humberto Delgado",
     airportPorto: "Porto Francisco Sá Carneiro",
     airportFaro: "Faro",

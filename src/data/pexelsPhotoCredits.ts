@@ -786,6 +786,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@henrique-guimaraes-337906737",
     photoPageUrl: "https://www.pexels.com/photo/empty-island-platforms-at-krakow-train-station-poland-13983001/",
   },
+  "14018325": {
+    photographer: "Ramon Perucho",
+    photographerUrl: "https://www.pexels.com/@rperucho",
+    photoPageUrl: "https://www.pexels.com/photo/ceiling-at-madrid-barajas-airport-in-madrid-spain-14018325/",
+  },
   "14148163": {
     photographer: "Breno Cardoso",
     photographerUrl: "https://www.pexels.com/@breno-cardoso-149064345",
@@ -840,6 +845,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Bilakis",
     photographerUrl: "https://www.pexels.com/@bilakis",
     photoPageUrl: "https://www.pexels.com/photo/railway-station-platform-14916418/",
+  },
+  "14916421": {
+    photographer: "Bilakis",
+    photographerUrl: "https://www.pexels.com/@bilakis",
+    photoPageUrl: "https://www.pexels.com/photo/man-running-on-railway-station-14916421/",
   },
   "14924416": {
     photographer: "Vladimir Srajber",
@@ -1030,6 +1040,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "João Valverde",
     photographerUrl: "https://www.pexels.com/@joao-valverde-369196822",
     photoPageUrl: "https://www.pexels.com/photo/people-waiting-at-a-train-station-platform-at-milan-italy-17427532/",
+  },
+  "17457459": {
+    photographer: "mermoz lionel",
+    photographerUrl: "https://www.pexels.com/@mermoz-lionel-622163994",
+    photoPageUrl: "https://www.pexels.com/photo/modern-railway-station-17457459/",
   },
   "17554654": {
     photographer: "Pascal B.",
@@ -1481,6 +1496,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@alimuart",
     photoPageUrl: "https://www.pexels.com/photo/blurred-motion-of-subway-train-at-station-28601256/",
   },
+  "28770546": {
+    photographer: "J MAD",
+    photographerUrl: "https://www.pexels.com/@juicemitapfelndrin",
+    photoPageUrl: "https://www.pexels.com/photo/architectural-glass-roof-of-antwerp-station-28770546/",
+  },
   "29144892": {
     photographer: "Liane Ferreira",
     photographerUrl: "https://www.pexels.com/@liane-ferreira-1033991071",
@@ -1490,6 +1510,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Gabii Fernandez",
     photographerUrl: "https://www.pexels.com/@gabii-fernandez-199438359",
     photoPageUrl: "https://www.pexels.com/photo/high-speed-subway-train-in-buenos-aires-station-29145818/",
+  },
+  "29183525": {
+    photographer: "M.Emin  BİLİR",
+    photographerUrl: "https://www.pexels.com/@travelerchitect",
+    photoPageUrl: "https://www.pexels.com/photo/dynamic-nighttime-train-station-with-motion-blur-29183525/",
   },
   "29189116": {
     photographer: "jordan besson",
@@ -2250,6 +2275,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Egor Kunovsky",
     photographerUrl: "https://www.pexels.com/@egor-kunovsky-1199972",
     photoPageUrl: "https://www.pexels.com/photo/classic-european-architecture-under-blue-sky-36471670/",
+  },
+  "36482789": {
+    photographer: "Miguel Cuenca",
+    photographerUrl: "https://www.pexels.com/@miguel-cuenca-67882473",
+    photoPageUrl: "https://www.pexels.com/photo/aerial-view-of-madrid-skyline-with-cloudy-sky-36482789/",
   },
   "36536130": {
     photographer: "Egor Kunovsky",

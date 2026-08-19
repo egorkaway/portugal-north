@@ -197,6 +197,42 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Santander": ["14223"],
 
+  "Soto del Henares": ["70112"],
+
+  "Vila-seca": ["71401"],
+
+  "Cambrils": ["65422"],
+
+  "Las Rozas": ["10005"],
+
+  "Leganés": ["35001"],
+
+  "Madrid-Ramón y Cajal": ["97201"],
+
+  "Calatayud": ["70600"],
+
+  "Navalmoral de la Mata": ["35206"],
+
+  "Reinosa": ["14202"],
+
+  "Miranda de Ebro": ["11200"],
+
+  "Fuencarral": ["17001"],
+
+  "San Fernando de Henares": ["70101"],
+
+  "L'Hospitalet de Llobregat": ["72305"],
+
+  "Las Matas": ["10101"],
+
+  "Torrelavega": ["14213"],
+
+  "Madrid-Villaverde Bajo": ["60100"],
+
+  "Pitis": ["97100"],
+
+  "Valdelasfuentes": ["19002"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

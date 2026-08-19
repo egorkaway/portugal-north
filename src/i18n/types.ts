@@ -281,6 +281,7 @@ export type Messages = {
     spainTrainCercanias: string;
     spainTrainLongDistance: string;
     spainTrainTooltip: string;
+    spainTrainTo: string;
     airportLis: string;
     airportPorto: string;
     airportFaro: string;

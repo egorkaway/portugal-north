@@ -941,4 +941,166 @@ export const spainStations: Station[] = [
     lng: -3.811,
   },
 
+  {
+    name: "Soto del Henares",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.464,
+    lng: -3.4414,
+  },
+
+  {
+    name: "Vila-seca",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1128,
+    lng: 1.1504,
+  },
+
+  {
+    name: "Cambrils",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.0816,
+    lng: 1.046,
+  },
+
+  {
+    name: "Las Rozas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4943,
+    lng: -3.8682,
+  },
+
+  {
+    name: "Leganés",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.3286,
+    lng: -3.7713,
+  },
+
+  {
+    name: "Madrid-Ramón y Cajal",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4881,
+    lng: -3.6948,
+  },
+
+  {
+    name: "Calatayud",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.3467,
+    lng: -1.6387,
+  },
+
+  {
+    name: "Navalmoral de la Mata",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.8949,
+    lng: -5.5456,
+  },
+
+  {
+    name: "Reinosa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.9945,
+    lng: -4.1409,
+  },
+
+  {
+    name: "Miranda de Ebro",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.691,
+    lng: -2.9404,
+  },
+
+  {
+    name: "Fuencarral",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.5016,
+    lng: -3.6825,
+  },
+
+  {
+    name: "San Fernando de Henares",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4428,
+    lng: -3.534,
+  },
+
+  {
+    name: "L'Hospitalet de Llobregat",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3642,
+    lng: 2.1009,
+  },
+
+  {
+    name: "Las Matas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5524,
+    lng: -3.8968,
+  },
+
+  {
+    name: "Torrelavega",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3277,
+    lng: -4.0427,
+  },
+
+  {
+    name: "Madrid-Villaverde Bajo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3527,
+    lng: -3.6839,
+  },
+
+  {
+    name: "Pitis",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4954,
+    lng: -3.7262,
+  },
+
+  {
+    name: "Valdelasfuentes",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.5474,
+    lng: -3.6543,
+  },
+
 ];

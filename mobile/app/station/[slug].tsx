@@ -27,7 +27,6 @@ import { getAirportConnectionsEntry } from '@/lib/airportConnections';
 import { remoteImageSource } from '@/lib/remoteImage';
 import {
   bakedReliabilityScores,
-  bakedSpainReliabilityScores,
   getHotelsForStation,
   getStationBySlug,
   getStationImageUrl,
@@ -98,7 +97,7 @@ export default function StationDetailScreen() {
   const summary = getSummaryForStation(station.name);
   const hotels = getHotelsForStation(station.name);
   const reliability = getReliabilityForStation(
-    station.country === 'es' ? bakedSpainReliabilityScores : bakedReliabilityScores,
+    bakedReliabilityScores,
     station.name,
   );
   const hasCpCode = Boolean(getCpCode(station.name));

@@ -1,4 +1,9 @@
-import { canonicalHotelVoteKey, parseHotelKeyedRecord, mergeAliasedHotelClosedReports, mergeAliasedHotelRatings } from "../../src/lib/hotelVoteAliases.js";
+import {
+  canonicalHotelVoteKey,
+  mergeAliasedHotelClosedReports,
+  mergeAliasedHotelRatings,
+  parseHotelKeyedRecord,
+} from "../../src/lib/hotelVoteAliases.js";
 import {
   readCommunityVotesFromBlob,
   writeCommunityVotesToBlob,

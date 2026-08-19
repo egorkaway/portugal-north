@@ -12,12 +12,16 @@ export type SpainTrainKind = "cercanias" | "longDistance";
 
 export type SpainTrainPosition = {
   id: string;
+  tripId: string | null;
   lat: number;
   lng: number;
   label: string;
   line: string | null;
   kind: SpainTrainKind;
   status: string | null;
+  delayMinutes: number | null;
+  nextStation: string | null;
+  serviceType: string | null;
 };
 
 export type SpainTrainsManifest = {
@@ -71,12 +75,16 @@ export function parseGtfsRtVehicles(
 
     trains.push({
       id: `${kind}:${entity.id ?? label}`,
+      tripId: vehicle?.trip?.tripId?.trim() ?? null,
       lat,
       lng,
       label,
       line: lineFromLabel(label),
       kind,
       status: vehicle?.currentStatus ?? null,
+      delayMinutes: null,
+      nextStation: null,
+      serviceType: null,
     });
   }
   return trains;

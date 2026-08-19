@@ -2431,6 +2431,96 @@ export const stationHotels: StationHotels = {
     { name: "Angelines", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Angelines%2C%20Santander%2C%20Spain&order=price" },
     { name: "Pensión Fernando", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Fernando%2C%20Santander%2C%20Spain&order=price" },
   ],
+  "Soto del Henares": [
+    { name: "Hotel LOOB", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20LOOB%2C%20Soto%20del%20Henares%2C%20Spain&order=price" },
+    { name: "Hostal Torrejón", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Torrej%C3%B3n%2C%20Soto%20del%20Henares%2C%20Spain&order=price" },
+    { name: "Hotel Aida", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Aida%2C%20Soto%20del%20Henares%2C%20Spain&order=price" },
+  ],
+  "Vila-seca": [
+    { name: "Pensio Salvado", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensio%20Salvado%2C%20Vila-seca%2C%20Spain&order=price" },
+    { name: "Raval de la Mar", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Raval%20de%20la%20Mar%2C%20Vila-seca%2C%20Spain&order=price" },
+    { name: "Atenea Aventura Apparthotel", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Atenea%20Aventura%20Apparthotel%2C%20Vila-seca%2C%20Spain&order=price" },
+  ],
+  "Cambrils": [
+    { name: "Hotel Vila Mar", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vila%20Mar%2C%20Cambrils%2C%20Spain&order=price" },
+    { name: "Hotel Port Eugeni", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Port%20Eugeni%2C%20Cambrils%2C%20Spain&order=price" },
+    { name: "Sol Port Cambrils", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sol%20Port%20Cambrils%2C%20Cambrils%2C%20Spain&order=price" },
+  ],
+  "Las Rozas": [
+    { name: "TH Aparthotel Las Rozas", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=TH%20Aparthotel%20Las%20Rozas%2C%20Las%20Rozas%2C%20Spain&order=price" },
+    { name: "Hostal Doña Isabel", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Do%C3%B1a%20Isabel%2C%20Las%20Rozas%2C%20Spain&order=price" },
+    { name: "B&B Hotel Madrid Pinar de Las Rozas", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotel%20Madrid%20Pinar%20de%20Las%20Rozas%2C%20Las%20Rozas%2C%20Spain&order=price" },
+  ],
+  "Leganés": [
+    { name: "micampus Leganés", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=micampus%20Legan%C3%A9s%2C%20Legan%C3%A9s%2C%20Spain&order=price" },
+    { name: "Leganés Urban Apartments", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Legan%C3%A9s%20Urban%20Apartments%2C%20Legan%C3%A9s%2C%20Spain&order=price" },
+    { name: "Crisol Leganés", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Crisol%20Legan%C3%A9s%2C%20Legan%C3%A9s%2C%20Spain&order=price" },
+  ],
+  "Madrid-Ramón y Cajal": [
+    { name: "Habitaciones 'Aránzazu'", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Habitaciones%20'Ar%C3%A1nzazu'%2C%20Madrid-Ram%C3%B3n%20y%20Cajal%2C%20Spain&order=price" },
+    { name: "Pensión 'Mónica'", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20'M%C3%B3nica'%2C%20Madrid-Ram%C3%B3n%20y%20Cajal%2C%20Spain&order=price" },
+    { name: "Hotel VillaMadrid", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20VillaMadrid%2C%20Madrid-Ram%C3%B3n%20y%20Cajal%2C%20Spain&order=price" },
+  ],
+  "Calatayud": [
+    { name: "Globales Castillo de Ayud", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Globales%20Castillo%20de%20Ayud%2C%20Calatayud%2C%20Spain&order=price" },
+    { name: "Fornos", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Fornos%2C%20Calatayud%2C%20Spain&order=price" },
+    { name: "Arco San Miguel", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arco%20San%20Miguel%2C%20Calatayud%2C%20Spain&order=price" },
+  ],
+  "Navalmoral de la Mata": [
+    { name: "Hotel Moya", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Moya%2C%20Navalmoral%20de%20la%20Mata%2C%20Spain&order=price" },
+    { name: "Hotel TAYP", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20TAYP%2C%20Navalmoral%20de%20la%20Mata%2C%20Spain&order=price" },
+    { name: "Pensión Salamanca", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Salamanca%2C%20Navalmoral%20de%20la%20Mata%2C%20Spain&order=price" },
+  ],
+  "Reinosa": [
+    { name: "El Golobar", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Golobar%2C%20Reinosa%2C%20Spain&order=price" },
+    { name: "La Casona de Nestares", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casona%20de%20Nestares%2C%20Reinosa%2C%20Spain&order=price" },
+    { name: "Hotel Restaurante San Roque", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurante%20San%20Roque%2C%20Reinosa%2C%20Spain&order=price" },
+  ],
+  "Miranda de Ebro": [
+    { name: "La Ferroviaria", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Ferroviaria%2C%20Miranda%20de%20Ebro%2C%20Spain&order=price" },
+    { name: "Hotel Achuri", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Achuri%2C%20Miranda%20de%20Ebro%2C%20Spain&order=price" },
+    { name: "Sercotel Ciudad de Miranda", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20Ciudad%20de%20Miranda%2C%20Miranda%20de%20Ebro%2C%20Spain&order=price" },
+  ],
+  "Fuencarral": [
+    { name: "Hotel VillaMadrid", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20VillaMadrid%2C%20Fuencarral%2C%20Spain&order=price" },
+    { name: "voco Madrid - Las Tablas by IHG", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=voco%20Madrid%20-%20Las%20Tablas%20by%20IHG%2C%20Fuencarral%2C%20Spain&order=price" },
+    { name: "Exe Madrid Norte", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Madrid%20Norte%2C%20Fuencarral%2C%20Spain&order=price" },
+  ],
+  "San Fernando de Henares": [
+    { name: "AC Hotel Coslada Aeropuerto", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AC%20Hotel%20Coslada%20Aeropuerto%2C%20San%20Fernando%20de%20Henares%2C%20Spain&order=price" },
+    { name: "Crowne Plaza Madrid Airport", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Crowne%20Plaza%20Madrid%20Airport%2C%20San%20Fernando%20de%20Henares%2C%20Spain&order=price" },
+    { name: "B&B Hotel Madrid Airport T1 T2 T3", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotel%20Madrid%20Airport%20T1%20T2%20T3%2C%20San%20Fernando%20de%20Henares%2C%20Spain&order=price" },
+  ],
+  "L'Hospitalet de Llobregat": [
+    { name: "Aura Park", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aura%20Park%2C%20L'Hospitalet%20de%20Llobregat%2C%20Spain&order=price" },
+    { name: "marina esteban", distanceKm: 1.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=marina%20esteban%2C%20L'Hospitalet%20de%20Llobregat%2C%20Spain&order=price" },
+    { name: "Novotel Cornella", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Novotel%20Cornella%2C%20L'Hospitalet%20de%20Llobregat%2C%20Spain&order=price" },
+  ],
+  "Las Matas": [
+    { name: "Hotel Plaza Las Matas", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Plaza%20Las%20Matas%2C%20Las%20Matas%2C%20Spain&order=price" },
+    { name: "Exe Gran Hotel Almenar", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Gran%20Hotel%20Almenar%2C%20Las%20Matas%2C%20Spain&order=price" },
+    { name: "Motel Los Peñascales", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Los%20Pe%C3%B1ascales%2C%20Las%20Matas%2C%20Spain&order=price" },
+  ],
+  "Torrelavega": [
+    { name: "La Terraza de Susi", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Terraza%20de%20Susi%2C%20Torrelavega%2C%20Spain&order=price" },
+    { name: "Casa Marte Doble", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Marte%20Doble%2C%20Torrelavega%2C%20Spain&order=price" },
+    { name: "Casa Velarde", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Velarde%2C%20Torrelavega%2C%20Spain&order=price" },
+  ],
+  "Madrid-Villaverde Bajo": [
+    { name: "Hotel Mercader", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mercader%2C%20Madrid-Villaverde%20Bajo%2C%20Spain&order=price" },
+    { name: "Albergue juvenil San Fermín", distanceKm: 2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20juvenil%20San%20Ferm%C3%ADn%2C%20Madrid-Villaverde%20Bajo%2C%20Spain&order=price" },
+    { name: "Hotel Vértice Roomspace Madrid", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20V%C3%A9rtice%20Roomspace%20Madrid%2C%20Madrid-Villaverde%20Bajo%2C%20Spain&order=price" },
+  ],
+  "Pitis": [
+    { name: "Eurostars Suites Mirasierra", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostars%20Suites%20Mirasierra%2C%20Pitis%2C%20Spain&order=price" },
+    { name: "Hostal Golden 21", distanceKm: 2.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Golden%2021%2C%20Pitis%2C%20Spain&order=price" },
+    { name: "Eurostars Monte Real", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostars%20Monte%20Real%2C%20Pitis%2C%20Spain&order=price" },
+  ],
+  "Valdelasfuentes": [
+    { name: "Hotel Amura", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Amura%2C%20Valdelasfuentes%2C%20Spain&order=price" },
+    { name: "Hotel Ibis Madrid Alcobendas", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ibis%20Madrid%20Alcobendas%2C%20Valdelasfuentes%2C%20Spain&order=price" },
+    { name: "Hotel UVE Alcobendas", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20UVE%20Alcobendas%2C%20Valdelasfuentes%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

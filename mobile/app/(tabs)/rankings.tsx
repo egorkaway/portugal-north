@@ -16,13 +16,12 @@ import { fetchGlobalRatings } from '@/lib/api';
 import { getTopDownvotedHotels, getTopUpvotedHotels } from '@/lib/rankHotels';
 import { getTopDownvoted, getTopUpvoted } from '@/lib/rankVotes';
 import {
-  buildSpainReliabilityRankings,
   getBottomReliabilityStations,
   getTopReliabilityStations,
   reliabilityScoreColor,
   formatReliabilityScore,
 } from '@/lib/reliabilityScore';
-import { bakedReliabilityScores, bakedSpainReliabilityScores, bakedTrainReliabilitySpotlight, pickPublicHotelRatings, pickPublicStationRatings, stationToSlug } from '@/lib/stationData';
+import { bakedReliabilityScores, bakedTrainReliabilitySpotlight, pickPublicHotelRatings, pickPublicStationRatings, stationToSlug } from '@/lib/stationData';
 import {
   formatTrainSpotlightDelay,
   trainSpotlightDelayColor,
@@ -69,10 +68,6 @@ export default function RankingsScreen() {
     reliability.scores,
     reliability.movements,
     10,
-  );
-  const spainRankings = buildSpainReliabilityRankings(
-    bakedSpainReliabilityScores.scores,
-    bakedSpainReliabilityScores.movements,
   );
   const topStations = getTopUpvoted(ratings.station, 10);
   const bottomStations = getTopDownvoted(ratings.station, 10);
@@ -122,35 +117,7 @@ export default function RankingsScreen() {
         ))}
       </RankingSection>
 
-      {spainRankings.top.length > 0 ? (
-        <>
-          <RankingSection title={t('rankings.spainMostReliable')}>
-            {spainRankings.top.map((item, index) => (
-              <RankingRow
-                key={item.name}
-                rank={index + 1}
-                title={item.name}
-                value={`${formatReliabilityScore(item.score)}/10`}
-                valueColor={reliabilityScoreColor(item.score)}
-                onPress={() => router.push(`/station/${stationToSlug(item.name)}`)}
-              />
-            ))}
-          </RankingSection>
-
-          <RankingSection title={t('rankings.spainLeastReliable')}>
-            {spainRankings.bottom.map((item, index) => (
-              <RankingRow
-                key={item.name}
-                rank={index + 1}
-                title={item.name}
-                value={`${formatReliabilityScore(item.score)}/10`}
-                valueColor={reliabilityScoreColor(item.score)}
-                onPress={() => router.push(`/station/${stationToSlug(item.name)}`)}
-              />
-            ))}
-          </RankingSection>
-        </>
-      ) : null}
+      {/* Spain reliability rankings hidden for now — data still collecting */}
 
       {(trainSpotlight.mostReliable || trainSpotlight.mostDelayed) && (
         <RankingSection title={t('rankings.trainSpotlightTitle')}>

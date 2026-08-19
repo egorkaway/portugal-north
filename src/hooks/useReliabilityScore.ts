@@ -1,6 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCpStationCode } from "@/data/cpStationCodes";
-import { primarySpainStopId } from "@/data/spainAdifStopIds";
 import { fetchReliabilityScores, fetchSpainReliabilityScores } from "@/lib/reliabilityScore";
 
 export function useReliabilityScores() {
@@ -24,17 +23,7 @@ export function useSpainReliabilityScores(enabled = true) {
 
 export function useReliabilityScore(stationName: string) {
   const cpCode = getCpStationCode(stationName);
-  const spainStopId = primarySpainStopId(stationName);
   const portugalQuery = useReliabilityScores();
-  const spainQuery = useSpainReliabilityScores(Boolean(spainStopId));
-
-  if (spainStopId) {
-    return {
-      ...spainQuery,
-      score: spainQuery.data?.scores[stationName],
-      hasScoreSource: true,
-    };
-  }
 
   return {
     ...portugalQuery,

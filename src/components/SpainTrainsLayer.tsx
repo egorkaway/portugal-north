@@ -20,6 +20,17 @@ const longDistanceIcon = divIcon({
   iconAnchor: [12, 12],
 });
 
+function trainTooltipLabel(train: SpainTrainPosition, t: (key: string) => string): string {
+  const type =
+    train.serviceType ??
+    (train.kind === "longDistance" ? t("map.spainTrainLongDistance") : t("map.spainTrainCercanias"));
+  const id = train.line ? `${train.line} · ${train.label}` : train.label;
+  let text = `${type} · ${id}`;
+  if (train.nextStation) text += ` ${t("map.spainTrainTo")} ${train.nextStation}`;
+  if (train.delayMinutes != null && train.delayMinutes > 0) text += ` (+${train.delayMinutes} min)`;
+  return text;
+}
+
 export function SpainTrainsLayer({ trains }: { trains: SpainTrainPosition[] }) {
   const { t } = useLocale();
 
@@ -32,13 +43,7 @@ export function SpainTrainsLayer({ trains }: { trains: SpainTrainPosition[] }) {
           icon={train.kind === "longDistance" ? longDistanceIcon : cercaniasIcon}
         >
           <Tooltip direction="top" offset={[0, -10]}>
-            {t("map.spainTrainTooltip", {
-              label: train.line ? `${train.line} · ${train.label}` : train.label,
-              kind:
-                train.kind === "longDistance"
-                  ? t("map.spainTrainLongDistance")
-                  : t("map.spainTrainCercanias"),
-            })}
+            {trainTooltipLabel(train, t)}
           </Tooltip>
         </Marker>
       ))}
