@@ -182,14 +182,18 @@ export default function StationActivityMap() {
           />
           {t("map.legendAirports")}
         </span>
-        <span className="inline-flex items-center gap-2">
-          <span aria-hidden="true">🚂</span>
-          {t("map.legendSpainCercanias")}
-        </span>
-        <span className="inline-flex items-center gap-2">
-          <span aria-hidden="true">🚆</span>
-          {t("map.legendSpainLongDistance")}
-        </span>
+        {spainTrains?.trains.length ? (
+          <>
+            <span className="inline-flex items-center gap-2">
+              <span aria-hidden="true">🚂</span>
+              {t("map.legendSpainCercanias")}
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <span aria-hidden="true">🚆</span>
+              {t("map.legendSpainLongDistance")}
+            </span>
+          </>
+        ) : null}
       </div>
     </div>
   );
