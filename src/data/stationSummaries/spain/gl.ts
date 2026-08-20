@@ -568,4 +568,13 @@ export const spainSummariesGl: Record<string, string> = {
   "San Ranón":
     "San Ranón é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Legazpi":
+    "Legazpi é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Mirasierra-Paco de Lucía":
+    "Mirasierra-Paco de Lucía é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Benicarló-Peñíscola":
+    "Benicarló-Peñíscola é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

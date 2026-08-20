@@ -1535,4 +1535,31 @@ export const spainStations: Station[] = [
     lng: -6.082,
   },
 
+  {
+    name: "Legazpi",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.051,
+    lng: -2.3306,
+  },
+
+  {
+    name: "Mirasierra-Paco de Lucía",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4998,
+    lng: -3.7093,
+  },
+
+  {
+    name: "Benicarló-Peñíscola",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4276,
+    lng: 0.4152,
+  },
+
 ];

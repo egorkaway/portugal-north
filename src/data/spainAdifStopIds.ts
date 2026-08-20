@@ -329,6 +329,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "San Ranón": ["05327"],
 
+  "Legazpi": ["11306"],
+
+  "Mirasierra-Paco de Lucía": ["97200"],
+
+  "Benicarló-Peñíscola": ["65311"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

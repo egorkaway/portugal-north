@@ -1176,6 +1176,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@dila-e-2831565",
     photoPageUrl: "https://www.pexels.com/photo/railway-station-and-a-train-on-the-filmstrip-18976710/",
   },
+  "19034403": {
+    photographer: "Joerg Hartmann",
+    photographerUrl: "https://www.pexels.com/@joerg-hartmann-626385254",
+    photoPageUrl: "https://www.pexels.com/photo/benches-in-front-of-the-railway-station-waiting-room-19034403/",
+  },
   "19091956": {
     photographer: "Masi",
     photographerUrl: "https://www.pexels.com/@masi-461420600",

@@ -568,4 +568,13 @@ export const spainSummariesCa: Record<string, string> = {
   "San Ranón":
     "San Ranón és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Legazpi":
+    "Legazpi és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Mirasierra-Paco de Lucía":
+    "Mirasierra-Paco de Lucía és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Benicarló-Peñíscola":
+    "Benicarló-Peñíscola és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

@@ -2761,6 +2761,21 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Palacio de La Magdalena", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Palacio%20de%20La%20Magdalena%2C%20San%20Ran%C3%B3n%2C%20Spain&order=price" },
     { name: "Hotel Rural Foncubierta", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20Foncubierta%2C%20San%20Ran%C3%B3n%2C%20Spain&order=price" },
   ],
+  "Legazpi": [
+    { name: "Budget stays near Legazpi", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Legazpi%2C%20Spain&order=price" },
+    { name: "Guest houses near Legazpi", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Legazpi%2C%20Spain&order=price" },
+    { name: "Hotels near Legazpi", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Legazpi%2C%20Spain&order=price" },
+  ],
+  "Mirasierra-Paco de Lucía": [
+    { name: "Eurostars Suites Mirasierra", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostars%20Suites%20Mirasierra%2C%20Mirasierra-Paco%20de%20Luc%C3%ADa%2C%20Spain&order=price" },
+    { name: "Hotel VillaMadrid", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20VillaMadrid%2C%20Mirasierra-Paco%20de%20Luc%C3%ADa%2C%20Spain&order=price" },
+    { name: "Habitaciones 'Aránzazu'", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Habitaciones%20'Ar%C3%A1nzazu'%2C%20Mirasierra-Paco%20de%20Luc%C3%ADa%2C%20Spain&order=price" },
+  ],
+  "Benicarló-Peñíscola": [
+    { name: "Parador de Benicarló", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20de%20Benicarl%C3%B3%2C%20Benicarl%C3%B3-Pe%C3%B1%C3%ADscola%2C%20Spain&order=price" },
+    { name: "Peñíscola Placa Suites", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pe%C3%B1%C3%ADscola%20Placa%20Suites%2C%20Benicarl%C3%B3-Pe%C3%B1%C3%ADscola%2C%20Spain&order=price" },
+    { name: "Crystal Park", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Crystal%20Park%2C%20Benicarl%C3%B3-Pe%C3%B1%C3%ADscola%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
