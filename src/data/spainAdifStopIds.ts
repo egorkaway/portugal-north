@@ -311,6 +311,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Madrid-Villaverde Alto": ["37001"],
 
+  "Parla": ["37012"],
+
+  "Arévalo": ["10409"],
+
+  "Maliaño Vidriera": ["05655"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

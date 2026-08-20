@@ -79,7 +79,7 @@ export const metroPortoStations: StationData[] = [
     name: "Senhora da Hora",
     lines: ["Metro Linha F (Laranja)"],
     types: ["Metro"],
-    lat: 41.1845,
-    lng: -8.649,
+    lat: 41.1881,
+    lng: -8.6545,
   },
 ];

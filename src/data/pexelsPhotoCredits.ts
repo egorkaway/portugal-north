@@ -656,6 +656,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@rangoni-gianluca-41700784",
     photoPageUrl: "https://www.pexels.com/photo/clouds-over-railway-in-city-11242365/",
   },
+  "11372496": {
+    photographer: "Gabriel Lara",
+    photographerUrl: "https://www.pexels.com/@gabriel-lara-1758051",
+    photoPageUrl: "https://www.pexels.com/photo/monochrome-shot-of-a-person-sitting-on-a-bench-in-a-train-station-11372496/",
+  },
   "11461447": {
     photographer: "Simeon Stoilov",
     photographerUrl: "https://www.pexels.com/@simeon-theartist",

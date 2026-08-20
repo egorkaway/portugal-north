@@ -541,4 +541,13 @@ export const spainSummariesCa: Record<string, string> = {
   "Madrid-Villaverde Alto":
     "Madrid-Villaverde Alto és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Parla":
+    "Parla és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Arévalo":
+    "Arévalo és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Maliaño Vidriera":
+    "Maliaño Vidriera és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

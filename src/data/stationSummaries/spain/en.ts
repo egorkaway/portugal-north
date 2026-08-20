@@ -541,4 +541,13 @@ export const spainSummariesEn: Record<string, string> = {
   "Madrid-Villaverde Alto":
     "Madrid-Villaverde Alto is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Parla":
+    "Parla is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Arévalo":
+    "Arévalo is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Maliaño Vidriera":
+    "Maliaño Vidriera is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

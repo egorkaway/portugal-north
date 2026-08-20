@@ -541,4 +541,13 @@ export const spainSummariesEs: Record<string, string> = {
   "Madrid-Villaverde Alto":
     "Madrid-Villaverde Alto es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Parla":
+    "Parla es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Arévalo":
+    "Arévalo es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Maliaño Vidriera":
+    "Maliaño Vidriera es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

@@ -1454,4 +1454,31 @@ export const spainStations: Station[] = [
     lng: -3.7124,
   },
 
+  {
+    name: "Parla",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.2411,
+    lng: -3.7693,
+  },
+
+  {
+    name: "Arévalo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.0471,
+    lng: -4.702,
+  },
+
+  {
+    name: "Maliaño Vidriera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.416,
+    lng: -3.8411,
+  },
+
 ];

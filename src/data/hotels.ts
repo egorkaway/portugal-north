@@ -2716,6 +2716,21 @@ export const stationHotels: StationHotels = {
     { name: "Solimpar", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solimpar%2C%20Madrid-Villaverde%20Alto%2C%20Spain&order=price" },
     { name: "Hotel Vértice Roomspace Madrid", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20V%C3%A9rtice%20Roomspace%20Madrid%2C%20Madrid-Villaverde%20Alto%2C%20Spain&order=price" },
   ],
+  "Parla": [
+    { name: "Checkin Madrid Parla", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Checkin%20Madrid%20Parla%2C%20Parla%2C%20Spain&order=price" },
+    { name: "NH Parla", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=NH%20Parla%2C%20Parla%2C%20Spain&order=price" },
+    { name: "Hotel La Cantueña", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Cantue%C3%B1a%2C%20Parla%2C%20Spain&order=price" },
+  ],
+  "Arévalo": [
+    { name: "Hostal del Campo", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20del%20Campo%2C%20Ar%C3%A9valo%2C%20Spain&order=price" },
+    { name: "Posada Los Cinco Linajes", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Posada%20Los%20Cinco%20Linajes%2C%20Ar%C3%A9valo%2C%20Spain&order=price" },
+    { name: "Las Fuentes", distanceKm: 4.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Las%20Fuentes%2C%20Ar%C3%A9valo%2C%20Spain&order=price" },
+  ],
+  "Maliaño Vidriera": [
+    { name: "Hostal Golf", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Golf%2C%20Malia%C3%B1o%20Vidriera%2C%20Spain&order=price" },
+    { name: "Hotel Nueva Plaza", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Nueva%20Plaza%2C%20Malia%C3%B1o%20Vidriera%2C%20Spain&order=price" },
+    { name: "San Luis", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/es/boutique-albussanluis.es.html" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
