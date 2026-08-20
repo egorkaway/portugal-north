@@ -565,4 +565,7 @@ export const spainSummariesPt: Record<string, string> = {
   "Bellvitge-Gornal":
     "Bellvitge-Gornal é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "San Ranón":
+    "San Ranón é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

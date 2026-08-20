@@ -2756,6 +2756,11 @@ export const stationHotels: StationHotels = {
     { name: "Eurohotel Gran Via Fira", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurohotel%20Gran%20Via%20Fira%2C%20Bellvitge-Gornal%2C%20Spain&order=price" },
     { name: "Hotel Renaissance Barcelona Fira", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Renaissance%20Barcelona%20Fira%2C%20Bellvitge-Gornal%2C%20Spain&order=price" },
   ],
+  "San Ranón": [
+    { name: "Apartamentos Rurales Ruta del Agua", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20Rurales%20Ruta%20del%20Agua%2C%20San%20Ran%C3%B3n%2C%20Spain&order=price" },
+    { name: "Hotel Palacio de La Magdalena", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Palacio%20de%20La%20Magdalena%2C%20San%20Ran%C3%B3n%2C%20Spain&order=price" },
+    { name: "Hotel Rural Foncubierta", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20Foncubierta%2C%20San%20Ran%C3%B3n%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

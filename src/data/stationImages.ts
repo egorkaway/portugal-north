@@ -468,6 +468,7 @@ export const stationImages: Record<string, string> = {
   "San Fernando de Henares": "https://images.pexels.com/photos/29183525/pexels-photo-29183525.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "San Fernando-Bahía Sur": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Estacion_de_San_Fernando_Bahia_Sur_-_Basilievich.jpg/960px-Estacion_de_San_Fernando_Bahia_Sur_-_Basilievich.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "San Isidro-Albatera-Catral": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Acceso_estaci%C3%B3n_San_Isidro-Albatera-Catral.jpg/960px-Acceso_estaci%C3%B3n_San_Isidro-Albatera-Catral.jpg",
+  "San Ranón": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Estacion_de_San_Ranon_%2803%29.jpg/960px-Estacion_de_San_Ranon_%2803%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "San Sebastián Airport (EAS)": "https://images.pexels.com/photos/33692841/pexels-photo-33692841.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "San Sebastián-Donostia": "https://images.pexels.com/photos/14916418/pexels-photo-14916418.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Sanabria Alta Velocidad": "https://upload.wikimedia.org/wikipedia/commons/0/09/Sanabria_AV.jpg",

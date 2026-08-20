@@ -1526,4 +1526,13 @@ export const spainStations: Station[] = [
     lng: 2.1153,
   },
 
+  {
+    name: "San Ranón",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5165,
+    lng: -6.082,
+  },
+
 ];
