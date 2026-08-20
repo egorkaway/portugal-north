@@ -317,6 +317,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Maliaño Vidriera": ["05655"],
 
+  "Las Margaritas": ["37010"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

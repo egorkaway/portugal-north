@@ -1481,4 +1481,13 @@ export const spainStations: Station[] = [
     lng: -3.8411,
   },
 
+  {
+    name: "Las Margaritas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3231,
+    lng: -3.7273,
+  },
+
 ];

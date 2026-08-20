@@ -550,4 +550,7 @@ export const spainSummariesCa: Record<string, string> = {
   "Maliaño Vidriera":
     "Maliaño Vidriera és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Las Margaritas":
+    "Las Margaritas és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

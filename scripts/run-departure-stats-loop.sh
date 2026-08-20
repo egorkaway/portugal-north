@@ -1,5 +1,5 @@
 #!/bin/bash
-# Wait a random 3–5 hours of *awake* time, then sample CP departures.
+# Wait a random 1–6 hours of *awake* time, then sample CP departures.
 # macOS freezes `sleep` while the machine is asleep, so intervals only
 # count when the computer is active. Loaded by launchd as
 # ~/Library/LaunchAgents/com.verystays.stats-departures.plist
@@ -10,8 +10,8 @@ NODE="/opt/homebrew/opt/node@20/bin/node"
 export PATH="/opt/homebrew/opt/node@20/bin:/usr/bin:/bin:/usr/sbin"
 
 LOG="${HOME}/Library/Logs/verystays-stats-departures.log"
-MIN_WAIT=10800
-MAX_WAIT=18000
+MIN_WAIT=3600
+MAX_WAIT=21600
 
 log() {
   echo "$(date +%Y-%m-%dT%H:%M:%S%z) $*" >>"$LOG"

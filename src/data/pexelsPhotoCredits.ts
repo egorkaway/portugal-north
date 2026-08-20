@@ -1486,6 +1486,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@uiliamnornberg",
     photoPageUrl: "https://www.pexels.com/photo/a-little-girl-is-standing-in-front-of-a-train-26977327/",
   },
+  "27173219": {
+    photographer: "Edgar Mosqueda Camacho",
+    photographerUrl: "https://www.pexels.com/@edgar-mosqueda-camacho-544076702",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-building-in-town-27173219/",
+  },
   "27677296": {
     photographer: "Gustavo Denuncio",
     photographerUrl: "https://www.pexels.com/@gustavodenuncio",

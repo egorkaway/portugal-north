@@ -269,6 +269,7 @@ export const stationImages: Record<string, string> = {
   "Lapa": "https://images.pexels.com/photos/3885725/pexels-photo-3885725.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Lardosa": "https://images.pexels.com/photos/37270089/pexels-photo-37270089.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Lares": "https://images.pexels.com/photos/29145818/pexels-photo-29145818.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Las Margaritas": "https://images.pexels.com/photos/27173219/pexels-photo-27173219.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Las Matas": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Estacion_las_matas.JPG/960px-Estacion_las_matas.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Las Rozas": "https://upload.wikimedia.org/wikipedia/commons/5/54/Las_Rozas_-_Estaci%C3%B3n.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
   "Las Zorreras-Navalquejigo": "https://images.pexels.com/photos/38973852/pexels-photo-38973852.png?auto=compress&cs=tinysrgb&h=650&w=940",

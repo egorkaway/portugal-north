@@ -2731,6 +2731,11 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Nueva Plaza", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Nueva%20Plaza%2C%20Malia%C3%B1o%20Vidriera%2C%20Spain&order=price" },
     { name: "San Luis", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/es/boutique-albussanluis.es.html" },
   ],
+  "Las Margaritas": [
+    { name: "Residencia de Estudiantes Fernando de los Ríos", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20de%20Estudiantes%20Fernando%20de%20los%20R%C3%ADos%2C%20Las%20Margaritas%2C%20Spain&order=price" },
+    { name: "Residencia Gregorio Peces Barba", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Gregorio%20Peces%20Barba%2C%20Las%20Margaritas%2C%20Spain&order=price" },
+    { name: "Residencia de estudiantes Livensa Living", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20de%20estudiantes%20Livensa%20Living%2C%20Las%20Margaritas%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
