@@ -1238,4 +1238,85 @@ export const spainStations: Station[] = [
     lng: -3.7029,
   },
 
+  {
+    name: "Murcia del Carmen",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.9748,
+    lng: -1.1315,
+  },
+
+  {
+    name: "Torrejón de Ardoz",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4548,
+    lng: -3.4797,
+  },
+
+  {
+    name: "Ujo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2047,
+    lng: -5.7926,
+  },
+
+  {
+    name: "Sitges",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.2391,
+    lng: 1.8097,
+  },
+
+  {
+    name: "Utebo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7109,
+    lng: -0.9986,
+  },
+
+  {
+    name: "Virgen del Rocío",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.3628,
+    lng: -5.976,
+  },
+
+  {
+    name: "Barcelona Plaça de Catalunya",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3879,
+    lng: 2.1697,
+  },
+
+  {
+    name: "El Prat de Llobregat",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3309,
+    lng: 2.0893,
+  },
+
+  {
+    name: "Caldes de Malavella",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.8411,
+    lng: 2.8008,
+  },
+
 ];

@@ -6,9 +6,13 @@ import { MapFitBounds } from "@/components/MapFitBounds";
 import { MapHexLayer } from "@/components/MapHexLayer";
 import { MapLocateControl } from "@/components/MapLocateControl";
 import { MapPointLabels } from "@/components/MapPointLabels";
+import { MapStationDotsLayer } from "@/components/MapStationDotsLayer";
 import { SpainTrainsLayer } from "@/components/SpainTrainsLayer";
 import { stations } from "@/data/stations";
-import { useReliabilityScores } from "@/hooks/useReliabilityScore";
+import {
+  useReliabilityScores,
+  useSpainReliabilityScores,
+} from "@/hooks/useReliabilityScore";
 import { useSpainTrains } from "@/hooks/useSpainTrains";
 import { useLocale } from "@/i18n/LocaleProvider";
 import {
@@ -41,10 +45,25 @@ const LEGEND_TIERS = {
     size: "h-2.5 w-2.5",
   },
   quiet: {
-    fill: "hsl(275 48% 34%)",
+    fill: "hsl(215 16% 65%)",
     fillOpacity: 0.92,
-    border: "hsl(275 68% 10%)",
+    border: "hsl(215 18% 36%)",
     size: "h-2 w-2",
+  },
+} as const;
+
+const RELIABILITY_DOT_SWATCHES = {
+  high: {
+    fill: "#059669",
+    border: "#065F46",
+  },
+  mid: {
+    fill: "#D97706",
+    border: "#92400E",
+  },
+  low: {
+    fill: "#DC2626",
+    border: "#991B1B",
   },
 } as const;
 
@@ -73,6 +92,7 @@ const AIRPORT_LABEL_KEYS = {
 export default function StationActivityMap() {
   const { t } = useLocale();
   const { data, isError } = useReliabilityScores();
+  const { data: spainData, isError: isSpainError } = useSpainReliabilityScores();
   const { data: spainTrains } = useSpainTrains();
   const [hiddenAirportIatas, setHiddenAirportIatas] = useState<Set<string>>(() => new Set());
 
@@ -88,8 +108,14 @@ export default function StationActivityMap() {
   }, []);
 
   const hexData = useMemo(
-    () => buildMapActivityHexData(data?.movements ?? {}),
-    [data?.movements],
+    () =>
+      buildMapActivityHexData(data?.movements ?? {}, {
+        portugalScores: data?.scores,
+        portugalMovements: data?.movements,
+        spainScores: spainData?.scores,
+        spainMovements: spainData?.movements,
+      }),
+    [data?.movements, data?.scores, spainData?.movements, spainData?.scores],
   );
 
   const labelPoints = useMemo(() => {
@@ -99,11 +125,11 @@ export default function StationActivityMap() {
     return buildMapLabelPoints(stations, airportLabels, { hiddenAirportIatas });
   }, [t, hiddenAirportIatas]);
 
-  if (hexData.cells.length === 0 && isError) {
+  if (hexData.cells.length === 0 && hexData.dots.length === 0 && isError && isSpainError) {
     return <p className="text-sm text-muted-foreground">{t("map.unavailable")}</p>;
   }
 
-  const { cells, minMovements, maxMovements } = hexData;
+  const { cells, dots, minMovements, maxMovements } = hexData;
 
   return (
     <div className="space-y-3">
@@ -138,6 +164,7 @@ export default function StationActivityMap() {
             minMovements={minMovements}
             maxMovements={maxMovements}
           />
+          <MapStationDotsLayer dots={dots} />
           <MapPointLabels points={labelPoints} />
           {spainTrains?.trains.length ? (
             <SpainTrainsLayer trains={spainTrains.trains} />
@@ -147,14 +174,12 @@ export default function StationActivityMap() {
 
       <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
         <span className="font-medium text-foreground">{t("map.legendTitle")}</span>
-        {(["busy", "mid", "quiet"] as const).map((tier) => {
+        {(["busy", "mid"] as const).map((tier) => {
           const swatch = LEGEND_TIERS[tier];
           const label =
             tier === "busy"
               ? t("map.legendBusy")
-              : tier === "mid"
-                ? t("map.legendMid")
-                : t("map.legendQuiet");
+              : t("map.legendMid");
           return (
             <span key={tier} className="inline-flex items-center gap-2">
               <span
@@ -170,6 +195,40 @@ export default function StationActivityMap() {
             </span>
           );
         })}
+        {(["high", "mid", "low"] as const).map((tier) => {
+          const swatch = RELIABILITY_DOT_SWATCHES[tier];
+          const label =
+            tier === "high"
+              ? t("map.legendReliableHigh")
+              : tier === "mid"
+                ? t("map.legendReliableMid")
+                : t("map.legendReliableLow");
+          return (
+            <span key={tier} className="inline-flex items-center gap-2">
+              <span
+                className="inline-block h-2.5 w-2.5 rounded-full border-2"
+                style={{
+                  backgroundColor: swatch.fill,
+                  borderColor: swatch.border,
+                }}
+                aria-hidden="true"
+              />
+              {label}
+            </span>
+          );
+        })}
+        <span className="inline-flex items-center gap-2">
+          <span
+            className={`inline-block rounded-sm border-2 ${LEGEND_TIERS.quiet.size}`}
+            style={{
+              backgroundColor: LEGEND_TIERS.quiet.fill,
+              opacity: LEGEND_TIERS.quiet.fillOpacity,
+              borderColor: LEGEND_TIERS.quiet.border,
+            }}
+            aria-hidden="true"
+          />
+          {t("map.legendQuiet")}
+        </span>
         <span className="inline-flex items-center gap-2">
           <span
             className="inline-block h-2.5 w-2.5 rounded-full border-2"

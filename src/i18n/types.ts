@@ -271,6 +271,9 @@ export type Messages = {
     legendBusy: string;
     legendMid: string;
     legendQuiet: string;
+    legendReliableHigh: string;
+    legendReliableMid: string;
+    legendReliableLow: string;
     tooltipMovements: string;
     tooltipResolution: string;
     viewStation: string;

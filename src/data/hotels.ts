@@ -2596,6 +2596,51 @@ export const stationHotels: StationHotels = {
     { name: "Apartamentos en Sol", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20en%20Sol%2C%20Sol%2C%20Spain&order=price" },
     { name: "Hotel Europa", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Europa%2C%20Sol%2C%20Spain&order=price" },
   ],
+  "Murcia del Carmen": [
+    { name: "Pensión Campoy", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Campoy%2C%20Murcia%20del%20Carmen%2C%20Spain&order=price" },
+    { name: "Catalonia Conde de Floridablanca", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Catalonia%20Conde%20de%20Floridablanca%2C%20Murcia%20del%20Carmen%2C%20Spain&order=price" },
+    { name: "Hotel Pacoche Murcia", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pacoche%20Murcia%2C%20Murcia%20del%20Carmen%2C%20Spain&order=price" },
+  ],
+  "Torrejón de Ardoz": [
+    { name: "Asset Torrejón", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Asset%20Torrej%C3%B3n%2C%20Torrej%C3%B3n%20de%20Ardoz%2C%20Spain&order=price" },
+    { name: "Hotel Madrid Torrejón Plaza", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Madrid%20Torrej%C3%B3n%20Plaza%2C%20Torrej%C3%B3n%20de%20Ardoz%2C%20Spain&order=price" },
+    { name: "Hostal Plaza Mayor", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Plaza%20Mayor%2C%20Torrej%C3%B3n%20de%20Ardoz%2C%20Spain&order=price" },
+  ],
+  "Ujo": [
+    { name: "Hotel Río Caudal", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20R%C3%ADo%20Caudal%2C%20Ujo%2C%20Spain&order=price" },
+    { name: "Cenera", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cenera%2C%20Ujo%2C%20Spain&order=price" },
+    { name: "El Palacio de Arriba", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Palacio%20de%20Arriba%2C%20Ujo%2C%20Spain&order=price" },
+  ],
+  "Sitges": [
+    { name: "HOTEL EL XALET", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=HOTEL%20EL%20XALET%2C%20Sitges%2C%20Spain&order=price" },
+    { name: "HOTEL NOUCENTISTA", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=HOTEL%20NOUCENTISTA%2C%20Sitges%2C%20Spain&order=price" },
+    { name: "Hotel Sitges 1883", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sitges%201883%2C%20Sitges%2C%20Spain&order=price" },
+  ],
+  "Utebo": [
+    { name: "Silvano", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silvano%2C%20Utebo%2C%20Spain&order=price" },
+    { name: "Pensión Don Juan", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Don%20Juan%2C%20Utebo%2C%20Spain&order=price" },
+    { name: "europa", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=europa%2C%20Utebo%2C%20Spain&order=price" },
+  ],
+  "Virgen del Rocío": [
+    { name: "Hotel Sevilla Palmera", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sevilla%20Palmera%2C%20Virgen%20del%20Roc%C3%ADo%2C%20Spain&order=price" },
+    { name: "AC Hotel Cuidad de Sevilla", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AC%20Hotel%20Cuidad%20de%20Sevilla%2C%20Virgen%20del%20Roc%C3%ADo%2C%20Spain&order=price" },
+    { name: "Albergue Inturjoven", distanceKm: 1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Inturjoven%2C%20Virgen%20del%20Roc%C3%ADo%2C%20Spain&order=price" },
+  ],
+  "Barcelona Plaça de Catalunya": [
+    { name: "BLESS Barcelona", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=BLESS%20Barcelona%2C%20Barcelona%20Pla%C3%A7a%20de%20Catalunya%2C%20Spain&order=price" },
+    { name: "H10 Catalunya Plaza", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=H10%20Catalunya%20Plaza%2C%20Barcelona%20Pla%C3%A7a%20de%20Catalunya%2C%20Spain&order=price" },
+    { name: "Hotel Ginebra", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ginebra%2C%20Barcelona%20Pla%C3%A7a%20de%20Catalunya%2C%20Spain&order=price" },
+  ],
+  "El Prat de Llobregat": [
+    { name: "Mucha Masia Hostel Rural-Urbà", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mucha%20Masia%20Hostel%20Rural-Urb%C3%A0%2C%20El%20Prat%20de%20Llobregat%2C%20Spain&order=price" },
+    { name: "Pensió Rosita", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3%20Rosita%2C%20El%20Prat%20de%20Llobregat%2C%20Spain&order=price" },
+    { name: "Hotel Sallés Ciutat del Prat", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sall%C3%A9s%20Ciutat%20del%20Prat%2C%20El%20Prat%20de%20Llobregat%2C%20Spain&order=price" },
+  ],
+  "Caldes de Malavella": [
+    { name: "Hostal Esteba", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Esteba%2C%20Caldes%20de%20Malavella%2C%20Spain&order=price" },
+    { name: "Vichy Catalan", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vichy%20Catalan%2C%20Caldes%20de%20Malavella%2C%20Spain&order=price" },
+    { name: "Balneari Prats", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Balneari%20Prats%2C%20Caldes%20de%20Malavella%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

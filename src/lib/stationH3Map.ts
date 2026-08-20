@@ -23,6 +23,14 @@ export type StationHexCell = {
   boundary: [number, number][];
 };
 
+export type StationActivityDot = {
+  stationName: string;
+  lat: number;
+  lng: number;
+  movements: number;
+  score: number;
+};
+
 /** Map movement totals to busy / mid / quiet tiers and H3 res. 7 or 9 hex sizes. */
 export function movementsToActivityTier(
   movements: number,

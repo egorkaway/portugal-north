@@ -30,4 +30,38 @@ describe("mapActivityStations", () => {
       expect(cell?.resolution).toBe(9);
     }
   });
+
+  it("renders quiet Spanish stations with enough reliability samples as dots", () => {
+    const station = spainStations[0]!;
+    const result = buildMapActivityHexData(
+      {
+        "Porto-Campanhã": 247,
+        Aveiro: 120,
+      },
+      {
+        spainScores: { [station.name]: 8.6 },
+        spainMovements: { [station.name]: 7 },
+      },
+    );
+
+    expect(result.dots.some((dot) => dot.stationName === station.name)).toBe(true);
+    expect(result.cells.some((cell) => cell.stationName === station.name)).toBe(false);
+  });
+
+  it("keeps quiet Portuguese stations with enough reliability samples as dots", () => {
+    const result = buildMapActivityHexData(
+      {
+        "Porto-Campanhã": 247,
+        Aveiro: 120,
+        Pombal: 1,
+      },
+      {
+        portugalScores: { Pombal: 8.2 },
+        portugalMovements: { Pombal: 7 },
+      },
+    );
+
+    expect(result.dots.some((dot) => dot.stationName === "Pombal")).toBe(true);
+    expect(result.cells.some((cell) => cell.stationName === "Pombal")).toBe(false);
+  });
 });

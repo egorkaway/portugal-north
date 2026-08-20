@@ -501,6 +501,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@sumeyye-alkan-63700680",
     photoPageUrl: "https://www.pexels.com/photo/train-station-platform-with-canopy-8148158/",
   },
+  "8275094": {
+    photographer: "Alexander Zvir",
+    photographerUrl: "https://www.pexels.com/@algrey",
+    photoPageUrl: "https://www.pexels.com/photo/train-station-in-black-and-white-8275094/",
+  },
   "8308104": {
     photographer: "Renato Rocca",
     photographerUrl: "https://www.pexels.com/@renato-rocca-2397962",
@@ -1620,6 +1625,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Sebastian Luna",
     photographerUrl: "https://www.pexels.com/@sebastian-luna-736234668",
     photoPageUrl: "https://www.pexels.com/photo/foggy-night-at-berlin-train-station-30113635/",
+  },
+  "30166262": {
+    photographer: "Adria Gimeno",
+    photographerUrl: "https://www.pexels.com/@adria-gimeno-2148569912",
+    photoPageUrl: "https://www.pexels.com/photo/charming-mediterranean-suburban-neighborhood-view-30166262/",
   },
   "30254825": {
     photographer: "berobscura",

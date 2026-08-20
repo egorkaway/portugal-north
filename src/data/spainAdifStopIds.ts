@@ -263,6 +263,24 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Sol": ["18101"],
 
+  "Murcia del Carmen": ["61200"],
+
+  "Torrejón de Ardoz": ["70102"],
+
+  "Ujo": ["15200"],
+
+  "Sitges": ["71701"],
+
+  "Utebo": ["70801"],
+
+  "Virgen del Rocío": ["51110"],
+
+  "Barcelona Plaça de Catalunya": ["78805"],
+
+  "El Prat de Llobregat": ["71707"],
+
+  "Caldes de Malavella": ["79203"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
