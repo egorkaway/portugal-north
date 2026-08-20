@@ -251,6 +251,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@bastien-neves-2459695",
     photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-a-train-station-roofing-in-lyon-france-4082184/",
   },
+  "4341096": {
+    photographer: "Luis Quintero",
+    photographerUrl: "https://www.pexels.com/@jibarofoto",
+    photoPageUrl: "https://www.pexels.com/photo/people-waiting-for-train-on-station-4341096/",
+  },
   "4525217": {
     photographer: "Arthur Forti",
     photographerUrl: "https://www.pexels.com/@arthur-forti-967563",
@@ -2475,6 +2480,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Gustavo Aguiar",
     photographerUrl: "https://www.pexels.com/@gustavo-aguiar-2161164324",
     photoPageUrl: "https://www.pexels.com/photo/commuter-train-at-sao-paulo-station-37365781/",
+  },
+  "37373920": {
+    photographer: "George  Zografidis",
+    photographerUrl: "https://www.pexels.com/@george-zografidis-1705219",
+    photoPageUrl: "https://www.pexels.com/photo/passengers-inside-a-train-viewed-through-window-37373920/",
   },
   "37418140": {
     photographer: "Paolo Bici",

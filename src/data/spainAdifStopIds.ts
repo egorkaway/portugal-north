@@ -335,6 +335,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Benicarló-Peñíscola": ["65311"],
 
+  "Cantaelgallo": ["51112"],
+
+  "Coslada": ["70108"],
+
+  "Sant Vicenç de Castellet": ["78604"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

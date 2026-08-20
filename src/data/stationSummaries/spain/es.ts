@@ -577,4 +577,13 @@ export const spainSummariesEs: Record<string, string> = {
   "Benicarló-Peñíscola":
     "Benicarló-Peñíscola es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Cantaelgallo":
+    "Cantaelgallo es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Coslada":
+    "Coslada es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Sant Vicenç de Castellet":
+    "Sant Vicenç de Castellet es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

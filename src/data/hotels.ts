@@ -2776,6 +2776,21 @@ export const stationHotels: StationHotels = {
     { name: "Peñíscola Placa Suites", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pe%C3%B1%C3%ADscola%20Placa%20Suites%2C%20Benicarl%C3%B3-Pe%C3%B1%C3%ADscola%2C%20Spain&order=price" },
     { name: "Crystal Park", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Crystal%20Park%2C%20Benicarl%C3%B3-Pe%C3%B1%C3%ADscola%2C%20Spain&order=price" },
   ],
+  "Cantaelgallo": [
+    { name: "Hostal El emigrante", distanceKm: 1.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20emigrante%2C%20Cantaelgallo%2C%20Spain&order=price" },
+    { name: "Leflet", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Leflet%2C%20Cantaelgallo%2C%20Spain&order=price" },
+    { name: "Hotel Mare", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mare%2C%20Cantaelgallo%2C%20Spain&order=price" },
+  ],
+  "Coslada": [
+    { name: "Travelodge Madrid Coslada Aeropuerto", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Travelodge%20Madrid%20Coslada%20Aeropuerto%2C%20Coslada%2C%20Spain&order=price" },
+    { name: "Casa Huéspedes Avenida 57", distanceKm: 2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Hu%C3%A9spedes%20Avenida%2057%2C%20Coslada%2C%20Spain&order=price" },
+    { name: "Hostal Quinta Santillán", distanceKm: 2.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Quinta%20Santill%C3%A1n%2C%20Coslada%2C%20Spain&order=price" },
+  ],
+  "Sant Vicenç de Castellet": [
+    { name: "Refugi de pelegrins Mas del Pla", distanceKm: 1.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Refugi%20de%20pelegrins%20Mas%20del%20Pla%2C%20Sant%20Vicen%C3%A7%20de%20Castellet%2C%20Spain&order=price" },
+    { name: "La Casajoana", distanceKm: 5.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casajoana%2C%20Sant%20Vicen%C3%A7%20de%20Castellet%2C%20Spain&order=price" },
+    { name: "Els Noguers", distanceKm: 6.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Els%20Noguers%2C%20Sant%20Vicen%C3%A7%20de%20Castellet%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

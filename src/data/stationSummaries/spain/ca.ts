@@ -577,4 +577,13 @@ export const spainSummariesCa: Record<string, string> = {
   "Benicarló-Peñíscola":
     "Benicarló-Peñíscola és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Cantaelgallo":
+    "Cantaelgallo és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Coslada":
+    "Coslada és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Sant Vicenç de Castellet":
+    "Sant Vicenç de Castellet és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

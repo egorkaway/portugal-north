@@ -577,4 +577,13 @@ export const spainSummariesEn: Record<string, string> = {
   "Benicarló-Peñíscola":
     "Benicarló-Peñíscola is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Cantaelgallo":
+    "Cantaelgallo is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Coslada":
+    "Coslada is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Sant Vicenç de Castellet":
+    "Sant Vicenç de Castellet is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

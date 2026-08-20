@@ -1562,4 +1562,31 @@ export const spainStations: Station[] = [
     lng: 0.4152,
   },
 
+  {
+    name: "Cantaelgallo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.2782,
+    lng: -5.9104,
+  },
+
+  {
+    name: "Coslada",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4232,
+    lng: -3.5611,
+  },
+
+  {
+    name: "Sant Vicenç de Castellet",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6688,
+    lng: 1.8626,
+  },
+
 ];
