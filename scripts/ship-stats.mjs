@@ -53,6 +53,10 @@ if (!status) {
 }
 
 run("git add -A");
-run(`git commit -m ${JSON.stringify(message)}`);
+execSync("git commit -F -", {
+  cwd: root,
+  input: message,
+  stdio: ["pipe", "inherit", "inherit"],
+});
 run("git push origin HEAD");
 console.log("Shipped.");
