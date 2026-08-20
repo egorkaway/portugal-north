@@ -1346,4 +1346,31 @@ export const spainStations: Station[] = [
     lng: -6.2179,
   },
 
+  {
+    name: "Briviesca",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.5428,
+    lng: -3.3193,
+  },
+
+  {
+    name: "Reus",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1605,
+    lng: 1.1001,
+  },
+
+  {
+    name: "Granada",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.184,
+    lng: -3.6092,
+  },
+
 ];

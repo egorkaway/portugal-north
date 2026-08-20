@@ -5,8 +5,8 @@ import type { MapLabelPoint } from "@/lib/mapLabels";
 const AIRPORT_MARKER_RADIUS = 5;
 
 const AIRPORT_MARKER_STYLE = {
-  color: "hsl(25 88% 28%)",
-  fillColor: "hsl(25 92% 52%)",
+  color: "#075985",
+  fillColor: "#0284C7",
   fillOpacity: 0.92,
   weight: 1.5,
 } as const;

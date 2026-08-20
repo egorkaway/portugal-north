@@ -287,6 +287,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Puerto de Santa María": ["51400"],
 
+  "Briviesca": ["11109"],
+
+  "Reus": ["71400"],
+
+  "Granada": ["05000", "72205"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -68,9 +68,9 @@ const RELIABILITY_DOT_SWATCHES = {
 } as const;
 
 const AIRPORT_LEGEND_SWATCH = {
-  fill: "hsl(25 92% 52%)",
+  fill: "#0284C7",
   fillOpacity: 0.92,
-  border: "hsl(25 88% 28%)",
+  border: "#075985",
 } as const;
 
 const AIRPORT_LABEL_KEYS = {

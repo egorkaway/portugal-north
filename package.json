@@ -32,6 +32,8 @@
     "hotels:apply-audit-report": "node scripts/apply-hotel-audit-report.mjs",
     "hotels:recheck-ambiguous": "node scripts/recheck-ambiguous-hotel-links.mjs",
     "stats:departures": "node --import tsx scripts/collect-departure-stats.mjs",
+    "stats:ship": "npm run stats:departures -- --delay 500 && node scripts/ship-stats.mjs",
+    "ship": "node scripts/ship-stats.mjs",
     "stats:spain": "node --import tsx scripts/collect-spain-reliability.mjs",
     "stats:spain-expand": "node --import tsx scripts/expand-spain-stations.mjs",
     "stats:sync-station-types": "node --import tsx scripts/sync-station-types-from-stats.mjs --write",

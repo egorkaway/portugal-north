@@ -2656,6 +2656,21 @@ export const stationHotels: StationHotels = {
     { name: "Crisol Monasterio San Miguel", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Crisol%20Monasterio%20San%20Miguel%2C%20Puerto%20de%20Santa%20Mar%C3%ADa%2C%20Spain&order=price" },
     { name: "Casa del Regidor", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20del%20Regidor%2C%20Puerto%20de%20Santa%20Mar%C3%ADa%2C%20Spain&order=price" },
   ],
+  "Briviesca": [
+    { name: "Hotel Isabel", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Isabel%2C%20Briviesca%2C%20Spain&order=price" },
+    { name: "Albergue de peregrinos", distanceKm: 1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20peregrinos%2C%20Briviesca%2C%20Spain&order=price" },
+    { name: "Hostal la Vid", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20la%20Vid%2C%20Briviesca%2C%20Spain&order=price" },
+  ],
+  "Reus": [
+    { name: "Hostal Santa Teresa", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Santa%20Teresa%2C%20Reus%2C%20Spain&order=price" },
+    { name: "Residencia Ulloa", distanceKm: 0.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Ulloa%2C%20Reus%2C%20Spain&order=price" },
+    { name: "Hotel Gaudí", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Gaud%C3%AD%2C%20Reus%2C%20Spain&order=price" },
+  ],
+  "Granada": [
+    { name: "Hotel Turia Granada", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Turia%20Granada%2C%20Granada%2C%20Spain&order=price" },
+    { name: "Hotel Princesa Ana", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Princesa%20Ana%2C%20Granada%2C%20Spain&order=price" },
+    { name: "Sercotel HMO Martina", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20HMO%20Martina%2C%20Granada%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

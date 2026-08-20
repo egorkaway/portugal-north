@@ -1,6 +1,6 @@
 {
-  "runCount": 407,
-  "lastRunAt": "2026-08-20T06:40:53.858Z",
+  "runCount": 408,
+  "lastRunAt": "2026-08-20T06:47:00.584Z",
   "lastAirportConnectionsAt": "2026-08-20T05:43:45.779Z",
   "stations": {
     "Pombal": {
@@ -6169,9 +6169,9 @@
         "delayMinutes": 444
       },
       "successfulSamples": 127,
-      "failedSamples": 6,
+      "failedSamples": 7,
       "lastSampleAt": "2026-08-20T06:31:02.729Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Verride": {
       "cpCode": "94-65086",
@@ -6575,9 +6575,9 @@
         "delayMinutes": 732
       },
       "successfulSamples": 116,
-      "failedSamples": 5,
+      "failedSamples": 6,
       "lastSampleAt": "2026-08-20T06:41:52.483Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Bobadela": {
       "cpCode": "94-31070",
@@ -7023,9 +7023,9 @@
         "delayMinutes": 155
       },
       "successfulSamples": 113,
-      "failedSamples": 2,
+      "failedSamples": 3,
       "lastSampleAt": "2026-08-20T06:41:40.600Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Parede": {
       "cpCode": "94-69203",
