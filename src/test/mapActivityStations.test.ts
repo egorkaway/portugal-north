@@ -64,4 +64,33 @@ describe("mapActivityStations", () => {
     expect(result.dots.some((dot) => dot.stationName === "Pombal")).toBe(true);
     expect(result.cells.some((cell) => cell.stationName === "Pombal")).toBe(false);
   });
+
+  it("keeps busy and mid-traffic stations as hexes while attaching reliability scores", () => {
+    const result = buildMapActivityHexData(
+      {
+        "Porto-Campanhã": 247,
+        Aveiro: 120,
+        Pombal: 1,
+      },
+      {
+        portugalScores: {
+          "Porto-Campanhã": 4.8,
+          Aveiro: 6.1,
+          Pombal: 8.2,
+        },
+        portugalMovements: {
+          "Porto-Campanhã": 40,
+          Aveiro: 18,
+          Pombal: 7,
+        },
+      },
+    );
+
+    const porto = result.cells.find((cell) => cell.stationName === "Porto-Campanhã");
+    const aveiro = result.cells.find((cell) => cell.stationName === "Aveiro");
+    expect(porto?.tier).toBe("busy");
+    expect(porto?.score).toBe(4.8);
+    expect(aveiro?.tier).toBe("mid");
+    expect(aveiro?.score).toBe(6.1);
+  });
 });

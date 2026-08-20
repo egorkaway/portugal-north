@@ -496,4 +496,13 @@ export const spainSummariesCa: Record<string, string> = {
   "Caldes de Malavella":
     "Caldes de Malavella és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "San Fernando-Bahía Sur":
+    "San Fernando-Bahía Sur és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Pravia":
+    "Pravia és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Puerto de Santa María":
+    "Puerto de Santa María és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

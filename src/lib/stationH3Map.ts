@@ -16,6 +16,7 @@ export const IBERIAN_MAP_BOUNDS: [[number, number], [number, number]] = [
 export type StationHexCell = {
   stationName: string;
   movements: number;
+  score?: number;
   tier: HexActivityTier;
   resolution: H3ActivityResolution;
   cellId: string;
@@ -148,22 +149,27 @@ export function hexPathStyle(
   movements: number,
   minMovements: number,
   maxMovements: number,
+  score?: number,
 ): HexPathStyle {
   const t = movementRatio(movements, minMovements, maxMovements);
+  const reliabilityFill =
+    score == null ? null : score >= 8 ? "#059669" : score >= 5 ? "#D97706" : "#DC2626";
+  const reliabilityBorder =
+    score == null ? null : score >= 8 ? "#065F46" : score >= 5 ? "#92400E" : "#991B1B";
 
   switch (tier) {
     case "busy":
       return {
-        fillColor: "hsl(145 58% 50%)",
+        fillColor: reliabilityFill ?? "hsl(145 58% 50%)",
         fillOpacity: 0.48 - t * 0.14,
-        color: "hsl(145 82% 26%)",
+        color: reliabilityBorder ?? "hsl(145 82% 26%)",
         weight: 3,
       };
     case "mid":
       return {
-        fillColor: "hsl(210 52% 46%)",
+        fillColor: reliabilityFill ?? "hsl(210 52% 46%)",
         fillOpacity: 0.42 + t * 0.22,
-        color: "hsl(210 72% 18%)",
+        color: reliabilityBorder ?? "hsl(210 72% 18%)",
         weight: 2,
       };
     case "quiet":

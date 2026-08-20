@@ -2641,6 +2641,21 @@ export const stationHotels: StationHotels = {
     { name: "Vichy Catalan", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vichy%20Catalan%2C%20Caldes%20de%20Malavella%2C%20Spain&order=price" },
     { name: "Balneari Prats", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Balneari%20Prats%2C%20Caldes%20de%20Malavella%2C%20Spain&order=price" },
   ],
+  "San Fernando-Bahía Sur": [
+    { name: "Hotel Roma", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Roma%2C%20San%20Fernando-Bah%C3%ADa%20Sur%2C%20Spain&order=price" },
+    { name: "Salymar", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Salymar%2C%20San%20Fernando-Bah%C3%ADa%20Sur%2C%20Spain&order=price" },
+    { name: "Islasol", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Islasol%2C%20San%20Fernando-Bah%C3%ADa%20Sur%2C%20Spain&order=price" },
+  ],
+  "Pravia": [
+    { name: "Hotel Antiguo Casino", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Antiguo%20Casino%2C%20Pravia%2C%20Spain&order=price" },
+    { name: "Hotel Pax Casona del Busto", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pax%20Casona%20del%20Busto%2C%20Pravia%2C%20Spain&order=price" },
+    { name: "Hotel Los 14", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Los%2014%2C%20Pravia%2C%20Spain&order=price" },
+  ],
+  "Puerto de Santa María": [
+    { name: "Duques de Medinaceli", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Duques%20de%20Medinaceli%2C%20Puerto%20de%20Santa%20Mar%C3%ADa%2C%20Spain&order=price" },
+    { name: "Crisol Monasterio San Miguel", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Crisol%20Monasterio%20San%20Miguel%2C%20Puerto%20de%20Santa%20Mar%C3%ADa%2C%20Spain&order=price" },
+    { name: "Casa del Regidor", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20del%20Regidor%2C%20Puerto%20de%20Santa%20Mar%C3%ADa%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

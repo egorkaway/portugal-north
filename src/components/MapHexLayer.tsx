@@ -175,6 +175,7 @@ export function MapHexLayer({
           cell.movements,
           minMovements,
           maxMovements,
+          cell.score,
         );
         return (
           <Polygon

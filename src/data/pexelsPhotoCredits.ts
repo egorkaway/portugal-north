@@ -2561,4 +2561,9 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@explora-andalucia-2162577091",
     photoPageUrl: "https://www.pexels.com/photo/modern-train-station-in-sevilla-spain-38978616/",
   },
+  "39038706": {
+    photographer: "Fotografías de El Puerto  de Santa María",
+    photographerUrl: "https://www.pexels.com/@fotografias-de-el-puerto-de-santa-maria-2148829485",
+    photoPageUrl: "https://www.pexels.com/photo/historic-archway-in-el-puerto-de-santa-maria-39038706/",
+  },
 };

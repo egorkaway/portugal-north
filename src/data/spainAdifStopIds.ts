@@ -281,6 +281,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Caldes de Malavella": ["79203"],
 
+  "San Fernando-Bahía Sur": ["51406"],
+
+  "Pravia": ["05325"],
+
+  "Puerto de Santa María": ["51400"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

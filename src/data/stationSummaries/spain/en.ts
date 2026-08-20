@@ -496,4 +496,13 @@ export const spainSummariesEn: Record<string, string> = {
   "Caldes de Malavella":
     "Caldes de Malavella is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "San Fernando-Bahía Sur":
+    "San Fernando-Bahía Sur is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Pravia":
+    "Pravia is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Puerto de Santa María":
+    "Puerto de Santa María is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

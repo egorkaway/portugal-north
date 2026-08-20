@@ -33,15 +33,15 @@ import "leaflet/dist/leaflet.css";
 
 const LEGEND_TIERS = {
   busy: {
-    fill: "hsl(145 58% 50%)",
+    fill: "hsl(215 16% 65%)",
     fillOpacity: 0.42,
-    border: "hsl(145 82% 26%)",
+    border: "hsl(215 18% 36%)",
     size: "h-2.5 w-2.5",
   },
   mid: {
-    fill: "hsl(210 52% 46%)",
+    fill: "hsl(215 16% 65%)",
     fillOpacity: 0.55,
-    border: "hsl(210 72% 18%)",
+    border: "hsl(215 18% 36%)",
     size: "h-2.5 w-2.5",
   },
   quiet: {

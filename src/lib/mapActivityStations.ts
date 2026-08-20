@@ -48,21 +48,26 @@ export function buildMapActivityHexData(
   const portugalHexData = buildStationHexCells(portugalStations, movementsByStation);
   const dots: StationActivityDot[] = [];
 
-  const quietPortugalHexes = portugalHexData.cells.filter((cell) => {
-    if (cell.tier !== "quiet") return true;
-    const station = portugalStations.find((entry) => entry.name === cell.stationName);
-    if (!station) return true;
-    const score = canRenderAsReliabilityDot(cell.stationName, "pt", reliability);
-    if (score == null) return true;
-    dots.push({
-      stationName: cell.stationName,
-      lat: station.lat,
-      lng: station.lng,
-      movements: cell.movements,
-      score,
+  const portugalCells = portugalHexData.cells
+    .map((cell) => ({
+      ...cell,
+      score: canRenderAsReliabilityDot(cell.stationName, "pt", reliability) ?? undefined,
+    }))
+    .filter((cell) => {
+      if (cell.tier !== "quiet") return true;
+      const station = portugalStations.find((entry) => entry.name === cell.stationName);
+      if (!station) return true;
+      const score = cell.score;
+      if (score == null) return true;
+      dots.push({
+        stationName: cell.stationName,
+        lat: station.lat,
+        lng: station.lng,
+        movements: cell.movements,
+        score,
+      });
+      return false;
     });
-    return false;
-  });
 
   const inactiveOrLowSampleInternational = getMapLowActivityInternationalStations().filter(
     (station) => canRenderAsReliabilityDot(station.name, station.country === "es" ? "es" : "pt", reliability) == null,
@@ -94,7 +99,7 @@ export function buildMapActivityHexData(
     ...appendLowActivityHexCells(
       {
         ...portugalHexData,
-        cells: quietPortugalHexes,
+        cells: portugalCells,
       },
       inactiveOrLowSampleInternational,
     ),

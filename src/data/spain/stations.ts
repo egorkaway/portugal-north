@@ -1319,4 +1319,31 @@ export const spainStations: Station[] = [
     lng: 2.8008,
   },
 
+  {
+    name: "San Fernando-Bahía Sur",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.4681,
+    lng: -6.2068,
+  },
+
+  {
+    name: "Pravia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4909,
+    lng: -6.1105,
+  },
+
+  {
+    name: "Puerto de Santa María",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.6041,
+    lng: -6.2179,
+  },
+
 ];

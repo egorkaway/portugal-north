@@ -496,4 +496,13 @@ export const spainSummariesEs: Record<string, string> = {
   "Caldes de Malavella":
     "Caldes de Malavella es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "San Fernando-Bahía Sur":
+    "San Fernando-Bahía Sur es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Pravia":
+    "Pravia es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Puerto de Santa María":
+    "Puerto de Santa María es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };
