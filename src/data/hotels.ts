@@ -2521,6 +2521,81 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Ibis Madrid Alcobendas", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ibis%20Madrid%20Alcobendas%2C%20Valdelasfuentes%2C%20Spain&order=price" },
     { name: "Hotel UVE Alcobendas", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20UVE%20Alcobendas%2C%20Valdelasfuentes%2C%20Spain&order=price" },
   ],
+  "Barcelona Arc de Triomf": [
+    { name: "Born Barcelona Hostel", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Born%20Barcelona%20Hostel%2C%20Barcelona%20Arc%20de%20Triomf%2C%20Spain&order=price" },
+    { name: "NH Collection Barcelona Podium", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=NH%20Collection%20Barcelona%20Podium%2C%20Barcelona%20Arc%20de%20Triomf%2C%20Spain&order=price" },
+    { name: "Hotel Rec Barcelona - Adults Only", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rec%20Barcelona%20-%20Adults%20Only%2C%20Barcelona%20Arc%20de%20Triomf%2C%20Spain&order=price" },
+  ],
+  "Figueres": [
+    { name: "Hotel Rambla", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rambla%2C%20Figueres%2C%20Spain&order=price" },
+    { name: "Hostel Figueres", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20Figueres%2C%20Figueres%2C%20Spain&order=price" },
+    { name: "Hostal La Barretina", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Barretina%2C%20Figueres%2C%20Spain&order=price" },
+  ],
+  "Elda-Petrer": [
+    { name: "Santa Ana", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santa%20Ana%2C%20Elda-Petrer%2C%20Spain&order=price" },
+    { name: "Hotel AC Elda", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20AC%20Elda%2C%20Elda-Petrer%2C%20Spain&order=price" },
+    { name: "Hotel Sant Bonifaci", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sant%20Bonifaci%2C%20Elda-Petrer%2C%20Spain&order=price" },
+  ],
+  "La Serna-Fuenlabrada": [
+    { name: "Hotel Egido Las Provincias", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Egido%20Las%20Provincias%2C%20La%20Serna-Fuenlabrada%2C%20Spain&order=price" },
+    { name: "Hotel Avenida de España", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Avenida%20de%20Espa%C3%B1a%2C%20La%20Serna-Fuenlabrada%2C%20Spain&order=price" },
+    { name: "Andrès", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Andr%C3%A8s%2C%20La%20Serna-Fuenlabrada%2C%20Spain&order=price" },
+  ],
+  "San Bernardo": [
+    { name: "Budget stays near San Bernardo", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=San%20Bernardo%2C%20Spain&order=price" },
+    { name: "Guest houses near San Bernardo", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=San%20Bernardo%2C%20Spain&order=price" },
+    { name: "Hotels near San Bernardo", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=San%20Bernardo%2C%20Spain&order=price" },
+  ],
+  "Tudela de Navarra": [
+    { name: "Hotel Delta", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Delta%2C%20Tudela%20de%20Navarra%2C%20Spain&order=price" },
+    { name: "Hotel Santamaría", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Santamar%C3%ADa%2C%20Tudela%20de%20Navarra%2C%20Spain&order=price" },
+    { name: "Albergue Municipal de Tudela", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Municipal%20de%20Tudela%2C%20Tudela%20de%20Navarra%2C%20Spain&order=price" },
+  ],
+  "Altafulla-Tamarit": [
+    { name: "Altafulla Mar", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Altafulla%20Mar%2C%20Altafulla-Tamarit%2C%20Spain&order=price" },
+    { name: "Hotel Yola", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Yola%2C%20Altafulla-Tamarit%2C%20Spain&order=price" },
+    { name: "May Beach", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=May%20Beach%2C%20Altafulla-Tamarit%2C%20Spain&order=price" },
+  ],
+  "Balsicas-Mar Menor": [
+    { name: "DoubleTree by Hilton La Torre Golf & Spa Resort", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=DoubleTree%20by%20Hilton%20La%20Torre%20Golf%20%26%20Spa%20Resort%2C%20Balsicas-Mar%20Menor%2C%20Spain&order=price" },
+    { name: "Hotel Valle del Sol", distanceKm: 8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Valle%20del%20Sol%2C%20Balsicas-Mar%20Menor%2C%20Spain&order=price" },
+    { name: "Ona Mar Menor - Golf Resort & Spa", distanceKm: 8.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ona%20Mar%20Menor%20-%20Golf%20Resort%20%26%20Spa%2C%20Balsicas-Mar%20Menor%2C%20Spain&order=price" },
+  ],
+  "Granollers Centre": [
+    { name: "Hotel Ciutat de Granollers", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ciutat%20de%20Granollers%2C%20Granollers%20Centre%2C%20Spain&order=price" },
+    { name: "Aparthotel Atenea Vallès", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Atenea%20Vall%C3%A8s%2C%20Granollers%20Centre%2C%20Spain&order=price" },
+    { name: "Hotel Granollers", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Granollers%2C%20Granollers%20Centre%2C%20Spain&order=price" },
+  ],
+  "Pirámides": [
+    { name: "Hotel Rafael Pirámides", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rafael%20Pir%C3%A1mides%2C%20Pir%C3%A1mides%2C%20Spain&order=price" },
+    { name: "Rafaelhoteles Pirámides", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rafaelhoteles%20Pir%C3%A1mides%2C%20Pir%C3%A1mides%2C%20Spain&order=price" },
+    { name: "Puerta De Toledo", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Puerta%20De%20Toledo%2C%20Pir%C3%A1mides%2C%20Spain&order=price" },
+  ],
+  "Ametzola": [
+    { name: "Zenit Bilbao", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Zenit%20Bilbao%2C%20Ametzola%2C%20Spain&order=price" },
+    { name: "Hostel Optimi Rooms", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20Optimi%20Rooms%2C%20Ametzola%2C%20Spain&order=price" },
+    { name: "Lamia Women Hostel", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lamia%20Women%20Hostel%2C%20Ametzola%2C%20Spain&order=price" },
+  ],
+  "Barcelona Estació de França": [
+    { name: "Park Hotel Barcelona", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Park%20Hotel%20Barcelona%2C%20Barcelona%20Estaci%C3%B3%20de%20Fran%C3%A7a%2C%20Spain&order=price" },
+    { name: "Pension Ciudadela", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pension%20Ciudadela%2C%20Barcelona%20Estaci%C3%B3%20de%20Fran%C3%A7a%2C%20Spain&order=price" },
+    { name: "Hotel Ciutadella Barcelona", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ciutadella%20Barcelona%2C%20Barcelona%20Estaci%C3%B3%20de%20Fran%C3%A7a%2C%20Spain&order=price" },
+  ],
+  "València-La Font de Sant Lluís": [
+    { name: "B&B", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%2C%20Val%C3%A8ncia-La%20Font%20de%20Sant%20Llu%C3%ADs%2C%20Spain&order=price" },
+    { name: "Hotel Malcom & Barret", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Malcom%20%26%20Barret%2C%20Val%C3%A8ncia-La%20Font%20de%20Sant%20Llu%C3%ADs%2C%20Spain&order=price" },
+    { name: "Arena Zone Hotel", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arena%20Zone%20Hotel%2C%20Val%C3%A8ncia-La%20Font%20de%20Sant%20Llu%C3%ADs%2C%20Spain&order=price" },
+  ],
+  "Guadalajara-Yebes": [
+    { name: "Hotel Guadalajara & Conference Center", distanceKm: 4.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Guadalajara%20%26%20Conference%20Center%2C%20Guadalajara-Yebes%2C%20Spain&order=price" },
+    { name: "Hotel Alcarria", distanceKm: 4.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alcarria%2C%20Guadalajara-Yebes%2C%20Spain&order=price" },
+    { name: "Hotel La Cañada", distanceKm: 5.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Ca%C3%B1ada%2C%20Guadalajara-Yebes%2C%20Spain&order=price" },
+  ],
+  "Sol": [
+    { name: "Hostal Victoria II", distanceKm: 0, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Victoria%20II%2C%20Sol%2C%20Spain&order=price" },
+    { name: "Apartamentos en Sol", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20en%20Sol%2C%20Sol%2C%20Spain&order=price" },
+    { name: "Hotel Europa", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Europa%2C%20Sol%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

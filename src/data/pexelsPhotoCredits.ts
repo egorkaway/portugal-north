@@ -41,6 +41,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@hikaique",
     photoPageUrl: "https://www.pexels.com/photo/train-station-109915/",
   },
+  "157018": {
+    photographer: "Flickr",
+    photographerUrl: "https://www.pexels.com/@flickr",
+    photoPageUrl: "https://www.pexels.com/photo/train-terminal-gray-scale-photo-157018/",
+  },
   "157030": {
     photographer: "Flickr",
     photographerUrl: "https://www.pexels.com/@flickr",
@@ -75,6 +80,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Pixabay",
     photographerUrl: "https://www.pexels.com/@pixabay",
     photoPageUrl: "https://www.pexels.com/photo/railroad-tracks-against-sky-326011/",
+  },
+  "414808": {
+    photographer: "Pixabay",
+    photographerUrl: "https://www.pexels.com/@pixabay",
+    photoPageUrl: "https://www.pexels.com/photo/clear-glass-roof-with-gray-steel-frames-414808/",
   },
   "421129": {
     photographer: "Nicolas Postiglioni",
@@ -555,6 +565,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Enric Cruz López",
     photographerUrl: "https://www.pexels.com/@enric-cruz-lopez",
     photoPageUrl: "https://www.pexels.com/photo/tropical-trees-in-front-of-brick-public-building-9989485/",
+  },
+  "9989491": {
+    photographer: "Enric Cruz López",
+    photographerUrl: "https://www.pexels.com/@enric-cruz-lopez",
+    photoPageUrl: "https://www.pexels.com/photo/el-retiro-park-madrid-spain-9989491/",
   },
   "9999094": {
     photographer: "Rostyslav Savchyn",
@@ -1171,6 +1186,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@roza-53442428",
     photoPageUrl: "https://www.pexels.com/photo/train-at-the-station-19353350/",
   },
+  "19354452": {
+    photographer: "Jan van der Wolf",
+    photographerUrl: "https://www.pexels.com/@jan-van-der-wolf-11680885",
+    photoPageUrl: "https://www.pexels.com/photo/brunette-woman-sitting-by-windows-in-railway-station-19354452/",
+  },
   "19358766": {
     photographer: "Roman Zorge",
     photographerUrl: "https://www.pexels.com/@romanzorge",
@@ -1346,6 +1366,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@diogo-miranda-2044514",
     photoPageUrl: "https://www.pexels.com/photo/maria-pia-bridge-crossing-the-river-douro-vila-nova-de-gaia-portugal-22756478/",
   },
+  "22893299": {
+    photographer: "Wolfgang Weiser",
+    photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
+    photoPageUrl: "https://www.pexels.com/photo/subway-station-in-hamburg-22893299/",
+  },
   "23408792": {
     photographer: "Altamart",
     photographerUrl: "https://www.pexels.com/@altamar",
@@ -1445,6 +1470,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Uiliam Nörnberg",
     photographerUrl: "https://www.pexels.com/@uiliamnornberg",
     photoPageUrl: "https://www.pexels.com/photo/a-little-girl-is-standing-in-front-of-a-train-26977327/",
+  },
+  "27677296": {
+    photographer: "Gustavo Denuncio",
+    photographerUrl: "https://www.pexels.com/@gustavodenuncio",
+    photoPageUrl: "https://www.pexels.com/photo/a-train-station-with-people-walking-around-it-27677296/",
   },
   "27744199": {
     photographer: "Sandra Seitamaa",
@@ -2305,6 +2335,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Fausto Ferreira",
     photographerUrl: "https://www.pexels.com/@fausto-ferreira-2159402204",
     photoPageUrl: "https://www.pexels.com/photo/train-emerging-from-morning-fog-near-urban-coast-36675216/",
+  },
+  "36681090": {
+    photographer: "Bor Jinson",
+    photographerUrl: "https://www.pexels.com/@bor-jinson-3583500",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architecture-at-madrid-barajas-airport-36681090/",
   },
   "36685513": {
     photographer: "Renata Moraes",

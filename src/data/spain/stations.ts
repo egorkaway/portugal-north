@@ -1103,4 +1103,139 @@ export const spainStations: Station[] = [
     lng: -3.6543,
   },
 
+  {
+    name: "Barcelona Arc de Triomf",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3919,
+    lng: 2.1806,
+  },
+
+  {
+    name: "Figueres",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.2651,
+    lng: 2.9688,
+  },
+
+  {
+    name: "Elda-Petrer",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.4849,
+    lng: -0.8011,
+  },
+
+  {
+    name: "La Serna-Fuenlabrada",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.2968,
+    lng: -3.7926,
+  },
+
+  {
+    name: "San Bernardo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.3778,
+    lng: -5.9796,
+  },
+
+  {
+    name: "Tudela de Navarra",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.0594,
+    lng: -1.5979,
+  },
+
+  {
+    name: "Altafulla-Tamarit",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1366,
+    lng: 1.3734,
+  },
+
+  {
+    name: "Balsicas-Mar Menor",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.8188,
+    lng: -0.9509,
+  },
+
+  {
+    name: "Granollers Centre",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.5997,
+    lng: 2.2913,
+  },
+
+  {
+    name: "Pirámides",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.4025,
+    lng: -3.7114,
+  },
+
+  {
+    name: "Ametzola",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2547,
+    lng: -2.9437,
+  },
+
+  {
+    name: "Barcelona Estació de França",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.3845,
+    lng: 2.1853,
+  },
+
+  {
+    name: "València-La Font de Sant Lluís",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.4416,
+    lng: -0.3714,
+  },
+
+  {
+    name: "Guadalajara-Yebes",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 40.5873,
+    lng: -3.1243,
+  },
+
+  {
+    name: "Sol",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.4169,
+    lng: -3.7029,
+  },
+
 ];

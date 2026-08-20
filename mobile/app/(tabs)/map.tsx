@@ -20,10 +20,15 @@ import { OsmWebMap, type OsmWebMapHandle } from '@/components/OsmWebMap';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { getCurrentCoords } from '@/lib/currentLocation';
-import { reliabilityScoreColor, formatReliabilityScore } from '@/lib/reliabilityScore';
+import {
+  reliabilityScoreColor,
+  formatReliabilityScore,
+  SPAIN_RELIABILITY_MIN_MOVEMENTS,
+} from '@/lib/reliabilityScore';
 import {
   allStations,
   bakedReliabilityScores,
+  bakedSpainReliabilityScores,
   stationToSlug,
 } from '@/lib/stationData';
 import { isAirportHiddenFromMapMarkers } from '@/lib/airportMapVisibility';
@@ -74,8 +79,12 @@ export default function MapScreen() {
       allStations
         .filter((station) => !isAirportHiddenFromMapMarkers(station))
         .map((station) => {
-          const score = bakedReliabilityScores.scores[station.name] ?? null;
-          const movements = bakedReliabilityScores.movements[station.name] ?? 0;
+          const spain = station.country === 'es';
+          const manifest = spain ? bakedSpainReliabilityScores : bakedReliabilityScores;
+          const movements = manifest.movements[station.name] ?? 0;
+          const rawScore = manifest.scores[station.name] ?? null;
+          const score =
+            spain && movements < SPAIN_RELIABILITY_MIN_MOVEMENTS ? null : rawScore;
           return {
             station,
             score,

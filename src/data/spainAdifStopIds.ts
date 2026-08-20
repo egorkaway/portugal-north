@@ -233,6 +233,36 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Valdelasfuentes": ["19002"],
 
+  "Barcelona Arc de Triomf": ["78804"],
+
+  "Figueres": ["79309"],
+
+  "Elda-Petrer": ["60905"],
+
+  "La Serna-Fuenlabrada": ["35010"],
+
+  "San Bernardo": ["51100"],
+
+  "Tudela de Navarra": ["81202"],
+
+  "Altafulla-Tamarit": ["71502"],
+
+  "Balsicas-Mar Menor": ["61303"],
+
+  "Granollers Centre": ["79100"],
+
+  "Pirámides": ["18005"],
+
+  "Ametzola": ["13206"],
+
+  "Barcelona Estació de França": ["79400"],
+
+  "València-La Font de Sant Lluís": ["65002"],
+
+  "Guadalajara-Yebes": ["04007"],
+
+  "Sol": ["18101"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
