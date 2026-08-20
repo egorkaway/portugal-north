@@ -1373,4 +1373,31 @@ export const spainStations: Station[] = [
     lng: -3.6092,
   },
 
+  {
+    name: "Monfragüe",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.9375,
+    lng: -6.1009,
+  },
+
+  {
+    name: "Alcalá de Henares",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4891,
+    lng: -3.3662,
+  },
+
+  {
+    name: "Figueres-Vilafant",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.2648,
+    lng: 2.9435,
+  },
+
 ];

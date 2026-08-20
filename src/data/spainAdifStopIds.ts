@@ -293,6 +293,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Granada": ["05000", "72205"],
 
+  "Monfragüe": ["30000"],
+
+  "Alcalá de Henares": ["70103"],
+
+  "Figueres-Vilafant": ["04307"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

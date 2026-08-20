@@ -514,4 +514,13 @@ export const spainSummariesEn: Record<string, string> = {
   "Granada":
     "Granada is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Monfragüe":
+    "Monfragüe is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Alcalá de Henares":
+    "Alcalá de Henares is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Figueres-Vilafant":
+    "Figueres-Vilafant is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

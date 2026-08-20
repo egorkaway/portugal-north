@@ -2671,6 +2671,21 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Princesa Ana", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Princesa%20Ana%2C%20Granada%2C%20Spain&order=price" },
     { name: "Sercotel HMO Martina", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20HMO%20Martina%2C%20Granada%2C%20Spain&order=price" },
   ],
+  "Monfragüe": [
+    { name: "Apartamentos Rurales La Solana", distanceKm: 6.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20Rurales%20La%20Solana%2C%20Monfrag%C3%BCe%2C%20Spain&order=price" },
+    { name: "ELE Puerta de Monfragüe", distanceKm: 7.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ELE%20Puerta%20de%20Monfrag%C3%BCe%2C%20Monfrag%C3%BCe%2C%20Spain&order=price" },
+    { name: "Hotel Ciudad de Plasencia", distanceKm: 7.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ciudad%20de%20Plasencia%2C%20Monfrag%C3%BCe%2C%20Spain&order=price" },
+  ],
+  "Alcalá de Henares": [
+    { name: "Hostel Complutum", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20Complutum%2C%20Alcal%C3%A1%20de%20Henares%2C%20Spain&order=price" },
+    { name: "Hostal Miguel de Cervantes", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Miguel%20de%20Cervantes%2C%20Alcal%C3%A1%20de%20Henares%2C%20Spain&order=price" },
+    { name: "Hotel El Bedel", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Bedel%2C%20Alcal%C3%A1%20de%20Henares%2C%20Spain&order=price" },
+  ],
+  "Figueres-Vilafant": [
+    { name: "Hostal Amiel", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Amiel%2C%20Figueres-Vilafant%2C%20Spain&order=price" },
+    { name: "Hotel Europa", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Europa%2C%20Figueres-Vilafant%2C%20Spain&order=price" },
+    { name: "President", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=President%2C%20Figueres-Vilafant%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
