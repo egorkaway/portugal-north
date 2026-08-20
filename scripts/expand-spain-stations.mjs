@@ -4,9 +4,10 @@
  *
  *   npm run stats:spain-expand
  *   npm run stats:spain-expand -- --dry-run
- *   npm run stats:spain-expand -- --limit 3
+ *   npm run stats:spain-expand -- --limit 1
  *
- * Also invoked from collect-departure-stats.mjs after Spain reliability sampling.
+ * Also invoked from collect-departure-stats.mjs after Spain reliability sampling
+ * (default: one station per run).
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -113,11 +114,13 @@ function spainStubHotels(name) {
 
 export async function expandSpainStations(options = {}) {
   const dryRun = Boolean(options.dryRun);
-  const limit = Number(options.limit ?? 3);
+  const { pickNextSpainStations, SPAIN_EXPAND_BATCH_SIZE } = await import(
+    "../src/lib/spainStationCandidates.ts"
+  );
+  const limit = Number(options.limit ?? SPAIN_EXPAND_BATCH_SIZE);
   const { loadEnvFile, parseAllStationsFromRepo, parseImageMap, resolveStationImage, seedUsedImages, updateImageInMap, writeImageMap, sleep } =
     await import("./lib/stationImageFetch.mjs");
   const { loadSpainGtfsStops } = await import("./lib/spainGtfsStops.mjs");
-  const { pickNextSpainStations } = await import("../src/lib/spainStationCandidates.ts");
   const { readSpainTrainDelayLog } = await import("../server/lib/spainTrainDelayLog.ts");
   const { parseHotelMap, resolveHotelsForStation, writeHotelMap } = await import(
     "./lib/stationHotelFetch.mjs"
@@ -249,7 +252,10 @@ const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.arg
 if (isMain) {
   const dryRun = process.argv.includes("--dry-run");
   const limitArg = process.argv.find((arg) => arg.startsWith("--limit="));
-  const limit = limitArg ? Number.parseInt(limitArg.split("=")[1], 10) : 3;
+  const { SPAIN_EXPAND_BATCH_SIZE } = await import("../src/lib/spainStationCandidates.ts");
+  const limit = limitArg
+    ? Number.parseInt(limitArg.split("=")[1], 10)
+    : SPAIN_EXPAND_BATCH_SIZE;
   expandSpainStations({ dryRun, limit }).then((result) => {
     if (result.added?.length) {
       console.log(`Done: ${result.added.join(", ")}`);

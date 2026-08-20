@@ -1400,4 +1400,58 @@ export const spainStations: Station[] = [
     lng: 2.9435,
   },
 
+  {
+    name: "Elche/Elx AV",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.2455,
+    lng: -0.7667,
+  },
+
+  {
+    name: "Las Zorreras-Navalquejigo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.6093,
+    lng: -4.0464,
+  },
+
+  {
+    name: "Pola de Siero",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3882,
+    lng: -5.6648,
+  },
+
+  {
+    name: "Tortosa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.8073,
+    lng: 0.523,
+  },
+
+  {
+    name: "Alcázar de San Juan",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.3956,
+    lng: -3.2057,
+  },
+
+  {
+    name: "Madrid-Villaverde Alto",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3416,
+    lng: -3.7124,
+  },
+
 ];

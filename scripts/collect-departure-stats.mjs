@@ -299,7 +299,7 @@ if (!dryRun) {
   if (!args.includes("--skip-spain-expand")) {
     try {
       const { expandSpainStations } = await import("./expand-spain-stations.mjs");
-      await expandSpainStations({ limit: 3 });
+      await expandSpainStations();
     } catch (error) {
       const message = error instanceof Error ? error.message : String(error);
       console.error(`Spain station expand skipped: ${message}`);

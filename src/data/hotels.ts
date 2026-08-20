@@ -2686,6 +2686,36 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Europa", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Europa%2C%20Figueres-Vilafant%2C%20Spain&order=price" },
     { name: "President", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=President%2C%20Figueres-Vilafant%2C%20Spain&order=price" },
   ],
+  "Elche/Elx AV": [
+    { name: "Campanile", distanceKm: 5.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Campanile%2C%20Elche%2FElx%20AV%2C%20Spain&order=price" },
+    { name: "Hotel H2", distanceKm: 5.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20H2%2C%20Elche%2FElx%20AV%2C%20Spain&order=price" },
+    { name: "Hostal Residencial Candilejas", distanceKm: 5.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Residencial%20Candilejas%2C%20Elche%2FElx%20AV%2C%20Spain&order=price" },
+  ],
+  "Las Zorreras-Navalquejigo": [
+    { name: "El Molino", distanceKm: 3.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Molino%2C%20Las%20Zorreras-Navalquejigo%2C%20Spain&order=price" },
+    { name: "Hostal Lady Ana María", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Lady%20Ana%20Mar%C3%ADa%2C%20Las%20Zorreras-Navalquejigo%2C%20Spain&order=price" },
+    { name: "Residencia Santa María de los Negrales", distanceKm: 3.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Santa%20Mar%C3%ADa%20de%20los%20Negrales%2C%20Las%20Zorreras-Navalquejigo%2C%20Spain&order=price" },
+  ],
+  "Pola de Siero": [
+    { name: "Albergue de Peregrinos Casona de San Miguel", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Casona%20de%20San%20Miguel%2C%20Pola%20de%20Siero%2C%20Spain&order=price" },
+    { name: "Albergue de La Carrera", distanceKm: 1.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20La%20Carrera%2C%20Pola%20de%20Siero%2C%20Spain&order=price" },
+    { name: "Hotel del Nora", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20del%20Nora%2C%20Pola%20de%20Siero%2C%20Spain&order=price" },
+  ],
+  "Tortosa": [
+    { name: "Hotel Berenguer IV", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Berenguer%20IV%2C%20Tortosa%2C%20Spain&order=price" },
+    { name: "Tortosa Parc", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tortosa%20Parc%2C%20Tortosa%2C%20Spain&order=price" },
+    { name: "Parador Nacional de Turisme de Tortosa", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20Nacional%20de%20Turisme%20de%20Tortosa%2C%20Tortosa%2C%20Spain&order=price" },
+  ],
+  "Alcázar de San Juan": [
+    { name: "Hostal HAR Numancia", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20HAR%20Numancia%2C%20Alc%C3%A1zar%20de%20San%20Juan%2C%20Spain&order=price" },
+    { name: "Hotel Ercilla Don Quijote", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ercilla%20Don%20Quijote%2C%20Alc%C3%A1zar%20de%20San%20Juan%2C%20Spain&order=price" },
+    { name: "Hotel Hidalgo Quijada", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Hidalgo%20Quijada%2C%20Alc%C3%A1zar%20de%20San%20Juan%2C%20Spain&order=price" },
+  ],
+  "Madrid-Villaverde Alto": [
+    { name: "Hotel Asador Enrique", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Asador%20Enrique%2C%20Madrid-Villaverde%20Alto%2C%20Spain&order=price" },
+    { name: "Solimpar", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solimpar%2C%20Madrid-Villaverde%20Alto%2C%20Spain&order=price" },
+    { name: "Hotel Vértice Roomspace Madrid", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20V%C3%A9rtice%20Roomspace%20Madrid%2C%20Madrid-Villaverde%20Alto%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

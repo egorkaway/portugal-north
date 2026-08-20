@@ -523,4 +523,22 @@ export const spainSummariesEs: Record<string, string> = {
   "Figueres-Vilafant":
     "Figueres-Vilafant es una estación de Renfe de larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Elche/Elx AV":
+    "Elche/Elx AV es una estación de Renfe de larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Las Zorreras-Navalquejigo":
+    "Las Zorreras-Navalquejigo es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Pola de Siero":
+    "Pola de Siero es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Tortosa":
+    "Tortosa es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Alcázar de San Juan":
+    "Alcázar de San Juan es una estación de Renfe de larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Madrid-Villaverde Alto":
+    "Madrid-Villaverde Alto es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

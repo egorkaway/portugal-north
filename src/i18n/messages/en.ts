@@ -292,18 +292,19 @@ export const en: Messages = {
     title: "Station activity map",
     subtitle: "Hex sizes show activity, while station colors show on-time reliability across Portugal and Spain",
     intro:
-      "Busiest and mid-traffic stations stay as H3 hexes sized by sampled departures and arrivals. Quiet active stations switch to reliability-colored dots, while inactive or low-sample stations stay as smaller resolution-9 hexes.",
+      "Busiest and mid-traffic stations stay as bigger hexes, sized by sampled departures and arrivals. Quiet active stations switch to reliability-colored dots, while inactive or low-sample stations stay as small hexes.",
     loading: "Loading map…",
     unavailable: "Station activity data is temporarily unavailable.",
     legendTitle: "Station activity",
-    legendBusy: "Busiest (H3 res. 7)",
-    legendMid: "Mid traffic (H3 res. 7)",
-    legendQuiet: "Inactive or low-sample (H3 res. 9)",
+    legendBusy: "Busy and mid-traffic (bigger hexes)",
+    legendMid: "Mid traffic (bigger hexes)",
+    legendQuiet: "Inactive or low-sample (small hexes)",
     legendReliableHigh: "Reliable",
     legendReliableMid: "Mixed reliability",
     legendReliableLow: "Unreliable",
     tooltipMovements: "{{count}} departures + arrivals (sampled)",
-    tooltipResolution: "H3 resolution {{resolution}}",
+    tooltipBiggerHex: "Bigger hex",
+    tooltipSmallHex: "Small hex",
     viewStation: "View station",
     downloadGeoJson: "Download GeoJSON",
     legendAirports: "International airports",
@@ -331,7 +332,7 @@ export const en: Messages = {
     overviewIntro:
       "Static maps focused on mainland Portugal. The activity map matches the hex view above; the reliability map uses the same on-time scores as our mobile app.",
     overviewActivityTitle: "Station activity",
-    overviewActivityAlt: "Map of mainland Portugal with H3 hexes coloured by sampled train activity",
+    overviewActivityAlt: "Map of mainland Portugal with hexes coloured by sampled train activity",
     overviewActivityDownload: "Download activity map",
     overviewReliabilityTitle: "Station reliability",
     overviewReliabilityAlt:
@@ -569,9 +570,9 @@ export const en: Messages = {
     map: {
       title: "Station Activity Map | Sustainable Iberian",
       description:
-        "Interactive map of CP stations in mainland Portugal with H3 hexes sized by sampled departures and arrivals.",
+        "Interactive map of CP stations in mainland Portugal with hexes sized by sampled departures and arrivals.",
       ogDescription:
-        "See which CP stations are busiest in our live departure samples, on an H3 hex map of Portugal.",
+        "See which CP stations are busiest in our live departure samples, on a hex map of Portugal.",
     },
     trip: {
       title: "Trip | Sustainable Iberian",

@@ -299,6 +299,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Figueres-Vilafant": ["04307"],
 
+  "Elche/Elx AV": ["03410"],
+
+  "Las Zorreras-Navalquejigo": ["10202"],
+
+  "Pola de Siero": ["05513"],
+
+  "Tortosa": ["65400"],
+
+  "Alcázar de San Juan": ["60400"],
+
+  "Madrid-Villaverde Alto": ["37001"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

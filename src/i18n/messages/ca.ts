@@ -294,18 +294,19 @@ export const ca: Messages = {
     title: "Mapa d'activitat d'estacions",
     subtitle: "La mida dels hexàgons mostra activitat i els colors de les estacions mostren fiabilitat a Portugal i Espanya",
     intro:
-      "Les estacions més actives i les de trànsit mitjà continuen com a hexàgons H3 segons les sortides i arribades mostrejades. Les estacions actives més tranquil·les passen a punts acolorits per fiabilitat, mentre que les inactives o amb poques mostres continuen com a hexàgons petits de resolució 9.",
+      "Les estacions més actives i les de trànsit mitjà continuen com a hexàgons més grans, segons les sortides i arribades mostrejades. Les estacions actives més tranquil·les passen a punts acolorits per fiabilitat, mentre que les inactives o amb poques mostres continuen com a hexàgons petits.",
     loading: "Carregant mapa…",
     unavailable: "Les dades d'activitat d'estacions no estan disponibles temporalment.",
     legendTitle: "Activitat de l'estació",
-    legendBusy: "Més activa (H3 res. 7)",
-    legendMid: "Trànsit mitjà (H3 res. 7)",
-    legendQuiet: "Inactiva o amb poques mostres (H3 res. 9)",
+    legendBusy: "Actives i trànsit mitjà (hexàgons més grans)",
+    legendMid: "Trànsit mitjà (hexàgons més grans)",
+    legendQuiet: "Inactiva o amb poques mostres (hexàgons petits)",
     legendReliableHigh: "Fiable",
     legendReliableMid: "Fiabilitat mixta",
     legendReliableLow: "Poc fiable",
     tooltipMovements: "{{count}} sortides + arribades (mostrejades)",
-    tooltipResolution: "Resolució H3 {{resolution}}",
+    tooltipBiggerHex: "Hexàgon més gran",
+    tooltipSmallHex: "Hexàgon petit",
     viewStation: "Veure estació",
     downloadGeoJson: "Descarregar GeoJSON",
     legendAirports: "Aeroports internacionals",
@@ -333,7 +334,7 @@ export const ca: Messages = {
     overviewIntro:
       "Mapes estàtics centrats en Portugal continental. El mapa d'activitat coincideix amb la vista hexagonal de dalt; el de fiabilitat fa servir les mateixes puntuacions de puntualitat que l'app mòbil.",
     overviewActivityTitle: "Activitat d'estacions",
-    overviewActivityAlt: "Mapa de Portugal continental amb hexàgons H3 per activitat ferroviària mostrejada",
+    overviewActivityAlt: "Mapa de Portugal continental amb hexàgons per activitat ferroviària mostrejada",
     overviewActivityDownload: "Descarregar mapa d'activitat",
     overviewReliabilityTitle: "Fiabilitat d'estacions",
     overviewReliabilityAlt:
@@ -571,9 +572,9 @@ export const ca: Messages = {
     map: {
       title: "Mapa d'Activitat | Viatge Ibèric Sostenible",
       description:
-        "Mapa interactiu d'estacions CP a Portugal continental amb hexàgons H3 segons sortides i arribades mostrejades.",
+        "Mapa interactiu d'estacions CP a Portugal continental amb hexàgons segons sortides i arribades mostrejades.",
       ogDescription:
-        "Mira quines estacions CP són més actives a les nostres mostres de sortides, en un mapa H3 de Portugal.",
+        "Mira quines estacions CP són més actives a les nostres mostres de sortides, en un mapa hexagonal de Portugal.",
     },
     trip: {
       title: "Viatge | Viatge Ibèric Sostenible",

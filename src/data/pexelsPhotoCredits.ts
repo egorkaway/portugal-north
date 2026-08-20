@@ -231,6 +231,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@herve-piglowski-1457017",
     photoPageUrl: "https://www.pexels.com/photo/yellow-and-red-tram-near-white-concrete-building-4008645/",
   },
+  "4015577": {
+    photographer: "Serinus",
+    photographerUrl: "https://www.pexels.com/@serinus",
+    photoPageUrl: "https://www.pexels.com/photo/interior-of-lyon-airport-in-france-4015577/",
+  },
   "4082005": {
     photographer: "Bastien Neves",
     photographerUrl: "https://www.pexels.com/@bastien-neves-2459695",
@@ -1566,6 +1571,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@el-gringo-photo-116752370",
     photoPageUrl: "https://www.pexels.com/photo/man-walking-in-subway-station-with-red-train-29210896/",
   },
+  "29223287": {
+    photographer: "Juan García",
+    photographerUrl: "https://www.pexels.com/@juan-garcia-84744800",
+    photoPageUrl: "https://www.pexels.com/photo/historic-architecture-in-madrid-s-casa-del-reloj-29223287/",
+  },
   "29240083": {
     photographer: "Pedro Oliveira",
     photographerUrl: "https://www.pexels.com/@mrpoliveira",
@@ -2555,6 +2565,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Jerson Martins",
     photographerUrl: "https://www.pexels.com/@jerson-martins-1514473344",
     photoPageUrl: "https://www.pexels.com/photo/historic-rio-das-velhas-train-station-at-sunset-38844111/",
+  },
+  "38973852": {
+    photographer: "stelios ΒΚ",
+    photographerUrl: "https://www.pexels.com/@stelios-117223391",
+    photoPageUrl: "https://www.pexels.com/photo/high-speed-train-motion-blur-at-sunset-station-38973852/",
   },
   "38978616": {
     photographer: "Explora Andalucia",

@@ -32,6 +32,21 @@ describe("spain station expand picker", () => {
     );
   });
 
+  it("defaults to one station per expand batch", () => {
+    const picked = pickNextSpainStations({
+      stops,
+      existing,
+      observations: [
+        ...Array.from({ length: 9 }, () => ({ stopId: "04040", kind: "longDistance" as const })),
+        ...Array.from({ length: 4 }, () => ({ stopId: "60000", kind: "longDistance" as const })),
+        ...Array.from({ length: 3 }, () => ({ stopId: "05100", kind: "cercanias" as const })),
+      ],
+    });
+
+    expect(picked).toHaveLength(1);
+    expect(picked[0]?.name).toBe("Zaragoza Delicias");
+  });
+
   it("picks the busiest unmatched Spanish stops and skips catalog plus Portugal", () => {
     const picked = pickNextSpainStations({
       stops,

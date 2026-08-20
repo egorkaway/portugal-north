@@ -275,7 +275,8 @@ export type Messages = {
     legendReliableMid: string;
     legendReliableLow: string;
     tooltipMovements: string;
-    tooltipResolution: string;
+    tooltipBiggerHex: string;
+    tooltipSmallHex: string;
     viewStation: string;
     downloadGeoJson: string;
     legendAirports: string;

@@ -38,12 +38,6 @@ const LEGEND_TIERS = {
     border: "hsl(215 18% 36%)",
     size: "h-2.5 w-2.5",
   },
-  mid: {
-    fill: "hsl(215 16% 65%)",
-    fillOpacity: 0.55,
-    border: "hsl(215 18% 36%)",
-    size: "h-2.5 w-2.5",
-  },
   quiet: {
     fill: "hsl(215 16% 65%)",
     fillOpacity: 0.92,
@@ -174,27 +168,18 @@ export default function StationActivityMap() {
 
       <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
         <span className="font-medium text-foreground">{t("map.legendTitle")}</span>
-        {(["busy", "mid"] as const).map((tier) => {
-          const swatch = LEGEND_TIERS[tier];
-          const label =
-            tier === "busy"
-              ? t("map.legendBusy")
-              : t("map.legendMid");
-          return (
-            <span key={tier} className="inline-flex items-center gap-2">
-              <span
-                className={`inline-block rounded-sm border-2 ${swatch.size}`}
-                style={{
-                  backgroundColor: swatch.fill,
-                  opacity: swatch.fillOpacity,
-                  borderColor: swatch.border,
-                }}
-                aria-hidden="true"
-              />
-              {label}
-            </span>
-          );
-        })}
+        <span className="inline-flex items-center gap-2">
+          <span
+            className={`inline-block rounded-sm border-2 ${LEGEND_TIERS.busy.size}`}
+            style={{
+              backgroundColor: LEGEND_TIERS.busy.fill,
+              opacity: LEGEND_TIERS.busy.fillOpacity,
+              borderColor: LEGEND_TIERS.busy.border,
+            }}
+            aria-hidden="true"
+          />
+          {t("map.legendBusy")}
+        </span>
         {(["high", "mid", "low"] as const).map((tier) => {
           const swatch = RELIABILITY_DOT_SWATCHES[tier];
           const label =

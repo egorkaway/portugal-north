@@ -27,14 +27,13 @@ function buildTooltipHtml(
       const slug = stationToSlug(cell.stationName);
       const name = escapeHtml(cell.stationName);
       const movements = t("map.tooltipMovements", { count: cell.movements });
-      const resolution = t("map.tooltipResolution", {
-        resolution: cell.resolution,
-      });
+      const hexSize =
+        cell.resolution === 7 ? t("map.tooltipBiggerHex") : t("map.tooltipSmallHex");
       const viewStation = t("map.viewStation");
       return `<div class="map-hex-tooltip__station">
         <p class="font-semibold text-foreground">${name}</p>
         <p class="text-xs text-muted-foreground">${movements}</p>
-        <p class="text-xs text-muted-foreground">${resolution}</p>
+        <p class="text-xs text-muted-foreground">${hexSize}</p>
         <a href="/stations/${slug}" data-station-link class="text-xs font-medium text-primary hover:underline">${viewStation}</a>
       </div>`;
     })

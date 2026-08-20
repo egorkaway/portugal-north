@@ -294,18 +294,19 @@ export const pt: Messages = {
     title: "Mapa de atividade das estações",
     subtitle: "O tamanho dos hexágonos mostra atividade e as cores das estações mostram fiabilidade em Portugal e Espanha",
     intro:
-      "As estações mais movimentadas e as de tráfego médio mantêm hexágonos H3 dimensionados pelas partidas e chegadas amostradas. As estações ativas mais calmas passam a pontos coloridos pela fiabilidade, enquanto as inativas ou com poucas amostras ficam em hexágonos menores de resolução 9.",
+      "As estações mais movimentadas e as de tráfego médio mantêm hexágonos maiores, dimensionados pelas partidas e chegadas amostradas. As estações ativas mais calmas passam a pontos coloridos pela fiabilidade, enquanto as inativas ou com poucas amostras ficam em hexágonos pequenos.",
     loading: "A carregar mapa…",
     unavailable: "Os dados de atividade das estações estão temporariamente indisponíveis.",
     legendTitle: "Atividade da estação",
-    legendBusy: "Mais movimentada (H3 res. 7)",
-    legendMid: "Tráfego médio (H3 res. 7)",
-    legendQuiet: "Inativa ou com poucas amostras (H3 res. 9)",
+    legendBusy: "Movimentadas e tráfego médio (hexágonos maiores)",
+    legendMid: "Tráfego médio (hexágonos maiores)",
+    legendQuiet: "Inativa ou com poucas amostras (hexágonos pequenos)",
     legendReliableHigh: "Fiável",
     legendReliableMid: "Fiabilidade mista",
     legendReliableLow: "Pouco fiável",
     tooltipMovements: "{{count}} partidas + chegadas (amostradas)",
-    tooltipResolution: "Resolução H3 {{resolution}}",
+    tooltipBiggerHex: "Hexágono maior",
+    tooltipSmallHex: "Hexágono pequeno",
     viewStation: "Ver estação",
     downloadGeoJson: "Descarregar GeoJSON",
     legendAirports: "Aeroportos internacionais",
@@ -333,7 +334,7 @@ export const pt: Messages = {
     overviewIntro:
       "Mapas estáticos focados no continente português. O mapa de atividade corresponde à vista hexagonal acima; o de fiabilidade usa as mesmas pontuações de pontualidade da app móvel.",
     overviewActivityTitle: "Atividade das estações",
-    overviewActivityAlt: "Mapa de Portugal continental com hexágonos H3 por atividade ferroviária amostrada",
+    overviewActivityAlt: "Mapa de Portugal continental com hexágonos por atividade ferroviária amostrada",
     overviewActivityDownload: "Descarregar mapa de atividade",
     overviewReliabilityTitle: "Fiabilidade das estações",
     overviewReliabilityAlt:
@@ -571,9 +572,9 @@ export const pt: Messages = {
     map: {
       title: "Mapa de Atividade | Mobilidade Ibérica",
       description:
-        "Mapa interativo das estações CP em Portugal continental com hexágonos H3 dimensionados por partidas e chegadas amostradas.",
+        "Mapa interativo das estações CP em Portugal continental com hexágonos dimensionados por partidas e chegadas amostradas.",
       ogDescription:
-        "Veja quais estações CP são mais movimentadas nas nossas amostras de partidas, num mapa H3 de Portugal.",
+        "Veja quais estações CP são mais movimentadas nas nossas amostras de partidas, num mapa hexagonal de Portugal.",
     },
     trip: {
       title: "Viagem | Mobilidade Ibérica",

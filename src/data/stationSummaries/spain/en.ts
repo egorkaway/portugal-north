@@ -523,4 +523,22 @@ export const spainSummariesEn: Record<string, string> = {
   "Figueres-Vilafant":
     "Figueres-Vilafant is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Elche/Elx AV":
+    "Elche/Elx AV is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Las Zorreras-Navalquejigo":
+    "Las Zorreras-Navalquejigo is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Pola de Siero":
+    "Pola de Siero is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Tortosa":
+    "Tortosa is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Alcázar de San Juan":
+    "Alcázar de San Juan is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Madrid-Villaverde Alto":
+    "Madrid-Villaverde Alto is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };
