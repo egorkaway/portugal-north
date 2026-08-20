@@ -201,6 +201,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@itislit",
     photoPageUrl: "https://www.pexels.com/photo/group-of-people-outside-2866765/",
   },
+  "3108525": {
+    photographer: "Paul Seling",
+    photographerUrl: "https://www.pexels.com/@paulseling",
+    photoPageUrl: "https://www.pexels.com/photo/graffiti-train-car-station-3108525/",
+  },
   "3193322": {
     photographer: "Nam Phong Bùi",
     photographerUrl: "https://www.pexels.com/@streetwindy",
@@ -575,6 +580,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Enric Cruz López",
     photographerUrl: "https://www.pexels.com/@enric-cruz-lopez",
     photoPageUrl: "https://www.pexels.com/photo/tropical-trees-in-front-of-brick-public-building-9989485/",
+  },
+  "9989486": {
+    photographer: "Enric Cruz López",
+    photographerUrl: "https://www.pexels.com/@enric-cruz-lopez",
+    photoPageUrl: "https://www.pexels.com/photo/tropical-garden-inside-railroad-station-9989486/",
   },
   "9989491": {
     photographer: "Enric Cruz López",
@@ -2415,6 +2425,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Lajos Kristóf Kántor",
     photographerUrl: "https://www.pexels.com/@lajos-kristof-kantor-2158796893",
     photoPageUrl: "https://www.pexels.com/photo/arched-passageway-in-lisbon-s-historic-district-37093706/",
+  },
+  "37104712": {
+    photographer: "Uriel Lu",
+    photographerUrl: "https://www.pexels.com/@urielluphoto",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-police-office-interior-in-uribelarrea-37104712/",
   },
   "37122717": {
     photographer: "Lajos Kristóf Kántor",

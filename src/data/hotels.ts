@@ -2736,6 +2736,26 @@ export const stationHotels: StationHotels = {
     { name: "Residencia Gregorio Peces Barba", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Gregorio%20Peces%20Barba%2C%20Las%20Margaritas%2C%20Spain&order=price" },
     { name: "Residencia de estudiantes Livensa Living", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20de%20estudiantes%20Livensa%20Living%2C%20Las%20Margaritas%2C%20Spain&order=price" },
   ],
+  "Lieres": [
+    { name: "Hotel La Curva", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Curva%2C%20Lieres%2C%20Spain&order=price" },
+    { name: "Albergue Municipal de Peregrinos de Sariego", distanceKm: 3.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Municipal%20de%20Peregrinos%20de%20Sariego%2C%20Lieres%2C%20Spain&order=price" },
+    { name: "Hotel Hello Astur", distanceKm: 5.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Hello%20Astur%2C%20Lieres%2C%20Spain&order=price" },
+  ],
+  "Ordizia": [
+    { name: "Hotel Ordizia", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ordizia%2C%20Ordizia%2C%20Spain&order=price" },
+    { name: "Hotel Beasain", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Beasain%2C%20Ordizia%2C%20Spain&order=price" },
+    { name: "Igartza", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Igartza%2C%20Ordizia%2C%20Spain&order=price" },
+  ],
+  "Málaga María Zambrano": [
+    { name: "Barceló Málaga", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcel%C3%B3%20M%C3%A1laga%2C%20M%C3%A1laga%20Mar%C3%ADa%20Zambrano%2C%20Spain&order=price" },
+    { name: "Hostal Acapulco", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Acapulco%2C%20M%C3%A1laga%20Mar%C3%ADa%20Zambrano%2C%20Spain&order=price" },
+    { name: "Hotel Las Américas", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Am%C3%A9ricas%2C%20M%C3%A1laga%20Mar%C3%ADa%20Zambrano%2C%20Spain&order=price" },
+  ],
+  "Bellvitge-Gornal": [
+    { name: "marina esteban", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=marina%20esteban%2C%20Bellvitge-Gornal%2C%20Spain&order=price" },
+    { name: "Eurohotel Gran Via Fira", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurohotel%20Gran%20Via%20Fira%2C%20Bellvitge-Gornal%2C%20Spain&order=price" },
+    { name: "Hotel Renaissance Barcelona Fira", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Renaissance%20Barcelona%20Fira%2C%20Bellvitge-Gornal%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

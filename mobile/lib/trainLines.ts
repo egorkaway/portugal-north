@@ -12,7 +12,12 @@ const LINE_ALIASES: Record<string, string> = {
   'Linha do Sul (historic terminus)': 'Linha do Sul',
 };
 
-const NON_LINE_TOKENS = new Set(['Urban']);
+const NON_LINE_TOKENS = new Set([
+  'Urban',
+  // Service-family labels, not named corridors / lines.
+  'Cercanías',
+  'Larga distancia',
+]);
 
 export type LineCategory = 'rail' | 'metro';
 

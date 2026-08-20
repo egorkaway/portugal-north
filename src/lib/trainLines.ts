@@ -19,7 +19,12 @@ const LINE_ALIASES: Record<string, string> = {
 };
 
 /** Tokens that appear in `lines[]` but are not real line names. */
-const NON_LINE_TOKENS = new Set(["Urban"]);
+const NON_LINE_TOKENS = new Set([
+  "Urban",
+  // Service-family labels, not named corridors / lines.
+  "Cercanías",
+  "Larga distancia",
+]);
 
 export type LineCategory = "rail" | "metro";
 

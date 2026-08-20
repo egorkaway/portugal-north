@@ -319,6 +319,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Las Margaritas": ["37010"],
 
+  "Lieres": ["05517"],
+
+  "Ordizia": ["11405"],
+
+  "Málaga María Zambrano": ["54413"],
+
+  "Bellvitge-Gornal": ["71708"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

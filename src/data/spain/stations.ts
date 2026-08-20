@@ -121,7 +121,7 @@ export const spainStations: Station[] = [
   {
     name: "Madrid-Chamartín",
     country: "es",
-    lines: ["Línea de alta velocidad (Madrid–Galicia)"],
+    lines: ["Línea de alta velocidad (Madrid–Galicia)", "Línea de alta velocidad (Madrid–Valladolid–Norte)"],
     types: ["Intercidades"],
     lat: 40.472,
     lng: -3.6823,
@@ -129,7 +129,7 @@ export const spainStations: Station[] = [
   {
     name: "Barcelona-Sants",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Barcelona–Francia)", "Corredor Mediterráneo"],
     types: ["Intercidades"],
     lat: 41.3794,
     lng: 2.1403,
@@ -145,7 +145,7 @@ export const spainStations: Station[] = [
   {
     name: "Madrid-Puerta de Atocha",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Barcelona–Francia)", "Línea de alta velocidad (Madrid–Levante)", "Línea de alta velocidad (Madrid–Sevilla)", "Línea Madrid–Extremadura"],
     types: ["Intercidades"],
     lat: 40.4064,
     lng: -3.6909,
@@ -170,7 +170,7 @@ export const spainStations: Station[] = [
   {
     name: "Girona",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Barcelona–Francia)"],
     types: ["Urban", "Intercidades"],
     lat: 41.9794,
     lng: 2.8169,
@@ -179,7 +179,7 @@ export const spainStations: Station[] = [
   {
     name: "Valladolid-Campo Grande",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Valladolid–Norte)"],
     types: ["Urban", "Intercidades"],
     lat: 41.6422,
     lng: -4.727,
@@ -188,7 +188,7 @@ export const spainStations: Station[] = [
   {
     name: "Sant Vicenç de Calders",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 41.1862,
     lng: 1.5248,
@@ -197,7 +197,7 @@ export const spainStations: Station[] = [
   {
     name: "Zaragoza Delicias",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Barcelona–Francia)"],
     types: ["Urban", "Intercidades"],
     lat: 41.6587,
     lng: -0.9113,
@@ -206,7 +206,7 @@ export const spainStations: Station[] = [
   {
     name: "Córdoba-Julio Anguita",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Sevilla)"],
     types: ["Intercidades"],
     lat: 37.8883,
     lng: -4.7895,
@@ -215,7 +215,7 @@ export const spainStations: Station[] = [
   {
     name: "Sevilla-Santa Justa",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Sevilla)", "Línea Sevilla–Cádiz"],
     types: ["Urban", "Intercidades"],
     lat: 37.3925,
     lng: -5.9749,
@@ -224,7 +224,7 @@ export const spainStations: Station[] = [
   {
     name: "Orihuela-Miguel Hernández",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Levante)", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 38.0779,
     lng: -0.9446,
@@ -242,7 +242,7 @@ export const spainStations: Station[] = [
   {
     name: "León",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Valladolid–Norte)"],
     types: ["Urban", "Intercidades"],
     lat: 42.596,
     lng: -5.5824,
@@ -269,7 +269,7 @@ export const spainStations: Station[] = [
   {
     name: "Camp de Tarragona",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Barcelona–Francia)"],
     types: ["Intercidades"],
     lat: 41.1921,
     lng: 1.2727,
@@ -287,7 +287,7 @@ export const spainStations: Station[] = [
   {
     name: "València-Estació del Nord",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 39.4669,
     lng: -0.3772,
@@ -296,7 +296,7 @@ export const spainStations: Station[] = [
   {
     name: "Burgos-Rosa Manzano",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Valladolid–Norte)"],
     types: ["Urban", "Intercidades"],
     lat: 42.3712,
     lng: -3.6663,
@@ -341,7 +341,7 @@ export const spainStations: Station[] = [
   {
     name: "Cáceres",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Madrid–Extremadura"],
     types: ["Urban", "Intercidades"],
     lat: 39.4611,
     lng: -6.3857,
@@ -368,7 +368,7 @@ export const spainStations: Station[] = [
   {
     name: "Castelló de la Plana",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 39.9885,
     lng: -0.0523,
@@ -386,7 +386,7 @@ export const spainStations: Station[] = [
   {
     name: "Segovia-Guiomar",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Valladolid–Norte)"],
     types: ["Intercidades"],
     lat: 40.9106,
     lng: -4.0946,
@@ -449,7 +449,7 @@ export const spainStations: Station[] = [
   {
     name: "Vilanova i la Geltrú",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 41.2203,
     lng: 1.7308,
@@ -467,7 +467,7 @@ export const spainStations: Station[] = [
   {
     name: "Cuenca-Fernando Zóbel",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Levante)"],
     types: ["Intercidades"],
     lat: 40.0352,
     lng: -2.1444,
@@ -476,7 +476,7 @@ export const spainStations: Station[] = [
   {
     name: "Jerez de la Frontera",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Sevilla–Cádiz"],
     types: ["Urban", "Intercidades"],
     lat: 36.68,
     lng: -6.1266,
@@ -485,7 +485,7 @@ export const spainStations: Station[] = [
   {
     name: "Lleida-Pirineus",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Barcelona–Francia)"],
     types: ["Urban", "Intercidades"],
     lat: 41.6201,
     lng: 0.6337,
@@ -494,7 +494,7 @@ export const spainStations: Station[] = [
   {
     name: "Alicante/Alacant-Terminal",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Levante)", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 38.3447,
     lng: -0.4955,
@@ -512,7 +512,7 @@ export const spainStations: Station[] = [
   {
     name: "Palencia",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Valladolid–Norte)"],
     types: ["Urban", "Intercidades"],
     lat: 42.0157,
     lng: -4.5341,
@@ -557,7 +557,7 @@ export const spainStations: Station[] = [
   {
     name: "Albacete-Los Llanos",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Levante)"],
     types: ["Intercidades"],
     lat: 38.9994,
     lng: -1.8484,
@@ -584,7 +584,7 @@ export const spainStations: Station[] = [
   {
     name: "Torredembarra",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 41.1428,
     lng: 1.4058,
@@ -602,7 +602,7 @@ export const spainStations: Station[] = [
   {
     name: "Elche/Elx-Carrús",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 38.269,
     lng: -0.7064,
@@ -620,7 +620,7 @@ export const spainStations: Station[] = [
   {
     name: "Medina del Campo",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Valladolid–Norte)"],
     types: ["Urban", "Intercidades"],
     lat: 41.3176,
     lng: -4.9099,
@@ -638,7 +638,7 @@ export const spainStations: Station[] = [
   {
     name: "Dos Hermanas",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Sevilla–Cádiz"],
     types: ["Urban", "Intercidades"],
     lat: 37.2872,
     lng: -5.9235,
@@ -674,7 +674,7 @@ export const spainStations: Station[] = [
   {
     name: "Tarragona",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 41.1116,
     lng: 1.2532,
@@ -710,7 +710,7 @@ export const spainStations: Station[] = [
   {
     name: "Cartagena",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Corredor Mediterráneo"],
     types: ["Intercidades"],
     lat: 37.605,
     lng: -0.9751,
@@ -755,7 +755,7 @@ export const spainStations: Station[] = [
   {
     name: "Talavera de la Reina",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Madrid–Extremadura"],
     types: ["Urban", "Intercidades"],
     lat: 39.9707,
     lng: -4.8265,
@@ -791,7 +791,7 @@ export const spainStations: Station[] = [
   {
     name: "L'Aldea-Amposta-Tortosa",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 40.7536,
     lng: 0.6143,
@@ -827,7 +827,7 @@ export const spainStations: Station[] = [
   {
     name: "Ciudad Real",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Sevilla)"],
     types: ["Intercidades"],
     lat: 38.9853,
     lng: -3.9136,
@@ -863,7 +863,7 @@ export const spainStations: Station[] = [
   {
     name: "Xàtiva",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 38.9921,
     lng: -0.5245,
@@ -881,7 +881,7 @@ export const spainStations: Station[] = [
   {
     name: "Utrera",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Sevilla–Cádiz"],
     types: ["Urban", "Intercidades"],
     lat: 37.1848,
     lng: -5.7908,
@@ -890,7 +890,7 @@ export const spainStations: Station[] = [
   {
     name: "València-Joaquín Sorolla",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Levante)", "Corredor Mediterráneo"],
     types: ["Intercidades"],
     lat: 39.4591,
     lng: -0.3829,
@@ -962,7 +962,7 @@ export const spainStations: Station[] = [
   {
     name: "Cambrils",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 41.0816,
     lng: 1.046,
@@ -998,7 +998,7 @@ export const spainStations: Station[] = [
   {
     name: "Calatayud",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Barcelona–Francia)"],
     types: ["Urban", "Intercidades"],
     lat: 41.3467,
     lng: -1.6387,
@@ -1007,7 +1007,7 @@ export const spainStations: Station[] = [
   {
     name: "Navalmoral de la Mata",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Madrid–Extremadura"],
     types: ["Urban", "Intercidades"],
     lat: 39.8949,
     lng: -5.5456,
@@ -1124,7 +1124,7 @@ export const spainStations: Station[] = [
   {
     name: "Elda-Petrer",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 38.4849,
     lng: -0.8011,
@@ -1142,7 +1142,7 @@ export const spainStations: Station[] = [
   {
     name: "San Bernardo",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Sevilla–Cádiz"],
     types: ["Urban", "Intercidades"],
     lat: 37.3778,
     lng: -5.9796,
@@ -1160,7 +1160,7 @@ export const spainStations: Station[] = [
   {
     name: "Altafulla-Tamarit",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 41.1366,
     lng: 1.3734,
@@ -1223,7 +1223,7 @@ export const spainStations: Station[] = [
   {
     name: "Guadalajara-Yebes",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Barcelona–Francia)"],
     types: ["Intercidades"],
     lat: 40.5873,
     lng: -3.1243,
@@ -1241,7 +1241,7 @@ export const spainStations: Station[] = [
   {
     name: "Murcia del Carmen",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea de alta velocidad (Madrid–Levante)", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 37.9748,
     lng: -1.1315,
@@ -1268,7 +1268,7 @@ export const spainStations: Station[] = [
   {
     name: "Sitges",
     country: "es",
-    lines: ["Cercanías"],
+    lines: ["Cercanías", "Corredor Mediterráneo"],
     types: ["Urban"],
     lat: 41.2391,
     lng: 1.8097,
@@ -1286,7 +1286,7 @@ export const spainStations: Station[] = [
   {
     name: "Virgen del Rocío",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Sevilla–Cádiz"],
     types: ["Urban", "Intercidades"],
     lat: 37.3628,
     lng: -5.976,
@@ -1322,7 +1322,7 @@ export const spainStations: Station[] = [
   {
     name: "San Fernando-Bahía Sur",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Sevilla–Cádiz"],
     types: ["Urban", "Intercidades"],
     lat: 36.4681,
     lng: -6.2068,
@@ -1340,7 +1340,7 @@ export const spainStations: Station[] = [
   {
     name: "Puerto de Santa María",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Sevilla–Cádiz"],
     types: ["Urban", "Intercidades"],
     lat: 36.6041,
     lng: -6.2179,
@@ -1376,7 +1376,7 @@ export const spainStations: Station[] = [
   {
     name: "Monfragüe",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Línea Madrid–Extremadura"],
     types: ["Urban", "Intercidades"],
     lat: 39.9375,
     lng: -6.1009,
@@ -1394,7 +1394,7 @@ export const spainStations: Station[] = [
   {
     name: "Figueres-Vilafant",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Barcelona–Francia)"],
     types: ["Intercidades"],
     lat: 42.2648,
     lng: 2.9435,
@@ -1403,7 +1403,7 @@ export const spainStations: Station[] = [
   {
     name: "Elche/Elx AV",
     country: "es",
-    lines: ["Larga distancia"],
+    lines: ["Larga distancia", "Línea de alta velocidad (Madrid–Levante)"],
     types: ["Intercidades"],
     lat: 38.2455,
     lng: -0.7667,
@@ -1430,7 +1430,7 @@ export const spainStations: Station[] = [
   {
     name: "Tortosa",
     country: "es",
-    lines: ["Cercanías", "Larga distancia"],
+    lines: ["Cercanías", "Larga distancia", "Corredor Mediterráneo"],
     types: ["Urban", "Intercidades"],
     lat: 40.8073,
     lng: 0.523,
@@ -1488,6 +1488,42 @@ export const spainStations: Station[] = [
     types: ["Urban"],
     lat: 40.3231,
     lng: -3.7273,
+  },
+
+  {
+    name: "Lieres",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3806,
+    lng: -5.5826,
+  },
+
+  {
+    name: "Ordizia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.0528,
+    lng: -2.1792,
+  },
+
+  {
+    name: "Málaga María Zambrano",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 36.7113,
+    lng: -4.4314,
+  },
+
+  {
+    name: "Bellvitge-Gornal",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3549,
+    lng: 2.1153,
   },
 
 ];
