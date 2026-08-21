@@ -586,4 +586,13 @@ export const spainSummariesCa: Record<string, string> = {
   "Sant Vicenç de Castellet":
     "Sant Vicenç de Castellet és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Cádiz":
+    "Cádiz és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Nules la Villavella":
+    "Nules la Villavella és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Venta de Baños":
+    "Venta de Baños és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

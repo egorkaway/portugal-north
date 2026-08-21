@@ -586,4 +586,13 @@ export const spainSummariesGl: Record<string, string> = {
   "Sant Vicenç de Castellet":
     "Sant Vicenç de Castellet é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Cádiz":
+    "Cádiz é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Nules la Villavella":
+    "Nules la Villavella é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Venta de Baños":
+    "Venta de Baños é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

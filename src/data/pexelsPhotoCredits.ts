@@ -251,6 +251,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@bastien-neves-2459695",
     photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-a-train-station-roofing-in-lyon-france-4082184/",
   },
+  "4224110": {
+    photographer: "Marik Elikishvili",
+    photographerUrl: "https://www.pexels.com/@marik-elikishvili-1886521",
+    photoPageUrl: "https://www.pexels.com/photo/railway-tracks-in-rural-terrain-on-sunny-day-4224110/",
+  },
   "4341096": {
     photographer: "Luis Quintero",
     photographerUrl: "https://www.pexels.com/@jibarofoto",

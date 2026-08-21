@@ -22,7 +22,8 @@
  * (client hides when the Lisbon month rolls over or samples ≤ 9),
  * and syncs mobile/data (npm run sync:data).
  * Overview PNGs (portugal-activity / portugal-reliability) regenerate only when
- * at least one station sample succeeds.
+ * at least one station sample succeeds and the existing PNGs are missing or
+ * older than 3 days (force anytime with npm run maps:overview).
  * Stations are shuffled each run so partial runs (--limit or timeouts) spread across the network.
  * Stops early after 3 consecutive API failures (e.g. CP outage or rate limit).
  */
@@ -31,6 +32,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadEnvFile, parseAllStationsFromRepo } from "./lib/stationImageFetch.mjs";
 import { shouldRecheckAirportDestinations } from "./lib/airportRecheckPolicy.mjs";
+import { shouldRenderOverviewMaps } from "./lib/overviewMapsRecheckPolicy.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const statsPath = join(root, "data/departure-stats.json");
@@ -357,15 +359,19 @@ if (!dryRun) {
   console.log("Syncing mobile bundled data…");
   await syncMobileData();
 
+  const overviewDir = join(root, "public/maps/overview");
   if (ok === 0) {
     console.log(
       "Skipping portugal-activity.png / portugal-reliability.png — no successful station samples this run.",
+    );
+  } else if (!shouldRenderOverviewMaps(overviewDir)) {
+    console.log(
+      "Skipping portugal-activity.png / portugal-reliability.png — last render < 3 days ago.",
     );
   } else {
     const { renderPortugalActivityMap, renderPortugalReliabilityMap } = await import("./lib/portugalOverviewMap.mjs");
     const { resolveOverviewBasemap } = await import("./lib/mapBasemaps.mjs");
     const { mkdirSync, writeFileSync } = await import("node:fs");
-    const overviewDir = join(root, "public/maps/overview");
     mkdirSync(overviewDir, { recursive: true });
     const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
     const basemap = resolveOverviewBasemap("osm");

@@ -2791,6 +2791,21 @@ export const stationHotels: StationHotels = {
     { name: "La Casajoana", distanceKm: 5.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casajoana%2C%20Sant%20Vicen%C3%A7%20de%20Castellet%2C%20Spain&order=price" },
     { name: "Els Noguers", distanceKm: 6.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Els%20Noguers%2C%20Sant%20Vicen%C3%A7%20de%20Castellet%2C%20Spain&order=price" },
   ],
+  "Cádiz": [
+    { name: "Cádiz Inn Backpackers", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=C%C3%A1diz%20Inn%20Backpackers%2C%20C%C3%A1diz%2C%20Spain&order=price" },
+    { name: "Hotel Boutique Convento de Cádiz", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Boutique%20Convento%20de%20C%C3%A1diz%2C%20C%C3%A1diz%2C%20Spain&order=price" },
+    { name: "Casa Caracol", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Caracol%2C%20C%C3%A1diz%2C%20Spain&order=price" },
+  ],
+  "Nules la Villavella": [
+    { name: "Termas", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Termas%2C%20Nules%20la%20Villavella%2C%20Spain&order=price" },
+    { name: "Torre La Mina", distanceKm: 4.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torre%20La%20Mina%2C%20Nules%20la%20Villavella%2C%20Spain&order=price" },
+    { name: "Ticasa", distanceKm: 5.6, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ticasa%2C%20Nules%20la%20Villavella%2C%20Spain&order=price" },
+  ],
+  "Venta de Baños": [
+    { name: "Aparthotel Plata", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Plata%2C%20Venta%20de%20Ba%C3%B1os%2C%20Spain&order=price" },
+    { name: "Hotel La Basílica", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Bas%C3%ADlica%2C%20Venta%20de%20Ba%C3%B1os%2C%20Spain&order=price" },
+    { name: "Casa rural La Villa es Bella", distanceKm: 6.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20rural%20La%20Villa%20es%20Bella%2C%20Venta%20de%20Ba%C3%B1os%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

@@ -341,6 +341,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Sant Vicenç de Castellet": ["78604"],
 
+  "Cádiz": ["51405"],
+
+  "Nules la Villavella": ["65206"],
+
+  "Venta de Baños": ["11000"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -1589,4 +1589,31 @@ export const spainStations: Station[] = [
     lng: 1.8626,
   },
 
+  {
+    name: "Cádiz",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.5289,
+    lng: -6.288,
+  },
+
+  {
+    name: "Nules la Villavella",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.8532,
+    lng: -0.1527,
+  },
+
+  {
+    name: "Venta de Baños",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.9174,
+    lng: -4.4958,
+  },
+
 ];
