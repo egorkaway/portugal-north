@@ -347,6 +347,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Venta de Baños": ["11000"],
 
+  "Tremañes Carreño": ["05203"],
+
+  "Xeraco": ["69107"],
+
+  "Lebrija": ["51203"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -1616,4 +1616,31 @@ export const spainStations: Station[] = [
     lng: -4.4958,
   },
 
+  {
+    name: "Tremañes Carreño",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5286,
+    lng: -5.6949,
+  },
+
+  {
+    name: "Xeraco",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.0261,
+    lng: -0.215,
+  },
+
+  {
+    name: "Lebrija",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.9116,
+    lng: -6.0948,
+  },
+
 ];

@@ -2806,6 +2806,20 @@ export const stationHotels: StationHotels = {
     { name: "Hotel La Basílica", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Bas%C3%ADlica%2C%20Venta%20de%20Ba%C3%B1os%2C%20Spain&order=price" },
     { name: "Casa rural La Villa es Bella", distanceKm: 6.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20rural%20La%20Villa%20es%20Bella%2C%20Venta%20de%20Ba%C3%B1os%2C%20Spain&order=price" },
   ],
+  "Tremañes Carreño": [
+    { name: "Hotel Arbeyal", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Arbeyal%2C%20Trema%C3%B1es%20Carre%C3%B1o%2C%20Spain&order=price" },
+    { name: "Hotel AC Los Ferranes", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20AC%20Los%20Ferranes%2C%20Trema%C3%B1es%20Carre%C3%B1o%2C%20Spain&order=price" },
+    { name: "Hotel 44", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%2044%2C%20Trema%C3%B1es%20Carre%C3%B1o%2C%20Spain&order=price" },
+  ],
+  "Xeraco": [
+    { name: "Albergue Municipal 'Massís del Mondúver'", distanceKm: 1.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Municipal%20'Mass%C3%ADs%20del%20Mond%C3%BAver'%2C%20Xeraco%2C%20Spain&order=price" },
+    { name: "Gandia Home", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gandia%20Home%2C%20Xeraco%2C%20Spain&order=price" },
+    { name: "Hotel Tres Anclas", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Tres%20Anclas%2C%20Xeraco%2C%20Spain&order=price" },
+  ],
+  "Lebrija": [
+    { name: "Hotel LB", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20LB%2C%20Lebrija%2C%20Spain&order=price" },
+    { name: "Hotel-Restaurante Vía Sevilla-Cádiz", distanceKm: 8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel-Restaurante%20V%C3%ADa%20Sevilla-C%C3%A1diz%2C%20Lebrija%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

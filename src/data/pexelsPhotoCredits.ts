@@ -606,6 +606,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@rossxsavchyn",
     photoPageUrl: "https://www.pexels.com/photo/white-and-brown-concrete-building-9999094/",
   },
+  "10143303": {
+    photographer: "DHampl",
+    photographerUrl: "https://www.pexels.com/@dhampl-30042661",
+    photoPageUrl: "https://www.pexels.com/photo/an-old-abandoned-train-station-10143303/",
+  },
   "10150057": {
     photographer: "MELIANI Driss",
     photographerUrl: "https://www.pexels.com/@droosmo",
@@ -1515,6 +1520,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Edgar Mosqueda Camacho",
     photographerUrl: "https://www.pexels.com/@edgar-mosqueda-camacho-544076702",
     photoPageUrl: "https://www.pexels.com/photo/vintage-building-in-town-27173219/",
+  },
+  "27173231": {
+    photographer: "Edgar Mosqueda Camacho",
+    photographerUrl: "https://www.pexels.com/@edgar-mosqueda-camacho-544076702",
+    photoPageUrl: "https://www.pexels.com/photo/museum-in-the-old-railway-station-in-atlixco-27173231/",
   },
   "27677296": {
     photographer: "Gustavo Denuncio",
