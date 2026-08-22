@@ -7,7 +7,6 @@ export const OVERVIEW_MAP_MIN_INTERVAL_MS = 3 * 24 * 60 * 60 * 1000;
 export const OVERVIEW_MAP_FILENAMES = [
   "portugal-activity.png",
   "portugal-reliability.png",
-  "iberian-activity.png",
   "iberian-reliability.png",
 ];
 

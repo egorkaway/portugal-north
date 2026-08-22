@@ -28,8 +28,8 @@ describe("overviewMapImage", () => {
     expect(getOverviewMapImagePath("reliability", "iberian")).toBe(
       "/maps/overview/iberian-reliability.png",
     );
-    expect(getOverviewMapDownloadFilename("activity", "iberian")).toBe(
-      "verystays-iberian-activity.png",
+    expect(getOverviewMapDownloadFilename("reliability", "iberian")).toBe(
+      "verystays-iberian-reliability.png",
     );
   });
 });

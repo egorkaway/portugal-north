@@ -2,7 +2,7 @@
 /**
  * Generate overview PNGs for the web map and rankings pages:
  *   - portugal-activity.png / portugal-reliability.png (4:5 portrait)
- *   - iberian-activity.png / iberian-reliability.png (square peninsula)
+ *   - iberian-reliability.png (square peninsula)
  *
  *   npm run maps:overview
  */
@@ -10,7 +10,6 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  renderIberianActivityMap,
   renderIberianReliabilityMap,
   renderPortugalActivityMap,
   renderPortugalReliabilityMap,
@@ -39,12 +38,6 @@ const outputs = [
     width: CARD_WIDTH,
     height: CARD_HEIGHT,
     render: () => renderPortugalReliabilityMap(root, { siteUrl, basemap }),
-  },
-  {
-    filename: "iberian-activity.png",
-    width: IBERIAN_CARD_SIZE,
-    height: IBERIAN_CARD_SIZE,
-    render: () => renderIberianActivityMap(root, { siteUrl, basemap }),
   },
   {
     filename: "iberian-reliability.png",

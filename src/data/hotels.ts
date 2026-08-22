@@ -2915,6 +2915,21 @@ export const stationHotels: StationHotels = {
     { name: "Parador de Turismo Marco Fabio Quintiliano", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20de%20Turismo%20Marco%20Fabio%20Quintiliano%2C%20Calahorra%2C%20Spain&order=price" },
     { name: "Albergue de Peregrinos Calahorra", distanceKm: 1.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Calahorra%2C%20Calahorra%2C%20Spain&order=price" },
   ],
+  "Tolosa": [
+    { name: "Oria", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oria%2C%20Tolosa%2C%20Spain&order=price" },
+    { name: "Bidebide", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bidebide%2C%20Tolosa%2C%20Spain&order=price" },
+    { name: "Karmentxu", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Karmentxu%2C%20Tolosa%2C%20Spain&order=price" },
+  ],
+  "Antequera AV": [
+    { name: "Finca Eslava", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20Eslava%2C%20Antequera%20AV%2C%20Spain&order=price" },
+    { name: "Parador Nacional de Antequera", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20Nacional%20de%20Antequera%2C%20Antequera%20AV%2C%20Spain&order=price" },
+    { name: "Hotel Las Villas de Antikaria", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Villas%20de%20Antikaria%2C%20Antequera%20AV%2C%20Spain&order=price" },
+  ],
+  "Ribadeo": [
+    { name: "A Cortiña de Cantalarrana", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=A%20Corti%C3%B1a%20de%20Cantalarrana%2C%20Ribadeo%2C%20Spain&order=price" },
+    { name: "Hotel Voar", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Voar%2C%20Ribadeo%2C%20Spain&order=price" },
+    { name: "Albergue Viruxe", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Viruxe%2C%20Ribadeo%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

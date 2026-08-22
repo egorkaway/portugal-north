@@ -19,12 +19,15 @@ const PORTUGAL_BOUNDS = {
   maxLng: -6.15,
 };
 
-/** Iberian peninsula bbox — matches the interactive web map. */
+/**
+ * Iberian overview PNG bbox — tighter than the interactive web map so the
+ * square card fills with the peninsula and shows less of France / Africa.
+ */
 const IBERIAN_BOUNDS = {
-  minLat: 35.8,
-  maxLat: 44.0,
-  minLng: -10.0,
-  maxLng: 4.0,
+  minLat: 36.0,
+  maxLat: 43.85,
+  minLng: -9.55,
+  maxLng: 3.35,
 };
 
 const BRAND_DARK = "#0f3d38";
@@ -133,6 +136,14 @@ function markerRadius(movements) {
   if (movements >= 200) return 16;
   if (movements >= 50) return 13;
   return 10;
+}
+
+/** Smaller dots for the dense Iberian reliability overview. */
+function iberianMarkerRadius(movements) {
+  if (movements >= 500) return 5.5;
+  if (movements >= 200) return 4.5;
+  if (movements >= 50) return 3.75;
+  return 3;
 }
 
 function isAirportStation(station) {
@@ -428,10 +439,18 @@ function buildReliabilityOverlaySvg({
   siteHost,
   cardWidth = CARD_WIDTH,
   cardHeight = CARD_HEIGHT,
+  /** When true, skip stations without a reliability score (no grey/unknown dots). */
+  omitUnknownScores = false,
+  /** Iberian overview uses denser, smaller markers. */
+  compactMarkers = false,
 }) {
+  const radiusFor = compactMarkers ? iberianMarkerRadius : markerRadius;
+  const strokeWidth = compactMarkers ? 1 : 3;
+
   const markerElements = stations
     .map((station) => {
       const score = scores[station.name] ?? null;
+      if (omitUnknownScores && score === null) return "";
       const stationMovements = movements[station.name] ?? 0;
       const pt = project(station.lat, station.lng);
       const color =
@@ -440,8 +459,8 @@ function buildReliabilityOverlaySvg({
           : isAirportStation(station)
             ? RELIABILITY_COLORS.airport
             : RELIABILITY_COLORS.unknown;
-      const radius = markerRadius(stationMovements);
-      return `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" stroke="#ffffff" stroke-width="3" />`;
+      const radius = radiusFor(stationMovements);
+      return `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" stroke="#ffffff" stroke-width="${strokeWidth}" />`;
     })
     .join("");
 
@@ -510,9 +529,8 @@ function iberianBoundsPoints() {
   return [
     { lat: minLat, lng: minLng },
     { lat: maxLat, lng: maxLng },
-    { lat: 36.7, lng: -6.0 },
-    { lat: 43.5, lng: -8.4 },
-    { lat: 41.4, lng: 2.2 },
+    { lat: minLat, lng: maxLng },
+    { lat: maxLat, lng: minLng },
   ];
 }
 
@@ -522,7 +540,9 @@ async function stitchIberianMap(basemap = "carto-voyager") {
     points: iberianBoundsPoints(),
     width: IBERIAN_CARD_SIZE,
     height: IBERIAN_CARD_SIZE,
-    paddingPx: 40,
+    paddingPx: 16,
+    // Cover crops E–W excess so we don't pad N–S into France / Africa.
+    fit: "cover",
     basemap,
   });
 }
@@ -642,6 +662,8 @@ export async function renderIberianReliabilityMap(root, { siteUrl = "https://www
     siteHost,
     cardWidth: IBERIAN_CARD_SIZE,
     cardHeight: IBERIAN_CARD_SIZE,
+    omitUnknownScores: true,
+    compactMarkers: true,
   });
 
   return renderOverviewMap({

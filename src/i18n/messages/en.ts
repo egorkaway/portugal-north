@@ -350,11 +350,9 @@ export const en: Messages = {
     overviewReliabilityAlt:
       "Map of mainland Portugal with stations coloured by on-time reliability score",
     overviewReliabilityDownload: "Download reliability map",
-    overviewIberianTitle: "Download Iberian overview maps",
+    overviewIberianTitle: "Download Iberian overview map",
     overviewIberianIntro:
-      "Square static maps covering Portugal and Spain. Activity uses sampled departures; reliability uses on-time scores where we have enough data.",
-    overviewIberianActivityAlt:
-      "Square map of the Iberian peninsula with hexes coloured by sampled train activity",
+      "A square static reliability map covering Portugal and Spain, using the same on-time scores as our mobile app where we have enough data.",
     overviewIberianReliabilityAlt:
       "Square map of the Iberian peninsula with stations coloured by on-time reliability score",
   },

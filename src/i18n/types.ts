@@ -321,7 +321,6 @@ export type Messages = {
     overviewReliabilityDownload: string;
     overviewIberianTitle: string;
     overviewIberianIntro: string;
-    overviewIberianActivityAlt: string;
     overviewIberianReliabilityAlt: string;
   };
   tickets: {

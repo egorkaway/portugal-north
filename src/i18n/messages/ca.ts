@@ -352,11 +352,9 @@ export const ca: Messages = {
     overviewReliabilityAlt:
       "Mapa de Portugal continental amb estacions per puntuació de puntualitat",
     overviewReliabilityDownload: "Descarregar mapa de fiabilitat",
-    overviewIberianTitle: "Descarregar mapes generals de la Península Ibèrica",
+    overviewIberianTitle: "Descarregar mapa general de la Península Ibèrica",
     overviewIberianIntro:
-      "Mapes estàtics quadrats de Portugal i Espanya. L'activitat usa sortides mostrejades; la fiabilitat usa puntuacions de puntualitat quan hi ha prou dades.",
-    overviewIberianActivityAlt:
-      "Mapa quadrat de la península ibèrica amb hexàgons per activitat ferroviària mostrejada",
+      "Un mapa estàtic quadrat de fiabilitat de Portugal i Espanya, amb les mateixes puntuacions de puntualitat de l'app mòbil quan hi ha prou dades.",
     overviewIberianReliabilityAlt:
       "Mapa quadrat de la península ibèrica amb estacions per puntuació de puntualitat",
   },

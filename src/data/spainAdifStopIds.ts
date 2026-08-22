@@ -391,6 +391,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Calahorra": ["81108"],
 
+  "Tolosa": ["11500"],
+
+  "Antequera AV": ["02030"],
+
+  "Ribadeo": ["05193"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

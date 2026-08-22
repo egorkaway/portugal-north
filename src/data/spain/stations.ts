@@ -1814,4 +1814,31 @@ export const spainStations: Station[] = [
     lng: -1.9578,
   },
 
+  {
+    name: "Tolosa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.1354,
+    lng: -2.0791,
+  },
+
+  {
+    name: "Antequera AV",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.0334,
+    lng: -4.5613,
+  },
+
+  {
+    name: "Ribadeo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5361,
+    lng: -7.0556,
+  },
+
 ];

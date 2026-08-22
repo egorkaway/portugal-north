@@ -8,13 +8,22 @@ import {
   type OverviewMapRegion,
 } from "@/lib/overviewMapImage";
 
+type MapKindConfig = {
+  kind: OverviewMapKind;
+  titleKey: "map.overviewActivityTitle" | "map.overviewReliabilityTitle";
+  downloadKey: "map.overviewActivityDownload" | "map.overviewReliabilityDownload";
+  altKey:
+    | "map.overviewActivityAlt"
+    | "map.overviewReliabilityAlt"
+    | "map.overviewIberianReliabilityAlt";
+};
+
 type RegionConfig = {
   region: OverviewMapRegion;
   headingId: string;
   titleKey: "map.overviewTitle" | "map.overviewIberianTitle";
   introKey: "map.overviewIntro" | "map.overviewIberianIntro";
-  activityAltKey: "map.overviewActivityAlt" | "map.overviewIberianActivityAlt";
-  reliabilityAltKey: "map.overviewReliabilityAlt" | "map.overviewIberianReliabilityAlt";
+  kinds: MapKindConfig[];
 };
 
 const REGIONS: RegionConfig[] = [
@@ -23,33 +32,34 @@ const REGIONS: RegionConfig[] = [
     headingId: "map-overview-heading",
     titleKey: "map.overviewTitle",
     introKey: "map.overviewIntro",
-    activityAltKey: "map.overviewActivityAlt",
-    reliabilityAltKey: "map.overviewReliabilityAlt",
+    kinds: [
+      {
+        kind: "activity",
+        titleKey: "map.overviewActivityTitle",
+        downloadKey: "map.overviewActivityDownload",
+        altKey: "map.overviewActivityAlt",
+      },
+      {
+        kind: "reliability",
+        titleKey: "map.overviewReliabilityTitle",
+        downloadKey: "map.overviewReliabilityDownload",
+        altKey: "map.overviewReliabilityAlt",
+      },
+    ],
   },
   {
     region: "iberian",
     headingId: "map-overview-iberian-heading",
     titleKey: "map.overviewIberianTitle",
     introKey: "map.overviewIberianIntro",
-    activityAltKey: "map.overviewIberianActivityAlt",
-    reliabilityAltKey: "map.overviewIberianReliabilityAlt",
-  },
-];
-
-const MAP_KINDS: {
-  kind: OverviewMapKind;
-  titleKey: "map.overviewActivityTitle" | "map.overviewReliabilityTitle";
-  downloadKey: "map.overviewActivityDownload" | "map.overviewReliabilityDownload";
-}[] = [
-  {
-    kind: "activity",
-    titleKey: "map.overviewActivityTitle",
-    downloadKey: "map.overviewActivityDownload",
-  },
-  {
-    kind: "reliability",
-    titleKey: "map.overviewReliabilityTitle",
-    downloadKey: "map.overviewReliabilityDownload",
+    kinds: [
+      {
+        kind: "reliability",
+        titleKey: "map.overviewReliabilityTitle",
+        downloadKey: "map.overviewReliabilityDownload",
+        altKey: "map.overviewIberianReliabilityAlt",
+      },
+    ],
   },
 ];
 
@@ -62,9 +72,9 @@ function OverviewMapCard({
 }: {
   region: OverviewMapRegion;
   kind: OverviewMapKind;
-  titleKey: "map.overviewActivityTitle" | "map.overviewReliabilityTitle";
-  altKey: RegionConfig["activityAltKey"] | RegionConfig["reliabilityAltKey"];
-  downloadKey: "map.overviewActivityDownload" | "map.overviewReliabilityDownload";
+  titleKey: MapKindConfig["titleKey"];
+  altKey: MapKindConfig["altKey"];
+  downloadKey: MapKindConfig["downloadKey"];
 }) {
   const { t } = useLocale();
   const { width, height, aspectClass } = OVERVIEW_MAP_DIMENSIONS[region];
@@ -102,33 +112,40 @@ export function MapOverviewImages() {
 
   return (
     <>
-      {REGIONS.map((config, index) => (
-        <section
-          key={config.region}
-          className={index === 0 ? "mt-10 md:mt-12" : "mt-12 md:mt-14"}
-          aria-labelledby={config.headingId}
-        >
-          <h2 id={config.headingId} className="font-display text-xl text-foreground md:text-2xl">
-            {t(config.titleKey)}
-          </h2>
-          <p className="mt-2 max-w-3xl text-sm text-muted-foreground">{t(config.introKey)}</p>
+      {REGIONS.map((config, index) => {
+        const multi = config.kinds.length > 1;
+        return (
+          <section
+            key={config.region}
+            className={index === 0 ? "mt-10 md:mt-12" : "mt-12 md:mt-14"}
+            aria-labelledby={config.headingId}
+          >
+            <h2 id={config.headingId} className="font-display text-xl text-foreground md:text-2xl">
+              {t(config.titleKey)}
+            </h2>
+            <p className="mt-2 max-w-3xl text-sm text-muted-foreground">{t(config.introKey)}</p>
 
-          <div className="mt-5 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-            {MAP_KINDS.map((map) => (
-              <OverviewMapCard
-                key={`${config.region}-${map.kind}`}
-                region={config.region}
-                kind={map.kind}
-                titleKey={map.titleKey}
-                altKey={
-                  map.kind === "activity" ? config.activityAltKey : config.reliabilityAltKey
-                }
-                downloadKey={map.downloadKey}
-              />
-            ))}
-          </div>
-        </section>
-      ))}
+            <div
+              className={
+                multi
+                  ? "mt-5 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8"
+                  : "mt-5 max-w-xl"
+              }
+            >
+              {config.kinds.map((map) => (
+                <OverviewMapCard
+                  key={`${config.region}-${map.kind}`}
+                  region={config.region}
+                  kind={map.kind}
+                  titleKey={map.titleKey}
+                  altKey={map.altKey}
+                  downloadKey={map.downloadKey}
+                />
+              ))}
+            </div>
+          </section>
+        );
+      })}
     </>
   );
 }
