@@ -419,6 +419,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Guadalajara": ["70200"],
 
+  "Hernani-Erdia": ["11507"],
+
+  "La Quadra": ["05465"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

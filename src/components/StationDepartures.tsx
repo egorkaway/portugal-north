@@ -55,7 +55,7 @@ function DepartureRow({
     minutesUntil !== null ? formatDepartureCountdown(minutesUntil, { t }) : null;
 
   return (
-    <li className="flex items-start justify-between gap-3 rounded-md border border-border bg-card px-3 py-2.5 md:px-4 md:py-3">
+    <li className="flex items-start justify-between gap-3 rounded-md border border-border bg-card even:bg-muted/30 px-3 py-2.5 md:px-4 md:py-3">
       <div className="min-w-0">
         <p className="font-medium text-foreground tabular-nums">
           {time}
@@ -65,7 +65,12 @@ function DepartureRow({
         </p>
         <p className="mt-0.5 text-sm text-foreground truncate">→ {destination}</p>
         <p className="mt-1 text-xs text-muted-foreground">
-          {serviceType} · {t("departures.train")} {trainNumber}
+          <span className={
+            serviceType.includes("Alfa") ? "text-primary font-semibold" :
+            serviceType.includes("Intercidades") || serviceType.includes("Celta") ? "text-secondary font-semibold" :
+            serviceType.includes("Regional") || serviceType.includes("InterRegional") ? "text-accent-foreground font-semibold" :
+            "font-medium text-foreground/70"
+          }>{serviceType}</span> · {t("departures.train")} {trainNumber}
           {platform ? ` · ${t("departures.platform")} ${platform}` : ""}
         </p>
       </div>

@@ -1940,4 +1940,22 @@ export const spainStations: Station[] = [
     lng: -3.1823,
   },
 
+  {
+    name: "Hernani-Erdia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2665,
+    lng: -1.9726,
+  },
+
+  {
+    name: "La Quadra",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2227,
+    lng: -3.025,
+  },
+
 ];

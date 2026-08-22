@@ -340,7 +340,7 @@ const Trip = () => {
                   return (
                     <li
                       key={record.id}
-                      className="flex flex-col gap-3 rounded-lg border border-border bg-card p-4 sm:flex-row sm:items-start sm:justify-between"
+                      className="flex flex-col gap-3 rounded-lg border border-border bg-card even:bg-muted/30 p-4 sm:flex-row sm:items-start sm:justify-between"
                     >
                       <div className="min-w-0">
                         <p className="font-medium text-foreground">

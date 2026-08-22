@@ -703,4 +703,10 @@ export const spainSummariesEn: Record<string, string> = {
   "Guadalajara":
     "Guadalajara is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Hernani-Erdia":
+    "Hernani-Erdia is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "La Quadra":
+    "La Quadra is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

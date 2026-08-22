@@ -2985,6 +2985,16 @@ export const stationHotels: StationHotels = {
     { name: "Pensión El Hostal", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20El%20Hostal%2C%20Guadalajara%2C%20Spain&order=price" },
     { name: "Hotel Puerta Guadalajara", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Puerta%20Guadalajara%2C%20Guadalajara%2C%20Spain&order=price" },
   ],
+  "Hernani-Erdia": [
+    { name: "Zinkoenea", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Zinkoenea%2C%20Hernani-Erdia%2C%20Spain&order=price" },
+    { name: "Hotel Txintxua", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Txintxua%2C%20Hernani-Erdia%2C%20Spain&order=price" },
+    { name: "Pensión Astigarraga", distanceKm: 1.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Astigarraga%2C%20Hernani-Erdia%2C%20Spain&order=price" },
+  ],
+  "La Quadra": [
+    { name: "Cynthia", distanceKm: 3.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cynthia%2C%20La%20Quadra%2C%20Spain&order=price" },
+    { name: "Hotel Erreka-alde", distanceKm: 4.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Erreka-alde%2C%20La%20Quadra%2C%20Spain&order=price" },
+    { name: "Agroturismo Ordaola", distanceKm: 4.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Agroturismo%20Ordaola%2C%20La%20Quadra%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

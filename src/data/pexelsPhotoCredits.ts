@@ -256,6 +256,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@bastien-neves-2459695",
     photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-a-train-station-roofing-in-lyon-france-4082184/",
   },
+  "4124866": {
+    photographer: "Christian Naccarato",
+    photographerUrl: "https://www.pexels.com/@lifeofnacchi",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-train-on-rail-tracks-4124866/",
+  },
   "4224110": {
     photographer: "Marik Elikishvili",
     photographerUrl: "https://www.pexels.com/@marik-elikishvili-1886521",
@@ -2185,6 +2190,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Heinz Reisenhofer",
     photographerUrl: "https://www.pexels.com/@heinz-reisenhofer-2155138929",
     photoPageUrl: "https://www.pexels.com/photo/modern-metro-station-entrance-with-sunlight-34240791/",
+  },
+  "34254938": {
+    photographer: "Ugo Mendes Donelli",
+    photographerUrl: "https://www.pexels.com/@ugo-mendes-donelli-2170582",
+    photoPageUrl: "https://www.pexels.com/photo/modern-indoor-corridor-with-glass-panels-34254938/",
   },
   "34268986": {
     photographer: "K",
