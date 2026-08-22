@@ -685,4 +685,7 @@ export const spainSummariesCa: Record<string, string> = {
   "Vallobín":
     "Vallobín és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Vilassar de Mar":
+    "Vilassar de Mar és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

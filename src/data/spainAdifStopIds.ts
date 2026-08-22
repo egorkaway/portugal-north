@@ -407,6 +407,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Vallobín": ["05300"],
 
+  "Vilassar de Mar": ["79410"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

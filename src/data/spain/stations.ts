@@ -1886,4 +1886,13 @@ export const spainStations: Station[] = [
     lng: -5.8648,
   },
 
+  {
+    name: "Vilassar de Mar",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5006,
+    lng: 2.3899,
+  },
+
 ];

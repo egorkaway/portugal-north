@@ -70,12 +70,16 @@ export function AirportDestinationRankingsPanel() {
   const { data, isLoading, isError } = useAirportConnections();
 
   if (isLoading) {
-    return <p className="text-sm text-muted-foreground">{t("rankings.airportDestinationLoading")}</p>;
+    return (
+      <p className="mt-8 mb-6 text-sm text-muted-foreground md:mt-12 md:mb-10">
+        {t("rankings.airportDestinationLoading")}
+      </p>
+    );
   }
 
   if (isError || !data) {
     return (
-      <div className="mb-6 rounded-lg border border-border bg-muted/30 p-4 text-sm text-muted-foreground md:mb-10">
+      <div className="mt-8 mb-6 rounded-lg border border-border bg-muted/30 p-4 text-sm text-muted-foreground md:mt-12 md:mb-10">
         <div className="flex items-start gap-2">
           <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
           <p>{t("rankings.airportDestinationUnavailable")}</p>
@@ -93,14 +97,14 @@ export function AirportDestinationRankingsPanel() {
 
   if (!hasData) {
     return (
-      <p className="mb-6 text-sm text-muted-foreground md:mb-10">
+      <p className="mt-8 mb-6 text-sm text-muted-foreground md:mt-12 md:mb-10">
         {t("rankings.airportDestinationNoData")}
       </p>
     );
   }
 
   return (
-    <section aria-labelledby="airport-destination-rankings-heading" className="mb-6 md:mb-10">
+    <section aria-labelledby="airport-destination-rankings-heading" className="mt-8 mb-6 md:mt-12 md:mb-10">
       <div className="mb-4 flex items-center gap-2">
         <Plane className="h-5 w-5 text-primary" aria-hidden="true" />
         <h2 id="airport-destination-rankings-heading" className="font-display text-2xl text-foreground">

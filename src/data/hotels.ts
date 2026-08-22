@@ -2955,6 +2955,11 @@ export const stationHotels: StationHotels = {
     { name: "5dos5", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=5dos5%2C%20Vallob%C3%ADn%2C%20Spain&order=price" },
     { name: "Pensión", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%2C%20Vallob%C3%ADn%2C%20Spain&order=price" },
   ],
+  "Vilassar de Mar": [
+    { name: "Hotel Tres Lleons", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Tres%20Lleons%2C%20Vilassar%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Hotel Sorli Emocions", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sorli%20Emocions%2C%20Vilassar%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Mas de Baix", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mas%20de%20Baix%2C%20Vilassar%20de%20Mar%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

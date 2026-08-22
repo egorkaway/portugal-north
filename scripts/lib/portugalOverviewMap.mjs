@@ -139,14 +139,14 @@ function markerRadius(movements) {
 }
 
 /**
- * Iberian reliability dots — a bit under Portugal’s radii so dense corridors
- * stay readable on the wider peninsula frame, but large enough to see.
+ * Iberian reliability dots — smaller than Portugal so dense corridors stay
+ * readable on the wider peninsula frame.
  */
 function iberianMarkerRadius(movements) {
-  if (movements >= 500) return 18;
-  if (movements >= 200) return 15;
-  if (movements >= 50) return 12;
-  return 10;
+  if (movements >= 500) return 10;
+  if (movements >= 200) return 8;
+  if (movements >= 50) return 6.5;
+  return 5;
 }
 
 function isAirportStation(station) {
@@ -448,7 +448,7 @@ function buildReliabilityOverlaySvg({
   compactMarkers = false,
 }) {
   const radiusFor = compactMarkers ? iberianMarkerRadius : markerRadius;
-  const strokeWidth = compactMarkers ? 2.5 : 3;
+  const strokeWidth = compactMarkers ? 1.75 : 3;
   const strokeColor = compactMarkers ? "#0f3d38" : "#ffffff";
 
   const markerElements = stations

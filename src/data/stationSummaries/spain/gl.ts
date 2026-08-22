@@ -685,4 +685,7 @@ export const spainSummariesGl: Record<string, string> = {
   "Vallobín":
     "Vallobín é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Vilassar de Mar":
+    "Vilassar de Mar é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };
