@@ -415,6 +415,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "San Severiano": ["51414"],
 
+  "Collado Mediano": ["12004"],
+
+  "Guadalajara": ["70200"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

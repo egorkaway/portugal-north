@@ -697,4 +697,10 @@ export const spainSummariesCa: Record<string, string> = {
   "San Severiano":
     "San Severiano és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Collado Mediano":
+    "Collado Mediano és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Guadalajara":
+    "Guadalajara és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

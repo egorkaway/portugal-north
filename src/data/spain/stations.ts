@@ -1922,4 +1922,22 @@ export const spainStations: Station[] = [
     lng: -6.2807,
   },
 
+  {
+    name: "Collado Mediano",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.6929,
+    lng: -4.0359,
+  },
+
+  {
+    name: "Guadalajara",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.6442,
+    lng: -3.1823,
+  },
+
 ];

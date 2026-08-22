@@ -2975,6 +2975,16 @@ export const stationHotels: StationHotels = {
     { name: "Regio 2", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Regio%202%2C%20San%20Severiano%2C%20Spain&order=price" },
     { name: "Hotel Barceló", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Barcel%C3%B3%2C%20San%20Severiano%2C%20Spain&order=price" },
   ],
+  "Collado Mediano": [
+    { name: "Hotel Las Postas", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Postas%2C%20Collado%20Mediano%2C%20Spain&order=price" },
+    { name: "Hacienda Los Robles", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hacienda%20Los%20Robles%2C%20Collado%20Mediano%2C%20Spain&order=price" },
+    { name: "Hostal Rural El Caño", distanceKm: 3.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Rural%20El%20Ca%C3%B1o%2C%20Collado%20Mediano%2C%20Spain&order=price" },
+  ],
+  "Guadalajara": [
+    { name: "Hostal Rica Posada", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Rica%20Posada%2C%20Guadalajara%2C%20Spain&order=price" },
+    { name: "Pensión El Hostal", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20El%20Hostal%2C%20Guadalajara%2C%20Spain&order=price" },
+    { name: "Hotel Puerta Guadalajara", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Puerta%20Guadalajara%2C%20Guadalajara%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
