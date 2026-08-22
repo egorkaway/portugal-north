@@ -1697,4 +1697,13 @@ export const spainStations: Station[] = [
     lng: -7.5036,
   },
 
+  {
+    name: "Barcelona Sant Andreu",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.4361,
+    lng: 2.1932,
+  },
+
 ];

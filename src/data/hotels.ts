@@ -2850,6 +2850,11 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Cardenal", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cardenal%2C%20Monforte%20de%20Lemos%2C%20Spain&order=price" },
     { name: "Ribeira Sacra", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ribeira%20Sacra%2C%20Monforte%20de%20Lemos%2C%20Spain&order=price" },
   ],
+  "Barcelona Sant Andreu": [
+    { name: "Alberg Coroleu House", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20Coroleu%20House%2C%20Barcelona%20Sant%20Andreu%2C%20Spain&order=price" },
+    { name: "Hotel Catalonia La Maquinista", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Catalonia%20La%20Maquinista%2C%20Barcelona%20Sant%20Andreu%2C%20Spain&order=price" },
+    { name: "ibis Barcelona Meridiana", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20Barcelona%20Meridiana%2C%20Barcelona%20Sant%20Andreu%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

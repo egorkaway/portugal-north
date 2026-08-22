@@ -76,6 +76,7 @@ export const stationImages: Record<string, string> = {
   "Barcelona El Clot": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Estaci%C3%B3_del_Clot_-_20230324_183117.jpg/960px-Estaci%C3%B3_del_Clot_-_20230324_183117.jpg",
   "Barcelona Estació de França": "https://images.pexels.com/photos/6399438/pexels-photo-6399438.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Barcelona Plaça de Catalunya": "https://images.pexels.com/photos/8275094/pexels-photo-8275094.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Barcelona Sant Andreu": "https://images.pexels.com/photos/3058992/pexels-photo-3058992.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Barcelona-El Prat Airport (BCN)": "https://images.pexels.com/photos/5602172/pexels-photo-5602172.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Barcelona-Passeig de Gràcia": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Estaci%C3%B3_de_tren_de_Passeig_de_Gr%C3%A0cia_01_2018.jpg/960px-Estaci%C3%B3_de_tren_de_Passeig_de_Gr%C3%A0cia_01_2018.jpg",
   "Barcelona-Sants": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Barcelona_-_Estaci%C3%B3n_de_Sants_y_Hotel_Barcel%C3%B3_Sants_2.jpg/960px-Barcelona_-_Estaci%C3%B3n_de_Sants_y_Hotel_Barcel%C3%B3_Sants_2.jpg",

@@ -201,6 +201,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@itislit",
     photoPageUrl: "https://www.pexels.com/photo/group-of-people-outside-2866765/",
   },
+  "3058992": {
+    photographer: "Markus Winkler",
+    photographerUrl: "https://www.pexels.com/@markus-winkler-1430818",
+    photoPageUrl: "https://www.pexels.com/photo/the-dome-at-the-mercado-central-valencia-spain-3058992/",
+  },
   "3108525": {
     photographer: "Paul Seling",
     photographerUrl: "https://www.pexels.com/@paulseling",

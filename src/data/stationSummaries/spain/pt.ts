@@ -622,4 +622,7 @@ export const spainSummariesPt: Record<string, string> = {
   "Monforte de Lemos":
     "Monforte de Lemos é uma estação Renfe de longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "Barcelona Sant Andreu":
+    "Barcelona Sant Andreu é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

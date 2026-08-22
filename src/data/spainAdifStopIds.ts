@@ -365,6 +365,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Monforte de Lemos": ["20300"],
 
+  "Barcelona Sant Andreu": ["79004"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
