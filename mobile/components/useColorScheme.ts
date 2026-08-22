@@ -1,2 +1,2 @@
-/** App UI is always light; map basemap uses {@link useSystemColorScheme}. */
+/** App UI and Map tab basemap are always light. */
 export const useColorScheme = () => 'light' as const;

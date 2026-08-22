@@ -14,7 +14,6 @@ import * as Location from 'expo-location';
 import { SymbolView } from 'expo-symbols';
 import { useNavigation, useRouter } from 'expo-router';
 import ViewShot from 'react-native-view-shot';
-import { useSystemColorScheme } from '@/components/useSystemColorScheme';
 import { MapShareBrandingFooter } from '@/components/MapShareBrandingFooter';
 import { OsmWebMap, type OsmWebMapHandle } from '@/components/OsmWebMap';
 import { theme } from '@/constants/theme';
@@ -232,7 +231,6 @@ export default function MapScreen() {
     const iata = destinationIataFromStation(selected.station);
     return iata ? getIberianHubsFlyingTo(iata) : [];
   }, [selected]);
-  const mapAppearance = useSystemColorScheme();
 
   return (
     <View style={styles.container}>
@@ -243,7 +241,7 @@ export default function MapScreen() {
             style={styles.map}
             initialRegion={IBERIAN_REGION}
             markers={osmMarkers}
-            darkMode={mapAppearance === 'dark'}
+            darkMode={false}
             onMarkerPress={selectStation}
             onMapPress={clearSelection}
           />
@@ -252,7 +250,7 @@ export default function MapScreen() {
             ref={appleMapRef}
             style={styles.map}
             initialRegion={IBERIAN_REGION}
-            userInterfaceStyle={mapAppearance}
+            userInterfaceStyle="light"
             showsUserLocation={showsUserLocation}
             showsMyLocationButton={false}
             onPress={clearSelection}

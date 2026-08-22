@@ -353,6 +353,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Lebrija": ["51203"],
 
+  "Cabrera de Mar-Vilassar de Mar": ["79412"],
+
+  "Villena Alta Velocidad": ["03309"],
+
+  "Zumarraga": ["11400"],
+
+  "Martorell Central": ["72209"],
+
+  "Flaçà": ["79303"],
+
+  "Monforte de Lemos": ["20300"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

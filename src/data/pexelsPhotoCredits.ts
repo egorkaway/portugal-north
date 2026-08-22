@@ -506,6 +506,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@sarisecils",
     photoPageUrl: "https://www.pexels.com/photo/a-hand-holding-a-photo-while-standing-on-a-railway-platform-7635585/",
   },
+  "7687260": {
+    photographer: "RENE MADRID",
+    photographerUrl: "https://www.pexels.com/@rene-madrid-51319192",
+    photoPageUrl: "https://www.pexels.com/photo/monochrome-photo-of-a-train-station-7687260/",
+  },
   "7790751": {
     photographer: "Oğuz Kandemir",
     photographerUrl: "https://www.pexels.com/@oguz-kandemir-1449914",

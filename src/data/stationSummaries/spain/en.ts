@@ -604,4 +604,22 @@ export const spainSummariesEn: Record<string, string> = {
   "Lebrija":
     "Lebrija is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Cabrera de Mar-Vilassar de Mar":
+    "Cabrera de Mar-Vilassar de Mar is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Villena Alta Velocidad":
+    "Villena Alta Velocidad is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Zumarraga":
+    "Zumarraga is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Martorell Central":
+    "Martorell Central is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Flaçà":
+    "Flaçà is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Monforte de Lemos":
+    "Monforte de Lemos is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };
