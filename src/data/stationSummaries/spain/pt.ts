@@ -646,4 +646,19 @@ export const spainSummariesPt: Record<string, string> = {
   "Silla":
     "Silla é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "Bembibre":
+    "Bembibre é uma estação Renfe de longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "El Pito Piñera":
+    "El Pito Piñera é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Lorca-San Diego":
+    "Lorca-San Diego é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Noreña":
+    "Noreña é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Calahorra":
+    "Calahorra é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

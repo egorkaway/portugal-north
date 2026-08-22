@@ -1,11 +1,27 @@
 {
-  "generatedAt": "2026-07-19T06:16:48.607Z",
+  "generatedAt": "2026-08-22T16:38:01.086Z",
   "siteUrl": "https://www.verystays.com",
-  "basemap": "carto-positron",
-  "width": 1080,
-  "height": 1350,
+  "basemap": "osm",
   "files": [
-    "portugal-activity.png",
-    "portugal-reliability.png"
+    {
+      "filename": "portugal-activity.png",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "filename": "portugal-reliability.png",
+      "width": 1080,
+      "height": 1350
+    },
+    {
+      "filename": "iberian-activity.png",
+      "width": 1080,
+      "height": 1080
+    },
+    {
+      "filename": "iberian-reliability.png",
+      "width": 1080,
+      "height": 1080
+    }
   ]
 }

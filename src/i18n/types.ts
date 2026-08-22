@@ -260,6 +260,17 @@ export type Messages = {
     trainSpotlightAvgDelay: string;
     trainSpotlightRotating: string;
     trainSpotlightMajorStations: string;
+    airportDestinationRankings: string;
+    airportDestinationIntro: string;
+    airportDestinationLoading: string;
+    airportDestinationUnavailable: string;
+    airportDestinationNoData: string;
+    airportDestinationMostPt: string;
+    airportDestinationLeastPt: string;
+    airportDestinationMostEs: string;
+    airportDestinationLeastEs: string;
+    airportDestinationCount_one: string;
+    airportDestinationCount_other: string;
   };
   map: {
     title: string;
@@ -308,6 +319,10 @@ export type Messages = {
     overviewReliabilityTitle: string;
     overviewReliabilityAlt: string;
     overviewReliabilityDownload: string;
+    overviewIberianTitle: string;
+    overviewIberianIntro: string;
+    overviewIberianActivityAlt: string;
+    overviewIberianReliabilityAlt: string;
   };
   tickets: {
     title: string;

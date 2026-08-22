@@ -381,6 +381,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Silla": ["64200"],
 
+  "Bembibre": ["20111"],
+
+  "El Pito Piñera": ["05244"],
+
+  "Lorca-San Diego": ["06005"],
+
+  "Noreña": ["05413"],
+
+  "Calahorra": ["81108"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

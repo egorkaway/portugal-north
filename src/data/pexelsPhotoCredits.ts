@@ -2421,6 +2421,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@moraesrenata",
     photoPageUrl: "https://www.pexels.com/photo/abandoned-train-carriage-in-brazilian-field-36685513/",
   },
+  "36705483": {
+    photographer: "Tomás Asurmendi",
+    photographerUrl: "https://www.pexels.com/@tomas-asurmendi-774865545",
+    photoPageUrl: "https://www.pexels.com/photo/abandoned-ghost-village-in-cordoba-argentina-36705483/",
+  },
   "36716382": {
     photographer: "Léa Claisse",
     photographerUrl: "https://www.pexels.com/@lea-claisse-2160105977",

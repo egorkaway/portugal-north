@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 /**
- * Generate Portugal overview PNGs for the web map page:
- *   - portugal-activity.png   (H3 hex activity, like the interactive web map)
- *   - portugal-reliability.png (reliability colours, like the mobile map)
+ * Generate overview PNGs for the web map and rankings pages:
+ *   - portugal-activity.png / portugal-reliability.png (4:5 portrait)
+ *   - iberian-activity.png / iberian-reliability.png (square peninsula)
  *
  *   npm run maps:overview
  */
@@ -10,8 +10,13 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import {
+  renderIberianActivityMap,
+  renderIberianReliabilityMap,
   renderPortugalActivityMap,
   renderPortugalReliabilityMap,
+  CARD_HEIGHT,
+  CARD_WIDTH,
+  IBERIAN_CARD_SIZE,
 } from "./lib/portugalOverviewMap.mjs";
 import { resolveOverviewBasemap } from "./lib/mapBasemaps.mjs";
 
@@ -25,11 +30,27 @@ const basemap = resolveOverviewBasemap("osm");
 const outputs = [
   {
     filename: "portugal-activity.png",
+    width: CARD_WIDTH,
+    height: CARD_HEIGHT,
     render: () => renderPortugalActivityMap(root, { siteUrl, basemap }),
   },
   {
     filename: "portugal-reliability.png",
+    width: CARD_WIDTH,
+    height: CARD_HEIGHT,
     render: () => renderPortugalReliabilityMap(root, { siteUrl, basemap }),
+  },
+  {
+    filename: "iberian-activity.png",
+    width: IBERIAN_CARD_SIZE,
+    height: IBERIAN_CARD_SIZE,
+    render: () => renderIberianActivityMap(root, { siteUrl, basemap }),
+  },
+  {
+    filename: "iberian-reliability.png",
+    width: IBERIAN_CARD_SIZE,
+    height: IBERIAN_CARD_SIZE,
+    render: () => renderIberianReliabilityMap(root, { siteUrl, basemap }),
   },
 ];
 
@@ -49,9 +70,11 @@ writeFileSync(
       generatedAt: new Date().toISOString(),
       siteUrl,
       basemap: basemap.id,
-      width: 1080,
-      height: 1350,
-      files: outputs.map((output) => output.filename),
+      files: outputs.map((output) => ({
+        filename: output.filename,
+        width: output.width,
+        height: output.height,
+      })),
     },
     null,
     2,

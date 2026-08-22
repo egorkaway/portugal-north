@@ -84,6 +84,9 @@ export type MobileMessages = {
     ratePhotoA11y: string;
     photoYesA11y: string;
     photoNoA11y: string;
+    away: string;
+    longDistanceNearby: string;
+    longDistanceIntro: string;
   };
   lines: {
     intro: string;

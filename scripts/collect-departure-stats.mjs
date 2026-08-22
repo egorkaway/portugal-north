@@ -21,7 +21,7 @@
  * publishes public/data/station-monthly-temperatures.json for station pages
  * (client hides when the Lisbon month rolls over or samples ≤ 9),
  * and syncs mobile/data (npm run sync:data).
- * Overview PNGs (portugal-activity / portugal-reliability) regenerate only when
+ * Overview PNGs (portugal-* / iberian-*) regenerate only when
  * at least one station sample succeeds and the existing PNGs are missing or
  * older than 3 days (force anytime with npm run maps:overview).
  * Stations are shuffled each run so partial runs (--limit or timeouts) spread across the network.
@@ -362,14 +362,14 @@ if (!dryRun) {
   const overviewDir = join(root, "public/maps/overview");
   if (ok === 0) {
     console.log(
-      "Skipping portugal-activity.png / portugal-reliability.png — no successful station samples this run.",
+      "Skipping overview map PNGs — no successful station samples this run.",
     );
   } else if (!shouldRenderOverviewMaps(overviewDir)) {
     console.log(
-      "Skipping portugal-activity.png / portugal-reliability.png — last render < 3 days ago.",
+      "Skipping overview map PNGs — last render < 3 days ago.",
     );
   } else {
-    const { renderPortugalActivityMap, renderPortugalReliabilityMap } = await import("./lib/portugalOverviewMap.mjs");
+    const { renderPortugalActivityMap, renderPortugalReliabilityMap, renderIberianActivityMap, renderIberianReliabilityMap } = await import("./lib/portugalOverviewMap.mjs");
     const { resolveOverviewBasemap } = await import("./lib/mapBasemaps.mjs");
     const { mkdirSync, writeFileSync } = await import("node:fs");
     mkdirSync(overviewDir, { recursive: true });
@@ -378,6 +378,8 @@ if (!dryRun) {
     const overviewMaps = [
       { filename: "portugal-activity.png", render: () => renderPortugalActivityMap(root, { siteUrl, basemap }) },
       { filename: "portugal-reliability.png", render: () => renderPortugalReliabilityMap(root, { siteUrl, basemap }) },
+      { filename: "iberian-activity.png", render: () => renderIberianActivityMap(root, { siteUrl, basemap }) },
+      { filename: "iberian-reliability.png", render: () => renderIberianReliabilityMap(root, { siteUrl, basemap }) },
     ];
     for (const map of overviewMaps) {
       process.stdout.write(`Rendering overview ${map.filename}… `);

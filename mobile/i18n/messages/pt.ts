@@ -82,6 +82,10 @@ export const pt: MobileMessages = {
     ratePhotoA11y: 'Avaliar se a foto da estação no topo representa a estação',
     photoYesA11y: 'Sim, a foto representa a estação',
     photoNoA11y: 'Não, a foto não representa a estação',
+    away: 'a {{distance}}',
+    longDistanceNearby: 'Paragens de longa distância mais próximas',
+    longDistanceIntro:
+      'Esta paragem tem apenas serviço regional ou urbano. Para comboios Alfa Pendular ou Intercidades, experimente estas estações:',
   },
   lines: {
     intro: 'Explore as linhas ferroviárias de Portugal — e as linhas transfronteiriças nos nossos dados. Cada linha lista as estações e os serviços que aí param.',

@@ -82,6 +82,10 @@ export const ca: MobileMessages = {
     ratePhotoA11y: 'Valorar si la foto de l’estació de dalt representa l’estació',
     photoYesA11y: 'Sí, la foto representa l’estació',
     photoNoA11y: 'No, la foto no representa l’estació',
+    away: 'a {{distance}}',
+    longDistanceNearby: 'Parades de llarga distància més properes',
+    longDistanceIntro:
+      'Aquesta parada té només servei regional o urbà. Per a trens Alfa Pendular o Intercidades, prova aquestes estacions:',
   },
   lines: {
     intro: 'Explora les línies ferroviàries de Portugal — i les línies transfrontereres a les nostres dades. Cada línia llista les estacions i els serveis que hi paren.',

@@ -13,6 +13,7 @@ import {
 import { StationArrivalsBoard } from '@/components/StationArrivalsBoard';
 import { StationDeparturesBoard } from '@/components/StationDeparturesBoard';
 import { AirportConnectionsSection } from '@/components/AirportConnectionsSection';
+import { NearestLongDistanceStations } from '@/components/NearestLongDistanceStations';
 import { BuildFooter } from '@/components/BuildFooter';
 import { StationHotelList } from '@/components/StationHotelList';
 import { StationImageCredit } from '@/components/StationImageCredit';
@@ -216,6 +217,8 @@ export default function StationDetailScreen() {
           onTripChanged={(trip) => void handleTripChanged(trip)}
         />
       ) : null}
+
+      <NearestLongDistanceStations station={station} />
 
       {airportConnections ? (
         <AirportConnectionsSection entry={airportConnections} stationName={station.name} />

@@ -9,6 +9,7 @@ import { stitchBoundsMap } from "./osmTiles.mjs";
 
 export const CARD_WIDTH = 1080;
 export const CARD_HEIGHT = 1350;
+export const IBERIAN_CARD_SIZE = 1080;
 
 /** Mainland Portugal bbox — includes Valença (north) and Faro (south) with margin. */
 const PORTUGAL_BOUNDS = {
@@ -16,6 +17,14 @@ const PORTUGAL_BOUNDS = {
   maxLat: 42.15,
   minLng: -9.55,
   maxLng: -6.15,
+};
+
+/** Iberian peninsula bbox — matches the interactive web map. */
+const IBERIAN_BOUNDS = {
+  minLat: 35.8,
+  maxLat: 44.0,
+  minLng: -10.0,
+  maxLng: 4.0,
 };
 
 const BRAND_DARK = "#0f3d38";
@@ -140,6 +149,12 @@ function portugalStationsFromRepo(root) {
   return parseAllStationsFromRepo(root).filter((station) => station.country === "pt");
 }
 
+function iberianRailStationsFromRepo(root) {
+  return parseAllStationsFromRepo(root).filter(
+    (station) => (station.country === "pt" || station.country === "es") && !isAirportStation(station),
+  );
+}
+
 const OVERLAY = {
   padX: 26,
   padY: 26,
@@ -254,7 +269,7 @@ function layoutHorizontalLegendItems(items, swatchAdvance, swatchHeight) {
 }
 
 /** Corner overlay pill: title + horizontal legend + URL */
-function buildActivityCornerOverlay(siteHost) {
+function buildActivityCornerOverlay(siteHost, cardHeight = CARD_HEIGHT) {
   const pageUrl = `${siteHost}/map`;
   const title = "Station activity";
   const items = [
@@ -282,7 +297,7 @@ function buildActivityCornerOverlay(siteHost) {
   );
   const boxW = overlayBoxWidth({ title, pageUrl, legendInnerWidth });
   const boxH = overlayBoxHeight(legendInnerHeight);
-  const boxY = CARD_HEIGHT - boxH - boxBottomPad;
+  const boxY = cardHeight - boxH - boxBottomPad;
   const legendY = boxY + padY + titleFontSize + titleToLegendGap;
 
   const legendMarkup = laidOut
@@ -307,7 +322,7 @@ function buildActivityCornerOverlay(siteHost) {
   });
 }
 
-function buildReliabilityCornerOverlay(siteHost) {
+function buildReliabilityCornerOverlay(siteHost, cardHeight = CARD_HEIGHT) {
   const pageUrl = `${siteHost}/map`;
   const title = "Station reliability";
   const items = [
@@ -336,7 +351,7 @@ function buildReliabilityCornerOverlay(siteHost) {
   );
   const boxW = overlayBoxWidth({ title, pageUrl, legendInnerWidth });
   const boxH = overlayBoxHeight(legendInnerHeight);
-  const boxY = CARD_HEIGHT - boxH - boxBottomPad;
+  const boxY = cardHeight - boxH - boxBottomPad;
   const legendY = boxY + padY + titleFontSize + titleToLegendGap + r;
 
   const legendMarkup = laidOut
@@ -376,7 +391,15 @@ function boundaryToSvgPoints(boundary, project) {
     .join(" ");
 }
 
-function buildActivityOverlaySvg({ cells, minMovements, maxMovements, project, siteHost }) {
+function buildActivityOverlaySvg({
+  cells,
+  minMovements,
+  maxMovements,
+  project,
+  siteHost,
+  cardWidth = CARD_WIDTH,
+  cardHeight = CARD_HEIGHT,
+}) {
   const tierRank = { quiet: 0, mid: 1, busy: 2 };
   const sortedCells = [...cells].sort(
     (a, b) => tierRank[a.tier] - tierRank[b.tier] || a.movements - b.movements,
@@ -391,13 +414,21 @@ function buildActivityOverlaySvg({ cells, minMovements, maxMovements, project, s
     .join("");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="${CARD_WIDTH}" height="${CARD_HEIGHT}" viewBox="0 0 ${CARD_WIDTH} ${CARD_HEIGHT}">
+<svg xmlns="http://www.w3.org/2000/svg" width="${cardWidth}" height="${cardHeight}" viewBox="0 0 ${cardWidth} ${cardHeight}">
   ${hexElements}
-  ${buildActivityCornerOverlay(siteHost)}
+  ${buildActivityCornerOverlay(siteHost, cardHeight)}
 </svg>`;
 }
 
-function buildReliabilityOverlaySvg({ stations, scores, movements, project, siteHost }) {
+function buildReliabilityOverlaySvg({
+  stations,
+  scores,
+  movements,
+  project,
+  siteHost,
+  cardWidth = CARD_WIDTH,
+  cardHeight = CARD_HEIGHT,
+}) {
   const markerElements = stations
     .map((station) => {
       const score = scores[station.name] ?? null;
@@ -415,14 +446,28 @@ function buildReliabilityOverlaySvg({ stations, scores, movements, project, site
     .join("");
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="${CARD_WIDTH}" height="${CARD_HEIGHT}" viewBox="0 0 ${CARD_WIDTH} ${CARD_HEIGHT}">
+<svg xmlns="http://www.w3.org/2000/svg" width="${cardWidth}" height="${cardHeight}" viewBox="0 0 ${cardWidth} ${cardHeight}">
   ${markerElements}
-  ${buildReliabilityCornerOverlay(siteHost)}
+  ${buildReliabilityCornerOverlay(siteHost, cardHeight)}
 </svg>`;
 }
 
 export function loadReliabilityManifest(root) {
   return JSON.parse(readFileSync(join(root, "public/data/reliability-scores.json"), "utf8"));
+}
+
+export function loadSpainReliabilityManifest(root) {
+  try {
+    return JSON.parse(
+      readFileSync(join(root, "public/data/spain-reliability-scores.json"), "utf8"),
+    );
+  } catch {
+    return { scores: {}, movements: {} };
+  }
+}
+
+function mergeRecordMaps(...maps) {
+  return Object.assign({}, ...maps);
 }
 
 function portugalBoundsPoints() {
@@ -460,6 +505,44 @@ async function stitchPortugalMap(basemap = "carto-voyager") {
   return { buffer: cropped, project };
 }
 
+function iberianBoundsPoints() {
+  const { minLat, maxLat, minLng, maxLng } = IBERIAN_BOUNDS;
+  return [
+    { lat: minLat, lng: minLng },
+    { lat: maxLat, lng: maxLng },
+    { lat: 36.7, lng: -6.0 },
+    { lat: 43.5, lng: -8.4 },
+    { lat: 41.4, lng: 2.2 },
+  ];
+}
+
+/** Stitch a square map fitted to the Iberian peninsula. */
+async function stitchIberianMap(basemap = "carto-voyager") {
+  return stitchBoundsMap({
+    points: iberianBoundsPoints(),
+    width: IBERIAN_CARD_SIZE,
+    height: IBERIAN_CARD_SIZE,
+    paddingPx: 40,
+    basemap,
+  });
+}
+
+async function renderOverviewMap({
+  mapBuffer,
+  project,
+  overlaySvg,
+  cardWidth,
+}) {
+  const overlayPng = new Resvg(overlaySvg, {
+    fitTo: { mode: "width", value: cardWidth },
+  }).render().asPng();
+
+  return sharp(mapBuffer)
+    .composite([{ input: overlayPng, top: 0, left: 0 }])
+    .png({ compressionLevel: 9 })
+    .toBuffer();
+}
+
 export async function renderPortugalActivityMap(root, { siteUrl = "https://www.verystays.com", basemap = "carto-voyager" } = {}) {
   const manifest = loadReliabilityManifest(root);
   const stations = portugalStationsFromRepo(root).filter((s) => !isAirportStation(s));
@@ -474,16 +557,16 @@ export async function renderPortugalActivityMap(root, { siteUrl = "https://www.v
     maxMovements: hexData.maxMovements,
     project,
     siteHost,
+    cardWidth: CARD_WIDTH,
+    cardHeight: CARD_HEIGHT,
   });
 
-  const overlayPng = new Resvg(overlaySvg, {
-    fitTo: { mode: "width", value: CARD_WIDTH },
-  }).render().asPng();
-
-  return sharp(mapBuffer)
-    .composite([{ input: overlayPng, top: 0, left: 0 }])
-    .png({ compressionLevel: 9 })
-    .toBuffer();
+  return renderOverviewMap({
+    mapBuffer,
+    project,
+    overlaySvg,
+    cardWidth: CARD_WIDTH,
+  });
 }
 
 export async function renderPortugalReliabilityMap(root, { siteUrl = "https://www.verystays.com", basemap = "carto-voyager" } = {}) {
@@ -501,14 +584,70 @@ export async function renderPortugalReliabilityMap(root, { siteUrl = "https://ww
     movements: manifest.movements ?? {},
     project,
     siteHost,
+    cardWidth: CARD_WIDTH,
+    cardHeight: CARD_HEIGHT,
   });
 
-  const overlayPng = new Resvg(overlaySvg, {
-    fitTo: { mode: "width", value: CARD_WIDTH },
-  }).render().asPng();
+  return renderOverviewMap({
+    mapBuffer,
+    project,
+    overlaySvg,
+    cardWidth: CARD_WIDTH,
+  });
+}
 
-  return sharp(mapBuffer)
-    .composite([{ input: overlayPng, top: 0, left: 0 }])
-    .png({ compressionLevel: 9 })
-    .toBuffer();
+export async function renderIberianActivityMap(root, { siteUrl = "https://www.verystays.com", basemap = "carto-voyager" } = {}) {
+  const ptManifest = loadReliabilityManifest(root);
+  const esManifest = loadSpainReliabilityManifest(root);
+  const movements = mergeRecordMaps(ptManifest.movements ?? {}, esManifest.movements ?? {});
+  const stations = iberianRailStationsFromRepo(root);
+  const siteHost = siteHostFromUrl(siteUrl);
+
+  const { buffer: mapBuffer, project } = await stitchIberianMap(basemap);
+
+  const hexData = buildStationHexCells(stations, movements);
+  const overlaySvg = buildActivityOverlaySvg({
+    cells: hexData.cells,
+    minMovements: hexData.minMovements,
+    maxMovements: hexData.maxMovements,
+    project,
+    siteHost,
+    cardWidth: IBERIAN_CARD_SIZE,
+    cardHeight: IBERIAN_CARD_SIZE,
+  });
+
+  return renderOverviewMap({
+    mapBuffer,
+    project,
+    overlaySvg,
+    cardWidth: IBERIAN_CARD_SIZE,
+  });
+}
+
+export async function renderIberianReliabilityMap(root, { siteUrl = "https://www.verystays.com", basemap = "carto-voyager" } = {}) {
+  const ptManifest = loadReliabilityManifest(root);
+  const esManifest = loadSpainReliabilityManifest(root);
+  const scores = mergeRecordMaps(ptManifest.scores ?? {}, esManifest.scores ?? {});
+  const movements = mergeRecordMaps(ptManifest.movements ?? {}, esManifest.movements ?? {});
+  const stations = iberianRailStationsFromRepo(root).filter((station) => !isMetroStation(station));
+  const siteHost = siteHostFromUrl(siteUrl);
+
+  const { buffer: mapBuffer, project } = await stitchIberianMap(basemap);
+
+  const overlaySvg = buildReliabilityOverlaySvg({
+    stations,
+    scores,
+    movements,
+    project,
+    siteHost,
+    cardWidth: IBERIAN_CARD_SIZE,
+    cardHeight: IBERIAN_CARD_SIZE,
+  });
+
+  return renderOverviewMap({
+    mapBuffer,
+    project,
+    overlaySvg,
+    cardWidth: IBERIAN_CARD_SIZE,
+  });
 }

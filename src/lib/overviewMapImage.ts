@@ -1,13 +1,30 @@
 export type OverviewMapKind = "activity" | "reliability";
+export type OverviewMapRegion = "portugal" | "iberian";
 
-/** Portrait 1080×1350 (4:5) Portugal overview map under public/maps/overview/. */
-export const OVERVIEW_MAP_WIDTH = 1080;
-export const OVERVIEW_MAP_HEIGHT = 1350;
+export const OVERVIEW_MAP_DIMENSIONS: Record<
+  OverviewMapRegion,
+  { width: number; height: number; aspectClass: string }
+> = {
+  portugal: { width: 1080, height: 1350, aspectClass: "aspect-[4/5]" },
+  iberian: { width: 1080, height: 1080, aspectClass: "aspect-square" },
+};
 
-export function getOverviewMapImagePath(kind: OverviewMapKind): string {
-  return `/maps/overview/portugal-${kind}.png`;
+/** @deprecated use OVERVIEW_MAP_DIMENSIONS.portugal.width */
+export const OVERVIEW_MAP_WIDTH = OVERVIEW_MAP_DIMENSIONS.portugal.width;
+
+/** @deprecated use OVERVIEW_MAP_DIMENSIONS.portugal.height */
+export const OVERVIEW_MAP_HEIGHT = OVERVIEW_MAP_DIMENSIONS.portugal.height;
+
+export function getOverviewMapImagePath(
+  kind: OverviewMapKind,
+  region: OverviewMapRegion = "portugal",
+): string {
+  return `/maps/overview/${region}-${kind}.png`;
 }
 
-export function getOverviewMapDownloadFilename(kind: OverviewMapKind): string {
-  return `verystays-portugal-${kind}.png`;
+export function getOverviewMapDownloadFilename(
+  kind: OverviewMapKind,
+  region: OverviewMapRegion = "portugal",
+): string {
+  return `verystays-${region}-${kind}.png`;
 }

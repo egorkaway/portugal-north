@@ -289,6 +289,18 @@ export const gl: Messages = {
     trainSpotlightAvgDelay: "{{avg}} min de atraso medio",
     trainSpotlightRotating: "Rota coa mostra n.º {{runCount}} ata estabilizar os datos",
     trainSpotlightMajorStations: "Vía",
+    airportDestinationRankings: "Rankings de conexións aéreas",
+    airportDestinationIntro:
+      "Baseado no número de destinos directos recollidos para cada hub — non na frecuencia de voos mostreados.",
+    airportDestinationLoading: "Cargando rankings de aeroportos…",
+    airportDestinationUnavailable: "Os rankings de conexións aéreas non están dispoñibles temporalmente.",
+    airportDestinationNoData: "Aínda non hai datos de conexións aéreas.",
+    airportDestinationMostPt: "Máis destinos (Portugal)",
+    airportDestinationLeastPt: "Menos destinos (Portugal)",
+    airportDestinationMostEs: "Máis destinos (España)",
+    airportDestinationLeastEs: "Menos destinos (España)",
+    airportDestinationCount_one: "{{count}} destino",
+    airportDestinationCount_other: "{{count}} destinos",
   },
   map: {
     title: "Mapa de actividade das estacións",
@@ -340,6 +352,13 @@ export const gl: Messages = {
     overviewReliabilityAlt:
       "Mapa de Portugal continental con estacións por puntuación de puntualidade",
     overviewReliabilityDownload: "Descargar mapa de fiabilidade",
+    overviewIberianTitle: "Descargar mapas xerais da Península Ibérica",
+    overviewIberianIntro:
+      "Mapas estáticos cadrados de Portugal e España. A actividade usa saídas mostreadas; a fiabilidade usa puntuacións de puntualidade cando hai datos abondos.",
+    overviewIberianActivityAlt:
+      "Mapa cadrado da península ibérica con hexágonos por actividade ferroviaria mostreada",
+    overviewIberianReliabilityAlt:
+      "Mapa cadrado da península ibérica con estacións por puntuación de puntualidade",
   },
   tickets: {
     title: "Billetes e prezos",

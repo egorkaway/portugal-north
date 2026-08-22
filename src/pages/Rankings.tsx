@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { JsonLd } from "@/components/JsonLd";
 import { RankingsPanel } from "@/components/RankingsPanel";
 import { ReliabilityRankingsPanel } from "@/components/ReliabilityRankingsPanel";
+import { AirportDestinationRankingsPanel } from "@/components/AirportDestinationRankingsPanel";
 // import { SpainReliabilityRankingsPanel } from "@/components/SpainReliabilityRankingsPanel";
 import { TrainReliabilitySpotlightPanel } from "@/components/TrainReliabilitySpotlightPanel";
 import { MapOverviewImages } from "@/components/MapOverviewImages";
@@ -50,6 +51,7 @@ const Rankings = () => {
           <ReliabilityRankingsPanel />
           {/* <SpainReliabilityRankingsPanel /> */}
           <TrainReliabilitySpotlightPanel />
+          <AirportDestinationRankingsPanel />
 
           <p className="mb-5 text-muted-foreground md:mb-8">{t("rankings.intro")}</p>
 

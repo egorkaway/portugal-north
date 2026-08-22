@@ -287,6 +287,18 @@ export const en: Messages = {
     trainSpotlightAvgDelay: "{{avg}} min avg delay",
     trainSpotlightRotating: "Rotates with sample run #{{runCount}} until data stabilises",
     trainSpotlightMajorStations: "Via",
+    airportDestinationRankings: "Airport connection rankings",
+    airportDestinationIntro:
+      "Based on how many direct destinations appear in our collected connection data for each hub — not how many flights we sampled.",
+    airportDestinationLoading: "Loading airport rankings…",
+    airportDestinationUnavailable: "Airport connection rankings are temporarily unavailable.",
+    airportDestinationNoData: "No airport connection data yet.",
+    airportDestinationMostPt: "Most destinations (Portugal)",
+    airportDestinationLeastPt: "Fewest destinations (Portugal)",
+    airportDestinationMostEs: "Most destinations (Spain)",
+    airportDestinationLeastEs: "Fewest destinations (Spain)",
+    airportDestinationCount_one: "{{count}} destination",
+    airportDestinationCount_other: "{{count}} destinations",
   },
   map: {
     title: "Station activity map",
@@ -338,6 +350,13 @@ export const en: Messages = {
     overviewReliabilityAlt:
       "Map of mainland Portugal with stations coloured by on-time reliability score",
     overviewReliabilityDownload: "Download reliability map",
+    overviewIberianTitle: "Download Iberian overview maps",
+    overviewIberianIntro:
+      "Square static maps covering Portugal and Spain. Activity uses sampled departures; reliability uses on-time scores where we have enough data.",
+    overviewIberianActivityAlt:
+      "Square map of the Iberian peninsula with hexes coloured by sampled train activity",
+    overviewIberianReliabilityAlt:
+      "Square map of the Iberian peninsula with stations coloured by on-time reliability score",
   },
   tickets: {
     title: "Tickets & prices",

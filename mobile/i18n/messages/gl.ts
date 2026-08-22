@@ -82,6 +82,10 @@ export const gl: MobileMessages = {
     ratePhotoA11y: 'Valorar se a foto da estación de arriba representa a estación',
     photoYesA11y: 'Si, a foto representa a estación',
     photoNoA11y: 'Non, a foto non representa a estación',
+    away: 'a {{distance}}',
+    longDistanceNearby: 'Paradas de longa distancia máis próximas',
+    longDistanceIntro:
+      'Esta parada ten só servizo rexional ou urbano. Para trens Alfa Pendular ou Intercidades, proba estas estacións:',
   },
   lines: {
     intro: 'Explora as liñas ferroviarias de Portugal — e as liñas transfronteirizas nos nosos datos. Cada liña lista as estacións e os servizos que paran alí.',

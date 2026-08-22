@@ -2890,6 +2890,31 @@ export const stationHotels: StationHotels = {
     { name: "ibis budget Valencia Alcasser", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20budget%20Valencia%20Alcasser%2C%20Silla%2C%20Spain&order=price" },
     { name: "Ramada", distanceKm: 6.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ramada%2C%20Silla%2C%20Spain&order=price" },
   ],
+  "Bembibre": [
+    { name: "Hotel Restaurante Carmen", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurante%20Carmen%2C%20Bembibre%2C%20Spain&order=price" },
+    { name: "Nruta", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nruta%2C%20Bembibre%2C%20Spain&order=price" },
+    { name: "Casa Nogala", distanceKm: 6.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Nogala%2C%20Bembibre%2C%20Spain&order=price" },
+  ],
+  "El Pito Piñera": [
+    { name: "Hotel Álvaro", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20%C3%81lvaro%2C%20El%20Pito%20Pi%C3%B1era%2C%20Spain&order=price" },
+    { name: "Hotel El Rosal", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Rosal%2C%20El%20Pito%20Pi%C3%B1era%2C%20Spain&order=price" },
+    { name: "Casona De La Paca", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casona%20De%20La%20Paca%2C%20El%20Pito%20Pi%C3%B1era%2C%20Spain&order=price" },
+  ],
+  "Lorca-San Diego": [
+    { name: "Casa Juan", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Juan%2C%20Lorca-San%20Diego%2C%20Spain&order=price" },
+    { name: "Hotel Félix", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20F%C3%A9lix%2C%20Lorca-San%20Diego%2C%20Spain&order=price" },
+    { name: "Hotel Alameda", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alameda%2C%20Lorca-San%20Diego%2C%20Spain&order=price" },
+  ],
+  "Noreña": [
+    { name: "Hotel Cabeza", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cabeza%2C%20Nore%C3%B1a%2C%20Spain&order=price" },
+    { name: "Hotel Doña Nieves", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Do%C3%B1a%20Nieves%2C%20Nore%C3%B1a%2C%20Spain&order=price" },
+    { name: "Hotel La Casona del Conde", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Casona%20del%20Conde%2C%20Nore%C3%B1a%2C%20Spain&order=price" },
+  ],
+  "Calahorra": [
+    { name: "Hostal Gala", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Gala%2C%20Calahorra%2C%20Spain&order=price" },
+    { name: "Parador de Turismo Marco Fabio Quintiliano", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20de%20Turismo%20Marco%20Fabio%20Quintiliano%2C%20Calahorra%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos Calahorra", distanceKm: 1.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Calahorra%2C%20Calahorra%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

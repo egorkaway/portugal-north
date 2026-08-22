@@ -1769,4 +1769,49 @@ export const spainStations: Station[] = [
     lng: -0.415,
   },
 
+  {
+    name: "Bembibre",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.6096,
+    lng: -6.422,
+  },
+
+  {
+    name: "El Pito Piñera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5469,
+    lng: -6.1433,
+  },
+
+  {
+    name: "Lorca-San Diego",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.6807,
+    lng: -1.6856,
+  },
+
+  {
+    name: "Noreña",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.394,
+    lng: -5.7036,
+  },
+
+  {
+    name: "Calahorra",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.3105,
+    lng: -1.9578,
+  },
+
 ];

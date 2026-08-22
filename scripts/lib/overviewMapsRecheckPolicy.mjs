@@ -1,12 +1,14 @@
 import { statSync } from "node:fs";
 import { join } from "node:path";
 
-/** Regenerate Portugal overview PNGs at most this often during departure runs. */
+/** Regenerate overview PNGs at most this often during departure runs. */
 export const OVERVIEW_MAP_MIN_INTERVAL_MS = 3 * 24 * 60 * 60 * 1000;
 
 export const OVERVIEW_MAP_FILENAMES = [
   "portugal-activity.png",
   "portugal-reliability.png",
+  "iberian-activity.png",
+  "iberian-reliability.png",
 ];
 
 /**

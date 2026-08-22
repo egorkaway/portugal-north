@@ -289,6 +289,18 @@ export const ca: Messages = {
     trainSpotlightAvgDelay: "{{avg}} min de retard mitjà",
     trainSpotlightRotating: "Rota amb la mostra núm. {{runCount}} fins estabilitzar les dades",
     trainSpotlightMajorStations: "Via",
+    airportDestinationRankings: "Rankings de connexions aèries",
+    airportDestinationIntro:
+      "Segons quants destins directes apareixen a les dades de connexions recollides per a cada hub — no segons quants vols hem mostrejat.",
+    airportDestinationLoading: "Carregant rankings d'aeroports…",
+    airportDestinationUnavailable: "Els rankings de connexions aèries no estan disponibles temporalment.",
+    airportDestinationNoData: "Encara no hi ha dades de connexions aèries.",
+    airportDestinationMostPt: "Més destins (Portugal)",
+    airportDestinationLeastPt: "Menys destins (Portugal)",
+    airportDestinationMostEs: "Més destins (Espanya)",
+    airportDestinationLeastEs: "Menys destins (Espanya)",
+    airportDestinationCount_one: "{{count}} destí",
+    airportDestinationCount_other: "{{count}} destins",
   },
   map: {
     title: "Mapa d'activitat d'estacions",
@@ -340,6 +352,13 @@ export const ca: Messages = {
     overviewReliabilityAlt:
       "Mapa de Portugal continental amb estacions per puntuació de puntualitat",
     overviewReliabilityDownload: "Descarregar mapa de fiabilitat",
+    overviewIberianTitle: "Descarregar mapes generals de la Península Ibèrica",
+    overviewIberianIntro:
+      "Mapes estàtics quadrats de Portugal i Espanya. L'activitat usa sortides mostrejades; la fiabilitat usa puntuacions de puntualitat quan hi ha prou dades.",
+    overviewIberianActivityAlt:
+      "Mapa quadrat de la península ibèrica amb hexàgons per activitat ferroviària mostrejada",
+    overviewIberianReliabilityAlt:
+      "Mapa quadrat de la península ibèrica amb estacions per puntuació de puntualitat",
   },
   tickets: {
     title: "Bitllets i preus",
