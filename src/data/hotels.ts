@@ -2960,6 +2960,21 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Sorli Emocions", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sorli%20Emocions%2C%20Vilassar%20de%20Mar%2C%20Spain&order=price" },
     { name: "Mas de Baix", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mas%20de%20Baix%2C%20Vilassar%20de%20Mar%2C%20Spain&order=price" },
   ],
+  "O Barco de Valdeorras": [
+    { name: "Hotel Malecón", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Malec%C3%B3n%2C%20O%20Barco%20de%20Valdeorras%2C%20Spain&order=price" },
+    { name: "Hostal La Gran Tortuga", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Gran%20Tortuga%2C%20O%20Barco%20de%20Valdeorras%2C%20Spain&order=price" },
+    { name: "Pensión Aurum", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Aurum%2C%20O%20Barco%20de%20Valdeorras%2C%20Spain&order=price" },
+  ],
+  "Llançà": [
+    { name: "Alberg Costa Brava", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20Costa%20Brava%2C%20Llan%C3%A7%C3%A0%2C%20Spain&order=price" },
+    { name: "Hotel Gri-Mar", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Gri-Mar%2C%20Llan%C3%A7%C3%A0%2C%20Spain&order=price" },
+    { name: "Hostel Gran Sol", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20Gran%20Sol%2C%20Llan%C3%A7%C3%A0%2C%20Spain&order=price" },
+  ],
+  "San Severiano": [
+    { name: "Hotel Puertatierra", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Puertatierra%2C%20San%20Severiano%2C%20Spain&order=price" },
+    { name: "Regio 2", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Regio%202%2C%20San%20Severiano%2C%20Spain&order=price" },
+    { name: "Hotel Barceló", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Barcel%C3%B3%2C%20San%20Severiano%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

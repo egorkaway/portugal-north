@@ -139,14 +139,13 @@ function markerRadius(movements) {
 }
 
 /**
- * Iberian reliability dots — smaller than Portugal so dense corridors stay
- * readable on the wider peninsula frame.
+ * Iberian reliability dots — compact on the wide peninsula frame (~4–8px).
  */
 function iberianMarkerRadius(movements) {
-  if (movements >= 500) return 10;
-  if (movements >= 200) return 8;
-  if (movements >= 50) return 6.5;
-  return 5;
+  if (movements >= 500) return 8;
+  if (movements >= 200) return 6.5;
+  if (movements >= 50) return 5;
+  return 4;
 }
 
 function isAirportStation(station) {
@@ -448,8 +447,6 @@ function buildReliabilityOverlaySvg({
   compactMarkers = false,
 }) {
   const radiusFor = compactMarkers ? iberianMarkerRadius : markerRadius;
-  const strokeWidth = compactMarkers ? 1.75 : 3;
-  const strokeColor = compactMarkers ? "#0f3d38" : "#ffffff";
 
   const markerElements = stations
     .map((station) => {
@@ -464,7 +461,10 @@ function buildReliabilityOverlaySvg({
             ? RELIABILITY_COLORS.airport
             : RELIABILITY_COLORS.unknown;
       const radius = radiusFor(stationMovements);
-      return `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" stroke="${strokeColor}" stroke-width="${strokeWidth}" />`;
+      // Iberian compact markers: no outline; Portugal keeps white stroke for contrast.
+      return compactMarkers
+        ? `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" />`
+        : `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" stroke="#ffffff" stroke-width="3" />`;
     })
     .join("");
 

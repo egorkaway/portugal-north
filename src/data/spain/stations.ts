@@ -1895,4 +1895,31 @@ export const spainStations: Station[] = [
     lng: 2.3899,
   },
 
+  {
+    name: "O Barco de Valdeorras",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.4183,
+    lng: -6.985,
+  },
+
+  {
+    name: "Llançà",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.3666,
+    lng: 3.149,
+  },
+
+  {
+    name: "San Severiano",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.5216,
+    lng: -6.2807,
+  },
+
 ];

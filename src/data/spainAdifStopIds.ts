@@ -409,6 +409,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Vilassar de Mar": ["79410"],
 
+  "O Barco de Valdeorras": ["20211"],
+
+  "Llançà": ["79312"],
+
+  "San Severiano": ["51414"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -1721,6 +1721,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@fotografias-de-el-puerto-de-santa-maria-2148829485",
     photoPageUrl: "https://www.pexels.com/photo/modern-train-at-el-puerto-de-santa-maria-station-30648823/",
   },
+  "30666699": {
+    photographer: "Dursun Yartaşı",
+    photographerUrl: "https://www.pexels.com/@dursunyartasi",
+    photoPageUrl: "https://www.pexels.com/photo/historic-trains-and-building-in-urban-rail-yard-30666699/",
+  },
   "30730154": {
     photographer: "Jean-Paul Wettstein",
     photographerUrl: "https://www.pexels.com/@jean-paul-wettstein-677916508",
@@ -1790,6 +1795,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Kevyn Costa",
     photographerUrl: "https://www.pexels.com/@kevynlourencofotografia",
     photoPageUrl: "https://www.pexels.com/photo/abandoned-train-car-under-clear-blue-sky-31028541/",
+  },
+  "31167964": {
+    photographer: "Hkn clk",
+    photographerUrl: "https://www.pexels.com/@hkn-clk-2148641156",
+    photoPageUrl: "https://www.pexels.com/photo/historic-train-station-platform-with-clock-at-dusk-31167964/",
   },
   "31433130": {
     photographer: "Gustavo Denuncio",
