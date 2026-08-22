@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AlertCircle, Plane } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAirportConnections } from "@/hooks/useAirportConnections";
@@ -17,6 +18,7 @@ function AirportDestinationRankingCard({
   row: AirportDestinationRankingRow | null;
 }) {
   const { t, plural } = useLocale();
+  const [mapMissing, setMapMissing] = useState(false);
 
   return (
     <div className="rounded-lg border border-border bg-card p-4 md:p-5">
@@ -24,20 +26,39 @@ function AirportDestinationRankingCard({
       {!row ? (
         <p className="text-sm text-muted-foreground">{emptyLabel}</p>
       ) : (
-        <div className="flex items-start justify-between gap-3">
-          <p className="min-w-0 text-sm font-medium text-foreground">
+        <div className="space-y-3">
+          <div className="flex items-start justify-between gap-3">
+            <p className="min-w-0 text-sm font-medium text-foreground">
+              <Link
+                to={`/stations/${row.slug}`}
+                className="hover:text-primary hover:underline"
+              >
+                {row.name}
+              </Link>
+            </p>
+            <span className="shrink-0 text-sm font-semibold tabular-nums text-primary">
+              {plural("rankings.airportDestinationCount", row.destinationCount, {
+                count: row.destinationCount,
+              })}
+            </span>
+          </div>
+          {!mapMissing ? (
             <Link
               to={`/stations/${row.slug}`}
-              className="hover:text-primary hover:underline"
+              className="block overflow-hidden rounded-md border border-border bg-muted"
             >
-              {row.name}
+              <img
+                src={row.mapImage}
+                alt={t("station.airportConnectionsMapAlt", { name: row.name })}
+                width={1080}
+                height={1080}
+                className="aspect-square w-full object-cover"
+                loading="lazy"
+                decoding="async"
+                onError={() => setMapMissing(true)}
+              />
             </Link>
-          </p>
-          <span className="shrink-0 text-sm font-semibold tabular-nums text-primary">
-            {plural("rankings.airportDestinationCount", row.destinationCount, {
-              count: row.destinationCount,
-            })}
-          </span>
+          ) : null}
         </div>
       )}
     </div>

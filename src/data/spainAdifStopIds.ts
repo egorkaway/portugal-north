@@ -397,6 +397,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Ribadeo": ["05193"],
 
+  "Iñarratxu": ["13116"],
+
+  "Pola de Lena": ["15122"],
+
+  "Novelda-Aspe": ["60907"],
+
+  "Cercedilla": ["12006"],
+
+  "Vallobín": ["05300"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

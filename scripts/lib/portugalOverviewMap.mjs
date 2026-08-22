@@ -20,14 +20,14 @@ const PORTUGAL_BOUNDS = {
 };
 
 /**
- * Iberian overview PNG bbox — tighter than the interactive web map so the
- * square card fills with the peninsula and shows less of France / Africa.
+ * Iberian overview PNG bbox — full peninsula including Portugal's Atlantic
+ * coast. A little of France / Africa may appear in the square frame; that is OK.
  */
 const IBERIAN_BOUNDS = {
-  minLat: 36.0,
-  maxLat: 43.85,
-  minLng: -9.55,
-  maxLng: 3.35,
+  minLat: 35.9,
+  maxLat: 43.9,
+  minLng: -10.0,
+  maxLng: 3.5,
 };
 
 const BRAND_DARK = "#0f3d38";
@@ -138,12 +138,15 @@ function markerRadius(movements) {
   return 10;
 }
 
-/** Smaller dots for the dense Iberian reliability overview. */
+/**
+ * Iberian reliability dots — a bit under Portugal’s radii so dense corridors
+ * stay readable on the wider peninsula frame, but large enough to see.
+ */
 function iberianMarkerRadius(movements) {
-  if (movements >= 500) return 5.5;
-  if (movements >= 200) return 4.5;
-  if (movements >= 50) return 3.75;
-  return 3;
+  if (movements >= 500) return 18;
+  if (movements >= 200) return 15;
+  if (movements >= 50) return 12;
+  return 10;
 }
 
 function isAirportStation(station) {
@@ -445,7 +448,8 @@ function buildReliabilityOverlaySvg({
   compactMarkers = false,
 }) {
   const radiusFor = compactMarkers ? iberianMarkerRadius : markerRadius;
-  const strokeWidth = compactMarkers ? 1 : 3;
+  const strokeWidth = compactMarkers ? 2.5 : 3;
+  const strokeColor = compactMarkers ? "#0f3d38" : "#ffffff";
 
   const markerElements = stations
     .map((station) => {
@@ -460,7 +464,7 @@ function buildReliabilityOverlaySvg({
             ? RELIABILITY_COLORS.airport
             : RELIABILITY_COLORS.unknown;
       const radius = radiusFor(stationMovements);
-      return `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" stroke="#ffffff" stroke-width="${strokeWidth}" />`;
+      return `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" stroke="${strokeColor}" stroke-width="${strokeWidth}" />`;
     })
     .join("");
 
@@ -534,15 +538,15 @@ function iberianBoundsPoints() {
   ];
 }
 
-/** Stitch a square map fitted to the Iberian peninsula. */
+/** Square overview fitted to the full Iberian peninsula (Portugal not clipped). */
 async function stitchIberianMap(basemap = "carto-voyager") {
   return stitchBoundsMap({
     points: iberianBoundsPoints(),
     width: IBERIAN_CARD_SIZE,
     height: IBERIAN_CARD_SIZE,
-    paddingPx: 16,
-    // Cover crops E–W excess so we don't pad N–S into France / Africa.
-    fit: "cover",
+    paddingPx: 36,
+    fit: "contain",
+    tightBounds: true,
     basemap,
   });
 }

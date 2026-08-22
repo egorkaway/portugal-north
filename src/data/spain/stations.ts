@@ -1841,4 +1841,49 @@ export const spainStations: Station[] = [
     lng: -7.0556,
   },
 
+  {
+    name: "Iñarratxu",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.0358,
+    lng: -3.0039,
+  },
+
+  {
+    name: "Pola de Lena",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.1587,
+    lng: -5.831,
+  },
+
+  {
+    name: "Novelda-Aspe",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.4071,
+    lng: -0.7777,
+  },
+
+  {
+    name: "Cercedilla",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.7376,
+    lng: -4.0663,
+  },
+
+  {
+    name: "Vallobín",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3652,
+    lng: -5.8648,
+  },
+
 ];

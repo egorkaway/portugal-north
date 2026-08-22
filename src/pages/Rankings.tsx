@@ -51,11 +51,11 @@ const Rankings = () => {
           <ReliabilityRankingsPanel />
           {/* <SpainReliabilityRankingsPanel /> */}
           <TrainReliabilitySpotlightPanel />
-          <AirportDestinationRankingsPanel />
 
           <p className="mb-5 text-muted-foreground md:mb-8">{t("rankings.intro")}</p>
 
           <RankingsPanel alwaysShow showDetailedError />
+          <AirportDestinationRankingsPanel />
           <MapOverviewImages />
         </main>
 

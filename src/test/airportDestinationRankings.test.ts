@@ -96,9 +96,15 @@ describe("airportDestinationRankings", () => {
 
     const rankings = buildAirportDestinationRankingsByCountry(manifest);
     expect(rankings.pt.busiest?.iata).toBe("OPO");
+    expect(rankings.pt.busiest?.mapImage).toBe(
+      "/maps/airports/porto-airport-opo-connections.png",
+    );
     expect(rankings.pt.leastBusy?.iata).toBe("LIS");
     expect(rankings.es.busiest?.iata).toBe("MAD");
     expect(rankings.es.leastBusy?.iata).toBe("VLL");
+    expect(rankings.es.leastBusy?.mapImage).toBe(
+      "/maps/airports/valladolid-airport-vll-connections.png",
+    );
   });
 
   it("returns nulls when no hubs have destinations", () => {

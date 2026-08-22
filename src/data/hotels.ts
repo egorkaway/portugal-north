@@ -2930,6 +2930,31 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Voar", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Voar%2C%20Ribadeo%2C%20Spain&order=price" },
     { name: "Albergue Viruxe", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Viruxe%2C%20Ribadeo%2C%20Spain&order=price" },
   ],
+  "Iñarratxu": [
+    { name: "Hostal Ayala", distanceKm: 1.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Ayala%2C%20I%C3%B1arratxu%2C%20Spain&order=price" },
+    { name: "Albizabal", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albizabal%2C%20I%C3%B1arratxu%2C%20Spain&order=price" },
+    { name: "Caserío Iruaritz", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caser%C3%ADo%20Iruaritz%2C%20I%C3%B1arratxu%2C%20Spain&order=price" },
+  ],
+  "Pola de Lena": [
+    { name: "Hotel Ruta de la Plata", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ruta%20de%20la%20Plata%2C%20Pola%20de%20Lena%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos San Martín", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20San%20Mart%C3%ADn%2C%20Pola%20de%20Lena%2C%20Spain&order=price" },
+    { name: "Hotel Lena", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Lena%2C%20Pola%20de%20Lena%2C%20Spain&order=price" },
+  ],
+  "Novelda-Aspe": [
+    { name: "Hostal Suiza", distanceKm: 2.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Suiza%2C%20Novelda-Aspe%2C%20Spain&order=price" },
+    { name: "Suiza", distanceKm: 2.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Suiza%2C%20Novelda-Aspe%2C%20Spain&order=price" },
+    { name: "Hotel Palacios", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Palacios%2C%20Novelda-Aspe%2C%20Spain&order=price" },
+  ],
+  "Cercedilla": [
+    { name: "Casa Rural Peña Pintada", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Pe%C3%B1a%20Pintada%2C%20Cercedilla%2C%20Spain&order=price" },
+    { name: "Hostal Longinos El Aribel", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Longinos%20El%20Aribel%2C%20Cercedilla%2C%20Spain&order=price" },
+    { name: "Casa Rural Los Castaños", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Los%20Casta%C3%B1os%2C%20Cercedilla%2C%20Spain&order=price" },
+  ],
+  "Vallobín": [
+    { name: "Hotel Silken Monumental Naranco", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Silken%20Monumental%20Naranco%2C%20Vallob%C3%ADn%2C%20Spain&order=price" },
+    { name: "5dos5", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=5dos5%2C%20Vallob%C3%ADn%2C%20Spain&order=price" },
+    { name: "Pensión", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%2C%20Vallob%C3%ADn%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

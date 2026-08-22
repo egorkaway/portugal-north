@@ -3,7 +3,10 @@ import { spainAirports } from "@/data/spain/airports";
 import type { Station } from "@/data/stationTypes";
 import type { CountryCode } from "@/lib/countries";
 import type { AirportConnectionsManifest } from "../../server/lib/airportConnections.js";
-import { resolveAirportConnectionsEntry } from "@/lib/airportConnections";
+import {
+  getAirportConnectionsMapImagePath,
+  resolveAirportConnectionsEntry,
+} from "@/lib/airportConnections";
 import { stationToSlug } from "@/lib/stationSlug";
 
 export type AirportDestinationRankingRow = {
@@ -11,6 +14,7 @@ export type AirportDestinationRankingRow = {
   slug: string;
   iata: string;
   destinationCount: number;
+  mapImage: string;
 };
 
 export type AirportDestinationCountryRankings = {
@@ -46,13 +50,20 @@ export function buildAirportDestinationRankingRows(
   return airports
     .map((airport) => {
       const iata = hubIata(airport);
-      const destinationCount = getAirportDestinationCount(manifest, airport);
-      if (!iata || destinationCount <= 0) return null;
+      const slug = stationToSlug(airport.name);
+      const entry = resolveAirportConnectionsEntry(manifest, {
+        iata,
+        stationName: airport.name,
+        slug,
+      });
+      const destinationCount = entry?.connections?.length ?? 0;
+      if (!iata || destinationCount <= 0 || !entry) return null;
       return {
         name: airport.name,
-        slug: stationToSlug(airport.name),
+        slug,
         iata,
         destinationCount,
+        mapImage: getAirportConnectionsMapImagePath(entry),
       };
     })
     .filter((row): row is AirportDestinationRankingRow => row !== null)

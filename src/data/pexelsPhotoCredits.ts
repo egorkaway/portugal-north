@@ -551,6 +551,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@anastasia-kostyleva-76907665",
     photoPageUrl: "https://www.pexels.com/photo/windows-of-abandoned-warehouse-8628930/",
   },
+  "9081835": {
+    photographer: "beyzahzah",
+    photographerUrl: "https://www.pexels.com/@beyzahzah-89810429",
+    photoPageUrl: "https://www.pexels.com/photo/people-standing-while-waiting-for-a-train-in-a-subway-station-9081835/",
+  },
   "9180935": {
     photographer: "Cátia Matos",
     photographerUrl: "https://www.pexels.com/@catiamatos",
