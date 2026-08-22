@@ -625,4 +625,7 @@ export const spainSummariesEs: Record<string, string> = {
   "Barcelona Sant Andreu":
     "Barcelona Sant Andreu es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Antequera-Santa Ana":
+    "Antequera-Santa Ana es una estación de Renfe de larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

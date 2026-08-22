@@ -2855,6 +2855,11 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Catalonia La Maquinista", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Catalonia%20La%20Maquinista%2C%20Barcelona%20Sant%20Andreu%2C%20Spain&order=price" },
     { name: "ibis Barcelona Meridiana", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20Barcelona%20Meridiana%2C%20Barcelona%20Sant%20Andreu%2C%20Spain&order=price" },
   ],
+  "Antequera-Santa Ana": [
+    { name: "Kanada&ma", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Kanada%26ma%2C%20Antequera-Santa%20Ana%2C%20Spain&order=price" },
+    { name: "Hostal Deportes Paco", distanceKm: 5.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Deportes%20Paco%2C%20Antequera-Santa%20Ana%2C%20Spain&order=price" },
+    { name: "DOMICILIO PARTICULAR", distanceKm: 7.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=DOMICILIO%20PARTICULAR%2C%20Antequera-Santa%20Ana%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

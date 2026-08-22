@@ -625,4 +625,7 @@ export const spainSummariesCa: Record<string, string> = {
   "Barcelona Sant Andreu":
     "Barcelona Sant Andreu és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Antequera-Santa Ana":
+    "Antequera-Santa Ana és una estació de Renfe de llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

@@ -1706,4 +1706,13 @@ export const spainStations: Station[] = [
     lng: 2.1932,
   },
 
+  {
+    name: "Antequera-Santa Ana",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.0699,
+    lng: -4.719,
+  },
+
 ];

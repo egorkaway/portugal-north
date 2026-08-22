@@ -367,6 +367,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Barcelona Sant Andreu": ["79004"],
 
+  "Antequera-Santa Ana": ["02003"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

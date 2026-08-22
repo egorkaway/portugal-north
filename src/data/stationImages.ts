@@ -49,6 +49,7 @@ export const stationImages: Record<string, string> = {
   "Amadora Este": "https://images.pexels.com/photos/35231556/pexels-photo-35231556.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Amarante": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/07.11.93_Amarante_9101_%283380785350%29.jpg/960px-07.11.93_Amarante_9101_%283380785350%29.jpg",
   "Ametzola": "https://images.pexels.com/photos/19354452/pexels-photo-19354452.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Antequera-Santa Ana": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Antequera-Santa_Ana.jpg/960px-Antequera-Santa_Ana.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Aranjuez": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Aranjuez_EstacionFFCC.jpg/960px-Aranjuez_EstacionFFCC.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Aravaca": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Estaci%C3%B3n_de_Aravaca_-_Exterior_2.jpg/960px-Estaci%C3%B3n_de_Aravaca_-_Exterior_2.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Aregos": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CP_592.0_%2817341367656%29.jpg/960px-CP_592.0_%2817341367656%29.jpg",
