@@ -369,6 +369,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Antequera-Santa Ana": ["02003"],
 
+  "Castellbisbal": ["72210"],
+
+  "Sant Adrià de Besòs": ["79403"],
+
+  "La Pereda-Riosa": ["15206"],
+
+  "Sils": ["79202"],
+
+  "Vitoria-Gasteiz": ["11208"],
+
+  "Silla": ["64200"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -1715,4 +1715,58 @@ export const spainStations: Station[] = [
     lng: -4.719,
   },
 
+  {
+    name: "Castellbisbal",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4734,
+    lng: 1.9676,
+  },
+
+  {
+    name: "Sant Adrià de Besòs",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4244,
+    lng: 2.2305,
+  },
+
+  {
+    name: "La Pereda-Riosa",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2771,
+    lng: -5.8122,
+  },
+
+  {
+    name: "Sils",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.8076,
+    lng: 2.745,
+  },
+
+  {
+    name: "Vitoria-Gasteiz",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.8415,
+    lng: -2.6726,
+  },
+
+  {
+    name: "Silla",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.362,
+    lng: -0.415,
+  },
+
 ];

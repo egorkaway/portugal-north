@@ -2860,6 +2860,36 @@ export const stationHotels: StationHotels = {
     { name: "Hostal Deportes Paco", distanceKm: 5.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Deportes%20Paco%2C%20Antequera-Santa%20Ana%2C%20Spain&order=price" },
     { name: "DOMICILIO PARTICULAR", distanceKm: 7.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=DOMICILIO%20PARTICULAR%2C%20Antequera-Santa%20Ana%2C%20Spain&order=price" },
   ],
+  "Castellbisbal": [
+    { name: "Ibis Budget", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Budget%2C%20Castellbisbal%2C%20Spain&order=price" },
+    { name: "Hotel Bristol", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bristol%2C%20Castellbisbal%2C%20Spain&order=price" },
+    { name: "Hotel Manel", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Manel%2C%20Castellbisbal%2C%20Spain&order=price" },
+  ],
+  "Sant Adrià de Besòs": [
+    { name: "Ciutat de Sant Adrià", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ciutat%20de%20Sant%20Adri%C3%A0%2C%20Sant%20Adri%C3%A0%20de%20Bes%C3%B2s%2C%20Spain&order=price" },
+    { name: "SLS Hotel Barcelona", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=SLS%20Hotel%20Barcelona%2C%20Sant%20Adri%C3%A0%20de%20Bes%C3%B2s%2C%20Spain&order=price" },
+    { name: "Hostal Athenas", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Athenas%2C%20Sant%20Adri%C3%A0%20de%20Bes%C3%B2s%2C%20Spain&order=price" },
+  ],
+  "La Pereda-Riosa": [
+    { name: "Albergue de peregrinos Luz", distanceKm: 2.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20peregrinos%20Luz%2C%20La%20Pereda-Riosa%2C%20Spain&order=price" },
+    { name: "Hostal Meson La Peña", distanceKm: 2.7, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Meson%20La%20Pe%C3%B1a%2C%20La%20Pereda-Riosa%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos de La Peña Mieres del Camín", distanceKm: 3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20de%20La%20Pe%C3%B1a%20Mieres%20del%20Cam%C3%ADn%2C%20La%20Pereda-Riosa%2C%20Spain&order=price" },
+  ],
+  "Sils": [
+    { name: "Hostal de Mallorquines", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20de%20Mallorquines%2C%20Sils%2C%20Spain&order=price" },
+    { name: "Hostal els Rolls", distanceKm: 3.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20els%20Rolls%2C%20Sils%2C%20Spain&order=price" },
+    { name: "Granja escola Can Masó", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Granja%20escola%20Can%20Mas%C3%B3%2C%20Sils%2C%20Spain&order=price" },
+  ],
+  "Vitoria-Gasteiz": [
+    { name: "400", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=400%2C%20Vitoria-Gasteiz%2C%20Spain&order=price" },
+    { name: "Dato", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dato%2C%20Vitoria-Gasteiz%2C%20Spain&order=price" },
+    { name: "Hotel Hito", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Hito%2C%20Vitoria-Gasteiz%2C%20Spain&order=price" },
+  ],
+  "Silla": [
+    { name: "Alain", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alain%2C%20Silla%2C%20Spain&order=price" },
+    { name: "ibis budget Valencia Alcasser", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20budget%20Valencia%20Alcasser%2C%20Silla%2C%20Spain&order=price" },
+    { name: "Ramada", distanceKm: 6.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ramada%2C%20Silla%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

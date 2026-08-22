@@ -628,4 +628,22 @@ export const spainSummariesPt: Record<string, string> = {
   "Antequera-Santa Ana":
     "Antequera-Santa Ana é uma estação Renfe de longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "Castellbisbal":
+    "Castellbisbal é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Sant Adrià de Besòs":
+    "Sant Adrià de Besòs é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "La Pereda-Riosa":
+    "La Pereda-Riosa é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Sils":
+    "Sils é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Vitoria-Gasteiz":
+    "Vitoria-Gasteiz é uma estação Renfe de longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Silla":
+    "Silla é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

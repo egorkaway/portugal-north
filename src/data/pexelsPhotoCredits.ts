@@ -2466,6 +2466,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@urielluphoto",
     photoPageUrl: "https://www.pexels.com/photo/vintage-police-office-interior-in-uribelarrea-37104712/",
   },
+  "37115905": {
+    photographer: "Ana Hidalgo Burgos Burgos.",
+    photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-burgos-4848204",
+    photoPageUrl: "https://www.pexels.com/photo/black-and-white-urban-train-station-scene-37115905/",
+  },
   "37122717": {
     photographer: "Lajos Kristóf Kántor",
     photographerUrl: "https://www.pexels.com/@lajos-kristof-kantor-2158796893",
@@ -2525,6 +2530,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Ali Akdemir",
     photographerUrl: "https://www.pexels.com/@aliakdemir",
     photoPageUrl: "https://www.pexels.com/photo/ancient-aqueduct-bridge-over-serene-landscape-37453768/",
+  },
+  "37548355": {
+    photographer: "Mohsan TV",
+    photographerUrl: "https://www.pexels.com/@mohsan-tv-451533817",
+    photoPageUrl: "https://www.pexels.com/photo/modern-metro-station-in-barcelona-at-night-37548355/",
   },
   "37626003": {
     photographer: "Michael Westen",
