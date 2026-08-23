@@ -60,6 +60,7 @@ async function stitchScaledPointBounds(
   height,
   paddingPx,
   fit = "contain",
+  centerOffsetFraction = 0,
 ) {
   const worldSize = worldSizePx(zoom);
   const xs = points.map((point) => latLngToWorldPx(point.lat, point.lng, zoom).x);
@@ -90,7 +91,7 @@ async function stitchScaledPointBounds(
   }
 
   let topLeftX = cx - bw / 2;
-  let topLeftY = cy - bh / 2;
+  let topLeftY = cy - bh / 2 + centerOffsetFraction * bh;
   // Keep the crop centered on the points. Do not clamp into the Web Mercator world —
   // that shifts the frame and can push the origin or edge destinations off-canvas.
   // Areas outside the world are filled with ocean color below.
@@ -286,6 +287,8 @@ export async function stitchBoundsMap({
    * Avoids extra empty margin from a fixed-size viewport larger than the cluster.
    */
   tightBounds = false,
+  /** Positive values pan the viewport south, shifting geographic content up on the card. */
+  centerOffsetFraction = 0,
   basemap = "carto-voyager",
 }) {
   const basemapConfig =
@@ -298,7 +301,7 @@ export async function stitchBoundsMap({
 
   // Tight / cover / undersized-world: frame to destinations then scale to the card.
   if (tightBounds || fit === "cover" || width > worldSize || height > worldSize) {
-    return stitchScaledPointBounds(basemapConfig, points, zoom, width, height, paddingPx, fit);
+    return stitchScaledPointBounds(basemapConfig, points, zoom, width, height, paddingPx, fit, centerOffsetFraction);
   }
 
   const xs = points.map((point) => latLngToWorldPx(point.lat, point.lng, zoom).x);

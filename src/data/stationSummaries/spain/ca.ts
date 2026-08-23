@@ -718,4 +718,10 @@ export const spainSummariesCa: Record<string, string> = {
   "L'Hospitalet de l'Infant":
     "L'Hospitalet de l'Infant és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Sagunt":
+    "Sagunt és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Valle Real":
+    "Valle Real és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

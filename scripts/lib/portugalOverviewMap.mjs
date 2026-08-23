@@ -132,20 +132,20 @@ function reliabilityScoreColor(score) {
 }
 
 function markerRadius(movements) {
-  if (movements >= 500) return 20;
-  if (movements >= 200) return 16;
-  if (movements >= 50) return 13;
-  return 10;
+  if (movements >= 500) return 13;
+  if (movements >= 200) return 10;
+  if (movements >= 50) return 8;
+  return 6.5;
 }
 
 /**
- * Iberian reliability dots — compact on the wide peninsula frame (~4–8px).
+ * Iberian reliability dots — compact on the wide peninsula frame (~5–7px).
  */
 function iberianMarkerRadius(movements) {
-  if (movements >= 500) return 8;
-  if (movements >= 200) return 6.5;
-  if (movements >= 50) return 5;
-  return 4;
+  if (movements >= 500) return 7;
+  if (movements >= 200) return 6;
+  if (movements >= 50) return 5.5;
+  return 5;
 }
 
 function isAirportStation(station) {
@@ -447,6 +447,7 @@ function buildReliabilityOverlaySvg({
   compactMarkers = false,
 }) {
   const radiusFor = compactMarkers ? iberianMarkerRadius : markerRadius;
+  const strokeWidth = compactMarkers ? 1 : 3;
 
   const markerElements = stations
     .map((station) => {
@@ -461,10 +462,7 @@ function buildReliabilityOverlaySvg({
             ? RELIABILITY_COLORS.airport
             : RELIABILITY_COLORS.unknown;
       const radius = radiusFor(stationMovements);
-      // Iberian compact markers: no outline; Portugal keeps white stroke for contrast.
-      return compactMarkers
-        ? `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" />`
-        : `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" stroke="#ffffff" stroke-width="3" />`;
+      return `<circle cx="${pt.x}" cy="${pt.y}" r="${radius}" fill="${color}" stroke="#ffffff" stroke-width="${strokeWidth}" />`;
     })
     .join("");
 
@@ -538,6 +536,9 @@ function iberianBoundsPoints() {
   ];
 }
 
+/** Pan viewport south so western Iberia clears the bottom-left legend overlay. */
+const IBERIAN_VIEW_OFFSET_FRACTION = 0.06;
+
 /** Square overview fitted to the full Iberian peninsula (Portugal not clipped). */
 async function stitchIberianMap(basemap = "carto-voyager") {
   return stitchBoundsMap({
@@ -547,6 +548,7 @@ async function stitchIberianMap(basemap = "carto-voyager") {
     paddingPx: 36,
     fit: "contain",
     tightBounds: true,
+    centerOffsetFraction: IBERIAN_VIEW_OFFSET_FRACTION,
     basemap,
   });
 }

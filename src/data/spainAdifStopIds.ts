@@ -429,6 +429,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "L'Hospitalet de l'Infant": ["65420"],
 
+  "Sagunt": ["65200"],
+
+  "Valle Real": ["05652"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

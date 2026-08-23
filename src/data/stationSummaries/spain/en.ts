@@ -718,4 +718,10 @@ export const spainSummariesEn: Record<string, string> = {
   "L'Hospitalet de l'Infant":
     "L'Hospitalet de l'Infant is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Sagunt":
+    "Sagunt is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Valle Real":
+    "Valle Real is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

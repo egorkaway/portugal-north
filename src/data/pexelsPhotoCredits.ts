@@ -271,6 +271,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@jibarofoto",
     photoPageUrl: "https://www.pexels.com/photo/people-waiting-for-train-on-station-4341096/",
   },
+  "4458687": {
+    photographer: "Enes Ersahin",
+    photographerUrl: "https://www.pexels.com/@enesersahin",
+    photoPageUrl: "https://www.pexels.com/photo/antique-train-station-in-black-and-white-4458687/",
+  },
   "4525217": {
     photographer: "Arthur Forti",
     photographerUrl: "https://www.pexels.com/@arthur-forti-967563",

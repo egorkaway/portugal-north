@@ -1985,4 +1985,22 @@ export const spainStations: Station[] = [
     lng: 0.9125,
   },
 
+  {
+    name: "Sagunt",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.6758,
+    lng: -0.2715,
+  },
+
+  {
+    name: "Valle Real",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4275,
+    lng: -3.8405,
+  },
+
 ];

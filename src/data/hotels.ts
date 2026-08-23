@@ -3010,6 +3010,16 @@ export const stationHotels: StationHotels = {
     { name: "Alas Hotel", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alas%20Hotel%2C%20L'Hospitalet%20de%20l'Infant%2C%20Spain&order=price" },
     { name: "Comunidad Tramuntana, Pino Alto", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Comunidad%20Tramuntana%2C%20Pino%20Alto%2C%20L'Hospitalet%20de%20l'Infant%2C%20Spain&order=price" },
   ],
+  "Sagunt": [
+    { name: "Hotel Austria 76", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Austria%2076%2C%20Sagunt%2C%20Spain&order=price" },
+    { name: "Complejo turístico La Pinada", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Complejo%20tur%C3%ADstico%20La%20Pinada%2C%20Sagunt%2C%20Spain&order=price" },
+    { name: "Hostal Teide", distanceKm: 4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Teide%2C%20Sagunt%2C%20Spain&order=price" },
+  ],
+  "Valle Real": [
+    { name: "San Luis", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/es/boutique-albussanluis.es.html" },
+    { name: "Hotel Nueva Plaza", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Nueva%20Plaza%2C%20Valle%20Real%2C%20Spain&order=price" },
+    { name: "Hotel Mercedes", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mercedes%2C%20Valle%20Real%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
