@@ -1958,4 +1958,31 @@ export const spainStations: Station[] = [
     lng: -3.025,
   },
 
+  {
+    name: "Meco",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5347,
+    lng: -3.2987,
+  },
+
+  {
+    name: "Las Retamas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3421,
+    lng: -3.8425,
+  },
+
+  {
+    name: "L'Hospitalet de l'Infant",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.9994,
+    lng: 0.9125,
+  },
+
 ];

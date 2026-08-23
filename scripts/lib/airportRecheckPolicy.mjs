@@ -1,5 +1,5 @@
 /** Skip airport destination re-sampling when airport collection ran this recently. */
-export const AIRPORT_RECHECK_MIN_INTERVAL_MS = 3 * 60 * 60 * 1000;
+export const AIRPORT_RECHECK_MIN_INTERVAL_MS = 5 * 60 * 60 * 1000;
 
 /**
  * Airport connection sampling is expensive; on frequent train-stat runs, skip it

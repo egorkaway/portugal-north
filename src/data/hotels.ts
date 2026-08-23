@@ -2995,6 +2995,21 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Erreka-alde", distanceKm: 4.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Erreka-alde%2C%20La%20Quadra%2C%20Spain&order=price" },
     { name: "Agroturismo Ordaola", distanceKm: 4.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Agroturismo%20Ordaola%2C%20La%20Quadra%2C%20Spain&order=price" },
   ],
+  "Meco": [
+    { name: "Motel Venus", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Venus%2C%20Meco%2C%20Spain&order=price" },
+    { name: "Hotel Encin Golf", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Encin%20Golf%2C%20Meco%2C%20Spain&order=price" },
+    { name: "Miralcampo", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Miralcampo%2C%20Meco%2C%20Spain&order=price" },
+  ],
+  "Las Retamas": [
+    { name: "NH Hotel Alcorcón", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=NH%20Hotel%20Alcorc%C3%B3n%2C%20Las%20Retamas%2C%20Spain&order=price" },
+    { name: "Ibis", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%2C%20Las%20Retamas%2C%20Spain&order=price" },
+    { name: "Holiday Inn Express - Madrid Alcorcón", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20-%20Madrid%20Alcorc%C3%B3n%2C%20Las%20Retamas%2C%20Spain&order=price" },
+  ],
+  "L'Hospitalet de l'Infant": [
+    { name: "Matenai", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Matenai%2C%20L'Hospitalet%20de%20l'Infant%2C%20Spain&order=price" },
+    { name: "Alas Hotel", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alas%20Hotel%2C%20L'Hospitalet%20de%20l'Infant%2C%20Spain&order=price" },
+    { name: "Comunidad Tramuntana, Pino Alto", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Comunidad%20Tramuntana%2C%20Pino%20Alto%2C%20L'Hospitalet%20de%20l'Infant%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

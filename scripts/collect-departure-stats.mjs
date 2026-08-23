@@ -8,7 +8,7 @@
  *   npm run stats:departures -- --dry-run
  *
  * Also collects airport flight connections (skipped if the last airport check
- * was < 3 hours ago — train-only runs do not count),
+ * was < 5 hours ago — train-only runs do not count),
  * logs temperatures (Open-Meteo) for train stations that returned a departure
  * sample attempt (OK or FAIL). Airport hub temperatures are logged only during
  * a flight-connections collect, after a successful flight sample,
@@ -188,7 +188,7 @@ if (!recheckAirports) {
     (Date.now() - Date.parse(previousAirportAt)) / 60_000,
   );
   console.log(
-    `Last airport destination check was ${minutesAgo} min ago (< 3 h) — sampling trains only, skipping airport destinations.`,
+    `Last airport destination check was ${minutesAgo} min ago (< 5 h) — sampling trains only, skipping airport destinations.`,
   );
 }
 
@@ -352,7 +352,7 @@ if (!dryRun) {
     store.lastAirportConnectionsAt = new Date().toISOString();
     saveStore(store);
   } else {
-    console.log("Skipping airport destination recheck (last airport check < 3 hours ago).");
+    console.log("Skipping airport destination recheck (last airport check < 5 hours ago).");
   }
 
   const { syncMobileData } = await import("../mobile/scripts/sync-data.mjs");
@@ -392,7 +392,7 @@ if (!dryRun) {
 
 const skipped = stoppedEarly ? targets.length - ok - failed : 0;
 const earlyNote = stoppedEarly ? `, ${skipped} skipped after ${CONSECUTIVE_FAILURE_LIMIT} consecutive failures` : "";
-const airportNote = recheckAirports ? "airport connections" : "airports skipped (<3h)";
+const airportNote = recheckAirports ? "airport connections" : "airports skipped (<5h)";
 
 console.log(
   dryRun

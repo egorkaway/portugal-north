@@ -423,6 +423,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "La Quadra": ["05465"],
 
+  "Meco": ["70104"],
+
+  "Las Retamas": ["35610"],
+
+  "L'Hospitalet de l'Infant": ["65420"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -562,12 +562,28 @@ export const europeDestinationAirports: Station[] = [
     lng: -5.306321,
   },
   {
+    name: "Santorini International Airport (JTR)",
+    country: "gr",
+    lines: ["JTR"],
+    types: ["Airport Destination"],
+    lat: 36.400045,
+    lng: 25.478638,
+  },
+  {
     name: "Kerry Airport (KIR)",
     country: "ie",
     lines: ["KIR"],
     types: ["Airport Destination"],
     lat: 52.180901,
     lng: -9.52378,
+  },
+  {
+    name: "Chisinau International Airport (KIV)",
+    country: "md",
+    lines: ["KIV"],
+    types: ["Airport Destination"],
+    lat: 46.92778,
+    lng: 28.93083,
   },
   {
     name: "Kraków John Paul II International Airport (KRK)",
@@ -608,6 +624,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 53.865898,
     lng: -1.66057,
+  },
+  {
+    name: "Lübeck Blankensee Airport (LBC)",
+    country: "de",
+    lines: ["LBC"],
+    types: ["Airport Destination"],
+    lat: 53.805401,
+    lng: 10.7192,
   },
   {
     name: "Larnaca International Airport (LCA)",
@@ -866,6 +890,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 1.28278,
   },
   {
+    name: "Stockholm Skavsta Airport (NYO)",
+    country: "se",
+    lines: ["NYO"],
+    types: ["Airport Destination"],
+    lat: 58.789656,
+    lng: 16.911479,
+  },
+  {
     name: "Olbia Costa Smeralda Airport (OLB)",
     country: "it",
     lines: ["OLB"],
@@ -1050,6 +1082,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 22.024155,
   },
   {
+    name: "Saarbrücken Airport (SCN)",
+    country: "de",
+    lines: ["SCN"],
+    types: ["Airport Destination"],
+    lat: 49.214545,
+    lng: 7.109735,
+  },
+  {
     name: "London Southend Airport (SEN)",
     country: "gb",
     lines: ["SEN"],
@@ -1080,6 +1120,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 50.950298,
     lng: -1.3568,
+  },
+  {
+    name: "La Palma Airport (SPC)",
+    country: "es",
+    lines: ["SPC"],
+    types: ["Airport Destination"],
+    lat: 28.626499,
+    lng: -17.7556,
   },
   {
     name: "Split Saint Jerome Airport (SPU)",
