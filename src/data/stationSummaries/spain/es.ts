@@ -724,4 +724,10 @@ export const spainSummariesEs: Record<string, string> = {
   "Valle Real":
     "Valle Real es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Puerto de Navacerrada":
+    "Puerto de Navacerrada es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Guadix":
+    "Guadix es una estación de Renfe de larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

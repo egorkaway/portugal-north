@@ -132,10 +132,10 @@ function reliabilityScoreColor(score) {
 }
 
 function markerRadius(movements) {
-  if (movements >= 500) return 13;
-  if (movements >= 200) return 10;
-  if (movements >= 50) return 8;
-  return 6.5;
+  if (movements >= 500) return 11;
+  if (movements >= 200) return 9;
+  if (movements >= 50) return 7;
+  return 5;
 }
 
 /**
@@ -447,7 +447,7 @@ function buildReliabilityOverlaySvg({
   compactMarkers = false,
 }) {
   const radiusFor = compactMarkers ? iberianMarkerRadius : markerRadius;
-  const strokeWidth = compactMarkers ? 1 : 3;
+  const strokeWidth = compactMarkers ? 1 : 2;
 
   const markerElements = stations
     .map((station) => {

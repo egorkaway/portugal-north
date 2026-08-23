@@ -3020,6 +3020,16 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Nueva Plaza", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Nueva%20Plaza%2C%20Valle%20Real%2C%20Spain&order=price" },
     { name: "Hotel Mercedes", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mercedes%2C%20Valle%20Real%2C%20Spain&order=price" },
   ],
+  "Puerto de Navacerrada": [
+    { name: "Restaurante Hotel El Corzo", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Restaurante%20Hotel%20El%20Corzo%2C%20Puerto%20de%20Navacerrada%2C%20Spain&order=price" },
+    { name: "Pasadoiro", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pasadoiro%2C%20Puerto%20de%20Navacerrada%2C%20Spain&order=price" },
+    { name: "Hotel La Barranca", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Barranca%2C%20Puerto%20de%20Navacerrada%2C%20Spain&order=price" },
+  ],
+  "Guadix": [
+    { name: "Hotel Mulhacén", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mulhac%C3%A9n%2C%20Guadix%2C%20Spain&order=price" },
+    { name: "Hostel El Retiro", distanceKm: 1.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20El%20Retiro%2C%20Guadix%2C%20Spain&order=price" },
+    { name: "Hotel Palacio de Oñate", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Palacio%20de%20O%C3%B1ate%2C%20Guadix%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

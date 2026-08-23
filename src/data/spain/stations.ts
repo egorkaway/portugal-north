@@ -2003,4 +2003,22 @@ export const spainStations: Station[] = [
     lng: -3.8405,
   },
 
+  {
+    name: "Puerto de Navacerrada",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.7845,
+    lng: -4.0048,
+  },
+
+  {
+    name: "Guadix",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.3169,
+    lng: -3.1272,
+  },
+
 ];

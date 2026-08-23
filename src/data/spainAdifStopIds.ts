@@ -433,6 +433,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Valle Real": ["05652"],
 
+  "Puerto de Navacerrada": ["12020"],
+
+  "Guadix": ["56200"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
