@@ -3115,6 +3115,16 @@ export const stationHotels: StationHotels = {
     { name: "Guest houses near Guadajoz", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guadajoz%2C%20Spain&order=price" },
     { name: "Hotels near Guadajoz", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guadajoz%2C%20Spain&order=price" },
   ],
+  "València-Cabanyal": [
+    { name: "Lindala Hotel", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lindala%20Hotel%2C%20Val%C3%A8ncia-Cabanyal%2C%20Spain&order=price" },
+    { name: "Limin Hostel Capsules", distanceKm: 0.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Limin%20Hostel%20Capsules%2C%20Val%C3%A8ncia-Cabanyal%2C%20Spain&order=price" },
+    { name: "Urban Youth Hostel", distanceKm: 1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Urban%20Youth%20Hostel%2C%20Val%C3%A8ncia-Cabanyal%2C%20Spain&order=price" },
+  ],
+  "Lenova-Manuel": [
+    { name: "Hotel Vernisa", distanceKm: 7.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vernisa%2C%20Lenova-Manuel%2C%20Spain&order=price" },
+    { name: "Casa Aldomar", distanceKm: 7.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Aldomar%2C%20Lenova-Manuel%2C%20Spain&order=price" },
+    { name: "Albergue turistico 'El Palau'", distanceKm: 7.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20turistico%20'El%20Palau'%2C%20Lenova-Manuel%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

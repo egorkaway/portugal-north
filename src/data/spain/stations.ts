@@ -2174,4 +2174,22 @@ export const spainStations: Station[] = [
     lng: -5.67,
   },
 
+  {
+    name: "València-Cabanyal",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.4702,
+    lng: -0.3347,
+  },
+
+  {
+    name: "Lenova-Manuel",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.0501,
+    lng: -0.4776,
+  },
+
 ];

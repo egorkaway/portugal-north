@@ -41,6 +41,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@hikaique",
     photoPageUrl: "https://www.pexels.com/photo/train-station-109915/",
   },
+  "116885": {
+    photographer: "George Becker",
+    photographerUrl: "https://www.pexels.com/@eye4dtail",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photography-of-man-carrying-bag-walking-on-subway-station-116885/",
+  },
   "157018": {
     photographer: "Flickr",
     photographerUrl: "https://www.pexels.com/@flickr",
@@ -2190,6 +2195,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Junior Diniz PHOTOGRAPHER IN LISBON",
     photographerUrl: "https://www.pexels.com/@junior-diniz-photographer-in-lisbon-2051893",
     photoPageUrl: "https://www.pexels.com/photo/street-view-of-iconic-lisbon-trams-with-graffiti-33768022/",
+  },
+  "33798224": {
+    photographer: "David Underland",
+    photographerUrl: "https://www.pexels.com/@david-underland",
+    photoPageUrl: "https://www.pexels.com/photo/intricate-architectural-ceiling-with-arched-design-33798224/",
   },
   "33804880": {
     photographer: "ᛟᛞᚨᛚᚹ ᚨᚱᚲᛟᚾᛊᚲᛁ",

@@ -471,6 +471,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Guadajoz": ["50602"],
 
+  "València-Cabanyal": ["65003"],
+
+  "Lenova-Manuel": ["64007"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

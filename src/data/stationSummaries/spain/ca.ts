@@ -781,4 +781,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Guadajoz":
     "Guadajoz és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "València-Cabanyal":
+    "València-Cabanyal és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Lenova-Manuel":
+    "Lenova-Manuel és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

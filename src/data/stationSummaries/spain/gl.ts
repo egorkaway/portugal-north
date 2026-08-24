@@ -781,4 +781,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Guadajoz":
     "Guadajoz é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "València-Cabanyal":
+    "València-Cabanyal é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Lenova-Manuel":
+    "Lenova-Manuel é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };
