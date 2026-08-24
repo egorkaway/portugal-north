@@ -51,6 +51,25 @@ export function isProEntitlementActive(info: CustomerInfo | null | undefined): b
   return Boolean(info.entitlements.active[PRO_ENTITLEMENT_ID]);
 }
 
+function serializePurchasesError(error: unknown): Record<string, unknown> {
+  if (!error || typeof error !== 'object') {
+    return { message: String(error) };
+  }
+  const err = error as Record<string, unknown> & { message?: string; code?: unknown };
+  const info =
+    err.userInfo && typeof err.userInfo === 'object'
+      ? (err.userInfo as Record<string, unknown>)
+      : undefined;
+  return {
+    message: err.message ?? String(error),
+    code: err.code,
+    readableErrorCode: err.readableErrorCode ?? info?.readableErrorCode,
+    underlyingErrorMessage: err.underlyingErrorMessage ?? info?.underlyingErrorMessage,
+    readable_error_code: info?.readable_error_code,
+    NSUnderlyingError: info?.NSUnderlyingError ?? info?.underlyingError,
+  };
+}
+
 function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
   return new Promise<T>((resolve, reject) => {
     const timer = setTimeout(() => {
@@ -113,6 +132,21 @@ export async function configurePurchases(): Promise<boolean> {
     } catch (error) {
       // Device IDs are optional — never fail startup for attribution helpers.
       console.warn('[purchases] collectDeviceIdentifiers failed', error);
+    }
+
+    try {
+      const offerings = await Purchases.getOfferings();
+      const current = offerings.current;
+      console.log('[purchases] offerings', {
+        keyPrefix: apiKey.slice(0, 5),
+        currentId: current?.identifier ?? null,
+        packageCount: current?.availablePackages.length ?? 0,
+        packageIds: current?.availablePackages.map((pkg) => pkg.identifier) ?? [],
+        productIds:
+          current?.availablePackages.map((pkg) => pkg.product.identifier) ?? [],
+      });
+    } catch (error) {
+      console.warn('[purchases] getOfferings failed after configure', serializePurchasesError(error));
     }
 
     return true;
@@ -202,7 +236,7 @@ export async function presentProPaywall(): Promise<boolean> {
     );
     return paywallUnlockedPro(result);
   } catch (error) {
-    console.warn('[purchases] presentPaywall failed', error);
+    console.warn('[purchases] presentPaywall failed', serializePurchasesError(error));
     return false;
   }
 }
@@ -224,7 +258,7 @@ export async function presentProPaywallIfNeeded(): Promise<boolean> {
     );
     return paywallUnlockedPro(result);
   } catch (error) {
-    console.warn('[purchases] presentPaywallIfNeeded failed', error);
+    console.warn('[purchases] presentPaywallIfNeeded failed', serializePurchasesError(error));
     return false;
   }
 }

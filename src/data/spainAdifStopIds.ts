@@ -467,6 +467,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Mieres-Puente": ["15203"],
 
+  "Almassora": ["65209"],
+
+  "Guadajoz": ["50602"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

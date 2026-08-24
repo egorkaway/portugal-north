@@ -42,7 +42,8 @@ export function getServiceTypeTextColor(serviceType: string | null | undefined):
     return TRAIN_TYPE_COLORS.Intercidades;
   }
   if (serviceType.includes('Regional') || serviceType.includes('InterRegional')) {
-    return TRAIN_TYPE_COLORS.Regional;
+    // Web trip/departure labels use accent-foreground (hsl(175 60% 15%)), not the light accent wash.
+    return '#0F3D39';
   }
   return 'rgba(1, 40, 65, 0.7)';
 }

@@ -482,8 +482,11 @@ export default function TripScreen() {
         {pastTrips.length === 0 ? (
           <Text style={styles.historyEmpty}>{t('trip.emptyBody')}</Text>
         ) : (
-          pastTrips.map((record) => (
-            <View key={record.id} style={styles.historyCard}>
+          pastTrips.map((record, index) => (
+            <View
+              key={record.id}
+              style={[styles.historyCard, index % 2 === 1 && styles.historyCardEven]}
+            >
               <View style={styles.historyMain}>
                 <Text style={styles.historyTitle}>
                   {record.trainNumber} · {record.stationName} → {record.finalStationName}
@@ -698,6 +701,9 @@ const styles = StyleSheet.create({
     borderColor: theme.border,
     padding: 14,
     gap: 10,
+  },
+  historyCardEven: {
+    backgroundColor: '#E8EEF1',
   },
   historyMain: {
     gap: 4,

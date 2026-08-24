@@ -2156,4 +2156,22 @@ export const spainStations: Station[] = [
     lng: -5.7823,
   },
 
+  {
+    name: "Almassora",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.9549,
+    lng: -0.0768,
+  },
+
+  {
+    name: "Guadajoz",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.5815,
+    lng: -5.67,
+  },
+
 ];

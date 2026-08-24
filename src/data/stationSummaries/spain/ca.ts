@@ -775,4 +775,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Mieres-Puente":
     "Mieres-Puente és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Almassora":
+    "Almassora és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Guadajoz":
+    "Guadajoz és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

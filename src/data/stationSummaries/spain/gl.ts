@@ -775,4 +775,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Mieres-Puente":
     "Mieres-Puente é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Almassora":
+    "Almassora é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Guadajoz":
+    "Guadajoz é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };
