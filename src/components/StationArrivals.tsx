@@ -21,6 +21,8 @@ import {
   toggleActiveTrip,
   useActiveTrip,
 } from "@/lib/plannedDepartures";
+import { getServiceTypeTextClass } from "@/lib/trainTypes";
+import { cn } from "@/lib/utils";
 
 function ArrivalRow({
   id,
@@ -88,12 +90,7 @@ function ArrivalRow({
             : t("arrivals.continuesTo", { origin, destination })}
         </p>
         <p className="mt-1 text-xs text-muted-foreground">
-          <span className={
-            serviceType.includes("Alfa") ? "text-primary font-semibold" :
-            serviceType.includes("Intercidades") || serviceType.includes("Celta") ? "text-secondary font-semibold" :
-            serviceType.includes("Regional") || serviceType.includes("InterRegional") ? "text-accent-foreground font-semibold" :
-            "font-medium text-foreground/70"
-          }>{serviceType}</span> · {t("departures.train")} {trainNumber}
+          <span className={cn(getServiceTypeTextClass(serviceType))}>{serviceType}</span> · {t("departures.train")} {trainNumber}
           {platform ? ` · ${t("departures.platform")} ${platform}` : ""}
           {terminatesHere ? ` · ${t("arrivals.terminates")}` : ""}
         </p>

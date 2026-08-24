@@ -68,6 +68,17 @@ Used on the activity map, rankings, and overview PNG exports. Keep distinct from
 
 Also: connection-line fallback `#2563EB`; airport-destination type `#0EA5E9`. Airport labels may use an orange border.
 
+**Train service types** (dots, badges, history / departure labels — high contrast on light surfaces):
+
+| Type | Hex |
+|---|---|
+| Alfa Pendular | `#0F5C4E` |
+| Intercidades / Celta | `#B45309` |
+| Regional / InterRegional | `#166534` |
+| Urban | `#475569` |
+| Metro | `#6D28D9` |
+| Airport | `#0369A1` |
+
 **Activity hexes:** size = traffic. Color = reliability when a score exists; otherwise busy green `hsl(145 58% 50%)`, mid blue `hsl(210 52% 46%)`, quiet purple `hsl(275 48% 34%)`.
 
 ---

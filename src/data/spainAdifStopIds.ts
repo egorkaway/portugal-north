@@ -483,6 +483,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Putxeta": ["13505"],
 
+  "Humanes": ["35012"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

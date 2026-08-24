@@ -8,12 +8,8 @@ import {
   shouldShowNearestLongDistance,
 } from "@/lib/nearestLongDistanceStations";
 import { getStationPath } from "@/lib/stationSlug";
+import { getTrainTypeBadgeClass } from "@/lib/trainTypes";
 import { useLocale } from "@/i18n/LocaleProvider";
-
-const typeColors: Record<string, string> = {
-  "Alfa Pendular": "bg-primary text-primary-foreground",
-  Intercidades: "bg-secondary text-secondary-foreground",
-};
 
 export function NearestLongDistanceStations({ station }: { station: Station }) {
   const { t } = useLocale();
@@ -67,7 +63,7 @@ export function NearestLongDistanceStations({ station }: { station: Station }) {
                 {getLongDistanceTypes(candidate).map((type) => (
                   <span
                     key={type}
-                    className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${typeColors[type] || "bg-muted text-muted-foreground"}`}
+                    className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${getTrainTypeBadgeClass(type)}`}
                   >
                     {type}
                   </span>

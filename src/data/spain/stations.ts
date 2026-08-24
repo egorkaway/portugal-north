@@ -2228,4 +2228,13 @@ export const spainStations: Station[] = [
     lng: -3.0911,
   },
 
+  {
+    name: "Humanes",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.2558,
+    lng: -3.8287,
+  },
+
 ];

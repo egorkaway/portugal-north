@@ -25,21 +25,42 @@ export function getTrainTypeAbbrev(type: string): string {
   return TRAIN_TYPE_ABBREV[type] ?? type;
 }
 
-/** Badge colour classes per service type, shared across station and line pages. */
+/**
+ * High-contrast filled badges on light surfaces (station cards, filters).
+ * Hue-separated: teal / orange / forest / slate / violet / sky.
+ */
 export const TRAIN_TYPE_BADGE_CLASSES: Record<string, string> = {
-  Airport: "bg-sky-600 text-white",
-  "Airport Destination": "bg-sky-500 text-white",
-  "Alfa Pendular": "bg-primary text-primary-foreground",
-  Intercidades: "bg-secondary text-secondary-foreground",
-  Regional: "bg-accent text-accent-foreground",
-  Urban: "bg-muted text-muted-foreground",
-  Internacional: "bg-teal-600 text-white",
-  Metro: "bg-violet-600 text-white",
-  "Inactive / Historic": "bg-muted text-muted-foreground opacity-60",
+  Airport: "bg-sky-700 text-white",
+  "Airport Destination": "bg-sky-600 text-white",
+  "Alfa Pendular": "bg-[#0F5C4E] text-white",
+  Intercidades: "bg-[#B45309] text-white",
+  Regional: "bg-[#166534] text-white",
+  Urban: "bg-slate-600 text-white",
+  Internacional: "bg-teal-700 text-white",
+  Metro: "bg-violet-700 text-white",
+  "Inactive / Historic": "bg-slate-400 text-white opacity-80",
 };
 
 export function getTrainTypeBadgeClass(type: string): string {
   return TRAIN_TYPE_BADGE_CLASSES[type] ?? "bg-muted text-muted-foreground";
+}
+
+/** Inline text colour classes for departures / arrivals / trip history. */
+export function getServiceTypeTextClass(serviceType: string | null | undefined): string {
+  if (!serviceType) return "font-medium text-foreground/70";
+  if (serviceType.includes("Alfa")) return "font-semibold text-[#0F5C4E]";
+  if (serviceType.includes("Intercidades") || serviceType.includes("Celta")) {
+    return "font-semibold text-[#B45309]";
+  }
+  if (serviceType.includes("Regional") || serviceType.includes("InterRegional")) {
+    return "font-semibold text-[#166534]";
+  }
+  if (serviceType.includes("Urban") || serviceType.includes("Urbano")) {
+    return "font-semibold text-slate-600";
+  }
+  if (serviceType.includes("Metro")) return "font-semibold text-violet-700";
+  if (serviceType.includes("Internacional")) return "font-semibold text-teal-700";
+  return "font-medium text-foreground/70";
 }
 
 export function sortTrainTypes(types: string[]): string[] {

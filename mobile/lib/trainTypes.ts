@@ -11,16 +11,23 @@ const TRAIN_TYPE_ABBREV: Record<string, string> = {
   'Inactive / Historic': 'Historic',
 };
 
-/** Matches web `typeColors` in StationCard / Station page. */
+/**
+ * High-contrast colours for dots and service-type labels on light surfaces
+ * (white cards + muted zebra stripes). Hue-separated so types stay distinct.
+ */
 const TRAIN_TYPE_COLORS: Record<string, string> = {
-  Airport: '#0284C7',
-  'Airport Destination': '#0EA5E9',
-  'Alfa Pendular': theme.primary,
-  Intercidades: '#E89B3C',
-  Regional: theme.accent,
-  Urban: '#94A3B8',
-  Metro: '#7C3AED',
-  'Inactive / Historic': '#B8C4CE',
+  Airport: '#0369A1',
+  'Airport Destination': '#0284C7',
+  /** Brand teal — premium long-distance */
+  'Alfa Pendular': '#0F5C4E',
+  /** Burnt orange — intercity */
+  Intercidades: '#B45309',
+  /** Forest green — regional / IR (not the pale sky accent) */
+  Regional: '#166534',
+  Urban: '#475569',
+  Metro: '#6D28D9',
+  Internacional: '#0F766E',
+  'Inactive / Historic': '#64748B',
 };
 
 export function getTrainTypeAbbrev(type: string): string {
@@ -33,17 +40,21 @@ export function getTrainTypeColor(type: string): string {
 
 /**
  * Text colour for a live/history service-type label.
- * Mirrors web Trip / StationDepartures / StationArrivals includes()-based styling.
+ * Same palette as dots so history, departures, and station chips stay consistent.
  */
 export function getServiceTypeTextColor(serviceType: string | null | undefined): string {
-  if (!serviceType) return 'rgba(1, 40, 65, 0.7)';
+  if (!serviceType) return '#475569';
   if (serviceType.includes('Alfa')) return TRAIN_TYPE_COLORS['Alfa Pendular'];
   if (serviceType.includes('Intercidades') || serviceType.includes('Celta')) {
     return TRAIN_TYPE_COLORS.Intercidades;
   }
   if (serviceType.includes('Regional') || serviceType.includes('InterRegional')) {
-    // Web trip/departure labels use accent-foreground (hsl(175 60% 15%)), not the light accent wash.
-    return '#0F3D39';
+    return TRAIN_TYPE_COLORS.Regional;
   }
-  return 'rgba(1, 40, 65, 0.7)';
+  if (serviceType.includes('Urban') || serviceType.includes('Urbano')) {
+    return TRAIN_TYPE_COLORS.Urban;
+  }
+  if (serviceType.includes('Metro')) return TRAIN_TYPE_COLORS.Metro;
+  if (serviceType.includes('Internacional')) return TRAIN_TYPE_COLORS.Internacional;
+  return '#475569';
 }

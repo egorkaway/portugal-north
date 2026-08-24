@@ -799,4 +799,7 @@ export const spainSummariesPt: Record<string, string> = {
   "Putxeta":
     "Putxeta é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "Humanes":
+    "Humanes é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

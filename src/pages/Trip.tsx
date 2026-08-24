@@ -34,6 +34,7 @@ import { downstreamStopsFrom } from "@/lib/trainJourney";
 import { defaultHomePath } from "@/lib/homeRoute";
 import { getStationPath } from "@/lib/stationSlug";
 import { deleteTripHistoryRecord, useTripHistory } from "@/lib/trainTripHistory";
+import { getServiceTypeTextClass } from "@/lib/trainTypes";
 import { allStations } from "@/data/stationRegistry";
 import type { TrainJourneyStop } from "@/lib/trainJourney";
 import { buttonVariants } from "@/components/ui/button";
@@ -347,12 +348,9 @@ const Trip = () => {
                           {record.trainNumber} · {record.stationName} → {record.finalStationName}
                         </p>
                         <p className="mt-1 text-sm text-muted-foreground tabular-nums">
-                          <span className={
-                            record.serviceType?.includes("Alfa") ? "text-primary font-semibold" :
-                            record.serviceType?.includes("Intercidades") || record.serviceType?.includes("Celta") ? "text-secondary font-semibold" :
-                            record.serviceType?.includes("Regional") || record.serviceType?.includes("InterRegional") ? "text-accent-foreground font-semibold" :
-                            "font-medium text-foreground/70"
-                          }>{record.serviceType ?? "—"}</span> · {record.timetableDate} ·{" "}
+                          <span className={cn(getServiceTypeTextClass(record.serviceType))}>
+                            {record.serviceType ?? "—"}
+                          </span> · {record.timetableDate} ·{" "}
                           {record.actualDepartureTime ?? record.departureTime}
                           {record.platform
                             ? ` · ${t("departures.platform")} ${record.platform}`

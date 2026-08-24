@@ -279,6 +279,7 @@ export const stationImages: Record<string, string> = {
   "Hospital São João": "https://images.pexels.com/photos/28261173/pexels-photo-28261173.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Hospital São João (Metro)": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Metro_do_Porto_-_Hospital_de_S%C3%A3o_Jo%C3%A3o_%284838427676%29.jpg/960px-Metro_do_Porto_-_Hospital_de_S%C3%A3o_Jo%C3%A3o_%284838427676%29.jpg",
   "Huesca-Pirineos Airport (HSK)": "https://images.pexels.com/photos/31586773/pexels-photo-31586773.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Humanes": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Humanes_-_Estaci%C3%B3n_de_Cercan%C3%ADas.jpg/960px-Humanes_-_Estaci%C3%B3n_de_Cercan%C3%ADas.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Iñarratxu": "https://images.pexels.com/photos/9081835/pexels-photo-9081835.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Infiesto": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Estaci%C3%B3n_de_Infiesto.jpg/960px-Estaci%C3%B3n_de_Infiesto.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Irivo": "https://images.pexels.com/photos/31797342/pexels-photo-31797342.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",

@@ -3145,6 +3145,11 @@ export const stationHotels: StationHotels = {
     { name: "Guest houses near Putxeta", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Putxeta%2C%20Spain&order=price" },
     { name: "Hotels near Putxeta", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Putxeta%2C%20Spain&order=price" },
   ],
+  "Humanes": [
+    { name: "Hotel Pizarro", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pizarro%2C%20Humanes%2C%20Spain&order=price" },
+    { name: "Hotel La Unión", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Uni%C3%B3n%2C%20Humanes%2C%20Spain&order=price" },
+    { name: "Hotel La Unión II", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Uni%C3%B3n%20II%2C%20Humanes%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
