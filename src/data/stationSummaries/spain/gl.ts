@@ -793,4 +793,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Los Boliches":
     "Los Boliches é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Peñota":
+    "Peñota é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Putxeta":
+    "Putxeta é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

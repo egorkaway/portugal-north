@@ -3135,6 +3135,16 @@ export const stationHotels: StationHotels = {
     { name: "Hotel ILUNION Fuengirola", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ILUNION%20Fuengirola%2C%20Los%20Boliches%2C%20Spain&order=price" },
     { name: "Nuriasol", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nuriasol%2C%20Los%20Boliches%2C%20Spain&order=price" },
   ],
+  "Peñota": [
+    { name: "Oriol jauregia", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oriol%20jauregia%2C%20Pe%C3%B1ota%2C%20Spain&order=price" },
+    { name: "Bellmar", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bellmar%2C%20Pe%C3%B1ota%2C%20Spain&order=price" },
+    { name: "Buenavista", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Buenavista%2C%20Pe%C3%B1ota%2C%20Spain&order=price" },
+  ],
+  "Putxeta": [
+    { name: "Budget stays near Putxeta", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Putxeta%2C%20Spain&order=price" },
+    { name: "Guest houses near Putxeta", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Putxeta%2C%20Spain&order=price" },
+    { name: "Hotels near Putxeta", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Putxeta%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

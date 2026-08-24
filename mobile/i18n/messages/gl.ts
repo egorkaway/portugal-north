@@ -226,7 +226,7 @@ export const gl: MobileMessages = {
     serviceTypes: 'Tipos de servizo',
     usefulLinks: 'Ligazóns útiles',
     open: 'Abrir',
-    proTitle: 'iberian.travel Pro',
+    proTitle: 'VeryStays Pro',
     proBody: 'Desbloquea Pro cunha subscrición mensual. Xestiona o teu plan en calquera momento desde aquí.',
     proCta: 'Ver plans Pro',
     proActiveTitle: 'Tes Pro',

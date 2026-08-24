@@ -793,4 +793,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Los Boliches":
     "Los Boliches és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Peñota":
+    "Peñota és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Putxeta":
+    "Putxeta és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

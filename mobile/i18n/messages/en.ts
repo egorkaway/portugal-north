@@ -226,7 +226,7 @@ export const en: MobileMessages = {
     serviceTypes: 'Service types',
     usefulLinks: 'Useful links',
     open: 'Open',
-    proTitle: 'iberian.travel Pro',
+    proTitle: 'VeryStays Pro',
     proBody: 'Unlock Pro with a monthly subscription. Manage your plan anytime from here.',
     proCta: 'View Pro plans',
     proActiveTitle: 'You have Pro',

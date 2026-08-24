@@ -226,7 +226,7 @@ export const ru: MobileMessages = {
     serviceTypes: 'Типы поездов',
     usefulLinks: 'Полезные ссылки',
     open: 'Открыть',
-    proTitle: 'iberian.travel Pro',
+    proTitle: 'VeryStays Pro',
     proBody: 'Разблокируйте Pro с ежемесячной подпиской. Управляйте планом в любое время здесь.',
     proCta: 'Смотреть планы Pro',
     proActiveTitle: 'У вас есть Pro',

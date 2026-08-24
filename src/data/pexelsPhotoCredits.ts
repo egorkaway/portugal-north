@@ -696,6 +696,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@nathanmarcam",
     photoPageUrl: "https://www.pexels.com/photo/trains-on-rail-tracks-at-dawn-10673911/",
   },
+  "10785806": {
+    photographer: "Fidan Jafarova",
+    photographerUrl: "https://www.pexels.com/@fafinah",
+    photoPageUrl: "https://www.pexels.com/photo/empty-train-station-during-evening-10785806/",
+  },
   "10805086": {
     photographer: "Jo Kassis",
     photographerUrl: "https://www.pexels.com/@jokassis",
@@ -1015,6 +1020,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Emmanuel Codden",
     photographerUrl: "https://www.pexels.com/@ehma",
     photoPageUrl: "https://www.pexels.com/photo/steel-structure-of-a-round-roof-over-the-escalators-15982756/",
+  },
+  "16085050": {
+    photographer: "Francesco Ungaro",
+    photographerUrl: "https://www.pexels.com/@francesco-ungaro",
+    photoPageUrl: "https://www.pexels.com/photo/a-contemporary-passenger-train-on-the-railway-16085050/",
   },
   "16086936": {
     photographer: "Nevtuğ  Yalçın",

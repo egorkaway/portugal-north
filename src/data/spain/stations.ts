@@ -2210,4 +2210,22 @@ export const spainStations: Station[] = [
     lng: -4.6146,
   },
 
+  {
+    name: "Peñota",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3264,
+    lng: -3.0235,
+  },
+
+  {
+    name: "Putxeta",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3157,
+    lng: -3.0911,
+  },
+
 ];

@@ -479,6 +479,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Los Boliches": ["54515"],
 
+  "Peñota": ["13404"],
+
+  "Putxeta": ["13505"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
