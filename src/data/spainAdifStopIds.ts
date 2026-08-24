@@ -485,6 +485,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Humanes": ["35012"],
 
+  "Tardienta": ["78200"],
+
+  "Villena": ["60902"],
+
+  "Torrelavega-Centro": ["05621"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

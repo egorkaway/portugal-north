@@ -2237,4 +2237,31 @@ export const spainStations: Station[] = [
     lng: -3.8287,
   },
 
+  {
+    name: "Tardienta",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.9757,
+    lng: -0.5382,
+  },
+
+  {
+    name: "Villena",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.6317,
+    lng: -0.8677,
+  },
+
+  {
+    name: "Torrelavega-Centro",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.351,
+    lng: -4.0512,
+  },
+
 ];

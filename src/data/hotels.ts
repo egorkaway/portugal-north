@@ -3150,6 +3150,14 @@ export const stationHotels: StationHotels = {
     { name: "Hotel La Unión", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Uni%C3%B3n%2C%20Humanes%2C%20Spain&order=price" },
     { name: "Hotel La Unión II", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Uni%C3%B3n%20II%2C%20Humanes%2C%20Spain&order=price" },
   ],
+  "Tardienta": [
+    { name: "Hotel Cueva", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cueva%2C%20Tardienta%2C%20Spain&order=price" },
+  ],
+  "Torrelavega-Centro": [
+    { name: "Saja", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Saja%2C%20Torrelavega-Centro%2C%20Spain&order=price" },
+    { name: "Besaya", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Besaya%2C%20Torrelavega-Centro%2C%20Spain&order=price" },
+    { name: "Torrelavega", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torrelavega%2C%20Torrelavega-Centro%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
