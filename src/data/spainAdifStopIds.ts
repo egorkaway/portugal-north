@@ -455,6 +455,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Massanassa": ["64202"],
 
+  "Universidad-Cantoblanco": ["17009"],
+
+  "L'Ametlla de Mar": ["65405"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

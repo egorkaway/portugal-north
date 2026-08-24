@@ -3075,6 +3075,16 @@ export const stationHotels: StationHotels = {
     { name: "Aparthotel Albufera", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Albufera%2C%20Massanassa%2C%20Spain&order=price" },
     { name: "Hotel Albufera", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Albufera%2C%20Massanassa%2C%20Spain&order=price" },
   ],
+  "Universidad-Cantoblanco": [
+    { name: "Residencia Universitaria Erasmo I", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Universitaria%20Erasmo%20I%2C%20Universidad-Cantoblanco%2C%20Spain&order=price" },
+    { name: "Residencia Universitaria Erasmo II", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Universitaria%20Erasmo%20II%2C%20Universidad-Cantoblanco%2C%20Spain&order=price" },
+    { name: "voco Madrid - Las Tablas by IHG", distanceKm: 4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=voco%20Madrid%20-%20Las%20Tablas%20by%20IHG%2C%20Universidad-Cantoblanco%2C%20Spain&order=price" },
+  ],
+  "L'Ametlla de Mar": [
+    { name: "Hotel del Port", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20del%20Port%2C%20L'Ametlla%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Hotel l'Alguer", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20l'Alguer%2C%20L'Ametlla%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Hotel Ametlla Mar", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ametlla%20Mar%2C%20L'Ametlla%20de%20Mar%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

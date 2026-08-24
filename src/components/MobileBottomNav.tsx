@@ -23,10 +23,10 @@ function NavItem({
       aria-label={label}
       className={({ isActive }) =>
         cn(
-          "group relative flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 py-2 text-[10px] font-medium leading-tight transition-colors sm:gap-1 sm:px-2 sm:text-[11px]",
+          "group relative flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 py-2 text-[10px] leading-tight transition-all duration-300 sm:gap-1 sm:px-2 sm:text-[11px]",
           isActive
-            ? "bg-foreground/5 text-primary"
-            : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground",
+            ? "bg-primary/15 text-primary font-bold shadow-sm"
+            : "text-muted-foreground font-medium hover:bg-foreground/5 hover:text-foreground",
         )
       }
     >
@@ -52,10 +52,10 @@ function HomeNavItem({ label }: { label: string }) {
       aria-label={label}
       className={({ isPending }) =>
         cn(
-          "group flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 py-2 text-[10px] font-medium leading-tight transition-colors sm:gap-1 sm:px-2 sm:text-[11px]",
+          "group flex min-w-0 flex-col items-center justify-center gap-0.5 rounded-2xl px-1 py-2 text-[10px] leading-tight transition-all duration-300 sm:gap-1 sm:px-2 sm:text-[11px]",
           active
-            ? "bg-foreground/5 text-primary"
-            : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground",
+            ? "bg-primary/15 text-primary font-bold shadow-sm"
+            : "text-muted-foreground font-medium hover:bg-foreground/5 hover:text-foreground",
           isPending && "opacity-70",
         )
       }

@@ -757,4 +757,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Massanassa":
     "Massanassa és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Universidad-Cantoblanco":
+    "Universidad-Cantoblanco és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "L'Ametlla de Mar":
+    "L'Ametlla de Mar és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

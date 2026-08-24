@@ -2102,4 +2102,22 @@ export const spainStations: Station[] = [
     lng: -0.3953,
   },
 
+  {
+    name: "Universidad-Cantoblanco",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.5438,
+    lng: -3.7002,
+  },
+
+  {
+    name: "L'Ametlla de Mar",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.8862,
+    lng: 0.8005,
+  },
+
 ];

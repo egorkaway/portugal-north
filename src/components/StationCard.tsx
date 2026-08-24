@@ -88,7 +88,7 @@ const StationCardView = memo(function StationCardView({
   const LineIcon = isAirport ? Plane : Train;
 
   return (
-    <div className="group bg-card border border-border rounded-lg overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col">
+    <div className="group bg-card border border-border shadow-sm rounded-lg overflow-hidden hover:shadow-lg hover:border-primary/30 transition-all duration-300 flex flex-col">
       <Link to={stationPath} className="relative block aspect-[2/1] w-full overflow-hidden bg-muted sm:aspect-[16/9]">
         <StationPhoto
           src={imageUrl}

@@ -757,4 +757,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Massanassa":
     "Massanassa é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Universidad-Cantoblanco":
+    "Universidad-Cantoblanco é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "L'Ametlla de Mar":
+    "L'Ametlla de Mar é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

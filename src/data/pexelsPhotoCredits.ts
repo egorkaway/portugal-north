@@ -1291,6 +1291,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@masoodaslami",
     photoPageUrl: "https://www.pexels.com/photo/westpark-subway-station-in-munich-germany-19429415/",
   },
+  "19657290": {
+    photographer: "Bilal Furkan KOŞAR",
+    photographerUrl: "https://www.pexels.com/@bilalfurkankosar",
+    photoPageUrl: "https://www.pexels.com/photo/train-at-night-19657290/",
+  },
   "19657293": {
     photographer: "Bilal Furkan KOŞAR",
     photographerUrl: "https://www.pexels.com/@bilalfurkankosar",

@@ -216,7 +216,7 @@ const Trip = () => {
             </div>
           ) : (
             <div className="flex flex-col gap-6">
-              <section className="rounded-lg border border-border bg-card p-5 md:p-6">
+              <section className="rounded-lg border border-border bg-card shadow-sm p-5 md:p-6">
                 <div className="flex items-start justify-between gap-4">
                   <p className="text-sm font-medium uppercase tracking-wide text-muted-foreground">
                     {showDepartedWithoutStops
@@ -340,14 +340,19 @@ const Trip = () => {
                   return (
                     <li
                       key={record.id}
-                      className="flex flex-col gap-3 rounded-lg border border-border bg-card even:bg-muted/30 p-4 sm:flex-row sm:items-start sm:justify-between"
+                      className="flex flex-col gap-3 rounded-lg border border-border bg-card even:bg-muted p-4 sm:flex-row sm:items-start sm:justify-between"
                     >
                       <div className="min-w-0">
                         <p className="font-medium text-foreground">
                           {record.trainNumber} · {record.stationName} → {record.finalStationName}
                         </p>
                         <p className="mt-1 text-sm text-muted-foreground tabular-nums">
-                          {record.timetableDate} ·{" "}
+                          <span className={
+                            record.serviceType?.includes("Alfa") ? "text-primary font-semibold" :
+                            record.serviceType?.includes("Intercidades") || record.serviceType?.includes("Celta") ? "text-secondary font-semibold" :
+                            record.serviceType?.includes("Regional") || record.serviceType?.includes("InterRegional") ? "text-accent-foreground font-semibold" :
+                            "font-medium text-foreground/70"
+                          }>{record.serviceType ?? "—"}</span> · {record.timetableDate} ·{" "}
                           {record.actualDepartureTime ?? record.departureTime}
                           {record.platform
                             ? ` · ${t("departures.platform")} ${record.platform}`
