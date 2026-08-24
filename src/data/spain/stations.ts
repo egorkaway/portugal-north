@@ -2084,4 +2084,22 @@ export const spainStations: Station[] = [
     lng: -5.6687,
   },
 
+  {
+    name: "Astillero",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4037,
+    lng: -3.8207,
+  },
+
+  {
+    name: "Massanassa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.4092,
+    lng: -0.3953,
+  },
+
 ];

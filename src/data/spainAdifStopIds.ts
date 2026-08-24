@@ -451,6 +451,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Ciaño": ["16010"],
 
+  "Astillero": ["05657"],
+
+  "Massanassa": ["64202"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

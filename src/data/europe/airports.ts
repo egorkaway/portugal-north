@@ -1074,6 +1074,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -16.3500003815,
   },
   {
+    name: "Rodez–Aveyron Airport (RDZ)",
+    country: "fr",
+    lines: ["RDZ"],
+    types: ["Airport Destination"],
+    lat: 44.407902,
+    lng: 2.48267,
+  },
+  {
     name: "Riga International Airport (RIX)",
     country: "lv",
     lines: ["RIX"],
@@ -1120,6 +1128,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 51.570562,
     lng: 0.693627,
+  },
+  {
+    name: "Sarajevo International Airport (SJJ)",
+    country: "ba",
+    lines: ["SJJ"],
+    types: ["Airport Destination"],
+    lat: 43.8246,
+    lng: 18.331499,
   },
   {
     name: "Shannon Airport (SNN)",

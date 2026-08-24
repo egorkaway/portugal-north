@@ -2681,6 +2681,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@sergei",
     photoPageUrl: "https://www.pexels.com/photo/dom-luis-i-bridge-spanning-douro-river-porto-38780454/",
   },
+  "38814595": {
+    photographer: "Malcoln Oliveira",
+    photographerUrl: "https://www.pexels.com/@malcolnphoto",
+    photoPageUrl: "https://www.pexels.com/photo/historic-train-station-in-minas-gerais-brazil-38814595/",
+  },
   "38814600": {
     photographer: "Malcoln Oliveira",
     photographerUrl: "https://www.pexels.com/@malcolnphoto",

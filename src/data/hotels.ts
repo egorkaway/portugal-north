@@ -3065,6 +3065,16 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Palacio de Las Nieves", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Palacio%20de%20Las%20Nieves%2C%20Cia%C3%B1o%2C%20Spain&order=price" },
     { name: "AZZ Asturias LangreHotel & SPA", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AZZ%20Asturias%20LangreHotel%20%26%20SPA%2C%20Cia%C3%B1o%2C%20Spain&order=price" },
   ],
+  "Astillero": [
+    { name: "Hotel Las Anclas", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Anclas%2C%20Astillero%2C%20Spain&order=price" },
+    { name: "Albergue de peregrinos Nuestra Señora de Muslera", distanceKm: 0.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20peregrinos%20Nuestra%20Se%C3%B1ora%20de%20Muslera%2C%20Astillero%2C%20Spain&order=price" },
+    { name: "Hostal Golf", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Golf%2C%20Astillero%2C%20Spain&order=price" },
+  ],
+  "Massanassa": [
+    { name: "Hotel ibis Valencia Alfafar", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ibis%20Valencia%20Alfafar%2C%20Massanassa%2C%20Spain&order=price" },
+    { name: "Aparthotel Albufera", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Albufera%2C%20Massanassa%2C%20Spain&order=price" },
+    { name: "Hotel Albufera", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Albufera%2C%20Massanassa%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
