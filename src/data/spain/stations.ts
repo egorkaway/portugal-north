@@ -2192,4 +2192,22 @@ export const spainStations: Station[] = [
     lng: -0.4776,
   },
 
+  {
+    name: "Zarzaquemada",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3409,
+    lng: -3.7483,
+  },
+
+  {
+    name: "Los Boliches",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.5547,
+    lng: -4.6146,
+  },
+
 ];

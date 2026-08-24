@@ -787,4 +787,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Lenova-Manuel":
     "Lenova-Manuel é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Zarzaquemada":
+    "Zarzaquemada é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Los Boliches":
+    "Los Boliches é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

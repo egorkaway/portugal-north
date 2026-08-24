@@ -658,6 +658,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 33.624901,
   },
   {
+    name: "Łódź Władysław Reymont Airport (LCJ)",
+    country: "pl",
+    lines: ["LCJ"],
+    types: ["Airport Destination"],
+    lat: 51.721901,
+    lng: 19.3981,
+  },
+  {
     name: "London City Airport (LCY)",
     country: "gb",
     lines: ["LCY"],

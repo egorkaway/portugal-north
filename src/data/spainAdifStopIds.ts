@@ -475,6 +475,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Lenova-Manuel": ["64007"],
 
+  "Zarzaquemada": ["35009"],
+
+  "Los Boliches": ["54515"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

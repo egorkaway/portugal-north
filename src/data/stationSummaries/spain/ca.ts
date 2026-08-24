@@ -787,4 +787,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Lenova-Manuel":
     "Lenova-Manuel és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Zarzaquemada":
+    "Zarzaquemada és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Los Boliches":
+    "Los Boliches és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

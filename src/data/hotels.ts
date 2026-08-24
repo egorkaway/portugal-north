@@ -3125,6 +3125,16 @@ export const stationHotels: StationHotels = {
     { name: "Casa Aldomar", distanceKm: 7.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Aldomar%2C%20Lenova-Manuel%2C%20Spain&order=price" },
     { name: "Albergue turistico 'El Palau'", distanceKm: 7.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20turistico%20'El%20Palau'%2C%20Lenova-Manuel%2C%20Spain&order=price" },
   ],
+  "Zarzaquemada": [
+    { name: "AR Parquesur", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AR%20Parquesur%2C%20Zarzaquemada%2C%20Spain&order=price" },
+    { name: "Crisol Leganés", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Crisol%20Legan%C3%A9s%2C%20Zarzaquemada%2C%20Spain&order=price" },
+    { name: "micampus Leganés", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=micampus%20Legan%C3%A9s%2C%20Zarzaquemada%2C%20Spain&order=price" },
+  ],
+  "Los Boliches": [
+    { name: "hostal Nevada", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=hostal%20Nevada%2C%20Los%20Boliches%2C%20Spain&order=price" },
+    { name: "Hotel ILUNION Fuengirola", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ILUNION%20Fuengirola%2C%20Los%20Boliches%2C%20Spain&order=price" },
+    { name: "Nuriasol", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nuriasol%2C%20Los%20Boliches%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
