@@ -18,6 +18,7 @@ import { BuildFooter } from '@/components/BuildFooter';
 import { TripShareBrandingFooter } from '@/components/TripShareBrandingFooter';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
+import { getServiceTypeTextColor } from '@/lib/trainTypes';
 import {
   fetchStationArrivals,
   fetchStationDepartures,
@@ -438,7 +439,14 @@ export default function TripScreen() {
                   : `${activeTrip.trainNumber} → ${activeTrip.destination}`}
               </Text>
               <Text style={styles.meta}>
-                {serviceType}
+                <Text
+                  style={[
+                    styles.serviceTypeLabel,
+                    { color: getServiceTypeTextColor(serviceType) },
+                  ]}
+                >
+                  {serviceType}
+                </Text>
                 {platform ? ` · ${t('trip.platform', { platform })}` : ''}
               </Text>
             </View>
@@ -481,6 +489,15 @@ export default function TripScreen() {
                   {record.trainNumber} · {record.stationName} → {record.finalStationName}
                 </Text>
                 <Text style={styles.historyMeta}>
+                  <Text
+                    style={[
+                      styles.serviceTypeLabel,
+                      { color: getServiceTypeTextColor(record.serviceType) },
+                    ]}
+                  >
+                    {record.serviceType?.trim() ? record.serviceType : '—'}
+                  </Text>
+                  {' · '}
                   {record.timetableDate} · {record.actualDepartureTime ?? record.departureTime}
                   {record.platform ? ` · ${t('departures.platform')} ${record.platform}` : ''}
                 </Text>
@@ -693,6 +710,10 @@ const styles = StyleSheet.create({
   historyMeta: {
     fontSize: 13,
     color: theme.primaryMuted,
+    fontVariant: ['tabular-nums'],
+  },
+  serviceTypeLabel: {
+    fontWeight: '600',
   },
   historyLinks: {
     flexDirection: 'row',

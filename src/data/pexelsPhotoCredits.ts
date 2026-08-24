@@ -136,6 +136,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pille-kirsi-222198",
     photoPageUrl: "https://www.pexels.com/photo/people-walking-on-hallway-1075839/",
   },
+  "1170182": {
+    photographer: "veerasak Piyawatanakul",
+    photographerUrl: "https://www.pexels.com/@veerasak-piyawatanakul-392493",
+    photoPageUrl: "https://www.pexels.com/photo/man-wearing-red-button-up-shirt-and-blue-jeans-holding-silver-train-side-rail-1170182/",
+  },
   "1192438": {
     photographer: "Natã Romualdo",
     photographerUrl: "https://www.pexels.com/@nataromualdo",
@@ -420,6 +425,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Leon Natan",
     photographerUrl: "https://www.pexels.com/@leon-natan-2996182",
     photoPageUrl: "https://www.pexels.com/photo/high-angle-shot-of-trains-on-trucks-6409084/",
+  },
+  "6415022": {
+    photographer: "RDNE Stock project",
+    photographerUrl: "https://www.pexels.com/@rdne",
+    photoPageUrl: "https://www.pexels.com/photo/man-sitting-on-an-iron-bench-at-a-subway-station-using-cellphone-6415022/",
   },
   "6492079": {
     photographer: "Magda Ehlers",

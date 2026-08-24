@@ -3085,6 +3085,26 @@ export const stationHotels: StationHotels = {
     { name: "Hotel l'Alguer", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20l'Alguer%2C%20L'Ametlla%20de%20Mar%2C%20Spain&order=price" },
     { name: "Hotel Ametlla Mar", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ametlla%20Mar%2C%20L'Ametlla%20de%20Mar%2C%20Spain&order=price" },
   ],
+  "Bellavista": [
+    { name: "Hotel Bellavista Sevilla", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bellavista%20Sevilla%2C%20Bellavista%2C%20Spain&order=price" },
+    { name: "Hotel Doña Carmela", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Do%C3%B1a%20Carmela%2C%20Bellavista%2C%20Spain&order=price" },
+    { name: "Hotel Valme", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Valme%2C%20Bellavista%2C%20Spain&order=price" },
+  ],
+  "Miribilla": [
+    { name: "Albergue Claret Enea Aterpea", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Claret%20Enea%20Aterpea%2C%20Miribilla%2C%20Spain&order=price" },
+    { name: "Hotel Bilbi", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bilbi%2C%20Miribilla%2C%20Spain&order=price" },
+    { name: "Mirasol Apartments", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mirasol%20Apartments%2C%20Miribilla%2C%20Spain&order=price" },
+  ],
+  "Benifaió": [
+    { name: "Hotel Bartos", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bartos%2C%20Benifai%C3%B3%2C%20Spain&order=price" },
+    { name: "Isabel", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Isabel%2C%20Benifai%C3%B3%2C%20Spain&order=price" },
+    { name: "Pensión Nadal", distanceKm: 1.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Nadal%2C%20Benifai%C3%B3%2C%20Spain&order=price" },
+  ],
+  "Mieres-Puente": [
+    { name: "Hostal Pachin", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Pachin%2C%20Mieres-Puente%2C%20Spain&order=price" },
+    { name: "H.Albar", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=H.Albar%2C%20Mieres-Puente%2C%20Spain&order=price" },
+    { name: "Albergue Residencia Universitaria de Mieres", distanceKm: 0.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Residencia%20Universitaria%20de%20Mieres%2C%20Mieres-Puente%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

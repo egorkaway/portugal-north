@@ -30,3 +30,19 @@ export function getTrainTypeAbbrev(type: string): string {
 export function getTrainTypeColor(type: string): string {
   return TRAIN_TYPE_COLORS[type] ?? theme.primaryMuted;
 }
+
+/**
+ * Text colour for a live/history service-type label.
+ * Mirrors web Trip / StationDepartures / StationArrivals includes()-based styling.
+ */
+export function getServiceTypeTextColor(serviceType: string | null | undefined): string {
+  if (!serviceType) return 'rgba(1, 40, 65, 0.7)';
+  if (serviceType.includes('Alfa')) return TRAIN_TYPE_COLORS['Alfa Pendular'];
+  if (serviceType.includes('Intercidades') || serviceType.includes('Celta')) {
+    return TRAIN_TYPE_COLORS.Intercidades;
+  }
+  if (serviceType.includes('Regional') || serviceType.includes('InterRegional')) {
+    return TRAIN_TYPE_COLORS.Regional;
+  }
+  return 'rgba(1, 40, 65, 0.7)';
+}

@@ -12,11 +12,11 @@
  * `test_…` keys are RevenueCat Test Store keys. The native SDK **fatally
  * aborts** if they are used in a Release build (TestFlight / App Store).
  * We only configure the SDK with test keys in Debug (`__DEV__`); Release
- * builds skip purchases until you paste real `appl_…` / `goog_…` keys here.
+ * builds skip purchases when a platform still has a `test_…` / empty key.
  */
 export const REVENUECAT_API_KEYS = {
-  /** Debug-only Test Store key until an App Store (`appl_…`) key is set. */
-  ios: 'test_SUliVovThJXraTvMAywLjwjCczj',
+  /** App Store public SDK key (RevenueCat → Project settings → API keys). */
+  ios: 'appl_yHhYKfBwggzCvJPlpkMFAMxHLXA',
   /** Debug-only Test Store key until a Play (`goog_…`) key is set. */
   android: 'test_SUliVovThJXraTvMAywLjwjCczj',
 } as const;

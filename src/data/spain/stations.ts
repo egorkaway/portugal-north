@@ -2120,4 +2120,40 @@ export const spainStations: Station[] = [
     lng: 0.8005,
   },
 
+  {
+    name: "Bellavista",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.3215,
+    lng: -5.9642,
+  },
+
+  {
+    name: "Miribilla",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2504,
+    lng: -2.9305,
+  },
+
+  {
+    name: "Benifaió",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.2843,
+    lng: -0.43,
+  },
+
+  {
+    name: "Mieres-Puente",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.25,
+    lng: -5.7823,
+  },
+
 ];

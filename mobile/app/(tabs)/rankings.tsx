@@ -22,6 +22,7 @@ import {
   formatReliabilityScore,
 } from '@/lib/reliabilityScore';
 import { bakedReliabilityScores, bakedTrainReliabilitySpotlight, pickPublicHotelRatings, pickPublicStationRatings, stationToSlug } from '@/lib/stationData';
+import { getServiceTypeTextColor } from '@/lib/trainTypes';
 import {
   formatTrainSpotlightDelay,
   trainSpotlightDelayColor,
@@ -241,7 +242,10 @@ function TrainSpotlightRow({
       <View style={styles.rowMain}>
         <Text style={styles.rowSubtitle}>{label}</Text>
         <Text style={styles.rowTitle}>
-          {trainNumber} · {serviceType}
+          {trainNumber} ·{' '}
+          <Text style={{ color: getServiceTypeTextColor(serviceType), fontWeight: '600' }}>
+            {serviceType}
+          </Text>
         </Text>
         {subtitle ? <Text style={styles.rowSubtitle}>{subtitle}</Text> : null}
         {majorStations && majorStations.length > 0 ? (

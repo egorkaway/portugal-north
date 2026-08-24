@@ -21,6 +21,7 @@ import {
   getMinutesUntilDeparture,
 } from '@/lib/departureCountdown';
 import { lisbonDateAndTime } from '@/lib/lisbonTime';
+import { getServiceTypeTextColor } from '@/lib/trainTypes';
 import {
   buildPlannedDepartureId,
   clearActiveTrip,
@@ -195,7 +196,16 @@ export function StationArrivalsBoard({
                     })}
               </Text>
               <Text style={styles.cardMeta}>
-                {arr.serviceType} · {t('departures.train')} {arr.trainNumber}
+                <Text
+                  style={{
+                    color: getServiceTypeTextColor(arr.serviceType),
+                    fontWeight: '600',
+                  }}
+                >
+                  {arr.serviceType}
+                </Text>
+                {' · '}
+                {t('departures.train')} {arr.trainNumber}
                 {arr.platform ? ` · ${t('departures.platform')} ${arr.platform}` : ''}
                 {arr.terminatesHere ? ` · ${t('arrivals.terminates')}` : ''}
               </Text>

@@ -459,6 +459,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "L'Ametlla de Mar": ["65405"],
 
+  "Bellavista": ["51111"],
+
+  "Miribilla": ["13120"],
+
+  "Benifaió": ["64107"],
+
+  "Mieres-Puente": ["15203"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
