@@ -74,6 +74,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 23.9445,
   },
   {
+    name: "Bucharest Băneasa Aurel Vlaicu International Airport (BBU)",
+    country: "ro",
+    lines: ["BBU"],
+    types: ["Airport Destination"],
+    lat: 44.503133,
+    lng: 26.102944,
+  },
+  {
     name: "Bacău George Enescu International  Airport (BCM)",
     country: "ro",
     lines: ["BCM"],
@@ -418,6 +426,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 10.238248,
   },
   {
+    name: "Münster Osnabrück Airport (FMO)",
+    country: "de",
+    lines: ["FMO"],
+    types: ["Airport Destination"],
+    lat: 52.133816,
+    lng: 7.688482,
+  },
+  {
     name: "Cristiano Ronaldo International Airport (FNC)",
     country: "pt",
     lines: ["FNC"],
@@ -736,6 +752,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 49.626845,
     lng: 6.212134,
+  },
+  {
+    name: "Lublin Airport (LUZ)",
+    country: "pl",
+    lines: ["LUZ"],
+    types: ["Airport Destination"],
+    lat: 51.240157,
+    lng: 22.713461,
   },
   {
     name: "Lyon Saint-Exupéry Airport (LYS)",
@@ -1368,6 +1392,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 51.103719,
     lng: 16.882096,
+  },
+  {
+    name: "Chalons Vatry airport (XCR)",
+    country: "fr",
+    lines: ["XCR"],
+    types: ["Airport Destination"],
+    lat: 48.77333,
+    lng: 4.20611,
   },
   {
     name: "Zagreb Franjo Tuđman International Airport (ZAG)",

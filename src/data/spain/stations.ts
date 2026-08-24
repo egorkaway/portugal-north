@@ -2021,4 +2021,49 @@ export const spainStations: Station[] = [
     lng: -3.1272,
   },
 
+  {
+    name: "L'Alcúdia de Crespins",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 38.9691,
+    lng: -0.5867,
+  },
+
+  {
+    name: "Puente Genil-Herrera",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.3579,
+    lng: -4.8216,
+  },
+
+  {
+    name: "Bell-lloc d'Urgell",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6316,
+    lng: 0.7815,
+  },
+
+  {
+    name: "Mérida",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.9215,
+    lng: -6.3438,
+  },
+
+  {
+    name: "Plasencia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.0223,
+    lng: -6.0994,
+  },
+
 ];

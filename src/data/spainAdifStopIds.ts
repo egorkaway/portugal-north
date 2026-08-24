@@ -437,6 +437,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Guadix": ["56200"],
 
+  "L'Alcúdia de Crespins": ["64006"],
+
+  "Puente Genil-Herrera": ["02002"],
+
+  "Bell-lloc d'Urgell": ["78402"],
+
+  "Mérida": ["37500"],
+
+  "Plasencia": ["30002"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

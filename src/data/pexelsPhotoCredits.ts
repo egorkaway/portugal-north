@@ -1111,6 +1111,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@joaquin-carfagna-3131171",
     photoPageUrl: "https://www.pexels.com/photo/silhouettes-of-travelers-waiting-at-the-train-station-17274280/",
   },
+  "17274281": {
+    photographer: "Joaquin Carfagna",
+    photographerUrl: "https://www.pexels.com/@joaquin-carfagna-3131171",
+    photoPageUrl: "https://www.pexels.com/photo/silhouette-of-passengers-at-a-railway-station-platform-17274281/",
+  },
   "17312345": {
     photographer: "Matteo Basile",
     photographerUrl: "https://www.pexels.com/@matteobasilephoto",
@@ -1365,6 +1370,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Jorge Ribeiro",
     photographerUrl: "https://www.pexels.com/@jorge-ribeiro-177643262",
     photoPageUrl: "https://www.pexels.com/photo/passengers-on-platform-passing-by-train-with-graffiti-20376272/",
+  },
+  "20427359": {
+    photographer: "Jakub Pabis",
+    photographerUrl: "https://www.pexels.com/@jakub-pabis-147246622",
+    photoPageUrl: "https://www.pexels.com/photo/abandoned-building-with-tower-in-murcia-spain-20427359/",
   },
   "20445879": {
     photographer: "Beachbumology  .",

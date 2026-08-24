@@ -3030,6 +3030,31 @@ export const stationHotels: StationHotels = {
     { name: "Hostel El Retiro", distanceKm: 1.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20El%20Retiro%2C%20Guadix%2C%20Spain&order=price" },
     { name: "Hotel Palacio de Oñate", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Palacio%20de%20O%C3%B1ate%2C%20Guadix%2C%20Spain&order=price" },
   ],
+  "L'Alcúdia de Crespins": [
+    { name: "Granja-Escola Casablanca", distanceKm: 4.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Granja-Escola%20Casablanca%2C%20L'Alc%C3%BAdia%20de%20Crespins%2C%20Spain&order=price" },
+    { name: "Casa Camino al Castillo", distanceKm: 6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Camino%20al%20Castillo%2C%20L'Alc%C3%BAdia%20de%20Crespins%2C%20Spain&order=price" },
+    { name: "Albergue turistico 'El Palau'", distanceKm: 6.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20turistico%20'El%20Palau'%2C%20L'Alc%C3%BAdia%20de%20Crespins%2C%20Spain&order=price" },
+  ],
+  "Puente Genil-Herrera": [
+    { name: "Hostal-Restaurante 'Cora'", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal-Restaurante%20'Cora'%2C%20Puente%20Genil-Herrera%2C%20Spain&order=price" },
+    { name: "Hotel Las Acacias", distanceKm: 7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Acacias%2C%20Puente%20Genil-Herrera%2C%20Spain&order=price" },
+    { name: "Hotel El Carmen", distanceKm: 7.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Carmen%2C%20Puente%20Genil-Herrera%2C%20Spain&order=price" },
+  ],
+  "Bell-lloc d'Urgell": [
+    { name: "Alberg Municipal Bell-lloc d'Urgell", distanceKm: 0.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20Municipal%20Bell-lloc%20d'Urgell%2C%20Bell-lloc%20d'Urgell%2C%20Spain&order=price" },
+    { name: "Hotel Restaurant Picnic", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurant%20Picnic%2C%20Bell-lloc%20d'Urgell%2C%20Spain&order=price" },
+    { name: "Rosaleda", distanceKm: 8.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rosaleda%2C%20Bell-lloc%20d'Urgell%2C%20Spain&order=price" },
+  ],
+  "Mérida": [
+    { name: "Cervantes", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cervantes%2C%20M%C3%A9rida%2C%20Spain&order=price" },
+    { name: "Hostal Salud", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Salud%2C%20M%C3%A9rida%2C%20Spain&order=price" },
+    { name: "Hostal La Flor de Al-Andalus", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Flor%20de%20Al-Andalus%2C%20M%C3%A9rida%2C%20Spain&order=price" },
+  ],
+  "Plasencia": [
+    { name: "Hotel Los Álamos", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Los%20%C3%81lamos%2C%20Plasencia%2C%20Spain&order=price" },
+    { name: "Parador Nacional de Plasencia", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20Nacional%20de%20Plasencia%2C%20Plasencia%2C%20Spain&order=price" },
+    { name: "Palacio Carvajal Girón", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Palacio%20Carvajal%20Gir%C3%B3n%2C%20Plasencia%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

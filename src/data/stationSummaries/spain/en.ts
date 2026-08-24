@@ -730,4 +730,19 @@ export const spainSummariesEn: Record<string, string> = {
   "Guadix":
     "Guadix is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "L'Alcúdia de Crespins":
+    "L'Alcúdia de Crespins is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Puente Genil-Herrera":
+    "Puente Genil-Herrera is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Bell-lloc d'Urgell":
+    "Bell-lloc d'Urgell is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Mérida":
+    "Mérida is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Plasencia":
+    "Plasencia is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };
