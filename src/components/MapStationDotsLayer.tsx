@@ -42,10 +42,7 @@ export function MapStationDotsLayer({ dots }: { dots: StationActivityDot[] }) {
             <div className="map-hex-tooltip__station">
               <p className="font-semibold text-foreground">{dot.stationName}</p>
               <p className="text-xs text-muted-foreground">
-                {formatReliabilityScore(dot.score)}/10
-              </p>
-              <p className="text-xs text-muted-foreground">
-                {t("map.tooltipMovements", { count: dot.movements })}
+                {t("map.tooltipScore", { score: formatReliabilityScore(dot.score) })}
               </p>
               <p className="text-xs font-medium text-primary">{t("map.viewStation")}</p>
             </div>

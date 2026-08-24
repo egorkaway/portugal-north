@@ -3,6 +3,7 @@ import L from "leaflet";
 import { Polygon, useMap, useMapEvents } from "react-leaflet";
 import { useNavigate } from "react-router-dom";
 import { useLocale } from "@/i18n/LocaleProvider";
+import { formatReliabilityScore } from "@/lib/reliabilityScore";
 import { stationToSlug } from "@/lib/stationSlug";
 import {
   findHexCellsAtLatLng,
@@ -26,13 +27,16 @@ function buildTooltipHtml(
     .map((cell) => {
       const slug = stationToSlug(cell.stationName);
       const name = escapeHtml(cell.stationName);
-      const movements = t("map.tooltipMovements", { count: cell.movements });
+      const scoreLine =
+        typeof cell.score === "number"
+          ? t("map.tooltipScore", { score: formatReliabilityScore(cell.score) })
+          : t("map.tooltipNoScore");
       const hexSize =
         cell.resolution === 7 ? t("map.tooltipBiggerHex") : t("map.tooltipSmallHex");
       const viewStation = t("map.viewStation");
       return `<div class="map-hex-tooltip__station">
         <p class="font-semibold text-foreground">${name}</p>
-        <p class="text-xs text-muted-foreground">${movements}</p>
+        <p class="text-xs text-muted-foreground">${escapeHtml(scoreLine)}</p>
         <p class="text-xs text-muted-foreground">${hexSize}</p>
         <a href="/stations/${slug}" data-station-link class="text-xs font-medium text-primary hover:underline">${viewStation}</a>
       </div>`;

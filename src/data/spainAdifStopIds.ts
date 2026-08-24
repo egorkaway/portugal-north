@@ -447,6 +447,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Plasencia": ["30002"],
 
+  "Pozuelo": ["10002"],
+
+  "Ciaño": ["16010"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

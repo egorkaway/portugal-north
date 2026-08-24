@@ -1,6 +1,6 @@
 import { createPortal } from "react-dom";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { CircleMarker, useMap } from "react-leaflet";
+import { CircleMarker, Tooltip, useMap } from "react-leaflet";
 import { LocateFixed } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLocale } from "@/i18n/LocaleProvider";
@@ -14,11 +14,20 @@ import {
 
 const USER_LOCATION_ZOOM = 11;
 
+const USER_HALO_STYLE = {
+  color: "transparent",
+  fillColor: "#0f766e",
+  fillOpacity: 0.2,
+  weight: 0,
+  className: "map-user-location-halo",
+  interactive: false,
+} as const;
+
 const USER_MARKER_STYLE = {
-  color: "hsl(210 72% 18%)",
-  fillColor: "hsl(210 52% 46%)",
-  fillOpacity: 0.95,
-  weight: 2,
+  color: "#ffffff",
+  fillColor: "#0f766e",
+  fillOpacity: 1,
+  weight: 3,
 } as const;
 
 export function MapLocateControl() {
@@ -107,11 +116,25 @@ export function MapLocateControl() {
         map.getContainer(),
       )}
       {userPos ? (
-        <CircleMarker
-          center={[userPos.lat, userPos.lng]}
-          radius={7}
-          pathOptions={USER_MARKER_STYLE}
-        />
+        <>
+          <CircleMarker
+            center={[userPos.lat, userPos.lng]}
+            radius={16}
+            pathOptions={USER_HALO_STYLE}
+          />
+          <CircleMarker
+            center={[userPos.lat, userPos.lng]}
+            radius={8}
+            pathOptions={USER_MARKER_STYLE}
+          >
+            <Tooltip direction="top" offset={[0, -10]} className="map-hex-tooltip">
+              <div className="map-hex-tooltip__station">
+                <p className="font-semibold text-foreground">{t("map.yourLocation")}</p>
+                <p className="text-xs text-muted-foreground">{t("map.yourLocationHint")}</p>
+              </div>
+            </Tooltip>
+          </CircleMarker>
+        </>
       ) : null}
     </>
   );

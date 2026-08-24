@@ -316,7 +316,8 @@ export const gl: Messages = {
     legendReliableHigh: "Fiable",
     legendReliableMid: "Fiabilidade mixta",
     legendReliableLow: "Pouco fiable",
-    tooltipMovements: "{{count}} saídas + chegadas (mostradas)",
+    tooltipScore: "{{score}}/10",
+    tooltipNoScore: "Sen puntuación de fiabilidade",
     tooltipBiggerHex: "Hexágono máis grande",
     tooltipSmallHex: "Hexágono pequeno",
     viewStation: "Ver estación",
@@ -342,6 +343,8 @@ export const gl: Messages = {
     airportVigo: "Vigo",
     airportAsturias: "Asturias",
     locateMe: "Mostrar a miña localización",
+    yourLocation: "Está aquí",
+    yourLocationHint: "Localización actual",
     overviewTitle: "Descargar mapas xerais de Portugal",
     overviewIntro:
       "Mapas estáticos centrados en Portugal continental. O mapa de actividade coincide coa vista hexagonal de arriba; o de fiabilidade usa as mesmas puntuacións de puntualidade da app móbil.",

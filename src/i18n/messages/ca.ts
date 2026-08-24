@@ -316,7 +316,8 @@ export const ca: Messages = {
     legendReliableHigh: "Fiable",
     legendReliableMid: "Fiabilitat mixta",
     legendReliableLow: "Poc fiable",
-    tooltipMovements: "{{count}} sortides + arribades (mostrejades)",
+    tooltipScore: "{{score}}/10",
+    tooltipNoScore: "Sense puntuació de fiabilitat",
     tooltipBiggerHex: "Hexàgon més gran",
     tooltipSmallHex: "Hexàgon petit",
     viewStation: "Veure estació",
@@ -342,6 +343,8 @@ export const ca: Messages = {
     airportVigo: "Vigo",
     airportAsturias: "Astúries",
     locateMe: "Mostrar la meva ubicació",
+    yourLocation: "És aquí",
+    yourLocationHint: "Ubicació actual",
     overviewTitle: "Descarregar mapes generals de Portugal",
     overviewIntro:
       "Mapes estàtics centrats en Portugal continental. El mapa d'activitat coincideix amb la vista hexagonal de dalt; el de fiabilitat fa servir les mateixes puntuacions de puntualitat que l'app mòbil.",

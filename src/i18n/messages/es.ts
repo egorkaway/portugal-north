@@ -316,7 +316,8 @@ export const es: Messages = {
     legendReliableHigh: "Fiable",
     legendReliableMid: "Fiabilidad mixta",
     legendReliableLow: "Poco fiable",
-    tooltipMovements: "{{count}} salidas + llegadas (muestreadas)",
+    tooltipScore: "{{score}}/10",
+    tooltipNoScore: "Sin puntuación de fiabilidad",
     tooltipBiggerHex: "Hexágono más grande",
     tooltipSmallHex: "Hexágono pequeño",
     viewStation: "Ver estación",
@@ -342,6 +343,8 @@ export const es: Messages = {
     airportVigo: "Vigo",
     airportAsturias: "Asturias",
     locateMe: "Mostrar mi ubicación",
+    yourLocation: "Está aquí",
+    yourLocationHint: "Ubicación actual",
     overviewTitle: "Descargar mapas generales de Portugal",
     overviewIntro:
       "Mapas estáticos centrados en Portugal continental. El mapa de actividad coincide con la vista hexagonal de arriba; el de fiabilidad usa las mismas puntuaciones de puntualidad que la app móvil.",

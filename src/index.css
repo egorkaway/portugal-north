@@ -120,6 +120,25 @@ All colors MUST be HSL.
   display: none;
 }
 
+@keyframes map-user-location-pulse {
+  0% {
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0.12;
+  }
+  100% {
+    opacity: 0.55;
+  }
+}
+
+.leaflet-interactive.map-user-location-halo,
+.path.map-user-location-halo,
+.map-user-location-halo {
+  animation: map-user-location-pulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
 .leaflet-tooltip.map-point-label--airport {
   border-color: hsl(25 88% 45%);
 }

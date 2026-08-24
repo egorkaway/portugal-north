@@ -2066,4 +2066,22 @@ export const spainStations: Station[] = [
     lng: -6.0994,
   },
 
+  {
+    name: "Pozuelo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4475,
+    lng: -3.8003,
+  },
+
+  {
+    name: "Ciaño",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2894,
+    lng: -5.6687,
+  },
+
 ];

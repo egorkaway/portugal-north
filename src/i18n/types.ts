@@ -285,7 +285,8 @@ export type Messages = {
     legendReliableHigh: string;
     legendReliableMid: string;
     legendReliableLow: string;
-    tooltipMovements: string;
+    tooltipScore: string;
+    tooltipNoScore: string;
     tooltipBiggerHex: string;
     tooltipSmallHex: string;
     viewStation: string;
@@ -311,6 +312,8 @@ export type Messages = {
     airportVigo: string;
     airportAsturias: string;
     locateMe: string;
+    yourLocation: string;
+    yourLocationHint: string;
     overviewTitle: string;
     overviewIntro: string;
     overviewActivityTitle: string;

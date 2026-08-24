@@ -3055,6 +3055,16 @@ export const stationHotels: StationHotels = {
     { name: "Parador Nacional de Plasencia", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20Nacional%20de%20Plasencia%2C%20Plasencia%2C%20Spain&order=price" },
     { name: "Palacio Carvajal Girón", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Palacio%20Carvajal%20Gir%C3%B3n%2C%20Plasencia%2C%20Spain&order=price" },
   ],
+  "Pozuelo": [
+    { name: "Sercotel Pozuelo", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20Pozuelo%2C%20Pozuelo%2C%20Spain&order=price" },
+    { name: "TH Aravaca", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=TH%20Aravaca%2C%20Pozuelo%2C%20Spain&order=price" },
+    { name: "Hostal Jaenes", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Jaenes%2C%20Pozuelo%2C%20Spain&order=price" },
+  ],
+  "Ciaño": [
+    { name: "Hotel Vaqueros", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vaqueros%2C%20Cia%C3%B1o%2C%20Spain&order=price" },
+    { name: "Hotel Palacio de Las Nieves", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Palacio%20de%20Las%20Nieves%2C%20Cia%C3%B1o%2C%20Spain&order=price" },
+    { name: "AZZ Asturias LangreHotel & SPA", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AZZ%20Asturias%20LangreHotel%20%26%20SPA%2C%20Cia%C3%B1o%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

@@ -314,7 +314,8 @@ export const en: Messages = {
     legendReliableHigh: "Reliable",
     legendReliableMid: "Mixed reliability",
     legendReliableLow: "Unreliable",
-    tooltipMovements: "{{count}} departures + arrivals (sampled)",
+    tooltipScore: "{{score}}/10",
+    tooltipNoScore: "No reliability score",
     tooltipBiggerHex: "Bigger hex",
     tooltipSmallHex: "Small hex",
     viewStation: "View station",
@@ -340,6 +341,8 @@ export const en: Messages = {
     airportVigo: "Vigo",
     airportAsturias: "Asturias",
     locateMe: "Show my location",
+    yourLocation: "You are here",
+    yourLocationHint: "Current location",
     overviewTitle: "Download Portugal overview maps",
     overviewIntro:
       "Static maps focused on mainland Portugal. The activity map matches the hex view above; the reliability map uses the same on-time scores as our mobile app.",
