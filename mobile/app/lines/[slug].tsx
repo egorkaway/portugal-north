@@ -35,7 +35,7 @@ export default function LineDetailScreen() {
           count: line.stations.length,
         })}
       </Text>
-      <TrainTypeLabels types={line.serviceTypes} compact />
+      <TrainTypeLabels types={line.serviceTypes} compact country={line.country} />
       <Text style={styles.note}>{t('lines.servicesNote')}</Text>
 
       <Text style={styles.sectionTitle}>{t('lines.stationsHeading')}</Text>
@@ -58,7 +58,11 @@ export default function LineDetailScreen() {
                   <Text style={styles.index}>{index + 1}</Text>
                   <View style={styles.cardMain}>
                     <Text style={styles.stationName}>{station.name}</Text>
-                    <TrainTypeLabels types={station.types} compact />
+                    <TrainTypeLabels
+                      types={station.types}
+                      compact
+                      country={station.country ?? line.country}
+                    />
                   </View>
                   <Text style={styles.chevron}>›</Text>
                 </Pressable>

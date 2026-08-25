@@ -84,3 +84,25 @@ export function isTrainTypeFilterChip(type: string): boolean {
 export function trainTypesForFilterChips(types: Iterable<string>): string[] {
   return sortTrainTypes([...new Set(types)].filter(isTrainTypeFilterChip));
 }
+
+/**
+ * Prefer English "InterCity" whenever Spanish stations/trains are in play
+ * (Spain-only or Portugal+Spain). Portugal-only keeps CP's "Intercidades".
+ */
+export function usesInterCityLabel(context: {
+  scope?: string | null;
+  country?: string | null;
+}): boolean {
+  return context.scope === "es" || context.scope === "all" || context.country === "es";
+}
+
+/** UI label for a catalog train type. Data keys stay "Intercidades". */
+export function displayTrainType(
+  type: string,
+  context: { scope?: string | null; country?: string | null } | boolean = false,
+): string {
+  const useInterCity =
+    typeof context === "boolean" ? context : usesInterCityLabel(context);
+  if (useInterCity && type === "Intercidades") return "InterCity";
+  return type;
+}

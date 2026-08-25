@@ -12,7 +12,7 @@ import { SymbolView } from 'expo-symbols';
 import { TrainTypeDot } from '@/components/TrainTypeDot';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
-import { getTrainTypeAbbrev } from '@/lib/trainTypes';
+import { getTrainTypeAbbrev, displayTrainType } from '@/lib/trainTypes';
 
 type VoteFilter = 'up' | 'down' | 'none';
 type VisitedFilter = 'visited' | 'notVisited';
@@ -153,16 +153,19 @@ export function StationFilters({
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.filtersContent}
       >
-        {trainTypes.map((type) => (
+        {trainTypes.map((type) => {
+          const typeLabel = displayTrainType(type, true);
+          return (
           <FilterChip
             key={type}
             active={typeFilter === type}
             onPress={() => onTypeToggle(type)}
             label={getTrainTypeAbbrev(type)}
-            accessibilityLabel={type}
+            accessibilityLabel={typeLabel}
             trainType={type}
           />
-        ))}
+          );
+        })}
 
         <View style={styles.divider} />
 

@@ -9,7 +9,7 @@ import { buildLinesStructuredData } from "@/lib/structuredData";
 import { defaultHomePath } from "@/lib/homeRoute";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getLinePath, getRailLines, type TrainLine } from "@/lib/trainLines";
-import { getTrainTypeBadgeClass } from "@/lib/trainTypes";
+import { displayTrainType, getTrainTypeBadgeClass } from "@/lib/trainTypes";
 
 function LineCard({ line }: { line: TrainLine }) {
   const { t, plural } = useLocale();
@@ -38,7 +38,7 @@ function LineCard({ line }: { line: TrainLine }) {
               key={type}
               className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${getTrainTypeBadgeClass(type)}`}
             >
-              {type}
+              {displayTrainType(type, { country: line.country })}
             </span>
           ))}
         </div>

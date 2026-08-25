@@ -49,7 +49,7 @@ import {
 } from "@/lib/stationImageAttribution";
 import { StationImageCredit } from "@/components/StationImageCredit";
 import { getStationLineLinks } from "@/lib/trainLines";
-import { TRAIN_TYPE_BADGE_CLASSES } from "@/lib/trainTypes";
+import { displayTrainType, TRAIN_TYPE_BADGE_CLASSES } from "@/lib/trainTypes";
 import { isAirportHubStation } from "@/lib/airportTypes";
 
 const Station = () => {
@@ -179,7 +179,7 @@ const Station = () => {
                 key={type}
                 className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${TRAIN_TYPE_BADGE_CLASSES[type] || "bg-muted text-muted-foreground"}`}
               >
-                {type}
+                {displayTrainType(type, { country: station.country })}
               </span>
             ))}
           </div>

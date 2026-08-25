@@ -7,6 +7,7 @@ import { formatDistance } from '@/lib/geo';
 import { remoteImageSource } from '@/lib/remoteImage';
 import { getStationImageUrl, type Station } from '@/lib/stationData';
 import type { Vote } from '@/lib/voteStorage';
+import { displayTrainType } from '@/lib/trainTypes';
 
 type Props = {
   station: Station;
@@ -57,7 +58,9 @@ export function StationCard({
             {sortTrainTypes(station.types).map((type) => (
               <View key={type} style={styles.typeItem}>
                 <TrainTypeDot type={type} size={7} />
-                <Text style={styles.typeLabel}>{type}</Text>
+                <Text style={styles.typeLabel}>
+                  {displayTrainType(type, { country: station.country, scope: 'all' })}
+                </Text>
               </View>
             ))}
           </View>

@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
+  displayTrainType,
   getTrainTypeAbbrev,
   sortTrainTypes,
   trainTypesForFilterChips,
+  usesInterCityLabel,
 } from "@/lib/trainTypes";
 
 describe("getTrainTypeAbbrev", () => {
@@ -47,5 +49,19 @@ describe("trainTypesForFilterChips", () => {
     expect(
       trainTypesForFilterChips(["Regional", "Internacional", "Intercidades", "Regional"]),
     ).toEqual(["Intercidades", "Regional"]);
+  });
+});
+
+describe("displayTrainType", () => {
+  it("keeps Intercidades for Portugal-only browsing", () => {
+    expect(usesInterCityLabel({ scope: "pt" })).toBe(false);
+    expect(displayTrainType("Intercidades", { scope: "pt" })).toBe("Intercidades");
+  });
+
+  it("uses InterCity when Spain is in scope or the station is Spanish", () => {
+    expect(displayTrainType("Intercidades", { scope: "es" })).toBe("InterCity");
+    expect(displayTrainType("Intercidades", { scope: "all" })).toBe("InterCity");
+    expect(displayTrainType("Intercidades", { country: "es" })).toBe("InterCity");
+    expect(displayTrainType("Regional", { scope: "all" })).toBe("Regional");
   });
 });

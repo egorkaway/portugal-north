@@ -6,7 +6,7 @@ import { getNearestStations } from "@/lib/nearestStations";
 import { shouldShowNearestLongDistance } from "@/lib/nearestLongDistanceStations";
 import { getStationPath } from "@/lib/stationSlug";
 import { useLocale } from "@/i18n/LocaleProvider";
-import { TRAIN_TYPE_BADGE_CLASSES } from "@/lib/trainTypes";
+import { displayTrainType, TRAIN_TYPE_BADGE_CLASSES } from "@/lib/trainTypes";
 
 const typeColors = TRAIN_TYPE_BADGE_CLASSES;
 
@@ -64,7 +64,7 @@ export function NearestStations({ station }: { station: Station }) {
                     key={type}
                     className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${typeColors[type] || "bg-muted text-muted-foreground"}`}
                   >
-                    {type}
+                    {displayTrainType(type, { country: candidate.country })}
                   </span>
                 ))}
               </div>

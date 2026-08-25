@@ -42,6 +42,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -13.6052,
   },
   {
+    name: "Ålesund Airport (AES)",
+    country: "no",
+    lines: ["AES"],
+    types: ["Airport Destination"],
+    lat: 62.560443,
+    lng: 6.110845,
+  },
+  {
     name: "Amsterdam Airport Schiphol (AMS)",
     country: "nl",
     lines: ["AMS"],
@@ -1240,6 +1248,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 58.876701,
     lng: 5.63778,
+  },
+  {
+    name: "Strasbourg Airport (SXB)",
+    country: "fr",
+    lines: ["SXB"],
+    types: ["Airport Destination"],
+    lat: 48.5383,
+    lng: 7.62823,
   },
   {
     name: "Salzburg Airport (SZG)",

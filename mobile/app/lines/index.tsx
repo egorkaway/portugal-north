@@ -25,7 +25,7 @@ function LineCard({ line }: { line: TrainLine }) {
             count: line.stations.length,
           })}
         </Text>
-        <TrainTypeLabels types={line.serviceTypes} compact />
+        <TrainTypeLabels types={line.serviceTypes} compact country={line.country} />
       </View>
       <Text style={styles.chevron}>›</Text>
     </Pressable>

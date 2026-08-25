@@ -13,6 +13,7 @@ import {
 } from "@/lib/pageMeta";
 import { parseHomeCanonicalPath, buildHomePath } from "@/lib/homeRoute";
 import { formatLineList, formatServiceTypes } from "@/lib/stationMeta";
+import { displayTrainType } from "@/lib/trainTypes";
 import { getStationBySlug, getStationPath, stationToSlug } from "@/lib/stationSlug";
 import {
   getLinePath,
@@ -263,7 +264,9 @@ export function buildStationMarkdown(
   const longDistanceLines = shouldShowNearestLongDistance(station)
     ? getNearestLongDistanceStations(station)
         .map(({ station: candidate, distanceKm }) => {
-          const types = getLongDistanceTypes(candidate).join(", ");
+          const types = getLongDistanceTypes(candidate)
+            .map((type) => displayTrainType(type, { country: candidate.country }))
+            .join(", ");
           return `- [${candidate.name}](${base}${getStationPath(candidate)}) — ${formatDistance(distanceKm)} away (${types})`;
         })
         .join("\n")
@@ -273,7 +276,7 @@ export function buildStationMarkdown(
     longDistanceLines.length > 0
       ? `## Nearest long-distance stops
 
-This stop has regional or urban service only. For Alfa Pendular or Intercidades trains, try these nearby stations:
+This stop has regional or urban service only. For Alfa Pendular or ${displayTrainType("Intercidades", { country: station.country })} trains, try these nearby stations:
 
 ${longDistanceLines}
 
@@ -282,7 +285,7 @@ ${longDistanceLines}
 
   const summaryText =
     getStationSummary(station.name) ??
-    `${formatServiceTypes(station.types, "en")} at **${station.name}** on ${formatLineList(station.lines, "en")}.`;
+    `${formatServiceTypes(station.types, "en", { country: station.country })} at **${station.name}** on ${formatLineList(station.lines, "en")}.`;
 
   const body = `${yamlFrontmatter({
     title: meta.title,

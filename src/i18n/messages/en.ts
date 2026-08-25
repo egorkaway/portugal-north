@@ -108,7 +108,7 @@ export const en: Messages = {
     away: "{{distance}} away",
     longDistanceNearby: "Nearest long-distance stops",
     longDistanceIntro:
-      "This stop has regional or urban service only. For Alfa Pendular or Intercidades trains, try these nearby stations:",
+      "This stop has regional or urban service only. For Alfa Pendular or {{icService}} trains, try these nearby stations:",
     nearestStationsNearby: "Nearest stations",
     nearestStationsIntro: "Other stops close to this station on the map.",
     yesimTitle: "Travel eSIM for the airport",

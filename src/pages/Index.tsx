@@ -237,6 +237,7 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
         onRequestLocation={requestLocation}
         locationState={locationState}
         coords={coords}
+        labelScope={scope}
       />
 
       <StationInteractionProvider>
@@ -278,6 +279,7 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
                     key={station.name}
                     station={station}
                     distanceKm={distanceByStation?.[station.name]}
+                    labelScope={scope}
                   />
                 ))}
               </div>

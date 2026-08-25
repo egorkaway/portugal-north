@@ -838,4 +838,13 @@ export const spainSummariesGl: Record<string, string> = {
   "Levinco":
     "Levinco é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Viladecans":
+    "Viladecans é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Vicálvaro":
+    "Vicálvaro é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Almansa":
+    "Almansa é unha estación de Renfe de longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

@@ -11,6 +11,7 @@ import {
   getNearestLongDistanceStations,
   shouldShowNearestLongDistance,
 } from '@/lib/nearestLongDistanceStations';
+import { displayTrainType } from '@/lib/trainTypes';
 import { stationToSlug, type Station } from '@/lib/stationData';
 
 type Props = {
@@ -20,6 +21,7 @@ type Props = {
 export function NearestLongDistanceStations({ station }: Props) {
   const router = useRouter();
   const { t } = useLocale();
+  const icService = displayTrainType('Intercidades', { country: station.country });
 
   if (!shouldShowNearestLongDistance(station)) {
     return null;
@@ -33,7 +35,9 @@ export function NearestLongDistanceStations({ station }: Props) {
   return (
     <View style={sectionStyles.section}>
       <Text style={sectionStyles.sectionTitle}>{t('station.longDistanceNearby')}</Text>
-      <Text style={sectionStyles.sectionIntro}>{t('station.longDistanceIntro')}</Text>
+      <Text style={sectionStyles.sectionIntro}>
+        {t('station.longDistanceIntro', { icService })}
+      </Text>
       <View style={styles.list}>
         {nearest.map(({ station: candidate, distanceKm }) => (
           <Pressable
@@ -48,7 +52,11 @@ export function NearestLongDistanceStations({ station }: Props) {
                 {candidate.lines.join(' · ')}
               </Text>
               <Text style={cardStyles.distance}>{t('station.away', { distance: formatDistance(distanceKm) })}</Text>
-              <TrainTypeLabels types={getLongDistanceTypes(candidate)} compact />
+              <TrainTypeLabels
+                types={getLongDistanceTypes(candidate)}
+                compact
+                country={candidate.country}
+              />
             </View>
             <Text style={cardStyles.chevron} accessibilityElementsHidden>
               ›

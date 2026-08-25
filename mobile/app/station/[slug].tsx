@@ -172,7 +172,7 @@ export default function StationDetailScreen() {
         <VoteButtons vote={vote} onVote={(direction) => void handleVote(direction)} />
       </View>
 
-      <TrainTypeLabels types={station.types} />
+      <TrainTypeLabels types={station.types} country={station.country} />
 
       <Pressable
         onPress={() => void handleVisited()}

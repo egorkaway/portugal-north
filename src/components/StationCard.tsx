@@ -15,16 +15,19 @@ import { VoteButtons } from "@/components/VoteButtons";
 import { VisitedButton } from "@/components/VisitedButton";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { stationHasAirportType } from "@/lib/airportTypes";
-import { TRAIN_TYPE_BADGE_CLASSES } from "@/lib/trainTypes";
+import { displayTrainType, TRAIN_TYPE_BADGE_CLASSES } from "@/lib/trainTypes";
+import type { HomeScope } from "@/lib/countries";
 
 const typeColors = TRAIN_TYPE_BADGE_CLASSES;
 
 function StationCardWithHooks({
   station,
   distanceKm,
+  labelScope,
 }: {
   station: Station;
   distanceKm?: number;
+  labelScope?: HomeScope;
 }) {
   const { vote, cast } = useStationVote(station.name);
   const { visited, toggle: toggleVisited } = useStationVisited(station.name);
@@ -33,6 +36,7 @@ function StationCardWithHooks({
     <StationCardView
       station={station}
       distanceKm={distanceKm}
+      labelScope={labelScope}
       vote={vote}
       visited={visited}
       onVote={cast}
@@ -44,19 +48,28 @@ function StationCardWithHooks({
 function StationCardWithContext({
   station,
   distanceKm,
+  labelScope,
 }: {
   station: Station;
   distanceKm?: number;
+  labelScope?: HomeScope;
 }) {
   const interaction = useStationInteraction(station.name);
   if (!interaction) {
-    return <StationCardWithHooks station={station} distanceKm={distanceKm} />;
+    return (
+      <StationCardWithHooks
+        station={station}
+        distanceKm={distanceKm}
+        labelScope={labelScope}
+      />
+    );
   }
 
   return (
     <StationCardView
       station={station}
       distanceKm={distanceKm}
+      labelScope={labelScope}
       vote={interaction.vote}
       visited={interaction.visited}
       onVote={interaction.cast}
@@ -68,6 +81,7 @@ function StationCardWithContext({
 const StationCardView = memo(function StationCardView({
   station,
   distanceKm,
+  labelScope,
   vote,
   visited,
   onVote,
@@ -75,6 +89,7 @@ const StationCardView = memo(function StationCardView({
 }: {
   station: Station;
   distanceKm?: number;
+  labelScope?: HomeScope;
   vote: Vote;
   visited: boolean;
   onVote: (direction: "up" | "down") => void;
@@ -141,7 +156,7 @@ const StationCardView = memo(function StationCardView({
               key={type}
               className={`text-xs px-2 py-0.5 rounded-full font-medium ${typeColors[type] || "bg-muted text-muted-foreground"}`}
             >
-              {type}
+              {displayTrainType(type, { scope: labelScope, country: station.country })}
             </span>
           ))}
         </div>
@@ -198,9 +213,18 @@ const StationCardView = memo(function StationCardView({
 export function StationCard({
   station,
   distanceKm,
+  labelScope,
 }: {
   station: Station;
   distanceKm?: number;
+  /** Home country scope — drives Intercidades vs InterCity labels. */
+  labelScope?: HomeScope;
 }) {
-  return <StationCardWithContext station={station} distanceKm={distanceKm} />;
+  return (
+    <StationCardWithContext
+      station={station}
+      distanceKm={distanceKm}
+      labelScope={labelScope}
+    />
+  );
 }

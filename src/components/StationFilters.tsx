@@ -10,9 +10,10 @@ import {
   ThumbsUp,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getTrainTypeAbbrev } from "@/lib/trainTypes";
+import { getTrainTypeAbbrev, displayTrainType } from "@/lib/trainTypes";
 import { useLocale } from "@/i18n/LocaleProvider";
 import type { UserLocationState } from "@/hooks/useUserLocation";
+import type { HomeScope } from "@/lib/countries";
 
 type VoteFilter = "up" | "down" | "none";
 type VisitedFilter = "visited" | "notVisited";
@@ -104,6 +105,7 @@ export function StationFilters({
   onRequestLocation,
   locationState,
   coords,
+  labelScope,
 }: {
   search: string;
   onSearchChange: (value: string) => void;
@@ -118,6 +120,7 @@ export function StationFilters({
   onRequestLocation: () => void;
   locationState: UserLocationState;
   coords: { lat: number; lng: number } | null;
+  labelScope?: HomeScope;
 }) {
   const { t } = useLocale();
   const touchHandledRef = useRef(false);
@@ -204,17 +207,20 @@ export function StationFilters({
           role="group"
           aria-label={t("home.filtersLabel")}
         >
-          {trainTypes.map((type) => (
+          {trainTypes.map((type) => {
+            const typeLabel = displayTrainType(type, { scope: labelScope });
+            return (
             <FilterChip
               key={type}
               active={activeType === type}
               activeClassName={chipActivePrimary}
               onClick={() => onTypeToggle(type)}
               label={getTrainTypeAbbrev(type)}
-              longLabel={type}
-              accessibilityLabel={type}
+              longLabel={typeLabel}
+              accessibilityLabel={typeLabel}
             />
-          ))}
+            );
+          })}
 
           <FilterDivider />
 

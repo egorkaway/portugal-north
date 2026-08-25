@@ -108,7 +108,7 @@ export const ca: Messages = {
     away: "a {{distance}}",
     longDistanceNearby: "Parades de llarga distància més properes",
     longDistanceIntro:
-      "Aquesta parada només té servei regional o urbà. Per als trens Alfa Pendular o Intercidades, prova aquestes estacions properes:",
+      "Aquesta parada només té servei regional o urbà. Per als trens Alfa Pendular o {{icService}}, prova aquestes estacions properes:",
     nearestStationsNearby: "Estacions més properes",
     nearestStationsIntro: "Altres parades a prop d'aquesta estació al mapa.",
     yesimTitle: "eSIM de viatge per a l'aeroport",

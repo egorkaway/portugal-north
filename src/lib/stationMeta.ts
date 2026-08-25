@@ -1,6 +1,7 @@
 import type { Hotel } from "@/data/hotels";
 import type { Station } from "@/data/stations";
 import type { Locale, Translator } from "@/i18n";
+import { displayTrainType } from "@/lib/trainTypes";
 
 const MAX_DESCRIPTION = 158;
 
@@ -24,8 +25,14 @@ export function formatLineList(lines: string[], locale: Locale): string {
   return `${lines.slice(0, -1).join(", ")}, ${and} ${lines[lines.length - 1]}`;
 }
 
-export function formatServiceTypes(types: string[], locale: Locale): string {
-  const active = types.filter((type) => type !== "Inactive / Historic");
+export function formatServiceTypes(
+  types: string[],
+  locale: Locale,
+  context: { scope?: string | null; country?: string | null } = {},
+): string {
+  const active = types
+    .filter((type) => type !== "Inactive / Historic")
+    .map((type) => displayTrainType(type, context));
   if (active.length === 0) return "";
   if (active.length <= 3) return active.join(", ");
   const more =
@@ -63,7 +70,9 @@ export function getStationMetaDescription(
   hotels: Hotel[],
   tr: Translator,
 ): string {
-  const services = formatServiceTypes(station.types, tr.locale) || tr.t("meta.cpTrains");
+  const services =
+    formatServiceTypes(station.types, tr.locale, { country: station.country }) ||
+    tr.t("meta.cpTrains");
   const lines = formatLineList(station.lines, tr.locale) || tr.t("meta.cpNetwork");
   const stays = hotelSummary(hotels, tr);
   return truncate(
@@ -77,7 +86,9 @@ export function getStationOgDescription(
   hotels: Hotel[],
   tr: Translator,
 ): string {
-  const services = formatServiceTypes(station.types, tr.locale) || tr.t("meta.cpTrains");
+  const services =
+    formatServiceTypes(station.types, tr.locale, { country: station.country }) ||
+    tr.t("meta.cpTrains");
   const lines = formatLineList(station.lines, tr.locale) || tr.t("meta.cpNetwork");
 
   if (hotels.length === 0) {

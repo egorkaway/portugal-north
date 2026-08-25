@@ -838,4 +838,13 @@ export const spainSummariesEn: Record<string, string> = {
   "Levinco":
     "Levinco is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Viladecans":
+    "Viladecans is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Vicálvaro":
+    "Vicálvaro is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Almansa":
+    "Almansa is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

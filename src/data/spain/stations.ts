@@ -2345,4 +2345,31 @@ export const spainStations: Station[] = [
     lng: -5.6003,
   },
 
+  {
+    name: "Viladecans",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3095,
+    lng: 2.0274,
+  },
+
+  {
+    name: "Vicálvaro",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4013,
+    lng: -3.5959,
+  },
+
+  {
+    name: "Almansa",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.8678,
+    lng: -1.1054,
+  },
+
 ];

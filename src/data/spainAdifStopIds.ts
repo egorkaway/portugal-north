@@ -509,6 +509,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Levinco": ["05387"],
 
+  "Viladecans": ["71709"],
+
+  "Vicálvaro": ["70100"],
+
+  "Almansa": ["60800"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

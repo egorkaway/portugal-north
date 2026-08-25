@@ -85,7 +85,7 @@ export const es: MobileMessages = {
     away: 'a {{distance}}',
     longDistanceNearby: 'Paradas de larga distancia más cercanas',
     longDistanceIntro:
-      'Esta parada solo tiene servicio regional o urbano. Para trenes Alfa Pendular o Intercidades, prueba estas estaciones cercanas:',
+      'Esta parada solo tiene servicio regional o urbano. Para trenes Alfa Pendular o {{icService}}, prueba estas estaciones cercanas:',
   },
   lines: {
     intro: 'Explora las líneas ferroviarias de Portugal — y las líneas transfronterizas en nuestros datos. Cada línea lista sus estaciones y los servicios que paran allí.',

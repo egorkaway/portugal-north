@@ -13,7 +13,7 @@ import {
   getTrainLineBySlug,
 } from "@/lib/trainLines";
 import { getStationPath } from "@/lib/stationSlug";
-import { getTrainTypeBadgeClass } from "@/lib/trainTypes";
+import { displayTrainType, getTrainTypeBadgeClass } from "@/lib/trainTypes";
 
 const Line = () => {
   const { t, plural, locale } = useLocale();
@@ -71,7 +71,7 @@ const Line = () => {
                 key={type}
                 className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${getTrainTypeBadgeClass(type)}`}
               >
-                {type}
+                {displayTrainType(type, { country: line.country })}
               </span>
             ))}
           </div>
@@ -118,7 +118,9 @@ const Line = () => {
                                 key={type}
                                 className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${getTrainTypeBadgeClass(type)}`}
                               >
-                                {type}
+                                {displayTrainType(type, {
+                                  country: station.country ?? line.country,
+                                })}
                               </span>
                             ))
                           )}

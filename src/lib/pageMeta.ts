@@ -73,7 +73,8 @@ export function getLinesPageMeta(locale: Locale = "en"): PageMeta {
 export function buildLinePageMeta(line: TrainLine, locale: Locale = "en"): PageMeta {
   const tr = createTranslator(locale);
   const services =
-    formatServiceTypes(line.serviceTypes, locale) || tr.t("meta.cpTrains");
+    formatServiceTypes(line.serviceTypes, locale, { country: line.country }) ||
+    tr.t("meta.cpTrains");
   const params = {
     line: line.name,
     site: tr.t("meta.siteName"),

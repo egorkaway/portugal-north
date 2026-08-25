@@ -8,11 +8,12 @@ import {
   shouldShowNearestLongDistance,
 } from "@/lib/nearestLongDistanceStations";
 import { getStationPath } from "@/lib/stationSlug";
-import { getTrainTypeBadgeClass } from "@/lib/trainTypes";
+import { getTrainTypeBadgeClass, displayTrainType } from "@/lib/trainTypes";
 import { useLocale } from "@/i18n/LocaleProvider";
 
 export function NearestLongDistanceStations({ station }: { station: Station }) {
   const { t } = useLocale();
+  const icService = displayTrainType("Intercidades", { country: station.country });
 
   if (!shouldShowNearestLongDistance(station)) {
     return null;
@@ -32,7 +33,7 @@ export function NearestLongDistanceStations({ station }: { station: Station }) {
         </h2>
       </div>
       <p className="mb-4 text-sm text-muted-foreground md:mb-6">
-        {t("station.longDistanceIntro")}
+        {t("station.longDistanceIntro", { icService })}
       </p>
       <ul className="grid gap-3 sm:grid-cols-2">
         {nearest.map(({ station: candidate, distanceKm }) => (
@@ -65,7 +66,7 @@ export function NearestLongDistanceStations({ station }: { station: Station }) {
                     key={type}
                     className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${getTrainTypeBadgeClass(type)}`}
                   >
-                    {type}
+                    {displayTrainType(type, { country: candidate.country })}
                   </span>
                 ))}
               </div>

@@ -108,7 +108,7 @@ export const pt: Messages = {
     away: "a {{distance}}",
     longDistanceNearby: "Paragens de longa distância mais próximas",
     longDistanceIntro:
-      "Esta paragem tem apenas serviço regional ou urbano. Para comboios Alfa Pendular ou Intercidades, experimente estas estações:",
+      "Esta paragem tem apenas serviço regional ou urbano. Para comboios Alfa Pendular ou {{icService}}, experimente estas estações:",
     nearestStationsNearby: "Estações mais próximas",
     nearestStationsIntro: "Outras paragens perto desta estação no mapa.",
     yesimTitle: "eSIM de viagem para o aeroporto",

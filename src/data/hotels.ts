@@ -3203,6 +3203,21 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Rural El Fundil", distanceKm: 8.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20El%20Fundil%2C%20Levinco%2C%20Spain&order=price" },
     { name: "Hotel Restaurante El Parador de Felechosa", distanceKm: 9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurante%20El%20Parador%20de%20Felechosa%2C%20Levinco%2C%20Spain&order=price" },
   ],
+  "Viladecans": [
+    { name: "B&B Hotels", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotels%2C%20Viladecans%2C%20Spain&order=price" },
+    { name: "Four Points by Sheraton - Barcelona Airport", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Four%20Points%20by%20Sheraton%20-%20Barcelona%20Airport%2C%20Viladecans%2C%20Spain&order=price" },
+    { name: "Ibis Budget", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Budget%2C%20Viladecans%2C%20Spain&order=price" },
+  ],
+  "Vicálvaro": [
+    { name: "Aparthotel Encasa", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Encasa%2C%20Vic%C3%A1lvaro%2C%20Spain&order=price" },
+    { name: "Pensión Bulevar", distanceKm: 3.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Bulevar%2C%20Vic%C3%A1lvaro%2C%20Spain&order=price" },
+    { name: "Hotel Porcel Torre Garden", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Porcel%20Torre%20Garden%2C%20Vic%C3%A1lvaro%2C%20Spain&order=price" },
+  ],
+  "Almansa": [
+    { name: "Confortel Almansa", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Confortel%20Almansa%2C%20Almansa%2C%20Spain&order=price" },
+    { name: "El Estudio", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Estudio%2C%20Almansa%2C%20Spain&order=price" },
+    { name: "Casa Almántica", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Alm%C3%A1ntica%2C%20Almansa%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
