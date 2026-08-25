@@ -3218,6 +3218,31 @@ export const stationHotels: StationHotels = {
     { name: "El Estudio", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Estudio%2C%20Almansa%2C%20Spain&order=price" },
     { name: "Casa Almántica", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Alm%C3%A1ntica%2C%20Almansa%2C%20Spain&order=price" },
   ],
+  "Beasain": [
+    { name: "Hotel Beasain", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Beasain%2C%20Beasain%2C%20Spain&order=price" },
+    { name: "Igartza", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Igartza%2C%20Beasain%2C%20Spain&order=price" },
+    { name: "Done Jakue bideko ostatua", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Done%20Jakue%20bideko%20ostatua%2C%20Beasain%2C%20Spain&order=price" },
+  ],
+  "Llanes": [
+    { name: "Don Paco", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Don%20Paco%2C%20Llanes%2C%20Spain&order=price" },
+    { name: "Albergue la Estacion Llanes", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20la%20Estacion%20Llanes%2C%20Llanes%2C%20Spain&order=price" },
+    { name: "La Paz", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Paz%2C%20Llanes%2C%20Spain&order=price" },
+  ],
+  "Méndez Álvaro P.V.": [
+    { name: "Four Points Flex by Sheraton Madrid Atocha", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Four%20Points%20Flex%20by%20Sheraton%20Madrid%20Atocha%2C%20M%C3%A9ndez%20%C3%81lvaro%20P.V.%2C%20Spain&order=price" },
+    { name: "Ibis Budget - Madrid Calle 30", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Budget%20-%20Madrid%20Calle%2030%2C%20M%C3%A9ndez%20%C3%81lvaro%20P.V.%2C%20Spain&order=price" },
+    { name: "Velvet Hostels Pacifico", distanceKm: 0.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Velvet%20Hostels%20Pacifico%2C%20M%C3%A9ndez%20%C3%81lvaro%20P.V.%2C%20Spain&order=price" },
+  ],
+  "Zaragoza-Miraflores": [
+    { name: "Hotel Boston", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Boston%2C%20Zaragoza-Miraflores%2C%20Spain&order=price" },
+    { name: "Residencia Juvenil Hermanas Trinitarias", distanceKm: 1.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Juvenil%20Hermanas%20Trinitarias%2C%20Zaragoza-Miraflores%2C%20Spain&order=price" },
+    { name: "Colegio Mayor La Anunciata", distanceKm: 1.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Colegio%20Mayor%20La%20Anunciata%2C%20Zaragoza-Miraflores%2C%20Spain&order=price" },
+  ],
+  "Algemesí": [
+    { name: "Albergue municipal de Algemesí", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20municipal%20de%20Algemes%C3%AD%2C%20Algemes%C3%AD%2C%20Spain&order=price" },
+    { name: "Casa novia", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20novia%2C%20Algemes%C3%AD%2C%20Spain&order=price" },
+    { name: "Casa de jessica", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20de%20jessica%2C%20Algemes%C3%AD%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

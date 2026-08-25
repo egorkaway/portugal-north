@@ -2372,4 +2372,49 @@ export const spainStations: Station[] = [
     lng: -1.1054,
   },
 
+  {
+    name: "Beasain",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.0463,
+    lng: -2.2023,
+  },
+
+  {
+    name: "Llanes",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4209,
+    lng: -4.7587,
+  },
+
+  {
+    name: "Méndez Álvaro P.V.",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3958,
+    lng: -3.6778,
+  },
+
+  {
+    name: "Zaragoza-Miraflores",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6334,
+    lng: -0.8682,
+  },
+
+  {
+    name: "Algemesí",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.1931,
+    lng: -0.4409,
+  },
+
 ];

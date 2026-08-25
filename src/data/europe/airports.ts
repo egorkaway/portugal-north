@@ -610,6 +610,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 25.478638,
   },
   {
+    name: "Keflavik International Airport (KEF)",
+    country: "is",
+    lines: ["KEF"],
+    types: ["Airport Destination"],
+    lat: 63.985001,
+    lng: -22.6056,
+  },
+  {
     name: "Kerry Airport (KIR)",
     country: "ie",
     lines: ["KIR"],

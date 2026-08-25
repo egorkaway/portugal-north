@@ -387,7 +387,8 @@ const styles = StyleSheet.create({
     color: theme.primaryMuted,
   },
   stationLink: {
-    color: theme.accent,
+    color: theme.primary,
+    fontWeight: '600',
     textDecorationLine: 'underline',
   },
   rowValue: {

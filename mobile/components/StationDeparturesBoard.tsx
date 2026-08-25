@@ -242,9 +242,9 @@ const localStyles = StyleSheet.create({
   loadMore: {
     marginTop: 4,
     borderRadius: 12,
-    borderWidth: 1,
-    borderColor: theme.border,
-    backgroundColor: theme.background,
+    borderWidth: theme.buttonBorderWidth,
+    borderColor: theme.buttonBorder,
+    backgroundColor: theme.card,
     paddingVertical: 12,
     alignItems: 'center',
     justifyContent: 'center',

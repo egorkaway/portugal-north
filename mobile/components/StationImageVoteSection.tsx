@@ -142,8 +142,8 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   chip: {
-    borderWidth: 1,
-    borderColor: theme.border,
+    borderWidth: theme.buttonBorderWidth,
+    borderColor: theme.buttonBorder,
     borderRadius: 999,
     paddingHorizontal: 12,
     paddingVertical: 7,

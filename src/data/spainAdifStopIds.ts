@@ -515,6 +515,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Almansa": ["60800"],
 
+  "Beasain": ["11404"],
+
+  "Llanes": ["05571"],
+
+  "Méndez Álvaro P.V.": ["18003"],
+
+  "Zaragoza-Miraflores": ["71100"],
+
+  "Algemesí": ["64105"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

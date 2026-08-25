@@ -72,8 +72,8 @@ const styles = StyleSheet.create({
     width: 34,
     height: 34,
     borderRadius: 999,
-    borderWidth: 1,
-    borderColor: theme.border,
+    borderWidth: theme.buttonBorderWidth,
+    borderColor: theme.buttonBorder,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: theme.card,
@@ -81,6 +81,9 @@ const styles = StyleSheet.create({
   buttonCompact: {
     width: 30,
     height: 30,
+    /** Home cards keep the lighter outline; station page uses the heavy default. */
+    borderWidth: 1,
+    borderColor: theme.border,
   },
   buttonUpActive: {
     backgroundColor: theme.success,

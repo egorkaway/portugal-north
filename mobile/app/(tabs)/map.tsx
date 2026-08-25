@@ -508,6 +508,8 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
     backgroundColor: theme.primary,
     borderRadius: 999,
+    borderWidth: theme.buttonBorderWidth,
+    borderColor: theme.primary,
     paddingHorizontal: 14,
     paddingVertical: 10,
   },

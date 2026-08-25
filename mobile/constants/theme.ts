@@ -4,6 +4,9 @@ export const theme = {
   background: '#F5F7F8',
   card: '#FFFFFF',
   border: '#E2E8EE',
+  /** Stronger outline for chips / outline buttons (vs. light card borders). */
+  buttonBorder: '#64748B',
+  buttonBorderWidth: 2,
   success: '#059669',
   warning: '#D97706',
   danger: '#DC2626',

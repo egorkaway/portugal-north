@@ -50,11 +50,11 @@ export const stationSectionStyles = StyleSheet.create({
   },
   actionButton: {
     borderRadius: 999,
-    borderWidth: 1,
-    borderColor: theme.border,
+    borderWidth: theme.buttonBorderWidth,
+    borderColor: theme.buttonBorder,
     paddingHorizontal: 12,
     paddingVertical: 8,
-    backgroundColor: theme.background,
+    backgroundColor: theme.card,
   },
   actionButtonText: {
     fontSize: 12,

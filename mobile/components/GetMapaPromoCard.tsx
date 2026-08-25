@@ -26,8 +26,8 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: theme.card,
     borderRadius: 16,
-    borderWidth: 1,
-    borderColor: theme.border,
+    borderWidth: theme.buttonBorderWidth,
+    borderColor: theme.buttonBorder,
     padding: 16,
     gap: 6,
   },

@@ -401,6 +401,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@g-cortez-1520507",
     photoPageUrl: "https://www.pexels.com/photo/people-in-a-train-station-5979802/",
   },
+  "6062883": {
+    photographer: "sergio pirola",
+    photographerUrl: "https://www.pexels.com/@pirandello47",
+    photoPageUrl: "https://www.pexels.com/photo/people-walking-on-the-train-station-6062883/",
+  },
   "6068391": {
     photographer: "Dan Raz",
     photographerUrl: "https://www.pexels.com/@dan-raz-3153619",
@@ -1240,6 +1245,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Elisa Giaccaglia",
     photographerUrl: "https://www.pexels.com/@elisa-giaccaglia-704611068",
     photoPageUrl: "https://www.pexels.com/photo/vintage-train-car-near-industrial-silo-in-countryside-18338511/",
+  },
+  "18404361": {
+    photographer: "Furkan Dalgacı",
+    photographerUrl: "https://www.pexels.com/@furkan-dalgaci-724204136",
+    photoPageUrl: "https://www.pexels.com/photo/metro-train-at-station-in-izmir-in-turkey-18404361/",
   },
   "18498268": {
     photographer: "Jimmy Liao",
@@ -2440,6 +2450,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Sergei  Gussev",
     photographerUrl: "https://www.pexels.com/@sergei",
     photoPageUrl: "https://www.pexels.com/photo/sunset-over-rocky-coastline-at-vila-praia-de-ancora-35872756/",
+  },
+  "35996281": {
+    photographer: "Raoul Turmond",
+    photographerUrl: "https://www.pexels.com/@raoul-turmond-1765272532",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architectural-ceiling-structure-with-sklylight-35996281/",
   },
   "36056485": {
     photographer: "Diego  HG",
