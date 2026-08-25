@@ -2,11 +2,16 @@ import stationsFull from '@/data/stations-full.json';
 import stationImages from '@/data/stationImages.json';
 import hotels from '@/data/hotels.json';
 import summariesEn from '@/data/summaries-en.json';
+import summariesPt from '@/data/summaries-pt.json';
+import summariesEs from '@/data/summaries-es.json';
+import summariesCa from '@/data/summaries-ca.json';
+import summariesGl from '@/data/summaries-gl.json';
 import reliabilityScores from '@/data/reliability-scores.json';
 import spainReliabilityScores from '@/data/spain-reliability-scores.json';
 import trainReliabilitySpotlight from '@/data/train-reliability-spotlight.json';
 import cpStationCodes from '@/data/cpStationCodes.json';
 import { canonicalHotelName, mergeAliasedHotelRatings } from '@/lib/hotelVoteAliases';
+import type { Locale } from '@/i18n/types';
 
 export type CountryCode = 'pt' | 'es';
 
@@ -71,6 +76,14 @@ export function pickPublicHotelRatings(
 export const bakedStationImages = stationImages as Record<string, string>;
 export const bakedHotels = hotels as Record<string, Hotel[]>;
 export const bakedSummariesEn = summariesEn as Record<string, string>;
+
+const bakedSummariesByLocale: Partial<Record<Locale, Record<string, string>>> = {
+  en: bakedSummariesEn,
+  pt: summariesPt as Record<string, string>,
+  es: summariesEs as Record<string, string>,
+  ca: summariesCa as Record<string, string>,
+  gl: summariesGl as Record<string, string>,
+};
 export const bakedReliabilityScores = reliabilityScores as ReliabilityScoresManifest;
 export const bakedSpainReliabilityScores = spainReliabilityScores as ReliabilityScoresManifest;
 
@@ -137,8 +150,15 @@ export function getHotelsForStation(stationName: string): Hotel[] {
   return out;
 }
 
-export function getSummaryForStation(stationName: string): string | null {
-  return bakedSummariesEn[stationName] ?? null;
+export function getSummaryForStation(
+  stationName: string,
+  locale: Locale = 'en',
+): string | null {
+  return (
+    bakedSummariesByLocale[locale]?.[stationName] ??
+    bakedSummariesEn[stationName] ??
+    null
+  );
 }
 
 export function getCpCode(stationName: string): string | null {

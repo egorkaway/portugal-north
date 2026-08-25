@@ -58,3 +58,10 @@ export function getServiceTypeTextColor(serviceType: string | null | undefined):
   if (serviceType.includes('Internacional')) return TRAIN_TYPE_COLORS.Internacional;
   return '#475569';
 }
+
+/** Catalog tags that should not appear as home-list filter chips. */
+const TRAIN_TYPE_FILTER_EXCLUSIONS = new Set(['Internacional']);
+
+export function isTrainTypeFilterChip(type: string): boolean {
+  return !TRAIN_TYPE_FILTER_EXCLUSIONS.has(type);
+}

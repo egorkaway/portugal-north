@@ -26,7 +26,7 @@ import { footerCountryFromHomeScope, type HomeScope } from "@/lib/countries";
 import { buildHomePath, isHomePath, parseHomeCanonicalPath } from "@/lib/homeRoute";
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
 import { stationMatchesSearch } from "@/lib/searchText";
-import { sortTrainTypes } from "@/lib/trainTypes";
+import { trainTypesForFilterChips } from "@/lib/trainTypes";
 import {
   normalizeStationTypeForFilter,
   stationMatchesTypeFilter,
@@ -57,11 +57,9 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
   );
   const allTypes = useMemo(
     () =>
-      sortTrainTypes([
-        ...new Set(
-          countryStations.flatMap((s) => s.types.map(normalizeStationTypeForFilter)),
-        ),
-      ]),
+      trainTypesForFilterChips(
+        countryStations.flatMap((s) => s.types.map(normalizeStationTypeForFilter)),
+      ),
     [countryStations],
   );
   const [activeFilter, setActiveFilter] = useState<string | null>(null);

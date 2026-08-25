@@ -503,6 +503,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Benacazón": ["43005"],
 
+  "Gavà": ["71706"],
+
+  "La Rocica": ["16402"],
+
+  "Levinco": ["05387"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

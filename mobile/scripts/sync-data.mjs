@@ -17,14 +17,30 @@ export async function syncMobileData() {
     { stationImages },
     { stationHotels },
     { stationSummariesEn },
+    { stationSummariesPt },
+    { stationSummariesEs },
+    { stationSummariesCa },
+    { stationSummariesGl },
     { spainSummariesEn },
+    { spainSummariesPt },
+    { spainSummariesEs },
+    { spainSummariesCa },
+    { spainSummariesGl },
   ] = await Promise.all([
     importFromSrc("src/data/stationRegistry.ts"),
     importFromSrc("src/data/cpStationCodes.ts"),
     importFromSrc("src/data/stationImages.ts"),
     importFromSrc("src/data/hotels.ts"),
     importFromSrc("src/data/stationSummaries/en.ts"),
+    importFromSrc("src/data/stationSummaries/pt.ts"),
+    importFromSrc("src/data/stationSummaries/es.ts"),
+    importFromSrc("src/data/stationSummaries/ca.ts"),
+    importFromSrc("src/data/stationSummaries/gl.ts"),
     importFromSrc("src/data/stationSummaries/spain/en.ts"),
+    importFromSrc("src/data/stationSummaries/spain/pt.ts"),
+    importFromSrc("src/data/stationSummaries/spain/es.ts"),
+    importFromSrc("src/data/stationSummaries/spain/ca.ts"),
+    importFromSrc("src/data/stationSummaries/spain/gl.ts"),
   ]);
 
   const outDir = path.join(__dirname, "../data");
@@ -40,7 +56,14 @@ export async function syncMobileData() {
   }));
 
   const stationsLite = stationsFull.map(({ name, lat, lng }) => ({ name, lat, lng }));
-  const summaries = { ...stationSummariesEn, ...spainSummariesEn };
+  const summariesByLocale = {
+    en: { ...stationSummariesEn, ...spainSummariesEn },
+    pt: { ...stationSummariesPt, ...spainSummariesPt },
+    es: { ...stationSummariesEs, ...spainSummariesEs },
+    ca: { ...stationSummariesCa, ...spainSummariesCa },
+    gl: { ...stationSummariesGl, ...spainSummariesGl },
+  };
+  const summaries = summariesByLocale.en;
 
   const reliabilityPath = path.join(repoRoot, "public/data/reliability-scores.json");
   const reliability = JSON.parse(fs.readFileSync(reliabilityPath, "utf8"));
@@ -96,7 +119,11 @@ export async function syncMobileData() {
   fs.writeFileSync(path.join(outDir, "cpStationCodes.json"), JSON.stringify(cpStationCodes));
   fs.writeFileSync(path.join(outDir, "stationImages.json"), JSON.stringify(stationImages));
   fs.writeFileSync(path.join(outDir, "hotels.json"), JSON.stringify(stationHotels));
-  fs.writeFileSync(path.join(outDir, "summaries-en.json"), JSON.stringify(summaries));
+  fs.writeFileSync(path.join(outDir, "summaries-en.json"), JSON.stringify(summariesByLocale.en));
+  fs.writeFileSync(path.join(outDir, "summaries-pt.json"), JSON.stringify(summariesByLocale.pt));
+  fs.writeFileSync(path.join(outDir, "summaries-es.json"), JSON.stringify(summariesByLocale.es));
+  fs.writeFileSync(path.join(outDir, "summaries-ca.json"), JSON.stringify(summariesByLocale.ca));
+  fs.writeFileSync(path.join(outDir, "summaries-gl.json"), JSON.stringify(summariesByLocale.gl));
   fs.writeFileSync(path.join(outDir, "reliability-scores.json"), JSON.stringify(reliability));
   fs.writeFileSync(
     path.join(outDir, "spain-reliability-scores.json"),
@@ -254,7 +281,7 @@ export async function syncMobileData() {
   console.log(
     `Synced ${stationsFull.length} stations, ${Object.keys(cpStationCodes).length} CP codes, ` +
       `${Object.keys(stationImages).length} images, ${Object.keys(stationHotels).length} hotel lists, ` +
-      `${Object.keys(summaries).length} summaries, ` +
+      `${Object.keys(summariesByLocale.en).length} summaries × ${Object.keys(summariesByLocale).length} locales, ` +
       `${Object.keys(airportConnections.airports ?? {}).length} airport connection maps, ` +
       `${Object.keys(pexelsPhotoCredits).length} Pexels credits, ` +
       `ticket guides (${Object.keys(ticketGuides).join(", ")}), ` +

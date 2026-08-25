@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { getTrainTypeAbbrev, sortTrainTypes } from "@/lib/trainTypes";
+import {
+  getTrainTypeAbbrev,
+  sortTrainTypes,
+  trainTypesForFilterChips,
+} from "@/lib/trainTypes";
 
 describe("getTrainTypeAbbrev", () => {
   it("maps known CP service types", () => {
@@ -35,5 +39,13 @@ describe("sortTrainTypes", () => {
       "Metro",
       "Inactive / Historic",
     ]);
+  });
+});
+
+describe("trainTypesForFilterChips", () => {
+  it("omits Internacional from the home filter bar", () => {
+    expect(
+      trainTypesForFilterChips(["Regional", "Internacional", "Intercidades", "Regional"]),
+    ).toEqual(["Intercidades", "Regional"]);
   });
 });

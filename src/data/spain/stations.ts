@@ -2318,4 +2318,31 @@ export const spainStations: Station[] = [
     lng: -6.2082,
   },
 
+  {
+    name: "Gavà",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3035,
+    lng: 2.0105,
+  },
+
+  {
+    name: "La Rocica",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5471,
+    lng: -5.9047,
+  },
+
+  {
+    name: "Levinco",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1511,
+    lng: -5.6003,
+  },
+
 ];

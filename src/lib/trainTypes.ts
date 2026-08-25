@@ -72,3 +72,15 @@ export function sortTrainTypes(types: string[]): string[] {
     return a.localeCompare(b);
   });
 }
+
+/** Catalog tags that should not appear as home-list filter chips. */
+const TRAIN_TYPE_FILTER_EXCLUSIONS = new Set(["Internacional"]);
+
+export function isTrainTypeFilterChip(type: string): boolean {
+  return !TRAIN_TYPE_FILTER_EXCLUSIONS.has(type);
+}
+
+/** Unique, ordered types for the station-list filter bar. */
+export function trainTypesForFilterChips(types: Iterable<string>): string[] {
+  return sortTrainTypes([...new Set(types)].filter(isTrainTypeFilterChip));
+}

@@ -8,6 +8,7 @@ import { StationCard } from '@/components/StationCard';
 import { BuildFooter } from '@/components/BuildFooter';
 import { StationFilters } from '@/components/StationFilters';
 import { PAGE_SIZE, sortTrainTypes, theme } from '@/constants/theme';
+import { isTrainTypeFilterChip } from '@/lib/trainTypes';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { fetchGlobalRatings } from '@/lib/api';
 import {
@@ -52,7 +53,10 @@ export default function HomeScreen() {
 
   const countryStations = pageStations;
   const allTypes = useMemo(
-    () => sortTrainTypes([...new Set(countryStations.flatMap((s) => s.types))]),
+    () =>
+      sortTrainTypes(
+        [...new Set(countryStations.flatMap((s) => s.types))].filter(isTrainTypeFilterChip),
+      ),
     [countryStations],
   );
 

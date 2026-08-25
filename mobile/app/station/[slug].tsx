@@ -51,7 +51,7 @@ import type { PlannedDeparture } from '@/lib/types';
 export default function StationDetailScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const router = useRouter();
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   const station = slug ? getStationBySlug(slug) : undefined;
 
   const [vote, setVote] = useState<'up' | 'down' | null>(null);
@@ -95,7 +95,7 @@ export default function StationDetailScreen() {
   }
 
   const imageUrl = getStationImageUrl(station.name);
-  const summary = getSummaryForStation(station.name);
+  const summary = getSummaryForStation(station.name, locale);
   const hotels = getHotelsForStation(station.name);
   const reliability = getReliabilityForStation(
     bakedReliabilityScores,

@@ -7,11 +7,13 @@ import {
   stationToSlug,
   type Station,
 } from '@/lib/stationData';
+import { detectDeviceLocale } from '@/i18n/index';
+import type { Locale } from '@/i18n/types';
 
 const DOMAIN = 'com.iberian.travel.stations';
 const INDEX_VERSION_KEY = '@verystays/spotlight_stations_version';
 /** Bump when indexed fields or URL shape change. */
-const INDEX_PAYLOAD_VERSION = '1';
+const INDEX_PAYLOAD_VERSION = '2';
 const INDEX_CHUNK_SIZE = 80;
 
 function countryLabel(country: Station['country']): string {
@@ -28,10 +30,13 @@ function countryLabel(country: Station['country']): string {
   return String(country);
 }
 
-export function buildStationSpotlightItem(station: Station): CoreSpotlightItem {
+export function buildStationSpotlightItem(
+  station: Station,
+  locale: Locale = detectDeviceLocale(),
+): CoreSpotlightItem {
   const slug = stationToSlug(station.name);
   const url = `verystays://station/${slug}`;
-  const summary = getSummaryForStation(station.name);
+  const summary = getSummaryForStation(station.name, locale);
   const lines = station.lines.join(', ');
   const contentDescription = summary
     ? summary.slice(0, 240)
@@ -67,12 +72,13 @@ export function buildStationSpotlightItem(station: Station): CoreSpotlightItem {
 
 export function buildStationSpotlightItems(
   stations: readonly Station[] = pageStations,
+  locale: Locale = detectDeviceLocale(),
 ): CoreSpotlightItem[] {
-  return stations.map(buildStationSpotlightItem);
+  return stations.map((station) => buildStationSpotlightItem(station, locale));
 }
 
 function indexVersionToken(): string {
-  return `${INDEX_PAYLOAD_VERSION}:${pageStations.length}`;
+  return `${INDEX_PAYLOAD_VERSION}:${pageStations.length}:${detectDeviceLocale()}`;
 }
 
 async function indexInChunks(items: CoreSpotlightItem[]): Promise<void> {
