@@ -3158,6 +3158,36 @@ export const stationHotels: StationHotels = {
     { name: "Besaya", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Besaya%2C%20Torrelavega-Centro%2C%20Spain&order=price" },
     { name: "Torrelavega", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torrelavega%2C%20Torrelavega-Centro%2C%20Spain&order=price" },
   ],
+  "Requena-Utiel": [
+    { name: "Balcones de Oleana", distanceKm: 2.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Balcones%20de%20Oleana%2C%20Requena-Utiel%2C%20Spain&order=price" },
+    { name: "Avenida", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Avenida%2C%20Requena-Utiel%2C%20Spain&order=price" },
+    { name: "Finca Calderón", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20Calder%C3%B3n%2C%20Requena-Utiel%2C%20Spain&order=price" },
+  ],
+  "Balmaseda": [
+    { name: "Hotel Convento San Roque", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Convento%20San%20Roque%2C%20Balmaseda%2C%20Spain&order=price" },
+    { name: "Batzarki", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Batzarki%2C%20Balmaseda%2C%20Spain&order=price" },
+    { name: "Amalurra", distanceKm: 5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Amalurra%2C%20Balmaseda%2C%20Spain&order=price" },
+  ],
+  "San Jerónimo": [
+    { name: "Hilton Garden Inn Sevilla", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hilton%20Garden%20Inn%20Sevilla%2C%20San%20Jer%C3%B3nimo%2C%20Spain&order=price" },
+    { name: "Hotel Porcel Torneo", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Porcel%20Torneo%2C%20San%20Jer%C3%B3nimo%2C%20Spain&order=price" },
+    { name: "Hotel Isla de la Cartuja", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Isla%20de%20la%20Cartuja%2C%20San%20Jer%C3%B3nimo%2C%20Spain&order=price" },
+  ],
+  "Águilas-El Labradorcico": [
+    { name: "Hotel El Paso", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Paso%2C%20%C3%81guilas-El%20Labradorcico%2C%20Spain&order=price" },
+    { name: "Hotel Puerto Juan Montiel Spa & Base Náutica", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Puerto%20Juan%20Montiel%20Spa%20%26%20Base%20N%C3%A1utica%2C%20%C3%81guilas-El%20Labradorcico%2C%20Spain&order=price" },
+    { name: "Bea Beah Hostel", distanceKm: 2.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bea%20Beah%20Hostel%2C%20%C3%81guilas-El%20Labradorcico%2C%20Spain&order=price" },
+  ],
+  "Los Rosales": [
+    { name: "Budget stays near Los Rosales", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Los%20Rosales%2C%20Spain&order=price" },
+    { name: "Guest houses near Los Rosales", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Los%20Rosales%2C%20Spain&order=price" },
+    { name: "Hotels near Los Rosales", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Los%20Rosales%2C%20Spain&order=price" },
+  ],
+  "Benacazón": [
+    { name: "Hotel Abades Benacazón", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Abades%20Benacaz%C3%B3n%2C%20Benacaz%C3%B3n%2C%20Spain&order=price" },
+    { name: "Monte Carmelo", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Monte%20Carmelo%2C%20Benacaz%C3%B3n%2C%20Spain&order=price" },
+    { name: "Hotel Hacienda Benazuza", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Hacienda%20Benazuza%2C%20Benacaz%C3%B3n%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

@@ -491,6 +491,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Torrelavega-Centro": ["05621"],
 
+  "Requena-Utiel": ["03213"],
+
+  "Balmaseda": ["05483"],
+
+  "San Jerónimo": ["43000"],
+
+  "Águilas-El Labradorcico": ["07007"],
+
+  "Los Rosales": ["50700"],
+
+  "Benacazón": ["43005"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -2264,4 +2264,58 @@ export const spainStations: Station[] = [
     lng: -4.0512,
   },
 
+  {
+    name: "Requena-Utiel",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.5198,
+    lng: -1.1276,
+  },
+
+  {
+    name: "Balmaseda",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.1964,
+    lng: -3.19,
+  },
+
+  {
+    name: "San Jerónimo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.4332,
+    lng: -5.9804,
+  },
+
+  {
+    name: "Águilas-El Labradorcico",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.412,
+    lng: -1.5859,
+  },
+
+  {
+    name: "Los Rosales",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.59,
+    lng: -5.7261,
+  },
+
+  {
+    name: "Benacazón",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.3569,
+    lng: -6.2082,
+  },
+
 ];

@@ -90,6 +90,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 26.910299,
   },
   {
+    name: "Brindisi Airport (BDS)",
+    country: "it",
+    lines: ["BDS"],
+    types: ["Airport Destination"],
+    lat: 40.6576,
+    lng: 17.947001,
+  },
+  {
     name: "Belgrade Nikola Tesla Airport (BEG)",
     country: "rs",
     lines: ["BEG"],
@@ -576,6 +584,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 35.892657,
     lng: -5.306321,
+  },
+  {
+    name: "Mykonos Island National Airport (JMK)",
+    country: "gr",
+    lines: ["JMK"],
+    types: ["Airport Destination"],
+    lat: 37.435101,
+    lng: 25.348101,
   },
   {
     name: "Santorini International Airport (JTR)",
@@ -1144,6 +1160,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 43.8246,
     lng: 18.331499,
+  },
+  {
+    name: "Skopje International Airport (SKP)",
+    country: "mk",
+    lines: ["SKP"],
+    types: ["Airport Destination"],
+    lat: 41.958087,
+    lng: 21.622581,
   },
   {
     name: "Shannon Airport (SNN)",

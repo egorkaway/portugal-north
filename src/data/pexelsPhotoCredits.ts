@@ -1276,6 +1276,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@beyzaa-yurtkuran-279977530",
     photoPageUrl: "https://www.pexels.com/photo/railway-tracks-passing-through-the-fields-19149275/",
   },
+  "19151402": {
+    photographer: "Beyza Kaplan",
+    photographerUrl: "https://www.pexels.com/@kaplanart",
+    photoPageUrl: "https://www.pexels.com/photo/woman-on-a-train-station-platform-at-sunset-19151402/",
+  },
   "19272882": {
     photographer: "Zeynep Sude  Emek",
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
@@ -1610,6 +1615,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Elmir Jafarov",
     photographerUrl: "https://www.pexels.com/@elmir-jafarov-375483362",
     photoPageUrl: "https://www.pexels.com/photo/a-man-is-walking-towards-a-train-27781833/",
+  },
+  "27806921": {
+    photographer: "Masi",
+    photographerUrl: "https://www.pexels.com/@masi-461420600",
+    photoPageUrl: "https://www.pexels.com/photo/a-train-is-traveling-through-a-train-station-27806921/",
   },
   "27872867": {
     photographer: "berobscura",

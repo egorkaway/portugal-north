@@ -1,6 +1,6 @@
 {
-  "runCount": 133,
-  "lastRunAt": "2026-08-24T20:53:26.703Z",
+  "runCount": 139,
+  "lastRunAt": "2026-08-25T08:52:07.897Z",
   "lastAirportConnectionsAt": null,
   "stations": {
     "Barcelona-Sants": {
@@ -8,23 +8,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 356,
-          "delayMinutes": 3811
+          "arrivalsNextHour": 361,
+          "delayMinutes": 3843
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 771,
-          "delayMinutes": 17349
+          "arrivalsNextHour": 789,
+          "delayMinutes": 17702
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 1127,
-        "delayMinutes": 21160
+        "arrivalsNextHour": 1150,
+        "delayMinutes": 21545
       },
-      "successfulSamples": 125,
+      "successfulSamples": 129,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Madrid-Chamartín": {
@@ -32,17 +32,17 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 728,
-          "delayMinutes": 3937
+          "arrivalsNextHour": 745,
+          "delayMinutes": 3974
         },
         "Cercanías C7": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 53,
-          "delayMinutes": 1556
+          "arrivalsNextHour": 59,
+          "delayMinutes": 1687
         },
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 33,
+          "arrivalsNextHour": 34,
           "delayMinutes": 57
         },
         "Cercanías C3": {
@@ -52,13 +52,13 @@
         },
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 10,
-          "delayMinutes": 33
+          "arrivalsNextHour": 13,
+          "delayMinutes": 35
         },
         "Cercanías C4B": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 7,
-          "delayMinutes": 49
+          "arrivalsNextHour": 8,
+          "delayMinutes": 55
         },
         "Cercanías C4A": {
           "departuresNextHour": 0,
@@ -83,12 +83,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 1244,
-        "delayMinutes": 12481
+        "arrivalsNextHour": 1272,
+        "delayMinutes": 12657
       },
-      "successfulSamples": 126,
+      "successfulSamples": 130,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Santiago de Compostela": {
@@ -96,18 +96,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 266,
-          "delayMinutes": 1914
+          "arrivalsNextHour": 280,
+          "delayMinutes": 2739
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 266,
-        "delayMinutes": 1914
+        "arrivalsNextHour": 280,
+        "delayMinutes": 2739
       },
-      "successfulSamples": 109,
+      "successfulSamples": 113,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Zamora": {
@@ -115,18 +115,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 195,
-          "delayMinutes": 1450
+          "arrivalsNextHour": 202,
+          "delayMinutes": 1488
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 195,
-        "delayMinutes": 1450
+        "arrivalsNextHour": 202,
+        "delayMinutes": 1488
       },
-      "successfulSamples": 89,
+      "successfulSamples": 92,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Vilagarcía de Arousa": {
@@ -134,18 +134,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 170,
-          "delayMinutes": 936
+          "arrivalsNextHour": 171,
+          "delayMinutes": 937
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 170,
-        "delayMinutes": 936
+        "arrivalsNextHour": 171,
+        "delayMinutes": 937
       },
-      "successfulSamples": 80,
+      "successfulSamples": 81,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Vigo-Urzáiz": {
@@ -153,18 +153,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 57,
+          "arrivalsNextHour": 58,
           "delayMinutes": 388
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 57,
+        "arrivalsNextHour": 58,
         "delayMinutes": 388
       },
-      "successfulSamples": 33,
+      "successfulSamples": 34,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T17:20:03.658Z",
+      "lastSampleAt": "2026-08-25T03:13:22.514Z",
       "lastError": null
     },
     "Pontevedra": {
@@ -172,18 +172,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 70,
-          "delayMinutes": 273
+          "arrivalsNextHour": 71,
+          "delayMinutes": 277
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 70,
-        "delayMinutes": 273
+        "arrivalsNextHour": 71,
+        "delayMinutes": 277
       },
-      "successfulSamples": 50,
+      "successfulSamples": 51,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "A Coruña": {
@@ -191,18 +191,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 168,
-          "delayMinutes": 560
+          "arrivalsNextHour": 185,
+          "delayMinutes": 630
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 168,
-        "delayMinutes": 560
+        "arrivalsNextHour": 185,
+        "delayMinutes": 630
       },
-      "successfulSamples": 93,
+      "successfulSamples": 97,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Ourense": {
@@ -210,18 +210,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 241,
-          "delayMinutes": 2248
+          "arrivalsNextHour": 251,
+          "delayMinutes": 2275
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 241,
-        "delayMinutes": 2248
+        "arrivalsNextHour": 251,
+        "delayMinutes": 2275
       },
-      "successfulSamples": 97,
+      "successfulSamples": 100,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Barcelona-Passeig de Gràcia": {
@@ -229,23 +229,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 394,
-          "delayMinutes": 3990
+          "arrivalsNextHour": 410,
+          "delayMinutes": 4107
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 90,
-          "delayMinutes": 1814
+          "arrivalsNextHour": 92,
+          "delayMinutes": 1852
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 484,
-        "delayMinutes": 5804
+        "arrivalsNextHour": 502,
+        "delayMinutes": 5959
       },
-      "successfulSamples": 121,
+      "successfulSamples": 124,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Padrón": {
@@ -253,18 +253,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 27,
-          "delayMinutes": 71
+          "arrivalsNextHour": 29,
+          "delayMinutes": 78
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 27,
-        "delayMinutes": 71
+        "arrivalsNextHour": 29,
+        "delayMinutes": 78
       },
-      "successfulSamples": 26,
+      "successfulSamples": 28,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Madrid-Puerta de Atocha": {
@@ -272,18 +272,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 934,
-          "delayMinutes": 11214
+          "arrivalsNextHour": 965,
+          "delayMinutes": 11524
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 934,
-        "delayMinutes": 11214
+        "arrivalsNextHour": 965,
+        "delayMinutes": 11524
       },
-      "successfulSamples": 121,
+      "successfulSamples": 124,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Sant Vicenç de Calders": {
@@ -291,23 +291,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 87,
-          "delayMinutes": 2033
+          "arrivalsNextHour": 90,
+          "delayMinutes": 2064
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 171,
-          "delayMinutes": 2988
+          "arrivalsNextHour": 175,
+          "delayMinutes": 3146
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 258,
-        "delayMinutes": 5021
+        "arrivalsNextHour": 265,
+        "delayMinutes": 5210
       },
-      "successfulSamples": 106,
+      "successfulSamples": 110,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Valladolid-Campo Grande": {
@@ -315,18 +315,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 424,
-          "delayMinutes": 2746
+          "arrivalsNextHour": 437,
+          "delayMinutes": 3031
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 424,
-        "delayMinutes": 2746
+        "arrivalsNextHour": 437,
+        "delayMinutes": 3031
       },
-      "successfulSamples": 107,
+      "successfulSamples": 111,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Sanabria Alta Velocidad": {
@@ -353,12 +353,12 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 571,
-          "delayMinutes": 6095
+          "arrivalsNextHour": 602,
+          "delayMinutes": 6276
         },
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
+          "arrivalsNextHour": 5,
           "delayMinutes": 21
         },
         "Cercanías": {
@@ -369,12 +369,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 592,
-        "delayMinutes": 6160
+        "arrivalsNextHour": 624,
+        "delayMinutes": 6341
       },
-      "successfulSamples": 99,
+      "successfulSamples": 102,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Córdoba-Julio Anguita": {
@@ -382,18 +382,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 551,
-          "delayMinutes": 5126
+          "arrivalsNextHour": 565,
+          "delayMinutes": 5220
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 551,
-        "delayMinutes": 5126
+        "arrivalsNextHour": 565,
+        "delayMinutes": 5220
       },
-      "successfulSamples": 106,
+      "successfulSamples": 109,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Girona": {
@@ -401,8 +401,8 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 155,
-          "delayMinutes": 981
+          "arrivalsNextHour": 162,
+          "delayMinutes": 1073
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -412,12 +412,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 161,
-        "delayMinutes": 1045
+        "arrivalsNextHour": 168,
+        "delayMinutes": 1137
       },
-      "successfulSamples": 73,
+      "successfulSamples": 76,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Sevilla-Santa Justa": {
@@ -425,13 +425,13 @@
       "byTrainType": {
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 0
+          "arrivalsNextHour": 2,
+          "delayMinutes": 3
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 293,
-          "delayMinutes": 3739
+          "arrivalsNextHour": 303,
+          "delayMinutes": 3823
         },
         "Cercanías C4": {
           "departuresNextHour": 0,
@@ -440,8 +440,8 @@
         },
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 41
+          "arrivalsNextHour": 5,
+          "delayMinutes": 59
         },
         "Cercanías C5": {
           "departuresNextHour": 0,
@@ -461,12 +461,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 412,
-        "delayMinutes": 5452
+        "arrivalsNextHour": 424,
+        "delayMinutes": 5557
       },
-      "successfulSamples": 116,
+      "successfulSamples": 119,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Valdecilla la Marga": {
@@ -474,13 +474,13 @@
       "byTrainType": {
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 11,
+          "arrivalsNextHour": 14,
           "delayMinutes": 7
         },
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 6,
-          "delayMinutes": 0
+          "arrivalsNextHour": 8,
+          "delayMinutes": 1
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -490,12 +490,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 157,
-        "delayMinutes": 76
+        "arrivalsNextHour": 162,
+        "delayMinutes": 77
       },
-      "successfulSamples": 86,
+      "successfulSamples": 89,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Orihuela-Miguel Hernández": {
@@ -508,7 +508,7 @@
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 102,
+          "arrivalsNextHour": 103,
           "delayMinutes": 1563
         },
         "Cercanías": {
@@ -519,12 +519,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 119,
+        "arrivalsNextHour": 120,
         "delayMinutes": 1648
       },
-      "successfulSamples": 55,
+      "successfulSamples": 56,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Alhama de Murcia": {
@@ -532,8 +532,8 @@
       "byTrainType": {
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 14,
-          "delayMinutes": 341
+          "arrivalsNextHour": 20,
+          "delayMinutes": 770
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -543,12 +543,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 163,
-        "delayMinutes": 8994
+        "arrivalsNextHour": 169,
+        "delayMinutes": 9423
       },
-      "successfulSamples": 97,
+      "successfulSamples": 101,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Madrid-Recoletos": {
@@ -556,12 +556,12 @@
       "byTrainType": {
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 29,
+          "arrivalsNextHour": 31,
           "delayMinutes": 471
         },
         "Cercanías C8B": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 9,
+          "arrivalsNextHour": 11,
           "delayMinutes": 18
         },
         "Cercanías C8A": {
@@ -573,16 +573,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 231,
           "delayMinutes": 688
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 282,
+        "arrivalsNextHour": 287,
         "delayMinutes": 1440
       },
-      "successfulSamples": 109,
+      "successfulSamples": 112,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Madrid-Príncipe Pío": {
@@ -595,7 +600,7 @@
         },
         "Cercanías C7": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 7,
+          "arrivalsNextHour": 8,
           "delayMinutes": 41
         },
         "Long distance": {
@@ -611,12 +616,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 127,
+        "arrivalsNextHour": 128,
         "delayMinutes": 845
       },
-      "successfulSamples": 77,
+      "successfulSamples": 78,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-24T22:05:12.681Z",
       "lastError": null
     },
     "León": {
@@ -624,18 +629,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 155,
-          "delayMinutes": 1009
+          "arrivalsNextHour": 157,
+          "delayMinutes": 1022
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 155,
-        "delayMinutes": 1009
+        "arrivalsNextHour": 157,
+        "delayMinutes": 1022
       },
-      "successfulSamples": 75,
+      "successfulSamples": 77,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Camp de Tarragona": {
@@ -643,18 +648,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 426,
-          "delayMinutes": 2962
+          "arrivalsNextHour": 439,
+          "delayMinutes": 3019
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 426,
-        "delayMinutes": 2962
+        "arrivalsNextHour": 439,
+        "delayMinutes": 3019
       },
-      "successfulSamples": 96,
+      "successfulSamples": 99,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Tafalla": {
@@ -681,13 +686,13 @@
       "byTrainType": {
         "Cercanías C4A": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 9,
+          "arrivalsNextHour": 10,
           "delayMinutes": 88
         },
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 21,
-          "delayMinutes": 86
+          "arrivalsNextHour": 26,
+          "delayMinutes": 99
         },
         "Cercanías C7": {
           "departuresNextHour": 0,
@@ -696,7 +701,7 @@
         },
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 7,
+          "arrivalsNextHour": 8,
           "delayMinutes": 25
         },
         "Cercanías C8B": {
@@ -706,8 +711,8 @@
         },
         "Cercanías C4B": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 10
+          "arrivalsNextHour": 6,
+          "delayMinutes": 17
         },
         "Cercanías C8A": {
           "departuresNextHour": 0,
@@ -718,16 +723,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 357,
           "delayMinutes": 1771
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 410,
-        "delayMinutes": 1997
+        "arrivalsNextHour": 420,
+        "delayMinutes": 2017
       },
-      "successfulSamples": 108,
+      "successfulSamples": 112,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Fuenlabrada": {
@@ -735,8 +745,8 @@
       "byTrainType": {
         "Cercanías C5": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 40,
-          "delayMinutes": 172
+          "arrivalsNextHour": 46,
+          "delayMinutes": 175
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -751,12 +761,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 242,
-        "delayMinutes": 607
+        "arrivalsNextHour": 248,
+        "delayMinutes": 610
       },
-      "successfulSamples": 108,
+      "successfulSamples": 111,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Burgos-Rosa Manzano": {
@@ -764,18 +774,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 363,
-          "delayMinutes": 2978
+          "arrivalsNextHour": 376,
+          "delayMinutes": 3046
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 363,
-        "delayMinutes": 2978
+        "arrivalsNextHour": 376,
+        "delayMinutes": 3046
       },
-      "successfulSamples": 75,
+      "successfulSamples": 78,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Oviedo": {
@@ -783,13 +793,13 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 6
+          "arrivalsNextHour": 8,
+          "delayMinutes": 22
         },
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 5,
-          "delayMinutes": 70
+          "arrivalsNextHour": 9,
+          "delayMinutes": 76
         },
         "Long distance": {
           "departuresNextHour": 0,
@@ -805,16 +815,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 86,
           "delayMinutes": 494
+        },
+        "Cercanías C6": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 162,
-        "delayMinutes": 1157
+        "arrivalsNextHour": 171,
+        "delayMinutes": 1180
       },
-      "successfulSamples": 91,
+      "successfulSamples": 95,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Aravaca": {
@@ -822,8 +837,8 @@
       "byTrainType": {
         "Cercanías C7": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 39,
-          "delayMinutes": 1311
+          "arrivalsNextHour": 43,
+          "delayMinutes": 1465
         },
         "Cercanías C10": {
           "departuresNextHour": 0,
@@ -838,12 +853,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 274,
-        "delayMinutes": 6004
+        "arrivalsNextHour": 278,
+        "delayMinutes": 6158
       },
-      "successfulSamples": 108,
+      "successfulSamples": 110,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "València-Estació del Nord": {
@@ -851,13 +866,13 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 7,
-          "delayMinutes": 27
+          "arrivalsNextHour": 8,
+          "delayMinutes": 29
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 149,
-          "delayMinutes": 1976
+          "arrivalsNextHour": 159,
+          "delayMinutes": 2022
         },
         "Cercanías C2": {
           "departuresNextHour": 0,
@@ -866,7 +881,7 @@
         },
         "Cercanías C6": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 3,
+          "arrivalsNextHour": 4,
           "delayMinutes": 4
         },
         "Cercanías C3": {
@@ -882,12 +897,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 214,
-        "delayMinutes": 2166
+        "arrivalsNextHour": 226,
+        "delayMinutes": 2214
       },
-      "successfulSamples": 102,
+      "successfulSamples": 105,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Castelló de la Plana": {
@@ -895,13 +910,13 @@
       "byTrainType": {
         "Cercanías C6": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
+          "arrivalsNextHour": 6,
           "delayMinutes": 79
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 172,
-          "delayMinutes": 1304
+          "arrivalsNextHour": 175,
+          "delayMinutes": 1310
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -911,12 +926,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 214,
-        "delayMinutes": 1494
+        "arrivalsNextHour": 219,
+        "delayMinutes": 1500
       },
-      "successfulSamples": 95,
+      "successfulSamples": 98,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Calzada de Asturias": {
@@ -924,8 +939,8 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 14,
-          "delayMinutes": 29
+          "arrivalsNextHour": 18,
+          "delayMinutes": 30
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -940,12 +955,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 140,
-        "delayMinutes": 1256
+        "arrivalsNextHour": 144,
+        "delayMinutes": 1257
       },
-      "successfulSamples": 95,
+      "successfulSamples": 98,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Asamblea de Madrid-Entrevías": {
@@ -953,23 +968,28 @@
       "byTrainType": {
         "Cercanías C7": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 22,
-          "delayMinutes": 26
+          "arrivalsNextHour": 30,
+          "delayMinutes": 54
         },
         "Cercanías": {
           "departuresNextHour": 0,
           "arrivalsNextHour": 250,
           "delayMinutes": 758
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 272,
-        "delayMinutes": 784
+        "arrivalsNextHour": 281,
+        "delayMinutes": 812
       },
-      "successfulSamples": 99,
+      "successfulSamples": 102,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Castejón de Ebro": {
@@ -977,18 +997,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 85,
-          "delayMinutes": 1344
+          "arrivalsNextHour": 86,
+          "delayMinutes": 1347
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 85,
-        "delayMinutes": 1344
+        "arrivalsNextHour": 86,
+        "delayMinutes": 1347
       },
-      "successfulSamples": 35,
+      "successfulSamples": 36,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Cáceres": {
@@ -996,18 +1016,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 112,
-          "delayMinutes": 336
+          "arrivalsNextHour": 114,
+          "delayMinutes": 374
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 112,
-        "delayMinutes": 336
+        "arrivalsNextHour": 114,
+        "delayMinutes": 374
       },
-      "successfulSamples": 59,
+      "successfulSamples": 60,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Barcelona El Clot": {
@@ -1015,23 +1035,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 119,
-          "delayMinutes": 1105
+          "arrivalsNextHour": 121,
+          "delayMinutes": 1130
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 74,
-          "delayMinutes": 1002
+          "arrivalsNextHour": 76,
+          "delayMinutes": 1049
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 193,
-        "delayMinutes": 2107
+        "arrivalsNextHour": 197,
+        "delayMinutes": 2179
       },
-      "successfulSamples": 103,
+      "successfulSamples": 106,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Sant Celoni": {
@@ -1039,23 +1059,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 33,
+          "arrivalsNextHour": 34,
           "delayMinutes": 402
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 74,
-          "delayMinutes": 1234
+          "arrivalsNextHour": 79,
+          "delayMinutes": 1425
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 107,
-        "delayMinutes": 1636
+        "arrivalsNextHour": 113,
+        "delayMinutes": 1827
       },
-      "successfulSamples": 73,
+      "successfulSamples": 77,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "La Garena": {
@@ -1063,8 +1083,8 @@
       "byTrainType": {
         "Cercanías C7": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 32,
-          "delayMinutes": 147
+          "arrivalsNextHour": 41,
+          "delayMinutes": 177
         },
         "Cercanías C2": {
           "departuresNextHour": 0,
@@ -1079,12 +1099,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 308,
-        "delayMinutes": 1431
+        "arrivalsNextHour": 317,
+        "delayMinutes": 1461
       },
-      "successfulSamples": 106,
+      "successfulSamples": 109,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Getafe-Sector 3": {
@@ -1092,13 +1112,13 @@
       "byTrainType": {
         "Cercanías C4A": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 19,
-          "delayMinutes": 66
+          "arrivalsNextHour": 26,
+          "delayMinutes": 93
         },
         "Cercanías C4B": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 12,
-          "delayMinutes": 207
+          "arrivalsNextHour": 17,
+          "delayMinutes": 214
         },
         "Cercanías C4": {
           "departuresNextHour": 0,
@@ -1113,12 +1133,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 479,
-        "delayMinutes": 2276
+        "arrivalsNextHour": 491,
+        "delayMinutes": 2310
       },
-      "successfulSamples": 107,
+      "successfulSamples": 110,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Zaragoza-Portillo": {
@@ -1155,18 +1175,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 209,
-          "delayMinutes": 1185
+          "arrivalsNextHour": 219,
+          "delayMinutes": 1242
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 209,
-        "delayMinutes": 1185
+        "arrivalsNextHour": 219,
+        "delayMinutes": 1242
       },
-      "successfulSamples": 81,
+      "successfulSamples": 84,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Redondela": {
@@ -1193,13 +1213,13 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 10
+          "arrivalsNextHour": 5,
+          "delayMinutes": 54
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 95,
-          "delayMinutes": 702
+          "arrivalsNextHour": 98,
+          "delayMinutes": 732
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1209,12 +1229,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 132,
-        "delayMinutes": 908
+        "arrivalsNextHour": 136,
+        "delayMinutes": 982
       },
-      "successfulSamples": 82,
+      "successfulSamples": 85,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Alfafar-Benetússer": {
@@ -1222,12 +1242,12 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 7,
-          "delayMinutes": 0
+          "arrivalsNextHour": 10,
+          "delayMinutes": 2
         },
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 8,
+          "arrivalsNextHour": 10,
           "delayMinutes": 11
         },
         "Cercanías": {
@@ -1238,12 +1258,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 133,
-        "delayMinutes": 257
+        "arrivalsNextHour": 138,
+        "delayMinutes": 259
       },
-      "successfulSamples": 88,
+      "successfulSamples": 91,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Vilanova i la Geltrú": {
@@ -1251,23 +1271,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 113,
-          "delayMinutes": 1537
+          "arrivalsNextHour": 114,
+          "delayMinutes": 1541
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 136,
-          "delayMinutes": 2594
+          "arrivalsNextHour": 141,
+          "delayMinutes": 2835
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 249,
-        "delayMinutes": 4131
+        "arrivalsNextHour": 255,
+        "delayMinutes": 4376
       },
-      "successfulSamples": 100,
+      "successfulSamples": 104,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Móstoles": {
@@ -1275,8 +1295,8 @@
       "byTrainType": {
         "Cercanías C5": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 44,
-          "delayMinutes": 602
+          "arrivalsNextHour": 56,
+          "delayMinutes": 608
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1286,12 +1306,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 375,
-        "delayMinutes": 1318
+        "arrivalsNextHour": 387,
+        "delayMinutes": 1324
       },
-      "successfulSamples": 105,
+      "successfulSamples": 108,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Vigo-Guixar": {
@@ -1318,18 +1338,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 315,
-          "delayMinutes": 1681
+          "arrivalsNextHour": 324,
+          "delayMinutes": 1712
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 315,
-        "delayMinutes": 1681
+        "arrivalsNextHour": 324,
+        "delayMinutes": 1712
       },
-      "successfulSamples": 93,
+      "successfulSamples": 96,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Aranjuez": {
@@ -1342,8 +1362,8 @@
         },
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 44
+          "arrivalsNextHour": 9,
+          "delayMinutes": 52
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1353,12 +1373,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 92,
-        "delayMinutes": 567
+        "arrivalsNextHour": 93,
+        "delayMinutes": 575
       },
-      "successfulSamples": 68,
+      "successfulSamples": 69,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Infiesto": {
@@ -1371,8 +1391,8 @@
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 30,
-          "delayMinutes": 864
+          "arrivalsNextHour": 31,
+          "delayMinutes": 865
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1382,12 +1402,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 93,
-        "delayMinutes": 2835
+        "arrivalsNextHour": 94,
+        "delayMinutes": 2836
       },
-      "successfulSamples": 67,
+      "successfulSamples": 68,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Parque Principado": {
@@ -1395,7 +1415,7 @@
       "byTrainType": {
         "Cercanías C6": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 14,
+          "arrivalsNextHour": 16,
           "delayMinutes": 254
         },
         "Cercanías C5A": {
@@ -1411,12 +1431,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 136,
+        "arrivalsNextHour": 138,
         "delayMinutes": 1884
       },
-      "successfulSamples": 84,
+      "successfulSamples": 86,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Alicante/Alacant-Terminal": {
@@ -1424,13 +1444,13 @@
       "byTrainType": {
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 10
+          "arrivalsNextHour": 3,
+          "delayMinutes": 19
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 156,
-          "delayMinutes": 997
+          "arrivalsNextHour": 167,
+          "delayMinutes": 1017
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1440,12 +1460,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 178,
-        "delayMinutes": 1147
+        "arrivalsNextHour": 190,
+        "delayMinutes": 1176
       },
-      "successfulSamples": 89,
+      "successfulSamples": 92,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Sant Gabriel": {
@@ -1453,8 +1473,8 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 9,
-          "delayMinutes": 754
+          "arrivalsNextHour": 14,
+          "delayMinutes": 867
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1464,12 +1484,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 168,
-        "delayMinutes": 8573
+        "arrivalsNextHour": 173,
+        "delayMinutes": 8686
       },
-      "successfulSamples": 93,
+      "successfulSamples": 96,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Fuente de la Mora": {
@@ -1477,13 +1497,13 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 25,
-          "delayMinutes": 54
+          "arrivalsNextHour": 31,
+          "delayMinutes": 63
         },
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 10,
-          "delayMinutes": 74
+          "arrivalsNextHour": 14,
+          "delayMinutes": 101
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1493,12 +1513,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 355,
-        "delayMinutes": 1090
+        "arrivalsNextHour": 365,
+        "delayMinutes": 1126
       },
-      "successfulSamples": 105,
+      "successfulSamples": 108,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Villalba de Guadarrama": {
@@ -1506,8 +1526,8 @@
       "byTrainType": {
         "Cercanías C8B": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 6,
-          "delayMinutes": 104
+          "arrivalsNextHour": 8,
+          "delayMinutes": 109
         },
         "Long distance": {
           "departuresNextHour": 0,
@@ -1521,7 +1541,7 @@
         },
         "Cercanías C10": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 3,
+          "arrivalsNextHour": 4,
           "delayMinutes": 33
         },
         "Cercanías": {
@@ -1532,12 +1552,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 113,
-        "delayMinutes": 559
+        "arrivalsNextHour": 116,
+        "delayMinutes": 564
       },
-      "successfulSamples": 70,
+      "successfulSamples": 73,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Torredembarra": {
@@ -1545,23 +1565,23 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 74,
-          "delayMinutes": 1775
+          "arrivalsNextHour": 78,
+          "delayMinutes": 1888
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 50,
-          "delayMinutes": 1104
+          "arrivalsNextHour": 51,
+          "delayMinutes": 1109
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 124,
-        "delayMinutes": 2879
+        "arrivalsNextHour": 129,
+        "delayMinutes": 2997
       },
-      "successfulSamples": 74,
+      "successfulSamples": 77,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Lleida-Pirineus": {
@@ -1569,8 +1589,8 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 202,
-          "delayMinutes": 3583
+          "arrivalsNextHour": 205,
+          "delayMinutes": 3601
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1580,12 +1600,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 214,
-        "delayMinutes": 4027
+        "arrivalsNextHour": 217,
+        "delayMinutes": 4045
       },
-      "successfulSamples": 78,
+      "successfulSamples": 81,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "La Corredoria": {
@@ -1593,8 +1613,8 @@
       "byTrainType": {
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 10,
-          "delayMinutes": 7
+          "arrivalsNextHour": 13,
+          "delayMinutes": 13
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1604,12 +1624,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 139,
-        "delayMinutes": 1839
+        "arrivalsNextHour": 142,
+        "delayMinutes": 1845
       },
-      "successfulSamples": 87,
+      "successfulSamples": 90,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Elche/Elx-Carrús": {
@@ -1617,8 +1637,8 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 7,
-          "delayMinutes": 315
+          "arrivalsNextHour": 9,
+          "delayMinutes": 395
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1628,12 +1648,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 125,
-        "delayMinutes": 5117
+        "arrivalsNextHour": 127,
+        "delayMinutes": 5197
       },
-      "successfulSamples": 84,
+      "successfulSamples": 85,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Galapagar-La Navata": {
@@ -1641,7 +1661,7 @@
       "byTrainType": {
         "Cercanías C10": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 12,
+          "arrivalsNextHour": 15,
           "delayMinutes": 8
         },
         "Cercanías C8A": {
@@ -1653,16 +1673,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 141,
           "delayMinutes": 735
+        },
+        "Cercanías C8B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 10
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 154,
-        "delayMinutes": 746
+        "arrivalsNextHour": 159,
+        "delayMinutes": 756
       },
-      "successfulSamples": 98,
+      "successfulSamples": 101,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Albacete-Los Llanos": {
@@ -1689,8 +1714,8 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 52,
-          "delayMinutes": 403
+          "arrivalsNextHour": 54,
+          "delayMinutes": 419
         },
         "Cercanías C1": {
           "departuresNextHour": 0,
@@ -1705,12 +1730,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 71,
-        "delayMinutes": 523
+        "arrivalsNextHour": 73,
+        "delayMinutes": 539
       },
-      "successfulSamples": 50,
+      "successfulSamples": 51,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Ávila": {
@@ -1718,18 +1743,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 117,
-          "delayMinutes": 1003
+          "arrivalsNextHour": 127,
+          "delayMinutes": 1120
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 117,
-        "delayMinutes": 1003
+        "arrivalsNextHour": 127,
+        "delayMinutes": 1120
       },
-      "successfulSamples": 72,
+      "successfulSamples": 76,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "El Berrón": {
@@ -1737,7 +1762,7 @@
       "byTrainType": {
         "Cercanías C6": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 11,
+          "arrivalsNextHour": 13,
           "delayMinutes": 53
         },
         "Cercanías C5A": {
@@ -1758,12 +1783,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 108,
+        "arrivalsNextHour": 110,
         "delayMinutes": 627
       },
-      "successfulSamples": 74,
+      "successfulSamples": 76,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "El Escorial": {
@@ -1776,8 +1801,8 @@
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 63,
-          "delayMinutes": 486
+          "arrivalsNextHour": 65,
+          "delayMinutes": 500
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1787,12 +1812,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 78,
-        "delayMinutes": 616
+        "arrivalsNextHour": 80,
+        "delayMinutes": 630
       },
-      "successfulSamples": 54,
+      "successfulSamples": 55,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Llodio": {
@@ -1800,13 +1825,13 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 53,
-          "delayMinutes": 1227
+          "arrivalsNextHour": 55,
+          "delayMinutes": 1271
         },
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 3,
-          "delayMinutes": 11
+          "arrivalsNextHour": 5,
+          "delayMinutes": 14
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1816,12 +1841,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 78,
-        "delayMinutes": 1283
+        "arrivalsNextHour": 82,
+        "delayMinutes": 1330
       },
-      "successfulSamples": 41,
+      "successfulSamples": 44,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "San Isidro-Albatera-Catral": {
@@ -1829,8 +1854,8 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 24
+          "arrivalsNextHour": 4,
+          "delayMinutes": 49
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1839,18 +1864,18 @@
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 3,
+          "arrivalsNextHour": 6,
           "delayMinutes": 96
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 96,
-        "delayMinutes": 4143
+        "arrivalsNextHour": 101,
+        "delayMinutes": 4168
       },
-      "successfulSamples": 64,
+      "successfulSamples": 66,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Valdebebas": {
@@ -1858,7 +1883,7 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 15,
+          "arrivalsNextHour": 21,
           "delayMinutes": 14
         },
         "Cercanías": {
@@ -1869,12 +1894,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 239,
+        "arrivalsNextHour": 245,
         "delayMinutes": 260
       },
-      "successfulSamples": 98,
+      "successfulSamples": 101,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Tarragona": {
@@ -1882,23 +1907,23 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 102,
-          "delayMinutes": 1716
+          "arrivalsNextHour": 108,
+          "delayMinutes": 2036
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 38,
-          "delayMinutes": 880
+          "arrivalsNextHour": 41,
+          "delayMinutes": 945
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 140,
-        "delayMinutes": 2596
+        "arrivalsNextHour": 149,
+        "delayMinutes": 2981
       },
-      "successfulSamples": 85,
+      "successfulSamples": 89,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Cartagena": {
@@ -1906,18 +1931,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 109,
-          "delayMinutes": 590
+          "arrivalsNextHour": 111,
+          "delayMinutes": 591
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 109,
-        "delayMinutes": 590
+        "arrivalsNextHour": 111,
+        "delayMinutes": 591
       },
-      "successfulSamples": 54,
+      "successfulSamples": 56,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Universidad de Alicante": {
@@ -1925,8 +1950,8 @@
       "byTrainType": {
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 15
+          "arrivalsNextHour": 7,
+          "delayMinutes": 26
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1936,12 +1961,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 93,
-        "delayMinutes": 485
+        "arrivalsNextHour": 96,
+        "delayMinutes": 496
       },
-      "successfulSamples": 61,
+      "successfulSamples": 63,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Los Molinos-Guadarrama": {
@@ -1949,8 +1974,8 @@
       "byTrainType": {
         "Cercanías C8B": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 3
+          "arrivalsNextHour": 7,
+          "delayMinutes": 77
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1960,12 +1985,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 111,
-        "delayMinutes": 918
+        "arrivalsNextHour": 116,
+        "delayMinutes": 992
       },
-      "successfulSamples": 81,
+      "successfulSamples": 84,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Azuqueca": {
@@ -1973,8 +1998,8 @@
       "byTrainType": {
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 2
+          "arrivalsNextHour": 9,
+          "delayMinutes": 9
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -1984,12 +2009,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 122,
-        "delayMinutes": 495
+        "arrivalsNextHour": 127,
+        "delayMinutes": 502
       },
-      "successfulSamples": 90,
+      "successfulSamples": 94,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Medina del Campo": {
@@ -1997,18 +2022,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 85,
+          "arrivalsNextHour": 88,
           "delayMinutes": 604
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 85,
+        "arrivalsNextHour": 88,
         "delayMinutes": 604
       },
-      "successfulSamples": 48,
+      "successfulSamples": 49,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Salamanca": {
@@ -2016,18 +2041,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 79,
-          "delayMinutes": 249
+          "arrivalsNextHour": 83,
+          "delayMinutes": 279
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 79,
-        "delayMinutes": 249
+        "arrivalsNextHour": 83,
+        "delayMinutes": 279
       },
-      "successfulSamples": 38,
+      "successfulSamples": 41,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Llamaquique": {
@@ -2035,7 +2060,7 @@
       "byTrainType": {
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
+          "arrivalsNextHour": 3,
           "delayMinutes": 5
         },
         "Cercanías C2": {
@@ -2045,7 +2070,7 @@
         },
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
+          "arrivalsNextHour": 2,
           "delayMinutes": 5
         },
         "Cercanías": {
@@ -2056,12 +2081,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 102,
+        "arrivalsNextHour": 104,
         "delayMinutes": 553
       },
-      "successfulSamples": 72,
+      "successfulSamples": 73,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-24T22:05:12.681Z",
       "lastError": null
     },
     "Tres Cantos": {
@@ -2069,8 +2094,8 @@
       "byTrainType": {
         "Cercanías C4B": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 12,
-          "delayMinutes": 71
+          "arrivalsNextHour": 21,
+          "delayMinutes": 101
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -2080,12 +2105,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 205,
-        "delayMinutes": 807
+        "arrivalsNextHour": 214,
+        "delayMinutes": 837
       },
-      "successfulSamples": 96,
+      "successfulSamples": 100,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Pinar de las Rozas": {
@@ -2105,16 +2130,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 63,
           "delayMinutes": 420
+        },
+        "Cercanías C8A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 65,
+        "arrivalsNextHour": 66,
         "delayMinutes": 430
       },
-      "successfulSamples": 53,
+      "successfulSamples": 54,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-24T22:05:12.681Z",
       "lastError": null
     },
     "Ormáiztegui": {
@@ -2122,7 +2152,7 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
+          "arrivalsNextHour": 4,
           "delayMinutes": 8
         },
         "Cercanías": {
@@ -2133,12 +2163,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 44,
+        "arrivalsNextHour": 46,
         "delayMinutes": 36
       },
-      "successfulSamples": 43,
+      "successfulSamples": 44,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T17:20:03.658Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Gijón-Sanz Crespo": {
@@ -2146,23 +2176,23 @@
       "byTrainType": {
         "Cercanías C5": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
+          "arrivalsNextHour": 2,
           "delayMinutes": 17
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 17,
+          "arrivalsNextHour": 20,
           "delayMinutes": 322
         },
         "Cercanías C4": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 5,
+          "arrivalsNextHour": 6,
           "delayMinutes": 99
         },
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 12
+          "arrivalsNextHour": 3,
+          "delayMinutes": 29
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -2172,12 +2202,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 81,
-        "delayMinutes": 1035
+        "arrivalsNextHour": 88,
+        "delayMinutes": 1052
       },
-      "successfulSamples": 55,
+      "successfulSamples": 59,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "L'Aldea-Amposta-Tortosa": {
@@ -2185,23 +2215,23 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 58,
-          "delayMinutes": 605
+          "arrivalsNextHour": 60,
+          "delayMinutes": 613
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 16,
-          "delayMinutes": 346
+          "arrivalsNextHour": 17,
+          "delayMinutes": 384
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 74,
-        "delayMinutes": 951
+        "arrivalsNextHour": 77,
+        "delayMinutes": 997
       },
-      "successfulSamples": 58,
+      "successfulSamples": 60,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T17:20:03.658Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Zabalburu": {
@@ -2209,23 +2239,28 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 0
+          "arrivalsNextHour": 6,
+          "delayMinutes": 1
         },
         "Cercanías": {
           "departuresNextHour": 0,
           "arrivalsNextHour": 131,
           "delayMinutes": 41
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 133,
-        "delayMinutes": 41
+        "arrivalsNextHour": 139,
+        "delayMinutes": 42
       },
-      "successfulSamples": 97,
+      "successfulSamples": 102,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Avilés-Apeadero": {
@@ -2233,7 +2268,7 @@
       "byTrainType": {
         "Cercanías C3": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
+          "arrivalsNextHour": 3,
           "delayMinutes": 2
         },
         "Cercanías": {
@@ -2245,16 +2280,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 4,
           "delayMinutes": 245
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 1
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 151,
-        "delayMinutes": 1281
+        "arrivalsNextHour": 155,
+        "delayMinutes": 1282
       },
-      "successfulSamples": 80,
+      "successfulSamples": 83,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Ciudad Real": {
@@ -2262,18 +2302,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 193,
-          "delayMinutes": 1531
+          "arrivalsNextHour": 206,
+          "delayMinutes": 1697
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 193,
-        "delayMinutes": 1531
+        "arrivalsNextHour": 206,
+        "delayMinutes": 1697
       },
-      "successfulSamples": 86,
+      "successfulSamples": 89,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Manresa": {
@@ -2281,23 +2321,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 32,
-          "delayMinutes": 510
+          "arrivalsNextHour": 34,
+          "delayMinutes": 526
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 7,
-          "delayMinutes": 81
+          "arrivalsNextHour": 9,
+          "delayMinutes": 103
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 39,
-        "delayMinutes": 591
+        "arrivalsNextHour": 43,
+        "delayMinutes": 629
       },
-      "successfulSamples": 28,
+      "successfulSamples": 31,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "San Sebastián-Donostia": {
@@ -2329,8 +2369,8 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 5
+          "arrivalsNextHour": 2,
+          "delayMinutes": 15
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -2339,18 +2379,18 @@
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
+          "arrivalsNextHour": 3,
           "delayMinutes": 6
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 60,
-        "delayMinutes": 116
+        "arrivalsNextHour": 62,
+        "delayMinutes": 126
       },
-      "successfulSamples": 54,
+      "successfulSamples": 56,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Xàtiva": {
@@ -2358,13 +2398,13 @@
       "byTrainType": {
         "Cercanías C2": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 2,
-          "delayMinutes": 1
+          "arrivalsNextHour": 5,
+          "delayMinutes": 4
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 61,
-          "delayMinutes": 335
+          "arrivalsNextHour": 62,
+          "delayMinutes": 336
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -2374,12 +2414,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 116,
-        "delayMinutes": 433
+        "arrivalsNextHour": 120,
+        "delayMinutes": 437
       },
-      "successfulSamples": 63,
+      "successfulSamples": 66,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Torrelodones": {
@@ -2392,7 +2432,7 @@
         },
         "Cercanías C8B": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
+          "arrivalsNextHour": 2,
           "delayMinutes": 33
         },
         "Cercanías": {
@@ -2403,12 +2443,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 60,
+        "arrivalsNextHour": 61,
         "delayMinutes": 389
       },
-      "successfulSamples": 53,
+      "successfulSamples": 54,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-24T22:05:12.681Z",
       "lastError": null
     },
     "Lora del Río": {
@@ -2416,8 +2456,8 @@
       "byTrainType": {
         "Cercanías C1": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 1,
-          "delayMinutes": 4
+          "arrivalsNextHour": 2,
+          "delayMinutes": 10
         },
         "Long distance": {
           "departuresNextHour": 0,
@@ -2432,12 +2472,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 75,
-        "delayMinutes": 817
+        "arrivalsNextHour": 76,
+        "delayMinutes": 823
       },
-      "successfulSamples": 55,
+      "successfulSamples": 56,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "València-Joaquín Sorolla": {
@@ -2445,18 +2485,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 168,
-          "delayMinutes": 983
+          "arrivalsNextHour": 177,
+          "delayMinutes": 1003
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 168,
-        "delayMinutes": 983
+        "arrivalsNextHour": 177,
+        "delayMinutes": 1003
       },
-      "successfulSamples": 62,
+      "successfulSamples": 64,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Maçanet-Massanes": {
@@ -2464,23 +2504,23 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 29,
-          "delayMinutes": 313
+          "arrivalsNextHour": 30,
+          "delayMinutes": 322
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 30,
-          "delayMinutes": 405
+          "arrivalsNextHour": 32,
+          "delayMinutes": 446
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 59,
-        "delayMinutes": 718
+        "arrivalsNextHour": 62,
+        "delayMinutes": 768
       },
-      "successfulSamples": 43,
+      "successfulSamples": 44,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Palencia": {
@@ -2488,18 +2528,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 136,
-          "delayMinutes": 1334
+          "arrivalsNextHour": 141,
+          "delayMinutes": 1351
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 136,
-        "delayMinutes": 1334
+        "arrivalsNextHour": 141,
+        "delayMinutes": 1351
       },
-      "successfulSamples": 55,
+      "successfulSamples": 58,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:52:59.232Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Talavera de la Reina": {
@@ -2507,18 +2547,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 66,
-          "delayMinutes": 647
+          "arrivalsNextHour": 68,
+          "delayMinutes": 665
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 66,
-        "delayMinutes": 647
+        "arrivalsNextHour": 68,
+        "delayMinutes": 665
       },
-      "successfulSamples": 36,
+      "successfulSamples": 37,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Utrera": {
@@ -2533,16 +2573,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 43,
           "delayMinutes": 457
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 40
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 59,
-        "delayMinutes": 589
+        "arrivalsNextHour": 62,
+        "delayMinutes": 629
       },
-      "successfulSamples": 48,
+      "successfulSamples": 50,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Leganés": {
@@ -2557,16 +2602,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 56,
           "delayMinutes": 214
+        },
+        "Cercanías C5": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 97,
-        "delayMinutes": 684
+        "arrivalsNextHour": 99,
+        "delayMinutes": 686
       },
-      "successfulSamples": 56,
+      "successfulSamples": 58,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Bilbao-Intermod. Abando Indalecio Prieto": {
@@ -2581,16 +2631,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 65,
           "delayMinutes": 961
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 87,
-        "delayMinutes": 1035
+        "arrivalsNextHour": 89,
+        "delayMinutes": 1037
       },
-      "successfulSamples": 34,
+      "successfulSamples": 36,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Santander": {
@@ -2605,16 +2660,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 17,
           "delayMinutes": 413
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 44,
-        "delayMinutes": 465
+        "arrivalsNextHour": 46,
+        "delayMinutes": 467
       },
-      "successfulSamples": 35,
+      "successfulSamples": 37,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Las Rozas": {
@@ -2643,16 +2703,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 76,
           "delayMinutes": 516
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 9
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 76,
-        "delayMinutes": 516
+        "arrivalsNextHour": 78,
+        "delayMinutes": 525
       },
-      "successfulSamples": 62,
+      "successfulSamples": 64,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Madrid-Ramón y Cajal": {
@@ -2662,16 +2727,26 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 75,
           "delayMinutes": 367
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        },
+        "Cercanías C8A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 75,
-        "delayMinutes": 367
+        "arrivalsNextHour": 78,
+        "delayMinutes": 373
       },
-      "successfulSamples": 51,
+      "successfulSamples": 53,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Ciempozuelos": {
@@ -2681,16 +2756,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 195,
           "delayMinutes": 374
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 7,
+          "delayMinutes": 19
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 195,
-        "delayMinutes": 374
+        "arrivalsNextHour": 202,
+        "delayMinutes": 393
       },
-      "successfulSamples": 92,
+      "successfulSamples": 95,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Vila-seca": {
@@ -2698,23 +2778,23 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 37,
-          "delayMinutes": 436
+          "arrivalsNextHour": 38,
+          "delayMinutes": 537
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 50,
-          "delayMinutes": 673
+          "arrivalsNextHour": 52,
+          "delayMinutes": 710
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 87,
-        "delayMinutes": 1109
+        "arrivalsNextHour": 90,
+        "delayMinutes": 1247
       },
-      "successfulSamples": 59,
+      "successfulSamples": 62,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Calatayud": {
@@ -2743,16 +2823,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 122,
           "delayMinutes": 952
+        },
+        "Cercanías C4A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 21
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 122,
-        "delayMinutes": 952
+        "arrivalsNextHour": 126,
+        "delayMinutes": 973
       },
-      "successfulSamples": 75,
+      "successfulSamples": 78,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "San Fernando de Henares": {
@@ -2762,16 +2847,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 70,
           "delayMinutes": 510
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 5
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 70,
-        "delayMinutes": 510
+        "arrivalsNextHour": 71,
+        "delayMinutes": 515
       },
-      "successfulSamples": 56,
+      "successfulSamples": 57,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Sant Vicent Centre": {
@@ -2803,18 +2893,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 299,
-          "delayMinutes": 2302
+          "arrivalsNextHour": 312,
+          "delayMinutes": 2484
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 299,
-        "delayMinutes": 2302
+        "arrivalsNextHour": 312,
+        "delayMinutes": 2484
       },
-      "successfulSamples": 69,
+      "successfulSamples": 72,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "L'Hospitalet de Llobregat": {
@@ -2822,18 +2912,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 161,
-          "delayMinutes": 1238
+          "arrivalsNextHour": 164,
+          "delayMinutes": 1248
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 161,
-        "delayMinutes": 1238
+        "arrivalsNextHour": 164,
+        "delayMinutes": 1248
       },
-      "successfulSamples": 88,
+      "successfulSamples": 90,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Las Matas": {
@@ -2843,16 +2933,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 59,
           "delayMinutes": 322
+        },
+        "Cercanías C10": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 6
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 59,
-        "delayMinutes": 322
+        "arrivalsNextHour": 62,
+        "delayMinutes": 328
       },
-      "successfulSamples": 49,
+      "successfulSamples": 51,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Reinosa": {
@@ -2881,16 +2976,36 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 142,
           "delayMinutes": 896
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 14
+        },
+        "Cercanías C4B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 20
+        },
+        "Cercanías C4A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 18
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 142,
-        "delayMinutes": 896
+        "arrivalsNextHour": 152,
+        "delayMinutes": 948
       },
-      "successfulSamples": 78,
+      "successfulSamples": 82,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Valdelasfuentes": {
@@ -2900,16 +3015,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 182,
           "delayMinutes": 558
+        },
+        "Cercanías C4A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 7,
+          "delayMinutes": 7
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 182,
-        "delayMinutes": 558
+        "arrivalsNextHour": 189,
+        "delayMinutes": 565
       },
-      "successfulSamples": 88,
+      "successfulSamples": 92,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Cambrils": {
@@ -2941,18 +3061,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 118,
-          "delayMinutes": 1919
+          "arrivalsNextHour": 121,
+          "delayMinutes": 1961
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 118,
-        "delayMinutes": 1919
+        "arrivalsNextHour": 121,
+        "delayMinutes": 1961
       },
-      "successfulSamples": 44,
+      "successfulSamples": 47,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Barcelona Arc de Triomf": {
@@ -2960,18 +3080,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 132,
-          "delayMinutes": 1139
+          "arrivalsNextHour": 137,
+          "delayMinutes": 1212
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 132,
-        "delayMinutes": 1139
+        "arrivalsNextHour": 137,
+        "delayMinutes": 1212
       },
-      "successfulSamples": 74,
+      "successfulSamples": 77,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:52:59.232Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Pitis": {
@@ -2981,16 +3101,26 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 78,
           "delayMinutes": 490
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Cercanías C8A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 11
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 78,
-        "delayMinutes": 490
+        "arrivalsNextHour": 81,
+        "delayMinutes": 501
       },
-      "successfulSamples": 63,
+      "successfulSamples": 65,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Torrelavega": {
@@ -3017,23 +3147,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 121
+          "arrivalsNextHour": 9,
+          "delayMinutes": 124
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 52,
+          "arrivalsNextHour": 53,
           "delayMinutes": 626
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 60,
-        "delayMinutes": 747
+        "arrivalsNextHour": 62,
+        "delayMinutes": 750
       },
-      "successfulSamples": 48,
+      "successfulSamples": 49,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "San Bernardo": {
@@ -3048,16 +3178,26 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 12,
           "delayMinutes": 86
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 8
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 7
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 74,
-        "delayMinutes": 607
+        "arrivalsNextHour": 78,
+        "delayMinutes": 622
       },
-      "successfulSamples": 55,
+      "successfulSamples": 58,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Ametzola": {
@@ -3067,16 +3207,26 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 69,
           "delayMinutes": 61
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 69,
-        "delayMinutes": 61
+        "arrivalsNextHour": 71,
+        "delayMinutes": 62
       },
-      "successfulSamples": 54,
+      "successfulSamples": 56,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "La Serna-Fuenlabrada": {
@@ -3086,16 +3236,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 169,
           "delayMinutes": 213
+        },
+        "Cercanías C5": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 8,
+          "delayMinutes": 9
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 169,
-        "delayMinutes": 213
+        "arrivalsNextHour": 177,
+        "delayMinutes": 222
       },
-      "successfulSamples": 80,
+      "successfulSamples": 84,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Pirámides": {
@@ -3105,16 +3260,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 113,
           "delayMinutes": 395
+        },
+        "Cercanías C10": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 113,
-        "delayMinutes": 395
+        "arrivalsNextHour": 118,
+        "delayMinutes": 397
       },
-      "successfulSamples": 83,
+      "successfulSamples": 85,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Granollers Centre": {
@@ -3122,23 +3282,23 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 23,
-          "delayMinutes": 402
+          "arrivalsNextHour": 24,
+          "delayMinutes": 426
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 44,
-          "delayMinutes": 298
+          "arrivalsNextHour": 45,
+          "delayMinutes": 322
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 67,
-        "delayMinutes": 700
+        "arrivalsNextHour": 69,
+        "delayMinutes": 748
       },
-      "successfulSamples": 50,
+      "successfulSamples": 52,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "A Gudiña-Porta de Galicia": {
@@ -3146,18 +3306,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 18,
-          "delayMinutes": 135
+          "arrivalsNextHour": 20,
+          "delayMinutes": 145
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 18,
-        "delayMinutes": 135
+        "arrivalsNextHour": 20,
+        "delayMinutes": 145
       },
-      "successfulSamples": 10,
+      "successfulSamples": 11,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T13:55:39.620Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Tudela de Navarra": {
@@ -3165,18 +3325,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 134,
+          "arrivalsNextHour": 138,
           "delayMinutes": 2549
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 134,
+        "arrivalsNextHour": 138,
         "delayMinutes": 2549
       },
-      "successfulSamples": 59,
+      "successfulSamples": 61,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Balsicas-Mar Menor": {
@@ -3184,18 +3344,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 71,
-          "delayMinutes": 789
+          "arrivalsNextHour": 73,
+          "delayMinutes": 798
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 71,
-        "delayMinutes": 789
+        "arrivalsNextHour": 73,
+        "delayMinutes": 798
       },
-      "successfulSamples": 37,
+      "successfulSamples": 39,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "València-La Font de Sant Lluís": {
@@ -3205,16 +3365,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 63,
           "delayMinutes": 124
+        },
+        "Cercanías C6": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 63,
-        "delayMinutes": 124
+        "arrivalsNextHour": 64,
+        "delayMinutes": 126
       },
-      "successfulSamples": 52,
+      "successfulSamples": 53,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Sol": {
@@ -3224,16 +3389,31 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 138,
           "delayMinutes": 1082
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Cercanías C4B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 4
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 7
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 138,
-        "delayMinutes": 1082
+        "arrivalsNextHour": 143,
+        "delayMinutes": 1093
       },
-      "successfulSamples": 78,
+      "successfulSamples": 82,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Guadalajara-Yebes": {
@@ -3241,18 +3421,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 80,
-          "delayMinutes": 281
+          "arrivalsNextHour": 85,
+          "delayMinutes": 282
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 80,
-        "delayMinutes": 281
+        "arrivalsNextHour": 85,
+        "delayMinutes": 282
       },
-      "successfulSamples": 34,
+      "successfulSamples": 36,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Altafulla-Tamarit": {
@@ -3265,18 +3445,18 @@
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 48,
-          "delayMinutes": 757
+          "arrivalsNextHour": 51,
+          "delayMinutes": 795
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 75,
-        "delayMinutes": 1043
+        "arrivalsNextHour": 78,
+        "delayMinutes": 1081
       },
-      "successfulSamples": 50,
+      "successfulSamples": 52,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Sitges": {
@@ -3284,18 +3464,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 98,
-          "delayMinutes": 1276
+          "arrivalsNextHour": 106,
+          "delayMinutes": 1332
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 98,
-        "delayMinutes": 1276
+        "arrivalsNextHour": 106,
+        "delayMinutes": 1332
       },
-      "successfulSamples": 62,
+      "successfulSamples": 66,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Torrejón de Ardoz": {
@@ -3322,18 +3502,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 43,
-          "delayMinutes": 181
+          "arrivalsNextHour": 45,
+          "delayMinutes": 219
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 43,
-        "delayMinutes": 181
+        "arrivalsNextHour": 45,
+        "delayMinutes": 219
       },
-      "successfulSamples": 24,
+      "successfulSamples": 25,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:52:59.232Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Virgen del Rocío": {
@@ -3348,16 +3528,31 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 38,
           "delayMinutes": 296
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Cercanías C5": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 5
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 4
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 43,
-        "delayMinutes": 336
+        "arrivalsNextHour": 46,
+        "delayMinutes": 345
       },
-      "successfulSamples": 32,
+      "successfulSamples": 35,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Barcelona Estació de França": {
@@ -3365,23 +3560,23 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 45,
+          "arrivalsNextHour": 46,
           "delayMinutes": 1490
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 31,
-          "delayMinutes": 833
+          "arrivalsNextHour": 33,
+          "delayMinutes": 852
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 76,
-        "delayMinutes": 2323
+        "arrivalsNextHour": 79,
+        "delayMinutes": 2342
       },
-      "successfulSamples": 53,
+      "successfulSamples": 55,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Barcelona Plaça de Catalunya": {
@@ -3389,18 +3584,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 160,
-          "delayMinutes": 1219
+          "arrivalsNextHour": 165,
+          "delayMinutes": 1242
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 160,
-        "delayMinutes": 1219
+        "arrivalsNextHour": 165,
+        "delayMinutes": 1242
       },
-      "successfulSamples": 79,
+      "successfulSamples": 83,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "El Prat de Llobregat": {
@@ -3408,18 +3603,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 106,
-          "delayMinutes": 695
+          "arrivalsNextHour": 110,
+          "delayMinutes": 709
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 106,
-        "delayMinutes": 695
+        "arrivalsNextHour": 110,
+        "delayMinutes": 709
       },
-      "successfulSamples": 70,
+      "successfulSamples": 73,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Ujo": {
@@ -3453,16 +3648,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 38,
           "delayMinutes": 118
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 15
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 57,
-        "delayMinutes": 302
+        "arrivalsNextHour": 58,
+        "delayMinutes": 317
       },
-      "successfulSamples": 41,
+      "successfulSamples": 42,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Utebo": {
@@ -3477,16 +3677,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 2,
           "delayMinutes": 3
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 54,
+        "arrivalsNextHour": 56,
         "delayMinutes": 98
       },
-      "successfulSamples": 41,
+      "successfulSamples": 43,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Caldes de Malavella": {
@@ -3494,8 +3699,8 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 25,
-          "delayMinutes": 447
+          "arrivalsNextHour": 27,
+          "delayMinutes": 505
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -3505,12 +3710,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 36,
-        "delayMinutes": 590
+        "arrivalsNextHour": 38,
+        "delayMinutes": 648
       },
-      "successfulSamples": 28,
+      "successfulSamples": 30,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Elda-Petrer": {
@@ -3518,18 +3723,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 29,
-          "delayMinutes": 91
+          "arrivalsNextHour": 37,
+          "delayMinutes": 125
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 29,
-        "delayMinutes": 91
+        "arrivalsNextHour": 37,
+        "delayMinutes": 125
       },
-      "successfulSamples": 16,
+      "successfulSamples": 18,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "San Fernando-Bahía Sur": {
@@ -3542,18 +3747,23 @@
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 27,
-          "delayMinutes": 303
+          "arrivalsNextHour": 28,
+          "delayMinutes": 307
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 49,
-        "delayMinutes": 374
+        "arrivalsNextHour": 51,
+        "delayMinutes": 379
       },
-      "successfulSamples": 39,
+      "successfulSamples": 41,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Pravia": {
@@ -3561,23 +3771,28 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 77
+          "arrivalsNextHour": 9,
+          "delayMinutes": 83
         },
         "Cercanías": {
           "departuresNextHour": 0,
           "arrivalsNextHour": 16,
           "delayMinutes": 175
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 12
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 24,
-        "delayMinutes": 252
+        "arrivalsNextHour": 28,
+        "delayMinutes": 270
       },
-      "successfulSamples": 22,
+      "successfulSamples": 25,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Puerto de Santa María": {
@@ -3592,16 +3807,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 31,
           "delayMinutes": 298
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 71,
+        "arrivalsNextHour": 72,
         "delayMinutes": 418
       },
-      "successfulSamples": 50,
+      "successfulSamples": 51,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Granada": {
@@ -3609,23 +3829,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 30,
-          "delayMinutes": 290
+          "arrivalsNextHour": 34,
+          "delayMinutes": 297
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 49,
-          "delayMinutes": 415
+          "arrivalsNextHour": 52,
+          "delayMinutes": 444
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 79,
-        "delayMinutes": 705
+        "arrivalsNextHour": 86,
+        "delayMinutes": 741
       },
-      "successfulSamples": 44,
+      "successfulSamples": 47,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Briviesca": {
@@ -3633,18 +3853,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 27,
-          "delayMinutes": 340
+          "arrivalsNextHour": 28,
+          "delayMinutes": 342
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 27,
-        "delayMinutes": 340
+        "arrivalsNextHour": 28,
+        "delayMinutes": 342
       },
-      "successfulSamples": 10,
+      "successfulSamples": 11,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T11:47:57.578Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Alcalá de Henares": {
@@ -3654,16 +3874,26 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 44,
           "delayMinutes": 260
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 4
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 44,
-        "delayMinutes": 260
+        "arrivalsNextHour": 46,
+        "delayMinutes": 264
       },
-      "successfulSamples": 35,
+      "successfulSamples": 37,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Reus": {
@@ -3671,8 +3901,8 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 29,
-          "delayMinutes": 1014
+          "arrivalsNextHour": 32,
+          "delayMinutes": 1385
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -3682,12 +3912,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 39,
-        "delayMinutes": 1445
+        "arrivalsNextHour": 42,
+        "delayMinutes": 1816
       },
-      "successfulSamples": 29,
+      "successfulSamples": 31,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Figueres-Vilafant": {
@@ -3695,18 +3925,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 169,
-          "delayMinutes": 4539
+          "arrivalsNextHour": 183,
+          "delayMinutes": 4555
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 169,
-        "delayMinutes": 4539
+        "arrivalsNextHour": 183,
+        "delayMinutes": 4555
       },
-      "successfulSamples": 53,
+      "successfulSamples": 57,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T17:20:03.658Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Monfragüe": {
@@ -3740,16 +3970,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 6,
           "delayMinutes": 130
+        },
+        "Cercanías C6": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 26,
+        "arrivalsNextHour": 27,
         "delayMinutes": 316
       },
-      "successfulSamples": 24,
+      "successfulSamples": 25,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T03:13:22.514Z",
       "lastError": null
     },
     "Las Zorreras-Navalquejigo": {
@@ -3759,16 +3994,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 53,
           "delayMinutes": 698
+        },
+        "Cercanías C8A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 8
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 53,
-        "delayMinutes": 698
+        "arrivalsNextHour": 55,
+        "delayMinutes": 706
       },
-      "successfulSamples": 46,
+      "successfulSamples": 48,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Elche/Elx AV": {
@@ -3776,18 +4016,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 55,
-          "delayMinutes": 318
+          "arrivalsNextHour": 62,
+          "delayMinutes": 326
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 55,
-        "delayMinutes": 318
+        "arrivalsNextHour": 62,
+        "delayMinutes": 326
       },
-      "successfulSamples": 41,
+      "successfulSamples": 44,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Madrid-Villaverde Alto": {
@@ -3797,16 +4037,31 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 65,
           "delayMinutes": 218
+        },
+        "Cercanías C4B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Cercanías C4A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 12
+        },
+        "Cercanías C5": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 18
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 65,
-        "delayMinutes": 218
+        "arrivalsNextHour": 71,
+        "delayMinutes": 248
       },
-      "successfulSamples": 48,
+      "successfulSamples": 51,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Alcázar de San Juan": {
@@ -3814,18 +4069,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 53,
-          "delayMinutes": 248
+          "arrivalsNextHour": 58,
+          "delayMinutes": 274
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 53,
-        "delayMinutes": 248
+        "arrivalsNextHour": 58,
+        "delayMinutes": 274
       },
-      "successfulSamples": 32,
+      "successfulSamples": 34,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Tortosa": {
@@ -3833,7 +4088,7 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 17,
+          "arrivalsNextHour": 18,
           "delayMinutes": 176
         },
         "Cercanías": {
@@ -3844,12 +4099,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 30,
+        "arrivalsNextHour": 31,
         "delayMinutes": 804
       },
-      "successfulSamples": 25,
+      "successfulSamples": 26,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Parla": {
@@ -3859,16 +4114,26 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 62,
           "delayMinutes": 426
+        },
+        "Cercanías C4B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Cercanías C4A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 5
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 62,
-        "delayMinutes": 426
+        "arrivalsNextHour": 64,
+        "delayMinutes": 431
       },
-      "successfulSamples": 53,
+      "successfulSamples": 55,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Las Margaritas": {
@@ -3878,16 +4143,31 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 66,
           "delayMinutes": 283
+        },
+        "Cercanías C4A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 13
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
+        },
+        "Cercanías C4B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 3
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 66,
-        "delayMinutes": 283
+        "arrivalsNextHour": 70,
+        "delayMinutes": 299
       },
-      "successfulSamples": 50,
+      "successfulSamples": 53,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Arévalo": {
@@ -3895,18 +4175,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 69,
+          "arrivalsNextHour": 70,
           "delayMinutes": 1013
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 69,
+        "arrivalsNextHour": 70,
         "delayMinutes": 1013
       },
-      "successfulSamples": 39,
+      "successfulSamples": 40,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Maliaño Vidriera": {
@@ -3921,16 +4201,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 1,
           "delayMinutes": 1
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 36,
+        "arrivalsNextHour": 39,
         "delayMinutes": 3
       },
-      "successfulSamples": 35,
+      "successfulSamples": 38,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Málaga María Zambrano": {
@@ -3938,18 +4223,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 107,
+          "arrivalsNextHour": 109,
           "delayMinutes": 761
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 107,
+        "arrivalsNextHour": 109,
         "delayMinutes": 761
       },
-      "successfulSamples": 64,
+      "successfulSamples": 66,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Lieres": {
@@ -3964,16 +4249,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 2,
           "delayMinutes": 17
+        },
+        "Cercanías C6": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 121
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 27,
-        "delayMinutes": 113
+        "arrivalsNextHour": 30,
+        "delayMinutes": 234
       },
-      "successfulSamples": 25,
+      "successfulSamples": 27,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Bellvitge-Gornal": {
@@ -3981,18 +4271,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 60,
-          "delayMinutes": 515
+          "arrivalsNextHour": 65,
+          "delayMinutes": 529
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 60,
-        "delayMinutes": 515
+        "arrivalsNextHour": 65,
+        "delayMinutes": 529
       },
-      "successfulSamples": 48,
+      "successfulSamples": 52,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "San Ranón": {
@@ -4002,16 +4292,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 77,
           "delayMinutes": 2241
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 20
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 77,
-        "delayMinutes": 2241
+        "arrivalsNextHour": 80,
+        "delayMinutes": 2261
       },
-      "successfulSamples": 44,
+      "successfulSamples": 46,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Legazpi": {
@@ -4026,16 +4321,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 28,
           "delayMinutes": 1723
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 63,
+        "arrivalsNextHour": 64,
         "delayMinutes": 1736
       },
-      "successfulSamples": 36,
+      "successfulSamples": 37,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Mirasierra-Paco de Lucía": {
@@ -4045,16 +4345,26 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 35,
           "delayMinutes": 206
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 3
+        },
+        "Cercanías C8A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 35,
-        "delayMinutes": 206
+        "arrivalsNextHour": 37,
+        "delayMinutes": 210
       },
-      "successfulSamples": 31,
+      "successfulSamples": 32,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T17:20:03.658Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Cantaelgallo": {
@@ -4064,16 +4374,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 45,
           "delayMinutes": 120
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 45,
-        "delayMinutes": 120
+        "arrivalsNextHour": 49,
+        "delayMinutes": 122
       },
-      "successfulSamples": 39,
+      "successfulSamples": 42,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Sant Vicenç de Castellet": {
@@ -4105,18 +4420,18 @@
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 29,
-          "delayMinutes": 142
+          "arrivalsNextHour": 30,
+          "delayMinutes": 152
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 36,
-        "delayMinutes": 142
+        "arrivalsNextHour": 37,
+        "delayMinutes": 152
       },
-      "successfulSamples": 25,
+      "successfulSamples": 26,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T16:49:57.148Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Cádiz": {
@@ -4129,18 +4444,23 @@
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 14,
-          "delayMinutes": 89
+          "arrivalsNextHour": 15,
+          "delayMinutes": 103
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 21
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 28,
-        "delayMinutes": 272
+        "arrivalsNextHour": 30,
+        "delayMinutes": 307
       },
-      "successfulSamples": 27,
+      "successfulSamples": 28,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Nules la Villavella": {
@@ -4153,18 +4473,23 @@
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 8,
-          "delayMinutes": 31
+          "arrivalsNextHour": 9,
+          "delayMinutes": 33
+        },
+        "Cercanías C6": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 10
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 31,
-        "delayMinutes": 74
+        "arrivalsNextHour": 33,
+        "delayMinutes": 86
       },
-      "successfulSamples": 25,
+      "successfulSamples": 26,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Coslada": {
@@ -4174,16 +4499,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 28,
           "delayMinutes": 139
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 28,
-        "delayMinutes": 139
+        "arrivalsNextHour": 30,
+        "delayMinutes": 141
       },
-      "successfulSamples": 26,
+      "successfulSamples": 28,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Ordizia": {
@@ -4198,16 +4528,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 9,
           "delayMinutes": 105
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 23,
+        "arrivalsNextHour": 24,
         "delayMinutes": 128
       },
-      "successfulSamples": 16,
+      "successfulSamples": 17,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T03:13:22.514Z",
       "lastError": null
     },
     "Tremañes Carreño": {
@@ -4217,16 +4552,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 76,
           "delayMinutes": 438
+        },
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 27
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 76,
-        "delayMinutes": 438
+        "arrivalsNextHour": 79,
+        "delayMinutes": 465
       },
-      "successfulSamples": 60,
+      "successfulSamples": 63,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Venta de Baños": {
@@ -4255,16 +4595,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 40,
           "delayMinutes": 39
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 6
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 40,
-        "delayMinutes": 39
+        "arrivalsNextHour": 43,
+        "delayMinutes": 45
       },
-      "successfulSamples": 36,
+      "successfulSamples": 39,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Cabrera de Mar-Vilassar de Mar": {
@@ -4272,18 +4617,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 51,
-          "delayMinutes": 252
+          "arrivalsNextHour": 54,
+          "delayMinutes": 329
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 51,
-        "delayMinutes": 252
+        "arrivalsNextHour": 54,
+        "delayMinutes": 329
       },
-      "successfulSamples": 43,
+      "successfulSamples": 45,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Martorell Central": {
@@ -4291,18 +4636,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 35,
-          "delayMinutes": 291
+          "arrivalsNextHour": 37,
+          "delayMinutes": 303
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 35,
-        "delayMinutes": 291
+        "arrivalsNextHour": 37,
+        "delayMinutes": 303
       },
-      "successfulSamples": 24,
+      "successfulSamples": 25,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Flaçà": {
@@ -4315,18 +4660,18 @@
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 22,
-          "delayMinutes": 33
+          "arrivalsNextHour": 23,
+          "delayMinutes": 87
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 48,
-        "delayMinutes": 293
+        "arrivalsNextHour": 49,
+        "delayMinutes": 347
       },
-      "successfulSamples": 28,
+      "successfulSamples": 29,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Zumarraga": {
@@ -4334,23 +4679,28 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 25,
-          "delayMinutes": 211
+          "arrivalsNextHour": 26,
+          "delayMinutes": 215
         },
         "Cercanías": {
           "departuresNextHour": 0,
           "arrivalsNextHour": 13,
           "delayMinutes": 21
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 38,
-        "delayMinutes": 232
+        "arrivalsNextHour": 40,
+        "delayMinutes": 236
       },
-      "successfulSamples": 23,
+      "successfulSamples": 24,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Monforte de Lemos": {
@@ -4358,18 +4708,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 39,
-          "delayMinutes": 1587
+          "arrivalsNextHour": 41,
+          "delayMinutes": 1661
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 39,
-        "delayMinutes": 1587
+        "arrivalsNextHour": 41,
+        "delayMinutes": 1661
       },
-      "successfulSamples": 17,
+      "successfulSamples": 19,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Lebrija": {
@@ -4377,8 +4727,8 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 32,
-          "delayMinutes": 377
+          "arrivalsNextHour": 34,
+          "delayMinutes": 401
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -4388,12 +4738,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 35,
-        "delayMinutes": 445
+        "arrivalsNextHour": 37,
+        "delayMinutes": 469
       },
-      "successfulSamples": 28,
+      "successfulSamples": 30,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Villena Alta Velocidad": {
@@ -4401,18 +4751,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 59,
-          "delayMinutes": 1011
+          "arrivalsNextHour": 63,
+          "delayMinutes": 1021
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 59,
-        "delayMinutes": 1011
+        "arrivalsNextHour": 63,
+        "delayMinutes": 1021
       },
-      "successfulSamples": 38,
+      "successfulSamples": 41,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Antequera-Santa Ana": {
@@ -4420,18 +4770,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 48,
-          "delayMinutes": 264
+          "arrivalsNextHour": 52,
+          "delayMinutes": 270
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 48,
-        "delayMinutes": 264
+        "arrivalsNextHour": 52,
+        "delayMinutes": 270
       },
-      "successfulSamples": 32,
+      "successfulSamples": 35,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Barcelona Sant Andreu": {
@@ -4463,18 +4813,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 60,
-          "delayMinutes": 250
+          "arrivalsNextHour": 63,
+          "delayMinutes": 258
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 60,
-        "delayMinutes": 250
+        "arrivalsNextHour": 63,
+        "delayMinutes": 258
       },
-      "successfulSamples": 40,
+      "successfulSamples": 43,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Sant Adrià de Besòs": {
@@ -4482,18 +4832,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 52,
-          "delayMinutes": 323
+          "arrivalsNextHour": 56,
+          "delayMinutes": 345
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 52,
-        "delayMinutes": 323
+        "arrivalsNextHour": 56,
+        "delayMinutes": 345
       },
-      "successfulSamples": 35,
+      "successfulSamples": 38,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "La Pereda-Riosa": {
@@ -4503,16 +4853,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 42,
           "delayMinutes": 1353
+        },
+        "Cercanías C8": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 175
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 42,
-        "delayMinutes": 1353
+        "arrivalsNextHour": 46,
+        "delayMinutes": 1528
       },
-      "successfulSamples": 34,
+      "successfulSamples": 37,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Sils": {
@@ -4544,18 +4899,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 64,
-          "delayMinutes": 645
+          "arrivalsNextHour": 65,
+          "delayMinutes": 650
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 64,
-        "delayMinutes": 645
+        "arrivalsNextHour": 65,
+        "delayMinutes": 650
       },
-      "successfulSamples": 18,
+      "successfulSamples": 19,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Silla": {
@@ -4570,16 +4925,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 24,
           "delayMinutes": 46
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 32,
+        "arrivalsNextHour": 33,
         "delayMinutes": 49
       },
-      "successfulSamples": 24,
+      "successfulSamples": 25,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Noreña": {
@@ -4589,16 +4949,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 30,
           "delayMinutes": 218
+        },
+        "Cercanías C5A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 3,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 30,
+        "arrivalsNextHour": 33,
         "delayMinutes": 218
       },
-      "successfulSamples": 24,
+      "successfulSamples": 27,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Lorca-San Diego": {
@@ -4608,16 +4973,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 49,
           "delayMinutes": 2001
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 292
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 49,
-        "delayMinutes": 2001
+        "arrivalsNextHour": 54,
+        "delayMinutes": 2293
       },
-      "successfulSamples": 33,
+      "successfulSamples": 36,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Calahorra": {
@@ -4684,16 +5054,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 34,
           "delayMinutes": 18
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 34,
-        "delayMinutes": 18
+        "arrivalsNextHour": 38,
+        "delayMinutes": 20
       },
-      "successfulSamples": 33,
+      "successfulSamples": 36,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Tolosa": {
@@ -4732,16 +5107,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 15,
           "delayMinutes": 105
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 20
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 25,
-        "delayMinutes": 123
+        "arrivalsNextHour": 27,
+        "delayMinutes": 143
       },
-      "successfulSamples": 17,
+      "successfulSamples": 19,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Novelda-Aspe": {
@@ -4749,18 +5129,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 7,
-          "delayMinutes": 15
+          "arrivalsNextHour": 10,
+          "delayMinutes": 48
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 7,
-        "delayMinutes": 15
+        "arrivalsNextHour": 10,
+        "delayMinutes": 48
       },
-      "successfulSamples": 7,
+      "successfulSamples": 8,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T14:02:59.035Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Cercedilla": {
@@ -4770,16 +5150,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 46,
           "delayMinutes": 495
+        },
+        "Cercanías C8B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 70
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 46,
-        "delayMinutes": 495
+        "arrivalsNextHour": 51,
+        "delayMinutes": 565
       },
-      "successfulSamples": 37,
+      "successfulSamples": 40,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Vilassar de Mar": {
@@ -4787,18 +5172,18 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 28,
-          "delayMinutes": 169
+          "arrivalsNextHour": 32,
+          "delayMinutes": 211
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 28,
-        "delayMinutes": 169
+        "arrivalsNextHour": 32,
+        "delayMinutes": 211
       },
-      "successfulSamples": 19,
+      "successfulSamples": 21,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Vallobín": {
@@ -4808,16 +5193,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 16,
           "delayMinutes": 20
+        },
+        "Cercanías C7": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 10
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 16,
-        "delayMinutes": 20
+        "arrivalsNextHour": 18,
+        "delayMinutes": 30
       },
-      "successfulSamples": 16,
+      "successfulSamples": 18,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Llançà": {
@@ -4830,18 +5220,18 @@
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 150
+          "arrivalsNextHour": 5,
+          "delayMinutes": 176
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 13,
-        "delayMinutes": 219
+        "arrivalsNextHour": 14,
+        "delayMinutes": 245
       },
-      "successfulSamples": 13,
+      "successfulSamples": 14,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "San Severiano": {
@@ -4849,18 +5239,23 @@
       "byTrainType": {
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 32,
-          "delayMinutes": 29
+          "arrivalsNextHour": 36,
+          "delayMinutes": 38
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 9
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 32,
-        "delayMinutes": 29
+        "arrivalsNextHour": 38,
+        "delayMinutes": 47
       },
-      "successfulSamples": 25,
+      "successfulSamples": 28,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Hernani-Erdia": {
@@ -4984,16 +5379,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 24,
           "delayMinutes": 89
+        },
+        "Cercanías C5": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 19
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 24,
-        "delayMinutes": 89
+        "arrivalsNextHour": 26,
+        "delayMinutes": 108
       },
-      "successfulSamples": 17,
+      "successfulSamples": 18,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "L'Hospitalet de l'Infant": {
@@ -5001,8 +5401,8 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 10,
-          "delayMinutes": 77
+          "arrivalsNextHour": 11,
+          "delayMinutes": 237
         },
         "Cercanías": {
           "departuresNextHour": 0,
@@ -5012,12 +5412,12 @@
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 12,
-        "delayMinutes": 91
+        "arrivalsNextHour": 13,
+        "delayMinutes": 251
       },
-      "successfulSamples": 9,
+      "successfulSamples": 10,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T16:49:57.148Z",
+      "lastSampleAt": "2026-08-24T22:05:12.681Z",
       "lastError": null
     },
     "Sagunt": {
@@ -5030,18 +5430,23 @@
         },
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 4,
-          "delayMinutes": 11
+          "arrivalsNextHour": 5,
+          "delayMinutes": 23
+        },
+        "Cercanías C6": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 7
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 21,
-        "delayMinutes": 45
+        "arrivalsNextHour": 24,
+        "delayMinutes": 64
       },
-      "successfulSamples": 16,
+      "successfulSamples": 18,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "O Barco de Valdeorras": {
@@ -5089,16 +5494,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 14,
           "delayMinutes": 6
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 14,
+        "arrivalsNextHour": 15,
         "delayMinutes": 6
       },
-      "successfulSamples": 10,
+      "successfulSamples": 11,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T14:57:38.508Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Guadix": {
@@ -5125,18 +5535,18 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 19,
-          "delayMinutes": 157
+          "arrivalsNextHour": 23,
+          "delayMinutes": 163
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 19,
-        "delayMinutes": 157
+        "arrivalsNextHour": 23,
+        "delayMinutes": 163
       },
-      "successfulSamples": 14,
+      "successfulSamples": 17,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Mérida": {
@@ -5163,23 +5573,23 @@
       "byTrainType": {
         "Long distance": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 6,
+          "arrivalsNextHour": 9,
           "delayMinutes": 128
         },
         "Cercanías": {
           "departuresNextHour": 0,
-          "arrivalsNextHour": 6,
+          "arrivalsNextHour": 8,
           "delayMinutes": 36
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 12,
+        "arrivalsNextHour": 17,
         "delayMinutes": 164
       },
-      "successfulSamples": 9,
+      "successfulSamples": 13,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "L'Alcúdia de Crespins": {
@@ -5189,16 +5599,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 16,
           "delayMinutes": 35
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 16,
+        "arrivalsNextHour": 17,
         "delayMinutes": 35
       },
-      "successfulSamples": 13,
+      "successfulSamples": 14,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Puerto de Navacerrada": {
@@ -5208,16 +5623,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 26,
           "delayMinutes": 652
+        },
+        "Cercanías C9": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 8
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 26,
-        "delayMinutes": 652
+        "arrivalsNextHour": 27,
+        "delayMinutes": 660
       },
-      "successfulSamples": 16,
+      "successfulSamples": 17,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T17:20:03.658Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Ciaño": {
@@ -5227,16 +5647,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 14,
           "delayMinutes": 158
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 14,
+        "arrivalsNextHour": 15,
         "delayMinutes": 158
       },
-      "successfulSamples": 13,
+      "successfulSamples": 14,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Pozuelo": {
@@ -5284,16 +5709,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 10,
           "delayMinutes": 20
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 8
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 10,
-        "delayMinutes": 20
+        "arrivalsNextHour": 12,
+        "delayMinutes": 28
       },
-      "successfulSamples": 7,
+      "successfulSamples": 9,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Plasencia": {
@@ -5322,16 +5752,26 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 8,
           "delayMinutes": 23
+        },
+        "Cercanías C4B": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 10
+        },
+        "Cercanías C4A": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 3
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 8,
-        "delayMinutes": 23
+        "arrivalsNextHour": 10,
+        "delayMinutes": 36
       },
-      "successfulSamples": 7,
+      "successfulSamples": 9,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "L'Ametlla de Mar": {
@@ -5360,16 +5800,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 17,
           "delayMinutes": 2
+        },
+        "Cercanías C3": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 5,
+          "delayMinutes": 2
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 17,
-        "delayMinutes": 2
+        "arrivalsNextHour": 22,
+        "delayMinutes": 4
       },
-      "successfulSamples": 13,
+      "successfulSamples": 17,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Bellavista": {
@@ -5379,16 +5824,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 4,
           "delayMinutes": 2
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 10
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 4,
-        "delayMinutes": 2
+        "arrivalsNextHour": 6,
+        "delayMinutes": 12
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T16:49:57.148Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Benifaió": {
@@ -5398,16 +5848,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 6,
           "delayMinutes": 8
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 3
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 6,
-        "delayMinutes": 8
+        "arrivalsNextHour": 8,
+        "delayMinutes": 11
       },
-      "successfulSamples": 4,
+      "successfulSamples": 6,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:04:02.006Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Mieres-Puente": {
@@ -5446,16 +5901,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 2,
           "delayMinutes": 15
+        },
+        "Cercanías C6": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 10
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 5,
-        "delayMinutes": 25
+        "arrivalsNextHour": 6,
+        "delayMinutes": 35
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Almassora": {
@@ -5465,16 +5925,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 6,
           "delayMinutes": 3
+        },
+        "Cercanías C6": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 6,
+        "arrivalsNextHour": 8,
         "delayMinutes": 3
       },
-      "successfulSamples": 4,
+      "successfulSamples": 6,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T18:35:34.935Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Lenova-Manuel": {
@@ -5503,16 +5968,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 6,
           "delayMinutes": 12
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 16
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 6,
-        "delayMinutes": 12
+        "arrivalsNextHour": 7,
+        "delayMinutes": 28
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     },
     "Peñota": {
@@ -5522,16 +5992,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 5,
           "delayMinutes": 0
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 5,
+        "arrivalsNextHour": 6,
         "delayMinutes": 0
       },
-      "successfulSamples": 5,
+      "successfulSamples": 6,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Los Boliches": {
@@ -5541,16 +6016,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 3,
           "delayMinutes": 0
+        },
+        "Cercanías C1": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 0
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 3,
+        "arrivalsNextHour": 4,
         "delayMinutes": 0
       },
-      "successfulSamples": 3,
+      "successfulSamples": 4,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Putxeta": {
@@ -5560,16 +6040,21 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 2,
           "delayMinutes": 0
+        },
+        "Cercanías C2": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 2,
-        "delayMinutes": 0
+        "arrivalsNextHour": 3,
+        "delayMinutes": 1
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T08:44:30.059Z",
       "lastError": null
     },
     "Humanes": {
@@ -5579,16 +6064,26 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 2,
           "delayMinutes": 8
+        },
+        "Cercanías C5": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 4
+        },
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 1
         }
       },
       "totals": {
         "departuresNextHour": 0,
-        "arrivalsNextHour": 2,
-        "delayMinutes": 8
+        "arrivalsNextHour": 4,
+        "delayMinutes": 13
       },
-      "successfulSamples": 2,
+      "successfulSamples": 3,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
       "lastError": null
     },
     "Zarzaquemada": {
@@ -5598,22 +6093,8 @@
           "departuresNextHour": 0,
           "arrivalsNextHour": 5,
           "delayMinutes": 3
-        }
-      },
-      "totals": {
-        "departuresNextHour": 0,
-        "arrivalsNextHour": 5,
-        "delayMinutes": 3
-      },
-      "successfulSamples": 3,
-      "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T20:53:26.703Z",
-      "lastError": null
-    },
-    "Tardienta": {
-      "cpCode": "78200",
-      "byTrainType": {
-        "Long distance": {
+        },
+        "Cercanías C5": {
           "departuresNextHour": 0,
           "arrivalsNextHour": 1,
           "delayMinutes": 0
@@ -5621,12 +6102,107 @@
       },
       "totals": {
         "departuresNextHour": 0,
+        "arrivalsNextHour": 6,
+        "delayMinutes": 3
+      },
+      "successfulSamples": 4,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
+      "lastError": null
+    },
+    "Tardienta": {
+      "cpCode": "78200",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 2
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 2
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
+      "lastError": null
+    },
+    "Balmaseda": {
+      "cpCode": "05483",
+      "byTrainType": {
+        "Cercanías C4": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 4,
+          "delayMinutes": 2
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 4,
+        "delayMinutes": 2
+      },
+      "successfulSamples": 3,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
+      "lastError": null
+    },
+    "Torrelavega-Centro": {
+      "cpCode": "05621",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 1,
+          "delayMinutes": 5
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
         "arrivalsNextHour": 1,
-        "delayMinutes": 0
+        "delayMinutes": 5
       },
       "successfulSamples": 1,
       "failedSamples": 0,
-      "lastSampleAt": "2026-08-24T19:53:56.875Z",
+      "lastSampleAt": "2026-08-25T06:53:45.143Z",
+      "lastError": null
+    },
+    "Requena-Utiel": {
+      "cpCode": "03213",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 9,
+          "delayMinutes": 40
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 9,
+        "delayMinutes": 40
+      },
+      "successfulSamples": 2,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
+      "lastError": null
+    },
+    "Villena": {
+      "cpCode": "60902",
+      "byTrainType": {
+        "Long distance": {
+          "departuresNextHour": 0,
+          "arrivalsNextHour": 2,
+          "delayMinutes": 10
+        }
+      },
+      "totals": {
+        "departuresNextHour": 0,
+        "arrivalsNextHour": 2,
+        "delayMinutes": 10
+      },
+      "successfulSamples": 1,
+      "failedSamples": 0,
+      "lastSampleAt": "2026-08-25T08:52:07.897Z",
       "lastError": null
     }
   }
