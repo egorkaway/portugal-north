@@ -2441,6 +2441,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@walter-cunha-2158705182",
     photoPageUrl: "https://www.pexels.com/photo/gran-via-metro-entrance-in-madrid-city-35551070/",
   },
+  "35604410": {
+    photographer: "Wolfgang Weiser",
+    photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
+    photoPageUrl: "https://www.pexels.com/photo/historic-tram-in-palma-s-nostalgic-setting-35604410/",
+  },
   "35646857": {
     photographer: "Jonathan Fuentes",
     photographerUrl: "https://www.pexels.com/@jonathan-fuentes-2158022177",

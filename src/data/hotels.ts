@@ -3303,6 +3303,26 @@ export const stationHotels: StationHotels = {
     { name: "Hotel NH Campo de Cartagena", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20NH%20Campo%20de%20Cartagena%2C%20Estaci%C3%B3n%20de%20tren%20Hospital%2C%20Spain&order=price" },
     { name: "Hotel Los Habaneros", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Los%20Habaneros%2C%20Estaci%C3%B3n%20de%20tren%20Hospital%2C%20Spain&order=price" },
   ],
+  "Huercal-Viator": [
+    { name: "Elba Almería Business & Convention Hotel", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Elba%20Almer%C3%ADa%20Business%20%26%20Convention%20Hotel%2C%20Huercal-Viator%2C%20Spain&order=price" },
+    { name: "Sercotel Gran Fama", distanceKm: 3.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20Gran%20Fama%2C%20Huercal-Viator%2C%20Spain&order=price" },
+    { name: "16:9 Los Molinos Suites", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=16%3A9%20Los%20Molinos%20Suites%2C%20Huercal-Viator%2C%20Spain&order=price" },
+  ],
+  "Alcorcón": [
+    { name: "Holiday Inn Express - Madrid Alcorcón", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20-%20Madrid%20Alcorc%C3%B3n%2C%20Alcorc%C3%B3n%2C%20Spain&order=price" },
+    { name: "Hotel ibis Madrid Alcorcón Tresaguas", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ibis%20Madrid%20Alcorc%C3%B3n%20Tresaguas%2C%20Alcorc%C3%B3n%2C%20Spain&order=price" },
+    { name: "NH Hotel Alcorcón", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=NH%20Hotel%20Alcorc%C3%B3n%2C%20Alcorc%C3%B3n%2C%20Spain&order=price" },
+  ],
+  "Torrijos": [
+    { name: "Hotel La Salve", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Salve%2C%20Torrijos%2C%20Spain&order=price" },
+    { name: "El Mesón", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Mes%C3%B3n%2C%20Torrijos%2C%20Spain&order=price" },
+    { name: "Albergue de los Frailes", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20los%20Frailes%2C%20Torrijos%2C%20Spain&order=price" },
+  ],
+  "Catarroja": [
+    { name: "Hotel ibis Valencia Alfafar", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ibis%20Valencia%20Alfafar%2C%20Catarroja%2C%20Spain&order=price" },
+    { name: "Aparthotel Albufera", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Albufera%2C%20Catarroja%2C%20Spain&order=price" },
+    { name: "Hotel Albufera", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Albufera%2C%20Catarroja%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

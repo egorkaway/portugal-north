@@ -50,6 +50,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 6.110845,
   },
   {
+    name: "Alghero-Fertilia Airport (AHO)",
+    country: "it",
+    lines: ["AHO"],
+    types: ["Airport Destination"],
+    lat: 40.632099,
+    lng: 8.29077,
+  },
+  {
     name: "Amsterdam Airport Schiphol (AMS)",
     country: "nl",
     lines: ["AMS"],
@@ -416,6 +424,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 41.804532,
     lng: 12.251998,
+  },
+  {
+    name: "Bodensee Airport Friedrichshafen (FDH)",
+    country: "de",
+    lines: ["FDH"],
+    types: ["Airport Destination"],
+    lat: 47.671299,
+    lng: 9.51149,
   },
   {
     name: "Karlsruhe Baden-Baden Airport (FKB)",

@@ -549,6 +549,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Estación de tren Hospital": ["05952"],
 
+  "Huercal-Viator": ["56310"],
+
+  "Alcorcón": ["35605"],
+
+  "Torrijos": ["35105"],
+
+  "Catarroja": ["64201"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

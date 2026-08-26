@@ -2525,4 +2525,40 @@ export const spainStations: Station[] = [
     lng: -0.9607,
   },
 
+  {
+    name: "Huercal-Viator",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 36.8852,
+    lng: -2.4367,
+  },
+
+  {
+    name: "Alcorcón",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3502,
+    lng: -3.8317,
+  },
+
+  {
+    name: "Torrijos",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.979,
+    lng: -4.283,
+  },
+
+  {
+    name: "Catarroja",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.4,
+    lng: -0.3992,
+  },
+
 ];
