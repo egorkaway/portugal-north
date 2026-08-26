@@ -81,6 +81,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pixabay",
     photoPageUrl: "https://www.pexels.com/photo/view-of-building-interior-258523/",
   },
+  "258594": {
+    photographer: "Pixabay",
+    photographerUrl: "https://www.pexels.com/@pixabay",
+    photoPageUrl: "https://www.pexels.com/photo/view-of-railroad-station-258594/",
+  },
   "326011": {
     photographer: "Pixabay",
     photographerUrl: "https://www.pexels.com/@pixabay",

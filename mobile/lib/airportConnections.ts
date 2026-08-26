@@ -38,19 +38,29 @@ export type AirportConnectionsManifest = {
 
 export const bakedAirportConnections = airportConnections as AirportConnectionsManifest;
 
-const airportSlugByIata = new Map<string, string>();
+let airportSlugByIata: Map<string, string> | null = null;
 
-for (const station of allStations) {
-  // Iberian hubs only — destination airports have no public station pages.
-  if (!station.types.includes('Airport') || station.types.includes('Airport Destination')) {
-    continue;
+function getAirportSlugByIataMap(): Map<string, string> {
+  if (airportSlugByIata) return airportSlugByIata;
+  const next = new Map<string, string>();
+  for (const station of allStations) {
+    // Iberian hubs only — destination airports have no public station pages.
+    if (!station.types.includes('Airport') || station.types.includes('Airport Destination')) {
+      continue;
+    }
+    const fromLine = station.lines[0]?.trim().toUpperCase();
+    const iata =
+      (fromLine && /^[A-Z]{3}$/.test(fromLine) ? fromLine : null) ??
+      station.name.match(IATA_IN_NAME_RE)?.[1] ??
+      null;
+    if (iata) next.set(iata, stationToSlug(station.name));
   }
-  const fromLine = station.lines[0]?.trim().toUpperCase();
-  const iata =
-    (fromLine && /^[A-Z]{3}$/.test(fromLine) ? fromLine : null) ??
-    station.name.match(IATA_IN_NAME_RE)?.[1] ??
-    null;
-  if (iata) airportSlugByIata.set(iata, stationToSlug(station.name));
+  airportSlugByIata = next;
+  return next;
+}
+
+export function invalidateAirportSlugIndex(): void {
+  airportSlugByIata = null;
 }
 
 function findAirportEntry(
@@ -95,7 +105,7 @@ export function formatFlightCount(count: number): string {
 }
 
 export function getAirportStationSlugByIata(iata: string): string | undefined {
-  return airportSlugByIata.get(iata.trim().toUpperCase());
+  return getAirportSlugByIataMap().get(iata.trim().toUpperCase());
 }
 
 export function getAirportConnectionsMapImageUrl(

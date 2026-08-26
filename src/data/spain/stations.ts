@@ -2588,4 +2588,13 @@ export const spainStations: Station[] = [
     lng: 0.0578,
   },
 
+  {
+    name: "Montcada i Reixac-Santa Maria",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4811,
+    lng: 2.167,
+  },
+
 ];

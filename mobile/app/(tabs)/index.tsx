@@ -19,6 +19,7 @@ import { getCurrentCoords } from '@/lib/currentLocation';
 import { orderStationsForHome, stationDistancesKm } from '@/lib/rankStations';
 import { stationMatchesSearch } from '@/lib/searchText';
 import { pageStations, stationToSlug, type Station } from '@/lib/stationData';
+import { useCatalogRevision } from '@/lib/useCatalogRevision';
 import {
   castStationVote,
   readStationVotes,
@@ -35,6 +36,7 @@ export default function HomeScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { t, plural } = useLocale();
+  useCatalogRevision();
   const [searchQuery, setSearchQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState<string | null>(null);
   const [voteFilter, setVoteFilter] = useState<VoteFilter | null>(null);

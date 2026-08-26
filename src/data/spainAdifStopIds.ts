@@ -563,6 +563,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Benicàssim": ["65318"],
 
+  "Montcada i Reixac-Santa Maria": ["78707"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

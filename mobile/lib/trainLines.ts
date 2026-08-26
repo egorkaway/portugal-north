@@ -135,6 +135,11 @@ function buildTrainLines(): TrainLine[] {
 let cachedLines: TrainLine[] | null = null;
 let cachedBySlug: Map<string, TrainLine> | null = null;
 
+export function invalidateTrainLinesCache(): void {
+  cachedLines = null;
+  cachedBySlug = null;
+}
+
 export function getTrainLines(): TrainLine[] {
   if (!cachedLines) cachedLines = buildTrainLines();
   return cachedLines;

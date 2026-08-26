@@ -278,6 +278,14 @@ export async function syncMobileData() {
     JSON.stringify(geofencePayload),
   );
 
+  const { publishMobileCatalogFromBundle } = await import(
+    pathToFileURL(path.join(repoRoot, "scripts/lib/mobileCatalog.mjs")).href
+  );
+  const catalog = publishMobileCatalogFromBundle(repoRoot);
+  console.log(
+    `Published mobile OTA catalog (${Object.keys(catalog.assets).length} assets) → public/data/mobile-catalog.json`,
+  );
+
   console.log(
     `Synced ${stationsFull.length} stations, ${Object.keys(cpStationCodes).length} CP codes, ` +
       `${Object.keys(stationImages).length} images, ${Object.keys(stationHotels).length} hotel lists, ` +

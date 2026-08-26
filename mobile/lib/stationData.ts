@@ -12,6 +12,15 @@ import trainReliabilitySpotlight from '@/data/train-reliability-spotlight.json';
 import cpStationCodes from '@/data/cpStationCodes.json';
 import { canonicalHotelName, mergeAliasedHotelRatings } from '@/lib/hotelVoteAliases';
 import type { Locale } from '@/i18n/types';
+import type { CatalogAssetId } from '@/lib/catalogPolicy';
+import {
+  parseHotelsPayload,
+  parsePexelsCreditsPayload,
+  parseReliabilityPayload,
+  parseStationsPayload,
+  parseStringRecord,
+  parseTrainSpotlightPayload,
+} from '@/lib/catalogPolicy';
 
 export type CountryCode = 'pt' | 'es';
 
@@ -42,14 +51,74 @@ export type ReliabilityScoresManifest = {
   movements: Record<string, number>;
 };
 
-export const allStations = stationsFull as Station[];
+export type TrainSpotlightEntry = {
+  trainNumber: string;
+  serviceType: string;
+  avgDelayMinutes: number;
+  observations: number;
+  stationsSampled: number;
+  majorStations: string[];
+};
+
+export type TrainReliabilitySpotlightManifest = {
+  generatedAt: string;
+  runCount: number;
+  mostDelayed: TrainSpotlightEntry | null;
+  mostReliable: (TrainSpotlightEntry & {
+    selectionMode: 'stable' | 'rotating';
+    poolSize: number;
+  }) | null;
+};
+
+const bakedAllStations = stationsFull as Station[];
+
+export let allStations = bakedAllStations;
 
 /** Iberian hubs/stops only — Europe destination airports stay in `allStations` for maps. */
-export const pageStations = allStations.filter(
+export let pageStations = bakedAllStations.filter(
   (station) => !station.types.includes('Airport Destination'),
 );
 
-const publicStationNames = new Set(pageStations.map((station) => station.name));
+let publicStationNames = new Set(pageStations.map((station) => station.name));
+let catalogRevision = 0;
+const catalogListeners = new Set<() => void>();
+
+type PexelsPhotoCredit = {
+  photographer: string;
+  photographerUrl: string;
+  photoPageUrl: string;
+};
+
+let overlayHotels: Record<string, Hotel[]> | null = null;
+let overlayStationImages: Record<string, string> | null = null;
+let overlaySummariesByLocale: Partial<Record<Locale, Record<string, string>>> | null = null;
+let overlayReliabilityScores: ReliabilityScoresManifest | null = null;
+let overlaySpainReliabilityScores: ReliabilityScoresManifest | null = null;
+let overlayTrainSpotlight: TrainReliabilitySpotlightManifest | null = null;
+let overlayCpCodes: Record<string, string> | null = null;
+let overlayPexelsCredits: Record<string, PexelsPhotoCredit> | null = null;
+
+export function getCatalogRevision(): number {
+  return catalogRevision;
+}
+
+export function subscribeCatalog(listener: () => void): () => void {
+  catalogListeners.add(listener);
+  return () => {
+    catalogListeners.delete(listener);
+  };
+}
+
+function notifyCatalogListeners(): void {
+  catalogRevision += 1;
+  for (const listener of catalogListeners) listener();
+}
+
+function rebuildStationIndexes(): void {
+  pageStations = allStations.filter((station) => !station.types.includes('Airport Destination'));
+  publicStationNames = new Set(pageStations.map((station) => station.name));
+  stationBySlug = new Map(pageStations.map((station) => [stationToSlug(station.name), station]));
+}
 
 export function pickPublicStationRatings(
   ratings: Record<string, { up: number; down: number }>,
@@ -87,32 +156,117 @@ const bakedSummariesByLocale: Partial<Record<Locale, Record<string, string>>> = 
 export const bakedReliabilityScores = reliabilityScores as ReliabilityScoresManifest;
 export const bakedSpainReliabilityScores = spainReliabilityScores as ReliabilityScoresManifest;
 
-export type TrainSpotlightEntry = {
-  trainNumber: string;
-  serviceType: string;
-  avgDelayMinutes: number;
-  observations: number;
-  stationsSampled: number;
-  majorStations: string[];
-};
-
-export type TrainReliabilitySpotlightManifest = {
-  generatedAt: string;
-  runCount: number;
-  mostDelayed: TrainSpotlightEntry | null;
-  mostReliable: (TrainSpotlightEntry & {
-    selectionMode: 'stable' | 'rotating';
-    poolSize: number;
-  }) | null;
-};
-
 export const bakedTrainReliabilitySpotlight =
   trainReliabilitySpotlight as TrainReliabilitySpotlightManifest;
 export const bakedCpCodes = cpStationCodes as Record<string, string>;
 
-const stationBySlug = new Map(
+let stationBySlug = new Map(
   pageStations.map((station) => [stationToSlug(station.name), station]),
 );
+
+export function getReliabilityScores(): ReliabilityScoresManifest {
+  return overlayReliabilityScores ?? bakedReliabilityScores;
+}
+
+export function getSpainReliabilityScores(): ReliabilityScoresManifest {
+  return overlaySpainReliabilityScores ?? bakedSpainReliabilityScores;
+}
+
+export function getTrainReliabilitySpotlight(): TrainReliabilitySpotlightManifest {
+  return overlayTrainSpotlight ?? bakedTrainReliabilitySpotlight;
+}
+
+export function getCpCodes(): Record<string, string> {
+  return overlayCpCodes ?? bakedCpCodes;
+}
+
+export function getPexelsPhotoCredits(): Record<string, PexelsPhotoCredit> | null {
+  return overlayPexelsCredits;
+}
+
+export function applyCatalogAssets(
+  assets: Partial<Record<CatalogAssetId, unknown>>,
+): CatalogAssetId[] {
+  const applied: CatalogAssetId[] = [];
+
+  if (assets.stations !== undefined) {
+    const stations = parseStationsPayload(assets.stations);
+    if (stations) {
+      allStations = stations;
+      applied.push('stations');
+    }
+  }
+  if (assets.hotels !== undefined) {
+    const parsed = parseHotelsPayload(assets.hotels);
+    if (parsed) {
+      overlayHotels = parsed;
+      applied.push('hotels');
+    }
+  }
+  if (assets.stationImages !== undefined) {
+    const parsed = parseStringRecord(assets.stationImages);
+    if (parsed) {
+      overlayStationImages = parsed;
+      applied.push('stationImages');
+    }
+  }
+  if (assets.pexelsPhotoCredits !== undefined) {
+    const parsed = parsePexelsCreditsPayload(assets.pexelsPhotoCredits);
+    if (parsed) {
+      overlayPexelsCredits = parsed;
+      applied.push('pexelsPhotoCredits');
+    }
+  }
+  if (assets.reliabilityScores !== undefined) {
+    const parsed = parseReliabilityPayload(assets.reliabilityScores);
+    if (parsed) {
+      overlayReliabilityScores = parsed;
+      applied.push('reliabilityScores');
+    }
+  }
+  if (assets.spainReliabilityScores !== undefined) {
+    const parsed = parseReliabilityPayload(assets.spainReliabilityScores);
+    if (parsed) {
+      overlaySpainReliabilityScores = parsed;
+      applied.push('spainReliabilityScores');
+    }
+  }
+  if (assets.trainReliabilitySpotlight !== undefined) {
+    const parsed = parseTrainSpotlightPayload(assets.trainReliabilitySpotlight);
+    if (parsed) {
+      overlayTrainSpotlight = parsed as TrainReliabilitySpotlightManifest;
+      applied.push('trainReliabilitySpotlight');
+    }
+  }
+  if (assets.cpStationCodes !== undefined) {
+    const parsed = parseStringRecord(assets.cpStationCodes);
+    if (parsed) {
+      overlayCpCodes = parsed;
+      applied.push('cpStationCodes');
+    }
+  }
+
+  const summaryLocales: { id: CatalogAssetId; locale: Locale }[] = [
+    { id: 'summariesEn', locale: 'en' },
+    { id: 'summariesPt', locale: 'pt' },
+    { id: 'summariesEs', locale: 'es' },
+    { id: 'summariesCa', locale: 'ca' },
+    { id: 'summariesGl', locale: 'gl' },
+  ];
+  for (const { id, locale } of summaryLocales) {
+    if (assets[id] === undefined) continue;
+    const parsed = parseStringRecord(assets[id]);
+    if (!parsed) continue;
+    overlaySummariesByLocale = { ...overlaySummariesByLocale, [locale]: parsed };
+    applied.push(id);
+  }
+
+  if (applied.length > 0) {
+    rebuildStationIndexes();
+    notifyCatalogListeners();
+  }
+  return applied;
+}
 
 export function stationToSlug(name: string): string {
   return name
@@ -134,11 +288,11 @@ export function getStationsForScope(scope: HomeScope): Station[] {
 }
 
 export function getStationImageUrl(stationName: string): string | null {
-  return bakedStationImages[stationName] ?? null;
+  return (overlayStationImages ?? bakedStationImages)[stationName] ?? null;
 }
 
 export function getHotelsForStation(stationName: string): Hotel[] {
-  const hotels = bakedHotels[stationName] ?? [];
+  const hotels = (overlayHotels ?? bakedHotels)[stationName] ?? [];
   const seen = new Set<string>();
   const out: Hotel[] = [];
   for (const hotel of hotels) {
@@ -155,6 +309,8 @@ export function getSummaryForStation(
   locale: Locale = 'en',
 ): string | null {
   return (
+    overlaySummariesByLocale?.[locale]?.[stationName] ??
+    overlaySummariesByLocale?.en?.[stationName] ??
     bakedSummariesByLocale[locale]?.[stationName] ??
     bakedSummariesEn[stationName] ??
     null
@@ -162,7 +318,7 @@ export function getSummaryForStation(
 }
 
 export function getCpCode(stationName: string): string | null {
-  return bakedCpCodes[stationName] ?? null;
+  return getCpCodes()[stationName] ?? null;
 }
 
 export function getBookingSearchUrl(station: Station): string {

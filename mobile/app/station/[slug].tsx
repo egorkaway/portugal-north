@@ -27,8 +27,9 @@ import { getReliabilityForStation, reliabilityScoreColor, formatReliabilityScore
 import { getAirportConnectionsEntry } from '@/lib/airportConnections';
 import { remoteImageSource } from '@/lib/remoteImage';
 import {
-  bakedReliabilityScores,
   getHotelsForStation,
+  getReliabilityScores,
+  getSpainReliabilityScores,
   getStationBySlug,
   getStationImageUrl,
   getSummaryForStation,
@@ -36,6 +37,7 @@ import {
   getBookingSearchUrl,
   isAirportStation,
 } from '@/lib/stationData';
+import { useCatalogRevision } from '@/lib/useCatalogRevision';
 import { getStationLineLinks } from '@/lib/trainLines';
 import {
   castStationVote,
@@ -52,6 +54,7 @@ export default function StationDetailScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const router = useRouter();
   const { t, locale } = useLocale();
+  useCatalogRevision();
   const station = slug ? getStationBySlug(slug) : undefined;
 
   const [vote, setVote] = useState<'up' | 'down' | null>(null);
@@ -98,7 +101,7 @@ export default function StationDetailScreen() {
   const summary = getSummaryForStation(station.name, locale);
   const hotels = getHotelsForStation(station.name);
   const reliability = getReliabilityForStation(
-    bakedReliabilityScores,
+    station.country === 'es' ? getSpainReliabilityScores() : getReliabilityScores(),
     station.name,
   );
   const hasCpCode = Boolean(getCpCode(station.name));

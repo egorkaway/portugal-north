@@ -919,4 +919,7 @@ export const spainSummariesCa: Record<string, string> = {
   "Benicàssim":
     "Benicàssim és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Montcada i Reixac-Santa Maria":
+    "Montcada i Reixac-Santa Maria és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

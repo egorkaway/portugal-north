@@ -26,10 +26,11 @@ import {
 } from '@/lib/reliabilityScore';
 import {
   allStations,
-  bakedReliabilityScores,
-  bakedSpainReliabilityScores,
+  getReliabilityScores,
+  getSpainReliabilityScores,
   stationToSlug,
 } from '@/lib/stationData';
+import { useCatalogRevision } from '@/lib/useCatalogRevision';
 import { isAirportHiddenFromMapMarkers } from '@/lib/airportMapVisibility';
 import {
   destinationIataFromStation,
@@ -64,6 +65,7 @@ export default function MapScreen() {
   const router = useRouter();
   const navigation = useNavigation();
   const { t, plural } = useLocale();
+  const catalogRevision = useCatalogRevision();
   const appleMapRef = useRef<MapView>(null);
   const osmMapRef = useRef<OsmWebMapHandle>(null);
   const shareViewRef = useRef<ViewShot>(null);
@@ -79,7 +81,7 @@ export default function MapScreen() {
         .filter((station) => !isAirportHiddenFromMapMarkers(station))
         .map((station) => {
           const spain = station.country === 'es';
-          const manifest = spain ? bakedSpainReliabilityScores : bakedReliabilityScores;
+          const manifest = spain ? getSpainReliabilityScores() : getReliabilityScores();
           const movements = manifest.movements[station.name] ?? 0;
           const rawScore = manifest.scores[station.name] ?? null;
           const score =
@@ -98,7 +100,7 @@ export default function MapScreen() {
             size: markerSize(movements),
           };
         }),
-    [],
+    [catalogRevision],
   );
 
   const osmMarkers = useMemo(

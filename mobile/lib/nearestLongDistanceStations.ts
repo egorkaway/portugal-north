@@ -5,8 +5,9 @@ import { pageStations, type Station } from '@/lib/stationData';
 
 const LONG_DISTANCE_TYPES = new Set(['Alfa Pendular', 'Intercidades']);
 
-/** CP and metro stops in Portugal — mirrors web `portugalStations`. */
-const portugalRailStations = pageStations.filter((station) => station.country === 'pt');
+function portugalRailStations(): Station[] {
+  return pageStations.filter((station) => station.country === 'pt');
+}
 
 export function hasLongDistanceService(station: Station): boolean {
   return station.types.some((type) => LONG_DISTANCE_TYPES.has(type));
@@ -31,7 +32,7 @@ export function getNearestLongDistanceStations(
   station: Station,
   limit = 2,
 ): NearestLongDistanceStation[] {
-  const candidates = portugalRailStations.filter(
+  const candidates = portugalRailStations().filter(
     (candidate) =>
       candidate.name !== station.name && hasLongDistanceService(candidate),
   );

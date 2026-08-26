@@ -4,6 +4,7 @@ import { BuildFooter } from '@/components/BuildFooter';
 import { TrainTypeLabels } from '@/components/TrainTypeLabels';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
+import { useCatalogRevision } from '@/lib/useCatalogRevision';
 import {
   getListedLinesForStation,
   getStationPathFromName,
@@ -14,6 +15,7 @@ export default function LineDetailScreen() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const router = useRouter();
   const { t, plural } = useLocale();
+  useCatalogRevision();
   const line = slug ? getTrainLineBySlug(slug) : undefined;
 
   if (!line) {

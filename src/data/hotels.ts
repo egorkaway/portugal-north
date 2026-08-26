@@ -3338,6 +3338,11 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Residencia Canadá", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Residencia%20Canad%C3%A1%2C%20Benic%C3%A0ssim%2C%20Spain&order=price" },
     { name: "La Torre", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Torre%2C%20Benic%C3%A0ssim%2C%20Spain&order=price" },
   ],
+  "Montcada i Reixac-Santa Maria": [
+    { name: "ApartHotel Montcada", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ApartHotel%20Montcada%2C%20Montcada%20i%20Reixac-Santa%20Maria%2C%20Spain&order=price" },
+    { name: "Sercotel Ciutat de Montcada", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20Ciutat%20de%20Montcada%2C%20Montcada%20i%20Reixac-Santa%20Maria%2C%20Spain&order=price" },
+    { name: "ibis", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%2C%20Montcada%20i%20Reixac-Santa%20Maria%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

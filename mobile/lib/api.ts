@@ -1,13 +1,10 @@
-import cpStationCodes from '@/data/cpStationCodes.json';
 import type { PlannedDeparture, StationArrival, StationDeparture } from '@/lib/types';
 import type { GlobalRatings } from '@/lib/rankVotes';
-import { bakedReliabilityScores } from '@/lib/stationData';
+import { getCpCode, getReliabilityScores } from '@/lib/stationData';
 import type { ReliabilityScoresManifest } from '@/lib/stationData';
 import { INITIAL_DEPARTURES_LIMIT } from '@/lib/departureLimits';
 
 const API_BASE = 'https://www.verystays.com';
-
-const codes = cpStationCodes as Record<string, string>;
 
 export type GlobalRatingsResult = {
   ratings: GlobalRatings;
@@ -32,7 +29,7 @@ export type TrainJourney = {
 };
 
 export function getCpStationCode(stationName: string): string | null {
-  return codes[stationName] ?? null;
+  return getCpCode(stationName);
 }
 
 export async function fetchStationBoard(
@@ -139,7 +136,7 @@ export async function fetchTrainJourney(input: {
 }
 
 export function getBakedReliabilityScores(): ReliabilityScoresManifest {
-  return bakedReliabilityScores;
+  return getReliabilityScores();
 }
 
 export function matchLiveDeparture(

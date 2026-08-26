@@ -6,6 +6,7 @@ import { TrainTypeLabels } from '@/components/TrainTypeLabels';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { getRailLines, type TrainLine } from '@/lib/trainLines';
+import { useCatalogRevision } from '@/lib/useCatalogRevision';
 
 function LineCard({ line }: { line: TrainLine }) {
   const router = useRouter();
@@ -48,7 +49,8 @@ function LineSection({ title, lines }: { title: string; lines: TrainLine[] }) {
 
 export default function LinesIndexScreen() {
   const { t } = useLocale();
-  const lines = useMemo(() => getRailLines(), []);
+  const catalogRevision = useCatalogRevision();
+  const lines = useMemo(() => getRailLines(), [catalogRevision]);
   const railPt = useMemo(() => lines.filter((l) => l.country === 'pt'), [lines]);
   const railEs = useMemo(() => lines.filter((l) => l.country === 'es'), [lines]);
 

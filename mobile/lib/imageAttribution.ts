@@ -1,4 +1,5 @@
 import pexelsPhotoCreditsJson from '@/data/pexelsPhotoCredits.json';
+import { getPexelsPhotoCredits } from '@/lib/stationData';
 
 type PexelsPhotoCredit = {
   photographer: string;
@@ -62,11 +63,15 @@ function wikimediaFilePageUrl(filename: string): string {
   return `${WIKIMEDIA_COMMONS}wiki/${encodeURIComponent(`File:${filename}`)}`;
 }
 
+function pexelsCredits(): Record<string, PexelsPhotoCredit> {
+  return getPexelsPhotoCredits() ?? pexelsPhotoCredits;
+}
+
 /** Attribution for a station photo URL (Pexels / Wikimedia). */
 export function attributionForImageUrl(imageUrl: string): ImageAttribution {
   const pexelsId = pexelsPhotoIdFromUrl(imageUrl);
   if (pexelsId) {
-    const credit = pexelsPhotoCredits[pexelsId];
+    const credit = pexelsCredits()[pexelsId];
     if (credit) {
       return {
         creator: { type: 'Person', name: credit.photographer },

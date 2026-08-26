@@ -3,6 +3,7 @@ import { Platform } from 'react-native';
 import ExpoCoreSpotlight, { type CoreSpotlightItem } from 'expo-core-spotlight';
 import {
   pageStations,
+  getCatalogRevision,
   getSummaryForStation,
   stationToSlug,
   type Station,
@@ -13,7 +14,7 @@ import type { Locale } from '@/i18n/types';
 const DOMAIN = 'com.iberian.travel.stations';
 const INDEX_VERSION_KEY = '@verystays/spotlight_stations_version';
 /** Bump when indexed fields or URL shape change. */
-const INDEX_PAYLOAD_VERSION = '2';
+const INDEX_PAYLOAD_VERSION = '3';
 const INDEX_CHUNK_SIZE = 80;
 
 function countryLabel(country: Station['country']): string {
@@ -78,7 +79,7 @@ export function buildStationSpotlightItems(
 }
 
 function indexVersionToken(): string {
-  return `${INDEX_PAYLOAD_VERSION}:${pageStations.length}:${detectDeviceLocale()}`;
+  return `${INDEX_PAYLOAD_VERSION}:${pageStations.length}:${getCatalogRevision()}:${detectDeviceLocale()}`;
 }
 
 async function indexInChunks(items: CoreSpotlightItem[]): Promise<void> {

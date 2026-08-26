@@ -21,7 +21,8 @@ import {
   reliabilityScoreColor,
   formatReliabilityScore,
 } from '@/lib/reliabilityScore';
-import { bakedReliabilityScores, bakedTrainReliabilitySpotlight, pickPublicHotelRatings, pickPublicStationRatings, stationToSlug } from '@/lib/stationData';
+import { getReliabilityScores, getTrainReliabilitySpotlight, pickPublicHotelRatings, pickPublicStationRatings, stationToSlug } from '@/lib/stationData';
+import { useCatalogRevision } from '@/lib/useCatalogRevision';
 import { getServiceTypeTextColor } from '@/lib/trainTypes';
 import {
   formatTrainSpotlightDelay,
@@ -31,6 +32,7 @@ import {
 export default function RankingsScreen() {
   const router = useRouter();
   const { t } = useLocale();
+  useCatalogRevision();
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [ratings, setRatings] = useState<{
@@ -58,8 +60,8 @@ export default function RankingsScreen() {
     setRefreshing(false);
   };
 
-  const reliability = bakedReliabilityScores;
-  const trainSpotlight = bakedTrainReliabilitySpotlight;
+  const reliability = getReliabilityScores();
+  const trainSpotlight = getTrainReliabilitySpotlight();
   const topReliability = getTopReliabilityStations(
     reliability.scores,
     reliability.movements,

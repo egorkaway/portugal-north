@@ -16,10 +16,12 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Colors from '@/constants/Colors';
 import { theme } from '@/constants/theme';
 import { WidgetSyncBootstrap } from '@/components/WidgetSyncBootstrap';
+import { CatalogSyncBootstrap } from '@/components/CatalogSyncBootstrap';
 import { LocaleProvider, useLocale } from '@/i18n/LocaleProvider';
 import { PurchasesProvider } from '@/components/PurchasesProvider';
 import { isLiveActivityEndNotification } from '@/lib/liveActivityEndSchedule';
 import { isOnboardingComplete } from '@/lib/onboardingStorage';
+import { hydrateCatalogFromDisk } from '@/lib/catalogSync';
 import { endAllLiveActivities, onTripDeparted, seedWidgetTimeline } from '@/lib/widgetSync';
 import { getStationSlugFromArrivalNotification } from '@/lib/stationArrivalNotifications';
 
@@ -95,7 +97,12 @@ function RootLayoutNav() {
 
   useEffect(() => {
     if (!ready) return;
-    void isOnboardingComplete().then((complete) => {
+    void Promise.all([
+      isOnboardingComplete(),
+      hydrateCatalogFromDisk().catch((error) => {
+        console.warn('[catalog] hydrate failed', error);
+      }),
+    ]).then(([complete]) => {
       if (!complete) {
         router.replace('/onboarding');
       }
@@ -132,6 +139,7 @@ function RootLayoutNav() {
       <ThemeProvider value={DefaultTheme}>
         <StatusBar style="dark" />
         <WidgetSyncBootstrap />
+        <CatalogSyncBootstrap />
         <Stack
           screenOptions={{
             headerStyle: { backgroundColor: light.background },

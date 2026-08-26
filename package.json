@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/refresh-station-images-from-votes.mjs --build && vite build && node scripts/prerender-pages.mjs && node scripts/prerender-markdown.mjs && node scripts/sync-discovery-public.mjs",
+    "build": "node scripts/refresh-station-images-from-votes.mjs --build && node scripts/publish-mobile-catalog.mjs && vite build && node scripts/prerender-pages.mjs && node scripts/prerender-markdown.mjs && node scripts/sync-discovery-public.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "icons": "node scripts/generate-icons.mjs",
     "social:stations": "node scripts/generate-social-station-cards.mjs",
@@ -39,6 +39,7 @@
     "stats:sync-station-types": "node --import tsx scripts/sync-station-types-from-stats.mjs --write",
     "stats:sync-station-types:dry": "node --import tsx scripts/sync-station-types-from-stats.mjs",
     "summaries:next": "node --import tsx scripts/list-stations-needing-summaries.mjs",
+    "catalog:mobile": "node scripts/publish-mobile-catalog.mjs",
     "sync:build": "node --import tsx scripts/sync-mobile-build-number.mjs",
     "sync:build:bump": "node --import tsx scripts/sync-mobile-build-number.mjs --bump"
   },
