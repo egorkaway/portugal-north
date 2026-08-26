@@ -11,8 +11,8 @@ export const spainStations: Station[] = [
     country: "es",
     lines: ["Eje Atlántico", "Celta (Porto–Vigo)"],
     types: ["Regional", "Internacional"],
-    lat: 42.2314,
-    lng: -8.7126,
+    lat: 42.2395,
+    lng: -8.7119,
   },
   {
     name: "Vigo-Urzáiz",
@@ -2487,6 +2487,42 @@ export const spainStations: Station[] = [
     types: ["Urban"],
     lat: 40.31,
     lng: -3.734,
+  },
+
+  {
+    name: "Castelldefels",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.279,
+    lng: 1.9792,
+  },
+
+  {
+    name: "Colloto",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3795,
+    lng: -5.7924,
+  },
+
+  {
+    name: "Terrassa Est",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5675,
+    lng: 2.0396,
+  },
+
+  {
+    name: "Estación de tren Hospital",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.6052,
+    lng: -0.9607,
   },
 
 ];

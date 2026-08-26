@@ -3283,6 +3283,26 @@ export const stationHotels: StationHotels = {
     { name: "Ibis Madrid Getafe", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Madrid%20Getafe%2C%20Getafe-Centro%2C%20Spain&order=price" },
     { name: "B&B Hotel", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotel%2C%20Getafe-Centro%2C%20Spain&order=price" },
   ],
+  "Castelldefels": [
+    { name: "Hotel ibis Barcelona Castelldefels", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ibis%20Barcelona%20Castelldefels%2C%20Castelldefels%2C%20Spain&order=price" },
+    { name: "Hotel Pitort", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pitort%2C%20Castelldefels%2C%20Spain&order=price" },
+    { name: "Сб нотел", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=%D0%A1%D0%B1%20%D0%BD%D0%BE%D1%82%D0%B5%D0%BB%2C%20Castelldefels%2C%20Spain&order=price" },
+  ],
+  "Colloto": [
+    { name: "Hotel Viella Asturias", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Viella%20Asturias%2C%20Colloto%2C%20Spain&order=price" },
+    { name: "Los Abedules", distanceKm: 1.3, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Los%20Abedules%2C%20Colloto%2C%20Spain&order=price" },
+    { name: "Hotel Las Lomas", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Lomas%2C%20Colloto%2C%20Spain&order=price" },
+  ],
+  "Terrassa Est": [
+    { name: "La Mola Hotel & Conference Centre", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Mola%20Hotel%20%26%20Conference%20Centre%2C%20Terrassa%20Est%2C%20Spain&order=price" },
+    { name: "Hotel Terrassa Park", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Terrassa%20Park%2C%20Terrassa%20Est%2C%20Spain&order=price" },
+    { name: "Hotel Petit Luxe", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Petit%20Luxe%2C%20Terrassa%20Est%2C%20Spain&order=price" },
+  ],
+  "Estación de tren Hospital": [
+    { name: "Posadas de España", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Posadas%20de%20Espa%C3%B1a%2C%20Estaci%C3%B3n%20de%20tren%20Hospital%2C%20Spain&order=price" },
+    { name: "Hotel NH Campo de Cartagena", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20NH%20Campo%20de%20Cartagena%2C%20Estaci%C3%B3n%20de%20tren%20Hospital%2C%20Spain&order=price" },
+    { name: "Hotel Los Habaneros", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Los%20Habaneros%2C%20Estaci%C3%B3n%20de%20tren%20Hospital%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

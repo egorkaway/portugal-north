@@ -541,6 +541,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Getafe-Centro": ["37002"],
 
+  "Castelldefels": ["71705"],
+
+  "Colloto": ["05505"],
+
+  "Terrassa Est": ["78710"],
+
+  "Estación de tren Hospital": ["05952"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

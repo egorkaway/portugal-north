@@ -1246,6 +1246,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@onorblog",
     photoPageUrl: "https://www.pexels.com/photo/people-on-a-railway-station-18280334/",
   },
+  "18305896": {
+    photographer: "Wolfgang Weiser",
+    photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
+    photoPageUrl: "https://www.pexels.com/photo/station-luttich-18305896/",
+  },
   "18305906": {
     photographer: "Wolfgang Weiser",
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
@@ -1915,6 +1920,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Renata Moraes",
     photographerUrl: "https://www.pexels.com/@moraesrenata",
     photoPageUrl: "https://www.pexels.com/photo/sao-bento-station-clock-and-azulejos-in-porto-31597977/",
+  },
+  "31610408": {
+    photographer: "Plastic Lines",
+    photographerUrl: "https://www.pexels.com/@plasticlines",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architecture-with-lone-figure-in-istanbul-31610408/",
   },
   "31666708": {
     photographer: "Esra Erdoğdu",
