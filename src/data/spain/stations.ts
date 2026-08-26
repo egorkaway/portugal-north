@@ -2561,4 +2561,31 @@ export const spainStations: Station[] = [
     lng: -0.3992,
   },
 
+  {
+    name: "Calafell",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.1897,
+    lng: 1.575,
+  },
+
+  {
+    name: "Los Nietos Pescadería",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.6494,
+    lng: -0.7879,
+  },
+
+  {
+    name: "Benicàssim",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.0579,
+    lng: 0.0578,
+  },
+
 ];

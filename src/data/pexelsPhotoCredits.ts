@@ -1211,6 +1211,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@roodzn",
     photoPageUrl: "https://www.pexels.com/photo/stone-building-at-railway-station-17755286/",
   },
+  "17830731": {
+    photographer: "Masood Aslami",
+    photographerUrl: "https://www.pexels.com/@masoodaslami",
+    photoPageUrl: "https://www.pexels.com/photo/modern-subway-station-in-cologne-17830731/",
+  },
   "17845091": {
     photographer: "Katia Miasoed",
     photographerUrl: "https://www.pexels.com/@katia-miasoed-624959709",

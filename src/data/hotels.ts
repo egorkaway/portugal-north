@@ -3323,6 +3323,21 @@ export const stationHotels: StationHotels = {
     { name: "Aparthotel Albufera", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Albufera%2C%20Catarroja%2C%20Spain&order=price" },
     { name: "Hotel Albufera", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Albufera%2C%20Catarroja%2C%20Spain&order=price" },
   ],
+  "Calafell": [
+    { name: "Hotel Canada Palace", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Canada%20Palace%2C%20Calafell%2C%20Spain&order=price" },
+    { name: "Hotel Solimar", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Solimar%2C%20Calafell%2C%20Spain&order=price" },
+    { name: "Hotel Salomé", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Salom%C3%A9%2C%20Calafell%2C%20Spain&order=price" },
+  ],
+  "Los Nietos Pescadería": [
+    { name: "Hotel El Secreto del Agua Rooms & Suites", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Secreto%20del%20Agua%20Rooms%20%26%20Suites%2C%20Los%20Nietos%20Pescader%C3%ADa%2C%20Spain&order=price" },
+    { name: "Occidental Mar Menor", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Occidental%20Mar%20Menor%2C%20Los%20Nietos%20Pescader%C3%ADa%2C%20Spain&order=price" },
+    { name: "Las Lomas Village", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Las%20Lomas%20Village%2C%20Los%20Nietos%20Pescader%C3%ADa%2C%20Spain&order=price" },
+  ],
+  "Benicàssim": [
+    { name: "Hotel Eco Avenida", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Eco%20Avenida%2C%20Benic%C3%A0ssim%2C%20Spain&order=price" },
+    { name: "Hotel Residencia Canadá", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Residencia%20Canad%C3%A1%2C%20Benic%C3%A0ssim%2C%20Spain&order=price" },
+    { name: "La Torre", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Torre%2C%20Benic%C3%A0ssim%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

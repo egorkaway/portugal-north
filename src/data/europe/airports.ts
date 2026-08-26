@@ -594,6 +594,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -28.715900421142578,
   },
   {
+    name: "Iaşi International Airport (IAS)",
+    country: "ro",
+    lines: ["IAS"],
+    types: ["Airport Destination"],
+    lat: 47.179633,
+    lng: 27.621431,
+  },
+  {
     name: "Ibiza Airport (IBZ)",
     country: "es",
     lines: ["IBZ"],
@@ -1320,6 +1328,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 28.0445,
     lng: -16.5725,
+  },
+  {
+    name: "Podgorica Airport / Podgorica Golubovci Airbase (TGD)",
+    country: "me",
+    lines: ["TGD"],
+    types: ["Airport Destination"],
+    lat: 42.359402,
+    lng: 19.2519,
   },
   {
     name: "Tirana International Airport Mother Teresa (TIA)",

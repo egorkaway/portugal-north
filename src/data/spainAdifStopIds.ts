@@ -557,6 +557,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Catarroja": ["64201"],
 
+  "Calafell": ["71601"],
+
+  "Los Nietos Pescadería": ["05975"],
+
+  "Benicàssim": ["65318"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
