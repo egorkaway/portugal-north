@@ -537,6 +537,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Cádiz-Estadio": ["51409"],
 
+  "Pizarra": ["54406"],
+
+  "Getafe-Centro": ["37002"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

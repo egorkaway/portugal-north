@@ -272,8 +272,8 @@ export const en: Messages = {
     spainReliabilityIntro:
       "Based on cumulative delays from our live Renfe trip-update samples. Stations need at least 5 observations. 10 means fewest delays in our Spanish data; 1 means most. Separate from the Portuguese ranking.",
     spainReliabilityUnavailable: "Spain reliability rankings are temporarily unavailable.",
-    spainMostReliable: "Top 3 most reliable (Spain)",
-    spainLeastReliable: "Top 3 least reliable (Spain)",
+    spainMostReliable: "Top 5 most reliable (Spain)",
+    spainLeastReliable: "Top 5 least reliable (Spain)",
     downloadReliabilityCsv: "Download CSV",
     downloadStationCsv: "Download CSV",
     trainSpotlightTitle: "Portugal train spotlight",
@@ -289,7 +289,7 @@ export const en: Messages = {
     trainSpotlightMajorStations: "Via",
     airportDestinationRankings: "Airport connection rankings",
     airportDestinationIntro:
-      "Based on how many direct destinations appear in our collected connection data for each hub — not how many flights we sampled.",
+      "Based on how many direct destinations appear in our collected connection data for each hub — not how many flights we sampled. Only continental airports are compared; island airports are not counted.",
     airportDestinationLoading: "Loading airport rankings…",
     airportDestinationUnavailable: "Airport connection rankings are temporarily unavailable.",
     airportDestinationNoData: "No airport connection data yet.",

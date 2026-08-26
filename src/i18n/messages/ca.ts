@@ -274,8 +274,8 @@ export const ca: Messages = {
       "Basat en els retards acumulats de les nostres mostres Renfe en temps real. Les estacions necessiten almenys 5 observacions. 10 = menys retards en les dades espanyoles; 1 = més retards. Independent del ranking portuguès.",
     spainReliabilityUnavailable:
       "Els rankings de fiabilitat d'Espanya no estan disponibles temporalment.",
-    spainMostReliable: "Top 3 més fiables (Espanya)",
-    spainLeastReliable: "Top 3 menys fiables (Espanya)",
+    spainMostReliable: "Top 5 més fiables (Espanya)",
+    spainLeastReliable: "Top 5 menys fiables (Espanya)",
     downloadReliabilityCsv: "Descarregar CSV",
     downloadStationCsv: "Descarregar CSV",
     trainSpotlightTitle: "Trens destacats a Portugal",
@@ -291,7 +291,7 @@ export const ca: Messages = {
     trainSpotlightMajorStations: "Via",
     airportDestinationRankings: "Rankings de connexions aèries",
     airportDestinationIntro:
-      "Segons quants destins directes apareixen a les dades de connexions recollides per a cada hub — no segons quants vols hem mostrejat.",
+      "Segons quants destins directes apareixen a les dades de connexions recollides per a cada hub — no segons quants vols hem mostrejat. Només comparem aeroports continentals; els de les illes no compten.",
     airportDestinationLoading: "Carregant rankings d'aeroports…",
     airportDestinationUnavailable: "Els rankings de connexions aèries no estan disponibles temporalment.",
     airportDestinationNoData: "Encara no hi ha dades de connexions aèries.",

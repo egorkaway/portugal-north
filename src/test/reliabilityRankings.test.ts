@@ -100,13 +100,17 @@ describe("reliability rankings", () => {
     expect(filtered).toEqual({ Quiet: 10, Busy: 8 });
   });
 
-  it("builds a separate Spain top and bottom 3 from gated scores", () => {
+  it("builds a separate Spain top and bottom 5 from gated scores", () => {
     const scores: Record<string, number> = {
       "A Coruña": 10,
       Pontevedra: 9,
       Ourense: 8,
-      "Barcelona-Sants": 3,
-      "Zaragoza Delicias": 2,
+      Vigo: 7,
+      Santiago: 6,
+      "Barcelona-Sants": 5,
+      "Madrid-Chamartín": 4,
+      "Zaragoza Delicias": 3,
+      "Sevilla-Santa Justa": 2,
       "València-Estació del Nord": 1,
       "One sample halt": 10,
     };
@@ -114,21 +118,33 @@ describe("reliability rankings", () => {
       "A Coruña": 26,
       Pontevedra: 23,
       Ourense: 41,
+      Vigo: 30,
+      Santiago: 18,
       "Barcelona-Sants": 224,
+      "Madrid-Chamartín": 180,
       "Zaragoza Delicias": 56,
+      "Sevilla-Santa Justa": 90,
       "València-Estació del Nord": 35,
       "One sample halt": 1,
     };
 
     const { top, bottom } = buildSpainReliabilityRankings(scores, movements);
 
-    expect(SPAIN_RELIABILITY_RANKING_LIMIT).toBe(3);
-    expect(top).toHaveLength(3);
-    expect(bottom).toHaveLength(3);
-    expect(top.map((row) => row.name)).toEqual(["A Coruña", "Pontevedra", "Ourense"]);
+    expect(SPAIN_RELIABILITY_RANKING_LIMIT).toBe(5);
+    expect(top).toHaveLength(5);
+    expect(bottom).toHaveLength(5);
+    expect(top.map((row) => row.name)).toEqual([
+      "A Coruña",
+      "Pontevedra",
+      "Ourense",
+      "Vigo",
+      "Santiago",
+    ]);
     expect(bottom.map((row) => row.name)).toEqual([
       "València-Estació del Nord",
+      "Sevilla-Santa Justa",
       "Zaragoza Delicias",
+      "Madrid-Chamartín",
       "Barcelona-Sants",
     ]);
     expect(top.some((row) => row.name === "One sample halt")).toBe(false);
@@ -151,7 +167,7 @@ describe("reliability rankings", () => {
     );
 
     const { top, bottom } = buildSpainReliabilityRankings(spain.scores, spain.movements);
-    expect(top).toHaveLength(3);
-    expect(bottom).toHaveLength(3);
+    expect(top).toHaveLength(5);
+    expect(bottom).toHaveLength(5);
   });
 });

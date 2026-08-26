@@ -106,6 +106,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pixabay",
     photoPageUrl: "https://www.pexels.com/photo/gray-steel-entrance-gate-in-middle-of-hallway-462341/",
   },
+  "731362": {
+    photographer: "payam masouri",
+    photographerUrl: "https://www.pexels.com/@payam-masouri-230151",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-train-731362/",
+  },
   "753510": {
     photographer: "Francesco Paggiaro",
     photographerUrl: "https://www.pexels.com/@paggiarofrancesco",

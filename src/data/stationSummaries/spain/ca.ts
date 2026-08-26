@@ -880,4 +880,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Cádiz-Estadio":
     "Cádiz-Estadio és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Pizarra":
+    "Pizarra és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Getafe-Centro":
+    "Getafe-Centro és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

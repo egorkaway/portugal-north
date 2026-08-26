@@ -880,4 +880,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Cádiz-Estadio":
     "Cádiz-Estadio é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Pizarra":
+    "Pizarra é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Getafe-Centro":
+    "Getafe-Centro é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

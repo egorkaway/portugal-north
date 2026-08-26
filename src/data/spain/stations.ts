@@ -2471,4 +2471,22 @@ export const spainStations: Station[] = [
     lng: -6.2721,
   },
 
+  {
+    name: "Pizarra",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.7642,
+    lng: -4.7118,
+  },
+
+  {
+    name: "Getafe-Centro",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.31,
+    lng: -3.734,
+  },
+
 ];

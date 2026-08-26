@@ -274,8 +274,8 @@ export const es: Messages = {
       "Basado en los retrasos acumulados de nuestras muestras Renfe en tiempo real. Las estaciones necesitan al menos 5 observaciones. 10 = menos retrasos en los datos españoles; 1 = más retrasos. Independiente del ranking portugués.",
     spainReliabilityUnavailable:
       "Los rankings de fiabilidad de España no están disponibles temporalmente.",
-    spainMostReliable: "Top 3 más fiables (España)",
-    spainLeastReliable: "Top 3 menos fiables (España)",
+    spainMostReliable: "Top 5 más fiables (España)",
+    spainLeastReliable: "Top 5 menos fiables (España)",
     downloadReliabilityCsv: "Descargar CSV",
     downloadStationCsv: "Descargar CSV",
     trainSpotlightTitle: "Trenes destacados en Portugal",
@@ -291,7 +291,7 @@ export const es: Messages = {
     trainSpotlightMajorStations: "Vía",
     airportDestinationRankings: "Rankings de conexiones aéreas",
     airportDestinationIntro:
-      "Según cuántos destinos directos aparecen en nuestros datos de conexiones recogidos para cada hub — no según cuántos vuelos hemos muestreado.",
+      "Según cuántos destinos directos aparecen en nuestros datos de conexiones recogidos para cada hub — no según cuántos vuelos hemos muestreado. Solo comparamos aeropuertos continentales; los de las islas no cuentan.",
     airportDestinationLoading: "Cargando rankings de aeropuertos…",
     airportDestinationUnavailable: "Los rankings de conexiones aéreas no están disponibles temporalmente.",
     airportDestinationNoData: "Aún no hay datos de conexiones aéreas.",

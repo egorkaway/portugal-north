@@ -3273,6 +3273,16 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Spa Cádiz Plaza", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Spa%20C%C3%A1diz%20Plaza%2C%20C%C3%A1diz-Estadio%2C%20Spain&order=price" },
     { name: "Hotel Playa Victoria", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Playa%20Victoria%2C%20C%C3%A1diz-Estadio%2C%20Spain&order=price" },
   ],
+  "Pizarra": [
+    { name: "Cortijo del Arte", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cortijo%20del%20Arte%2C%20Pizarra%2C%20Spain&order=price" },
+    { name: "Casa Patricia", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Patricia%2C%20Pizarra%2C%20Spain&order=price" },
+    { name: "Rancho Rustico", distanceKm: 5.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rancho%20Rustico%2C%20Pizarra%2C%20Spain&order=price" },
+  ],
+  "Getafe-Centro": [
+    { name: "Hostal Colón", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Col%C3%B3n%2C%20Getafe-Centro%2C%20Spain&order=price" },
+    { name: "Ibis Madrid Getafe", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Madrid%20Getafe%2C%20Getafe-Centro%2C%20Spain&order=price" },
+    { name: "B&B Hotel", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotel%2C%20Getafe-Centro%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

@@ -880,4 +880,10 @@ export const spainSummariesEn: Record<string, string> = {
   "Cádiz-Estadio":
     "Cádiz-Estadio is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Pizarra":
+    "Pizarra is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Getafe-Centro":
+    "Getafe-Centro is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };
