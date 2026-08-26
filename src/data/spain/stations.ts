@@ -2417,4 +2417,58 @@ export const spainStations: Station[] = [
     lng: -0.4409,
   },
 
+  {
+    name: "Herradón-La Cañada",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5993,
+    lng: -4.495,
+  },
+
+  {
+    name: "Logroño",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.4575,
+    lng: -2.4422,
+  },
+
+  {
+    name: "Trubia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3486,
+    lng: -5.9678,
+  },
+
+  {
+    name: "Badalona",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4459,
+    lng: 2.2489,
+  },
+
+  {
+    name: "Callosa de Segura",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.1228,
+    lng: -0.8746,
+  },
+
+  {
+    name: "Cádiz-Estadio",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.5029,
+    lng: -6.2721,
+  },
+
 ];

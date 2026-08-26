@@ -3243,6 +3243,36 @@ export const stationHotels: StationHotels = {
     { name: "Casa novia", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20novia%2C%20Algemes%C3%AD%2C%20Spain&order=price" },
     { name: "Casa de jessica", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20de%20jessica%2C%20Algemes%C3%AD%2C%20Spain&order=price" },
   ],
+  "Herradón-La Cañada": [
+    { name: "Casa Tío Peguero", distanceKm: 7.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20T%C3%ADo%20Peguero%2C%20Herrad%C3%B3n-La%20Ca%C3%B1ada%2C%20Spain&order=price" },
+    { name: "Casa Rural El Molino", distanceKm: 7.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20El%20Molino%2C%20Herrad%C3%B3n-La%20Ca%C3%B1ada%2C%20Spain&order=price" },
+    { name: "Hotel Quinta de los Enebrales", distanceKm: 9.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Quinta%20de%20los%20Enebrales%2C%20Herrad%C3%B3n-La%20Ca%C3%B1ada%2C%20Spain&order=price" },
+  ],
+  "Logroño": [
+    { name: "Pensión Belchite", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Belchite%2C%20Logro%C3%B1o%2C%20Spain&order=price" },
+    { name: "Hotel Iraipe", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Iraipe%2C%20Logro%C3%B1o%2C%20Spain&order=price" },
+    { name: "Eurostars Marqués de Vallejo", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostars%20Marqu%C3%A9s%20de%20Vallejo%2C%20Logro%C3%B1o%2C%20Spain&order=price" },
+  ],
+  "Trubia": [
+    { name: "Blau Hotel Las Caldas", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Blau%20Hotel%20Las%20Caldas%2C%20Trubia%2C%20Spain&order=price" },
+    { name: "Blau Gran Hotel Las Caldas", distanceKm: 4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Blau%20Gran%20Hotel%20Las%20Caldas%2C%20Trubia%2C%20Spain&order=price" },
+    { name: "Las Viñas", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Las%20Vi%C3%B1as%2C%20Trubia%2C%20Spain&order=price" },
+  ],
+  "Badalona": [
+    { name: "Hostal Solimar", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Solimar%2C%20Badalona%2C%20Spain&order=price" },
+    { name: "Hotel Miramar", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Miramar%2C%20Badalona%2C%20Spain&order=price" },
+    { name: "Hostal Badaloní", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Badalon%C3%AD%2C%20Badalona%2C%20Spain&order=price" },
+  ],
+  "Callosa de Segura": [
+    { name: "El Chalet", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Chalet%2C%20Callosa%20de%20Segura%2C%20Spain&order=price" },
+    { name: "Hostal El Palmeral", distanceKm: 5.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20Palmeral%2C%20Callosa%20de%20Segura%2C%20Spain&order=price" },
+    { name: "Hostal Restaurante La Rotonda", distanceKm: 5.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Restaurante%20La%20Rotonda%2C%20Callosa%20de%20Segura%2C%20Spain&order=price" },
+  ],
+  "Cádiz-Estadio": [
+    { name: "Hospederia Imar", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospederia%20Imar%2C%20C%C3%A1diz-Estadio%2C%20Spain&order=price" },
+    { name: "Hotel Spa Cádiz Plaza", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Spa%20C%C3%A1diz%20Plaza%2C%20C%C3%A1diz-Estadio%2C%20Spain&order=price" },
+    { name: "Hotel Playa Victoria", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Playa%20Victoria%2C%20C%C3%A1diz-Estadio%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

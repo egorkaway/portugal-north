@@ -391,6 +391,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@solmaazzzz",
     photoPageUrl: "https://www.pexels.com/photo/woman-with-a-dog-on-a-train-station-platform-5830084/",
   },
+  "5833582": {
+    photographer: "Claiton  Conto",
+    photographerUrl: "https://www.pexels.com/@claiton",
+    photoPageUrl: "https://www.pexels.com/photo/an-empty-train-station-5833582/",
+  },
   "5833584": {
     photographer: "Claiton  Conto",
     photographerUrl: "https://www.pexels.com/@claiton",
@@ -2256,6 +2261,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@theo-cold-814199886",
     photoPageUrl: "https://www.pexels.com/photo/urban-railway-tracks-and-cityscape-in-black-and-white-33945106/",
   },
+  "34011230": {
+    photographer: "Earth Photart",
+    photographerUrl: "https://www.pexels.com/@earth-photart-2149767641",
+    photoPageUrl: "https://www.pexels.com/photo/scenic-view-of-rabat-s-bridge-and-cityscape-34011230/",
+  },
   "34055632": {
     photographer: "Spiros Kakos",
     photographerUrl: "https://www.pexels.com/@spiros-kakos-1083421",
@@ -2775,5 +2785,10 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Fotografías de El Puerto  de Santa María",
     photographerUrl: "https://www.pexels.com/@fotografias-de-el-puerto-de-santa-maria-2148829485",
     photoPageUrl: "https://www.pexels.com/photo/historic-archway-in-el-puerto-de-santa-maria-39038706/",
+  },
+  "39139818": {
+    photographer: "Kari Alfonso",
+    photographerUrl: "https://www.pexels.com/@kari-alfonso-2151442665",
+    photoPageUrl: "https://www.pexels.com/photo/historic-train-station-with-vintage-railcar-in-black-and-white-39139818/",
   },
 };

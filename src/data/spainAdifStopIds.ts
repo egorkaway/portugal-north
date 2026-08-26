@@ -525,6 +525,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Algemesí": ["64105"],
 
+  "Herradón-La Cañada": ["10300"],
+
+  "Logroño": ["81100"],
+
+  "Trubia": ["05311"],
+
+  "Badalona": ["79404"],
+
+  "Callosa de Segura": ["62003"],
+
+  "Cádiz-Estadio": ["51409"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

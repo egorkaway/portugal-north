@@ -994,6 +994,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 11.1004,
   },
   {
+    name: "Leoš Janáček Airport Ostrava (OSR)",
+    country: "cz",
+    lines: ["OSR"],
+    types: ["Airport Destination"],
+    lat: 49.696301,
+    lng: 18.111099,
+  },
+  {
     name: "Ostend-Bruges International Airport (OST)",
     country: "be",
     lines: ["OST"],
