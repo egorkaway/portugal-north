@@ -17,8 +17,8 @@
 export const REVENUECAT_API_KEYS = {
   /** App Store public SDK key (RevenueCat → Project settings → API keys). */
   ios: 'appl_yHhYKfBwggzCvJPlpkMFAMxHLXA',
-  /** Debug-only Test Store key until a Play (`goog_…`) key is set. */
-  android: 'test_SUliVovThJXraTvMAywLjwjCczj',
+  /** Google Play public SDK key (RevenueCat → Project settings → API keys). */
+  android: 'goog_lyduUTfiSDjJquBXOBUwxEEPeJT',
 } as const;
 
 /** True for RevenueCat Test Store keys (`test_…`). Unsafe in Release. */

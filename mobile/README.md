@@ -30,7 +30,7 @@ Packages: `react-native-purchases` + `react-native-purchases-ui` (installed via 
 |----------|--------|
 | Entitlement | `iberian.travel Pro` |
 | Package | `monthly` (falls back to `$rc_monthly` / offering.monthly) |
-| API key | Apple test key in [`constants/revenueCat.ts`](constants/revenueCat.ts) |
+| API key | iOS `appl_…` + Android `goog_…` in [`constants/revenueCat.ts`](constants/revenueCat.ts) |
 
 **Dashboard checklist**
 
