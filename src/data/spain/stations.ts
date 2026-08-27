@@ -2660,4 +2660,67 @@ export const spainStations: Station[] = [
     lng: -8.2311,
   },
 
+  {
+    name: "Molins de Rei",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4099,
+    lng: 2.0208,
+  },
+
+  {
+    name: "Terrassa Estació del Nord",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.5698,
+    lng: 2.0144,
+  },
+
+  {
+    name: "Andoain-Centro",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2156,
+    lng: -2.0205,
+  },
+
+  {
+    name: "Viveiro",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.6569,
+    lng: -7.6003,
+  },
+
+  {
+    name: "Ocata",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.479,
+    lng: 2.3195,
+  },
+
+  {
+    name: "Laguna",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3991,
+    lng: -3.7442,
+  },
+
+  {
+    name: "Alcalá de Chivert",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.3047,
+    lng: 0.2287,
+  },
+
 ];

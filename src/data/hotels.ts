@@ -3378,6 +3378,41 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Almendra", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Almendra%2C%20Ferrol%2C%20Spain&order=price" },
     { name: "Zahara", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Zahara%2C%20Ferrol%2C%20Spain&order=price" },
   ],
+  "Molins de Rei": [
+    { name: "Calasanz", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Calasanz%2C%20Molins%20de%20Rei%2C%20Spain&order=price" },
+    { name: "Holiday Inn Express Molins de Rei, an IHG Hotel", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Molins%20de%20Rei%2C%20an%20IHG%20Hotel%2C%20Molins%20de%20Rei%2C%20Spain&order=price" },
+    { name: "Ibis", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%2C%20Molins%20de%20Rei%2C%20Spain&order=price" },
+  ],
+  "Terrassa Estació del Nord": [
+    { name: "Hotel Petit Luxe", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Petit%20Luxe%2C%20Terrassa%20Estaci%C3%B3%20del%20Nord%2C%20Spain&order=price" },
+    { name: "Hotel Egara", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Egara%2C%20Terrassa%20Estaci%C3%B3%20del%20Nord%2C%20Spain&order=price" },
+    { name: "Familia Simón i Vernet", distanceKm: 1.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Familia%20Sim%C3%B3n%20i%20Vernet%2C%20Terrassa%20Estaci%C3%B3%20del%20Nord%2C%20Spain&order=price" },
+  ],
+  "Andoain-Centro": [
+    { name: "Albergue del Peregrino de Andoain - Andoaingo Plazaolako Aterpetxea", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20del%20Peregrino%20de%20Andoain%20-%20Andoaingo%20Plazaolako%20Aterpetxea%2C%20Andoain-Centro%2C%20Spain&order=price" },
+    { name: "Pensión - Ostatua Andoain", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20-%20Ostatua%20Andoain%2C%20Andoain-Centro%2C%20Spain&order=price" },
+    { name: "Apartahotel la estación", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartahotel%20la%20estaci%C3%B3n%2C%20Andoain-Centro%2C%20Spain&order=price" },
+  ],
+  "Viveiro": [
+    { name: "Viveiro Hotel Urban", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Viveiro%20Hotel%20Urban%2C%20Viveiro%2C%20Spain&order=price" },
+    { name: "Pensión Nuevo Mundo", distanceKm: 0.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Nuevo%20Mundo%2C%20Viveiro%2C%20Spain&order=price" },
+    { name: "Hostal Vigo", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Vigo%2C%20Viveiro%2C%20Spain&order=price" },
+  ],
+  "Ocata": [
+    { name: "Hotel Torino", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Torino%2C%20Ocata%2C%20Spain&order=price" },
+    { name: "Hotel Llar de Capitans", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Llar%20de%20Capitans%2C%20Ocata%2C%20Spain&order=price" },
+    { name: "Xavi", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Xavi%2C%20Ocata%2C%20Spain&order=price" },
+  ],
+  "Laguna": [
+    { name: "Hostal Don Pedro", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Don%20Pedro%2C%20Laguna%2C%20Spain&order=price" },
+    { name: "Hostal Puerta Bonita", distanceKm: 1.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Puerta%20Bonita%2C%20Laguna%2C%20Spain&order=price" },
+    { name: "Hostal Granado Madrid", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Granado%20Madrid%2C%20Laguna%2C%20Spain&order=price" },
+  ],
+  "Alcalá de Chivert": [
+    { name: "Budget stays near Alcalá de Chivert", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alcal%C3%A1%20de%20Chivert%2C%20Spain&order=price" },
+    { name: "Guest houses near Alcalá de Chivert", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alcal%C3%A1%20de%20Chivert%2C%20Spain&order=price" },
+    { name: "Hotels near Alcalá de Chivert", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alcal%C3%A1%20de%20Chivert%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

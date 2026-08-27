@@ -579,6 +579,20 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Ferrol": ["21010"],
 
+  "Molins de Rei": ["72300"],
+
+  "Terrassa Estació del Nord": ["78700"],
+
+  "Andoain-Centro": ["11504"],
+
+  "Viveiro": ["05155"],
+
+  "Ocata": ["79408"],
+
+  "Laguna": ["35608"],
+
+  "Alcalá de Chivert": ["65308"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

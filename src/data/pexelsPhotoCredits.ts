@@ -1361,6 +1361,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@masoodaslami",
     photoPageUrl: "https://www.pexels.com/photo/westpark-subway-station-in-munich-germany-19429415/",
   },
+  "19532513": {
+    photographer: "Moin Uddin",
+    photographerUrl: "https://www.pexels.com/@moin-uddin-186116831",
+    photoPageUrl: "https://www.pexels.com/photo/railway-station-covered-with-fog-19532513/",
+  },
   "19657290": {
     photographer: "Bilal Furkan KOŞAR",
     photographerUrl: "https://www.pexels.com/@bilalfurkankosar",
@@ -1465,6 +1470,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Wolfgang Weiser",
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
     photoPageUrl: "https://www.pexels.com/photo/train-at-elbbrucken-metro-station-in-hamburg-20712722/",
+  },
+  "20798745": {
+    photographer: "Ela Dilara",
+    photographerUrl: "https://www.pexels.com/@ela-dilara-993694092",
+    photoPageUrl: "https://www.pexels.com/photo/silhouette-of-people-waiting-at-the-railway-station-20798745/",
   },
   "20813454": {
     photographer: "Drago Rapovac",
