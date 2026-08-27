@@ -964,4 +964,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Alcalá de Chivert":
     "Alcalá de Chivert é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Aranguren":
+    "Aranguren é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Lutxana-Barakaldo":
+    "Lutxana-Barakaldo é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

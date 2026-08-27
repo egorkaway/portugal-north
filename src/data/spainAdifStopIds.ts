@@ -593,6 +593,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Alcalá de Chivert": ["65308"],
 
+  "Aranguren": ["05473", "05474"],
+
+  "Lutxana-Barakaldo": ["13305"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

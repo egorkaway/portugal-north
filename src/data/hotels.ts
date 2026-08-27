@@ -3413,6 +3413,16 @@ export const stationHotels: StationHotels = {
     { name: "Guest houses near Alcalá de Chivert", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alcal%C3%A1%20de%20Chivert%2C%20Spain&order=price" },
     { name: "Hotels near Alcalá de Chivert", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alcal%C3%A1%20de%20Chivert%2C%20Spain&order=price" },
   ],
+  "Aranguren": [
+    { name: "Erreka Güeñes", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Erreka%20G%C3%BCe%C3%B1es%2C%20Aranguren%2C%20Spain&order=price" },
+    { name: "Hostal Txikote", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Txikote%2C%20Aranguren%2C%20Spain&order=price" },
+    { name: "Santxosolo", distanceKm: 2.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santxosolo%2C%20Aranguren%2C%20Spain&order=price" },
+  ],
+  "Lutxana-Barakaldo": [
+    { name: "Budget stays near Lutxana-Barakaldo", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lutxana-Barakaldo%2C%20Spain&order=price" },
+    { name: "Guest houses near Lutxana-Barakaldo", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lutxana-Barakaldo%2C%20Spain&order=price" },
+    { name: "Hotels near Lutxana-Barakaldo", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lutxana-Barakaldo%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

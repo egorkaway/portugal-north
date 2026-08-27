@@ -2723,4 +2723,22 @@ export const spainStations: Station[] = [
     lng: 0.2287,
   },
 
+  {
+    name: "Aranguren",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2105,
+    lng: -3.1084,
+  },
+
+  {
+    name: "Lutxana-Barakaldo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2878,
+    lng: -2.9754,
+  },
+
 ];

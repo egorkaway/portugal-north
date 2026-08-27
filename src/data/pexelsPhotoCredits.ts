@@ -2166,6 +2166,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@regan-dsouza-1315522347",
     photoPageUrl: "https://www.pexels.com/photo/historic-stone-structure-in-avila-spain-32979182/",
   },
+  "33064779": {
+    photographer: "Irene Anchundia Loor",
+    photographerUrl: "https://www.pexels.com/@irene-anchundia-loor-2154116095",
+    photoPageUrl: "https://www.pexels.com/photo/modern-commuter-train-at-madrid-station-33064779/",
+  },
   "33065902": {
     photographer: "Ana Hidalgo Burgos",
     photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-4848204",
@@ -2795,6 +2800,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Cristiano Ferrari films",
     photographerUrl: "https://www.pexels.com/@cristiano-ferrari-films-2162783697",
     photoPageUrl: "https://www.pexels.com/photo/black-and-white-railway-tracks-in-scenic-landscape-38479643/",
+  },
+  "38704915": {
+    photographer: "Efrem  Efre",
+    photographerUrl: "https://www.pexels.com/@efrem-efre-2786187",
+    photoPageUrl: "https://www.pexels.com/photo/railway-tracks-and-signals-at-dol-de-bretagne-station-38704915/",
   },
   "38780454": {
     photographer: "Sergei  Gussev",

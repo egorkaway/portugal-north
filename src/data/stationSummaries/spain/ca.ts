@@ -964,4 +964,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Alcalá de Chivert":
     "Alcalá de Chivert és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Aranguren":
+    "Aranguren és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Lutxana-Barakaldo":
+    "Lutxana-Barakaldo és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };
