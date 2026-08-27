@@ -565,6 +565,20 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Montcada i Reixac-Santa Maria": ["78707"],
 
+  "Colmenar Viejo": ["17005"],
+
+  "Aluche": ["35600"],
+
+  "Tavernes de la Valldigna": ["69105"],
+
+  "Villallana": ["15123"],
+
+  "Beniel": ["62001"],
+
+  "Cabezón de la Sal": ["05637"],
+
+  "Ferrol": ["21010"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

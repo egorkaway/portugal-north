@@ -578,6 +578,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 24.963341,
   },
   {
+    name: "Heraklion International Nikos Kazantzakis Airport (HER)",
+    country: "gr",
+    lines: ["HER"],
+    types: ["Airport Destination"],
+    lat: 35.339699,
+    lng: 25.1803,
+  },
+  {
     name: "Frankfurt-Hahn Airport (HHN)",
     country: "de",
     lines: ["HHN"],
@@ -768,6 +776,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 45.445099,
     lng: 9.27674,
+  },
+  {
+    name: "Ljubljana Jože Pučnik Airport (LJU)",
+    country: "si",
+    lines: ["LJU"],
+    types: ["Airport Destination"],
+    lat: 46.223701,
+    lng: 14.4576,
   },
   {
     name: "Linz-Hörsching Airport (LNZ)",
@@ -1152,6 +1168,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 44.407902,
     lng: 2.48267,
+  },
+  {
+    name: "Reggio Calabria Airport (REG)",
+    country: "it",
+    lines: ["REG"],
+    types: ["Airport Destination"],
+    lat: 38.071201,
+    lng: 15.6516,
   },
   {
     name: "Riga International Airport (RIX)",

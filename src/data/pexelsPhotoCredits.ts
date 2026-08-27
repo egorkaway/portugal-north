@@ -2511,6 +2511,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
     photoPageUrl: "https://www.pexels.com/photo/steam-train-in-wintry-geesthacht-station-36195919/",
   },
+  "36326403": {
+    photographer: "Mike Art 🎥 Visual Creator | Photography and Video 📸",
+    photographerUrl: "https://www.pexels.com/@mike-art-visual-creator-photography-and-video-2159421235",
+    photoPageUrl: "https://www.pexels.com/photo/aerial-view-of-iron-bridge-in-valladolid-at-sunset-36326403/",
+  },
   "36364760": {
     photographer: "Egor Kunovsky",
     photographerUrl: "https://www.pexels.com/@egor-kunovsky-1199972",

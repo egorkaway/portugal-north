@@ -16,12 +16,20 @@ import { fetchGlobalRatings } from '@/lib/api';
 import { getTopDownvotedHotels, getTopUpvotedHotels } from '@/lib/rankHotels';
 import { getTopDownvoted, getTopUpvoted } from '@/lib/rankVotes';
 import {
+  buildSpainReliabilityRankings,
   getBottomReliabilityStations,
   getTopReliabilityStations,
   reliabilityScoreColor,
   formatReliabilityScore,
 } from '@/lib/reliabilityScore';
-import { getReliabilityScores, getTrainReliabilitySpotlight, pickPublicHotelRatings, pickPublicStationRatings, stationToSlug } from '@/lib/stationData';
+import {
+  getReliabilityScores,
+  getSpainReliabilityScores,
+  getTrainReliabilitySpotlight,
+  pickPublicHotelRatings,
+  pickPublicStationRatings,
+  stationToSlug,
+} from '@/lib/stationData';
 import { useCatalogRevision } from '@/lib/useCatalogRevision';
 import { getServiceTypeTextColor } from '@/lib/trainTypes';
 import {
@@ -61,6 +69,7 @@ export default function RankingsScreen() {
   };
 
   const reliability = getReliabilityScores();
+  const spainReliability = getSpainReliabilityScores();
   const trainSpotlight = getTrainReliabilitySpotlight();
   const topReliability = getTopReliabilityStations(
     reliability.scores,
@@ -72,6 +81,8 @@ export default function RankingsScreen() {
     reliability.movements,
     10,
   );
+  const { top: spainTopReliability, bottom: spainBottomReliability } =
+    buildSpainReliabilityRankings(spainReliability.scores, spainReliability.movements);
   const topStations = getTopUpvoted(ratings.station, 10);
   const bottomStations = getTopDownvoted(ratings.station, 10);
   const topHotels = getTopUpvotedHotels(ratings.hotel, 10);
@@ -120,7 +131,35 @@ export default function RankingsScreen() {
         ))}
       </RankingSection>
 
-      {/* Spain reliability rankings hidden for now — data still collecting */}
+      {spainTopReliability.length > 0 ? (
+        <>
+          <RankingSection title={t('rankings.spainMostReliable')}>
+            {spainTopReliability.map((item, index) => (
+              <RankingRow
+                key={item.name}
+                rank={index + 1}
+                title={item.name}
+                value={`${formatReliabilityScore(item.score)}/10`}
+                valueColor={reliabilityScoreColor(item.score)}
+                onPress={() => router.push(`/station/${stationToSlug(item.name)}`)}
+              />
+            ))}
+          </RankingSection>
+
+          <RankingSection title={t('rankings.spainLeastReliable')}>
+            {spainBottomReliability.map((item, index) => (
+              <RankingRow
+                key={item.name}
+                rank={index + 1}
+                title={item.name}
+                value={`${formatReliabilityScore(item.score)}/10`}
+                valueColor={reliabilityScoreColor(item.score)}
+                onPress={() => router.push(`/station/${stationToSlug(item.name)}`)}
+              />
+            ))}
+          </RankingSection>
+        </>
+      ) : null}
 
       {(trainSpotlight.mostReliable || trainSpotlight.mostDelayed) && (
         <RankingSection title={t('rankings.trainSpotlightTitle')}>

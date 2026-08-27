@@ -3343,6 +3343,41 @@ export const stationHotels: StationHotels = {
     { name: "Sercotel Ciutat de Montcada", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20Ciutat%20de%20Montcada%2C%20Montcada%20i%20Reixac-Santa%20Maria%2C%20Spain&order=price" },
     { name: "ibis", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%2C%20Montcada%20i%20Reixac-Santa%20Maria%2C%20Spain&order=price" },
   ],
+  "Colmenar Viejo": [
+    { name: "Gran Hostal El Chiscón", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gran%20Hostal%20El%20Chisc%C3%B3n%2C%20Colmenar%20Viejo%2C%20Spain&order=price" },
+    { name: "UrbanA", distanceKm: 6.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=UrbanA%2C%20Colmenar%20Viejo%2C%20Spain&order=price" },
+    { name: "Ramada", distanceKm: 7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ramada%2C%20Colmenar%20Viejo%2C%20Spain&order=price" },
+  ],
+  "Aluche": [
+    { name: "Hostal Don Pedro", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Don%20Pedro%2C%20Aluche%2C%20Spain&order=price" },
+    { name: "Hostal Granado Madrid", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Granado%20Madrid%2C%20Aluche%2C%20Spain&order=price" },
+    { name: "Casa Frami", distanceKm: 1.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Frami%2C%20Aluche%2C%20Spain&order=price" },
+  ],
+  "Tavernes de la Valldigna": [
+    { name: "Hotel Valldigna", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Valldigna%2C%20Tavernes%20de%20la%20Valldigna%2C%20Spain&order=price" },
+    { name: "Albergue Municipal 'Massís del Mondúver'", distanceKm: 7.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Municipal%20'Mass%C3%ADs%20del%20Mond%C3%BAver'%2C%20Tavernes%20de%20la%20Valldigna%2C%20Spain&order=price" },
+    { name: "Apartamentos Presidente", distanceKm: 7.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20Presidente%2C%20Tavernes%20de%20la%20Valldigna%2C%20Spain&order=price" },
+  ],
+  "Villallana": [
+    { name: "Doña Gaudiosa", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Do%C3%B1a%20Gaudiosa%2C%20Villallana%2C%20Spain&order=price" },
+    { name: "Hotel Ruta de la Plata", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ruta%20de%20la%20Plata%2C%20Villallana%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos San Martín", distanceKm: 3.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20San%20Mart%C3%ADn%2C%20Villallana%2C%20Spain&order=price" },
+  ],
+  "Beniel": [
+    { name: "Hotel Santos", distanceKm: 4.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Santos%2C%20Beniel%2C%20Spain&order=price" },
+    { name: "Hostal Rey Teodomiro", distanceKm: 6.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Rey%20Teodomiro%2C%20Beniel%2C%20Spain&order=price" },
+    { name: "Palacio de Tudemir", distanceKm: 6.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Palacio%20de%20Tudemir%2C%20Beniel%2C%20Spain&order=price" },
+  ],
+  "Cabezón de la Sal": [
+    { name: "Hotel Cose", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cose%2C%20Cabez%C3%B3n%20de%20la%20Sal%2C%20Spain&order=price" },
+    { name: "Hotel Viar", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Viar%2C%20Cabez%C3%B3n%20de%20la%20Sal%2C%20Spain&order=price" },
+    { name: "Hotel El Cruce", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Cruce%2C%20Cabez%C3%B3n%20de%20la%20Sal%2C%20Spain&order=price" },
+  ],
+  "Ferrol": [
+    { name: "Hotel Carrís Almirante", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Carr%C3%ADs%20Almirante%2C%20Ferrol%2C%20Spain&order=price" },
+    { name: "Hotel Almendra", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Almendra%2C%20Ferrol%2C%20Spain&order=price" },
+    { name: "Zahara", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Zahara%2C%20Ferrol%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

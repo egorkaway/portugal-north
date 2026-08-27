@@ -2597,4 +2597,67 @@ export const spainStations: Station[] = [
     lng: 2.167,
   },
 
+  {
+    name: "Colmenar Viejo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.6452,
+    lng: -3.7766,
+  },
+
+  {
+    name: "Aluche",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3857,
+    lng: -3.7607,
+  },
+
+  {
+    name: "Tavernes de la Valldigna",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.079,
+    lng: -0.2263,
+  },
+
+  {
+    name: "Villallana",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1839,
+    lng: -5.8146,
+  },
+
+  {
+    name: "Beniel",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.0449,
+    lng: -0.9995,
+  },
+
+  {
+    name: "Cabezón de la Sal",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3079,
+    lng: -4.2319,
+  },
+
+  {
+    name: "Ferrol",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.488,
+    lng: -8.2311,
+  },
+
 ];
