@@ -1,6 +1,6 @@
 {
-  "runCount": 569,
-  "lastRunAt": "2026-08-28T08:57:59.534Z",
+  "runCount": 570,
+  "lastRunAt": "2026-08-28T09:06:12.829Z",
   "lastAirportConnectionsAt": "2026-08-28T06:52:46.179Z",
   "stations": {
     "Pombal": {
@@ -944,9 +944,9 @@
         "delayMinutes": 550
       },
       "successfulSamples": 174,
-      "failedSamples": 8,
+      "failedSamples": 9,
       "lastSampleAt": "2026-08-28T08:49:06.988Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Esmoriz": {
       "cpCode": "94-38406",
@@ -2032,9 +2032,9 @@
         "delayMinutes": 161
       },
       "successfulSamples": 184,
-      "failedSamples": 6,
+      "failedSamples": 7,
       "lastSampleAt": "2026-08-28T08:59:33.802Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Sernada do Vouga": {
       "cpCode": "94-43000",
@@ -7283,9 +7283,9 @@
         "delayMinutes": 1015
       },
       "successfulSamples": 178,
-      "failedSamples": 7,
+      "failedSamples": 8,
       "lastSampleAt": "2026-08-28T08:59:09.622Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Sacavem": {
       "cpCode": "94-31062",

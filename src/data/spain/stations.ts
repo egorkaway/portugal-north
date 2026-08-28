@@ -2876,4 +2876,13 @@ export const spainStations: Station[] = [
     lng: 0.8104,
   },
 
+  {
+    name: "Arenys de Mar",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5777,
+    lng: 2.5493,
+  },
+
 ];

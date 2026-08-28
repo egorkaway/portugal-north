@@ -66,6 +66,7 @@ export const stationImages: Record<string, string> = {
   "Aregos": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/CP_592.0_%2817341367656%29.jpg/960px-CP_592.0_%2817341367656%29.jpg",
   "Areia-Darque": "https://images.pexels.com/photos/33690984/pexels-photo-33690984.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Arentim": "https://images.pexels.com/photos/6623349/pexels-photo-6623349.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Arenys de Mar": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/95/CataloniaMaresmeArenysDeMarEstacio.JPG/960px-CataloniaMaresmeArenysDeMarEstacio.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Areosa": "https://images.pexels.com/photos/326011/pexels-photo-326011.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Arévalo": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Estaci%C3%B3n_de_tren_de_Ar%C3%A9valo.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
   "Arrifana": "https://images.pexels.com/photos/17315130/pexels-photo-17315130.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",

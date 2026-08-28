@@ -627,6 +627,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Marçà-Falset": ["71303"],
 
+  "Arenys de Mar": ["79600"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

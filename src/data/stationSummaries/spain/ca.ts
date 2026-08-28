@@ -1015,4 +1015,7 @@ export const spainSummariesCa: Record<string, string> = {
   "Marçà-Falset":
     "Marçà-Falset és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Arenys de Mar":
+    "Arenys de Mar és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

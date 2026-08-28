@@ -3498,6 +3498,11 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Sport", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sport%2C%20Mar%C3%A7%C3%A0-Falset%2C%20Spain&order=price" },
     { name: "Lotus Priorat", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lotus%20Priorat%2C%20Mar%C3%A7%C3%A0-Falset%2C%20Spain&order=price" },
   ],
+  "Arenys de Mar": [
+    { name: "Pensió Kalima", distanceKm: 1.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3%20Kalima%2C%20Arenys%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Hotel Kalima", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Kalima%2C%20Arenys%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Hotel Jet", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Jet%2C%20Arenys%20de%20Mar%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
