@@ -643,6 +643,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "El Puig": ["65007"],
 
+  "El Chorro-Caminito del Rey": ["54403"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

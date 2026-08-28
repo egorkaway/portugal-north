@@ -3538,6 +3538,11 @@ export const stationHotels: StationHotels = {
     { name: "Olympia Ronda Hostel", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Olympia%20Ronda%20Hostel%2C%20El%20Puig%2C%20Spain&order=price" },
     { name: "Ronda II", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ronda%20II%2C%20El%20Puig%2C%20Spain&order=price" },
   ],
+  "El Chorro-Caminito del Rey": [
+    { name: "La Garganta", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Garganta%2C%20El%20Chorro-Caminito%20del%20Rey%2C%20Spain&order=price" },
+    { name: "Olive Branch, El Chorro", distanceKm: 0.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Olive%20Branch%2C%20El%20Chorro%2C%20El%20Chorro-Caminito%20del%20Rey%2C%20Spain&order=price" },
+    { name: "Finca la Campana", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20la%20Campana%2C%20El%20Chorro-Caminito%20del%20Rey%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

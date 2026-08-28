@@ -1039,4 +1039,7 @@ export const spainSummariesCa: Record<string, string> = {
   "El Puig":
     "El Puig és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "El Chorro-Caminito del Rey":
+    "El Chorro-Caminito del Rey és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

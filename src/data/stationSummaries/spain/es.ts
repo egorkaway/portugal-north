@@ -1039,4 +1039,7 @@ export const spainSummariesEs: Record<string, string> = {
   "El Puig":
     "El Puig es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "El Chorro-Caminito del Rey":
+    "El Chorro-Caminito del Rey es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

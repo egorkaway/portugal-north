@@ -2948,4 +2948,13 @@ export const spainStations: Station[] = [
     lng: -0.3117,
   },
 
+  {
+    name: "El Chorro-Caminito del Rey",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.9073,
+    lng: -4.7593,
+  },
+
 ];

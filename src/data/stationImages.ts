@@ -233,6 +233,7 @@ export const stationImages: Record<string, string> = {
   "Eirol": "https://images.pexels.com/photos/1423636/pexels-photo-1423636.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Eixo": "https://images.pexels.com/photos/11870610/pexels-photo-11870610.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "El Berrón": "https://upload.wikimedia.org/wikipedia/commons/e/ed/FEVE_El_Berron_and%C3%A9n_1_%282013%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+  "El Chorro-Caminito del Rey": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/El_Chorro_-_train_station.jpg/960px-El_Chorro_-_train_station.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "El Escorial": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Train_station_of_El_Escorial.jpg/960px-Train_station_of_El_Escorial.jpg",
   "El Pito Piñera": "https://images.pexels.com/photos/36705483/pexels-photo-36705483.png?auto=compress&cs=tinysrgb&h=650&w=940",
   "El Prat de Llobregat": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Estaci%C3%B3_del_Prat.jpg/960px-Estaci%C3%B3_del_Prat.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
