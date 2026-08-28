@@ -1072,4 +1072,7 @@ export const spainSummariesEs: Record<string, string> = {
   "Cervera":
     "Cervera es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Orpesa":
+    "Orpesa es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

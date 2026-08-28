@@ -3593,6 +3593,11 @@ export const stationHotels: StationHotels = {
     { name: "Hostal Universitat", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Universitat%2C%20Cervera%2C%20Spain&order=price" },
     { name: "Residencia Sagrada Familia", distanceKm: 0.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Sagrada%20Familia%2C%20Cervera%2C%20Spain&order=price" },
   ],
+  "Orpesa": [
+    { name: "Hotel Servigroup Koral Beach", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Servigroup%20Koral%20Beach%2C%20Orpesa%2C%20Spain&order=price" },
+    { name: "Hotel Magic Fantasy", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Magic%20Fantasy%2C%20Orpesa%2C%20Spain&order=price" },
+    { name: "Hotel Balenario", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Balenario%2C%20Orpesa%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

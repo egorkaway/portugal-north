@@ -665,6 +665,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Cervera": ["78500"],
 
+  "Orpesa": ["65304"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

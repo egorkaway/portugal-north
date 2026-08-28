@@ -5,7 +5,7 @@ export type RankedReliabilityStation = {
   score: number;
 };
 
-export const SPAIN_RELIABILITY_RANKING_LIMIT = 5;
+export const SPAIN_RELIABILITY_RANKING_LIMIT = 7;
 export const SPAIN_RELIABILITY_MIN_MOVEMENTS = 5;
 
 function compareReliabilityRank(

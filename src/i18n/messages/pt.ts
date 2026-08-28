@@ -274,8 +274,8 @@ export const pt: Messages = {
       "Com base nos atrasos acumulados das nossas amostras Renfe em tempo real. As estações precisam de pelo menos 5 observações. 10 = menos atrasos nos dados espanhóis; 1 = mais atrasos. Separado do ranking português.",
     spainReliabilityUnavailable:
       "Os rankings de fiabilidade de Espanha estão temporariamente indisponíveis.",
-    spainMostReliable: "Top 5 mais fiáveis (Espanha)",
-    spainLeastReliable: "Top 5 menos fiáveis (Espanha)",
+    spainMostReliable: "Top 7 mais fiáveis (Espanha)",
+    spainLeastReliable: "Top 7 menos fiáveis (Espanha)",
     downloadReliabilityCsv: "Descarregar CSV",
     downloadStationCsv: "Descarregar CSV",
     trainSpotlightTitle: "Destaques de comboios em Portugal",

@@ -274,8 +274,8 @@ export const es: Messages = {
       "Basado en los retrasos acumulados de nuestras muestras Renfe en tiempo real. Las estaciones necesitan al menos 5 observaciones. 10 = menos retrasos en los datos españoles; 1 = más retrasos. Independiente del ranking portugués.",
     spainReliabilityUnavailable:
       "Los rankings de fiabilidad de España no están disponibles temporalmente.",
-    spainMostReliable: "Top 5 más fiables (España)",
-    spainLeastReliable: "Top 5 menos fiables (España)",
+    spainMostReliable: "Top 7 más fiables (España)",
+    spainLeastReliable: "Top 7 menos fiables (España)",
     downloadReliabilityCsv: "Descargar CSV",
     downloadStationCsv: "Descargar CSV",
     trainSpotlightTitle: "Trenes destacados en Portugal",

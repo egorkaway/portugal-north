@@ -7,7 +7,7 @@ export type ReliabilityScoresManifest = {
 };
 
 /** Spain ranking lists; Portugal keeps top/bottom 10. */
-export const SPAIN_RELIABILITY_RANKING_LIMIT = 5;
+export const SPAIN_RELIABILITY_RANKING_LIMIT = 7;
 
 /** Same bar as train spotlight: skip 1–4 observation stations in Spain rankings. */
 export const SPAIN_RELIABILITY_MIN_MOVEMENTS = 5;

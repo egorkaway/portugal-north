@@ -3047,4 +3047,13 @@ export const spainStations: Station[] = [
     lng: 1.2748,
   },
 
+  {
+    name: "Orpesa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.0923,
+    lng: 0.1399,
+  },
+
 ];

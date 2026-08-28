@@ -100,7 +100,7 @@ describe("reliability rankings", () => {
     expect(filtered).toEqual({ Quiet: 10, Busy: 8 });
   });
 
-  it("builds a separate Spain top and bottom 5 from gated scores", () => {
+  it("builds a separate Spain top and bottom 7 from gated scores", () => {
     const scores: Record<string, number> = {
       "A Coruña": 10,
       Pontevedra: 9,
@@ -130,15 +130,17 @@ describe("reliability rankings", () => {
 
     const { top, bottom } = buildSpainReliabilityRankings(scores, movements);
 
-    expect(SPAIN_RELIABILITY_RANKING_LIMIT).toBe(5);
-    expect(top).toHaveLength(5);
-    expect(bottom).toHaveLength(5);
+    expect(SPAIN_RELIABILITY_RANKING_LIMIT).toBe(7);
+    expect(top).toHaveLength(7);
+    expect(bottom).toHaveLength(7);
     expect(top.map((row) => row.name)).toEqual([
       "A Coruña",
       "Pontevedra",
       "Ourense",
       "Vigo",
       "Santiago",
+      "Barcelona-Sants",
+      "Madrid-Chamartín",
     ]);
     expect(bottom.map((row) => row.name)).toEqual([
       "València-Estació del Nord",
@@ -146,6 +148,8 @@ describe("reliability rankings", () => {
       "Zaragoza Delicias",
       "Madrid-Chamartín",
       "Barcelona-Sants",
+      "Santiago",
+      "Vigo",
     ]);
     expect(top.some((row) => row.name === "One sample halt")).toBe(false);
     expect(bottom.some((row) => row.name === "One sample halt")).toBe(false);
@@ -167,7 +171,7 @@ describe("reliability rankings", () => {
     );
 
     const { top, bottom } = buildSpainReliabilityRankings(spain.scores, spain.movements);
-    expect(top).toHaveLength(5);
-    expect(bottom).toHaveLength(5);
+    expect(top).toHaveLength(7);
+    expect(bottom).toHaveLength(7);
   });
 });

@@ -272,8 +272,8 @@ export const en: Messages = {
     spainReliabilityIntro:
       "Based on cumulative delays from our live Renfe trip-update samples. Stations need at least 5 observations. 10 means fewest delays in our Spanish data; 1 means most. Separate from the Portuguese ranking.",
     spainReliabilityUnavailable: "Spain reliability rankings are temporarily unavailable.",
-    spainMostReliable: "Top 5 most reliable (Spain)",
-    spainLeastReliable: "Top 5 least reliable (Spain)",
+    spainMostReliable: "Top 7 most reliable (Spain)",
+    spainLeastReliable: "Top 7 least reliable (Spain)",
     downloadReliabilityCsv: "Download CSV",
     downloadStationCsv: "Download CSV",
     trainSpotlightTitle: "Portugal train spotlight",
