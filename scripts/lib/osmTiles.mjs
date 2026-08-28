@@ -35,8 +35,8 @@ async function fetchTile(basemap, z, x, y) {
     return Buffer.from(await res.arrayBuffer());
   })().catch(async (error) => {
     tileCache.delete(key);
-    if (basemap.id === "carto-voyager") throw error;
-    const fallback = getBasemap("carto-voyager");
+    if (basemap.id === "osm") throw error;
+    const fallback = getBasemap("osm");
     return fetchTile(fallback, z, x, y);
   });
 
@@ -289,11 +289,11 @@ export async function stitchBoundsMap({
   tightBounds = false,
   /** Positive values pan the viewport south, shifting geographic content up on the card. */
   centerOffsetFraction = 0,
-  basemap = "carto-voyager",
+  basemap = "osm",
 }) {
   const basemapConfig =
     typeof basemap === "string"
-      ? getBasemap(isBasemapId(basemap) ? basemap : "carto-voyager")
+      ? getBasemap(isBasemapId(basemap) ? basemap : "osm")
       : basemap;
 
   const zoom = pickZoomForPoints(points, width, height, paddingPx, maxZoom, fit);

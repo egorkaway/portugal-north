@@ -1033,4 +1033,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Candás":
     "Candás é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Peñaranda de Bracamonte":
+    "Peñaranda de Bracamonte é unha estación de Renfe de longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "El Puig":
+    "El Puig é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

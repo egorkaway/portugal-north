@@ -250,6 +250,7 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,ico,png,svg,jpg,webp,woff2,txt,xml,webmanifest}"],
         globIgnores: [
           "**/social/**",
+          "**/maps/**",
           "**/og-image.jpg",
           "**/icon-source.png",
           "**/version.json",

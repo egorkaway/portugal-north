@@ -5,6 +5,8 @@ describe("stationSlug", () => {
   it("maps slug to station", () => {
     expect(getStationBySlug("porto-campanha")?.name).toBe("Porto-Campanhã");
     expect(getStationBySlug("sao-bento-porto")?.name).toBe("São Bento (Porto)");
+    expect(getStationBySlug("ferrol")?.name).toBe("Ferrol");
+    expect(getStationBySlug("Ferrol")?.name).toBe("Ferrol");
   });
 
   it("slugifies names consistently", () => {

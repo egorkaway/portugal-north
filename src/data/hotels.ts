@@ -3528,6 +3528,16 @@ export const stationHotels: StationHotels = {
     { name: "Puerto de Candás", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Puerto%20de%20Cand%C3%A1s%2C%20Cand%C3%A1s%2C%20Spain&order=price" },
     { name: "Hotel Rural La Casina", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/es/la-casina.es.html" },
   ],
+  "Peñaranda de Bracamonte": [
+    { name: "Las Cabañas", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Las%20Caba%C3%B1as%2C%20Pe%C3%B1aranda%20de%20Bracamonte%2C%20Spain&order=price" },
+    { name: "La Granja", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Granja%2C%20Pe%C3%B1aranda%20de%20Bracamonte%2C%20Spain&order=price" },
+    { name: "Hotel El Pórtico", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20P%C3%B3rtico%2C%20Pe%C3%B1aranda%20de%20Bracamonte%2C%20Spain&order=price" },
+  ],
+  "El Puig": [
+    { name: "Ronda I", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ronda%20I%2C%20El%20Puig%2C%20Spain&order=price" },
+    { name: "Olympia Ronda Hostel", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Olympia%20Ronda%20Hostel%2C%20El%20Puig%2C%20Spain&order=price" },
+    { name: "Ronda II", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ronda%20II%2C%20El%20Puig%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

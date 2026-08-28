@@ -639,6 +639,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Candás": ["05210", "05211"],
 
+  "Peñaranda de Bracamonte": ["34010"],
+
+  "El Puig": ["65007"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

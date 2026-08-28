@@ -18,7 +18,8 @@ const stationBySlug = new Map(
 );
 
 export function getStationBySlug(slug: string): Station | undefined {
-  return stationBySlug.get(slug);
+  const trimmed = slug.trim();
+  return stationBySlug.get(trimmed) ?? stationBySlug.get(stationToSlug(trimmed));
 }
 
 export function getStationPath(station: Station): string {

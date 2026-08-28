@@ -6,11 +6,12 @@
  *   npm run maps:stations
  *   npm run maps:stations -- --limit 5
  *   npm run maps:stations -- --station "Aveiro"
- *   npm run maps:stations -- --basemap=carto-voyager   # same style for all
+ *   npm run maps:stations -- --basemap=carto-voyager   # needs CARTO_API_KEY
  *   npm run maps:stations -- --basemap=random          # default: random per station
  *   npm run maps:stations -- --region=lisbon           # Lisbon metro + LIS airport
  *   npm run maps:stations -- --country=es              # Spanish stations + airports
  *   npm run maps:stations -- --missing-only            # skip stations that already have a PNG
+ *   npm run maps:stations -- --watermarked-only        # Carto API-key watermark / recorded Carto maps
  *   npm run maps:stations -- --skip-europe             # skip Europe destination airports
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
@@ -19,6 +20,7 @@ import { fileURLToPath } from "node:url";
 import { parseAllStationsFromRepo, parseStations } from "./lib/stationImageFetch.mjs";
 import { renderStationMapCard, stationToSlug } from "./lib/stationMapCard.mjs";
 import { BASEMAP_IDS, isBasemapId } from "./lib/mapBasemaps.mjs";
+import { listWatermarkedStationMapSlugs } from "./lib/mapWatermark.mjs";
 import { matchesMapRegion } from "./lib/mapRegions.mjs";
 import { writeStationMapAvailability } from "./write-station-map-availability.mjs";
 
@@ -29,6 +31,7 @@ const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").repla
 const args = process.argv.slice(2);
 const dryRun = args.includes("--dry-run");
 const missingOnly = args.includes("--missing-only");
+const watermarkedOnly = args.includes("--watermarked-only");
 const skipEurope = args.includes("--skip-europe");
 const limitArg = args.find((a) => a.startsWith("--limit"));
 const limit = limitArg
@@ -98,6 +101,14 @@ if (stationFilter) {
 if (missingOnly) {
   targets = targets.filter((s) => !existsSync(join(outDir, `${stationToSlug(s.name)}.png`)));
 }
+if (watermarkedOnly) {
+  const found = await listWatermarkedStationMapSlugs(outDir);
+  console.log(
+    `Watermarked maps: ${found.slugs.length} (${found.fromManifest} Carto in manifest, ${found.fromScan} extra from scan)`,
+  );
+  const slugs = new Set(found.slugs);
+  targets = targets.filter((s) => slugs.has(stationToSlug(s.name)));
+}
 if (Number.isFinite(limit) && limit > 0) {
   targets = targets.slice(0, limit);
 }
@@ -109,6 +120,10 @@ if (!targets.length) {
       const availability = writeStationMapAvailability(root);
       console.log(`Availability index: ${availability.count} slug(s)`);
     }
+    process.exit(0);
+  }
+  if (watermarkedOnly) {
+    console.log("No watermarked station maps.");
     process.exit(0);
   }
   console.error("No stations matched.");
@@ -162,6 +177,7 @@ const isFullRun =
   !countryFilter &&
   !Number.isFinite(limit) &&
   !missingOnly &&
+  !watermarkedOnly &&
   !skipEurope;
 
 function loadExistingManifest() {

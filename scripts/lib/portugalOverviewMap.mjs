@@ -508,7 +508,7 @@ function portugalBoundsPoints() {
 const MAP_SHIFT_PX = 420;
 
 /** Stitch a 4:5 portrait map fitted to mainland Portugal bounds. */
-async function stitchPortugalMap(basemap = "carto-voyager") {
+async function stitchPortugalMap(basemap = "osm") {
   const { buffer, project } = await stitchBoundsMap({
     points: portugalBoundsPoints(),
     width: CARD_WIDTH + MAP_SHIFT_PX,
@@ -540,7 +540,7 @@ function iberianBoundsPoints() {
 const IBERIAN_VIEW_OFFSET_FRACTION = 0.06;
 
 /** Square overview fitted to the full Iberian peninsula (Portugal not clipped). */
-async function stitchIberianMap(basemap = "carto-voyager") {
+async function stitchIberianMap(basemap = "osm") {
   return stitchBoundsMap({
     points: iberianBoundsPoints(),
     width: IBERIAN_CARD_SIZE,
@@ -569,7 +569,7 @@ async function renderOverviewMap({
     .toBuffer();
 }
 
-export async function renderPortugalActivityMap(root, { siteUrl = "https://www.verystays.com", basemap = "carto-voyager" } = {}) {
+export async function renderPortugalActivityMap(root, { siteUrl = "https://www.verystays.com", basemap = "osm" } = {}) {
   const manifest = loadReliabilityManifest(root);
   const stations = portugalStationsFromRepo(root).filter((s) => !isAirportStation(s));
   const siteHost = siteHostFromUrl(siteUrl);
@@ -595,7 +595,7 @@ export async function renderPortugalActivityMap(root, { siteUrl = "https://www.v
   });
 }
 
-export async function renderPortugalReliabilityMap(root, { siteUrl = "https://www.verystays.com", basemap = "carto-voyager" } = {}) {
+export async function renderPortugalReliabilityMap(root, { siteUrl = "https://www.verystays.com", basemap = "osm" } = {}) {
   const manifest = loadReliabilityManifest(root);
   const stations = portugalStationsFromRepo(root).filter(
     (station) => !isAirportStation(station) && !isMetroStation(station),
@@ -622,7 +622,7 @@ export async function renderPortugalReliabilityMap(root, { siteUrl = "https://ww
   });
 }
 
-export async function renderIberianActivityMap(root, { siteUrl = "https://www.verystays.com", basemap = "carto-voyager" } = {}) {
+export async function renderIberianActivityMap(root, { siteUrl = "https://www.verystays.com", basemap = "osm" } = {}) {
   const ptManifest = loadReliabilityManifest(root);
   const esManifest = loadSpainReliabilityManifest(root);
   const movements = mergeRecordMaps(ptManifest.movements ?? {}, esManifest.movements ?? {});
@@ -650,7 +650,7 @@ export async function renderIberianActivityMap(root, { siteUrl = "https://www.ve
   });
 }
 
-export async function renderIberianReliabilityMap(root, { siteUrl = "https://www.verystays.com", basemap = "carto-voyager" } = {}) {
+export async function renderIberianReliabilityMap(root, { siteUrl = "https://www.verystays.com", basemap = "osm" } = {}) {
   const ptManifest = loadReliabilityManifest(root);
   const esManifest = loadSpainReliabilityManifest(root);
   const scores = mergeRecordMaps(ptManifest.scores ?? {}, esManifest.scores ?? {});

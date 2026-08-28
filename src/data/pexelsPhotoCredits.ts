@@ -2201,6 +2201,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-4848204",
     photoPageUrl: "https://www.pexels.com/photo/yellow-maintenance-train-at-la-encina-station-33065902/",
   },
+  "33120768": {
+    photographer: "Wheeleo Walker",
+    photographerUrl: "https://www.pexels.com/@wheeleo",
+    photoPageUrl: "https://www.pexels.com/photo/woman-with-rollator-at-modern-train-station-33120768/",
+  },
   "33147868": {
     photographer: "Charles Edward Cansino",
     photographerUrl: "https://www.pexels.com/@charles-edward-cansino-2149014986",

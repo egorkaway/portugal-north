@@ -2930,4 +2930,22 @@ export const spainStations: Station[] = [
     lng: -5.7727,
   },
 
+  {
+    name: "Peñaranda de Bracamonte",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 40.8981,
+    lng: -5.2064,
+  },
+
+  {
+    name: "El Puig",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.5883,
+    lng: -0.3117,
+  },
+
 ];

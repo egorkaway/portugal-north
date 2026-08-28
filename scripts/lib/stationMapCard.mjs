@@ -4,7 +4,8 @@ import { fileURLToPath } from "node:url";
 import { Resvg } from "@resvg/resvg-js";
 import sharp from "sharp";
 import { stitchSquareMap } from "./osmTiles.mjs";
-import { resolveBasemap } from "./mapBasemaps.mjs";
+import { getBasemap, resolveBasemap } from "./mapBasemaps.mjs";
+import { pngHasCartoApiKeyWatermark } from "./mapWatermark.mjs";
 import { CARD_SIZE, siteHostFromUrl, stationToSlug } from "./socialCard.mjs";
 
 export { stationToSlug, siteHostFromUrl };
@@ -226,13 +227,28 @@ export async function renderStationMapCard({
   const mapZoom = zoom ?? pickZoom(station);
   const basemap = resolveBasemap(basemapMode);
 
-  const { buffer: mapBuffer, markerX, markerY, basemapId } = await stitchSquareMap({
+  let { buffer: mapBuffer, markerX, markerY, basemapId } = await stitchSquareMap({
     lat: station.lat,
     lng: station.lng,
     size: CARD_SIZE,
     zoom: mapZoom,
     basemap,
   });
+
+  if (basemapId !== "osm" && (await pngHasCartoApiKeyWatermark(mapBuffer))) {
+    const fallback = getBasemap("osm");
+    const retried = await stitchSquareMap({
+      lat: station.lat,
+      lng: station.lng,
+      size: CARD_SIZE,
+      zoom: mapZoom,
+      basemap: fallback,
+    });
+    mapBuffer = retried.buffer;
+    markerX = retried.markerX;
+    markerY = retried.markerY;
+    basemapId = retried.basemapId;
+  }
 
   const overlaySvg = buildMapOverlaySvg({
     stationName: station.name,
