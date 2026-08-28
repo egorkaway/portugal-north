@@ -631,6 +631,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Vilches": ["50207"],
 
+  "Celrà": ["79301"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

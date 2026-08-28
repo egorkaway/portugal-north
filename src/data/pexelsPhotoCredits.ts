@@ -1321,6 +1321,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@sofus",
     photoPageUrl: "https://www.pexels.com/photo/trains-on-an-abandoned-train-station-19094087/",
   },
+  "19104573": {
+    photographer: "Igor Passchier",
+    photographerUrl: "https://www.pexels.com/@igor-passchier-111147847",
+    photoPageUrl: "https://www.pexels.com/photo/wide-escalator-in-terminal-19104573/",
+  },
   "19127312": {
     photographer: "Sonny Vermeer",
     photographerUrl: "https://www.pexels.com/@sonny-vermeer-505472791",

@@ -1,6 +1,6 @@
 {
-  "runCount": 571,
-  "lastRunAt": "2026-08-28T09:11:25.607Z",
+  "runCount": 572,
+  "lastRunAt": "2026-08-28T09:20:18.542Z",
   "lastAirportConnectionsAt": "2026-08-28T06:52:46.179Z",
   "stations": {
     "Pombal": {
@@ -4460,9 +4460,9 @@
         "delayMinutes": 0
       },
       "successfulSamples": 161,
-      "failedSamples": 6,
+      "failedSamples": 7,
       "lastSampleAt": "2026-08-28T08:59:12.272Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Arrifana": {
       "cpCode": "94-44248",
@@ -6869,9 +6869,9 @@
         "delayMinutes": 547
       },
       "successfulSamples": 161,
-      "failedSamples": 9,
+      "failedSamples": 10,
       "lastSampleAt": "2026-08-28T09:14:32.690Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Lavradio": {
       "cpCode": "94-95042",
@@ -7848,9 +7848,9 @@
         "delayMinutes": 25
       },
       "successfulSamples": 87,
-      "failedSamples": 2,
+      "failedSamples": 3,
       "lastSampleAt": "2026-08-28T09:14:02.060Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Lardosa": {
       "cpCode": "94-53215",

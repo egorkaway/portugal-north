@@ -1021,4 +1021,7 @@ export const spainSummariesEs: Record<string, string> = {
   "Vilches":
     "Vilches es una estación de Renfe de larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Celrà":
+    "Celrà es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

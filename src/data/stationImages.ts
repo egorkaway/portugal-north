@@ -188,6 +188,7 @@ export const stationImages: Record<string, string> = {
   "Caxarias": "https://images.pexels.com/photos/29144892/pexels-photo-29144892.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Caxias": "https://images.pexels.com/photos/31804316/pexels-photo-31804316.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Celorico da Beira": "https://images.pexels.com/photos/17923997/pexels-photo-17923997.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Celrà": "https://images.pexels.com/photos/19104573/pexels-photo-19104573.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Cercedilla": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Estaci%C3%B3n_de_Cercedilla.jpg/960px-Estaci%C3%B3n_de_Cercedilla.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Cete": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Esta%C3%A7%C3%A3o_de_Cete_CALVB2668_03_%28cropped%29.jpg/960px-Esta%C3%A7%C3%A3o_de_Cete_CALVB2668_03_%28cropped%29.jpg",
   "Chão de Maçãs – Fátima": "https://images.pexels.com/photos/11757550/pexels-photo-11757550.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",

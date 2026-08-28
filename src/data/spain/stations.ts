@@ -2894,4 +2894,13 @@ export const spainStations: Station[] = [
     lng: -3.5176,
   },
 
+  {
+    name: "Celrà",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.0272,
+    lng: 2.8749,
+  },
+
 ];

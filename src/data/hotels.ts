@@ -3508,6 +3508,11 @@ export const stationHotels: StationHotels = {
     { name: "Guest houses near Vilches", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilches%2C%20Spain&order=price" },
     { name: "Hotels near Vilches", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vilches%2C%20Spain&order=price" },
   ],
+  "Celrà": [
+    { name: "Can Carreras 1846", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Carreras%201846%2C%20Celr%C3%A0%2C%20Spain&order=price" },
+    { name: "Can Tallada", distanceKm: 3.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Tallada%2C%20Celr%C3%A0%2C%20Spain&order=price" },
+    { name: "Can Dama", distanceKm: 3.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Dama%2C%20Celr%C3%A0%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
