@@ -73,20 +73,38 @@ export function mapFooterTextLayout({ titleLineCount, hasLineLabel }) {
 
 let topTrafficStationNames = null;
 
-function getTopTrafficStationNames(limit = 3) {
-  if (topTrafficStationNames) return topTrafficStationNames;
+function loadDepartureStats(relPath) {
+  try {
+    return JSON.parse(readFileSync(join(REPO_ROOT, relPath), "utf8"));
+  } catch {
+    return { stations: {} };
+  }
+}
 
-  const stats = JSON.parse(readFileSync(join(REPO_ROOT, "data/departure-stats.json"), "utf8"));
-  topTrafficStationNames = Object.entries(stats.stations)
+function topTrafficNamesFromStats(stats, limit) {
+  return Object.entries(stats.stations ?? {})
     .map(([name, entry]) => ({
       name,
-      departures: entry.totals?.departuresNextHour ?? 0,
+      traffic: Math.max(
+        entry.totals?.departuresNextHour ?? 0,
+        entry.totals?.arrivalsNextHour ?? 0,
+      ),
       samples: entry.successfulSamples ?? 0,
     }))
     .filter((entry) => entry.samples > 0)
-    .sort((a, b) => b.departures - a.departures || a.name.localeCompare(b.name))
+    .sort((a, b) => b.traffic - a.traffic || a.name.localeCompare(b.name))
     .slice(0, limit)
     .map((entry) => entry.name);
+}
+
+function getTopTrafficStationNames(limit = 3) {
+  if (topTrafficStationNames) return topTrafficStationNames;
+
+  // Busiest hubs per country zoom out the same way (Spain stats are arrival-heavy).
+  topTrafficStationNames = [
+    ...topTrafficNamesFromStats(loadDepartureStats("data/departure-stats.json"), limit),
+    ...topTrafficNamesFromStats(loadDepartureStats("data/spain-departure-stats.json"), limit),
+  ];
 
   return topTrafficStationNames;
 }

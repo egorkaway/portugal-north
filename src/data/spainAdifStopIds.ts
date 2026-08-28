@@ -617,6 +617,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Puente San Miguel": ["05623"],
 
+  "Sant Feliu de Llobregat": ["72301"],
+
+  "Montmeló": ["79007"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

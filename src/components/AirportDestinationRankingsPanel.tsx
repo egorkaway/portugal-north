@@ -89,11 +89,7 @@ export function AirportDestinationRankingsPanel() {
   }
 
   const rankings = buildAirportDestinationRankingsByCountry(data);
-  const hasData =
-    rankings.pt.busiest ||
-    rankings.pt.leastBusy ||
-    rankings.es.busiest ||
-    rankings.es.leastBusy;
+  const hasData = rankings.pt || rankings.es;
 
   if (!hasData) {
     return (
@@ -114,26 +110,16 @@ export function AirportDestinationRankingsPanel() {
       <p className="mb-3 text-sm text-muted-foreground md:mb-4">
         {t("rankings.airportDestinationIntro")}
       </p>
-      <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
+      <div className="grid gap-3 md:grid-cols-2 md:gap-4">
         <AirportDestinationRankingCard
           title={t("rankings.airportDestinationMostPt")}
           emptyLabel={t("rankings.airportDestinationNoData")}
-          row={rankings.pt.busiest}
-        />
-        <AirportDestinationRankingCard
-          title={t("rankings.airportDestinationLeastPt")}
-          emptyLabel={t("rankings.airportDestinationNoData")}
-          row={rankings.pt.leastBusy}
+          row={rankings.pt}
         />
         <AirportDestinationRankingCard
           title={t("rankings.airportDestinationMostEs")}
           emptyLabel={t("rankings.airportDestinationNoData")}
-          row={rankings.es.busiest}
-        />
-        <AirportDestinationRankingCard
-          title={t("rankings.airportDestinationLeastEs")}
-          emptyLabel={t("rankings.airportDestinationNoData")}
-          row={rankings.es.leastBusy}
+          row={rankings.es}
         />
       </div>
     </section>

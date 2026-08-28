@@ -266,9 +266,7 @@ export type Messages = {
     airportDestinationUnavailable: string;
     airportDestinationNoData: string;
     airportDestinationMostPt: string;
-    airportDestinationLeastPt: string;
     airportDestinationMostEs: string;
-    airportDestinationLeastEs: string;
     airportDestinationCount_one: string;
     airportDestinationCount_other: string;
   };

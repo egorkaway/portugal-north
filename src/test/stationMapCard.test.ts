@@ -30,9 +30,15 @@ describe("siteHostFromUrl", () => {
 
 describe("stationMapCard pickZoom", () => {
   it("zooms out 3 steps for the busiest train stations", () => {
-    expect(pickZoom({ name: "Agualva - Cacém", lines: ["Sintra Line"], lat: 0, lng: 0 })).toBe(13);
     expect(pickZoom({ name: "Lisboa Oriente", lines: ["Norte Line"], lat: 0, lng: 0 })).toBe(13);
-    expect(pickZoom({ name: "Portela de Sintra", lines: ["Sintra Line"], lat: 0, lng: 0 })).toBe(13);
+    expect(pickZoom({ name: "Porto-Campanhã", lines: ["Norte Line"], lat: 0, lng: 0 })).toBe(13);
+    expect(pickZoom({ name: "Massama - Barcarena", lines: ["Sintra Line"], lat: 0, lng: 0 })).toBe(13);
+  });
+
+  it("zooms out 3 steps for the busiest Spanish stations", () => {
+    expect(pickZoom({ name: "Madrid-Chamartín", lines: ["AVE"], lat: 0, lng: 0 })).toBe(13);
+    expect(pickZoom({ name: "Barcelona-Sants", lines: ["AVE"], lat: 0, lng: 0 })).toBe(13);
+    expect(pickZoom({ name: "Madrid-Puerta de Atocha", lines: ["AVE"], lat: 0, lng: 0 })).toBe(13);
   });
 
   it("zooms out 2 steps for airport stations", () => {

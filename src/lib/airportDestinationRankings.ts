@@ -17,14 +17,9 @@ export type AirportDestinationRankingRow = {
   mapImage: string;
 };
 
-export type AirportDestinationCountryRankings = {
-  busiest: AirportDestinationRankingRow | null;
-  leastBusy: AirportDestinationRankingRow | null;
-};
-
 export type AirportDestinationRankingsByCountry = Record<
   CountryCode,
-  AirportDestinationCountryRankings
+  AirportDestinationRankingRow | null
 >;
 
 function hubIata(airport: Station): string {
@@ -74,27 +69,17 @@ export function buildAirportDestinationRankingRows(
     );
 }
 
-export function pickBusiestAndLeastBusy(
+export function pickBusiest(
   rows: AirportDestinationRankingRow[],
-): AirportDestinationCountryRankings {
-  if (rows.length === 0) {
-    return { busiest: null, leastBusy: null };
-  }
-
-  const busiest = rows[0];
-  const leastBusy = rows[rows.length - 1];
-  return { busiest, leastBusy };
+): AirportDestinationRankingRow | null {
+  return rows[0] ?? null;
 }
 
 export function buildAirportDestinationRankingsByCountry(
   manifest: AirportConnectionsManifest | null | undefined,
 ): AirportDestinationRankingsByCountry {
   return {
-    pt: pickBusiestAndLeastBusy(
-      buildAirportDestinationRankingRows(portugalAirports, manifest),
-    ),
-    es: pickBusiestAndLeastBusy(
-      buildAirportDestinationRankingRows(spainAirports, manifest),
-    ),
+    pt: pickBusiest(buildAirportDestinationRankingRows(portugalAirports, manifest)),
+    es: pickBusiest(buildAirportDestinationRankingRows(spainAirports, manifest)),
   };
 }

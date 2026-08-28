@@ -9,6 +9,7 @@
  *   npm run maps:stations -- --basemap=carto-voyager   # same style for all
  *   npm run maps:stations -- --basemap=random          # default: random per station
  *   npm run maps:stations -- --region=lisbon           # Lisbon metro + LIS airport
+ *   npm run maps:stations -- --country=es              # Spanish stations + airports
  *   npm run maps:stations -- --missing-only            # skip stations that already have a PNG
  *   npm run maps:stations -- --skip-europe             # skip Europe destination airports
  */
@@ -45,6 +46,17 @@ const regionFilter = regionArg
     ? regionArg.split("=")[1]
     : args[args.indexOf("--region") + 1] ?? null
   : null;
+const countryArg = args.find((a) => a.startsWith("--country"));
+const countryFilter = countryArg
+  ? (countryArg.includes("=")
+      ? countryArg.split("=")[1]
+      : args[args.indexOf("--country") + 1] ?? "")
+      .toLowerCase() || null
+  : null;
+if (countryFilter && countryFilter !== "pt" && countryFilter !== "es") {
+  console.error(`Unknown --country "${countryFilter}". Use pt or es.`);
+  process.exit(1);
+}
 const basemapArg = args.find((a) => a.startsWith("--basemap"));
 const basemapMode = basemapArg
   ? basemapArg.includes("=")
@@ -67,6 +79,9 @@ const europeNames = new Set(
 let targets = stations.filter((s) => Number.isFinite(s.lat) && Number.isFinite(s.lng));
 if (skipEurope) {
   targets = targets.filter((s) => !europeNames.has(s.name));
+}
+if (countryFilter) {
+  targets = targets.filter((s) => s.country === countryFilter);
 }
 if (regionFilter) {
   targets = targets.filter((s) => matchesMapRegion(s, regionFilter.toLowerCase()));
@@ -142,7 +157,12 @@ let ok = 0;
 let failed = 0;
 // Only prune orphan PNGs on a true full regenerate — never when filtering or backfilling.
 const isFullRun =
-  !stationFilter && !regionFilter && !Number.isFinite(limit) && !missingOnly && !skipEurope;
+  !stationFilter &&
+  !regionFilter &&
+  !countryFilter &&
+  !Number.isFinite(limit) &&
+  !missingOnly &&
+  !skipEurope;
 
 function loadExistingManifest() {
   try {

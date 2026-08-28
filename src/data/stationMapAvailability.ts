@@ -232,6 +232,7 @@ export const stationMapAvailability: ReadonlySet<string> = new Set([
   "madalena",
   "madrid-barajas-airport-mad",
   "madrid-chamartin",
+  "madrid-puerta-de-atocha",
   "mafra",
   "malaga-costa-del-sol-airport-agp",
   "mangualde",

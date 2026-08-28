@@ -4,7 +4,7 @@ import { spainAirports } from "@/data/spain/airports";
 import {
   buildAirportDestinationRankingsByCountry,
   getAirportDestinationCount,
-  pickBusiestAndLeastBusy,
+  pickBusiest,
 } from "@/lib/airportDestinationRankings";
 import type { AirportConnectionsManifest } from "../../server/lib/airportConnections";
 
@@ -41,7 +41,7 @@ describe("airportDestinationRankings", () => {
     expect(getAirportDestinationCount(manifest, lisbon)).toBe(2);
   });
 
-  it("picks busiest and least busy per country", () => {
+  it("picks the busiest hub per country", () => {
     const manifest = manifestFor({
       LIS: {
         stationName: "Lisbon Airport (LIS)",
@@ -95,23 +95,21 @@ describe("airportDestinationRankings", () => {
     });
 
     const rankings = buildAirportDestinationRankingsByCountry(manifest);
-    expect(rankings.pt.busiest?.iata).toBe("OPO");
-    expect(rankings.pt.busiest?.mapImage).toBe(
+    expect(rankings.pt?.iata).toBe("OPO");
+    expect(rankings.pt?.mapImage).toBe(
       "/maps/airports/porto-airport-opo-connections.png",
     );
-    expect(rankings.pt.leastBusy?.iata).toBe("LIS");
-    expect(rankings.es.busiest?.iata).toBe("MAD");
-    expect(rankings.es.leastBusy?.iata).toBe("VLL");
-    expect(rankings.es.leastBusy?.mapImage).toBe(
-      "/maps/airports/valladolid-airport-vll-connections.png",
+    expect(rankings.es?.iata).toBe("MAD");
+    expect(rankings.es?.mapImage).toBe(
+      "/maps/airports/madrid-barajas-airport-mad-connections.png",
     );
   });
 
   it("returns nulls when no hubs have destinations", () => {
-    expect(pickBusiestAndLeastBusy([])).toEqual({ busiest: null, leastBusy: null });
+    expect(pickBusiest([])).toBeNull();
     expect(buildAirportDestinationRankingsByCountry(manifestFor({}))).toEqual({
-      pt: { busiest: null, leastBusy: null },
-      es: { busiest: null, leastBusy: null },
+      pt: null,
+      es: null,
     });
     expect(spainAirports.length).toBeGreaterThan(0);
   });

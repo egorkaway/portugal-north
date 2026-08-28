@@ -1000,4 +1000,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Puente San Miguel":
     "Puente San Miguel é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Sant Feliu de Llobregat":
+    "Sant Feliu de Llobregat é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Montmeló":
+    "Montmeló é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };
