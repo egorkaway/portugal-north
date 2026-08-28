@@ -2858,4 +2858,13 @@ export const spainStations: Station[] = [
     lng: 1.2587,
   },
 
+  {
+    name: "Oropesa de Toledo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.9217,
+    lng: -5.1861,
+  },
+
 ];

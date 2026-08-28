@@ -3488,6 +3488,11 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Casa Fèlix", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Casa%20F%C3%A8lix%2C%20Valls%2C%20Spain&order=price" },
     { name: "Hotel Nou", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Nou%2C%20Valls%2C%20Spain&order=price" },
   ],
+  "Oropesa de Toledo": [
+    { name: "Hostal La Plata", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Plata%2C%20Oropesa%20de%20Toledo%2C%20Spain&order=price" },
+    { name: "El Huésped del Sevillano AR", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/es/inn-el-huesped-del-sevillano.es.html?label=gen173nr-1DCAsoRkIcaW5uLWVsLWh1ZXNwZWQtZGVsLXNldmlsbGFub0gKWARoRogBAZgBCrgBGMgBDNgBA-gBAfgBA4gCAagCBLgCvbzqlgbAAgHSAiRmZjVmNzNmNi0zMzE5LTQ2MzAtYjRhNy0yZWM5ZDdlODRiYmLYAgTgAgE&sid=" },
+    { name: "Parador de Oropesa - Virrey de Toledo", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20de%20Oropesa%20-%20Virrey%20de%20Toledo%2C%20Oropesa%20de%20Toledo%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

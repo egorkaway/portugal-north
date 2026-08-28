@@ -1,6 +1,6 @@
 {
-  "runCount": 567,
-  "lastRunAt": "2026-08-28T08:46:27.312Z",
+  "runCount": 568,
+  "lastRunAt": "2026-08-28T08:56:06.435Z",
   "lastAirportConnectionsAt": "2026-08-28T06:52:46.179Z",
   "stations": {
     "Pombal": {
@@ -203,9 +203,9 @@
         "delayMinutes": 5276
       },
       "successfulSamples": 184,
-      "failedSamples": 5,
+      "failedSamples": 6,
       "lastSampleAt": "2026-08-28T07:58:31.039Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Canelas": {
       "cpCode": "94-38117",
@@ -2838,9 +2838,9 @@
         "delayMinutes": 163
       },
       "successfulSamples": 188,
-      "failedSamples": 7,
+      "failedSamples": 8,
       "lastSampleAt": "2026-08-28T08:48:33.814Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Nespereira": {
       "cpCode": "94-28266",
@@ -4403,9 +4403,9 @@
         "delayMinutes": 1253
       },
       "successfulSamples": 182,
-      "failedSamples": 8,
+      "failedSamples": 9,
       "lastSampleAt": "2026-08-28T08:49:00.774Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Alferrarede": {
       "cpCode": "94-52068",

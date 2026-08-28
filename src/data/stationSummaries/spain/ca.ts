@@ -1009,4 +1009,7 @@ export const spainSummariesCa: Record<string, string> = {
   "Valls":
     "Valls és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Oropesa de Toledo":
+    "Oropesa de Toledo és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

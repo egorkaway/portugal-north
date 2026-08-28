@@ -1009,4 +1009,7 @@ export const spainSummariesEs: Record<string, string> = {
   "Valls":
     "Valls es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Oropesa de Toledo":
+    "Oropesa de Toledo es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

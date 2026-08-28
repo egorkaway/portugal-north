@@ -475,6 +475,7 @@ export const stationImages: Record<string, string> = {
   "Orihuela-Miguel Hernández": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Intercambiador_de_Orihuela.jpg",
   "Ormáiztegui": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Estaci%C3%B3n_de_Orm%C3%A1iztegui_2005.jpg/960px-Estaci%C3%B3n_de_Orm%C3%A1iztegui_2005.jpg",
   "Oronhe": "https://images.pexels.com/photos/33355462/pexels-photo-33355462.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Oropesa de Toledo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Oropesa_de_Toledo_estaci%C3%B3n_02.jpg/960px-Oropesa_de_Toledo_estaci%C3%B3n_02.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Oura": "https://images.pexels.com/photos/9685974/pexels-photo-9685974.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Ourense": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Ourense_30-07-2008_06_estacion.jpg/960px-Ourense_30-07-2008_06_estacion.jpg",
   "Outeiro": "https://images.pexels.com/photos/37774483/pexels-photo-37774483.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
