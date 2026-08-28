@@ -597,6 +597,26 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Lutxana-Barakaldo": ["13305"],
 
+  "Sant Joan Despí": ["72302"],
+
+  "Maestra Justa Freire-Polidep. Aluche": ["35601"],
+
+  "Ablaña": ["15205"],
+
+  "Manzanares": ["50100"],
+
+  "Las Águilas": ["35602"],
+
+  "Crevillente": ["62101"],
+
+  "Xuvia": ["05107"],
+
+  "Canet de Mar": ["79601"],
+
+  "Montcada i Reixac-Manresa": ["78708"],
+
+  "Puente San Miguel": ["05623"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

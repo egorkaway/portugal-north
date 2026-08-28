@@ -131,6 +131,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@rafael-de-nadai-272665",
     photoPageUrl: "https://www.pexels.com/photo/people-gathering-near-train-820746/",
   },
+  "886205": {
+    photographer: "ClickerHappy",
+    photographerUrl: "https://www.pexels.com/@clickerhappy",
+    photoPageUrl: "https://www.pexels.com/photo/brown-cargo-on-train-station-886205/",
+  },
   "953125": {
     photographer: "Francesco Paggiaro",
     photographerUrl: "https://www.pexels.com/@paggiarofrancesco",
@@ -470,6 +475,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Sinitta Leunen",
     photographerUrl: "https://www.pexels.com/@sinileunen",
     photoPageUrl: "https://www.pexels.com/photo/people-walking-in-the-railway-station-6497207/",
+  },
+  "6508054": {
+    photographer: "Ana Hidalgo Burgos Burgos.",
+    photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-burgos-4848204",
+    photoPageUrl: "https://www.pexels.com/photo/black-and-red-train-under-blue-sky-6508054/",
   },
   "6589185": {
     photographer: "Luca Sammarco",
@@ -1820,6 +1830,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "berobscura",
     photographerUrl: "https://www.pexels.com/@berobscura-1679175123",
     photoPageUrl: "https://www.pexels.com/photo/black-and-white-street-scene-in-istanbul-30254825/",
+  },
+  "30432517": {
+    photographer: "Zafer Erdoğan",
+    photographerUrl: "https://www.pexels.com/@zafer-erdogan-49915050",
+    photoPageUrl: "https://www.pexels.com/photo/people-walking-on-historic-railway-platform-30432517/",
   },
   "30615685": {
     photographer: "Mihaela Claudia  Puscas",

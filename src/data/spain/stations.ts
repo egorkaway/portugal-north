@@ -2741,4 +2741,94 @@ export const spainStations: Station[] = [
     lng: -2.9754,
   },
 
+  {
+    name: "Sant Joan Despí",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3686,
+    lng: 2.0602,
+  },
+
+  {
+    name: "Maestra Justa Freire-Polidep. Aluche",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3836,
+    lng: -3.7687,
+  },
+
+  {
+    name: "Ablaña",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2676,
+    lng: -5.8058,
+  },
+
+  {
+    name: "Manzanares",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.0058,
+    lng: -3.3705,
+  },
+
+  {
+    name: "Las Águilas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.381,
+    lng: -3.7802,
+  },
+
+  {
+    name: "Crevillente",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.2246,
+    lng: -0.7815,
+  },
+
+  {
+    name: "Xuvia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5172,
+    lng: -8.1613,
+  },
+
+  {
+    name: "Canet de Mar",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5867,
+    lng: 2.5813,
+  },
+
+  {
+    name: "Montcada i Reixac-Manresa",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4839,
+    lng: 2.1854,
+  },
+
+  {
+    name: "Puente San Miguel",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3587,
+    lng: -4.0878,
+  },
+
 ];
