@@ -1012,4 +1012,7 @@ export const spainSummariesEs: Record<string, string> = {
   "Oropesa de Toledo":
     "Oropesa de Toledo es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Marçà-Falset":
+    "Marçà-Falset es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

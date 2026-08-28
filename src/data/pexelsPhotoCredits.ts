@@ -811,6 +811,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@simaomoreira",
     photoPageUrl: "https://www.pexels.com/photo/green-trees-near-the-church-building-12362183/",
   },
+  "12388492": {
+    photographer: "Jose Antonio Gallego Vázquez",
+    photographerUrl: "https://www.pexels.com/@joseantoniogallego",
+    photoPageUrl: "https://www.pexels.com/photo/long-exposure-photo-of-train-near-high-rise-building-12388492/",
+  },
   "12464217": {
     photographer: "K",
     photographerUrl: "https://www.pexels.com/@kelly",

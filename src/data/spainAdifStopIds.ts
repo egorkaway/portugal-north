@@ -625,6 +625,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Oropesa de Toledo": ["35203"],
 
+  "Marçà-Falset": ["71303"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

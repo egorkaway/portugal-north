@@ -3493,6 +3493,11 @@ export const stationHotels: StationHotels = {
     { name: "El Huésped del Sevillano AR", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/es/inn-el-huesped-del-sevillano.es.html?label=gen173nr-1DCAsoRkIcaW5uLWVsLWh1ZXNwZWQtZGVsLXNldmlsbGFub0gKWARoRogBAZgBCrgBGMgBDNgBA-gBAfgBA4gCAagCBLgCvbzqlgbAAgHSAiRmZjVmNzNmNi0zMzE5LTQ2MzAtYjRhNy0yZWM5ZDdlODRiYmLYAgTgAgE&sid=" },
     { name: "Parador de Oropesa - Virrey de Toledo", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20de%20Oropesa%20-%20Virrey%20de%20Toledo%2C%20Oropesa%20de%20Toledo%2C%20Spain&order=price" },
   ],
+  "Marçà-Falset": [
+    { name: "Mas Figures", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mas%20Figures%2C%20Mar%C3%A7%C3%A0-Falset%2C%20Spain&order=price" },
+    { name: "Hotel Sport", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sport%2C%20Mar%C3%A7%C3%A0-Falset%2C%20Spain&order=price" },
+    { name: "Lotus Priorat", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lotus%20Priorat%2C%20Mar%C3%A7%C3%A0-Falset%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

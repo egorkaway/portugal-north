@@ -2867,4 +2867,13 @@ export const spainStations: Station[] = [
     lng: -5.1861,
   },
 
+  {
+    name: "Marçà-Falset",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1309,
+    lng: 0.8104,
+  },
+
 ];
