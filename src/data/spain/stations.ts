@@ -2957,4 +2957,40 @@ export const spainStations: Station[] = [
     lng: -4.7593,
   },
 
+  {
+    name: "Chiva",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.4711,
+    lng: -0.7229,
+  },
+
+  {
+    name: "Segunda Aguada",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.5135,
+    lng: -6.277,
+  },
+
+  {
+    name: "Carcaixent",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.1205,
+    lng: -0.4544,
+  },
+
+  {
+    name: "Torreblanca",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.2122,
+    lng: 0.1988,
+  },
+
 ];

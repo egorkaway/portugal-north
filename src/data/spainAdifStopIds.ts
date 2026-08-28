@@ -645,6 +645,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "El Chorro-Caminito del Rey": ["54403"],
 
+  "Chiva": ["66207"],
+
+  "Segunda Aguada": ["51404"],
+
+  "Carcaixent": ["64103"],
+
+  "Torreblanca": ["65306"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

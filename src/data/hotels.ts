@@ -3543,6 +3543,26 @@ export const stationHotels: StationHotels = {
     { name: "Olive Branch, El Chorro", distanceKm: 0.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Olive%20Branch%2C%20El%20Chorro%2C%20El%20Chorro-Caminito%20del%20Rey%2C%20Spain&order=price" },
     { name: "Finca la Campana", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20la%20Campana%2C%20El%20Chorro-Caminito%20del%20Rey%2C%20Spain&order=price" },
   ],
+  "Chiva": [
+    { name: "Ignacio", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ignacio%2C%20Chiva%2C%20Spain&order=price" },
+    { name: "La'Orza de Angel", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La'Orza%20de%20Angel%2C%20Chiva%2C%20Spain&order=price" },
+    { name: "Hotel Restaurante Venta del Pilar", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurante%20Venta%20del%20Pilar%2C%20Chiva%2C%20Spain&order=price" },
+  ],
+  "Segunda Aguada": [
+    { name: "Regio", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Regio%2C%20Segunda%20Aguada%2C%20Spain&order=price" },
+    { name: "Hotel Barceló", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Barcel%C3%B3%2C%20Segunda%20Aguada%2C%20Spain&order=price" },
+    { name: "Regio 2", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Regio%202%2C%20Segunda%20Aguada%2C%20Spain&order=price" },
+  ],
+  "Carcaixent": [
+    { name: "San Fernando", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=San%20Fernando%2C%20Carcaixent%2C%20Spain&order=price" },
+    { name: "Hotel Avenida Plaza", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Avenida%20Plaza%2C%20Carcaixent%2C%20Spain&order=price" },
+    { name: "Casa Blava", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Blava%2C%20Carcaixent%2C%20Spain&order=price" },
+  ],
+  "Torreblanca": [
+    { name: "Hotel Miramar", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Miramar%2C%20Torreblanca%2C%20Spain&order=price" },
+    { name: "Hostal Juani", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Juani%2C%20Torreblanca%2C%20Spain&order=price" },
+    { name: "236", distanceKm: 1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=236%2C%20Torreblanca%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

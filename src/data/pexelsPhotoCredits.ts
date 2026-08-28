@@ -796,6 +796,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@emrullahtalhaazakli",
     photoPageUrl: "https://www.pexels.com/photo/people-walking-at-the-train-station-11906671/",
   },
+  "11971718": {
+    photographer: "Yusuf sinan",
+    photographerUrl: "https://www.pexels.com/@yusufsinan",
+    photoPageUrl: "https://www.pexels.com/photo/a-man-cleaning-the-train-platform-11971718/",
+  },
   "12083360": {
     photographer: "Douglas  Santos",
     photographerUrl: "https://www.pexels.com/@douglas-santos-30354854",
