@@ -2885,4 +2885,13 @@ export const spainStations: Station[] = [
     lng: 2.5493,
   },
 
+  {
+    name: "Vilches",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.2157,
+    lng: -3.5176,
+  },
+
 ];

@@ -1018,4 +1018,7 @@ export const spainSummariesCa: Record<string, string> = {
   "Arenys de Mar":
     "Arenys de Mar és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Vilches":
+    "Vilches és una estació de Renfe de llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

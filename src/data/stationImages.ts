@@ -757,6 +757,7 @@ export const stationImages: Record<string, string> = {
   "Vilar Formoso": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Vilar_Formoso_Train_Station.jpg/960px-Vilar_Formoso_Train_Station.jpg",
   "Vilarinho das Paranheiras": "https://images.pexels.com/photos/38479643/pexels-photo-38479643.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Vilassar de Mar": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Catalonia_Maresme_VilassarDeMar_Estacio.JPG/960px-Catalonia_Maresme_VilassarDeMar_Estacio.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "Vilches": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/RENFE_121_501_Vilches.jpg/960px-RENFE_121_501_Vilches.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Vilela do Tâmega": "https://images.pexels.com/photos/20813454/pexels-photo-20813454.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Vilela-Fornos": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Medway_4719_%2850842299321%29.jpg/960px-Medway_4719_%2850842299321%29.jpg",
   "Villalba de Guadarrama": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Collado_Villalba_-_Estaci%C3%B3n_de_Villalba_5.JPG/960px-Collado_Villalba_-_Estaci%C3%B3n_de_Villalba_5.JPG",
