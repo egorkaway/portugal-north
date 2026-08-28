@@ -3483,6 +3483,11 @@ export const stationHotels: StationHotels = {
     { name: "Guest houses near Montmeló", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Montmel%C3%B3%2C%20Spain&order=price" },
     { name: "Hotels near Montmeló", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Montmel%C3%B3%2C%20Spain&order=price" },
   ],
+  "Valls": [
+    { name: "B&B Hotels Tarragona-Valls", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotels%20Tarragona-Valls%2C%20Valls%2C%20Spain&order=price" },
+    { name: "Hotel Casa Fèlix", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Casa%20F%C3%A8lix%2C%20Valls%2C%20Spain&order=price" },
+    { name: "Hotel Nou", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Nou%2C%20Valls%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

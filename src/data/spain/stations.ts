@@ -2849,4 +2849,13 @@ export const spainStations: Station[] = [
     lng: 2.2454,
   },
 
+  {
+    name: "Valls",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.2896,
+    lng: 1.2587,
+  },
+
 ];

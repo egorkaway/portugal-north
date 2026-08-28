@@ -720,6 +720,7 @@ export const stationImages: Record<string, string> = {
   "Valladolid-Campo Grande": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Valladolid_-_Campo_Grande_station.JPG/960px-Valladolid_-_Campo_Grande_station.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Valle Real": "https://images.pexels.com/photos/4458687/pexels-photo-4458687.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Vallobín": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Estacion_de_Vallobin_%2801%29.jpg/960px-Estacion_de_Vallobin_%2801%29.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+  "Valls": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5f/Estaci%C3%B3_de_Valls.jpg/960px-Estaci%C3%B3_de_Valls.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Valongo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/CP_3400_%284722729444%29.jpg/960px-CP_3400_%284722729444%29.jpg",
   "Vendas Novas": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/Flickr_-_nmorao_-_Regional_4804%2C_Esta%C3%A7%C3%A3o_de_Vendas_Novas%2C_2009.11.11_%281%29.jpg/960px-Flickr_-_nmorao_-_Regional_4804%2C_Esta%C3%A7%C3%A3o_de_Vendas_Novas%2C_2009.11.11_%281%29.jpg",
   "Venta de Baños": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Venta_de_Ba%C3%B1os_-_estaci%C3%B3n_de_ferrocarril_1.jpg/960px-Venta_de_Ba%C3%B1os_-_estaci%C3%B3n_de_ferrocarril_1.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

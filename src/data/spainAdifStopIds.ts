@@ -621,6 +621,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Montmeló": ["79007"],
 
+  "Valls": ["76004"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
