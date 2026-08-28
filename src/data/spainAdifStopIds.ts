@@ -633,6 +633,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Celrà": ["79301"],
 
+  "Colera": ["79314"],
+
+  "Alzira": ["64104"],
+
+  "Candás": ["05210", "05211"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

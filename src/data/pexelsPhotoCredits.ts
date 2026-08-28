@@ -2466,6 +2466,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@filipa-moreira-2149871975",
     photoPageUrl: "https://www.pexels.com/photo/train-in-douro-valley-landscape-35389341/",
   },
+  "35478596": {
+    photographer: "Belquior G.",
+    photographerUrl: "https://www.pexels.com/@belquior-g-2829257",
+    photoPageUrl: "https://www.pexels.com/photo/historic-building-and-tower-in-cadiz-spain-35478596/",
+  },
   "35496713": {
     photographer: "Jérémy Glineur",
     photographerUrl: "https://www.pexels.com/@pixels-elements",

@@ -3513,6 +3513,21 @@ export const stationHotels: StationHotels = {
     { name: "Can Tallada", distanceKm: 3.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Tallada%2C%20Celr%C3%A0%2C%20Spain&order=price" },
     { name: "Can Dama", distanceKm: 3.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Dama%2C%20Celr%C3%A0%2C%20Spain&order=price" },
   ],
+  "Colera": [
+    { name: "Hostal La gambina", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20gambina%2C%20Colera%2C%20Spain&order=price" },
+    { name: "Pensió Juventus", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3%20Juventus%2C%20Colera%2C%20Spain&order=price" },
+    { name: "Hotel Comodoro", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Comodoro%2C%20Colera%2C%20Spain&order=price" },
+  ],
+  "Alzira": [
+    { name: "Hotel Avenida Plaza", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Avenida%20Plaza%2C%20Alzira%2C%20Spain&order=price" },
+    { name: "Casa Blava", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Blava%2C%20Alzira%2C%20Spain&order=price" },
+    { name: "San Fernando", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=San%20Fernando%2C%20Alzira%2C%20Spain&order=price" },
+  ],
+  "Candás": [
+    { name: "Principado de Asturias 2", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Principado%20de%20Asturias%202%2C%20Cand%C3%A1s%2C%20Spain&order=price" },
+    { name: "Puerto de Candás", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Puerto%20de%20Cand%C3%A1s%2C%20Cand%C3%A1s%2C%20Spain&order=price" },
+    { name: "Hotel Rural La Casina", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/es/la-casina.es.html" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

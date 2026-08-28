@@ -2903,4 +2903,31 @@ export const spainStations: Station[] = [
     lng: 2.8749,
   },
 
+  {
+    name: "Colera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.4069,
+    lng: 3.1543,
+  },
+
+  {
+    name: "Alzira",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.1531,
+    lng: -0.4506,
+  },
+
+  {
+    name: "Candás",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5847,
+    lng: -5.7727,
+  },
+
 ];
