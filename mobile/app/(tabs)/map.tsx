@@ -267,7 +267,13 @@ export default function MapScreen() {
                 tracksViewChanges={false}
                 onPress={() => selectStation(station.name)}
               >
-                <View style={styles.markerHitArea} collapsable={false}>
+                <View
+                  style={styles.markerHitArea}
+                  collapsable={false}
+                  accessible
+                  accessibilityRole="button"
+                  accessibilityLabel={station.name}
+                >
                   <View style={styles.markerTouchTarget} />
                   <View
                     style={[

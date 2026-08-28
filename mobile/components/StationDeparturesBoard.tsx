@@ -200,6 +200,8 @@ export function StationDeparturesBoard({
             <View style={styles.cardAside}>
               <Pressable
                 onPress={() => void toggleTake(dep)}
+                accessibilityRole="button"
+                accessibilityLabel={`${taking ? t('departures.taking') : t('departures.take')} ${dep.destination}`}
                 style={[
                   styles.actionButton,
                   taking && { backgroundColor: theme.primary, borderColor: theme.primary },

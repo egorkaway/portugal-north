@@ -653,6 +653,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Torreblanca": ["65306"],
 
+  "Les Borges del Camp": ["71307"],
+
+  "Meres": ["05507"],
+
+  "Ortigueira": ["05139"],
+
+  "Montgat": ["79405"],
+
+  "Robledo de Chavela": ["10205"],
+
+  "Cervera": ["78500"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

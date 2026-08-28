@@ -2993,4 +2993,58 @@ export const spainStations: Station[] = [
     lng: 0.1988,
   },
 
+  {
+    name: "Les Borges del Camp",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1665,
+    lng: 1.0221,
+  },
+
+  {
+    name: "Meres",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.381,
+    lng: -5.7487,
+  },
+
+  {
+    name: "Ortigueira",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.6862,
+    lng: -7.8496,
+  },
+
+  {
+    name: "Montgat",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.463,
+    lng: 2.2722,
+  },
+
+  {
+    name: "Robledo de Chavela",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5208,
+    lng: -4.2468,
+  },
+
+  {
+    name: "Cervera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6736,
+    lng: 1.2748,
+  },
+
 ];

@@ -226,6 +226,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@marcelodias",
     photoPageUrl: "https://www.pexels.com/photo/person-wearing-black-shoe-2379943/",
   },
+  "2799392": {
+    photographer: "Maury Hz",
+    photographerUrl: "https://www.pexels.com/@maury-hz-1406721",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photography-of-concrete-structure-2799392/",
+  },
   "2866765": {
     photographer: "La Afterman",
     photographerUrl: "https://www.pexels.com/@itislit",

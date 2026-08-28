@@ -1,8 +1,10 @@
-import { portugalStations, type Station } from "@/data/stations";
+import { pageStations } from "@/data/stationRegistry";
+import type { Station } from "@/data/stations";
 import { distanceKm } from "@/lib/geo";
 import { sortStationsByDistance } from "@/lib/rankStations";
 import { isAirportDestinationStation, isAirportHubStation } from "@/lib/airportTypes";
 
+/** CP Alfa/IC plus Spanish long-distance (catalogued as Intercidades, shown as InterCity). */
 const LONG_DISTANCE_TYPES = new Set(["Alfa Pendular", "Intercidades"]);
 
 export function hasLongDistanceService(station: Station): boolean {
@@ -28,9 +30,12 @@ export function getNearestLongDistanceStations(
   station: Station,
   limit = 2,
 ): NearestLongDistanceStation[] {
-  const candidates = portugalStations.filter(
+  const candidates = pageStations.filter(
     (candidate) =>
-      candidate.name !== station.name && hasLongDistanceService(candidate),
+      candidate.name !== station.name &&
+      hasLongDistanceService(candidate) &&
+      !isAirportHubStation(candidate) &&
+      !isAirportDestinationStation(candidate),
   );
 
   return sortStationsByDistance(candidates, station)

@@ -3563,6 +3563,36 @@ export const stationHotels: StationHotels = {
     { name: "Hostal Juani", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Juani%2C%20Torreblanca%2C%20Spain&order=price" },
     { name: "236", distanceKm: 1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=236%2C%20Torreblanca%2C%20Spain&order=price" },
   ],
+  "Les Borges del Camp": [
+    { name: "Xalet les borges", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Xalet%20les%20borges%2C%20Les%20Borges%20del%20Camp%2C%20Spain&order=price" },
+    { name: "Sant Jordi", distanceKm: 5.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sant%20Jordi%2C%20Les%20Borges%20del%20Camp%2C%20Spain&order=price" },
+    { name: "Hotel Termes Montbrió", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Termes%20Montbri%C3%B3%2C%20Les%20Borges%20del%20Camp%2C%20Spain&order=price" },
+  ],
+  "Meres": [
+    { name: "Hotel Zalle Don Fernando", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Zalle%20Don%20Fernando%2C%20Meres%2C%20Spain&order=price" },
+    { name: "Hostal Jarana", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Jarana%2C%20Meres%2C%20Spain&order=price" },
+    { name: "Hotel San Miguel de la Barreda", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20San%20Miguel%20de%20la%20Barreda%2C%20Meres%2C%20Spain&order=price" },
+  ],
+  "Ortigueira": [
+    { name: "Hotel la Perla", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20la%20Perla%2C%20Ortigueira%2C%20Spain&order=price" },
+    { name: "Hostal Vendaval", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Vendaval%2C%20Ortigueira%2C%20Spain&order=price" },
+    { name: "Hotel Santa Marta", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Santa%20Marta%2C%20Ortigueira%2C%20Spain&order=price" },
+  ],
+  "Montgat": [
+    { name: "Hotel Badalona Tower", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Badalona%20Tower%2C%20Montgat%2C%20Spain&order=price" },
+    { name: "Hotel Miramar", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Miramar%2C%20Montgat%2C%20Spain&order=price" },
+    { name: "Hostal Solimar", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Solimar%2C%20Montgat%2C%20Spain&order=price" },
+  ],
+  "Robledo de Chavela": [
+    { name: "Casa Rural Deo Gratias", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Deo%20Gratias%2C%20Robledo%20de%20Chavela%2C%20Spain&order=price" },
+    { name: "Casa Zúrich", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Z%C3%BArich%2C%20Robledo%20de%20Chavela%2C%20Spain&order=price" },
+    { name: "Apartamentos Almenara", distanceKm: 1.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20Almenara%2C%20Robledo%20de%20Chavela%2C%20Spain&order=price" },
+  ],
+  "Cervera": [
+    { name: "Hostal Bonavista", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Bonavista%2C%20Cervera%2C%20Spain&order=price" },
+    { name: "Hostal Universitat", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Universitat%2C%20Cervera%2C%20Spain&order=price" },
+    { name: "Residencia Sagrada Familia", distanceKm: 0.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Sagrada%20Familia%2C%20Cervera%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

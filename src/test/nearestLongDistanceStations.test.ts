@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { portugalAirports } from "@/data/portugal/airports";
 import { spainAirports } from "@/data/spain/airports";
+import { spainStations } from "@/data/spain/stations";
 import { stations } from "@/data/stations";
 import {
   getLongDistanceTypes,
@@ -55,5 +56,17 @@ describe("nearestLongDistanceStations", () => {
   it("lists only long-distance types on a candidate", () => {
     const porto = stations.find((s) => s.name === "Porto-Campanhã")!;
     expect(getLongDistanceTypes(porto)).toEqual(["Alfa Pendular", "Intercidades"]);
+  });
+
+  it("points Barcelona suburban stops at InterCity stations in the city, not Portugal", () => {
+    const arcDeTriomf = spainStations.find((s) => s.name === "Barcelona Arc de Triomf")!;
+    expect(shouldShowNearestLongDistance(arcDeTriomf)).toBe(true);
+
+    const nearest = getNearestLongDistanceStations(arcDeTriomf);
+    expect(nearest).toHaveLength(2);
+    expect(nearest.every((entry) => entry.station.country === "es")).toBe(true);
+    expect(nearest.every((entry) => hasLongDistanceService(entry.station))).toBe(true);
+    expect(nearest.some((entry) => entry.station.name.startsWith("Barcelona"))).toBe(true);
+    expect(nearest[0].distanceKm).toBeLessThan(15);
   });
 });
