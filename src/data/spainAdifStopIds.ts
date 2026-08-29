@@ -683,6 +683,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "La Rinconada": ["50703"],
 
+  "Sueca": ["69103"],
+
+  "Zaramillo": ["05463"],
+
+  "Puerto Real": ["51401"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

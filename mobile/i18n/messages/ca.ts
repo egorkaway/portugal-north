@@ -42,6 +42,7 @@ export const ca: MobileMessages = {
   },
   home: {
     searchPlaceholder: 'Cercar estació o línia...',
+    searchClear: 'Esborrar cerca',
     sortByDistance: 'Ordenar per distància',
     sortedByDistance: 'Ordenat per distància',
     locating: 'Localitzant...',

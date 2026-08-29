@@ -42,6 +42,7 @@ export const gl: MobileMessages = {
   },
   home: {
     searchPlaceholder: 'Buscar estación ou liña...',
+    searchClear: 'Borrar busca',
     sortByDistance: 'Ordenar por distancia',
     sortedByDistance: 'Ordenado por distancia',
     locating: 'Localizando...',

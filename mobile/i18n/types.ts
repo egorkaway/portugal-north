@@ -44,6 +44,7 @@ export type MobileMessages = {
   };
   home: {
     searchPlaceholder: string;
+    searchClear: string;
     sortByDistance: string;
     sortedByDistance: string;
     locating: string;

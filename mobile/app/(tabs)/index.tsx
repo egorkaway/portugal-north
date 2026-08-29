@@ -229,6 +229,8 @@ export default function HomeScreen() {
           if (visible.length < filtered.length) setPage((p) => p + 1);
         }}
         onEndReachedThreshold={0.4}
+        keyboardShouldPersistTaps="handled"
+        keyboardDismissMode="on-drag"
         ListHeaderComponent={
           <View style={[styles.header, { paddingTop: insets.top + 4 }]}>
             <AppBrandHeader />

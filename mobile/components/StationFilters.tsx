@@ -26,6 +26,7 @@ const ICONS = {
   circle: { ios: 'circle', android: 'radio_button_unchecked', web: 'radio_button_unchecked' },
   check: { ios: 'checkmark', android: 'check', web: 'check' },
   mapPin: { ios: 'mappin.and.ellipse', android: 'place', web: 'place' },
+  clear: { ios: 'xmark.circle.fill', android: 'cancel', web: 'cancel' },
 } as const satisfies Record<string, SymbolName>;
 
 type Props = {
@@ -122,11 +123,28 @@ export function StationFilters({
             onChangeText={onSearchChange}
             placeholder={searchLabel}
             placeholderTextColor={theme.primaryMuted}
-            style={styles.search}
+            style={[styles.search, searchQuery ? styles.searchWithClear : null]}
             autoCapitalize="none"
             autoCorrect={false}
             accessibilityLabel={searchLabel}
+            returnKeyType="search"
           />
+          {searchQuery ? (
+            <Pressable
+              onPress={() => onSearchChange('')}
+              accessibilityRole="button"
+              accessibilityLabel={t('home.searchClear')}
+              testID="search-clear"
+              hitSlop={8}
+              style={styles.searchClear}
+            >
+              <SymbolView
+                name={ICONS.clear}
+                size={16}
+                tintColor={theme.primaryMuted}
+              />
+            </Pressable>
+          ) : null}
         </View>
         <Pressable
           onPress={() => void onRequestLocation()}
@@ -244,6 +262,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: theme.primary,
     minHeight: 34,
+  },
+  searchWithClear: {
+    paddingRight: 32,
+  },
+  searchClear: {
+    position: 'absolute',
+    right: 6,
+    height: 34,
+    width: 28,
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1,
   },
   locationButton: {
     width: 34,

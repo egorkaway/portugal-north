@@ -244,6 +244,12 @@ export default function OnboardingScreen() {
           </Pressable>
         ) : null}
 
+        {step === 'location' || step === 'notifications' ? (
+          <Pressable onPress={advance} disabled={busy} hitSlop={8}>
+            <Text style={styles.skip}>{t('common.skip')}</Text>
+          </Pressable>
+        ) : null}
+
         {step === 'location' ? (
           <Text style={styles.footerNote}>{t('onboarding.locationFooter')}</Text>
         ) : null}
@@ -351,5 +357,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 12,
     color: brandTheme.textMuted,
+  },
+  skip: {
+    textAlign: 'center',
+    fontSize: 15,
+    fontWeight: '600',
+    color: brandTheme.textMuted,
+    paddingVertical: 4,
   },
 });

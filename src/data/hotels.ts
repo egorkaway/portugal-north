@@ -3638,6 +3638,21 @@ export const stationHotels: StationHotels = {
     { name: "Hostal Venta El Cruce", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Venta%20El%20Cruce%2C%20La%20Rinconada%2C%20Spain&order=price" },
     { name: "Hotel El Cruce", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Cruce%2C%20La%20Rinconada%2C%20Spain&order=price" },
   ],
+  "Sueca": [
+    { name: "Dos Pontets", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dos%20Pontets%2C%20Sueca%2C%20Spain&order=price" },
+    { name: "Hotel Cullera Holiday", distanceKm: 6.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cullera%20Holiday%2C%20Sueca%2C%20Spain&order=price" },
+    { name: "Santamarta", distanceKm: 6.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santamarta%2C%20Sueca%2C%20Spain&order=price" },
+  ],
+  "Zaramillo": [
+    { name: "Cynthia", distanceKm: 2.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cynthia%2C%20Zaramillo%2C%20Spain&order=price" },
+    { name: "Hotel Erreka-alde", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Erreka-alde%2C%20Zaramillo%2C%20Spain&order=price" },
+    { name: "Agroturismo Ordaola", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Agroturismo%20Ordaola%2C%20Zaramillo%2C%20Spain&order=price" },
+  ],
+  "Puerto Real": [
+    { name: "Residencia Escolar Las Canteras", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Escolar%20Las%20Canteras%2C%20Puerto%20Real%2C%20Spain&order=price" },
+    { name: "Hostal Bahía de Cádiz", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Bah%C3%ADa%20de%20C%C3%A1diz%2C%20Puerto%20Real%2C%20Spain&order=price" },
+    { name: "Las Canteras", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Las%20Canteras%2C%20Puerto%20Real%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

@@ -151,8 +151,9 @@ export default function MapScreen() {
       const region = {
         latitude: coords.lat,
         longitude: coords.lng,
-        latitudeDelta: 0.45,
-        longitudeDelta: 0.45,
+        // Neighborhood span so nearby hubs (e.g. Oriente vs Moscavide) stay tappable.
+        latitudeDelta: 0.06,
+        longitudeDelta: 0.06,
       };
       if (USE_OSM_MAP) {
         osmMapRef.current?.setUserLocation(coords);

@@ -42,6 +42,7 @@ export const ru: MobileMessages = {
   },
   home: {
     searchPlaceholder: 'Искать станцию или линию...',
+    searchClear: 'Очистить поиск',
     sortByDistance: 'Сортировать по расстоянию',
     sortedByDistance: 'Отсортировано по расстоянию',
     locating: 'Определяем место…',

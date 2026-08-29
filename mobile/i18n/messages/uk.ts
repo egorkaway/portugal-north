@@ -42,6 +42,7 @@ export const uk: MobileMessages = {
   },
   home: {
     searchPlaceholder: 'Шукати станцію або лінію...',
+    searchClear: 'Очистити пошук',
     sortByDistance: 'Сортувати за відстанню',
     sortedByDistance: 'Відсортовано за відстанню',
     locating: 'Визначаємо місце…',

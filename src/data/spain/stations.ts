@@ -3128,4 +3128,31 @@ export const spainStations: Station[] = [
     lng: -5.9401,
   },
 
+  {
+    name: "Sueca",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.2058,
+    lng: -0.3082,
+  },
+
+  {
+    name: "Zaramillo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2333,
+    lng: -3.0159,
+  },
+
+  {
+    name: "Puerto Real",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.5309,
+    lng: -6.1853,
+  },
+
 ];

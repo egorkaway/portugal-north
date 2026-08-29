@@ -28,7 +28,7 @@ import {
   readActiveTrip,
   takeActiveTrip,
 } from '@/lib/tripStorage';
-import { isLongDistanceDeparture, isStorePreview, withStorePreviewDepartures } from '@/lib/storePreview';
+import { isLongDistanceDeparture, withStorePreviewDepartures } from '@/lib/storePreview';
 import type { PlannedDeparture, StationDeparture } from '@/lib/types';
 
 type Props = {
@@ -92,7 +92,8 @@ export function StationDeparturesBoard({
   );
 
   useEffect(() => {
-    const initialLimit = isStorePreview() ? MAX_DEPARTURES_LIMIT : INITIAL_DEPARTURES_LIMIT;
+    const initialLimit =
+      stationName === 'Lisboa Oriente' ? MAX_DEPARTURES_LIMIT : INITIAL_DEPARTURES_LIMIT;
     setLimit(initialLimit);
     void load(initialLimit, 'initial');
     const timer = setInterval(() => setNow(new Date()), 60_000);
@@ -168,8 +169,7 @@ export function StationDeparturesBoard({
               activeTrip?.timetableDate ?? date,
             )
           : null;
-        const previewLongDistanceTake =
-          isStorePreview() && index === 0 && isLongDistanceDeparture(dep);
+        const previewLongDistanceTake = index === 0 && isLongDistanceDeparture(dep);
 
         return (
           <View key={id} style={styles.card}>
