@@ -226,6 +226,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@marcelodias",
     photoPageUrl: "https://www.pexels.com/photo/person-wearing-black-shoe-2379943/",
   },
+  "2464412": {
+    photographer: "Adrien Olichon",
+    photographerUrl: "https://www.pexels.com/@adrien-olichon-1257089",
+    photoPageUrl: "https://www.pexels.com/photo/aerial-photo-of-train-station-2464412/",
+  },
   "2799392": {
     photographer: "Maury Hz",
     photographerUrl: "https://www.pexels.com/@maury-hz-1406721",
@@ -2845,6 +2850,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Cristiano Ferrari films",
     photographerUrl: "https://www.pexels.com/@cristiano-ferrari-films-2162783697",
     photoPageUrl: "https://www.pexels.com/photo/black-and-white-railway-tracks-in-scenic-landscape-38479643/",
+  },
+  "38583932": {
+    photographer: "pierre matile",
+    photographerUrl: "https://www.pexels.com/@open-borders",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architecture-and-reflections-in-basel-38583932/",
   },
   "38704915": {
     photographer: "Efrem  Efre",

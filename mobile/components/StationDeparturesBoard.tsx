@@ -13,6 +13,7 @@ import { fetchStationDepartures } from '@/lib/api';
 import {
   canLoadMoreDepartures,
   INITIAL_DEPARTURES_LIMIT,
+  MAX_DEPARTURES_LIMIT,
   nextDeparturesLimit,
 } from '@/lib/departureLimits';
 import {
@@ -27,6 +28,7 @@ import {
   readActiveTrip,
   takeActiveTrip,
 } from '@/lib/tripStorage';
+import { isLongDistanceDeparture, isStorePreview, withStorePreviewDepartures } from '@/lib/storePreview';
 import type { PlannedDeparture, StationDeparture } from '@/lib/types';
 
 type Props = {
@@ -79,7 +81,7 @@ export function StationDeparturesBoard({
 
       try {
         const rows = await fetchStationDepartures(stationName, nextLimit);
-        setDepartures(rows);
+        setDepartures(withStorePreviewDepartures(stationName, rows));
         setLimit(nextLimit);
       } finally {
         setLoading(false);
@@ -90,8 +92,9 @@ export function StationDeparturesBoard({
   );
 
   useEffect(() => {
-    setLimit(INITIAL_DEPARTURES_LIMIT);
-    void load(INITIAL_DEPARTURES_LIMIT, 'initial');
+    const initialLimit = isStorePreview() ? MAX_DEPARTURES_LIMIT : INITIAL_DEPARTURES_LIMIT;
+    setLimit(initialLimit);
+    void load(initialLimit, 'initial');
     const timer = setInterval(() => setNow(new Date()), 60_000);
     return () => clearInterval(timer);
   }, [load]);
@@ -147,7 +150,7 @@ export function StationDeparturesBoard({
 
   return (
     <View style={styles.list}>
-      {departures.map((dep) => {
+      {departures.map((dep, index) => {
         const { date } = lisbonDateAndTime(now);
         const id = buildPlannedDepartureId(
           stationName,
@@ -165,6 +168,8 @@ export function StationDeparturesBoard({
               activeTrip?.timetableDate ?? date,
             )
           : null;
+        const previewLongDistanceTake =
+          isStorePreview() && index === 0 && isLongDistanceDeparture(dep);
 
         return (
           <View key={id} style={styles.card}>
@@ -202,6 +207,7 @@ export function StationDeparturesBoard({
                 onPress={() => void toggleTake(dep)}
                 accessibilityRole="button"
                 accessibilityLabel={`${taking ? t('departures.taking') : t('departures.take')} ${dep.destination}`}
+                testID={previewLongDistanceTake ? 'take-long-distance' : undefined}
                 style={[
                   styles.actionButton,
                   taking && { backgroundColor: theme.primary, borderColor: theme.primary },

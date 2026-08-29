@@ -1075,4 +1075,28 @@ export const spainSummariesEs: Record<string, string> = {
   "Orpesa":
     "Orpesa es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Zarzalejo":
+    "Zarzalejo es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "San Sadurniño":
+    "San Sadurniño es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Cullera":
+    "Cullera es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Móra la Nova":
+    "Móra la Nova es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Nueva Montaña apeadero":
+    "Nueva Montaña apeadero es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Tolosa-Centro":
+    "Tolosa-Centro es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "La Cantábrica":
+    "La Cantábrica es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "La Rinconada":
+    "La Rinconada es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

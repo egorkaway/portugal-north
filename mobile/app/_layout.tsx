@@ -9,7 +9,7 @@ import { DefaultTheme, Stack, ThemeProvider, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
-import { ActivityIndicator, View } from 'react-native';
+import { ActivityIndicator, Linking, View } from 'react-native';
 import 'react-native-reanimated';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -21,6 +21,11 @@ import { LocaleProvider, useLocale } from '@/i18n/LocaleProvider';
 import { PurchasesProvider } from '@/components/PurchasesProvider';
 import { isLiveActivityEndNotification } from '@/lib/liveActivityEndSchedule';
 import { isOnboardingComplete } from '@/lib/onboardingStorage';
+import {
+  enableStorePreview,
+  isStorePreview,
+  isStorePreviewUrl,
+} from '@/lib/storePreview';
 import { hydrateCatalogFromDisk } from '@/lib/catalogSync';
 import { endAllLiveActivities, onTripDeparted, seedWidgetTimeline } from '@/lib/widgetSync';
 import { getStationSlugFromArrivalNotification } from '@/lib/stationArrivalNotifications';
@@ -103,12 +108,25 @@ function RootLayoutNav() {
         console.warn('[catalog] hydrate failed', error);
       }),
     ]).then(([complete]) => {
-      if (!complete) {
+      if (!complete && !isStorePreview()) {
         router.replace('/onboarding');
       }
       setBootState('ready');
     });
   }, [router, ready]);
+
+  useEffect(() => {
+    const applyPreviewUrl = async (url: string | null) => {
+      if (!isStorePreviewUrl(url)) return;
+      await enableStorePreview();
+      router.replace('/map');
+    };
+    void Linking.getInitialURL().then((url) => void applyPreviewUrl(url));
+    const sub = Linking.addEventListener('url', (event) => {
+      void applyPreviewUrl(event.url);
+    });
+    return () => sub.remove();
+  }, [router]);
 
   useEffect(() => {
     const sub = Notifications.addNotificationResponseReceivedListener((response) => {

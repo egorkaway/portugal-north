@@ -3056,4 +3056,76 @@ export const spainStations: Station[] = [
     lng: 0.1399,
   },
 
+  {
+    name: "Zarzalejo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5389,
+    lng: -4.1581,
+  },
+
+  {
+    name: "San Sadurniño",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5461,
+    lng: -8.0781,
+  },
+
+  {
+    name: "Cullera",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.1779,
+    lng: -0.2632,
+  },
+
+  {
+    name: "Móra la Nova",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1066,
+    lng: 0.6532,
+  },
+
+  {
+    name: "Nueva Montaña apeadero",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4447,
+    lng: -3.8472,
+  },
+
+  {
+    name: "Tolosa-Centro",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.1394,
+    lng: -2.0741,
+  },
+
+  {
+    name: "La Cantábrica",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3974,
+    lng: -3.815,
+  },
+
+  {
+    name: "La Rinconada",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.4801,
+    lng: -5.9401,
+  },
+
 ];

@@ -362,6 +362,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 18.265543,
   },
   {
+    name: "Dole Tavaux Airport (DLE)",
+    country: "fr",
+    lines: ["DLE"],
+    types: ["Airport Destination"],
+    lat: 47.038955,
+    lng: 5.427589,
+  },
+  {
     name: "Deauville Normandie airport (DOL)",
     country: "fr",
     lines: ["DOL"],

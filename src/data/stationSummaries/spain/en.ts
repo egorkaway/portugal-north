@@ -1075,4 +1075,28 @@ export const spainSummariesEn: Record<string, string> = {
   "Orpesa":
     "Orpesa is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Zarzalejo":
+    "Zarzalejo is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "San Sadurniño":
+    "San Sadurniño is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Cullera":
+    "Cullera is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Móra la Nova":
+    "Móra la Nova is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Nueva Montaña apeadero":
+    "Nueva Montaña apeadero is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Tolosa-Centro":
+    "Tolosa-Centro is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "La Cantábrica":
+    "La Cantábrica is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "La Rinconada":
+    "La Rinconada is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

@@ -371,6 +371,12 @@ export default function MapScreen() {
           ) : (
             <Pressable
               style={styles.sheetButton}
+              accessibilityRole="button"
+              accessibilityLabel={
+                selected.station.types.includes('Airport')
+                  ? t('map.openDetails')
+                  : t('map.openStation')
+              }
               onPress={() => router.push(`/station/${stationToSlug(selected.station.name)}`)}
             >
               <Text style={styles.sheetButtonText}>

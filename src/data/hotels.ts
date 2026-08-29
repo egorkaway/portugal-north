@@ -3598,6 +3598,46 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Magic Fantasy", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Magic%20Fantasy%2C%20Orpesa%2C%20Spain&order=price" },
     { name: "Hotel Balenario", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Balenario%2C%20Orpesa%2C%20Spain&order=price" },
   ],
+  "Zarzalejo": [
+    { name: "El Duque", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Duque%2C%20Zarzalejo%2C%20Spain&order=price" },
+    { name: "Albergue Santa María del Buen Aire", distanceKm: 4.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Santa%20Mar%C3%ADa%20del%20Buen%20Aire%2C%20Zarzalejo%2C%20Spain&order=price" },
+    { name: "Refugio Juvenil Villa Paz Unciti", distanceKm: 5.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Refugio%20Juvenil%20Villa%20Paz%20Unciti%2C%20Zarzalejo%2C%20Spain&order=price" },
+  ],
+  "San Sadurniño": [
+    { name: "Casa Outeiro", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Outeiro%2C%20San%20Sadurni%C3%B1o%2C%20Spain&order=price" },
+    { name: "PR Maragoto", distanceKm: 6.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=PR%20Maragoto%2C%20San%20Sadurni%C3%B1o%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos de Neda", distanceKm: 7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20de%20Neda%2C%20San%20Sadurni%C3%B1o%2C%20Spain&order=price" },
+  ],
+  "Cullera": [
+    { name: "Hotel Cullera Holiday", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cullera%20Holiday%2C%20Cullera%2C%20Spain&order=price" },
+    { name: "Santamarta", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santamarta%2C%20Cullera%2C%20Spain&order=price" },
+    { name: "Costa San Antonio", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Costa%20San%20Antonio%2C%20Cullera%2C%20Spain&order=price" },
+  ],
+  "Móra la Nova": [
+    { name: "Hostal Font de Móra", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Font%20de%20M%C3%B3ra%2C%20M%C3%B3ra%20la%20Nova%2C%20Spain&order=price" },
+    { name: "Hostal La Creu", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Creu%2C%20M%C3%B3ra%20la%20Nova%2C%20Spain&order=price" },
+    { name: "Mas Taniet", distanceKm: 4.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mas%20Taniet%2C%20M%C3%B3ra%20la%20Nova%2C%20Spain&order=price" },
+  ],
+  "Nueva Montaña apeadero": [
+    { name: "Hotel Puerta Santander", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Puerta%20Santander%2C%20Nueva%20Monta%C3%B1a%20apeadero%2C%20Spain&order=price" },
+    { name: "Pensión La Bolera", distanceKm: 1.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20La%20Bolera%2C%20Nueva%20Monta%C3%B1a%20apeadero%2C%20Spain&order=price" },
+    { name: "Hotel San Millán & SPA", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20San%20Mill%C3%A1n%20%26%20SPA%2C%20Nueva%20Monta%C3%B1a%20apeadero%2C%20Spain&order=price" },
+  ],
+  "Tolosa-Centro": [
+    { name: "Bidebide", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bidebide%2C%20Tolosa-Centro%2C%20Spain&order=price" },
+    { name: "Karmentxu", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Karmentxu%2C%20Tolosa-Centro%2C%20Spain&order=price" },
+    { name: "Oria", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oria%2C%20Tolosa-Centro%2C%20Spain&order=price" },
+  ],
+  "La Cantábrica": [
+    { name: "Hotel Las Anclas", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Anclas%2C%20La%20Cant%C3%A1brica%2C%20Spain&order=price" },
+    { name: "Albergue de peregrinos Nuestra Señora de Muslera", distanceKm: 1.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20peregrinos%20Nuestra%20Se%C3%B1ora%20de%20Muslera%2C%20La%20Cant%C3%A1brica%2C%20Spain&order=price" },
+    { name: "Hostal Golf", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Golf%2C%20La%20Cant%C3%A1brica%2C%20Spain&order=price" },
+  ],
+  "La Rinconada": [
+    { name: "Hotel Villa Maria", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Villa%20Maria%2C%20La%20Rinconada%2C%20Spain&order=price" },
+    { name: "Hostal Venta El Cruce", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Venta%20El%20Cruce%2C%20La%20Rinconada%2C%20Spain&order=price" },
+    { name: "Hotel El Cruce", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Cruce%2C%20La%20Rinconada%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

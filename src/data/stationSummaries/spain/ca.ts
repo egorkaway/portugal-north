@@ -1075,4 +1075,28 @@ export const spainSummariesCa: Record<string, string> = {
   "Orpesa":
     "Orpesa és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Zarzalejo":
+    "Zarzalejo és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "San Sadurniño":
+    "San Sadurniño és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Cullera":
+    "Cullera és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Móra la Nova":
+    "Móra la Nova és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Nueva Montaña apeadero":
+    "Nueva Montaña apeadero és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Tolosa-Centro":
+    "Tolosa-Centro és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "La Cantábrica":
+    "La Cantábrica és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "La Rinconada":
+    "La Rinconada és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

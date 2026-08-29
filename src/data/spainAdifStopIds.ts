@@ -667,6 +667,22 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Orpesa": ["65304"],
 
+  "Zarzalejo": ["10204"],
+
+  "San Sadurniño": ["05115"],
+
+  "Cullera": ["69104"],
+
+  "Móra la Nova": ["71300"],
+
+  "Nueva Montaña apeadero": ["05651", "14231"],
+
+  "Tolosa-Centro": ["11501"],
+
+  "La Cantábrica": ["05658"],
+
+  "La Rinconada": ["50703"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
