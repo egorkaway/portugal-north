@@ -205,10 +205,10 @@ export const uk: MobileMessages = {
   rankings: {
     title: 'Рейтинги',
     subtitle: 'Пунктуальність і голоси спільноти за станції та готелі.',
-    mostReliable: 'Найпунктуальніші (Португалія)',
-    leastReliable: 'Найменш пунктуальні (Португалія)',
+    mostReliable: 'Топ-7 найпунктуальніших (Португалія)',
+    leastReliable: 'Нижні 7 найменш пунктуальних (Португалія)',
     spainMostReliable: 'Топ-7 найпунктуальніших (Іспанія)',
-    spainLeastReliable: 'Топ-7 найменш пунктуальних (Іспанія)',
+    spainLeastReliable: 'Нижні 7 найменш пунктуальних (Іспанія)',
     topUpvotedStations: 'Станції з найбільшою кількістю плюсів',
     mostDownvotedStations: 'Станції з найбільшою кількістю мінусів',
     topUpvotedHotels: 'Готелі з найбільшою кількістю плюсів',

@@ -19,6 +19,7 @@ import {
   buildSpainReliabilityRankings,
   getBottomReliabilityStations,
   getTopReliabilityStations,
+  PORTUGAL_RELIABILITY_RANKING_LIMIT,
   reliabilityScoreColor,
   formatReliabilityScore,
 } from '@/lib/reliabilityScore';
@@ -74,12 +75,12 @@ export default function RankingsScreen() {
   const topReliability = getTopReliabilityStations(
     reliability.scores,
     reliability.movements,
-    10,
+    PORTUGAL_RELIABILITY_RANKING_LIMIT,
   );
   const bottomReliability = getBottomReliabilityStations(
     reliability.scores,
     reliability.movements,
-    10,
+    PORTUGAL_RELIABILITY_RANKING_LIMIT,
   );
   const { top: spainTopReliability, bottom: spainBottomReliability } =
     buildSpainReliabilityRankings(spainReliability.scores, spainReliability.movements);

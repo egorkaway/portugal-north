@@ -9,6 +9,7 @@ import {
   downloadReliabilityRankingsCsv,
   getBottomReliabilityStations,
   getTopReliabilityStations,
+  PORTUGAL_RELIABILITY_RANKING_LIMIT,
   reliabilityScoreTone,
   formatReliabilityScore,
 } from "@/lib/reliabilityScore";
@@ -73,8 +74,16 @@ export function ReliabilityRankingsPanel() {
     );
   }
 
-  const top = getTopReliabilityStations(data.scores, data.movements, 10);
-  const bottom = getBottomReliabilityStations(data.scores, data.movements, 10);
+  const top = getTopReliabilityStations(
+    data.scores,
+    data.movements,
+    PORTUGAL_RELIABILITY_RANKING_LIMIT,
+  );
+  const bottom = getBottomReliabilityStations(
+    data.scores,
+    data.movements,
+    PORTUGAL_RELIABILITY_RANKING_LIMIT,
+  );
   const allRows = buildReliabilityRankingRows(
     stations.map((station) => station.name),
     data.scores,

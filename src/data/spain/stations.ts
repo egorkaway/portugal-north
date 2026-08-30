@@ -3191,4 +3191,40 @@ export const spainStations: Station[] = [
     lng: 3.0057,
   },
 
+  {
+    name: "Capçanes",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1021,
+    lng: 0.7804,
+  },
+
+  {
+    name: "El Prat Aeroport",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3042,
+    lng: 2.0734,
+  },
+
+  {
+    name: "Bezana",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.4409,
+    lng: -3.8996,
+  },
+
+  {
+    name: "Desertu-Barakaldo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3,
+    lng: -2.9844,
+  },
+
 ];

@@ -5,6 +5,7 @@ export type RankedReliabilityStation = {
   score: number;
 };
 
+export const PORTUGAL_RELIABILITY_RANKING_LIMIT = 7;
 export const SPAIN_RELIABILITY_RANKING_LIMIT = 7;
 export const SPAIN_RELIABILITY_MIN_MOVEMENTS = 5;
 
@@ -28,7 +29,7 @@ function compareReliabilityRank(
 export function getTopReliabilityStations(
   scores: Record<string, number>,
   movements: Record<string, number> = {},
-  limit = 10,
+  limit = PORTUGAL_RELIABILITY_RANKING_LIMIT,
 ): RankedReliabilityStation[] {
   return Object.entries(scores)
     .sort(([nameA, scoreA], [nameB, scoreB]) =>
@@ -41,7 +42,7 @@ export function getTopReliabilityStations(
 export function getBottomReliabilityStations(
   scores: Record<string, number>,
   movements: Record<string, number> = {},
-  limit = 10,
+  limit = PORTUGAL_RELIABILITY_RANKING_LIMIT,
 ): RankedReliabilityStation[] {
   return Object.entries(scores)
     .sort(([nameA, scoreA], [nameB, scoreB]) =>

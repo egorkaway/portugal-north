@@ -205,10 +205,10 @@ export const ca: MobileMessages = {
   rankings: {
     title: 'Rankings',
     subtitle: 'Fiabilitat i vots de la comunitat en estacions i hotels.',
-    mostReliable: 'Més fiables (Portugal)',
-    leastReliable: 'Menys fiables (Portugal)',
+    mostReliable: 'Top 7 més fiables (Portugal)',
+    leastReliable: 'Bottom 7 menys fiables (Portugal)',
     spainMostReliable: 'Top 7 més fiables (Espanya)',
-    spainLeastReliable: 'Top 7 menys fiables (Espanya)',
+    spainLeastReliable: 'Bottom 7 menys fiables (Espanya)',
     topUpvotedStations: 'Estacions més votades positivament',
     mostDownvotedStations: 'Estacions més votades negativament',
     topUpvotedHotels: 'Hotels més votats positivament',

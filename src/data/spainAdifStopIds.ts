@@ -697,6 +697,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Narbonne": ["87088"],
 
+  "Capçanes": ["71302"],
+
+  "El Prat Aeroport": ["72400"],
+
+  "Bezana": ["05605"],
+
+  "Desertu-Barakaldo": ["13400"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

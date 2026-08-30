@@ -205,10 +205,10 @@ export const gl: MobileMessages = {
   rankings: {
     title: 'Rankings',
     subtitle: 'Fiabilidade e votos da comunidade en estacións e hoteis.',
-    mostReliable: 'Máis fiábeis (Portugal)',
-    leastReliable: 'Menos fiábeis (Portugal)',
+    mostReliable: 'Top 7 máis fiábeis (Portugal)',
+    leastReliable: 'Bottom 7 menos fiábeis (Portugal)',
     spainMostReliable: 'Top 7 máis fiábeis (España)',
-    spainLeastReliable: 'Top 7 menos fiábeis (España)',
+    spainLeastReliable: 'Bottom 7 menos fiábeis (España)',
     topUpvotedStations: 'Estacións máis votadas positivamente',
     mostDownvotedStations: 'Estacións máis votadas negativamente',
     topUpvotedHotels: 'Hoteis máis votados positivamente',

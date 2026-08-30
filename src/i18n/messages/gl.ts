@@ -267,15 +267,15 @@ export const gl: Messages = {
     reliabilityLoading: "Cargando rankings de fiabilidade…",
     reliabilityUnavailable: "Os rankings de fiabilidade de Portugal non están dispoñibles temporalmente.",
     noReliabilityData: "Aínda non hai datos de fiabilidade.",
-    mostReliable: "Top 10 máis fiábeis (Portugal)",
-    leastReliable: "Top 10 menos fiábeis (Portugal)",
+    mostReliable: "Top 7 máis fiábeis (Portugal)",
+    leastReliable: "Bottom 7 menos fiábeis (Portugal)",
     spainReliabilityRankings: "Rankings de fiabilidade en España",
     spainReliabilityIntro:
       "Baseado nos atrasos acumulados das nosas mostras Renfe en tempo real. As estacións precisan polo menos 5 observacións. 10 = menos atrasos nos datos españois; 1 = máis atrasos. Separado do ranking portugués.",
     spainReliabilityUnavailable:
       "Os rankings de fiabilidade de España non están dispoñibles temporalmente.",
     spainMostReliable: "Top 7 máis fiábeis (España)",
-    spainLeastReliable: "Top 7 menos fiábeis (España)",
+    spainLeastReliable: "Bottom 7 menos fiábeis (España)",
     downloadReliabilityCsv: "Descargar CSV",
     downloadStationCsv: "Descargar CSV",
     trainSpotlightTitle: "Destacados de trens en Portugal",

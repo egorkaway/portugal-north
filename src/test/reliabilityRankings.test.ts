@@ -9,6 +9,7 @@ import {
   getBottomReliabilityStations,
   getTopReliabilityStations,
   reliabilityRankingsToCsv,
+  PORTUGAL_RELIABILITY_RANKING_LIMIT,
   SPAIN_RELIABILITY_MIN_MOVEMENTS,
   SPAIN_RELIABILITY_RANKING_LIMIT,
 } from "@/lib/reliabilityScore";
@@ -41,6 +42,32 @@ describe("reliability rankings", () => {
     const top = getTopReliabilityStations(scores, movements, 10);
     expect(top[0]).toEqual({ name: "Lima", score: 10 });
     expect(top[1]).toEqual({ name: "Alpha", score: 10 });
+  });
+
+  it("limits Portugal ranking lists to 7", () => {
+    expect(PORTUGAL_RELIABILITY_RANKING_LIMIT).toBe(7);
+    const top = getTopReliabilityStations(scores, {}, PORTUGAL_RELIABILITY_RANKING_LIMIT);
+    const bottom = getBottomReliabilityStations(scores, {}, PORTUGAL_RELIABILITY_RANKING_LIMIT);
+    expect(top).toHaveLength(7);
+    expect(bottom).toHaveLength(7);
+    expect(top.map((row) => row.name)).toEqual([
+      "Alpha",
+      "Lima",
+      "Bravo",
+      "Charlie",
+      "Delta",
+      "Echo",
+      "Foxtrot",
+    ]);
+    expect(bottom.map((row) => row.name)).toEqual([
+      "Juliet",
+      "Kilo",
+      "India",
+      "Hotel",
+      "Golf",
+      "Foxtrot",
+      "Echo",
+    ]);
   });
 
   it("returns top stations by score descending", () => {
@@ -171,6 +198,25 @@ describe("reliability rankings", () => {
     );
 
     const { top, bottom } = buildSpainReliabilityRankings(spain.scores, spain.movements);
+    expect(top).toHaveLength(7);
+    expect(bottom).toHaveLength(7);
+  });
+
+  it("limits published Portugal rankings to 7", () => {
+    const portugal = JSON.parse(
+      readFileSync(join(process.cwd(), "public/data/reliability-scores.json"), "utf8"),
+    ) as { scores: Record<string, number>; movements?: Record<string, number> };
+
+    const top = getTopReliabilityStations(
+      portugal.scores,
+      portugal.movements ?? {},
+      PORTUGAL_RELIABILITY_RANKING_LIMIT,
+    );
+    const bottom = getBottomReliabilityStations(
+      portugal.scores,
+      portugal.movements ?? {},
+      PORTUGAL_RELIABILITY_RANKING_LIMIT,
+    );
     expect(top).toHaveLength(7);
     expect(bottom).toHaveLength(7);
   });

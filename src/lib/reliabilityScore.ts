@@ -6,7 +6,8 @@ export type ReliabilityScoresManifest = {
   movements: Record<string, number>;
 };
 
-/** Spain ranking lists; Portugal keeps top/bottom 10. */
+/** Top / bottom list size for Portugal and Spain station reliability rankings. */
+export const PORTUGAL_RELIABILITY_RANKING_LIMIT = 7;
 export const SPAIN_RELIABILITY_RANKING_LIMIT = 7;
 
 /** Same bar as train spotlight: skip 1–4 observation stations in Spain rankings. */
@@ -123,7 +124,7 @@ function compareReliabilityRank(
 export function getTopReliabilityStations(
   scores: Record<string, number>,
   movements: Record<string, number> = {},
-  limit = 10,
+  limit = PORTUGAL_RELIABILITY_RANKING_LIMIT,
 ): RankedReliabilityStation[] {
   return Object.entries(scores)
     .sort(([nameA, scoreA], [nameB, scoreB]) =>
@@ -136,7 +137,7 @@ export function getTopReliabilityStations(
 export function getBottomReliabilityStations(
   scores: Record<string, number>,
   movements: Record<string, number> = {},
-  limit = 10,
+  limit = PORTUGAL_RELIABILITY_RANKING_LIMIT,
 ): RankedReliabilityStation[] {
   return Object.entries(scores)
     .sort(([nameA, scoreA], [nameB, scoreB]) =>

@@ -1396,6 +1396,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@romanzorge",
     photoPageUrl: "https://www.pexels.com/photo/tunnel-in-metro-station-19358769/",
   },
+  "19429392": {
+    photographer: "Masood Aslami",
+    photographerUrl: "https://www.pexels.com/@masoodaslami",
+    photoPageUrl: "https://www.pexels.com/photo/marienplatz-subway-platform-in-munich-germany-19429392/",
+  },
   "19429415": {
     photographer: "Masood Aslami",
     photographerUrl: "https://www.pexels.com/@masoodaslami",
@@ -1745,6 +1750,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Miguel  Monte",
     photographerUrl: "https://www.pexels.com/@miguel-monte-411136289",
     photoPageUrl: "https://www.pexels.com/photo/urban-train-in-aveiro-station-close-up-28406417/",
+  },
+  "28560166": {
+    photographer: "Shabazz Stuart",
+    photographerUrl: "https://www.pexels.com/@shabazz-stuart-465927833",
+    photoPageUrl: "https://www.pexels.com/photo/commuters-in-new-york-urban-train-station-28560166/",
   },
   "28601256": {
     photographer: "Alimurat Üral",
@@ -2280,6 +2290,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Ana Hidalgo Burgos",
     photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-4848204",
     photoPageUrl: "https://www.pexels.com/photo/train-approaching-torrellano-station-under-cloudy-sky-33521486/",
+  },
+  "33546698": {
+    photographer: "Ana Hidalgo Burgos Burgos.",
+    photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-burgos-4848204",
+    photoPageUrl: "https://www.pexels.com/photo/historic-canfranc-station-architecture-33546698/",
   },
   "33622612": {
     photographer: "Newman Photographs",

@@ -3673,6 +3673,26 @@ export const stationHotels: StationHotels = {
     { name: "Hôtel de la Gare", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=H%C3%B4tel%20de%20la%20Gare%2C%20Narbonne%2C%20Spain&order=price" },
     { name: "Galla Placidia", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Galla%20Placidia%2C%20Narbonne%2C%20Spain&order=price" },
   ],
+  "Capçanes": [
+    { name: "Mas del Collet", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mas%20del%20Collet%2C%20Cap%C3%A7anes%2C%20Spain&order=price" },
+    { name: "Mas Figures", distanceKm: 3.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mas%20Figures%2C%20Cap%C3%A7anes%2C%20Spain&order=price" },
+    { name: "Hotel Sport", distanceKm: 5.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sport%2C%20Cap%C3%A7anes%2C%20Spain&order=price" },
+  ],
+  "El Prat Aeroport": [
+    { name: "Barcelona Aeropuerto", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barcelona%20Aeropuerto%2C%20El%20Prat%20Aeroport%2C%20Spain&order=price" },
+    { name: "Centre Esplai", distanceKm: 1.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Centre%20Esplai%2C%20El%20Prat%20Aeroport%2C%20Spain&order=price" },
+    { name: "BAH Barcelona Airport Hotel", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=BAH%20Barcelona%20Airport%20Hotel%2C%20El%20Prat%20Aeroport%2C%20Spain&order=price" },
+  ],
+  "Bezana": [
+    { name: "Hotel Bezana Lago", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bezana%20Lago%2C%20Bezana%2C%20Spain&order=price" },
+    { name: "Hotel Camargo", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Camargo%2C%20Bezana%2C%20Spain&order=price" },
+    { name: "Albergue Santa Cruz de Bezana", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Santa%20Cruz%20de%20Bezana%2C%20Bezana%2C%20Spain&order=price" },
+  ],
+  "Desertu-Barakaldo": [
+    { name: "Pensión Maite", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Maite%2C%20Desertu-Barakaldo%2C%20Spain&order=price" },
+    { name: "Pensión Marina", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Marina%2C%20Desertu-Barakaldo%2C%20Spain&order=price" },
+    { name: "Hotel La Naval", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Naval%2C%20Desertu-Barakaldo%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
