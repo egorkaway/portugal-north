@@ -229,6 +229,7 @@ export const stationImages: Record<string, string> = {
   "Cruz Quebrada": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_da_Cruz_Quebrada_05.jpg/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_da_Cruz_Quebrada_05.jpg",
   "Cruzeiro": "https://images.pexels.com/photos/5661285/pexels-photo-5661285.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Cuca": "https://images.pexels.com/photos/21031431/pexels-photo-21031431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+  "Cudillero": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b9/Estaci%C3%B3n_Feve_Cudillero_-_panoramio.jpg/960px-Estaci%C3%B3n_Feve_Cudillero_-_panoramio.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Cuenca-Fernando Zóbel": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Estaci%C3%B3n_de_Cuenca-Fernando_Z%C3%B3bel_12.jpg/960px-Estaci%C3%B3n_de_Cuenca-Fernando_Z%C3%B3bel_12.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Cullera": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Estaci%C3%B3_de_tren_de_Cullera.jpg/960px-Estaci%C3%B3_de_tren_de_Cullera.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Curia": "https://images.pexels.com/photos/17651977/pexels-photo-17651977.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",

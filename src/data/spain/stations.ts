@@ -3254,4 +3254,13 @@ export const spainStations: Station[] = [
     lng: 2.4983,
   },
 
+  {
+    name: "Cudillero",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5509,
+    lng: -6.1519,
+  },
+
 ];

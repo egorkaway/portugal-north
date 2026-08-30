@@ -1141,4 +1141,7 @@ export const spainSummariesCa: Record<string, string> = {
   "Sant Andreu de Llavaneres":
     "Sant Andreu de Llavaneres és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Cudillero":
+    "Cudillero és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

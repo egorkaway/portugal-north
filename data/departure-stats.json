@@ -1,6 +1,6 @@
 {
-  "runCount": 611,
-  "lastRunAt": "2026-08-30T20:45:17.176Z",
+  "runCount": 612,
+  "lastRunAt": "2026-08-30T20:56:51.990Z",
   "lastAirportConnectionsAt": "2026-08-30T19:32:06.459Z",
   "stations": {
     "Pombal": {
@@ -1610,9 +1610,9 @@
         "delayMinutes": 1380
       },
       "successfulSamples": 205,
-      "failedSamples": 12,
+      "failedSamples": 13,
       "lastSampleAt": "2026-08-30T20:47:15.248Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Válega": {
       "cpCode": "94-38240",
@@ -3595,9 +3595,9 @@
         "delayMinutes": 993
       },
       "successfulSamples": 195,
-      "failedSamples": 10,
+      "failedSamples": 11,
       "lastSampleAt": "2026-08-30T20:45:51.407Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Gouveia": {
       "cpCode": "94-48165",
@@ -6396,9 +6396,9 @@
         "delayMinutes": 392
       },
       "successfulSamples": 187,
-      "failedSamples": 13,
+      "failedSamples": 14,
       "lastSampleAt": "2026-08-30T20:45:29.010Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Algés": {
       "cpCode": "94-69088",

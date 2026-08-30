@@ -3708,6 +3708,11 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Colon", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Colon%2C%20Sant%20Andreu%20de%20Llavaneres%2C%20Spain&order=price" },
     { name: "Pensió Kalima", distanceKm: 3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3%20Kalima%2C%20Sant%20Andreu%20de%20Llavaneres%2C%20Spain&order=price" },
   ],
+  "Cudillero": [
+    { name: "Apartamentos El Pradón", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20El%20Prad%C3%B3n%2C%20Cudillero%2C%20Spain&order=price" },
+    { name: "Casona De La Paca", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casona%20De%20La%20Paca%2C%20Cudillero%2C%20Spain&order=price" },
+    { name: "El Pescador", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Pescador%2C%20Cudillero%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

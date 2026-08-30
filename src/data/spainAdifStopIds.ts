@@ -711,6 +711,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Sant Andreu de Llavaneres": ["79501"],
 
+  "Cudillero": ["05245"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

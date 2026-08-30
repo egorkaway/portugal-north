@@ -1141,4 +1141,7 @@ export const spainSummariesEn: Record<string, string> = {
   "Sant Andreu de Llavaneres":
     "Sant Andreu de Llavaneres is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Cudillero":
+    "Cudillero is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };
