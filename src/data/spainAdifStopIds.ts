@@ -705,6 +705,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Desertu-Barakaldo": ["13400"],
 
+  "Caspe": ["71204"],
+
+  "Puente Alcocer": ["35704"],
+
+  "Sant Andreu de Llavaneres": ["79501"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

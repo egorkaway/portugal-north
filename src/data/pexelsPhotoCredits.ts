@@ -2931,4 +2931,9 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@kari-alfonso-2151442665",
     photoPageUrl: "https://www.pexels.com/photo/historic-train-station-with-vintage-railcar-in-black-and-white-39139818/",
   },
+  "39269007": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-in-cadiz-spain-39269007/",
+  },
 };

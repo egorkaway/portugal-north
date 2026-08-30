@@ -1132,4 +1132,13 @@ export const spainSummariesGl: Record<string, string> = {
   "Desertu-Barakaldo":
     "Desertu-Barakaldo é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Caspe":
+    "Caspe é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Puente Alcocer":
+    "Puente Alcocer é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Sant Andreu de Llavaneres":
+    "Sant Andreu de Llavaneres é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

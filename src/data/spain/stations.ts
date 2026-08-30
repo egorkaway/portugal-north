@@ -3227,4 +3227,31 @@ export const spainStations: Station[] = [
     lng: -2.9844,
   },
 
+  {
+    name: "Caspe",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.2397,
+    lng: -0.0427,
+  },
+
+  {
+    name: "Puente Alcocer",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3504,
+    lng: -3.7051,
+  },
+
+  {
+    name: "Sant Andreu de Llavaneres",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5555,
+    lng: 2.4983,
+  },
+
 ];

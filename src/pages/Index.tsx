@@ -1,5 +1,5 @@
 import { lazy, Suspense, useCallback, useDeferredValue, useMemo, useRef, useState } from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { getStationsForHomeScope } from "@/data/stationRegistry";
 import { StationCard } from "@/components/StationCard";
 import { StationGridSkeleton } from "@/components/StationGridSkeleton";
@@ -23,7 +23,7 @@ import { StationInteractionProvider } from "@/hooks/StationInteractionProvider";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import { useHomeRoute } from "@/hooks/useHomeRoute";
 import { footerCountryFromHomeScope, type HomeScope } from "@/lib/countries";
-import { buildHomePath, isHomePath, parseHomeCanonicalPath } from "@/lib/homeRoute";
+import { buildHomePath, parseHomeCanonicalPath } from "@/lib/homeRoute";
 import { orderStationsForHome, stationDistancesKm } from "@/lib/rankStations";
 import { stationMatchesSearch } from "@/lib/searchText";
 import { trainTypesForFilterChips } from "@/lib/trainTypes";
@@ -177,10 +177,12 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
           <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between md:gap-4">
             <div className="min-w-0">
               <h1 className="mb-2 font-display text-3xl tracking-tight hero-title-shadow md:mb-4 md:text-5xl lg:text-6xl lg:tracking-normal">
-                <a
-                  href={buildHomePath(scope)}
+                <Link
+                  to={buildHomePath(scope)}
                   onClick={(e) => {
-                    if (isHomePath(window.location.pathname)) {
+                    // Reload only on page 1 of this scope. Paginated URLs like
+                    // /all/12 are still "home" paths, but the logo should go to page 1.
+                    if (currentPage <= 1 && !searchQuery) {
                       e.preventDefault();
                       window.location.reload();
                     }
@@ -197,8 +199,8 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
                       className="h-0.5 w-12 rounded-full bg-secondary transition-[width] group-hover:w-16 md:w-16 lg:w-20 lg:group-hover:w-24"
                       aria-hidden="true"
                     />
-                  </span>
-                </a>
+                    </span>
+                </Link>
               </h1>
               <p className="max-w-2xl text-lg text-primary-foreground/90">{heroSubtitle}</p>
             </div>

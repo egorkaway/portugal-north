@@ -1132,4 +1132,13 @@ export const spainSummariesCa: Record<string, string> = {
   "Desertu-Barakaldo":
     "Desertu-Barakaldo és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Caspe":
+    "Caspe és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Puente Alcocer":
+    "Puente Alcocer és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Sant Andreu de Llavaneres":
+    "Sant Andreu de Llavaneres és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };
