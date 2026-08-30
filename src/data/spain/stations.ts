@@ -3155,4 +3155,22 @@ export const spainStations: Station[] = [
     lng: -6.1853,
   },
 
+  {
+    name: "Brinkola",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.019,
+    lng: -2.3347,
+  },
+
+  {
+    name: "Gualba",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7182,
+    lng: 2.5388,
+  },
+
 ];

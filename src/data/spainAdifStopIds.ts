@@ -689,6 +689,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Puerto Real": ["51401"],
 
+  "Brinkola": ["11305"],
+
+  "Gualba": ["79105"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

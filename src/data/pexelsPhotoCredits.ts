@@ -1831,6 +1831,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@brunorock",
     photoPageUrl: "https://www.pexels.com/photo/high-speed-train-in-snowy-landscape-at-dusk-29858703/",
   },
+  "29864104": {
+    photographer: "Andres Alaniz",
+    photographerUrl: "https://www.pexels.com/@andres-alaniz-461433202",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-train-station-in-mendoza-argentina-29864104/",
+  },
   "29864109": {
     photographer: "Andres Alaniz",
     photographerUrl: "https://www.pexels.com/@andres-alaniz-461433202",

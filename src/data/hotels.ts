@@ -3653,6 +3653,16 @@ export const stationHotels: StationHotels = {
     { name: "Hostal Bahía de Cádiz", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Bah%C3%ADa%20de%20C%C3%A1diz%2C%20Puerto%20Real%2C%20Spain&order=price" },
     { name: "Las Canteras", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Las%20Canteras%2C%20Puerto%20Real%2C%20Spain&order=price" },
   ],
+  "Brinkola": [
+    { name: "Pastain", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pastain%2C%20Brinkola%2C%20Spain&order=price" },
+    { name: "Hotel Mauleón", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Maule%C3%B3n%2C%20Brinkola%2C%20Spain&order=price" },
+    { name: "Mutiloako Ostatua", distanceKm: 5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mutiloako%20Ostatua%2C%20Brinkola%2C%20Spain&order=price" },
+  ],
+  "Gualba": [
+    { name: "L'Hotelet", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=L'Hotelet%2C%20Gualba%2C%20Spain&order=price" },
+    { name: "Hotel Sant Celoni", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sant%20Celoni%2C%20Gualba%2C%20Spain&order=price" },
+    { name: "Hotel Suís", distanceKm: 5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Su%C3%ADs%2C%20Gualba%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

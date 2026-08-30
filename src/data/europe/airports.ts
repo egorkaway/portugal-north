@@ -306,6 +306,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 2.554117,
   },
   {
+    name: "Corfu Ioannis Kapodistrias International Airport (CFU)",
+    country: "gr",
+    lines: ["CFU"],
+    types: ["Airport Destination"],
+    lat: 39.60145,
+    lng: 19.912179,
+  },
+  {
     name: "Cologne Bonn Airport (CGN)",
     country: "de",
     lines: ["CGN"],
