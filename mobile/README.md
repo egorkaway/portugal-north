@@ -35,10 +35,11 @@ Packages: `react-native-purchases` + `react-native-purchases-ui` (installed via 
 **Dashboard checklist**
 
 1. Create entitlement **`iberian.travel Pro`**
-2. Create App Store monthly product and attach it to that entitlement
-3. Add package **`monthly`** on the **current** Offering
+2. Create App Store **and** Google Play monthly products and attach them to that entitlement
+3. Add package **`monthly`** on the **current** Offering (include the Play product, not only App Store)
 4. Design a Paywall on that Offering ([Paywalls](https://www.revenuecat.com/docs/tools/paywalls))
 5. In Xcode: enable **In-App Purchase** on the VeryStays target (Signing & Capabilities)
+6. Play Console: subscription live (or license testers) for `com.iberian.travel`. Release builds skip `test_…` keys — Android needs the `goog_…` key in [`constants/revenueCat.ts`](constants/revenueCat.ts).
 
 **App wiring**
 

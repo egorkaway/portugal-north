@@ -693,6 +693,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Gualba": ["79105"],
 
+  "Tàrrega": ["78408"],
+
+  "Narbonne": ["87088"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

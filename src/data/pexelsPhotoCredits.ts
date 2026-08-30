@@ -1356,6 +1356,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@kaplanart",
     photoPageUrl: "https://www.pexels.com/photo/woman-on-a-train-station-platform-at-sunset-19151402/",
   },
+  "19216055": {
+    photographer: "Andreas Schnabl",
+    photographerUrl: "https://www.pexels.com/@andreas-schnabl-1775843",
+    photoPageUrl: "https://www.pexels.com/photo/photo-of-a-simple-industrial-structure-19216055/",
+  },
   "19272882": {
     photographer: "Zeynep Sude  Emek",
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
@@ -1790,6 +1795,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Pedro Oliveira",
     photographerUrl: "https://www.pexels.com/@mrpoliveira",
     photoPageUrl: "https://www.pexels.com/photo/rustic-train-passing-through-resende-portugal-29240083/",
+  },
+  "29300386": {
+    photographer: "El gringo photo",
+    photographerUrl: "https://www.pexels.com/@el-gringo-photo-116752370",
+    photoPageUrl: "https://www.pexels.com/photo/barceloneta-metro-station-with-commuters-waiting-29300386/",
   },
   "29406935": {
     photographer: "SHOX ART",

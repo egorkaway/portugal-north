@@ -121,6 +121,9 @@ export async function configurePurchases(): Promise<boolean> {
     // Native SDK aborts the process if a Test Store key is used in Release.
     // Skip configure entirely so TestFlight/Release builds stay stable.
     if (isRevenueCatTestStoreKey(apiKey) && !__DEV__) {
+      console.warn(
+        '[purchases] skipping configure: Test Store key is not allowed in Release. Use appl_/goog_ keys.',
+      );
       return false;
     }
 

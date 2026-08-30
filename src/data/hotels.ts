@@ -3663,6 +3663,16 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Sant Celoni", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sant%20Celoni%2C%20Gualba%2C%20Spain&order=price" },
     { name: "Hotel Suís", distanceKm: 5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Su%C3%ADs%2C%20Gualba%2C%20Spain&order=price" },
   ],
+  "Tàrrega": [
+    { name: "Budget stays near Tàrrega", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=T%C3%A0rrega%2C%20Spain&order=price" },
+    { name: "Guest houses near Tàrrega", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=T%C3%A0rrega%2C%20Spain&order=price" },
+    { name: "Hotels near Tàrrega", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=T%C3%A0rrega%2C%20Spain&order=price" },
+  ],
+  "Narbonne": [
+    { name: "Hôtel Alsace", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=H%C3%B4tel%20Alsace%2C%20Narbonne%2C%20Spain&order=price" },
+    { name: "Hôtel de la Gare", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=H%C3%B4tel%20de%20la%20Gare%2C%20Narbonne%2C%20Spain&order=price" },
+    { name: "Galla Placidia", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Galla%20Placidia%2C%20Narbonne%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

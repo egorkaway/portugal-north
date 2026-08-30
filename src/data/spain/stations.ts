@@ -3173,4 +3173,22 @@ export const spainStations: Station[] = [
     lng: 2.5388,
   },
 
+  {
+    name: "Tàrrega",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6504,
+    lng: 1.139,
+  },
+
+  {
+    name: "Narbonne",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 43.1903,
+    lng: 3.0057,
+  },
+
 ];
