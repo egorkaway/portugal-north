@@ -3263,4 +3263,40 @@ export const spainStations: Station[] = [
     lng: -6.1519,
   },
 
+  {
+    name: "La Pobla Llarga",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.0833,
+    lng: -0.4697,
+  },
+
+  {
+    name: "Majadahonda",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.4743,
+    lng: -3.8463,
+  },
+
+  {
+    name: "Vilajuïga",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.3257,
+    lng: 3.0875,
+  },
+
+  {
+    name: "Villabona de Asturias",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.4615,
+    lng: -5.8263,
+  },
+
 ];

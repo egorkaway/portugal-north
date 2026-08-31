@@ -713,6 +713,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Cudillero": ["05245"],
 
+  "La Pobla Llarga": ["64102"],
+
+  "Majadahonda": ["10007"],
+
+  "Vilajuïga": ["79311"],
+
+  "Villabona de Asturias": ["15301"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

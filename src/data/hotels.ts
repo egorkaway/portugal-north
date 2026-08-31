@@ -3713,6 +3713,26 @@ export const stationHotels: StationHotels = {
     { name: "Casona De La Paca", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casona%20De%20La%20Paca%2C%20Cudillero%2C%20Spain&order=price" },
     { name: "El Pescador", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Pescador%2C%20Cudillero%2C%20Spain&order=price" },
   ],
+  "La Pobla Llarga": [
+    { name: "San Fernando", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=San%20Fernando%2C%20La%20Pobla%20Llarga%2C%20Spain&order=price" },
+    { name: "Hotel Avenida Plaza", distanceKm: 8.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Avenida%20Plaza%2C%20La%20Pobla%20Llarga%2C%20Spain&order=price" },
+    { name: "Casa Blava", distanceKm: 8.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Blava%2C%20La%20Pobla%20Llarga%2C%20Spain&order=price" },
+  ],
+  "Majadahonda": [
+    { name: "TH Aparthotel Las Rozas", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=TH%20Aparthotel%20Las%20Rozas%2C%20Majadahonda%2C%20Spain&order=price" },
+    { name: "Hostal Doña Isabel", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Do%C3%B1a%20Isabel%2C%20Majadahonda%2C%20Spain&order=price" },
+    { name: "Hotel Majadahonda", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Majadahonda%2C%20Majadahonda%2C%20Spain&order=price" },
+  ],
+  "Vilajuïga": [
+    { name: "Hostal Xavi", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Xavi%2C%20Vilaju%C3%AFga%2C%20Spain&order=price" },
+    { name: "Naturaki Niu d'Albera", distanceKm: 2.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Naturaki%20Niu%20d'Albera%2C%20Vilaju%C3%AFga%2C%20Spain&order=price" },
+    { name: "Casa Albera", distanceKm: 4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Albera%2C%20Vilaju%C3%AFga%2C%20Spain&order=price" },
+  ],
+  "Villabona de Asturias": [
+    { name: "Albergue Municipal de Robledo", distanceKm: 1.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Municipal%20de%20Robledo%2C%20Villabona%20de%20Asturias%2C%20Spain&order=price" },
+    { name: "Motel Cancún", distanceKm: 3.2, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Canc%C3%BAn%2C%20Villabona%20de%20Asturias%2C%20Spain&order=price" },
+    { name: "Motel Latino", distanceKm: 3.5, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Latino%2C%20Villabona%20de%20Asturias%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

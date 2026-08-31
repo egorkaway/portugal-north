@@ -1106,6 +1106,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@german-engelgardt-150603118",
     photoPageUrl: "https://www.pexels.com/photo/view-of-a-staircase-16285018/",
   },
+  "16285111": {
+    photographer: "Gülru Sude",
+    photographerUrl: "https://www.pexels.com/@gulru-sude-330689650",
+    photoPageUrl: "https://www.pexels.com/photo/hat-on-table-in-train-16285111/",
+  },
   "16318677": {
     photographer: "Kostas Dimopoulos",
     photographerUrl: "https://www.pexels.com/@kostas-dimopoulos-119583302",
@@ -1950,6 +1955,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Bryanken",
     photographerUrl: "https://www.pexels.com/@bryanken-649049340",
     photoPageUrl: "https://www.pexels.com/photo/modern-empty-train-station-platform-view-30821653/",
+  },
+  "30917130": {
+    photographer: "Birtakımhisler",
+    photographerUrl: "https://www.pexels.com/@birtakimhisler-1625965288",
+    photoPageUrl: "https://www.pexels.com/photo/modern-train-station-with-architectural-roof-30917130/",
   },
   "30946587": {
     photographer: "The Nadrupians",
