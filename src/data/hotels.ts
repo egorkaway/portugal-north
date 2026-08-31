@@ -3753,6 +3753,21 @@ export const stationHotels: StationHotels = {
     { name: "El Águila", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20%C3%81guila%2C%20Casetas%2C%20Spain&order=price" },
     { name: "Silvano", distanceKm: 2.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silvano%2C%20Casetas%2C%20Spain&order=price" },
   ],
+  "Artxube": [
+    { name: "Santxosolo", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santxosolo%2C%20Artxube%2C%20Spain&order=price" },
+    { name: "Erreka Güeñes", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Erreka%20G%C3%BCe%C3%B1es%2C%20Artxube%2C%20Spain&order=price" },
+    { name: "Hotel Isasi", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Isasi%2C%20Artxube%2C%20Spain&order=price" },
+  ],
+  "Elche/Elx-Parc": [
+    { name: "Hotel Boutique Hort De Nal", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Boutique%20Hort%20De%20Nal%2C%20Elche%2FElx-Parc%2C%20Spain&order=price" },
+    { name: "Hotel Elche Centro", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Elche%20Centro%2C%20Elche%2FElx-Parc%2C%20Spain&order=price" },
+    { name: "Hostal María", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Mar%C3%ADa%2C%20Elche%2FElx-Parc%2C%20Spain&order=price" },
+  ],
+  "Aeropuerto de Jerez": [
+    { name: "Hotel La Cueva", distanceKm: 5.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Cueva%2C%20Aeropuerto%20de%20Jerez%2C%20Spain&order=price" },
+    { name: "Hotel Barceló Montecastillio Golf", distanceKm: 6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Barcel%C3%B3%20Montecastillio%20Golf%2C%20Aeropuerto%20de%20Jerez%2C%20Spain&order=price" },
+    { name: "Hotel Jerez & Spa", distanceKm: 7.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Jerez%20%26%20Spa%2C%20Aeropuerto%20de%20Jerez%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

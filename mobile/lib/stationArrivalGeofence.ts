@@ -85,7 +85,8 @@ async function isInCooldown(slug: string, now = Date.now()): Promise<boolean> {
  * Must be defined at module scope (imported early from root layout).
  * Fires a local notification when the device enters a monitored station region.
  */
-TaskManager.defineTask(STATION_ARRIVAL_GEOFENCE_TASK, async ({ data, error }) => {
+try {
+  TaskManager.defineTask(STATION_ARRIVAL_GEOFENCE_TASK, async ({ data, error }) => {
   if (error) {
     console.warn('[geofence] task error', error);
     return;
@@ -114,7 +115,10 @@ TaskManager.defineTask(STATION_ARRIVAL_GEOFENCE_TASK, async ({ data, error }) =>
 
   await writeCooldown(station.slug);
   await notifyStationArrival(station);
-});
+  });
+} catch (error) {
+  console.warn('[geofence] defineTask failed', error);
+}
 
 export async function hasStationArrivalBackgroundPermission(): Promise<boolean> {
   if (Platform.OS === 'web') return false;

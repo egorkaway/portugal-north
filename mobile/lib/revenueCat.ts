@@ -12,6 +12,7 @@ import {
   REVENUECAT_API_KEYS,
   isRevenueCatTestStoreKey,
 } from '@/constants/revenueCat';
+import { withTimeout } from '@/lib/timeout';
 
 /** Soft timeout so paywalls never block onboarding / navigation forever. */
 const PAYWALL_TIMEOUT_MS = 20_000;
@@ -70,23 +71,7 @@ function serializePurchasesError(error: unknown): Record<string, unknown> {
   };
 }
 
-function withTimeout<T>(promise: Promise<T>, ms: number, label: string): Promise<T> {
-  return new Promise<T>((resolve, reject) => {
-    const timer = setTimeout(() => {
-      reject(new Error(`[purchases] ${label} timed out after ${ms}ms`));
-    }, ms);
-    promise.then(
-      (value) => {
-        clearTimeout(timer);
-        resolve(value);
-      },
-      (error) => {
-        clearTimeout(timer);
-        reject(error);
-      },
-    );
-  });
-}
+const CUSTOMER_INFO_TIMEOUT_MS = 5_000;
 
 /**
  * Configure RevenueCat once. Never throws — failures leave purchases unavailable
@@ -130,27 +115,29 @@ export async function configurePurchases(): Promise<boolean> {
     Purchases.configure({ apiKey });
     configureSucceeded = true;
 
-    try {
-      await Purchases.collectDeviceIdentifiers();
-    } catch (error) {
-      // Device IDs are optional — never fail startup for attribution helpers.
+    // Play Billing / identifier collection can hang on some Android devices.
+    // Never await them during bootstrap — the rest of the app must stay usable.
+    void Purchases.collectDeviceIdentifiers().catch((error) => {
       console.warn('[purchases] collectDeviceIdentifiers failed', error);
-    }
-
-    try {
-      const offerings = await Purchases.getOfferings();
-      const current = offerings.current;
-      console.log('[purchases] offerings', {
-        keyPrefix: apiKey.slice(0, 5),
-        currentId: current?.identifier ?? null,
-        packageCount: current?.availablePackages.length ?? 0,
-        packageIds: current?.availablePackages.map((pkg) => pkg.identifier) ?? [],
-        productIds:
-          current?.availablePackages.map((pkg) => pkg.product.identifier) ?? [],
+    });
+    void Purchases.getOfferings()
+      .then((offerings) => {
+        const current = offerings.current;
+        console.log('[purchases] offerings', {
+          keyPrefix: apiKey.slice(0, 5),
+          currentId: current?.identifier ?? null,
+          packageCount: current?.availablePackages.length ?? 0,
+          packageIds: current?.availablePackages.map((pkg) => pkg.identifier) ?? [],
+          productIds:
+            current?.availablePackages.map((pkg) => pkg.product.identifier) ?? [],
+        });
+      })
+      .catch((error) => {
+        console.warn(
+          '[purchases] getOfferings failed after configure',
+          serializePurchasesError(error),
+        );
       });
-    } catch (error) {
-      console.warn('[purchases] getOfferings failed after configure', serializePurchasesError(error));
-    }
 
     return true;
   } catch (error) {
@@ -163,9 +150,17 @@ export async function configurePurchases(): Promise<boolean> {
 export async function getCustomerInfoSafe(): Promise<CustomerInfo | null> {
   if (!configureSucceeded) return null;
   try {
-    const configured = await Purchases.isConfigured();
+    const configured = await withTimeout(
+      Purchases.isConfigured(),
+      CUSTOMER_INFO_TIMEOUT_MS,
+      'purchases.isConfigured',
+    );
     if (!configured) return null;
-    return await Purchases.getCustomerInfo();
+    return await withTimeout(
+      Purchases.getCustomerInfo(),
+      CUSTOMER_INFO_TIMEOUT_MS,
+      'purchases.getCustomerInfo',
+    );
   } catch (error) {
     console.warn('[purchases] getCustomerInfo failed', error);
     return null;

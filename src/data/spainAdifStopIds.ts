@@ -729,6 +729,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Casetas": ["70800"],
 
+  "Artxube": ["05469"],
+
+  "Elche/Elx-Parc": ["62103"],
+
+  "Aeropuerto de Jerez": ["51205"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

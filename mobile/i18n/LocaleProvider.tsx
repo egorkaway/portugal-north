@@ -35,7 +35,7 @@ function safeDetectDeviceLocale(): Locale {
 
 export function LocaleProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>(() => safeDetectDeviceLocale());
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(true);
 
   const refreshFromDevice = useCallback(() => {
     setLocale(safeDetectDeviceLocale());

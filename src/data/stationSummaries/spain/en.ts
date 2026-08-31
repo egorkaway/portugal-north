@@ -1168,4 +1168,13 @@ export const spainSummariesEn: Record<string, string> = {
   "Casetas":
     "Casetas is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Artxube":
+    "Artxube is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Elche/Elx-Parc":
+    "Elche/Elx-Parc is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Aeropuerto de Jerez":
+    "Aeropuerto de Jerez is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

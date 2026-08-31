@@ -1168,4 +1168,13 @@ export const spainSummariesEs: Record<string, string> = {
   "Casetas":
     "Casetas es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Artxube":
+    "Artxube es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Elche/Elx-Parc":
+    "Elche/Elx-Parc es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Aeropuerto de Jerez":
+    "Aeropuerto de Jerez es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

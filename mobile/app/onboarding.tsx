@@ -19,6 +19,7 @@ import { brandTheme } from '@/constants/brandTheme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { usePurchases } from '@/components/PurchasesProvider';
 import { completeOnboarding, isOnboardingComplete } from '@/lib/onboardingStorage';
+import { raceTimeout, withTimeout } from '@/lib/timeout';
 import { getCurrentCoords } from '@/lib/currentLocation';
 import { waitForPurchasesBootstrap } from '@/lib/revenueCat';
 import {
@@ -54,7 +55,7 @@ export default function OnboardingScreen() {
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
-    void isOnboardingComplete().then((complete) => {
+    void raceTimeout(isOnboardingComplete(), 800, false, 'onboarding-flag').then((complete) => {
       if (complete) {
         router.replace('/(tabs)');
         return;
@@ -71,7 +72,7 @@ export default function OnboardingScreen() {
   const finish = async () => {
     setBusy(true);
     try {
-      await completeOnboarding();
+      await raceTimeout(completeOnboarding().then(() => true), 1_500, true, 'complete-onboarding');
       // Brief wait for RevenueCat bootstrap; never block leaving onboarding.
       await waitForPurchasesBootstrap(2500);
       try {
@@ -89,15 +90,24 @@ export default function OnboardingScreen() {
     setBusy(true);
     try {
       if (Platform.OS === 'ios') {
-        const locationGranted = await ensureStationArrivalLocationPermission();
+        const locationGranted = await raceTimeout(
+          ensureStationArrivalLocationPermission(),
+          8_000,
+          false,
+          'location-permission',
+        );
         const coords = await getCurrentCoords({ timeoutMs: 5_000 });
         if (coords) await writeLastCoords(coords);
         if (locationGranted) {
           await refreshStationArrivalGeofences();
         }
       } else {
-        const { status } = await Location.requestForegroundPermissionsAsync();
-        if (status === 'granted') {
+        const permission = await withTimeout(
+          Location.requestForegroundPermissionsAsync(),
+          8_000,
+          'location-permission',
+        );
+        if (permission.status === 'granted') {
           const coords = await getCurrentCoords({ timeoutMs: 5_000 });
           if (coords) await writeLastCoords(coords);
         }
@@ -111,7 +121,7 @@ export default function OnboardingScreen() {
   const requestNotifications = async () => {
     setBusy(true);
     try {
-      await ensureTripNotificationPermission();
+      await raceTimeout(ensureTripNotificationPermission(), 8_000, false, 'notification-permission');
       advance();
     } finally {
       setBusy(false);

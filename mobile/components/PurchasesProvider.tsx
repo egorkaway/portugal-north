@@ -108,7 +108,11 @@ export function PurchasesProvider({ children }: { children: ReactNode }) {
       }
     };
 
-    void bootstrap();
+    // Play Billing can block the Android UI thread. Let splash + first frame
+    // paint first so a hung store connection cannot freeze the splash.
+    const start = setTimeout(() => {
+      void bootstrap();
+    }, 400);
 
     const onAppState = (state: AppStateStatus) => {
       if (state === 'active') void refresh();
@@ -117,6 +121,7 @@ export function PurchasesProvider({ children }: { children: ReactNode }) {
 
     return () => {
       cancelled = true;
+      clearTimeout(start);
       appSub.remove();
     };
   }, [applyInfo, refresh]);

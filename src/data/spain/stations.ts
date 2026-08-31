@@ -3335,4 +3335,31 @@ export const spainStations: Station[] = [
     lng: -1.0202,
   },
 
+  {
+    name: "Artxube",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.201,
+    lng: -3.0715,
+  },
+
+  {
+    name: "Elche/Elx-Parc",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.2718,
+    lng: -0.6952,
+  },
+
+  {
+    name: "Aeropuerto de Jerez",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.7516,
+    lng: -6.0659,
+  },
+
 ];

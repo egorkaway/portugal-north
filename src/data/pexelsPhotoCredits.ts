@@ -2466,6 +2466,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@rainer-rohtla-2157494180",
     photoPageUrl: "https://www.pexels.com/photo/historic-lisbon-trams-in-traditional-depot-34753107/",
   },
+  "34776489": {
+    photographer: "Emilio Sánchez  Hernández",
+    photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",
+    photoPageUrl: "https://www.pexels.com/photo/estacio-del-nord-in-valencia-spain-34776489/",
+  },
   "34805965": {
     photographer: "Emilio Sánchez  Hernández",
     photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",
@@ -2940,6 +2945,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Fotografías de El Puerto  de Santa María",
     photographerUrl: "https://www.pexels.com/@fotografias-de-el-puerto-de-santa-maria-2148829485",
     photoPageUrl: "https://www.pexels.com/photo/historic-archway-in-el-puerto-de-santa-maria-39038706/",
+  },
+  "39121174": {
+    photographer: "Rafael Minguet Delgado",
+    photographerUrl: "https://www.pexels.com/@thales13",
+    photoPageUrl: "https://www.pexels.com/photo/valencia-s-historic-ruzafa-metro-at-blue-hour-39121174/",
   },
   "39139818": {
     photographer: "Kari Alfonso",

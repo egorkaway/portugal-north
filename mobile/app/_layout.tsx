@@ -8,13 +8,12 @@ import * as Notifications from 'expo-notifications';
 import { DefaultTheme, Stack, ThemeProvider, useRouter } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
-import { useEffect, useState } from 'react';
-import { ActivityIndicator, Linking, View } from 'react-native';
+import { useCallback, useEffect } from 'react';
+import { Linking, View } from 'react-native';
 import 'react-native-reanimated';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import Colors from '@/constants/Colors';
-import { theme } from '@/constants/theme';
 import { WidgetSyncBootstrap } from '@/components/WidgetSyncBootstrap';
 import { CatalogSyncBootstrap } from '@/components/CatalogSyncBootstrap';
 import { LocaleProvider, useLocale } from '@/i18n/LocaleProvider';
@@ -27,30 +26,35 @@ import {
   isStorePreviewUrl,
 } from '@/lib/storePreview';
 import { hydrateCatalogFromDisk } from '@/lib/catalogSync';
+import { raceTimeout } from '@/lib/timeout';
 import { endAllLiveActivities, onTripDeparted, seedWidgetTimeline } from '@/lib/widgetSync';
 import { getStationSlugFromArrivalNotification } from '@/lib/stationArrivalNotifications';
 
-Notifications.setNotificationHandler({
-  handleNotification: async (notification) => {
-    if (isLiveActivityEndNotification(notification)) {
-      // End the Live Activity as soon as this fires while the app can run JS.
-      void endAllLiveActivities().then(() => onTripDeparted());
+try {
+  Notifications.setNotificationHandler({
+    handleNotification: async (notification) => {
+      if (isLiveActivityEndNotification(notification)) {
+        // End the Live Activity as soon as this fires while the app can run JS.
+        void endAllLiveActivities().then(() => onTripDeparted());
+        return {
+          shouldShowBanner: false,
+          shouldShowList: false,
+          shouldPlaySound: false,
+          shouldSetBadge: false,
+        };
+      }
+
       return {
-        shouldShowBanner: false,
-        shouldShowList: false,
-        shouldPlaySound: false,
+        shouldShowBanner: true,
+        shouldShowList: true,
+        shouldPlaySound: true,
         shouldSetBadge: false,
       };
-    }
-
-    return {
-      shouldShowBanner: true,
-      shouldShowList: true,
-      shouldPlaySound: true,
-      shouldSetBadge: false,
-    };
-  },
-});
+    },
+  });
+} catch (error) {
+  console.warn('[notifications] setNotificationHandler failed', error);
+}
 
 export {
   ErrorBoundary,
@@ -60,60 +64,71 @@ export const unstable_settings = {
   initialRouteName: '(tabs)',
 };
 
-SplashScreen.preventAutoHideAsync();
+void SplashScreen.preventAutoHideAsync().catch(() => {});
+
+const SPLASH_FALLBACK_MS = 1_500;
+
+function hideSplash() {
+  void SplashScreen.hideAsync().catch(() => {
+    // Already hidden, or the native splash dismissed itself.
+  });
+}
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
 
+  const onRootLayout = useCallback(() => {
+    hideSplash();
+  }, []);
+
   useEffect(() => {
-    if (error) throw error;
+    if (error) {
+      console.warn('[fonts] failed to load', error);
+    }
   }, [error]);
+
+  useEffect(() => {
+    hideSplash();
+    const fallback = setTimeout(hideSplash, SPLASH_FALLBACK_MS);
+    return () => clearTimeout(fallback);
+  }, []);
+
+  useEffect(() => {
+    if (loaded) hideSplash();
+  }, [loaded]);
 
   useEffect(() => {
     void seedWidgetTimeline();
   }, []);
 
-  useEffect(() => {
-    if (loaded) {
-      SplashScreen.hideAsync();
-    }
-  }, [loaded]);
-
-  if (!loaded) {
-    return null;
-  }
-
   return (
-    <LocaleProvider>
-      <PurchasesProvider>
-        <RootLayoutNav />
-      </PurchasesProvider>
-    </LocaleProvider>
+    <View style={{ flex: 1 }} onLayout={onRootLayout}>
+      <LocaleProvider>
+        <PurchasesProvider>
+          <RootLayoutNav />
+        </PurchasesProvider>
+      </LocaleProvider>
+    </View>
   );
 }
 
 function RootLayoutNav() {
   const light = Colors.light;
   const router = useRouter();
-  const { t, ready } = useLocale();
-  const [bootState, setBootState] = useState<'loading' | 'ready'>('loading');
+  const { t } = useLocale();
 
   useEffect(() => {
-    if (!ready) return;
-    void Promise.all([
-      isOnboardingComplete(),
-      hydrateCatalogFromDisk().catch((error) => {
-        console.warn('[catalog] hydrate failed', error);
-      }),
-    ]).then(([complete]) => {
+    void hydrateCatalogFromDisk().catch((error) => {
+      console.warn('[catalog] hydrate failed', error);
+    });
+    void raceTimeout(isOnboardingComplete(), 800, true, 'onboarding-flag').then((complete) => {
       if (!complete && !isStorePreview()) {
         router.replace('/onboarding');
       }
-      setBootState('ready');
     });
-  }, [router, ready]);
+  }, [router]);
 
   useEffect(() => {
     const applyPreviewUrl = async (url: string | null) => {
@@ -136,21 +151,6 @@ function RootLayoutNav() {
     });
     return () => sub.remove();
   }, [router]);
-
-  if (bootState === 'loading' || !ready) {
-    return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: theme.background,
-        }}
-      >
-        <ActivityIndicator color={theme.primary} size="large" />
-      </View>
-    );
-  }
 
   return (
     <SafeAreaProvider>
