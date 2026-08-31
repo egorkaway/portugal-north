@@ -721,6 +721,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Villabona de Asturias": ["15301"],
 
+  "Vallada": ["64004"],
+
+  "Mollet-Sant Fost": ["79006"],
+
+  "Victoria Kent": ["54501"],
+
+  "Casetas": ["70800"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

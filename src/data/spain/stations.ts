@@ -3299,4 +3299,40 @@ export const spainStations: Station[] = [
     lng: -5.8263,
   },
 
+  {
+    name: "Vallada",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 38.909,
+    lng: -0.6902,
+  },
+
+  {
+    name: "Mollet-Sant Fost",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5336,
+    lng: 2.2177,
+  },
+
+  {
+    name: "Victoria Kent",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.7012,
+    lng: -4.4544,
+  },
+
+  {
+    name: "Casetas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7226,
+    lng: -1.0202,
+  },
+
 ];

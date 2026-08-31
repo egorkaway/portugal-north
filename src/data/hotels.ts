@@ -3733,6 +3733,26 @@ export const stationHotels: StationHotels = {
     { name: "Motel Cancún", distanceKm: 3.2, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Canc%C3%BAn%2C%20Villabona%20de%20Asturias%2C%20Spain&order=price" },
     { name: "Motel Latino", distanceKm: 3.5, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Latino%2C%20Villabona%20de%20Asturias%2C%20Spain&order=price" },
   ],
+  "Vallada": [
+    { name: "Budget stays near Vallada", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vallada%2C%20Spain&order=price" },
+    { name: "Guest houses near Vallada", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vallada%2C%20Spain&order=price" },
+    { name: "Hotels near Vallada", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vallada%2C%20Spain&order=price" },
+  ],
+  "Mollet-Sant Fost": [
+    { name: "Hermanos Navas", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hermanos%20Navas%2C%20Mollet-Sant%20Fost%2C%20Spain&order=price" },
+    { name: "sidorme", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=sidorme%2C%20Mollet-Sant%20Fost%2C%20Spain&order=price" },
+    { name: "Hotel Catalan Barcelona", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Catalan%20Barcelona%2C%20Mollet-Sant%20Fost%2C%20Spain&order=price" },
+  ],
+  "Victoria Kent": [
+    { name: "Ibis Budget", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Budget%2C%20Victoria%20Kent%2C%20Spain&order=price" },
+    { name: "Hilton Garden Inn Málaga", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hilton%20Garden%20Inn%20M%C3%A1laga%2C%20Victoria%20Kent%2C%20Spain&order=price" },
+    { name: "Vincci Málaga", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vincci%20M%C3%A1laga%2C%20Victoria%20Kent%2C%20Spain&order=price" },
+  ],
+  "Casetas": [
+    { name: "Hotel Villa de Zaragoza", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Villa%20de%20Zaragoza%2C%20Casetas%2C%20Spain&order=price" },
+    { name: "El Águila", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20%C3%81guila%2C%20Casetas%2C%20Spain&order=price" },
+    { name: "Silvano", distanceKm: 2.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silvano%2C%20Casetas%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

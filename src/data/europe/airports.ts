@@ -58,6 +58,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 8.29077,
   },
   {
+    name: "Ajaccio Napoléon Bonaparte airport (AJA)",
+    country: "fr",
+    lines: ["AJA"],
+    types: ["Airport Destination"],
+    lat: 41.923599,
+    lng: 8.80292,
+  },
+  {
     name: "Amsterdam Airport Schiphol (AMS)",
     country: "nl",
     lines: ["AMS"],
@@ -696,6 +704,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 58.204201,
     lng: 8.08537,
+  },
+  {
+    name: "Košice International Airport (KSC)",
+    country: "sk",
+    lines: ["KSC"],
+    types: ["Airport Destination"],
+    lat: 48.663101,
+    lng: 21.2411,
   },
   {
     name: "Katowice Wojciech Korfanty International Airport (KTW)",

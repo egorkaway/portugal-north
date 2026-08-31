@@ -871,6 +871,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@ppppr",
     photoPageUrl: "https://www.pexels.com/photo/a-train-arriving-at-a-station-12841279/",
   },
+  "12905110": {
+    photographer: "Инсаф  Мирзаянов",
+    photographerUrl: "https://www.pexels.com/@66733048",
+    photoPageUrl: "https://www.pexels.com/photo/empty-platform-at-railway-station-with-forest-behind-12905110/",
+  },
   "13075112": {
     photographer: "Luo Chris",
     photographerUrl: "https://www.pexels.com/@luo-chris-1659104",
