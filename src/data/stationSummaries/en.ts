@@ -820,4 +820,41 @@ export const stationSummariesEn: Record<string, string> = {
     "Northern Portugal's international airport at Maia, with Metro Linha E to Trindade and central Porto in about half an hour. Alfa Pendular and Intercidades services leave from Porto-Campanhã — the metro is the usual ground link for travellers who want to skip taxis into the city.",
   "Faro Airport (FAO)":
     "Algarve international airport west of Faro city, with bus and taxi links to Faro station on the Linha do Algarve and to coastal resorts. Busiest in summer — a practical fly-in for beach holidays with regional CP connections east to Tavira and west towards Lagos.",
+  "São João do Estoril":
+    "Coastal halt on the Cascais line between Estoril and São Pedro do Estoril, a short walk from the Atlantic beaches. Frequent urban trains run to Cais do Sodré and Cascais — a practical seaside stop on one of Lisbon's busiest suburban corridors.",
+  "São Pedro do Estoril":
+    "Cascais-line halt between São João do Estoril and Parede, above the cliffs and beach cafés of the Estoril coast. Urban trains run constantly towards Cais do Sodré and Cascais — handy for seaside weekends while keeping central Lisbon within easy reach by rail.",
+  "Venda do Alcaide":
+    "Halt on the Linha do Sul between Pinhal Novo and Setúbal in the Sado hinterland. Urban and regional trains serve the south-bank commuter belt — a practical stop for countryside stays near Palmela with links towards Lisbon and the Algarve without crossing the Tagus.",
+  "Praias do Sado-A":
+    "Halt on the Linha do Sado near the Sado estuary beaches south of Setúbal. Urban and regional trains serve the south-bank corridor — useful for beach days and river walks while keeping Setúbal and Pinhal Novo on a direct suburban link.",
+  "Formoselha – Santo Varão":
+    "Halt on the Linha do Norte west of Coimbra between Alfarelos and Pereira in the Mondego valley. Urban and regional trains link the university city with Figueira da Foz and the Lisbon axis — a quiet parish stop for suburban stays without the bustle of Coimbra-B.",
+  Pereira:
+    "Halt on the Linha do Norte between Formoselha and Ameal on the Coimbra suburban belt. Urban and regional trains run towards Coimbra-B and Alfarelos — a practical countryside stop in the Mondego valley with frequent links to the university city.",
+  Bencanta:
+    "Suburban halt on the Linha do Norte at the western edge of Coimbra, one stop from Coimbra-B. Urban and regional trains serve the university-city fringe — handy for lower-cost stays near Coimbra with a short hop to the main-line platforms.",
+  Espadaneira:
+    "Halt on the Linha do Norte between Casais and Bencanta on the Coimbra suburban approach. Urban and regional trains link the Mondego fringe with Coimbra-B — a quiet residential stop for stays near the university city without changing at Alfarelos.",
+  Ameal:
+    "Halt on the Linha do Norte between Pereira and Vila Pouca do Campo west of Coimbra. Urban and regional trains serve the Mondego suburban belt — a parish stop for countryside lodging with frequent links towards Coimbra-B and Alfarelos.",
+  Casais:
+    "Halt on the Linha do Norte between Taveiro and Espadaneira on the Coimbra suburban approach. Urban and regional trains run towards Coimbra-B and the Lisbon axis — a quiet Mondego-valley stop for residential stays near the university city.",
+  "Vila Pouca do Campo":
+    "Halt on the Linha do Norte between Ameal and Taveiro west of Coimbra. Urban and regional trains serve the Mondego suburban belt — practical for countryside stays with a short ride into Coimbra-B and connections towards Figueira da Foz.",
+  "Carvalheira - Maceda":
+    "Carvalheira - Maceda is a CP urban halt on Linha do Norte in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Casa Branca":
+    "Casa Branca is a CP Intercidades halt on Linha do Alentejo in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Bom João":
+    "Bom João is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Cacela":
+    "Cacela is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Conceição":
+    "Conceição is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

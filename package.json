@@ -36,6 +36,7 @@
     "ship": "node scripts/ship-stats.mjs",
     "stats:spain": "node --import tsx scripts/collect-spain-reliability.mjs",
     "stats:spain-expand": "node --import tsx scripts/expand-spain-stations.mjs",
+    "stats:portugal-expand": "node --import tsx scripts/expand-portugal-stations.mjs",
     "stats:sync-station-types": "node --import tsx scripts/sync-station-types-from-stats.mjs --write",
     "stats:sync-station-types:dry": "node --import tsx scripts/sync-station-types-from-stats.mjs",
     "summaries:next": "node --import tsx scripts/list-stations-needing-summaries.mjs",

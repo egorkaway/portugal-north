@@ -218,7 +218,6 @@ export const gl: MobileMessages = {
     mostReliableTrain: 'Os 3 trens máis fiábeis',
     mostDelayedTrain: 'Os 3 trens máis atrasados',
     trainSpotlightAvgDelay: '{{avg}} min de atraso medio',
-    trainSpotlightRotating: 'Rota coa mostra n.º {{runCount}}',
     trainSpotlightMajorStations: 'Vía',
   },
   tickets: {

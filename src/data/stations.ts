@@ -127,6 +127,14 @@ const cpStations: StationData[] = [
   // Even more northern stops
   { name: "Cortegaça", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.9408, lng: -8.6356 },
   { name: "Taveiro", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.2059, lng: -8.5003 },
+  // Coimbra suburban (Linha do Norte between Alfarelos and Coimbra-B)
+  { name: "Ameal", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.1924, lng: -8.5441 },
+  { name: "Bencanta", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.2145, lng: -8.4563 },
+  { name: "Casais", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.2047, lng: -8.4842 },
+  { name: "Espadaneira", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.209, lng: -8.4709 },
+  { name: "Formoselha – Santo Varão", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.1795, lng: -8.6071 },
+  { name: "Pereira", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.1864, lng: -8.5849 },
+  { name: "Vila Pouca do Campo", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.193, lng: -8.5251 },
   { name: "Lousada", lines: ["Linha do Douro"], types: ["Urban", "Regional"], lat: 41.2783, lng: -8.2811 },
   { name: "Vila Nova de Cerveira", lines: ["Linha do Minho"], types: ["Intercidades", "Regional"], lat: 41.9419, lng: -8.7392 },
   { name: "Pocinho", lines: ["Linha do Douro"], types: ["Intercidades", "Regional"], lat: 41.1361, lng: -7.1219 },
@@ -336,7 +344,7 @@ const cpStations: StationData[] = [
   { name: "Vila Nova da Rainha", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 39.0362, lng: -8.9284 },
   { name: "Vila Nova de Ancos", lines: ["Linha do Norte"], types: ["Regional"], lat: 40.1072, lng: -8.6377 },
   { name: "Zibreira", lines: ["Linha do Oeste"], types: ["Regional"], lat: 39.006, lng: -9.1835 },
-  // Lisbon commuter belt (53 stops)
+  // Lisbon commuter belt
   { name: "Agualva - Cacém", lines: ["Linha de Sintra"], types: ["Intercidades", "Urban"], lat: 38.7664, lng: -9.2984 },
   { name: "Alcantara - Mar", lines: ["Linha de Cintura", "Linha de Cascais"], types: ["Urban"], lat: 38.7024, lng: -9.174 },
   { name: "Alcantara - Terra", lines: ["Linha de Cintura"], types: ["Urban"], lat: 38.7074, lng: -9.1732 },
@@ -377,6 +385,7 @@ const cpStations: StationData[] = [
   { name: "Penteado", lines: ["Linha do Sado"], types: ["Urban", "Regional"], lat: 38.6381, lng: -8.9562 },
   { name: "Portela de Sintra", lines: ["Linha de Sintra"], types: ["Urban"], lat: 38.8022, lng: -9.3767 },
   { name: "Povoa", lines: ["Linha do Norte"], types: ["Urban", "Regional"], lat: 38.8596, lng: -9.0638 },
+  { name: "Praias do Sado-A", lines: ["Linha do Sado"], types: ["Urban", "Regional"], lat: 38.518, lng: -8.8381 },
   { name: "Praça do Quebedo", lines: ["Linha do Sul"], types: ["Urban", "Regional"], lat: 38.5249, lng: -8.8865 },
   { name: "Queluz - Belas", lines: ["Linha de Sintra"], types: ["Urban"], lat: 38.7588, lng: -9.257 },
   { name: "Reboleira", lines: ["Linha de Sintra"], types: ["Urban"], lat: 38.7509, lng: -9.2226 },
@@ -388,12 +397,15 @@ const cpStations: StationData[] = [
   { name: "Santa Iria", lines: ["Linha do Norte"], types: ["Urban", "Regional"], lat: 38.8409, lng: -9.0803 },
   { name: "Santo Amaro", lines: ["Linha de Cascais"], types: ["Urban"], lat: 38.6869, lng: -9.312 },
   { name: "Santos", lines: ["Linha de Cascais"], types: ["Urban"], lat: 38.7062, lng: -9.1553 },
+  { name: "São João do Estoril", lines: ["Linha de Cascais"], types: ["Urban"], lat: 38.7013, lng: -9.3861 },
+  { name: "São Pedro do Estoril", lines: ["Linha de Cascais"], types: ["Urban"], lat: 38.6954, lng: -9.3719 },
   { name: "Sete Rios", lines: ["Linha de Cintura"], types: ["Intercidades", "Urban"], lat: 38.7401, lng: -9.167 },
   { name: "Virtudes", lines: ["Linha do Norte"], types: ["Urban", "Regional"], lat: 39.0865, lng: -8.8281 },
   { name: "Mafra", lines: ["Linha do Oeste"], types: ["Regional"], lat: 38.8975, lng: -9.2914 },
   // Lisbon south bank & Oeste
   { name: "Pragal", lines: ["Linha do Sul"], types: ["Alfa Pendular", "Intercidades", "Urban"], lat: 38.6662, lng: -9.18 },
   { name: "Pinhal Novo", lines: ["Linha do Sul", "Linha do Alentejo"], types: ["Alfa Pendular", "Intercidades", "Regional", "Urban"], lat: 38.6361, lng: -8.9117 },
+  { name: "Venda do Alcaide", lines: ["Linha do Sul"], types: ["Urban", "Regional"], lat: 38.6057, lng: -8.8882 },
   { name: "Barreiro", lines: ["Linha do Sul (historic terminus)"], types: ["Urban", "Regional"], lat: 38.6529, lng: -9.0793 },
   { name: "Torres Vedras", lines: ["Linha do Oeste"], types: ["Intercidades", "Regional"], lat: 39.0928, lng: -9.2603 },
   { name: "Mira Sintra-Meleças", lines: ["Linha do Oeste", "Linha de Sintra"], types: ["Regional", "Urban"], lat: 38.7901, lng: -9.313 },
@@ -427,6 +439,46 @@ const cpStations: StationData[] = [
   { name: "Olhão", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.0289, lng: -7.8425 },
   { name: "Loulé", lines: ["Linha do Algarve"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 37.1043, lng: -8.0583 },
   { name: "Silves", lines: ["Linha do Algarve"], types: ["Regional"], lat: 37.1757, lng: -8.4405 },
+  {
+    name: "Carvalheira - Maceda",
+    lines: ["Linha do Norte", "Linha de Leixões"],
+    types: ["Urban"],
+    lat: 40.9245,
+    lng: -8.6261,
+  },
+
+  {
+    name: "Casa Branca",
+    lines: ["Linha do Alentejo"],
+    types: ["Intercidades"],
+    lat: 38.4982,
+    lng: -8.1582,
+  },
+
+  {
+    name: "Bom João",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.014,
+    lng: -7.921,
+  },
+
+  {
+    name: "Cacela",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1764,
+    lng: -7.5381,
+  },
+
+  {
+    name: "Conceição",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1444,
+    lng: -7.6056,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

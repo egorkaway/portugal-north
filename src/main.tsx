@@ -2,8 +2,11 @@ import { createRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
+import { installChunkLoadRecovery } from "@/lib/chunkLoadRecovery";
 import { registerPwaServiceWorker } from "@/lib/registerPwa.ts";
 import "./index.css";
+
+installChunkLoadRecovery();
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.addEventListener("controllerchange", () => {

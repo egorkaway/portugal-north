@@ -2,7 +2,7 @@
   "rewrites": [
     { "source": "/docs/api", "destination": "/docs/api.md" },
     {
-      "source": "/((?!api/|\\.well-known/|docs/).*)",
+      "source": "/((?!api/|assets/|data/|maps/|social/|\\.well-known/|docs/).*)",
       "destination": "/index.html"
     }
   ],

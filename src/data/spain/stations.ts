@@ -3596,4 +3596,49 @@ export const spainStations: Station[] = [
     lng: 2.1833,
   },
 
+  {
+    name: "Ontoria",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3153,
+    lng: -4.2154,
+  },
+
+  {
+    name: "Fuente Santa de Nava",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3556,
+    lng: -5.4784,
+  },
+
+  {
+    name: "El Masnou",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.477,
+    lng: 2.3104,
+  },
+
+  {
+    name: "Valdemoro",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.1961,
+    lng: -3.6649,
+  },
+
+  {
+    name: "Villacañas",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.6227,
+    lng: -3.3305,
+  },
+
 ];

@@ -581,6 +581,41 @@ export const stationHotels: StationHotels = {
     { name: "Jantesta Guest House", distanceKm: 2.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Jantesta%20Guest%20House%2C%20Taveiro%2C%20Portugal&order=price" },
     { name: "Hotel Quinta das Lágrimas", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Quinta%20das%20L%C3%A1grimas%2C%20Taveiro%2C%20Portugal&order=price" },
   ],
+  "Ameal": [
+    { name: "Palácio de São Silvestre Boutique Hotel", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pal%C3%A1cio%20de%20S%C3%A3o%20Silvestre%20Boutique%20Hotel%2C%20Ameal%2C%20Portugal&order=price" },
+    { name: "Quinta do Mourão", distanceKm: 5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Mour%C3%A3o%2C%20Ameal%2C%20Portugal&order=price" },
+    { name: "Quinta das Tamengas", distanceKm: 5.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20das%20Tamengas%2C%20Ameal%2C%20Portugal&order=price" },
+  ],
+  "Bencanta": [
+    { name: "Hotel Vila Galé", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vila%20Gal%C3%A9%2C%20Bencanta%2C%20Portugal&order=price" },
+    { name: "Hotel Dona Inês", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Dona%20In%C3%AAs%2C%20Bencanta%2C%20Portugal&order=price" },
+    { name: "Tivoli Coimbra", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tivoli%20Coimbra%2C%20Bencanta%2C%20Portugal&order=price" },
+  ],
+  "Casais": [
+    { name: "Quinta do Regalo", distanceKm: 3.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Regalo%2C%20Casais%2C%20Portugal&order=price" },
+    { name: "Albergue de Peregrinos Rainha Santa Isabel", distanceKm: 4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Rainha%20Santa%20Isabel%2C%20Casais%2C%20Portugal&order=price" },
+    { name: "Hotel Vila Galé", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vila%20Gal%C3%A9%2C%20Casais%2C%20Portugal&order=price" },
+  ],
+  "Espadaneira": [
+    { name: "Albergue de Peregrinos Rainha Santa Isabel", distanceKm: 3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Rainha%20Santa%20Isabel%2C%20Espadaneira%2C%20Portugal&order=price" },
+    { name: "Hotel Vila Galé", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vila%20Gal%C3%A9%2C%20Espadaneira%2C%20Portugal&order=price" },
+    { name: "Hotel Dona Inês", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Dona%20In%C3%AAs%2C%20Espadaneira%2C%20Portugal&order=price" },
+  ],
+  "Formoselha – Santo Varão": [
+    { name: "Hotel Garça Real", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Gar%C3%A7a%20Real%2C%20Formoselha%20%E2%80%93%20Santo%20Var%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Quinta do Mourão", distanceKm: 5.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Mour%C3%A3o%2C%20Formoselha%20%E2%80%93%20Santo%20Var%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Quinta das Tamengas", distanceKm: 5.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20das%20Tamengas%2C%20Formoselha%20%E2%80%93%20Santo%20Var%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Pereira": [
+    { name: "Quinta do Mourão", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Mour%C3%A3o%2C%20Pereira%2C%20Portugal&order=price" },
+    { name: "Hotel Garça Real", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Gar%C3%A7a%20Real%2C%20Pereira%2C%20Portugal&order=price" },
+    { name: "Quinta das Tamengas", distanceKm: 4.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20das%20Tamengas%2C%20Pereira%2C%20Portugal&order=price" },
+  ],
+  "Vila Pouca do Campo": [
+    { name: "Palácio de São Silvestre Boutique Hotel", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pal%C3%A1cio%20de%20S%C3%A3o%20Silvestre%20Boutique%20Hotel%2C%20Vila%20Pouca%20do%20Campo%2C%20Portugal&order=price" },
+    { name: "Quinta do Regalo", distanceKm: 6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Regalo%2C%20Vila%20Pouca%20do%20Campo%2C%20Portugal&order=price" },
+    { name: "Quinta do Mourão", distanceKm: 6.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Mour%C3%A3o%2C%20Vila%20Pouca%20do%20Campo%2C%20Portugal&order=price" },
+  ],
   "Lousada": [
     { name: "Casa de Juste", distanceKm: 1.8, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lousada%2C+Portugal&order=price" },
     { name: "Hotel Lousadense", distanceKm: 0.8, priceFrom: 40, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lousada%2C+Portugal&order=price" },
@@ -1700,6 +1735,11 @@ export const stationHotels: StationHotels = {
     { name: "VIP Executive Santa Iria Hotel", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=VIP%20Executive%20Santa%20Iria%20Hotel%2C%20Povoa%2C%20Portugal&order=price" },
     { name: "Dormidas A Faia", distanceKm: 3.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dormidas%20A%20Faia%2C%20Povoa%2C%20Portugal&order=price" },
   ],
+  "Praias do Sado-A": [
+    { name: "Sport Hotel A Seleção", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sport%20Hotel%20A%20Sele%C3%A7%C3%A3o%2C%20Praias%20do%20Sado-A%2C%20Portugal&order=price" },
+    { name: "Ibis", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%2C%20Praias%20do%20Sado-A%2C%20Portugal&order=price" },
+    { name: "Hotel Cristal", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cristal%2C%20Praias%20do%20Sado-A%2C%20Portugal&order=price" },
+  ],
   "Praça do Quebedo": [
     { name: "Aranguês", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arangu%C3%AAs%2C%20Pra%C3%A7a%20do%20Quebedo%2C%20Portugal&order=price" },
     { name: "Day Off Suite&Hostel", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Day%20Off%20Suite%26Hostel%2C%20Pra%C3%A7a%20do%20Quebedo%2C%20Portugal&order=price" },
@@ -1754,6 +1794,16 @@ export const stationHotels: StationHotels = {
     { name: "Mana Guest House", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mana%20Guest%20House%2C%20Santos%2C%20Portugal&order=price" },
     { name: "Kab+1", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Kab%2B1%2C%20Santos%2C%20Portugal&order=price" },
   ],
+  "São João do Estoril": [
+    { name: "Short Stay Flats", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Short%20Stay%20Flats%2C%20S%C3%A3o%20Jo%C3%A3o%20do%20Estoril%2C%20Portugal&order=price" },
+    { name: "BLUE Boutique Hostel & Suites", distanceKm: 0.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=BLUE%20Boutique%20Hostel%20%26%20Suites%2C%20S%C3%A3o%20Jo%C3%A3o%20do%20Estoril%2C%20Portugal&order=price" },
+    { name: "Dolce Vita Guesthouse", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dolce%20Vita%20Guesthouse%2C%20S%C3%A3o%20Jo%C3%A3o%20do%20Estoril%2C%20Portugal&order=price" },
+  ],
+  "São Pedro do Estoril": [
+    { name: "Casa", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%2C%20S%C3%A3o%20Pedro%20do%20Estoril%2C%20Portugal&order=price" },
+    { name: "Short Stay Flats", distanceKm: 1.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Short%20Stay%20Flats%2C%20S%C3%A3o%20Pedro%20do%20Estoril%2C%20Portugal&order=price" },
+    { name: "Get Inn Hostel", distanceKm: 1.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Get%20Inn%20Hostel%2C%20S%C3%A3o%20Pedro%20do%20Estoril%2C%20Portugal&order=price" },
+  ],
   "Sete Rios": [
     { name: "Corinthia Hotel Lisbon", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Corinthia%20Hotel%20Lisbon%2C%20Sete%20Rios%2C%20Portugal&order=price" },
     { name: "Mercure", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mercure%2C%20Sete%20Rios%2C%20Portugal&order=price" },
@@ -1778,6 +1828,11 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Pinhal Novo", distanceKm: 0.5, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pinhal+Novo&order=price" },
     { name: "Residencial Central", distanceKm: 0.7, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pinhal+Novo&order=price" },
     { name: "Recanto Tropical", distanceKm: 3.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Recanto%20Tropical%2C%20Pinhal%20Novo%2C%20Portugal&order=price" },
+  ],
+  "Venda do Alcaide": [
+    { name: "Retiro dos Batudes", distanceKm: 0.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Retiro%20dos%20Batudes%2C%20Venda%20do%20Alcaide%2C%20Portugal&order=price" },
+    { name: "Sonho de Paula", distanceKm: 1.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sonho%20de%20Paula%2C%20Venda%20do%20Alcaide%2C%20Portugal&order=price" },
+    { name: "Recanto Tropical", distanceKm: 3.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Recanto%20Tropical%2C%20Venda%20do%20Alcaide%2C%20Portugal&order=price" },
   ],
   "Barreiro": [
     { name: "Hotel Barreiro", distanceKm: 0.9, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Barreiro%2C+Portugal&order=price" },
@@ -1932,6 +1987,21 @@ export const stationHotels: StationHotels = {
     { name: "Colina dos Mouros", distanceKm: 0.6, priceFrom: 55, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Hotel Vila Sodré", distanceKm: 1.4, priceFrom: 50, bookingUrl: "https://www.booking.com/searchresults.html?ss=Silves%2C+Algarve&order=price" },
     { name: "Horta Grande", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Horta%20Grande%2C%20Silves%2C%20Portugal&order=price" },
+  ],
+  "Casa Branca": [
+    { name: "Budget stays near Casa Branca", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Branca%2C%20Portugal&order=price" },
+    { name: "Guest houses near Casa Branca", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Branca%2C%20Portugal&order=price" },
+    { name: "Hotels near Casa Branca", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Branca%2C%20Portugal&order=price" },
+  ],
+  "Bom João": [
+    { name: "Pousada da Juventude", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20da%20Juventude%2C%20Bom%20Jo%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Hostel do Largo", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostel%20do%20Largo%2C%20Bom%20Jo%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Alto House", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alto%20House%2C%20Bom%20Jo%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Conceição": [
+    { name: "Mi casa - su casa", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mi%20casa%20-%20su%20casa%2C%20Concei%C3%A7%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Aldeamento Pedras da Rainha", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aldeamento%20Pedras%20da%20Rainha%2C%20Concei%C3%A7%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Apartamento Formosa Cabanas", distanceKm: 1.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20Formosa%20Cabanas%2C%20Concei%C3%A7%C3%A3o%2C%20Portugal&order=price" },
   ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -3897,6 +3967,25 @@ export const stationHotels: StationHotels = {
     { name: "Alberg Coroleu House", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20Coroleu%20House%2C%20Barcelona%20Fabra%20i%20Puig%2C%20Spain&order=price" },
     { name: "ibis Barcelona Meridiana", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20Barcelona%20Meridiana%2C%20Barcelona%20Fabra%20i%20Puig%2C%20Spain&order=price" },
     { name: "Hotel BESTPRICE Maragall", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20BESTPRICE%20Maragall%2C%20Barcelona%20Fabra%20i%20Puig%2C%20Spain&order=price" },
+  ],
+  "Ontoria": [
+    { name: "Budget stays near Ontoria", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ontoria%2C%20Spain&order=price" },
+    { name: "Guest houses near Ontoria", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ontoria%2C%20Spain&order=price" },
+    { name: "Hotels near Ontoria", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ontoria%2C%20Spain&order=price" },
+  ],
+  "El Masnou": [
+    { name: "Xavi", distanceKm: 0.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Xavi%2C%20El%20Masnou%2C%20Spain&order=price" },
+    { name: "Hotel Torino", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Torino%2C%20El%20Masnou%2C%20Spain&order=price" },
+    { name: "Hotel Llar de Capitans", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Llar%20de%20Capitans%2C%20El%20Masnou%2C%20Spain&order=price" },
+  ],
+  "Valdemoro": [
+    { name: "Hotel Victoria", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Victoria%2C%20Valdemoro%2C%20Spain&order=price" },
+    { name: "Hostal Cervantes", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Cervantes%2C%20Valdemoro%2C%20Spain&order=price" },
+    { name: "Hotel Valdemoro", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Valdemoro%2C%20Valdemoro%2C%20Spain&order=price" },
+  ],
+  "Villacañas": [
+    { name: "Hotel Mirasierra", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mirasierra%2C%20Villaca%C3%B1as%2C%20Spain&order=price" },
+    { name: "Hospedería El Convento", distanceKm: 11.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospeder%C3%ADa%20El%20Convento%2C%20Villaca%C3%B1as%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

@@ -64,4 +64,16 @@ describe("image occupation keys", () => {
     markImageUsed(used, "https://upload.wikimedia.org/wiki/foo.jpg");
     expect(isImageUsed(used, "https://upload.wikimedia.org/wiki/foo.jpg")).toBe(true);
   });
+
+  it("treats Wikimedia query-param variants as the same photo", () => {
+    const used = seedUsedImages([
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Linha_do_Norte_-_Bencanta.JPG/960px-Linha_do_Norte_-_Bencanta.JPG?utm_source=pt.wikipedia.org",
+    ]);
+    expect(
+      isImageUsed(
+        used,
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Linha_do_Norte_-_Bencanta.JPG/960px-Linha_do_Norte_-_Bencanta.JPG",
+      ),
+    ).toBe(true);
+  });
 });

@@ -971,6 +971,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@breno-cardoso-149064345",
     photoPageUrl: "https://www.pexels.com/photo/woman-in-blue-dress-sitting-on-train-rail-14148163/",
   },
+  "14366485": {
+    photographer: "Luis Quintero",
+    photographerUrl: "https://www.pexels.com/@jibarofoto",
+    photoPageUrl: "https://www.pexels.com/photo/metro-opera-station-in-madrid-14366485/",
+  },
   "14383715": {
     photographer: "Emilio Sánchez  Hernández",
     photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",
@@ -2966,6 +2971,16 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@jerson-martins-1514473344",
     photoPageUrl: "https://www.pexels.com/photo/historic-rio-das-velhas-train-station-at-sunset-38844111/",
   },
+  "38930590": {
+    photographer: "Victor Silva",
+    photographerUrl: "https://www.pexels.com/@victor-silva-3715807",
+    photoPageUrl: "https://www.pexels.com/photo/metro-of-porto-emerging-from-city-tunnel-38930590/",
+  },
+  "38930611": {
+    photographer: "Victor Silva",
+    photographerUrl: "https://www.pexels.com/@victor-silva-3715807",
+    photoPageUrl: "https://www.pexels.com/photo/azulejo-tiles-in-sao-bento-railway-station-38930611/",
+  },
   "38973852": {
     photographer: "stelios ΒΚ",
     photographerUrl: "https://www.pexels.com/@stelios-117223391",
@@ -2995,5 +3010,10 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-in-cadiz-spain-39269007/",
+  },
+  "39269011": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/historic-cadiz-railway-station-exterior-39269011/",
   },
 };

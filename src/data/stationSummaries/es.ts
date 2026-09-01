@@ -753,4 +753,41 @@ export const stationSummariesEs: Record<string, string> = {
     "Aeropuerto internacional del norte de Portugal en Maia, con Metro Linha E a Trindade y el centro de Oporto en unos treinta minutos. Alfa Pendular e Intercidades parten de Porto-Campanhã — el metro es el enlace terrestre habitual para evitar taxis hasta la ciudad.",
   "Faro Airport (FAO)":
     "Aeropuerto internacional del Algarve al oeste de Faro, con autobuses y taxis a la estación de Faro en la Linha do Algarve y a los resorts costeros. Más concurrido en verano — entrada práctica para vacaciones de playa con conexiones regionales de CP hacia Tavira y Lagos.",
+  "São João do Estoril":
+    "Parada costera en la línea de Cascais entre Estoril y São Pedro do Estoril, a pocos minutos de las playas atlánticas. Trenes urbanos frecuentes enlazan con Cais do Sodré y Cascais — parada playera práctica en uno de los corredores suburbanos más concurridos de Lisboa.",
+  "São Pedro do Estoril":
+    "Parada de la línea de Cascais entre São João do Estoril y Parede, sobre los acantilados y los cafés de playa de la costa de Estoril. Trenes urbanos circulan constantemente hacia Cais do Sodré y Cascais — útil para fines de semana junto al mar manteniendo el centro de Lisboa al alcance del tren.",
+  "Venda do Alcaide":
+    "Parada en la Linha do Sul entre Pinhal Novo y Setúbal en el hinterland del Sado. Trenes urbanos y regionales sirven el cinturón de cercanías de la margen sur — parada práctica para estancias en el campo cerca de Palmela con enlaces hacia Lisboa y el Algarve sin cruzar el Tajo.",
+  "Praias do Sado-A":
+    "Parada en la Linha do Sado junto a las playas del estuario al sur de Setúbal. Trenes urbanos y regionales sirven el corredor de la margen sur — útil para días de playa y paseos ribereños manteniendo Setúbal y Pinhal Novo en un enlace suburbano directo.",
+  "Formoselha – Santo Varão":
+    "Parada en la Linha do Norte al oeste de Coímbra entre Alfarelos y Pereira, en el valle del Mondego. Trenes urbanos y regionales enlazan la ciudad universitaria con Figueira da Foz y el eje de Lisboa — parada parroquial tranquila para estancias suburbanas sin el bullicio de Coimbra-B.",
+  Pereira:
+    "Parada en la Linha do Norte entre Formoselha y Ameal en el cinturón suburbano de Coímbra. Trenes urbanos y regionales siguen hacia Coimbra-B y Alfarelos — parada práctica en el campo del Mondego con enlaces frecuentes a la ciudad universitaria.",
+  Bencanta:
+    "Parada suburbana en la Linha do Norte en el borde occidental de Coímbra, a una parada de Coimbra-B. Trenes urbanos y regionales sirven la franja de la ciudad universitaria — útil para estancias más económicas cerca de Coímbra con un salto corto hasta los andenes de la línea principal.",
+  Espadaneira:
+    "Parada en la Linha do Norte entre Casais y Bencanta en la aproximación suburbana a Coímbra. Trenes urbanos y regionales enlazan la franja del Mondego con Coimbra-B — parada residencial tranquila para estancias junto a la ciudad universitaria sin cambiar en Alfarelos.",
+  Ameal:
+    "Parada en la Linha do Norte entre Pereira y Vila Pouca do Campo al oeste de Coímbra. Trenes urbanos y regionales sirven el cinturón suburbano del Mondego — parada parroquial para alojamiento en el campo con enlaces frecuentes hacia Coimbra-B y Alfarelos.",
+  Casais:
+    "Parada en la Linha do Norte entre Taveiro y Espadaneira en la aproximación suburbana a Coímbra. Trenes urbanos y regionales siguen hacia Coimbra-B y el eje de Lisboa — parada tranquila en el valle del Mondego para estancias residenciales cerca de la ciudad universitaria.",
+  "Vila Pouca do Campo":
+    "Parada en la Linha do Norte entre Ameal y Taveiro al oeste de Coímbra. Trenes urbanos y regionales sirven el cinturón suburbano del Mondego — práctica para estancias en el campo con un salto corto hasta Coimbra-B y conexiones hacia Figueira da Foz.",
+  "Carvalheira - Maceda":
+    "Carvalheira - Maceda es una parada de CP de servicios cercanías en la Linha do Norte en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Casa Branca":
+    "Casa Branca es una parada de CP de servicios Intercidades en la Linha do Alentejo en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Bom João":
+    "Bom João es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Cacela":
+    "Cacela es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Conceição":
+    "Conceição es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
 };

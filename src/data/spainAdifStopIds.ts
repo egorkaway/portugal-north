@@ -787,6 +787,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Barcelona Fabra i Puig": ["78802"],
 
+  "Ontoria": ["05635"],
+
+  "Fuente Santa de Nava": ["05525"],
+
+  "El Masnou": ["79407"],
+
+  "Valdemoro": ["60104"],
+
+  "Villacañas": ["60300"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

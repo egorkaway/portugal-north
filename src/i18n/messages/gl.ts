@@ -287,7 +287,6 @@ export const gl: Messages = {
     mostDelayedTrain: "Os 3 trens máis atrasados",
     trainSpotlightTrainLabel: "Tren {{number}} · {{serviceType}}",
     trainSpotlightAvgDelay: "{{avg}} min de atraso medio",
-    trainSpotlightRotating: "Rota coa mostra n.º {{runCount}} ata estabilizar os datos",
     trainSpotlightMajorStations: "Vía",
     airportDestinationRankings: "Rankings de conexións aéreas",
     airportDestinationIntro:

@@ -242,6 +242,12 @@ export default defineConfig({
       },
       workbox: {
         navigateFallback: "/index.html",
+        navigateFallbackDenylist: [
+          /^\/api\//,
+          /^\/assets\//,
+          /^\/data\//,
+          /\/[^/?]+\.[a-zA-Z0-9]+$/,
+        ],
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         // Main app chunk includes station/airport data; default 2 MiB precache cap is too low.

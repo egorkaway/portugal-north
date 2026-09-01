@@ -179,11 +179,6 @@ export default function RankingsScreen() {
                   valueColor={trainSpotlightDelayColor(entry.avgDelayMinutes)}
                   majorStations={entry.majorStations}
                   onStationPress={(name) => router.push(`/station/${stationToSlug(name)}`)}
-                  subtitle={
-                    index === 0 && entry.selectionMode === 'rotating'
-                      ? t('rankings.trainSpotlightRotating', { runCount: trainSpotlight.runCount })
-                      : undefined
-                  }
                 />
               ))}
             </>
@@ -277,7 +272,6 @@ function TrainSpotlightRow({
   serviceType,
   value,
   valueColor,
-  subtitle,
   majorStations,
   onStationPress,
 }: {
@@ -287,7 +281,6 @@ function TrainSpotlightRow({
   serviceType: string;
   value: string;
   valueColor: string;
-  subtitle?: string;
   majorStations?: string[];
   onStationPress?: (stationName: string) => void;
 }) {
@@ -304,7 +297,6 @@ function TrainSpotlightRow({
             {serviceType}
           </Text>
         </Text>
-        {subtitle ? <Text style={styles.rowSubtitle}>{subtitle}</Text> : null}
         {majorStations && majorStations.length > 0 ? (
           <Text style={styles.rowSubtitle}>
             {t('rankings.trainSpotlightMajorStations')}{' '}

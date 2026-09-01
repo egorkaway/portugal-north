@@ -43,7 +43,9 @@ export function planBuildReload(
   return { action: "reload", markReloadGuard: remoteBuildNumber };
 }
 
-async function clearServiceWorkerCaches(): Promise<void> {
+export async function clearClientCaches(): Promise<void> {
+  if (typeof window === "undefined") return;
+
   if ("caches" in window) {
     const keys = await caches.keys();
     await Promise.all(keys.map((key) => caches.delete(key)));
@@ -55,6 +57,13 @@ async function clearServiceWorkerCaches(): Promise<void> {
       await registration.unregister();
     }
   }
+}
+
+/** Drop stale service-worker caches, then reload — used after a failed lazy chunk. */
+export async function reloadAfterClearingClientCaches(): Promise<void> {
+  if (typeof window === "undefined") return;
+  await clearClientCaches();
+  window.location.reload();
 }
 
 export function getLastServiceWorkerCheckAt(): number {
@@ -114,7 +123,7 @@ export async function ensureLatestBuild(): Promise<boolean> {
   await checkForServiceWorkerUpdate();
 
   if ("markCacheClearedGuard" in plan && plan.markCacheClearedGuard) {
-    await clearServiceWorkerCaches();
+    await clearClientCaches();
     sessionStorage.setItem(CACHE_CLEARED_GUARD_KEY, plan.markCacheClearedGuard);
   } else if ("markReloadGuard" in plan && plan.markReloadGuard) {
     sessionStorage.setItem(RELOAD_GUARD_KEY, plan.markReloadGuard);

@@ -218,7 +218,6 @@ export const es: MobileMessages = {
     mostReliableTrain: 'Los 3 trenes más fiables',
     mostDelayedTrain: 'Los 3 trenes más retrasados',
     trainSpotlightAvgDelay: '{{avg}} min de retraso medio',
-    trainSpotlightRotating: 'Rota con la muestra n.º {{runCount}}',
     trainSpotlightMajorStations: 'Vía',
   },
   tickets: {

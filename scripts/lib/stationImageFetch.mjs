@@ -2,12 +2,20 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { pexelsPhotoIdFromUrl } from "./pexelsCredits.mjs";
 
-/** Exact URL plus Pexels photo-id key so query-param variants still collide. */
+/** Exact URL plus Pexels photo-id / Wikimedia path so query-param variants still collide. */
 export function imageOccupationKeys(url) {
   if (!url || typeof url !== "string") return [];
   const keys = [url];
   const photoId = pexelsPhotoIdFromUrl(url);
   if (photoId) keys.push(`pexels:${photoId}`);
+  try {
+    const parsed = new URL(url);
+    if (/(^|\.)(wikimedia|wikipedia)\.org$/i.test(parsed.hostname)) {
+      keys.push(`wiki:${parsed.pathname}`);
+    }
+  } catch {
+    // ignore invalid URLs
+  }
   return keys;
 }
 
@@ -481,6 +489,17 @@ export async function resolveStationImage(station, { apiKey, usedUrls, pexelsOnl
     await sleep(400);
   }
 
+  const country = station.country === "es" ? "Spain" : "Portugal";
+  for (const query of [
+    `${stationBaseName(station.name)} ${country} landscape`,
+    `${country} railway countryside`,
+    `Iberian peninsula landscape`,
+  ]) {
+    const picked = await pexelsPickUnique(query, station.name, usedUrls, apiKey, { perPage: 80 });
+    if (picked) return { url: picked.url, source: "pexels-fallback", query, credit: picked.credit };
+    await sleep(400);
+  }
+
   return null;
 }
 
@@ -489,12 +508,16 @@ export function sleep(ms) {
 }
 
 export function findDuplicateGroups(imageMap) {
-  const byUrl = new Map();
+  const byKey = new Map();
   for (const [name, url] of Object.entries(imageMap)) {
-    if (!byUrl.has(url)) byUrl.set(url, []);
-    byUrl.get(url).push(name);
+    const keys = imageOccupationKeys(url);
+    const key = keys.find((item) => item.startsWith("pexels:") || item.startsWith("wiki:")) ?? url;
+    const group = byKey.get(key) ?? { url, names: [] };
+    group.names.push(name);
+    byKey.set(key, group);
   }
-  return [...byUrl.entries()]
-    .filter(([, names]) => names.length > 1)
+  return [...byKey.values()]
+    .filter((group) => group.names.length > 1)
+    .map((group) => [group.url, group.names])
     .sort((a, b) => b[1].length - a[1].length);
 }

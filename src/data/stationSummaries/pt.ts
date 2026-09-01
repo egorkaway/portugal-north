@@ -753,4 +753,41 @@ export const stationSummariesPt: Record<string, string> = {
     "Aeroporto internacional do norte de Portugal na Maia, com Metro Linha E até Trindade e o centro do Porto em cerca de meia hora. Alfa Pendular e Intercidades partem de Porto-Campanhã — o metro é a ligação terrestre habitual para quem evita táxis até à cidade.",
   "Faro Airport (FAO)":
     "Aeroporto internacional do Algarve a oeste da cidade de Faro, com autocarros e táxis para a estação de Faro na Linha do Algarve e para os resorts costeiros. Mais movimentado no verão — entrada prática para férias de praia com ligações regionais da CP a leste até Tavira e a oeste em direção a Lagos.",
+  "São João do Estoril":
+    "Paragem costeira na linha de Cascais entre o Estoril e São Pedro do Estoril, a poucos minutos das praias atlânticas. Comboios urbanos frequentes ligam ao Cais do Sodré e a Cascais — paragem balnear prática num dos corredores suburbanos mais movimentados de Lisboa.",
+  "São Pedro do Estoril":
+    "Paragem da linha de Cascais entre São João do Estoril e a Parede, acima das arribas e dos cafés de praia da costa do Estoril. Comboios urbanos circulam constantemente em direção ao Cais do Sodré e a Cascais — útil para fins de semana à beira-mar mantendo Lisboa central ao alcance do comboio.",
+  "Venda do Alcaide":
+    "Paragem na Linha do Sul entre Pinhal Novo e Setúbal no hinterland do Sado. Comboios urbanos e regionais servem o cinturão pendular da margem sul — paragem prática para estadias no campo perto de Palmela com ligações a Lisboa e ao Algarve sem atravessar o Tejo.",
+  "Praias do Sado-A":
+    "Paragem na Linha do Sado junto às praias do estuário a sul de Setúbal. Comboios urbanos e regionais servem o corredor da margem sul — útil para dias de praia e passeios ribeirinhos mantendo Setúbal e Pinhal Novo numa ligação suburbana direta.",
+  "Formoselha – Santo Varão":
+    "Paragem na Linha do Norte a oeste de Coimbra entre Alfarelos e Pereira, no vale do Mondego. Comboios urbanos e regionais ligam a cidade universitária a Figueira da Foz e ao eixo de Lisboa — paragem paroquial tranquila para estadias suburbanas sem o movimento de Coimbra-B.",
+  Pereira:
+    "Paragem na Linha do Norte entre Formoselha e Ameal no cinturão suburbano de Coimbra. Comboios urbanos e regionais seguem para Coimbra-B e Alfarelos — paragem prática no campo do Mondego com ligações frequentes à cidade universitária.",
+  Bencanta:
+    "Paragem suburbana na Linha do Norte na orla ocidental de Coimbra, a uma paragem de Coimbra-B. Comboios urbanos e regionais servem a franja da cidade universitária — útil para estadias mais económicas perto de Coimbra com um salto curto até às plataformas da linha principal.",
+  Espadaneira:
+    "Paragem na Linha do Norte entre Casais e Bencanta na aproximação suburbana a Coimbra. Comboios urbanos e regionais ligam a franja do Mondego a Coimbra-B — paragem residencial tranquila para estadias junto à cidade universitária sem mudar em Alfarelos.",
+  Ameal:
+    "Paragem na Linha do Norte entre Pereira e Vila Pouca do Campo a oeste de Coimbra. Comboios urbanos e regionais servem o cinturão suburbano do Mondego — paragem paroquial para alojamento no campo com ligações frequentes a Coimbra-B e Alfarelos.",
+  Casais:
+    "Paragem na Linha do Norte entre Taveiro e Espadaneira na aproximação suburbana a Coimbra. Comboios urbanos e regionais seguem para Coimbra-B e o eixo de Lisboa — paragem tranquila no vale do Mondego para estadias residenciais perto da cidade universitária.",
+  "Vila Pouca do Campo":
+    "Paragem na Linha do Norte entre Ameal e Taveiro a oeste de Coimbra. Comboios urbanos e regionais servem o cinturão suburbano do Mondego — prática para estadias no campo com um salto curto até Coimbra-B e ligações em direção a Figueira da Foz.",
+  "Carvalheira - Maceda":
+    "Carvalheira - Maceda é uma paragem CP de serviços urbanos na Linha do Norte em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Casa Branca":
+    "Casa Branca é uma paragem CP de serviços Intercidades na Linha do Alentejo em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Bom João":
+    "Bom João é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Cacela":
+    "Cacela é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Conceição":
+    "Conceição é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
 };

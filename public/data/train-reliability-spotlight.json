@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-01T20:48:51.147Z",
-  "runCount": 649,
+  "generatedAt": "2026-09-01T21:36:24.603Z",
+  "runCount": 655,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -22,8 +22,8 @@
       "observations": 17,
       "stationsSampled": 15,
       "majorStations": [
-        "Lisboa Oriente",
         "Porto-Campanhã",
+        "Lisboa Oriente",
         "Vila Franca de Xira",
         "Vila Nova de Gaia-Devesas"
       ]
@@ -44,14 +44,14 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "10544",
+      "trainNumber": "10541",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 14,
+      "observations": 12,
       "stationsSampled": 6,
       "majorStations": [
-        "Abrantes",
         "Castelo Branco",
+        "Guarda",
         "Covilhã",
         "Fundão"
       ],
@@ -59,25 +59,25 @@
       "poolSize": 12
     },
     {
-      "trainNumber": "36407",
+      "trainNumber": "36406",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 13,
+      "observations": 12,
       "stationsSampled": 13,
       "majorStations": [
+        "Mira Sintra-Meleças",
         "Pero Negro",
         "Mafra",
-        "Feliteira",
-        "Zibreira"
+        "Feliteira"
       ],
       "selectionMode": "rotating",
       "poolSize": 12
     },
     {
-      "trainNumber": "36410",
+      "trainNumber": "36414",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 13,
+      "observations": 12,
       "stationsSampled": 13,
       "majorStations": [
         "Mira Sintra-Meleças",

@@ -287,7 +287,6 @@ export const pt: Messages = {
     mostDelayedTrain: "3 comboios mais atrasados",
     trainSpotlightTrainLabel: "Comboio {{number}} · {{serviceType}}",
     trainSpotlightAvgDelay: "{{avg}} min de atraso médio",
-    trainSpotlightRotating: "Roda com a amostra n.º {{runCount}} até os dados estabilizarem",
     trainSpotlightMajorStations: "Via",
     airportDestinationRankings: "Rankings de ligações aéreas",
     airportDestinationIntro:

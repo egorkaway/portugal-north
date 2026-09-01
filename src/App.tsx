@@ -9,6 +9,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { DeferredClientBootstraps } from "@/components/DeferredClientBootstraps";
 import { RevenueCatProvider } from "@/components/RevenueCatProvider";
 import { LocaleProvider } from "@/i18n/LocaleProvider";
+import { recoverFromChunkLoadError } from "@/lib/chunkLoadRecovery";
 import HomeRedirect from "./pages/HomeRedirect.tsx";
 import Index from "./pages/Index.tsx";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
@@ -18,7 +19,14 @@ const Analytics = lazy(() =>
 );
 
 const lazyPage = <P extends object>(loader: () => Promise<{ default: ComponentType<P> }>) =>
-  lazy(() => loader().then((module) => ({ default: withShellDismiss(module.default) })));
+  lazy(() =>
+    loader()
+      .then((module) => ({ default: withShellDismiss(module.default) }))
+      .catch((error: unknown) => {
+        recoverFromChunkLoadError(error);
+        throw error;
+      }),
+  );
 
 const Rankings = lazyPage(() => import("./pages/Rankings.tsx"));
 const Station = lazyPage(() => import("./pages/Station.tsx"));

@@ -16,10 +16,6 @@ import { fileURLToPath } from "node:url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const STATIONS_PATH = join(root, "src/data/spain/stations.ts");
 const ADIF_PATH = join(root, "src/data/spainAdifStopIds.ts");
-const IMAGES_PATH = join(root, "src/data/stationImages.ts");
-const HOTELS_PATH = join(root, "src/data/hotels.ts");
-const CREDITS_PATH = join(root, "src/data/pexelsPhotoCredits.ts");
-const HISTORY_PATH = join(root, "data/station-image-history.json");
 const DELAY_LOG_PATH = join(root, "data/spain-train-delay-log.ndjson");
 
 const SUMMARY_FILES = {
@@ -103,32 +99,20 @@ function appendAdifIds(name, stopIds) {
   );
 }
 
-function spainStubHotels(name) {
-  const url = `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(`${name}, Spain`)}&order=price`;
-  return [
-    { name: `Budget stays near ${name}`, distanceKm: 0.8, priceFrom: 35, bookingUrl: url },
-    { name: `Guest houses near ${name}`, distanceKm: 1.1, priceFrom: 30, bookingUrl: url },
-    { name: `Hotels near ${name}`, distanceKm: 1.4, priceFrom: 25, bookingUrl: url },
-  ];
-}
-
 export async function expandSpainStations(options = {}) {
   const dryRun = Boolean(options.dryRun);
   const { pickNextSpainStations, SPAIN_EXPAND_BATCH_SIZE } = await import(
     "../src/lib/spainStationCandidates.ts"
   );
   const limit = Number(options.limit ?? SPAIN_EXPAND_BATCH_SIZE);
-  const { loadEnvFile, parseAllStationsFromRepo, parseImageMap, resolveStationImage, seedUsedImages, updateImageInMap, writeImageMap, sleep } =
-    await import("./lib/stationImageFetch.mjs");
+  const { loadEnvFile, parseAllStationsFromRepo } = await import("./lib/stationImageFetch.mjs");
   const { loadSpainGtfsStops } = await import("./lib/spainGtfsStops.mjs");
   const { readSpainTrainDelayLog } = await import("../server/lib/spainTrainDelayLog.ts");
-  const { parseHotelMap, resolveHotelsForStation, writeHotelMap } = await import(
-    "./lib/stationHotelFetch.mjs"
-  );
-  const { allRejectedUrls, readImageHistory } = await import("./lib/stationImageHistory.mjs");
-  const { loadPexelsCredits, pexelsPhotoIdFromUrl, upsertPexelsCredit, writePexelsCredits } =
-    await import("./lib/pexelsCredits.mjs");
-  const { readRejectedHotels } = await import("./lib/rejectedHotels.mjs");
+  const {
+    createExpandAssetContext,
+    persistExpandedStationAssets,
+    resolveExpandedStationAssets,
+  } = await import("./lib/expandStationAssets.mjs");
 
   loadEnvFile(join(root, ".env"));
 
@@ -170,24 +154,8 @@ export async function expandSpainStations(options = {}) {
 
   if (dryRun) return { added: picked.map((row) => row.name), skipped: undefined, dryRun: true };
 
-  for (const station of picked) {
-    appendSpainStation(station);
-    appendAdifIds(station.name, station.stopIds);
-    const summaries = summaryTemplates(station.name, station.kinds);
-    for (const [locale, filePath] of Object.entries(SUMMARY_FILES)) {
-      appendSummary(filePath, station.name, summaries[locale]);
-    }
-  }
-
-  const stations = parseAllStationsFromRepo(root);
-  const imageMap = parseImageMap(readFileSync(IMAGES_PATH, "utf8"));
-  const history = readImageHistory(HISTORY_PATH);
-  const usedUrls = seedUsedImages([...Object.values(imageMap), ...allRejectedUrls(history)]);
-  const pexelsCredits = loadPexelsCredits(CREDITS_PATH);
-  const apiKey = process.env.PEXELS_API_KEY ?? "";
-  const hotelMap = parseHotelMap(readFileSync(HOTELS_PATH, "utf8"));
-  const rejectedHotels = readRejectedHotels(join(root, "scripts/data/rejected-hotels.json"));
-
+  const ctx = await createExpandAssetContext(root);
+  const added = [];
   for (const candidate of picked) {
     const station = {
       name: candidate.name,
@@ -197,54 +165,23 @@ export async function expandSpainStations(options = {}) {
       lng: candidate.lng,
       country: "es",
     };
-
-    if (!imageMap[station.name]) {
-      try {
-        const result = await resolveStationImage(station, {
-          apiKey: apiKey || "missing",
-          usedUrls,
-          pexelsOnly: false,
-        });
-        if (result) {
-          updateImageInMap(imageMap, station.name, result.url);
-          if (result.credit && apiKey) {
-            const photoId = pexelsPhotoIdFromUrl(result.url);
-            upsertPexelsCredit(pexelsCredits, photoId, result.credit);
-            writePexelsCredits(CREDITS_PATH, pexelsCredits);
-          }
-          writeImageMap(IMAGES_PATH, imageMap);
-          console.log(`  image ${station.name}: ${result.source}`);
-        } else {
-          console.log(`  image ${station.name}: NOT FOUND`);
-        }
-      } catch (error) {
-        const message = error instanceof Error ? error.message : String(error);
-        console.log(`  image ${station.name}: ERROR — ${message}`);
-      }
-      await sleep(400);
+    const assets = await resolveExpandedStationAssets(station, ctx);
+    if (!assets.image?.url) {
+      console.error(`Spain expand skipped ${station.name}: no unique image`);
+      continue;
     }
-
-    if (!hotelMap[station.name]?.length) {
-      try {
-        const result = await resolveHotelsForStation(station, [], { target: 3, rejected: rejectedHotels });
-        hotelMap[station.name] = result.added.length ? result.curated : spainStubHotels(station.name);
-        writeHotelMap(HOTELS_PATH, hotelMap, stations);
-        console.log(
-          result.added.length
-            ? `  hotels ${station.name}: +${result.added.length}`
-            : `  hotels ${station.name}: Booking stubs (no OSM listings)`,
-        );
-      } catch (error) {
-        hotelMap[station.name] = spainStubHotels(station.name);
-        writeHotelMap(HOTELS_PATH, hotelMap, stations);
-        const message = error instanceof Error ? error.message : String(error);
-        console.log(`  hotels ${station.name}: stubs after error (${message})`);
-      }
-      await sleep(1500);
+    appendSpainStation(station);
+    appendAdifIds(station.name, candidate.stopIds);
+    const summaries = summaryTemplates(station.name, candidate.kinds);
+    for (const [locale, filePath] of Object.entries(SUMMARY_FILES)) {
+      appendSummary(filePath, station.name, summaries[locale]);
     }
+    ctx.stations = parseAllStationsFromRepo(root);
+    await persistExpandedStationAssets(station, assets, ctx);
+    added.push(station.name);
   }
 
-  return { added: picked.map((row) => row.name) };
+  return { added };
 }
 
 const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1];

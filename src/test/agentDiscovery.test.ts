@@ -103,5 +103,9 @@ describe("agent discovery (RFC 8288 / RFC 9727)", () => {
     expect(destinations).not.toContain("/api/api-catalog");
     expect(destinations).not.toContain("/api/mcp-server-card");
     expect(destinations).not.toContain("/api/agent-skills-index");
+
+    const spaRewrite = vercel.rewrites.find((rewrite) => rewrite.destination === "/index.html");
+    expect(spaRewrite?.source).toContain("assets/");
+    expect(spaRewrite?.source).toContain("data/");
   });
 });

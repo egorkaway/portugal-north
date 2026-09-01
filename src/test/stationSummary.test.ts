@@ -25,11 +25,28 @@ describe("station summaries coverage", () => {
   it("covers every Portuguese station", () => {
     expect(portugalStationsWithoutSummaries()).toEqual([]);
   });
+
+  it("covers the Cascais, Sado, and Coimbra suburban batch", () => {
+    const batch = [
+      "São João do Estoril",
+      "São Pedro do Estoril",
+      "Venda do Alcaide",
+      "Praias do Sado-A",
+      "Formoselha – Santo Varão",
+      "Pereira",
+      "Bencanta",
+      "Espadaneira",
+      "Ameal",
+      "Casais",
+      "Vila Pouca do Campo",
+    ];
+    expect(batch.filter((name) => !hasStationSummary(name))).toEqual([]);
+  });
 });
 
 describe("station summaries i18n", () => {
   it("has all station keys in every locale", () => {
-    expect(STATION_SUMMARY_NAMES.length).toBe(378);
+    expect(STATION_SUMMARY_NAMES.length).toBe(387);
 
     for (const locale of LOCALES) {
       for (const name of STATION_SUMMARY_NAMES) {

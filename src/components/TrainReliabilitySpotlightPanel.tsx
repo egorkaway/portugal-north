@@ -8,9 +8,9 @@ import {
 } from "@/lib/trainReliabilitySpotlight";
 import { stationToSlug } from "@/lib/stationSlug";
 
-function MajorStationsList({ stations }: { stations: string[] }) {
+function MajorStationsList({ stations }: { stations?: string[] }) {
   const { t } = useLocale();
-  if (stations.length === 0) return null;
+  if (!stations || stations.length === 0) return null;
 
   return (
     <p className="mt-3 text-sm text-muted-foreground">
@@ -69,19 +69,16 @@ function SpotlightColumn({
   title,
   entries,
   tone,
-  note,
 }: {
   title: string;
   entries: TrainSpotlightEntry[];
   tone: "good" | "bad";
-  note?: string;
 }) {
   const { t } = useLocale();
 
   return (
     <div className="space-y-3">
       <h3 className="font-display text-lg text-foreground md:text-xl">{title}</h3>
-      {note ? <p className="text-xs text-muted-foreground">{note}</p> : null}
       {entries.length > 0 ? (
         entries.map((entry, index) => (
           <TrainSpotlightCard
@@ -116,11 +113,6 @@ export function TrainReliabilitySpotlightPanel() {
   const { mostDelayed, mostReliable } = data;
   if (mostDelayed.length === 0 && mostReliable.length === 0) return null;
 
-  const reliableNote =
-    mostReliable[0]?.selectionMode === "rotating"
-      ? t("rankings.trainSpotlightRotating", { runCount: data.runCount })
-      : undefined;
-
   return (
     <section aria-labelledby="train-spotlight-heading" className="mb-6 md:mb-8">
       <div className="mb-4 flex items-center gap-2">
@@ -135,7 +127,6 @@ export function TrainReliabilitySpotlightPanel() {
           title={t("rankings.mostReliableTrain")}
           entries={mostReliable}
           tone="good"
-          note={reliableNote}
         />
         <SpotlightColumn
           title={t("rankings.mostDelayedTrain")}

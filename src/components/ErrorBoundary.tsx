@@ -1,4 +1,6 @@
 import { Component, type ErrorInfo, type ReactNode } from "react";
+import { reloadAfterClearingClientCaches } from "@/lib/appUpdate";
+import { recoverFromChunkLoadError } from "@/lib/chunkLoadRecovery";
 
 type Props = {
   children: ReactNode;
@@ -17,10 +19,11 @@ export class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, info: ErrorInfo): void {
     console.error("App render error", error, info.componentStack);
+    recoverFromChunkLoadError(error);
   }
 
   private reload = (): void => {
-    window.location.reload();
+    void reloadAfterClearingClientCaches();
   };
 
   render() {

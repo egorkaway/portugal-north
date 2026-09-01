@@ -258,7 +258,6 @@ export type Messages = {
     mostDelayedTrain: string;
     trainSpotlightTrainLabel: string;
     trainSpotlightAvgDelay: string;
-    trainSpotlightRotating: string;
     trainSpotlightMajorStations: string;
     airportDestinationRankings: string;
     airportDestinationIntro: string;
