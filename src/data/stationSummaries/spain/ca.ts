@@ -1249,4 +1249,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Sabadell Nord":
     "Sabadell Nord és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "San José de Valderas":
+    "San José de Valderas és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Barcelona Fabra i Puig":
+    "Barcelona Fabra i Puig és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

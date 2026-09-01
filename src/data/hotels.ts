@@ -3888,6 +3888,16 @@ export const stationHotels: StationHotels = {
     { name: "Gran Hotel Verdi", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gran%20Hotel%20Verdi%2C%20Sabadell%20Nord%2C%20Spain&order=price" },
     { name: "Hotel Urpí", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Urp%C3%AD%2C%20Sabadell%20Nord%2C%20Spain&order=price" },
   ],
+  "San José de Valderas": [
+    { name: "Hotel ibis Madrid Alcorcón Tresaguas", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ibis%20Madrid%20Alcorc%C3%B3n%20Tresaguas%2C%20San%20Jos%C3%A9%20de%20Valderas%2C%20Spain&order=price" },
+    { name: "Holiday Inn Express - Madrid Alcorcón", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20-%20Madrid%20Alcorc%C3%B3n%2C%20San%20Jos%C3%A9%20de%20Valderas%2C%20Spain&order=price" },
+    { name: "B&B Hotel", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotel%2C%20San%20Jos%C3%A9%20de%20Valderas%2C%20Spain&order=price" },
+  ],
+  "Barcelona Fabra i Puig": [
+    { name: "Alberg Coroleu House", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20Coroleu%20House%2C%20Barcelona%20Fabra%20i%20Puig%2C%20Spain&order=price" },
+    { name: "ibis Barcelona Meridiana", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20Barcelona%20Meridiana%2C%20Barcelona%20Fabra%20i%20Puig%2C%20Spain&order=price" },
+    { name: "Hotel BESTPRICE Maragall", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20BESTPRICE%20Maragall%2C%20Barcelona%20Fabra%20i%20Puig%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

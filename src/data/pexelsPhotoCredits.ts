@@ -1626,6 +1626,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@altamar",
     photoPageUrl: "https://www.pexels.com/photo/train-on-tracks-in-spain-23408792/",
   },
+  "23670621": {
+    photographer: "Alexander Zvir",
+    photographerUrl: "https://www.pexels.com/@algrey",
+    photoPageUrl: "https://www.pexels.com/photo/hall-of-railway-station-in-lviv-23670621/",
+  },
   "23720159": {
     photographer: "Altamart",
     photographerUrl: "https://www.pexels.com/@altamar",

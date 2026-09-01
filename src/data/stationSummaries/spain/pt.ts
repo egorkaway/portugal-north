@@ -1249,4 +1249,10 @@ export const spainSummariesPt: Record<string, string> = {
   "Sabadell Nord":
     "Sabadell Nord é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "San José de Valderas":
+    "San José de Valderas é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Barcelona Fabra i Puig":
+    "Barcelona Fabra i Puig é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

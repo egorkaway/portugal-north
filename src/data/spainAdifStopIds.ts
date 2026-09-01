@@ -783,6 +783,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Sabadell Nord": ["78709"],
 
+  "San José de Valderas": ["35604"],
+
+  "Barcelona Fabra i Puig": ["78802"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

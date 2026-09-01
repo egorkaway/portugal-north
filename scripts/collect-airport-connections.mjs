@@ -32,9 +32,12 @@
  * no outbound collection).
  *
  * Each collect also samples outbound flights from one airport outside the
- * Iberian peninsula (the destination with the most Iberian-hub flights not
- * yet mapped) and writes public/maps/airports/external/*-connections.png.
- * Those airports do not get station pages.
+ * Iberian peninsula (prefer an Iberian-inbound map that still needs a full
+ * redraw, else the busiest unmapped destination) and writes
+ * public/maps/airports/external/*-connections.png.
+ * Those airports do not get station pages. If flight APIs are out of quota,
+ * the first map may use Iberian hubs that fly there; the next successful API
+ * run redraws that airport with all outbound connections.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";

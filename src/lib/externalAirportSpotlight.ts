@@ -25,6 +25,39 @@ export type RankedExternalAirport = {
   hubCount: number;
 };
 
+/** Map built from Iberian hubs that fly here, used when outbound APIs are exhausted. */
+export const IBERIAN_INBOUND_PROVIDER = "iberian-inbound";
+
+export type ExternalMapCoverage = {
+  /** Already mapped from a real outbound sample. */
+  completeIatas: ReadonlySet<string>;
+  /** Mapped from Iberian inbound only — redraw with full outbound when APIs return. */
+  inboundOnlyIatas: ReadonlySet<string>;
+};
+
+export function coverageFromExternalMapRows(
+  rows: Array<{ iata?: string; provider?: string }>,
+): ExternalMapCoverage {
+  const completeIatas = new Set<string>();
+  const inboundOnlyIatas = new Set<string>();
+  for (const row of rows) {
+    const iata = String(row.iata ?? "").trim().toUpperCase();
+    if (!iata) continue;
+    if (row.provider === IBERIAN_INBOUND_PROVIDER) inboundOnlyIatas.add(iata);
+    else completeIatas.add(iata);
+  }
+  return { completeIatas, inboundOnlyIatas };
+}
+
+function asCoverage(
+  sampledOrCoverage: ReadonlySet<string> | ExternalMapCoverage,
+): ExternalMapCoverage {
+  if (sampledOrCoverage instanceof Set) {
+    return { completeIatas: sampledOrCoverage, inboundOnlyIatas: new Set() };
+  }
+  return sampledOrCoverage;
+}
+
 function isoCountry(country: string): string {
   const value = country.trim().toUpperCase();
   if (value === "SPAIN") return "ES";
@@ -106,16 +139,22 @@ export function rankExternalAirportsFromManifest(
 }
 
 /**
- * One new external airport per collect run: highest Iberian traffic not yet
- * mapped, or the current #1 again once every candidate has a map.
+ * One external airport per collect run. Prefer an Iberian-inbound map that
+ * still needs a full outbound redraw, then an unmapped airport, then refresh
+ * the current #1.
  */
 export function pickExternalAirportForRun(
   ranked: RankedExternalAirport[],
-  alreadySampledIatas: ReadonlySet<string>,
+  sampledOrCoverage: ReadonlySet<string> | ExternalMapCoverage,
 ): RankedExternalAirport | null {
   if (ranked.length === 0) return null;
-  const next = ranked.find((row) => !alreadySampledIatas.has(row.iata));
-  return next ?? ranked[0] ?? null;
+  const { completeIatas, inboundOnlyIatas } = asCoverage(sampledOrCoverage);
+  const needsRedraw = ranked.find((row) => inboundOnlyIatas.has(row.iata));
+  if (needsRedraw) return needsRedraw;
+  const unmapped = ranked.find(
+    (row) => !completeIatas.has(row.iata) && !inboundOnlyIatas.has(row.iata),
+  );
+  return unmapped ?? ranked[0] ?? null;
 }
 
 export function externalAirportDisplayName(

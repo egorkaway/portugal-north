@@ -3578,4 +3578,22 @@ export const spainStations: Station[] = [
     lng: 2.0962,
   },
 
+  {
+    name: "San José de Valderas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3566,
+    lng: -3.8156,
+  },
+
+  {
+    name: "Barcelona Fabra i Puig",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4303,
+    lng: 2.1833,
+  },
+
 ];

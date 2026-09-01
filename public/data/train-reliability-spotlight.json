@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-01T20:40:49.145Z",
-  "runCount": 647,
+  "generatedAt": "2026-09-01T20:48:51.147Z",
+  "runCount": 649,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -44,36 +44,6 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "36404",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 11,
-      "stationsSampled": 13,
-      "majorStations": [
-        "Mira Sintra-Meleças",
-        "Pero Negro",
-        "Mafra",
-        "Feliteira"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "10543",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 0,
-      "observations": 15,
-      "stationsSampled": 6,
-      "majorStations": [
-        "Castelo Branco",
-        "Guarda",
-        "Covilhã",
-        "Fundão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
       "trainNumber": "10544",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
@@ -84,6 +54,36 @@
         "Castelo Branco",
         "Covilhã",
         "Fundão"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36407",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 13,
+      "stationsSampled": 13,
+      "majorStations": [
+        "Pero Negro",
+        "Mafra",
+        "Feliteira",
+        "Zibreira"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36410",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 13,
+      "stationsSampled": 13,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Mafra",
+        "Feliteira"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

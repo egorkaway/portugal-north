@@ -189,7 +189,7 @@ If a hub airport has **never recorded mappable flights**, it is hidden on the ma
 npm run maps:airport-connections -- --backfill-europe-destinations
 ```
 
-Each airport-connections collect also picks **one airport outside the Iberian peninsula** (the destination with the most sampled flights from Iberian hubs that does not yet have a map) and renders `public/maps/airports/external/{slug}-connections.png`. These airports do **not** get station pages. The running list is stored in `data/external-airport-connection-maps.json` and printed at the end of `npm run stats:departures`.
+Each airport-connections collect also picks **one airport outside the Iberian peninsula** (an Iberian-inbound map still waiting for a full outbound redraw, otherwise the destination with the most sampled flights from Iberian hubs that does not yet have a map) and renders `public/maps/airports/external/{slug}-connections.png`. These airports do **not** get station pages. If flight APIs are out of monthly quota, the first map may show only Iberian hubs that fly there; once APIs return, that airport is redrawn with all of its connections. The running list is stored in `data/external-airport-connection-maps.json` and printed at the end of `npm run stats:departures`.
 
 Then sync mobile: `cd mobile && npm run sync:data`.
 

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  coverageFromExternalMapRows,
   isOutsideIberianPeninsula,
   pickExternalAirportForRun,
   rankExternalAirportsFromManifest,
@@ -67,6 +68,20 @@ describe("rankExternalAirportsFromManifest", () => {
   });
 });
 
+describe("coverageFromExternalMapRows", () => {
+  it("marks Iberian-inbound rows as needing an outbound redraw", () => {
+    expect(
+      coverageFromExternalMapRows([
+        { iata: "PMI", provider: "iberian-inbound" },
+        { iata: "FRA", provider: "aviationstack" },
+      ]),
+    ).toEqual({
+      completeIatas: new Set(["FRA"]),
+      inboundOnlyIatas: new Set(["PMI"]),
+    });
+  });
+});
+
 describe("pickExternalAirportForRun", () => {
   const ranked = [
     { iata: "FRA", iberianFlightCount: 17, hubCount: 3 },
@@ -78,7 +93,28 @@ describe("pickExternalAirportForRun", () => {
     expect(pickExternalAirportForRun(ranked, new Set(["FRA"]))?.iata).toBe("LHR");
   });
 
-  it("refreshes the current top once every candidate has a map", () => {
+  it("redraws an Iberian-inbound map before mapping a new airport", () => {
+    expect(
+      pickExternalAirportForRun(ranked, {
+        completeIatas: new Set(),
+        inboundOnlyIatas: new Set(["FRA"]),
+      })?.iata,
+    ).toBe("FRA");
+    expect(
+      pickExternalAirportForRun(ranked, {
+        completeIatas: new Set(),
+        inboundOnlyIatas: new Set(["LHR"]),
+      })?.iata,
+    ).toBe("LHR");
+  });
+
+  it("refreshes the current top once every candidate has a full map", () => {
     expect(pickExternalAirportForRun(ranked, new Set(["FRA", "LHR"]))?.iata).toBe("FRA");
+    expect(
+      pickExternalAirportForRun(ranked, {
+        completeIatas: new Set(["FRA", "LHR"]),
+        inboundOnlyIatas: new Set(),
+      })?.iata,
+    ).toBe("FRA");
   });
 });
