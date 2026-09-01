@@ -23,12 +23,18 @@
  *   node --import tsx scripts/collect-airport-connections.mjs --maps-only
  *   node --import tsx scripts/collect-airport-connections.mjs --period-status
  *   node --import tsx scripts/collect-airport-connections.mjs --as-of=2026-08-11
+ *   node --import tsx scripts/collect-airport-connections.mjs --external-only
  *   node --import tsx scripts/collect-airport-connections.mjs --backfill-europe-destinations
  *
  * After a successful bake (or with --backfill-europe-destinations), European
  * destinations not in the PT/ES hub catalog are upserted into
  * src/data/europe/airports.ts as "Airport Destination" stations (map only;
  * no outbound collection).
+ *
+ * Each collect also samples outbound flights from one airport outside the
+ * Iberian peninsula (the destination with the most Iberian-hub flights not
+ * yet mapped) and writes public/maps/airports/external/*-connections.png.
+ * Those airports do not get station pages.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -57,6 +63,11 @@ import {
   collectDestinationIatasFromManifest,
   upsertEuropeDestinationAirports,
 } from "./lib/europeDestinationAirports.mjs";
+import {
+  formatExternalAirportMapsLog,
+  loadExternalAirportMapsStore,
+  sampleExternalAirportConnectionMap,
+} from "./lib/externalAirportConnectionMaps.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 loadEnvFile(join(root, ".env"));
@@ -104,6 +115,7 @@ const delayMs = delayArg
   ? Number.parseInt(delayArg.split("=")[1] ?? args[args.indexOf("--delay") + 1], 10)
   : 400;
 const mapsOnly = args.includes("--maps-only");
+const externalOnly = args.includes("--external-only");
 const periodStatus = args.includes("--period-status");
 const backfillEuropeDestinations = args.includes("--backfill-europe-destinations");
 const asOfArg = args.find((arg) => arg.startsWith("--as-of"));
@@ -216,6 +228,49 @@ async function temperatureSuffixForAirport(airport, rootDir) {
   }
 }
 
+async function runExternalAirportSpotlight({
+  rootDir,
+  manifest,
+  coordinates,
+  isDryRun,
+  quotaExhausted,
+  forceAirport,
+  periodId,
+  siteUrl,
+  basemapMode,
+}) {
+  const skip = quotaExhausted || forceAirport;
+  const skipReason = quotaExhausted
+    ? "quota-exhausted"
+    : forceAirport
+      ? "airport-filter"
+      : null;
+  try {
+    const result = await sampleExternalAirportConnectionMap({
+      rootDir,
+      manifest,
+      coordinates,
+      fetchDepartures: fetchDeparturesFromAirport,
+      resolveMissingCoordinates: async (iatas) => {
+        await resolveMissingCoordinates(iatas, coordinates, {});
+      },
+      buildAirportConnections,
+      renderAirportConnectionsMap,
+      siteUrl,
+      basemapMode,
+      periodId,
+      dryRun: isDryRun,
+      skip,
+      skipReason,
+    });
+    return result.store;
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`External destination map skipped: ${message}`);
+    return loadExternalAirportMapsStore(rootDir);
+  }
+}
+
 export async function collectAirportConnections(options = {}) {
   const {
     rootDir = root,
@@ -223,6 +278,7 @@ export async function collectAirportConnections(options = {}) {
     airportFilter: filter = airportFilter,
     delayMs: delay = delayMs,
     mapsOnly: renderMapsOnly = mapsOnly,
+    externalOnly: sampleExternalOnly = externalOnly,
     basemapMode: basemapMode = defaultBasemapMode,
     asOf = asOfDate,
     periodStatusOnly = periodStatus,
@@ -257,6 +313,41 @@ export async function collectAirportConnections(options = {}) {
       backfillEurope: true,
       europeDestinationCount: result.count,
       europeDestinationIatas: result.iatas,
+    };
+  }
+
+  if (sampleExternalOnly) {
+    if (!isDryRun && !hasAirportFlightProvider()) {
+      console.warn(
+        "No airport flight provider available — skipping external destination map.",
+      );
+      return { ok: 0, failed: 0, skipped: true, externalOnly: true };
+    }
+    resetAirportFlightProvider();
+    await ensureAirportCoordinateCache(cachePath);
+    const existing = loadExistingManifest(rootDir);
+    const roll = ensureAirportConnectionPeriodRoll({
+      rootDir,
+      asOf: asOf ?? new Date(),
+      dryRun: isDryRun,
+    });
+    const store = await runExternalAirportSpotlight({
+      rootDir,
+      manifest: existing,
+      coordinates: loadAirportCoordinateCache(cachePath),
+      isDryRun,
+      quotaExhausted: false,
+      forceAirport: false,
+      periodId: existing.periodId ?? roll.period.id,
+      siteUrl,
+      basemapMode,
+    });
+    return {
+      ok: store.airports?.length ? 1 : 0,
+      failed: 0,
+      skipped: false,
+      externalOnly: true,
+      externalAirportMaps: store,
     };
   }
 
@@ -496,6 +587,7 @@ export async function collectAirportConnections(options = {}) {
   }
 
   let europeDestinations = { count: 0, iatas: [] };
+  let externalAirportMaps = loadExternalAirportMapsStore(rootDir);
 
   // Always refresh live JSON after a collect so previous-period display fallback
   // stays available until hubs are re-sampled (even when this run got 0 OK).
@@ -539,6 +631,31 @@ export async function collectAirportConnections(options = {}) {
     console.log(
       `Europe destination airports: ${europeDestinations.count} (from ${destIatas.size} unique destinations)`,
     );
+
+    externalAirportMaps = await runExternalAirportSpotlight({
+      rootDir,
+      manifest,
+      coordinates: loadAirportCoordinateCache(cachePath),
+      isDryRun,
+      quotaExhausted,
+      forceAirport,
+      periodId: period.id,
+      siteUrl,
+      basemapMode,
+    });
+  } else if (isDryRun && !forceAirport) {
+    const existing = loadExistingManifest(rootDir);
+    await runExternalAirportSpotlight({
+      rootDir,
+      manifest: existing,
+      coordinates: loadAirportCoordinateCache(cachePath),
+      isDryRun: true,
+      quotaExhausted: false,
+      forceAirport: false,
+      periodId: period.id,
+      siteUrl,
+      basemapMode,
+    });
   }
 
   if (!isDryRun && (temperaturesLogged > 0 || temperaturesMissed > 0)) {
@@ -559,6 +676,7 @@ export async function collectAirportConnections(options = {}) {
     rolled: roll.rolled,
     frozen: roll.frozen,
     europeDestinationCount: europeDestinations.count,
+    externalAirportMaps,
   };
 }
 
@@ -566,7 +684,15 @@ const isMain = process.argv[1] && fileURLToPath(import.meta.url) === process.arg
 
 if (isMain) {
   collectAirportConnections().then(
-    ({ ok, failed, skipped, skippedNeverSeen, monthlyLimitReached, periodStatus: statusOnly }) => {
+    ({
+      ok,
+      failed,
+      skipped,
+      skippedNeverSeen,
+      monthlyLimitReached,
+      periodStatus: statusOnly,
+      externalAirportMaps,
+    }) => {
     if (statusOnly) process.exit(0);
     if (skipped) process.exit(0);
     const limitNote = monthlyLimitReached ? " (stopped: flight API monthly limit)" : "";
@@ -574,6 +700,7 @@ if (isMain) {
       ? `, ${skippedNeverSeen} never-seen hub(s) skipped (outside 2-week window)`
       : "";
     console.log(`Done: ${ok} airport(s) updated, ${failed} failed${skipNote}${limitNote}`);
+    console.log(formatExternalAirportMapsLog(externalAirportMaps ?? loadExternalAirportMapsStore(root)));
     process.exit(failed > 0 && ok === 0 ? 1 : 0);
   });
 }

@@ -8,7 +8,10 @@
  *   npm run stats:departures -- --dry-run
  *
  * Also collects airport flight connections (skipped if the last airport check
- * was < 5 hours ago — train-only runs do not count),
+ * was < 5 hours ago — train-only runs do not count), and on each airport
+ * collect samples outbound flights from one airport outside the Iberian
+ * peninsula (most Iberian-hub flights) into public/maps/airports/external/
+ * (no station pages; listed at the end of this log),
  * logs temperatures (Open-Meteo) for train stations that returned a departure
  * sample attempt (OK or FAIL). Airport hub temperatures are logged only during
  * a flight-connections collect, after a successful flight sample,
@@ -399,3 +402,14 @@ console.log(
     ? `Dry run: ${ok} station(s) planned (run #${store.runCount} not saved)`
     : `Done: run #${store.runCount}, ${ok} sampled, ${failed} failed${earlyNote} → ${statsPath} (+ reliability scores, temperatures, ${airportNote}, mobile data)`,
 );
+
+try {
+  const {
+    formatExternalAirportMapsLog,
+    loadExternalAirportMapsStore,
+  } = await import("./lib/externalAirportConnectionMaps.mjs");
+  console.log(formatExternalAirportMapsLog(loadExternalAirportMapsStore(root)));
+} catch (error) {
+  const message = error instanceof Error ? error.message : String(error);
+  console.error(`External destination maps list skipped: ${message}`);
+}

@@ -15,7 +15,8 @@ const BRAND_DARK = "#0f3d38";
 const BRAND_CREAM = "#f4f7f6";
 const BRAND_GOLD = "#e8a838";
 
-function formatAirportPageUrl(siteHost, slug) {
+function formatAirportPageUrl(siteHost, slug, showStationPageUrl = true) {
+  if (!showStationPageUrl) return siteHost;
   const fullUrl = `${siteHost}/stations/${slug}`;
   return fullUrl.length <= URL_MAX_CHARS ? fullUrl : formatMapUrlLabel(siteHost, slug);
 }
@@ -37,8 +38,9 @@ function buildOverlaySvg({
   origin,
   connections,
   project,
+  showStationPageUrl = true,
 }) {
-  const pageUrl = formatAirportPageUrl(siteHost, slug);
+  const pageUrl = formatAirportPageUrl(siteHost, slug, showStationPageUrl);
   const lineElements = connections
     .map((connection) => {
       const from = project(origin.lat, origin.lng);
@@ -73,7 +75,11 @@ function buildOverlaySvg({
 
 export async function renderAirportConnectionsMap(
   entry,
-  { basemapMode = "osm", siteUrl = "https://www.verystays.com" } = {},
+  {
+    basemapMode = "osm",
+    siteUrl = "https://www.verystays.com",
+    showStationPageUrl = true,
+  } = {},
 ) {
   // Frame to every sampled destination (and the origin). No outlier dropping —
   // tightBounds crops to that extent so we do not pad beyond the flown network.
@@ -106,6 +112,7 @@ export async function renderAirportConnectionsMap(
     origin: entry.origin,
     connections: entry.connections,
     project,
+    showStationPageUrl,
   });
 
   const overlayPng = new Resvg(overlaySvg, {

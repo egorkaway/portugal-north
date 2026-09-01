@@ -346,6 +346,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@roman-kokoev-1245913",
     photoPageUrl: "https://www.pexels.com/photo/people-in-train-station-at-night-4980902/",
   },
+  "5098167": {
+    photographer: "Elena Saharova",
+    photographerUrl: "https://www.pexels.com/@eessoo",
+    photoPageUrl: "https://www.pexels.com/photo/old-railway-station-with-modern-train-5098167/",
+  },
   "5142435": {
     photographer: "Michael Erhardsson",
     photographerUrl: "https://www.pexels.com/@michael-erhardsson-3438583",
@@ -926,6 +931,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@myersmc16",
     photoPageUrl: "https://www.pexels.com/photo/concrete-bridge-across-the-river-13540081/",
   },
+  "13625163": {
+    photographer: "Melike  B",
+    photographerUrl: "https://www.pexels.com/@mlkbnl",
+    photoPageUrl: "https://www.pexels.com/photo/empty-train-station-13625163/",
+  },
   "13690003": {
     photographer: "Zetong Li",
     photographerUrl: "https://www.pexels.com/@zetong-li-880728",
@@ -990,6 +1000,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Kristina Chuprina",
     photographerUrl: "https://www.pexels.com/@kristina-chuprina-132621985",
     photoPageUrl: "https://www.pexels.com/photo/an-empty-train-station-14715659/",
+  },
+  "14805873": {
+    photographer: "Simeon Stoilov",
+    photographerUrl: "https://www.pexels.com/@simeon-theartist",
+    photoPageUrl: "https://www.pexels.com/photo/train-arriving-at-station-at-night-14805873/",
   },
   "14808160": {
     photographer: "F1lter 88",
@@ -2905,6 +2920,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Jose Cruz",
     photographerUrl: "https://www.pexels.com/@cruz-in-portugal",
     photoPageUrl: "https://www.pexels.com/photo/traditional-portuguese-house-with-red-roof-in-summer-sun-38413221/",
+  },
+  "38452507": {
+    photographer: "Lorenzo Manera",
+    photographerUrl: "https://www.pexels.com/@lorenzo-manera-686693293",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-steam-train-at-historic-wooden-station-38452507/",
   },
   "38479643": {
     photographer: "Cristiano Ferrari films",

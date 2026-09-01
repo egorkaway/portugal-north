@@ -10,14 +10,16 @@ export type TrainSpotlightEntry = {
   majorStations: string[];
 };
 
+export type TrainSpotlightReliableEntry = TrainSpotlightEntry & {
+  selectionMode: "stable" | "rotating";
+  poolSize: number;
+};
+
 export type TrainReliabilitySpotlightManifest = {
   generatedAt: string;
   runCount: number;
-  mostDelayed: TrainSpotlightEntry | null;
-  mostReliable: (TrainSpotlightEntry & {
-    selectionMode: "stable" | "rotating";
-    poolSize: number;
-  }) | null;
+  mostDelayed: TrainSpotlightEntry[];
+  mostReliable: TrainSpotlightReliableEntry[];
 };
 
 /** Minimum independent sightings before a train can appear in the spotlight. */
@@ -43,6 +45,9 @@ export const TRAIN_SPOTLIGHT_STABLE_RELIABLE_OBSERVATIONS = 20;
 
 /** How many low-delay trains to rotate through while data is still thin. */
 export const TRAIN_SPOTLIGHT_ROTATION_POOL_SIZE = 12;
+
+/** Best and worst trains shown on the Portugal train spotlight. */
+export const TRAIN_SPOTLIGHT_LIST_SIZE = 3;
 
 /** How many major stops to list on the train spotlight cards. */
 export const TRAIN_SPOTLIGHT_MAJOR_STATIONS_LIMIT = 4;
@@ -235,12 +240,13 @@ function compareReliable(a: TrainAggregate, b: TrainAggregate): number {
   );
 }
 
-export function pickMostDelayedTrain(
+export function pickMostDelayedTrains(
   entries: TrainDelayLogEntry[],
   stationTraffic: Record<string, number> = {},
   minInstances = TRAIN_SPOTLIGHT_MIN_INSTANCES,
   nowMs = Date.now(),
-): TrainSpotlightEntry | null {
+  limit = TRAIN_SPOTLIGHT_LIST_SIZE,
+): TrainSpotlightEntry[] {
   const candidates = aggregateTrainDelays(
     entriesForRecentlyObservedTrains(entries, nowMs),
   ).filter(
@@ -248,9 +254,78 @@ export function pickMostDelayedTrain(
       meetsSpotlightSampleFloor(aggregate, minInstances) &&
       aggregate.totalDelayMinutes > 0,
   );
-  if (candidates.length === 0) return null;
+  if (candidates.length === 0) return [];
   candidates.sort(compareDelayed);
-  return toSpotlightEntry(candidates[0]!, stationTraffic);
+  return candidates.slice(0, limit).map((aggregate) => toSpotlightEntry(aggregate, stationTraffic));
+}
+
+export function pickMostDelayedTrain(
+  entries: TrainDelayLogEntry[],
+  stationTraffic: Record<string, number> = {},
+  minInstances = TRAIN_SPOTLIGHT_MIN_INSTANCES,
+  nowMs = Date.now(),
+): TrainSpotlightEntry | null {
+  return pickMostDelayedTrains(entries, stationTraffic, minInstances, nowMs, 1)[0] ?? null;
+}
+
+function spotlightEntryKey(entry: Pick<TrainSpotlightEntry, "trainNumber" | "serviceType">): string {
+  return `${entry.trainNumber}|${entry.serviceType}`;
+}
+
+export function pickMostReliableTrains(
+  entries: TrainDelayLogEntry[],
+  runCount: number,
+  options: {
+    poolMin?: number;
+    stableObservations?: number;
+    poolSize?: number;
+    stationTraffic?: Record<string, number>;
+    nowMs?: number;
+    limit?: number;
+    excludeKeys?: Iterable<string>;
+  } = {},
+): TrainSpotlightReliableEntry[] {
+  const poolMin = options.poolMin ?? TRAIN_SPOTLIGHT_RELIABLE_POOL_MIN;
+  const stableObservations =
+    options.stableObservations ?? TRAIN_SPOTLIGHT_STABLE_RELIABLE_OBSERVATIONS;
+  const poolSize = options.poolSize ?? TRAIN_SPOTLIGHT_ROTATION_POOL_SIZE;
+  const stationTraffic = options.stationTraffic ?? {};
+  const nowMs = options.nowMs ?? Date.now();
+  const limit = options.limit ?? TRAIN_SPOTLIGHT_LIST_SIZE;
+  const excluded = new Set(options.excludeKeys ?? []);
+
+  const candidates = aggregateTrainDelays(
+    entriesForRecentlyObservedTrains(entries, nowMs),
+  ).filter(
+    (aggregate) =>
+      meetsSpotlightSampleFloor(aggregate, poolMin) &&
+      !excluded.has(trainKey(aggregate)),
+  );
+  if (candidates.length === 0) return [];
+
+  candidates.sort(compareReliable);
+  const leader = candidates[0]!;
+
+  const withMeta = (
+    aggregates: TrainAggregate[],
+    selectionMode: "stable" | "rotating",
+    metaPoolSize: number,
+  ): TrainSpotlightReliableEntry[] =>
+    aggregates.map((aggregate) => ({
+      ...toSpotlightEntry(aggregate, stationTraffic),
+      selectionMode,
+      poolSize: metaPoolSize,
+    }));
+
+  if (leader.observations >= stableObservations) {
+    return withMeta(candidates.slice(0, limit), "stable", 1);
+  }
+
+  const pool = candidates.slice(0, Math.min(poolSize, candidates.length));
+  const windowSize = Math.min(limit, pool.length);
+  const start = runCount > 0 ? runCount % pool.length : 0;
+  const picked = Array.from({ length: windowSize }, (_, index) => pool[(start + index) % pool.length]!);
+  return withMeta(picked, "rotating", pool.length);
 }
 
 export function pickMostReliableTrain(
@@ -263,39 +338,8 @@ export function pickMostReliableTrain(
     stationTraffic?: Record<string, number>;
     nowMs?: number;
   } = {},
-): (TrainSpotlightEntry & { selectionMode: "stable" | "rotating"; poolSize: number }) | null {
-  const poolMin = options.poolMin ?? TRAIN_SPOTLIGHT_RELIABLE_POOL_MIN;
-  const stableObservations =
-    options.stableObservations ?? TRAIN_SPOTLIGHT_STABLE_RELIABLE_OBSERVATIONS;
-  const poolSize = options.poolSize ?? TRAIN_SPOTLIGHT_ROTATION_POOL_SIZE;
-  const stationTraffic = options.stationTraffic ?? {};
-  const nowMs = options.nowMs ?? Date.now();
-
-  const candidates = aggregateTrainDelays(
-    entriesForRecentlyObservedTrains(entries, nowMs),
-  ).filter((aggregate) => meetsSpotlightSampleFloor(aggregate, poolMin));
-  if (candidates.length === 0) return null;
-
-  candidates.sort(compareReliable);
-  const leader = candidates[0]!;
-
-  if (leader.observations >= stableObservations) {
-    return {
-      ...toSpotlightEntry(leader, stationTraffic),
-      selectionMode: "stable",
-      poolSize: 1,
-    };
-  }
-
-  const pool = candidates.slice(0, Math.min(poolSize, candidates.length));
-  const index = runCount > 0 ? runCount % pool.length : 0;
-  const picked = pool[index] ?? leader;
-
-  return {
-    ...toSpotlightEntry(picked, stationTraffic),
-    selectionMode: "rotating",
-    poolSize: pool.length,
-  };
+): TrainSpotlightReliableEntry | null {
+  return pickMostReliableTrains(entries, runCount, { ...options, limit: 1 })[0] ?? null;
 }
 
 export function stationTrafficFromDepartureStats(
@@ -318,13 +362,20 @@ export function buildTrainReliabilitySpotlightManifest(options: {
   const generatedAt = options.generatedAt ?? new Date().toISOString();
   const nowMs = Date.parse(generatedAt);
   const asOf = Number.isFinite(nowMs) ? nowMs : Date.now();
+  const mostDelayed = pickMostDelayedTrains(
+    options.entries,
+    stationTraffic,
+    TRAIN_SPOTLIGHT_MIN_INSTANCES,
+    asOf,
+  );
   return {
     generatedAt,
     runCount: options.runCount,
-    mostDelayed: pickMostDelayedTrain(options.entries, stationTraffic, TRAIN_SPOTLIGHT_MIN_INSTANCES, asOf),
-    mostReliable: pickMostReliableTrain(options.entries, options.runCount, {
+    mostDelayed,
+    mostReliable: pickMostReliableTrains(options.entries, options.runCount, {
       stationTraffic,
       nowMs: asOf,
+      excludeKeys: mostDelayed.map(spotlightEntryKey),
     }),
   };
 }

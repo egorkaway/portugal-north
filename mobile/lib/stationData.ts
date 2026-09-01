@@ -21,6 +21,14 @@ import {
   parseStringRecord,
   parseTrainSpotlightPayload,
 } from '@/lib/catalogPolicy';
+import {
+  normalizeTrainReliabilitySpotlight,
+  type TrainReliabilitySpotlightManifest,
+  type TrainSpotlightEntry,
+  type TrainSpotlightReliableEntry,
+} from '@/lib/trainReliabilitySpotlight';
+
+export type { TrainReliabilitySpotlightManifest, TrainSpotlightEntry, TrainSpotlightReliableEntry };
 
 export type CountryCode = 'pt' | 'es';
 
@@ -49,25 +57,6 @@ export type ReliabilityScoresManifest = {
   stationCount: number;
   scores: Record<string, number>;
   movements: Record<string, number>;
-};
-
-export type TrainSpotlightEntry = {
-  trainNumber: string;
-  serviceType: string;
-  avgDelayMinutes: number;
-  observations: number;
-  stationsSampled: number;
-  majorStations: string[];
-};
-
-export type TrainReliabilitySpotlightManifest = {
-  generatedAt: string;
-  runCount: number;
-  mostDelayed: TrainSpotlightEntry | null;
-  mostReliable: (TrainSpotlightEntry & {
-    selectionMode: 'stable' | 'rotating';
-    poolSize: number;
-  }) | null;
 };
 
 const bakedAllStations = stationsFull as Station[];
@@ -156,8 +145,9 @@ const bakedSummariesByLocale: Partial<Record<Locale, Record<string, string>>> = 
 export const bakedReliabilityScores = reliabilityScores as ReliabilityScoresManifest;
 export const bakedSpainReliabilityScores = spainReliabilityScores as ReliabilityScoresManifest;
 
-export const bakedTrainReliabilitySpotlight =
-  trainReliabilitySpotlight as TrainReliabilitySpotlightManifest;
+export const bakedTrainReliabilitySpotlight = normalizeTrainReliabilitySpotlight(
+  trainReliabilitySpotlight,
+);
 export const bakedCpCodes = cpStationCodes as Record<string, string>;
 
 let stationBySlug = new Map(
@@ -173,7 +163,7 @@ export function getSpainReliabilityScores(): ReliabilityScoresManifest {
 }
 
 export function getTrainReliabilitySpotlight(): TrainReliabilitySpotlightManifest {
-  return overlayTrainSpotlight ?? bakedTrainReliabilitySpotlight;
+  return normalizeTrainReliabilitySpotlight(overlayTrainSpotlight ?? bakedTrainReliabilitySpotlight);
 }
 
 export function getCpCodes(): Record<string, string> {
@@ -234,7 +224,7 @@ export function applyCatalogAssets(
   if (assets.trainReliabilitySpotlight !== undefined) {
     const parsed = parseTrainSpotlightPayload(assets.trainReliabilitySpotlight);
     if (parsed) {
-      overlayTrainSpotlight = parsed as TrainReliabilitySpotlightManifest;
+      overlayTrainSpotlight = normalizeTrainReliabilitySpotlight(parsed);
       applied.push('trainReliabilitySpotlight');
     }
   }

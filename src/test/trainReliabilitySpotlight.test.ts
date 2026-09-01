@@ -5,7 +5,10 @@ import {
   pickMajorStationsForTrain,
   pickMostDelayedTrain,
   pickMostReliableTrain,
+  pickMostDelayedTrains,
+  pickMostReliableTrains,
 } from "../../server/lib/trainReliabilitySpotlight.js";
+import { normalizeTrainReliabilitySpotlight } from "../lib/trainReliabilitySpotlight";
 import type { TrainDelayLogEntry } from "../../server/lib/trainDelayLog.js";
 
 function entry(
@@ -244,6 +247,54 @@ describe("trainReliabilitySpotlight", () => {
     expect(run7?.trainNumber).not.toBe(run8?.trainNumber);
   });
 
+  it("rotates a window of three reliable trains while data is thin", () => {
+    const entries = [100, 200, 300, 400, 500, 600].flatMap((trainNumber) =>
+      sightings(String(trainNumber), 0, THREE_DAYS),
+    );
+
+    const run7 = pickMostReliableTrains(entries, 7, { poolSize: 6, nowMs });
+    const run8 = pickMostReliableTrains(entries, 8, { poolSize: 6, nowMs });
+
+    expect(run7).toHaveLength(3);
+    expect(run8).toHaveLength(3);
+    expect(run7.map((entry) => entry.trainNumber)).not.toEqual(
+      run8.map((entry) => entry.trainNumber),
+    );
+  });
+
+  it("picks the three most delayed trains", () => {
+    const entries = [
+      ...sightings("100", 30, THREE_DAYS),
+      ...sightings("200", 20, THREE_DAYS),
+      ...sightings("300", 10, THREE_DAYS),
+      ...sightings("400", 5, THREE_DAYS),
+    ];
+
+    expect(pickMostDelayedTrains(entries, {}, 3, nowMs).map((entry) => entry.trainNumber)).toEqual([
+      "100",
+      "200",
+      "300",
+    ]);
+  });
+
+  it("normalizes the older single-train JSON shape", () => {
+    const normalized = normalizeTrainReliabilitySpotlight({
+      generatedAt: "2026-08-18T12:00:00.000Z",
+      runCount: 9,
+      mostDelayed: { trainNumber: "900", serviceType: "Regional" },
+      mostReliable: {
+        trainNumber: "100",
+        serviceType: "Regional",
+        selectionMode: "rotating",
+        poolSize: 12,
+      },
+    });
+
+    expect(normalized.mostDelayed).toHaveLength(1);
+    expect(normalized.mostReliable).toHaveLength(1);
+    expect(normalized.mostReliable[0]?.selectionMode).toBe("rotating");
+  });
+
   it("builds a manifest with both spotlight picks", () => {
     const manifest = buildTrainReliabilitySpotlightManifest({
       runCount: 12,
@@ -251,9 +302,52 @@ describe("trainReliabilitySpotlight", () => {
       entries: [...sightings("900", 15, THREE_DAYS), ...sightings("100", 0, THREE_DAYS)],
     });
 
-    expect(manifest.mostDelayed?.trainNumber).toBe("900");
-    expect(manifest.mostReliable?.trainNumber).toBe("100");
+    expect(manifest.mostDelayed.map((entry) => entry.trainNumber)).toEqual(["900"]);
+    expect(manifest.mostReliable.map((entry) => entry.trainNumber)).toEqual(["100"]);
     expect(manifest.runCount).toBe(12);
+  });
+
+  it("picks three most delayed and three most reliable trains", () => {
+    const entries = [
+      ...sightings(
+        "100",
+        0,
+        Array.from({ length: 20 }, (_, i) => {
+          const day = new Date(Date.UTC(2026, 6, 30 + i, 10, 0, 0));
+          return day.toISOString();
+        }),
+      ),
+      ...sightings("200", 1, THREE_DAYS),
+      ...sightings("300", 2, THREE_DAYS),
+      ...sightings("400", 10, THREE_DAYS),
+      ...sightings("500", 20, THREE_DAYS),
+      ...sightings("600", 30, THREE_DAYS),
+    ];
+    const manifest = buildTrainReliabilitySpotlightManifest({
+      runCount: 1,
+      generatedAt: "2026-08-18T12:00:00.000Z",
+      entries,
+    });
+
+    expect(manifest.mostDelayed.map((entry) => entry.trainNumber)).toEqual(["600", "500", "400"]);
+    expect(manifest.mostReliable.map((entry) => entry.trainNumber)).toEqual(["100", "200", "300"]);
+    expect(manifest.mostReliable[0]?.selectionMode).toBe("stable");
+  });
+
+  it("keeps delayed trains out of the reliable list", () => {
+    const entries = [
+      ...sightings("100", 0, THREE_DAYS),
+      ...sightings("200", 1, THREE_DAYS),
+      ...sightings("900", 40, THREE_DAYS),
+    ];
+    const manifest = buildTrainReliabilitySpotlightManifest({
+      runCount: 0,
+      generatedAt: "2026-08-18T12:00:00.000Z",
+      entries,
+    });
+
+    expect(manifest.mostDelayed.map((entry) => entry.trainNumber)).toEqual(["900", "200"]);
+    expect(manifest.mostReliable.map((entry) => entry.trainNumber)).toEqual(["100"]);
   });
 
   it("lists major stations where the train was sampled, busiest first", () => {

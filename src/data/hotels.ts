@@ -3863,6 +3863,31 @@ export const stationHotels: StationHotels = {
     { name: "La Casona Del Viajante", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casona%20Del%20Viajante%2C%20Carancos%2C%20Spain&order=price" },
     { name: "El molín de Fraynoquiso", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20mol%C3%ADn%20de%20Fraynoquiso%2C%20Carancos%2C%20Spain&order=price" },
   ],
+  "Les Valls": [
+    { name: "Hotel Barú", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bar%C3%BA%2C%20Les%20Valls%2C%20Spain&order=price" },
+    { name: "AGH Canet", distanceKm: 5.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AGH%20Canet%2C%20Les%20Valls%2C%20Spain&order=price" },
+    { name: "Hotel Playa Canet", distanceKm: 5.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Playa%20Canet%2C%20Les%20Valls%2C%20Spain&order=price" },
+  ],
+  "Gelida": [
+    { name: "Budget stays near Gelida", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gelida%2C%20Spain&order=price" },
+    { name: "Guest houses near Gelida", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gelida%2C%20Spain&order=price" },
+    { name: "Hotels near Gelida", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gelida%2C%20Spain&order=price" },
+  ],
+  "Barberà del Vallès": [
+    { name: "Eurostars Executive", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostars%20Executive%2C%20Barber%C3%A0%20del%20Vall%C3%A8s%2C%20Spain&order=price" },
+    { name: "Holiday Inn Express & Suites Barcelona-Sabadell", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20%26%20Suites%20Barcelona-Sabadell%2C%20Barber%C3%A0%20del%20Vall%C3%A8s%2C%20Spain&order=price" },
+    { name: "casa Beatriz", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=casa%20Beatriz%2C%20Barber%C3%A0%20del%20Vall%C3%A8s%2C%20Spain&order=price" },
+  ],
+  "Alegría-Dulantzi": [
+    { name: "Dulantziko erromesen aterpetxea", distanceKm: 0.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dulantziko%20erromesen%20aterpetxea%2C%20Alegr%C3%ADa-Dulantzi%2C%20Spain&order=price" },
+    { name: "Parador de Argómaniz", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20de%20Arg%C3%B3maniz%2C%20Alegr%C3%ADa-Dulantzi%2C%20Spain&order=price" },
+    { name: "Casa Rural Sagasti", distanceKm: 5.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Sagasti%2C%20Alegr%C3%ADa-Dulantzi%2C%20Spain&order=price" },
+  ],
+  "Sabadell Nord": [
+    { name: "xavier", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=xavier%2C%20Sabadell%20Nord%2C%20Spain&order=price" },
+    { name: "Gran Hotel Verdi", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gran%20Hotel%20Verdi%2C%20Sabadell%20Nord%2C%20Spain&order=price" },
+    { name: "Hotel Urpí", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Urp%C3%AD%2C%20Sabadell%20Nord%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

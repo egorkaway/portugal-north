@@ -773,6 +773,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Carancos": ["05529"],
 
+  "Les Valls": ["65201"],
+
+  "Gelida": ["72208"],
+
+  "Barberà del Vallès": ["78705"],
+
+  "Alegría-Dulantzi": ["11210"],
+
+  "Sabadell Nord": ["78709"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

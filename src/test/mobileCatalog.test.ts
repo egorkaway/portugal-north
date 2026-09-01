@@ -96,7 +96,7 @@ describe("mobile catalog publish", () => {
     );
     writeFileSync(
       join(rootDir, "public/data/train-reliability-spotlight.json"),
-      JSON.stringify({ generatedAt: reliability.generatedAt, runCount: 12, mostDelayed: null, mostReliable: null }),
+      JSON.stringify({ generatedAt: reliability.generatedAt, runCount: 12, mostDelayed: [], mostReliable: [] }),
     );
 
     return rootDir;

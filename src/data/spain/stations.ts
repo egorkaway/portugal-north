@@ -3533,4 +3533,49 @@ export const spainStations: Station[] = [
     lng: -5.4344,
   },
 
+  {
+    name: "Les Valls",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.7193,
+    lng: -0.2398,
+  },
+
+  {
+    name: "Gelida",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4485,
+    lng: 1.8655,
+  },
+
+  {
+    name: "Barberà del Vallès",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5137,
+    lng: 2.1185,
+  },
+
+  {
+    name: "Alegría-Dulantzi",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.8487,
+    lng: -2.5147,
+  },
+
+  {
+    name: "Sabadell Nord",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.562,
+    lng: 2.0962,
+  },
+
 ];

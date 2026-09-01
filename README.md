@@ -183,11 +183,13 @@ Airport destination maps are sampled from AviationStack (AirLabs Schedules, then
 
 If a hub airport has **never recorded mappable flights**, it is hidden on the map immediately and only re-sampled during the **first 2 weeks** after each airport-connection period opens (so quiet fields like Teruel can still appear if service starts). Hubs that once had flights and then return **No mappable connections** for **3 consecutive periods** (~several months) are also hidden. Collection for active hubs continues; never-seen hubs are skipped outside the 2-week window unless you pass `--airport IATA`. State lives in `public/data/airport-map-visibility.json` (web labels + mobile markers).
 
-**Europe destination airports:** when connection collection finds a European destination that is not already an Iberian hub (`portugal/airports.ts` / `spain/airports.ts`), it upserts a station into `src/data/europe/airports.ts` with type `Airport Destination`. Those appear on the map (and under the Airport filter on `/all`) but are **never** used as departure hubs — `loadAirportCatalog` only reads PT/ES, so we do not sample outbound flights or render connection maps from them. Non-mainland ES/PT (Canaries, Balearics, Azores, Madeira, Ceuta, Melilla) can become destinations; mainland Iberia hubs stay hub-only. Backfill from the live connections JSON with:
+**Europe destination airports:** when connection collection finds a European destination that is not already an Iberian hub (`portugal/airports.ts` / `spain/airports.ts`), it upserts a station into `src/data/europe/airports.ts` with type `Airport Destination`. Those appear on the map (and under the Airport filter on `/all`) but are **never** used as departure hubs — `loadAirportCatalog` only reads PT/ES, so we do not sample outbound flights or render hub connection maps from them. Non-mainland ES/PT (Canaries, Balearics, Azores, Madeira, Ceuta, Melilla) can become destinations; mainland Iberia hubs stay hub-only. Backfill from the live connections JSON with:
 
 ```bash
 npm run maps:airport-connections -- --backfill-europe-destinations
 ```
+
+Each airport-connections collect also picks **one airport outside the Iberian peninsula** (the destination with the most sampled flights from Iberian hubs that does not yet have a map) and renders `public/maps/airports/external/{slug}-connections.png`. These airports do **not** get station pages. The running list is stored in `data/external-airport-connection-maps.json` and printed at the end of `npm run stats:departures`.
 
 Then sync mobile: `cd mobile && npm run sync:data`.
 

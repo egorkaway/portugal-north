@@ -162,38 +162,50 @@ export default function RankingsScreen() {
         </>
       ) : null}
 
-      {(trainSpotlight.mostReliable || trainSpotlight.mostDelayed) && (
+      {(trainSpotlight.mostReliable.length > 0 || trainSpotlight.mostDelayed.length > 0) && (
         <RankingSection title={t('rankings.trainSpotlightTitle')}>
-          {trainSpotlight.mostReliable ? (
-            <TrainSpotlightRow
-              label={t('rankings.mostReliableTrain')}
-              trainNumber={trainSpotlight.mostReliable.trainNumber}
-              serviceType={trainSpotlight.mostReliable.serviceType}
-              value={t('rankings.trainSpotlightAvgDelay', {
-                avg: formatTrainSpotlightDelay(trainSpotlight.mostReliable.avgDelayMinutes),
-              })}
-              valueColor={trainSpotlightDelayColor(trainSpotlight.mostReliable.avgDelayMinutes)}
-              majorStations={trainSpotlight.mostReliable.majorStations}
-              onStationPress={(name) => router.push(`/station/${stationToSlug(name)}`)}
-              subtitle={
-                trainSpotlight.mostReliable.selectionMode === 'rotating'
-                  ? t('rankings.trainSpotlightRotating', { runCount: trainSpotlight.runCount })
-                  : undefined
-              }
-            />
+          {trainSpotlight.mostReliable.length > 0 ? (
+            <>
+              {trainSpotlight.mostReliable.map((entry, index) => (
+                <TrainSpotlightRow
+                  key={`reliable-${entry.trainNumber}-${entry.serviceType}`}
+                  rank={index + 1}
+                  label={index === 0 ? t('rankings.mostReliableTrain') : undefined}
+                  trainNumber={entry.trainNumber}
+                  serviceType={entry.serviceType}
+                  value={t('rankings.trainSpotlightAvgDelay', {
+                    avg: formatTrainSpotlightDelay(entry.avgDelayMinutes),
+                  })}
+                  valueColor={trainSpotlightDelayColor(entry.avgDelayMinutes)}
+                  majorStations={entry.majorStations}
+                  onStationPress={(name) => router.push(`/station/${stationToSlug(name)}`)}
+                  subtitle={
+                    index === 0 && entry.selectionMode === 'rotating'
+                      ? t('rankings.trainSpotlightRotating', { runCount: trainSpotlight.runCount })
+                      : undefined
+                  }
+                />
+              ))}
+            </>
           ) : null}
-          {trainSpotlight.mostDelayed ? (
-            <TrainSpotlightRow
-              label={t('rankings.mostDelayedTrain')}
-              trainNumber={trainSpotlight.mostDelayed.trainNumber}
-              serviceType={trainSpotlight.mostDelayed.serviceType}
-              value={t('rankings.trainSpotlightAvgDelay', {
-                avg: formatTrainSpotlightDelay(trainSpotlight.mostDelayed.avgDelayMinutes),
-              })}
-              valueColor={trainSpotlightDelayColor(trainSpotlight.mostDelayed.avgDelayMinutes)}
-              majorStations={trainSpotlight.mostDelayed.majorStations}
-              onStationPress={(name) => router.push(`/station/${stationToSlug(name)}`)}
-            />
+          {trainSpotlight.mostDelayed.length > 0 ? (
+            <>
+              {trainSpotlight.mostDelayed.map((entry, index) => (
+                <TrainSpotlightRow
+                  key={`delayed-${entry.trainNumber}-${entry.serviceType}`}
+                  rank={index + 1}
+                  label={index === 0 ? t('rankings.mostDelayedTrain') : undefined}
+                  trainNumber={entry.trainNumber}
+                  serviceType={entry.serviceType}
+                  value={t('rankings.trainSpotlightAvgDelay', {
+                    avg: formatTrainSpotlightDelay(entry.avgDelayMinutes),
+                  })}
+                  valueColor={trainSpotlightDelayColor(entry.avgDelayMinutes)}
+                  majorStations={entry.majorStations}
+                  onStationPress={(name) => router.push(`/station/${stationToSlug(name)}`)}
+                />
+              ))}
+            </>
           ) : null}
         </RankingSection>
       )}
@@ -259,6 +271,7 @@ export default function RankingsScreen() {
 }
 
 function TrainSpotlightRow({
+  rank,
   label,
   trainNumber,
   serviceType,
@@ -268,7 +281,8 @@ function TrainSpotlightRow({
   majorStations,
   onStationPress,
 }: {
-  label: string;
+  rank: number;
+  label?: string;
   trainNumber: string;
   serviceType: string;
   value: string;
@@ -282,8 +296,9 @@ function TrainSpotlightRow({
   return (
     <View style={styles.row}>
       <View style={styles.rowMain}>
-        <Text style={styles.rowSubtitle}>{label}</Text>
+        {label ? <Text style={styles.rowSubtitle}>{label}</Text> : null}
         <Text style={styles.rowTitle}>
+          <Text style={styles.rank}>{rank}. </Text>
           {trainNumber} ·{' '}
           <Text style={{ color: getServiceTypeTextColor(serviceType), fontWeight: '600' }}>
             {serviceType}

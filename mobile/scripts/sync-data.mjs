@@ -76,7 +76,7 @@ export async function syncMobileData() {
   const trainSpotlightPath = path.join(repoRoot, "public/data/train-reliability-spotlight.json");
   const trainSpotlight = fs.existsSync(trainSpotlightPath)
     ? JSON.parse(fs.readFileSync(trainSpotlightPath, "utf8"))
-    : { generatedAt: "", runCount: 0, mostDelayed: null, mostReliable: null };
+    : { generatedAt: "", runCount: 0, mostDelayed: [], mostReliable: [] };
 
   const airportConnectionsPath = path.join(repoRoot, "public/data/airport-connections.json");
   const airportConnections = fs.existsSync(airportConnectionsPath)
