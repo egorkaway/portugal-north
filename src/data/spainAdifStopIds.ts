@@ -765,6 +765,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Calella": ["79603"],
 
+  "Veriña": ["15400"],
+
+  "Calaf": ["78503"],
+
+  "Ganzo": ["05622"],
+
+  "Carancos": ["05529"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

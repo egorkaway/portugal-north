@@ -3497,4 +3497,40 @@ export const spainStations: Station[] = [
     lng: 2.666,
   },
 
+  {
+    name: "Veriña",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5416,
+    lng: -5.7228,
+  },
+
+  {
+    name: "Calaf",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7303,
+    lng: 1.5151,
+  },
+
+  {
+    name: "Ganzo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3565,
+    lng: -4.0702,
+  },
+
+  {
+    name: "Carancos",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3556,
+    lng: -5.4344,
+  },
+
 ];

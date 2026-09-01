@@ -3843,6 +3843,26 @@ export const stationHotels: StationHotels = {
     { name: "Continental", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Continental%2C%20Calella%2C%20Spain&order=price" },
     { name: "Hotel Miami Calella", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Miami%20Calella%2C%20Calella%2C%20Spain&order=price" },
   ],
+  "Veriña": [
+    { name: "Hotel Arbeyal", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Arbeyal%2C%20Veri%C3%B1a%2C%20Spain&order=price" },
+    { name: "Hotel 44", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%2044%2C%20Veri%C3%B1a%2C%20Spain&order=price" },
+    { name: "Hotel Valdés", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vald%C3%A9s%2C%20Veri%C3%B1a%2C%20Spain&order=price" },
+  ],
+  "Calaf": [
+    { name: "Budget stays near Calaf", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Calaf%2C%20Spain&order=price" },
+    { name: "Guest houses near Calaf", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Calaf%2C%20Spain&order=price" },
+    { name: "Hotels near Calaf", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Calaf%2C%20Spain&order=price" },
+  ],
+  "Ganzo": [
+    { name: "Hostal Torres", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Torres%2C%20Ganzo%2C%20Spain&order=price" },
+    { name: "Torrelavega", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torrelavega%2C%20Ganzo%2C%20Spain&order=price" },
+    { name: "Saja", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Saja%2C%20Ganzo%2C%20Spain&order=price" },
+  ],
+  "Carancos": [
+    { name: "El Llagar de Zoilo", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Llagar%20de%20Zoilo%2C%20Carancos%2C%20Spain&order=price" },
+    { name: "La Casona Del Viajante", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casona%20Del%20Viajante%2C%20Carancos%2C%20Spain&order=price" },
+    { name: "El molín de Fraynoquiso", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20mol%C3%ADn%20de%20Fraynoquiso%2C%20Carancos%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

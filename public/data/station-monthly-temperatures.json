@@ -1,10 +1,40 @@
 {
-  "generatedAt": "2026-09-01T10:33:53.227Z",
+  "generatedAt": "2026-09-01T17:05:13.908Z",
   "yearMonth": "2026-09",
   "stations": {
+    "Agualva - Cacém": {
+      "avgLowC": 17.6,
+      "avgHighC": 23.1,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Águas Santas - Palmilheira": {
+      "avgLowC": 13.8,
+      "avgHighC": 24.4,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
     "Águeda": {
       "avgLowC": 13.7,
-      "avgHighC": 20.5,
+      "avgHighC": 24.8,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Aguim": {
+      "avgLowC": 14.2,
+      "avgHighC": 25.3,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Albergaria dos Doze": {
+      "avgLowC": 15.8,
+      "avgHighC": 24.5,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Alcaide": {
+      "avgLowC": 15.5,
+      "avgHighC": 29.7,
       "dayCount": 1,
       "sampleCount": 10
     },
@@ -16,103 +46,331 @@
     },
     "Alcaria": {
       "avgLowC": 13.4,
-      "avgHighC": 25,
+      "avgHighC": 29.9,
       "dayCount": 1,
-      "sampleCount": 10
+      "sampleCount": 11
     },
     "Alegria": {
       "avgLowC": 16.3,
-      "avgHighC": 25.1,
+      "avgHighC": 30.7,
       "dayCount": 1,
-      "sampleCount": 11
+      "sampleCount": 14
     },
     "Alfarelos": {
       "avgLowC": 16,
-      "avgHighC": 22.2,
+      "avgHighC": 24.2,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Alhos Vedros": {
+      "avgLowC": 17.9,
+      "avgHighC": 25.2,
       "dayCount": 1,
       "sampleCount": 10
     },
-    "Barrimau": {
-      "avgLowC": 13.6,
-      "avgHighC": 20.9,
+    "Alpedrinha": {
+      "avgLowC": 15.3,
+      "avgHighC": 30.3,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Alverca": {
+      "avgLowC": 18.3,
+      "avgHighC": 25.2,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Amadora": {
+      "avgLowC": 17.5,
+      "avgHighC": 23.3,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Areia-Darque": {
+      "avgLowC": 16.9,
+      "avgHighC": 23.2,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Azurva": {
+      "avgLowC": 15.1,
+      "avgHighC": 23.7,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Barca da Amieira – Envendos": {
+      "avgLowC": 14.2,
+      "avgHighC": 29.2,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Barqueiros": {
+      "avgLowC": 16.6,
+      "avgHighC": 28.2,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Barreiro": {
+      "avgLowC": 18,
+      "avgHighC": 26,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Barreiro-A": {
+      "avgLowC": 18.3,
+      "avgHighC": 26,
       "dayCount": 1,
       "sampleCount": 11
     },
+    "Barrimau": {
+      "avgLowC": 13.6,
+      "avgHighC": 25,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Barroselas": {
+      "avgLowC": 15.1,
+      "avgHighC": 24.7,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
     "Belver": {
       "avgLowC": 13.5,
-      "avgHighC": 24.3,
+      "avgHighC": 29.4,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Benespera": {
+      "avgLowC": 17,
+      "avgHighC": 28.2,
       "dayCount": 1,
       "sampleCount": 10
     },
     "Benfica": {
       "avgLowC": 17.7,
-      "avgHighC": 22.6,
+      "avgHighC": 25.1,
       "dayCount": 1,
-      "sampleCount": 10
+      "sampleCount": 12
     },
     "Braco de Prata": {
       "avgLowC": 18.5,
-      "avgHighC": 22.6,
+      "avgHighC": 24.2,
       "dayCount": 1,
-      "sampleCount": 11
+      "sampleCount": 13
+    },
+    "Braga": {
+      "avgLowC": 13.8,
+      "avgHighC": 25.6,
+      "dayCount": 1,
+      "sampleCount": 10
     },
     "Bustelo": {
       "avgLowC": 14.2,
-      "avgHighC": 21.7,
+      "avgHighC": 24.5,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Caíde": {
+      "avgLowC": 13.9,
+      "avgHighC": 24.9,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Caminha": {
+      "avgLowC": 15.2,
+      "avgHighC": 23.3,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Carvalhos de Figueiredo": {
+      "avgLowC": 16.7,
+      "avgHighC": 25.1,
       "dayCount": 1,
       "sampleCount": 10
     },
     "Cascais": {
       "avgLowC": 18.6,
-      "avgHighC": 21.4,
+      "avgHighC": 23,
       "dayCount": 1,
-      "sampleCount": 10
+      "sampleCount": 13
     },
     "Cavaco": {
       "avgLowC": 13.5,
-      "avgHighC": 20.1,
+      "avgHighC": 21.5,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Caxarias": {
+      "avgLowC": 16.2,
+      "avgHighC": 25.8,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Celorico da Beira": {
+      "avgLowC": 13.4,
+      "avgHighC": 28.7,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Coimbra-B": {
+      "avgLowC": 15.9,
+      "avgHighC": 24.5,
       "dayCount": 1,
       "sampleCount": 10
     },
     "Coimbrões": {
       "avgLowC": 14.1,
-      "avgHighC": 20.5,
+      "avgHighC": 22.2,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Cortegaça": {
+      "avgLowC": 15.1,
+      "avgHighC": 22,
       "dayCount": 1,
       "sampleCount": 10
     },
     "Covelinhas": {
       "avgLowC": 15.5,
-      "avgHighC": 24.2,
+      "avgHighC": 29.2,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Curia": {
+      "avgLowC": 14.5,
+      "avgHighC": 23.9,
       "dayCount": 1,
       "sampleCount": 10
+    },
+    "Curvaceiras": {
+      "avgLowC": 16.9,
+      "avgHighC": 27,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Dois Portos": {
+      "avgLowC": 17.4,
+      "avgHighC": 23.1,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Donas": {
+      "avgLowC": 15.4,
+      "avgHighC": 29.2,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Eixo": {
+      "avgLowC": 15.2,
+      "avgHighC": 23.7,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Ermesinde": {
+      "avgLowC": 13.9,
+      "avgHighC": 23.7,
+      "dayCount": 1,
+      "sampleCount": 11
     },
     "Ermida": {
       "avgLowC": 14.9,
-      "avgHighC": 24.3,
+      "avgHighC": 27.5,
       "dayCount": 1,
-      "sampleCount": 10
+      "sampleCount": 11
     },
     "Esmeriz": {
       "avgLowC": 14.2,
-      "avgHighC": 21,
+      "avgHighC": 23.3,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Espinho": {
+      "avgLowC": 15.1,
+      "avgHighC": 21.5,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Espinho - Vouga": {
+      "avgLowC": 15.3,
+      "avgHighC": 21.4,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Esqueiró": {
+      "avgLowC": 15.6,
+      "avgHighC": 24.9,
       "dayCount": 1,
       "sampleCount": 10
     },
     "Famalicão da Nazaré": {
       "avgLowC": 18.6,
-      "avgHighC": 21.3,
+      "avgHighC": 21.9,
+      "dayCount": 1,
+      "sampleCount": 13
+    },
+    "Faria": {
+      "avgLowC": 14.1,
+      "avgHighC": 23.3,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Feliteira": {
+      "avgLowC": 17.3,
+      "avgHighC": 23.6,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Ferradosa": {
+      "avgLowC": 15.5,
+      "avgHighC": 29.7,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Ferreiros": {
+      "avgLowC": 14.4,
+      "avgHighC": 25.2,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Figueira da Foz": {
+      "avgLowC": 18.7,
+      "avgHighC": 21.6,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Fontela-A": {
+      "avgLowC": 18.3,
+      "avgHighC": 23.3,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Fratel": {
+      "avgLowC": 13.7,
+      "avgHighC": 31.4,
       "dayCount": 1,
       "sampleCount": 11
     },
     "Fundão": {
       "avgLowC": 15.5,
-      "avgHighC": 24.8,
+      "avgHighC": 29.8,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Godim": {
+      "avgLowC": 15,
+      "avgHighC": 29,
       "dayCount": 1,
       "sampleCount": 10
     },
     "Gondarém": {
       "avgLowC": 14.1,
-      "avgHighC": 21.8,
+      "avgHighC": 24.2,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Guarda": {
+      "avgLowC": 13.3,
+      "avgHighC": 26.4,
       "dayCount": 1,
       "sampleCount": 10
     },
@@ -120,23 +378,83 @@
       "avgLowC": 17.2,
       "avgHighC": 22,
       "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Guimarães": {
+      "avgLowC": 13.3,
+      "avgHighC": 25.2,
+      "dayCount": 1,
       "sampleCount": 10
     },
-    "Irivo": {
-      "avgLowC": 14.4,
-      "avgHighC": 21.9,
+    "Hospital São João": {
+      "avgLowC": 14.2,
+      "avgHighC": 22.6,
       "dayCount": 1,
       "sampleCount": 11
     },
+    "Irivo": {
+      "avgLowC": 14.4,
+      "avgHighC": 23.8,
+      "dayCount": 1,
+      "sampleCount": 13
+    },
+    "Juncal": {
+      "avgLowC": 14.9,
+      "avgHighC": 25.4,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Lagos": {
+      "avgLowC": 17.6,
+      "avgHighC": 26.4,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
     "Lamarosa": {
       "avgLowC": 17.4,
-      "avgHighC": 23.7,
+      "avgHighC": 25.9,
       "dayCount": 1,
-      "sampleCount": 10
+      "sampleCount": 11
+    },
+    "Lapa": {
+      "avgLowC": 14.8,
+      "avgHighC": 21.1,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Lares": {
+      "avgLowC": 17.6,
+      "avgHighC": 23.3,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Leça do Balio": {
+      "avgLowC": 14.4,
+      "avgHighC": 22.8,
+      "dayCount": 1,
+      "sampleCount": 11
     },
     "Livração": {
       "avgLowC": 14.1,
-      "avgHighC": 21.8,
+      "avgHighC": 24.6,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Lourical": {
+      "avgLowC": 16.7,
+      "avgHighC": 23.3,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Louro": {
+      "avgLowC": 13.3,
+      "avgHighC": 23.1,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Lousado": {
+      "avgLowC": 13.8,
+      "avgHighC": 25.2,
       "dayCount": 1,
       "sampleCount": 11
     },
@@ -144,97 +462,397 @@
       "avgLowC": 17.2,
       "avgHighC": 21.6,
       "dayCount": 1,
-      "sampleCount": 11
-    },
-    "Midões": {
-      "avgLowC": 14.2,
-      "avgHighC": 22,
-      "dayCount": 1,
       "sampleCount": 12
     },
-    "Mouquim": {
-      "avgLowC": 14.1,
-      "avgHighC": 21.8,
-      "dayCount": 1,
-      "sampleCount": 11
-    },
-    "Oliveira de Azeméis": {
-      "avgLowC": 13.5,
-      "avgHighC": 20.2,
+    "Marinha Grande": {
+      "avgLowC": 17.3,
+      "avgHighC": 22.4,
       "dayCount": 1,
       "sampleCount": 10
     },
+    "Martingança – Maceira": {
+      "avgLowC": 17,
+      "avgHighC": 22.2,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Marujal": {
+      "avgLowC": 16.5,
+      "avgHighC": 24.3,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Massama - Barcarena": {
+      "avgLowC": 17.4,
+      "avgHighC": 23.8,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Mato de Miranda": {
+      "avgLowC": 13.3,
+      "avgHighC": 26,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Meinedo": {
+      "avgLowC": 14.2,
+      "avgHighC": 25.2,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Merces": {
+      "avgLowC": 17.1,
+      "avgHighC": 23.2,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Midões": {
+      "avgLowC": 14.2,
+      "avgHighC": 25.4,
+      "dayCount": 1,
+      "sampleCount": 14
+    },
+    "Mogofores": {
+      "avgLowC": 14.2,
+      "avgHighC": 22.6,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Moita": {
+      "avgLowC": 18,
+      "avgHighC": 25.2,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Moledo do Minho": {
+      "avgLowC": 15.4,
+      "avgHighC": 23.4,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Monte Abraão": {
+      "avgLowC": 17.7,
+      "avgHighC": 24.3,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Monte de Páramos": {
+      "avgLowC": 15,
+      "avgHighC": 21.4,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Monte Estoril": {
+      "avgLowC": 18.5,
+      "avgHighC": 22.9,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Moscavide": {
+      "avgLowC": 18.7,
+      "avgHighC": 25,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Mouquim": {
+      "avgLowC": 14.1,
+      "avgHighC": 23.9,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Nespereira": {
+      "avgLowC": 14.4,
+      "avgHighC": 25.2,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Óbidos": {
+      "avgLowC": 18.5,
+      "avgHighC": 22.7,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Oeiras": {
+      "avgLowC": 18.3,
+      "avgHighC": 23.2,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Oliveira de Azeméis": {
+      "avgLowC": 13.5,
+      "avgHighC": 21.2,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Paialvo": {
+      "avgLowC": 17.1,
+      "avgHighC": 26.5,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Pala": {
+      "avgLowC": 15,
+      "avgHighC": 25.8,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Palmela": {
+      "avgLowC": 17.2,
+      "avgHighC": 26.3,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
     "Pampilhosa": {
       "avgLowC": 14.6,
-      "avgHighC": 21.3,
+      "avgHighC": 24.8,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Parada": {
+      "avgLowC": 13.5,
+      "avgHighC": 23.4,
       "dayCount": 1,
       "sampleCount": 10
     },
     "Paraimo-Sangalhos": {
       "avgLowC": 14.1,
-      "avgHighC": 21.3,
+      "avgHighC": 22,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Paredes": {
+      "avgLowC": 14.8,
+      "avgHighC": 24.7,
       "dayCount": 1,
       "sampleCount": 11
     },
     "Penafiel": {
       "avgLowC": 14.3,
-      "avgHighC": 21.8,
-      "dayCount": 1,
-      "sampleCount": 10
-    },
-    "Pero Negro": {
-      "avgLowC": 17,
-      "avgHighC": 21.8,
-      "dayCount": 1,
-      "sampleCount": 10
-    },
-    "Povoa": {
-      "avgLowC": 18.2,
-      "avgHighC": 22.9,
+      "avgHighC": 23.7,
       "dayCount": 1,
       "sampleCount": 11
     },
-    "Ramalhal": {
-      "avgLowC": 17.5,
-      "avgHighC": 22.1,
+    "Pero Negro": {
+      "avgLowC": 17,
+      "avgHighC": 22.8,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Pocinho": {
+      "avgLowC": 16.6,
+      "avgHighC": 31.4,
       "dayCount": 1,
       "sampleCount": 10
     },
+    "Pombal": {
+      "avgLowC": 17.2,
+      "avgHighC": 24.6,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Portalegre": {
+      "avgLowC": 13.4,
+      "avgHighC": 30,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Porto Rei": {
+      "avgLowC": 15,
+      "avgHighC": 27.6,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Povoa": {
+      "avgLowC": 18.2,
+      "avgHighC": 25.1,
+      "dayCount": 1,
+      "sampleCount": 14
+    },
+    "Queluz - Belas": {
+      "avgLowC": 17.6,
+      "avgHighC": 24.3,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Quintans": {
+      "avgLowC": 15.4,
+      "avgHighC": 23.3,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Ramalhal": {
+      "avgLowC": 17.5,
+      "avgHighC": 23.5,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
     "Reboleira": {
       "avgLowC": 17.8,
-      "avgHighC": 21.3,
+      "avgHighC": 24.4,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Recarei-Sobreira": {
+      "avgLowC": 13.4,
+      "avgHighC": 24.8,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Rede": {
+      "avgLowC": 15,
+      "avgHighC": 29,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Retaxo": {
+      "avgLowC": 13.4,
+      "avgHighC": 30.3,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Rio de Mouro": {
+      "avgLowC": 17.3,
+      "avgHighC": 22.5,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Rio Meão": {
+      "avgLowC": 14.3,
+      "avgHighC": 22.4,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Sacavem": {
+      "avgLowC": 18.2,
+      "avgHighC": 24.2,
       "dayCount": 1,
       "sampleCount": 11
     },
     "Salreu": {
       "avgLowC": 14.7,
-      "avgHighC": 21.1,
+      "avgHighC": 23.3,
       "dayCount": 1,
-      "sampleCount": 10
+      "sampleCount": 11
     },
     "Sanfins": {
       "avgLowC": 14,
-      "avgHighC": 21.2,
+      "avgHighC": 23,
       "dayCount": 1,
-      "sampleCount": 12
+      "sampleCount": 14
     },
     "Santa Cita": {
       "avgLowC": 16.5,
-      "avgHighC": 23.2,
+      "avgHighC": 25.1,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Santa Iria": {
+      "avgLowC": 18.4,
+      "avgHighC": 25.2,
       "dayCount": 1,
       "sampleCount": 10
     },
     "Santana - Cartaxo": {
       "avgLowC": 16.6,
+      "avgHighC": 25.3,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Santo Amaro": {
+      "avgLowC": 18.2,
       "avgHighC": 23.7,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Santos": {
+      "avgLowC": 18.1,
+      "avgHighC": 25.5,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "São Bento (Porto)": {
+      "avgLowC": 14.3,
+      "avgHighC": 22.6,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "São João da Madeira": {
+      "avgLowC": 13.8,
+      "avgHighC": 23,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "São João Loure": {
+      "avgLowC": 15.2,
+      "avgHighC": 23.8,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "São Martinho do Porto": {
+      "avgLowC": 19.1,
+      "avgHighC": 21.5,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "São Romão": {
+      "avgLowC": 13.9,
+      "avgHighC": 24.5,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Sapataria": {
+      "avgLowC": 16.7,
+      "avgHighC": 22.5,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Sarnadas": {
+      "avgLowC": 13,
+      "avgHighC": 30.3,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Sernada do Vouga": {
+      "avgLowC": 14.6,
+      "avgHighC": 24.8,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Silvalde – Vouga": {
+      "avgLowC": 15.1,
+      "avgHighC": 21.5,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Silves": {
+      "avgLowC": 17,
+      "avgHighC": 27.6,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Soudos - Vila Nova": {
+      "avgLowC": 17.1,
+      "avgHighC": 26.5,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Taipa - Requeixo": {
+      "avgLowC": 14.9,
+      "avgHighC": 23.9,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Tancos": {
+      "avgLowC": 17,
+      "avgHighC": 28,
       "dayCount": 1,
       "sampleCount": 10
     },
     "Tojeirinha": {
       "avgLowC": 13.4,
-      "avgHighC": 24.6,
+      "avgHighC": 28.4,
       "dayCount": 1,
-      "sampleCount": 10
+      "sampleCount": 11
     },
     "Tomar": {
       "avgLowC": 16.7,
@@ -244,33 +862,87 @@
     },
     "Travasso": {
       "avgLowC": 14,
-      "avgHighC": 20.7,
+      "avgHighC": 24.2,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Trofa": {
+      "avgLowC": 13.8,
+      "avgHighC": 24.2,
       "dayCount": 1,
       "sampleCount": 11
     },
-    "Válega": {
-      "avgLowC": 14.9,
-      "avgHighC": 20.7,
+    "Tua": {
+      "avgLowC": 13.8,
+      "avgHighC": 28,
       "dayCount": 1,
       "sampleCount": 10
     },
-    "Valença": {
-      "avgLowC": 13.6,
-      "avgHighC": 22.2,
+    "Tunes": {
+      "avgLowC": 17.3,
+      "avgHighC": 29.3,
       "dayCount": 1,
       "sampleCount": 11
     },
+    "Valadares": {
+      "avgLowC": 14.4,
+      "avgHighC": 22.7,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Válega": {
+      "avgLowC": 14.9,
+      "avgHighC": 22,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Valença": {
+      "avgLowC": 13.6,
+      "avgHighC": 24.6,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
     "Vermoil": {
       "avgLowC": 16.1,
-      "avgHighC": 22.1,
+      "avgHighC": 24.9,
+      "dayCount": 1,
+      "sampleCount": 12
+    },
+    "Vesúvio": {
+      "avgLowC": 16,
+      "avgHighC": 31.5,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Viana do Castelo": {
+      "avgLowC": 16.9,
+      "avgHighC": 23.1,
       "dayCount": 1,
       "sampleCount": 10
     },
     "Vila Meã": {
       "avgLowC": 14,
-      "avgHighC": 22.2,
+      "avgHighC": 25.8,
+      "dayCount": 1,
+      "sampleCount": 11
+    },
+    "Vila Nova de Ancos": {
+      "avgLowC": 16.2,
+      "avgHighC": 24.6,
       "dayCount": 1,
       "sampleCount": 10
+    },
+    "Vila Praia de Âncora": {
+      "avgLowC": 18.2,
+      "avgHighC": 21.6,
+      "dayCount": 1,
+      "sampleCount": 10
+    },
+    "Vizela": {
+      "avgLowC": 14.1,
+      "avgHighC": 25.4,
+      "dayCount": 1,
+      "sampleCount": 11
     }
   }
 }
