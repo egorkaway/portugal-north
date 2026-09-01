@@ -3768,6 +3768,21 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Barceló Montecastillio Golf", distanceKm: 6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Barcel%C3%B3%20Montecastillio%20Golf%2C%20Aeropuerto%20de%20Jerez%2C%20Spain&order=price" },
     { name: "Hotel Jerez & Spa", distanceKm: 7.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Jerez%20%26%20Spa%2C%20Aeropuerto%20de%20Jerez%2C%20Spain&order=price" },
   ],
+  "Sabadell Centre": [
+    { name: "Casa", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%2C%20Sabadell%20Centre%2C%20Spain&order=price" },
+    { name: "Hotel Urpí", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Urp%C3%AD%2C%20Sabadell%20Centre%2C%20Spain&order=price" },
+    { name: "Alberg Molí de Sant Oleguer", distanceKm: 1.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20Mol%C3%AD%20de%20Sant%20Oleguer%2C%20Sabadell%20Centre%2C%20Spain&order=price" },
+  ],
+  "Lugo de Llanera": [
+    { name: "Motel Cancún", distanceKm: 1.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Canc%C3%BAn%2C%20Lugo%20de%20Llanera%2C%20Spain&order=price" },
+    { name: "Albergue Municipal de Robledo", distanceKm: 1.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Municipal%20de%20Robledo%2C%20Lugo%20de%20Llanera%2C%20Spain&order=price" },
+    { name: "Motel Latino", distanceKm: 2, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Latino%2C%20Lugo%20de%20Llanera%2C%20Spain&order=price" },
+  ],
+  "Pinto": [
+    { name: "Hostal Gran Via", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Gran%20Via%2C%20Pinto%2C%20Spain&order=price" },
+    { name: "Pensión Venecia", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Venecia%2C%20Pinto%2C%20Spain&order=price" },
+    { name: "El Indio", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Indio%2C%20Pinto%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

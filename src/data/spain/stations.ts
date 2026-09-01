@@ -3362,4 +3362,31 @@ export const spainStations: Station[] = [
     lng: -6.0659,
   },
 
+  {
+    name: "Sabadell Centre",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5464,
+    lng: 2.1156,
+  },
+
+  {
+    name: "Lugo de Llanera",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.4423,
+    lng: -5.8159,
+  },
+
+  {
+    name: "Pinto",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.2429,
+    lng: -3.7035,
+  },
+
 ];

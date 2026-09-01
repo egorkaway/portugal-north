@@ -1177,4 +1177,13 @@ export const spainSummariesCa: Record<string, string> = {
   "Aeropuerto de Jerez":
     "Aeropuerto de Jerez és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Sabadell Centre":
+    "Sabadell Centre és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Lugo de Llanera":
+    "Lugo de Llanera és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Pinto":
+    "Pinto és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

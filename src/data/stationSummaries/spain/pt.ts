@@ -1177,4 +1177,13 @@ export const spainSummariesPt: Record<string, string> = {
   "Aeropuerto de Jerez":
     "Aeropuerto de Jerez é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "Sabadell Centre":
+    "Sabadell Centre é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Lugo de Llanera":
+    "Lugo de Llanera é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Pinto":
+    "Pinto é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

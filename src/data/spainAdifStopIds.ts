@@ -735,6 +735,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Aeropuerto de Jerez": ["51205"],
 
+  "Sabadell Centre": ["78704"],
+
+  "Lugo de Llanera": ["15300"],
+
+  "Pinto": ["60103"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

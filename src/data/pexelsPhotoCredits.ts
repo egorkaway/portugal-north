@@ -1071,6 +1071,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
     photoPageUrl: "https://www.pexels.com/photo/modern-railway-station-15714409/",
   },
+  "15893870": {
+    photographer: "Wolfgang Weiser",
+    photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
+    photoPageUrl: "https://www.pexels.com/photo/modern-railway-station-15893870/",
+  },
   "15976674": {
     photographer: "Eliel Souza",
     photographerUrl: "https://www.pexels.com/@eliel-souza-475047835",
