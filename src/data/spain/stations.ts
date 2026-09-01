@@ -3389,4 +3389,112 @@ export const spainStations: Station[] = [
     lng: -3.7035,
   },
 
+  {
+    name: "Arrigorriaga",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2101,
+    lng: -2.8886,
+  },
+
+  {
+    name: "El Papiol",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4354,
+    lng: 2.0026,
+  },
+
+  {
+    name: "Doce de Octubre",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3789,
+    lng: -3.6987,
+  },
+
+  {
+    name: "Alcalá de Henares-Universidad",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5054,
+    lng: -3.3353,
+  },
+
+  {
+    name: "Embajadores",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.4046,
+    lng: -3.7026,
+  },
+
+  {
+    name: "Álora",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.8199,
+    lng: -4.6996,
+  },
+
+  {
+    name: "Móstoles-El Soto",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3311,
+    lng: -3.8825,
+  },
+
+  {
+    name: "Cazalla-Constantina",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.9329,
+    lng: -5.7044,
+  },
+
+  {
+    name: "El Pozo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.376,
+    lng: -3.6561,
+  },
+
+  {
+    name: "Nava",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3612,
+    lng: -5.5091,
+  },
+
+  {
+    name: "Sant Sadurní d'Anoia",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4205,
+    lng: 1.7947,
+  },
+
+  {
+    name: "Calella",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6147,
+    lng: 2.666,
+  },
+
 ];

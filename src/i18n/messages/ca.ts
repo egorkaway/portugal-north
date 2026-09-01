@@ -280,7 +280,7 @@ export const ca: Messages = {
     downloadStationCsv: "Descarregar CSV",
     trainSpotlightTitle: "Trens destacats a Portugal",
     trainSpotlightIntro:
-      "Un tren triat a partir de les nostres mostres de retards a l'arribada de CP a Portugal. El més fiable rota a cada mostra fins tenir prou dades.",
+      "Un tren triat a partir de les nostres mostres de retards a l'arribada de CP a Portugal. Les estacions mostrejades plegades compten com un albirament. Calen almenys tres albiraments en dos dies diferents, i un de la darrera setmana.",
     trainSpotlightLoading: "Carregant trens destacats…",
     trainSpotlightNoData: "Encara no hi ha prou mostres de trens.",
     mostReliableTrain: "Tren més fiable",

@@ -1401,6 +1401,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@romanzorge",
     photoPageUrl: "https://www.pexels.com/photo/empty-hallway-of-lisbon-oriente-station-19358766/",
   },
+  "19358767": {
+    photographer: "Roman Zorge",
+    photographerUrl: "https://www.pexels.com/@romanzorge",
+    photoPageUrl: "https://www.pexels.com/photo/interior-of-metro-station-19358767/",
+  },
   "19358768": {
     photographer: "Roman Zorge",
     photographerUrl: "https://www.pexels.com/@romanzorge",

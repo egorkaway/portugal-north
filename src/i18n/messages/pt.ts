@@ -280,7 +280,7 @@ export const pt: Messages = {
     downloadStationCsv: "Descarregar CSV",
     trainSpotlightTitle: "Destaques de comboios em Portugal",
     trainSpotlightIntro:
-      "Uma escolha de comboio a partir das nossas amostras de atrasos na chegada da CP em Portugal. O comboio mais fiável roda a cada amostra até haver dados suficientes.",
+      "Uma escolha de comboio a partir das nossas amostras de atrasos na chegada da CP em Portugal. Estações amostradas em conjunto contam como uma observação. É preciso pelo menos três observações em dois dias diferentes, e uma na última semana.",
     trainSpotlightLoading: "A carregar destaques de comboios…",
     trainSpotlightNoData: "Ainda não há amostras suficientes de comboios.",
     mostReliableTrain: "Comboio mais fiável",

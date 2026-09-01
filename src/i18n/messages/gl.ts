@@ -280,7 +280,7 @@ export const gl: Messages = {
     downloadStationCsv: "Descargar CSV",
     trainSpotlightTitle: "Destacados de trens en Portugal",
     trainSpotlightIntro:
-      "Un tren escollido a partir das nosas mostras de atrasos á chegada da CP en Portugal. O máis fiábel rota en cada mostra ata ter datos abondos.",
+      "Un tren escollido a partir das nosas mostras de atrasos á chegada da CP en Portugal. As estacións mostradas xuntas contan como un avistamento. Fan falta polo menos tres avistamentos en dous días distintos, e un na última semana.",
     trainSpotlightLoading: "Cargando destacados de trens…",
     trainSpotlightNoData: "Aínda non hai mostras abondas de trens.",
     mostReliableTrain: "Tren máis fiábel",

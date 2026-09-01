@@ -741,6 +741,30 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Pinto": ["60103"],
 
+  "Arrigorriaga": ["13111"],
+
+  "El Papiol": ["72211"],
+
+  "Doce de Octubre": ["35702"],
+
+  "Alcalá de Henares-Universidad": ["70107"],
+
+  "Embajadores": ["35609"],
+
+  "Álora": ["54405"],
+
+  "Móstoles-El Soto": ["35607"],
+
+  "Cazalla-Constantina": ["40113"],
+
+  "El Pozo": ["70003"],
+
+  "Nava": ["05523"],
+
+  "Sant Sadurní d'Anoia": ["72207"],
+
+  "Calella": ["79603"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

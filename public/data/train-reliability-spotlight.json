@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-09-01T06:31:12.922Z",
-  "runCount": 626,
+  "generatedAt": "2026-09-01T10:33:23.943Z",
+  "runCount": 638,
   "mostDelayed": {
-    "trainNumber": "516",
-    "serviceType": "Intercidades",
-    "avgDelayMinutes": 45.2,
-    "observations": 5,
-    "stationsSampled": 5,
+    "trainNumber": "868",
+    "serviceType": "InterRegional",
+    "avgDelayMinutes": 37.6,
+    "observations": 11,
+    "stationsSampled": 18,
     "majorStations": [
-      "Entroncamento",
-      "Santarém",
-      "Pombal",
-      "Caxarias"
+      "Porto-Campanhã",
+      "Ermesinde",
+      "Paredes",
+      "Penafiel"
     ]
   },
   "mostReliable": {
-    "trainNumber": "18528",
-    "serviceType": "Urbano",
+    "trainNumber": "10540",
+    "serviceType": "Intercidades",
     "avgDelayMinutes": 0,
-    "observations": 103,
-    "stationsSampled": 17,
+    "observations": 12,
+    "stationsSampled": 6,
     "majorStations": [
-      "Lisboa Oriente",
-      "Massama - Barcarena",
-      "Braco de Prata",
-      "Agualva - Cacém"
+      "Abrantes",
+      "Castelo Branco",
+      "Covilhã",
+      "Fundão"
     ],
-    "selectionMode": "stable",
-    "poolSize": 1
+    "selectionMode": "rotating",
+    "poolSize": 12
   }
 }
