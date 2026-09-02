@@ -1,8 +1,8 @@
 /**
- * One non-Iberian airport per connections collect: sample its outbound
- * destinations and render a connection map. No station pages.
- * Iberian-inbound fallback maps are redrawn with the full outbound network
- * on the next run that can reach a flight API.
+ * One non-Iberian airport map per connections collect. No station pages.
+ * Flight APIs down: draw the next unmapped airport from Iberian inbound data.
+ * Flight APIs up: redraw one inbound-only map with the full outbound network
+ * (or sample a new airport outbound).
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -80,14 +80,20 @@ function hubIataSet(rootDir) {
   );
 }
 
-export function chooseExternalAirportForRun(rootDir, manifest, coordinates, store) {
+export function chooseExternalAirportForRun(
+  rootDir,
+  manifest,
+  coordinates,
+  store,
+  options = {},
+) {
   const ranked = rankExternalAirportsFromManifest(
     manifest,
     hubIataSet(rootDir),
     coordinates,
   );
   const sampled = coverageFromExternalMapRows(store?.airports ?? []);
-  const pick = pickExternalAirportForRun(ranked, sampled);
+  const pick = pickExternalAirportForRun(ranked, sampled, options);
   if (!pick) return { ranked, pick: null, coords: null, stationName: null, slug: null };
   const coords = coordinates[pick.iata];
   const stationName = externalAirportDisplayName(pick.iata, coords);
@@ -182,117 +188,21 @@ function upsertAirportRow(store, row) {
   };
 }
 
-/**
- * Sample outbound flights from the busiest non-peninsula destination and
- * write a connections PNG. Does not create station pages or hub catalog entries.
- */
-export async function sampleExternalAirportConnectionMap(options) {
-  const {
-    rootDir,
-    manifest,
-    coordinates,
-    fetchDepartures,
-    resolveMissingCoordinates,
-    buildAirportConnections,
-    renderAirportConnectionsMap,
-    siteUrl,
-    basemapMode = "osm",
-    periodId = null,
-    dryRun = false,
-    skip = false,
-    skipReason = null,
-  } = options;
-
-  const store = loadExternalAirportMapsStore(rootDir);
-  if (skip) {
-    return { store, skipped: true, skipReason, pick: null };
-  }
-
-  const chosen = chooseExternalAirportForRun(rootDir, manifest, coordinates, store);
-  if (!chosen.pick || !chosen.coords) {
-    return { store, skipped: true, skipReason: "no-external-destination", pick: null };
-  }
-
-  const { pick, coords, stationName, slug } = chosen;
-  const label = `${stationName} (${pick.iata})`;
-
-  const existing = existingMapRow(store, pick.iata);
-  const redrawingInbound = isInboundOnlyRow(existing);
-
-  if (dryRun) {
-    const intent = redrawingInbound
-      ? `redraw with full outbound (currently Iberian inbound)`
-      : existing
-        ? `refresh outbound map`
-        : `${pick.iberianFlightCount} Iberian flights`;
-    console.log(`[dry-run] External spotlight: ${label} — ${intent}`);
-    return { store, skipped: true, skipReason: "dry-run", pick };
-  }
-
-  const synthetic = {
-    stationName,
-    slug,
-    iata: pick.iata,
-    name: coords.name || pick.iata,
-    lat: coords.lat,
-    lng: coords.lng,
-    countryCode: "pt",
-  };
-
-  let provider = null;
-  let entry = null;
-  try {
-    const sample = await fetchDepartures(pick.iata, 100);
-    provider = sample.provider;
-    const destIatas = [
-      ...new Set(
-        sample.flights
-          .map((flight) => flight.arrival?.iata?.trim().toUpperCase())
-          .filter((iata) => iata && iata !== pick.iata),
-      ),
-    ];
-    await resolveMissingCoordinates(destIatas.filter((iata) => !coordinates[iata]));
-    entry = buildAirportConnections(synthetic, sample.flights, coordinates);
-    if (!entry?.connections?.length) {
-      entry = null;
-      throw new Error("outbound sample returned no mappable destinations");
-    }
-  } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
-    if (redrawingInbound) {
-      console.warn(
-        `Flight APIs are still out of quota (${message}). Keeping the Iberian-inbound map for ${label}; I'll redraw all of its connections once APIs return.`,
-      );
-      return { store, skipped: true, skipReason: "pending-outbound-redraw", pick };
-    }
-    if (existing) {
-      console.warn(
-        `External spotlight ${label}: outbound sample failed (${message}); keeping the existing map.`,
-      );
-      return { store, skipped: true, skipReason: "keep-existing", pick };
-    }
-    console.warn(
-      `Flight APIs are out of monthly quota, so I'll build this map from Iberian connections we already have: ${label}, with lines to the Iberian hubs that fly there. We'll redraw it with all of its connections once flight APIs return. (${message})`,
-    );
-  }
-
-  if (!entry) {
-    entry = buildIberianInboundEntry({
-      pick,
-      coords,
-      stationName,
-      slug,
-      manifest,
-      coordinates,
-    });
-    provider = IBERIAN_INBOUND_PROVIDER;
-  }
-
-  if (!entry) {
-    console.warn(`External spotlight ${label}: no mappable destinations`);
-    return { store, skipped: true, skipReason: "no-connections", pick };
-  }
-
+async function persistExternalAirportMap({
+  rootDir,
+  store,
+  entry,
+  pick,
+  coords,
+  stationName,
+  slug,
+  provider,
+  periodId,
+  siteUrl,
+  basemapMode,
+  renderAirportConnectionsMap,
+  redrawingInbound,
+}) {
   entry.mapImage = `/${EXTERNAL_MAPS_REL}/${slug}-connections.png`.replace(
     /^\/public\//,
     "/",
@@ -327,9 +237,187 @@ export async function sampleExternalAirportConnectionMap(options) {
     : provider === IBERIAN_INBOUND_PROVIDER
       ? `Iberian inbound (pending full redraw)`
       : `outbound`;
+  const label = `${stationName} (${pick.iata})`;
   console.log(
     `External spotlight ${label}: ${entry.connections.length} destinations` +
       ` (${pick.iberianFlightCount} Iberian flights in) ${action} via ${provider} (${png.basemapId})`,
   );
   return { store: nextStore, skipped: false, skipReason: null, pick, entry };
 }
+
+function iberianInboundForChosen(chosen, manifest, coordinates) {
+  return buildIberianInboundEntry({
+    pick: chosen.pick,
+    coords: chosen.coords,
+    stationName: chosen.stationName,
+    slug: chosen.slug,
+    manifest,
+    coordinates,
+  });
+}
+
+/**
+ * One external map per airport-connections collect.
+ * APIs down: Iberian inbound for the next unmapped airport.
+ * APIs up: full outbound for an inbound-only map (or a new airport).
+ */
+export async function sampleExternalAirportConnectionMap(options) {
+  const {
+    rootDir,
+    manifest,
+    coordinates,
+    fetchDepartures,
+    resolveMissingCoordinates,
+    buildAirportConnections,
+    renderAirportConnectionsMap,
+    siteUrl,
+    basemapMode = "osm",
+    periodId = null,
+    dryRun = false,
+    skip = false,
+    skipReason = null,
+    flightApisAvailable = true,
+  } = options;
+
+  const store = loadExternalAirportMapsStore(rootDir);
+  if (skip) {
+    return { store, skipped: true, skipReason, pick: null };
+  }
+
+  const persist = (chosen, entry, provider, redrawingInbound) =>
+    persistExternalAirportMap({
+      rootDir,
+      store,
+      entry,
+      pick: chosen.pick,
+      coords: chosen.coords,
+      stationName: chosen.stationName,
+      slug: chosen.slug,
+      provider,
+      periodId,
+      siteUrl,
+      basemapMode,
+      renderAirportConnectionsMap,
+      redrawingInbound,
+    });
+
+  const chosen = chooseExternalAirportForRun(rootDir, manifest, coordinates, store, {
+    flightApisAvailable,
+  });
+  if (!chosen.pick || !chosen.coords) {
+    return {
+      store,
+      skipped: true,
+      skipReason: flightApisAvailable ? "no-external-destination" : "no-unmapped-external",
+      pick: null,
+    };
+  }
+
+  const { pick, coords, stationName, slug } = chosen;
+  const label = `${stationName} (${pick.iata})`;
+  const existing = existingMapRow(store, pick.iata);
+  const redrawingInbound = isInboundOnlyRow(existing);
+
+  if (dryRun) {
+    const intent = !flightApisAvailable
+      ? `Iberian inbound (${pick.iberianFlightCount} Iberian flights)`
+      : redrawingInbound
+        ? `redraw with full outbound (currently Iberian inbound)`
+        : existing
+          ? `refresh outbound map`
+          : `outbound sample (${pick.iberianFlightCount} Iberian flights in)`;
+    console.log(`[dry-run] External spotlight: ${label} — ${intent}`);
+    return { store, skipped: true, skipReason: "dry-run", pick };
+  }
+
+  if (!flightApisAvailable) {
+    const inbound = iberianInboundForChosen(chosen, manifest, coordinates);
+    if (!inbound) {
+      console.warn(`External spotlight ${label}: no mappable Iberian destinations`);
+      return { store, skipped: true, skipReason: "no-connections", pick };
+    }
+    console.warn(
+      `Flight APIs are unavailable, so I'll build this map from Iberian connections we already have: ${label}, with lines to the Iberian hubs that fly there. We'll redraw it with all of its connections once flight APIs return.`,
+    );
+    return persist(chosen, inbound, IBERIAN_INBOUND_PROVIDER, false);
+  }
+
+  const synthetic = {
+    stationName,
+    slug,
+    iata: pick.iata,
+    name: coords.name || pick.iata,
+    lat: coords.lat,
+    lng: coords.lng,
+    countryCode: "pt",
+  };
+
+  try {
+    const sample = await fetchDepartures(pick.iata, 100);
+    const destIatas = [
+      ...new Set(
+        sample.flights
+          .map((flight) => flight.arrival?.iata?.trim().toUpperCase())
+          .filter((iata) => iata && iata !== pick.iata),
+      ),
+    ];
+    await resolveMissingCoordinates(destIatas.filter((iata) => !coordinates[iata]));
+    const entry = buildAirportConnections(synthetic, sample.flights, coordinates);
+    if (!entry?.connections?.length) {
+      throw new Error("outbound sample returned no mappable destinations");
+    }
+    return persist(chosen, entry, sample.provider, redrawingInbound);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    if (!existing) {
+      console.warn(
+        `Flight APIs are out of monthly quota, so I'll build this map from Iberian connections we already have: ${label}, with lines to the Iberian hubs that fly there. We'll redraw it with all of its connections once flight APIs return. (${message})`,
+      );
+      const inbound = iberianInboundForChosen(chosen, manifest, coordinates);
+      if (!inbound) {
+        console.warn(`External spotlight ${label}: no mappable destinations`);
+        return { store, skipped: true, skipReason: "no-connections", pick };
+      }
+      return persist(chosen, inbound, IBERIAN_INBOUND_PROVIDER, false);
+    }
+
+    if (redrawingInbound) {
+      console.warn(
+        `Flight APIs are still out of quota (${message}). Keeping the Iberian-inbound map for ${label}; I'll redraw all of its connections once APIs return.`,
+      );
+    } else {
+      console.warn(
+        `External spotlight ${label}: outbound sample failed (${message}); keeping the existing map.`,
+      );
+    }
+
+    const fallback = chooseExternalAirportForRun(rootDir, manifest, coordinates, store, {
+      flightApisAvailable: false,
+    });
+    if (!fallback.pick || !fallback.coords || fallback.pick.iata === pick.iata) {
+      return {
+        store,
+        skipped: true,
+        skipReason: redrawingInbound ? "pending-outbound-redraw" : "keep-existing",
+        pick,
+      };
+    }
+
+    const fallbackLabel = `${fallback.stationName} (${fallback.pick.iata})`;
+    const inbound = iberianInboundForChosen(fallback, manifest, coordinates);
+    if (!inbound) {
+      console.warn(`External spotlight ${fallbackLabel}: no mappable Iberian destinations`);
+      return {
+        store,
+        skipped: true,
+        skipReason: redrawingInbound ? "pending-outbound-redraw" : "keep-existing",
+        pick,
+      };
+    }
+    console.warn(
+      `Drawing ${fallbackLabel} from Iberian connections we already have while APIs are down.`,
+    );
+    return persist(fallback, inbound, IBERIAN_INBOUND_PROVIDER, false);
+  }
+}
+

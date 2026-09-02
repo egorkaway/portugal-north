@@ -857,4 +857,22 @@ export const stationSummariesEn: Record<string, string> = {
   "Conceição":
     "Conceição is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Fuseta-A":
+    "Fuseta-A is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Porta Nova":
+    "Porta Nova is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Montemor":
+    "Montemor is a CP urban halt on Ramal de Alfarelos in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Castro Marim":
+    "Castro Marim is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Livramento":
+    "Livramento is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Monte Gordo":
+    "Monte Gordo is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

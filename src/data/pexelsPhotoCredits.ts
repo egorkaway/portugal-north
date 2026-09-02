@@ -2596,6 +2596,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@zandatsu",
     photoPageUrl: "https://www.pexels.com/photo/abandoned-vintage-train-car-in-varna-rail-yard-35545038/",
   },
+  "35545052": {
+    photographer: "Yusuf Çelik",
+    photographerUrl: "https://www.pexels.com/@zandatsu",
+    photoPageUrl: "https://www.pexels.com/photo/graffiti-adorned-train-at-varna-station-in-autumn-35545052/",
+  },
   "35551070": {
     photographer: "Walter Cunha",
     photographerUrl: "https://www.pexels.com/@walter-cunha-2158705182",

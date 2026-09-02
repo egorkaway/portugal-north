@@ -93,7 +93,7 @@ describe("pickExternalAirportForRun", () => {
     expect(pickExternalAirportForRun(ranked, new Set(["FRA"]))?.iata).toBe("LHR");
   });
 
-  it("redraws an Iberian-inbound map before mapping a new airport", () => {
+  it("redraws an Iberian-inbound map before mapping a new airport when APIs are up", () => {
     expect(
       pickExternalAirportForRun(ranked, {
         completeIatas: new Set(),
@@ -106,6 +106,29 @@ describe("pickExternalAirportForRun", () => {
         inboundOnlyIatas: new Set(["LHR"]),
       })?.iata,
     ).toBe("LHR");
+  });
+
+  it("maps the next unmapped airport from Iberian data when APIs are down", () => {
+    expect(
+      pickExternalAirportForRun(
+        ranked,
+        {
+          completeIatas: new Set(),
+          inboundOnlyIatas: new Set(["FRA"]),
+        },
+        { flightApisAvailable: false },
+      )?.iata,
+    ).toBe("LHR");
+    expect(
+      pickExternalAirportForRun(
+        ranked,
+        {
+          completeIatas: new Set(["FRA"]),
+          inboundOnlyIatas: new Set(["LHR"]),
+        },
+        { flightApisAvailable: false },
+      ),
+    ).toBeNull();
   });
 
   it("refreshes the current top once every candidate has a full map", () => {

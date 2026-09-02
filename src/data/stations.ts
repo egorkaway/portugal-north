@@ -479,6 +479,54 @@ const cpStations: StationData[] = [
     lng: -7.6056,
   },
 
+  {
+    name: "Fuseta-A",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.0535,
+    lng: -7.7497,
+  },
+
+  {
+    name: "Porta Nova",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1331,
+    lng: -7.6481,
+  },
+
+  {
+    name: "Montemor",
+    lines: ["Ramal de Alfarelos"],
+    types: ["Urban"],
+    lat: 40.1602,
+    lng: -8.6541,
+  },
+
+  {
+    name: "Castro Marim",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1968,
+    lng: -7.4839,
+  },
+
+  {
+    name: "Livramento",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.0737,
+    lng: -7.7313,
+  },
+
+  {
+    name: "Monte Gordo",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1901,
+    lng: -7.4484,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

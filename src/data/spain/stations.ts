@@ -3641,4 +3641,58 @@ export const spainStations: Station[] = [
     lng: -3.3305,
   },
 
+  {
+    name: "La Llagosta",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5105,
+    lng: 2.1997,
+  },
+
+  {
+    name: "Anglesola",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6464,
+    lng: 1.0792,
+  },
+
+  {
+    name: "San Xoán",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4946,
+    lng: -8.2143,
+  },
+
+  {
+    name: "Carvajal",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.5703,
+    lng: -4.594,
+  },
+
+  {
+    name: "Camp-redó",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.7592,
+    lng: 0.5558,
+  },
+
+  {
+    name: "Navalperal",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5912,
+    lng: -4.4084,
+  },
+
 ];

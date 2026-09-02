@@ -790,4 +790,22 @@ export const stationSummariesCa: Record<string, string> = {
   "Conceição":
     "Conceição és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
 
+  "Fuseta-A":
+    "Fuseta-A és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Porta Nova":
+    "Porta Nova és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Montemor":
+    "Montemor és una parada de CP de serveis rodalia a la Ramal de Alfarelos a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Castro Marim":
+    "Castro Marim és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Livramento":
+    "Livramento és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Monte Gordo":
+    "Monte Gordo és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
 };

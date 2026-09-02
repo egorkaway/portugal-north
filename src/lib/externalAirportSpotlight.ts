@@ -138,23 +138,39 @@ export function rankExternalAirportsFromManifest(
     );
 }
 
+export type PickExternalAirportOptions = {
+  /**
+   * When true (default), prefer an Iberian-inbound map for a full outbound redraw.
+   * When false, pick the next unmapped airport to draw from Iberian data we already have.
+   */
+  flightApisAvailable?: boolean;
+};
+
 /**
- * One external airport per collect run. Prefer an Iberian-inbound map that
- * still needs a full outbound redraw, then an unmapped airport, then refresh
- * the current #1.
+ * One external airport per collect run.
+ * APIs up: prefer an inbound-only map for a full outbound redraw, else unmapped, else refresh #1.
+ * APIs down: pick the next unmapped airport for an Iberian-inbound map (do not stall on a pending redraw).
  */
 export function pickExternalAirportForRun(
   ranked: RankedExternalAirport[],
   sampledOrCoverage: ReadonlySet<string> | ExternalMapCoverage,
+  options: PickExternalAirportOptions = {},
 ): RankedExternalAirport | null {
   if (ranked.length === 0) return null;
   const { completeIatas, inboundOnlyIatas } = asCoverage(sampledOrCoverage);
-  const needsRedraw = ranked.find((row) => inboundOnlyIatas.has(row.iata));
-  if (needsRedraw) return needsRedraw;
+  const flightApisAvailable = options.flightApisAvailable !== false;
+
+  if (flightApisAvailable) {
+    const needsRedraw = ranked.find((row) => inboundOnlyIatas.has(row.iata));
+    if (needsRedraw) return needsRedraw;
+  }
+
   const unmapped = ranked.find(
     (row) => !completeIatas.has(row.iata) && !inboundOnlyIatas.has(row.iata),
   );
-  return unmapped ?? ranked[0] ?? null;
+  if (unmapped) return unmapped;
+  if (!flightApisAvailable) return null;
+  return ranked[0] ?? null;
 }
 
 export function externalAirportDisplayName(

@@ -2003,6 +2003,36 @@ export const stationHotels: StationHotels = {
     { name: "Aldeamento Pedras da Rainha", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aldeamento%20Pedras%20da%20Rainha%2C%20Concei%C3%A7%C3%A3o%2C%20Portugal&order=price" },
     { name: "Apartamento Formosa Cabanas", distanceKm: 1.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamento%20Formosa%20Cabanas%2C%20Concei%C3%A7%C3%A3o%2C%20Portugal&order=price" },
   ],
+  "Fuseta-A": [
+    { name: "Fuseta Ria Resort", distanceKm: 0.5, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Fuseta%20Ria%20Resort%2C%20Fuseta-A%2C%20Portugal&order=price" },
+    { name: "Moinho das Marés", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/pt/moinhos-das-mares.de.html" },
+    { name: "Vila Fuzeta", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Fuzeta%2C%20Fuseta-A%2C%20Portugal&order=price" },
+  ],
+  "Porta Nova": [
+    { name: "Altanure - Almatere", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Altanure%20-%20Almatere%2C%20Porta%20Nova%2C%20Portugal&order=price" },
+    { name: "AP Maria Nova Lounge Hotel", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AP%20Maria%20Nova%20Lounge%20Hotel%2C%20Porta%20Nova%2C%20Portugal&order=price" },
+    { name: "Residencial Princesa do Gilao", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Princesa%20do%20Gilao%2C%20Porta%20Nova%2C%20Portugal&order=price" },
+  ],
+  "Montemor": [
+    { name: "Abade João", distanceKm: 3, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Abade%20Jo%C3%A3o%2C%20Montemor%2C%20Portugal&order=price" },
+    { name: "Hotel Garça Real", distanceKm: 5.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Gar%C3%A7a%20Real%2C%20Montemor%2C%20Portugal&order=price" },
+    { name: "Quinta d'Anta Hotel Rural", distanceKm: 8.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20d'Anta%20Hotel%20Rural%2C%20Montemor%2C%20Portugal&order=price" },
+  ],
+  "Castro Marim": [
+    { name: "Quinta da Fornalha", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Fornalha%2C%20Castro%20Marim%2C%20Portugal&order=price" },
+    { name: "Vale do Boto", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vale%20do%20Boto%2C%20Castro%20Marim%2C%20Portugal&order=price" },
+    { name: "Companhia das Culturas - Eco-Design&SPA Hotel", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Companhia%20das%20Culturas%20-%20Eco-Design%26SPA%20Hotel%2C%20Castro%20Marim%2C%20Portugal&order=price" },
+  ],
+  "Livramento": [
+    { name: "Casa Flor do Mar, Ferienhaus mit Meerblick", distanceKm: 0.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Flor%20do%20Mar%2C%20Ferienhaus%20mit%20Meerblick%2C%20Livramento%2C%20Portugal&order=price" },
+    { name: "Moinho das Marés", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/pt/moinhos-das-mares.de.html" },
+    { name: "Colina Verde", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Colina%20Verde%2C%20Livramento%2C%20Portugal&order=price" },
+  ],
+  "Monte Gordo": [
+    { name: "Hortamar", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hortamar%2C%20Monte%20Gordo%2C%20Portugal&order=price" },
+    { name: "Quinta da Rosa Linda", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Rosa%20Linda%2C%20Monte%20Gordo%2C%20Portugal&order=price" },
+    { name: "Aparthotel Calema Avenida Jardim", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Calema%20Avenida%20Jardim%2C%20Monte%20Gordo%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -3986,6 +4016,36 @@ export const stationHotels: StationHotels = {
   "Villacañas": [
     { name: "Hotel Mirasierra", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mirasierra%2C%20Villaca%C3%B1as%2C%20Spain&order=price" },
     { name: "Hospedería El Convento", distanceKm: 11.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospeder%C3%ADa%20El%20Convento%2C%20Villaca%C3%B1as%2C%20Spain&order=price" },
+  ],
+  "La Llagosta": [
+    { name: "Sercotel Ciutat de Montcada", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20Ciutat%20de%20Montcada%2C%20La%20Llagosta%2C%20Spain&order=price" },
+    { name: "ApartHotel Montcada", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ApartHotel%20Montcada%2C%20La%20Llagosta%2C%20Spain&order=price" },
+    { name: "Hermanos Navas", distanceKm: 3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hermanos%20Navas%2C%20La%20Llagosta%2C%20Spain&order=price" },
+  ],
+  "Anglesola": [
+    { name: "Hostal del Carme", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20del%20Carme%2C%20Anglesola%2C%20Spain&order=price" },
+    { name: "Alberg de pelegrins Cal Trepat", distanceKm: 3.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20de%20pelegrins%20Cal%20Trepat%2C%20Anglesola%2C%20Spain&order=price" },
+    { name: "Hotel Restaurant Pintor Marsà", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurant%20Pintor%20Mars%C3%A0%2C%20Anglesola%2C%20Spain&order=price" },
+  ],
+  "San Xoán": [
+    { name: "Residencia Fina", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Fina%2C%20San%20Xo%C3%A1n%2C%20Spain&order=price" },
+    { name: "Hotel Silva", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Silva%2C%20San%20Xo%C3%A1n%2C%20Spain&order=price" },
+    { name: "Hostal Porta Nova I", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Porta%20Nova%20I%2C%20San%20Xo%C3%A1n%2C%20Spain&order=price" },
+  ],
+  "Carvajal": [
+    { name: "Apartamentos Fuengirola Playa", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20Fuengirola%20Playa%2C%20Carvajal%2C%20Spain&order=price" },
+    { name: "Globales Gardenia", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Globales%20Gardenia%2C%20Carvajal%2C%20Spain&order=price" },
+    { name: "HW Hydros", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=HW%20Hydros%2C%20Carvajal%2C%20Spain&order=price" },
+  ],
+  "Camp-redó": [
+    { name: "HCC Montsia", distanceKm: 5.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=HCC%20Montsia%2C%20Camp-red%C3%B3%2C%20Spain&order=price" },
+    { name: "Tortosa Parc", distanceKm: 6.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tortosa%20Parc%2C%20Camp-red%C3%B3%2C%20Spain&order=price" },
+    { name: "Hotel Berenguer IV", distanceKm: 6.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Berenguer%20IV%2C%20Camp-red%C3%B3%2C%20Spain&order=price" },
+  ],
+  "Navalperal": [
+    { name: "Hotel Quinta de los Enebrales", distanceKm: 8.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Quinta%20de%20los%20Enebrales%2C%20Navalperal%2C%20Spain&order=price" },
+    { name: "El Estanco", distanceKm: 10, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Estanco%2C%20Navalperal%2C%20Spain&order=price" },
+    { name: "Casas Rurales Las Escuelas", distanceKm: 10.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20Rurales%20Las%20Escuelas%2C%20Navalperal%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

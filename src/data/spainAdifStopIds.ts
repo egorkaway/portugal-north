@@ -797,6 +797,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Villacañas": ["60300"],
 
+  "La Llagosta": ["79011"],
+
+  "Anglesola": ["78407"],
+
+  "San Xoán": ["05102"],
+
+  "Carvajal": ["54513"],
+
+  "Camp-redó": ["65401"],
+
+  "Navalperal": ["10208"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
