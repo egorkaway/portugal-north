@@ -527,6 +527,22 @@ const cpStations: StationData[] = [
     lng: -7.4484,
   },
 
+  {
+    name: "Alvito",
+    lines: ["Linha do Alentejo"],
+    types: ["Intercidades", "Regional"],
+    lat: 38.2327,
+    lng: -8,
+  },
+
+  {
+    name: "Cuba",
+    lines: ["Linha do Alentejo"],
+    types: ["Intercidades", "Regional"],
+    lat: 38.1631,
+    lng: -7.8948,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

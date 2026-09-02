@@ -189,7 +189,13 @@ If a hub airport has **never recorded mappable flights**, it is hidden on the ma
 npm run maps:airport-connections -- --backfill-europe-destinations
 ```
 
-Each airport-connections collect also draws **one airport outside the Iberian peninsula** (`public/maps/airports/external/{slug}-connections.png`). These airports do **not** get station pages. If flight APIs are unavailable or out of quota, that map is built from Iberian hubs that already fly there (one new airport per run). The next run that can reach a flight API redraws one of those inbound maps with **all** outbound connections, not only Iberian ones. The running list is stored in `data/external-airport-connection-maps.json` and printed at the end of `npm run stats:departures`.
+Each airport-connections collect also draws **one airport outside the Iberian peninsula** (`public/maps/airports/external/{slug}-connections.png`) by default. These airports do **not** get station pages. If flight APIs are unavailable or out of quota, that map is built from Iberian hubs that already fly there (one new airport per run). The next run that can reach a flight API redraws one of those inbound maps with **all** outbound connections, not only Iberian ones. To draw several maps at once from Iberian data we already have:
+
+```bash
+npm run maps:airport-connections -- --external-only --iberian-inbound --external-count=12
+```
+
+`--external-count=all` keeps going until every ranked destination has a map. The running list is stored in `data/external-airport-connection-maps.json` and printed at the end of `npm run stats:departures`.
 
 Then sync mobile: `cd mobile && npm run sync:data`.
 

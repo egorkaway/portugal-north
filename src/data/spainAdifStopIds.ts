@@ -809,6 +809,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Navalperal": ["10208"],
 
+  "Illescas": ["35005"],
+
+  "Bárcena": ["14206"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -3695,4 +3695,22 @@ export const spainStations: Station[] = [
     lng: -4.4084,
   },
 
+  {
+    name: "Illescas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.1209,
+    lng: -3.8423,
+  },
+
+  {
+    name: "Bárcena",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.1287,
+    lng: -4.0535,
+  },
+
 ];

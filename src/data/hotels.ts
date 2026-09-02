@@ -2033,6 +2033,16 @@ export const stationHotels: StationHotels = {
     { name: "Quinta da Rosa Linda", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Rosa%20Linda%2C%20Monte%20Gordo%2C%20Portugal&order=price" },
     { name: "Aparthotel Calema Avenida Jardim", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Calema%20Avenida%20Jardim%2C%20Monte%20Gordo%2C%20Portugal&order=price" },
   ],
+  "Alvito": [
+    { name: "Horta da Rosa", distanceKm: 1.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Horta%20da%20Rosa%2C%20Alvito%2C%20Portugal&order=price" },
+    { name: "Mte do Trancoso - Agroturismo", distanceKm: 1.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mte%20do%20Trancoso%20-%20Agroturismo%2C%20Alvito%2C%20Portugal&order=price" },
+    { name: "Horta da Vila", distanceKm: 2.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Horta%20da%20Vila%2C%20Alvito%2C%20Portugal&order=price" },
+  ],
+  "Cuba": [
+    { name: "Hospedaria Lula", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20Lula%2C%20Cuba%2C%20Portugal&order=price" },
+    { name: "Chave D'ouro", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Chave%20D'ouro%2C%20Cuba%2C%20Portugal&order=price" },
+    { name: "Hospedaria do Carmo", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20do%20Carmo%2C%20Cuba%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4046,6 +4056,16 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Quinta de los Enebrales", distanceKm: 8.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Quinta%20de%20los%20Enebrales%2C%20Navalperal%2C%20Spain&order=price" },
     { name: "El Estanco", distanceKm: 10, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Estanco%2C%20Navalperal%2C%20Spain&order=price" },
     { name: "Casas Rurales Las Escuelas", distanceKm: 10.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20Rurales%20Las%20Escuelas%2C%20Navalperal%2C%20Spain&order=price" },
+  ],
+  "Illescas": [
+    { name: "Hotel Real", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Real%2C%20Illescas%2C%20Spain&order=price" },
+    { name: "Complejo París", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Complejo%20Par%C3%ADs%2C%20Illescas%2C%20Spain&order=price" },
+    { name: "Hotel Carlos I", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Carlos%20I%2C%20Illescas%2C%20Spain&order=price" },
+  ],
+  "Bárcena": [
+    { name: "La Casa Vieja de Silió", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casa%20Vieja%20de%20Sili%C3%B3%2C%20B%C3%A1rcena%2C%20Spain&order=price" },
+    { name: "Posada Los Avellanos", distanceKm: 3.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Posada%20Los%20Avellanos%2C%20B%C3%A1rcena%2C%20Spain&order=price" },
+    { name: "La Finca del Monasterio", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Finca%20del%20Monasterio%2C%20B%C3%A1rcena%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

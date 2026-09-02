@@ -808,4 +808,10 @@ export const stationSummariesEs: Record<string, string> = {
   "Monte Gordo":
     "Monte Gordo es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
 
+  "Alvito":
+    "Alvito es una parada de CP de servicios Intercidades y regionales en la Linha do Alentejo en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Cuba":
+    "Cuba es una parada de CP de servicios Intercidades y regionales en la Linha do Alentejo en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
 };

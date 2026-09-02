@@ -24,6 +24,7 @@
  *   node --import tsx scripts/collect-airport-connections.mjs --period-status
  *   node --import tsx scripts/collect-airport-connections.mjs --as-of=2026-08-11
  *   node --import tsx scripts/collect-airport-connections.mjs --external-only
+ *   node --import tsx scripts/collect-airport-connections.mjs --external-only --iberian-inbound --external-count=12
  *   node --import tsx scripts/collect-airport-connections.mjs --backfill-europe-destinations
  *
  * After a successful bake (or with --backfill-europe-destinations), European
@@ -32,10 +33,11 @@
  * no outbound collection).
  *
  * Each collect also draws one airport map outside the Iberian peninsula
- * (`public/maps/airports/external/*-connections.png`). Those airports do not
- * get station pages. Without flight APIs, the map uses Iberian hubs that
- * already fly there; the next run that can reach an API redraws one inbound
- * map with all outbound connections.
+ * (`public/maps/airports/external/*-connections.png`) unless `--external-count`
+ * asks for more. Those airports do not get station pages. Without flight APIs
+ * (or with `--iberian-inbound`), maps use Iberian hubs that already fly there;
+ * the next run that can reach an API redraws one inbound map with all outbound
+ * connections.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -117,6 +119,7 @@ const delayMs = delayArg
   : 400;
 const mapsOnly = args.includes("--maps-only");
 const externalOnly = args.includes("--external-only");
+const iberianInboundOnly = args.includes("--iberian-inbound");
 const periodStatus = args.includes("--period-status");
 const backfillEuropeDestinations = args.includes("--backfill-europe-destinations");
 const asOfArg = args.find((arg) => arg.startsWith("--as-of"));
@@ -133,6 +136,19 @@ const defaultBasemapMode = basemapArg
   : "osm";
 
 const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
+
+function parseExternalCount(argv) {
+  const flag = argv.find((arg) => arg.startsWith("--external-count"));
+  if (!flag) return 1;
+  const raw = flag.includes("=")
+    ? flag.slice("--external-count=".length)
+    : argv[argv.indexOf("--external-count") + 1];
+  if (!raw || raw === "all") return Number.POSITIVE_INFINITY;
+  const parsed = Number.parseInt(raw, 10);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 1;
+}
+
+const externalCount = parseExternalCount(args);
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -239,35 +255,46 @@ async function runExternalAirportSpotlight({
   periodId,
   siteUrl,
   basemapMode,
+  count = 1,
 }) {
   const skip = forceAirport;
   const skipReason = forceAirport ? "airport-filter" : null;
   const flightApisAvailable = !quotaExhausted && hasAirportFlightProvider();
-  try {
-    const result = await sampleExternalAirportConnectionMap({
-      rootDir,
-      manifest,
-      coordinates,
-      fetchDepartures: fetchDeparturesFromAirport,
-      resolveMissingCoordinates: async (iatas) => {
-        await resolveMissingCoordinates(iatas, coordinates, {});
-      },
-      buildAirportConnections,
-      renderAirportConnectionsMap,
-      siteUrl,
-      basemapMode,
-      periodId,
-      dryRun: isDryRun,
-      skip,
-      skipReason,
-      flightApisAvailable,
-    });
-    return result.store;
-  } catch (error) {
-    const message = error instanceof Error ? error.message : String(error);
-    console.error(`External destination map skipped: ${message}`);
-    return loadExternalAirportMapsStore(rootDir);
+  let store = loadExternalAirportMapsStore(rootDir);
+  if (skip) {
+    return store;
   }
+
+  const limit = Number.isFinite(count) && count > 0 ? count : 1;
+  for (let i = 0; i < limit; i += 1) {
+    try {
+      const result = await sampleExternalAirportConnectionMap({
+        rootDir,
+        manifest,
+        coordinates,
+        fetchDepartures: fetchDeparturesFromAirport,
+        resolveMissingCoordinates: async (iatas) => {
+          await resolveMissingCoordinates(iatas, coordinates, {});
+        },
+        buildAirportConnections,
+        renderAirportConnectionsMap,
+        siteUrl,
+        basemapMode,
+        periodId,
+        dryRun: isDryRun,
+        skip: false,
+        skipReason: null,
+        flightApisAvailable,
+      });
+      store = result.store;
+      if (result.skipped) break;
+    } catch (error) {
+      const message = error instanceof Error ? error.message : String(error);
+      console.error(`External destination map skipped: ${message}`);
+      break;
+    }
+  }
+  return store;
 }
 
 async function runExternalSpotlightFromExistingManifest({
@@ -277,6 +304,7 @@ async function runExternalSpotlightFromExistingManifest({
   siteUrl,
   basemapMode,
   quotaExhausted = true,
+  count = 1,
 }) {
   const coordsPath = join(rootDir, "data/airport-iata-coordinates.json");
   await ensureAirportCoordinateCache(coordsPath);
@@ -296,6 +324,7 @@ async function runExternalSpotlightFromExistingManifest({
     periodId: existing.periodId ?? roll.period.id,
     siteUrl,
     basemapMode,
+    count,
   });
 }
 
@@ -307,6 +336,8 @@ export async function collectAirportConnections(options = {}) {
     delayMs: delay = delayMs,
     mapsOnly: renderMapsOnly = mapsOnly,
     externalOnly: sampleExternalOnly = externalOnly,
+    iberianInbound: useIberianInbound = iberianInboundOnly,
+    externalMapCount = externalCount,
     basemapMode: basemapMode = defaultBasemapMode,
     asOf = asOfDate,
     periodStatusOnly = periodStatus,
@@ -345,11 +376,14 @@ export async function collectAirportConnections(options = {}) {
   }
 
   if (sampleExternalOnly) {
-    if (!isDryRun && !hasAirportFlightProvider()) {
+    const quotaExhausted = useIberianInbound || !hasAirportFlightProvider();
+    if (!isDryRun && quotaExhausted) {
       console.warn(
-        "No airport flight provider available — drawing one external destination map from Iberian connections we already have.",
+        useIberianInbound
+          ? `Drawing ${Number.isFinite(externalMapCount) ? externalMapCount : "all unmapped"} external destination map(s) from Iberian connections we already have.`
+          : "No airport flight provider available — drawing external destination map(s) from Iberian connections we already have.",
       );
-    } else {
+    } else if (!quotaExhausted) {
       resetAirportFlightProvider();
     }
     const store = await runExternalSpotlightFromExistingManifest({
@@ -358,7 +392,8 @@ export async function collectAirportConnections(options = {}) {
       asOf,
       siteUrl,
       basemapMode,
-      quotaExhausted: !hasAirportFlightProvider(),
+      quotaExhausted,
+      count: externalMapCount,
     });
     return {
       ok: store.airports?.length ? 1 : 0,
@@ -423,6 +458,7 @@ export async function collectAirportConnections(options = {}) {
       siteUrl,
       basemapMode,
       quotaExhausted: true,
+      count: externalMapCount,
     });
     return {
       ok: 0,
@@ -674,11 +710,12 @@ export async function collectAirportConnections(options = {}) {
       manifest,
       coordinates: loadAirportCoordinateCache(cachePath),
       isDryRun,
-      quotaExhausted,
+      quotaExhausted: quotaExhausted || useIberianInbound,
       forceAirport,
       periodId: period.id,
       siteUrl,
       basemapMode,
+      count: externalMapCount,
     });
   } else if (isDryRun && !forceAirport) {
     const existing = loadExistingManifest(rootDir);
@@ -687,11 +724,12 @@ export async function collectAirportConnections(options = {}) {
       manifest: existing,
       coordinates: loadAirportCoordinateCache(cachePath),
       isDryRun: true,
-      quotaExhausted: false,
+      quotaExhausted: useIberianInbound,
       forceAirport: false,
       periodId: period.id,
       siteUrl,
       basemapMode,
+      count: externalMapCount,
     });
   }
 
