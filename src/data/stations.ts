@@ -543,6 +543,30 @@ const cpStations: StationData[] = [
     lng: -7.8948,
   },
 
+  {
+    name: "Vila Nova da Baronia",
+    lines: ["Linha do Alentejo"],
+    types: ["Intercidades", "Regional"],
+    lat: 38.2938,
+    lng: -8.0351,
+  },
+
+  {
+    name: "Alcáçovas",
+    lines: ["Linha do Alentejo"],
+    types: ["Intercidades"],
+    lat: 38.4069,
+    lng: -8.0955,
+  },
+
+  {
+    name: "Boliqueime",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1227,
+    lng: -8.1527,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

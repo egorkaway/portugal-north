@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-02T09:43:09.599Z",
-  "runCount": 664,
+  "generatedAt": "2026-09-02T11:59:33.811Z",
+  "runCount": 667,
   "mostDelayed": [
     {
       "trainNumber": "868",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 36.8,
-      "observations": 12,
+      "avgDelayMinutes": 34,
+      "observations": 13,
       "stationsSampled": 18,
       "majorStations": [
         "Porto-Campanhã",
@@ -44,46 +44,46 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "10541",
-      "serviceType": "Intercidades",
+      "trainNumber": "36415",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 13,
+      "stationsSampled": 13,
+      "majorStations": [
+        "Pero Negro",
+        "Mafra",
+        "Feliteira",
+        "Zibreira"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36417",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 13,
+      "stationsSampled": 13,
+      "majorStations": [
+        "Pero Negro",
+        "Mafra",
+        "Feliteira",
+        "Zibreira"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "55621",
+      "serviceType": "Regional",
       "avgDelayMinutes": 0,
       "observations": 13,
       "stationsSampled": 6,
       "majorStations": [
-        "Castelo Branco",
-        "Guarda",
-        "Covilhã",
-        "Fundão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "36406",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 13,
-      "stationsSampled": 13,
-      "majorStations": [
-        "Mira Sintra-Meleças",
-        "Pero Negro",
-        "Mafra",
-        "Feliteira"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "36410",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 13,
-      "stationsSampled": 13,
-      "majorStations": [
-        "Mira Sintra-Meleças",
-        "Pero Negro",
-        "Mafra",
-        "Feliteira"
+        "Fratel",
+        "Vila Velha de Ródão",
+        "Barca da Amieira – Envendos",
+        "Belver"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

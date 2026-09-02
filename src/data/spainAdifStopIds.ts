@@ -813,6 +813,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Bárcena": ["14206"],
 
+  "Santa Eugenia": ["70109"],
+
+  "Orcasitas": ["35703"],
+
+  "Llinars del Vallès": ["79102"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

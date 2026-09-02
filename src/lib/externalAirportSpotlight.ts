@@ -49,6 +49,34 @@ export function coverageFromExternalMapRows(
   return { completeIatas, inboundOnlyIatas };
 }
 
+function formatIataList(codes: string[]): string {
+  return codes.length ? `${codes.join(" ")} (${codes.length})` : `(0)`;
+}
+
+/** Compact collect-log summary: two IATA lists instead of one line per airport. */
+export function formatExternalAirportMapsLog(
+  store: { airports?: Array<{ iata?: string; provider?: string }> } | null | undefined,
+): string {
+  const inbound: string[] = [];
+  const complete: string[] = [];
+  for (const row of store?.airports ?? []) {
+    const iata = String(row.iata ?? "").trim().toUpperCase();
+    if (!iata) continue;
+    if (row.provider === IBERIAN_INBOUND_PROVIDER) inbound.push(iata);
+    else complete.push(iata);
+  }
+
+  if (inbound.length === 0 && complete.length === 0) {
+    return "External destination maps (outside Iberian peninsula): none yet";
+  }
+
+  return [
+    "External destination maps (outside Iberian peninsula):",
+    `  Iberian flights only (regenerate when flight APIs available): ${formatIataList(inbound)}`,
+    `  All flights (drawn with flight APIs): ${formatIataList(complete)}`,
+  ].join("\n");
+}
+
 function asCoverage(
   sampledOrCoverage: ReadonlySet<string> | ExternalMapCoverage,
 ): ExternalMapCoverage {

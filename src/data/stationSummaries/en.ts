@@ -881,4 +881,13 @@ export const stationSummariesEn: Record<string, string> = {
   "Cuba":
     "Cuba is a CP Intercidades and regional halt on Linha do Alentejo in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Vila Nova da Baronia":
+    "Vila Nova da Baronia is a CP Intercidades and regional halt on Linha do Alentejo in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Alcáçovas":
+    "Alcáçovas is a CP Intercidades halt on Linha do Alentejo in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Boliqueime":
+    "Boliqueime is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

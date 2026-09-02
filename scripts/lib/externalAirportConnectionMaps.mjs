@@ -10,10 +10,13 @@ import { stationToSlug } from "./socialCard.mjs";
 import {
   coverageFromExternalMapRows,
   externalAirportDisplayName,
+  formatExternalAirportMapsLog,
   IBERIAN_INBOUND_PROVIDER,
   pickExternalAirportForRun,
   rankExternalAirportsFromManifest,
 } from "../../src/lib/externalAirportSpotlight.ts";
+
+export { formatExternalAirportMapsLog };
 import { loadAirportCatalog } from "./airportCatalog.mjs";
 import { getFlightLineColor, getFlightLineWeight } from "../../server/lib/airportIata.ts";
 import { formatCountryName } from "../../server/lib/countryName.ts";
@@ -47,29 +50,6 @@ export function saveExternalAirportMapsStore(rootDir, store) {
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, `${JSON.stringify(store, null, 2)}\n`);
   return outPath;
-}
-
-export function formatExternalAirportMapsLog(store) {
-  const rows = store?.airports ?? [];
-  if (!rows.length) {
-    return "External destination maps (outside Iberian peninsula): none yet";
-  }
-  const lines = ["External destination maps (outside Iberian peninsula):"];
-  for (const row of rows) {
-    const name = row.stationName || row.iata;
-    const flights = row.iberianFlightCount ?? 0;
-    const dests = row.destinationCount ?? 0;
-    const inbound = row.provider === IBERIAN_INBOUND_PROVIDER;
-    const via = inbound
-      ? "Iberian inbound — redraw all connections when flight APIs return"
-      : row.provider
-        ? `via ${row.provider}`
-        : "outbound";
-    lines.push(
-      `  ${row.iata}  ${name} — ${flights} Iberian flights, ${dests} destinations (${via})`,
-    );
-  }
-  return lines.join("\n");
 }
 
 function hubIataSet(rootDir) {

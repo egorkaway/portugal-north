@@ -3713,4 +3713,31 @@ export const spainStations: Station[] = [
     lng: -4.0535,
   },
 
+  {
+    name: "Santa Eugenia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.387,
+    lng: -3.609,
+  },
+
+  {
+    name: "Orcasitas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3671,
+    lng: -3.7042,
+  },
+
+  {
+    name: "Llinars del Vallès",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.638,
+    lng: 2.4045,
+  },
+
 ];

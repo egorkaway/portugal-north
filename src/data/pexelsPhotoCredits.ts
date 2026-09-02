@@ -41,6 +41,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@hikaique",
     photoPageUrl: "https://www.pexels.com/photo/train-station-109915/",
   },
+  "113574": {
+    photographer: "George Becker",
+    photographerUrl: "https://www.pexels.com/@eye4dtail",
+    photoPageUrl: "https://www.pexels.com/photo/grey-scale-photography-of-train-station-113574/",
+  },
   "116885": {
     photographer: "George Becker",
     photographerUrl: "https://www.pexels.com/@eye4dtail",

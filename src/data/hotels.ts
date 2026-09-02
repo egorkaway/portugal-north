@@ -2043,6 +2043,21 @@ export const stationHotels: StationHotels = {
     { name: "Chave D'ouro", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Chave%20D'ouro%2C%20Cuba%2C%20Portugal&order=price" },
     { name: "Hospedaria do Carmo", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20do%20Carmo%2C%20Cuba%2C%20Portugal&order=price" },
   ],
+  "Vila Nova da Baronia": [
+    { name: "Monte de Nossa Senhora do Carmo", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Monte%20de%20Nossa%20Senhora%20do%20Carmo%2C%20Vila%20Nova%20da%20Baronia%2C%20Portugal&order=price" },
+    { name: "The Green House Alentejo", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=The%20Green%20House%20Alentejo%2C%20Vila%20Nova%20da%20Baronia%2C%20Portugal&order=price" },
+    { name: "Casas da Baronia", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20da%20Baronia%2C%20Vila%20Nova%20da%20Baronia%2C%20Portugal&order=price" },
+  ],
+  "Alcáçovas": [
+    { name: "Monte do Sobral", distanceKm: 4.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Monte%20do%20Sobral%2C%20Alc%C3%A1%C3%A7ovas%2C%20Portugal&order=price" },
+    { name: "Herdade da Samarra - Agroturismo", distanceKm: 10.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Herdade%20da%20Samarra%20-%20Agroturismo%2C%20Alc%C3%A1%C3%A7ovas%2C%20Portugal&order=price" },
+    { name: "Hospedaria Maria de Jesus", distanceKm: 11.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaria%20Maria%20de%20Jesus%2C%20Alc%C3%A1%C3%A7ovas%2C%20Portugal&order=price" },
+  ],
+  "Boliqueime": [
+    { name: "Algarve Wheelchair Holidays", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Algarve%20Wheelchair%20Holidays%2C%20Boliqueime%2C%20Portugal&order=price" },
+    { name: "Anantara Vilamoura Algarve Resort", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Anantara%20Vilamoura%20Algarve%20Resort%2C%20Boliqueime%2C%20Portugal&order=price" },
+    { name: "Quinta Da Cebola Vermelha", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20Da%20Cebola%20Vermelha%2C%20Boliqueime%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4066,6 +4081,21 @@ export const stationHotels: StationHotels = {
     { name: "La Casa Vieja de Silió", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casa%20Vieja%20de%20Sili%C3%B3%2C%20B%C3%A1rcena%2C%20Spain&order=price" },
     { name: "Posada Los Avellanos", distanceKm: 3.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Posada%20Los%20Avellanos%2C%20B%C3%A1rcena%2C%20Spain&order=price" },
     { name: "La Finca del Monasterio", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Finca%20del%20Monasterio%2C%20B%C3%A1rcena%2C%20Spain&order=price" },
+  ],
+  "Santa Eugenia": [
+    { name: "Pensión Bulevar", distanceKm: 1.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Bulevar%2C%20Santa%20Eugenia%2C%20Spain&order=price" },
+    { name: "Los cazadores", distanceKm: 1.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Los%20cazadores%2C%20Santa%20Eugenia%2C%20Spain&order=price" },
+    { name: "Aparthotel Encasa", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20Encasa%2C%20Santa%20Eugenia%2C%20Spain&order=price" },
+  ],
+  "Orcasitas": [
+    { name: "Albergue juvenil San Fermín", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20juvenil%20San%20Ferm%C3%ADn%2C%20Orcasitas%2C%20Spain&order=price" },
+    { name: "Plaza el molino", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Plaza%20el%20molino%2C%20Orcasitas%2C%20Spain&order=price" },
+    { name: "Hotel Madrid Río", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Madrid%20R%C3%ADo%2C%20Orcasitas%2C%20Spain&order=price" },
+  ],
+  "Llinars del Vallès": [
+    { name: "Casa Moderna de Totxana", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Moderna%20de%20Totxana%2C%20Llinars%20del%20Vall%C3%A8s%2C%20Spain&order=price" },
+    { name: "Casa Modernista", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Modernista%2C%20Llinars%20del%20Vall%C3%A8s%2C%20Spain&order=price" },
+    { name: "Masia Paradise", distanceKm: 3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Masia%20Paradise%2C%20Llinars%20del%20Vall%C3%A8s%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

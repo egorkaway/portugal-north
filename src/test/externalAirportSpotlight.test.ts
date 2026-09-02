@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   coverageFromExternalMapRows,
+  formatExternalAirportMapsLog,
   isOutsideIberianPeninsula,
   pickExternalAirportForRun,
   rankExternalAirportsFromManifest,
@@ -79,6 +80,32 @@ describe("coverageFromExternalMapRows", () => {
       completeIatas: new Set(["FRA"]),
       inboundOnlyIatas: new Set(["PMI"]),
     });
+  });
+});
+
+describe("formatExternalAirportMapsLog", () => {
+  it("lists IATA codes in two groups with counts", () => {
+    expect(
+      formatExternalAirportMapsLog({
+        airports: [
+          { iata: "PMI", provider: "iberian-inbound" },
+          { iata: "AMS", provider: "iberian-inbound" },
+          { iata: "FRA", provider: "aviationstack" },
+        ],
+      }),
+    ).toBe(
+      [
+        "External destination maps (outside Iberian peninsula):",
+        "  Iberian flights only (regenerate when flight APIs available): PMI AMS (2)",
+        "  All flights (drawn with flight APIs): FRA (1)",
+      ].join("\n"),
+    );
+  });
+
+  it("says none yet when the store is empty", () => {
+    expect(formatExternalAirportMapsLog({ airports: [] })).toBe(
+      "External destination maps (outside Iberian peninsula): none yet",
+    );
   });
 });
 

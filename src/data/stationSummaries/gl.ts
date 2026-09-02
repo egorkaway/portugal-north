@@ -814,4 +814,13 @@ export const stationSummariesGl: Record<string, string> = {
   "Cuba":
     "Cuba é unha parada de CP de servizos Intercidades e rexionais na Linha do Alentejo en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
 
+  "Vila Nova da Baronia":
+    "Vila Nova da Baronia é unha parada de CP de servizos Intercidades e rexionais na Linha do Alentejo en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Alcáçovas":
+    "Alcáçovas é unha parada de CP de servizos Intercidades na Linha do Alentejo en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Boliqueime":
+    "Boliqueime é unha parada de CP de servizos rexionais na Linha do Algarve en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
 };
