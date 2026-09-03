@@ -1821,6 +1821,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@miguel-monte-411136289",
     photoPageUrl: "https://www.pexels.com/photo/urban-train-in-aveiro-station-close-up-28406417/",
   },
+  "28483614": {
+    photographer: "SHOX ART",
+    photographerUrl: "https://www.pexels.com/@shox",
+    photoPageUrl: "https://www.pexels.com/photo/industrial-bridge-over-odra-river-in-wroclaw-28483614/",
+  },
   "28560166": {
     photographer: "Shabazz Stuart",
     photographerUrl: "https://www.pexels.com/@shabazz-stuart-465927833",
@@ -3095,6 +3100,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Kari Alfonso",
     photographerUrl: "https://www.pexels.com/@kari-alfonso-2151442665",
     photoPageUrl: "https://www.pexels.com/photo/historic-train-station-with-vintage-railcar-in-black-and-white-39139818/",
+  },
+  "39154440": {
+    photographer: "Malcoln Oliveira",
+    photographerUrl: "https://www.pexels.com/@malcolnphoto",
+    photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-in-itabirito-brazil-39154440/",
   },
   "39269007": {
     photographer: "Antonio Garcia Prats",

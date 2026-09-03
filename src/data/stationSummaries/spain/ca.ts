@@ -1363,4 +1363,7 @@ export const spainSummariesCa: Record<string, string> = {
   "Almenara":
     "Almenara és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Sodupe":
+    "Sodupe és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

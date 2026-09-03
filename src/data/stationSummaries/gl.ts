@@ -883,4 +883,10 @@ export const stationSummariesGl: Record<string, string> = {
   "Vargelas":
     "Vargelas é unha parada de CP de servizos rexionais na Linha do Douro en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
 
+  "Benquerenças":
+    "Benquerenças é unha parada de CP de servizos rexionais na Linha da Beira Baixa en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Canas - Felgueira":
+    "Canas - Felgueira é unha parada de CP de servizos rexionais na Linha da Beira Alta en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
 };

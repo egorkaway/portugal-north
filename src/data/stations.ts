@@ -727,6 +727,22 @@ const cpStations: StationData[] = [
     lng: -7.316,
   },
 
+  {
+    name: "Benquerenças",
+    lines: ["Linha da Beira Baixa"],
+    types: ["Regional"],
+    lat: 39.7882,
+    lng: -7.5622,
+  },
+
+  {
+    name: "Canas - Felgueira",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.491,
+    lng: -7.9066,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

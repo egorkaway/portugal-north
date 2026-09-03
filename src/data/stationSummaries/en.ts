@@ -950,4 +950,10 @@ export const stationSummariesEn: Record<string, string> = {
   "Vargelas":
     "Vargelas is a CP regional halt on Linha do Douro in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Benquerenças":
+    "Benquerenças is a CP regional halt on Linha da Beira Baixa in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Canas - Felgueira":
+    "Canas - Felgueira is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

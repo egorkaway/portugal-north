@@ -1363,4 +1363,7 @@ export const spainSummariesEs: Record<string, string> = {
   "Almenara":
     "Almenara es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Sodupe":
+    "Sodupe es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

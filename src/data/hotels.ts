@@ -2153,10 +2153,15 @@ export const stationHotels: StationHotels = {
     { name: "Casa Vermelha", distanceKm: 8.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Vermelha%2C%20Freixo%20de%20Num%C3%A3o%20-%20M%C3%B3s%20do%20Douro%2C%20Portugal&order=price" },
     { name: "Quinta de São Xisto", distanceKm: 10.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20de%20S%C3%A3o%20Xisto%2C%20Freixo%20de%20Num%C3%A3o%20-%20M%C3%B3s%20do%20Douro%2C%20Portugal&order=price" },
   ],
-  "Vargelas": [
-    { name: "Quinta de São Xisto", distanceKm: 1.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20de%20S%C3%A3o%20Xisto%2C%20Vargelas%2C%20Portugal&order=price" },
-    { name: "Dourovou - Ecoturismo Fluvial", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dourovou%20-%20Ecoturismo%20Fluvial%2C%20Vargelas%2C%20Portugal&order=price" },
-    { name: "Hotel Pesqdouro", distanceKm: 7.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pesqdouro%2C%20Vargelas%2C%20Portugal&order=price" },
+  "Benquerenças": [
+    { name: "Pousada da Juventude", distanceKm: 6.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20da%20Juventude%2C%20Benqueren%C3%A7as%2C%20Portugal&order=price" },
+    { name: "Guest House Esplanada", distanceKm: 6.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guest%20House%20Esplanada%2C%20Benqueren%C3%A7as%2C%20Portugal&order=price" },
+    { name: "Hotel Rainha Dona Amélia", distanceKm: 6.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rainha%20Dona%20Am%C3%A9lia%2C%20Benqueren%C3%A7as%2C%20Portugal&order=price" },
+  ],
+  "Canas - Felgueira": [
+    { name: "Residencial Rossio", distanceKm: 1.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Rossio%2C%20Canas%20-%20Felgueira%2C%20Portugal&order=price" },
+    { name: "Casas do Lupo", distanceKm: 2.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20do%20Lupo%2C%20Canas%20-%20Felgueira%2C%20Portugal&order=price" },
+    { name: "Hotel Urgeiriça", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Urgeiri%C3%A7a%2C%20Canas%20-%20Felgueira%2C%20Portugal&order=price" },
   ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4296,6 +4301,11 @@ export const stationHotels: StationHotels = {
     { name: "Hostal Casa Paco", distanceKm: 4.4, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Casa%20Paco%2C%20Almenara%2C%20Spain&order=price" },
     { name: "Hotel Barú", distanceKm: 6.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bar%C3%BA%2C%20Almenara%2C%20Spain&order=price" },
     { name: "Hotel Belcaire", distanceKm: 7.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Belcaire%2C%20Almenara%2C%20Spain&order=price" },
+  ],
+  "Sodupe": [
+    { name: "Hotel Isasi", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Isasi%2C%20Sodupe%2C%20Spain&order=price" },
+    { name: "Santxosolo", distanceKm: 2.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santxosolo%2C%20Sodupe%2C%20Spain&order=price" },
+    { name: "Erreka Güeñes", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Erreka%20G%C3%BCe%C3%B1es%2C%20Sodupe%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

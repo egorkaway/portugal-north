@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-03T13:28:59.245Z",
-  "runCount": 688,
+  "generatedAt": "2026-09-03T15:02:26.794Z",
+  "runCount": 689,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -31,7 +31,7 @@
     {
       "trainNumber": "722",
       "serviceType": "Intercidades",
-      "avgDelayMinutes": 22.9,
+      "avgDelayMinutes": 23.1,
       "observations": 19,
       "stationsSampled": 15,
       "majorStations": [
@@ -74,16 +74,16 @@
       "poolSize": 12
     },
     {
-      "trainNumber": "36410",
+      "trainNumber": "36415",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
       "observations": 14,
       "stationsSampled": 13,
       "majorStations": [
-        "Mira Sintra-Meleças",
         "Pero Negro",
         "Mafra",
-        "Dois Portos"
+        "Dois Portos",
+        "Feliteira"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

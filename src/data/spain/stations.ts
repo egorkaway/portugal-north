@@ -3920,4 +3920,13 @@ export const spainStations: Station[] = [
     lng: -0.2184,
   },
 
+  {
+    name: "Sodupe",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.202,
+    lng: -3.0505,
+  },
+
 ];
