@@ -855,6 +855,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Ponferrada": ["20200"],
 
+  "Sanlúcar la Mayor": ["43004"],
+
+  "Almenara": ["65202"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

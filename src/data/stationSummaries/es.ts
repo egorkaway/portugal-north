@@ -877,4 +877,10 @@ export const stationSummariesEs: Record<string, string> = {
   "Pedra Furada":
     "Pedra Furada es una parada de CP de servicios regionales en la Linha do Oeste en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
 
+  "Freixo de Numão - Mós do Douro":
+    "Freixo de Numão - Mós do Douro es una parada de CP de servicios regionales en la Linha do Douro en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Vargelas":
+    "Vargelas es una parada de CP de servicios regionales en la Linha do Douro en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
 };

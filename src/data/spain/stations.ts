@@ -3902,4 +3902,22 @@ export const spainStations: Station[] = [
     lng: -6.6024,
   },
 
+  {
+    name: "Sanlúcar la Mayor",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.3814,
+    lng: -6.194,
+  },
+
+  {
+    name: "Almenara",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.7488,
+    lng: -0.2184,
+  },
+
 ];

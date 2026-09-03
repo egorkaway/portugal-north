@@ -944,4 +944,10 @@ export const stationSummariesEn: Record<string, string> = {
   "Pedra Furada":
     "Pedra Furada is a CP regional halt on Linha do Oeste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Freixo de Numão - Mós do Douro":
+    "Freixo de Numão - Mós do Douro is a CP regional halt on Linha do Douro in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Vargelas":
+    "Vargelas is a CP regional halt on Linha do Douro in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

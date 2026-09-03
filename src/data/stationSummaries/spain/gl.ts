@@ -1357,4 +1357,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Ponferrada":
     "Ponferrada é unha estación de Renfe de longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Sanlúcar la Mayor":
+    "Sanlúcar la Mayor é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Almenara":
+    "Almenara é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

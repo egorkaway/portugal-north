@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-03T10:04:07.411Z",
-  "runCount": 686,
+  "generatedAt": "2026-09-03T13:28:59.245Z",
+  "runCount": 688,
   "mostDelayed": [
     {
       "trainNumber": "868",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 36.5,
-      "observations": 13,
+      "avgDelayMinutes": 33.9,
+      "observations": 14,
       "stationsSampled": 19,
       "majorStations": [
         "Porto-Campanhã",
@@ -31,8 +31,8 @@
     {
       "trainNumber": "722",
       "serviceType": "Intercidades",
-      "avgDelayMinutes": 23.8,
-      "observations": 18,
+      "avgDelayMinutes": 22.9,
+      "observations": 19,
       "stationsSampled": 15,
       "majorStations": [
         "Porto-Campanhã",
@@ -44,36 +44,6 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "36407",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 15,
-      "stationsSampled": 13,
-      "majorStations": [
-        "Pero Negro",
-        "Mafra",
-        "Feliteira",
-        "Dois Portos"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "10540",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 0,
-      "observations": 14,
-      "stationsSampled": 6,
-      "majorStations": [
-        "Abrantes",
-        "Castelo Branco",
-        "Covilhã",
-        "Fundão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
       "trainNumber": "10541",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
@@ -84,6 +54,36 @@
         "Guarda",
         "Covilhã",
         "Fundão"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36406",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 14,
+      "stationsSampled": 13,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Mafra",
+        "Dois Portos"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36410",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 14,
+      "stationsSampled": 13,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Mafra",
+        "Dois Portos"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

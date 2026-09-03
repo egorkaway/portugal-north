@@ -1357,4 +1357,10 @@ export const spainSummariesEn: Record<string, string> = {
   "Ponferrada":
     "Ponferrada is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Sanlúcar la Mayor":
+    "Sanlúcar la Mayor is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Almenara":
+    "Almenara is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

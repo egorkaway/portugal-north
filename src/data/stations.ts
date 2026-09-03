@@ -711,6 +711,22 @@ const cpStations: StationData[] = [
     lng: -9.2955,
   },
 
+  {
+    name: "Freixo de Numão - Mós do Douro",
+    lines: ["Linha do Douro"],
+    types: ["Regional"],
+    lat: 41.1346,
+    lng: -7.2114,
+  },
+
+  {
+    name: "Vargelas",
+    lines: ["Linha do Douro"],
+    types: ["Regional"],
+    lat: 41.1431,
+    lng: -7.316,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

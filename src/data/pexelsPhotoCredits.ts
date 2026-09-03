@@ -1231,6 +1231,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@petra-nesti-1766376",
     photoPageUrl: "https://www.pexels.com/photo/view-of-the-carvalhal-beach-on-the-atlantic-coast-alentejo-portugal-17157805/",
   },
+  "17249891": {
+    photographer: "joao Guerreiro",
+    photographerUrl: "https://www.pexels.com/@gunas4life",
+    photoPageUrl: "https://www.pexels.com/photo/a-cottage-in-the-countryside-17249891/",
+  },
   "17252889": {
     photographer: "Eduardo Niederauer",
     photographerUrl: "https://www.pexels.com/@eduardogn",
@@ -1830,6 +1835,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "J MAD",
     photographerUrl: "https://www.pexels.com/@juicemitapfelndrin",
     photoPageUrl: "https://www.pexels.com/photo/architectural-glass-roof-of-antwerp-station-28770546/",
+  },
+  "28972500": {
+    photographer: "Hub JACQU",
+    photographerUrl: "https://www.pexels.com/@hub-jacqu-750015482",
+    photoPageUrl: "https://www.pexels.com/photo/historic-tram-in-rainy-porto-city-center-28972500/",
   },
   "29144892": {
     photographer: "Liane Ferreira",

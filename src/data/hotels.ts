@@ -2148,6 +2148,16 @@ export const stationHotels: StationHotels = {
     { name: "Cabra Figa", distanceKm: 5.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cabra%20Figa%2C%20Pedra%20Furada%2C%20Portugal&order=price" },
     { name: "Quinta da Cerca", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Cerca%2C%20Pedra%20Furada%2C%20Portugal&order=price" },
   ],
+  "Freixo de Numão - Mós do Douro": [
+    { name: "Pousada de Juventude", distanceKm: 7.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20de%20Juventude%2C%20Freixo%20de%20Num%C3%A3o%20-%20M%C3%B3s%20do%20Douro%2C%20Portugal&order=price" },
+    { name: "Casa Vermelha", distanceKm: 8.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Vermelha%2C%20Freixo%20de%20Num%C3%A3o%20-%20M%C3%B3s%20do%20Douro%2C%20Portugal&order=price" },
+    { name: "Quinta de São Xisto", distanceKm: 10.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20de%20S%C3%A3o%20Xisto%2C%20Freixo%20de%20Num%C3%A3o%20-%20M%C3%B3s%20do%20Douro%2C%20Portugal&order=price" },
+  ],
+  "Vargelas": [
+    { name: "Quinta de São Xisto", distanceKm: 1.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20de%20S%C3%A3o%20Xisto%2C%20Vargelas%2C%20Portugal&order=price" },
+    { name: "Dourovou - Ecoturismo Fluvial", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dourovou%20-%20Ecoturismo%20Fluvial%2C%20Vargelas%2C%20Portugal&order=price" },
+    { name: "Hotel Pesqdouro", distanceKm: 7.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pesqdouro%2C%20Vargelas%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4276,6 +4286,16 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Aroi Ponferrada", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Aroi%20Ponferrada%2C%20Ponferrada%2C%20Spain&order=price" },
     { name: "Hotel Temple", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Temple%2C%20Ponferrada%2C%20Spain&order=price" },
     { name: "Hostal La Madrileña", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Madrile%C3%B1a%2C%20Ponferrada%2C%20Spain&order=price" },
+  ],
+  "Sanlúcar la Mayor": [
+    { name: "Hotel Solucar", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Solucar%2C%20Sanl%C3%BAcar%20la%20Mayor%2C%20Spain&order=price" },
+    { name: "Hotel Hacienda Benazuza", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Hacienda%20Benazuza%2C%20Sanl%C3%BAcar%20la%20Mayor%2C%20Spain&order=price" },
+    { name: "Hostal Don Julio", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Don%20Julio%2C%20Sanl%C3%BAcar%20la%20Mayor%2C%20Spain&order=price" },
+  ],
+  "Almenara": [
+    { name: "Hostal Casa Paco", distanceKm: 4.4, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Casa%20Paco%2C%20Almenara%2C%20Spain&order=price" },
+    { name: "Hotel Barú", distanceKm: 6.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bar%C3%BA%2C%20Almenara%2C%20Spain&order=price" },
+    { name: "Hotel Belcaire", distanceKm: 7.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Belcaire%2C%20Almenara%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

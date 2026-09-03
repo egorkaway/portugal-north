@@ -1357,4 +1357,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Ponferrada":
     "Ponferrada és una estació de Renfe de llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Sanlúcar la Mayor":
+    "Sanlúcar la Mayor és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Almenara":
+    "Almenara és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };
