@@ -850,4 +850,19 @@ export const stationSummariesCa: Record<string, string> = {
   "Parque das Cidades":
     "Parque das Cidades és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
 
+  "Poço Barreto":
+    "Poço Barreto és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Malveira":
+    "Malveira és una parada de CP de serveis regionals a la Linha do Oeste a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Sabugo":
+    "Sabugo és una parada de CP de serveis regionals a la Linha do Oeste a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Carregal do Sal":
+    "Carregal do Sal és una parada de CP de serveis Intercidades i regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Mortágua":
+    "Mortágua és una parada de CP de serveis Intercidades i regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
 };

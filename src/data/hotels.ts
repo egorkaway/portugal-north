@@ -2103,6 +2103,31 @@ export const stationHotels: StationHotels = {
     { name: "Sítio das Duas Amêndoas", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=S%C3%ADtio%20das%20Duas%20Am%C3%AAndoas%2C%20Parque%20das%20Cidades%2C%20Portugal&order=price" },
     { name: "Âmago - Casa Lenta", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=%C3%82mago%20-%20Casa%20Lenta%2C%20Parque%20das%20Cidades%2C%20Portugal&order=price" },
   ],
+  "Poço Barreto": [
+    { name: "Vila Odysseus", distanceKm: 2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Odysseus%2C%20Po%C3%A7o%20Barreto%2C%20Portugal&order=price" },
+    { name: "Quinta Teresinha - Alojamento local", distanceKm: 2.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20Teresinha%20-%20Alojamento%20local%2C%20Po%C3%A7o%20Barreto%2C%20Portugal&order=price" },
+    { name: "Casa das Oliveiras", distanceKm: 3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20das%20Oliveiras%2C%20Po%C3%A7o%20Barreto%2C%20Portugal&order=price" },
+  ],
+  "Malveira": [
+    { name: "Mafra Hotel", distanceKm: 6.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mafra%20Hotel%2C%20Malveira%2C%20Portugal&order=price" },
+    { name: "DOMA Portugal", distanceKm: 6.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=DOMA%20Portugal%2C%20Malveira%2C%20Portugal&order=price" },
+    { name: "Cabra Figa", distanceKm: 9.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cabra%20Figa%2C%20Malveira%2C%20Portugal&order=price" },
+  ],
+  "Sabugo": [
+    { name: "Quinta da Cerca", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Cerca%2C%20Sabugo%2C%20Portugal&order=price" },
+    { name: "Vivenda André", distanceKm: 3.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vivenda%20Andr%C3%A9%2C%20Sabugo%2C%20Portugal&order=price" },
+    { name: "Quinta do Scoto", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Scoto%2C%20Sabugo%2C%20Portugal&order=price" },
+  ],
+  "Carregal do Sal": [
+    { name: "Quinta Vale do Fojo", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20Vale%20do%20Fojo%2C%20Carregal%20do%20Sal%2C%20Portugal&order=price" },
+    { name: "Quinta Vale Porchacho", distanceKm: 5.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20Vale%20Porchacho%2C%20Carregal%20do%20Sal%2C%20Portugal&order=price" },
+    { name: "No’Clock - Country House", distanceKm: 6.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=No%E2%80%99Clock%20-%20Country%20House%2C%20Carregal%20do%20Sal%2C%20Portugal&order=price" },
+  ],
+  "Mortágua": [
+    { name: "Lena Village", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lena%20Village%2C%20Mort%C3%A1gua%2C%20Portugal&order=price" },
+    { name: "Hotel Monte Rio Aguieira", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Monte%20Rio%20Aguieira%2C%20Mort%C3%A1gua%2C%20Portugal&order=price" },
+    { name: "Hotel Rural Quinta da Conchada", distanceKm: 6.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20Quinta%20da%20Conchada%2C%20Mort%C3%A1gua%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4186,6 +4211,31 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Errekagain", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Errekagain%2C%20Areta%2C%20Spain&order=price" },
     { name: "Kutxatxuri", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Kutxatxuri%2C%20Areta%2C%20Spain&order=price" },
     { name: "Valle de Ayala", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Valle%20de%20Ayala%2C%20Areta%2C%20Spain&order=price" },
+  ],
+  "Las Cabezas de San Juan": [
+    { name: "Venta El Pan", distanceKm: 4.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Venta%20El%20Pan%2C%20Las%20Cabezas%20de%20San%20Juan%2C%20Spain&order=price" },
+    { name: "El Cruce", distanceKm: 9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Cruce%2C%20Las%20Cabezas%20de%20San%20Juan%2C%20Spain&order=price" },
+    { name: "Hotel Cortijo Los Naranjos", distanceKm: 9.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cortijo%20Los%20Naranjos%2C%20Las%20Cabezas%20de%20San%20Juan%2C%20Spain&order=price" },
+  ],
+  "El Cáñamo": [
+    { name: "Hotel Villa Maria", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Villa%20Maria%2C%20El%20C%C3%A1%C3%B1amo%2C%20Spain&order=price" },
+    { name: "Hostal Venta El Cruce", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Venta%20El%20Cruce%2C%20El%20C%C3%A1%C3%B1amo%2C%20Spain&order=price" },
+    { name: "Hotel El Cruce", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Cruce%2C%20El%20C%C3%A1%C3%B1amo%2C%20Spain&order=price" },
+  ],
+  "Caldes d'Estrac": [
+    { name: "Hotel Colon", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Colon%2C%20Caldes%20d'Estrac%2C%20Spain&order=price" },
+    { name: "Pensió Kalima", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3%20Kalima%2C%20Caldes%20d'Estrac%2C%20Spain&order=price" },
+    { name: "Hotel Kalima", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Kalima%2C%20Caldes%20d'Estrac%2C%20Spain&order=price" },
+  ],
+  "Cubelles": [
+    { name: "Xalet del Nin", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Xalet%20del%20Nin%2C%20Cubelles%2C%20Spain&order=price" },
+    { name: "Cunit Suites Spa Hotel", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cunit%20Suites%20Spa%20Hotel%2C%20Cubelles%2C%20Spain&order=price" },
+    { name: "Hotel Ribes-Roges", distanceKm: 4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ribes-Roges%2C%20Cubelles%2C%20Spain&order=price" },
+  ],
+  "Sax": [
+    { name: "Hotel Fuente El Cura", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Fuente%20El%20Cura%2C%20Sax%2C%20Spain&order=price" },
+    { name: "Hostal El Almendros", distanceKm: 0.9, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20Almendros%2C%20Sax%2C%20Spain&order=price" },
+    { name: "Alojamiento Rural La Puerta del Agua", distanceKm: 4.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamiento%20Rural%20La%20Puerta%20del%20Agua%2C%20Sax%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

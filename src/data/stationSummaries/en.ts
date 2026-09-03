@@ -917,4 +917,19 @@ export const stationSummariesEn: Record<string, string> = {
   "Parque das Cidades":
     "Parque das Cidades is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Poço Barreto":
+    "Poço Barreto is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Malveira":
+    "Malveira is a CP regional halt on Linha do Oeste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Sabugo":
+    "Sabugo is a CP regional halt on Linha do Oeste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Carregal do Sal":
+    "Carregal do Sal is a CP Intercidades and regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Mortágua":
+    "Mortágua is a CP Intercidades and regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

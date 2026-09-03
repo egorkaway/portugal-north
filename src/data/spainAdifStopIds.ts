@@ -837,6 +837,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Areta": ["13107"],
 
+  "Las Cabezas de San Juan": ["51202"],
+
+  "El Cáñamo": ["50704"],
+
+  "Caldes d'Estrac": ["79502"],
+
+  "Cubelles": ["71604"],
+
+  "Sax": ["60904"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

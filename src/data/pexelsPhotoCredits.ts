@@ -1376,6 +1376,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@joerg-hartmann-626385254",
     photoPageUrl: "https://www.pexels.com/photo/benches-in-front-of-the-railway-station-waiting-room-19034403/",
   },
+  "19085285": {
+    photographer: "Jan van der Wolf",
+    photographerUrl: "https://www.pexels.com/@jan-van-der-wolf-11680885",
+    photoPageUrl: "https://www.pexels.com/photo/bench-against-demolished-building-19085285/",
+  },
   "19091956": {
     photographer: "Masi",
     photographerUrl: "https://www.pexels.com/@masi-461420600",
@@ -2291,6 +2296,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@tuan-vy-903011268",
     photoPageUrl: "https://www.pexels.com/photo/vintage-train-at-an-outdoor-station-32884620/",
   },
+  "32969988": {
+    photographer: "Ariadne Barroso",
+    photographerUrl: "https://www.pexels.com/@titiaariadne",
+    photoPageUrl: "https://www.pexels.com/photo/red-train-at-historic-paranapiacaba-station-32969988/",
+  },
   "32979182": {
     photographer: "Regan Dsouza",
     photographerUrl: "https://www.pexels.com/@regan-dsouza-1315522347",
@@ -2881,6 +2891,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@alexravvas",
     photoPageUrl: "https://www.pexels.com/photo/scenic-kalavryta-railway-station-in-greece-37487783/",
   },
+  "37505763": {
+    photographer: "Frederick Adegoke Snr.",
+    photographerUrl: "https://www.pexels.com/@thelionics",
+    photoPageUrl: "https://www.pexels.com/photo/scenic-countryside-house-in-cantabria-spain-37505763/",
+  },
   "37548355": {
     photographer: "Mohsan TV",
     photographerUrl: "https://www.pexels.com/@mohsan-tv-451533817",
@@ -2975,6 +2990,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Lorenzo Manera",
     photographerUrl: "https://www.pexels.com/@lorenzo-manera-686693293",
     photoPageUrl: "https://www.pexels.com/photo/vintage-steam-train-at-historic-wooden-station-38452507/",
+  },
+  "38464001": {
+    photographer: "Nuno Magalhães",
+    photographerUrl: "https://www.pexels.com/@nuno-magalhaes-1241549",
+    photoPageUrl: "https://www.pexels.com/photo/abandoned-arraiolos-station-in-rural-setting-38464001/",
   },
   "38479643": {
     photographer: "Cristiano Ferrari films",

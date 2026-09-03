@@ -639,6 +639,46 @@ const cpStations: StationData[] = [
     lng: -7.9849,
   },
 
+  {
+    name: "Poço Barreto",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1636,
+    lng: -8.3888,
+  },
+
+  {
+    name: "Malveira",
+    lines: ["Linha do Oeste"],
+    types: ["Regional"],
+    lat: 38.9288,
+    lng: -9.2574,
+  },
+
+  {
+    name: "Sabugo",
+    lines: ["Linha do Oeste"],
+    types: ["Regional"],
+    lat: 38.8305,
+    lng: -9.3,
+  },
+
+  {
+    name: "Carregal do Sal",
+    lines: ["Linha da Beira Alta"],
+    types: ["Intercidades", "Regional"],
+    lat: 40.4333,
+    lng: -8.0076,
+  },
+
+  {
+    name: "Mortágua",
+    lines: ["Linha da Beira Alta"],
+    types: ["Intercidades", "Regional"],
+    lat: 40.3909,
+    lng: -8.2412,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

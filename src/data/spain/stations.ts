@@ -3821,4 +3821,49 @@ export const spainStations: Station[] = [
     lng: -2.9434,
   },
 
+  {
+    name: "Las Cabezas de San Juan",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.0195,
+    lng: -5.9466,
+  },
+
+  {
+    name: "El Cáñamo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.4864,
+    lng: -5.933,
+  },
+
+  {
+    name: "Caldes d'Estrac",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5686,
+    lng: 2.526,
+  },
+
+  {
+    name: "Cubelles",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.2043,
+    lng: 1.676,
+  },
+
+  {
+    name: "Sax",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.5443,
+    lng: -0.8137,
+  },
+
 ];
