@@ -3740,4 +3740,85 @@ export const spainStations: Station[] = [
     lng: 2.4045,
   },
 
+  {
+    name: "Mollerussa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6318,
+    lng: 0.8968,
+  },
+
+  {
+    name: "Santa María de la Alameda-Peguerinos",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.569,
+    lng: -4.2691,
+  },
+
+  {
+    name: "Madrid-Aeropuerto T4",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.4924,
+    lng: -3.5932,
+  },
+
+  {
+    name: "Seguers-Sant Pere Sallavinera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.748,
+    lng: 1.5742,
+  },
+
+  {
+    name: "Cornellà",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3575,
+    lng: 2.0705,
+  },
+
+  {
+    name: "La Hoya",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.4112,
+    lng: -6.1391,
+  },
+
+  {
+    name: "Zorrotza Zorrozgoiti",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.274,
+    lng: -2.974,
+  },
+
+  {
+    name: "Parque Polvoranca",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3126,
+    lng: -3.7835,
+  },
+
+  {
+    name: "Areta",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1451,
+    lng: -2.9434,
+  },
+
 ];

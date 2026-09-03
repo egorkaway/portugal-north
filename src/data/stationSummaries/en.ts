@@ -890,4 +890,31 @@ export const stationSummariesEn: Record<string, string> = {
   "Boliqueime":
     "Boliqueime is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Estômbar - Lagoa":
+    "Estômbar - Lagoa is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Valongo - Vouga":
+    "Valongo - Vouga is a CP regional halt on Linha do Norte in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Alcantarilha":
+    "Alcantarilha is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Algoz":
+    "Algoz is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Almancil":
+    "Almancil is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Ferragudo":
+    "Ferragudo is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Meia Praia":
+    "Meia Praia is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Mexilhoeira Grande":
+    "Mexilhoeira Grande is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Parque das Cidades":
+    "Parque das Cidades is a CP regional halt on Linha do Algarve in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

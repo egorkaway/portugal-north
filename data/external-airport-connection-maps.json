@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-02T09:35:28.614Z",
+  "updatedAt": "2026-09-03T04:08:58.229Z",
   "airports": [
     {
       "iata": "PMI",
@@ -179,6 +179,62 @@
       "sampledFlights": 53,
       "mapImage": "/maps/airports/external/munich-airport-muc-connections.png",
       "sampledAt": "2026-09-02T09:35:28.614Z",
+      "periodId": "2026-08-11",
+      "provider": "iberian-inbound",
+      "basemapId": "osm"
+    },
+    {
+      "iata": "GVA",
+      "stationName": "Geneva International Airport (GVA)",
+      "slug": "geneva-international-airport-gva",
+      "country": "CH",
+      "iberianFlightCount": 47,
+      "destinationCount": 12,
+      "sampledFlights": 47,
+      "mapImage": "/maps/airports/external/geneva-international-airport-gva-connections.png",
+      "sampledAt": "2026-09-02T13:30:05.656Z",
+      "periodId": "2026-08-11",
+      "provider": "iberian-inbound",
+      "basemapId": "osm"
+    },
+    {
+      "iata": "MXP",
+      "stationName": "Milan Malpensa International Airport (MXP)",
+      "slug": "milan-malpensa-international-airport-mxp",
+      "country": "IT",
+      "iberianFlightCount": 47,
+      "destinationCount": 10,
+      "sampledFlights": 47,
+      "mapImage": "/maps/airports/external/milan-malpensa-international-airport-mxp-connections.png",
+      "sampledAt": "2026-09-02T19:16:45.740Z",
+      "periodId": "2026-08-11",
+      "provider": "iberian-inbound",
+      "basemapId": "osm"
+    },
+    {
+      "iata": "MAN",
+      "stationName": "Manchester Airport (MAN)",
+      "slug": "manchester-airport-man",
+      "country": "GB",
+      "iberianFlightCount": 46,
+      "destinationCount": 17,
+      "sampledFlights": 46,
+      "mapImage": "/maps/airports/external/manchester-airport-man-connections.png",
+      "sampledAt": "2026-09-03T04:08:25.969Z",
+      "periodId": "2026-08-11",
+      "provider": "iberian-inbound",
+      "basemapId": "osm"
+    },
+    {
+      "iata": "BRU",
+      "stationName": "Brussels Airport (BRU)",
+      "slug": "brussels-airport-bru",
+      "country": "BE",
+      "iberianFlightCount": 46,
+      "destinationCount": 15,
+      "sampledFlights": 46,
+      "mapImage": "/maps/airports/external/brussels-airport-bru-connections.png",
+      "sampledAt": "2026-09-03T04:08:58.229Z",
       "periodId": "2026-08-11",
       "provider": "iberian-inbound",
       "basemapId": "osm"

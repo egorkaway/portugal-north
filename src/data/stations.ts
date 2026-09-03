@@ -567,6 +567,78 @@ const cpStations: StationData[] = [
     lng: -8.1527,
   },
 
+  {
+    name: "Estômbar - Lagoa",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1434,
+    lng: -8.4855,
+  },
+
+  {
+    name: "Valongo - Vouga",
+    lines: ["Linha do Norte"],
+    types: ["Regional"],
+    lat: 40.6242,
+    lng: -8.4499,
+  },
+
+  {
+    name: "Alcantarilha",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1699,
+    lng: -8.3486,
+  },
+
+  {
+    name: "Algoz",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1678,
+    lng: -8.3029,
+  },
+
+  {
+    name: "Almancil",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.0952,
+    lng: -8.0234,
+  },
+
+  {
+    name: "Ferragudo",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1388,
+    lng: -8.519,
+  },
+
+  {
+    name: "Meia Praia",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1186,
+    lng: -8.6475,
+  },
+
+  {
+    name: "Mexilhoeira Grande",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.1542,
+    lng: -8.6096,
+  },
+
+  {
+    name: "Parque das Cidades",
+    lines: ["Linha do Algarve"],
+    types: ["Regional"],
+    lat: 37.0802,
+    lng: -7.9849,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

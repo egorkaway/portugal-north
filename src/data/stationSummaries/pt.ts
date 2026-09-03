@@ -823,4 +823,31 @@ export const stationSummariesPt: Record<string, string> = {
   "Boliqueime":
     "Boliqueime é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
 
+  "Estômbar - Lagoa":
+    "Estômbar - Lagoa é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Valongo - Vouga":
+    "Valongo - Vouga é uma paragem CP de serviços regionais na Linha do Norte em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Alcantarilha":
+    "Alcantarilha é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Algoz":
+    "Algoz é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Almancil":
+    "Almancil é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Ferragudo":
+    "Ferragudo é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Meia Praia":
+    "Meia Praia é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Mexilhoeira Grande":
+    "Mexilhoeira Grande é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Parque das Cidades":
+    "Parque das Cidades é uma paragem CP de serviços regionais na Linha do Algarve em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
 };

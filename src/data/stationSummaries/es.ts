@@ -823,4 +823,31 @@ export const stationSummariesEs: Record<string, string> = {
   "Boliqueime":
     "Boliqueime es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
 
+  "Estômbar - Lagoa":
+    "Estômbar - Lagoa es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Valongo - Vouga":
+    "Valongo - Vouga es una parada de CP de servicios regionales en la Linha do Norte en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Alcantarilha":
+    "Alcantarilha es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Algoz":
+    "Algoz es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Almancil":
+    "Almancil es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Ferragudo":
+    "Ferragudo es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Meia Praia":
+    "Meia Praia es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Mexilhoeira Grande":
+    "Mexilhoeira Grande es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Parque das Cidades":
+    "Parque das Cidades es una parada de CP de servicios regionales en la Linha do Algarve en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
 };

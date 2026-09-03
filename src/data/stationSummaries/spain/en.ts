@@ -1303,4 +1303,31 @@ export const spainSummariesEn: Record<string, string> = {
   "Llinars del Vallès":
     "Llinars del Vallès is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Mollerussa":
+    "Mollerussa is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Santa María de la Alameda-Peguerinos":
+    "Santa María de la Alameda-Peguerinos is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Madrid-Aeropuerto T4":
+    "Madrid-Aeropuerto T4 is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Seguers-Sant Pere Sallavinera":
+    "Seguers-Sant Pere Sallavinera is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Cornellà":
+    "Cornellà is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "La Hoya":
+    "La Hoya is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Zorrotza Zorrozgoiti":
+    "Zorrotza Zorrozgoiti is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Parque Polvoranca":
+    "Parque Polvoranca is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Areta":
+    "Areta is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

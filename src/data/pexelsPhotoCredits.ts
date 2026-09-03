@@ -166,6 +166,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pille-kirsi-222198",
     photoPageUrl: "https://www.pexels.com/photo/people-walking-on-hallway-1075839/",
   },
+  "1170180": {
+    photographer: "veerasak Piyawatanakul",
+    photographerUrl: "https://www.pexels.com/@veerasak-piyawatanakul-392493",
+    photoPageUrl: "https://www.pexels.com/photo/man-and-woman-sitting-on-brown-wooden-bench-at-the-train-station-1170180/",
+  },
   "1170182": {
     photographer: "veerasak Piyawatanakul",
     photographerUrl: "https://www.pexels.com/@veerasak-piyawatanakul-392493",
@@ -1190,6 +1195,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Emrah İnci",
     photographerUrl: "https://www.pexels.com/@emrah-i-nci-191282376",
     photoPageUrl: "https://www.pexels.com/photo/a-train-at-the-station-and-man-standing-on-the-platform-16843692/",
+  },
+  "17034500": {
+    photographer: "Joan Costa",
+    photographerUrl: "https://www.pexels.com/@jcosta",
+    photoPageUrl: "https://www.pexels.com/photo/tio-pepe-logo-on-building-in-madrid-17034500/",
   },
   "17056082": {
     photographer: "Andres Alaniz",
@@ -2441,6 +2451,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@spiros-kakos-1083421",
     photoPageUrl: "https://www.pexels.com/photo/abandoned-graffiti-covered-train-car-in-black-and-white-34055632/",
   },
+  "34134854": {
+    photographer: "Jose Cruz",
+    photographerUrl: "https://www.pexels.com/@cruz-in-portugal",
+    photoPageUrl: "https://www.pexels.com/photo/panoramic-view-of-coastal-cliffs-in-praia-das-macas-34134854/",
+  },
   "34189741": {
     photographer: "Bob Jenkin",
     photographerUrl: "https://www.pexels.com/@bob-jenkin-2007649943",
@@ -2566,6 +2581,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@niksbro2404",
     photoPageUrl: "https://www.pexels.com/photo/quiet-railway-station-with-passing-train-35289361/",
   },
+  "35327616": {
+    photographer: "ᛟᛞᚨᛚᚹ ᚨᚱᚲᛟᚾᛊᚲᛁ",
+    photographerUrl: "https://www.pexels.com/@odalv",
+    photoPageUrl: "https://www.pexels.com/photo/modern-train-at-zagreb-railway-station-35327616/",
+  },
   "35388184": {
     photographer: "Travel Photographer",
     photographerUrl: "https://www.pexels.com/@travel-photographer-127255675",
@@ -2665,6 +2685,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Karlheinz Strohmaier",
     photographerUrl: "https://www.pexels.com/@karlheinz-strohmaier-2153257497",
     photoPageUrl: "https://www.pexels.com/photo/old-cargo-train-in-motion-on-railway-tracks-36095712/",
+  },
+  "36189661": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/modern-railway-station-interior-in-cadiz-36189661/",
   },
   "36195919": {
     photographer: "Wolfgang Weiser",
@@ -2851,6 +2876,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@aliakdemir",
     photoPageUrl: "https://www.pexels.com/photo/ancient-aqueduct-bridge-over-serene-landscape-37453768/",
   },
+  "37487783": {
+    photographer: "Alex Ravvas",
+    photographerUrl: "https://www.pexels.com/@alexravvas",
+    photoPageUrl: "https://www.pexels.com/photo/scenic-kalavryta-railway-station-in-greece-37487783/",
+  },
   "37548355": {
     photographer: "Mohsan TV",
     photographerUrl: "https://www.pexels.com/@mohsan-tv-451533817",
@@ -2966,6 +2996,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@sergei",
     photoPageUrl: "https://www.pexels.com/photo/dom-luis-i-bridge-spanning-douro-river-porto-38780454/",
   },
+  "38792721": {
+    photographer: "El Capra",
+    photographerUrl: "https://www.pexels.com/@el-capra-98488027",
+    photoPageUrl: "https://www.pexels.com/photo/historic-steam-locomotives-in-train-museum-38792721/",
+  },
   "38814595": {
     photographer: "Malcoln Oliveira",
     photographerUrl: "https://www.pexels.com/@malcolnphoto",
@@ -2975,6 +3010,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Malcoln Oliveira",
     photographerUrl: "https://www.pexels.com/@malcolnphoto",
     photoPageUrl: "https://www.pexels.com/photo/charming-historical-train-station-in-minas-gerais-38814600/",
+  },
+  "38814603": {
+    photographer: "Malcoln Oliveira",
+    photographerUrl: "https://www.pexels.com/@malcolnphoto",
+    photoPageUrl: "https://www.pexels.com/photo/charming-santa-luzia-train-station-at-twilight-38814603/",
   },
   "38844111": {
     photographer: "Jerson Martins",
@@ -3010,6 +3050,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Rafael Minguet Delgado",
     photographerUrl: "https://www.pexels.com/@thales13",
     photoPageUrl: "https://www.pexels.com/photo/valencia-s-historic-ruzafa-metro-at-blue-hour-39121174/",
+  },
+  "39121177": {
+    photographer: "Rafael Minguet Delgado",
+    photographerUrl: "https://www.pexels.com/@thales13",
+    photoPageUrl: "https://www.pexels.com/photo/historic-valencian-facade-at-blue-hour-39121177/",
   },
   "39139818": {
     photographer: "Kari Alfonso",

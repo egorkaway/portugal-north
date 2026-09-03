@@ -823,4 +823,31 @@ export const stationSummariesCa: Record<string, string> = {
   "Boliqueime":
     "Boliqueime és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
 
+  "Estômbar - Lagoa":
+    "Estômbar - Lagoa és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Valongo - Vouga":
+    "Valongo - Vouga és una parada de CP de serveis regionals a la Linha do Norte a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Alcantarilha":
+    "Alcantarilha és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Algoz":
+    "Algoz és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Almancil":
+    "Almancil és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Ferragudo":
+    "Ferragudo és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Meia Praia":
+    "Meia Praia és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Mexilhoeira Grande":
+    "Mexilhoeira Grande és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Parque das Cidades":
+    "Parque das Cidades és una parada de CP de serveis regionals a la Linha do Algarve a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
 };

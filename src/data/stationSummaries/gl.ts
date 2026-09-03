@@ -823,4 +823,31 @@ export const stationSummariesGl: Record<string, string> = {
   "Boliqueime":
     "Boliqueime é unha parada de CP de servizos rexionais na Linha do Algarve en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
 
+  "Estômbar - Lagoa":
+    "Estômbar - Lagoa é unha parada de CP de servizos rexionais na Linha do Algarve en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Valongo - Vouga":
+    "Valongo - Vouga é unha parada de CP de servizos rexionais na Linha do Norte en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Alcantarilha":
+    "Alcantarilha é unha parada de CP de servizos rexionais na Linha do Algarve en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Algoz":
+    "Algoz é unha parada de CP de servizos rexionais na Linha do Algarve en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Almancil":
+    "Almancil é unha parada de CP de servizos rexionais na Linha do Algarve en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Ferragudo":
+    "Ferragudo é unha parada de CP de servizos rexionais na Linha do Algarve en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Meia Praia":
+    "Meia Praia é unha parada de CP de servizos rexionais na Linha do Algarve en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Mexilhoeira Grande":
+    "Mexilhoeira Grande é unha parada de CP de servizos rexionais na Linha do Algarve en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
+  "Parque das Cidades":
+    "Parque das Cidades é unha parada de CP de servizos rexionais na Linha do Algarve en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
+
 };

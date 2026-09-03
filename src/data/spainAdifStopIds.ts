@@ -819,6 +819,24 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Llinars del Vallès": ["79102"],
 
+  "Mollerussa": ["78403"],
+
+  "Santa María de la Alameda-Peguerinos": ["10206"],
+
+  "Madrid-Aeropuerto T4": ["98305"],
+
+  "Seguers-Sant Pere Sallavinera": ["78504"],
+
+  "Cornellà": ["72303"],
+
+  "La Hoya": ["51451"],
+
+  "Zorrotza Zorrozgoiti": ["05457"],
+
+  "Parque Polvoranca": ["35011"],
+
+  "Areta": ["13107"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
