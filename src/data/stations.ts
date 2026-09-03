@@ -679,6 +679,38 @@ const cpStations: StationData[] = [
     lng: -8.2412,
   },
 
+  {
+    name: "Santa Comba Dão",
+    lines: ["Linha da Beira Alta"],
+    types: ["Intercidades", "Regional"],
+    lat: 40.3905,
+    lng: -8.1244,
+  },
+
+  {
+    name: "Vila Franca das Naves",
+    lines: ["Linha da Beira Alta"],
+    types: ["Intercidades", "Regional"],
+    lat: 40.7248,
+    lng: -7.2582,
+  },
+
+  {
+    name: "Jerumelo",
+    lines: ["Linha do Oeste"],
+    types: ["Regional"],
+    lat: 38.9496,
+    lng: -9.2343,
+  },
+
+  {
+    name: "Pedra Furada",
+    lines: ["Linha do Oeste"],
+    types: ["Regional"],
+    lat: 38.8701,
+    lng: -9.2955,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

@@ -3866,4 +3866,40 @@ export const spainStations: Station[] = [
     lng: -0.8137,
   },
 
+  {
+    name: "Montgat-Nord",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4688,
+    lng: 2.2867,
+  },
+
+  {
+    name: "Posadas",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.804,
+    lng: -5.1063,
+  },
+
+  {
+    name: "San Clodio-Quiroga",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.4653,
+    lng: -7.2872,
+  },
+
+  {
+    name: "Ponferrada",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.5454,
+    lng: -6.6024,
+  },
+
 ];

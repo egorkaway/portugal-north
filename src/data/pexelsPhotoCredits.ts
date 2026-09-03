@@ -2381,6 +2381,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@newman-photographs-234743505",
     photoPageUrl: "https://www.pexels.com/photo/bustling-train-station-with-people-and-trains-33622646/",
   },
+  "33627217": {
+    photographer: "Ana Hidalgo Burgos Burgos.",
+    photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-burgos-4848204",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architectural-structure-in-aguilas-33627217/",
+  },
   "33643093": {
     photographer: "PhotoByMau PhotoByMau",
     photographerUrl: "https://www.pexels.com/@photobymau-photobymau-2154512590",

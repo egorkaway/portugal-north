@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-03T04:08:58.229Z",
+  "updatedAt": "2026-09-03T10:04:07.166Z",
   "airports": [
     {
       "iata": "PMI",
@@ -235,6 +235,20 @@
       "sampledFlights": 46,
       "mapImage": "/maps/airports/external/brussels-airport-bru-connections.png",
       "sampledAt": "2026-09-03T04:08:58.229Z",
+      "periodId": "2026-08-11",
+      "provider": "iberian-inbound",
+      "basemapId": "osm"
+    },
+    {
+      "iata": "MAH",
+      "stationName": "Menorca Airport (MAH)",
+      "slug": "menorca-airport-mah",
+      "country": "ES",
+      "iberianFlightCount": 40,
+      "destinationCount": 16,
+      "sampledFlights": 40,
+      "mapImage": "/maps/airports/external/menorca-airport-mah-connections.png",
+      "sampledAt": "2026-09-03T10:04:07.166Z",
       "periodId": "2026-08-11",
       "provider": "iberian-inbound",
       "basemapId": "osm"

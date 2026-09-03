@@ -847,6 +847,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Sax": ["60904"],
 
+  "Montgat-Nord": ["79406"],
+
+  "Posadas": ["50504"],
+
+  "San Clodio-Quiroga": ["20216"],
+
+  "Ponferrada": ["20200"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

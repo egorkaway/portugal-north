@@ -932,4 +932,16 @@ export const stationSummariesEn: Record<string, string> = {
   "Mortágua":
     "Mortágua is a CP Intercidades and regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Santa Comba Dão":
+    "Santa Comba Dão is a CP Intercidades and regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Vila Franca das Naves":
+    "Vila Franca das Naves is a CP Intercidades and regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Jerumelo":
+    "Jerumelo is a CP regional halt on Linha do Oeste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Pedra Furada":
+    "Pedra Furada is a CP regional halt on Linha do Oeste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

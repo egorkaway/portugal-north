@@ -865,4 +865,16 @@ export const stationSummariesCa: Record<string, string> = {
   "Mortágua":
     "Mortágua és una parada de CP de serveis Intercidades i regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
 
+  "Santa Comba Dão":
+    "Santa Comba Dão és una parada de CP de serveis Intercidades i regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Vila Franca das Naves":
+    "Vila Franca das Naves és una parada de CP de serveis Intercidades i regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Jerumelo":
+    "Jerumelo és una parada de CP de serveis regionals a la Linha do Oeste a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Pedra Furada":
+    "Pedra Furada és una parada de CP de serveis regionals a la Linha do Oeste a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
 };

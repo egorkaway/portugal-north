@@ -2128,6 +2128,26 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Monte Rio Aguieira", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Monte%20Rio%20Aguieira%2C%20Mort%C3%A1gua%2C%20Portugal&order=price" },
     { name: "Hotel Rural Quinta da Conchada", distanceKm: 6.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20Quinta%20da%20Conchada%2C%20Mort%C3%A1gua%2C%20Portugal&order=price" },
   ],
+  "Santa Comba Dão": [
+    { name: "A Casa Branca", distanceKm: 1.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=A%20Casa%20Branca%2C%20Santa%20Comba%20D%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Quinta da Abelenda", distanceKm: 1.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Abelenda%2C%20Santa%20Comba%20D%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Casas Vale Martinho", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20Vale%20Martinho%2C%20Santa%20Comba%20D%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "Vila Franca das Naves": [
+    { name: "Figuras Mágicas", distanceKm: 9.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Figuras%20M%C3%A1gicas%2C%20Vila%20Franca%20das%20Naves%2C%20Portugal&order=price" },
+    { name: "Residencial São Bartolomeu", distanceKm: 9.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20S%C3%A3o%20Bartolomeu%2C%20Vila%20Franca%20das%20Naves%2C%20Portugal&order=price" },
+    { name: "Solar Sampaio e Melo", distanceKm: 9.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solar%20Sampaio%20e%20Melo%2C%20Vila%20Franca%20das%20Naves%2C%20Portugal&order=price" },
+  ],
+  "Jerumelo": [
+    { name: "DOMA Portugal", distanceKm: 5.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=DOMA%20Portugal%2C%20Jerumelo%2C%20Portugal&order=price" },
+    { name: "Mafra Hotel", distanceKm: 8.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mafra%20Hotel%2C%20Jerumelo%2C%20Portugal&order=price" },
+    { name: "Dolce CampoReal Lisboa", distanceKm: 9.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Dolce%20CampoReal%20Lisboa%2C%20Jerumelo%2C%20Portugal&order=price" },
+  ],
+  "Pedra Furada": [
+    { name: "Vivenda André", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vivenda%20Andr%C3%A9%2C%20Pedra%20Furada%2C%20Portugal&order=price" },
+    { name: "Cabra Figa", distanceKm: 5.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cabra%20Figa%2C%20Pedra%20Furada%2C%20Portugal&order=price" },
+    { name: "Quinta da Cerca", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Cerca%2C%20Pedra%20Furada%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4236,6 +4256,26 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Fuente El Cura", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Fuente%20El%20Cura%2C%20Sax%2C%20Spain&order=price" },
     { name: "Hostal El Almendros", distanceKm: 0.9, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20Almendros%2C%20Sax%2C%20Spain&order=price" },
     { name: "Alojamiento Rural La Puerta del Agua", distanceKm: 4.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamiento%20Rural%20La%20Puerta%20del%20Agua%2C%20Sax%2C%20Spain&order=price" },
+  ],
+  "Montgat-Nord": [
+    { name: "Xavi", distanceKm: 2.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Xavi%2C%20Montgat-Nord%2C%20Spain&order=price" },
+    { name: "Museu dels Angels", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Museu%20dels%20Angels%2C%20Montgat-Nord%2C%20Spain&order=price" },
+    { name: "Hotel Torino", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Torino%2C%20Montgat-Nord%2C%20Spain&order=price" },
+  ],
+  "Posadas": [
+    { name: "Hostal La Melchora", distanceKm: 0.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Melchora%2C%20Posadas%2C%20Spain&order=price" },
+    { name: "Hostal La Fonda", distanceKm: 0.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Fonda%2C%20Posadas%2C%20Spain&order=price" },
+    { name: "Hotel María", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mar%C3%ADa%2C%20Posadas%2C%20Spain&order=price" },
+  ],
+  "San Clodio-Quiroga": [
+    { name: "Hostal/Bar Las Vegas", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%2FBar%20Las%20Vegas%2C%20San%20Clodio-Quiroga%2C%20Spain&order=price" },
+    { name: "Hotel Remansiño", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Remansi%C3%B1o%2C%20San%20Clodio-Quiroga%2C%20Spain&order=price" },
+    { name: "Casa Rural O Verxel", distanceKm: 1.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20O%20Verxel%2C%20San%20Clodio-Quiroga%2C%20Spain&order=price" },
+  ],
+  "Ponferrada": [
+    { name: "Hotel Aroi Ponferrada", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Aroi%20Ponferrada%2C%20Ponferrada%2C%20Spain&order=price" },
+    { name: "Hotel Temple", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Temple%2C%20Ponferrada%2C%20Spain&order=price" },
+    { name: "Hostal La Madrileña", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Madrile%C3%B1a%2C%20Ponferrada%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
