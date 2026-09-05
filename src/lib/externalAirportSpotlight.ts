@@ -33,6 +33,7 @@ export type ExternalMapKind = "iberian" | "all";
 export type ExternalAirportMapRow = {
   iata?: string;
   slug?: string;
+  stationName?: string;
   provider?: string;
   mapImage?: string;
   iberianMapImage?: string;
@@ -50,12 +51,51 @@ export type ExternalMapCoverage = {
   staleAllFlightsIatas: ReadonlySet<string>;
 };
 
-export function externalMapFilename(slug: string, kind: ExternalMapKind): string {
-  return kind === "iberian" ? `${slug}-iberian-connections.png` : `${slug}-connections.png`;
+function slugifyMapToken(value: string): string {
+  return value
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .toLowerCase()
+    .replace(/[()]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
-export function externalMapPublicPath(slug: string, kind: ExternalMapKind): string {
-  return `/maps/airports/external/${externalMapFilename(slug, kind)}`;
+/** Place token after stripping IATA and generic “airport” words: Cork, Munich, London Gatwick. */
+export function externalMapPlaceSlug(name: string, iata: string): string {
+  const code = iata.trim().toUpperCase();
+  let text = String(name ?? "");
+  if (code) text = text.replace(new RegExp(`\\(\\s*${code}\\s*\\)`, "i"), " ");
+  text = text.replace(/\s*\([A-Z]{3}\)\s*$/i, " ");
+  text = text.replace(
+    /\b(international|airport|aeroporto|aeropuerto|aeroport|flughafen)\b/gi,
+    " ",
+  );
+  text = text.replace(/\s+/g, " ").trim();
+  return slugifyMapToken(text) || code.toLowerCase();
+}
+
+export function externalMapStem(iata: string, name: string): string {
+  const code = iata.trim().toLowerCase();
+  const place = externalMapPlaceSlug(name, iata);
+  return place && place !== code ? `${code}-${place}` : code;
+}
+
+export function externalMapFilename(
+  iata: string,
+  name: string,
+  kind: ExternalMapKind,
+): string {
+  const stem = externalMapStem(iata, name);
+  return kind === "iberian" ? `${stem}-iberia.png` : `${stem}.png`;
+}
+
+export function externalMapPublicPath(
+  iata: string,
+  name: string,
+  kind: ExternalMapKind,
+): string {
+  return `/maps/airports/external/${externalMapFilename(iata, name, kind)}`;
 }
 
 export function hasIberianMap(row: ExternalAirportMapRow | null | undefined): boolean {
@@ -107,9 +147,11 @@ export function countIberianConnectionDestinations(
 export function normalizeExternalAirportRow<T extends ExternalAirportMapRow>(row: T): T {
   if (row.iberianMapImage) return row;
   if (row.provider !== IBERIAN_INBOUND_PROVIDER || !row.mapImage) return row;
-  const iberianMapImage = row.slug
-    ? externalMapPublicPath(row.slug, "iberian")
-    : String(row.mapImage).replace(/-connections\.png$/i, "-iberian-connections.png");
+  const iberianMapImage = row.iata
+    ? externalMapPublicPath(row.iata, row.stationName || row.slug || row.iata, "iberian")
+    : String(row.mapImage)
+        .replace(/-iberian-connections\.png$/i, "-iberia.png")
+        .replace(/-connections\.png$/i, "-iberia.png");
   const next = {
     ...row,
     iberianMapImage,

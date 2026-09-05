@@ -1516,4 +1516,13 @@ export const spainSummariesEn: Record<string, string> = {
   "Barcelona Torre Baró -Vallbona":
     "Barcelona Torre Baró -Vallbona is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Santianes":
+    "Santianes is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Getafe-Industrial":
+    "Getafe-Industrial is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Ulldecona-Alcanar-La Sénia":
+    "Ulldecona-Alcanar-La Sénia is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

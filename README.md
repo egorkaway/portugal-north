@@ -189,7 +189,7 @@ If a hub airport has **never recorded mappable flights**, it is hidden on the ma
 npm run maps:airport-connections -- --backfill-europe-destinations
 ```
 
-Each `npm run stats:departures` adds **one Iberian-flights-only map** outside the peninsula (`public/maps/airports/external/{slug}-iberian-connections.png`, no flight API). When the 5-hour airport-hub cooldown has elapsed, the same run also samples **one all-flights map** (`{slug}-connections.png`) from a flight API. Both files are kept. Airports with both maps get a compact station page; the rest stay off station lists. The running list is stored in `data/external-airport-connection-maps.json` and printed at the end of `stats:departures`. To draw several Iberian maps at once from hub data we already have:
+Each `npm run stats:departures` adds **one Iberian-flights-only map** outside the peninsula (`public/maps/airports/external/{iata}-{place}-iberia.png`, no flight API). When the 5-hour airport-hub cooldown has elapsed, the same run also samples **one all-flights map** (`{iata}-{place}.png`) from a flight API. Both files are kept. Airports with both maps get a compact station page; the rest stay off station lists. The running list is stored in `data/external-airport-connection-maps.json` and printed at the end of `stats:departures`. To draw several Iberian maps at once from hub data we already have:
 
 ```bash
 npm run maps:airport-connections -- --external-only --iberian-inbound --external-count=12

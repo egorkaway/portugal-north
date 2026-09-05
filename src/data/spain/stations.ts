@@ -4379,4 +4379,31 @@ export const spainStations: Station[] = [
     lng: 2.181,
   },
 
+  {
+    name: "Santianes",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5038,
+    lng: -6.0918,
+  },
+
+  {
+    name: "Getafe-Industrial",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3057,
+    lng: -3.7078,
+  },
+
+  {
+    name: "Ulldecona-Alcanar-La Sénia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5959,
+    lng: 0.4493,
+  },
+
 ];

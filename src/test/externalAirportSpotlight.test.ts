@@ -3,6 +3,8 @@ import {
   allFlightsMapNeedsRegeneration,
   countIberianConnectionDestinations,
   coverageFromExternalMapRows,
+  externalMapFilename,
+  externalMapPlaceSlug,
   externalSpotlightLimit,
   formatExternalAirportMapsLog,
   isOutsideIberianPeninsula,
@@ -342,5 +344,25 @@ describe("pickExternalAirportForRun", () => {
         staleAllFlightsIatas: new Set(["LHR"]),
       })?.iata,
     ).toBe("FRA");
+  });
+});
+
+describe("externalMapFilename", () => {
+  it("puts IATA first and drops airport/international padding", () => {
+    expect(externalMapPlaceSlug("Cork International Airport (ORK)", "ORK")).toBe("cork");
+    expect(externalMapPlaceSlug("Munich Airport (MUC)", "MUC")).toBe("munich");
+    expect(
+      externalMapFilename("ORK", "Cork International Airport (ORK)", "iberian"),
+    ).toBe("ork-cork-iberia.png");
+    expect(externalMapFilename("MUC", "Munich Airport (MUC)", "iberian")).toBe(
+      "muc-munich-iberia.png",
+    );
+    expect(externalMapFilename("MUC", "Munich Airport (MUC)", "all")).toBe("muc-munich.png");
+    expect(externalMapFilename("LGW", "London Gatwick Airport (LGW)", "all")).toBe(
+      "lgw-london-gatwick.png",
+    );
+    expect(
+      externalMapFilename("AMS", "Amsterdam Airport Schiphol (AMS)", "iberian"),
+    ).toBe("ams-amsterdam-schiphol-iberia.png");
   });
 });

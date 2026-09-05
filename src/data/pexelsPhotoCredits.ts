@@ -461,6 +461,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@g-cortez-1520507",
     photoPageUrl: "https://www.pexels.com/photo/people-in-a-train-station-5979802/",
   },
+  "6037007": {
+    photographer: "G. Cortez",
+    photographerUrl: "https://www.pexels.com/@g-cortez-1520507",
+    photoPageUrl: "https://www.pexels.com/photo/subway-train-station-6037007/",
+  },
   "6062883": {
     photographer: "sergio pirola",
     photographerUrl: "https://www.pexels.com/@pirandello47",
@@ -3035,6 +3040,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Filipa Moreira",
     photographerUrl: "https://www.pexels.com/@filipa-moreira-2149871975",
     photoPageUrl: "https://www.pexels.com/photo/scenic-train-crossing-iron-bridge-in-portugal-37195500/",
+  },
+  "37236644": {
+    photographer: "Yeşim Çolak",
+    photographerUrl: "https://www.pexels.com/@yesimcolak",
+    photoPageUrl: "https://www.pexels.com/photo/colorful-abstract-wall-mural-in-istanbul-passage-37236644/",
   },
   "37243144": {
     photographer: "Talha Kılıç",

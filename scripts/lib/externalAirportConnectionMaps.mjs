@@ -1,14 +1,14 @@
 /**
  * Two maps per non-Iberian airport:
- *   1. Iberian flights only (`*-iberian-connections.png`)
- *   2. All flights (`*-connections.png`)
+ *   1. Iberian flights only (`{iata}-{place}-iberia.png`)
+ *   2. All flights (`{iata}-{place}.png`)
  * Departures runs add one missing Iberian map (no flight API). Flight APIs up:
  * add or refresh one all-flights map without replacing the Iberian one
  * (airports whose all-flights sample missed Iberian destinations are redrawn first).
  * Compact station pages exist only once both maps are present.
  */
-import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
+import { existsSync, mkdirSync, readFileSync, renameSync, unlinkSync, writeFileSync } from "node:fs";
+import { basename, dirname, join } from "node:path";
 import { stationToSlug } from "./socialCard.mjs";
 import {
   countIberianConnectionDestinations,
@@ -95,22 +95,59 @@ export function writeExternalAirportPageIatas(rootDir, store) {
   return outPath;
 }
 
+function mapBasename(publicPath) {
+  return basename(String(publicPath ?? ""));
+}
+
+function replaceMapFile(mapsDir, fromNames, destName) {
+  const dest = join(mapsDir, destName);
+  for (const name of fromNames) {
+    if (!name || name === destName) continue;
+    const src = join(mapsDir, name);
+    if (!existsSync(src)) continue;
+    if (!existsSync(dest)) renameSync(src, dest);
+    else if (src !== dest) unlinkSync(src);
+  }
+}
+
 function migrateLegacyIberianRow(rootDir, row) {
   const normalized = normalizeExternalAirportRow(row);
+  const iata = String(normalized.iata ?? "").trim().toUpperCase();
+  const name = normalized.stationName || normalized.slug || iata;
   const slug = normalized.slug;
-  if (
-    slug &&
-    hasIberianMap(normalized) &&
-    !hasAllFlightsMap(normalized)
-  ) {
-    const mapsDir = externalMapsDir(rootDir);
-    const dest = join(mapsDir, externalMapFilename(slug, "iberian"));
-    const legacy = join(mapsDir, externalMapFilename(slug, "all"));
+  const mapsDir = externalMapsDir(rootDir);
+
+  if (slug && hasIberianMap(normalized) && !hasAllFlightsMap(normalized)) {
+    const dest = join(mapsDir, `${slug}-iberian-connections.png`);
+    const legacy = join(mapsDir, `${slug}-connections.png`);
     if (existsSync(legacy) && !existsSync(dest)) {
       renameSync(legacy, dest);
     }
   }
-  return normalized;
+
+  if (!iata) return normalized;
+
+  const iberianPath = externalMapPublicPath(iata, name, "iberian");
+  const iberianNames = [
+    mapBasename(normalized.iberianMapImage),
+    slug && `${slug}-iberian-connections.png`,
+    !hasAllFlightsMap(normalized) && slug ? `${slug}-connections.png` : null,
+  ].filter(Boolean);
+  replaceMapFile(mapsDir, iberianNames, mapBasename(iberianPath));
+
+  const next = { ...normalized, iberianMapImage: hasIberianMap(normalized) ? iberianPath : normalized.iberianMapImage };
+
+  if (hasAllFlightsMap(normalized)) {
+    const allPath = externalMapPublicPath(iata, name, "all");
+    const allNames = [
+      mapBasename(normalized.mapImage),
+      slug && `${slug}-connections.png`,
+    ].filter(Boolean);
+    replaceMapFile(mapsDir, allNames, mapBasename(allPath));
+    next.mapImage = allPath;
+  }
+
+  return next;
 }
 
 function hubIataSet(rootDir) {
@@ -205,7 +242,7 @@ function buildIberianInboundEntry({
     sampledFlights: pick.iberianFlightCount,
     connections,
     topDestinations: connections.slice(0, 10),
-    mapImage: externalMapPublicPath(slug, "iberian"),
+    mapImage: externalMapPublicPath(dest, stationName, "iberian"),
   };
 }
 
@@ -245,7 +282,7 @@ async function persistExternalAirportMap({
   renderAirportConnectionsMap,
   kind,
 }) {
-  const publicPath = externalMapPublicPath(slug, kind);
+  const publicPath = externalMapPublicPath(pick.iata, stationName, kind);
   entry.mapImage = publicPath;
   const png = await renderAirportConnectionsMap(entry, {
     siteUrl,
@@ -255,7 +292,7 @@ async function persistExternalAirportMap({
   });
   const mapsDir = externalMapsDir(rootDir);
   mkdirSync(mapsDir, { recursive: true });
-  writeFileSync(join(mapsDir, externalMapFilename(slug, kind)), png.buffer);
+  writeFileSync(join(mapsDir, externalMapFilename(pick.iata, stationName, kind)), png.buffer);
 
   const sampledAt = new Date().toISOString();
   const patch = {

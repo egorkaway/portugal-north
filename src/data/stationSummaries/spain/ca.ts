@@ -1516,4 +1516,13 @@ export const spainSummariesCa: Record<string, string> = {
   "Barcelona Torre Baró -Vallbona":
     "Barcelona Torre Baró -Vallbona és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Santianes":
+    "Santianes és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Getafe-Industrial":
+    "Getafe-Industrial és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Ulldecona-Alcanar-La Sénia":
+    "Ulldecona-Alcanar-La Sénia és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

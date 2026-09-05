@@ -1516,4 +1516,13 @@ export const spainSummariesPt: Record<string, string> = {
   "Barcelona Torre Baró -Vallbona":
     "Barcelona Torre Baró -Vallbona é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "Santianes":
+    "Santianes é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Getafe-Industrial":
+    "Getafe-Industrial é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Ulldecona-Alcanar-La Sénia":
+    "Ulldecona-Alcanar-La Sénia é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

@@ -4714,6 +4714,21 @@ export const stationHotels: StationHotels = {
     { name: "Abarco Apartments", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Abarco%20Apartments%2C%20Barcelona%20Torre%20Bar%C3%B3%20-Vallbona%2C%20Spain&order=price" },
     { name: "ibis Barcelona Santa Coloma", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20Barcelona%20Santa%20Coloma%2C%20Barcelona%20Torre%20Bar%C3%B3%20-Vallbona%2C%20Spain&order=price" },
   ],
+  "Santianes": [
+    { name: "Apartamentos Rurales Ruta del Agua", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartamentos%20Rurales%20Ruta%20del%20Agua%2C%20Santianes%2C%20Spain&order=price" },
+    { name: "Hotel Los 14", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Los%2014%2C%20Santianes%2C%20Spain&order=price" },
+    { name: "Hotel Pax Casona del Busto", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pax%20Casona%20del%20Busto%2C%20Santianes%2C%20Spain&order=price" },
+  ],
+  "Getafe-Industrial": [
+    { name: "Gran Hotel Los Ángeles", distanceKm: 1.8, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gran%20Hotel%20Los%20%C3%81ngeles%2C%20Getafe-Industrial%2C%20Spain&order=price" },
+    { name: "Los Olivos", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Los%20Olivos%2C%20Getafe-Industrial%2C%20Spain&order=price" },
+    { name: "Ramada by Wyndham Madrid Getafe", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ramada%20by%20Wyndham%20Madrid%20Getafe%2C%20Getafe-Industrial%2C%20Spain&order=price" },
+  ],
+  "Ulldecona-Alcanar-La Sénia": [
+    { name: "Hotel Bon Lloc", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bon%20Lloc%2C%20Ulldecona-Alcanar-La%20S%C3%A9nia%2C%20Spain&order=price" },
+    { name: "Cal Naudí", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cal%20Naud%C3%AD%2C%20Ulldecona-Alcanar-La%20S%C3%A9nia%2C%20Spain&order=price" },
+    { name: "Alberg Ermita de la Pietat", distanceKm: 4.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20Ermita%20de%20la%20Pietat%2C%20Ulldecona-Alcanar-La%20S%C3%A9nia%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

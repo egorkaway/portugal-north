@@ -33,8 +33,8 @@
  * no outbound collection).
  *
  * Each collect also draws one all-flights map outside the Iberian peninsula
- * (`public/maps/airports/external/*-connections.png`) unless `--external-count`
- * asks for more. Iberian-flights maps (`*-iberian-connections.png`) are added
+ * (`public/maps/airports/external/{iata}-{place}.png`) unless `--external-count`
+ * asks for more. Iberian-flights maps (`{iata}-{place}-iberia.png`) are added
  * one per `stats:departures` run (no flight API). Pass `--external-only
  * --iberian-inbound --external-count=N` (or `all`) to draw more at once.
  * Those airports do not appear in station lists until both maps exist, then

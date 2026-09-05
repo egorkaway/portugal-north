@@ -10,9 +10,9 @@
  * Also collects airport flight connections (skipped if the last airport check
  * was < 5 hours ago — train-only runs do not count), and on every run adds
  * one Iberian-flights-only map outside the peninsula
- * (`*-iberian-connections.png`, no flight API). When the airport check runs,
+ * (`{iata}-{place}-iberia.png`, no flight API). When the airport check runs,
  * it also samples outbound flights from one such airport into
- * `*-connections.png`. Airports with both maps get a compact station page.
+ * `{iata}-{place}.png`. Airports with both maps get a compact station page.
  * Listed at the end of this log.
  * logs temperatures (Open-Meteo) for train stations that returned a departure
  * sample attempt (OK or FAIL). Airport hub temperatures are logged only during

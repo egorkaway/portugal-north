@@ -961,6 +961,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Barcelona Torre Baró -Vallbona": ["78801"],
 
+  "Santianes": ["05239"],
+
+  "Getafe-Industrial": ["60102"],
+
+  "Ulldecona-Alcanar-La Sénia": ["65314"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

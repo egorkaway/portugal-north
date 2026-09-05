@@ -31,23 +31,13 @@ export function getExternalAirportPageIataSet(): ReadonlySet<string> {
   return pageIataSet;
 }
 
-function stationNameSlug(name: string): string {
-  return name
-    .normalize("NFD")
-    .replace(/\p{M}/gu, "")
-    .toLowerCase()
-    .replace(/[()]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
-}
-
-export function getExternalAirportMapPaths(station: Pick<Station, "name">): {
+export function getExternalAirportMapPaths(station: Pick<Station, "name" | "lines">): {
   iberian: string;
   all: string;
 } {
-  const slug = stationNameSlug(station.name);
+  const iata = stationIata(station) ?? "";
   return {
-    iberian: externalMapPublicPath(slug, "iberian"),
-    all: externalMapPublicPath(slug, "all"),
+    iberian: externalMapPublicPath(iata, station.name, "iberian"),
+    all: externalMapPublicPath(iata, station.name, "all"),
   };
 }

@@ -2,7 +2,6 @@ import { Download, Plane } from "lucide-react";
 import { useState } from "react";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getExternalAirportMapPaths } from "@/lib/externalAirportPages";
-import { stationToSlug } from "@/lib/stationSlug";
 import type { Station } from "@/data/stations";
 
 type Props = {
@@ -53,8 +52,9 @@ function MapCard({
 
 export function ExternalAirportConnectionsMaps({ station }: Props) {
   const { t } = useLocale();
-  const slug = stationToSlug(station.name);
   const maps = getExternalAirportMapPaths(station);
+  const iberianFile = maps.iberian.slice(maps.iberian.lastIndexOf("/") + 1);
+  const allFile = maps.all.slice(maps.all.lastIndexOf("/") + 1);
 
   return (
     <section className="mb-8 md:mb-10" aria-labelledby="airport-connections-heading">
@@ -68,13 +68,13 @@ export function ExternalAirportConnectionsMaps({ station }: Props) {
         <MapCard
           src={maps.iberian}
           alt={t("station.airportConnectionsIberianMapAlt", { name: station.name })}
-          downloadName={`${slug}-iberian-connections.png`}
+          downloadName={iberianFile}
           title={t("station.airportConnectionsIberianTitle")}
         />
         <MapCard
           src={maps.all}
           alt={t("station.airportConnectionsAllFlightsMapAlt", { name: station.name })}
-          downloadName={`${slug}-connections.png`}
+          downloadName={allFile}
           title={t("station.airportConnectionsAllFlightsTitle")}
         />
       </div>
