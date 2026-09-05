@@ -901,6 +901,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Cantillana": ["50701"],
 
+  "Cerdido": ["05127"],
+
+  "Cortes de Navarra": ["81205"],
+
+  "Ventas de Irún": ["11518"],
+
+  "Badajoz": ["37606"],
+
+  "Montcada-Bifurcació": ["78800"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

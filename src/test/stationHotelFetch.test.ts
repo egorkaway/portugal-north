@@ -9,13 +9,39 @@ import {
   townQueryForStation,
   writeHotelMap,
 } from "../../scripts/lib/stationHotelFetch.mjs";
+import {
+  bookingStubHotels,
+  hotelListNeedsFill,
+} from "../../scripts/lib/expandStationAssets.mjs";
 
 describe("stationHotelFetch", () => {
+  it("keeps the rejected-hotel filter wired into OSM picks", () => {
+    const src = readFileSync(join("scripts/lib/stationHotelFetch.mjs"), "utf8");
+    expect(src).toMatch(/import \{ isRejectedHotel \} from "\.\/rejectedHotels\.mjs"/);
+    expect(src).toMatch(/isRejectedHotel\(rejected, stationName, candidate\.name/);
+  });
+
+  it("treats Booking search stubs as an unfinished hotel list", () => {
+    expect(hotelListNeedsFill(bookingStubHotels("Frankfurt Main Airport (FRA)", "de"))).toBe(true);
+    expect(
+      hotelListNeedsFill([
+        {
+          name: "Hilton Frankfurt Airport",
+          distanceKm: 0.4,
+          priceFrom: 38,
+          bookingUrl: "https://www.booking.com/hotel/de/hilton-frankfurt-airport.html",
+        },
+      ]),
+    ).toBe(false);
+  });
+
   it("builds town geocode query from station name", () => {
     expect(townQueryForStation("Campanhã (Metro)")).toBe("Campanhã, Portugal");
     expect(townQueryForStation("Mafra")).toBe("Mafra, Portugal");
     expect(townQueryForStation("Vigo-Urzáiz", "es")).toBe("Vigo, Spain");
-    expect(townQueryForStation("Barcelona-Sants", "es")).toBe("Barcelona, Spain");
+    expect(townQueryForStation("Charles de Gaulle International Airport (CDG)", "fr")).toBe(
+      "Charles de Gaulle International, France",
+    );
   });
 
   it("parses the pinned Luan Café Lanhelas listing", () => {

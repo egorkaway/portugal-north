@@ -22,6 +22,24 @@ const RECENT_PORTUGAL_STATIONS = [
   "Vila Pouca do Campo",
 ];
 
+const EXTERNAL_AIRPORT_PAGE_STATIONS = [
+  "Amsterdam Airport Schiphol (AMS)",
+  "Brussels Airport (BRU)",
+  "Charles de Gaulle International Airport (CDG)",
+  "Rome–Fiumicino Leonardo da Vinci International Airport (FCO)",
+  "Frankfurt Main Airport (FRA)",
+  "Ibiza Airport (IBZ)",
+  "London Gatwick Airport (LGW)",
+  "London Heathrow Airport (LHR)",
+  "Gran Canaria Airport (LPA)",
+  "Manchester Airport (MAN)",
+  "Munich Airport (MUC)",
+  "Paris-Orly Airport (ORY)",
+  "Palma de Mallorca Airport (PMI)",
+  "Tenerife Norte-Ciudad de La Laguna Airport (TFN)",
+  "Zürich Airport (ZRH)",
+];
+
 describe("expanded station assets", () => {
   it("gives each recent Portugal add a representative unique image", () => {
     const missing = RECENT_PORTUGAL_STATIONS.filter((name) => !hasRepresentativeStationImage(name));
@@ -55,5 +73,16 @@ describe("expanded station assets", () => {
       (name) => (stationHotels[name]?.length ?? 0) < 3,
     );
     expect(missing, `missing hotel listings: ${missing.join(", ")}`).toEqual([]);
+  });
+
+  it("gives each compact destination-airport page a photo and hotels", () => {
+    const missingImages = EXTERNAL_AIRPORT_PAGE_STATIONS.filter(
+      (name) => !hasRepresentativeStationImage(name),
+    );
+    expect(missingImages, `missing images: ${missingImages.join(", ")}`).toEqual([]);
+    const missingHotels = EXTERNAL_AIRPORT_PAGE_STATIONS.filter(
+      (name) => (stationHotels[name]?.length ?? 0) < 3,
+    );
+    expect(missingHotels, `missing hotel listings: ${missingHotels.join(", ")}`).toEqual([]);
   });
 });

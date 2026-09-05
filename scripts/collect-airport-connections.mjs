@@ -156,6 +156,15 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
+async function fillExternalAirportPageAssetsIfNeeded(rootDir, isDryRun) {
+  if (isDryRun) return;
+  const { fillExternalAirportPageAssets } = await import("./lib/expandStationAssets.mjs");
+  const { missingImages } = await fillExternalAirportPageAssets(rootDir);
+  if (missingImages.length) {
+    console.log(`External airport page images still missing: ${missingImages.join(", ")}`);
+  }
+}
+
 function loadRunCount(rootDir) {
   try {
     const stats = JSON.parse(readFileSync(join(rootDir, "data/departure-stats.json"), "utf8"));
@@ -397,6 +406,7 @@ export async function collectAirportConnections(options = {}) {
       quotaExhausted,
       count: externalMapCount,
     });
+    await fillExternalAirportPageAssetsIfNeeded(rootDir, isDryRun);
     return {
       ok: store.airports?.length ? 1 : 0,
       failed: 0,
@@ -462,6 +472,7 @@ export async function collectAirportConnections(options = {}) {
       quotaExhausted: true,
       count: externalMapCount,
     });
+    await fillExternalAirportPageAssetsIfNeeded(rootDir, isDryRun);
     return {
       ok: 0,
       failed: 0,
@@ -742,6 +753,8 @@ export async function collectAirportConnections(options = {}) {
       `Airport temperatures: ${temperaturesLogged} logged, ${temperaturesMissed} missed`,
     );
   }
+
+  await fillExternalAirportPageAssetsIfNeeded(rootDir, isDryRun);
 
   return {
     ok,

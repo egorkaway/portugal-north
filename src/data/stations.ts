@@ -903,6 +903,46 @@ const cpStations: StationData[] = [
     lng: -7.0133,
   },
 
+  {
+    name: "Monte de Lobos",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.4082,
+    lng: -8.2645,
+  },
+
+  {
+    name: "Papízios",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.4191,
+    lng: -8.0461,
+  },
+
+  {
+    name: "Rochoso",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.5071,
+    lng: -7.0906,
+  },
+
+  {
+    name: "Vacariça",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.3567,
+    lng: -8.4122,
+  },
+
+  {
+    name: "Vila Fernando",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.4978,
+    lng: -7.148,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

@@ -2258,6 +2258,26 @@ export const stationHotels: StationHotels = {
     { name: "Casa do Corro", distanceKm: 9.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Corro%2C%20Miuzela%2C%20Portugal&order=price" },
     { name: "Casa da Cidadela", distanceKm: 9.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Cidadela%2C%20Miuzela%2C%20Portugal&order=price" },
   ],
+  "Monte de Lobos": [
+    { name: "Lena Village", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lena%20Village%2C%20Monte%20de%20Lobos%2C%20Portugal&order=price" },
+    { name: "Hotel Monte Rio Aguieira", distanceKm: 8.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Monte%20Rio%20Aguieira%2C%20Monte%20de%20Lobos%2C%20Portugal&order=price" },
+    { name: "Hotel Rural Quinta da Conchada", distanceKm: 8.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20Quinta%20da%20Conchada%2C%20Monte%20de%20Lobos%2C%20Portugal&order=price" },
+  ],
+  "Papízios": [
+    { name: "Budget stays near Papízios", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pap%C3%ADzios%2C%20Portugal&order=price" },
+    { name: "Guest houses near Papízios", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pap%C3%ADzios%2C%20Portugal&order=price" },
+    { name: "Hotels near Papízios", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pap%C3%ADzios%2C%20Portugal&order=price" },
+  ],
+  "Vacariça": [
+    { name: "Solar da Vacariça", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Solar%20da%20Vacari%C3%A7a%2C%20Vacari%C3%A7a%2C%20Portugal&order=price" },
+    { name: "Mansão Fátima", distanceKm: 3.2, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mans%C3%A3o%20F%C3%A1tima%2C%20Vacari%C3%A7a%2C%20Portugal&order=price" },
+    { name: "Hotel Vila Aurora", distanceKm: 4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vila%20Aurora%2C%20Vacari%C3%A7a%2C%20Portugal&order=price" },
+  ],
+  "Vila Fernando": [
+    { name: "Hotel Lusitânia Parque", distanceKm: 9.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Lusit%C3%A2nia%20Parque%2C%20Vila%20Fernando%2C%20Portugal&order=price" },
+    { name: "Hotel Pombeira", distanceKm: 10, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pombeira%2C%20Vila%20Fernando%2C%20Portugal&order=price" },
+    { name: "Termas do Cró", distanceKm: 10.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Termas%20do%20Cr%C3%B3%2C%20Vila%20Fernando%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4502,6 +4522,26 @@ export const stationHotels: StationHotels = {
     { name: "Hostal El Niño", distanceKm: 6.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20Ni%C3%B1o%2C%20Cantillana%2C%20Spain&order=price" },
     { name: "El Juncal", distanceKm: 7.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Juncal%2C%20Cantillana%2C%20Spain&order=price" },
   ],
+  "Cerdido": [
+    { name: "Muinos De Pontenoval", distanceKm: 6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Muinos%20De%20Pontenoval%2C%20Cerdido%2C%20Spain&order=price" },
+    { name: "La Ría", distanceKm: 9.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20R%C3%ADa%2C%20Cerdido%2C%20Spain&order=price" },
+    { name: "Hospedería Casa Cordobelas", distanceKm: 11.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospeder%C3%ADa%20Casa%20Cordobelas%2C%20Cerdido%2C%20Spain&order=price" },
+  ],
+  "Cortes de Navarra": [
+    { name: "Budget stays near Cortes de Navarra", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cortes%20de%20Navarra%2C%20Spain&order=price" },
+    { name: "Guest houses near Cortes de Navarra", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cortes%20de%20Navarra%2C%20Spain&order=price" },
+    { name: "Hotels near Cortes de Navarra", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cortes%20de%20Navarra%2C%20Spain&order=price" },
+  ],
+  "Badajoz": [
+    { name: "Hotel Lisboa", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Lisboa%2C%20Badajoz%2C%20Spain&order=price" },
+    { name: "Turia Badajoz", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Turia%20Badajoz%2C%20Badajoz%2C%20Spain&order=price" },
+    { name: "Hotel Río", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20R%C3%ADo%2C%20Badajoz%2C%20Spain&order=price" },
+  ],
+  "Montcada-Bifurcació": [
+    { name: "ApartHotel Montcada", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ApartHotel%20Montcada%2C%20Montcada-Bifurcaci%C3%B3%2C%20Spain&order=price" },
+    { name: "ibis Barcelona Santa Coloma", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20Barcelona%20Santa%20Coloma%2C%20Montcada-Bifurcaci%C3%B3%2C%20Spain&order=price" },
+    { name: "Toni", distanceKm: 2.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Toni%2C%20Montcada-Bifurcaci%C3%B3%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
@@ -4674,6 +4714,81 @@ export const stationHotels: StationHotels = {
   ],
   "Ciudad Real Airport (CQM)": [
     { name: "Palacio de la Serna", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Palacio%20de%20la%20Serna%2C%20Ciudad%20Real%20Airport%20(CQM)%2C%20Spain&order=price" },
+  ],
+  "Amsterdam Airport Schiphol (AMS)": [
+    { name: "Yotel Schiphol", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Yotel%20Schiphol%2C%20Amsterdam%20Airport%20Schiphol%20(AMS)%2C%20Netherlands&order=price" },
+    { name: "Sheraton Amsterdam Airport Hotel and Conference Center", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sheraton%20Amsterdam%20Airport%20Hotel%20and%20Conference%20Center%2C%20Amsterdam%20Airport%20Schiphol%20(AMS)%2C%20Netherlands&order=price" },
+    { name: "Mercure Schiphol Terminal", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mercure%20Schiphol%20Terminal%2C%20Amsterdam%20Airport%20Schiphol%20(AMS)%2C%20Netherlands&order=price" },
+  ],
+  "Brussels Airport (BRU)": [
+    { name: "Sheraton Brussels Airport - 55", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sheraton%20Brussels%20Airport%20-%2055%2C%20Brussels%20Airport%20(BRU)%2C%20Belgium&order=price" },
+    { name: "B&B Landing Point", distanceKm: 1.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Landing%20Point%2C%20Brussels%20Airport%20(BRU)%2C%20Belgium&order=price" },
+    { name: "Thermae Boetfort Hotel", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Thermae%20Boetfort%20Hotel%2C%20Brussels%20Airport%20(BRU)%2C%20Belgium&order=price" },
+  ],
+  "Charles de Gaulle International Airport (CDG)": [
+    { name: "citizenM hotel Paris Charles de Gaulle Airport", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=citizenM%20hotel%20Paris%20Charles%20de%20Gaulle%20Airport%2C%20Charles%20de%20Gaulle%20International%20Airport%20(CDG)%2C%20France&order=price" },
+    { name: "Hilton Paris Charles de Gaulle Airport", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hilton%20Paris%20Charles%20de%20Gaulle%20Airport%2C%20Charles%20de%20Gaulle%20International%20Airport%20(CDG)%2C%20France&order=price" },
+    { name: "Mercure Paris Charles de Gaulle Airport & Convention", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mercure%20Paris%20Charles%20de%20Gaulle%20Airport%20%26%20Convention%2C%20Charles%20de%20Gaulle%20International%20Airport%20(CDG)%2C%20France&order=price" },
+  ],
+  "Rome–Fiumicino Leonardo da Vinci International Airport (FCO)": [
+    { name: "Air Rooms", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Air%20Rooms%2C%20Rome%E2%80%93Fiumicino%20Leonardo%20da%20Vinci%20International%20Airport%20(FCO)%2C%20Italy&order=price" },
+    { name: "Hilton Roma Airport", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hilton%20Roma%20Airport%2C%20Rome%E2%80%93Fiumicino%20Leonardo%20da%20Vinci%20International%20Airport%20(FCO)%2C%20Italy&order=price" },
+    { name: "Hilton Garden Inn Rome Airport", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hilton%20Garden%20Inn%20Rome%20Airport%2C%20Rome%E2%80%93Fiumicino%20Leonardo%20da%20Vinci%20International%20Airport%20(FCO)%2C%20Italy&order=price" },
+  ],
+  "Frankfurt Main Airport (FRA)": [
+    { name: "Olive Inn", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Olive%20Inn%2C%20Frankfurt%20Main%20Airport%20(FRA)%2C%20Germany&order=price" },
+    { name: "Galeria Airport Hotel", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Galeria%20Airport%20Hotel%2C%20Frankfurt%20Main%20Airport%20(FRA)%2C%20Germany&order=price" },
+    { name: "Airport Hotel Walldorf", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Airport%20Hotel%20Walldorf%2C%20Frankfurt%20Main%20Airport%20(FRA)%2C%20Germany&order=price" },
+  ],
+  "Ibiza Airport (IBZ)": [
+    { name: "Casa Munich", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Munich%2C%20Ibiza%20Airport%20(IBZ)%2C%20Spain&order=price" },
+    { name: "Grand Palladium Palace Ibiza Resort & Spa", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Grand%20Palladium%20Palace%20Ibiza%20Resort%20%26%20Spa%2C%20Ibiza%20Airport%20(IBZ)%2C%20Spain&order=price" },
+    { name: "Grand Palladium White Island Resort & Spa", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Grand%20Palladium%20White%20Island%20Resort%20%26%20Spa%2C%20Ibiza%20Airport%20(IBZ)%2C%20Spain&order=price" },
+  ],
+  "London Gatwick Airport (LGW)": [
+    { name: "Radisson RED London Gatwick Airport", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Radisson%20RED%20London%20Gatwick%20Airport%2C%20London%20Gatwick%20Airport%20(LGW)%2C%20United%20Kingdom&order=price" },
+    { name: "Premier Inn Gatwick Airport South", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Premier%20Inn%20Gatwick%20Airport%20South%2C%20London%20Gatwick%20Airport%20(LGW)%2C%20United%20Kingdom&order=price" },
+    { name: "Ibis Styles", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Styles%2C%20London%20Gatwick%20Airport%20(LGW)%2C%20United%20Kingdom&order=price" },
+  ],
+  "London Heathrow Airport (LHR)": [
+    { name: "Hilton Garden Inn London Heathrow Terminals 2 and 3", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hilton%20Garden%20Inn%20London%20Heathrow%20Terminals%202%20and%203%2C%20London%20Heathrow%20Airport%20(LHR)%2C%20United%20Kingdom&order=price" },
+    { name: "Holiday Inn London - Heathrow Bath Road, an IHG Hotel", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20London%20-%20Heathrow%20Bath%20Road%2C%20an%20IHG%20Hotel%2C%20London%20Heathrow%20Airport%20(LHR)%2C%20United%20Kingdom&order=price" },
+    { name: "Staybridge Suites London - Heathrow Bath Road, an IHG Hotel", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Staybridge%20Suites%20London%20-%20Heathrow%20Bath%20Road%2C%20an%20IHG%20Hotel%2C%20London%20Heathrow%20Airport%20(LHR)%2C%20United%20Kingdom&order=price" },
+  ],
+  "Gran Canaria Airport (LPA)": [
+    { name: "Aloja cerca del aeropuerto", distanceKm: 2.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aloja%20cerca%20del%20aeropuerto%2C%20Gran%20Canaria%20Airport%20(LPA)%2C%20Spain&order=price" },
+    { name: "Finca Carlos", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20Carlos%2C%20Gran%20Canaria%20Airport%20(LPA)%2C%20Spain&order=price" },
+    { name: "Villa El Eden", distanceKm: 4.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Villa%20El%20Eden%2C%20Gran%20Canaria%20Airport%20(LPA)%2C%20Spain&order=price" },
+  ],
+  "Manchester Airport (MAN)": [
+    { name: "Britannia Airport Inn Manchester Hotel & Spa", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Britannia%20Airport%20Inn%20Manchester%20Hotel%20%26%20Spa%2C%20Manchester%20Airport%20(MAN)%2C%20United%20Kingdom&order=price" },
+    { name: "Radisson Blu", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Radisson%20Blu%2C%20Manchester%20Airport%20(MAN)%2C%20United%20Kingdom&order=price" },
+    { name: "Premier Inn Manchester Airport FT (Runger Lane North)", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Premier%20Inn%20Manchester%20Airport%20FT%20(Runger%20Lane%20North)%2C%20Manchester%20Airport%20(MAN)%2C%20United%20Kingdom&order=price" },
+  ],
+  "Munich Airport (MUC)": [
+    { name: "Hilton Munich Airport", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hilton%20Munich%20Airport%2C%20Munich%20Airport%20(MUC)%2C%20Germany&order=price" },
+    { name: "VIP Wing", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=VIP%20Wing%2C%20Munich%20Airport%20(MUC)%2C%20Germany&order=price" },
+    { name: "Ibis Styles München Airport", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Styles%20M%C3%BCnchen%20Airport%2C%20Munich%20Airport%20(MUC)%2C%20Germany&order=price" },
+  ],
+  "Paris-Orly Airport (ORY)": [
+    { name: "ibis Paris Cœur d'Orly Airport", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20Paris%20C%C5%93ur%20d'Orly%20Airport%2C%20Paris-Orly%20Airport%20(ORY)%2C%20France&order=price" },
+    { name: "Novotel Paris Coeur d'Orly Airport", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Novotel%20Paris%20Coeur%20d'Orly%20Airport%2C%20Paris-Orly%20Airport%20(ORY)%2C%20France&order=price" },
+    { name: "ibis budget Paris Coeur d'Orly Airport", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20budget%20Paris%20Coeur%20d'Orly%20Airport%2C%20Paris-Orly%20Airport%20(ORY)%2C%20France&order=price" },
+  ],
+  "Palma de Mallorca Airport (PMI)": [
+    { name: "El Cid", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Cid%2C%20Palma%20de%20Mallorca%20Airport%20(PMI)%2C%20Spain&order=price" },
+    { name: "Helios", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Helios%2C%20Palma%20de%20Mallorca%20Airport%20(PMI)%2C%20Spain&order=price" },
+    { name: "Java", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Java%2C%20Palma%20de%20Mallorca%20Airport%20(PMI)%2C%20Spain&order=price" },
+  ],
+  "Tenerife Norte-Ciudad de La Laguna Airport (TFN)": [
+    { name: "La Macadamia", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Macadamia%2C%20Tenerife%20Norte-Ciudad%20de%20La%20Laguna%20Airport%20(TFN)%2C%20Spain&order=price" },
+    { name: "Pensión Padrón", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Padr%C3%B3n%2C%20Tenerife%20Norte-Ciudad%20de%20La%20Laguna%20Airport%20(TFN)%2C%20Spain&order=price" },
+    { name: "Hotel Aguere", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Aguere%2C%20Tenerife%20Norte-Ciudad%20de%20La%20Laguna%20Airport%20(TFN)%2C%20Spain&order=price" },
+  ],
+  "Zürich Airport (ZRH)": [
+    { name: "Radisson Hotel Zurich Airport", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Radisson%20Hotel%20Zurich%20Airport%2C%20Z%C3%BCrich%20Airport%20(ZRH)%2C%20Switzerland&order=price" },
+    { name: "Intercity Hotel", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Intercity%20Hotel%2C%20Z%C3%BCrich%20Airport%20(ZRH)%2C%20Switzerland&order=price" },
+    { name: "Holiday Inn Express Zürich Airport", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Z%C3%BCrich%20Airport%2C%20Z%C3%BCrich%20Airport%20(ZRH)%2C%20Switzerland&order=price" },
   ],
   "Estádio do Dragão": [
     { name: "Porto Antas Hotel", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Porto%20Antas%20Hotel%2C%20Est%C3%A1dio%20do%20Drag%C3%A3o%2C%20Portugal&order=price" },

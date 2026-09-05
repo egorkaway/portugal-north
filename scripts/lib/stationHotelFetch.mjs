@@ -3,6 +3,7 @@
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { canonicalHotelName, foldHotelName } from "./hotelVoteAliases.mjs";
+import { formatCountryName } from "../../server/lib/countryName.ts";
 import { isRejectedHotel } from "./rejectedHotels.mjs";
 
 const OVERPASS_URLS = [
@@ -177,7 +178,10 @@ export function bookingSearchUrl(query) {
 }
 
 function countryLabel(country = "pt") {
-  return country === "es" ? "Spain" : "Portugal";
+  const iso = String(country ?? "pt").trim().toUpperCase();
+  if (iso === "PT") return "Portugal";
+  if (iso === "ES") return "Spain";
+  return formatCountryName(iso) || "Portugal";
 }
 
 function bookingUrlFor(tags, hotelName, station) {

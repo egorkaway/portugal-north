@@ -61,12 +61,16 @@ export function hashString(value) {
 
 export function parseStations(ts) {
   return [...ts.matchAll(/\{\s*name:\s*"([^"]+)"[^}]*lines:\s*\[([^\]]*)\][^}]*lat:\s*([\d.-]+)[^}]*lng:\s*([\d.-]+)/gs)].map(
-    (match) => ({
-      name: match[1],
-      lines: [...match[2].matchAll(/"([^"]+)"/g)].map((line) => line[1]),
-      lat: Number(match[3]),
-      lng: Number(match[4]),
-    }),
+    (match) => {
+      const country = match[0].match(/\bcountry:\s*"([a-z]{2})"/i)?.[1]?.toLowerCase();
+      return {
+        name: match[1],
+        lines: [...match[2].matchAll(/"([^"]+)"/g)].map((line) => line[1]),
+        lat: Number(match[3]),
+        lng: Number(match[4]),
+        ...(country ? { country } : {}),
+      };
+    },
   );
 }
 
@@ -113,13 +117,21 @@ function stripDiacritics(text) {
   return text.normalize("NFD").replace(/\p{M}/gu, "");
 }
 
-/** Drop mode suffixes like "(Metro)" so locality is the stop name, not "Metro". */
+/** Drop mode suffixes like "(Metro)" and airport IATA so locality is the place name. */
 export function stationBaseName(name) {
-  return name.replace(/\s*\((?:Metro(?:\s+[^)]*)?|CP|Renfe)\)\s*$/i, "").trim();
+  return name
+    .replace(/\s*\((?:Metro(?:\s+[^)]*)?|CP|Renfe)\)\s*$/i, "")
+    .replace(/\s*\(([A-Z]{3})\)\s*$/, "")
+    .trim();
+}
+
+export function isAirportStationName(name) {
+  return /\bairport\b/i.test(name);
 }
 
 function isGenericParenLabel(label) {
-  return /^(metro|cp|renfe)(\s|$)/i.test(stripDiacritics(label).trim());
+  const folded = stripDiacritics(label).trim();
+  return /^(metro|cp|renfe)(\s|$)/i.test(folded) || /^[A-Z]{3}$/i.test(folded);
 }
 
 function localityFromName(name) {
@@ -257,8 +269,21 @@ function universalAtmosphereQueries(station) {
   ];
 }
 
+function airportPexelsQueries(station) {
+  const full = stationBaseName(station.name);
+  const noIntl = full.replace(/\s+International\b/gi, "").replace(/\s+/g, " ").trim();
+  return [...new Set([
+    `${full} airport`,
+    `${noIntl} airport`,
+    `${full} terminal`,
+    `${noIntl} airport terminal`,
+  ])];
+}
+
 /** Train-focused Pexels queries (tried first). */
 export function buildPexelsQueries(station) {
+  if (isAirportStationName(station.name)) return airportPexelsQueries(station);
+
   const { country = "pt" } = station;
   const locality = localityFromName(station.name);
   const region = regionFromCoords(station.lat, station.lng, country);
@@ -419,7 +444,42 @@ const wikiTitlesEs = (stationName) => {
   ];
 };
 
+const WIKI_LANG_BY_COUNTRY = {
+  pt: "pt",
+  es: "es",
+  fr: "fr",
+  de: "de",
+  it: "it",
+  nl: "nl",
+  be: "nl",
+  ch: "de",
+  gb: "en",
+};
+
+export function wikiLangsForStation(station) {
+  if (isAirportStationName(station.name)) {
+    const local = WIKI_LANG_BY_COUNTRY[station.country] ?? "en";
+    return [...new Set(["en", local])];
+  }
+  if (station.country === "es") return ["es", "gl"];
+  return ["pt"];
+}
+
+export function wikiTitlesForAirport(station) {
+  const full = stationBaseName(station.name);
+  const noIntl = full.replace(/\s+International\b/gi, "").replace(/\s+/g, " ").trim();
+  const titles = [full, noIntl, full.replace(/\bInternational Airport\b/i, "Airport")];
+  if (/^London\s+/i.test(full)) titles.push(full.replace(/^London\s+/i, ""));
+  if (/^Frankfurt Main Airport$/i.test(full)) titles.push("Frankfurt Airport");
+  if (/^Paris-Orly Airport$/i.test(full)) titles.push("Orly Airport");
+  if (/Tenerife Norte/i.test(full)) titles.push("Tenerife North Airport");
+  if (/Zürich Airport/i.test(full)) titles.push("Zurich Airport");
+  if (/Fiumicino/i.test(full)) titles.push("Leonardo da Vinci–Fiumicino Airport");
+  return [...new Set(titles.map((title) => title.replace(/\s+/g, " ").trim()).filter(Boolean))];
+}
+
 export function wikiTitlesForStation(station) {
+  if (isAirportStationName(station.name)) return wikiTitlesForAirport(station);
   return station.country === "es" ? wikiTitlesEs(station.name) : wikiTitlesPt(station);
 }
 
@@ -463,7 +523,7 @@ export async function pexelsPickUnique(query, stationName, usedUrls, apiKey, { p
 
 export async function resolveStationImage(station, { apiKey, usedUrls, pexelsOnly = false }) {
   if (!pexelsOnly) {
-    const langs = station.country === "es" ? ["es", "gl"] : ["pt"];
+    const langs = wikiLangsForStation(station);
     for (const lang of langs) {
       for (const title of wikiTitlesForStation(station)) {
         const { thumb, rateLimited } = await wikiThumb(title, lang);

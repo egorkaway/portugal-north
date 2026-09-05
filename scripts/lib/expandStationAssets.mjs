@@ -1,8 +1,18 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { formatCountryName } from "../../server/lib/countryName.ts";
+import { isPlaceholderHotelName } from "./stationHotelFetch.mjs";
+
+/** True when OSM should run: no list, or only Booking search stubs from a failed lookup. */
+export function hotelListNeedsFill(hotels) {
+  if (!Array.isArray(hotels) || hotels.length === 0) return true;
+  return hotels.every((hotel) => isPlaceholderHotelName(hotel?.name ?? ""));
+}
 
 export function bookingStubHotels(name, country = "pt") {
-  const nation = country === "es" ? "Spain" : "Portugal";
+  const iso = String(country ?? "pt").trim().toUpperCase();
+  const nation =
+    iso === "PT" ? "Portugal" : iso === "ES" ? "Spain" : formatCountryName(iso) || "Portugal";
   const url = `https://www.booking.com/searchresults.html?ss=${encodeURIComponent(`${name}, ${nation}`)}&order=price`;
   return [
     { name: `Budget stays near ${name}`, distanceKm: 0.8, priceFrom: 35, bookingUrl: url },
@@ -62,7 +72,7 @@ async function resolveUniqueImage(station, ctx) {
 
 async function resolveHotelsWithRetry(station, ctx) {
   const { resolveHotelsForStation, sleep } = await import("./stationHotelFetch.mjs");
-  if (ctx.hotelMap[station.name]?.length) {
+  if (!hotelListNeedsFill(ctx.hotelMap[station.name])) {
     return { hotels: ctx.hotelMap[station.name], source: "existing" };
   }
 
@@ -116,7 +126,7 @@ export async function persistExpandedStationAssets(station, assets, ctx) {
     console.log(`  image ${station.name}: NOT FOUND`);
   }
 
-  if (!ctx.hotelMap[station.name]?.length && assets.hotels?.length) {
+  if (hotelListNeedsFill(ctx.hotelMap[station.name]) && assets.hotels?.length) {
     ctx.hotelMap[station.name] = assets.hotels;
     writeHotelMap(ctx.hotelsPath, ctx.hotelMap, ctx.stations);
     console.log(
@@ -145,4 +155,22 @@ export async function fillExpandedStationAssets(picked, ctx) {
     await persistExpandedStationAssets(station, assets, ctx);
   }
   return { missingImages };
+}
+
+/** Photos and hotels for destination airports that have compact station pages. */
+export async function fillExternalAirportPageAssets(rootDir) {
+  const { loadEnvFile } = await import("./stationImageFetch.mjs");
+  loadEnvFile(join(rootDir, ".env"));
+  const { EXTERNAL_AIRPORT_PAGE_IATAS } = await import("../../src/data/externalAirportPageIatas.ts");
+  const { europeDestinationAirports } = await import("../../src/data/europe/airports.ts");
+  const pageIatas = new Set(
+    EXTERNAL_AIRPORT_PAGE_IATAS.map((iata) => String(iata).trim().toUpperCase()),
+  );
+  const picked = europeDestinationAirports.filter((station) =>
+    pageIatas.has(String(station.lines[0] ?? "").trim().toUpperCase()),
+  );
+  if (!picked.length) return { missingImages: [] };
+  const ctx = await createExpandAssetContext(rootDir);
+  console.log(`Filling images/hotels for ${picked.length} external airport page(s)…`);
+  return fillExpandedStationAssets(picked, ctx);
 }

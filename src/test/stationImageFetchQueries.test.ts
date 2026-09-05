@@ -4,6 +4,7 @@ import {
   locationNamesFromStation,
   metroSystemForStation,
   stationBaseName,
+  wikiLangsForStation,
   wikiTitlesForStation,
 } from "../../scripts/lib/stationImageFetch.mjs";
 
@@ -39,5 +40,19 @@ describe("station image query helpers", () => {
       country: "pt",
     });
     expect(titles[0]).toBe("Estação Estádio do Dragão (Metro do Porto)");
+  });
+
+  it("uses English Wikipedia airport titles instead of Portuguese stations", () => {
+    const cdg = {
+      name: "Charles de Gaulle International Airport (CDG)",
+      lines: ["CDG"],
+      lat: 49.01,
+      lng: 2.55,
+      country: "fr",
+    };
+    expect(stationBaseName(cdg.name)).toBe("Charles de Gaulle International Airport");
+    expect(wikiTitlesForStation(cdg)).toContain("Charles de Gaulle Airport");
+    expect(wikiLangsForStation(cdg)).toEqual(["en", "fr"]);
+    expect(buildPexelsQueries(cdg)[0]).toMatch(/airport/i);
   });
 });

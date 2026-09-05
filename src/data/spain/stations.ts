@@ -4109,4 +4109,49 @@ export const spainStations: Station[] = [
     lng: -5.8032,
   },
 
+  {
+    name: "Cerdido",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5873,
+    lng: -7.9343,
+  },
+
+  {
+    name: "Cortes de Navarra",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.9151,
+    lng: -1.4204,
+  },
+
+  {
+    name: "Ventas de Irún",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3304,
+    lng: -1.8168,
+  },
+
+  {
+    name: "Badajoz",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.8907,
+    lng: -6.9818,
+  },
+
+  {
+    name: "Montcada-Bifurcació",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4698,
+    lng: 2.18,
+  },
+
 ];

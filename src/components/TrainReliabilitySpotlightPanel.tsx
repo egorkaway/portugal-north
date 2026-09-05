@@ -65,7 +65,7 @@ function TrainSpotlightCard({
   );
 }
 
-function SpotlightColumn({
+function SpotlightGrid({
   title,
   entries,
   tone,
@@ -77,17 +77,19 @@ function SpotlightColumn({
   const { t } = useLocale();
 
   return (
-    <div className="space-y-3">
-      <h3 className="font-display text-lg text-foreground md:text-xl">{title}</h3>
+    <div>
+      <h3 className="mb-3 font-display text-lg text-foreground md:mb-4 md:text-xl">{title}</h3>
       {entries.length > 0 ? (
-        entries.map((entry, index) => (
-          <TrainSpotlightCard
-            key={`${entry.trainNumber}|${entry.serviceType}`}
-            rank={index + 1}
-            entry={entry}
-            tone={tone}
-          />
-        ))
+        <div className="grid gap-3 sm:grid-cols-2 sm:gap-4">
+          {entries.map((entry, index) => (
+            <TrainSpotlightCard
+              key={`${entry.trainNumber}|${entry.serviceType}`}
+              rank={index + 1}
+              entry={entry}
+              tone={tone}
+            />
+          ))}
+        </div>
       ) : (
         <div className="rounded-lg border border-border bg-card p-4 md:p-5">
           <div className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -122,13 +124,11 @@ export function TrainReliabilitySpotlightPanel() {
         </h2>
       </div>
       <p className="mb-3 text-sm text-muted-foreground md:mb-4">{t("rankings.trainSpotlightIntro")}</p>
-      <div className="max-w-md">
-        <SpotlightColumn
-          title={t("rankings.mostDelayedTrain")}
-          entries={mostDelayed}
-          tone="bad"
-        />
-      </div>
+      <SpotlightGrid
+        title={t("rankings.mostDelayedTrain")}
+        entries={mostDelayed}
+        tone="bad"
+      />
     </section>
   );
 }
