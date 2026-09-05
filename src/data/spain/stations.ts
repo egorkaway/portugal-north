@@ -4082,4 +4082,22 @@ export const spainStations: Station[] = [
     lng: -5.9641,
   },
 
+  {
+    name: "El Barrial-Centro Comercial Pozuelo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.4654,
+    lng: -3.8077,
+  },
+
+  {
+    name: "Gallarta",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3193,
+    lng: -3.0675,
+  },
+
 ];

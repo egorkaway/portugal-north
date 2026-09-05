@@ -1417,4 +1417,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Jardines de Hércules":
     "Jardines de Hércules és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "El Barrial-Centro Comercial Pozuelo":
+    "El Barrial-Centro Comercial Pozuelo és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Gallarta":
+    "Gallarta és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

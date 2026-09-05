@@ -110,8 +110,8 @@ export function TrainReliabilitySpotlightPanel() {
 
   if (isError || !data) return null;
 
-  const { mostDelayed, mostReliable } = data;
-  if (mostDelayed.length === 0 && mostReliable.length === 0) return null;
+  const { mostDelayed } = data;
+  if (mostDelayed.length === 0) return null;
 
   return (
     <section aria-labelledby="train-spotlight-heading" className="mb-6 md:mb-8">
@@ -122,12 +122,7 @@ export function TrainReliabilitySpotlightPanel() {
         </h2>
       </div>
       <p className="mb-3 text-sm text-muted-foreground md:mb-4">{t("rankings.trainSpotlightIntro")}</p>
-      <div className="grid gap-6 sm:grid-cols-2 sm:gap-4">
-        <SpotlightColumn
-          title={t("rankings.mostReliableTrain")}
-          entries={mostReliable}
-          tone="good"
-        />
+      <div className="max-w-md">
         <SpotlightColumn
           title={t("rankings.mostDelayedTrain")}
           entries={mostDelayed}

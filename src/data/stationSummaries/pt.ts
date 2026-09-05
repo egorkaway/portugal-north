@@ -940,4 +940,10 @@ export const stationSummariesPt: Record<string, string> = {
   "Freineda":
     "Freineda é uma paragem CP de serviços regionais na Linha da Beira Alta em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
 
+  "Gata":
+    "Gata é uma paragem CP de serviços regionais na Linha da Beira Alta em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Lapa do Lobo":
+    "Lapa do Lobo é uma paragem CP de serviços regionais na Linha da Beira Alta em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
 };

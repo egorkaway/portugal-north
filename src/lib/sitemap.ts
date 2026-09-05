@@ -1,3 +1,7 @@
+/**
+ * Keep this module on relative imports only. vite.config.ts loads it at config
+ * time, before the `@` alias exists, so `@/…` specifiers fail on Vercel.
+ */
 import { pageStations } from "../data/stationRegistry";
 import { getExternalAirportPageStations } from "./externalAirportPages";
 import { getHomeSitemapPaths } from "./homeRoute";

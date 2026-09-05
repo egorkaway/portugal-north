@@ -2243,6 +2243,16 @@ export const stationHotels: StationHotels = {
     { name: "Casa da Cidadela", distanceKm: 3.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Cidadela%2C%20Freineda%2C%20Portugal&order=price" },
     { name: "Casa do Corro", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Corro%2C%20Freineda%2C%20Portugal&order=price" },
   ],
+  "Gata": [
+    { name: "Hotel Lusitânia Parque", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Lusit%C3%A2nia%20Parque%2C%20Gata%2C%20Portugal&order=price" },
+    { name: "Pensão Aliança", distanceKm: 4.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Alian%C3%A7a%2C%20Gata%2C%20Portugal&order=price" },
+    { name: "Residência Filipe", distanceKm: 4.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Resid%C3%AAncia%20Filipe%2C%20Gata%2C%20Portugal&order=price" },
+  ],
+  "Lapa do Lobo": [
+    { name: "Casas do Lupo", distanceKm: 0.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20do%20Lupo%2C%20Lapa%20do%20Lobo%2C%20Portugal&order=price" },
+    { name: "Residencial Rossio", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Rossio%2C%20Lapa%20do%20Lobo%2C%20Portugal&order=price" },
+    { name: "Hotel Urgeiriça", distanceKm: 4.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Urgeiri%C3%A7a%2C%20Lapa%20do%20Lobo%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4472,6 +4482,16 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Doña Carmela", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Do%C3%B1a%20Carmela%2C%20Jardines%20de%20H%C3%A9rcules%2C%20Spain&order=price" },
     { name: "Hotel Valme", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Valme%2C%20Jardines%20de%20H%C3%A9rcules%2C%20Spain&order=price" },
     { name: "Hotel Bellavista Sevilla", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bellavista%20Sevilla%2C%20Jardines%20de%20H%C3%A9rcules%2C%20Spain&order=price" },
+  ],
+  "El Barrial-Centro Comercial Pozuelo": [
+    { name: "Hotel Concordy", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Concordy%2C%20El%20Barrial-Centro%20Comercial%20Pozuelo%2C%20Spain&order=price" },
+    { name: "Aparthotel NH La Florida", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aparthotel%20NH%20La%20Florida%2C%20El%20Barrial-Centro%20Comercial%20Pozuelo%2C%20Spain&order=price" },
+    { name: "TH Aravaca", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=TH%20Aravaca%2C%20El%20Barrial-Centro%20Comercial%20Pozuelo%2C%20Spain&order=price" },
+  ],
+  "Gallarta": [
+    { name: "Hotel Ortuella", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ortuella%2C%20Gallarta%2C%20Spain&order=price" },
+    { name: "Albergue Municipal de Cotorrio", distanceKm: 2.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Municipal%20de%20Cotorrio%2C%20Gallarta%2C%20Spain&order=price" },
+    { name: "Buenavista", distanceKm: 3.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Buenavista%2C%20Gallarta%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

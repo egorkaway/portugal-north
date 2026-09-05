@@ -526,6 +526,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@magda-ehlers-pexels",
     photoPageUrl: "https://www.pexels.com/photo/rusty-railroad-tracks-on-brown-soil-6718893/",
   },
+  "6718901": {
+    photographer: "Magda Ehlers",
+    photographerUrl: "https://www.pexels.com/@magda-ehlers-pexels",
+    photoPageUrl: "https://www.pexels.com/photo/railroad-track-between-tall-trees-6718901/",
+  },
   "6718973": {
     photographer: "Magda Ehlers",
     photographerUrl: "https://www.pexels.com/@magda-ehlers-pexels",
@@ -2100,6 +2105,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Kevyn Costa",
     photographerUrl: "https://www.pexels.com/@kevynlourencofotografia",
     photoPageUrl: "https://www.pexels.com/photo/abandoned-train-car-under-clear-blue-sky-31028541/",
+  },
+  "31166113": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/modern-high-speed-train-at-cadiz-station-31166113/",
   },
   "31167964": {
     photographer: "Hkn clk",

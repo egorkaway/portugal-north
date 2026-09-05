@@ -3,13 +3,18 @@ import { buildSitemapXml, getSitemapEntries } from "@/lib/sitemap";
 import { pageStations } from "@/data/stationRegistry";
 import { getHomeSitemapPaths } from "@/lib/homeRoute";
 import { getRailLines } from "@/lib/trainLines";
+import { getExternalAirportPageStations } from "@/lib/externalAirportPages";
 
 describe("sitemap", () => {
   it("includes home pages, rankings, tickets, map, lines, privacy, and every station page", () => {
     const entries = getSitemapEntries();
     const homePages = getHomeSitemapPaths();
     expect(entries).toHaveLength(
-      homePages.length + 5 + getRailLines().length + pageStations.length,
+      homePages.length +
+        5 +
+        getRailLines().length +
+        pageStations.length +
+        getExternalAirportPageStations().length,
     );
     expect(entries[0].path).toBe("/all");
     expect(entries.some((e) => e.path === "/all/2")).toBe(true);
@@ -25,7 +30,7 @@ describe("sitemap", () => {
     expect(entries.some((e) => e.path === "/stations/porto-campanha")).toBe(true);
     expect(entries.some((e) => e.path === "/stations/vigo-guixar")).toBe(true);
     expect(entries.some((e) => e.path === "/stations/amsterdam-airport-schiphol-ams")).toBe(
-      false,
+      true,
     );
   });
 

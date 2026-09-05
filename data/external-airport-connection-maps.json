@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T07:48:45.343Z",
+  "updatedAt": "2026-09-05T07:59:02.766Z",
   "airports": [
     {
       "iata": "PMI",
@@ -662,6 +662,32 @@
       "iberianDestinationCount": 11,
       "iberianSampledFlights": 25,
       "iberianSampledAt": "2026-09-05T07:48:45.343Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "PRG",
+      "stationName": "Václav Havel Airport Prague (PRG)",
+      "slug": "vaclav-havel-airport-prague-prg",
+      "country": "CZ",
+      "iberianFlightCount": 25,
+      "iberianMapImage": "/maps/airports/external/vaclav-havel-airport-prague-prg-iberian-connections.png",
+      "iberianDestinationCount": 11,
+      "iberianSampledFlights": 25,
+      "iberianSampledAt": "2026-09-05T07:57:38.998Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "LYS",
+      "stationName": "Lyon Saint-Exupéry Airport (LYS)",
+      "slug": "lyon-saint-exupery-airport-lys",
+      "country": "FR",
+      "iberianFlightCount": 24,
+      "iberianMapImage": "/maps/airports/external/lyon-saint-exupery-airport-lys-iberian-connections.png",
+      "iberianDestinationCount": 8,
+      "iberianSampledFlights": 24,
+      "iberianSampledAt": "2026-09-05T07:59:02.766Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }

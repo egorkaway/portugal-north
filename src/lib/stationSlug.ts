@@ -14,16 +14,24 @@ export function stationToSlug(name: string): string {
 }
 
 /** Listed Iberian hubs/stops plus destination airports that have both connection maps. */
-const stationBySlug = new Map(
-  [...pageStations, ...getExternalAirportPageStations()].map((station) => [
-    stationToSlug(station.name),
-    station,
-  ]),
-);
+let stationBySlug: Map<string, Station> | undefined;
+
+function stationLookup(): Map<string, Station> {
+  if (!stationBySlug) {
+    stationBySlug = new Map(
+      [...pageStations, ...getExternalAirportPageStations()].map((station) => [
+        stationToSlug(station.name),
+        station,
+      ]),
+    );
+  }
+  return stationBySlug;
+}
 
 export function getStationBySlug(slug: string): Station | undefined {
   const trimmed = slug.trim();
-  return stationBySlug.get(trimmed) ?? stationBySlug.get(stationToSlug(trimmed));
+  const lookup = stationLookup();
+  return lookup.get(trimmed) ?? lookup.get(stationToSlug(trimmed));
 }
 
 export function getStationPath(station: Station): string {

@@ -7,6 +7,7 @@ import { europeDestinationAirports } from "@/data/europe/airports";
 import { allStations, getStationsForCountry, getStationsForHomeScope } from "@/data/stationRegistry";
 import { getStationBySlug, stationToSlug } from "@/lib/stationSlug";
 import { AIRPORT_DESTINATION_TYPE } from "@/lib/airportTypes";
+import { getExternalAirportPageIataSet } from "@/lib/externalAirportPages";
 
 describe("stationRegistry", () => {
   it("keeps Portugal and Spain station lists separate", () => {
@@ -58,11 +59,17 @@ describe("stationRegistry", () => {
         .filter((s) => s.types.includes("Airport"))
         .map((s) => s.lines[0]),
     );
+    const pageIatas = getExternalAirportPageIataSet();
     for (const airport of europeDestinationAirports) {
       expect(airport.types).toEqual([AIRPORT_DESTINATION_TYPE]);
       expect(ptIatas.has(airport.lines[0])).toBe(false);
       expect(esIatas.has(airport.lines[0])).toBe(false);
-      expect(getStationBySlug(stationToSlug(airport.name))).toBeUndefined();
+      const page = getStationBySlug(stationToSlug(airport.name));
+      if (pageIatas.has(airport.lines[0])) {
+        expect(page?.name).toBe(airport.name);
+      } else {
+        expect(page).toBeUndefined();
+      }
     }
     expect(getStationsForHomeScope("pt")).not.toEqual(
       expect.arrayContaining(europeDestinationAirports),

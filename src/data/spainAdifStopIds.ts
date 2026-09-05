@@ -895,6 +895,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Jardines de Hércules": ["51113"],
 
+  "El Barrial-Centro Comercial Pozuelo": ["10010"],
+
+  "Gallarta": ["13508"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

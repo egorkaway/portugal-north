@@ -1,9 +1,9 @@
-import { europeDestinationAirports } from "@/data/europe/airports";
-import { EXTERNAL_AIRPORT_PAGE_IATAS } from "@/data/externalAirportPageIatas";
-import type { Station } from "@/data/stationTypes";
-import { isAirportDestinationStation } from "@/lib/airportTypes";
-import { externalMapPublicPath } from "@/lib/externalAirportSpotlight";
-import { stationToSlug } from "@/lib/stationSlug";
+/** Compact destination-airport pages (both connection maps). Relative imports: pulled in by sitemap → vite.config. */
+import { europeDestinationAirports } from "../data/europe/airports";
+import { EXTERNAL_AIRPORT_PAGE_IATAS } from "../data/externalAirportPageIatas";
+import type { Station } from "../data/stationTypes";
+import { isAirportDestinationStation } from "./airportTypes";
+import { externalMapPublicPath } from "./externalAirportSpotlight";
 
 const pageIataSet = new Set(
   EXTERNAL_AIRPORT_PAGE_IATAS.map((iata) => iata.trim().toUpperCase()),
@@ -31,11 +31,21 @@ export function getExternalAirportPageIataSet(): ReadonlySet<string> {
   return pageIataSet;
 }
 
+function stationNameSlug(name: string): string {
+  return name
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .toLowerCase()
+    .replace(/[()]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
 export function getExternalAirportMapPaths(station: Pick<Station, "name">): {
   iberian: string;
   all: string;
 } {
-  const slug = stationToSlug(station.name);
+  const slug = stationNameSlug(station.name);
   return {
     iberian: externalMapPublicPath(slug, "iberian"),
     all: externalMapPublicPath(slug, "all"),

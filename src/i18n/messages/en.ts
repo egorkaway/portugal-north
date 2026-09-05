@@ -282,7 +282,7 @@ export const en: Messages = {
     downloadStationCsv: "Download CSV",
     trainSpotlightTitle: "Portugal train spotlight",
     trainSpotlightIntro:
-      "The three most reliable and three most delayed trains from our live CP arrival delay samples across Portugal. Stations sampled together count as one sighting. A train needs at least three sightings on two different days, and one in the last week.",
+      "The three most delayed trains from our live CP arrival delay samples across Portugal. Stations sampled together count as one sighting. A train needs at least three sightings on two different days, and one in the last week.",
     trainSpotlightLoading: "Loading train spotlight…",
     trainSpotlightNoData: "Not enough train samples yet.",
     mostReliableTrain: "3 most reliable trains",

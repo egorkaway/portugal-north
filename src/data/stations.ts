@@ -879,6 +879,22 @@ const cpStations: StationData[] = [
     lng: -6.9044,
   },
 
+  {
+    name: "Gata",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.5218,
+    lng: -7.2145,
+  },
+
+  {
+    name: "Lapa do Lobo",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.4756,
+    lng: -7.9197,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

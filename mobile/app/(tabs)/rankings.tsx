@@ -162,48 +162,25 @@ export default function RankingsScreen() {
         </>
       ) : null}
 
-      {(trainSpotlight.mostReliable.length > 0 || trainSpotlight.mostDelayed.length > 0) && (
+      {trainSpotlight.mostDelayed.length > 0 ? (
         <RankingSection title={t('rankings.trainSpotlightTitle')}>
-          {trainSpotlight.mostReliable.length > 0 ? (
-            <>
-              {trainSpotlight.mostReliable.map((entry, index) => (
-                <TrainSpotlightRow
-                  key={`reliable-${entry.trainNumber}-${entry.serviceType}`}
-                  rank={index + 1}
-                  label={index === 0 ? t('rankings.mostReliableTrain') : undefined}
-                  trainNumber={entry.trainNumber}
-                  serviceType={entry.serviceType}
-                  value={t('rankings.trainSpotlightAvgDelay', {
-                    avg: formatTrainSpotlightDelay(entry.avgDelayMinutes),
-                  })}
-                  valueColor={trainSpotlightDelayColor(entry.avgDelayMinutes)}
-                  majorStations={entry.majorStations}
-                  onStationPress={(name) => router.push(`/station/${stationToSlug(name)}`)}
-                />
-              ))}
-            </>
-          ) : null}
-          {trainSpotlight.mostDelayed.length > 0 ? (
-            <>
-              {trainSpotlight.mostDelayed.map((entry, index) => (
-                <TrainSpotlightRow
-                  key={`delayed-${entry.trainNumber}-${entry.serviceType}`}
-                  rank={index + 1}
-                  label={index === 0 ? t('rankings.mostDelayedTrain') : undefined}
-                  trainNumber={entry.trainNumber}
-                  serviceType={entry.serviceType}
-                  value={t('rankings.trainSpotlightAvgDelay', {
-                    avg: formatTrainSpotlightDelay(entry.avgDelayMinutes),
-                  })}
-                  valueColor={trainSpotlightDelayColor(entry.avgDelayMinutes)}
-                  majorStations={entry.majorStations}
-                  onStationPress={(name) => router.push(`/station/${stationToSlug(name)}`)}
-                />
-              ))}
-            </>
-          ) : null}
+          {trainSpotlight.mostDelayed.map((entry, index) => (
+            <TrainSpotlightRow
+              key={`delayed-${entry.trainNumber}-${entry.serviceType}`}
+              rank={index + 1}
+              label={index === 0 ? t('rankings.mostDelayedTrain') : undefined}
+              trainNumber={entry.trainNumber}
+              serviceType={entry.serviceType}
+              value={t('rankings.trainSpotlightAvgDelay', {
+                avg: formatTrainSpotlightDelay(entry.avgDelayMinutes),
+              })}
+              valueColor={trainSpotlightDelayColor(entry.avgDelayMinutes)}
+              majorStations={entry.majorStations}
+              onStationPress={(name) => router.push(`/station/${stationToSlug(name)}`)}
+            />
+          ))}
         </RankingSection>
-      )}
+      ) : null}
 
       {!ratings.configured ? (
         <Text style={styles.note}>{t('rankings.votesUnavailable')}</Text>

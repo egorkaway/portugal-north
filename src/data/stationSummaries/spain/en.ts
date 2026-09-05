@@ -1417,4 +1417,10 @@ export const spainSummariesEn: Record<string, string> = {
   "Jardines de Hércules":
     "Jardines de Hércules is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "El Barrial-Centro Comercial Pozuelo":
+    "El Barrial-Centro Comercial Pozuelo is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Gallarta":
+    "Gallarta is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };
