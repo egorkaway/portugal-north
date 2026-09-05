@@ -240,6 +240,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Mira Sintra-Meleças": "94-62042",
   "Miramar": "94-39073",
   "Mirão": "94-9225",
+  "Miuzela": "94-49239",
   "Mogofores": "94-37143",
   "Moimenta - Alcafache": "94-46763",
   "Moita": "94-95109",

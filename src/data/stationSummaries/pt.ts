@@ -946,4 +946,7 @@ export const stationSummariesPt: Record<string, string> = {
   "Lapa do Lobo":
     "Lapa do Lobo é uma paragem CP de serviços regionais na Linha da Beira Alta em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
 
+  "Miuzela":
+    "Miuzela é uma paragem CP de serviços regionais na Linha da Beira Alta em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
 };

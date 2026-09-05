@@ -1871,6 +1871,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@shabazz-stuart-465927833",
     photoPageUrl: "https://www.pexels.com/photo/commuters-in-new-york-urban-train-station-28560166/",
   },
+  "28573647": {
+    photographer: "Emilio Sánchez  Hernández",
+    photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",
+    photoPageUrl: "https://www.pexels.com/photo/historic-toledo-building-in-bright-daylight-28573647/",
+  },
   "28601256": {
     photographer: "Alimurat Üral",
     photographerUrl: "https://www.pexels.com/@alimuart",
@@ -3105,6 +3110,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Malcoln Oliveira",
     photographerUrl: "https://www.pexels.com/@malcolnphoto",
     photoPageUrl: "https://www.pexels.com/photo/charming-historical-train-station-in-minas-gerais-38814600/",
+  },
+  "38814601": {
+    photographer: "Malcoln Oliveira",
+    photographerUrl: "https://www.pexels.com/@malcolnphoto",
+    photoPageUrl: "https://www.pexels.com/photo/santa-luzia-historic-train-station-at-dusk-38814601/",
   },
   "38814603": {
     photographer: "Malcoln Oliveira",

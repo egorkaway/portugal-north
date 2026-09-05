@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-05T07:57:59.006Z",
-  "runCount": 708,
+  "generatedAt": "2026-09-05T07:59:26.202Z",
+  "runCount": 709,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -44,21 +44,6 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "10543",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 0,
-      "observations": 17,
-      "stationsSampled": 6,
-      "majorStations": [
-        "Castelo Branco",
-        "Guarda",
-        "Covilhã",
-        "Fundão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
       "trainNumber": "36407",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
@@ -75,6 +60,21 @@
     },
     {
       "trainNumber": "10540",
+      "serviceType": "Intercidades",
+      "avgDelayMinutes": 0,
+      "observations": 15,
+      "stationsSampled": 6,
+      "majorStations": [
+        "Abrantes",
+        "Castelo Branco",
+        "Covilhã",
+        "Fundão"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "10544",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
       "observations": 15,

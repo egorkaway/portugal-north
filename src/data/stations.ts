@@ -895,6 +895,14 @@ const cpStations: StationData[] = [
     lng: -7.9197,
   },
 
+  {
+    name: "Miuzela",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.5193,
+    lng: -7.0133,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

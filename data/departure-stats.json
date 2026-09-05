@@ -1,6 +1,6 @@
 {
-  "runCount": 708,
-  "lastRunAt": "2026-09-05T07:57:56.474Z",
+  "runCount": 709,
+  "lastRunAt": "2026-09-05T07:59:23.697Z",
   "lastAirportConnectionsAt": "2026-09-05T06:01:23.167Z",
   "stations": {
     "Pombal": {
@@ -567,7 +567,7 @@
         "delayMinutes": 3367
       },
       "successfulSamples": 235,
-      "failedSamples": 13,
+      "failedSamples": 14,
       "lastSampleAt": "2026-09-05T06:35:44.410Z",
       "lastError": "cp_api_http_429"
     },
@@ -1912,9 +1912,9 @@
         "delayMinutes": 2656
       },
       "successfulSamples": 232,
-      "failedSamples": 4,
+      "failedSamples": 5,
       "lastSampleAt": "2026-09-05T07:54:58.760Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Paredes": {
       "cpCode": "94-8276",
@@ -2271,9 +2271,9 @@
         "delayMinutes": 362
       },
       "successfulSamples": 238,
-      "failedSamples": 14,
+      "failedSamples": 15,
       "lastSampleAt": "2026-09-05T07:56:12.687Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Esqueiró": {
       "cpCode": "94-18291",

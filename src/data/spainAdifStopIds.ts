@@ -899,6 +899,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Gallarta": ["13508"],
 
+  "Cantillana": ["50701"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

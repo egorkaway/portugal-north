@@ -4100,4 +4100,13 @@ export const spainStations: Station[] = [
     lng: -3.0675,
   },
 
+  {
+    name: "Cantillana",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.575,
+    lng: -5.8032,
+  },
+
 ];

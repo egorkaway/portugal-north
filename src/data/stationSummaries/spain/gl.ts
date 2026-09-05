@@ -1423,4 +1423,7 @@ export const spainSummariesGl: Record<string, string> = {
   "Gallarta":
     "Gallarta é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Cantillana":
+    "Cantillana é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

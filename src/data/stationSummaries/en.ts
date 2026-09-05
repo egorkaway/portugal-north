@@ -1013,4 +1013,7 @@ export const stationSummariesEn: Record<string, string> = {
   "Lapa do Lobo":
     "Lapa do Lobo is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Miuzela":
+    "Miuzela is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

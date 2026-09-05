@@ -2253,6 +2253,11 @@ export const stationHotels: StationHotels = {
     { name: "Residencial Rossio", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Rossio%2C%20Lapa%20do%20Lobo%2C%20Portugal&order=price" },
     { name: "Hotel Urgeiriça", distanceKm: 4.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Urgeiri%C3%A7a%2C%20Lapa%20do%20Lobo%2C%20Portugal&order=price" },
   ],
+  "Miuzela": [
+    { name: "Termas do Cró", distanceKm: 8.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Termas%20do%20Cr%C3%B3%2C%20Miuzela%2C%20Portugal&order=price" },
+    { name: "Casa do Corro", distanceKm: 9.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Corro%2C%20Miuzela%2C%20Portugal&order=price" },
+    { name: "Casa da Cidadela", distanceKm: 9.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Cidadela%2C%20Miuzela%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4492,6 +4497,10 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Ortuella", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ortuella%2C%20Gallarta%2C%20Spain&order=price" },
     { name: "Albergue Municipal de Cotorrio", distanceKm: 2.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Municipal%20de%20Cotorrio%2C%20Gallarta%2C%20Spain&order=price" },
     { name: "Buenavista", distanceKm: 3.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Buenavista%2C%20Gallarta%2C%20Spain&order=price" },
+  ],
+  "Cantillana": [
+    { name: "Hostal El Niño", distanceKm: 6.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20Ni%C3%B1o%2C%20Cantillana%2C%20Spain&order=price" },
+    { name: "El Juncal", distanceKm: 7.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Juncal%2C%20Cantillana%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
