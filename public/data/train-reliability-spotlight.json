@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-05T16:54:11.954Z",
-  "runCount": 745,
+  "generatedAt": "2026-09-05T18:11:00.245Z",
+  "runCount": 748,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -8,6 +8,19 @@
       "avgDelayMinutes": 32.8,
       "observations": 15,
       "stationsSampled": 21,
+      "majorStations": [
+        "Porto-Campanhã",
+        "Ermesinde",
+        "Paredes",
+        "Penafiel"
+      ]
+    },
+    {
+      "trainNumber": "876",
+      "serviceType": "InterRegional",
+      "avgDelayMinutes": 23.4,
+      "observations": 15,
+      "stationsSampled": 18,
       "majorStations": [
         "Porto-Campanhã",
         "Ermesinde",
@@ -27,52 +40,9 @@
         "Vila Franca de Xira",
         "Vila Nova de Gaia-Devesas"
       ]
-    },
-    {
-      "trainNumber": "876",
-      "serviceType": "InterRegional",
-      "avgDelayMinutes": 22.3,
-      "observations": 15,
-      "stationsSampled": 18,
-      "majorStations": [
-        "Porto-Campanhã",
-        "Ermesinde",
-        "Paredes",
-        "Penafiel"
-      ]
     }
   ],
   "mostReliable": [
-    {
-      "trainNumber": "36407",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 16,
-      "stationsSampled": 17,
-      "majorStations": [
-        "Pero Negro",
-        "Bombarral",
-        "Mafra",
-        "Feliteira"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "36410",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 16,
-      "stationsSampled": 15,
-      "majorStations": [
-        "Mira Sintra-Meleças",
-        "Pero Negro",
-        "Bombarral",
-        "Mafra"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
     {
       "trainNumber": "10540",
       "serviceType": "Intercidades",
@@ -84,6 +54,36 @@
         "Castelo Branco",
         "Covilhã",
         "Fundão"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "10541",
+      "serviceType": "Intercidades",
+      "avgDelayMinutes": 0,
+      "observations": 15,
+      "stationsSampled": 6,
+      "majorStations": [
+        "Castelo Branco",
+        "Guarda",
+        "Covilhã",
+        "Fundão"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36406",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 15,
+      "stationsSampled": 17,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Bombarral",
+        "Mafra"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

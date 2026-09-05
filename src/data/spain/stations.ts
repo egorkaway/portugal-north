@@ -4424,4 +4424,31 @@ export const spainStations: Station[] = [
     lng: -2.9538,
   },
 
+  {
+    name: "Montemar Alto",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.6137,
+    lng: -4.5094,
+  },
+
+  {
+    name: "Universidad Pontificia de Comillas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.554,
+    lng: -3.6837,
+  },
+
+  {
+    name: "Gandia",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 38.9705,
+    lng: -0.1798,
+  },
+
 ];

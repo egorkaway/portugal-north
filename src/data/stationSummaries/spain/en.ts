@@ -1531,4 +1531,13 @@ export const spainSummariesEn: Record<string, string> = {
   "Basurto Hospital":
     "Basurto Hospital is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Montemar Alto":
+    "Montemar Alto is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Universidad Pontificia de Comillas":
+    "Universidad Pontificia de Comillas is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Gandia":
+    "Gandia is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

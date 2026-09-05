@@ -2726,6 +2726,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",
     photoPageUrl: "https://www.pexels.com/photo/estacio-del-nord-in-valencia-spain-34776489/",
   },
+  "34799189": {
+    photographer: "Emilio Sánchez  Hernández",
+    photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",
+    photoPageUrl: "https://www.pexels.com/photo/historic-architecture-in-valencia-spain-34799189/",
+  },
   "34805965": {
     photographer: "Emilio Sánchez  Hernández",
     photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",

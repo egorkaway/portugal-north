@@ -1531,4 +1531,13 @@ export const spainSummariesCa: Record<string, string> = {
   "Basurto Hospital":
     "Basurto Hospital és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Montemar Alto":
+    "Montemar Alto és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Universidad Pontificia de Comillas":
+    "Universidad Pontificia de Comillas és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Gandia":
+    "Gandia és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

@@ -971,6 +971,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Basurto Hospital": ["05455"],
 
+  "Montemar Alto": ["54519"],
+
+  "Universidad Pontificia de Comillas": ["19001"],
+
+  "Gandia": ["69110"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

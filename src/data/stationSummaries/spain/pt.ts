@@ -1531,4 +1531,13 @@ export const spainSummariesPt: Record<string, string> = {
   "Basurto Hospital":
     "Basurto Hospital é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "Montemar Alto":
+    "Montemar Alto é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Universidad Pontificia de Comillas":
+    "Universidad Pontificia de Comillas é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Gandia":
+    "Gandia é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };
