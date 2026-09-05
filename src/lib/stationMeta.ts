@@ -1,6 +1,7 @@
 import type { Hotel } from "@/data/hotels";
 import type { Station } from "@/data/stations";
 import type { Locale, Translator } from "@/i18n";
+import { stationHasAirportType } from "@/lib/airportTypes";
 import { displayTrainType } from "@/lib/trainTypes";
 
 const MAX_DESCRIPTION = 158;
@@ -59,7 +60,8 @@ function hotelSummary(hotels: Hotel[], tr: Translator): string {
 }
 
 export function getStationPageTitle(station: Station, tr: Translator): string {
-  return tr.t("meta.stationTitle", {
+  const key = stationHasAirportType(station) ? "meta.airportTitle" : "meta.stationTitle";
+  return tr.t(key, {
     name: station.name,
     site: tr.t("meta.siteName"),
   });

@@ -616,6 +616,7 @@ export const pt: Messages = {
         "A página que procurava não existe. Volte ao início para explorar estações de comboio em Portugal.",
     },
     stationTitle: "Estação de {{name}} — Hotéis e Linhas | {{site}}",
+    airportTitle: "{{name}} — Hotéis e voos | {{site}}",
     stationDescription: "{{services}} em {{name}} ({{lines}}). {{stays}}",
     stationOgWithHotels:
       "{{name}} ({{lines}}): {{services}}. Estadias desde {{price}} €/noite — {{names}}{{more}}.",

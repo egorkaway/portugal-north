@@ -616,6 +616,7 @@ export const ca: Messages = {
         "La pàgina que buscaves no existeix. Torna a l'inici per explorar estacions de tren a Portugal.",
     },
     stationTitle: "Estació de {{name}} — Hotels i línies | {{site}}",
+    airportTitle: "{{name}} — Hotels i vols | {{site}}",
     stationDescription: "{{services}} a {{name}} ({{lines}}). {{stays}}",
     stationOgWithHotels:
       "{{name}} ({{lines}}): {{services}}. Allotjaments des de {{price}} €/nit — {{names}}{{more}}.",

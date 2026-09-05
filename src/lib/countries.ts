@@ -41,9 +41,12 @@ export function toggleCountrySelection(
   selected: CountryCode[],
   code: CountryCode,
 ): CountryCode[] {
-  const has = selected.includes(code);
-  const next = has ? selected.filter((entry) => entry !== code) : [...selected, code];
-  if (next.length === 0) return selected;
+  const unique = COUNTRY_CODES.filter((entry) => selected.includes(entry));
+  // Both on: clicking a flag means "show this country", not "turn it off".
+  if (unique.length === COUNTRY_CODES.length) return [code];
+  const has = unique.includes(code);
+  const next = has ? unique.filter((entry) => entry !== code) : [...unique, code];
+  if (next.length === 0) return unique;
   return next.sort(
     (a, b) => COUNTRY_CODES.indexOf(a) - COUNTRY_CODES.indexOf(b),
   );

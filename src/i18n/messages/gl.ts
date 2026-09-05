@@ -616,6 +616,7 @@ export const gl: Messages = {
         "A páxina que buscabas non existe. Volve ao inicio para explorar estacións de tren en Portugal.",
     },
     stationTitle: "Estación de {{name}} — Hoteis e liñas | {{site}}",
+    airportTitle: "{{name}} — Hoteis e voos | {{site}}",
     stationDescription: "{{services}} en {{name}} ({{lines}}). {{stays}}",
     stationOgWithHotels:
       "{{name}} ({{lines}}): {{services}}. Aloxamentos desde {{price}} €/noite — {{names}}{{more}}.",

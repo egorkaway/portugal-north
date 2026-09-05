@@ -4799,6 +4799,16 @@ export const stationHotels: StationHotels = {
     { name: "Arati Agroturismo", distanceKm: 2.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arati%20Agroturismo%2C%20Abaroa-San%20Miguel%2C%20Spain&order=price" },
     { name: "Ibis budget bilbao", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20budget%20bilbao%2C%20Abaroa-San%20Miguel%2C%20Spain&order=price" },
   ],
+  "Borgonyà": [
+    { name: "Can Tomàs de Pagès", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Tom%C3%A0s%20de%20Pag%C3%A8s%2C%20Borgony%C3%A0%2C%20Spain&order=price" },
+    { name: "Hotel Sant Quirze de Besora", distanceKm: 4.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sant%20Quirze%20de%20Besora%2C%20Borgony%C3%A0%2C%20Spain&order=price" },
+    { name: "Montcel", distanceKm: 6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Montcel%2C%20Borgony%C3%A0%2C%20Spain&order=price" },
+  ],
+  "Palacio de Congresos": [
+    { name: "Hotel Sevilla Congresos", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sevilla%20Congresos%2C%20Palacio%20de%20Congresos%2C%20Spain&order=price" },
+    { name: "Hotel San Pablo", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20San%20Pablo%2C%20Palacio%20de%20Congresos%2C%20Spain&order=price" },
+    { name: "Hotel AC Sevilla Fórum", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20AC%20Sevilla%20F%C3%B3rum%2C%20Palacio%20de%20Congresos%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

@@ -616,6 +616,7 @@ export const es: Messages = {
         "La página que buscabas no existe. Vuelve al inicio para explorar estaciones de tren en Portugal.",
     },
     stationTitle: "Estación de {{name}} — Hoteles y Líneas | {{site}}",
+    airportTitle: "{{name}} — Hoteles y vuelos | {{site}}",
     stationDescription: "{{services}} en {{name}} ({{lines}}). {{stays}}",
     stationOgWithHotels:
       "{{name}} ({{lines}}): {{services}}. Alojamientos desde {{price}} €/noche — {{names}}{{more}}.",

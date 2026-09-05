@@ -4541,4 +4541,22 @@ export const spainStations: Station[] = [
     lng: -2.8871,
   },
 
+  {
+    name: "Borgonyà",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.0647,
+    lng: 2.242,
+  },
+
+  {
+    name: "Palacio de Congresos",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.4036,
+    lng: -5.9363,
+  },
+
 ];

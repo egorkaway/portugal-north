@@ -997,6 +997,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Abaroa-San Miguel": ["13118"],
 
+  "Borgonyà": ["77112"],
+
+  "Palacio de Congresos": ["51009"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

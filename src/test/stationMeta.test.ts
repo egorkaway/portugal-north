@@ -24,6 +24,22 @@ describe("stationMeta", () => {
     );
   });
 
+  it("uses an airport title for airport listings", () => {
+    expect(
+      getStationPageTitle(
+        {
+          name: "Porto Airport (OPO)",
+          lines: ["OPO"],
+          types: ["Airport"],
+          lat: 41.242,
+          lng: -8.678,
+          country: "pt",
+        },
+        tr,
+      ),
+    ).toBe("Porto Airport (OPO) — Hotels & Flights | Sustainable Iberian");
+  });
+
   it("includes lines, services, and hotel pricing in the description", () => {
     const description = getStationMetaDescription(portoCampanha, [
       { name: "Hotel A", distanceKm: 0.5, priceFrom: 38, bookingUrl: "#" },

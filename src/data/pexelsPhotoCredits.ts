@@ -3296,6 +3296,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@jersonmfotos",
     photoPageUrl: "https://www.pexels.com/photo/historic-train-station-at-sunset-in-santa-luzia-brazil-38844112/",
   },
+  "38844115": {
+    photographer: "Jerson Martins",
+    photographerUrl: "https://www.pexels.com/@jersonmfotos",
+    photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-in-santa-luzia-brazil-38844115/",
+  },
   "38930590": {
     photographer: "Victor Silva",
     photographerUrl: "https://www.pexels.com/@victor-silva-3715807",

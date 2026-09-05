@@ -22,8 +22,9 @@ describe("country selection", () => {
     expect(homeScopeFromCountries(["pt", "es"])).toBe("all");
   });
 
-  it("toggles countries without clearing the last selection", () => {
-    expect(toggleCountrySelection(["pt", "es"], "pt")).toEqual(["es"]);
+  it("isolates a country when both are selected, and never clears the last one", () => {
+    expect(toggleCountrySelection(["pt", "es"], "pt")).toEqual(["pt"]);
+    expect(toggleCountrySelection(["pt", "es"], "es")).toEqual(["es"]);
     expect(toggleCountrySelection(["es"], "pt")).toEqual(["pt", "es"]);
     expect(toggleCountrySelection(["pt"], "pt")).toEqual(["pt"]);
   });

@@ -1570,4 +1570,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Abaroa-San Miguel":
     "Abaroa-San Miguel é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Borgonyà":
+    "Borgonyà é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Palacio de Congresos":
+    "Palacio de Congresos é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

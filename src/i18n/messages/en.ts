@@ -614,6 +614,7 @@ export const en: Messages = {
         "The page you were looking for could not be found. Return to the homepage to explore train stations across Portugal.",
     },
     stationTitle: "{{name}} Train Station — Hotels & Lines | {{site}}",
+    airportTitle: "{{name}} — Hotels & Flights | {{site}}",
     stationDescription: "{{services}} at {{name}} ({{lines}}). {{stays}}",
     stationOgWithHotels:
       "{{name}} ({{lines}}): {{services}}. Stays from €{{price}}/night — {{names}}{{more}}.",

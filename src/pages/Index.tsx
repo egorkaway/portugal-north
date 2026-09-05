@@ -45,7 +45,7 @@ type VisitedFilter = "visited" | "notVisited";
 function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: number }) {
   useDismissStaticShell();
   const { t, plural, locale, messages } = useLocale();
-  const { searchQuery, setScope, setPage, setSearchQuery, goToFirstPage } = useHomeRoute(
+  const { searchQuery, setScope, setSearchQuery, goToFirstPage } = useHomeRoute(
     scope,
     currentPage,
   );
@@ -142,18 +142,20 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
     [filtered, currentPage],
   );
 
+  const pageHref = useCallback(
+    (page: number) =>
+      buildHomePath(
+        scope,
+        page,
+        searchQuery ? new URLSearchParams({ q: searchQuery }) : undefined,
+      ),
+    [scope, searchQuery],
+  );
+
   const distanceByStation = useMemo(() => {
     if (!coords) return null;
     return stationDistancesKm(paginated.items, coords);
   }, [paginated.items, coords]);
-
-  const handlePageChange = useCallback(
-    (nextPage: number) => {
-      setPage(nextPage);
-      stationListRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    },
-    [setPage],
-  );
 
   const resetFiltersPage = useCallback(() => {
     goToFirstPage();
@@ -244,33 +246,44 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
 
       <StationInteractionProvider>
         <main className="mx-auto max-w-5xl px-4 py-5 md:px-6 md:py-8">
-          <p className="mb-3 text-sm text-muted-foreground md:mb-4">
-            {isSwitchingCountry
-              ? t("home.switchingCountry")
-              : plural("home.stationCount", paginated.total, { count: paginated.total })}
-            {!isSwitchingCountry && paginated.totalPages > 1
-              ? t("home.showingRange", {
-                  from: paginated.rangeFrom,
-                  to: paginated.rangeTo,
-                  total: paginated.total,
-                })
-              : ""}
-            {!isSwitchingCountry && coords
-              ? t("home.sortedByDistanceNote")
-              : !isSwitchingCountry && sortByDistance && locationState.status === "loading"
-                ? t("home.locating")
-                : !isSwitchingCountry && sortByCommunityVotes
-                  ? t("home.topCommunityPicks")
-                  : ""}
-            {!isSwitchingCountry && locationState.status === "denied"
-              ? t("home.locationDenied")
-              : !isSwitchingCountry && locationState.status === "unsupported"
-                ? t("home.locationUnsupported")
-                : !isSwitchingCountry && locationState.status === "error"
-                  ? t("home.locationError")
-                  : ""}
-            {!isSwitchingCountry && !sortByDistance && t("home.bookingHint")}
-          </p>
+          <div className="mb-3 flex flex-col gap-2 sm:mb-4 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-muted-foreground">
+              {isSwitchingCountry
+                ? t("home.switchingCountry")
+                : plural("home.stationCount", paginated.total, { count: paginated.total })}
+              {!isSwitchingCountry && paginated.totalPages > 1
+                ? t("home.showingRange", {
+                    from: paginated.rangeFrom,
+                    to: paginated.rangeTo,
+                    total: paginated.total,
+                  })
+                : ""}
+              {!isSwitchingCountry && coords
+                ? t("home.sortedByDistanceNote")
+                : !isSwitchingCountry && sortByDistance && locationState.status === "loading"
+                  ? t("home.locating")
+                  : !isSwitchingCountry && sortByCommunityVotes
+                    ? t("home.topCommunityPicks")
+                    : ""}
+              {!isSwitchingCountry && locationState.status === "denied"
+                ? t("home.locationDenied")
+                : !isSwitchingCountry && locationState.status === "unsupported"
+                  ? t("home.locationUnsupported")
+                  : !isSwitchingCountry && locationState.status === "error"
+                    ? t("home.locationError")
+                    : ""}
+              {!isSwitchingCountry && !sortByDistance && t("home.bookingHint")}
+            </p>
+            {!isSwitchingCountry ? (
+              <StationListPagination
+                currentPage={paginated.currentPage}
+                totalPages={paginated.totalPages}
+                hrefForPage={pageHref}
+                variant="inline"
+                className="shrink-0"
+              />
+            ) : null}
+          </div>
           {isSwitchingCountry ? (
             <StationGridSkeleton count={skeletonCount} />
           ) : (
@@ -288,7 +301,7 @@ function HomePage({ scope, currentPage }: { scope: HomeScope; currentPage: numbe
               <StationListPagination
                 currentPage={paginated.currentPage}
                 totalPages={paginated.totalPages}
-                onPageChange={handlePageChange}
+                hrefForPage={pageHref}
               />
             </div>
           )}

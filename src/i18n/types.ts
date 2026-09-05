@@ -501,6 +501,7 @@ export type Messages = {
     privacy: { title: string; description: string; ogDescription: string };
     notFound: { title: string; description: string };
     stationTitle: string;
+    airportTitle: string;
     stationDescription: string;
     stationOgWithHotels: string;
     stationOgNoHotels: string;

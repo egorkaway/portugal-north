@@ -1570,4 +1570,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Abaroa-San Miguel":
     "Abaroa-San Miguel és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Borgonyà":
+    "Borgonyà és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Palacio de Congresos":
+    "Palacio de Congresos és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };
