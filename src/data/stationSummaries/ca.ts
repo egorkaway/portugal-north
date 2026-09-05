@@ -988,4 +988,7 @@ export const stationSummariesCa: Record<string, string> = {
   "Torre das Vargens":
     "Torre das Vargens és una parada de CP de serveis regionals a la Linha do Leste a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
 
+  "Amoreiras - Odemira":
+    "Amoreiras - Odemira és una parada de CP de serveis Intercidades a la Linha do Sul a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
 };

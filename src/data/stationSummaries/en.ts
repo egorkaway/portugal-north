@@ -1055,4 +1055,7 @@ export const stationSummariesEn: Record<string, string> = {
   "Torre das Vargens":
     "Torre das Vargens is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Amoreiras - Odemira":
+    "Amoreiras - Odemira is a CP Intercidades halt on Linha do Sul in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

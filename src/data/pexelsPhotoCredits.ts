@@ -1746,6 +1746,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
     photoPageUrl: "https://www.pexels.com/photo/columns-on-a-train-station-24389640/",
   },
+  "24433016": {
+    photographer: "M.Emin  BİLİR",
+    photographerUrl: "https://www.pexels.com/@travelerchitect",
+    photoPageUrl: "https://www.pexels.com/photo/empty-railway-station-platform-24433016/",
+  },
   "24532066": {
     photographer: "Claiton  Conto",
     photographerUrl: "https://www.pexels.com/@claiton",
@@ -2905,6 +2910,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Juan Pablo Daniel",
     photographerUrl: "https://www.pexels.com/@who0ne",
     photoPageUrl: "https://www.pexels.com/photo/street-art-on-historic-building-in-santos-brazil-36593930/",
+  },
+  "36652745": {
+    photographer: "Laura Arnedo",
+    photographerUrl: "https://www.pexels.com/@lauraarnedo",
+    photoPageUrl: "https://www.pexels.com/photo/historic-canfranc-station-with-train-in-spain-36652745/",
   },
   "36654959": {
     photographer: "Davide Comunian",

@@ -927,6 +927,8 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Billabona-Zizurkil": ["11503"],
 
+  "Irauregui": ["05461"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

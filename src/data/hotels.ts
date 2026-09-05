@@ -2316,6 +2316,10 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Ponte de Sor", distanceKm: 10.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ponte%20de%20Sor%2C%20Torre%20das%20Vargens%2C%20Portugal&order=price" },
     { name: "Herdade da Lameira Hotel Rural", distanceKm: 11.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Herdade%20da%20Lameira%20Hotel%20Rural%2C%20Torre%20das%20Vargens%2C%20Portugal&order=price" },
   ],
+  "Amoreiras - Odemira": [
+    { name: "Herdade dos Montes Bastos", distanceKm: 3.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Herdade%20dos%20Montes%20Bastos%2C%20Amoreiras%20-%20Odemira%2C%20Portugal&order=price" },
+    { name: "Tamera Guest House", distanceKm: 9.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tamera%20Guest%20House%2C%20Amoreiras%20-%20Odemira%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4619,6 +4623,11 @@ export const stationHotels: StationHotels = {
     { name: "Alustiza landetxea", distanceKm: 2.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alustiza%20landetxea%2C%20Billabona-Zizurkil%2C%20Spain&order=price" },
     { name: "Txertota", distanceKm: 3.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Txertota%2C%20Billabona-Zizurkil%2C%20Spain&order=price" },
     { name: "Ziasoro", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ziasoro%2C%20Billabona-Zizurkil%2C%20Spain&order=price" },
+  ],
+  "Irauregui": [
+    { name: "Cynthia", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cynthia%2C%20Irauregui%2C%20Spain&order=price" },
+    { name: "Bilbao Hostel", distanceKm: 2.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bilbao%20Hostel%2C%20Irauregui%2C%20Spain&order=price" },
+    { name: "Hotel Erreka-alde", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Erreka-alde%2C%20Irauregui%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

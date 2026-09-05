@@ -4226,4 +4226,13 @@ export const spainStations: Station[] = [
     lng: -2.0554,
   },
 
+  {
+    name: "Irauregui",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2484,
+    lng: -2.9901,
+  },
+
 ];

@@ -36,6 +36,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Alvito": "94-74351",
   "Amadora": "94-60087",
   "Ameal": "94-35097",
+  "Amoreiras - Odemira": "94-77099",
   "Aregos": "94-9191",
   "Areia-Darque": "94-6395",
   "Arentim": "94-29066",

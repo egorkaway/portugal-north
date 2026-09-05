@@ -1007,6 +1007,14 @@ const cpStations: StationData[] = [
     lng: -7.9085,
   },
 
+  {
+    name: "Amoreiras - Odemira",
+    lines: ["Linha do Sul"],
+    types: ["Intercidades"],
+    lat: 37.69,
+    lng: -8.4144,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

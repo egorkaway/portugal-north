@@ -1465,4 +1465,7 @@ export const spainSummariesEs: Record<string, string> = {
   "Billabona-Zizurkil":
     "Billabona-Zizurkil es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Irauregui":
+    "Irauregui es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };
