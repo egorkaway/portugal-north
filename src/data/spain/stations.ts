@@ -4199,4 +4199,31 @@ export const spainStations: Station[] = [
     lng: -3.7071,
   },
 
+  {
+    name: "Los Negrales",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.6386,
+    lng: -4.0219,
+  },
+
+  {
+    name: "Sant Miquel de Fluvià",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.1721,
+    lng: 2.9896,
+  },
+
+  {
+    name: "Billabona-Zizurkil",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.1892,
+    lng: -2.0554,
+  },
+
 ];

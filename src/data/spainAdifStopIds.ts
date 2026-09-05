@@ -921,6 +921,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "La Cavada": ["05669"],
 
+  "Los Negrales": ["12001"],
+
+  "Sant Miquel de Fluvià": ["79306"],
+
+  "Billabona-Zizurkil": ["11503"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

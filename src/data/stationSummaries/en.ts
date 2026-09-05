@@ -1046,4 +1046,13 @@ export const stationSummariesEn: Record<string, string> = {
   "Crato":
     "Crato is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Ponte de Sor":
+    "Ponte de Sor is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Santa Eulália-A":
+    "Santa Eulália-A is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Torre das Vargens":
+    "Torre das Vargens is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

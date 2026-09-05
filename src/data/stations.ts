@@ -983,6 +983,30 @@ const cpStations: StationData[] = [
     lng: -7.6353,
   },
 
+  {
+    name: "Ponte de Sor",
+    lines: ["Linha do Leste"],
+    types: ["Regional"],
+    lat: 39.2655,
+    lng: -8.013,
+  },
+
+  {
+    name: "Santa Eulália-A",
+    lines: ["Linha do Leste"],
+    types: ["Regional"],
+    lat: 39.006,
+    lng: -7.2534,
+  },
+
+  {
+    name: "Torre das Vargens",
+    lines: ["Linha do Leste"],
+    types: ["Regional"],
+    lat: 39.3096,
+    lng: -7.9085,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

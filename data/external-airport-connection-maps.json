@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T09:00:11.508Z",
+  "updatedAt": "2026-09-05T09:37:48.130Z",
   "airports": [
     {
       "iata": "PMI",
@@ -831,6 +831,45 @@
       "iberianDestinationCount": 12,
       "iberianSampledFlights": 21,
       "iberianSampledAt": "2026-09-05T09:00:11.508Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "KRK",
+      "stationName": "Kraków John Paul II International Airport (KRK)",
+      "slug": "krakow-john-paul-ii-international-airport-krk",
+      "country": "PL",
+      "iberianFlightCount": 21,
+      "iberianMapImage": "/maps/airports/external/krakow-john-paul-ii-international-airport-krk-iberian-connections.png",
+      "iberianDestinationCount": 12,
+      "iberianSampledFlights": 21,
+      "iberianSampledAt": "2026-09-05T09:03:52.549Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "JFK",
+      "stationName": "John F. Kennedy International Airport (JFK)",
+      "slug": "john-f-kennedy-international-airport-jfk",
+      "country": "US",
+      "iberianFlightCount": 21,
+      "iberianMapImage": "/maps/airports/external/john-f-kennedy-international-airport-jfk-iberian-connections.png",
+      "iberianDestinationCount": 4,
+      "iberianSampledFlights": 21,
+      "iberianSampledAt": "2026-09-05T09:17:51.086Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "CGN",
+      "stationName": "Cologne Bonn Airport (CGN)",
+      "slug": "cologne-bonn-airport-cgn",
+      "country": "DE",
+      "iberianFlightCount": 20,
+      "iberianMapImage": "/maps/airports/external/cologne-bonn-airport-cgn-iberian-connections.png",
+      "iberianDestinationCount": 9,
+      "iberianSampledFlights": 20,
+      "iberianSampledAt": "2026-09-05T09:37:48.130Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }

@@ -38,6 +38,7 @@ export type ExternalAirportMapRow = {
   iberianMapImage?: string;
   destinationCount?: number;
   iberianDestinationCount?: number;
+  allFlightsIberianDestinationCount?: number;
 };
 
 export type ExternalMapCoverage = {
@@ -73,7 +74,7 @@ export function hasBothExternalMaps(row: ExternalAirportMapRow | null | undefine
   return hasIberianMap(normalized) && hasAllFlightsMap(normalized);
 }
 
-/** All-flights sample missed destinations the Iberian map already shows. */
+/** All-flights sample missed Iberian destinations the inbound map already shows. */
 export function allFlightsMapNeedsRegeneration(
   row: ExternalAirportMapRow | null | undefined,
 ): boolean {
@@ -83,7 +84,23 @@ export function allFlightsMapNeedsRegeneration(
   const allCount = Number(normalized.destinationCount);
   const iberianCount = Number(normalized.iberianDestinationCount);
   if (!Number.isFinite(allCount) || !Number.isFinite(iberianCount)) return false;
-  return allCount < iberianCount;
+  if (allCount < iberianCount) return true;
+  const iberianInAll = Number(normalized.allFlightsIberianDestinationCount);
+  return (
+    Number.isFinite(iberianInAll) && allCount > iberianCount && iberianInAll === 0
+  );
+}
+
+export function isIberianAirportCountry(country: string | undefined): boolean {
+  const iso = isoCountry(String(country ?? ""));
+  return iso === "PT" || iso === "ES";
+}
+
+export function countIberianConnectionDestinations(
+  connections: Array<{ country?: string }> | null | undefined,
+): number {
+  return (connections ?? []).filter((connection) => isIberianAirportCountry(connection.country))
+    .length;
 }
 
 /** Lift a legacy inbound-only row (one PNG that used to be replaced) into dual-map fields. */
@@ -165,7 +182,7 @@ export function formatExternalAirportMapsLog(
   ];
   if (staleAllFlights.length) {
     lines.push(
-      `  All-flights needs regen (fewer destinations than Iberian): ${formatIataList(staleAllFlights)}`,
+      `  All-flights needs regen (missed Iberian destinations): ${formatIataList(staleAllFlights)}`,
     );
   }
   return lines.join("\n");
@@ -288,7 +305,7 @@ export type PickExternalAirportOptions = {
 /**
  * One external map per collect step. Iberian and all-flights maps are kept separately.
  * APIs up: airport that has Iberian but not all-flights, else missing all-flights,
- * else all-flights with fewer destinations than Iberian, else refresh #1.
+ * else all-flights that missed Iberian destinations, else refresh #1.
  * APIs down: next airport missing an Iberian map (including ones that already have all-flights).
  */
 export function pickExternalAirportForRun(

@@ -4,13 +4,14 @@
  *   2. All flights (`*-connections.png`)
  * Departures runs add one missing Iberian map (no flight API). Flight APIs up:
  * add or refresh one all-flights map without replacing the Iberian one
- * (airports whose all-flights map has fewer destinations than Iberian are redrawn first).
+ * (airports whose all-flights sample missed Iberian destinations are redrawn first).
  * Compact station pages exist only once both maps are present.
  */
 import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { stationToSlug } from "./socialCard.mjs";
 import {
+  countIberianConnectionDestinations,
   coverageFromExternalMapRows,
   externalAirportDisplayName,
   externalMapFilename,
@@ -277,6 +278,7 @@ async function persistExternalAirportMap({
     Object.assign(patch, {
       mapImage: publicPath,
       destinationCount: entry.connections.length,
+      allFlightsIberianDestinationCount: countIberianConnectionDestinations(entry.connections),
       sampledFlights: entry.sampledFlights,
       sampledAt,
       periodId,

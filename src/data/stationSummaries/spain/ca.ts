@@ -1456,4 +1456,13 @@ export const spainSummariesCa: Record<string, string> = {
   "La Cavada":
     "La Cavada és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Los Negrales":
+    "Los Negrales és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Sant Miquel de Fluvià":
+    "Sant Miquel de Fluvià és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Billabona-Zizurkil":
+    "Billabona-Zizurkil és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

@@ -1456,4 +1456,13 @@ export const spainSummariesPt: Record<string, string> = {
   "La Cavada":
     "La Cavada é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "Los Negrales":
+    "Los Negrales é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Sant Miquel de Fluvià":
+    "Sant Miquel de Fluvià é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Billabona-Zizurkil":
+    "Billabona-Zizurkil é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   allFlightsMapNeedsRegeneration,
+  countIberianConnectionDestinations,
   coverageFromExternalMapRows,
   externalSpotlightLimit,
   formatExternalAirportMapsLog,
@@ -122,7 +123,8 @@ describe("coverageFromExternalMapRows", () => {
           iata: "AMS",
           provider: "aviationstack",
           mapImage: "/maps/airports/external/ams-connections.png",
-          destinationCount: 27,
+          destinationCount: 40,
+          allFlightsIberianDestinationCount: 0,
           iberianMapImage: "/maps/airports/external/ams-iberian-connections.png",
           iberianDestinationCount: 14,
         },
@@ -130,13 +132,13 @@ describe("coverageFromExternalMapRows", () => {
     ).toEqual({
       completeIatas: new Set(["TFN", "AMS"]),
       inboundIatas: new Set(["TFN", "AMS"]),
-      staleAllFlightsIatas: new Set(["TFN"]),
+      staleAllFlightsIatas: new Set(["TFN", "AMS"]),
     });
   });
 });
 
 describe("allFlightsMapNeedsRegeneration", () => {
-  it("is true only when both maps exist and all-flights has fewer destinations", () => {
+  it("is true when all-flights has fewer destinations than the Iberian map", () => {
     expect(
       allFlightsMapNeedsRegeneration({
         provider: "aviationstack",
@@ -146,6 +148,42 @@ describe("allFlightsMapNeedsRegeneration", () => {
         iberianDestinationCount: 21,
       }),
     ).toBe(true);
+  });
+
+  it("is true when all-flights has more destinations but none in Iberia", () => {
+    expect(
+      allFlightsMapNeedsRegeneration({
+        provider: "aviationstack",
+        mapImage: "/ams-connections.png",
+        destinationCount: 40,
+        allFlightsIberianDestinationCount: 0,
+        iberianMapImage: "/ams-iberian.png",
+        iberianDestinationCount: 14,
+      }),
+    ).toBe(true);
+  });
+
+  it("is false when all-flights has more destinations including Iberia", () => {
+    expect(
+      allFlightsMapNeedsRegeneration({
+        provider: "aviationstack",
+        mapImage: "/ams-connections.png",
+        destinationCount: 27,
+        allFlightsIberianDestinationCount: 6,
+        iberianMapImage: "/ams-iberian.png",
+        iberianDestinationCount: 14,
+      }),
+    ).toBe(false);
+  });
+
+  it("is false for Iberian-only rows and when the Iberian-in-all count is unknown", () => {
+    expect(
+      allFlightsMapNeedsRegeneration({
+        provider: "iberian-inbound",
+        iberianMapImage: "/pmi-iberian.png",
+        iberianDestinationCount: 28,
+      }),
+    ).toBe(false);
     expect(
       allFlightsMapNeedsRegeneration({
         provider: "aviationstack",
@@ -155,13 +193,20 @@ describe("allFlightsMapNeedsRegeneration", () => {
         iberianDestinationCount: 14,
       }),
     ).toBe(false);
+  });
+});
+
+describe("countIberianConnectionDestinations", () => {
+  it("counts Portugal and Spain destinations, including islands", () => {
     expect(
-      allFlightsMapNeedsRegeneration({
-        provider: "iberian-inbound",
-        iberianMapImage: "/pmi-iberian.png",
-        iberianDestinationCount: 28,
-      }),
-    ).toBe(false);
+      countIberianConnectionDestinations([
+        { country: "France" },
+        { country: "Portugal" },
+        { country: "Spain" },
+        { country: "DE" },
+        { country: "PT" },
+      ]),
+    ).toBe(3);
   });
 });
 
@@ -197,7 +242,7 @@ describe("formatExternalAirportMapsLog", () => {
         "  Iberian flights only: PMI AMS (2)",
         "  All flights only: FRA (1)",
         "  Both maps: CDG (1)",
-        "  All-flights needs regen (fewer destinations than Iberian): CDG (1)",
+        "  All-flights needs regen (missed Iberian destinations): CDG (1)",
       ].join("\n"),
     );
   });

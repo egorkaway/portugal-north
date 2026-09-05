@@ -979,4 +979,13 @@ export const stationSummariesPt: Record<string, string> = {
   "Crato":
     "Crato é uma paragem CP de serviços regionais na Linha do Leste em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
 
+  "Ponte de Sor":
+    "Ponte de Sor é uma paragem CP de serviços regionais na Linha do Leste em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Santa Eulália-A":
+    "Santa Eulália-A é uma paragem CP de serviços regionais na Linha do Leste em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Torre das Vargens":
+    "Torre das Vargens é uma paragem CP de serviços regionais na Linha do Leste em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
 };

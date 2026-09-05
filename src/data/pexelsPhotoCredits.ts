@@ -2116,6 +2116,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@gokhancinar",
     photoPageUrl: "https://www.pexels.com/photo/scenic-view-of-sirkeci-train-station-in-istanbul-30765106/",
   },
+  "30765107": {
+    photographer: "Gökhan Çınar",
+    photographerUrl: "https://www.pexels.com/@gokhancinar",
+    photoPageUrl: "https://www.pexels.com/photo/historical-train-station-in-istanbul-30765107/",
+  },
   "30776801": {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
@@ -3245,6 +3250,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Rafael Minguet Delgado",
     photographerUrl: "https://www.pexels.com/@thales13",
     photoPageUrl: "https://www.pexels.com/photo/historic-valencian-facade-at-blue-hour-39121177/",
+  },
+  "39131494": {
+    photographer: "Athena",
+    photographerUrl: "https://www.pexels.com/@athena-productions",
+    photoPageUrl: "https://www.pexels.com/photo/central-railway-station-sydney-at-dusk-39131494/",
   },
   "39139818": {
     photographer: "Kari Alfonso",

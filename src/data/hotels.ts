@@ -2302,6 +2302,20 @@ export const stationHotels: StationHotels = {
     { name: "Casa do Crato", distanceKm: 2.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Crato%2C%20Crato%2C%20Portugal&order=price" },
     { name: "Palacete", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Palacete%2C%20Crato%2C%20Portugal&order=price" },
   ],
+  "Ponte de Sor": [
+    { name: "Three Trees Hostel", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Three%20Trees%20Hostel%2C%20Ponte%20de%20Sor%2C%20Portugal&order=price" },
+    { name: "Hotel Ponte de Sor", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ponte%20de%20Sor%2C%20Ponte%20de%20Sor%2C%20Portugal&order=price" },
+  ],
+  "Santa Eulália-A": [
+    { name: "Casa da Ermida de Santa Catarina", distanceKm: 7.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Ermida%20de%20Santa%20Catarina%2C%20Santa%20Eul%C3%A1lia-A%2C%20Portugal&order=price" },
+    { name: "Monte da Torre", distanceKm: 8.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Monte%20da%20Torre%2C%20Santa%20Eul%C3%A1lia-A%2C%20Portugal&order=price" },
+    { name: "Moinho da Capela", distanceKm: 11.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Moinho%20da%20Capela%2C%20Santa%20Eul%C3%A1lia-A%2C%20Portugal&order=price" },
+  ],
+  "Torre das Vargens": [
+    { name: "Three Trees Hostel", distanceKm: 10.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Three%20Trees%20Hostel%2C%20Torre%20das%20Vargens%2C%20Portugal&order=price" },
+    { name: "Hotel Ponte de Sor", distanceKm: 10.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ponte%20de%20Sor%2C%20Torre%20das%20Vargens%2C%20Portugal&order=price" },
+    { name: "Herdade da Lameira Hotel Rural", distanceKm: 11.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Herdade%20da%20Lameira%20Hotel%20Rural%2C%20Torre%20das%20Vargens%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4590,6 +4604,21 @@ export const stationHotels: StationHotels = {
     { name: "Hostal Riotuerto", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Riotuerto%2C%20La%20Cavada%2C%20Spain&order=price" },
     { name: "Pensión Dehesa", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Dehesa%2C%20La%20Cavada%2C%20Spain&order=price" },
     { name: "Posada Carlos III", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Posada%20Carlos%20III%2C%20La%20Cavada%2C%20Spain&order=price" },
+  ],
+  "Los Negrales": [
+    { name: "Residencia Santa María de los Negrales", distanceKm: 0.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Santa%20Mar%C3%ADa%20de%20los%20Negrales%2C%20Los%20Negrales%2C%20Spain&order=price" },
+    { name: "El Molino", distanceKm: 1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Molino%2C%20Los%20Negrales%2C%20Spain&order=price" },
+    { name: "Hotel Galaico", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Galaico%2C%20Los%20Negrales%2C%20Spain&order=price" },
+  ],
+  "Sant Miquel de Fluvià": [
+    { name: "Can Borrellet", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Borrellet%2C%20Sant%20Miquel%20de%20Fluvi%C3%A0%2C%20Spain&order=price" },
+    { name: "Mas Llorenç", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mas%20Lloren%C3%A7%2C%20Sant%20Miquel%20de%20Fluvi%C3%A0%2C%20Spain&order=price" },
+    { name: "Can Rost", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Rost%2C%20Sant%20Miquel%20de%20Fluvi%C3%A0%2C%20Spain&order=price" },
+  ],
+  "Billabona-Zizurkil": [
+    { name: "Alustiza landetxea", distanceKm: 2.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alustiza%20landetxea%2C%20Billabona-Zizurkil%2C%20Spain&order=price" },
+    { name: "Txertota", distanceKm: 3.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Txertota%2C%20Billabona-Zizurkil%2C%20Spain&order=price" },
+    { name: "Ziasoro", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ziasoro%2C%20Billabona-Zizurkil%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
