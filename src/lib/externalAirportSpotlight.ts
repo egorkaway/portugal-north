@@ -25,45 +25,102 @@ export type RankedExternalAirport = {
   hubCount: number;
 };
 
-/** Map built from Iberian hubs that fly here, used when outbound APIs are exhausted. */
+/** Map built from Iberian hubs that fly here. Kept alongside the all-flights map. */
 export const IBERIAN_INBOUND_PROVIDER = "iberian-inbound";
 
-export type ExternalMapCoverage = {
-  /** Already mapped from a real outbound sample. */
-  completeIatas: ReadonlySet<string>;
-  /** Mapped from Iberian inbound only — redraw with full outbound when APIs return. */
-  inboundOnlyIatas: ReadonlySet<string>;
+export type ExternalMapKind = "iberian" | "all";
+
+export type ExternalAirportMapRow = {
+  iata?: string;
+  slug?: string;
+  provider?: string;
+  mapImage?: string;
+  iberianMapImage?: string;
 };
 
+export type ExternalMapCoverage = {
+  /** Has an all-flights (outbound API) map. */
+  completeIatas: ReadonlySet<string>;
+  /** Has an Iberian-flights map. An airport can be in both sets. */
+  inboundIatas: ReadonlySet<string>;
+};
+
+export function externalMapFilename(slug: string, kind: ExternalMapKind): string {
+  return kind === "iberian" ? `${slug}-iberian-connections.png` : `${slug}-connections.png`;
+}
+
+export function externalMapPublicPath(slug: string, kind: ExternalMapKind): string {
+  return `/maps/airports/external/${externalMapFilename(slug, kind)}`;
+}
+
+export function hasIberianMap(row: ExternalAirportMapRow | null | undefined): boolean {
+  if (row?.iberianMapImage) return true;
+  return row?.provider === IBERIAN_INBOUND_PROVIDER && Boolean(row?.mapImage);
+}
+
+export function hasAllFlightsMap(row: ExternalAirportMapRow | null | undefined): boolean {
+  const provider = String(row?.provider ?? "").trim();
+  if (!provider || provider === IBERIAN_INBOUND_PROVIDER) return false;
+  return Boolean(row?.mapImage);
+}
+
+/** Lift a legacy inbound-only row (one PNG that used to be replaced) into dual-map fields. */
+export function normalizeExternalAirportRow<T extends ExternalAirportMapRow>(row: T): T {
+  if (row.iberianMapImage) return row;
+  if (row.provider !== IBERIAN_INBOUND_PROVIDER || !row.mapImage) return row;
+  const iberianMapImage = row.slug
+    ? externalMapPublicPath(row.slug, "iberian")
+    : String(row.mapImage).replace(/-connections\.png$/i, "-iberian-connections.png");
+  const next = {
+    ...row,
+    iberianMapImage,
+    iberianDestinationCount: (row as { destinationCount?: number }).destinationCount,
+    iberianSampledFlights: (row as { sampledFlights?: number }).sampledFlights,
+    iberianSampledAt: (row as { sampledAt?: string }).sampledAt,
+    iberianPeriodId: (row as { periodId?: string }).periodId,
+    iberianBasemapId: (row as { basemapId?: string }).basemapId,
+  };
+  delete (next as { mapImage?: string }).mapImage;
+  delete (next as { destinationCount?: number }).destinationCount;
+  delete (next as { sampledFlights?: number }).sampledFlights;
+  delete (next as { sampledAt?: string }).sampledAt;
+  delete (next as { periodId?: string }).periodId;
+  delete (next as { provider?: string }).provider;
+  delete (next as { basemapId?: string }).basemapId;
+  return next;
+}
+
 export function coverageFromExternalMapRows(
-  rows: Array<{ iata?: string; provider?: string }>,
+  rows: Array<ExternalAirportMapRow>,
 ): ExternalMapCoverage {
   const completeIatas = new Set<string>();
-  const inboundOnlyIatas = new Set<string>();
+  const inboundIatas = new Set<string>();
   for (const row of rows) {
     const iata = String(row.iata ?? "").trim().toUpperCase();
     if (!iata) continue;
-    if (row.provider === IBERIAN_INBOUND_PROVIDER) inboundOnlyIatas.add(iata);
-    else completeIatas.add(iata);
+    const normalized = normalizeExternalAirportRow(row);
+    if (hasIberianMap(normalized)) inboundIatas.add(iata);
+    if (hasAllFlightsMap(normalized)) completeIatas.add(iata);
   }
-  return { completeIatas, inboundOnlyIatas };
+  return { completeIatas, inboundIatas };
 }
 
 function formatIataList(codes: string[]): string {
   return codes.length ? `${codes.join(" ")} (${codes.length})` : `(0)`;
 }
 
-/** Compact collect-log summary: two IATA lists instead of one line per airport. */
+/** Compact collect-log summary: two IATA lists; an airport can appear in both. */
 export function formatExternalAirportMapsLog(
-  store: { airports?: Array<{ iata?: string; provider?: string }> } | null | undefined,
+  store: { airports?: Array<ExternalAirportMapRow> } | null | undefined,
 ): string {
   const inbound: string[] = [];
   const complete: string[] = [];
   for (const row of store?.airports ?? []) {
     const iata = String(row.iata ?? "").trim().toUpperCase();
     if (!iata) continue;
-    if (row.provider === IBERIAN_INBOUND_PROVIDER) inbound.push(iata);
-    else complete.push(iata);
+    const normalized = normalizeExternalAirportRow(row);
+    if (hasIberianMap(normalized)) inbound.push(iata);
+    if (hasAllFlightsMap(normalized)) complete.push(iata);
   }
 
   if (inbound.length === 0 && complete.length === 0) {
@@ -72,8 +129,8 @@ export function formatExternalAirportMapsLog(
 
   return [
     "External destination maps (outside Iberian peninsula):",
-    `  Iberian flights only (regenerate when flight APIs available): ${formatIataList(inbound)}`,
-    `  All flights (drawn with flight APIs): ${formatIataList(complete)}`,
+    `  Iberian flights only: ${formatIataList(inbound)}`,
+    `  All flights: ${formatIataList(complete)}`,
   ].join("\n");
 }
 
@@ -81,7 +138,7 @@ function asCoverage(
   sampledOrCoverage: ReadonlySet<string> | ExternalMapCoverage,
 ): ExternalMapCoverage {
   if (sampledOrCoverage instanceof Set) {
-    return { completeIatas: sampledOrCoverage, inboundOnlyIatas: new Set() };
+    return { completeIatas: sampledOrCoverage, inboundIatas: new Set() };
   }
   return sampledOrCoverage;
 }
@@ -166,18 +223,27 @@ export function rankExternalAirportsFromManifest(
     );
 }
 
+/** `--external-count=all` is Infinity; otherwise a positive integer (default 1). */
+export function externalSpotlightLimit(count: number | undefined | null): number {
+  if (count === Number.POSITIVE_INFINITY) return Number.POSITIVE_INFINITY;
+  if (typeof count === "number" && Number.isFinite(count) && count > 0) {
+    return Math.floor(count);
+  }
+  return 1;
+}
+
 export type PickExternalAirportOptions = {
   /**
-   * When true (default), prefer an Iberian-inbound map for a full outbound redraw.
-   * When false, pick the next unmapped airport to draw from Iberian data we already have.
+   * When true (default), pick an airport that still needs an all-flights map.
+   * When false, pick the next airport that still needs an Iberian-flights map.
    */
   flightApisAvailable?: boolean;
 };
 
 /**
- * One external airport per collect run.
- * APIs up: prefer an inbound-only map for a full outbound redraw, else unmapped, else refresh #1.
- * APIs down: pick the next unmapped airport for an Iberian-inbound map (do not stall on a pending redraw).
+ * One external map per collect step. Iberian and all-flights maps are kept separately.
+ * APIs up: airport that has Iberian but not all-flights, else missing all-flights, else refresh #1.
+ * APIs down: next airport missing an Iberian map (including ones that already have all-flights).
  */
 export function pickExternalAirportForRun(
   ranked: RankedExternalAirport[],
@@ -185,20 +251,20 @@ export function pickExternalAirportForRun(
   options: PickExternalAirportOptions = {},
 ): RankedExternalAirport | null {
   if (ranked.length === 0) return null;
-  const { completeIatas, inboundOnlyIatas } = asCoverage(sampledOrCoverage);
+  const { completeIatas, inboundIatas } = asCoverage(sampledOrCoverage);
   const flightApisAvailable = options.flightApisAvailable !== false;
 
   if (flightApisAvailable) {
-    const needsRedraw = ranked.find((row) => inboundOnlyIatas.has(row.iata));
-    if (needsRedraw) return needsRedraw;
+    const hasIberianMissingAll = ranked.find(
+      (row) => inboundIatas.has(row.iata) && !completeIatas.has(row.iata),
+    );
+    if (hasIberianMissingAll) return hasIberianMissingAll;
+    const missingAllFlights = ranked.find((row) => !completeIatas.has(row.iata));
+    if (missingAllFlights) return missingAllFlights;
+    return ranked[0] ?? null;
   }
 
-  const unmapped = ranked.find(
-    (row) => !completeIatas.has(row.iata) && !inboundOnlyIatas.has(row.iata),
-  );
-  if (unmapped) return unmapped;
-  if (!flightApisAvailable) return null;
-  return ranked[0] ?? null;
+  return ranked.find((row) => !inboundIatas.has(row.iata)) ?? null;
 }
 
 export function externalAirportDisplayName(

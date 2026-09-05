@@ -904,4 +904,28 @@ export const stationSummariesEs: Record<string, string> = {
   "Moimenta - Alcafache":
     "Moimenta - Alcafache es una parada de CP de servicios regionales en la Linha da Beira Alta en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
 
+  "Oliveirinha - Cabanas":
+    "Oliveirinha - Cabanas es una parada de CP de servicios regionales en la Linha da Beira Alta en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Santa Clara - Sabóia":
+    "Santa Clara - Sabóia es una parada de CP de servicios Alfa Pendular y Intercidades en la Linha do Sul en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Soito":
+    "Soito es una parada de CP de servicios regionales en la Linha da Beira Alta en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Fernando Pó":
+    "Fernando Pó es una parada de CP de servicios Intercidades en la Linha do Alentejo en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Messines - Alte":
+    "Messines - Alte es una parada de CP de servicios Intercidades en la Linha do Sul en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Pegões":
+    "Pegões es una parada de CP de servicios Intercidades en la Linha do Alentejo en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Poceirão":
+    "Poceirão es una parada de CP de servicios Intercidades en la Linha do Alentejo en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "São João das Craveiras":
+    "São João das Craveiras es una parada de CP de servicios Intercidades en la Linha do Alentejo en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
 };

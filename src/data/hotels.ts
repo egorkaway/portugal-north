@@ -2185,6 +2185,45 @@ export const stationHotels: StationHotels = {
     { name: "Onix", distanceKm: 9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Onix%2C%20Moimenta%20-%20Alcafache%2C%20Portugal&order=price" },
     { name: "Hotel Rubi", distanceKm: 9.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rubi%2C%20Moimenta%20-%20Alcafache%2C%20Portugal&order=price" },
   ],
+  "Oliveirinha - Cabanas": [
+    { name: "Casas do Lupo", distanceKm: 4.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20do%20Lupo%2C%20Oliveirinha%20-%20Cabanas%2C%20Portugal&order=price" },
+    { name: "Quinta Vale Porchacho", distanceKm: 5.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20Vale%20Porchacho%2C%20Oliveirinha%20-%20Cabanas%2C%20Portugal&order=price" },
+    { name: "Quinta do Pisão", distanceKm: 7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Pis%C3%A3o%2C%20Oliveirinha%20-%20Cabanas%2C%20Portugal&order=price" },
+  ],
+  "Santa Clara - Sabóia": [
+    { name: "Pousada de Santa Clara", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pousada%20de%20Santa%20Clara%2C%20Santa%20Clara%20-%20Sab%C3%B3ia%2C%20Portugal&order=price" },
+    { name: "Quinta do Barranco da Estrada", distanceKm: 5.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20do%20Barranco%20da%20Estrada%2C%20Santa%20Clara%20-%20Sab%C3%B3ia%2C%20Portugal&order=price" },
+    { name: "Nave Redonda do Cerro", distanceKm: 10.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Nave%20Redonda%20do%20Cerro%2C%20Santa%20Clara%20-%20Sab%C3%B3ia%2C%20Portugal&order=price" },
+  ],
+  "Soito": [
+    { name: "Lena Village", distanceKm: 5.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lena%20Village%2C%20Soito%2C%20Portugal&order=price" },
+    { name: "Palácio Hotel do Buçaco", distanceKm: 6.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pal%C3%A1cio%20Hotel%20do%20Bu%C3%A7aco%2C%20Soito%2C%20Portugal&order=price" },
+    { name: "A Regional", distanceKm: 7.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=A%20Regional%2C%20Soito%2C%20Portugal&order=price" },
+  ],
+  "Fernando Pó": [
+    { name: "Casa Zanzibar", distanceKm: 7.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Zanzibar%2C%20Fernando%20P%C3%B3%2C%20Portugal&order=price" },
+    { name: "Quinta das Palmeiras", distanceKm: 10.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20das%20Palmeiras%2C%20Fernando%20P%C3%B3%2C%20Portugal&order=price" },
+  ],
+  "Messines - Alte": [
+    { name: "Guia Guest House", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Guia%20Guest%20House%2C%20Messines%20-%20Alte%2C%20Portugal&order=price" },
+    { name: "Residencial Titel Raquel", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Titel%20Raquel%2C%20Messines%20-%20Alte%2C%20Portugal&order=price" },
+    { name: "Casa Marafada", distanceKm: 6.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Marafada%2C%20Messines%20-%20Alte%2C%20Portugal&order=price" },
+  ],
+  "Pegões": [
+    { name: "Quinta das Palmeiras", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20das%20Palmeiras%2C%20Peg%C3%B5es%2C%20Portugal&order=price" },
+    { name: "Casa Zanzibar", distanceKm: 6.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Zanzibar%2C%20Peg%C3%B5es%2C%20Portugal&order=price" },
+    { name: "Monte da Charca", distanceKm: 7.4, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/pt/monte-da-charca.en-gb.html" },
+  ],
+  "Poceirão": [
+    { name: "Montado Hotel & Golf Resort", distanceKm: 8.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Montado%20Hotel%20%26%20Golf%20Resort%2C%20Poceir%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Casa Zanzibar", distanceKm: 11, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Zanzibar%2C%20Poceir%C3%A3o%2C%20Portugal&order=price" },
+    { name: "Palácio de Rio Frio", distanceKm: 11, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pal%C3%A1cio%20de%20Rio%20Frio%2C%20Poceir%C3%A3o%2C%20Portugal&order=price" },
+  ],
+  "São João das Craveiras": [
+    { name: "Quinta das Palmeiras", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20das%20Palmeiras%2C%20S%C3%A3o%20Jo%C3%A3o%20das%20Craveiras%2C%20Portugal&order=price" },
+    { name: "Laranjal Inn", distanceKm: 6.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Laranjal%20Inn%2C%20S%C3%A3o%20Jo%C3%A3o%20das%20Craveiras%2C%20Portugal&order=price" },
+    { name: "Monte da Charca", distanceKm: 6.7, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/pt/monte-da-charca.en-gb.html" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4354,6 +4393,46 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Areca", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Areca%2C%20Torrellano%2C%20Spain&order=price" },
     { name: "Doña Isabel", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Do%C3%B1a%20Isabel%2C%20Torrellano%2C%20Spain&order=price" },
     { name: "Hostal la posada", distanceKm: 0.8, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20la%20posada%2C%20Torrellano%2C%20Spain&order=price" },
+  ],
+  "Renedo": [
+    { name: "Hostería El Capricho", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hoster%C3%ADa%20El%20Capricho%2C%20Renedo%2C%20Spain&order=price" },
+    { name: "Posada Los Lienzos", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Posada%20Los%20Lienzos%2C%20Renedo%2C%20Spain&order=price" },
+    { name: "Posada El Crucero", distanceKm: 3.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Posada%20El%20Crucero%2C%20Renedo%2C%20Spain&order=price" },
+  ],
+  "Barredos": [
+    { name: "Hotel Canzana", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Canzana%2C%20Barredos%2C%20Spain&order=price" },
+    { name: "La Casa del Monte", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casa%20del%20Monte%2C%20Barredos%2C%20Spain&order=price" },
+    { name: "La Pará", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Par%C3%A1%2C%20Barredos%2C%20Spain&order=price" },
+  ],
+  "Santa Cruz de Llodio": [
+    { name: "Valle de Ayala", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Valle%20de%20Ayala%2C%20Santa%20Cruz%20de%20Llodio%2C%20Spain&order=price" },
+    { name: "Hotel Errekagain", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Errekagain%2C%20Santa%20Cruz%20de%20Llodio%2C%20Spain&order=price" },
+    { name: "Kutxatxuri", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Kutxatxuri%2C%20Santa%20Cruz%20de%20Llodio%2C%20Spain&order=price" },
+  ],
+  "Cunit": [
+    { name: "Cunit Suites Spa Hotel", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cunit%20Suites%20Spa%20Hotel%2C%20Cunit%2C%20Spain&order=price" },
+    { name: "Hotel Sant Jordi", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sant%20Jordi%2C%20Cunit%2C%20Spain&order=price" },
+    { name: "Hotel Victoria", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Victoria%2C%20Cunit%2C%20Spain&order=price" },
+  ],
+  "Platja de Castelldefels": [
+    { name: "Hotel Best Western", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Best%20Western%2C%20Platja%20de%20Castelldefels%2C%20Spain&order=price" },
+    { name: "Gran Hotel Rey Don Jaime", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gran%20Hotel%20Rey%20Don%20Jaime%2C%20Platja%20de%20Castelldefels%2C%20Spain&order=price" },
+    { name: "Ciudad de Castelldefels", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ciudad%20de%20Castelldefels%2C%20Platja%20de%20Castelldefels%2C%20Spain&order=price" },
+  ],
+  "Vilamalla": [
+    { name: "Bon Retorn", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bon%20Retorn%2C%20Vilamalla%2C%20Spain&order=price" },
+    { name: "Hotel ibis Styles Figueres Ronda", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ibis%20Styles%20Figueres%20Ronda%2C%20Vilamalla%2C%20Spain&order=price" },
+    { name: "Can Borrellet", distanceKm: 5.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Borrellet%2C%20Vilamalla%2C%20Spain&order=price" },
+  ],
+  "Chilches/Xilxes": [
+    { name: "Hostal Casa Paco", distanceKm: 0.3, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Casa%20Paco%2C%20Chilches%2FXilxes%2C%20Spain&order=price" },
+    { name: "Hotel Belcaire", distanceKm: 5.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Belcaire%2C%20Chilches%2FXilxes%2C%20Spain&order=price" },
+    { name: "Termas", distanceKm: 8.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Termas%2C%20Chilches%2FXilxes%2C%20Spain&order=price" },
+  ],
+  "El Goloso": [
+    { name: "Residencia Universitaria Erasmo I", distanceKm: 1.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Universitaria%20Erasmo%20I%2C%20El%20Goloso%2C%20Spain&order=price" },
+    { name: "Residencia Universitaria Erasmo II", distanceKm: 1.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Universitaria%20Erasmo%20II%2C%20El%20Goloso%2C%20Spain&order=price" },
+    { name: "Hostal Tres Cantos", distanceKm: 4.3, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Tres%20Cantos%2C%20El%20Goloso%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

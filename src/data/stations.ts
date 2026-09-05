@@ -65,7 +65,7 @@ const cpStations: StationData[] = [
   { name: "Chaves", lines: ["Linha do Corgo"], types: ["Inactive / Historic"], lat: 41.7457851, lng: -7.4692365 },
   { name: "Barcelos", lines: ["Linha do Minho"], types: ["Intercidades", "Regional"], lat: 41.5333, lng: -8.6167 },
   { name: "Viana do Castelo", lines: ["Linha do Minho"], types: ["Intercidades", "Regional"], lat: 41.6936, lng: -8.8389 },
-  { name: "Valença", lines: ["Linha do Minho"], types: ["Intercidades", "Regional"], lat: 42.0275, lng: -8.6425 },
+  { name: "Valença", lines: ["Linha do Minho"], types: ["Intercidades", "Regional"], lat: 42.0247, lng: -8.6393 },
   // Smaller / regional stops
   { name: "Cacia", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.6833, lng: -8.5972 },
   { name: "Salreu", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.7289, lng: -8.5649 },
@@ -781,6 +781,70 @@ const cpStations: StationData[] = [
     types: ["Regional"],
     lat: 40.5745,
     lng: -7.8096,
+  },
+
+  {
+    name: "Oliveirinha - Cabanas",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.4504,
+    lng: -7.9633,
+  },
+
+  {
+    name: "Santa Clara - Sabóia",
+    lines: ["Linha do Sul"],
+    types: ["Alfa Pendular", "Intercidades"],
+    lat: 37.4958,
+    lng: -8.4814,
+  },
+
+  {
+    name: "Soito",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.4149,
+    lng: -8.3019,
+  },
+
+  {
+    name: "Fernando Pó",
+    lines: ["Linha do Alentejo"],
+    types: ["Intercidades"],
+    lat: 38.6364,
+    lng: -8.6919,
+  },
+
+  {
+    name: "Messines - Alte",
+    lines: ["Linha do Sul"],
+    types: ["Intercidades"],
+    lat: 37.2554,
+    lng: -8.2905,
+  },
+
+  {
+    name: "Pegões",
+    lines: ["Linha do Alentejo"],
+    types: ["Intercidades"],
+    lat: 38.6623,
+    lng: -8.6191,
+  },
+
+  {
+    name: "Poceirão",
+    lines: ["Linha do Alentejo"],
+    types: ["Intercidades"],
+    lat: 38.6344,
+    lng: -8.7434,
+  },
+
+  {
+    name: "São João das Craveiras",
+    lines: ["Linha do Alentejo"],
+    types: ["Intercidades"],
+    lat: 38.668,
+    lng: -8.5857,
   },
 
 ];

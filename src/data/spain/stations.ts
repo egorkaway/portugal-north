@@ -3974,4 +3974,76 @@ export const spainStations: Station[] = [
     lng: -0.5825,
   },
 
+  {
+    name: "Renedo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3531,
+    lng: -3.9496,
+  },
+
+  {
+    name: "Barredos",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2599,
+    lng: -5.575,
+  },
+
+  {
+    name: "Santa Cruz de Llodio",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1329,
+    lng: -2.9698,
+  },
+
+  {
+    name: "Cunit",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.195,
+    lng: 1.6319,
+  },
+
+  {
+    name: "Platja de Castelldefels",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.267,
+    lng: 1.9571,
+  },
+
+  {
+    name: "Vilamalla",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.2164,
+    lng: 2.9778,
+  },
+
+  {
+    name: "Chilches/Xilxes",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.7827,
+    lng: -0.1903,
+  },
+
+  {
+    name: "El Goloso",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.5589,
+    lng: -3.714,
+  },
+
 ];

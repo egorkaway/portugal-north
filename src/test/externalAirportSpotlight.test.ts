@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   coverageFromExternalMapRows,
+  externalSpotlightLimit,
   formatExternalAirportMapsLog,
   isOutsideIberianPeninsula,
   pickExternalAirportForRun,
@@ -66,6 +67,18 @@ describe("rankExternalAirportsFromManifest", () => {
     expect(ranked.map((row) => row.iata)).toEqual(["FRA", "LHR"]);
     expect(ranked[0]).toMatchObject({ iata: "FRA", iberianFlightCount: 17, hubCount: 3 });
     expect(ranked[1]).toMatchObject({ iata: "LHR", iberianFlightCount: 7, hubCount: 2 });
+  });
+});
+
+describe("externalSpotlightLimit", () => {
+  it("treats all/Infinity as unbounded and defaults invalid counts to 1", () => {
+    expect(externalSpotlightLimit(Number.POSITIVE_INFINITY)).toBe(Number.POSITIVE_INFINITY);
+    expect(externalSpotlightLimit(3)).toBe(3);
+    expect(externalSpotlightLimit(1.8)).toBe(1);
+    expect(externalSpotlightLimit(0)).toBe(1);
+    expect(externalSpotlightLimit(-2)).toBe(1);
+    expect(externalSpotlightLimit(undefined)).toBe(1);
+    expect(externalSpotlightLimit(null)).toBe(1);
   });
 });
 

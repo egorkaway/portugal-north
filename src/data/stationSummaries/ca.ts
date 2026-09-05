@@ -904,4 +904,28 @@ export const stationSummariesCa: Record<string, string> = {
   "Moimenta - Alcafache":
     "Moimenta - Alcafache és una parada de CP de serveis regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
 
+  "Oliveirinha - Cabanas":
+    "Oliveirinha - Cabanas és una parada de CP de serveis regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Santa Clara - Sabóia":
+    "Santa Clara - Sabóia és una parada de CP de serveis Alfa Pendular i Intercidades a la Linha do Sul a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Soito":
+    "Soito és una parada de CP de serveis regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Fernando Pó":
+    "Fernando Pó és una parada de CP de serveis Intercidades a la Linha do Alentejo a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Messines - Alte":
+    "Messines - Alte és una parada de CP de serveis Intercidades a la Linha do Sul a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Pegões":
+    "Pegões és una parada de CP de serveis Intercidades a la Linha do Alentejo a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Poceirão":
+    "Poceirão és una parada de CP de serveis Intercidades a la Linha do Alentejo a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "São João das Craveiras":
+    "São João das Craveiras és una parada de CP de serveis Intercidades a la Linha do Alentejo a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
 };

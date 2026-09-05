@@ -497,7 +497,7 @@ function portugalBoundsPoints() {
     { lat: minLat, lng: minLng },
     { lat: maxLat, lng: maxLng },
     { lat: 37.0186, lng: -7.9319 }, // Faro
-    { lat: 42.0275, lng: -8.6425 }, // Valença
+    { lat: 42.0247, lng: -8.6393 }, // Valença
   ];
 }
 

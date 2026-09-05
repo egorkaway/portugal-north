@@ -904,4 +904,28 @@ export const stationSummariesPt: Record<string, string> = {
   "Moimenta - Alcafache":
     "Moimenta - Alcafache é uma paragem CP de serviços regionais na Linha da Beira Alta em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
 
+  "Oliveirinha - Cabanas":
+    "Oliveirinha - Cabanas é uma paragem CP de serviços regionais na Linha da Beira Alta em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Santa Clara - Sabóia":
+    "Santa Clara - Sabóia é uma paragem CP de serviços Alfa Pendular e Intercidades na Linha do Sul em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Soito":
+    "Soito é uma paragem CP de serviços regionais na Linha da Beira Alta em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Fernando Pó":
+    "Fernando Pó é uma paragem CP de serviços Intercidades na Linha do Alentejo em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Messines - Alte":
+    "Messines - Alte é uma paragem CP de serviços Intercidades na Linha do Sul em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Pegões":
+    "Pegões é uma paragem CP de serviços Intercidades na Linha do Alentejo em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "Poceirão":
+    "Poceirão é uma paragem CP de serviços Intercidades na Linha do Alentejo em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
+  "São João das Craveiras":
+    "São João das Craveiras é uma paragem CP de serviços Intercidades na Linha do Alentejo em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
+
 };

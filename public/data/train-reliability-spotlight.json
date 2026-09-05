@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-05T06:17:20.445Z",
-  "runCount": 694,
+  "generatedAt": "2026-09-05T07:28:01.605Z",
+  "runCount": 702,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -44,26 +44,26 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "55621",
-      "serviceType": "Regional",
+      "trainNumber": "10541",
+      "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
       "observations": 14,
       "stationsSampled": 6,
       "majorStations": [
-        "Fratel",
-        "Vila Velha de Ródão",
-        "Barca da Amieira – Envendos",
-        "Belver"
+        "Castelo Branco",
+        "Guarda",
+        "Covilhã",
+        "Fundão"
       ],
       "selectionMode": "rotating",
       "poolSize": 12
     },
     {
-      "trainNumber": "36400",
+      "trainNumber": "36404",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 13,
-      "stationsSampled": 15,
+      "observations": 14,
+      "stationsSampled": 13,
       "majorStations": [
         "Mira Sintra-Meleças",
         "Pero Negro",
@@ -74,16 +74,16 @@
       "poolSize": 12
     },
     {
-      "trainNumber": "10543",
-      "serviceType": "Intercidades",
+      "trainNumber": "36406",
+      "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 17,
-      "stationsSampled": 6,
+      "observations": 14,
+      "stationsSampled": 13,
       "majorStations": [
-        "Castelo Branco",
-        "Guarda",
-        "Covilhã",
-        "Fundão"
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Mafra",
+        "Bombarral"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

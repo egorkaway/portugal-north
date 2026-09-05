@@ -1,22 +1,35 @@
 /**
- * One non-Iberian airport map per connections collect. No station pages.
- * Flight APIs down: draw the next unmapped airport from Iberian inbound data.
- * Flight APIs up: redraw one inbound-only map with the full outbound network
- * (or sample a new airport outbound).
+ * Two maps per non-Iberian airport (no station pages):
+ *   1. Iberian flights only (`*-iberian-connections.png`)
+ *   2. All flights (`*-connections.png`)
+ * Flight APIs down: fill the next missing Iberian map from hub data we already have.
+ * Flight APIs up: add or refresh the all-flights map without replacing the Iberian one.
  */
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { stationToSlug } from "./socialCard.mjs";
 import {
   coverageFromExternalMapRows,
   externalAirportDisplayName,
+  externalMapFilename,
+  externalMapPublicPath,
+  externalSpotlightLimit,
   formatExternalAirportMapsLog,
+  hasAllFlightsMap,
+  hasIberianMap,
   IBERIAN_INBOUND_PROVIDER,
+  normalizeExternalAirportRow,
   pickExternalAirportForRun,
   rankExternalAirportsFromManifest,
 } from "../../src/lib/externalAirportSpotlight.ts";
 
-export { formatExternalAirportMapsLog };
+export {
+  externalSpotlightLimit,
+  formatExternalAirportMapsLog,
+  hasAllFlightsMap,
+  hasIberianMap,
+  normalizeExternalAirportRow,
+};
 import { loadAirportCatalog } from "./airportCatalog.mjs";
 import { getFlightLineColor, getFlightLineWeight } from "../../server/lib/airportIata.ts";
 import { formatCountryName } from "../../server/lib/countryName.ts";

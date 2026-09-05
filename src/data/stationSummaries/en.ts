@@ -971,4 +971,28 @@ export const stationSummariesEn: Record<string, string> = {
   "Moimenta - Alcafache":
     "Moimenta - Alcafache is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Oliveirinha - Cabanas":
+    "Oliveirinha - Cabanas is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Santa Clara - Sabóia":
+    "Santa Clara - Sabóia is a CP Alfa Pendular and Intercidades halt on Linha do Sul in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Soito":
+    "Soito is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Fernando Pó":
+    "Fernando Pó is a CP Intercidades halt on Linha do Alentejo in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Messines - Alte":
+    "Messines - Alte is a CP Intercidades halt on Linha do Sul in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Pegões":
+    "Pegões is a CP Intercidades halt on Linha do Alentejo in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Poceirão":
+    "Poceirão is a CP Intercidades halt on Linha do Alentejo in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "São João das Craveiras":
+    "São João das Craveiras is a CP Intercidades halt on Linha do Alentejo in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

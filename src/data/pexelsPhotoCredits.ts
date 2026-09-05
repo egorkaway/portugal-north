@@ -731,6 +731,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@omer-doner-82252844",
     photoPageUrl: "https://www.pexels.com/photo/a-person-in-gray-coat-walking-on-the-railway-platform-10519883/",
   },
+  "10530114": {
+    photographer: "Carlos Junior",
+    photographerUrl: "https://www.pexels.com/@carlos-junior-142452329",
+    photoPageUrl: "https://www.pexels.com/photo/mountain-rural-landscape-with-reservoir-10530114/",
+  },
   "10542168": {
     photographer: "Alexey Demidov",
     photographerUrl: "https://www.pexels.com/@alexeydemidov",
@@ -1261,6 +1266,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@matteobasilephoto",
     photoPageUrl: "https://www.pexels.com/photo/an-empty-railway-station-17312345/",
   },
+  "17312346": {
+    photographer: "Matteo Basile",
+    photographerUrl: "https://www.pexels.com/@matteobasilephoto",
+    photoPageUrl: "https://www.pexels.com/photo/roofed-train-platform-17312346/",
+  },
   "17315130": {
     photographer: "Kostas Dimopoulos",
     photographerUrl: "https://www.pexels.com/@kostas-dimopoulos-119583302",
@@ -1586,6 +1596,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
     photoPageUrl: "https://www.pexels.com/photo/train-at-elbbrucken-metro-station-in-hamburg-20712722/",
   },
+  "20798334": {
+    photographer: "Oktay Köseoğlu",
+    photographerUrl: "https://www.pexels.com/@oktay-koseoglu-42034955",
+    photoPageUrl: "https://www.pexels.com/photo/empty-railway-station-platform-at-night-20798334/",
+  },
   "20798745": {
     photographer: "Ela Dilara",
     photographerUrl: "https://www.pexels.com/@ela-dilara-993694092",
@@ -1645,6 +1660,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Efrem  Efre",
     photographerUrl: "https://www.pexels.com/@efrem-efre-2786187",
     photoPageUrl: "https://www.pexels.com/photo/architecture-city-22047476/",
+  },
+  "22744005": {
+    photographer: "Victor  de Dompablo",
+    photographerUrl: "https://www.pexels.com/@vkiller",
+    photoPageUrl: "https://www.pexels.com/photo/people-around-train-at-railway-station-22744005/",
   },
   "22756478": {
     photographer: "Diogo Miranda",
@@ -3130,6 +3150,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/historic-cadiz-railway-station-exterior-39269011/",
+  },
+  "39366837": {
+    photographer: "Igor Passchier",
+    photographerUrl: "https://www.pexels.com/@igor-passchier-111147847",
+    photoPageUrl: "https://www.pexels.com/photo/historic-train-station-with-tiled-decor-in-pinhao-39366837/",
   },
   "39366843": {
     photographer: "Igor Passchier",

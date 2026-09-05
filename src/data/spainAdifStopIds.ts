@@ -871,6 +871,22 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Torrellano": ["62104"],
 
+  "Renedo": ["14216"],
+
+  "Barredos": ["05441"],
+
+  "Santa Cruz de Llodio": ["13104"],
+
+  "Cunit": ["71603"],
+
+  "Platja de Castelldefels": ["71704"],
+
+  "Vilamalla": ["79308"],
+
+  "Chilches/Xilxes": ["65204"],
+
+  "El Goloso": ["17003"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
