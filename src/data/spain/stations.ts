@@ -4235,4 +4235,58 @@ export const spainStations: Station[] = [
     lng: -2.9901,
   },
 
+  {
+    name: "Las Navas del Marqués",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.5892,
+    lng: -4.3623,
+  },
+
+  {
+    name: "Loja",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.1754,
+    lng: -4.1348,
+  },
+
+  {
+    name: "Riells i Viabrea-Breda",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7264,
+    lng: 2.5689,
+  },
+
+  {
+    name: "Mataró",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5334,
+    lng: 2.4455,
+  },
+
+  {
+    name: "Villanueva de Córdoba",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.2554,
+    lng: -4.571,
+  },
+
+  {
+    name: "Torremuelle",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.5823,
+    lng: -4.567,
+  },
+
 ];

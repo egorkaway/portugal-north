@@ -186,6 +186,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -1.523223,
   },
   {
+    name: "Blackpool Airport (BLK)",
+    country: "gb",
+    lines: ["BLK"],
+    types: ["Airport Destination"],
+    lat: 53.771702,
+    lng: -3.02861,
+  },
+  {
     name: "Billund Airport (BLL)",
     country: "dk",
     lines: ["BLL"],
@@ -336,6 +344,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 49.00896,
     lng: 2.554117,
+  },
+  {
+    name: "Cannes Mandelieu Airport (CEQ)",
+    country: "fr",
+    lines: ["CEQ"],
+    types: ["Airport Destination"],
+    lat: 43.547998,
+    lng: 6.955176,
   },
   {
     name: "Corfu Ioannis Kapodistrias International Airport (CFU)",
@@ -688,6 +704,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 35.892657,
     lng: -5.306321,
+  },
+  {
+    name: "Jersey Airport (JER)",
+    country: "je",
+    lines: ["JER"],
+    types: ["Airport Destination"],
+    lat: 49.207901,
+    lng: -2.19551,
   },
   {
     name: "Mykonos Island National Airport (JMK)",
@@ -1312,6 +1336,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 51.570562,
     lng: 0.693627,
+  },
+  {
+    name: "Sion Airport (SIR)",
+    country: "ch",
+    lines: ["SIR"],
+    types: ["Airport Destination"],
+    lat: 46.219166,
+    lng: 7.326944,
   },
   {
     name: "Sarajevo International Airport (SJJ)",

@@ -1015,6 +1015,14 @@ const cpStations: StationData[] = [
     lng: -8.4144,
   },
 
+  {
+    name: "Baracal",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.6774,
+    lng: -7.3279,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

@@ -991,4 +991,7 @@ export const stationSummariesEs: Record<string, string> = {
   "Amoreiras - Odemira":
     "Amoreiras - Odemira es una parada de CP de servicios Intercidades en la Linha do Sul en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
 
+  "Baracal":
+    "Baracal es una parada de CP de servicios regionales en la Linha da Beira Alta en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
 };

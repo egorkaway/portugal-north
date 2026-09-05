@@ -929,6 +929,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Irauregui": ["05461"],
 
+  "Las Navas del Marqués": ["10207"],
+
+  "Loja": ["05012"],
+
+  "Riells i Viabrea-Breda": ["79106"],
+
+  "Mataró": ["79500"],
+
+  "Villanueva de Córdoba": ["37704"],
+
+  "Torremuelle": ["54512"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

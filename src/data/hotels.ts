@@ -2320,6 +2320,11 @@ export const stationHotels: StationHotels = {
     { name: "Herdade dos Montes Bastos", distanceKm: 3.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Herdade%20dos%20Montes%20Bastos%2C%20Amoreiras%20-%20Odemira%2C%20Portugal&order=price" },
     { name: "Tamera Guest House", distanceKm: 9.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tamera%20Guest%20House%2C%20Amoreiras%20-%20Odemira%2C%20Portugal&order=price" },
   ],
+  "Baracal": [
+    { name: "Mira Serra", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mira%20Serra%2C%20Baracal%2C%20Portugal&order=price" },
+    { name: "Hotel Quinta dos Cedros", distanceKm: 8.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Quinta%20dos%20Cedros%2C%20Baracal%2C%20Portugal&order=price" },
+    { name: "Casa da Martha _ Alojamento Local", distanceKm: 8.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Martha%20_%20Alojamento%20Local%2C%20Baracal%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4629,6 +4634,36 @@ export const stationHotels: StationHotels = {
     { name: "Bilbao Hostel", distanceKm: 2.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bilbao%20Hostel%2C%20Irauregui%2C%20Spain&order=price" },
     { name: "Hotel Erreka-alde", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Erreka-alde%2C%20Irauregui%2C%20Spain&order=price" },
   ],
+  "Las Navas del Marqués": [
+    { name: "Casa Rural El Olival", distanceKm: 7.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20El%20Olival%2C%20Las%20Navas%20del%20Marqu%C3%A9s%2C%20Spain&order=price" },
+    { name: "Hotel Quinta de los Enebrales", distanceKm: 10.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Quinta%20de%20los%20Enebrales%2C%20Las%20Navas%20del%20Marqu%C3%A9s%2C%20Spain&order=price" },
+    { name: "El Estanco", distanceKm: 11, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Estanco%2C%20Las%20Navas%20del%20Marqu%C3%A9s%2C%20Spain&order=price" },
+  ],
+  "Loja": [
+    { name: "Hotel Manzanil", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Manzanil%2C%20Loja%2C%20Spain&order=price" },
+    { name: "Hotel El Mirador", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20El%20Mirador%2C%20Loja%2C%20Spain&order=price" },
+    { name: "Manzanil Area de Servicio Hotel", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Manzanil%20Area%20de%20Servicio%20Hotel%2C%20Loja%2C%20Spain&order=price" },
+  ],
+  "Riells i Viabrea-Breda": [
+    { name: "Can Preses", distanceKm: 6.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Preses%2C%20Riells%20i%20Viabrea-Breda%2C%20Spain&order=price" },
+    { name: "L'Hotelet", distanceKm: 6.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=L'Hotelet%2C%20Riells%20i%20Viabrea-Breda%2C%20Spain&order=price" },
+    { name: "Sant Llop", distanceKm: 6.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sant%20Llop%2C%20Riells%20i%20Viabrea-Breda%2C%20Spain&order=price" },
+  ],
+  "Mataró": [
+    { name: "ApartHotel Atenea", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ApartHotel%20Atenea%2C%20Matar%C3%B3%2C%20Spain&order=price" },
+    { name: "New Hotel Colón", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=New%20Hotel%20Col%C3%B3n%2C%20Matar%C3%B3%2C%20Spain&order=price" },
+    { name: "URH Hotel Ciutat de Mataró", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=URH%20Hotel%20Ciutat%20de%20Matar%C3%B3%2C%20Matar%C3%B3%2C%20Spain&order=price" },
+  ],
+  "Villanueva de Córdoba": [
+    { name: "Casa Rural Casa Miqui", distanceKm: 8.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Casa%20Miqui%2C%20Villanueva%20de%20C%C3%B3rdoba%2C%20Spain&order=price" },
+    { name: "Hotel Asador Volao", distanceKm: 9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Asador%20Volao%2C%20Villanueva%20de%20C%C3%B3rdoba%2C%20Spain&order=price" },
+    { name: "Hotel La Casa del Médico", distanceKm: 9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Casa%20del%20M%C3%A9dico%2C%20Villanueva%20de%20C%C3%B3rdoba%2C%20Spain&order=price" },
+  ],
+  "Torremuelle": [
+    { name: "Vista de Rey", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vista%20de%20Rey%2C%20Torremuelle%2C%20Spain&order=price" },
+    { name: "Benalma Hotel Costa del Sol", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Benalma%20Hotel%20Costa%20del%20Sol%2C%20Torremuelle%2C%20Spain&order=price" },
+    { name: "Villa Skandia", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Villa%20Skandia%2C%20Torremuelle%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
@@ -4856,6 +4891,11 @@ export const stationHotels: StationHotels = {
     { name: "Hilton Munich Airport", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hilton%20Munich%20Airport%2C%20Munich%20Airport%20(MUC)%2C%20Germany&order=price" },
     { name: "VIP Wing", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=VIP%20Wing%2C%20Munich%20Airport%20(MUC)%2C%20Germany&order=price" },
     { name: "Ibis Styles München Airport", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Styles%20M%C3%BCnchen%20Airport%2C%20Munich%20Airport%20(MUC)%2C%20Germany&order=price" },
+  ],
+  "Milan Malpensa International Airport (MXP)": [
+    { name: "Sheraton Milan Malpensa Airport Hotel & Conference Centre", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sheraton%20Milan%20Malpensa%20Airport%20Hotel%20%26%20Conference%20Centre%2C%20Milan%20Malpensa%20International%20Airport%20(MXP)%2C%20Italy&order=price" },
+    { name: "Idea Hotel Milano Malpensa Airport", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Idea%20Hotel%20Milano%20Malpensa%20Airport%2C%20Milan%20Malpensa%20International%20Airport%20(MXP)%2C%20Italy&order=price" },
+    { name: "Holiday Inn Express Milan - Malpensa Airport", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Milan%20-%20Malpensa%20Airport%2C%20Milan%20Malpensa%20International%20Airport%20(MXP)%2C%20Italy&order=price" },
   ],
   "Paris-Orly Airport (ORY)": [
     { name: "ibis Paris Cœur d'Orly Airport", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20Paris%20C%C5%93ur%20d'Orly%20Airport%2C%20Paris-Orly%20Airport%20(ORY)%2C%20France&order=price" },

@@ -1091,6 +1091,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@vladimirsrajber",
     photoPageUrl: "https://www.pexels.com/photo/train-on-a-railroad-track-14924424/",
   },
+  "15063025": {
+    photographer: "David Brown",
+    photographerUrl: "https://www.pexels.com/@ninobur",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-steam-locomotive-15063025/",
+  },
   "15099732": {
     photographer: "Priyanshu  Das",
     photographerUrl: "https://www.pexels.com/@priyanshu-das-419903538",
@@ -3216,10 +3221,20 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@malcolnphoto",
     photoPageUrl: "https://www.pexels.com/photo/charming-santa-luzia-train-station-at-twilight-38814603/",
   },
+  "38844073": {
+    photographer: "Jerson Martins",
+    photographerUrl: "https://www.pexels.com/@jersonmfotos",
+    photoPageUrl: "https://www.pexels.com/photo/historic-santa-luzia-railway-station-at-dusk-38844073/",
+  },
   "38844111": {
     photographer: "Jerson Martins",
     photographerUrl: "https://www.pexels.com/@jerson-martins-1514473344",
     photoPageUrl: "https://www.pexels.com/photo/historic-rio-das-velhas-train-station-at-sunset-38844111/",
+  },
+  "38844112": {
+    photographer: "Jerson Martins",
+    photographerUrl: "https://www.pexels.com/@jersonmfotos",
+    photoPageUrl: "https://www.pexels.com/photo/historic-train-station-at-sunset-in-santa-luzia-brazil-38844112/",
   },
   "38930590": {
     photographer: "Victor Silva",
@@ -3245,6 +3260,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Explora Andalucia",
     photographerUrl: "https://www.pexels.com/@explora-andalucia-2162577091",
     photoPageUrl: "https://www.pexels.com/photo/modern-train-station-in-seville-spain-38978619/",
+  },
+  "39030716": {
+    photographer: "Javier del Casar",
+    photographerUrl: "https://www.pexels.com/@javier-del-casar-154790595",
+    photoPageUrl: "https://www.pexels.com/photo/rustic-ruins-in-alcala-de-henares-countryside-39030716/",
   },
   "39038706": {
     photographer: "Fotografías de El Puerto  de Santa María",

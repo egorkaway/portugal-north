@@ -51,6 +51,7 @@ export const cpStationCodes: Partial<Record<string, string>> = {
   "Azambuja": "94-33001",
   "Azurva": "94-42051",
   "Baixa da Banheira": "94-95059",
+  "Baracal": "94-48454",
   "Barca da Amieira – Envendos": "94-52415",
   "Barcelos": "94-6122",
   "Barqueiros": "94-9324",
