@@ -1,6 +1,7 @@
-import { forwardRef, useCallback, useImperativeHandle, useMemo, useRef } from 'react';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
 import { StyleSheet, View, type StyleProp, type ViewStyle } from 'react-native';
 import WebView, { type WebViewMessageEvent } from 'react-native-webview';
+import { theme } from '@/constants/theme';
 
 export type OsmMapRegion = {
   latitude: number;
@@ -15,6 +16,7 @@ export type OsmMapMarker = {
   lng: number;
   color: string;
   size: number;
+  visited?: boolean;
 };
 
 export type OsmWebMapHandle = {
@@ -26,6 +28,7 @@ type Props = {
   style?: StyleProp<ViewStyle>;
   initialRegion: OsmMapRegion;
   markers: OsmMapMarker[];
+  hideVisited?: boolean;
   darkMode?: boolean;
   onMarkerPress?: (id: string) => void;
   onMapPress?: () => void;
@@ -85,13 +88,22 @@ function buildHtml(options: {
 
     const layer = L.layerGroup().addTo(map);
     const byId = Object.create(null);
+    const halos = Object.create(null);
+    const visitedRingColor = ${JSON.stringify(theme.primary)};
 
     function post(type, payload) {
       window.ReactNativeWebView && window.ReactNativeWebView.postMessage(JSON.stringify({ type, payload }));
     }
 
+    function toSet(ids) {
+      const set = Object.create(null);
+      for (const id of ids) set[id] = 1;
+      return set;
+    }
+
     function addMarkers() {
       layer.clearLayers();
+      for (const key of Object.keys(halos)) delete halos[key];
       for (const item of markersData) {
         const [id, lat, lng, color, size] = item;
         const radius = Math.max(4, Number(size) || 7);
@@ -110,6 +122,40 @@ function buildHtml(options: {
         byId[id] = marker;
       }
     }
+
+    window.__applyMarkerState = function (visitedIds, hiddenIds) {
+      const visitedSet = toSet(visitedIds || []);
+      const hiddenSet = toSet(hiddenIds || []);
+      for (const id of Object.keys(byId)) {
+        const marker = byId[id];
+        if (hiddenSet[id]) {
+          if (layer.hasLayer(marker)) layer.removeLayer(marker);
+          if (halos[id]) {
+            layer.removeLayer(halos[id]);
+            delete halos[id];
+          }
+          continue;
+        }
+        if (!layer.hasLayer(marker)) marker.addTo(layer);
+        if (visitedSet[id]) {
+          if (!halos[id]) {
+            const latlng = marker.getLatLng();
+            const radius = marker.options.radius || 7;
+            halos[id] = L.circleMarker(latlng, {
+              radius: radius + 4,
+              color: visitedRingColor,
+              weight: 2,
+              fill: false,
+              interactive: false,
+            }).addTo(layer);
+          }
+          marker.bringToFront();
+        } else if (halos[id]) {
+          layer.removeLayer(halos[id]);
+          delete halos[id];
+        }
+      }
+    };
 
     addMarkers();
 
@@ -151,22 +197,55 @@ function buildHtml(options: {
 </html>`;
 }
 
+function markerCatalogKey(markers: OsmMapMarker[]): string {
+  return markers
+    .map(
+      (marker) =>
+        `${marker.id}|${marker.lat.toFixed(5)}|${marker.lng.toFixed(5)}|${marker.color}|${marker.size}`,
+    )
+    .join('\n');
+}
+
 export const OsmWebMap = forwardRef<OsmWebMapHandle, Props>(function OsmWebMap(
-  { style, initialRegion, markers, darkMode = false, onMarkerPress, onMapPress },
+  { style, initialRegion, markers, hideVisited = false, darkMode = false, onMarkerPress, onMapPress },
   ref,
 ) {
   const webRef = useRef<WebView>(null);
+  const readyRef = useRef(false);
+
+  const catalogKey = useMemo(() => markerCatalogKey(markers), [markers]);
+  const visitedIds = useMemo(
+    () => markers.filter((marker) => marker.visited).map((marker) => marker.id),
+    [markers],
+  );
 
   const html = useMemo(
     () => buildHtml({ initialRegion, markers, darkMode }),
-    // Rebuild only when appearance or marker set identity changes meaningfully.
-    // Marker list is stable for the app session.
-    [initialRegion.latitude, initialRegion.longitude, initialRegion.latitudeDelta, markers, darkMode],
+    // Rebuild only when tiles or the station catalog change — not visited/filter state.
+    [initialRegion.latitude, initialRegion.longitude, initialRegion.latitudeDelta, catalogKey, darkMode],
   );
 
   const inject = useCallback((script: string) => {
     webRef.current?.injectJavaScript(`${script}; true;`);
   }, []);
+
+  const applyMarkerState = useCallback(
+    (nextVisitedIds: string[], nextHideVisited: boolean) => {
+      const hiddenIds = nextHideVisited ? nextVisitedIds : [];
+      inject(
+        `window.__applyMarkerState && window.__applyMarkerState(${JSON.stringify(nextVisitedIds)}, ${JSON.stringify(hiddenIds)})`,
+      );
+    },
+    [inject],
+  );
+
+  useEffect(() => {
+    readyRef.current = false;
+  }, [html]);
+
+  useEffect(() => {
+    if (readyRef.current) applyMarkerState(visitedIds, hideVisited);
+  }, [applyMarkerState, hideVisited, visitedIds]);
 
   useImperativeHandle(
     ref,
@@ -196,6 +275,11 @@ export const OsmWebMap = forwardRef<OsmWebMapHandle, Props>(function OsmWebMap(
           type?: string;
           payload?: string | null;
         };
+        if (message.type === 'ready') {
+          readyRef.current = true;
+          applyMarkerState(visitedIds, hideVisited);
+          return;
+        }
         if (message.type === 'markerPress' && typeof message.payload === 'string') {
           onMarkerPress?.(message.payload);
           return;
@@ -207,7 +291,7 @@ export const OsmWebMap = forwardRef<OsmWebMapHandle, Props>(function OsmWebMap(
         // Ignore malformed bridge messages.
       }
     },
-    [onMapPress, onMarkerPress],
+    [applyMarkerState, hideVisited, onMapPress, onMarkerPress, visitedIds],
   );
 
   return (

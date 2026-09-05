@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -12,7 +12,7 @@ import {
 import MapView, { Marker, type MarkerPressEvent } from 'react-native-maps';
 import * as Location from 'expo-location';
 import { SymbolView } from 'expo-symbols';
-import { useNavigation, useRouter } from 'expo-router';
+import { useFocusEffect, useNavigation, useRouter } from 'expo-router';
 import ViewShot from 'react-native-view-shot';
 import { MapShareBrandingFooter } from '@/components/MapShareBrandingFooter';
 import { OsmWebMap, type OsmWebMapHandle } from '@/components/OsmWebMap';
@@ -38,6 +38,7 @@ import {
 } from '@/lib/airportConnections';
 import { shareCapturedMap } from '@/lib/shareMapImage';
 import { writeLastCoords } from '@/lib/tripStorage';
+import { readVisitedMap } from '@/lib/voteStorage';
 
 /** Fits Iberian peninsula (≈35.8°N–44°N, 10°W–4°E) on portrait phones. */
 const IBERIAN_REGION = {
@@ -53,6 +54,9 @@ const MARKER_PRESS_LOCK_MS = 120;
 
 /** Android uses free OSM/Carto tiles — no Google Maps API. iOS keeps Apple Maps. */
 const USE_OSM_MAP = Platform.OS === 'android';
+/** Navy ring around visited dots — distinct from reliability green/amber/red. */
+const VISITED_RING_COLOR = theme.primary;
+const VISITED_RING_EXTRA = 10;
 
 function markerSize(movements: number): number {
   if (movements >= 500) return 14;
@@ -74,6 +78,18 @@ export default function MapScreen() {
   const [locating, setLocating] = useState(false);
   const [sharing, setSharing] = useState(false);
   const [showsUserLocation, setShowsUserLocation] = useState(false);
+  const [visitedMap, setVisitedMap] = useState<Record<string, boolean>>({});
+  const [hideVisited, setHideVisited] = useState(false);
+
+  const loadVisited = useCallback(async () => {
+    setVisitedMap(await readVisitedMap());
+  }, []);
+
+  useFocusEffect(
+    useCallback(() => {
+      void loadVisited();
+    }, [loadVisited]),
+  );
 
   const markers = useMemo(
     () =>
@@ -90,6 +106,7 @@ export default function MapScreen() {
             station,
             score,
             movements,
+            visited: Boolean(visitedMap[station.name]),
             color:
               score !== null
                 ? reliabilityScoreColor(score)
@@ -100,17 +117,23 @@ export default function MapScreen() {
             size: markerSize(movements),
           };
         }),
-    [catalogRevision],
+    [catalogRevision, visitedMap],
+  );
+
+  const visibleMarkers = useMemo(
+    () => (hideVisited ? markers.filter((item) => !item.visited) : markers),
+    [hideVisited, markers],
   );
 
   const osmMarkers = useMemo(
     () =>
-      markers.map(({ station, color, size }) => ({
+      markers.map(({ station, color, size, visited }) => ({
         id: station.name,
         lat: station.lat,
         lng: station.lng,
         color,
         size,
+        visited,
       })),
     [markers],
   );
@@ -186,10 +209,35 @@ export default function MapScreen() {
     }
   }, [sharing, t]);
 
+  useEffect(() => {
+    if (hideVisited && selectedName && visitedMap[selectedName]) {
+      setSelectedName(null);
+    }
+  }, [hideVisited, selectedName, visitedMap]);
+
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
         <View style={styles.headerActions}>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityState={{ selected: hideVisited }}
+            accessibilityLabel={
+              hideVisited ? t('map.showAllStationsA11y') : t('map.hideVisitedA11y')
+            }
+            onPress={() => setHideVisited((prev) => !prev)}
+            style={[styles.headerButton, hideVisited && styles.headerButtonActive]}
+          >
+            <SymbolView
+              name={{
+                ios: hideVisited ? 'mappin.slash' : 'mappin',
+                android: hideVisited ? 'location_off' : 'place',
+                web: hideVisited ? 'location_off' : 'place',
+              }}
+              tintColor={hideVisited ? '#fff' : theme.primary}
+              size={22}
+            />
+          </Pressable>
           <Pressable
             accessibilityRole="button"
             accessibilityLabel={t('map.shareA11y')}
@@ -226,9 +274,9 @@ export default function MapScreen() {
         </View>
       ),
     });
-  }, [navigation, locateUser, locating, shareMap, sharing, t]);
+  }, [navigation, hideVisited, locateUser, locating, shareMap, sharing, t]);
 
-  const selected = markers.find((item) => item.station.name === selectedName);
+  const selected = visibleMarkers.find((item) => item.station.name === selectedName);
   const inboundHubs = useMemo(() => {
     if (!selected?.station.types.includes('Airport Destination')) return [];
     const iata = destinationIataFromStation(selected.station);
@@ -244,6 +292,7 @@ export default function MapScreen() {
             style={styles.map}
             initialRegion={IBERIAN_REGION}
             markers={osmMarkers}
+            hideVisited={hideVisited}
             darkMode={false}
             onMarkerPress={selectStation}
             onMapPress={clearSelection}
@@ -259,37 +308,55 @@ export default function MapScreen() {
             onPress={clearSelection}
             onMarkerPress={handleMarkerPress}
           >
-            {markers.map(({ station, color, size }) => (
-              <Marker
-                key={station.name}
-                identifier={station.name}
-                coordinate={{ latitude: station.lat, longitude: station.lng }}
-                stopPropagation
-                tracksViewChanges={false}
-                onPress={() => selectStation(station.name)}
-              >
-                <View
-                  style={styles.markerHitArea}
-                  collapsable={false}
-                  accessible
-                  accessibilityRole="button"
-                  accessibilityLabel={station.name}
+            {visibleMarkers.map(({ station, color, size, visited }) => {
+              const ringSize = size + VISITED_RING_EXTRA;
+              return (
+                <Marker
+                  key={`${station.name}-${visited ? 'v' : ''}`}
+                  identifier={station.name}
+                  coordinate={{ latitude: station.lat, longitude: station.lng }}
+                  stopPropagation
+                  tracksViewChanges={false}
+                  onPress={() => selectStation(station.name)}
                 >
-                  <View style={styles.markerTouchTarget} />
                   <View
-                    style={[
-                      styles.dot,
-                      {
-                        width: size,
-                        height: size,
-                        borderRadius: size / 2,
-                        backgroundColor: color,
-                      },
-                    ]}
-                  />
-                </View>
-              </Marker>
-            ))}
+                    style={styles.markerHitArea}
+                    collapsable={false}
+                    accessible
+                    accessibilityRole="button"
+                    accessibilityLabel={
+                      visited ? `${station.name}, ${t('map.legendVisited')}` : station.name
+                    }
+                  >
+                    <View style={styles.markerTouchTarget} />
+                    <View
+                      style={[
+                        styles.markerStack,
+                        visited ? { width: ringSize, height: ringSize } : null,
+                      ]}
+                    >
+                      {visited ? (
+                        <View
+                          pointerEvents="none"
+                          style={[styles.visitedRing, { borderRadius: ringSize / 2 }]}
+                        />
+                      ) : null}
+                      <View
+                        style={[
+                          styles.dot,
+                          {
+                            width: size,
+                            height: size,
+                            borderRadius: size / 2,
+                            backgroundColor: color,
+                          },
+                        ]}
+                      />
+                    </View>
+                  </View>
+                </Marker>
+              );
+            })}
           </MapView>
         )}
 
@@ -302,6 +369,7 @@ export default function MapScreen() {
               <LegendSwatch color={reliabilityScoreColor(3)} label={t('map.legendLow')} />
               <LegendSwatch color="#94A3B8" label={t('map.legendNoData')} />
               <LegendSwatch color="#0284C7" label={t('map.legendAirport')} />
+              <LegendSwatch color={VISITED_RING_COLOR} label={t('map.legendVisited')} ring />
             </View>
           </View>
         </View>
@@ -393,10 +461,22 @@ export default function MapScreen() {
   );
 }
 
-function LegendSwatch({ color, label }: { color: string; label: string }) {
+function LegendSwatch({
+  color,
+  label,
+  ring,
+}: {
+  color: string;
+  label: string;
+  ring?: boolean;
+}) {
   return (
     <View style={styles.legendItem}>
-      <View style={[styles.legendDot, { backgroundColor: color }]} />
+      {ring ? (
+        <View style={[styles.legendRing, { borderColor: color }]} />
+      ) : (
+        <View style={[styles.legendDot, { backgroundColor: color }]} />
+      )}
       <Text style={styles.legendLabel}>{label}</Text>
     </View>
   );
@@ -424,10 +504,20 @@ const styles = StyleSheet.create({
     height: 36,
     alignItems: 'center',
     justifyContent: 'center',
+    borderRadius: 8,
+  },
+  headerButtonActive: {
+    backgroundColor: theme.primary,
   },
   dot: {
     borderWidth: 1,
     borderColor: '#fff',
+  },
+  visitedRing: {
+    position: 'absolute',
+    borderWidth: 2,
+    borderColor: VISITED_RING_COLOR,
+    backgroundColor: 'transparent',
   },
   markerHitArea: {
     width: MARKER_HIT_SIZE,
@@ -473,6 +563,13 @@ const styles = StyleSheet.create({
     width: 10,
     height: 10,
     borderRadius: 5,
+  },
+  legendRing: {
+    width: 10,
+    height: 10,
+    borderRadius: 5,
+    borderWidth: 2,
+    backgroundColor: 'transparent',
   },
   legendLabel: {
     fontSize: 12,

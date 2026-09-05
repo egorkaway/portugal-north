@@ -941,6 +941,18 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Torremuelle": ["54512"],
 
+  "La Farga de Bebié": ["77114"],
+
+  "Sant Guim de Freixenet": ["78501"],
+
+  "Blanes": ["79606"],
+
+  "La Herrera": ["05481"],
+
+  "Bakiola": ["13115"],
+
+  "L'Arboç": ["72202"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

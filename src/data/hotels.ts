@@ -4664,6 +4664,36 @@ export const stationHotels: StationHotels = {
     { name: "Benalma Hotel Costa del Sol", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Benalma%20Hotel%20Costa%20del%20Sol%2C%20Torremuelle%2C%20Spain&order=price" },
     { name: "Villa Skandia", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Villa%20Skandia%2C%20Torremuelle%2C%20Spain&order=price" },
   ],
+  "La Farga de Bebié": [
+    { name: "Hotel Sant Quirze de Besora", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sant%20Quirze%20de%20Besora%2C%20La%20Farga%20de%20Bebi%C3%A9%2C%20Spain&order=price" },
+    { name: "el Pla", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=el%20Pla%2C%20La%20Farga%20de%20Bebi%C3%A9%2C%20Spain&order=price" },
+    { name: "Can Cisquet", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Cisquet%2C%20La%20Farga%20de%20Bebi%C3%A9%2C%20Spain&order=price" },
+  ],
+  "Sant Guim de Freixenet": [
+    { name: "Hotel Restaurant Bayona", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurant%20Bayona%2C%20Sant%20Guim%20de%20Freixenet%2C%20Spain&order=price" },
+    { name: "Casa rural la Rectoria", distanceKm: 9.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20rural%20la%20Rectoria%2C%20Sant%20Guim%20de%20Freixenet%2C%20Spain&order=price" },
+    { name: "Prats Jardí", distanceKm: 11.1, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Prats%20Jard%C3%AD%2C%20Sant%20Guim%20de%20Freixenet%2C%20Spain&order=price" },
+  ],
+  "Blanes": [
+    { name: "Apartments Europa", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartments%20Europa%2C%20Blanes%2C%20Spain&order=price" },
+    { name: "Stelamaris", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Stelamaris%2C%20Blanes%2C%20Spain&order=price" },
+    { name: "Horitzo", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Horitzo%2C%20Blanes%2C%20Spain&order=price" },
+  ],
+  "La Herrera": [
+    { name: "Hotel Convento San Roque", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Convento%20San%20Roque%2C%20La%20Herrera%2C%20Spain&order=price" },
+    { name: "Batzarki", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Batzarki%2C%20La%20Herrera%2C%20Spain&order=price" },
+    { name: "Hostal Txikote", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Txikote%2C%20La%20Herrera%2C%20Spain&order=price" },
+  ],
+  "Bakiola": [
+    { name: "Ibis budget bilbao", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20budget%20bilbao%2C%20Bakiola%2C%20Spain&order=price" },
+    { name: "Hotel Beñaran", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Be%C3%B1aran%2C%20Bakiola%2C%20Spain&order=price" },
+    { name: "Kutxatxuri", distanceKm: 3.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Kutxatxuri%2C%20Bakiola%2C%20Spain&order=price" },
+  ],
+  "L'Arboç": [
+    { name: "Hotel Don Pelayo", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Don%20Pelayo%2C%20L'Arbo%C3%A7%2C%20Spain&order=price" },
+    { name: "El Bosc", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Bosc%2C%20L'Arbo%C3%A7%2C%20Spain&order=price" },
+    { name: "Archs Hotel Rural", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Archs%20Hotel%20Rural%2C%20L'Arbo%C3%A7%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

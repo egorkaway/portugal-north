@@ -106,6 +106,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pixabay",
     photoPageUrl: "https://www.pexels.com/photo/clear-glass-roof-with-gray-steel-frames-414808/",
   },
+  "417171": {
+    photographer: "Pixabay",
+    photographerUrl: "https://www.pexels.com/@pixabay",
+    photoPageUrl: "https://www.pexels.com/photo/train-station-signage-417171/",
+  },
   "421129": {
     photographer: "Nicolas Postiglioni",
     photographerUrl: "https://www.pexels.com/@postiglioni",
@@ -2740,6 +2745,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Alexandre  Moreira",
     photographerUrl: "https://www.pexels.com/@alexandre-moreira-2527876",
     photoPageUrl: "https://www.pexels.com/photo/elegant-black-and-white-train-station-at-night-35159527/",
+  },
+  "35177899": {
+    photographer: "Airam Dato-on",
+    photographerUrl: "https://www.pexels.com/@airamdphoto",
+    photoPageUrl: "https://www.pexels.com/photo/railway-view-from-train-window-amidst-lush-forest-35177899/",
   },
   "35231556": {
     photographer: "Wolfgang Weiser",

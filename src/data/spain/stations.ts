@@ -4289,4 +4289,58 @@ export const spainStations: Station[] = [
     lng: -4.567,
   },
 
+  {
+    name: "La Farga de Bebié",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.1301,
+    lng: 2.2039,
+  },
+
+  {
+    name: "Sant Guim de Freixenet",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6559,
+    lng: 1.4205,
+  },
+
+  {
+    name: "Blanes",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6736,
+    lng: 2.7693,
+  },
+
+  {
+    name: "La Herrera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2035,
+    lng: -3.1706,
+  },
+
+  {
+    name: "Bakiola",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.177,
+    lng: -2.9091,
+  },
+
+  {
+    name: "L'Arboç",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.2734,
+    lng: 1.6005,
+  },
+
 ];
