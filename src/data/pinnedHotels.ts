@@ -15,4 +15,7 @@ export const pinnedStationHotels: StationHotels = {
   "Vila Nova de Cerveira": [
     { name: "HI Vila Nova de Cerveira - Pousada de Juventude", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/hotel/pt/pousada-de-juventude-de-vila-nova-de-cerveira.html" },
   ],
+  "Vigo-Urzáiz": [
+    { name: "Hotel Lino", distanceKm: 0.2, priceFrom: 48, bookingUrl: "https://www.booking.com/hotel/es/lino.html" },
+  ],
 };

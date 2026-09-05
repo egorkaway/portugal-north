@@ -956,4 +956,19 @@ export const stationSummariesEn: Record<string, string> = {
   "Canas - Felgueira":
     "Canas - Felgueira is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Ermidas - Sado":
+    "Ermidas - Sado is a CP Alfa Pendular and Intercidades halt on Linha do Sul in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Funcheira":
+    "Funcheira is a CP Alfa Pendular and Intercidades halt on Linha do Sul in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Grândola":
+    "Grândola is a CP Alfa Pendular and Intercidades halt on Linha do Sul in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Luso - Buçaco":
+    "Luso - Buçaco is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Moimenta - Alcafache":
+    "Moimenta - Alcafache is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

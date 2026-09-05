@@ -22,6 +22,7 @@ import { completeOnboarding, isOnboardingComplete } from '@/lib/onboardingStorag
 import { raceTimeout, withTimeout } from '@/lib/timeout';
 import { getCurrentCoords } from '@/lib/currentLocation';
 import { waitForPurchasesBootstrap } from '@/lib/revenueCat';
+import { requestAppTrackingAtEndOfOnboarding } from '@/lib/appTracking';
 import {
   ensureStationArrivalLocationPermission,
   refreshStationArrivalGeofences,
@@ -73,6 +74,7 @@ export default function OnboardingScreen() {
     setBusy(true);
     try {
       await raceTimeout(completeOnboarding().then(() => true), 1_500, true, 'complete-onboarding');
+      await requestAppTrackingAtEndOfOnboarding();
       // Brief wait for RevenueCat bootstrap; never block leaving onboarding.
       await waitForPurchasesBootstrap(2500);
       try {

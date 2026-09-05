@@ -3929,4 +3929,49 @@ export const spainStations: Station[] = [
     lng: -3.0505,
   },
 
+  {
+    name: "Toledo",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.8623,
+    lng: -4.0112,
+  },
+
+  {
+    name: "València-Sant Isidre",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.4502,
+    lng: -0.404,
+  },
+
+  {
+    name: "Sant Pol de Mar",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6018,
+    lng: 2.6246,
+  },
+
+  {
+    name: "El Pinillo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.6099,
+    lng: -4.5154,
+  },
+
+  {
+    name: "Torrellano",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.2896,
+    lng: -0.5825,
+  },
+
 ];

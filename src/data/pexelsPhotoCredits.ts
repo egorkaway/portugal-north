@@ -1186,6 +1186,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@ehma",
     photoPageUrl: "https://www.pexels.com/photo/passenger-train-at-the-railway-station-platform-16759426/",
   },
+  "16774492": {
+    photographer: "Gene Samit",
+    photographerUrl: "https://www.pexels.com/@gene-samit-546626702",
+    photoPageUrl: "https://www.pexels.com/photo/facade-of-the-madrid-atocha-railway-station-madrid-spain-16774492/",
+  },
   "16838144": {
     photographer: "Ricardo Oliveira",
     photographerUrl: "https://www.pexels.com/@ricardo-oliveira-317251078",
@@ -1736,6 +1741,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@efrem-efre-2786187",
     photoPageUrl: "https://www.pexels.com/photo/train-station-26770818/",
   },
+  "26798476": {
+    photographer: "Jean-Philippe Canto",
+    photographerUrl: "https://www.pexels.com/@jean-philippe-canto-410167111",
+    photoPageUrl: "https://www.pexels.com/photo/railway-in-city-26798476/",
+  },
   "26977308": {
     photographer: "Uiliam Nörnberg",
     photographerUrl: "https://www.pexels.com/@uiliamnornberg",
@@ -2205,6 +2215,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Saksham Vikram",
     photographerUrl: "https://www.pexels.com/@saksham-vikram-2148641748",
     photoPageUrl: "https://www.pexels.com/photo/high-speed-train-at-a-deserted-railway-station-32467298/",
+  },
+  "32537209": {
+    photographer: "joao Guerreiro",
+    photographerUrl: "https://www.pexels.com/@gunas4life",
+    photoPageUrl: "https://www.pexels.com/photo/shadowy-urban-passage-with-park-benches-32537209/",
   },
   "32542772": {
     photographer: "Deniz ŞENGÜL",
@@ -3115,5 +3130,10 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/historic-cadiz-railway-station-exterior-39269011/",
+  },
+  "39366843": {
+    photographer: "Igor Passchier",
+    photographerUrl: "https://www.pexels.com/@igor-passchier-111147847",
+    photoPageUrl: "https://www.pexels.com/photo/historic-pinhao-train-station-in-portugal-39366843/",
   },
 };

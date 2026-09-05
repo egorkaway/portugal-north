@@ -54,6 +54,16 @@ describe("getHotelsForStation", () => {
     expect(getHotelsForStation("Esqueiro")[0]?.name).toBe("Luan Café Lanhelas");
   });
 
+  it("pins Hotel Lino on the nearest Vigo station", () => {
+    const hotels = getHotelsForStation("Vigo-Urzáiz");
+    expect(hotels[0]).toMatchObject({
+      name: "Hotel Lino",
+      distanceKm: 0.2,
+      bookingUrl: "https://www.booking.com/hotel/es/lino.html",
+    });
+    expect(getHotelsForStation("Vigo-Guixar").map((hotel) => hotel.name)).not.toContain("Hotel Lino");
+  });
+
   it("shows one Cerveira pousada under the Hostelling International name", () => {
     const names = getHotelsForStation("Vila Nova de Cerveira").map((hotel) => hotel.name);
     expect(names).toContain("HI Vila Nova de Cerveira - Pousada de Juventude");

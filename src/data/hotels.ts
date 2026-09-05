@@ -2163,6 +2163,28 @@ export const stationHotels: StationHotels = {
     { name: "Casas do Lupo", distanceKm: 2.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20do%20Lupo%2C%20Canas%20-%20Felgueira%2C%20Portugal&order=price" },
     { name: "Hotel Urgeiriça", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Urgeiri%C3%A7a%2C%20Canas%20-%20Felgueira%2C%20Portugal&order=price" },
   ],
+  "Ermidas - Sado": [
+    { name: "Hotel Rural Santa Bárbara dos Mineiros", distanceKm: 4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20Santa%20B%C3%A1rbara%20dos%20Mineiros%2C%20Ermidas%20-%20Sado%2C%20Portugal&order=price" },
+    { name: "Monte do Giestal", distanceKm: 8.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Monte%20do%20Giestal%2C%20Ermidas%20-%20Sado%2C%20Portugal&order=price" },
+  ],
+  "Funcheira": [
+    { name: "Herdade dos Montes Bastos", distanceKm: 7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Herdade%20dos%20Montes%20Bastos%2C%20Funcheira%2C%20Portugal&order=price" },
+  ],
+  "Grândola": [
+    { name: "Pensão Fim do Mundo", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pens%C3%A3o%20Fim%20do%20Mundo%2C%20Gr%C3%A2ndola%2C%20Portugal&order=price" },
+    { name: "Hotel Dom Jorge", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Dom%20Jorge%2C%20Gr%C3%A2ndola%2C%20Portugal&order=price" },
+    { name: "Elodie's Country House", distanceKm: 2.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Elodie's%20Country%20House%2C%20Gr%C3%A2ndola%2C%20Portugal&order=price" },
+  ],
+  "Luso - Buçaco": [
+    { name: "Villa Duparchy", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Villa%20Duparchy%2C%20Luso%20-%20Bu%C3%A7aco%2C%20Portugal&order=price" },
+    { name: "A Regional", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=A%20Regional%2C%20Luso%20-%20Bu%C3%A7aco%2C%20Portugal&order=price" },
+    { name: "Hotel Vila Aurora", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vila%20Aurora%2C%20Luso%20-%20Bu%C3%A7aco%2C%20Portugal&order=price" },
+  ],
+  "Moimenta - Alcafache": [
+    { name: "Hotel Senhora do Castelo", distanceKm: 6.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Senhora%20do%20Castelo%2C%20Moimenta%20-%20Alcafache%2C%20Portugal&order=price" },
+    { name: "Onix", distanceKm: 9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Onix%2C%20Moimenta%20-%20Alcafache%2C%20Portugal&order=price" },
+    { name: "Hotel Rubi", distanceKm: 9.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rubi%2C%20Moimenta%20-%20Alcafache%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -2184,6 +2206,7 @@ export const stationHotels: StationHotels = {
     { name: "Occidental Vigo", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Occidental%20Vigo%2C%20Vigo-Guixar%2C%20Spain&order=price" },
   ],
   "Vigo-Urzáiz": [
+    { name: "Hotel Lino", distanceKm: 0.2, priceFrom: 48, bookingUrl: "https://www.booking.com/hotel/es/lino.html" },
     { name: "Occidental Vigo", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Occidental%20Vigo%2C%20Vigo-Urz%C3%A1iz%2C%20Spain&order=price" },
     { name: "Hostal Plaza", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Plaza%2C%20Vigo-Urz%C3%A1iz%2C%20Spain&order=price" },
     { name: "Exe Vigo", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Vigo%2C%20Vigo-Urz%C3%A1iz%2C%20Spain&order=price" },
@@ -4306,6 +4329,31 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Isasi", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Isasi%2C%20Sodupe%2C%20Spain&order=price" },
     { name: "Santxosolo", distanceKm: 2.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santxosolo%2C%20Sodupe%2C%20Spain&order=price" },
     { name: "Erreka Güeñes", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Erreka%20G%C3%BCe%C3%B1es%2C%20Sodupe%2C%20Spain&order=price" },
+  ],
+  "Toledo": [
+    { name: "Castillo de San Servando", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Castillo%20de%20San%20Servando%2C%20Toledo%2C%20Spain&order=price" },
+    { name: "Hotel BESTPRICE Toledo", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20BESTPRICE%20Toledo%2C%20Toledo%2C%20Spain&order=price" },
+    { name: "Zentral Mayoral", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Zentral%20Mayoral%2C%20Toledo%2C%20Spain&order=price" },
+  ],
+  "València-Sant Isidre": [
+    { name: "Hotel BESTPRICE Valencia", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20BESTPRICE%20Valencia%2C%20Val%C3%A8ncia-Sant%20Isidre%2C%20Spain&order=price" },
+    { name: "Suites Rooms Valencia", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Suites%20Rooms%20Valencia%2C%20Val%C3%A8ncia-Sant%20Isidre%2C%20Spain&order=price" },
+    { name: "Hostal Bonavista", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Bonavista%2C%20Val%C3%A8ncia-Sant%20Isidre%2C%20Spain&order=price" },
+  ],
+  "Sant Pol de Mar": [
+    { name: "B&B Sant Pol", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Sant%20Pol%2C%20Sant%20Pol%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Hotel Gran Sol", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Gran%20Sol%2C%20Sant%20Pol%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Hostal Pancheta", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Pancheta%2C%20Sant%20Pol%20de%20Mar%2C%20Spain&order=price" },
+  ],
+  "El Pinillo": [
+    { name: "La luna blanca", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20luna%20blanca%2C%20El%20Pinillo%2C%20Spain&order=price" },
+    { name: "Sun Sport Hotel", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sun%20Sport%20Hotel%2C%20El%20Pinillo%2C%20Spain&order=price" },
+    { name: "Los Arcos Montemar", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Los%20Arcos%20Montemar%2C%20El%20Pinillo%2C%20Spain&order=price" },
+  ],
+  "Torrellano": [
+    { name: "Hotel Areca", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Areca%2C%20Torrellano%2C%20Spain&order=price" },
+    { name: "Doña Isabel", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Do%C3%B1a%20Isabel%2C%20Torrellano%2C%20Spain&order=price" },
+    { name: "Hostal la posada", distanceKm: 0.8, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20la%20posada%2C%20Torrellano%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

@@ -889,4 +889,19 @@ export const stationSummariesEs: Record<string, string> = {
   "Canas - Felgueira":
     "Canas - Felgueira es una parada de CP de servicios regionales en la Linha da Beira Alta en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
 
+  "Ermidas - Sado":
+    "Ermidas - Sado es una parada de CP de servicios Alfa Pendular y Intercidades en la Linha do Sul en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Funcheira":
+    "Funcheira es una parada de CP de servicios Alfa Pendular y Intercidades en la Linha do Sul en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Grândola":
+    "Grândola es una parada de CP de servicios Alfa Pendular y Intercidades en la Linha do Sul en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Luso - Buçaco":
+    "Luso - Buçaco es una parada de CP de servicios regionales en la Linha da Beira Alta en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Moimenta - Alcafache":
+    "Moimenta - Alcafache es una parada de CP de servicios regionales en la Linha da Beira Alta en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
 };

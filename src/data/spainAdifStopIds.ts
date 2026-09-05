@@ -861,6 +861,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Sodupe": ["05467"],
 
+  "Toledo": ["92102"],
+
+  "València-Sant Isidre": ["66212"],
+
+  "Sant Pol de Mar": ["79602"],
+
+  "El Pinillo": ["54510"],
+
+  "Torrellano": ["62104"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

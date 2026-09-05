@@ -45,7 +45,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>74</string>
+	<string>75</string>
 	<key>ExpoWidgetsAppGroupIdentifier</key>
 	<string>group.com.iberian.travel</string>
 	<key>ExpoWidgets_EnablePushNotifications</key>
@@ -75,6 +75,8 @@
 	<true/>
 	<key>NSSupportsLiveActivitiesFrequentUpdates</key>
 	<true/>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>VeryStays uses this identifier to measure how people find the app and to attribute in-app purchases.</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route</string>

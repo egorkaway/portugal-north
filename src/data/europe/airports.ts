@@ -178,6 +178,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -1.74803,
   },
   {
+    name: "Biarritz Pays Basque airport (BIQ)",
+    country: "fr",
+    lines: ["BIQ"],
+    types: ["Airport Destination"],
+    lat: 43.468372,
+    lng: -1.523223,
+  },
+  {
     name: "Billund Airport (BLL)",
     country: "dk",
     lines: ["BLL"],
@@ -194,6 +202,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 11.2887,
   },
   {
+    name: "Stockholm-Bromma Airport (BMA)",
+    country: "se",
+    lines: ["BMA"],
+    types: ["Airport Destination"],
+    lat: 59.354401,
+    lng: 17.9417,
+  },
+  {
     name: "Bordeaux–Mérignac Airport (BOD)",
     country: "fr",
     lines: ["BOD"],
@@ -208,6 +224,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 50.780483,
     lng: -1.839576,
+  },
+  {
+    name: "London Biggin Hill Airport (BQH)",
+    country: "gb",
+    lines: ["BQH"],
+    types: ["Airport Destination"],
+    lat: 51.33079910279999,
+    lng: 0.0324999988079,
   },
   {
     name: "Bremen Airport (BRE)",
@@ -442,6 +466,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -3.413984,
   },
   {
+    name: "Farnborough Airport (FAB)",
+    country: "gb",
+    lines: ["FAB"],
+    types: ["Airport Destination"],
+    lat: 51.275799,
+    lng: -0.776333,
+  },
+  {
     name: "Rome–Fiumicino Leonardo da Vinci International Airport (FCO)",
     country: "it",
     lines: ["FCO"],
@@ -520,6 +552,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 28.4527,
     lng: -13.8638,
+  },
+  {
+    name: "Guernsey Airport (GCI)",
+    country: "gg",
+    lines: ["GCI"],
+    types: ["Airport Destination"],
+    lat: 49.435001,
+    lng: -2.60197,
   },
   {
     name: "Gdańsk Lech Wałęsa Airport (GDN)",
@@ -746,6 +786,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 10.7192,
   },
   {
+    name: "Paris-Le Bourget International Airport (LBG)",
+    country: "fr",
+    lines: ["LBG"],
+    types: ["Airport Destination"],
+    lat: 48.962276,
+    lng: 2.436539,
+  },
+  {
     name: "Larnaca International Airport (LCA)",
     country: "cy",
     lines: ["LCA"],
@@ -768,6 +816,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 51.505299,
     lng: 0.055278,
+  },
+  {
+    name: "Leipzig/Halle Airport (LEJ)",
+    country: "de",
+    lines: ["LEJ"],
+    types: ["Airport Destination"],
+    lat: 51.420657,
+    lng: 12.232705,
   },
   {
     name: "London Gatwick Airport (LGW)",
@@ -1424,6 +1480,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 43.629101,
     lng: 1.36382,
+  },
+  {
+    name: "Toussus-le-Noble Airport (TNF)",
+    country: "fr",
+    lines: ["TNF"],
+    types: ["Airport Destination"],
+    lat: 48.7519,
+    lng: 2.10619,
   },
   {
     name: "Vincenzo Florio Airport Trapani-Birgi (TPS)",

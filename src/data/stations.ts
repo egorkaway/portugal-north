@@ -743,6 +743,46 @@ const cpStations: StationData[] = [
     lng: -7.9066,
   },
 
+  {
+    name: "Ermidas - Sado",
+    lines: ["Linha do Sul"],
+    types: ["Alfa Pendular", "Intercidades"],
+    lat: 38.0028,
+    lng: -8.4139,
+  },
+
+  {
+    name: "Funcheira",
+    lines: ["Linha do Sul"],
+    types: ["Alfa Pendular", "Intercidades"],
+    lat: 37.7272,
+    lng: -8.338,
+  },
+
+  {
+    name: "Grândola",
+    lines: ["Linha do Sul"],
+    types: ["Alfa Pendular", "Intercidades"],
+    lat: 38.1816,
+    lng: -8.5546,
+  },
+
+  {
+    name: "Luso - Buçaco",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.3903,
+    lng: -8.385,
+  },
+
+  {
+    name: "Moimenta - Alcafache",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.5745,
+    lng: -7.8096,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */
