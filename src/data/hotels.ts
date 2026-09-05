@@ -2287,6 +2287,21 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Rural Santo António", distanceKm: 9.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20Santo%20Ant%C3%B3nio%2C%20Assumar%2C%20Portugal&order=price" },
     { name: "Casa da Urra", distanceKm: 10, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Urra%2C%20Assumar%2C%20Portugal&order=price" },
   ],
+  "Bemposta": [
+    { name: "Herdade de Cadouços", distanceKm: 10.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Herdade%20de%20Cadou%C3%A7os%2C%20Bemposta%2C%20Portugal&order=price" },
+    { name: "Hotel Abrantur", distanceKm: 11.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Abrantur%2C%20Bemposta%2C%20Portugal&order=price" },
+    { name: "Quinta de Coalhos", distanceKm: 11.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20de%20Coalhos%2C%20Bemposta%2C%20Portugal&order=price" },
+  ],
+  "Chança": [
+    { name: "Herdade da Lameira Hotel Rural", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Herdade%20da%20Lameira%20Hotel%20Rural%2C%20Chan%C3%A7a%2C%20Portugal&order=price" },
+    { name: "Monte de Vila Formosa", distanceKm: 7.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Monte%20de%20Vila%20Formosa%2C%20Chan%C3%A7a%2C%20Portugal&order=price" },
+    { name: "Vila Galé Collection Alter Real", distanceKm: 12, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vila%20Gal%C3%A9%20Collection%20Alter%20Real%2C%20Chan%C3%A7a%2C%20Portugal&order=price" },
+  ],
+  "Crato": [
+    { name: "Casa do Coreto", distanceKm: 2.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Coreto%2C%20Crato%2C%20Portugal&order=price" },
+    { name: "Casa do Crato", distanceKm: 2.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Crato%2C%20Crato%2C%20Portugal&order=price" },
+    { name: "Palacete", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Palacete%2C%20Crato%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4560,6 +4575,21 @@ export const stationHotels: StationHotels = {
     { name: "Can Dama", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Dama%2C%20Bordils-Jui%C3%A0%2C%20Spain&order=price" },
     { name: "Can Tallada", distanceKm: 0.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Tallada%2C%20Bordils-Jui%C3%A0%2C%20Spain&order=price" },
     { name: "Can Carreras del Mas", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Carreras%20del%20Mas%2C%20Bordils-Jui%C3%A0%2C%20Spain&order=price" },
+  ],
+  "Plaza Mayor": [
+    { name: "Parador Málaga del Golf", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Parador%20M%C3%A1laga%20del%20Golf%2C%20Plaza%20Mayor%2C%20Spain&order=price" },
+    { name: "Hotel Complejo Los Rosales", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Complejo%20Los%20Rosales%2C%20Plaza%20Mayor%2C%20Spain&order=price" },
+    { name: "Hotel Royal Costa", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Royal%20Costa%2C%20Plaza%20Mayor%2C%20Spain&order=price" },
+  ],
+  "Ribadesella": [
+    { name: "Pensión Arbidel", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Arbidel%2C%20Ribadesella%2C%20Spain&order=price" },
+    { name: "Hotel Argüelles", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Arg%C3%BCelles%2C%20Ribadesella%2C%20Spain&order=price" },
+    { name: "Hotel Covadonga", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Covadonga%2C%20Ribadesella%2C%20Spain&order=price" },
+  ],
+  "La Cavada": [
+    { name: "Hostal Riotuerto", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Riotuerto%2C%20La%20Cavada%2C%20Spain&order=price" },
+    { name: "Pensión Dehesa", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Dehesa%2C%20La%20Cavada%2C%20Spain&order=price" },
+    { name: "Posada Carlos III", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Posada%20Carlos%20III%2C%20La%20Cavada%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

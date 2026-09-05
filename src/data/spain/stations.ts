@@ -4172,4 +4172,31 @@ export const spainStations: Station[] = [
     lng: 2.9153,
   },
 
+  {
+    name: "Plaza Mayor",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.6562,
+    lng: -4.4803,
+  },
+
+  {
+    name: "Ribadesella",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4594,
+    lng: -5.0545,
+  },
+
+  {
+    name: "La Cavada",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3506,
+    lng: -3.7071,
+  },
+
 ];

@@ -959,6 +959,30 @@ const cpStations: StationData[] = [
     lng: -7.3823,
   },
 
+  {
+    name: "Bemposta",
+    lines: ["Linha do Leste"],
+    types: ["Regional"],
+    lat: 39.3525,
+    lng: -8.1357,
+  },
+
+  {
+    name: "Chança",
+    lines: ["Linha do Leste"],
+    types: ["Regional"],
+    lat: 39.2758,
+    lng: -7.8079,
+  },
+
+  {
+    name: "Crato",
+    lines: ["Linha do Leste"],
+    types: ["Regional"],
+    lat: 39.2695,
+    lng: -7.6353,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

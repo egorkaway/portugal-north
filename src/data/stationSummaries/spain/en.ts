@@ -1447,4 +1447,13 @@ export const spainSummariesEn: Record<string, string> = {
   "Bordils-Juià":
     "Bordils-Juià is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Plaza Mayor":
+    "Plaza Mayor is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Ribadesella":
+    "Ribadesella is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "La Cavada":
+    "La Cavada is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

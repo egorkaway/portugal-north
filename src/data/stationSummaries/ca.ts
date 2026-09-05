@@ -970,4 +970,13 @@ export const stationSummariesCa: Record<string, string> = {
   "Assumar":
     "Assumar és una parada de CP de serveis regionals a la Linha do Leste a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
 
+  "Bemposta":
+    "Bemposta és una parada de CP de serveis regionals a la Linha do Leste a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Chança":
+    "Chança és una parada de CP de serveis regionals a la Linha do Leste a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Crato":
+    "Crato és una parada de CP de serveis regionals a la Linha do Leste a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
 };

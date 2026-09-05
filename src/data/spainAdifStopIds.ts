@@ -915,6 +915,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Bordils-Juià": ["79302"],
 
+  "Plaza Mayor": ["54520"],
+
+  "Ribadesella": ["05553"],
+
+  "La Cavada": ["05669"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

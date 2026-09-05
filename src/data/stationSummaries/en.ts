@@ -1037,4 +1037,13 @@ export const stationSummariesEn: Record<string, string> = {
   "Assumar":
     "Assumar is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Bemposta":
+    "Bemposta is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Chança":
+    "Chança is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Crato":
+    "Crato is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };
