@@ -993,6 +993,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "San Feliz": ["05776"],
 
+  "Valdelagrana": ["51417"],
+
+  "Abaroa-San Miguel": ["13118"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

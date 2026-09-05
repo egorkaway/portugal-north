@@ -342,6 +342,8 @@ export type PickExternalAirportOptions = {
    * When false, pick the next airport that still needs an Iberian-flights map.
    */
   flightApisAvailable?: boolean;
+  /** Redraw this IATA instead of following the usual missing/stale queue. */
+  forceIata?: string | null;
 };
 
 /**
@@ -356,6 +358,10 @@ export function pickExternalAirportForRun(
   options: PickExternalAirportOptions = {},
 ): RankedExternalAirport | null {
   if (ranked.length === 0) return null;
+  const forceIata = options.forceIata?.trim().toUpperCase();
+  if (forceIata) {
+    return ranked.find((row) => row.iata === forceIata) ?? null;
+  }
   const { completeIatas, inboundIatas, staleAllFlightsIatas } = asCoverage(sampledOrCoverage);
   const flightApisAvailable = options.flightApisAvailable !== false;
 

@@ -1496,6 +1496,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
     photoPageUrl: "https://www.pexels.com/photo/maglova-kremer-in-turkey-19272882/",
   },
+  "19286488": {
+    photographer: "Gonzalo Carlos Novillo Lapeyra",
+    photographerUrl: "https://www.pexels.com/@novillolapeyra",
+    photoPageUrl: "https://www.pexels.com/photo/passengers-sitting-in-a-train-in-spain-19286488/",
+  },
   "19341889": {
     photographer: "Marcelo Brigato",
     photographerUrl: "https://www.pexels.com/@marcelo-brigato-1868038",

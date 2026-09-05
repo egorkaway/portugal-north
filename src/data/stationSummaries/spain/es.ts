@@ -1564,4 +1564,10 @@ export const spainSummariesEs: Record<string, string> = {
   "San Feliz":
     "San Feliz es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Valdelagrana":
+    "Valdelagrana es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Abaroa-San Miguel":
+    "Abaroa-San Miguel es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

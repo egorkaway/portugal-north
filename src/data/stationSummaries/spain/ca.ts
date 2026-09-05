@@ -1564,4 +1564,10 @@ export const spainSummariesCa: Record<string, string> = {
   "San Feliz":
     "San Feliz és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Valdelagrana":
+    "Valdelagrana és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Abaroa-San Miguel":
+    "Abaroa-San Miguel és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

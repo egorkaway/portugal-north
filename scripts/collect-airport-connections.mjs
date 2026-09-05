@@ -24,6 +24,7 @@
  *   node --import tsx scripts/collect-airport-connections.mjs --period-status
  *   node --import tsx scripts/collect-airport-connections.mjs --as-of=2026-08-11
  *   node --import tsx scripts/collect-airport-connections.mjs --external-only
+ *   node --import tsx scripts/collect-airport-connections.mjs --external-only --external-iata=TFN
  *   node --import tsx scripts/collect-airport-connections.mjs --external-only --iberian-inbound --external-count=12
  *   node --import tsx scripts/collect-airport-connections.mjs --backfill-europe-destinations
  *
@@ -122,6 +123,12 @@ const delayMs = delayArg
 const mapsOnly = args.includes("--maps-only");
 const externalOnly = args.includes("--external-only");
 const iberianInboundOnly = args.includes("--iberian-inbound");
+const externalIataArg = args.find((arg) => arg.startsWith("--external-iata"));
+const externalIataFilter = externalIataArg
+  ? (externalIataArg.includes("=")
+      ? externalIataArg.split("=")[1]
+      : args[args.indexOf("--external-iata") + 1])
+  : null;
 const periodStatus = args.includes("--period-status");
 const backfillEuropeDestinations = args.includes("--backfill-europe-destinations");
 const asOfArg = args.find((arg) => arg.startsWith("--as-of"));
@@ -270,6 +277,7 @@ async function runExternalAirportSpotlight({
   siteUrl,
   basemapMode,
   count = 1,
+  forceIata = null,
 }) {
   const skip = forceAirport;
   const skipReason = forceAirport ? "airport-filter" : null;
@@ -279,7 +287,7 @@ async function runExternalAirportSpotlight({
     return store;
   }
 
-  const limit = externalSpotlightLimit(count);
+  const limit = forceIata ? 1 : externalSpotlightLimit(count);
   for (let i = 0; i < limit; i += 1) {
     try {
       const result = await sampleExternalAirportConnectionMap({
@@ -299,6 +307,7 @@ async function runExternalAirportSpotlight({
         skip: false,
         skipReason: null,
         flightApisAvailable,
+        forceIata,
       });
       store = result.store;
       if (result.skipped) break;
@@ -319,6 +328,7 @@ async function runExternalSpotlightFromExistingManifest({
   basemapMode,
   quotaExhausted = true,
   count = 1,
+  forceIata = null,
 }) {
   const coordsPath = join(rootDir, "data/airport-iata-coordinates.json");
   await ensureAirportCoordinateCache(coordsPath);
@@ -339,6 +349,7 @@ async function runExternalSpotlightFromExistingManifest({
     siteUrl,
     basemapMode,
     count,
+    forceIata,
   });
 }
 
@@ -352,6 +363,7 @@ export async function collectAirportConnections(options = {}) {
     externalOnly: sampleExternalOnly = externalOnly,
     iberianInbound: useIberianInbound = iberianInboundOnly,
     externalMapCount = externalCount,
+    forceExternalIata = externalIataFilter,
     basemapMode: basemapMode = defaultBasemapMode,
     asOf = asOfDate,
     periodStatusOnly = periodStatus,
@@ -408,6 +420,7 @@ export async function collectAirportConnections(options = {}) {
       basemapMode,
       quotaExhausted,
       count: externalMapCount,
+      forceIata: forceExternalIata,
     });
     await fillExternalAirportPageAssetsIfNeeded(rootDir, isDryRun);
     return {
@@ -474,6 +487,7 @@ export async function collectAirportConnections(options = {}) {
       basemapMode,
       quotaExhausted: true,
       count: externalMapCount,
+      forceIata: forceExternalIata,
     });
     await fillExternalAirportPageAssetsIfNeeded(rootDir, isDryRun);
     return {
@@ -733,6 +747,7 @@ export async function collectAirportConnections(options = {}) {
         siteUrl,
         basemapMode,
         count: externalMapCount,
+        forceIata: forceExternalIata,
       });
     }
   } else if (isDryRun && !forceAirport) {
@@ -748,6 +763,7 @@ export async function collectAirportConnections(options = {}) {
       siteUrl,
       basemapMode,
       count: externalMapCount,
+      forceIata: forceExternalIata,
     });
   }
 

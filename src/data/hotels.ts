@@ -4789,6 +4789,16 @@ export const stationHotels: StationHotels = {
     { name: "Checkin Basic León Norte", distanceKm: 6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Checkin%20Basic%20Le%C3%B3n%20Norte%2C%20San%20Feliz%2C%20Spain&order=price" },
     { name: "Hotel Santiago", distanceKm: 6.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Santiago%2C%20San%20Feliz%2C%20Spain&order=price" },
   ],
+  "Valdelagrana": [
+    { name: "Hotel Playa Valdelagrana", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Playa%20Valdelagrana%2C%20Valdelagrana%2C%20Spain&order=price" },
+    { name: "Campomar", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Campomar%2C%20Valdelagrana%2C%20Spain&order=price" },
+    { name: "Coto de la Isleta", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Coto%20de%20la%20Isleta%2C%20Valdelagrana%2C%20Spain&order=price" },
+  ],
+  "Abaroa-San Miguel": [
+    { name: "Hotel Armiñe", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Armi%C3%B1e%2C%20Abaroa-San%20Miguel%2C%20Spain&order=price" },
+    { name: "Arati Agroturismo", distanceKm: 2.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arati%20Agroturismo%2C%20Abaroa-San%20Miguel%2C%20Spain&order=price" },
+    { name: "Ibis budget bilbao", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20budget%20bilbao%2C%20Abaroa-San%20Miguel%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

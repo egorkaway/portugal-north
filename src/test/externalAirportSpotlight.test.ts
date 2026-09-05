@@ -345,6 +345,23 @@ describe("pickExternalAirportForRun", () => {
       })?.iata,
     ).toBe("FRA");
   });
+
+  it("redraws a specific IATA when forceIata is set", () => {
+    expect(
+      pickExternalAirportForRun(
+        ranked,
+        {
+          completeIatas: new Set(["LHR"]),
+          inboundIatas: new Set(["FRA", "LHR"]),
+          staleAllFlightsIatas: new Set(["LHR"]),
+        },
+        { forceIata: "LHR" },
+      )?.iata,
+    ).toBe("LHR");
+    expect(
+      pickExternalAirportForRun(ranked, new Set(), { forceIata: "TFN" }),
+    ).toBeNull();
+  });
 });
 
 describe("externalMapFilename", () => {

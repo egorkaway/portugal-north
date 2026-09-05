@@ -4523,4 +4523,22 @@ export const spainStations: Station[] = [
     lng: -5.5379,
   },
 
+  {
+    name: "Valdelagrana",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.5847,
+    lng: -6.2163,
+  },
+
+  {
+    name: "Abaroa-San Miguel",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2256,
+    lng: -2.8871,
+  },
+
 ];

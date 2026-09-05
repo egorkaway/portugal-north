@@ -347,6 +347,31 @@ function iberianInboundForChosen(chosen, manifest, coordinates) {
   });
 }
 
+function unionAllFlightsWithIberianInbound(outbound, inbound) {
+  if (!inbound?.connections?.length) return outbound;
+  const byIata = new Map();
+  for (const connection of outbound.connections ?? []) {
+    const iata = connection.iata?.trim().toUpperCase();
+    if (iata) byIata.set(iata, connection);
+  }
+  let added = 0;
+  for (const connection of inbound.connections) {
+    const iata = connection.iata?.trim().toUpperCase();
+    if (!iata || byIata.has(iata)) continue;
+    byIata.set(iata, connection);
+    added += 1;
+  }
+  if (!added) return outbound;
+  const connections = [...byIata.values()].sort(
+    (a, b) => b.flightCount - a.flightCount || a.name.localeCompare(b.name),
+  );
+  return {
+    ...outbound,
+    connections,
+    topDestinations: connections.slice(0, 10),
+  };
+}
+
 /**
  * One external map per collect step. Iberian and all-flights maps are kept separately.
  * APIs down: Iberian map for the next airport that is missing one.
@@ -368,6 +393,7 @@ export async function sampleExternalAirportConnectionMap(options) {
     skip = false,
     skipReason = null,
     flightApisAvailable = true,
+    forceIata = null,
   } = options;
 
   const store = loadExternalAirportMapsStore(rootDir);
@@ -394,6 +420,7 @@ export async function sampleExternalAirportConnectionMap(options) {
 
   const chosen = chooseExternalAirportForRun(rootDir, manifest, coordinates, store, {
     flightApisAvailable,
+    forceIata,
   });
   if (!chosen.pick || !chosen.coords) {
     return {
@@ -447,9 +474,17 @@ export async function sampleExternalAirportConnectionMap(options) {
       ),
     ];
     await resolveMissingCoordinates(destIatas.filter((iata) => !coordinates[iata]));
-    const entry = buildAirportConnections(synthetic, sample.flights, coordinates);
-    if (!entry?.connections?.length) {
+    const outbound = buildAirportConnections(synthetic, sample.flights, coordinates);
+    if (!outbound?.connections?.length) {
       throw new Error("outbound sample returned no mappable destinations");
+    }
+    const inbound = iberianInboundForChosen(chosen, manifest, coordinates);
+    const entry = unionAllFlightsWithIberianInbound(outbound, inbound);
+    const added = entry.connections.length - outbound.connections.length;
+    if (added > 0) {
+      console.log(
+        `External spotlight ${label}: added ${added} Iberian destination(s) the outbound sample missed`,
+      );
     }
     return persist(chosen, entry, sample.provider, "all");
   } catch (error) {
@@ -469,6 +504,15 @@ export async function sampleExternalAirportConnectionMap(options) {
     console.warn(
       `External spotlight ${label}: all-flights sample failed (${message}); keeping existing maps.`,
     );
+
+    if (forceIata) {
+      return {
+        store,
+        skipped: true,
+        skipReason: "keep-existing",
+        pick,
+      };
+    }
 
     const fallback = chooseExternalAirportForRun(rootDir, manifest, coordinates, store, {
       flightApisAvailable: false,

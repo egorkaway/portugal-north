@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-05T20:44:49.162Z",
-  "runCount": 756,
+  "generatedAt": "2026-09-05T21:11:32.072Z",
+  "runCount": 758,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -44,36 +44,6 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "10543",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 0,
-      "observations": 18,
-      "stationsSampled": 6,
-      "majorStations": [
-        "Castelo Branco",
-        "Guarda",
-        "Covilhã",
-        "Fundão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "10544",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 0,
-      "observations": 16,
-      "stationsSampled": 6,
-      "majorStations": [
-        "Abrantes",
-        "Castelo Branco",
-        "Covilhã",
-        "Fundão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
       "trainNumber": "36407",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
@@ -84,6 +54,36 @@
         "Bombarral",
         "Mafra",
         "Dois Portos"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36410",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 16,
+      "stationsSampled": 15,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Bombarral",
+        "Mafra"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "10540",
+      "serviceType": "Intercidades",
+      "avgDelayMinutes": 0,
+      "observations": 15,
+      "stationsSampled": 6,
+      "majorStations": [
+        "Abrantes",
+        "Castelo Branco",
+        "Covilhã",
+        "Fundão"
       ],
       "selectionMode": "rotating",
       "poolSize": 12
