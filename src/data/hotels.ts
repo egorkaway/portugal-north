@@ -4694,6 +4694,26 @@ export const stationHotels: StationHotels = {
     { name: "El Bosc", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Bosc%2C%20L'Arbo%C3%A7%2C%20Spain&order=price" },
     { name: "Archs Hotel Rural", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Archs%20Hotel%20Rural%2C%20L'Arbo%C3%A7%2C%20Spain&order=price" },
   ],
+  "La Palma del Condado": [
+    { name: "Tierra de Vinos", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tierra%20de%20Vinos%2C%20La%20Palma%20del%20Condado%2C%20Spain&order=price" },
+    { name: "Grupo León", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Grupo%20Le%C3%B3n%2C%20La%20Palma%20del%20Condado%2C%20Spain&order=price" },
+    { name: "Alojamiento Rural Mirador Del Sol", distanceKm: 8.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamiento%20Rural%20Mirador%20Del%20Sol%2C%20La%20Palma%20del%20Condado%2C%20Spain&order=price" },
+  ],
+  "Santa Susanna": [
+    { name: "Alegria El Mar", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alegria%20El%20Mar%2C%20Santa%20Susanna%2C%20Spain&order=price" },
+    { name: "Caprici Verd", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caprici%20Verd%2C%20Santa%20Susanna%2C%20Spain&order=price" },
+    { name: "Caprici Beach Hotel & Spa", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caprici%20Beach%20Hotel%20%26%20Spa%2C%20Santa%20Susanna%2C%20Spain&order=price" },
+  ],
+  "Haro": [
+    { name: "Eurostars Los Agustinos", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostars%20Los%20Agustinos%2C%20Haro%2C%20Spain&order=price" },
+    { name: "Hotel Arrope", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Arrope%2C%20Haro%2C%20Spain&order=price" },
+    { name: "Los Agustinos", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Los%20Agustinos%2C%20Haro%2C%20Spain&order=price" },
+  ],
+  "Barcelona Torre Baró -Vallbona": [
+    { name: "Toni", distanceKm: 1.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Toni%2C%20Barcelona%20Torre%20Bar%C3%B3%20-Vallbona%2C%20Spain&order=price" },
+    { name: "Abarco Apartments", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Abarco%20Apartments%2C%20Barcelona%20Torre%20Bar%C3%B3%20-Vallbona%2C%20Spain&order=price" },
+    { name: "ibis Barcelona Santa Coloma", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20Barcelona%20Santa%20Coloma%2C%20Barcelona%20Torre%20Bar%C3%B3%20-Vallbona%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

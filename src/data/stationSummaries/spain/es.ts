@@ -1504,4 +1504,16 @@ export const spainSummariesEs: Record<string, string> = {
   "L'Arboç":
     "L'Arboç es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "La Palma del Condado":
+    "La Palma del Condado es una estación de Renfe de larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Santa Susanna":
+    "Santa Susanna es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Haro":
+    "Haro es una estación de Renfe de larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Barcelona Torre Baró -Vallbona":
+    "Barcelona Torre Baró -Vallbona es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

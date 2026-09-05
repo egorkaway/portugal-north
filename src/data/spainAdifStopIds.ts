@@ -953,6 +953,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "L'Arboç": ["72202"],
 
+  "La Palma del Condado": ["43011"],
+
+  "Santa Susanna": ["79608"],
+
+  "Haro": ["81002"],
+
+  "Barcelona Torre Baró -Vallbona": ["78801"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

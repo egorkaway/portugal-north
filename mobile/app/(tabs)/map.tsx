@@ -230,9 +230,9 @@ export default function MapScreen() {
           >
             <SymbolView
               name={{
-                ios: hideVisited ? 'mappin.slash' : 'mappin',
-                android: hideVisited ? 'location_off' : 'place',
-                web: hideVisited ? 'location_off' : 'place',
+                ios: hideVisited ? 'eye.slash' : 'eye',
+                android: hideVisited ? 'visibility_off' : 'visibility',
+                web: hideVisited ? 'visibility_off' : 'visibility',
               }}
               tintColor={hideVisited ? '#fff' : theme.primary}
               size={22}
@@ -514,7 +514,7 @@ const styles = StyleSheet.create({
     borderColor: '#fff',
   },
   visitedRing: {
-    position: 'absolute',
+    ...StyleSheet.absoluteFillObject,
     borderWidth: 2,
     borderColor: VISITED_RING_COLOR,
     backgroundColor: 'transparent',
@@ -522,6 +522,10 @@ const styles = StyleSheet.create({
   markerHitArea: {
     width: MARKER_HIT_SIZE,
     height: MARKER_HIT_SIZE,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  markerStack: {
     alignItems: 'center',
     justifyContent: 'center',
   },

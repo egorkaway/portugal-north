@@ -4343,4 +4343,40 @@ export const spainStations: Station[] = [
     lng: 1.6005,
   },
 
+  {
+    name: "La Palma del Condado",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.3907,
+    lng: -6.5544,
+  },
+
+  {
+    name: "Santa Susanna",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6301,
+    lng: 2.716,
+  },
+
+  {
+    name: "Haro",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.5836,
+    lng: -2.8494,
+  },
+
+  {
+    name: "Barcelona Torre Baró -Vallbona",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.461,
+    lng: 2.181,
+  },
+
 ];

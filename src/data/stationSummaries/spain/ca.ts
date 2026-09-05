@@ -1504,4 +1504,16 @@ export const spainSummariesCa: Record<string, string> = {
   "L'Arboç":
     "L'Arboç és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "La Palma del Condado":
+    "La Palma del Condado és una estació de Renfe de llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Santa Susanna":
+    "Santa Susanna és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Haro":
+    "Haro és una estació de Renfe de llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Barcelona Torre Baró -Vallbona":
+    "Barcelona Torre Baró -Vallbona és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

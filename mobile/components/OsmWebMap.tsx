@@ -104,6 +104,7 @@ function buildHtml(options: {
     function addMarkers() {
       layer.clearLayers();
       for (const key of Object.keys(halos)) delete halos[key];
+      for (const key of Object.keys(byId)) delete byId[key];
       for (const item of markersData) {
         const [id, lat, lng, color, size] = item;
         const radius = Math.max(4, Number(size) || 7);

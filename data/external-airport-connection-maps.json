@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T14:17:42.374Z",
+  "updatedAt": "2026-09-05T14:43:30.393Z",
   "airports": [
     {
       "iata": "PMI",
@@ -1060,6 +1060,58 @@
       "iberianDestinationCount": 7,
       "iberianSampledFlights": 17,
       "iberianSampledAt": "2026-09-05T14:17:42.374Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "YYZ",
+      "stationName": "Toronto Pearson International Airport (YYZ)",
+      "slug": "toronto-pearson-international-airport-yyz",
+      "country": "CA",
+      "iberianFlightCount": 17,
+      "iberianMapImage": "/maps/airports/external/toronto-pearson-international-airport-yyz-iberian-connections.png",
+      "iberianDestinationCount": 5,
+      "iberianSampledFlights": 17,
+      "iberianSampledAt": "2026-09-05T14:20:08.623Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "BOS",
+      "stationName": "Boston Logan International Airport (BOS)",
+      "slug": "boston-logan-international-airport-bos",
+      "country": "US",
+      "iberianFlightCount": 17,
+      "iberianMapImage": "/maps/airports/external/boston-logan-international-airport-bos-iberian-connections.png",
+      "iberianDestinationCount": 4,
+      "iberianSampledFlights": 17,
+      "iberianSampledAt": "2026-09-05T14:27:09.567Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "OTP",
+      "stationName": "Bucharest Henri Coandă International Airport (OTP)",
+      "slug": "bucharest-henri-coanda-international-airport-otp",
+      "country": "RO",
+      "iberianFlightCount": 16,
+      "iberianMapImage": "/maps/airports/external/bucharest-henri-coanda-international-airport-otp-iberian-connections.png",
+      "iberianDestinationCount": 13,
+      "iberianSampledFlights": 16,
+      "iberianSampledAt": "2026-09-05T14:31:23.258Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "ORK",
+      "stationName": "Cork International Airport (ORK)",
+      "slug": "cork-international-airport-ork",
+      "country": "IE",
+      "iberianFlightCount": 16,
+      "iberianMapImage": "/maps/airports/external/cork-international-airport-ork-iberian-connections.png",
+      "iberianDestinationCount": 10,
+      "iberianSampledFlights": 16,
+      "iberianSampledAt": "2026-09-05T14:43:30.393Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }

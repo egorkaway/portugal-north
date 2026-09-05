@@ -1504,4 +1504,16 @@ export const spainSummariesPt: Record<string, string> = {
   "L'Arboç":
     "L'Arboç é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "La Palma del Condado":
+    "La Palma del Condado é uma estação Renfe de longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Santa Susanna":
+    "Santa Susanna é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Haro":
+    "Haro é uma estação Renfe de longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Barcelona Torre Baró -Vallbona":
+    "Barcelona Torre Baró -Vallbona é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

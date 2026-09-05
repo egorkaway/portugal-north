@@ -436,6 +436,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@toni",
     photoPageUrl: "https://www.pexels.com/photo/old-narrow-gauge-railway-cars-on-an-abandoned-tracks-5765111/",
   },
+  "5810858": {
+    photographer: "Raphael Brasileiro",
+    photographerUrl: "https://www.pexels.com/@phael",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-train-station-5810858/",
+  },
   "5830084": {
     photographer: "Solmaz",
     photographerUrl: "https://www.pexels.com/@solmaazzzz",
@@ -855,6 +860,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Douglas  Santos",
     photographerUrl: "https://www.pexels.com/@douglas-santos-30354854",
     photoPageUrl: "https://www.pexels.com/photo/barcelos-bridge-in-ponte-de-barcelos-portugal-12083360/",
+  },
+  "12178044": {
+    photographer: "Markus Winkler",
+    photographerUrl: "https://www.pexels.com/@markus-winkler-1430818",
+    photoPageUrl: "https://www.pexels.com/photo/empty-platform-of-roma-trastevere-railway-station-12178044/",
   },
   "12188483": {
     photographer: "Markus Winkler",
