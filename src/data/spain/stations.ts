@@ -4451,4 +4451,22 @@ export const spainStations: Station[] = [
     lng: -0.1798,
   },
 
+  {
+    name: "Hostalric",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7478,
+    lng: 2.6317,
+  },
+
+  {
+    name: "Peñaflor de Grado",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4029,
+    lng: -6.0454,
+  },
+
 ];

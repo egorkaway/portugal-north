@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { formatCountryName } from "../../server/lib/countryName.ts";
 import { isPlaceholderHotelName } from "./stationHotelFetch.mjs";
@@ -157,20 +157,85 @@ export async function fillExpandedStationAssets(picked, ctx) {
   return { missingImages };
 }
 
-/** Photos and hotels for destination airports that have compact station pages. */
+/** Photos, hotels, and surrounding-area maps for destination airports that have compact station pages. */
 export async function fillExternalAirportPageAssets(rootDir) {
   const { loadEnvFile } = await import("./stationImageFetch.mjs");
   loadEnvFile(join(rootDir, ".env"));
+  const picked = await loadExternalAirportPageStations(rootDir);
+  if (!picked.length) return { missingImages: [], missingAreaMaps: [] };
+  const ctx = await createExpandAssetContext(rootDir);
+  console.log(`Filling images/hotels for ${picked.length} external airport page(s)…`);
+  const photos = await fillExpandedStationAssets(picked, ctx);
+  let missingAreaMaps = [];
+  try {
+    const maps = await fillExternalAirportPageAreaMaps(rootDir, picked);
+    missingAreaMaps = maps?.missing ?? [];
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.log(`External airport page area maps failed: ${message}`);
+    missingAreaMaps = picked.map((station) => station.name);
+  }
+  return {
+    missingImages: photos?.missingImages ?? [],
+    missingAreaMaps,
+  };
+}
+
+async function loadExternalAirportPageStations(rootDir) {
   const { EXTERNAL_AIRPORT_PAGE_IATAS } = await import("../../src/data/externalAirportPageIatas.ts");
   const { europeDestinationAirports } = await import("../../src/data/europe/airports.ts");
   const pageIatas = new Set(
     EXTERNAL_AIRPORT_PAGE_IATAS.map((iata) => String(iata).trim().toUpperCase()),
   );
-  const picked = europeDestinationAirports.filter((station) =>
+  return europeDestinationAirports.filter((station) =>
     pageIatas.has(String(station.lines[0] ?? "").trim().toUpperCase()),
   );
-  if (!picked.length) return { missingImages: [] };
-  const ctx = await createExpandAssetContext(rootDir);
-  console.log(`Filling images/hotels for ${picked.length} external airport page(s)…`);
-  return fillExpandedStationAssets(picked, ctx);
+}
+
+/** Square surrounding-area PNGs under public/maps/stations/ for compact airport pages. */
+export async function fillExternalAirportPageAreaMaps(rootDir, stations) {
+  const picked = (stations ?? (await loadExternalAirportPageStations(rootDir))).filter(
+    (station) => Number.isFinite(station.lat) && Number.isFinite(station.lng),
+  );
+  if (!picked.length) return { written: 0, missing: [] };
+
+  const { renderStationMapCard, stationToSlug } = await import("./stationMapCard.mjs");
+  const { writeStationMapAvailability } = await import("../write-station-map-availability.mjs");
+  const outDir = join(rootDir, "public/maps/stations");
+  mkdirSync(outDir, { recursive: true });
+  const siteUrl = (process.env.VITE_SITE_URL ?? "https://www.verystays.com").replace(/\/$/, "");
+  const missing = [];
+  let written = 0;
+  const CONCURRENCY = 2;
+
+  console.log(`Filling area maps for ${picked.length} external airport page(s)…`);
+  for (let i = 0; i < picked.length; i += CONCURRENCY) {
+    const chunk = picked.slice(i, i + CONCURRENCY);
+    const results = await Promise.allSettled(
+      chunk.map(async (station) => {
+        const slug = stationToSlug(station.name);
+        const outPath = join(outDir, `${slug}.png`);
+        if (existsSync(outPath)) return { station, skipped: true };
+        const png = await renderStationMapCard({ station, siteUrl, basemapMode: "random" });
+        writeFileSync(outPath, png.buffer);
+        console.log(`  area map ${station.name}: ${slug}.png (${png.basemapId})`);
+        return { station, skipped: false };
+      }),
+    );
+    for (let j = 0; j < results.length; j++) {
+      const result = results[j];
+      if (result.status === "fulfilled") {
+        if (!result.value.skipped) written += 1;
+      } else {
+        const station = chunk[j];
+        missing.push(station.name);
+        const message =
+          result.reason instanceof Error ? result.reason.message : String(result.reason);
+        console.log(`  area map ${station.name}: ERROR — ${message}`);
+      }
+    }
+  }
+
+  if (written > 0) writeStationMapAvailability(rootDir);
+  return { written, missing };
 }

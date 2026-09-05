@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T18:12:12.039Z",
+  "updatedAt": "2026-09-05T18:31:14.076Z",
   "airports": [
     {
       "iata": "PMI",
@@ -1250,6 +1250,45 @@
       "iberianDestinationCount": 10,
       "iberianSampledFlights": 14,
       "iberianSampledAt": "2026-09-05T18:12:12.039Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "HHN",
+      "stationName": "Frankfurt-Hahn Airport (HHN)",
+      "slug": "frankfurt-hahn-airport-hhn",
+      "country": "DE",
+      "iberianFlightCount": 14,
+      "iberianMapImage": "/maps/airports/external/hhn-frankfurt-hahn-iberia.png",
+      "iberianDestinationCount": 7,
+      "iberianSampledFlights": 14,
+      "iberianSampledAt": "2026-09-05T18:23:41.334Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "NUE",
+      "stationName": "Nuremberg Airport (NUE)",
+      "slug": "nuremberg-airport-nue",
+      "country": "DE",
+      "iberianFlightCount": 14,
+      "iberianMapImage": "/maps/airports/external/nue-nuremberg-iberia.png",
+      "iberianDestinationCount": 7,
+      "iberianSampledFlights": 14,
+      "iberianSampledAt": "2026-09-05T18:25:10.567Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "TLV",
+      "stationName": "Ben Gurion International Airport (TLV)",
+      "slug": "ben-gurion-international-airport-tlv",
+      "country": "IL",
+      "iberianFlightCount": 14,
+      "iberianMapImage": "/maps/airports/external/tlv-ben-gurion-iberia.png",
+      "iberianDestinationCount": 6,
+      "iberianSampledFlights": 14,
+      "iberianSampledAt": "2026-09-05T18:31:14.076Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-05T18:11:00.245Z",
-  "runCount": 748,
+  "generatedAt": "2026-09-05T18:30:29.134Z",
+  "runCount": 751,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -18,7 +18,7 @@
     {
       "trainNumber": "876",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 23.4,
+      "avgDelayMinutes": 23.6,
       "observations": 15,
       "stationsSampled": 18,
       "majorStations": [
@@ -44,46 +44,46 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "10540",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 0,
-      "observations": 15,
-      "stationsSampled": 6,
-      "majorStations": [
-        "Abrantes",
-        "Castelo Branco",
-        "Covilhã",
-        "Fundão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "10541",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 0,
-      "observations": 15,
-      "stationsSampled": 6,
-      "majorStations": [
-        "Castelo Branco",
-        "Guarda",
-        "Covilhã",
-        "Fundão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "36406",
+      "trainNumber": "36415",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
       "observations": 15,
       "stationsSampled": 17,
       "majorStations": [
-        "Mira Sintra-Meleças",
         "Pero Negro",
         "Bombarral",
-        "Mafra"
+        "Mafra",
+        "Feliteira"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36417",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 15,
+      "stationsSampled": 17,
+      "majorStations": [
+        "Pero Negro",
+        "Bombarral",
+        "Mafra",
+        "Feliteira"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "55621",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 15,
+      "stationsSampled": 6,
+      "majorStations": [
+        "Fratel",
+        "Vila Velha de Ródão",
+        "Barca da Amieira – Envendos",
+        "Belver"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

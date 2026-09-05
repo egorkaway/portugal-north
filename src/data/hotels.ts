@@ -4754,6 +4754,16 @@ export const stationHotels: StationHotels = {
     { name: "Borgia", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Borgia%2C%20Gandia%2C%20Spain&order=price" },
     { name: "Pension Alberto", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pension%20Alberto%2C%20Gandia%2C%20Spain&order=price" },
   ],
+  "Hostalric": [
+    { name: "Sant Llop", distanceKm: 7.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sant%20Llop%2C%20Hostalric%2C%20Spain&order=price" },
+    { name: "Masia la Pineda", distanceKm: 7.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Masia%20la%20Pineda%2C%20Hostalric%2C%20Spain&order=price" },
+    { name: "Can Pica", distanceKm: 8.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Pica%2C%20Hostalric%2C%20Spain&order=price" },
+  ],
+  "Peñaflor de Grado": [
+    { name: "El Lacayo de Sistiello", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Lacayo%20de%20Sistiello%2C%20Pe%C3%B1aflor%20de%20Grado%2C%20Spain&order=price" },
+    { name: "Albergue municipal de peregrinos Villa de Grado", distanceKm: 2.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20municipal%20de%20peregrinos%20Villa%20de%20Grado%2C%20Pe%C3%B1aflor%20de%20Grado%2C%20Spain&order=price" },
+    { name: "Albergue La Quintana", distanceKm: 2.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20La%20Quintana%2C%20Pe%C3%B1aflor%20de%20Grado%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

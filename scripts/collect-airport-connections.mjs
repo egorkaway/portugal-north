@@ -159,9 +159,12 @@ function sleep(ms) {
 async function fillExternalAirportPageAssetsIfNeeded(rootDir, isDryRun) {
   if (isDryRun) return;
   const { fillExternalAirportPageAssets } = await import("./lib/expandStationAssets.mjs");
-  const { missingImages } = await fillExternalAirportPageAssets(rootDir);
+  const { missingImages = [], missingAreaMaps = [] } = await fillExternalAirportPageAssets(rootDir);
   if (missingImages.length) {
     console.log(`External airport page images still missing: ${missingImages.join(", ")}`);
+  }
+  if (missingAreaMaps.length) {
+    console.log(`External airport page area maps still missing: ${missingAreaMaps.join(", ")}`);
   }
 }
 

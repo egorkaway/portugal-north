@@ -977,6 +977,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Gandia": ["69110"],
 
+  "Hostalric": ["79107"],
+
+  "Peñaflor de Grado": ["05316"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

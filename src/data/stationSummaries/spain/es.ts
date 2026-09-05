@@ -1540,4 +1540,10 @@ export const spainSummariesEs: Record<string, string> = {
   "Gandia":
     "Gandia es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Hostalric":
+    "Hostalric es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Peñaflor de Grado":
+    "Peñaflor de Grado es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };
