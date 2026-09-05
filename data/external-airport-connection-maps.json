@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T15:35:56.327Z",
+  "updatedAt": "2026-09-05T16:54:39.466Z",
   "airports": [
     {
       "iata": "PMI",
@@ -272,7 +272,15 @@
       "iberianSampledFlights": 47,
       "iberianSampledAt": "2026-09-02T13:30:05.656Z",
       "iberianPeriodId": "2026-08-11",
-      "iberianBasemapId": "osm"
+      "iberianBasemapId": "osm",
+      "mapImage": "/maps/airports/external/gva-geneva.png",
+      "destinationCount": 37,
+      "allFlightsIberianDestinationCount": 5,
+      "sampledFlights": 100,
+      "sampledAt": "2026-09-05T16:49:05.218Z",
+      "periodId": "2026-08-11",
+      "provider": "aviationstack",
+      "basemapId": "osm"
     },
     {
       "iata": "MXP",
@@ -1164,6 +1172,45 @@
       "iberianDestinationCount": 3,
       "iberianSampledFlights": 16,
       "iberianSampledAt": "2026-09-05T15:35:56.327Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "FKB",
+      "stationName": "Karlsruhe Baden-Baden Airport (FKB)",
+      "slug": "karlsruhe-baden-baden-airport-fkb",
+      "country": "DE",
+      "iberianFlightCount": 15,
+      "iberianMapImage": "/maps/airports/external/fkb-karlsruhe-baden-baden-iberia.png",
+      "iberianDestinationCount": 7,
+      "iberianSampledFlights": 15,
+      "iberianSampledAt": "2026-09-05T16:49:29.046Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "NCL",
+      "stationName": "Newcastle International Airport (NCL)",
+      "slug": "newcastle-international-airport-ncl",
+      "country": "GB",
+      "iberianFlightCount": 15,
+      "iberianMapImage": "/maps/airports/external/ncl-newcastle-iberia.png",
+      "iberianDestinationCount": 7,
+      "iberianSampledFlights": 15,
+      "iberianSampledAt": "2026-09-05T16:53:14.627Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "TNG",
+      "stationName": "Tangier Ibn Battuta Airport (TNG)",
+      "slug": "tangier-ibn-battuta-airport-tng",
+      "country": "MA",
+      "iberianFlightCount": 15,
+      "iberianMapImage": "/maps/airports/external/tng-tangier-ibn-battuta-iberia.png",
+      "iberianDestinationCount": 7,
+      "iberianSampledFlights": 15,
+      "iberianSampledAt": "2026-09-05T16:54:39.466Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }

@@ -1525,4 +1525,10 @@ export const spainSummariesPt: Record<string, string> = {
   "Ulldecona-Alcanar-La Sénia":
     "Ulldecona-Alcanar-La Sénia é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "Cerdanyola del Vallès":
+    "Cerdanyola del Vallès é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Basurto Hospital":
+    "Basurto Hospital é uma estação Renfe de cercanías e longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

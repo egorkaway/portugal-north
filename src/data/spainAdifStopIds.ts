@@ -967,6 +967,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Ulldecona-Alcanar-La Sénia": ["65314"],
 
+  "Cerdanyola del Vallès": ["78706"],
+
+  "Basurto Hospital": ["05455"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

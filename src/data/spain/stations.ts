@@ -4406,4 +4406,22 @@ export const spainStations: Station[] = [
     lng: 0.4493,
   },
 
+  {
+    name: "Cerdanyola del Vallès",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4926,
+    lng: 2.1475,
+  },
+
+  {
+    name: "Basurto Hospital",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2598,
+    lng: -2.9538,
+  },
+
 ];

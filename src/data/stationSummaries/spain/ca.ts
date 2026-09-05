@@ -1525,4 +1525,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Ulldecona-Alcanar-La Sénia":
     "Ulldecona-Alcanar-La Sénia és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Cerdanyola del Vallès":
+    "Cerdanyola del Vallès és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Basurto Hospital":
+    "Basurto Hospital és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

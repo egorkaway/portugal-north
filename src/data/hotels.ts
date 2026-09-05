@@ -4729,6 +4729,16 @@ export const stationHotels: StationHotels = {
     { name: "Cal Naudí", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cal%20Naud%C3%AD%2C%20Ulldecona-Alcanar-La%20S%C3%A9nia%2C%20Spain&order=price" },
     { name: "Alberg Ermita de la Pietat", distanceKm: 4.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alberg%20Ermita%20de%20la%20Pietat%2C%20Ulldecona-Alcanar-La%20S%C3%A9nia%2C%20Spain&order=price" },
   ],
+  "Cerdanyola del Vallès": [
+    { name: "ibis", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%2C%20Cerdanyola%20del%20Vall%C3%A8s%2C%20Spain&order=price" },
+    { name: "Torre Vermella", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torre%20Vermella%2C%20Cerdanyola%20del%20Vall%C3%A8s%2C%20Spain&order=price" },
+    { name: "CRAE Llar Les Vinyes", distanceKm: 0.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=CRAE%20Llar%20Les%20Vinyes%2C%20Cerdanyola%20del%20Vall%C3%A8s%2C%20Spain&order=price" },
+  ],
+  "Basurto Hospital": [
+    { name: "Students Residence Micampus San Mames", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Students%20Residence%20Micampus%20San%20Mames%2C%20Basurto%20Hospital%2C%20Spain&order=price" },
+    { name: "Hotel Ilunion San Mamés", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ilunion%20San%20Mam%C3%A9s%2C%20Basurto%20Hospital%2C%20Spain&order=price" },
+    { name: "Estadio", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Estadio%2C%20Basurto%20Hospital%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
@@ -4926,6 +4936,11 @@ export const stationHotels: StationHotels = {
     { name: "Olive Inn", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Olive%20Inn%2C%20Frankfurt%20Main%20Airport%20(FRA)%2C%20Germany&order=price" },
     { name: "Galeria Airport Hotel", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Galeria%20Airport%20Hotel%2C%20Frankfurt%20Main%20Airport%20(FRA)%2C%20Germany&order=price" },
     { name: "Airport Hotel Walldorf", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Airport%20Hotel%20Walldorf%2C%20Frankfurt%20Main%20Airport%20(FRA)%2C%20Germany&order=price" },
+  ],
+  "Geneva International Airport (GVA)": [
+    { name: "Ibis Styles Geneve PalExpo Aeroport", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Styles%20Geneve%20PalExpo%20Aeroport%2C%20Geneva%20International%20Airport%20(GVA)%2C%20Switzerland&order=price" },
+    { name: "Ibis Budget", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibis%20Budget%2C%20Geneva%20International%20Airport%20(GVA)%2C%20Switzerland&order=price" },
+    { name: "Hilton Geneva Hotel & Conference Centre", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hilton%20Geneva%20Hotel%20%26%20Conference%20Centre%2C%20Geneva%20International%20Airport%20(GVA)%2C%20Switzerland&order=price" },
   ],
   "Ibiza Airport (IBZ)": [
     { name: "Casa Munich", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Munich%2C%20Ibiza%20Airport%20(IBZ)%2C%20Spain&order=price" },

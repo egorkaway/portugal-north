@@ -5,6 +5,7 @@ export const EXTERNAL_AIRPORT_PAGE_IATAS: readonly string[] = [
   "CDG",
   "FCO",
   "FRA",
+  "GVA",
   "IBZ",
   "LGW",
   "LHR",

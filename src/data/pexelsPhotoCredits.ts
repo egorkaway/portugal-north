@@ -836,6 +836,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@czapp-arpad-3647289",
     photoPageUrl: "https://www.pexels.com/photo/black-train-in-subway-station-11498769/",
   },
+  "11519191": {
+    photographer: "Katrīne Skrebele",
+    photographerUrl: "https://www.pexels.com/@katrineskrebele",
+    photoPageUrl: "https://www.pexels.com/photo/woman-in-white-and-black-stripe-dress-11519191/",
+  },
   "11654430": {
     photographer: "Paul Buijs",
     photographerUrl: "https://www.pexels.com/@paulvanyork",

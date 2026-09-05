@@ -458,6 +458,14 @@ export const europeDestinationAirports: Station[] = [
     lng: -3.372288,
   },
   {
+    name: "Bergerac Dordogne-Périgord airport (EGC)",
+    country: "fr",
+    lines: ["EGC"],
+    types: ["Airport Destination"],
+    lat: 44.825298,
+    lng: 0.518611,
+  },
+  {
     name: "Eindhoven Airport (EIN)",
     country: "nl",
     lines: ["EIN"],
