@@ -928,4 +928,16 @@ export const stationSummariesCa: Record<string, string> = {
   "São João das Craveiras":
     "São João das Craveiras és una parada de CP de serveis Intercidades a la Linha do Alentejo a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
 
+  "Aldeia":
+    "Aldeia és una parada de CP de serveis regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Castelejo":
+    "Castelejo és una parada de CP de serveis regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Cerdeira":
+    "Cerdeira és una parada de CP de serveis regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
+  "Freineda":
+    "Freineda és una parada de CP de serveis regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
+
 };

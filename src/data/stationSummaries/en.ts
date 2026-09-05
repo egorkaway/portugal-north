@@ -995,4 +995,16 @@ export const stationSummariesEn: Record<string, string> = {
   "São João das Craveiras":
     "São João das Craveiras is a CP Intercidades halt on Linha do Alentejo in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Aldeia":
+    "Aldeia is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Castelejo":
+    "Castelejo is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Cerdeira":
+    "Cerdeira is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Freineda":
+    "Freineda is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };

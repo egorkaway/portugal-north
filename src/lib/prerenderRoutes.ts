@@ -1,6 +1,7 @@
 import { getHotelsForStation } from "@/lib/stationHotels";
 import { getStationShareImageUrl } from "@/lib/stationImage";
 import { pageStations } from "@/data/stationRegistry";
+import { getExternalAirportPageStations } from "@/lib/externalAirportPages";
 import {
   NOT_FOUND_PAGE_META,
   RANKINGS_PAGE_META,
@@ -55,7 +56,7 @@ export function getPrerenderRoutes(): PrerenderRoute[] {
     });
   }
 
-  for (const station of pageStations) {
+  for (const station of [...pageStations, ...getExternalAirportPageStations()]) {
     const slug = stationToSlug(station.name);
     const hotels = getHotelsForStation(station.name);
     routes.push({

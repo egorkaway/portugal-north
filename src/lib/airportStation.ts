@@ -1,5 +1,6 @@
 import type { Station } from "@/data/stations";
 import { allStations } from "@/data/stationRegistry";
+import { getExternalAirportPageIataSet } from "@/lib/externalAirportPages";
 import { stationToSlug } from "@/lib/stationSlug";
 import {
   isAirportDestinationStation,
@@ -20,14 +21,20 @@ function extractAirportIata(station: Pick<Station, "name" | "lines">): string | 
 }
 
 const airportStationPathByIata = new Map<string, string>();
+const destinationPageIatas = getExternalAirportPageIataSet();
 
-// Only Iberian hubs get station-page links. Europe destinations stay in flight
-// data / maps but are not navigable from connection lists.
+// Iberian hubs always get station-page links. Europe destinations get pages
+// only after both flight-connection maps exist.
 for (const station of allStations) {
-  if (!isAirportHubStation(station)) continue;
   const iata = extractAirportIata(station);
   if (!iata) continue;
-  airportStationPathByIata.set(iata, `/stations/${stationToSlug(station.name)}`);
+  if (isAirportHubStation(station)) {
+    airportStationPathByIata.set(iata, `/stations/${stationToSlug(station.name)}`);
+    continue;
+  }
+  if (isAirportDestinationStation(station) && destinationPageIatas.has(iata)) {
+    airportStationPathByIata.set(iata, `/stations/${stationToSlug(station.name)}`);
+  }
 }
 
 /** Station page path for catalog airports, keyed by IATA (e.g. MAD → /stations/madrid-barajas-airport-mad). */
@@ -41,8 +48,10 @@ export function isAirportStation(station: Pick<Station, "name" | "types">): bool
 }
 
 /** Whether the Yesim travel eSIM promo should render on this station page. */
-export function showsTravelEsimPromo(station: Pick<Station, "name" | "types">): boolean {
-  // Europe destination airports are map markers only — keep promo on Iberian hubs / metro airports.
-  if (isAirportDestinationStation(station)) return false;
+export function showsTravelEsimPromo(station: Pick<Station, "name" | "types" | "lines">): boolean {
+  if (isAirportDestinationStation(station)) {
+    const iata = extractAirportIata(station);
+    return Boolean(iata && destinationPageIatas.has(iata));
+  }
   return isAirportHubStation(station) || AIRPORT_NAME_RE.test(station.name);
 }

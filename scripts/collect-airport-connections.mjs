@@ -32,12 +32,13 @@
  * src/data/europe/airports.ts as "Airport Destination" stations (map only;
  * no outbound collection).
  *
- * Each collect also draws one airport map outside the Iberian peninsula
+ * Each collect also draws one all-flights map outside the Iberian peninsula
  * (`public/maps/airports/external/*-connections.png`) unless `--external-count`
- * asks for more. Those airports do not get station pages. Without flight APIs
- * (or with `--iberian-inbound`), maps use Iberian hubs that already fly there;
- * the next run that can reach an API redraws one inbound map with all outbound
- * connections.
+ * asks for more. Iberian-flights maps (`*-iberian-connections.png`) are added
+ * one per `stats:departures` run (no flight API). Pass `--external-only
+ * --iberian-inbound --external-count=N` (or `all`) to draw more at once.
+ * Those airports do not appear in station lists until both maps exist, then
+ * they get a compact station page.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -71,6 +72,7 @@ import {
   loadExternalAirportMapsStore,
   sampleExternalAirportConnectionMap,
 } from "./lib/externalAirportConnectionMaps.mjs";
+import { externalSpotlightLimit } from "../src/lib/externalAirportSpotlight.ts";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 loadEnvFile(join(root, ".env"));
@@ -265,7 +267,7 @@ async function runExternalAirportSpotlight({
     return store;
   }
 
-  const limit = Number.isFinite(count) && count > 0 ? count : 1;
+  const limit = externalSpotlightLimit(count);
   for (let i = 0; i < limit; i += 1) {
     try {
       const result = await sampleExternalAirportConnectionMap({
@@ -446,7 +448,7 @@ export async function collectAirportConnections(options = {}) {
 
   if (!hasAirportFlightProvider()) {
     console.warn(
-      "No airport flight provider available — skipping hub sampling, drawing one external destination map from Iberian connections we already have.",
+      "No airport flight provider available — skipping hub sampling, drawing one Iberian-flights map from connections we already have.",
     );
     if (filter) {
       return { ok: 0, failed: 0, skipped: true };
@@ -705,18 +707,20 @@ export async function collectAirportConnections(options = {}) {
       `Europe destination airports: ${europeDestinations.count} (from ${destIatas.size} unique destinations)`,
     );
 
-    externalAirportMaps = await runExternalAirportSpotlight({
-      rootDir,
-      manifest,
-      coordinates: loadAirportCoordinateCache(cachePath),
-      isDryRun,
-      quotaExhausted: quotaExhausted || useIberianInbound,
-      forceAirport,
-      periodId: period.id,
-      siteUrl,
-      basemapMode,
-      count: externalMapCount,
-    });
+    if (!quotaExhausted) {
+      externalAirportMaps = await runExternalAirportSpotlight({
+        rootDir,
+        manifest,
+        coordinates: loadAirportCoordinateCache(cachePath),
+        isDryRun,
+        quotaExhausted: false,
+        forceAirport,
+        periodId: period.id,
+        siteUrl,
+        basemapMode,
+        count: externalMapCount,
+      });
+    }
   } else if (isDryRun && !forceAirport) {
     const existing = loadExistingManifest(rootDir);
     await runExternalAirportSpotlight({

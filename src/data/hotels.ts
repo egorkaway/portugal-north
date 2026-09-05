@@ -2224,6 +2224,25 @@ export const stationHotels: StationHotels = {
     { name: "Laranjal Inn", distanceKm: 6.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Laranjal%20Inn%2C%20S%C3%A3o%20Jo%C3%A3o%20das%20Craveiras%2C%20Portugal&order=price" },
     { name: "Monte da Charca", distanceKm: 6.7, priceFrom: 38, bookingUrl: "https://www.booking.com/hotel/pt/monte-da-charca.en-gb.html" },
   ],
+  "Aldeia": [
+    { name: "El Patio de Caetana", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Patio%20de%20Caetana%2C%20Aldeia%2C%20Portugal&order=price" },
+    { name: "Casa do Lagar", distanceKm: 4.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Lagar%2C%20Aldeia%2C%20Portugal&order=price" },
+    { name: "Cubano", distanceKm: 4.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cubano%2C%20Aldeia%2C%20Portugal&order=price" },
+  ],
+  "Castelejo": [
+    { name: "Quinta da Abelenda", distanceKm: 2.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20da%20Abelenda%2C%20Castelejo%2C%20Portugal&order=price" },
+    { name: "Casas Vale Martinho", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20Vale%20Martinho%2C%20Castelejo%2C%20Portugal&order=price" },
+    { name: "Quinta Vale do Fojo", distanceKm: 3.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Quinta%20Vale%20do%20Fojo%2C%20Castelejo%2C%20Portugal&order=price" },
+  ],
+  "Cerdeira": [
+    { name: "Termas do Cró", distanceKm: 7.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Termas%20do%20Cr%C3%B3%2C%20Cerdeira%2C%20Portugal&order=price" },
+    { name: "Refúgio no Campo", distanceKm: 9.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ref%C3%BAgio%20no%20Campo%2C%20Cerdeira%2C%20Portugal&order=price" },
+  ],
+  "Freineda": [
+    { name: "El Patio de Caetana", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Patio%20de%20Caetana%2C%20Freineda%2C%20Portugal&order=price" },
+    { name: "Casa da Cidadela", distanceKm: 3.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Cidadela%2C%20Freineda%2C%20Portugal&order=price" },
+    { name: "Casa do Corro", distanceKm: 3.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20do%20Corro%2C%20Freineda%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4433,6 +4452,26 @@ export const stationHotels: StationHotels = {
     { name: "Residencia Universitaria Erasmo I", distanceKm: 1.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Universitaria%20Erasmo%20I%2C%20El%20Goloso%2C%20Spain&order=price" },
     { name: "Residencia Universitaria Erasmo II", distanceKm: 1.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Universitaria%20Erasmo%20II%2C%20El%20Goloso%2C%20Spain&order=price" },
     { name: "Hostal Tres Cantos", distanceKm: 4.3, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Tres%20Cantos%2C%20El%20Goloso%2C%20Spain&order=price" },
+  ],
+  "Pineda de Mar": [
+    { name: "Aquahotel Promenade", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aquahotel%20Promenade%2C%20Pineda%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Aqua Hotel Nostre Mar", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aqua%20Hotel%20Nostre%20Mar%2C%20Pineda%20de%20Mar%2C%20Spain&order=price" },
+    { name: "SUMUS Stella & SPA", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=SUMUS%20Stella%20%26%20SPA%2C%20Pineda%20de%20Mar%2C%20Spain&order=price" },
+  ],
+  "Soto de Rey": [
+    { name: "Hotel Castillo del Bosque la Zoreda", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Castillo%20del%20Bosque%20la%20Zoreda%2C%20Soto%20de%20Rey%2C%20Spain&order=price" },
+    { name: "Albergue de peregrinos Luz", distanceKm: 2.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20peregrinos%20Luz%2C%20Soto%20de%20Rey%2C%20Spain&order=price" },
+    { name: "La Casa Vieja", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casa%20Vieja%2C%20Soto%20de%20Rey%2C%20Spain&order=price" },
+  ],
+  "Garraf": [
+    { name: "Little BeachHouse Barcelona", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Little%20BeachHouse%20Barcelona%2C%20Garraf%2C%20Spain&order=price" },
+    { name: "Little Beach House Barcelona", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Little%20Beach%20House%20Barcelona%2C%20Garraf%2C%20Spain&order=price" },
+    { name: "Hotel Best Western", distanceKm: 5.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Best%20Western%2C%20Garraf%2C%20Spain&order=price" },
+  ],
+  "Jardines de Hércules": [
+    { name: "Hotel Doña Carmela", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Do%C3%B1a%20Carmela%2C%20Jardines%20de%20H%C3%A9rcules%2C%20Spain&order=price" },
+    { name: "Hotel Valme", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Valme%2C%20Jardines%20de%20H%C3%A9rcules%2C%20Spain&order=price" },
+    { name: "Hotel Bellavista Sevilla", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bellavista%20Sevilla%2C%20Jardines%20de%20H%C3%A9rcules%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

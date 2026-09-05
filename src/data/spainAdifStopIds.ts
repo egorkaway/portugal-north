@@ -887,6 +887,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "El Goloso": ["17003"],
 
+  "Pineda de Mar": ["79604"],
+
+  "Soto de Rey": ["15208"],
+
+  "Garraf": ["71703"],
+
+  "Jardines de Hércules": ["51113"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

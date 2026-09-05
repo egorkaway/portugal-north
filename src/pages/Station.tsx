@@ -36,6 +36,7 @@ import { isAirportStation, showsTravelEsimPromo } from "@/lib/airportStation";
 import { getMetroOperatorLink, isMetroStation } from "@/lib/metroStation";
 import { StationYesimPromo } from "@/components/StationYesimPromo";
 import { AirportConnectionsPanel } from "@/components/AirportConnectionsPanel";
+import { ExternalAirportConnectionsMaps } from "@/components/ExternalAirportConnectionsMaps";
 import { NearestLongDistanceStations } from "@/components/NearestLongDistanceStations";
 import { NearestStations } from "@/components/NearestStations";
 import { StationAreaMap } from "@/components/StationAreaMap";
@@ -51,6 +52,7 @@ import { StationImageCredit } from "@/components/StationImageCredit";
 import { getStationLineLinks } from "@/lib/trainLines";
 import { displayTrainType, TRAIN_TYPE_BADGE_CLASSES } from "@/lib/trainTypes";
 import { isAirportHubStation } from "@/lib/airportTypes";
+import { hasExternalAirportDestinationPage } from "@/lib/externalAirportPages";
 
 const Station = () => {
   const { t, locale } = useLocale();
@@ -65,6 +67,7 @@ const Station = () => {
   const tripHistorianUrl = getTripHistorianStationUrl(station.name);
   const metroStation = isMetroStation(station);
   const airportStation = isAirportStation(station);
+  const destinationAirportPage = hasExternalAirportDestinationPage(station);
   const showYesimPromo = showsTravelEsimPromo(station);
   const berrymetCityLink = getBerrymetCityLink(station);
   const stationSummary = getStationSummary(station.name, locale);
@@ -198,9 +201,10 @@ const Station = () => {
           {!airportStation ? <StationDepartures stationName={station.name} /> : null}
           {!airportStation ? <StationReliabilityCard stationName={station.name} /> : null}
           {!airportStation ? <StationArrivals stationName={station.name} /> : null}
-          <NearestLongDistanceStations station={station} />
+          {!destinationAirportPage ? <NearestLongDistanceStations station={station} /> : null}
           {isAirportHubStation(station) ? <AirportConnectionsPanel station={station} /> : null}
-          <NearestStations station={station} />
+          {destinationAirportPage ? <ExternalAirportConnectionsMaps station={station} /> : null}
+          {!destinationAirportPage ? <NearestStations station={station} /> : null}
 
           <div className="mb-6 flex flex-wrap gap-2 md:mb-10">
             <a

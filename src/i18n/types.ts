@@ -83,6 +83,10 @@ export type Messages = {
     airportConnectionsLegendModerate: string;
     airportConnectionsLegendLight: string;
     airportConnectionsMapAlt: string;
+    airportConnectionsIberianTitle: string;
+    airportConnectionsAllFlightsTitle: string;
+    airportConnectionsIberianMapAlt: string;
+    airportConnectionsAllFlightsMapAlt: string;
     downloadConnectionsMap: string;
     airportConnectionsFlights_one: string;
     airportConnectionsFlights_other: string;

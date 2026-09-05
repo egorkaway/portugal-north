@@ -64,6 +64,11 @@ export function hasAllFlightsMap(row: ExternalAirportMapRow | null | undefined):
   return Boolean(row?.mapImage);
 }
 
+export function hasBothExternalMaps(row: ExternalAirportMapRow | null | undefined): boolean {
+  const normalized = row ? normalizeExternalAirportRow(row) : row;
+  return hasIberianMap(normalized) && hasAllFlightsMap(normalized);
+}
+
 /** Lift a legacy inbound-only row (one PNG that used to be replaced) into dual-map fields. */
 export function normalizeExternalAirportRow<T extends ExternalAirportMapRow>(row: T): T {
   if (row.iberianMapImage) return row;
@@ -109,28 +114,33 @@ function formatIataList(codes: string[]): string {
   return codes.length ? `${codes.join(" ")} (${codes.length})` : `(0)`;
 }
 
-/** Compact collect-log summary: two IATA lists; an airport can appear in both. */
+/** Compact collect-log: disjoint IATA lists (Iberian-only, all-flights-only, both). */
 export function formatExternalAirportMapsLog(
   store: { airports?: Array<ExternalAirportMapRow> } | null | undefined,
 ): string {
-  const inbound: string[] = [];
-  const complete: string[] = [];
+  const iberianOnly: string[] = [];
+  const allFlightsOnly: string[] = [];
+  const both: string[] = [];
   for (const row of store?.airports ?? []) {
     const iata = String(row.iata ?? "").trim().toUpperCase();
     if (!iata) continue;
     const normalized = normalizeExternalAirportRow(row);
-    if (hasIberianMap(normalized)) inbound.push(iata);
-    if (hasAllFlightsMap(normalized)) complete.push(iata);
+    const iberian = hasIberianMap(normalized);
+    const allFlights = hasAllFlightsMap(normalized);
+    if (iberian && allFlights) both.push(iata);
+    else if (iberian) iberianOnly.push(iata);
+    else if (allFlights) allFlightsOnly.push(iata);
   }
 
-  if (inbound.length === 0 && complete.length === 0) {
+  if (iberianOnly.length === 0 && allFlightsOnly.length === 0 && both.length === 0) {
     return "External destination maps (outside Iberian peninsula): none yet";
   }
 
   return [
     "External destination maps (outside Iberian peninsula):",
-    `  Iberian flights only: ${formatIataList(inbound)}`,
-    `  All flights: ${formatIataList(complete)}`,
+    `  Iberian flights only: ${formatIataList(iberianOnly)}`,
+    `  All flights only: ${formatIataList(allFlightsOnly)}`,
+    `  Both maps: ${formatIataList(both)}`,
   ].join("\n");
 }
 

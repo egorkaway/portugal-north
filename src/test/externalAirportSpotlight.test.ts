@@ -83,34 +83,59 @@ describe("externalSpotlightLimit", () => {
 });
 
 describe("coverageFromExternalMapRows", () => {
-  it("marks Iberian-inbound rows as needing an outbound redraw", () => {
+  it("allows an airport to keep both an Iberian map and an all-flights map", () => {
     expect(
       coverageFromExternalMapRows([
-        { iata: "PMI", provider: "iberian-inbound" },
-        { iata: "FRA", provider: "aviationstack" },
+        {
+          iata: "PMI",
+          provider: "iberian-inbound",
+          iberianMapImage: "/maps/airports/external/pmi-iberian-connections.png",
+        },
+        { iata: "FRA", provider: "aviationstack", mapImage: "/maps/airports/external/fra-connections.png" },
+        {
+          iata: "AMS",
+          provider: "aviationstack",
+          mapImage: "/maps/airports/external/ams-connections.png",
+          iberianMapImage: "/maps/airports/external/ams-iberian-connections.png",
+        },
       ]),
     ).toEqual({
-      completeIatas: new Set(["FRA"]),
-      inboundOnlyIatas: new Set(["PMI"]),
+      completeIatas: new Set(["FRA", "AMS"]),
+      inboundIatas: new Set(["PMI", "AMS"]),
     });
   });
 });
 
 describe("formatExternalAirportMapsLog", () => {
-  it("lists IATA codes in two groups with counts", () => {
+  it("lists IATA codes in three disjoint groups with counts", () => {
     expect(
       formatExternalAirportMapsLog({
         airports: [
-          { iata: "PMI", provider: "iberian-inbound" },
-          { iata: "AMS", provider: "iberian-inbound" },
-          { iata: "FRA", provider: "aviationstack" },
+          {
+            iata: "PMI",
+            provider: "iberian-inbound",
+            iberianMapImage: "/pmi-iberian.png",
+          },
+          {
+            iata: "AMS",
+            provider: "iberian-inbound",
+            iberianMapImage: "/ams-iberian.png",
+          },
+          { iata: "FRA", provider: "aviationstack", mapImage: "/x.png" },
+          {
+            iata: "CDG",
+            provider: "aviationstack",
+            mapImage: "/cdg.png",
+            iberianMapImage: "/cdg-iberian.png",
+          },
         ],
       }),
     ).toBe(
       [
         "External destination maps (outside Iberian peninsula):",
-        "  Iberian flights only (regenerate when flight APIs available): PMI AMS (2)",
-        "  All flights (drawn with flight APIs): FRA (1)",
+        "  Iberian flights only: PMI AMS (2)",
+        "  All flights only: FRA (1)",
+        "  Both maps: CDG (1)",
       ].join("\n"),
     );
   });
@@ -133,28 +158,28 @@ describe("pickExternalAirportForRun", () => {
     expect(pickExternalAirportForRun(ranked, new Set(["FRA"]))?.iata).toBe("LHR");
   });
 
-  it("redraws an Iberian-inbound map before mapping a new airport when APIs are up", () => {
+  it("adds an all-flights map for an airport that already has an Iberian map when APIs are up", () => {
     expect(
       pickExternalAirportForRun(ranked, {
         completeIatas: new Set(),
-        inboundOnlyIatas: new Set(["FRA"]),
+        inboundIatas: new Set(["FRA"]),
       })?.iata,
     ).toBe("FRA");
     expect(
       pickExternalAirportForRun(ranked, {
         completeIatas: new Set(),
-        inboundOnlyIatas: new Set(["LHR"]),
+        inboundIatas: new Set(["LHR"]),
       })?.iata,
     ).toBe("LHR");
   });
 
-  it("maps the next unmapped airport from Iberian data when APIs are down", () => {
+  it("maps the next airport missing an Iberian map when APIs are down", () => {
     expect(
       pickExternalAirportForRun(
         ranked,
         {
           completeIatas: new Set(),
-          inboundOnlyIatas: new Set(["FRA"]),
+          inboundIatas: new Set(["FRA"]),
         },
         { flightApisAvailable: false },
       )?.iata,
@@ -164,7 +189,17 @@ describe("pickExternalAirportForRun", () => {
         ranked,
         {
           completeIatas: new Set(["FRA"]),
-          inboundOnlyIatas: new Set(["LHR"]),
+          inboundIatas: new Set(["LHR"]),
+        },
+        { flightApisAvailable: false },
+      )?.iata,
+    ).toBe("FRA");
+    expect(
+      pickExternalAirportForRun(
+        ranked,
+        {
+          completeIatas: new Set(["FRA"]),
+          inboundIatas: new Set(["FRA", "LHR"]),
         },
         { flightApisAvailable: false },
       ),
@@ -176,7 +211,7 @@ describe("pickExternalAirportForRun", () => {
     expect(
       pickExternalAirportForRun(ranked, {
         completeIatas: new Set(["FRA", "LHR"]),
-        inboundOnlyIatas: new Set(),
+        inboundIatas: new Set(),
       })?.iata,
     ).toBe("FRA");
   });

@@ -15,6 +15,25 @@ const BRAND_DARK = "#0f3d38";
 const BRAND_CREAM = "#f4f7f6";
 const BRAND_GOLD = "#e8a838";
 
+function overlayCopy(connectionScope, iata, destinationCount) {
+  if (connectionScope === "iberian") {
+    return {
+      kicker: "IBERIAN FLIGHTS",
+      destinations: `${iata} · ${destinationCount} destinations from Iberia`,
+    };
+  }
+  if (connectionScope === "all") {
+    return {
+      kicker: "ALL FLIGHTS",
+      destinations: `${iata} · ${destinationCount} destinations this period`,
+    };
+  }
+  return {
+    kicker: "FLIGHT CONNECTIONS",
+    destinations: `${iata} · ${destinationCount} destinations this period`,
+  };
+}
+
 function formatAirportPageUrl(siteHost, slug, showStationPageUrl = true) {
   if (!showStationPageUrl) return siteHost;
   const fullUrl = `${siteHost}/stations/${slug}`;
@@ -39,8 +58,10 @@ function buildOverlaySvg({
   connections,
   project,
   showStationPageUrl = true,
+  connectionScope,
 }) {
   const pageUrl = formatAirportPageUrl(siteHost, slug, showStationPageUrl);
+  const copy = overlayCopy(connectionScope, iata, connections.length);
   const lineElements = connections
     .map((connection) => {
       const from = project(origin.lat, origin.lng);
@@ -66,9 +87,9 @@ function buildOverlaySvg({
   <rect x="0" y="${MAP_HEIGHT - 4}" width="${CARD_SIZE}" height="4" fill="${BRAND_GOLD}" />
   <rect x="0" y="${MAP_HEIGHT}" width="${CARD_SIZE}" height="${FOOTER_HEIGHT}" fill="${BRAND_DARK}" />
   <rect x="${TEXT_X}" y="${MAP_HEIGHT + 24}" width="72" height="5" rx="2.5" fill="${BRAND_GOLD}" />
-  <text x="${TEXT_X}" y="${MAP_HEIGHT + 56}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">FLIGHT CONNECTIONS</text>
+  <text x="${TEXT_X}" y="${MAP_HEIGHT + 56}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="22" font-weight="700" letter-spacing="0.08em">${escapeXml(copy.kicker)}</text>
   <text x="${TEXT_X}" y="${MAP_HEIGHT + 104}" fill="${BRAND_CREAM}" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="700">${escapeXml(airportName)}</text>
-  <text x="${TEXT_X}" y="${MAP_HEIGHT + 142}" fill="${BRAND_CREAM}" font-family="Inter, system-ui, sans-serif" font-size="24" opacity="0.85">${escapeXml(iata)} · ${connections.length} destinations this period</text>
+  <text x="${TEXT_X}" y="${MAP_HEIGHT + 142}" fill="${BRAND_CREAM}" font-family="Inter, system-ui, sans-serif" font-size="24" opacity="0.85">${escapeXml(copy.destinations)}</text>
   <text x="${TEXT_X}" y="${MAP_HEIGHT + 204}" fill="${BRAND_GOLD}" font-family="Inter, system-ui, sans-serif" font-size="${URL_FONT_SIZE}" font-weight="700" letter-spacing="0.02em">${escapeXml(pageUrl)}</text>
 </svg>`;
 }
@@ -79,6 +100,7 @@ export async function renderAirportConnectionsMap(
     basemapMode = "osm",
     siteUrl = "https://www.verystays.com",
     showStationPageUrl = true,
+    connectionScope,
   } = {},
 ) {
   // Frame to every sampled destination (and the origin). No outlier dropping —
@@ -113,6 +135,7 @@ export async function renderAirportConnectionsMap(
     connections: entry.connections,
     project,
     showStationPageUrl,
+    connectionScope,
   });
 
   const overlayPng = new Resvg(overlaySvg, {

@@ -1576,6 +1576,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@jorge-ribeiro-177643262",
     photoPageUrl: "https://www.pexels.com/photo/passengers-on-platform-passing-by-train-with-graffiti-20376272/",
   },
+  "20405923": {
+    photographer: "Marcos Túlio",
+    photographerUrl: "https://www.pexels.com/@mtcd",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-houses-in-town-20405923/",
+  },
   "20427359": {
     photographer: "Jakub Pabis",
     photographerUrl: "https://www.pexels.com/@jakub-pabis-147246622",
@@ -1870,6 +1875,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "J MAD",
     photographerUrl: "https://www.pexels.com/@juicemitapfelndrin",
     photoPageUrl: "https://www.pexels.com/photo/architectural-glass-roof-of-antwerp-station-28770546/",
+  },
+  "28821807": {
+    photographer: "Wolfgang Weiser",
+    photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architecture-at-elbbrucken-station-28821807/",
   },
   "28972500": {
     photographer: "Hub JACQU",

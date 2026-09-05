@@ -4046,4 +4046,40 @@ export const spainStations: Station[] = [
     lng: -3.714,
   },
 
+  {
+    name: "Pineda de Mar",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6224,
+    lng: 2.6936,
+  },
+
+  {
+    name: "Soto de Rey",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3064,
+    lng: -5.8558,
+  },
+
+  {
+    name: "Garraf",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.2546,
+    lng: 1.9025,
+  },
+
+  {
+    name: "Jardines de Hércules",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.3329,
+    lng: -5.9641,
+  },
+
 ];

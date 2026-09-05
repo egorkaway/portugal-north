@@ -1,4 +1,5 @@
 import { pageStations } from "../data/stationRegistry";
+import { getExternalAirportPageStations } from "./externalAirportPages";
 import { getHomeSitemapPaths } from "./homeRoute";
 import { getStationPath } from "./stationSlug";
 import { getLinePath, getRailLines } from "./trainLines";
@@ -32,6 +33,11 @@ export function getSitemapEntries(): SitemapEntry[] {
       path: getStationPath(station),
       changefreq: "weekly" as const,
       priority: "0.7",
+    })),
+    ...getExternalAirportPageStations().map((station) => ({
+      path: getStationPath(station),
+      changefreq: "weekly" as const,
+      priority: "0.65",
     })),
   ];
 }

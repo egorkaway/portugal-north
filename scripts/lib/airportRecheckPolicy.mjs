@@ -5,8 +5,8 @@ export const AIRPORT_RECHECK_MIN_INTERVAL_MS = 5 * 60 * 60 * 1000;
  * Airport hub sampling and outbound flight-API maps are expensive; on frequent
  * train-stat runs, skip those unless the last *airport* check (not the last
  * train-stat run) is old enough.
- * Iberian-inbound external maps do not use flight APIs and are filled on every
- * departures run regardless of this interval.
+ * One Iberian-inbound external map is added on every departures run regardless
+ * of this interval (no flight API).
  * @param {string | null | undefined} lastAirportConnectionsAt
  * @param {Date} [now]
  */

@@ -847,6 +847,38 @@ const cpStations: StationData[] = [
     lng: -8.5857,
   },
 
+  {
+    name: "Aldeia",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.6004,
+    lng: -6.8853,
+  },
+
+  {
+    name: "Castelejo",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.408,
+    lng: -8.0843,
+  },
+
+  {
+    name: "Cerdeira",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.5115,
+    lng: -7.0479,
+  },
+
+  {
+    name: "Freineda",
+    lines: ["Linha da Beira Alta"],
+    types: ["Regional"],
+    lat: 40.5933,
+    lng: -6.9044,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

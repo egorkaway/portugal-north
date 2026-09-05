@@ -8,10 +8,12 @@
  *   npm run stats:departures -- --dry-run
  *
  * Also collects airport flight connections (skipped if the last airport check
- * was < 5 hours ago — train-only runs do not count), and on each airport
- * collect samples outbound flights from one airport outside the Iberian
- * peninsula (most Iberian-hub flights) into public/maps/airports/external/
- * (no station pages; listed at the end of this log),
+ * was < 5 hours ago — train-only runs do not count), and on every run adds
+ * one Iberian-flights-only map outside the peninsula
+ * (`*-iberian-connections.png`, no flight API). When the airport check runs,
+ * it also samples outbound flights from one such airport into
+ * `*-connections.png`. Airports with both maps get a compact station page.
+ * Listed at the end of this log.
  * logs temperatures (Open-Meteo) for train stations that returned a departure
  * sample attempt (OK or FAIL). Airport hub temperatures are logged only during
  * a flight-connections collect, after a successful flight sample,
@@ -360,14 +362,20 @@ if (!dryRun) {
     console.error(`Monthly temperature publish skipped: ${message}`);
   }
 
+  const { collectAirportConnections } = await import("./collect-airport-connections.mjs");
   if (recheckAirports) {
-    const { collectAirportConnections } = await import("./collect-airport-connections.mjs");
     await collectAirportConnections({ rootDir: root, delayMs });
     store.lastAirportConnectionsAt = new Date().toISOString();
     saveStore(store);
   } else {
     console.log("Skipping airport destination recheck (last airport check < 5 hours ago).");
   }
+  await collectAirportConnections({
+    rootDir: root,
+    externalOnly: true,
+    iberianInbound: true,
+    externalMapCount: 1,
+  });
 
   const { syncMobileData } = await import("../mobile/scripts/sync-data.mjs");
   console.log("Syncing mobile bundled data…");
