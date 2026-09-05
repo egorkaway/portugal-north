@@ -981,6 +981,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Peñaflor de Grado": ["05316"],
 
+  "Ibarra": ["05479"],
+
+  "Portbou": ["79315"],
+
+  "Karrantza": ["05497"],
+
+  "Osuna": ["01007"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

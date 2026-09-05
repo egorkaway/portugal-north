@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-05T18:30:29.134Z",
-  "runCount": 751,
+  "generatedAt": "2026-09-05T20:13:35.400Z",
+  "runCount": 754,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -18,7 +18,7 @@
     {
       "trainNumber": "876",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 23.6,
+      "avgDelayMinutes": 23.7,
       "observations": 15,
       "stationsSampled": 18,
       "majorStations": [
@@ -44,46 +44,46 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "36415",
+      "trainNumber": "36404",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 15,
+      "observations": 14,
       "stationsSampled": 17,
       "majorStations": [
+        "Mira Sintra-Meleças",
         "Pero Negro",
         "Bombarral",
-        "Mafra",
-        "Feliteira"
+        "Mafra"
       ],
       "selectionMode": "rotating",
       "poolSize": 12
     },
     {
-      "trainNumber": "36417",
+      "trainNumber": "36414",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 15,
-      "stationsSampled": 17,
+      "observations": 14,
+      "stationsSampled": 15,
       "majorStations": [
+        "Mira Sintra-Meleças",
         "Pero Negro",
         "Bombarral",
-        "Mafra",
-        "Feliteira"
+        "Mafra"
       ],
       "selectionMode": "rotating",
       "poolSize": 12
     },
     {
-      "trainNumber": "55621",
-      "serviceType": "Regional",
+      "trainNumber": "10543",
+      "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 15,
+      "observations": 18,
       "stationsSampled": 6,
       "majorStations": [
-        "Fratel",
-        "Vila Velha de Ródão",
-        "Barca da Amieira – Envendos",
-        "Belver"
+        "Castelo Branco",
+        "Guarda",
+        "Covilhã",
+        "Fundão"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

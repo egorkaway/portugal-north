@@ -4469,4 +4469,40 @@ export const spainStations: Station[] = [
     lng: -6.0454,
   },
 
+  {
+    name: "Ibarra",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.204,
+    lng: -3.1448,
+  },
+
+  {
+    name: "Portbou",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.4246,
+    lng: 3.158,
+  },
+
+  {
+    name: "Karrantza",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2389,
+    lng: -3.3578,
+  },
+
+  {
+    name: "Osuna",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.2339,
+    lng: -5.115,
+  },
+
 ];

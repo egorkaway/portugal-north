@@ -4759,10 +4759,25 @@ export const stationHotels: StationHotels = {
     { name: "Masia la Pineda", distanceKm: 7.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Masia%20la%20Pineda%2C%20Hostalric%2C%20Spain&order=price" },
     { name: "Can Pica", distanceKm: 8.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Pica%2C%20Hostalric%2C%20Spain&order=price" },
   ],
-  "Peñaflor de Grado": [
-    { name: "El Lacayo de Sistiello", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Lacayo%20de%20Sistiello%2C%20Pe%C3%B1aflor%20de%20Grado%2C%20Spain&order=price" },
-    { name: "Albergue municipal de peregrinos Villa de Grado", distanceKm: 2.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20municipal%20de%20peregrinos%20Villa%20de%20Grado%2C%20Pe%C3%B1aflor%20de%20Grado%2C%20Spain&order=price" },
-    { name: "Albergue La Quintana", distanceKm: 2.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20La%20Quintana%2C%20Pe%C3%B1aflor%20de%20Grado%2C%20Spain&order=price" },
+  "Ibarra": [
+    { name: "Hostal Txikote", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Txikote%2C%20Ibarra%2C%20Spain&order=price" },
+    { name: "Batzarki", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Batzarki%2C%20Ibarra%2C%20Spain&order=price" },
+    { name: "Hotel Convento San Roque", distanceKm: 4.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Convento%20San%20Roque%2C%20Ibarra%2C%20Spain&order=price" },
+  ],
+  "Portbou": [
+    { name: "Pensió Juventus", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3%20Juventus%2C%20Portbou%2C%20Spain&order=price" },
+    { name: "Hostal Portbou", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Portbou%2C%20Portbou%2C%20Spain&order=price" },
+    { name: "Hotel Comodoro", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Comodoro%2C%20Portbou%2C%20Spain&order=price" },
+  ],
+  "Karrantza": [
+    { name: "Balneario Casa Pallotti", distanceKm: 1.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Balneario%20Casa%20Pallotti%2C%20Karrantza%2C%20Spain&order=price" },
+    { name: "Casa rural Aingeru", distanceKm: 3.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20rural%20Aingeru%2C%20Karrantza%2C%20Spain&order=price" },
+    { name: "Posada Calera", distanceKm: 7.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Posada%20Calera%2C%20Karrantza%2C%20Spain&order=price" },
+  ],
+  "Osuna": [
+    { name: "Hotel Palacio Marqués de la Gomera", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Palacio%20Marqu%C3%A9s%20de%20la%20Gomera%2C%20Osuna%2C%20Spain&order=price" },
+    { name: "Hotel Esmeralda", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Esmeralda%2C%20Osuna%2C%20Spain&order=price" },
+    { name: "Hotel Las Casas del Duque", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Casas%20del%20Duque%2C%20Osuna%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

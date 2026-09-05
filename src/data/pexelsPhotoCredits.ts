@@ -2486,6 +2486,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@titiaariadne",
     photoPageUrl: "https://www.pexels.com/photo/red-train-at-historic-paranapiacaba-station-32969988/",
   },
+  "32975864": {
+    photographer: "Crab Lens",
+    photographerUrl: "https://www.pexels.com/@crab-lens-179881567",
+    photoPageUrl: "https://www.pexels.com/photo/dynamic-black-and-white-railroad-in-istanbul-32975864/",
+  },
   "32979182": {
     photographer: "Regan Dsouza",
     photographerUrl: "https://www.pexels.com/@regan-dsouza-1315522347",
