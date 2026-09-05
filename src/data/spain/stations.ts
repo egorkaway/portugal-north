@@ -4154,4 +4154,22 @@ export const spainStations: Station[] = [
     lng: 2.18,
   },
 
+  {
+    name: "L'Ampolla-El Perelló-Deltebre",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.812,
+    lng: 0.7083,
+  },
+
+  {
+    name: "Bordils-Juià",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.0371,
+    lng: 2.9153,
+  },
+
 ];

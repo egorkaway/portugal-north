@@ -3,7 +3,8 @@
  *   1. Iberian flights only (`*-iberian-connections.png`)
  *   2. All flights (`*-connections.png`)
  * Departures runs add one missing Iberian map (no flight API). Flight APIs up:
- * add or refresh one all-flights map without replacing the Iberian one.
+ * add or refresh one all-flights map without replacing the Iberian one
+ * (airports whose all-flights map has fewer destinations than Iberian are redrawn first).
  * Compact station pages exist only once both maps are present.
  */
 import { existsSync, mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";

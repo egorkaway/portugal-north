@@ -2278,6 +2278,15 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Pombeira", distanceKm: 10, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pombeira%2C%20Vila%20Fernando%2C%20Portugal&order=price" },
     { name: "Termas do Cró", distanceKm: 10.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Termas%20do%20Cr%C3%B3%2C%20Vila%20Fernando%2C%20Portugal&order=price" },
   ],
+  "Arronches": [
+    { name: "Hotel Rural Santo António", distanceKm: 5.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20Santo%20Ant%C3%B3nio%2C%20Arronches%2C%20Portugal&order=price" },
+    { name: "Hotel Palma", distanceKm: 10.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Palma%2C%20Arronches%2C%20Portugal&order=price" },
+  ],
+  "Assumar": [
+    { name: "Monte dos Apóstolos", distanceKm: 9.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Monte%20dos%20Ap%C3%B3stolos%2C%20Assumar%2C%20Portugal&order=price" },
+    { name: "Hotel Rural Santo António", distanceKm: 9.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Rural%20Santo%20Ant%C3%B3nio%2C%20Assumar%2C%20Portugal&order=price" },
+    { name: "Casa da Urra", distanceKm: 10, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20da%20Urra%2C%20Assumar%2C%20Portugal&order=price" },
+  ],
   "Lisbon Airport (LIS)": [
     { name: "Holiday Inn Express Lisbon Airport", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20Lisbon%20Airport%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
     { name: "Holiday Inn Express", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%2C%20Lisbon%20Airport%20(LIS)%2C%20Portugal&order=price" },
@@ -4541,6 +4550,16 @@ export const stationHotels: StationHotels = {
     { name: "ApartHotel Montcada", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ApartHotel%20Montcada%2C%20Montcada-Bifurcaci%C3%B3%2C%20Spain&order=price" },
     { name: "ibis Barcelona Santa Coloma", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=ibis%20Barcelona%20Santa%20Coloma%2C%20Montcada-Bifurcaci%C3%B3%2C%20Spain&order=price" },
     { name: "Toni", distanceKm: 2.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Toni%2C%20Montcada-Bifurcaci%C3%B3%2C%20Spain&order=price" },
+  ],
+  "L'Ampolla-El Perelló-Deltebre": [
+    { name: "Hotel Sea Garden", distanceKm: 2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Sea%20Garden%2C%20L'Ampolla-El%20Perell%C3%B3-Deltebre%2C%20Spain&order=price" },
+    { name: "les Oliveres", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=les%20Oliveres%2C%20L'Ampolla-El%20Perell%C3%B3-Deltebre%2C%20Spain&order=price" },
+    { name: "Casa de Campo - Casa uno", distanceKm: 6.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20de%20Campo%20-%20Casa%20uno%2C%20L'Ampolla-El%20Perell%C3%B3-Deltebre%2C%20Spain&order=price" },
+  ],
+  "Bordils-Juià": [
+    { name: "Can Dama", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Dama%2C%20Bordils-Jui%C3%A0%2C%20Spain&order=price" },
+    { name: "Can Tallada", distanceKm: 0.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Tallada%2C%20Bordils-Jui%C3%A0%2C%20Spain&order=price" },
+    { name: "Can Carreras del Mas", distanceKm: 1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Can%20Carreras%20del%20Mas%2C%20Bordils-Jui%C3%A0%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

@@ -1441,4 +1441,10 @@ export const spainSummariesEs: Record<string, string> = {
   "Montcada-Bifurcació":
     "Montcada-Bifurcació es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "L'Ampolla-El Perelló-Deltebre":
+    "L'Ampolla-El Perelló-Deltebre es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Bordils-Juià":
+    "Bordils-Juià es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

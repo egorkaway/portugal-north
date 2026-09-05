@@ -943,6 +943,22 @@ const cpStations: StationData[] = [
     lng: -7.148,
   },
 
+  {
+    name: "Arronches",
+    lines: ["Linha do Leste"],
+    types: ["Regional"],
+    lat: 39.0968,
+    lng: -7.3334,
+  },
+
+  {
+    name: "Assumar",
+    lines: ["Linha do Leste"],
+    types: ["Regional"],
+    lat: 39.1389,
+    lng: -7.3823,
+  },
+
 ];
 
 /** CP and Metro stations in Portugal. */

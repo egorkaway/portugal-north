@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  allFlightsMapNeedsRegeneration,
   coverageFromExternalMapRows,
   externalSpotlightLimit,
   formatExternalAirportMapsLog,
@@ -102,7 +103,65 @@ describe("coverageFromExternalMapRows", () => {
     ).toEqual({
       completeIatas: new Set(["FRA", "AMS"]),
       inboundIatas: new Set(["PMI", "AMS"]),
+      staleAllFlightsIatas: new Set(),
     });
+  });
+
+  it("flags an all-flights map with fewer destinations than the Iberian map", () => {
+    expect(
+      coverageFromExternalMapRows([
+        {
+          iata: "TFN",
+          provider: "aviationstack",
+          mapImage: "/maps/airports/external/tfn-connections.png",
+          destinationCount: 15,
+          iberianMapImage: "/maps/airports/external/tfn-iberian-connections.png",
+          iberianDestinationCount: 21,
+        },
+        {
+          iata: "AMS",
+          provider: "aviationstack",
+          mapImage: "/maps/airports/external/ams-connections.png",
+          destinationCount: 27,
+          iberianMapImage: "/maps/airports/external/ams-iberian-connections.png",
+          iberianDestinationCount: 14,
+        },
+      ]),
+    ).toEqual({
+      completeIatas: new Set(["TFN", "AMS"]),
+      inboundIatas: new Set(["TFN", "AMS"]),
+      staleAllFlightsIatas: new Set(["TFN"]),
+    });
+  });
+});
+
+describe("allFlightsMapNeedsRegeneration", () => {
+  it("is true only when both maps exist and all-flights has fewer destinations", () => {
+    expect(
+      allFlightsMapNeedsRegeneration({
+        provider: "aviationstack",
+        mapImage: "/tfn-connections.png",
+        destinationCount: 15,
+        iberianMapImage: "/tfn-iberian.png",
+        iberianDestinationCount: 21,
+      }),
+    ).toBe(true);
+    expect(
+      allFlightsMapNeedsRegeneration({
+        provider: "aviationstack",
+        mapImage: "/ams-connections.png",
+        destinationCount: 27,
+        iberianMapImage: "/ams-iberian.png",
+        iberianDestinationCount: 14,
+      }),
+    ).toBe(false);
+    expect(
+      allFlightsMapNeedsRegeneration({
+        provider: "iberian-inbound",
+        iberianMapImage: "/pmi-iberian.png",
+        iberianDestinationCount: 28,
+      }),
+    ).toBe(false);
   });
 });
 
@@ -126,7 +185,9 @@ describe("formatExternalAirportMapsLog", () => {
             iata: "CDG",
             provider: "aviationstack",
             mapImage: "/cdg.png",
+            destinationCount: 10,
             iberianMapImage: "/cdg-iberian.png",
+            iberianDestinationCount: 20,
           },
         ],
       }),
@@ -136,6 +197,7 @@ describe("formatExternalAirportMapsLog", () => {
         "  Iberian flights only: PMI AMS (2)",
         "  All flights only: FRA (1)",
         "  Both maps: CDG (1)",
+        "  All-flights needs regen (fewer destinations than Iberian): CDG (1)",
       ].join("\n"),
     );
   });
@@ -212,6 +274,27 @@ describe("pickExternalAirportForRun", () => {
       pickExternalAirportForRun(ranked, {
         completeIatas: new Set(["FRA", "LHR"]),
         inboundIatas: new Set(),
+        staleAllFlightsIatas: new Set(),
+      })?.iata,
+    ).toBe("FRA");
+  });
+
+  it("redraws an all-flights map that has fewer destinations than the Iberian map", () => {
+    expect(
+      pickExternalAirportForRun(ranked, {
+        completeIatas: new Set(["FRA", "LHR"]),
+        inboundIatas: new Set(["FRA", "LHR"]),
+        staleAllFlightsIatas: new Set(["LHR"]),
+      })?.iata,
+    ).toBe("LHR");
+  });
+
+  it("fills missing all-flights maps before redrawing a stale one", () => {
+    expect(
+      pickExternalAirportForRun(ranked, {
+        completeIatas: new Set(["LHR"]),
+        inboundIatas: new Set(["FRA", "LHR"]),
+        staleAllFlightsIatas: new Set(["LHR"]),
       })?.iata,
     ).toBe("FRA");
   });

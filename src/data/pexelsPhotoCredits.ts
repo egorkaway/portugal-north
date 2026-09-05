@@ -2091,6 +2091,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@dursunyartasi",
     photoPageUrl: "https://www.pexels.com/photo/historic-trains-and-building-in-urban-rail-yard-30666699/",
   },
+  "30666700": {
+    photographer: "Dursun Yartaşı",
+    photographerUrl: "https://www.pexels.com/@dursunyartasi",
+    photoPageUrl: "https://www.pexels.com/photo/excited-jump-between-graffiti-tagged-trains-30666700/",
+  },
   "30730154": {
     photographer: "Jean-Paul Wettstein",
     photographerUrl: "https://www.pexels.com/@jean-paul-wettstein-677916508",
@@ -3250,6 +3255,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Malcoln Oliveira",
     photographerUrl: "https://www.pexels.com/@malcolnphoto",
     photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-in-itabirito-brazil-39154440/",
+  },
+  "39268997": {
+    photographer: "Antonio Garcia Prats",
+    photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-in-cadiz-spain-39268997/",
   },
   "39269007": {
     photographer: "Antonio Garcia Prats",

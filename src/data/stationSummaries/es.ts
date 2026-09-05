@@ -964,4 +964,10 @@ export const stationSummariesEs: Record<string, string> = {
   "Vila Fernando":
     "Vila Fernando es una parada de CP de servicios regionales en la Linha da Beira Alta en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
 
+  "Arronches":
+    "Arronches es una parada de CP de servicios regionales en la Linha do Leste en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
+  "Assumar":
+    "Assumar es una parada de CP de servicios regionales en la Linha do Leste en Portugal. Es una parada práctica para explorar los alrededores, con paneles de salidas en directo.",
+
 };

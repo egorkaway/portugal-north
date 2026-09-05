@@ -911,6 +911,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Montcada-Bifurcació": ["78800"],
 
+  "L'Ampolla-El Perelló-Deltebre": ["65404"],
+
+  "Bordils-Juià": ["79302"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

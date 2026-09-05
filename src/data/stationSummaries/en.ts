@@ -1031,4 +1031,10 @@ export const stationSummariesEn: Record<string, string> = {
   "Vila Fernando":
     "Vila Fernando is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Arronches":
+    "Arronches is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
+  "Assumar":
+    "Assumar is a CP regional halt on Linha do Leste in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
+
 };
