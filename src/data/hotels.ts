@@ -4779,6 +4779,16 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Esmeralda", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Esmeralda%2C%20Osuna%2C%20Spain&order=price" },
     { name: "Hotel Las Casas del Duque", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Las%20Casas%20del%20Duque%2C%20Osuna%2C%20Spain&order=price" },
   ],
+  "El Vendrell": [
+    { name: "Ramblas Vendrell", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ramblas%20Vendrell%2C%20El%20Vendrell%2C%20Spain&order=price" },
+    { name: "Hotel el Castell", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20el%20Castell%2C%20El%20Vendrell%2C%20Spain&order=price" },
+    { name: "Casa de colònies Artur Martorell", distanceKm: 3.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20de%20col%C3%B2nies%20Artur%20Martorell%2C%20El%20Vendrell%2C%20Spain&order=price" },
+  ],
+  "San Feliz": [
+    { name: "La Casita del Jardín", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Casita%20del%20Jard%C3%ADn%2C%20San%20Feliz%2C%20Spain&order=price" },
+    { name: "Checkin Basic León Norte", distanceKm: 6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Checkin%20Basic%20Le%C3%B3n%20Norte%2C%20San%20Feliz%2C%20Spain&order=price" },
+    { name: "Hotel Santiago", distanceKm: 6.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Santiago%2C%20San%20Feliz%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

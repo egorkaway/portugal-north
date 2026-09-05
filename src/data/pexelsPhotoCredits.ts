@@ -1981,6 +1981,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@hub-jacqu-750015482",
     photoPageUrl: "https://www.pexels.com/photo/historic-tram-in-rainy-porto-city-center-28972500/",
   },
+  "29037479": {
+    photographer: "Osman Demirkıran",
+    photographerUrl: "https://www.pexels.com/@bassareus7",
+    photoPageUrl: "https://www.pexels.com/photo/elegant-black-and-white-train-station-perspective-29037479/",
+  },
   "29144892": {
     photographer: "Liane Ferreira",
     photographerUrl: "https://www.pexels.com/@liane-ferreira-1033991071",

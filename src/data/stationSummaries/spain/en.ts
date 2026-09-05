@@ -1558,4 +1558,10 @@ export const spainSummariesEn: Record<string, string> = {
   "Osuna":
     "Osuna is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "El Vendrell":
+    "El Vendrell is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "San Feliz":
+    "San Feliz is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

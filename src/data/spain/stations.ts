@@ -4505,4 +4505,22 @@ export const spainStations: Station[] = [
     lng: -5.115,
   },
 
+  {
+    name: "El Vendrell",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.221,
+    lng: 1.5379,
+  },
+
+  {
+    name: "San Feliz",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.6823,
+    lng: -5.5379,
+  },
+
 ];

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T20:13:57.178Z",
+  "updatedAt": "2026-09-05T20:46:17.309Z",
   "airports": [
     {
       "iata": "PMI",
@@ -1341,6 +1341,32 @@
       "iberianDestinationCount": 2,
       "iberianSampledFlights": 14,
       "iberianSampledAt": "2026-09-05T20:13:57.178Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "RTM",
+      "stationName": "Rotterdam The Hague Airport (RTM)",
+      "slug": "rotterdam-the-hague-airport-rtm",
+      "country": "NL",
+      "iberianFlightCount": 13,
+      "iberianMapImage": "/maps/airports/external/rtm-rotterdam-the-hague-iberia.png",
+      "iberianDestinationCount": 9,
+      "iberianSampledFlights": 13,
+      "iberianSampledAt": "2026-09-05T20:43:32.627Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "PSA",
+      "stationName": "Pisa International Airport (PSA)",
+      "slug": "pisa-international-airport-psa",
+      "country": "IT",
+      "iberianFlightCount": 13,
+      "iberianMapImage": "/maps/airports/external/psa-pisa-iberia.png",
+      "iberianDestinationCount": 7,
+      "iberianSampledFlights": 13,
+      "iberianSampledAt": "2026-09-05T20:46:17.309Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }

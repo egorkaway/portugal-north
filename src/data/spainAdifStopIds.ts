@@ -989,6 +989,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Osuna": ["01007"],
 
+  "El Vendrell": ["72201"],
+
+  "San Feliz": ["05776"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
