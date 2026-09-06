@@ -14,6 +14,7 @@ import {
   countIberianConnectionDestinations,
   coverageFromExternalMapRows,
   externalAirportDisplayName,
+  externalIberiaMapsGitignore,
   externalMapFilename,
   externalMapPublicPath,
   externalSpotlightLimit,
@@ -92,6 +93,9 @@ export function writeExternalAirportPageIatas(rootDir, store) {
   const outPath = join(rootDir, PAGE_IATAS_REL);
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, body);
+  const mapsDir = externalMapsDir(rootDir);
+  mkdirSync(mapsDir, { recursive: true });
+  writeFileSync(join(mapsDir, ".gitignore"), externalIberiaMapsGitignore(unique));
   return outPath;
 }
 

@@ -3,6 +3,7 @@ import {
   allFlightsMapNeedsRegeneration,
   countIberianConnectionDestinations,
   coverageFromExternalMapRows,
+  externalIberiaMapsGitignore,
   externalMapFilename,
   externalMapPlaceSlug,
   externalSpotlightLimit,
@@ -381,5 +382,15 @@ describe("externalMapFilename", () => {
     expect(
       externalMapFilename("AMS", "Amsterdam Airport Schiphol (AMS)", "iberian"),
     ).toBe("ams-amsterdam-schiphol-iberia.png");
+  });
+});
+
+describe("externalIberiaMapsGitignore", () => {
+  it("ignores Iberian-only maps and re-includes page-airport Iberian PNGs", () => {
+    const ignore = externalIberiaMapsGitignore(["AMS", "tfn", "AMS"]);
+    expect(ignore).toContain("*-iberia.png");
+    expect(ignore).toContain("!ams-*-iberia.png");
+    expect(ignore).toContain("!tfn-*-iberia.png");
+    expect(ignore).not.toContain("!ork-*-iberia.png");
   });
 });
