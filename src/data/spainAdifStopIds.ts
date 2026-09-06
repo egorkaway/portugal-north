@@ -1009,6 +1009,26 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Vilafranca del Penedès": ["72204"],
 
+  "Alpedrete": ["12002"],
+
+  "San Claudio": ["05304"],
+
+  "Albuixech": ["65005"],
+
+  "Arriondas": ["05543"],
+
+  "Peñaullán": ["05237"],
+
+  "Luceni": ["81207"],
+
+  "Vinaròs": ["65312"],
+
+  "Las Segadas": ["15209"],
+
+  "Delicias": ["18004"],
+
+  "Grado": ["05317"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

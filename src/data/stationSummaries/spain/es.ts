@@ -1588,4 +1588,34 @@ export const spainSummariesEs: Record<string, string> = {
   "Vilafranca del Penedès":
     "Vilafranca del Penedès es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Alpedrete":
+    "Alpedrete es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "San Claudio":
+    "San Claudio es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Albuixech":
+    "Albuixech es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Arriondas":
+    "Arriondas es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Peñaullán":
+    "Peñaullán es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Luceni":
+    "Luceni es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Vinaròs":
+    "Vinaròs es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Las Segadas":
+    "Las Segadas es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Delicias":
+    "Delicias es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Grado":
+    "Grado es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

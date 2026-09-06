@@ -1588,4 +1588,34 @@ export const spainSummariesCa: Record<string, string> = {
   "Vilafranca del Penedès":
     "Vilafranca del Penedès és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Alpedrete":
+    "Alpedrete és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "San Claudio":
+    "San Claudio és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Albuixech":
+    "Albuixech és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Arriondas":
+    "Arriondas és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Peñaullán":
+    "Peñaullán és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Luceni":
+    "Luceni és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Vinaròs":
+    "Vinaròs és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Las Segadas":
+    "Las Segadas és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Delicias":
+    "Delicias és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Grado":
+    "Grado és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

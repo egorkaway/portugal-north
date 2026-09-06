@@ -1141,6 +1141,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@priyanshu-das-419903538",
     photoPageUrl: "https://www.pexels.com/photo/person-walking-near-railway-station-in-grayscale-photography-15099732/",
   },
+  "15252265": {
+    photographer: "Eyup  Sayar",
+    photographerUrl: "https://www.pexels.com/@eyup-sayar-290427017",
+    photoPageUrl: "https://www.pexels.com/photo/view-on-a-square-through-the-arcades-15252265/",
+  },
   "15259476": {
     photographer: "Chirill Ceban",
     photographerUrl: "https://www.pexels.com/@bitkidd",
@@ -3140,6 +3145,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Alex Ravvas",
     photographerUrl: "https://www.pexels.com/@alexravvas",
     photoPageUrl: "https://www.pexels.com/photo/scenic-kalavryta-railway-station-in-greece-37487783/",
+  },
+  "37496823": {
+    photographer: "Janez Temlin",
+    photographerUrl: "https://www.pexels.com/@janez-temlin-2159304147",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-steam-locomotive-on-display-under-canopy-37496823/",
   },
   "37505763": {
     photographer: "Frederick Adegoke Snr.",

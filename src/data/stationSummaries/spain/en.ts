@@ -1588,4 +1588,34 @@ export const spainSummariesEn: Record<string, string> = {
   "Vilafranca del Penedès":
     "Vilafranca del Penedès is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Alpedrete":
+    "Alpedrete is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "San Claudio":
+    "San Claudio is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Albuixech":
+    "Albuixech is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Arriondas":
+    "Arriondas is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Peñaullán":
+    "Peñaullán is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Luceni":
+    "Luceni is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Vinaròs":
+    "Vinaròs is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Las Segadas":
+    "Las Segadas is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Delicias":
+    "Delicias is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Grado":
+    "Grado is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

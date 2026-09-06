@@ -4595,4 +4595,94 @@ export const spainStations: Station[] = [
     lng: 1.7032,
   },
 
+  {
+    name: "Alpedrete",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.6581,
+    lng: -4.035,
+  },
+
+  {
+    name: "San Claudio",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3554,
+    lng: -5.9178,
+  },
+
+  {
+    name: "Albuixech",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.5435,
+    lng: -0.3206,
+  },
+
+  {
+    name: "Arriondas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3875,
+    lng: -5.1883,
+  },
+
+  {
+    name: "Peñaullán",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.4912,
+    lng: -6.094,
+  },
+
+  {
+    name: "Luceni",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.8261,
+    lng: -1.2435,
+  },
+
+  {
+    name: "Vinaròs",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.4717,
+    lng: 0.4557,
+  },
+
+  {
+    name: "Las Segadas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3132,
+    lng: -5.8692,
+  },
+
+  {
+    name: "Delicias",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.4004,
+    lng: -3.6928,
+  },
+
+  {
+    name: "Grado",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3945,
+    lng: -6.0637,
+  },
+
 ];
