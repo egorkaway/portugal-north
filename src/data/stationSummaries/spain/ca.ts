@@ -1576,4 +1576,16 @@ export const spainSummariesCa: Record<string, string> = {
   "Palacio de Congresos":
     "Palacio de Congresos és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "San Román":
+    "San Román és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Cheste":
+    "Cheste és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Bidebieta-Basauri":
+    "Bidebieta-Basauri és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Vilafranca del Penedès":
+    "Vilafranca del Penedès és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

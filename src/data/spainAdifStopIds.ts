@@ -1001,6 +1001,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Palacio de Congresos": ["51009"],
 
+  "San Román": ["05321"],
+
+  "Cheste": ["66208"],
+
+  "Bidebieta-Basauri": ["13113"],
+
+  "Vilafranca del Penedès": ["72204"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

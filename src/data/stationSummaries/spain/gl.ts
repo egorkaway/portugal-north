@@ -1576,4 +1576,16 @@ export const spainSummariesGl: Record<string, string> = {
   "Palacio de Congresos":
     "Palacio de Congresos é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "San Román":
+    "San Román é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Cheste":
+    "Cheste é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Bidebieta-Basauri":
+    "Bidebieta-Basauri é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Vilafranca del Penedès":
+    "Vilafranca del Penedès é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

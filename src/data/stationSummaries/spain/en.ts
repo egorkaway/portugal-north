@@ -1576,4 +1576,16 @@ export const spainSummariesEn: Record<string, string> = {
   "Palacio de Congresos":
     "Palacio de Congresos is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "San Román":
+    "San Román is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Cheste":
+    "Cheste is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Bidebieta-Basauri":
+    "Bidebieta-Basauri is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
+  "Vilafranca del Penedès":
+    "Vilafranca del Penedès is a Renfe Cercanías station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

@@ -1046,6 +1046,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@emilio-sanchez-hernandez-285921208",
     photoPageUrl: "https://www.pexels.com/photo/photo-of-a-lake-with-brown-water-on-a-shore-14383715/",
   },
+  "14389332": {
+    photographer: "Artem Makarov",
+    photographerUrl: "https://www.pexels.com/@artem-makarov-289670876",
+    photoPageUrl: "https://www.pexels.com/photo/freight-wagons-with-petroleum-14389332/",
+  },
   "14508798": {
     photographer: "정규송 Nui MALAMA",
     photographerUrl: "https://www.pexels.com/@nui-malama-169330637",
@@ -1090,6 +1095,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Jan van der Wolf",
     photographerUrl: "https://www.pexels.com/@jan-van-der-wolf-11680885",
     photoPageUrl: "https://www.pexels.com/photo/benches-in-a-railway-station-14844696/",
+  },
+  "14911085": {
+    photographer: "Sakina Mammadli",
+    photographerUrl: "https://www.pexels.com/@sakina-mammadli-365647691",
+    photoPageUrl: "https://www.pexels.com/photo/train-at-a-railway-station-14911085/",
   },
   "14916418": {
     photographer: "Bilakis",
@@ -1145,6 +1155,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Zeynep Sude  Emek",
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
     photoPageUrl: "https://www.pexels.com/photo/a-man-wearing-a-gray-jacket-during-winter-15485530/",
+  },
+  "15616009": {
+    photographer: "Sami TÜRK",
+    photographerUrl: "https://www.pexels.com/@trksami",
+    photoPageUrl: "https://www.pexels.com/photo/interior-of-an-old-abandoned-mansion-15616009/",
   },
   "15656110": {
     photographer: "Jose Antonio Gallego Vázquez",

@@ -4809,6 +4809,26 @@ export const stationHotels: StationHotels = {
     { name: "Hotel San Pablo", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20San%20Pablo%2C%20Palacio%20de%20Congresos%2C%20Spain&order=price" },
     { name: "Hotel AC Sevilla Fórum", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20AC%20Sevilla%20F%C3%B3rum%2C%20Palacio%20de%20Congresos%2C%20Spain&order=price" },
   ],
+  "San Román": [
+    { name: "Hotel Los 14", distanceKm: 5.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Los%2014%2C%20San%20Rom%C3%A1n%2C%20Spain&order=price" },
+    { name: "Hotel Pax Casona del Busto", distanceKm: 5.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pax%20Casona%20del%20Busto%2C%20San%20Rom%C3%A1n%2C%20Spain&order=price" },
+    { name: "Hotel Antiguo Casino", distanceKm: 5.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Antiguo%20Casino%2C%20San%20Rom%C3%A1n%2C%20Spain&order=price" },
+  ],
+  "Cheste": [
+    { name: "La'Orza de Angel", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La'Orza%20de%20Angel%2C%20Cheste%2C%20Spain&order=price" },
+    { name: "Ignacio", distanceKm: 4.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ignacio%2C%20Cheste%2C%20Spain&order=price" },
+    { name: "Hotel Mas de Canicattí", distanceKm: 9.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mas%20de%20Canicatt%C3%AD%2C%20Cheste%2C%20Spain&order=price" },
+  ],
+  "Bidebieta-Basauri": [
+    { name: "Hotel Armiñe", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Armi%C3%B1e%2C%20Bidebieta-Basauri%2C%20Spain&order=price" },
+    { name: "BBK Bilbao Good Hostel", distanceKm: 2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=BBK%20Bilbao%20Good%20Hostel%2C%20Bidebieta-Basauri%2C%20Spain&order=price" },
+    { name: "B4R", distanceKm: 2.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=B4R%2C%20Bidebieta-Basauri%2C%20Spain&order=price" },
+  ],
+  "Vilafranca del Penedès": [
+    { name: "Pere III el Gran", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pere%20III%20el%20Gran%2C%20Vilafranca%20del%20Pened%C3%A8s%2C%20Spain&order=price" },
+    { name: "Hotel Casa Torner Güell", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Casa%20Torner%20G%C3%BCell%2C%20Vilafranca%20del%20Pened%C3%A8s%2C%20Spain&order=price" },
+    { name: "Sercotel Domo", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sercotel%20Domo%2C%20Vilafranca%20del%20Pened%C3%A8s%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

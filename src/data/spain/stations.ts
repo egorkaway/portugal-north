@@ -4559,4 +4559,40 @@ export const spainStations: Station[] = [
     lng: -5.9363,
   },
 
+  {
+    name: "San Román",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4489,
+    lng: -6.0772,
+  },
+
+  {
+    name: "Cheste",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.4909,
+    lng: -0.6863,
+  },
+
+  {
+    name: "Bidebieta-Basauri",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2371,
+    lng: -2.8895,
+  },
+
+  {
+    name: "Vilafranca del Penedès",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3448,
+    lng: 1.7032,
+  },
+
 ];

@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-05T22:02:29.417Z",
+  "updatedAt": "2026-09-06T09:32:41.607Z",
   "airports": [
     {
       "iata": "PMI",
@@ -1420,6 +1420,58 @@
       "iberianDestinationCount": 4,
       "iberianSampledFlights": 13,
       "iberianSampledAt": "2026-09-05T22:02:29.417Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "WMI",
+      "stationName": "Warsaw Modlin Airport (WMI)",
+      "slug": "warsaw-modlin-airport-wmi",
+      "country": "PL",
+      "iberianFlightCount": 12,
+      "iberianMapImage": "/maps/airports/external/wmi-warsaw-modlin-iberia.png",
+      "iberianDestinationCount": 8,
+      "iberianSampledFlights": 12,
+      "iberianSampledAt": "2026-09-06T01:04:04.436Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "TRN",
+      "stationName": "Turin Airport (TRN)",
+      "slug": "turin-airport-trn",
+      "country": "IT",
+      "iberianFlightCount": 12,
+      "iberianMapImage": "/maps/airports/external/trn-turin-iberia.png",
+      "iberianDestinationCount": 7,
+      "iberianSampledFlights": 12,
+      "iberianSampledAt": "2026-09-06T04:49:02.622Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "PHL",
+      "stationName": "Philadelphia International Airport (PHL)",
+      "slug": "philadelphia-international-airport-phl",
+      "country": "US",
+      "iberianFlightCount": 12,
+      "iberianMapImage": "/maps/airports/external/phl-philadelphia-iberia.png",
+      "iberianDestinationCount": 3,
+      "iberianSampledFlights": 12,
+      "iberianSampledAt": "2026-09-06T08:50:56.356Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "LIM",
+      "stationName": "Jorge Chávez International Airport (LIM)",
+      "slug": "jorge-chavez-international-airport-lim",
+      "country": "PE",
+      "iberianFlightCount": 12,
+      "iberianMapImage": "/maps/airports/external/lim-jorge-chavez-iberia.png",
+      "iberianDestinationCount": 1,
+      "iberianSampledFlights": 12,
+      "iberianSampledAt": "2026-09-06T09:32:41.607Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }
