@@ -32,7 +32,7 @@ describe("spain station expand picker", () => {
     );
   });
 
-  it("defaults to one station per expand batch", () => {
+  it("defaults to three stations per expand batch", () => {
     const picked = pickNextSpainStations({
       stops,
       existing,
@@ -43,8 +43,11 @@ describe("spain station expand picker", () => {
       ],
     });
 
-    expect(picked).toHaveLength(1);
-    expect(picked[0]?.name).toBe("Zaragoza Delicias");
+    expect(picked.map((row) => row.name)).toEqual([
+      "Zaragoza Delicias",
+      "Madrid-Puerta de Atocha",
+      "Valencia-Estació del Nord",
+    ]);
   });
 
   it("picks the busiest unmatched Spanish stops and skips catalog plus Portugal", () => {

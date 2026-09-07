@@ -241,6 +241,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@llucams",
     photoPageUrl: "https://www.pexels.com/photo/train-station-2002165/",
   },
+  "2031758": {
+    photographer: "Chait Goli",
+    photographerUrl: "https://www.pexels.com/@chaitaastic",
+    photoPageUrl: "https://www.pexels.com/photo/photo-of-two-red-trains-2031758/",
+  },
   "2352291": {
     photographer: "Lucas Pezeta",
     photographerUrl: "https://www.pexels.com/@lucaspezeta",
@@ -1306,6 +1311,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@ahrphotography",
     photoPageUrl: "https://www.pexels.com/photo/principe-pio-train-station-in-madrid-at-night-17060373/",
   },
+  "17078789": {
+    photographer: "Ayşenaz  Bilgin",
+    photographerUrl: "https://www.pexels.com/@aysenaz-bilgin-421884106",
+    photoPageUrl: "https://www.pexels.com/photo/light-rail-train-standing-by-a-platform-at-a-emek-station-ankara-turkey-17078789/",
+  },
   "17095484": {
     photographer: "Alan Kabeš",
     photographerUrl: "https://www.pexels.com/@alan-kabes-364775148",
@@ -1720,6 +1730,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Almada Studio",
     photographerUrl: "https://www.pexels.com/@almadastudio",
     photoPageUrl: "https://www.pexels.com/photo/busy-train-station-20829345/",
+  },
+  "20848709": {
+    photographer: "Jimmy Elizarraras",
+    photographerUrl: "https://www.pexels.com/@jimmyelizarraras",
+    photoPageUrl: "https://www.pexels.com/photo/people-around-palace-of-fine-arts-in-mexico-city-20848709/",
   },
   "20887330": {
     photographer: "Wolfgang Weiser",
@@ -2320,6 +2335,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Vadym Alyekseyenko",
     photographerUrl: "https://www.pexels.com/@vadym-alyekseyenko-137433856",
     photoPageUrl: "https://www.pexels.com/photo/railway-crossing-with-stop-sign-and-train-31762055/",
+  },
+  "31792035": {
+    photographer: "Hakam Magdea",
+    photographerUrl: "https://www.pexels.com/@hakam-magdea-2151202916",
+    photoPageUrl: "https://www.pexels.com/photo/train-at-snowy-station-in-turkiye-mountains-31792035/",
   },
   "31797305": {
     photographer: "Antonio Garcia Prats",

@@ -1085,6 +1085,36 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Villarrobledo": ["60500"],
 
+  "Pedroso de Narón": ["05113"],
+
+  "Salbio": ["13102"],
+
+  "Vega de Anzo": ["05315"],
+
+  "Astorga": ["20100"],
+
+  "Unquera": ["05649"],
+
+  "Linares-Baeza": ["50300"],
+
+  "Salteras": ["43027"],
+
+  "Malgrat de Mar": ["79605"],
+
+  "Traslaviña": ["05487"],
+
+  "Lorigüilla-Reva": ["66209"],
+
+  "Ollargan": ["13114"],
+
+  "Siete Aguas": ["66204"],
+
+  "Barcelona La Sagrera-Meridiana": ["78806"],
+
+  "Sabadell Sud": ["78703"],
+
+  "Sollana": ["69102"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

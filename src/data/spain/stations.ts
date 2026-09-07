@@ -4937,4 +4937,139 @@ export const spainStations: Station[] = [
     lng: -2.5986,
   },
 
+  {
+    name: "Pedroso de Narón",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5367,
+    lng: -8.1092,
+  },
+
+  {
+    name: "Salbio",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.0742,
+    lng: -2.9994,
+  },
+
+  {
+    name: "Vega de Anzo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3893,
+    lng: -6.0057,
+  },
+
+  {
+    name: "Astorga",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.4595,
+    lng: -6.0472,
+  },
+
+  {
+    name: "Unquera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3748,
+    lng: -4.5143,
+  },
+
+  {
+    name: "Linares-Baeza",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.0689,
+    lng: -3.5894,
+  },
+
+  {
+    name: "Salteras",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.4102,
+    lng: -6.0992,
+  },
+
+  {
+    name: "Malgrat de Mar",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6416,
+    lng: 2.7413,
+  },
+
+  {
+    name: "Traslaviña",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2333,
+    lng: -3.1983,
+  },
+
+  {
+    name: "Lorigüilla-Reva",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.4858,
+    lng: -0.5674,
+  },
+
+  {
+    name: "Ollargan",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2425,
+    lng: -2.9165,
+  },
+
+  {
+    name: "Siete Aguas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.4572,
+    lng: -0.9025,
+  },
+
+  {
+    name: "Barcelona La Sagrera-Meridiana",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4218,
+    lng: 2.1871,
+  },
+
+  {
+    name: "Sabadell Sud",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5287,
+    lng: 2.1054,
+  },
+
+  {
+    name: "Sollana",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.2793,
+    lng: -0.3793,
+  },
+
 ];

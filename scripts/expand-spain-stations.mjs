@@ -4,10 +4,10 @@
  *
  *   npm run stats:spain-expand
  *   npm run stats:spain-expand -- --dry-run
- *   npm run stats:spain-expand -- --limit 1
+ *   npm run stats:spain-expand -- --limit 3
  *
  * Also invoked from collect-departure-stats.mjs after Spain reliability sampling
- * (default: one station per run).
+ * (default: three stations per run).
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";

@@ -5234,6 +5234,81 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Ideal", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ideal%2C%20Villarrobledo%2C%20Spain&order=price" },
     { name: "Hotel Juan Carlos I", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Juan%20Carlos%20I%2C%20Villarrobledo%2C%20Spain&order=price" },
   ],
+  "Pedroso de Narón": [
+    { name: "Casa Outeiro", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Outeiro%2C%20Pedroso%20de%20Nar%C3%B3n%2C%20Spain&order=price" },
+    { name: "PR Maragoto", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=PR%20Maragoto%2C%20Pedroso%20de%20Nar%C3%B3n%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos de Neda", distanceKm: 4.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20de%20Neda%2C%20Pedroso%20de%20Nar%C3%B3n%2C%20Spain&order=price" },
+  ],
+  "Salbio": [
+    { name: "Hostal Ayala", distanceKm: 2.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Ayala%2C%20Salbio%2C%20Spain&order=price" },
+    { name: "Albizabal", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albizabal%2C%20Salbio%2C%20Spain&order=price" },
+    { name: "Belaustenea", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Belaustenea%2C%20Salbio%2C%20Spain&order=price" },
+  ],
+  "Vega de Anzo": [
+    { name: "El Lacayo de Sistiello", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Lacayo%20de%20Sistiello%2C%20Vega%20de%20Anzo%2C%20Spain&order=price" },
+    { name: "Casa Rural El Zapato", distanceKm: 3.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20El%20Zapato%2C%20Vega%20de%20Anzo%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos del Escamplero", distanceKm: 4.3, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20del%20Escamplero%2C%20Vega%20de%20Anzo%2C%20Spain&order=price" },
+  ],
+  "Astorga": [
+    { name: "Albergue Camino y Vía", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Camino%20y%20V%C3%ADa%2C%20Astorga%2C%20Spain&order=price" },
+    { name: "Hostal La Peseta", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Peseta%2C%20Astorga%2C%20Spain&order=price" },
+    { name: "Hotel Spa Vía de la Plata", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Spa%20V%C3%ADa%20de%20la%20Plata%2C%20Astorga%2C%20Spain&order=price" },
+  ],
+  "Unquera": [
+    { name: "Hotel Canal", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Canal%2C%20Unquera%2C%20Spain&order=price" },
+    { name: "Hostal Rio Deva 2", distanceKm: 1.2, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Rio%20Deva%202%2C%20Unquera%2C%20Spain&order=price" },
+    { name: "Vivienda rural", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vivienda%20rural%2C%20Unquera%2C%20Spain&order=price" },
+  ],
+  "Linares-Baeza": [
+    { name: "Hostal Las Palmeras", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Las%20Palmeras%2C%20Linares-Baeza%2C%20Spain&order=price" },
+    { name: "Hotel Cervantes", distanceKm: 4.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Cervantes%2C%20Linares-Baeza%2C%20Spain&order=price" },
+    { name: "Hotel Victoria", distanceKm: 4.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Victoria%2C%20Linares-Baeza%2C%20Spain&order=price" },
+  ],
+  "Salteras": [
+    { name: "Hotel Vereda Real", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vereda%20Real%2C%20Salteras%2C%20Spain&order=price" },
+    { name: "Hotel Nuevo Espartinas", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Nuevo%20Espartinas%2C%20Salteras%2C%20Spain&order=price" },
+    { name: "B&B Hotel Sevilla Bormujos", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotel%20Sevilla%20Bormujos%2C%20Salteras%2C%20Spain&order=price" },
+  ],
+  "Malgrat de Mar": [
+    { name: "Ibersol Sorra d'Or", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Ibersol%20Sorra%20d'Or%2C%20Malgrat%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Pensió Mallorca", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3%20Mallorca%2C%20Malgrat%20de%20Mar%2C%20Spain&order=price" },
+    { name: "Rosa Nàutica", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rosa%20N%C3%A0utica%2C%20Malgrat%20de%20Mar%2C%20Spain&order=price" },
+  ],
+  "Traslaviña": [
+    { name: "Amalurra", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Amalurra%2C%20Traslavi%C3%B1a%2C%20Spain&order=price" },
+    { name: "Batzarki", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Batzarki%2C%20Traslavi%C3%B1a%2C%20Spain&order=price" },
+    { name: "Hotel Convento San Roque", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Convento%20San%20Roque%2C%20Traslavi%C3%B1a%2C%20Spain&order=price" },
+  ],
+  "Lorigüilla-Reva": [
+    { name: "Casa de Amadeo", distanceKm: 5.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20de%20Amadeo%2C%20Lorig%C3%BCilla-Reva%2C%20Spain&order=price" },
+    { name: "Xon Valencia", distanceKm: 6.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Xon%20Valencia%2C%20Lorig%C3%BCilla-Reva%2C%20Spain&order=price" },
+    { name: "Holiday Inn", distanceKm: 6.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%2C%20Lorig%C3%BCilla-Reva%2C%20Spain&order=price" },
+  ],
+  "Ollargan": [
+    { name: "B4R", distanceKm: 0.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=B4R%2C%20Ollargan%2C%20Spain&order=price" },
+    { name: "BBK Bilbao Good Hostel", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=BBK%20Bilbao%20Good%20Hostel%2C%20Ollargan%2C%20Spain&order=price" },
+    { name: "HGB Hotel Gran Bilbao", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=HGB%20Hotel%20Gran%20Bilbao%2C%20Ollargan%2C%20Spain&order=price" },
+  ],
+  "Siete Aguas": [
+    { name: "Hotel Restaurante Venta del Pilar", distanceKm: 10.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurante%20Venta%20del%20Pilar%2C%20Siete%20Aguas%2C%20Spain&order=price" },
+    { name: "La Traviata", distanceKm: 10.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Traviata%2C%20Siete%20Aguas%2C%20Spain&order=price" },
+    { name: "Salon la Cartuja", distanceKm: 10.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Salon%20la%20Cartuja%2C%20Siete%20Aguas%2C%20Spain&order=price" },
+  ],
+  "Barcelona La Sagrera-Meridiana": [
+    { name: "Hotel Laumon", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Laumon%2C%20Barcelona%20La%20Sagrera-Meridiana%2C%20Spain&order=price" },
+    { name: "Amistat City Hostel Barcelona", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Amistat%20City%20Hostel%20Barcelona%2C%20Barcelona%20La%20Sagrera-Meridiana%2C%20Spain&order=price" },
+    { name: "Hotel BESTPRICE Maragall", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20BESTPRICE%20Maragall%2C%20Barcelona%20La%20Sagrera-Meridiana%2C%20Spain&order=price" },
+  ],
+  "Sabadell Sud": [
+    { name: "Arrahona", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Arrahona%2C%20Sabadell%20Sud%2C%20Spain&order=price" },
+    { name: "casa Beatriz", distanceKm: 0.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=casa%20Beatriz%2C%20Sabadell%20Sud%2C%20Spain&order=price" },
+    { name: "Holiday Inn Express & Suites Barcelona-Sabadell", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Holiday%20Inn%20Express%20%26%20Suites%20Barcelona-Sabadell%2C%20Sabadell%20Sud%2C%20Spain&order=price" },
+  ],
+  "Sollana": [
+    { name: "Pensión Nadal", distanceKm: 3.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Nadal%2C%20Sollana%2C%20Spain&order=price" },
+    { name: "Isabel", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Isabel%2C%20Sollana%2C%20Spain&order=price" },
+    { name: "Hotel Bartos", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Bartos%2C%20Sollana%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
