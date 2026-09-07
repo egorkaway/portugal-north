@@ -5224,6 +5224,16 @@ export const stationHotels: StationHotels = {
     { name: "Batzarki", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Batzarki%2C%20Mimetiz%2C%20Spain&order=price" },
     { name: "Erreka Güeñes", distanceKm: 3.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Erreka%20G%C3%BCe%C3%B1es%2C%20Mimetiz%2C%20Spain&order=price" },
   ],
+  "Mar": [
+    { name: "Rolisas Alojamiento Rural", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Rolisas%20Alojamiento%20Rural%2C%20Mar%2C%20Spain&order=price" },
+    { name: "Albergue de peregrinos Clara Campoamor", distanceKm: 1.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20peregrinos%20Clara%20Campoamor%2C%20Mar%2C%20Spain&order=price" },
+    { name: "Lunada", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Lunada%2C%20Mar%2C%20Spain&order=price" },
+  ],
+  "Villarrobledo": [
+    { name: "Castillo", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Castillo%2C%20Villarrobledo%2C%20Spain&order=price" },
+    { name: "Hotel Ideal", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ideal%2C%20Villarrobledo%2C%20Spain&order=price" },
+    { name: "Hotel Juan Carlos I", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Juan%20Carlos%20I%2C%20Villarrobledo%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

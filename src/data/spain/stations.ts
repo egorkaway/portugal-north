@@ -4919,4 +4919,22 @@ export const spainStations: Station[] = [
     lng: -3.1313,
   },
 
+  {
+    name: "Mar",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3984,
+    lng: -4.01,
+  },
+
+  {
+    name: "Villarrobledo",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.2609,
+    lng: -2.5986,
+  },
+
 ];

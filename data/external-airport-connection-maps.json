@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T14:27:02.550Z",
+  "updatedAt": "2026-09-07T14:45:24.456Z",
   "airports": [
     {
       "iata": "PMI",
@@ -1941,6 +1941,32 @@
       "iberianDestinationCount": 2,
       "iberianSampledFlights": 7,
       "iberianSampledAt": "2026-09-07T14:27:02.550Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "RBA",
+      "stationName": "Rabat-Salé Airport (RBA)",
+      "slug": "rabat-sale-airport-rba",
+      "country": "MA",
+      "iberianFlightCount": 6,
+      "iberianMapImage": "/maps/airports/external/rba-rabat-sale-iberia.png",
+      "iberianDestinationCount": 6,
+      "iberianSampledFlights": 6,
+      "iberianSampledAt": "2026-09-07T14:31:59.010Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "FEZ",
+      "stationName": "Fes Saïss International Airport (FEZ)",
+      "slug": "fes-saiss-international-airport-fez",
+      "country": "MA",
+      "iberianFlightCount": 6,
+      "iberianMapImage": "/maps/airports/external/fez-fes-saiss-iberia.png",
+      "iberianDestinationCount": 5,
+      "iberianSampledFlights": 6,
+      "iberianSampledAt": "2026-09-07T14:45:24.456Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }

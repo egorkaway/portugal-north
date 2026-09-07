@@ -1906,6 +1906,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@edgar-mosqueda-camacho-544076702",
     photoPageUrl: "https://www.pexels.com/photo/museum-in-the-old-railway-station-in-atlixco-27173231/",
   },
+  "27212823": {
+    photographer: "Ruben Reijgwart",
+    photographerUrl: "https://www.pexels.com/@ruben-reijgwart-820557011",
+    photoPageUrl: "https://www.pexels.com/photo/a-black-and-white-photo-of-a-train-in-a-station-27212823/",
+  },
   "27677296": {
     photographer: "Gustavo Denuncio",
     photographerUrl: "https://www.pexels.com/@gustavodenuncio",

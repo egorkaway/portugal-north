@@ -1696,4 +1696,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Mimetiz":
     "Mimetiz és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Mar":
+    "Mar és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Villarrobledo":
+    "Villarrobledo és una estació de Renfe de llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

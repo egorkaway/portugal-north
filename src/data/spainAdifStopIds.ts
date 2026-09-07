@@ -1081,6 +1081,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Mimetiz": ["05484"],
 
+  "Mar": ["05615"],
+
+  "Villarrobledo": ["60500"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
