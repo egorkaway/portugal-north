@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-07T09:37:42.657Z",
-  "runCount": 788,
+  "generatedAt": "2026-09-07T11:49:50.664Z",
+  "runCount": 793,
   "mostDelayed": [
     {
       "trainNumber": "868",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 32.3,
-      "observations": 16,
+      "avgDelayMinutes": 30.4,
+      "observations": 17,
       "stationsSampled": 21,
       "majorStations": [
         "Porto-Campanhã",
@@ -44,46 +44,46 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "36417",
+      "trainNumber": "36407",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 16,
+      "observations": 18,
       "stationsSampled": 17,
       "majorStations": [
         "Pero Negro",
         "Bombarral",
         "Mafra",
-        "Feliteira"
+        "Dois Portos"
       ],
       "selectionMode": "rotating",
       "poolSize": 12
     },
     {
-      "trainNumber": "55621",
-      "serviceType": "Regional",
+      "trainNumber": "10540",
+      "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 16,
+      "observations": 17,
       "stationsSampled": 6,
       "majorStations": [
-        "Vila Velha de Ródão",
-        "Fratel",
-        "Barca da Amieira – Envendos",
-        "Belver"
+        "Abrantes",
+        "Castelo Branco",
+        "Covilhã",
+        "Vila Velha de Ródão"
       ],
       "selectionMode": "rotating",
       "poolSize": 12
     },
     {
-      "trainNumber": "36400",
-      "serviceType": "Regional",
+      "trainNumber": "10544",
+      "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 15,
-      "stationsSampled": 17,
+      "observations": 17,
+      "stationsSampled": 6,
       "majorStations": [
-        "Mira Sintra-Meleças",
-        "Pero Negro",
-        "Bombarral",
-        "Mafra"
+        "Abrantes",
+        "Castelo Branco",
+        "Covilhã",
+        "Vila Velha de Ródão"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

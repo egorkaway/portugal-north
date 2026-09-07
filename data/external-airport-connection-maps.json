@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T09:38:39.759Z",
+  "updatedAt": "2026-09-07T11:50:45.687Z",
   "airports": [
     {
       "iata": "PMI",
@@ -1785,6 +1785,71 @@
       "iberianDestinationCount": 5,
       "iberianSampledFlights": 8,
       "iberianSampledAt": "2026-09-07T09:38:39.759Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "GDN",
+      "stationName": "Gdańsk Lech Wałęsa Airport (GDN)",
+      "slug": "gdansk-lech-wa-esa-airport-gdn",
+      "country": "PL",
+      "iberianFlightCount": 8,
+      "iberianMapImage": "/maps/airports/external/gdn-gdansk-lech-wa-esa-iberia.png",
+      "iberianDestinationCount": 4,
+      "iberianSampledFlights": 8,
+      "iberianSampledAt": "2026-09-07T11:28:41.662Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "LAX",
+      "stationName": "Los Angeles International Airport (LAX)",
+      "slug": "los-angeles-international-airport-lax",
+      "country": "US",
+      "iberianFlightCount": 8,
+      "iberianMapImage": "/maps/airports/external/lax-los-angeles-iberia.png",
+      "iberianDestinationCount": 2,
+      "iberianSampledFlights": 8,
+      "iberianSampledAt": "2026-09-07T11:33:54.150Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "MEX",
+      "stationName": "Mexico City Benito Juárez International Airport (MEX)",
+      "slug": "mexico-city-benito-juarez-international-airport-mex",
+      "country": "MX",
+      "iberianFlightCount": 8,
+      "iberianMapImage": "/maps/airports/external/mex-mexico-city-benito-juarez-iberia.png",
+      "iberianDestinationCount": 2,
+      "iberianSampledFlights": 8,
+      "iberianSampledAt": "2026-09-07T11:36:04.495Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "RAI",
+      "stationName": "Nelson Mandela International Airport (RAI)",
+      "slug": "nelson-mandela-international-airport-rai",
+      "country": "CV",
+      "iberianFlightCount": 8,
+      "iberianMapImage": "/maps/airports/external/rai-nelson-mandela-iberia.png",
+      "iberianDestinationCount": 2,
+      "iberianSampledFlights": 8,
+      "iberianSampledAt": "2026-09-07T11:46:55.773Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "CLJ",
+      "stationName": "Avram Iancu Cluj International Airport (CLJ)",
+      "slug": "avram-iancu-cluj-international-airport-clj",
+      "country": "RO",
+      "iberianFlightCount": 7,
+      "iberianMapImage": "/maps/airports/external/clj-avram-iancu-cluj-iberia.png",
+      "iberianDestinationCount": 7,
+      "iberianSampledFlights": 7,
+      "iberianSampledAt": "2026-09-07T11:50:45.687Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }

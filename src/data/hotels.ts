@@ -4949,6 +4949,31 @@ export const stationHotels: StationHotels = {
     { name: "Hostal El Hacho", distanceKm: 7.7, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20Hacho%2C%20Pedrera%2C%20Spain&order=price" },
     { name: "Río Blanco", distanceKm: 10.6, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=R%C3%ADo%20Blanco%2C%20Pedrera%2C%20Spain&order=price" },
   ],
+  "Beifar": [
+    { name: "Hotel Los 14", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Los%2014%2C%20Beifar%2C%20Spain&order=price" },
+    { name: "Hotel Pax Casona del Busto", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Pax%20Casona%20del%20Busto%2C%20Beifar%2C%20Spain&order=price" },
+    { name: "Hotel Antiguo Casino", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Antiguo%20Casino%2C%20Beifar%2C%20Spain&order=price" },
+  ],
+  "Cuatro Vientos": [
+    { name: "Eurostars i-Hotel", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Eurostars%20i-Hotel%2C%20Cuatro%20Vientos%2C%20Spain&order=price" },
+    { name: "Exe Pozuelo", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Pozuelo%2C%20Cuatro%20Vientos%2C%20Spain&order=price" },
+    { name: "Casa Frami", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Frami%2C%20Cuatro%20Vientos%2C%20Spain&order=price" },
+  ],
+  "Roca-Cúper": [
+    { name: "Hotel La Mozaira", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Mozaira%2C%20Roca-C%C3%BAper%2C%20Spain&order=price" },
+    { name: "Hotel Florazar", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Florazar%2C%20Roca-C%C3%BAper%2C%20Spain&order=price" },
+    { name: "Hotel Olympia", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Olympia%2C%20Roca-C%C3%BAper%2C%20Spain&order=price" },
+  ],
+  "El Casar": [
+    { name: "Residencia de Estudiantes Fernando de los Ríos", distanceKm: 1.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20de%20Estudiantes%20Fernando%20de%20los%20R%C3%ADos%2C%20El%20Casar%2C%20Spain&order=price" },
+    { name: "Residencia Gregorio Peces Barba", distanceKm: 1.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencia%20Gregorio%20Peces%20Barba%2C%20El%20Casar%2C%20Spain&order=price" },
+    { name: "Hotel Vértice Roomspace Madrid", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20V%C3%A9rtice%20Roomspace%20Madrid%2C%20El%20Casar%2C%20Spain&order=price" },
+  ],
+  "La Frecha": [
+    { name: "Albergue Santuario de Bendueños", distanceKm: 1.8, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Santuario%20de%20Bendue%C3%B1os%2C%20La%20Frecha%2C%20Spain&order=price" },
+    { name: "Hospedaje Senda del Huerna", distanceKm: 1.9, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaje%20Senda%20del%20Huerna%2C%20La%20Frecha%2C%20Spain&order=price" },
+    { name: "Alojamiento Casa del Abad", distanceKm: 2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamiento%20Casa%20del%20Abad%2C%20La%20Frecha%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

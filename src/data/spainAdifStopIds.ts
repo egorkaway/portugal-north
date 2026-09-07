@@ -1057,6 +1057,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Pedrera": ["01009"],
 
+  "Beifar": ["05323"],
+
+  "Cuatro Vientos": ["35603"],
+
+  "Roca-Cúper": ["65001"],
+
+  "El Casar": ["60109"],
+
+  "La Frecha": ["15119"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

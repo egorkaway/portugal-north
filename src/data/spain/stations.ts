@@ -4811,4 +4811,49 @@ export const spainStations: Station[] = [
     lng: -4.8935,
   },
 
+  {
+    name: "Beifar",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4701,
+    lng: -6.0989,
+  },
+
+  {
+    name: "Cuatro Vientos",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3778,
+    lng: -3.7915,
+  },
+
+  {
+    name: "Roca-Cúper",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.5262,
+    lng: -0.3238,
+  },
+
+  {
+    name: "El Casar",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3185,
+    lng: -3.7098,
+  },
+
+  {
+    name: "La Frecha",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.0962,
+    lng: -5.7986,
+  },
+
 ];

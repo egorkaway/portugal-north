@@ -3426,4 +3426,9 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@igor-passchier-111147847",
     photoPageUrl: "https://www.pexels.com/photo/historic-pinhao-train-station-in-portugal-39366843/",
   },
+  "39375943": {
+    photographer: "Igor Passchier",
+    photographerUrl: "https://www.pexels.com/@igor-passchier-111147847",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architectural-design-in-lisbon-portugal-39375943/",
+  },
 };
