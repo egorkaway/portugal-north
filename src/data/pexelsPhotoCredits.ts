@@ -951,6 +951,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@luo-chris-1659104",
     photoPageUrl: "https://www.pexels.com/photo/train-track-in-a-forest-13075112/",
   },
+  "13092665": {
+    photographer: "Image Hunter",
+    photographerUrl: "https://www.pexels.com/@image-hunter-281453274",
+    photoPageUrl: "https://www.pexels.com/photo/tracks-on-railway-station-in-snow-13092665/",
+  },
   "13135150": {
     photographer: "Zetong Li",
     photographerUrl: "https://www.pexels.com/@zetong-li-880728",
@@ -2421,6 +2426,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@larasantosartedesign",
     photoPageUrl: "https://www.pexels.com/photo/empty-train-carriage-with-modern-interior-design-32546136/",
   },
+  "32561396": {
+    photographer: "Rafael Minguet Delgado",
+    photographerUrl: "https://www.pexels.com/@thales13",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architectural-staircase-in-valencia-32561396/",
+  },
   "32561490": {
     photographer: "Rafael Minguet Delgado",
     photographerUrl: "https://www.pexels.com/@thales13",
@@ -3385,6 +3395,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Malcoln Oliveira",
     photographerUrl: "https://www.pexels.com/@malcolnphoto",
     photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-in-itabirito-brazil-39154440/",
+  },
+  "39238713": {
+    photographer: "Vadym Alyekseyenko",
+    photographerUrl: "https://www.pexels.com/@vadym-alyekseyenko-137433856",
+    photoPageUrl: "https://www.pexels.com/photo/atocha-railway-station-with-cyclist-and-pedestrians-39238713/",
   },
   "39268997": {
     photographer: "Antonio Garcia Prats",

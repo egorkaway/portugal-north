@@ -1043,6 +1043,20 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Balenyà-Tona-Seva": ["77107"],
 
+  "Muros del Nalón": ["05243"],
+
+  "Olabeaga": ["13303"],
+
+  "Ayerbe": ["74204"],
+
+  "A Rúa-Petín": ["20213"],
+
+  "Puçol": ["65008"],
+
+  "Ponte Mera": ["05133"],
+
+  "Pedrera": ["01009"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

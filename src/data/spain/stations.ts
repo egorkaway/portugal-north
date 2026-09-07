@@ -4748,4 +4748,67 @@ export const spainStations: Station[] = [
     lng: 2.2474,
   },
 
+  {
+    name: "Muros del Nalón",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.543,
+    lng: -6.1111,
+  },
+
+  {
+    name: "Olabeaga",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2644,
+    lng: -2.9553,
+  },
+
+  {
+    name: "Ayerbe",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.2756,
+    lng: -0.6826,
+  },
+
+  {
+    name: "A Rúa-Petín",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.3928,
+    lng: -7.1133,
+  },
+
+  {
+    name: "Puçol",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.6205,
+    lng: -0.3031,
+  },
+
+  {
+    name: "Ponte Mera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.666,
+    lng: -7.9026,
+  },
+
+  {
+    name: "Pedrera",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.2224,
+    lng: -4.8935,
+  },
+
 ];

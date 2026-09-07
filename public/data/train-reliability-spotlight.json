@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-07T05:32:17.569Z",
-  "runCount": 781,
+  "generatedAt": "2026-09-07T09:37:42.657Z",
+  "runCount": 788,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -44,46 +44,46 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "10540",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 0,
-      "observations": 17,
-      "stationsSampled": 6,
-      "majorStations": [
-        "Abrantes",
-        "Castelo Branco",
-        "Covilhã",
-        "Fundão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "10544",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 0,
-      "observations": 17,
-      "stationsSampled": 6,
-      "majorStations": [
-        "Abrantes",
-        "Castelo Branco",
-        "Covilhã",
-        "Fundão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "36407",
+      "trainNumber": "36417",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 17,
+      "observations": 16,
       "stationsSampled": 17,
       "majorStations": [
         "Pero Negro",
         "Bombarral",
-        "Feliteira",
-        "Dois Portos"
+        "Mafra",
+        "Feliteira"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "55621",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 16,
+      "stationsSampled": 6,
+      "majorStations": [
+        "Vila Velha de Ródão",
+        "Fratel",
+        "Barca da Amieira – Envendos",
+        "Belver"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36400",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 15,
+      "stationsSampled": 17,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Bombarral",
+        "Mafra"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

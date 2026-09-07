@@ -4914,6 +4914,41 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Seva", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Seva%2C%20Baleny%C3%A0-Tona-Seva%2C%20Spain&order=price" },
     { name: "Mas Boix", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mas%20Boix%2C%20Baleny%C3%A0-Tona-Seva%2C%20Spain&order=price" },
   ],
+  "Muros del Nalón": [
+    { name: "Albergue Camino de la Costa", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Camino%20de%20la%20Costa%2C%20Muros%20del%20Nal%C3%B3n%2C%20Spain&order=price" },
+    { name: "Albergue", distanceKm: 0.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%2C%20Muros%20del%20Nal%C3%B3n%2C%20Spain&order=price" },
+    { name: "Globales Playa de Las Llanas", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Globales%20Playa%20de%20Las%20Llanas%2C%20Muros%20del%20Nal%C3%B3n%2C%20Spain&order=price" },
+  ],
+  "Olabeaga": [
+    { name: "Hostal Ría de Bilbao", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20R%C3%ADa%20de%20Bilbao%2C%20Olabeaga%2C%20Spain&order=price" },
+    { name: "Akelarre", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Akelarre%2C%20Olabeaga%2C%20Spain&order=price" },
+    { name: "Bilbao Hostel", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bilbao%20Hostel%2C%20Olabeaga%2C%20Spain&order=price" },
+  ],
+  "Ayerbe": [
+    { name: "Villa de Ayerbe", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Villa%20de%20Ayerbe%2C%20Ayerbe%2C%20Spain&order=price" },
+    { name: "Casa Solatillo", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Solatillo%2C%20Ayerbe%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos (ex Bar San Nicolas)", distanceKm: 4.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20(ex%20Bar%20San%20Nicolas)%2C%20Ayerbe%2C%20Spain&order=price" },
+  ],
+  "A Rúa-Petín": [
+    { name: "Hostal Niza", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Niza%2C%20A%20R%C3%BAa-Pet%C3%ADn%2C%20Spain&order=price" },
+    { name: "Hotel Espada", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Espada%2C%20A%20R%C3%BAa-Pet%C3%ADn%2C%20Spain&order=price" },
+    { name: "Albergue Casa da Solaina", distanceKm: 0.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Casa%20da%20Solaina%2C%20A%20R%C3%BAa-Pet%C3%ADn%2C%20Spain&order=price" },
+  ],
+  "Puçol": [
+    { name: "Hotel Alba", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alba%2C%20Pu%C3%A7ol%2C%20Spain&order=price" },
+    { name: "Hotel Restaurant El Molí", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurant%20El%20Mol%C3%AD%2C%20Pu%C3%A7ol%2C%20Spain&order=price" },
+    { name: "Cuatro Hermanas", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cuatro%20Hermanas%2C%20Pu%C3%A7ol%2C%20Spain&order=price" },
+  ],
+  "Ponte Mera": [
+    { name: "La Ría", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20R%C3%ADa%2C%20Ponte%20Mera%2C%20Spain&order=price" },
+    { name: "Muinos De Pontenoval", distanceKm: 3.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Muinos%20De%20Pontenoval%2C%20Ponte%20Mera%2C%20Spain&order=price" },
+    { name: "Hostal Vendaval", distanceKm: 4.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Vendaval%2C%20Ponte%20Mera%2C%20Spain&order=price" },
+  ],
+  "Pedrera": [
+    { name: "Manantial de Roya", distanceKm: 7.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Manantial%20de%20Roya%2C%20Pedrera%2C%20Spain&order=price" },
+    { name: "Hostal El Hacho", distanceKm: 7.7, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20El%20Hacho%2C%20Pedrera%2C%20Spain&order=price" },
+    { name: "Río Blanco", distanceKm: 10.6, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=R%C3%ADo%20Blanco%2C%20Pedrera%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
