@@ -994,4 +994,133 @@ export const stationSummariesGl: Record<string, string> = {
   "Baracal":
     "Baracal é unha parada de CP de servizos rexionais na Linha da Beira Alta en Portugal. É unha parada práctica para explorar os arredores, con paneis de saídas en directo.",
 
+  "Arco de Baúlhe":
+    "Parada histórica na Linha do Tâmega pechada nas serras de Basto ao norte de Amarante. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Amarante para a ecopista e o museo no antigo terminal.",
+
+  "Mondim de Basto":
+    "Parada histórica na Linha do Tâmega pechada baixo a serra do Marão. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Amarante para turismo de aldea no val do Tâmega.",
+
+  "Celorico de Basto":
+    "Parada histórica na Linha do Tâmega pechada no val do Tâmega entre Amarante e Arco de Baúlhe. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Amarante para o edificio de azulexos e as serras de Basto.",
+
+  "Vila Caiz":
+    "Parada histórica na Linha do Tâmega pechada ao norte de Amarante. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Amarante para unha visita calma aos andeis pechados do Tâmega.",
+
+  "Canedo":
+    "Parada histórica na Linha do Tâmega pechada nas terras altas de Basto cara a Arco de Baúlhe. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Amarante para o edificio da estación na ecopista.",
+
+  "Marvão-Beirã":
+    "Parada histórica na Ramal de Cáceres pechada na fronteira española baixo a vila amurallada de Marvão. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Portalegre para os andeis de azulexos e turismo na serra de São Mamede.",
+
+  "Castelo de Vide":
+    "Parada histórica na Ramal de Cáceres pechada baixo a vila amurallada no Alto Alentejo. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Portalegre para a vila de mármore e paseos en São Mamede.",
+
+  "Barca d'Alva":
+    "Parada histórica na Linha do Douro pechada no antigo terminal internacional no Águeda xunto a España. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Pocinho para vistas do canón do Douro e a liña transfronteiriza pechada.",
+
+  "Almendra":
+    "Parada histórica na Linha do Douro pechada no tramo Pocinho–Barca d'Alva. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Pocinho para o edificio fluvial abandonado no alto Douro.",
+
+  "Castelo Melhor":
+    "Parada histórica na Linha do Douro pechada no tramo pechado cara a Barca d'Alva. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Pocinho para o apeadeiro de azulexos baixo Vila Nova de Foz Côa.",
+
+  "Macedo de Cavaleiros":
+    "Parada histórica na Linha do Tua pechada en Trás-os-Montes entre Mirandela e Bragança. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Bragança para o encoro do Azibo e o corredor de vía estreita pechado.",
+
+  "Azibo":
+    "Parada histórica na Linha do Tua pechada xunto ao encoro do Azibo ao leste de Macedo de Cavaleiros. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Macedo de Cavaleiros para paseos xunto ao encoro e o edificio abandonado do Tua.",
+
+  "Mogadouro":
+    "Parada histórica na Linha do Sabor pechada no planalto oriental de Trás-os-Montes. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Miranda do Douro para a estación abandonada do Sabor e o parque do Douro Internacional.",
+
+  "Moncorvo":
+    "Parada histórica na Linha do Sabor pechada baixo Torre de Moncorvo no baixo val do Sabor. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Pocinho para o edificio da estación e turismo no país do ferro.",
+
+  "Carviçais":
+    "Parada histórica na Linha do Sabor pechada no interior entre Moncorvo e Mogadouro. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Torre de Moncorvo para o depósito de auga e o apeadeiro pechado do Sabor.",
+
+  "Duas Igrejas - Miranda":
+    "Parada histórica na Linha do Sabor pechada xunto a Miranda do Douro no antigo terminal do Sabor. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Miranda do Douro para o edificio de azulexos e o canón do Douro.",
+
+  "Freixo de Espada à Cinta":
+    "Parada histórica na Linha do Sabor pechada no extremo nordeste sobre o Douro Internacional. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Miranda do Douro para as ruínas da estación e turismo na vila sobre o canón.",
+
+  "Estremoz":
+    "Parada histórica na Linha de Évora pechada no país do mármore do Alto Alentejo. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Évora para a estación recuperada e o centro histórico caiado.",
+
+  "Arraiolos":
+    "Parada histórica na Ramal de Mora pechada ao norte de Évora nas terras das alfombras. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Évora para a vila do castelo e o ramal de Mora pechado.",
+
+  "Aljustrel":
+    "Parada histórica na Ramal de Aljustrel pechada no país mineiro do Baixo Alentejo. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Beja para o edificio da estación e turismo na vila mineira.",
+
+  "Cabeço de Vide-Vaiamonte":
+    "Parada histórica na Ramal de Portalegre pechada no Alto Alentejo entre Estremoz e Portalegre. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Portalegre para o edificio de azulexos hoxe usado por unha fundación local.",
+
+  "Serpa-Brinches":
+    "Parada histórica na Ramal de Moura pechada nas chairas do Guadiana ao leste de Beja. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Beja para a vila amurallada de Serpa e o ramal de Moura pechado.",
+
+  "Castro Verde-Almodôvar":
+    "Parada histórica na Linha do Alentejo pechada nas chairas ao sur de Beja cara ao Algarve. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Beja para turismo nas chairas e o apeadeiro alentejano pechado.",
+
+  "Lousal":
+    "Parada histórica na Linha de Sines pechada na antiga aldea mineira no interior alentejano. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Grândola para a aldea-centro de ciencia e o edificio de Louzal.",
+
+  "Sines":
+    "Parada histórica na Linha de Sines pechada na vila portuaria atlántica do Alentejo Litoral. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Santiago do Cacém para o edificio recuperado e a terra natal de Vasco da Gama.",
+
+  "Canal-Caveira":
+    "Parada histórica na Linha do Sul pechada nos sobreirais ao norte de Grândola. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Grândola para o pequeno apeadeiro xunto ao corredor do Sul.",
+
+  "Serpins":
+    "Parada histórica na Ramal da Lousã pechada no antigo terminal da Lousã nos contrafortes da serra. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Coimbra-B para o edificio da estación onde a vía é hoxe un corredor de metrobus.",
+
+  "Treixedo":
+    "Parada histórica na Linha do Dão pechada na Ecopista do Dão ao sur de Viseu. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Viseu para ciclovía xunto ao antigo edificio da Liña do Dão.",
+
+  "Figueiró":
+    "Parada histórica na Linha do Dão pechada na Ecopista do Dão xunto a Viseu. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Viseu para unha parada na ecopista xunto ao edificio co nome da estación.",
+
+  "Vouzela":
+    "Parada histórica na Linha do Vouga pechada no val do Vouga ao oeste de Viseu. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Viseu para a praza da estación e a locomotora do Vouga en exposición.",
+
+  "Paradela":
+    "Parada histórica na Linha do Vouga pechada xunto a Sever do Vouga na liña de val pechada. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Aveiro para o edificio na ecopista nas serras do Vouga.",
+
+  "Coruche":
+    "Parada histórica na Linha de Vendas Novas pechada nas chairas do Sorraia no Ribatejo. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Santarém para turismo no país da cortiza e o apeadeiro pechado.",
+
+  "Canha":
+    "Parada histórica na Linha de Vendas Novas pechada nos sobreirais entre Vendas Novas e Coruche. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Vendas Novas para o pequeno edificio de arcos xunto ao corredor de mercadorías.",
+
+  "Agolada":
+    "Parada histórica na Linha de Vendas Novas pechada xunto a Fajarda nas chairas do Ribatejo. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Coruche para o apeadeiro de azulexos na liña pechada.",
+
+  "Quinta Grande":
+    "Parada histórica na Linha de Vendas Novas pechada nas herdades ao leste de Coruche. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Coruche para o edificio rural na liña de chaira pechada.",
+
+  "Águas de Moura":
+    "Parada histórica na Linha do Sul pechada no antigo entroncamento de Palmela cara ao Alentejo. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Pinhal Novo para os edificios da estación xunto ao patio de mercadorías.",
+
+  "Amieira":
+    "Parada histórica na Linha do Oeste pechada xunto a Soure na ligazón pechada de Amieira e Verride. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Soure para o edificio de azulexos xunto ás vías que restan.",
+
+  "Lanhelas":
+    "Parada histórica na Linha do Minho pechada no estuario do Miño ao sur de Caminha. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Caminha para o edificio con grafitis onde os trens de pasaxeiros xa non paran.",
+
+  "Friestas":
+    "Parada histórica na Linha do Minho pechada no val do Miño cara ao interior desde Valença. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Valença para o edificio tapiado na antiga vía convertida en camiño.",
+
+  "Montijo":
+    "Parada histórica na Ramal do Montijo pechada na beira sur do Texo fronte a Lisboa. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Barreiro para os edificios tapiados da antiga Aldegallega.",
+
+  "Seixal":
+    "Parada histórica na Ramal do Seixal pechada na baía do Seixal ao sur de Lisboa. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Barreiro para o edificio de azulexos na fronte de auga do ramal pechado.",
+
+  "Torre da Gadanha":
+    "Parada histórica na Linha do Alentejo pechada no antigo entroncamento cara a Montemor-o-Novo. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Évora para o edificio da estación e visitas a Montemor-o-Novo.",
+
+  "Luzianes":
+    "Parada histórica na Linha do Sul pechada nas serras sobre Odemira cara ao Algarve. Os trens de pasaxeiros xa non paran, pero o edificio da estación segue en pé — chegue por estrada ou autobús desde Funcheira para o edificio que resta en Luzianes-Gare.",
+
 };

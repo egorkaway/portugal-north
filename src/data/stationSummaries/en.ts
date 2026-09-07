@@ -1061,4 +1061,133 @@ export const stationSummariesEn: Record<string, string> = {
   "Baracal":
     "Baracal is a CP regional halt on Linha da Beira Alta in Portugal. It is a practical rail stop for exploring the surrounding area, with live departure boards.",
 
+  "Arco de Baúlhe":
+    "Historic halt on the closed Linha do Tâmega in the Basto hills north of Amarante. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Amarante for the ecotrail and the preserved terminus museum.",
+
+  "Mondim de Basto":
+    "Historic halt on the closed Linha do Tâmega beneath the Serra do Marão. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Amarante for village touring in the Tâmega valley.",
+
+  "Celorico de Basto":
+    "Historic halt on the closed Linha do Tâmega in the Tâmega valley between Amarante and Arco de Baúlhe. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Amarante for the azulejo station house and Basto hill country.",
+
+  "Vila Caiz":
+    "Historic halt on the closed Linha do Tâmega just north of Amarante. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Amarante for a quiet look at the closed Tâmega platforms.",
+
+  "Canedo":
+    "Historic halt on the closed Linha do Tâmega in the Basto uplands toward Arco de Baúlhe. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Amarante for the surviving station house on the ecotrail.",
+
+  "Marvão-Beirã":
+    "Historic halt on the closed Ramal de Cáceres on the Spanish border below the castle town of Marvão. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Portalegre for the famous azulejo platforms and Serra de São Mamede touring.",
+
+  "Castelo de Vide":
+    "Historic halt on the closed Ramal de Cáceres below the walled hill town in the Alto Alentejo. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Portalegre for the marble town and São Mamede walks.",
+
+  "Barca d'Alva":
+    "Historic halt on the closed Linha do Douro at the old international terminus on the Águeda near Spain. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Pocinho for Douro canyon views and the closed transborder line.",
+
+  "Almendra":
+    "Historic halt on the closed Linha do Douro on the Pocinho–Barca d'Alva section. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Pocinho for the derelict riverside station house in the upper Douro.",
+
+  "Castelo Melhor":
+    "Historic halt on the closed Linha do Douro on the stretch toward Barca d'Alva. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Pocinho for the azulejo halt below Vila Nova de Foz Côa.",
+
+  "Macedo de Cavaleiros":
+    "Historic halt on the closed Linha do Tua in Trás-os-Montes between Mirandela and Bragança. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Bragança for the Azibo lake country and the closed narrow-gauge corridor.",
+
+  "Azibo":
+    "Historic halt on the closed Linha do Tua beside the Azibo reservoir east of Macedo de Cavaleiros. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Macedo de Cavaleiros for lakeside walks and the abandoned Tua station house.",
+
+  "Mogadouro":
+    "Historic halt on the closed Linha do Sabor on the high plateau of eastern Trás-os-Montes. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Miranda do Douro for the derelict Sabor station and International Douro park country.",
+
+  "Moncorvo":
+    "Historic halt on the closed Linha do Sabor below Torre de Moncorvo in the lower Sabor valley. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Pocinho for the surviving station house and iron-country touring.",
+
+  "Carviçais":
+    "Historic halt on the closed Linha do Sabor in the hinterland between Moncorvo and Mogadouro. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Torre de Moncorvo for the water tower and the closed Sabor halt.",
+
+  "Duas Igrejas - Miranda":
+    "Historic halt on the closed Linha do Sabor near Miranda do Douro at the old Sabor terminus. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Miranda do Douro for the azulejo station house and Douro canyon country.",
+
+  "Freixo de Espada à Cinta":
+    "Historic halt on the closed Linha do Sabor in the far northeast above the International Douro. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Miranda do Douro for the roofless station ruins and cliff-top village touring.",
+
+  "Estremoz":
+    "Historic halt on the closed Linha de Évora in the marble country of the Alto Alentejo. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Évora for the restored station and the whitewashed historic centre.",
+
+  "Arraiolos":
+    "Historic halt on the closed Ramal de Mora north of Évora in rug-making hill country. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Évora for the hilltop castle town and the closed Mora branch.",
+
+  "Aljustrel":
+    "Historic halt on the closed Ramal de Aljustrel in the mining country of the Baixo Alentejo. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Beja for the surviving station house and pyrite-town touring.",
+
+  "Cabeço de Vide-Vaiamonte":
+    "Historic halt on the closed Ramal de Portalegre in the Alto Alentejo between Estremoz and Portalegre. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Portalegre for the tiled station house now used by a local foundation.",
+
+  "Serpa-Brinches":
+    "Historic halt on the closed Ramal de Moura on the Guadiana plains east of Beja. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Beja for the walled town of Serpa and the closed Moura branch.",
+
+  "Castro Verde-Almodôvar":
+    "Historic halt on the closed Linha do Alentejo on the plains south of Beja toward the Algarve. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Beja for steppe-country touring and the closed Alentejo halt.",
+
+  "Lousal":
+    "Historic halt on the closed Linha de Sines at the old mining village in the Alentejo interior. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Grândola for the science-centre village and the Louzal station house.",
+
+  "Sines":
+    "Historic halt on the closed Linha de Sines at the Atlantic port town of the Alentejo Litoral. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Santiago do Cacém for the restored passenger building and Vasco da Gama's birthplace.",
+
+  "Canal-Caveira":
+    "Historic halt on the closed Linha do Sul in the cork woods north of Grândola. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Grândola for the small surviving halt beside the Sul corridor.",
+
+  "Serpins":
+    "Historic halt on the closed Ramal da Lousã at the old Lousã-line terminus in the Serra da Lousã foothills. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Coimbra-B for the standing station house where tracks are now a metrobus corridor.",
+
+  "Treixedo":
+    "Historic halt on the closed Linha do Dão on the Ecopista do Dão south of Viseu. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Viseu for cycle-path touring past the old Dão station house.",
+
+  "Figueiró":
+    "Historic halt on the closed Linha do Dão on the Ecopista do Dão near Viseu. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Viseu for a paved rail-trail stop beside the named station house.",
+
+  "Vouzela":
+    "Historic halt on the closed Linha do Vouga in the Vouga valley west of Viseu. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Viseu for the preserved station plaza and the displayed Vouga locomotive.",
+
+  "Paradela":
+    "Historic halt on the closed Linha do Vouga near Sever do Vouga on the closed valley line. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Aveiro for the rail-trail station house in the Vouga hills.",
+
+  "Coruche":
+    "Historic halt on the closed Linha de Vendas Novas on the Sorraia plains in the Ribatejo. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Santarém for cork-country touring and the closed Vendas Novas halt.",
+
+  "Canha":
+    "Historic halt on the closed Linha de Vendas Novas in cork-oak country between Vendas Novas and Coruche. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Vendas Novas for the small brick-arched station house beside the freight corridor.",
+
+  "Agolada":
+    "Historic halt on the closed Linha de Vendas Novas near Fajarda on the Ribatejo plains. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Coruche for the tiled halt on the closed Vendas Novas line.",
+
+  "Quinta Grande":
+    "Historic halt on the closed Linha de Vendas Novas on the estate lands east of Coruche. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Coruche for the named rural station house on the closed plains line.",
+
+  "Águas de Moura":
+    "Historic halt on the closed Linha do Sul at the old Palmela-district junction toward the Alentejo. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Pinhal Novo for the named station buildings beside the freight yards.",
+
+  "Amieira":
+    "Historic halt on the closed Linha do Oeste near Soure on the closed Amieira / Verride link. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Soure for the tiled station house beside the remaining tracks.",
+
+  "Lanhelas":
+    "Historic halt on the closed Linha do Minho on the Minho estuary south of Caminha. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Caminha for the graffiti-marked station house where passenger trains no longer stop.",
+
+  "Friestas":
+    "Historic halt on the closed Linha do Minho in the Minho valley inland from Valença. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Valença for the blocked-up station house on the converted rail path.",
+
+  "Montijo":
+    "Historic halt on the closed Ramal do Montijo on the south bank of the Tagus opposite Lisbon. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Barreiro for the boarded-up Aldegallega station buildings in town.",
+
+  "Seixal":
+    "Historic halt on the closed Ramal do Seixal on the Seixal bay south of Lisbon. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Barreiro for the tiled waterfront station house on the closed branch.",
+
+  "Torre da Gadanha":
+    "Historic halt on the closed Linha do Alentejo at the old junction for Montemor-o-Novo. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Évora for the named station house and castle-town visits in Montemor.",
+
+  "Luzianes":
+    "Historic halt on the closed Linha do Sul in the hills above Odemira toward the Algarve. Passenger trains no longer call, but the station building still stands — reach it by road or bus from Funcheira for the surviving Luzianes-Gare station house.",
+
 };

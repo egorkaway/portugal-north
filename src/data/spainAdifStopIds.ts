@@ -1075,6 +1075,12 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Lugones": ["15212"],
 
+  "Muskiz": ["13506"],
+
+  "Pintueles": ["05531"],
+
+  "Mimetiz": ["05484"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

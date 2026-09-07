@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-07T12:59:38.132Z",
-  "runCount": 797,
+  "generatedAt": "2026-09-07T14:25:52.441Z",
+  "runCount": 800,
   "mostDelayed": [
     {
       "trainNumber": "868",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 30.6,
+      "avgDelayMinutes": 30.8,
       "observations": 17,
       "stationsSampled": 21,
       "majorStations": [
@@ -31,7 +31,7 @@
     {
       "trainNumber": "722",
       "serviceType": "Intercidades",
-      "avgDelayMinutes": 21.1,
+      "avgDelayMinutes": 21.3,
       "observations": 22,
       "stationsSampled": 15,
       "majorStations": [
@@ -44,25 +44,10 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "36410",
+      "trainNumber": "36417",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 17,
-      "stationsSampled": 16,
-      "majorStations": [
-        "Mira Sintra-Meleças",
-        "Pero Negro",
-        "Bombarral",
-        "Mafra"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "36415",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 17,
+      "observations": 16,
       "stationsSampled": 17,
       "majorStations": [
         "Pero Negro",
@@ -74,16 +59,31 @@
       "poolSize": 12
     },
     {
-      "trainNumber": "10541",
-      "serviceType": "Intercidades",
+      "trainNumber": "55621",
+      "serviceType": "Regional",
       "avgDelayMinutes": 0,
       "observations": 16,
       "stationsSampled": 6,
       "majorStations": [
-        "Castelo Branco",
-        "Guarda",
-        "Covilhã",
-        "Vila Velha de Ródão"
+        "Vila Velha de Ródão",
+        "Fratel",
+        "Barca da Amieira – Envendos",
+        "Belver"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36400",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 15,
+      "stationsSampled": 17,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Bombarral",
+        "Mafra"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

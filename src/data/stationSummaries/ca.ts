@@ -994,4 +994,133 @@ export const stationSummariesCa: Record<string, string> = {
   "Baracal":
     "Baracal és una parada de CP de serveis regionals a la Linha da Beira Alta a Portugal. És una parada pràctica per explorar els voltants, amb panells de sortides en directe.",
 
+  "Arco de Baúlhe":
+    "Parada històrica a la Linha do Tâmega tancada a les serres de Basto al nord d'Amarante. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Amarante per a l'ecopista i el museu a l'antic terminal.",
+
+  "Mondim de Basto":
+    "Parada històrica a la Linha do Tâmega tancada sota la serra del Marão. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Amarante per al turisme de poble al vall del Tâmega.",
+
+  "Celorico de Basto":
+    "Parada històrica a la Linha do Tâmega tancada al vall del Tâmega entre Amarante i Arco de Baúlhe. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Amarante per a l'edifici d'azulejos i les serres de Basto.",
+
+  "Vila Caiz":
+    "Parada històrica a la Linha do Tâmega tancada al nord d'Amarante. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Amarante per a una visita tranquil·la als andanes tancats del Tâmega.",
+
+  "Canedo":
+    "Parada històrica a la Linha do Tâmega tancada a les terres altes de Basto cap a Arco de Baúlhe. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Amarante per a l'edifici de l'estació a l'ecopista.",
+
+  "Marvão-Beirã":
+    "Parada històrica a la Ramal de Cáceres tancada a la frontera espanyola sota la vila emmurallada de Marvão. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Portalegre per als andanes d'azulejos i turisme a la serra de São Mamede.",
+
+  "Castelo de Vide":
+    "Parada històrica a la Ramal de Cáceres tancada sota la vila emmurallada a l'Alto Alentejo. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Portalegre per a la vila de marbre i passejades a São Mamede.",
+
+  "Barca d'Alva":
+    "Parada històrica a la Linha do Douro tancada a l'antic terminal internacional a l'Águeda vora Espanya. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Pocinho per a vistes del congost del Douro i la línia transfronterera tancada.",
+
+  "Almendra":
+    "Parada històrica a la Linha do Douro tancada al tram Pocinho–Barca d'Alva. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Pocinho per a l'edifici fluvial abandonat a l'alt Douro.",
+
+  "Castelo Melhor":
+    "Parada històrica a la Linha do Douro tancada al tram tancat cap a Barca d'Alva. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Pocinho per a l'apeadero d'azulejos sota Vila Nova de Foz Côa.",
+
+  "Macedo de Cavaleiros":
+    "Parada històrica a la Linha do Tua tancada a Trás-os-Montes entre Mirandela i Bragança. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Bragança per a l'embassament de l'Azibo i el corredor de via estreta tancat.",
+
+  "Azibo":
+    "Parada històrica a la Linha do Tua tancada vora l'embassament de l'Azibo a l'est de Macedo de Cavaleiros. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Macedo de Cavaleiros per a passejades vora l'embassament i l'edifici abandonat del Tua.",
+
+  "Mogadouro":
+    "Parada històrica a la Linha do Sabor tancada a l'altiplà oriental de Trás-os-Montes. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Miranda do Douro per a l'estació abandonada del Sabor i el parc del Douro Internacional.",
+
+  "Moncorvo":
+    "Parada històrica a la Linha do Sabor tancada sota Torre de Moncorvo al baix vall del Sabor. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Pocinho per a l'edifici de l'estació i turisme al país del ferro.",
+
+  "Carviçais":
+    "Parada històrica a la Linha do Sabor tancada a l'interior entre Moncorvo i Mogadouro. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Torre de Moncorvo per al dipòsit d'aigua i l'apeadero tancat del Sabor.",
+
+  "Duas Igrejas - Miranda":
+    "Parada històrica a la Linha do Sabor tancada vora Miranda do Douro a l'antic terminal del Sabor. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Miranda do Douro per a l'edifici d'azulejos i el congost del Douro.",
+
+  "Freixo de Espada à Cinta":
+    "Parada històrica a la Linha do Sabor tancada a l'extrem nord-est sobre el Douro Internacional. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Miranda do Douro per a les ruïnes de l'estació i turisme a la vila sobre el congost.",
+
+  "Estremoz":
+    "Parada històrica a la Linha de Évora tancada al país del marbre de l'Alto Alentejo. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Évora per a l'estació recuperada i el centre històric emblanquinat.",
+
+  "Arraiolos":
+    "Parada històrica a la Ramal de Mora tancada al nord d'Évora a les terres dels tapissos. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Évora per a la vila del castell i el ramal de Mora tancat.",
+
+  "Aljustrel":
+    "Parada històrica a la Ramal de Aljustrel tancada al país miner del Baixo Alentejo. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Beja per a l'edifici de l'estació i turisme a la vila minera.",
+
+  "Cabeço de Vide-Vaiamonte":
+    "Parada històrica a la Ramal de Portalegre tancada a l'Alto Alentejo entre Estremoz i Portalegre. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Portalegre per a l'edifici d'azulejos avui usat per una fundació local.",
+
+  "Serpa-Brinches":
+    "Parada històrica a la Ramal de Moura tancada a les planes del Guadiana a l'est de Beja. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Beja per a la vila emmurallada de Serpa i el ramal de Moura tancat.",
+
+  "Castro Verde-Almodôvar":
+    "Parada històrica a la Linha do Alentejo tancada a les planes al sud de Beja cap a l'Algarve. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Beja per al turisme a les planes i l'apeadero alentejà tancat.",
+
+  "Lousal":
+    "Parada històrica a la Linha de Sines tancada a l'antiga vila minera de l'interior alentejà. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Grândola per a la vila-centre de ciència i l'edifici de Louzal.",
+
+  "Sines":
+    "Parada històrica a la Linha de Sines tancada a la vila portuària atlàntica de l'Alentejo Litoral. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Santiago do Cacém per a l'edifici recuperat i la terra natal de Vasco da Gama.",
+
+  "Canal-Caveira":
+    "Parada històrica a la Linha do Sul tancada als alzinars al nord de Grândola. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Grândola per al petit apeadero vora el corredor del Sud.",
+
+  "Serpins":
+    "Parada històrica a la Ramal da Lousã tancada a l'antic terminal de Lousã als contraforts de la serra. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Coimbra-B per a l'edifici de l'estació on la via és avui un corredor de metrobus.",
+
+  "Treixedo":
+    "Parada històrica a la Linha do Dão tancada a l'Ecopista do Dão al sud de Viseu. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Viseu per a ciclovia vora l'antic edifici de la Linha do Dão.",
+
+  "Figueiró":
+    "Parada històrica a la Linha do Dão tancada a l'Ecopista do Dão vora Viseu. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Viseu per a una parada a l'ecopista vora l'edifici amb el nom de l'estació.",
+
+  "Vouzela":
+    "Parada històrica a la Linha do Vouga tancada al vall del Vouga a l'oest de Viseu. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Viseu per a la plaça de l'estació i la locomotora del Vouga en exposició.",
+
+  "Paradela":
+    "Parada històrica a la Linha do Vouga tancada vora Sever do Vouga a la línia de vall tancada. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Aveiro per a l'edifici a l'ecopista a les serres del Vouga.",
+
+  "Coruche":
+    "Parada històrica a la Linha de Vendas Novas tancada a les planes del Sorraia al Ribatejo. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Santarém per al turisme al país del suro i l'apeadero tancat.",
+
+  "Canha":
+    "Parada històrica a la Linha de Vendas Novas tancada als alzinars entre Vendas Novas i Coruche. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Vendas Novas per al petit edifici d'arcs vora el corredor de mercaderies.",
+
+  "Agolada":
+    "Parada històrica a la Linha de Vendas Novas tancada vora Fajarda a les planes del Ribatejo. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Coruche per a l'apeadero d'azulejos a la línia tancada.",
+
+  "Quinta Grande":
+    "Parada històrica a la Linha de Vendas Novas tancada a les hisendes a l'est de Coruche. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Coruche per a l'edifici rural a la línia de plana tancada.",
+
+  "Águas de Moura":
+    "Parada històrica a la Linha do Sul tancada a l'antic entroncament de Palmela cap a l'Alentejo. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Pinhal Novo per als edificis de l'estació vora el pati de mercaderies.",
+
+  "Amieira":
+    "Parada històrica a la Linha do Oeste tancada vora Soure a l'enllaç tancat d'Amieira i Verride. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Soure per a l'edifici d'azulejos vora les vies que resten.",
+
+  "Lanhelas":
+    "Parada històrica a la Linha do Minho tancada a l'estuari del Miño al sud de Caminha. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Caminha per a l'edifici amb grafits on els trens de passatgers ja no s'aturen.",
+
+  "Friestas":
+    "Parada històrica a la Linha do Minho tancada al vall del Miño cap a l'interior des de Valença. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Valença per a l'edifici tapiat a l'antiga via convertida en camí.",
+
+  "Montijo":
+    "Parada històrica a la Ramal do Montijo tancada a la riba sud del Tajo davant de Lisboa. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Barreiro per als edificis tapiats de l'antiga Aldegallega.",
+
+  "Seixal":
+    "Parada històrica a la Ramal do Seixal tancada a la badia de Seixal al sud de Lisboa. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Barreiro per a l'edifici d'azulejos al front d'aigua del ramal tancat.",
+
+  "Torre da Gadanha":
+    "Parada històrica a la Linha do Alentejo tancada a l'antic entroncament cap a Montemor-o-Novo. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Évora per a l'edifici de l'estació i visites a Montemor-o-Novo.",
+
+  "Luzianes":
+    "Parada històrica a la Linha do Sul tancada a les serres sobre Odemira cap a l'Algarve. Els trens de passatgers ja no s'aturen, però l'edifici de l'estació encara es manté — arribeu per carretera o autobús des de Funcheira per a l'edifici que resta a Luzianes-Gare.",
+
 };

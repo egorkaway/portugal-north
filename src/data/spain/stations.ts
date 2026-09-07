@@ -4892,4 +4892,31 @@ export const spainStations: Station[] = [
     lng: -5.8118,
   },
 
+  {
+    name: "Muskiz",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3215,
+    lng: -3.1123,
+  },
+
+  {
+    name: "Pintueles",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3599,
+    lng: -5.3841,
+  },
+
+  {
+    name: "Mimetiz",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2158,
+    lng: -3.1313,
+  },
+
 ];

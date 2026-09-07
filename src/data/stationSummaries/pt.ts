@@ -994,4 +994,133 @@ export const stationSummariesPt: Record<string, string> = {
   "Baracal":
     "Baracal é uma paragem CP de serviços regionais na Linha da Beira Alta em Portugal. É uma paragem prática para explorar os arredores, com painéis de partidas em direto.",
 
+  "Arco de Baúlhe":
+    "Paragem histórica na Linha do Tâmega encerrada nas serras de Basto a norte de Amarante. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Amarante para a ecopista e o museu no antigo terminal.",
+
+  "Mondim de Basto":
+    "Paragem histórica na Linha do Tâmega encerrada sob a serra do Marão. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Amarante para turismo de aldeia no vale do Tâmega.",
+
+  "Celorico de Basto":
+    "Paragem histórica na Linha do Tâmega encerrada no vale do Tâmega entre Amarante e Arco de Baúlhe. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Amarante para o edifício de azulejos e as serras de Basto.",
+
+  "Vila Caiz":
+    "Paragem histórica na Linha do Tâmega encerrada a norte de Amarante. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Amarante para uma visita calma às plataformas encerradas do Tâmega.",
+
+  "Canedo":
+    "Paragem histórica na Linha do Tâmega encerrada nas terras altas de Basto rumo a Arco de Baúlhe. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Amarante para o edifício da estação na ecopista.",
+
+  "Marvão-Beirã":
+    "Paragem histórica na Ramal de Cáceres encerrada na fronteira espanhola abaixo da vila muralhada de Marvão. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Portalegre para as plataformas de azulejos e turismo na serra de São Mamede.",
+
+  "Castelo de Vide":
+    "Paragem histórica na Ramal de Cáceres encerrada abaixo da vila muralhada no Alto Alentejo. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Portalegre para a vila de mármore e passeios em São Mamede.",
+
+  "Barca d'Alva":
+    "Paragem histórica na Linha do Douro encerrada no antigo terminal internacional no Águeda junto a Espanha. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Pocinho para vistas do canhão do Douro e a linha transfronteiriça encerrada.",
+
+  "Almendra":
+    "Paragem histórica na Linha do Douro encerrada no troço Pocinho–Barca d'Alva. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Pocinho para o edifício ribeirinho abandonado no alto Douro.",
+
+  "Castelo Melhor":
+    "Paragem histórica na Linha do Douro encerrada no troço encerrado rumo a Barca d'Alva. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Pocinho para o apeadeiro de azulejos abaixo de Vila Nova de Foz Côa.",
+
+  "Macedo de Cavaleiros":
+    "Paragem histórica na Linha do Tua encerrada em Trás-os-Montes entre Mirandela e Bragança. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Bragança para a albufeira do Azibo e o corredor de via estreita encerrado.",
+
+  "Azibo":
+    "Paragem histórica na Linha do Tua encerrada junto à albufeira do Azibo a leste de Macedo de Cavaleiros. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Macedo de Cavaleiros para passeios à albufeira e o edifício abandonado do Tua.",
+
+  "Mogadouro":
+    "Paragem histórica na Linha do Sabor encerrada no planalto oriental de Trás-os-Montes. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Miranda do Douro para a estação abandonada do Sabor e o parque do Douro Internacional.",
+
+  "Moncorvo":
+    "Paragem histórica na Linha do Sabor encerrada abaixo de Torre de Moncorvo no baixo vale do Sabor. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Pocinho para o edifício da estação e turismo no país do ferro.",
+
+  "Carviçais":
+    "Paragem histórica na Linha do Sabor encerrada no interior entre Moncorvo e Mogadouro. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Torre de Moncorvo para o depósito de água e o apeadeiro encerrado do Sabor.",
+
+  "Duas Igrejas - Miranda":
+    "Paragem histórica na Linha do Sabor encerrada junto a Miranda do Douro no antigo terminal do Sabor. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Miranda do Douro para o edifício de azulejos e o canhão do Douro.",
+
+  "Freixo de Espada à Cinta":
+    "Paragem histórica na Linha do Sabor encerrada no extremo nordeste acima do Douro Internacional. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Miranda do Douro para as ruínas da estação e turismo na vila sobre o canhão.",
+
+  "Estremoz":
+    "Paragem histórica na Linha de Évora encerrada no país do mármore do Alto Alentejo. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Évora para a estação recuperada e o centro histórico caiado.",
+
+  "Arraiolos":
+    "Paragem histórica na Ramal de Mora encerrada a norte de Évora nas terras dos tapetes. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Évora para a vila do castelo e o ramal de Mora encerrado.",
+
+  "Aljustrel":
+    "Paragem histórica na Ramal de Aljustrel encerrada no país mineiro do Baixo Alentejo. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Beja para o edifício da estação e turismo na vila mineira.",
+
+  "Cabeço de Vide-Vaiamonte":
+    "Paragem histórica na Ramal de Portalegre encerrada no Alto Alentejo entre Estremoz e Portalegre. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Portalegre para o edifício de azulejos hoje usado por uma fundação local.",
+
+  "Serpa-Brinches":
+    "Paragem histórica na Ramal de Moura encerrada nas planícies do Guadiana a leste de Beja. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Beja para a vila muralhada de Serpa e o ramal de Moura encerrado.",
+
+  "Castro Verde-Almodôvar":
+    "Paragem histórica na Linha do Alentejo encerrada nas planícies a sul de Beja rumo ao Algarve. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Beja para turismo nas planícies e o apeadeiro alentejano encerrado.",
+
+  "Lousal":
+    "Paragem histórica na Linha de Sines encerrada na antiga aldeia mineira no interior alentejano. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Grândola para a aldeia-centro de ciência e o edifício de Louzal.",
+
+  "Sines":
+    "Paragem histórica na Linha de Sines encerrada na vila portuária atlântica do Alentejo Litoral. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Santiago do Cacém para o edifício recuperado e a terra natal de Vasco da Gama.",
+
+  "Canal-Caveira":
+    "Paragem histórica na Linha do Sul encerrada nos sobreirais a norte de Grândola. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Grândola para o pequeno apeadeiro junto ao corredor do Sul.",
+
+  "Serpins":
+    "Paragem histórica na Ramal da Lousã encerrada no antigo terminal da Lousã nos contrafortes da serra. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Coimbra-B para o edifício da estação onde a via é hoje um corredor de metrobus.",
+
+  "Treixedo":
+    "Paragem histórica na Linha do Dão encerrada na Ecopista do Dão a sul de Viseu. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Viseu para ciclovia junto ao antigo edifício da Linha do Dão.",
+
+  "Figueiró":
+    "Paragem histórica na Linha do Dão encerrada na Ecopista do Dão junto a Viseu. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Viseu para uma paragem na ecopista junto ao edifício com o nome da gare.",
+
+  "Vouzela":
+    "Paragem histórica na Linha do Vouga encerrada no vale do Vouga a oeste de Viseu. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Viseu para a praça da estação e a locomotiva do Vouga em exposição.",
+
+  "Paradela":
+    "Paragem histórica na Linha do Vouga encerrada junto a Sever do Vouga na linha de vale encerrada. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Aveiro para o edifício na ecopista nas serras do Vouga.",
+
+  "Coruche":
+    "Paragem histórica na Linha de Vendas Novas encerrada nas planícies do Sorraia no Ribatejo. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Santarém para turismo no país da cortiça e o apeadeiro encerrado.",
+
+  "Canha":
+    "Paragem histórica na Linha de Vendas Novas encerrada nos sobreirais entre Vendas Novas e Coruche. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Vendas Novas para o pequeno edifício de arcos junto ao corredor de mercadorias.",
+
+  "Agolada":
+    "Paragem histórica na Linha de Vendas Novas encerrada junto à Fajarda nas planícies do Ribatejo. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Coruche para o apeadeiro de azulejos na linha encerrada.",
+
+  "Quinta Grande":
+    "Paragem histórica na Linha de Vendas Novas encerrada nas herdades a leste de Coruche. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Coruche para o edifício rural na linha de planície encerrada.",
+
+  "Águas de Moura":
+    "Paragem histórica na Linha do Sul encerrada no antigo entroncamento de Palmela rumo ao Alentejo. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Pinhal Novo para os edifícios da gare junto ao terminal de mercadorias.",
+
+  "Amieira":
+    "Paragem histórica na Linha do Oeste encerrada junto a Soure na ligação encerrada de Amieira e Verride. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Soure para o edifício de azulejos junto às vias que restam.",
+
+  "Lanhelas":
+    "Paragem histórica na Linha do Minho encerrada no estuário do Minho a sul de Caminha. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Caminha para o edifício com grafitis onde os comboios de passageiros já não param.",
+
+  "Friestas":
+    "Paragem histórica na Linha do Minho encerrada no vale do Minho para o interior desde Valença. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Valença para o edifício entaipado na antiga via convertida em caminho.",
+
+  "Montijo":
+    "Paragem histórica na Ramal do Montijo encerrada na margem sul do Tejo em frente a Lisboa. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Barreiro para os edifícios entaipados da antiga Aldegallega.",
+
+  "Seixal":
+    "Paragem histórica na Ramal do Seixal encerrada na baía do Seixal a sul de Lisboa. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Barreiro para o edifício de azulejos na frente de água do ramal encerrado.",
+
+  "Torre da Gadanha":
+    "Paragem histórica na Linha do Alentejo encerrada no antigo entroncamento para Montemor-o-Novo. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Évora para o edifício da gare e visitas a Montemor-o-Novo.",
+
+  "Luzianes":
+    "Paragem histórica na Linha do Sul encerrada nas serras acima de Odemira rumo ao Algarve. Os comboios de passageiros já não param, mas o edifício da estação mantém-se — chegue de estrada ou autocarro desde Funcheira para o edifício que resta em Luzianes-Gare.",
+
 };

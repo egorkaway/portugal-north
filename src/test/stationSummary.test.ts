@@ -46,7 +46,7 @@ describe("station summaries coverage", () => {
 
 describe("station summaries i18n", () => {
   it("has all station keys in every locale", () => {
-    expect(STATION_SUMMARY_NAMES.length).toBe(387);
+    expect(STATION_SUMMARY_NAMES.length).toBe(503);
 
     for (const locale of LOCALES) {
       for (const name of STATION_SUMMARY_NAMES) {
