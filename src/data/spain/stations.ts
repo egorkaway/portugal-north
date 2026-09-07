@@ -4703,4 +4703,49 @@ export const spainStations: Station[] = [
     lng: 1.6963,
   },
 
+  {
+    name: "Lavern-Subirats",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3957,
+    lng: 1.7682,
+  },
+
+  {
+    name: "Kastrexana",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2555,
+    lng: -2.9721,
+  },
+
+  {
+    name: "Colegio",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2113,
+    lng: -3.1381,
+  },
+
+  {
+    name: "Río Arillo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.4575,
+    lng: -6.2236,
+  },
+
+  {
+    name: "Balenyà-Tona-Seva",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.8419,
+    lng: 2.2474,
+  },
+
 ];

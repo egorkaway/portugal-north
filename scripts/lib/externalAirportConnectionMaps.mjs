@@ -43,6 +43,12 @@ import { formatCountryName } from "../../server/lib/countryName.ts";
 export const EXTERNAL_MAPS_REL = "public/maps/airports/external";
 export const EXTERNAL_STORE_REL = "data/external-airport-connection-maps.json";
 const PAGE_IATAS_REL = "src/data/externalAirportPageIatas.ts";
+const OPENFLIGHTS_ROUTES =
+  "https://raw.githubusercontent.com/jpatokal/openflights/master/data/routes.dat";
+const OPENFLIGHTS_PROVIDER = "openflights";
+/** Keep forced all-flights redraws on the European network so Iberia stays visible. */
+const EUROPE_NETWORK_LAT = { min: 20, max: 72 };
+const EUROPE_NETWORK_LNG = { min: -32, max: 45 };
 
 export function externalMapsDir(rootDir) {
   return join(rootDir, EXTERNAL_MAPS_REL);
@@ -376,6 +382,110 @@ function unionAllFlightsWithIberianInbound(outbound, inbound) {
   };
 }
 
+function inEuropeanNetwork(coords) {
+  return (
+    Number.isFinite(coords?.lat) &&
+    Number.isFinite(coords?.lng) &&
+    coords.lat >= EUROPE_NETWORK_LAT.min &&
+    coords.lat <= EUROPE_NETWORK_LAT.max &&
+    coords.lng >= EUROPE_NETWORK_LNG.min &&
+    coords.lng <= EUROPE_NETWORK_LNG.max
+  );
+}
+
+export async function fetchOpenFlightsDestinationIatas(originIata) {
+  const origin = String(originIata ?? "").trim().toUpperCase();
+  const res = await fetch(OPENFLIGHTS_ROUTES, {
+    headers: { "User-Agent": "VeryStays-AirportConnections/1.0 (+https://www.verystays.com)" },
+    signal: AbortSignal.timeout(60_000),
+  });
+  if (!res.ok) throw new Error(`openflights_http_${res.status}`);
+  const dests = new Set();
+  for (const line of (await res.text()).split("\n")) {
+    if (!line || line.startsWith("#")) continue;
+    const cols = line.split(",");
+    if (cols[2]?.trim().toUpperCase() !== origin) continue;
+    const dest = cols[4]?.trim().toUpperCase();
+    if (dest && dest.length === 3 && dest !== origin) dests.add(dest);
+  }
+  return [...dests];
+}
+
+function connectionsFromIatas({ iatas, originIata, coordinates, flightCount = 1 }) {
+  const connections = [];
+  for (const raw of iatas) {
+    const iata = String(raw ?? "").trim().toUpperCase();
+    if (!iata || iata === originIata) continue;
+    const coords = coordinates[iata];
+    if (!inEuropeanNetwork(coords)) continue;
+    connections.push({
+      iata,
+      name: coords.name || iata,
+      country: formatCountryName(coords.country || ""),
+      lat: coords.lat,
+      lng: coords.lng,
+      flightCount,
+      flights: [],
+      lineColor: getFlightLineColor(flightCount),
+      lineWeight: getFlightLineWeight(flightCount),
+    });
+  }
+  connections.sort(
+    (a, b) => b.flightCount - a.flightCount || a.name.localeCompare(b.name),
+  );
+  return connections;
+}
+
+function entryFromConnections(chosen, connections, sampledFlights, kind) {
+  return {
+    stationName: chosen.stationName,
+    slug: chosen.slug,
+    iata: chosen.pick.iata,
+    origin: { lat: chosen.coords.lat, lng: chosen.coords.lng },
+    sampledFlights,
+    connections,
+    topDestinations: connections.slice(0, 10),
+    mapImage: externalMapPublicPath(chosen.pick.iata, chosen.stationName, kind),
+  };
+}
+
+async function redrawAllFlightsWithoutLiveSample({
+  chosen,
+  inbound,
+  coordinates,
+  resolveMissingCoordinates,
+  persist,
+  label,
+}) {
+  const destIatas = await fetchOpenFlightsDestinationIatas(chosen.pick.iata);
+  await resolveMissingCoordinates(destIatas.filter((iata) => !coordinates[iata]));
+  const outboundConnections = connectionsFromIatas({
+    iatas: destIatas,
+    originIata: chosen.pick.iata,
+    coordinates,
+  });
+  if (!outboundConnections.length) {
+    throw new Error("openflights returned no mappable European destinations");
+  }
+  const outbound = entryFromConnections(
+    chosen,
+    outboundConnections,
+    destIatas.length,
+    "all",
+  );
+  const entry = unionAllFlightsWithIberianInbound(outbound, inbound);
+  const added = entry.connections.length - outbound.connections.length;
+  if (added > 0) {
+    console.log(
+      `External spotlight ${label}: added ${added} Iberian destination(s) OpenFlights missed`,
+    );
+  }
+  console.warn(
+    `Flight APIs are out of quota; redrew ${label} all-flights from OpenFlights + Iberian inbound.`,
+  );
+  return persist(chosen, entry, OPENFLIGHTS_PROVIDER, "all");
+}
+
 /**
  * One external map per collect step. Iberian and all-flights maps are kept separately.
  * APIs down: Iberian map for the next airport that is missing one.
@@ -510,12 +620,27 @@ export async function sampleExternalAirportConnectionMap(options) {
     );
 
     if (forceIata) {
-      return {
-        store,
-        skipped: true,
-        skipReason: "keep-existing",
-        pick,
-      };
+      const inbound = iberianInboundForChosen(chosen, manifest, coordinates);
+      if (!inbound?.connections?.length) {
+        return { store, skipped: true, skipReason: "keep-existing", pick };
+      }
+      try {
+        return await redrawAllFlightsWithoutLiveSample({
+          chosen,
+          inbound,
+          coordinates,
+          resolveMissingCoordinates,
+          persist,
+          label,
+        });
+      } catch (fallbackError) {
+        const fallbackMessage =
+          fallbackError instanceof Error ? fallbackError.message : String(fallbackError);
+        console.warn(
+          `External spotlight ${label}: OpenFlights fallback failed (${fallbackMessage}); keeping existing maps.`,
+        );
+        return { store, skipped: true, skipReason: "keep-existing", pick };
+      }
     }
 
     const fallback = chooseExternalAirportForRun(rootDir, manifest, coordinates, store, {

@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-07T05:14:04.263Z",
-  "runCount": 776,
+  "generatedAt": "2026-09-07T05:32:17.569Z",
+  "runCount": 781,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -44,14 +44,14 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "10541",
+      "trainNumber": "10540",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 15,
+      "observations": 17,
       "stationsSampled": 6,
       "majorStations": [
+        "Abrantes",
         "Castelo Branco",
-        "Guarda",
         "Covilhã",
         "Fundão"
       ],
@@ -59,31 +59,31 @@
       "poolSize": 12
     },
     {
-      "trainNumber": "36400",
-      "serviceType": "Regional",
+      "trainNumber": "10544",
+      "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 15,
-      "stationsSampled": 15,
+      "observations": 17,
+      "stationsSampled": 6,
       "majorStations": [
-        "Mira Sintra-Meleças",
-        "Pero Negro",
-        "Bombarral",
-        "Feliteira"
+        "Abrantes",
+        "Castelo Branco",
+        "Covilhã",
+        "Fundão"
       ],
       "selectionMode": "rotating",
       "poolSize": 12
     },
     {
-      "trainNumber": "36414",
+      "trainNumber": "36407",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 15,
+      "observations": 17,
       "stationsSampled": 17,
       "majorStations": [
-        "Mira Sintra-Meleças",
         "Pero Negro",
         "Bombarral",
-        "Feliteira"
+        "Feliteira",
+        "Dois Portos"
       ],
       "selectionMode": "rotating",
       "poolSize": 12

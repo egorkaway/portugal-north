@@ -1033,6 +1033,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Rajadell": ["78506"],
 
+  "Lavern-Subirats": ["72206"],
+
+  "Kastrexana": ["05460"],
+
+  "Colegio": ["05477"],
+
+  "Río Arillo": ["51419"],
+
+  "Balenyà-Tona-Seva": ["77107"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

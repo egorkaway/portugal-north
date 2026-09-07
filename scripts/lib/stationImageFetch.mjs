@@ -373,29 +373,94 @@ export function buildLocationPexelsQueries(station) {
   return [...queries];
 }
 
-export async function wikiThumb(title, lang = "pt") {
+const WIKI_USER_AGENT = "portugal-north/1.0 (image-fetch; contact: verystays.com)";
+
+/** Logos, flags, and SVG diagrams are not usable station/airport hero photos. */
+export function isNonPhotographicWikiAsset(value) {
+  const hay = String(value ?? "").toLowerCase();
+  if (!hay) return true;
+  if (hay.includes("pt_ferv.png")) return true;
+  if (/\.svg(\.png)?(\?|$)/i.test(hay) || hay.includes(".svg/")) return true;
+  return (
+    hay.includes("_logo") ||
+    hay.includes("logo.svg") ||
+    hay.includes("flag_of") ||
+    hay.includes("flag of") ||
+    hay.includes("coat_of_arms") ||
+    hay.includes("commons-logo") ||
+    hay.includes("silhouette") ||
+    hay.includes("location_map")
+  );
+}
+
+async function wikiQuery(lang, params) {
   const url = new URL(`https://${lang}.wikipedia.org/w/api.php`);
-  url.searchParams.set("action", "query");
-  url.searchParams.set("titles", title);
-  url.searchParams.set("prop", "pageimages");
-  url.searchParams.set("pithumbsize", "960");
+  for (const [key, value] of Object.entries(params)) {
+    url.searchParams.set(key, String(value));
+  }
   url.searchParams.set("format", "json");
-  const res = await fetch(url, {
-    headers: { "User-Agent": "portugal-north/1.0 (image-fetch; contact: verystays.com)" },
-  });
+  const res = await fetch(url, { headers: { "User-Agent": WIKI_USER_AGENT } });
   const text = await res.text();
   if (!res.ok || text.startsWith("You are making too many requests")) {
-    return { thumb: null, rateLimited: true };
+    return { data: null, rateLimited: true };
   }
   try {
-    const data = JSON.parse(text);
-    const page = Object.values(data.query?.pages ?? {})[0];
-    const src = page?.thumbnail?.source;
-    if (!src || src.includes("Pt_ferv.png")) return { thumb: null, rateLimited: false };
-    return { thumb: src, rateLimited: false };
+    return { data: JSON.parse(text), rateLimited: false };
   } catch {
-    return { thumb: null, rateLimited: false };
+    return { data: null, rateLimited: false };
   }
+}
+
+async function wikiFileThumb(lang, fileTitle) {
+  if (isNonPhotographicWikiAsset(fileTitle)) return { thumb: null, rateLimited: false };
+  const { data, rateLimited } = await wikiQuery(lang, {
+    action: "query",
+    titles: fileTitle,
+    prop: "imageinfo",
+    iiprop: "url",
+    iiurlwidth: "960",
+  });
+  if (rateLimited) return { thumb: null, rateLimited: true };
+  const page = Object.values(data?.query?.pages ?? {})[0];
+  const info = page?.imageinfo?.[0];
+  const src = info?.thumburl || info?.url;
+  if (!src || isNonPhotographicWikiAsset(src)) return { thumb: null, rateLimited: false };
+  return { thumb: src, rateLimited: false };
+}
+
+export async function wikiThumb(title, lang = "pt") {
+  const { data, rateLimited } = await wikiQuery(lang, {
+    action: "query",
+    titles: title,
+    prop: "pageimages|images",
+    pithumbsize: "960",
+    imlimit: "40",
+    redirects: "1",
+  });
+  if (rateLimited) return { thumb: null, rateLimited: true };
+  const page = Object.values(data?.query?.pages ?? {})[0];
+  if (!page || page.missing != null) return { thumb: null, rateLimited: false };
+
+  const lead = page?.thumbnail?.source;
+  const leadFile = page?.pageimage;
+  if (
+    lead &&
+    !isNonPhotographicWikiAsset(lead) &&
+    !isNonPhotographicWikiAsset(leadFile)
+  ) {
+    return { thumb: lead, rateLimited: false };
+  }
+
+  const files = (page.images ?? [])
+    .map((image) => image.title)
+    .filter((name) => name && !isNonPhotographicWikiAsset(name));
+  for (const fileTitle of files.slice(0, 8)) {
+    const photo = await wikiFileThumb(lang, fileTitle);
+    if (photo.rateLimited) return photo;
+    if (photo.thumb) return photo;
+    await sleep(400);
+  }
+  return { thumb: null, rateLimited: false };
 }
 
 const wikiTitlesPt = (station) => {
@@ -472,6 +537,9 @@ export function wikiTitlesForAirport(station) {
   if (/^London\s+/i.test(full)) titles.push(full.replace(/^London\s+/i, ""));
   if (/^Frankfurt Main Airport$/i.test(full)) titles.push("Frankfurt Airport");
   if (/^Paris-Orly Airport$/i.test(full)) titles.push("Orly Airport");
+  if (/Charles de Gaulle/i.test(full)) {
+    titles.push("Charles de Gaulle Airport", "Aéroport de Paris-Charles-de-Gaulle");
+  }
   if (/Tenerife Norte/i.test(full)) titles.push("Tenerife North Airport");
   if (/Zürich Airport/i.test(full)) titles.push("Zurich Airport");
   if (/Fiumicino/i.test(full)) titles.push("Leonardo da Vinci–Fiumicino Airport");

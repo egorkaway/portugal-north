@@ -4889,6 +4889,31 @@ export const stationHotels: StationHotels = {
     { name: "Masia Caselles", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Masia%20Caselles%2C%20Rajadell%2C%20Spain&order=price" },
     { name: "Gorg Negre", distanceKm: 4.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gorg%20Negre%2C%20Rajadell%2C%20Spain&order=price" },
   ],
+  "Lavern-Subirats": [
+    { name: "Hotel Restaurant Sol i Vi", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Restaurant%20Sol%20i%20Vi%2C%20Lavern-Subirats%2C%20Spain&order=price" },
+    { name: "Masia Olivera", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Masia%20Olivera%2C%20Lavern-Subirats%2C%20Spain&order=price" },
+    { name: "Casa chele sant sadurni", distanceKm: 3.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20chele%20sant%20sadurni%2C%20Lavern-Subirats%2C%20Spain&order=price" },
+  ],
+  "Kastrexana": [
+    { name: "Bilbao Hostel", distanceKm: 1.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bilbao%20Hostel%2C%20Kastrexana%2C%20Spain&order=price" },
+    { name: "Hostal Ría de Bilbao", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20R%C3%ADa%20de%20Bilbao%2C%20Kastrexana%2C%20Spain&order=price" },
+    { name: "Students Residence Micampus San Mames", distanceKm: 1.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Students%20Residence%20Micampus%20San%20Mames%2C%20Kastrexana%2C%20Spain&order=price" },
+  ],
+  "Colegio": [
+    { name: "Hostal Txikote", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Txikote%2C%20Colegio%2C%20Spain&order=price" },
+    { name: "Batzarki", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Batzarki%2C%20Colegio%2C%20Spain&order=price" },
+    { name: "Erreka Güeñes", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Erreka%20G%C3%BCe%C3%B1es%2C%20Colegio%2C%20Spain&order=price" },
+  ],
+  "Río Arillo": [
+    { name: "Hostal La Andaluza", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20La%20Andaluza%2C%20R%C3%ADo%20Arillo%2C%20Spain&order=price" },
+    { name: "Hotel Roma", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Roma%2C%20R%C3%ADo%20Arillo%2C%20Spain&order=price" },
+    { name: "Salymar", distanceKm: 2.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Salymar%2C%20R%C3%ADo%20Arillo%2C%20Spain&order=price" },
+  ],
+  "Balenyà-Tona-Seva": [
+    { name: "Hostal Montserrat", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Montserrat%2C%20Baleny%C3%A0-Tona-Seva%2C%20Spain&order=price" },
+    { name: "Hotel Seva", distanceKm: 2.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Seva%2C%20Baleny%C3%A0-Tona-Seva%2C%20Spain&order=price" },
+    { name: "Mas Boix", distanceKm: 2.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mas%20Boix%2C%20Baleny%C3%A0-Tona-Seva%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

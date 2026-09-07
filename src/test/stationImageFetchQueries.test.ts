@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   buildPexelsQueries,
+  isNonPhotographicWikiAsset,
   locationNamesFromStation,
   metroSystemForStation,
   stationBaseName,
@@ -52,7 +53,20 @@ describe("station image query helpers", () => {
     };
     expect(stationBaseName(cdg.name)).toBe("Charles de Gaulle International Airport");
     expect(wikiTitlesForStation(cdg)).toContain("Charles de Gaulle Airport");
+    expect(wikiTitlesForStation(cdg)).toContain("Aéroport de Paris-Charles-de-Gaulle");
     expect(wikiLangsForStation(cdg)).toEqual(["en", "fr"]);
     expect(buildPexelsQueries(cdg)[0]).toMatch(/airport/i);
+  });
+
+  it("rejects Wikipedia logos and SVG diagrams as hero photos", () => {
+    expect(
+      isNonPhotographicWikiAsset(
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Paris_Aéroport_logo.svg/960px-Paris_Aéroport_logo.svg.png",
+      ),
+    ).toBe(true);
+    expect(isNonPhotographicWikiAsset("Paris_Aéroport_logo.svg")).toBe(true);
+    expect(isNonPhotographicWikiAsset("File:Airplane silhouette.svg")).toBe(true);
+    expect(isNonPhotographicWikiAsset("File:Charles De Gaulle Airport.jpg")).toBe(false);
+    expect(isNonPhotographicWikiAsset("File:CDG-aerialview.jpg")).toBe(false);
   });
 });

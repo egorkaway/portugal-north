@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-07T05:17:43.363Z",
+  "updatedAt": "2026-09-07T05:32:53.049Z",
   "airports": [
     {
       "iata": "PMI",
@@ -26,20 +26,21 @@
       "stationName": "Amsterdam Airport Schiphol (AMS)",
       "slug": "amsterdam-airport-schiphol-ams",
       "country": "NL",
-      "iberianFlightCount": 112,
-      "destinationCount": 27,
-      "sampledFlights": 100,
+      "iberianFlightCount": 114,
+      "destinationCount": 161,
+      "sampledFlights": 232,
       "mapImage": "/maps/airports/external/ams-amsterdam-schiphol.png",
-      "sampledAt": "2026-09-05T06:11:14.618Z",
+      "sampledAt": "2026-09-07T05:26:20.943Z",
       "periodId": "2026-08-11",
-      "provider": "aviationstack",
+      "provider": "openflights",
       "basemapId": "osm",
       "iberianMapImage": "/maps/airports/external/ams-amsterdam-schiphol-iberia.png",
       "iberianDestinationCount": 14,
       "iberianSampledFlights": 112,
       "iberianSampledAt": "2026-09-05T07:36:02.394Z",
       "iberianPeriodId": "2026-08-11",
-      "iberianBasemapId": "osm"
+      "iberianBasemapId": "osm",
+      "allFlightsIberianDestinationCount": 23
     },
     {
       "iata": "LGW",
@@ -1641,6 +1642,58 @@
       "iberianDestinationCount": 5,
       "iberianSampledFlights": 9,
       "iberianSampledAt": "2026-09-07T05:17:43.363Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "POZ",
+      "stationName": "Poznań-Ławica Airport (POZ)",
+      "slug": "poznan-awica-airport-poz",
+      "country": "PL",
+      "iberianFlightCount": 9,
+      "iberianMapImage": "/maps/airports/external/poz-poznan-awica-iberia.png",
+      "iberianDestinationCount": 5,
+      "iberianSampledFlights": 9,
+      "iberianSampledAt": "2026-09-07T05:28:21.364Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "SEN",
+      "stationName": "London Southend Airport (SEN)",
+      "slug": "london-southend-airport-sen",
+      "country": "GB",
+      "iberianFlightCount": 9,
+      "iberianMapImage": "/maps/airports/external/sen-london-southend-iberia.png",
+      "iberianDestinationCount": 5,
+      "iberianSampledFlights": 9,
+      "iberianSampledAt": "2026-09-07T05:29:21.051Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "ZAG",
+      "stationName": "Zagreb Franjo Tuđman International Airport (ZAG)",
+      "slug": "zagreb-franjo-tu-man-international-airport-zag",
+      "country": "HR",
+      "iberianFlightCount": 9,
+      "iberianMapImage": "/maps/airports/external/zag-zagreb-franjo-tu-man-iberia.png",
+      "iberianDestinationCount": 5,
+      "iberianSampledFlights": 9,
+      "iberianSampledAt": "2026-09-07T05:31:53.234Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "ALG",
+      "stationName": "Houari Boumediene Airport (ALG)",
+      "slug": "houari-boumediene-airport-alg",
+      "country": "DZ",
+      "iberianFlightCount": 9,
+      "iberianMapImage": "/maps/airports/external/alg-houari-boumediene-iberia.png",
+      "iberianDestinationCount": 4,
+      "iberianSampledFlights": 9,
+      "iberianSampledAt": "2026-09-07T05:32:53.049Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }
