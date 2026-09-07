@@ -21,6 +21,40 @@ function run(cmd) {
   execSync(cmd, { cwd: root, stdio: "inherit" });
 }
 
+/** Vite HMR writes `vite.config.ts.timestamp-*.mjs` then deletes it; `git add -A` races that. */
+function removeViteTimestampTemps() {
+  for (const name of fs.readdirSync(root)) {
+    if (!name.includes(".timestamp-") || !name.endsWith(".mjs")) continue;
+    try {
+      fs.unlinkSync(path.join(root, name));
+    } catch {
+      // already gone
+    }
+  }
+}
+
+function gitAddAll() {
+  let lastError;
+  for (let attempt = 0; attempt < 3; attempt++) {
+    removeViteTimestampTemps();
+    try {
+      execSync("git add -A", {
+        cwd: root,
+        encoding: "utf8",
+        stdio: ["inherit", "inherit", "pipe"],
+      });
+      return;
+    } catch (error) {
+      lastError = error;
+      const stderr = String(error.stderr ?? "");
+      if (stderr) process.stderr.write(stderr);
+      const detail = `${error instanceof Error ? error.message : String(error)}\n${stderr}`;
+      if (!/unable to stat|index.lock/i.test(detail)) throw error;
+    }
+  }
+  throw lastError;
+}
+
 function readRunCount() {
   try {
     const statsPath = path.join(root, "data/departure-stats.json");
@@ -52,7 +86,7 @@ if (!status) {
   process.exit(0);
 }
 
-run("git add -A");
+gitAddAll();
 execSync("git commit -F -", {
   cwd: root,
   input: message,

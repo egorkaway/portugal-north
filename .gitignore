@@ -17,6 +17,10 @@ dist-ssr
 .env.*
 !.env.example
 
+# Vite HMR temp files (can vanish mid `git add -A` and abort ship-stats)
+vite.config.ts.timestamp-*.mjs
+*.timestamp-*.mjs
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
