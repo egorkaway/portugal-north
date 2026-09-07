@@ -1675,4 +1675,16 @@ export const spainSummariesEs: Record<string, string> = {
   "La Frecha":
     "La Frecha es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "La Carrera de Siero":
+    "La Carrera de Siero es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Les Franqueses-Granollers Nord":
+    "Les Franqueses-Granollers Nord es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Cardedeu":
+    "Cardedeu es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
+  "Lugones":
+    "Lugones es una estación de Renfe de cercanías en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };

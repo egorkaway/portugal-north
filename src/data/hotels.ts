@@ -4974,6 +4974,26 @@ export const stationHotels: StationHotels = {
     { name: "Hospedaje Senda del Huerna", distanceKm: 1.9, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hospedaje%20Senda%20del%20Huerna%2C%20La%20Frecha%2C%20Spain&order=price" },
     { name: "Alojamiento Casa del Abad", distanceKm: 2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamiento%20Casa%20del%20Abad%2C%20La%20Frecha%2C%20Spain&order=price" },
   ],
+  "La Carrera de Siero": [
+    { name: "Albergue de La Carrera", distanceKm: 0.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20La%20Carrera%2C%20La%20Carrera%20de%20Siero%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos Casona de San Miguel", distanceKm: 1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20Casona%20de%20San%20Miguel%2C%20La%20Carrera%20de%20Siero%2C%20Spain&order=price" },
+    { name: "Hotel del Nora", distanceKm: 2.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20del%20Nora%2C%20La%20Carrera%20de%20Siero%2C%20Spain&order=price" },
+  ],
+  "Les Franqueses-Granollers Nord": [
+    { name: "B&B Hotel Barcelona Granollers", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=B%26B%20Hotel%20Barcelona%20Granollers%2C%20Les%20Franqueses-Granollers%20Nord%2C%20Spain&order=price" },
+    { name: "Sidorme", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sidorme%2C%20Les%20Franqueses-Granollers%20Nord%2C%20Spain&order=price" },
+    { name: "Fonda Europa", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Fonda%20Europa%2C%20Les%20Franqueses-Granollers%20Nord%2C%20Spain&order=price" },
+  ],
+  "Cardedeu": [
+    { name: "Torre Montserrat", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torre%20Montserrat%2C%20Cardedeu%2C%20Spain&order=price" },
+    { name: "Hotel Molí Cardedeu", distanceKm: 0.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Mol%C3%AD%20Cardedeu%2C%20Cardedeu%2C%20Spain&order=price" },
+    { name: "Casa Modernista", distanceKm: 3.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Modernista%2C%20Cardedeu%2C%20Spain&order=price" },
+  ],
+  "Lugones": [
+    { name: "Hotel Silvota", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Silvota%2C%20Lugones%2C%20Spain&order=price" },
+    { name: "Hotel restaurante B&B Oviedo", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20restaurante%20B%26B%20Oviedo%2C%20Lugones%2C%20Spain&order=price" },
+    { name: "Hotel Maruja", distanceKm: 2.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Maruja%2C%20Lugones%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

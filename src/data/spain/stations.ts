@@ -4856,4 +4856,40 @@ export const spainStations: Station[] = [
     lng: -5.7986,
   },
 
+  {
+    name: "La Carrera de Siero",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3869,
+    lng: -5.6753,
+  },
+
+  {
+    name: "Les Franqueses-Granollers Nord",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6173,
+    lng: 2.2944,
+  },
+
+  {
+    name: "Cardedeu",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6367,
+    lng: 2.3563,
+  },
+
+  {
+    name: "Lugones",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.4043,
+    lng: -5.8118,
+  },
+
 ];

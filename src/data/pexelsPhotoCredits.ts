@@ -2131,6 +2131,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@sebastian-luna-736234668",
     photoPageUrl: "https://www.pexels.com/photo/foggy-night-at-berlin-train-station-30113635/",
   },
+  "30116178": {
+    photographer: "Afitab",
+    photographerUrl: "https://www.pexels.com/@afitab-152665775",
+    photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-with-clock-and-columns-30116178/",
+  },
   "30166262": {
     photographer: "Adria Gimeno",
     photographerUrl: "https://www.pexels.com/@adria-gimeno-2148569912",

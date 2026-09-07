@@ -1067,6 +1067,14 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "La Frecha": ["15119"],
 
+  "La Carrera de Siero": ["05511"],
+
+  "Les Franqueses-Granollers Nord": ["79109"],
+
+  "Cardedeu": ["79101"],
+
+  "Lugones": ["15212"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

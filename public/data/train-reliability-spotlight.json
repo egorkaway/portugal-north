@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-09-07T11:49:50.664Z",
-  "runCount": 793,
+  "generatedAt": "2026-09-07T12:59:38.132Z",
+  "runCount": 797,
   "mostDelayed": [
     {
       "trainNumber": "868",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 30.4,
+      "avgDelayMinutes": 30.6,
       "observations": 17,
       "stationsSampled": 21,
       "majorStations": [
@@ -31,8 +31,8 @@
     {
       "trainNumber": "722",
       "serviceType": "Intercidades",
-      "avgDelayMinutes": 22.1,
-      "observations": 21,
+      "avgDelayMinutes": 21.1,
+      "observations": 22,
       "stationsSampled": 15,
       "majorStations": [
         "Porto-Campanhã",
@@ -44,10 +44,25 @@
   ],
   "mostReliable": [
     {
-      "trainNumber": "36407",
+      "trainNumber": "36410",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 18,
+      "observations": 17,
+      "stationsSampled": 16,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Bombarral",
+        "Mafra"
+      ],
+      "selectionMode": "rotating",
+      "poolSize": 12
+    },
+    {
+      "trainNumber": "36415",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 17,
       "stationsSampled": 17,
       "majorStations": [
         "Pero Negro",
@@ -59,29 +74,14 @@
       "poolSize": 12
     },
     {
-      "trainNumber": "10540",
+      "trainNumber": "10541",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 17,
+      "observations": 16,
       "stationsSampled": 6,
       "majorStations": [
-        "Abrantes",
         "Castelo Branco",
-        "Covilhã",
-        "Vila Velha de Ródão"
-      ],
-      "selectionMode": "rotating",
-      "poolSize": 12
-    },
-    {
-      "trainNumber": "10544",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 0,
-      "observations": 17,
-      "stationsSampled": 6,
-      "majorStations": [
-        "Abrantes",
-        "Castelo Branco",
+        "Guarda",
         "Covilhã",
         "Vila Velha de Ródão"
       ],
