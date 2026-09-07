@@ -4685,4 +4685,22 @@ export const spainStations: Station[] = [
     lng: -6.0637,
   },
 
+  {
+    name: "Huesca",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.1336,
+    lng: -0.4097,
+  },
+
+  {
+    name: "Rajadell",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7332,
+    lng: 1.6963,
+  },
+
 ];

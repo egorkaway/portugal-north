@@ -4879,6 +4879,16 @@ export const stationHotels: StationHotels = {
     { name: "Albergue La Quintana", distanceKm: 0.9, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20La%20Quintana%2C%20Grado%2C%20Spain&order=price" },
     { name: "El Lacayo de Sistiello", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Lacayo%20de%20Sistiello%2C%20Grado%2C%20Spain&order=price" },
   ],
+  "Huesca": [
+    { name: "Apartahotel Huesca", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartahotel%20Huesca%2C%20Huesca%2C%20Spain&order=price" },
+    { name: "Hostal Ordesa", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Ordesa%2C%20Huesca%2C%20Spain&order=price" },
+    { name: "Hotel ABBA Huesca", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20ABBA%20Huesca%2C%20Huesca%2C%20Spain&order=price" },
+  ],
+  "Rajadell": [
+    { name: "Cal Trisco", distanceKm: 3.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cal%20Trisco%2C%20Rajadell%2C%20Spain&order=price" },
+    { name: "Masia Caselles", distanceKm: 4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Masia%20Caselles%2C%20Rajadell%2C%20Spain&order=price" },
+    { name: "Gorg Negre", distanceKm: 4.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Gorg%20Negre%2C%20Rajadell%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

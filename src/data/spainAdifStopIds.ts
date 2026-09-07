@@ -1029,6 +1029,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Grado": ["05317"],
 
+  "Huesca": ["74200"],
+
+  "Rajadell": ["78506"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {
