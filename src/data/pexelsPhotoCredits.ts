@@ -841,6 +841,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@magdolna-kiss-163885502",
     photoPageUrl: "https://www.pexels.com/photo/aerial-footage-of-city-near-river-10861622/",
   },
+  "10901353": {
+    photographer: "Maximilian Vesper",
+    photographerUrl: "https://www.pexels.com/@maximilian-vesper-3137512",
+    photoPageUrl: "https://www.pexels.com/photo/view-from-a-glass-window-of-a-train-10901353/",
+  },
   "11114138": {
     photographer: "Tony Mrst",
     photographerUrl: "https://www.pexels.com/@tony-mrst-93331",
@@ -1220,6 +1225,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Wolfgang Weiser",
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
     photoPageUrl: "https://www.pexels.com/photo/modern-railway-station-15893870/",
+  },
+  "15911847": {
+    photographer: "Sakina Mammadli",
+    photographerUrl: "https://www.pexels.com/@sakina-mammadli-365647691",
+    photoPageUrl: "https://www.pexels.com/photo/barn-on-farm-15911847/",
   },
   "15976674": {
     photographer: "Eliel Souza",
@@ -2161,6 +2171,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@naimish17",
     photoPageUrl: "https://www.pexels.com/photo/vintage-yellow-trams-on-lisbon-s-historic-streets-29743111/",
   },
+  "29761824": {
+    photographer: "Badis Kesmia",
+    photographerUrl: "https://www.pexels.com/@badis-kesmia-2147767041",
+    photoPageUrl: "https://www.pexels.com/photo/freight-train-with-tank-cars-on-railway-track-29761824/",
+  },
   "29775298": {
     photographer: "Victor Silva",
     photographerUrl: "https://www.pexels.com/@victor-silva-3715807",
@@ -2276,6 +2291,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/30807450/",
   },
+  "30811934": {
+    photographer: "Gökhan Çınar",
+    photographerUrl: "https://www.pexels.com/@gokhancinar",
+    photoPageUrl: "https://www.pexels.com/photo/black-and-white-silhouette-at-istanbul-train-station-30811934/",
+  },
   "30811942": {
     photographer: "Gökhan Çınar",
     photographerUrl: "https://www.pexels.com/@gokhancinar",
@@ -2310,6 +2330,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "SHOX ART",
     photographerUrl: "https://www.pexels.com/@shox",
     photoPageUrl: "https://www.pexels.com/photo/black-and-white-urban-train-station-scene-31007812/",
+  },
+  "31028374": {
+    photographer: "Peter Caretta",
+    photographerUrl: "https://www.pexels.com/@peter-caretta-2150230261",
+    photoPageUrl: "https://www.pexels.com/photo/empty-train-station-at-night-in-black-and-white-31028374/",
   },
   "31028541": {
     photographer: "Kevyn Costa",
@@ -2530,6 +2555,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Nemika F",
     photographerUrl: "https://www.pexels.com/@nemika-f-1241784841",
     photoPageUrl: "https://www.pexels.com/photo/senior-couple-walking-at-a-sunny-train-station-32669240/",
+  },
+  "32704727": {
+    photographer: "Melisa Özdemir",
+    photographerUrl: "https://www.pexels.com/@melisa-ozdemir-939237061",
+    photoPageUrl: "https://www.pexels.com/photo/elderly-man-gazing-through-window-on-istanbul-ferry-32704727/",
   },
   "32724691": {
     photographer: "Kaue Barbier",
@@ -3121,6 +3151,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@mike-art-visual-creator-photography-and-video-2159421235",
     photoPageUrl: "https://www.pexels.com/photo/scenic-aerial-view-of-algarve-coastline-in-portugal-36768620/",
   },
+  "36772045": {
+    photographer: "Nicolas Panetta",
+    photographerUrl: "https://www.pexels.com/@nicolas-panetta-2160508544",
+    photoPageUrl: "https://www.pexels.com/photo/senior-woman-at-busy-subway-station-platform-36772045/",
+  },
   "36826247": {
     photographer: "Nikos B",
     photographerUrl: "https://www.pexels.com/@nikos-b-554391302",
@@ -3185,6 +3220,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Yeşim Çolak",
     photographerUrl: "https://www.pexels.com/@yesimcolak",
     photoPageUrl: "https://www.pexels.com/photo/colorful-abstract-wall-mural-in-istanbul-passage-37236644/",
+  },
+  "37236822": {
+    photographer: "Frederick Adegoke Snr.",
+    photographerUrl: "https://www.pexels.com/@thelionics",
+    photoPageUrl: "https://www.pexels.com/photo/rustic-stone-house-by-railway-tracks-in-summer-37236822/",
   },
   "37243144": {
     photographer: "Talha Kılıç",

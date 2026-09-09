@@ -1255,6 +1255,60 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Fornells de la Selva": ["79205"],
 
+  "La Asunción Universidad": ["05803"],
+
+  "Luiaondo": ["13103"],
+
+  "Perlora": ["05209"],
+
+  "Ascó": ["71211"],
+
+  "Los Álamos": ["54518"],
+
+  "Balenyà-Els Hostalets": ["77106"],
+
+  "Barreda": ["05619"],
+
+  "Brenes": ["50702"],
+
+  "Fuengirola": ["54516"],
+
+  "Santa Perpètua de Mogoda Riera de Caldes": ["72508"],
+
+  "Aljaima": ["54407"],
+
+  "Anoeta": ["11502"],
+
+  "Peñaflor": ["50507"],
+
+  "Faió-La Pobla de Massaluca": ["71208"],
+
+  "Ortuella": ["13504"],
+
+  "Palma del Río": ["50506"],
+
+  "Salou-Port Aventura": ["65411"],
+
+  "Santa María de Grado": ["05313"],
+
+  "Marrón": ["05687"],
+
+  "Serín": ["15302"],
+
+  "Sestao": ["13401"],
+
+  "Ferroñes": ["16301"],
+
+  "La Roda de Albacete": ["60505"],
+
+  "Marchena": ["01005"],
+
+  "Pozaldez": ["10501"],
+
+  "Perpignan": ["87374"],
+
+  "Torre-Pacheco": ["61304"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -5702,4 +5702,247 @@ export const spainStations: Station[] = [
     lng: 2.8098,
   },
 
+  {
+    name: "La Asunción Universidad",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.6161,
+    lng: -5.5661,
+  },
+
+  {
+    name: "Luiaondo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.0936,
+    lng: -2.9997,
+  },
+
+  {
+    name: "Perlora",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5809,
+    lng: -5.7541,
+  },
+
+  {
+    name: "Ascó",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1824,
+    lng: 0.569,
+  },
+
+  {
+    name: "Los Álamos",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.6451,
+    lng: -4.4851,
+  },
+
+  {
+    name: "Balenyà-Els Hostalets",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.815,
+    lng: 2.2333,
+  },
+
+  {
+    name: "Barreda",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3743,
+    lng: -4.0419,
+  },
+
+  {
+    name: "Brenes",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.5463,
+    lng: -5.8668,
+  },
+
+  {
+    name: "Fuengirola",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.5419,
+    lng: -4.6239,
+  },
+
+  {
+    name: "Santa Perpètua de Mogoda Riera de Caldes",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5262,
+    lng: 2.1863,
+  },
+
+  {
+    name: "Aljaima",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.7331,
+    lng: -4.6645,
+  },
+
+  {
+    name: "Anoeta",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1626,
+    lng: -2.0704,
+  },
+
+  {
+    name: "Peñaflor",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.7075,
+    lng: -5.3416,
+  },
+
+  {
+    name: "Faió-La Pobla de Massaluca",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.2251,
+    lng: 0.3511,
+  },
+
+  {
+    name: "Ortuella",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3115,
+    lng: -3.0604,
+  },
+
+  {
+    name: "Palma del Río",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.7181,
+    lng: -5.2928,
+  },
+
+  {
+    name: "Salou-Port Aventura",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.0885,
+    lng: 1.1461,
+  },
+
+  {
+    name: "Santa María de Grado",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3842,
+    lng: -5.9827,
+  },
+
+  {
+    name: "Marrón",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3466,
+    lng: -3.4209,
+  },
+
+  {
+    name: "Serín",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5049,
+    lng: -5.7819,
+  },
+
+  {
+    name: "Sestao",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3085,
+    lng: -2.994,
+  },
+
+  {
+    name: "Ferroñes",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.476,
+    lng: -5.8616,
+  },
+
+  {
+    name: "La Roda de Albacete",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.1996,
+    lng: -2.1625,
+  },
+
+  {
+    name: "Marchena",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.3343,
+    lng: -5.4255,
+  },
+
+  {
+    name: "Pozaldez",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 41.3679,
+    lng: -4.836,
+  },
+
+  {
+    name: "Perpignan",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.6964,
+    lng: 2.8804,
+  },
+
+  {
+    name: "Torre-Pacheco",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.7469,
+    lng: -0.9671,
+  },
+
 ];
