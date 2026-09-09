@@ -142,6 +142,7 @@ export async function expandPortugalStations(options = {}) {
   const {
     createExpandAssetContext,
     fillExpandedStationAssets,
+    fillStationAreaMaps,
     persistExpandedStationAssets,
     resolveExpandedStationAssets,
   } = await import("./lib/expandStationAssets.mjs");
@@ -201,6 +202,7 @@ export async function expandPortugalStations(options = {}) {
 
   const ctx = await createExpandAssetContext(root);
   const added = [];
+  const addedStations = [];
   let codes = readFileSync(CODES_PATH, "utf8");
   for (const candidate of picked) {
     const station = { ...candidate, country: "pt" };
@@ -218,8 +220,14 @@ export async function expandPortugalStations(options = {}) {
     ctx.stations = parseAllStationsFromRepo(root);
     await persistExpandedStationAssets(station, assets, ctx);
     added.push(station.name);
+    addedStations.push(station);
   }
   writeFileSync(CODES_PATH, codes);
+
+  if (addedStations.length) {
+    await fillStationAreaMaps(root, addedStations, { label: "Portugal expand station" });
+  }
+
   return { added };
 }
 

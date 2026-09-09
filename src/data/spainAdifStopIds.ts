@@ -1199,6 +1199,62 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Cortadura": ["51407"],
 
+  "Villaquirán": ["11009"],
+
+  "Riudellots": ["79204"],
+
+  "Sabiñánigo": ["74211"],
+
+  "San Yago": ["10201"],
+
+  "Málaga-Aeropuerto": ["54505"],
+
+  "Sandiche": ["05319"],
+
+  "Villa Romana": ["05796"],
+
+  "Trasona": ["05217"],
+
+  "Socuéllamos": ["60406"],
+
+  "Tudela-Veguín": ["16002"],
+
+  "Camas": ["43002"],
+
+  "Las Aletas": ["51415"],
+
+  "Alagón": ["81210"],
+
+  "Ceceda": ["05527"],
+
+  "Castellbell i el Vilar-Monist Montserrat": ["78605"],
+
+  "Cistierna": ["05761"],
+
+  "Roda de Mar": ["72101"],
+
+  "Senra": ["05137"],
+
+  "Sierra Minera": ["05967"],
+
+  "Parbayón": ["14217"],
+
+  "Viana": ["10504"],
+
+  "A Cuqueira": ["05129"],
+
+  "Valdepeñas": ["50102"],
+
+  "Ripoll": ["77200"],
+
+  "Araia": ["11213"],
+
+  "Cerceda-Meirama": ["31416"],
+
+  "Daimiel": ["94002"],
+
+  "Fornells de la Selva": ["79205"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

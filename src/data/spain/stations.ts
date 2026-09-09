@@ -5450,4 +5450,256 @@ export const spainStations: Station[] = [
     lng: -6.2682,
   },
 
+  {
+    name: "Villaquirán",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.2157,
+    lng: -3.9994,
+  },
+
+  {
+    name: "Riudellots",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.8963,
+    lng: 2.8116,
+  },
+
+  {
+    name: "Sabiñánigo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.5204,
+    lng: -0.3731,
+  },
+
+  {
+    name: "San Yago",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.6179,
+    lng: -4.0311,
+  },
+
+  {
+    name: "Málaga-Aeropuerto",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.6777,
+    lng: -4.4902,
+  },
+
+  {
+    name: "Sandiche",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4256,
+    lng: -6.0599,
+  },
+
+  {
+    name: "Villa Romana",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.6292,
+    lng: -5.5613,
+  },
+
+  {
+    name: "Trasona",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5518,
+    lng: -5.8742,
+  },
+
+  {
+    name: "Socuéllamos",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.2788,
+    lng: -2.7756,
+  },
+
+  {
+    name: "Tudela-Veguín",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.331,
+    lng: -5.7769,
+  },
+
+  {
+    name: "Camas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.4177,
+    lng: -6.0408,
+  },
+
+  {
+    name: "Las Aletas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.5446,
+    lng: -6.199,
+  },
+
+  {
+    name: "Alagón",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7714,
+    lng: -1.1128,
+  },
+
+  {
+    name: "Ceceda",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3562,
+    lng: -5.4511,
+  },
+
+  {
+    name: "Castellbell i el Vilar-Monist Montserrat",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6287,
+    lng: 1.8688,
+  },
+
+  {
+    name: "Cistierna",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.8032,
+    lng: -5.1308,
+  },
+
+  {
+    name: "Roda de Mar",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1864,
+    lng: 1.4552,
+  },
+
+  {
+    name: "Senra",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.6688,
+    lng: -7.8546,
+  },
+
+  {
+    name: "Sierra Minera",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.6199,
+    lng: -0.8649,
+  },
+
+  {
+    name: "Parbayón",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3767,
+    lng: -3.8942,
+  },
+
+  {
+    name: "Viana",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 41.5241,
+    lng: -4.7545,
+  },
+
+  {
+    name: "A Cuqueira",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.6078,
+    lng: -7.9219,
+  },
+
+  {
+    name: "Valdepeñas",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.7629,
+    lng: -3.3957,
+  },
+
+  {
+    name: "Ripoll",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.1961,
+    lng: 2.1958,
+  },
+
+  {
+    name: "Araia",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.8696,
+    lng: -2.3068,
+  },
+
+  {
+    name: "Cerceda-Meirama",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 43.2079,
+    lng: -8.4468,
+  },
+
+  {
+    name: "Daimiel",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.0616,
+    lng: -3.6042,
+  },
+
+  {
+    name: "Fornells de la Selva",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.935,
+    lng: 2.8098,
+  },
+
 ];

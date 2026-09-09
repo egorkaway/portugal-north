@@ -12,7 +12,11 @@
  *   npm run maps:stations -- --country=es              # Spanish stations + airports
  *   npm run maps:stations -- --missing-only            # skip stations that already have a PNG
  *   npm run maps:stations -- --watermarked-only        # Carto API-key watermark / recorded Carto maps
- *   npm run maps:stations -- --skip-europe             # skip Europe destination airports
+ *   npm run maps:stations -- --skip-europe             # legacy alias: same as page-eligible default
+ *   npm run maps:stations -- --include-all-catalog     # include map-only destination airports (no public page)
+ *
+ * By default only stations with a public /stations/:slug page get area maps
+ * (Iberian hubs/stops + destination airports that have both connection maps).
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -22,6 +26,7 @@ import { renderStationMapCard, stationToSlug } from "./lib/stationMapCard.mjs";
 import { BASEMAP_IDS, isBasemapId } from "./lib/mapBasemaps.mjs";
 import { listWatermarkedStationMapSlugs } from "./lib/mapWatermark.mjs";
 import { matchesMapRegion } from "./lib/mapRegions.mjs";
+import { stationNamesEligibleForAreaMaps } from "./lib/stationAreaMapEligibility.mjs";
 import { writeStationMapAvailability } from "./write-station-map-availability.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -33,6 +38,7 @@ const dryRun = args.includes("--dry-run");
 const missingOnly = args.includes("--missing-only");
 const watermarkedOnly = args.includes("--watermarked-only");
 const skipEurope = args.includes("--skip-europe");
+const includeAllCatalog = args.includes("--include-all-catalog");
 const limitArg = args.find((a) => a.startsWith("--limit"));
 const limit = limitArg
   ? Number.parseInt(limitArg.split("=")[1] ?? args[args.indexOf("--limit") + 1], 10)
@@ -78,8 +84,14 @@ const stations = parseAllStationsFromRepo(root);
 const europeNames = new Set(
   parseStations(readFileSync(join(root, "src/data/europe/airports.ts"), "utf8")).map((s) => s.name),
 );
+const pageEligibleNames = includeAllCatalog
+  ? null
+  : stationNamesEligibleForAreaMaps(root);
 
 let targets = stations.filter((s) => Number.isFinite(s.lat) && Number.isFinite(s.lng));
+if (pageEligibleNames) {
+  targets = targets.filter((s) => pageEligibleNames.has(s.name));
+}
 if (skipEurope) {
   targets = targets.filter((s) => !europeNames.has(s.name));
 }
@@ -178,7 +190,8 @@ const isFullRun =
   !Number.isFinite(limit) &&
   !missingOnly &&
   !watermarkedOnly &&
-  !skipEurope;
+  !skipEurope &&
+  !includeAllCatalog;
 
 function loadExistingManifest() {
   try {

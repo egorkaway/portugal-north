@@ -110,6 +110,7 @@ export async function expandSpainStations(options = {}) {
   const { readSpainTrainDelayLog } = await import("../server/lib/spainTrainDelayLog.ts");
   const {
     createExpandAssetContext,
+    fillStationAreaMaps,
     persistExpandedStationAssets,
     resolveExpandedStationAssets,
   } = await import("./lib/expandStationAssets.mjs");
@@ -156,6 +157,7 @@ export async function expandSpainStations(options = {}) {
 
   const ctx = await createExpandAssetContext(root);
   const added = [];
+  const addedStations = [];
   for (const candidate of picked) {
     const station = {
       name: candidate.name,
@@ -179,6 +181,11 @@ export async function expandSpainStations(options = {}) {
     ctx.stations = parseAllStationsFromRepo(root);
     await persistExpandedStationAssets(station, assets, ctx);
     added.push(station.name);
+    addedStations.push(station);
+  }
+
+  if (addedStations.length) {
+    await fillStationAreaMaps(root, addedStations, { label: "Spain expand station" });
   }
 
   return { added };

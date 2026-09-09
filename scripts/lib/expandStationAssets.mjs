@@ -192,9 +192,13 @@ async function loadExternalAirportPageStations(rootDir) {
   );
 }
 
-/** Square surrounding-area PNGs under public/maps/stations/ for compact airport pages. */
-export async function fillExternalAirportPageAreaMaps(rootDir, stations) {
-  const picked = (stations ?? (await loadExternalAirportPageStations(rootDir))).filter(
+/**
+ * Square surrounding-area PNGs under public/maps/stations/.
+ * Skips stations that already have a PNG; refreshes the availability index when any are written.
+ */
+export async function fillStationAreaMaps(rootDir, stations, options = {}) {
+  const label = options.label ?? "station";
+  const picked = (stations ?? []).filter(
     (station) => Number.isFinite(station.lat) && Number.isFinite(station.lng),
   );
   if (!picked.length) return { written: 0, missing: [] };
@@ -208,7 +212,7 @@ export async function fillExternalAirportPageAreaMaps(rootDir, stations) {
   let written = 0;
   const CONCURRENCY = 2;
 
-  console.log(`Filling area maps for ${picked.length} external airport page(s)…`);
+  console.log(`Filling area maps for ${picked.length} ${label}(s)…`);
   for (let i = 0; i < picked.length; i += CONCURRENCY) {
     const chunk = picked.slice(i, i + CONCURRENCY);
     const results = await Promise.allSettled(
@@ -238,4 +242,10 @@ export async function fillExternalAirportPageAreaMaps(rootDir, stations) {
 
   if (written > 0) writeStationMapAvailability(rootDir);
   return { written, missing };
+}
+
+/** Square surrounding-area PNGs under public/maps/stations/ for compact airport pages. */
+export async function fillExternalAirportPageAreaMaps(rootDir, stations) {
+  const picked = stations ?? (await loadExternalAirportPageStations(rootDir));
+  return fillStationAreaMaps(rootDir, picked, { label: "external airport page" });
 }

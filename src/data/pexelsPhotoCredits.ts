@@ -86,6 +86,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pixabay",
     photoPageUrl: "https://www.pexels.com/photo/view-of-building-interior-258523/",
   },
+  "258584": {
+    photographer: "Pixabay",
+    photographerUrl: "https://www.pexels.com/@pixabay",
+    photoPageUrl: "https://www.pexels.com/photo/railroad-tracks-258584/",
+  },
   "258594": {
     photographer: "Pixabay",
     photographerUrl: "https://www.pexels.com/@pixabay",
@@ -551,6 +556,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@frjuniorx",
     photoPageUrl: "https://www.pexels.com/photo/a-blue-train-in-a-train-station-6623349/",
   },
+  "6642488": {
+    photographer: "Enric Cruz López",
+    photographerUrl: "https://www.pexels.com/@enric-cruz-lopez",
+    photoPageUrl: "https://www.pexels.com/photo/railway-road-on-day-with-good-weather-6642488/",
+  },
   "6718891": {
     photographer: "Magda Ehlers",
     photographerUrl: "https://www.pexels.com/@magda-ehlers-pexels",
@@ -860,6 +870,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Katrīne Skrebele",
     photographerUrl: "https://www.pexels.com/@katrineskrebele",
     photoPageUrl: "https://www.pexels.com/photo/woman-in-white-and-black-stripe-dress-11519191/",
+  },
+  "11626570": {
+    photographer: "luis Peralta",
+    photographerUrl: "https://www.pexels.com/@luis-peralta-58498002",
+    photoPageUrl: "https://www.pexels.com/photo/clear-sky-over-building-near-street-11626570/",
   },
   "11654430": {
     photographer: "Paul Buijs",
@@ -1471,6 +1486,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@elisa-giaccaglia-704611068",
     photoPageUrl: "https://www.pexels.com/photo/vintage-train-car-near-industrial-silo-in-countryside-18338511/",
   },
+  "18373956": {
+    photographer: "Burak  Başgöze",
+    photographerUrl: "https://www.pexels.com/@burakbasgoze",
+    photoPageUrl: "https://www.pexels.com/photo/industrial-buildings-in-valley-in-rocky-mountains-landscape-18373956/",
+  },
   "18404361": {
     photographer: "Furkan Dalgacı",
     photographerUrl: "https://www.pexels.com/@furkan-dalgaci-724204136",
@@ -1855,6 +1875,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Th2city Santana",
     photographerUrl: "https://www.pexels.com/@th2city",
     photoPageUrl: "https://www.pexels.com/photo/train-at-railway-station-24534090/",
+  },
+  "24906245": {
+    photographer: "Wijs (Wise)",
+    photographerUrl: "https://www.pexels.com/@wijs-wise-136435282",
+    photoPageUrl: "https://www.pexels.com/photo/ornate-dome-interior-of-the-mercado-central-in-valencia-24906245/",
   },
   "25236769": {
     photographer: "Uiliam Nörnberg",
@@ -2946,6 +2971,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
     photoPageUrl: "https://www.pexels.com/photo/historic-tram-in-palma-s-nostalgic-setting-35604410/",
   },
+  "35614352": {
+    photographer: "Alejandro De Roa",
+    photographerUrl: "https://www.pexels.com/@alejandro-de-roa-649065356",
+    photoPageUrl: "https://www.pexels.com/photo/urban-exploration-in-abandoned-graffiti-train-car-35614352/",
+  },
   "35646857": {
     photographer: "Jonathan Fuentes",
     photographerUrl: "https://www.pexels.com/@jonathan-fuentes-2158022177",
@@ -3490,5 +3520,10 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Igor Passchier",
     photographerUrl: "https://www.pexels.com/@igor-passchier-111147847",
     photoPageUrl: "https://www.pexels.com/photo/modern-architectural-design-in-lisbon-portugal-39375943/",
+  },
+  "39400254": {
+    photographer: "Igor Passchier",
+    photographerUrl: "https://www.pexels.com/@igor-passchier-111147847",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architecture-of-lisbon-s-oriente-station-39400254/",
   },
 };
