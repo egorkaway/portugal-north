@@ -206,6 +206,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@pawel-l-435199",
     photoPageUrl: "https://www.pexels.com/photo/man-standing-beside-train-rail-1423636/",
   },
+  "1444108": {
+    photographer: "Vlad Bagacian",
+    photographerUrl: "https://www.pexels.com/@vladbagacian",
+    photoPageUrl: "https://www.pexels.com/photo/benches-on-train-station-1444108/",
+  },
   "1534560": {
     photographer: "Lisa from Pexels",
     photographerUrl: "https://www.pexels.com/@fotios-photos",
@@ -670,6 +675,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Anastasia  Kostyleva",
     photographerUrl: "https://www.pexels.com/@anastasia-kostyleva-76907665",
     photoPageUrl: "https://www.pexels.com/photo/windows-of-abandoned-warehouse-8628930/",
+  },
+  "8859644": {
+    photographer: "Enes Bayraktar",
+    photographerUrl: "https://www.pexels.com/@galleryofmyeye",
+    photoPageUrl: "https://www.pexels.com/photo/passenger-train-on-the-rocks-8859644/",
   },
   "9081835": {
     photographer: "beyzahzah",
@@ -1776,6 +1786,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@juicemitapfelndrin",
     photoPageUrl: "https://www.pexels.com/photo/train-standing-in-a-station-21550330/",
   },
+  "21625487": {
+    photographer: "Ana Hidalgo Burgos Burgos.",
+    photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-burgos-4848204",
+    photoPageUrl: "https://www.pexels.com/photo/bikes-on-street-in-front-of-north-station-in-valencia-spain-21625487/",
+  },
   "22047476": {
     photographer: "Efrem  Efre",
     photographerUrl: "https://www.pexels.com/@efrem-efre-2786187",
@@ -2831,6 +2846,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@panos-kappis-1161892582",
     photoPageUrl: "https://www.pexels.com/photo/moody-walk-by-overgrown-abandoned-train-34906410/",
   },
+  "34962476": {
+    photographer: "Zeynep Sude  Emek",
+    photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
+    photoPageUrl: "https://www.pexels.com/photo/elderly-man-waiting-at-istanbul-metro-station-34962476/",
+  },
   "34962620": {
     photographer: "Zeynep Sude  Emek",
     photographerUrl: "https://www.pexels.com/@zeynep-sude-emek-193601188",
@@ -3326,6 +3346,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@el-capra-98488027",
     photoPageUrl: "https://www.pexels.com/photo/historic-steam-locomotives-in-train-museum-38792721/",
   },
+  "38794210": {
+    photographer: "El Capra",
+    photographerUrl: "https://www.pexels.com/@el-capra-98488027",
+    photoPageUrl: "https://www.pexels.com/photo/abandoned-vintage-train-cars-on-rusted-tracks-38794210/",
+  },
   "38814595": {
     photographer: "Malcoln Oliveira",
     photographerUrl: "https://www.pexels.com/@malcolnphoto",
@@ -3445,6 +3470,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/historic-cadiz-railway-station-exterior-39269011/",
+  },
+  "39269015": {
+    photographer: "Explorando la provincia de Cádiz",
+    photographerUrl: "https://www.pexels.com/@explorando-la-provincia-de-cadiz-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-in-cadiz-spain-39269015/",
   },
   "39366837": {
     photographer: "Igor Passchier",

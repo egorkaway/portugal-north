@@ -1115,6 +1115,90 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Sollana": ["69102"],
 
+  "Aguilar de Campoo": ["14114"],
+
+  "Cancienes": ["16302"],
+
+  "Los Corrales de Buelna": ["14210"],
+
+  "Segur de Calafell": ["71602"],
+
+  "Montpellier Saint-Roch": ["87173"],
+
+  "Rubí Can Vallhonrat": ["72501"],
+
+  "Palautordera": ["79103"],
+
+  "Quinto": ["71105"],
+
+  "El Romaní": ["69101"],
+
+  "Guadalhorce": ["54503"],
+
+  "La Colina": ["54508"],
+
+  "San Cristóbal Industrial": ["60101"],
+
+  "Bobadilla": ["54400"],
+
+  "Vic": ["77109"],
+
+  "Alcobendas-San Sebastián de los Reyes": ["19003"],
+
+  "La Peña de Bilbao": ["13119"],
+
+  "Camallera": ["79305"],
+
+  "Manlleu": ["77110"],
+
+  "Artzentales": ["05489"],
+
+  "Campomanes": ["15120"],
+
+  "Moeche": ["05121"],
+
+  "Orduña": ["13100"],
+
+  "Rincón de Soto": ["81109"],
+
+  "Alegia": ["11409"],
+
+  "San Cristóbal de los Ángeles": ["60107"],
+
+  "Burriana-Alquerías Niño Perdido": ["65207"],
+
+  "Campdevànol": ["77301"],
+
+  "Centelles": ["77105"],
+
+  "Figaró": ["77103"],
+
+  "Albal": ["64210"],
+
+  "Blimea": ["05439"],
+
+  "Els Monjos": ["72203"],
+
+  "Salomó": ["76001"],
+
+  "Aldaia": ["66211"],
+
+  "Trápaga": ["13502"],
+
+  "Boo de Piélagos": ["05609"],
+
+  "Galindo": ["13501"],
+
+  "Villanueva del Ariscal y Olivares": ["43003"],
+
+  "Arahal": ["01003"],
+
+  "Valencina-Santiponce": ["43026"],
+
+  "Altsasu": ["11300"],
+
+  "Cortadura": ["51407"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

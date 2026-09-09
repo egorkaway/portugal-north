@@ -19,7 +19,7 @@ import { brandTheme } from '@/constants/brandTheme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { usePurchases } from '@/components/PurchasesProvider';
 import { completeOnboarding, isOnboardingComplete } from '@/lib/onboardingStorage';
-import { raceTimeout, withTimeout } from '@/lib/timeout';
+import { raceTimeout } from '@/lib/timeout';
 import { getCurrentCoords } from '@/lib/currentLocation';
 import { waitForPurchasesBootstrap } from '@/lib/revenueCat';
 import { requestAppTrackingAtEndOfOnboarding } from '@/lib/appTracking';
@@ -88,46 +88,39 @@ export default function OnboardingScreen() {
     }
   };
 
-  const requestLocation = async () => {
-    setBusy(true);
-    try {
-      if (Platform.OS === 'ios') {
-        const locationGranted = await raceTimeout(
-          ensureStationArrivalLocationPermission(),
-          8_000,
-          false,
-          'location-permission',
-        );
-        const coords = await getCurrentCoords({ timeoutMs: 5_000 });
-        if (coords) await writeLastCoords(coords);
-        if (locationGranted) {
-          await refreshStationArrivalGeofences();
-        }
-      } else {
-        const permission = await withTimeout(
-          Location.requestForegroundPermissionsAsync(),
-          8_000,
-          'location-permission',
-        );
-        if (permission.status === 'granted') {
+  const requestLocationInBackground = () => {
+    void (async () => {
+      try {
+        if (Platform.OS === 'ios') {
+          const locationGranted = await ensureStationArrivalLocationPermission();
           const coords = await getCurrentCoords({ timeoutMs: 5_000 });
           if (coords) await writeLastCoords(coords);
+          if (locationGranted) {
+            await refreshStationArrivalGeofences();
+          }
+        } else {
+          const permission = await Location.requestForegroundPermissionsAsync();
+          if (permission.status === 'granted') {
+            const coords = await getCurrentCoords({ timeoutMs: 5_000 });
+            if (coords) await writeLastCoords(coords);
+          }
         }
+      } catch (error) {
+        console.warn('[onboarding] location permission failed', error);
       }
-      advance();
-    } finally {
-      setBusy(false);
-    }
+    })();
   };
 
-  const requestNotifications = async () => {
-    setBusy(true);
-    try {
-      await raceTimeout(ensureTripNotificationPermission(), 8_000, false, 'notification-permission');
-      advance();
-    } finally {
-      setBusy(false);
-    }
+  const requestLocation = () => {
+    requestLocationInBackground();
+    setStepIndex((current) => (STEPS[current] === 'location' ? current + 1 : current));
+  };
+
+  const requestNotifications = () => {
+    void ensureTripNotificationPermission().catch((error) => {
+      console.warn('[onboarding] notification permission failed', error);
+    });
+    setStepIndex((current) => (STEPS[current] === 'notifications' ? current + 1 : current));
   };
 
   if (checking) {
@@ -221,26 +214,14 @@ export default function OnboardingScreen() {
         ) : null}
 
         {step === 'location' ? (
-          <Pressable
-            style={[styles.primaryButton, busy ? styles.buttonDisabled : null]}
-            onPress={() => void requestLocation()}
-            disabled={busy}
-          >
-            <Text style={styles.primaryButtonText}>
-              {busy ? t('common.requesting') : t('onboarding.enableLocation')}
-            </Text>
+          <Pressable style={styles.primaryButton} onPress={requestLocation}>
+            <Text style={styles.primaryButtonText}>{t('onboarding.enableLocation')}</Text>
           </Pressable>
         ) : null}
 
         {step === 'notifications' ? (
-          <Pressable
-            style={[styles.primaryButton, busy ? styles.buttonDisabled : null]}
-            onPress={() => void requestNotifications()}
-            disabled={busy}
-          >
-            <Text style={styles.primaryButtonText}>
-              {busy ? t('common.requesting') : t('onboarding.enableNotifications')}
-            </Text>
+          <Pressable style={styles.primaryButton} onPress={requestNotifications}>
+            <Text style={styles.primaryButtonText}>{t('onboarding.enableNotifications')}</Text>
           </Pressable>
         ) : null}
 
@@ -254,20 +235,6 @@ export default function OnboardingScreen() {
               {busy ? t('common.requesting') : t('onboarding.finish')}
             </Text>
           </Pressable>
-        ) : null}
-
-        {step === 'location' || step === 'notifications' ? (
-          <Pressable onPress={advance} disabled={busy} hitSlop={8}>
-            <Text style={styles.skip}>{t('common.skip')}</Text>
-          </Pressable>
-        ) : null}
-
-        {step === 'location' ? (
-          <Text style={styles.footerNote}>{t('onboarding.locationFooter')}</Text>
-        ) : null}
-
-        {step === 'notifications' ? (
-          <Text style={styles.footerNote}>{t('onboarding.notificationsFooter')}</Text>
         ) : null}
       </View>
     </SafeAreaView>
@@ -345,6 +312,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     paddingHorizontal: 24,
+    paddingTop: 12,
     paddingBottom: 16,
     gap: 10,
     borderTopWidth: 1,
@@ -364,17 +332,5 @@ const styles = StyleSheet.create({
   },
   buttonDisabled: {
     opacity: 0.7,
-  },
-  footerNote: {
-    textAlign: 'center',
-    fontSize: 12,
-    color: brandTheme.textMuted,
-  },
-  skip: {
-    textAlign: 'center',
-    fontSize: 15,
-    fontWeight: '600',
-    color: brandTheme.textMuted,
-    paddingVertical: 4,
   },
 });

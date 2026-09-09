@@ -5072,4 +5072,382 @@ export const spainStations: Station[] = [
     lng: -0.3793,
   },
 
+  {
+    name: "Aguilar de Campoo",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.7854,
+    lng: -4.2339,
+  },
+
+  {
+    name: "Cancienes",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5073,
+    lng: -5.8693,
+  },
+
+  {
+    name: "Los Corrales de Buelna",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2551,
+    lng: -4.0639,
+  },
+
+  {
+    name: "Segur de Calafell",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.1926,
+    lng: 1.6064,
+  },
+
+  {
+    name: "Montpellier Saint-Roch",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 43.6049,
+    lng: 3.8805,
+  },
+
+  {
+    name: "Rubí Can Vallhonrat",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4752,
+    lng: 2.0371,
+  },
+
+  {
+    name: "Palautordera",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.672,
+    lng: 2.4542,
+  },
+
+  {
+    name: "Quinto",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.4195,
+    lng: -0.4907,
+  },
+
+  {
+    name: "El Romaní",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.303,
+    lng: -0.3942,
+  },
+
+  {
+    name: "Guadalhorce",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.6921,
+    lng: -4.4837,
+  },
+
+  {
+    name: "La Colina",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.6419,
+    lng: -4.4926,
+  },
+
+  {
+    name: "San Cristóbal Industrial",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3319,
+    lng: -3.699,
+  },
+
+  {
+    name: "Bobadilla",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.0371,
+    lng: -4.7279,
+  },
+
+  {
+    name: "Vic",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.9311,
+    lng: 2.2489,
+  },
+
+  {
+    name: "Alcobendas-San Sebastián de los Reyes",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.5466,
+    lng: -3.6352,
+  },
+
+  {
+    name: "La Peña de Bilbao",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2402,
+    lng: -2.924,
+  },
+
+  {
+    name: "Camallera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.1223,
+    lng: 2.9654,
+  },
+
+  {
+    name: "Manlleu",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.9999,
+    lng: 2.2693,
+  },
+
+  {
+    name: "Artzentales",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2355,
+    lng: -3.2134,
+  },
+
+  {
+    name: "Campomanes",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.1101,
+    lng: -5.8164,
+  },
+
+  {
+    name: "Moeche",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5621,
+    lng: -8.0028,
+  },
+
+  {
+    name: "Orduña",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.9946,
+    lng: -3.0158,
+  },
+
+  {
+    name: "Rincón de Soto",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.23,
+    lng: -1.8475,
+  },
+
+  {
+    name: "Alegia",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1018,
+    lng: -2.0971,
+  },
+
+  {
+    name: "San Cristóbal de los Ángeles",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 40.3424,
+    lng: -3.684,
+  },
+
+  {
+    name: "Burriana-Alquerías Niño Perdido",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.8965,
+    lng: -0.1039,
+  },
+
+  {
+    name: "Campdevànol",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.2217,
+    lng: 2.1658,
+  },
+
+  {
+    name: "Centelles",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.7994,
+    lng: 2.2226,
+  },
+
+  {
+    name: "Figaró",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.7213,
+    lng: 2.2716,
+  },
+
+  {
+    name: "Albal",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.3918,
+    lng: -0.4026,
+  },
+
+  {
+    name: "Blimea",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2709,
+    lng: -5.5903,
+  },
+
+  {
+    name: "Els Monjos",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.3147,
+    lng: 1.6599,
+  },
+
+  {
+    name: "Salomó",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.2234,
+    lng: 1.3766,
+  },
+
+  {
+    name: "Aldaia",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.4611,
+    lng: -0.4632,
+  },
+
+  {
+    name: "Trápaga",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.303,
+    lng: -3.017,
+  },
+
+  {
+    name: "Boo de Piélagos",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.4317,
+    lng: -3.9463,
+  },
+
+  {
+    name: "Galindo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3041,
+    lng: -3.0102,
+  },
+
+  {
+    name: "Villanueva del Ariscal y Olivares",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.4071,
+    lng: -6.1482,
+  },
+
+  {
+    name: "Arahal",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.2681,
+    lng: -5.5485,
+  },
+
+  {
+    name: "Valencina-Santiponce",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.4268,
+    lng: -6.0567,
+  },
+
+  {
+    name: "Altsasu",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.8948,
+    lng: -2.1812,
+  },
+
+  {
+    name: "Cortadura",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.4944,
+    lng: -6.2682,
+  },
+
 ];
