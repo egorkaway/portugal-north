@@ -5945,4 +5945,445 @@ export const spainStations: Station[] = [
     lng: -0.9671,
   },
 
+  {
+    name: "Puente de los Fierros",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.0716,
+    lng: -5.7695,
+  },
+
+  {
+    name: "Uharte-Arakil",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.9206,
+    lng: -1.9748,
+  },
+
+  {
+    name: "Golmés",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6359,
+    lng: 0.9309,
+  },
+
+  {
+    name: "Almendralejo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.6847,
+    lng: -6.3998,
+  },
+
+  {
+    name: "Los Campos",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5365,
+    lng: -5.8849,
+  },
+
+  {
+    name: "Olite-Erriberri",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.485,
+    lng: -1.65,
+  },
+
+  {
+    name: "Alfaro",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.1865,
+    lng: -1.748,
+  },
+
+  {
+    name: "Fonciello",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3818,
+    lng: -5.7297,
+  },
+
+  {
+    name: "San Pedro de Nora",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3687,
+    lng: -5.9586,
+  },
+
+  {
+    name: "El Higuerón",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.8703,
+    lng: -4.8389,
+  },
+
+  {
+    name: "Nonaspe",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.2138,
+    lng: 0.2425,
+  },
+
+  {
+    name: "La Garriga",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6846,
+    lng: 2.2888,
+  },
+
+  {
+    name: "Pontecesures",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.723,
+    lng: -8.6521,
+  },
+
+  {
+    name: "Santa Águeda",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2619,
+    lng: -2.973,
+  },
+
+  {
+    name: "Alcover",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.2616,
+    lng: 1.1742,
+  },
+
+  {
+    name: "Bellpuig",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6325,
+    lng: 1.013,
+  },
+
+  {
+    name: "Sedes",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5426,
+    lng: -8.1402,
+  },
+
+  {
+    name: "El Remedio",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3751,
+    lng: -5.5462,
+  },
+
+  {
+    name: "Benalmádena-Arroyo de la Miel",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.5991,
+    lng: -4.5363,
+  },
+
+  {
+    name: "Cerdanyola Universitat",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.497,
+    lng: 2.1154,
+  },
+
+  {
+    name: "Nubledo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5234,
+    lng: -5.8703,
+  },
+
+  {
+    name: "Valdestillas",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 41.4887,
+    lng: -4.7729,
+  },
+
+  {
+    name: "La Ardila",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.4562,
+    lng: -6.216,
+  },
+
+  {
+    name: "Hoz de Anero",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4049,
+    lng: -3.6669,
+  },
+
+  {
+    name: "Moncofa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.8209,
+    lng: -0.1627,
+  },
+
+  {
+    name: "O Burgo-Santiago",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 43.3178,
+    lng: -8.3687,
+  },
+
+  {
+    name: "Premià de Mar",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.4878,
+    lng: 2.3549,
+  },
+
+  {
+    name: "Sahagún",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.3693,
+    lng: -5.0227,
+  },
+
+  {
+    name: "Sant Jordi Desvalls",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.0683,
+    lng: 2.9645,
+  },
+
+  {
+    name: "Villada",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.2452,
+    lng: -4.9706,
+  },
+
+  {
+    name: "Villasequilla",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.8795,
+    lng: -3.7285,
+  },
+
+  {
+    name: "Almagro",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.8953,
+    lng: -3.7098,
+  },
+
+  {
+    name: "Gornazo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.4097,
+    lng: -3.9886,
+  },
+
+  {
+    name: "Monteana",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5208,
+    lng: -5.7464,
+  },
+
+  {
+    name: "Ugao-Miraballes",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1791,
+    lng: -2.9027,
+  },
+
+  {
+    name: "Villalegre",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.54,
+    lng: -5.9022,
+  },
+
+  {
+    name: "Arakaldo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1536,
+    lng: -2.9382,
+  },
+
+  {
+    name: "Aguilar de Segarra",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7389,
+    lng: 1.6237,
+  },
+
+  {
+    name: "Buñol",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.4271,
+    lng: -0.7874,
+  },
+
+  {
+    name: "Guimorcondo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 40.6491,
+    lng: -4.615,
+  },
+
+  {
+    name: "Linares-Congostinas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.1017,
+    lng: -5.7722,
+  },
+
+  {
+    name: "Llames",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3688,
+    lng: -5.5252,
+  },
+
+  {
+    name: "Paredes de Nava",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.1507,
+    lng: -4.6976,
+  },
+
+  {
+    name: "Marquesado",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.4286,
+    lng: -6.1434,
+  },
+
+  {
+    name: "Ribaforada",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.997,
+    lng: -1.5151,
+  },
+
+  {
+    name: "Santurtzi",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3287,
+    lng: -3.0296,
+  },
+
+  {
+    name: "Adarzo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.4535,
+    lng: -3.8559,
+  },
+
+  {
+    name: "Amurrio Iparralde",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.0578,
+    lng: -2.9961,
+  },
+
+  {
+    name: "Vacarisses",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.6019,
+    lng: 1.8941,
+  },
+
 ];

@@ -1309,6 +1309,104 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Torre-Pacheco": ["61304"],
 
+  "Puente de los Fierros": ["15118"],
+
+  "Uharte-Arakil": ["80005"],
+
+  "Golmés": ["78404"],
+
+  "Almendralejo": ["40004"],
+
+  "Los Campos": ["16408"],
+
+  "Olite-Erriberri": ["80109"],
+
+  "Alfaro": ["81110"],
+
+  "Fonciello": ["05508"],
+
+  "San Pedro de Nora": ["05306"],
+
+  "El Higuerón": ["50501"],
+
+  "Nonaspe": ["71207"],
+
+  "La Garriga": ["77102"],
+
+  "Pontecesures": ["23010"],
+
+  "Santa Águeda": ["05459"],
+
+  "Alcover": ["73101"],
+
+  "Bellpuig": ["78406"],
+
+  "Sedes": ["05111"],
+
+  "El Remedio": ["05521"],
+
+  "Benalmádena-Arroyo de la Miel": ["54511"],
+
+  "Cerdanyola Universitat": ["72503"],
+
+  "Nubledo": ["16400"],
+
+  "Valdestillas": ["10503"],
+
+  "La Ardila": ["51464"],
+
+  "Hoz de Anero": ["05675"],
+
+  "Moncofa": ["65205"],
+
+  "O Burgo-Santiago": ["20404"],
+
+  "Premià de Mar": ["79409"],
+
+  "Sahagún": ["15009"],
+
+  "Sant Jordi Desvalls": ["79304"],
+
+  "Villada": ["15007"],
+
+  "Villasequilla": ["60203"],
+
+  "Almagro": ["94004"],
+
+  "Gornazo": ["05613"],
+
+  "Monteana": ["15303"],
+
+  "Ugao-Miraballes": ["13110"],
+
+  "Villalegre": ["16401"],
+
+  "Arakaldo": ["13117"],
+
+  "Aguilar de Segarra": ["78505"],
+
+  "Buñol": ["66206"],
+
+  "Guimorcondo": ["10302"],
+
+  "Linares-Congostinas": ["15116"],
+
+  "Llames": ["05522"],
+
+  "Paredes de Nava": ["15004"],
+
+  "Marquesado": ["51455"],
+
+  "Ribaforada": ["81203"],
+
+  "Santurtzi": ["13405"],
+
+  "Adarzo": ["05604"],
+
+  "Amurrio Iparralde": ["13121"],
+
+  "Vacarisses": ["78606"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

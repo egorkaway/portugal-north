@@ -196,6 +196,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@nataromualdo",
     photoPageUrl: "https://www.pexels.com/photo/photo-of-train-station-1192438/",
   },
+  "1212094": {
+    photographer: "Min An",
+    photographerUrl: "https://www.pexels.com/@minan1398",
+    photoPageUrl: "https://www.pexels.com/photo/train-on-rail-1212094/",
+  },
   "1299389": {
     photographer: "Jan Kroon",
     photographerUrl: "https://www.pexels.com/@jan-kroon-357445",
@@ -271,6 +276,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@adrien-olichon-1257089",
     photoPageUrl: "https://www.pexels.com/photo/aerial-photo-of-train-station-2464412/",
   },
+  "2464429": {
+    photographer: "Adrien Olichon",
+    photographerUrl: "https://www.pexels.com/@adrien-olichon-1257089",
+    photoPageUrl: "https://www.pexels.com/photo/empty-pathway-2464429/",
+  },
   "2799392": {
     photographer: "Maury Hz",
     photographerUrl: "https://www.pexels.com/@maury-hz-1406721",
@@ -335,6 +345,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Bastien Neves",
     photographerUrl: "https://www.pexels.com/@bastien-neves-2459695",
     photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-a-train-station-roofing-in-lyon-france-4082184/",
+  },
+  "4097097": {
+    photographer: "Bastien Neves",
+    photographerUrl: "https://www.pexels.com/@bastien-neves-2459695",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photography-of-railroad-track-4097097/",
   },
   "4124866": {
     photographer: "Christian Naccarato",
@@ -760,6 +775,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Rostyslav Savchyn",
     photographerUrl: "https://www.pexels.com/@rossxsavchyn",
     photoPageUrl: "https://www.pexels.com/photo/white-and-brown-concrete-building-9999094/",
+  },
+  "10046080": {
+    photographer: "Matteo Modica",
+    photographerUrl: "https://www.pexels.com/@matteomodica",
+    photoPageUrl: "https://www.pexels.com/photo/people-at-a-subway-station-10046080/",
   },
   "10143303": {
     photographer: "DHampl",
@@ -1510,6 +1530,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Jimmy Liao",
     photographerUrl: "https://www.pexels.com/@jimmy-liao-3615017",
     photoPageUrl: "https://www.pexels.com/photo/old-and-rusty-steel-roof-over-the-tracks-at-the-railway-station-18498268/",
+  },
+  "18644286": {
+    photographer: "XT7 Core",
+    photographerUrl: "https://www.pexels.com/@xt7core",
+    photoPageUrl: "https://www.pexels.com/photo/drone-shot-of-railway-tracks-18644286/",
   },
   "18672155": {
     photographer: "Sonny Vermeer",
@@ -2656,6 +2681,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@charles-edward-cansino-2149014986",
     photoPageUrl: "https://www.pexels.com/photo/captivating-black-and-white-subway-movement-shot-33147868/",
   },
+  "33331378": {
+    photographer: "Luca Arfini",
+    photographerUrl: "https://www.pexels.com/@luca-arfini-2152997023",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architecture-in-lyon-s-train-station-33331378/",
+  },
   "33353923": {
     photographer: "Chris Oberman",
     photographerUrl: "https://www.pexels.com/@chris-oberman-2154680251",
@@ -2965,6 +2995,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Belquior G.",
     photographerUrl: "https://www.pexels.com/@belquior-g-2829257",
     photoPageUrl: "https://www.pexels.com/photo/historic-building-and-tower-in-cadiz-spain-35478596/",
+  },
+  "35480458": {
+    photographer: "John  Kostopoulos",
+    photographerUrl: "https://www.pexels.com/@john-kostopoulos-403438109",
+    photoPageUrl: "https://www.pexels.com/photo/rusty-railroad-switch-amidst-overgrown-tracks-35480458/",
   },
   "35496713": {
     photographer: "Jérémy Glineur",
