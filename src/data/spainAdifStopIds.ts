@@ -1407,6 +1407,40 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Vacarisses": ["78606"],
 
+  "Xirivella-Alqueries": ["66214"],
+
+  "Duesaigües-L'Argentera": ["71305"],
+
+  "Gibaja": ["05691"],
+
+  "Mogro": ["05611"],
+
+  "Navia": ["05283"],
+
+  "Las Mellizas": ["54404"],
+
+  "Nimes": ["87302"],
+
+  "Sant Martí de Centelles": ["77104"],
+
+  "Moreda de Aller": ["05379"],
+
+  "Naredo": ["05787"],
+
+  "Tordera": ["79607"],
+
+  "Juneda": ["73002"],
+
+  "Pradell": ["71304"],
+
+  "Riba-roja d'Ebre": ["71209"],
+
+  "Agurain-Salvatierra de Álava": ["11212"],
+
+  "Samper": ["71201"],
+
+  "San Fernando-Centro": ["51402"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

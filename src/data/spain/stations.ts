@@ -6386,4 +6386,157 @@ export const spainStations: Station[] = [
     lng: 1.8941,
   },
 
+  {
+    name: "Xirivella-Alqueries",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.4626,
+    lng: -0.4322,
+  },
+
+  {
+    name: "Duesaigües-L'Argentera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1437,
+    lng: 0.9209,
+  },
+
+  {
+    name: "Gibaja",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2822,
+    lng: -3.4383,
+  },
+
+  {
+    name: "Mogro",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.4249,
+    lng: -3.9605,
+  },
+
+  {
+    name: "Navia",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5368,
+    lng: -6.7194,
+  },
+
+  {
+    name: "Las Mellizas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 36.8733,
+    lng: -4.7194,
+  },
+
+  {
+    name: "Nimes",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 43.8323,
+    lng: 4.3658,
+  },
+
+  {
+    name: "Sant Martí de Centelles",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.7606,
+    lng: 2.2489,
+  },
+
+  {
+    name: "Moreda de Aller",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1708,
+    lng: -5.742,
+  },
+
+  {
+    name: "Naredo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.8337,
+    lng: -5.5232,
+  },
+
+  {
+    name: "Tordera",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.7072,
+    lng: 2.7196,
+  },
+
+  {
+    name: "Juneda",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.5439,
+    lng: 0.8255,
+  },
+
+  {
+    name: "Pradell",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1334,
+    lng: 0.8587,
+  },
+
+  {
+    name: "Riba-roja d'Ebre",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.2486,
+    lng: 0.481,
+  },
+
+  {
+    name: "Agurain-Salvatierra de Álava",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.8464,
+    lng: -2.3892,
+  },
+
+  {
+    name: "Samper",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1822,
+    lng: -0.3688,
+  },
+
+  {
+    name: "San Fernando-Centro",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.476,
+    lng: -6.194,
+  },
+
 ];

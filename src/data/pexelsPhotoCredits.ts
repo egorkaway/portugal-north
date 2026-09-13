@@ -531,6 +531,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@santiagob",
     photoPageUrl: "https://www.pexels.com/photo/railway-under-town-on-hill-6339243/",
   },
+  "6362597": {
+    photographer: "carcdann",
+    photographerUrl: "https://www.pexels.com/@belarus",
+    photoPageUrl: "https://www.pexels.com/photo/people-waiting-at-a-train-station-at-night-6362597/",
+  },
   "6399438": {
     photographer: "Santiago  Boada",
     photographerUrl: "https://www.pexels.com/@santiagob",
@@ -670,6 +675,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Oğuz Kandemir",
     photographerUrl: "https://www.pexels.com/@oguz-kandemir-1449914",
     photoPageUrl: "https://www.pexels.com/photo/train-station-during-winter-7790751/",
+  },
+  "7889771": {
+    photographer: "moonpiece",
+    photographerUrl: "https://www.pexels.com/@moonpiece-56315807",
+    photoPageUrl: "https://www.pexels.com/photo/platform-outdoors-at-railway-station-7889771/",
   },
   "7900695": {
     photographer: "Efecan Efe",
@@ -1480,6 +1490,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "KJ Brix",
     photographerUrl: "https://www.pexels.com/@kjbromme",
     photoPageUrl: "https://www.pexels.com/photo/train-station-in-city-17936879/",
+  },
+  "17953210": {
+    photographer: "Jakub Zerdzicki",
+    photographerUrl: "https://www.pexels.com/@jakubzerdzicki",
+    photoPageUrl: "https://www.pexels.com/photo/building-in-town-17953210/",
   },
   "18133890": {
     photographer: "Ercan uğur Yaşar",
@@ -2370,6 +2385,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/modern-high-speed-train-at-cadiz-station-31166113/",
+  },
+  "31166115": {
+    photographer: "Explorando la provincia de Cádiz",
+    photographerUrl: "https://www.pexels.com/@explorando-la-provincia-de-cadiz-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/high-speed-train-at-cadiz-railway-station-31166115/",
   },
   "31167964": {
     photographer: "Hkn clk",
@@ -3571,6 +3591,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-in-cadiz-spain-39269007/",
   },
+  "39269008": {
+    photographer: "Explorando la provincia de Cádiz",
+    photographerUrl: "https://www.pexels.com/@explorando-la-provincia-de-cadiz-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/historic-railway-station-in-cadiz-spain-39269008/",
+  },
   "39269011": {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
@@ -3600,5 +3625,10 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Igor Passchier",
     photographerUrl: "https://www.pexels.com/@igor-passchier-111147847",
     photoPageUrl: "https://www.pexels.com/photo/modern-architecture-of-lisbon-s-oriente-station-39400254/",
+  },
+  "39477166": {
+    photographer: "Explorando la provincia de Cádiz",
+    photographerUrl: "https://www.pexels.com/@explorando-la-provincia-de-cadiz-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/abandoned-railway-station-in-el-portal-spain-39477166/",
   },
 };
