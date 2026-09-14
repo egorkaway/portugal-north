@@ -10,6 +10,7 @@ export const EXTERNAL_AIRPORT_PAGE_IATAS: readonly string[] = [
   "LGW",
   "LHR",
   "LPA",
+  "MAH",
   "MAN",
   "MUC",
   "MXP",

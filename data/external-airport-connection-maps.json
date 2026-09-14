@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-13T16:58:57.899Z",
+  "updatedAt": "2026-09-14T09:58:59.076Z",
   "airports": [
     {
       "iata": "PMI",
@@ -350,13 +350,21 @@
       "stationName": "Menorca Airport (MAH)",
       "slug": "menorca-airport-mah",
       "country": "ES",
-      "iberianFlightCount": 40,
+      "iberianFlightCount": 45,
       "iberianMapImage": "/maps/airports/external/mah-menorca-iberia.png",
       "iberianDestinationCount": 16,
       "iberianSampledFlights": 40,
       "iberianSampledAt": "2026-09-03T10:04:07.166Z",
       "iberianPeriodId": "2026-08-11",
-      "iberianBasemapId": "osm"
+      "iberianBasemapId": "osm",
+      "mapImage": "/maps/airports/external/mah-menorca.png",
+      "destinationCount": 25,
+      "allFlightsIberianDestinationCount": 17,
+      "sampledFlights": 39,
+      "sampledAt": "2026-09-14T07:22:04.267Z",
+      "periodId": "2026-08-11",
+      "provider": "aerodatabox",
+      "basemapId": "osm"
     },
     {
       "iata": "DUB",
@@ -2864,6 +2872,97 @@
       "iberianDestinationCount": 2,
       "iberianSampledFlights": 3,
       "iberianSampledAt": "2026-09-13T16:58:57.899Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "GUA",
+      "stationName": "La Aurora International Airport (GUA)",
+      "slug": "la-aurora-international-airport-gua",
+      "country": "GT",
+      "iberianFlightCount": 3,
+      "iberianMapImage": "/maps/airports/external/gua-la-aurora-iberia.png",
+      "iberianDestinationCount": 1,
+      "iberianSampledFlights": 3,
+      "iberianSampledAt": "2026-09-13T19:12:25.396Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "HAV",
+      "stationName": "José Martí International Airport (HAV)",
+      "slug": "jose-marti-international-airport-hav",
+      "country": "CU",
+      "iberianFlightCount": 3,
+      "iberianMapImage": "/maps/airports/external/hav-jose-marti-iberia.png",
+      "iberianDestinationCount": 1,
+      "iberianSampledFlights": 3,
+      "iberianSampledAt": "2026-09-13T19:12:52.998Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "HOR",
+      "stationName": "Horta Airport (HOR)",
+      "slug": "horta-airport-hor",
+      "country": "PT",
+      "iberianFlightCount": 3,
+      "iberianMapImage": "/maps/airports/external/hor-horta-iberia.png",
+      "iberianDestinationCount": 1,
+      "iberianSampledFlights": 3,
+      "iberianSampledAt": "2026-09-14T07:22:50.610Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "JCU",
+      "stationName": "Ceuta Heliport (JCU)",
+      "slug": "ceuta-heliport-jcu",
+      "country": "ES",
+      "iberianFlightCount": 3,
+      "iberianMapImage": "/maps/airports/external/jcu-ceuta-heliport-iberia.png",
+      "iberianDestinationCount": 1,
+      "iberianSampledFlights": 3,
+      "iberianSampledAt": "2026-09-14T07:36:26.260Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "KTI",
+      "stationName": "Techo International Airport (KTI)",
+      "slug": "techo-international-airport-kti",
+      "country": "KH",
+      "iberianFlightCount": 3,
+      "iberianMapImage": "/maps/airports/external/kti-techo-iberia.png",
+      "iberianDestinationCount": 1,
+      "iberianSampledFlights": 3,
+      "iberianSampledAt": "2026-09-14T08:24:21.948Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "SEA",
+      "stationName": "Seattle–Tacoma International Airport (SEA)",
+      "slug": "seattle-tacoma-international-airport-sea",
+      "country": "US",
+      "iberianFlightCount": 3,
+      "iberianMapImage": "/maps/airports/external/sea-seattle-tacoma-iberia.png",
+      "iberianDestinationCount": 1,
+      "iberianSampledFlights": 3,
+      "iberianSampledAt": "2026-09-14T09:47:56.567Z",
+      "iberianPeriodId": "2026-08-11",
+      "iberianBasemapId": "osm"
+    },
+    {
+      "iata": "SJO",
+      "stationName": "Juan Santamaría International Airport (SJO)",
+      "slug": "juan-santamaria-international-airport-sjo",
+      "country": "CR",
+      "iberianFlightCount": 3,
+      "iberianMapImage": "/maps/airports/external/sjo-juan-santamaria-iberia.png",
+      "iberianDestinationCount": 1,
+      "iberianSampledFlights": 3,
+      "iberianSampledAt": "2026-09-14T09:58:59.076Z",
       "iberianPeriodId": "2026-08-11",
       "iberianBasemapId": "osm"
     }

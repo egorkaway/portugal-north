@@ -6107,6 +6107,96 @@ export const stationHotels: StationHotels = {
     { name: "Residencial Dulce nombre de Maria", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Dulce%20nombre%20de%20Maria%2C%20San%20Fernando-Centro%2C%20Spain&order=price" },
     { name: "Hostal París", distanceKm: 0.3, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Par%C3%ADs%2C%20San%20Fernando-Centro%2C%20Spain&order=price" },
   ],
+  "Ferrerías": [
+    { name: "PR Maragoto", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=PR%20Maragoto%2C%20Ferrer%C3%ADas%2C%20Spain&order=price" },
+    { name: "Hotel Kensington", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Kensington%2C%20Ferrer%C3%ADas%2C%20Spain&order=price" },
+    { name: "Albergue de Peregrinos de Neda", distanceKm: 1.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20de%20Peregrinos%20de%20Neda%2C%20Ferrer%C3%ADas%2C%20Spain&order=price" },
+  ],
+  "San Antonio de Requena": [
+    { name: "Balcones de Oleana", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Balcones%20de%20Oleana%2C%20San%20Antonio%20de%20Requena%2C%20Spain&order=price" },
+    { name: "Finca Calderón", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20Calder%C3%B3n%2C%20San%20Antonio%20de%20Requena%2C%20Spain&order=price" },
+    { name: "Avenida", distanceKm: 5.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Avenida%2C%20San%20Antonio%20de%20Requena%2C%20Spain&order=price" },
+  ],
+  "Calamonte": [
+    { name: "AZZ Mérida Medea Hotel", distanceKm: 2.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AZZ%20M%C3%A9rida%20Medea%20Hotel%2C%20Calamonte%2C%20Spain&order=price" },
+    { name: "Hotel Romero", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Romero%2C%20Calamonte%2C%20Spain&order=price" },
+    { name: "El torero", distanceKm: 3.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20torero%2C%20Calamonte%2C%20Spain&order=price" },
+  ],
+  "Sarria": [
+    { name: "Hotel Roma", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Roma%2C%20Sarria%2C%20Spain&order=price" },
+    { name: "Andaina", distanceKm: 0.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Andaina%2C%20Sarria%2C%20Spain&order=price" },
+    { name: "Casa Matías", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Mat%C3%ADas%2C%20Sarria%2C%20Spain&order=price" },
+  ],
+  "Catoira": [
+    { name: "Os Migueliños", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Os%20Migueli%C3%B1os%2C%20Catoira%2C%20Spain&order=price" },
+    { name: "HarpAzul", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=HarpAzul%2C%20Catoira%2C%20Spain&order=price" },
+    { name: "Motel Abalo", distanceKm: 2.2, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Abalo%2C%20Catoira%2C%20Spain&order=price" },
+  ],
+  "Vacarisses-Torreblanca": [
+    { name: "Budget stays near Vacarisses-Torreblanca", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vacarisses-Torreblanca%2C%20Spain&order=price" },
+    { name: "Guest houses near Vacarisses-Torreblanca", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vacarisses-Torreblanca%2C%20Spain&order=price" },
+    { name: "Hotels near Vacarisses-Torreblanca", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Vacarisses-Torreblanca%2C%20Spain&order=price" },
+  ],
+  "Santa María de Mera": [
+    { name: "Muinos De Pontenoval", distanceKm: 0.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Muinos%20De%20Pontenoval%2C%20Santa%20Mar%C3%ADa%20de%20Mera%2C%20Spain&order=price" },
+    { name: "La Ría", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20R%C3%ADa%2C%20Santa%20Mar%C3%ADa%20de%20Mera%2C%20Spain&order=price" },
+    { name: "Hostal Casa Giz", distanceKm: 6.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Casa%20Giz%2C%20Santa%20Mar%C3%ADa%20de%20Mera%2C%20Spain&order=price" },
+  ],
+  "Altamira": [
+    { name: "Torrelavega", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Torrelavega%2C%20Altamira%2C%20Spain&order=price" },
+    { name: "Saja", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Saja%2C%20Altamira%2C%20Spain&order=price" },
+    { name: "Besaya", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Besaya%2C%20Altamira%2C%20Spain&order=price" },
+  ],
+  "Arbide": [
+    { name: "Kutxatxuri", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Kutxatxuri%2C%20Arbide%2C%20Spain&order=price" },
+    { name: "Hotel Errekagain", distanceKm: 1.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Errekagain%2C%20Arbide%2C%20Spain&order=price" },
+    { name: "Valle de Ayala", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Valle%20de%20Ayala%2C%20Arbide%2C%20Spain&order=price" },
+  ],
+  "Sariñena": [
+    { name: "Budget stays near Sariñena", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sari%C3%B1ena%2C%20Spain&order=price" },
+    { name: "Guest houses near Sariñena", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sari%C3%B1ena%2C%20Spain&order=price" },
+    { name: "Hotels near Sariñena", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Sari%C3%B1ena%2C%20Spain&order=price" },
+  ],
+  "Venta de Vargas": [
+    { name: "Islasol", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Islasol%2C%20Venta%20de%20Vargas%2C%20Spain&order=price" },
+    { name: "Salymar", distanceKm: 0.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Salymar%2C%20Venta%20de%20Vargas%2C%20Spain&order=price" },
+    { name: "Hotel Roma", distanceKm: 0.6, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Roma%2C%20Venta%20de%20Vargas%2C%20Spain&order=price" },
+  ],
+  "Andoain": [
+    { name: "Apartahotel la estación", distanceKm: 0, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Apartahotel%20la%20estaci%C3%B3n%2C%20Andoain%2C%20Spain&order=price" },
+    { name: "Pensión - Ostatua Andoain", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20-%20Ostatua%20Andoain%2C%20Andoain%2C%20Spain&order=price" },
+    { name: "Albergue del Peregrino de Andoain - Andoaingo Plazaolako Aterpetxea", distanceKm: 0.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20del%20Peregrino%20de%20Andoain%20-%20Andoaingo%20Plazaolako%20Aterpetxea%2C%20Andoain%2C%20Spain&order=price" },
+  ],
+  "Beranga": [
+    { name: "La Torre de los Isla", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Torre%20de%20los%20Isla%2C%20Beranga%2C%20Spain&order=price" },
+    { name: "EL Paso", distanceKm: 1.3, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=EL%20Paso%2C%20Beranga%2C%20Spain&order=price" },
+    { name: "Casa Hórreo de Hazas", distanceKm: 2.4, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20H%C3%B3rreo%20de%20Hazas%2C%20Beranga%2C%20Spain&order=price" },
+  ],
+  "Cabañas de Ebro": [
+    { name: "Hostal Cubero", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Cubero%2C%20Caba%C3%B1as%20de%20Ebro%2C%20Spain&order=price" },
+    { name: "Casa Rural Casta Álvarez", distanceKm: 0.9, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Casta%20%C3%81lvarez%2C%20Caba%C3%B1as%20de%20Ebro%2C%20Spain&order=price" },
+    { name: "Casa Rural La Palmera de la Insula", distanceKm: 3.5, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20La%20Palmera%20de%20la%20Insula%2C%20Caba%C3%B1as%20de%20Ebro%2C%20Spain&order=price" },
+  ],
+  "Caldearenas-Aquilué": [
+    { name: "Budget stays near Caldearenas-Aquilué", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caldearenas-Aquilu%C3%A9%2C%20Spain&order=price" },
+    { name: "Guest houses near Caldearenas-Aquilué", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caldearenas-Aquilu%C3%A9%2C%20Spain&order=price" },
+    { name: "Hotels near Caldearenas-Aquilué", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Caldearenas-Aquilu%C3%A9%2C%20Spain&order=price" },
+  ],
+  "Itsasondo": [
+    { name: "Hotel Ordizia", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Ordizia%2C%20Itsasondo%2C%20Spain&order=price" },
+    { name: "Bartzelona", distanceKm: 2.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Bartzelona%2C%20Itsasondo%2C%20Spain&order=price" },
+    { name: "Igartza", distanceKm: 4.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Igartza%2C%20Itsasondo%2C%20Spain&order=price" },
+  ],
+  "La Ercina": [
+    { name: "Budget stays near La Ercina", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Ercina%2C%20Spain&order=price" },
+    { name: "Guest houses near La Ercina", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Ercina%2C%20Spain&order=price" },
+    { name: "Hotels near La Ercina", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20Ercina%2C%20Spain&order=price" },
+  ],
+  "Lambarri": [
+    { name: "Erreka Güeñes", distanceKm: 0.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Erreka%20G%C3%BCe%C3%B1es%2C%20Lambarri%2C%20Spain&order=price" },
+    { name: "Santxosolo", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santxosolo%2C%20Lambarri%2C%20Spain&order=price" },
+    { name: "Hotel Isasi", distanceKm: 2.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Isasi%2C%20Lambarri%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
@@ -6329,6 +6419,11 @@ export const stationHotels: StationHotels = {
     { name: "Aloja cerca del aeropuerto", distanceKm: 2.6, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Aloja%20cerca%20del%20aeropuerto%2C%20Gran%20Canaria%20Airport%20(LPA)%2C%20Spain&order=price" },
     { name: "Finca Carlos", distanceKm: 3.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Finca%20Carlos%2C%20Gran%20Canaria%20Airport%20(LPA)%2C%20Spain&order=price" },
     { name: "Villa El Eden", distanceKm: 4.6, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Villa%20El%20Eden%2C%20Gran%20Canaria%20Airport%20(LPA)%2C%20Spain&order=price" },
+  ],
+  "Menorca Airport (MAH)": [
+    { name: "Llucmaçanes Gran", distanceKm: 2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Llucma%C3%A7anes%20Gran%2C%20Menorca%20Airport%20(MAH)%2C%20Spain&order=price" },
+    { name: "Hotel Son Tretze", distanceKm: 3.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Son%20Tretze%2C%20Menorca%20Airport%20(MAH)%2C%20Spain&order=price" },
+    { name: "Relise Hostel & Gym", distanceKm: 3.7, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Relise%20Hostel%20%26%20Gym%2C%20Menorca%20Airport%20(MAH)%2C%20Spain&order=price" },
   ],
   "Manchester Airport (MAN)": [
     { name: "Britannia Airport Inn Manchester Hotel & Spa", distanceKm: 0.7, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Britannia%20Airport%20Inn%20Manchester%20Hotel%20%26%20Spa%2C%20Manchester%20Airport%20(MAN)%2C%20United%20Kingdom&order=price" },

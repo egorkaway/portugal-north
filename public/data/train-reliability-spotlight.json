@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-13T16:58:52.194Z",
-  "runCount": 870,
+  "generatedAt": "2026-09-14T09:51:32.285Z",
+  "runCount": 877,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -29,16 +29,16 @@
       ]
     },
     {
-      "trainNumber": "722",
-      "serviceType": "Intercidades",
-      "avgDelayMinutes": 21.2,
-      "observations": 26,
-      "stationsSampled": 15,
+      "trainNumber": "876",
+      "serviceType": "InterRegional",
+      "avgDelayMinutes": 22.2,
+      "observations": 22,
+      "stationsSampled": 21,
       "majorStations": [
         "Porto-Campanhã",
-        "Lisboa Oriente",
-        "Vila Franca de Xira",
-        "Vila Nova de Gaia-Devesas"
+        "Ermesinde",
+        "Paredes",
+        "Penafiel"
       ]
     }
   ],
@@ -59,7 +59,7 @@
       "poolSize": 1
     },
     {
-      "trainNumber": "36410",
+      "trainNumber": "36406",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
       "observations": 23,
@@ -68,22 +68,22 @@
         "Mira Sintra-Meleças",
         "Pero Negro",
         "Bombarral",
-        "Mafra"
+        "Feliteira"
       ],
       "selectionMode": "stable",
       "poolSize": 1
     },
     {
-      "trainNumber": "36406",
+      "trainNumber": "36407",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 22,
+      "observations": 23,
       "stationsSampled": 17,
       "majorStations": [
-        "Mira Sintra-Meleças",
         "Pero Negro",
         "Bombarral",
-        "Mafra"
+        "Feliteira",
+        "Dois Portos"
       ],
       "selectionMode": "stable",
       "poolSize": 1

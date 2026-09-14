@@ -1441,6 +1441,44 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "San Fernando-Centro": ["51402"],
 
+  "Ferrerías": ["05109"],
+
+  "San Antonio de Requena": ["66201"],
+
+  "Urioste": ["13507"],
+
+  "Calamonte": ["40002"],
+
+  "Sarria": ["20305"],
+
+  "Catoira": ["23009"],
+
+  "Vacarisses-Torreblanca": ["78607"],
+
+  "Santa María de Mera": ["05131"],
+
+  "Altamira": ["05620"],
+
+  "Arbide": ["13108"],
+
+  "Sariñena": ["78203"],
+
+  "Venta de Vargas": ["51458"],
+
+  "Andoain": ["11505"],
+
+  "Beranga": ["05677"],
+
+  "Cabañas de Ebro": ["81209"],
+
+  "Caldearenas-Aquilué": ["74209"],
+
+  "Itsasondo": ["11406"],
+
+  "La Ercina": ["05763"],
+
+  "Lambarri": ["05470"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

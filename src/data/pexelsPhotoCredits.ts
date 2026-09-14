@@ -936,6 +936,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@yusufsinan",
     photoPageUrl: "https://www.pexels.com/photo/a-man-cleaning-the-train-platform-11971718/",
   },
+  "12017937": {
+    photographer: "Hensley Carrasco",
+    photographerUrl: "https://www.pexels.com/@hensley",
+    photoPageUrl: "https://www.pexels.com/photo/aerial-photography-of-an-old-town-surrounded-with-green-trees-12017937/",
+  },
   "12083360": {
     photographer: "Douglas  Santos",
     photographerUrl: "https://www.pexels.com/@douglas-santos-30354854",
@@ -1375,6 +1380,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Alex Hoces",
     photographerUrl: "https://www.pexels.com/@ahrphotography",
     photoPageUrl: "https://www.pexels.com/photo/principe-pio-train-station-in-madrid-at-night-17060373/",
+  },
+  "17069225": {
+    photographer: "Walter Alejandro",
+    photographerUrl: "https://www.pexels.com/@walter-alejandro-228509595",
+    photoPageUrl: "https://www.pexels.com/photo/cargo-wagons-on-railways-17069225/",
   },
   "17078789": {
     photographer: "Ayşenaz  Bilgin",
@@ -2230,6 +2240,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Andres Alaniz",
     photographerUrl: "https://www.pexels.com/@andres-alaniz-461433202",
     photoPageUrl: "https://www.pexels.com/photo/vintage-train-station-in-mendoza-argentina-29864104/",
+  },
+  "29864106": {
+    photographer: "Andres Alaniz",
+    photographerUrl: "https://www.pexels.com/@andres-alaniz-461433202",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-train-station-in-mendoza-argentina-29864106/",
   },
   "29864109": {
     photographer: "Andres Alaniz",
@@ -3425,6 +3440,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Anh Nguyen",
     photographerUrl: "https://www.pexels.com/@anh-nguyen-517648218",
     photoPageUrl: "https://www.pexels.com/photo/gothic-revival-architecture-in-breslau-poland-38194047/",
+  },
+  "38264800": {
+    photographer: "Mike Art 🎥 Visual Creator | Photography and Video 📸",
+    photographerUrl: "https://www.pexels.com/@mike-art-visual-creator-photography-and-video-2159421235",
+    photoPageUrl: "https://www.pexels.com/photo/scenic-view-of-embarcador-in-delta-del-ebro-spain-38264800/",
   },
   "38390768": {
     photographer: "Milo Deckert",

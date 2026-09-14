@@ -114,6 +114,10 @@ export async function expandSpainStations(options = {}) {
     persistExpandedStationAssets,
     resolveExpandedStationAssets,
   } = await import("./lib/expandStationAssets.mjs");
+  const {
+    shouldGenerateSpainExpandAreaMaps,
+    SPAIN_EXPAND_AREA_MAP_RUN_PROBABILITY,
+  } = await import("./lib/stationAreaMapEligibility.mjs");
 
   loadEnvFile(join(root, ".env"));
 
@@ -184,8 +188,15 @@ export async function expandSpainStations(options = {}) {
     addedStations.push(station);
   }
 
-  if (addedStations.length) {
+  // Only ~10% of expand runs generate area maps for the stations added this run.
+  if (addedStations.length && shouldGenerateSpainExpandAreaMaps()) {
     await fillStationAreaMaps(root, addedStations, { label: "Spain expand station" });
+  } else if (addedStations.length) {
+    console.log(
+      `Spain expand: skipping area maps this run (~${Math.round(
+        SPAIN_EXPAND_AREA_MAP_RUN_PROBABILITY * 100,
+      )}% of runs generate them).`,
+    );
   }
 
   return { added };

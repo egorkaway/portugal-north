@@ -37,3 +37,16 @@ export function loadStationsEligibleForAreaMaps(rootDir) {
 export function stationNamesEligibleForAreaMaps(rootDir) {
   return new Set(loadStationsEligibleForAreaMaps(rootDir).map((station) => station.name));
 }
+
+/**
+ * Fraction of Spain-expand runs that also generate surrounding-area maps for
+ * the stations added in that run. No backfill of older missing maps.
+ */
+export const SPAIN_EXPAND_AREA_MAP_RUN_PROBABILITY = 0.1;
+
+export function shouldGenerateSpainExpandAreaMaps(
+  probability = SPAIN_EXPAND_AREA_MAP_RUN_PROBABILITY,
+  random = Math.random,
+) {
+  return random() < probability;
+}

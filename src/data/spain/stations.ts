@@ -6539,4 +6539,175 @@ export const spainStations: Station[] = [
     lng: -6.194,
   },
 
+  {
+    name: "Ferrerías",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.528,
+    lng: -8.1504,
+  },
+
+  {
+    name: "San Antonio de Requena",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 39.5223,
+    lng: -1.1504,
+  },
+
+  {
+    name: "Urioste",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3075,
+    lng: -3.0411,
+  },
+
+  {
+    name: "Calamonte",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 38.8869,
+    lng: -6.383,
+  },
+
+  {
+    name: "Sarria",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.784,
+    lng: -7.4188,
+  },
+
+  {
+    name: "Catoira",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.6722,
+    lng: -8.7253,
+  },
+
+  {
+    name: "Vacarisses-Torreblanca",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5869,
+    lng: 1.9165,
+  },
+
+  {
+    name: "Santa María de Mera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.6409,
+    lng: -7.9162,
+  },
+
+  {
+    name: "Altamira",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3519,
+    lng: -4.057,
+  },
+
+  {
+    name: "Arbide",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1633,
+    lng: -2.9278,
+  },
+
+  {
+    name: "Sariñena",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 41.8175,
+    lng: -0.1708,
+  },
+
+  {
+    name: "Venta de Vargas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.4677,
+    lng: -6.1911,
+  },
+
+  {
+    name: "Andoain",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.222,
+    lng: -2.0157,
+  },
+
+  {
+    name: "Beranga",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4137,
+    lng: -3.5771,
+  },
+
+  {
+    name: "Cabañas de Ebro",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7881,
+    lng: -1.1675,
+  },
+
+  {
+    name: "Caldearenas-Aquilué",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.398,
+    lng: -0.4993,
+  },
+
+  {
+    name: "Itsasondo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.0683,
+    lng: -2.1625,
+  },
+
+  {
+    name: "La Ercina",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.8088,
+    lng: -5.2139,
+  },
+
+  {
+    name: "Lambarri",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2061,
+    lng: -3.0825,
+  },
+
 ];
