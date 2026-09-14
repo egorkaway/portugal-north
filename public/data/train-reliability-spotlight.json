@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-14T09:51:32.285Z",
-  "runCount": 877,
+  "generatedAt": "2026-09-14T18:13:32.137Z",
+  "runCount": 888,
   "mostDelayed": [
     {
       "trainNumber": "868",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 26.9,
-      "observations": 22,
+      "avgDelayMinutes": 25.5,
+      "observations": 24,
       "stationsSampled": 21,
       "majorStations": [
         "Porto-Campanhã",
@@ -31,8 +31,8 @@
     {
       "trainNumber": "876",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 22.2,
-      "observations": 22,
+      "avgDelayMinutes": 21.9,
+      "observations": 23,
       "stationsSampled": 21,
       "majorStations": [
         "Porto-Campanhã",
@@ -47,13 +47,28 @@
       "trainNumber": "10543",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 24,
+      "observations": 25,
       "stationsSampled": 6,
       "majorStations": [
         "Castelo Branco",
         "Guarda",
         "Covilhã",
         "Vila Velha de Ródão"
+      ],
+      "selectionMode": "stable",
+      "poolSize": 1
+    },
+    {
+      "trainNumber": "36410",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 24,
+      "stationsSampled": 17,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Bombarral",
+        "Feliteira"
       ],
       "selectionMode": "stable",
       "poolSize": 1
@@ -69,21 +84,6 @@
         "Pero Negro",
         "Bombarral",
         "Feliteira"
-      ],
-      "selectionMode": "stable",
-      "poolSize": 1
-    },
-    {
-      "trainNumber": "36407",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 23,
-      "stationsSampled": 17,
-      "majorStations": [
-        "Pero Negro",
-        "Bombarral",
-        "Feliteira",
-        "Dois Portos"
       ],
       "selectionMode": "stable",
       "poolSize": 1

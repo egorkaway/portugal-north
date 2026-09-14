@@ -1479,6 +1479,68 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Lambarri": ["05470"],
 
+  "Santa Isabel de Quijas": ["05625"],
+
+  "Massalfassar": ["65006"],
+
+  "Villanueva del Río-Minas": ["40119"],
+
+  "Mataporquera": ["14200"],
+
+  "Aces": ["05320"],
+
+  "Los Cabos": ["05241"],
+
+  "Golbardo": ["05629"],
+
+  "Estadio Olímpico": ["51051"],
+
+  "Nanclares-Langraiz": ["11205"],
+
+  "Xivares": ["05208"],
+
+  "Portugalete": ["13403"],
+
+  "Villanueva de Gállego": ["78005"],
+
+  "Apalla": ["05119"],
+
+  "Etxarri-Aranatz": ["80003"],
+
+  "Irun": ["11600"],
+
+  "Puente Agüero": ["05672"],
+
+  "Lugo": ["20309"],
+
+  "Campus Universitario de Rabanales": ["50417"],
+
+  "Sant Martí Sesgueioles": ["78502"],
+
+  "Valle de Trápaga/Trapagaran": ["13503"],
+
+  "Treto": ["05683"],
+
+  "Amurrio": ["13101"],
+
+  "Cabañaquinta": ["05385"],
+
+  "Plaza del Carmen": ["51462"],
+
+  "Alcanadre": ["81105"],
+
+  "Sama": ["16009"],
+
+  "Planoles": ["77304"],
+
+  "Ikaztegieta": ["11408"],
+
+  "Betanzos-Infesta": ["20400"],
+
+  "Jaca": ["74213"],
+
+  "La Llosa": ["65203"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -3,6 +3,7 @@ export const EXTERNAL_AIRPORT_PAGE_IATAS: readonly string[] = [
   "AMS",
   "BRU",
   "CDG",
+  "DUB",
   "FCO",
   "FRA",
   "GVA",
@@ -16,6 +17,7 @@ export const EXTERNAL_AIRPORT_PAGE_IATAS: readonly string[] = [
   "MXP",
   "ORY",
   "PMI",
+  "STN",
   "TFN",
   "ZRH"
 ];

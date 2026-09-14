@@ -6710,4 +6710,283 @@ export const spainStations: Station[] = [
     lng: -3.0825,
   },
 
+  {
+    name: "Santa Isabel de Quijas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.359,
+    lng: -4.1119,
+  },
+
+  {
+    name: "Massalfassar",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.5558,
+    lng: -0.3183,
+  },
+
+  {
+    name: "Villanueva del Río-Minas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 37.6617,
+    lng: -5.7122,
+  },
+
+  {
+    name: "Mataporquera",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.8709,
+    lng: -4.1654,
+  },
+
+  {
+    name: "Aces",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4399,
+    lng: -6.0658,
+  },
+
+  {
+    name: "Los Cabos",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5124,
+    lng: -6.0975,
+  },
+
+  {
+    name: "Golbardo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3408,
+    lng: -4.1556,
+  },
+
+  {
+    name: "Estadio Olímpico",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.4174,
+    lng: -6.0075,
+  },
+
+  {
+    name: "Nanclares-Langraiz",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 42.8162,
+    lng: -2.8049,
+  },
+
+  {
+    name: "Xivares",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5659,
+    lng: -5.7287,
+  },
+
+  {
+    name: "Portugalete",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3187,
+    lng: -3.0152,
+  },
+
+  {
+    name: "Villanueva de Gállego",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 41.7655,
+    lng: -0.8222,
+  },
+
+  {
+    name: "Apalla",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5505,
+    lng: -8.0186,
+  },
+
+  {
+    name: "Etxarri-Aranatz",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.9111,
+    lng: -2.0712,
+  },
+
+  {
+    name: "Irun",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3395,
+    lng: -1.8013,
+  },
+
+  {
+    name: "Puente Agüero",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4065,
+    lng: -3.7193,
+  },
+
+  {
+    name: "Lugo",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 43.0152,
+    lng: -7.5522,
+  },
+
+  {
+    name: "Campus Universitario de Rabanales",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.9126,
+    lng: -4.7209,
+  },
+
+  {
+    name: "Sant Martí Sesgueioles",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.7012,
+    lng: 1.4862,
+  },
+
+  {
+    name: "Valle de Trápaga/Trapagaran",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3015,
+    lng: -3.0288,
+  },
+
+  {
+    name: "Treto",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3941,
+    lng: -3.4692,
+  },
+
+  {
+    name: "Amurrio",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.0491,
+    lng: -3.002,
+  },
+
+  {
+    name: "Cabañaquinta",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.1608,
+    lng: -5.6249,
+  },
+
+  {
+    name: "Plaza del Carmen",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.4582,
+    lng: -6.2035,
+  },
+
+  {
+    name: "Alcanadre",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.4074,
+    lng: -2.1221,
+  },
+
+  {
+    name: "Sama",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2988,
+    lng: -5.6833,
+  },
+
+  {
+    name: "Planoles",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.3145,
+    lng: 2.0997,
+  },
+
+  {
+    name: "Ikaztegieta",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.094,
+    lng: -2.1256,
+  },
+
+  {
+    name: "Betanzos-Infesta",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 43.2707,
+    lng: -8.2258,
+  },
+
+  {
+    name: "Jaca",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.5783,
+    lng: -0.5392,
+  },
+
+  {
+    name: "La Llosa",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.7678,
+    lng: -0.2029,
+  },
+
 ];

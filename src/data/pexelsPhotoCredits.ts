@@ -321,6 +321,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@athena",
     photoPageUrl: "https://www.pexels.com/photo/people-inside-train-3357509/",
   },
+  "3793861": {
+    photographer: "Sinitta Leunen",
+    photographerUrl: "https://www.pexels.com/@sinileunen",
+    photoPageUrl: "https://www.pexels.com/photo/people-at-the-train-station-3793861/",
+  },
   "3885725": {
     photographer: "Egor Kunovsky",
     photographerUrl: "https://www.pexels.com/@egor-kunovsky-1199972",
@@ -741,6 +746,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@jan-van-der-wolf-11680885",
     photoPageUrl: "https://www.pexels.com/photo/railway-station-9367037/",
   },
+  "9685967": {
+    photographer: "Magda Ehlers",
+    photographerUrl: "https://www.pexels.com/@magda-ehlers-pexels",
+    photoPageUrl: "https://www.pexels.com/photo/footbridge-over-railway-tracks-9685967/",
+  },
   "9685974": {
     photographer: "Magda Ehlers",
     photographerUrl: "https://www.pexels.com/@magda-ehlers-pexels",
@@ -805,6 +815,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Sami  Aksu",
     photographerUrl: "https://www.pexels.com/@sami-aksu-48867324",
     photoPageUrl: "https://www.pexels.com/photo/train-on-rail-tracks-10195639/",
+  },
+  "10390779": {
+    photographer: "Markus Spiske",
+    photographerUrl: "https://www.pexels.com/@markusspiske",
+    photoPageUrl: "https://www.pexels.com/photo/grayscale-photo-of-a-footbridge-at-a-train-station-10390779/",
   },
   "10466862": {
     photographer: "antonio filigno",
@@ -1541,6 +1556,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@elisa-giaccaglia-704611068",
     photoPageUrl: "https://www.pexels.com/photo/vintage-train-car-near-industrial-silo-in-countryside-18338511/",
   },
+  "18373955": {
+    photographer: "Burak  Başgöze",
+    photographerUrl: "https://www.pexels.com/@burakbasgoze",
+    photoPageUrl: "https://www.pexels.com/photo/tracks-and-stairs-on-railway-station-on-dusk-18373955/",
+  },
   "18373956": {
     photographer: "Burak  Başgöze",
     photographerUrl: "https://www.pexels.com/@burakbasgoze",
@@ -1660,6 +1680,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Roman Zorge",
     photographerUrl: "https://www.pexels.com/@romanzorge",
     photoPageUrl: "https://www.pexels.com/photo/tunnel-in-metro-station-19358769/",
+  },
+  "19429387": {
+    photographer: "Masood Aslami",
+    photographerUrl: "https://www.pexels.com/@masoodaslami",
+    photoPageUrl: "https://www.pexels.com/photo/modern-railway-station-in-munich-19429387/",
   },
   "19429392": {
     photographer: "Masood Aslami",
@@ -1801,6 +1826,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
     photoPageUrl: "https://www.pexels.com/photo/train-at-elbbrucken-metro-station-in-hamburg-20712722/",
   },
+  "20712726": {
+    photographer: "Wolfgang Weiser",
+    photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
+    photoPageUrl: "https://www.pexels.com/photo/modern-elbbrucken-subway-station-in-hamburg-20712726/",
+  },
   "20798334": {
     photographer: "Oktay Köseoğlu",
     photographerUrl: "https://www.pexels.com/@oktay-koseoglu-42034955",
@@ -1870,6 +1900,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Ana Hidalgo Burgos Burgos.",
     photographerUrl: "https://www.pexels.com/@ana-hidalgo-burgos-burgos-4848204",
     photoPageUrl: "https://www.pexels.com/photo/bikes-on-street-in-front-of-north-station-in-valencia-spain-21625487/",
+  },
+  "21675354": {
+    photographer: "Wolfgang Weiser",
+    photographerUrl: "https://www.pexels.com/@wolfgang-weiser-467045605",
+    photoPageUrl: "https://www.pexels.com/photo/elbbrucken-terminal-station-in-hamburg-germany-21675354/",
   },
   "22047476": {
     photographer: "Efrem  Efre",
@@ -2501,6 +2536,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
     photoPageUrl: "https://www.pexels.com/photo/empty-railway-tracks-at-jerez-station-spain-31797342/",
   },
+  "31797346": {
+    photographer: "Explorando la provincia de Cádiz",
+    photographerUrl: "https://www.pexels.com/@explorando-la-provincia-de-cadiz-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/railway-tracks-in-jerez-de-la-frontera-31797346/",
+  },
   "31797388": {
     photographer: "Antonio Garcia Prats",
     photographerUrl: "https://www.pexels.com/@antonio-garcia-prats-1579305",
@@ -2991,6 +3031,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@alexandre-moreira-2527876",
     photoPageUrl: "https://www.pexels.com/photo/elegant-black-and-white-train-station-at-night-35159527/",
   },
+  "35160765": {
+    photographer: "Ivana Pavlova",
+    photographerUrl: "https://www.pexels.com/@lunex",
+    photoPageUrl: "https://www.pexels.com/photo/modern-architecture-at-city-of-arts-and-sciences-valencia-35160765/",
+  },
   "35177899": {
     photographer: "Airam Dato-on",
     photographerUrl: "https://www.pexels.com/@airamdphoto",
@@ -3366,6 +3411,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@lorna-pauli-1320744316",
     photoPageUrl: "https://www.pexels.com/photo/aerial-view-of-camara-de-lobos-madeira-islands-37556643/",
   },
+  "37573787": {
+    photographer: "Krystian B",
+    photographerUrl: "https://www.pexels.com/@krystian-b-2161563268",
+    photoPageUrl: "https://www.pexels.com/photo/person-waiting-for-subway-in-modern-urban-station-37573787/",
+  },
   "37626003": {
     photographer: "Michael Westen",
     photographerUrl: "https://www.pexels.com/@michael-westen-838156860",
@@ -3490,6 +3540,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "El Capra",
     photographerUrl: "https://www.pexels.com/@el-capra-98488027",
     photoPageUrl: "https://www.pexels.com/photo/historic-steam-locomotives-in-train-museum-38792721/",
+  },
+  "38792755": {
+    photographer: "El Capra",
+    photographerUrl: "https://www.pexels.com/@el-capra-98488027",
+    photoPageUrl: "https://www.pexels.com/photo/vintage-train-caboose-next-to-old-blue-building-38792755/",
   },
   "38794210": {
     photographer: "El Capra",
@@ -3645,6 +3700,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Igor Passchier",
     photographerUrl: "https://www.pexels.com/@igor-passchier-111147847",
     photoPageUrl: "https://www.pexels.com/photo/modern-architecture-of-lisbon-s-oriente-station-39400254/",
+  },
+  "39414211": {
+    photographer: "Explorando la provincia de Cádiz",
+    photographerUrl: "https://www.pexels.com/@explorando-la-provincia-de-cadiz-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/modern-train-at-puerto-real-railway-station-39414211/",
   },
   "39477166": {
     photographer: "Explorando la provincia de Cádiz",
