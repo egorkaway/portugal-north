@@ -1541,6 +1541,82 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "La Llosa": ["65203"],
 
+  "La Plana-Picamoixons": ["73100"],
+
+  "Llaranes": ["05219"],
+
+  "Lombera": ["14232"],
+
+  "Luarca": ["05275"],
+
+  "Riudecanyes-Botarell": ["71306"],
+
+  "Olloniego": ["15207"],
+
+  "Villaverde de Trucios": ["05493"],
+
+  "El Estrecho": ["05971"],
+
+  "Gama": ["05679"],
+
+  "Güeñes": ["05471"],
+
+  "La Puebla de Híjar": ["71200"],
+
+  "La Zaida-Sástago": ["71108"],
+
+  "Soto Udrión": ["05308"],
+
+  "Almuradiel-Viso del Marqués": ["50202"],
+
+  "Campo de Criptana": ["60402"],
+
+  "Lantueno-Santiurde": ["14203"],
+
+  "Pontedeume": ["21004"],
+
+  "Sagrada Familia": ["13509"],
+
+  "Busdongo": ["15113"],
+
+  "Campanillas": ["54410"],
+
+  "Castellnou de Seana": ["78405"],
+
+  "Caudalia": ["05371"],
+
+  "El Caleyo": ["15210"],
+
+  "Fabara": ["71206"],
+
+  "Las Campas": ["05302"],
+
+  "Sant Quirze de Besora-Montesquiu": ["77113"],
+
+  "Carbayín": ["05417"],
+
+  "Piedras Blancas": ["05227"],
+
+  "Plaza del Rey": ["51460"],
+
+  "Torelló": ["77111"],
+
+  "Tuilla": ["05421"],
+
+  "Torremolinos": ["54509"],
+
+  "Cazoña": ["05603"],
+
+  "Los Corros": ["05515"],
+
+  "Iznalloz": ["57003"],
+
+  "Matallana": ["05770"],
+
+  "O Ponto": ["05106"],
+
+  "Sant Miquel de Gonteres": ["78610"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

@@ -6989,4 +6989,346 @@ export const spainStations: Station[] = [
     lng: -0.2029,
   },
 
+  {
+    name: "La Plana-Picamoixons",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.3062,
+    lng: 1.1949,
+  },
+
+  {
+    name: "Llaranes",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5543,
+    lng: -5.8966,
+  },
+
+  {
+    name: "Lombera",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2658,
+    lng: -4.0676,
+  },
+
+  {
+    name: "Luarca",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5379,
+    lng: -6.5366,
+  },
+
+  {
+    name: "Riudecanyes-Botarell",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.1401,
+    lng: 0.9757,
+  },
+
+  {
+    name: "Olloniego",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2961,
+    lng: -5.8189,
+  },
+
+  {
+    name: "Villaverde de Trucios",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.2413,
+    lng: -3.2505,
+  },
+
+  {
+    name: "El Estrecho",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 37.6276,
+    lng: -0.8296,
+  },
+
+  {
+    name: "Gama",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.4232,
+    lng: -3.5247,
+  },
+
+  {
+    name: "Güeñes",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.209,
+    lng: -3.0952,
+  },
+
+  {
+    name: "La Puebla de Híjar",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.2244,
+    lng: -0.4386,
+  },
+
+  {
+    name: "La Zaida-Sástago",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.3205,
+    lng: -0.4271,
+  },
+
+  {
+    name: "Soto Udrión",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3564,
+    lng: -5.965,
+  },
+
+  {
+    name: "Almuradiel-Viso del Marqués",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.5143,
+    lng: -3.5019,
+  },
+
+  {
+    name: "Campo de Criptana",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 39.3943,
+    lng: -3.1177,
+  },
+
+  {
+    name: "Lantueno-Santiurde",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.0581,
+    lng: -4.084,
+  },
+
+  {
+    name: "Pontedeume",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 43.4118,
+    lng: -8.1804,
+  },
+
+  {
+    name: "Sagrada Familia",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3082,
+    lng: -3.0529,
+  },
+
+  {
+    name: "Busdongo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.9845,
+    lng: -5.7054,
+  },
+
+  {
+    name: "Campanillas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.705,
+    lng: -4.5455,
+  },
+
+  {
+    name: "Castellnou de Seana",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.6375,
+    lng: 0.9677,
+  },
+
+  {
+    name: "Caudalia",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2282,
+    lng: -5.7828,
+  },
+
+  {
+    name: "El Caleyo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.329,
+    lng: -5.8733,
+  },
+
+  {
+    name: "Fabara",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.2344,
+    lng: 0.1433,
+  },
+
+  {
+    name: "Las Campas",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3639,
+    lng: -5.8834,
+  },
+
+  {
+    name: "Sant Quirze de Besora-Montesquiu",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.1048,
+    lng: 2.2177,
+  },
+
+  {
+    name: "Carbayín",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3507,
+    lng: -5.6343,
+  },
+
+  {
+    name: "Piedras Blancas",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5566,
+    lng: -5.9756,
+  },
+
+  {
+    name: "Plaza del Rey",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.4639,
+    lng: -6.1983,
+  },
+
+  {
+    name: "Torelló",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.052,
+    lng: 2.26,
+  },
+
+  {
+    name: "Tuilla",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3282,
+    lng: -5.6431,
+  },
+
+  {
+    name: "Torremolinos",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 36.6226,
+    lng: -4.4996,
+  },
+
+  {
+    name: "Cazoña",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.4552,
+    lng: -3.8412,
+  },
+
+  {
+    name: "Los Corros",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3768,
+    lng: -5.6014,
+  },
+
+  {
+    name: "Iznalloz",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 37.3959,
+    lng: -3.5279,
+  },
+
+  {
+    name: "Matallana",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 42.8411,
+    lng: -5.5219,
+  },
+
+  {
+    name: "O Ponto",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.5148,
+    lng: -8.1778,
+  },
+
+  {
+    name: "Sant Miquel de Gonteres",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 41.5689,
+    lng: 1.9743,
+  },
+
 ];

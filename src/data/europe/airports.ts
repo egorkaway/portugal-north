@@ -258,6 +258,14 @@ export const europeDestinationAirports: Station[] = [
     lng: 16.760599,
   },
   {
+    name: "Bern Airport (BRN)",
+    country: "ch",
+    lines: ["BRN"],
+    types: ["Airport Destination"],
+    lat: 46.912736,
+    lng: 7.498819,
+  },
+  {
     name: "Brno-Tuřany Airport (BRQ)",
     country: "cz",
     lines: ["BRQ"],
@@ -1520,6 +1528,14 @@ export const europeDestinationAirports: Station[] = [
     types: ["Airport Destination"],
     lat: 43.629101,
     lng: 1.36382,
+  },
+  {
+    name: "Tampere-Pirkkala Airport (TMP)",
+    country: "fi",
+    lines: ["TMP"],
+    types: ["Airport Destination"],
+    lat: 61.414101,
+    lng: 23.604401,
   },
   {
     name: "Toussus-le-Noble Airport (TNF)",

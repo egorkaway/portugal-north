@@ -33,7 +33,7 @@ export type SpainStationCandidate = {
   types: string[];
 };
 
-export const SPAIN_EXPAND_BATCH_SIZE = 3;
+export const SPAIN_EXPAND_BATCH_SIZE = 1;
 const NEAR_EXISTING_KM = 0.45;
 const NEAR_PORTUGAL_KM = 2.5;
 
