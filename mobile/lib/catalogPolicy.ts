@@ -1,5 +1,6 @@
 export const CATALOG_SCHEMA_VERSION = 1;
-export const CATALOG_CHECK_INTERVAL_MS = 24 * 60 * 60 * 1000;
+/** Revalidate the tiny catalog manifest on each foreground; assets stay hash-gated. */
+export const CATALOG_CHECK_INTERVAL_MS = 0;
 export const CATALOG_RETRY_AFTER_FAILURE_MS = 15 * 60 * 1000;
 export const CATALOG_SITE_ORIGIN = 'https://www.verystays.com';
 export const CATALOG_URL = `${CATALOG_SITE_ORIGIN}/data/mobile-catalog.json`;

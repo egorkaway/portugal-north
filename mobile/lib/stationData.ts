@@ -278,11 +278,13 @@ export function getStationsForScope(scope: HomeScope): Station[] {
 }
 
 export function getStationImageUrl(stationName: string): string | null {
-  return (overlayStationImages ?? bakedStationImages)[stationName] ?? null;
+  // Overlay wins when it has a URL; fall back to bake so a stale OTA snapshot
+  // cannot hide photos that shipped later in the binary.
+  return overlayStationImages?.[stationName] ?? bakedStationImages[stationName] ?? null;
 }
 
 export function getHotelsForStation(stationName: string): Hotel[] {
-  const hotels = (overlayHotels ?? bakedHotels)[stationName] ?? [];
+  const hotels = overlayHotels?.[stationName] ?? bakedHotels[stationName] ?? [];
   const seen = new Set<string>();
   const out: Hotel[] = [];
   for (const hotel of hotels) {

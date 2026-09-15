@@ -131,7 +131,7 @@ async function syncCatalogNow(): Promise<void> {
   await writeMeta({ lastCheckAt: Date.now(), applied: nextApplied });
 }
 
-/** Fetch the website catalog at most once a day and overlay changed JSON. */
+/** Fetch the website catalog on foreground (failure-backed-off) and overlay changed JSON. */
 export function maybeSyncCatalog(): Promise<void> {
   if (Platform.OS === 'web') return Promise.resolve();
   if (inFlight) return inFlight;

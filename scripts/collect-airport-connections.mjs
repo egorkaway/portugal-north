@@ -28,18 +28,18 @@
  *   node --import tsx scripts/collect-airport-connections.mjs --external-only --iberian-inbound --external-count=12
  *   node --import tsx scripts/collect-airport-connections.mjs --backfill-europe-destinations
  *
- * After a successful bake (or with --backfill-europe-destinations), European
- * destinations not in the PT/ES hub catalog are upserted into
- * src/data/europe/airports.ts as "Airport Destination" stations (map only;
- * no outbound collection).
+ * After a successful bake, European destinations are **not** added to
+ * `src/data/europe/airports.ts` until you pass `--expand-europe-destinations`
+ * (or run `--backfill-europe-destinations`). Connection map redraws still run.
+ * Compact external-airport pages stay frozen at the current IATA list unless
+ * you pass `--expand-external-airport-pages`.
  *
  * Each collect also draws one all-flights map outside the Iberian peninsula
  * (`public/maps/airports/external/{iata}-{place}.png`) unless `--external-count`
  * asks for more. Iberian-flights maps (`{iata}-{place}-iberia.png`) are added
  * one per `stats:departures` run (no flight API). Pass `--external-only
  * --iberian-inbound --external-count=N` (or `all`) to draw more at once.
- * Those airports do not appear in station lists until both maps exist, then
- * they get a compact station page.
+ * Maps are stored even while catalog/pages are frozen.
  */
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -131,6 +131,8 @@ const externalIataFilter = externalIataArg
   : null;
 const periodStatus = args.includes("--period-status");
 const backfillEuropeDestinations = args.includes("--backfill-europe-destinations");
+const expandEuropeDestinations =
+  backfillEuropeDestinations || args.includes("--expand-europe-destinations");
 const asOfArg = args.find((arg) => arg.startsWith("--as-of"));
 const asOfDate = asOfArg
   ? asOfArg.includes("=")
@@ -368,6 +370,7 @@ export async function collectAirportConnections(options = {}) {
     asOf = asOfDate,
     periodStatusOnly = periodStatus,
     backfillEurope = backfillEuropeDestinations,
+    expandEurope = expandEuropeDestinations,
   } = options;
 
   if (periodStatusOnly) {
@@ -722,18 +725,23 @@ export async function collectAirportConnections(options = {}) {
       );
     }
 
-    // Upsert Europe destination stations from this run's (and prior live) destinations.
-    // Hubs only are in loadAirportCatalog — destinations never get outbound collection.
+    // Catalog expansion on hold — connection maps still redraw; stations stay frozen.
     const destIatas = collectDestinationIatasFromManifest(manifest);
-    europeDestinations = upsertEuropeDestinationAirports(
-      rootDir,
-      destIatas,
-      loadAirportCoordinateCache(cachePath),
-      { dryRun: isDryRun },
-    );
-    console.log(
-      `Europe destination airports: ${europeDestinations.count} (from ${destIatas.size} unique destinations)`,
-    );
+    if (expandEurope) {
+      europeDestinations = upsertEuropeDestinationAirports(
+        rootDir,
+        destIatas,
+        loadAirportCoordinateCache(cachePath),
+        { dryRun: isDryRun },
+      );
+      console.log(
+        `Europe destination airports: ${europeDestinations.count} (from ${destIatas.size} unique destinations)`,
+      );
+    } else {
+      console.log(
+        `Europe destination catalog frozen (${destIatas.size} unique destinations in connections; pass --expand-europe-destinations to upsert).`,
+      );
+    }
 
     if (!quotaExhausted) {
       externalAirportMaps = await runExternalAirportSpotlight({

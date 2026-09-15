@@ -2,7 +2,7 @@
   "expo": {
     "name": "VeryStays",
     "slug": "verystays",
-    "version": "1.0",
+    "version": "1.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "verystays",
@@ -10,7 +10,7 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": false,
-      "buildNumber": "79",
+      "buildNumber": "80",
       "bundleIdentifier": "com.iberian.travel",
       "infoPlist": {
         "ITSAppUsesNonExemptEncryption": false,
@@ -54,7 +54,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "versionCode": 79,
+      "versionCode": 80,
       "permissions": [
         "com.android.vending.BILLING"
       ]

@@ -150,20 +150,30 @@ describe("mobile catalog check interval", () => {
     expect(shouldCheckCatalog({ lastCheckAt: null, now: 1_000 })).toBe(true);
   });
 
-  it("waits a day after a successful check", () => {
+  it("rechecks after a successful check when the interval has elapsed", () => {
     const lastCheckAt = 1_000;
+    // Default interval is 0 (always revalidate the tiny manifest).
     expect(
       shouldCheckMobileCatalog({
         lastCheckAt,
-        now: lastCheckAt + MOBILE_CATALOG_CHECK_INTERVAL_MS - 1,
+        now: lastCheckAt,
+      }),
+    ).toBe(true);
+    expect(
+      shouldCheckMobileCatalog({
+        lastCheckAt,
+        now: lastCheckAt,
+        intervalMs: 60_000,
       }),
     ).toBe(false);
     expect(
       shouldCheckMobileCatalog({
         lastCheckAt,
-        now: lastCheckAt + MOBILE_CATALOG_CHECK_INTERVAL_MS,
+        now: lastCheckAt + 60_000,
+        intervalMs: 60_000,
       }),
     ).toBe(true);
+    expect(MOBILE_CATALOG_CHECK_INTERVAL_MS).toBe(0);
   });
 
   it("backs off after a failed attempt", () => {

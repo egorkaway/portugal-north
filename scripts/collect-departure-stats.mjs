@@ -19,14 +19,19 @@
  * a flight-connections collect, after a successful flight sample,
  * samples Renfe trip updates into data/spain-departure-stats.json +
  * data/spain-train-delay-log.ndjson (Spanish catalog stations / trains),
- * adds one new Spanish station and one new Portuguese CP halt (with images
- * and hotels) when GTFS has unmatched stops,
+ * Catalog expansion (new Spanish/Portuguese stations, new Europe destination
+ * airports, new compact external-airport pages) is on hold — pass
+ * `--spain-expand` / `--portugal-expand` / airport `--expand-europe-destinations`
+ * / `--expand-external-airport-pages` to opt in. Iberian catalog stays at the
+ * current ~1404 hubs/stops until further notice.
  * appends per-train arrival delay samples to data/train-delay-log.ndjson,
  * and prints this month's avg low / avg high on OK/FAIL lines only when the
  * temperature fetch for this run succeeded,
  * publishes public/data/station-monthly-temperatures.json for station pages
  * (client hides when the Lisbon month rolls over or samples ≤ 9),
  * and syncs mobile/data (npm run sync:data).
+ * Before sampling, fills any public station pages still missing photos
+ * (`--skip-station-images` to skip).
  * Overview PNGs (portugal-* / iberian-*) regenerate only when
  * at least one station sample succeeds and the existing PNGs are missing or
  * older than 3 days (force anytime with npm run maps:overview).
@@ -90,6 +95,21 @@ const delayArg = args.find((a) => a.startsWith("--delay"));
 const delayMs = delayArg
   ? Number.parseInt(delayArg.split("=")[1] ?? args[args.indexOf("--delay") + 1], 10)
   : 250;
+
+if (!args.includes("--skip-station-images") && !dryRun) {
+  try {
+    const { ensureStationImages } = await import("./lib/ensureStationImages.mjs");
+    const { stillMissing } = await ensureStationImages(root);
+    if (stillMissing.length) {
+      console.error(
+        `Continuing departures with ${stillMissing.length} station(s) still missing photos.`,
+      );
+    }
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error(`Station image ensure skipped: ${message}`);
+  }
+}
 
 function parseCpStationCodes(ts) {
   const map = {};
@@ -304,7 +324,7 @@ if (!dryRun) {
     console.error(`Spain reliability collect skipped: ${message}`);
   }
 
-  if (!args.includes("--skip-spain-expand")) {
+  if (args.includes("--spain-expand")) {
     try {
       const { expandSpainStations } = await import("./expand-spain-stations.mjs");
       await expandSpainStations();
@@ -312,9 +332,11 @@ if (!dryRun) {
       const message = error instanceof Error ? error.message : String(error);
       console.error(`Spain station expand skipped: ${message}`);
     }
+  } else {
+    console.log("Spain station expand on hold (pass --spain-expand to add stations).");
   }
 
-  if (!args.includes("--skip-portugal-expand")) {
+  if (args.includes("--portugal-expand")) {
     try {
       const { expandPortugalStations } = await import("./expand-portugal-stations.mjs");
       await expandPortugalStations();
@@ -322,6 +344,8 @@ if (!dryRun) {
       const message = error instanceof Error ? error.message : String(error);
       console.error(`Portugal station expand skipped: ${message}`);
     }
+  } else {
+    console.log("Portugal station expand on hold (pass --portugal-expand to add stations).");
   }
 
   if (temperaturesLogged > 0 || temperaturesMissed > 0) {

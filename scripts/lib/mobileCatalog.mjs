@@ -15,7 +15,8 @@ import {
 import { dirname, join } from "node:path";
 
 export const MOBILE_CATALOG_SCHEMA_VERSION = 1;
-export const MOBILE_CATALOG_CHECK_INTERVAL_MS = 24 * 60 * 60 * 1000;
+/** Revalidate the tiny catalog manifest often; asset downloads stay hash-gated. */
+export const MOBILE_CATALOG_CHECK_INTERVAL_MS = 0;
 export const MOBILE_CATALOG_RETRY_AFTER_FAILURE_MS = 15 * 60 * 1000;
 export const MOBILE_CATALOG_PUBLIC_PATH = "/data/mobile-catalog.json";
 

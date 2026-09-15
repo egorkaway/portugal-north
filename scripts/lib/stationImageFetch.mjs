@@ -605,6 +605,8 @@ export async function resolveStationImage(station, { apiKey, usedUrls, pexelsOnl
     }
   }
 
+  if (!apiKey) return null;
+
   for (const query of buildPexelsQueries(station)) {
     const picked = await pexelsPickUnique(query, station.name, usedUrls, apiKey);
     if (picked) return { url: picked.url, source: "pexels", query, credit: picked.credit };
