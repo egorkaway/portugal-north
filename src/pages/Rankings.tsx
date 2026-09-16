@@ -59,7 +59,7 @@ const Rankings = () => {
           <MapOverviewImages />
         </main>
 
-        <SiteFooter showIntro={false} />
+        <SiteFooter />
       </div>
     </>
   );

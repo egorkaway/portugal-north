@@ -13,11 +13,9 @@ import { APP_STORE_URL, appStoreBadgeSrc } from "@/lib/appStore";
 import type { CountryCode, HomeScope } from "@/lib/countries";
 
 export function SiteFooter({
-  showIntro = true,
   country: countryOverride,
   scope: scopeOverride,
 }: {
-  showIntro?: boolean;
   country?: CountryCode;
   /** Home list scope — drives Portugal / Spain / Iberia intro copy. */
   scope?: HomeScope;
@@ -39,38 +37,30 @@ export function SiteFooter({
       />
       <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/40" />
       <div className="relative mx-auto max-w-5xl px-4 py-6 text-center md:px-6 md:py-10">
-        {showIntro && (
-          <div className="mb-4 space-y-2 md:mb-5">
-            <h2 className="font-display text-2xl leading-tight md:text-3xl">{t(introKeys.title)}</h2>
-            <p className="mx-auto max-w-xl text-sm text-primary-foreground/90 md:text-base">
-              {t(introKeys.subtitle)}
-            </p>
-            <p className="text-xs text-primary-foreground/70 md:text-sm">{t("footer.disclaimer")}</p>
-            <a
-              href={APP_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex justify-center pt-1"
-            >
-              <img
-                src={appStoreBadgeSrc(locale)}
-                alt={t("footer.appStoreBadgeAlt")}
-                width={120}
-                height={40}
-                className="h-10 w-auto"
-                loading="lazy"
-              />
-            </a>
-          </div>
-        )}
+        <div className="mb-4 space-y-2 md:mb-5">
+          <h2 className="font-display text-2xl leading-tight md:text-3xl">{t(introKeys.title)}</h2>
+          <p className="mx-auto max-w-xl text-sm text-primary-foreground/90 md:text-base">
+            {t(introKeys.subtitle)}
+          </p>
+          <p className="text-xs text-primary-foreground/70 md:text-sm">{t("footer.disclaimer")}</p>
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex justify-center pt-1"
+          >
+            <img
+              src={appStoreBadgeSrc(locale)}
+              alt={t("footer.appStoreBadgeAlt")}
+              width={120}
+              height={40}
+              className="h-10 w-auto"
+              loading="lazy"
+            />
+          </a>
+        </div>
 
-        <div
-          className={
-            showIntro
-              ? "space-y-5 border-t border-primary-foreground/20 pt-5 md:space-y-8 md:pt-6"
-              : "space-y-6 md:space-y-8"
-          }
-        >
+        <div className="space-y-5 border-t border-primary-foreground/20 pt-5 md:space-y-8 md:pt-6">
           <LanguageSwitcher />
 
           <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm text-primary-foreground/80">

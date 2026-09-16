@@ -61,7 +61,7 @@ const Privacy = () => {
           </div>
         </main>
 
-        <SiteFooter showIntro={false} />
+        <SiteFooter />
       </div>
     </>
   );

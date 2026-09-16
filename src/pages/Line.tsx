@@ -168,7 +168,7 @@ const Line = () => {
           </div>
         </main>
 
-        <SiteFooter showIntro={false} country={line.country} />
+        <SiteFooter country={line.country} />
       </div>
     </>
   );

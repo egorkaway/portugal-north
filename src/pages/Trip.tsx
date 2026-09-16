@@ -423,7 +423,7 @@ const Trip = () => {
         </AlertDialog>
 
         <div className="hidden sm:block">
-          <SiteFooter showIntro={false} />
+          <SiteFooter />
         </div>
       </div>
     </>

@@ -252,7 +252,7 @@ const Tickets = () => {
           </div>
         </main>
 
-        <SiteFooter showIntro={false} />
+        <SiteFooter />
       </div>
     </>
   );

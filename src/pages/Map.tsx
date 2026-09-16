@@ -50,7 +50,7 @@ const MapPage = () => {
           <MapOverviewImages />
         </main>
 
-        <SiteFooter showIntro={false} />
+        <SiteFooter />
       </div>
     </>
   );

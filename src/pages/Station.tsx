@@ -297,10 +297,7 @@ const Station = () => {
           </p>
         </main>
 
-        <SiteFooter
-          showIntro={false}
-          country={isCountryCode(station.country) ? station.country : undefined}
-        />
+        <SiteFooter country={isCountryCode(station.country) ? station.country : undefined} />
       </div>
     </>
   );

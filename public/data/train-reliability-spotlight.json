@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-16T05:58:02.133Z",
-  "runCount": 909,
+  "generatedAt": "2026-09-16T11:27:59.638Z",
+  "runCount": 920,
   "mostDelayed": [
     {
       "trainNumber": "868",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 25.5,
-      "observations": 24,
+      "avgDelayMinutes": 24.4,
+      "observations": 25,
       "stationsSampled": 21,
       "majorStations": [
         "Porto-Campanhã",
@@ -59,7 +59,7 @@
       "poolSize": 1
     },
     {
-      "trainNumber": "36410",
+      "trainNumber": "36406",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
       "observations": 25,
@@ -67,23 +67,23 @@
       "majorStations": [
         "Mira Sintra-Meleças",
         "Pero Negro",
-        "Bombarral",
-        "Feliteira"
+        "Feliteira",
+        "Dois Portos"
       ],
       "selectionMode": "stable",
       "poolSize": 1
     },
     {
-      "trainNumber": "10544",
-      "serviceType": "Intercidades",
+      "trainNumber": "36407",
+      "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 24,
-      "stationsSampled": 6,
+      "observations": 25,
+      "stationsSampled": 17,
       "majorStations": [
-        "Abrantes",
-        "Castelo Branco",
-        "Covilhã",
-        "Vila Velha de Ródão"
+        "Pero Negro",
+        "Feliteira",
+        "Dois Portos",
+        "Mafra"
       ],
       "selectionMode": "stable",
       "poolSize": 1

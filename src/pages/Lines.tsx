@@ -109,7 +109,7 @@ const Lines = () => {
           <p className="mt-2 text-xs text-muted-foreground">{t("lines.orderingNote")}</p>
         </main>
 
-        <SiteFooter showIntro={false} />
+        <SiteFooter />
       </div>
     </>
   );
