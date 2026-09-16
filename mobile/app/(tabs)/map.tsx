@@ -308,55 +308,21 @@ export default function MapScreen() {
             onPress={clearSelection}
             onMarkerPress={handleMarkerPress}
           >
-            {visibleMarkers.map(({ station, color, size, visited }) => {
-              const ringSize = size + VISITED_RING_EXTRA;
-              return (
-                <Marker
-                  key={`${station.name}-${visited ? 'v' : ''}`}
-                  identifier={station.name}
-                  coordinate={{ latitude: station.lat, longitude: station.lng }}
-                  stopPropagation
-                  tracksViewChanges={false}
-                  onPress={() => selectStation(station.name)}
-                >
-                  <View
-                    style={styles.markerHitArea}
-                    collapsable={false}
-                    accessible
-                    accessibilityRole="button"
-                    accessibilityLabel={
-                      visited ? `${station.name}, ${t('map.legendVisited')}` : station.name
-                    }
-                  >
-                    <View style={styles.markerTouchTarget} />
-                    <View
-                      style={[
-                        styles.markerStack,
-                        visited ? { width: ringSize, height: ringSize } : null,
-                      ]}
-                    >
-                      {visited ? (
-                        <View
-                          pointerEvents="none"
-                          style={[styles.visitedRing, { borderRadius: ringSize / 2 }]}
-                        />
-                      ) : null}
-                      <View
-                        style={[
-                          styles.dot,
-                          {
-                            width: size,
-                            height: size,
-                            borderRadius: size / 2,
-                            backgroundColor: color,
-                          },
-                        ]}
-                      />
-                    </View>
-                  </View>
-                </Marker>
-              );
-            })}
+            {visibleMarkers.map(({ station, color, size, visited }) => (
+              <StationAppleMarker
+                key={station.name}
+                name={station.name}
+                latitude={station.lat}
+                longitude={station.lng}
+                color={color}
+                size={size}
+                visited={visited}
+                accessibilityLabel={
+                  visited ? `${station.name}, ${t('map.legendVisited')}` : station.name
+                }
+                onPress={() => selectStation(station.name)}
+              />
+            ))}
           </MapView>
         )}
 
@@ -461,6 +427,89 @@ export default function MapScreen() {
   );
 }
 
+function StationAppleMarker({
+  name,
+  latitude,
+  longitude,
+  color,
+  size,
+  visited,
+  accessibilityLabel,
+  onPress,
+}: {
+  name: string;
+  latitude: number;
+  longitude: number;
+  color: string;
+  size: number;
+  visited: boolean;
+  accessibilityLabel: string;
+  onPress: () => void;
+}) {
+  // iOS needs one layout pass before freezing the annotation bitmap; otherwise
+  // custom views sit above/beside the real coordinate (pin-style bottom anchor).
+  const [tracksViewChanges, setTracksViewChanges] = useState(true);
+  useEffect(() => {
+    setTracksViewChanges(true);
+    const timer = setTimeout(() => setTracksViewChanges(false), 80);
+    return () => clearTimeout(timer);
+  }, [visited, size, color]);
+
+  const ringSize = size + VISITED_RING_EXTRA;
+  const ringOffset = (MARKER_HIT_SIZE - ringSize) / 2;
+  const dotOffset = (MARKER_HIT_SIZE - size) / 2;
+
+  return (
+    <Marker
+      identifier={name}
+      coordinate={{ latitude, longitude }}
+      anchor={{ x: 0.5, y: 0.5 }}
+      centerOffset={{ x: 0, y: 0 }}
+      stopPropagation
+      tracksViewChanges={tracksViewChanges}
+      onPress={onPress}
+    >
+      <View
+        style={styles.markerHitArea}
+        collapsable={false}
+        accessible
+        accessibilityRole="button"
+        accessibilityLabel={accessibilityLabel}
+      >
+        <View style={styles.markerTouchTarget} />
+        {visited ? (
+          <View
+            pointerEvents="none"
+            style={[
+              styles.visitedRing,
+              {
+                width: ringSize,
+                height: ringSize,
+                borderRadius: ringSize / 2,
+                top: ringOffset,
+                left: ringOffset,
+              },
+            ]}
+          />
+        ) : null}
+        <View
+          style={[
+            styles.dot,
+            {
+              width: size,
+              height: size,
+              borderRadius: size / 2,
+              backgroundColor: color,
+              top: dotOffset,
+              left: dotOffset,
+            },
+          ]}
+        />
+      </View>
+    </Marker>
+  );
+}
+
 function LegendSwatch({
   color,
   label,
@@ -510,11 +559,12 @@ const styles = StyleSheet.create({
     backgroundColor: theme.primary,
   },
   dot: {
+    position: 'absolute',
     borderWidth: 1,
     borderColor: '#fff',
   },
   visitedRing: {
-    ...StyleSheet.absoluteFillObject,
+    position: 'absolute',
     borderWidth: 2,
     borderColor: VISITED_RING_COLOR,
     backgroundColor: 'transparent',
@@ -522,12 +572,6 @@ const styles = StyleSheet.create({
   markerHitArea: {
     width: MARKER_HIT_SIZE,
     height: MARKER_HIT_SIZE,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  markerStack: {
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   markerTouchTarget: {
     ...StyleSheet.absoluteFillObject,

@@ -1,0 +1,12 @@
+---
+description: Always include departures/reliability/map snapshot churn in commits
+alwaysApply: true
+---
+
+# Commit stats and map snapshots with code
+
+When committing in this repo, if the working tree also has churn from departures / reliability / airport connection / temperature / mobile catalog sync / overview or airport map PNGs / sitemap updates, **include those files in the same commit** (or the same push batch) rather than leaving them unstaged.
+
+Do not split “feature code” from incidental `stats:departures` / `sync:data` snapshot updates unless the user explicitly asks to exclude them.
+
+Typical paths: `data/*.json`, `public/data/**`, `public/maps/**`, `mobile/data/**`, `public/sitemap.xml`.
