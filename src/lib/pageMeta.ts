@@ -196,7 +196,8 @@ export function buildSeoHeadHtml(meta: PageMeta, siteUrl: string, siteName?: str
     : "";
 
   return `    <title>${escapeHtml(meta.title)}</title>
-    <meta name="description" content="${escapeAttr(meta.description)}" />${robots}
+    <meta name="description" content="${escapeAttr(meta.description)}" />
+    <meta name="apple-itunes-app" content="app-id=6789983242" />${robots}
     <link rel="canonical" href="${escapeAttrUrl(canonical)}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="${name}" />

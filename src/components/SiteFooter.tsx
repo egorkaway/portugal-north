@@ -9,6 +9,7 @@ import {
   useFooterCountry,
   useFooterHomeScope,
 } from "@/hooks/useFooterCountry";
+import { APP_STORE_URL, appStoreBadgeSrc } from "@/lib/appStore";
 import type { CountryCode, HomeScope } from "@/lib/countries";
 
 export function SiteFooter({
@@ -21,7 +22,7 @@ export function SiteFooter({
   /** Home list scope — drives Portugal / Spain / Iberia intro copy. */
   scope?: HomeScope;
 }) {
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
   const country = useFooterCountry(countryOverride);
   const introScope = useFooterHomeScope(scopeOverride);
   const introKeys = footerIntroMessageKeys(introScope);
@@ -37,21 +38,36 @@ export function SiteFooter({
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-primary/40" />
-      <div className="relative mx-auto max-w-5xl px-4 py-10 text-center md:px-6 md:py-16">
+      <div className="relative mx-auto max-w-5xl px-4 py-6 text-center md:px-6 md:py-10">
         {showIntro && (
-          <>
-            <h2 className="font-display text-3xl md:text-4xl mb-3">{t(introKeys.title)}</h2>
-            <p className="text-primary-foreground/90 max-w-xl mx-auto mb-6">
+          <div className="mb-4 space-y-2 md:mb-5">
+            <h2 className="font-display text-2xl leading-tight md:text-3xl">{t(introKeys.title)}</h2>
+            <p className="mx-auto max-w-xl text-sm text-primary-foreground/90 md:text-base">
               {t(introKeys.subtitle)}
             </p>
-            <p className="text-primary-foreground/70 text-sm">{t("footer.disclaimer")}</p>
-          </>
+            <p className="text-xs text-primary-foreground/70 md:text-sm">{t("footer.disclaimer")}</p>
+            <a
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex justify-center pt-1"
+            >
+              <img
+                src={appStoreBadgeSrc(locale)}
+                alt={t("footer.appStoreBadgeAlt")}
+                width={120}
+                height={40}
+                className="h-10 w-auto"
+                loading="lazy"
+              />
+            </a>
+          </div>
         )}
 
         <div
           className={
             showIntro
-              ? "mt-6 space-y-6 border-t border-primary-foreground/20 pt-6 md:mt-10 md:space-y-10 md:pt-8"
+              ? "space-y-5 border-t border-primary-foreground/20 pt-5 md:space-y-8 md:pt-6"
               : "space-y-6 md:space-y-8"
           }
         >

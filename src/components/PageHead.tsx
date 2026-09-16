@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { useLocale } from "@/i18n/LocaleProvider";
+import { APPLE_ITUNES_APP_META } from "@/lib/appStore";
 import type { PageMeta } from "@/lib/pageMeta";
 import { absoluteUrl } from "@/lib/site";
 
@@ -21,6 +22,7 @@ export function PageHead({ meta }: PageHeadProps) {
     <Helmet prioritizeSeoTags>
       <title>{meta.title}</title>
       <meta name="description" content={meta.description} />
+      <meta name="apple-itunes-app" content={APPLE_ITUNES_APP_META} />
       {meta.robots && <meta name="robots" content={meta.robots} />}
       <link rel="canonical" href={pageUrl} />
       <meta property="og:type" content="website" />

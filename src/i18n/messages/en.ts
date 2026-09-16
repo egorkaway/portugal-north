@@ -535,6 +535,7 @@ export const en: Messages = {
     subtitleIberia:
       "Across Portugal and Spain — key stops and a place to sleep nearby.",
     disclaimer: "We do not recommend these hotels, but if you do, we want to know.",
+    appStoreBadgeAlt: "Download VeryStays: Trains in Iberia on the App Store",
     alsoFromUs: "Also from us",
     caminoTitle: "My Personal Camino de Santiago",
     caminoDesc:

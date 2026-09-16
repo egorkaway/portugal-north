@@ -466,6 +466,7 @@ export type Messages = {
     titleIberia: string;
     subtitleIberia: string;
     disclaimer: string;
+    appStoreBadgeAlt: string;
     alsoFromUs: string;
     caminoTitle: string;
     caminoDesc: string;
