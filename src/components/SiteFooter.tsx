@@ -9,6 +9,7 @@ import {
   useFooterCountry,
   useFooterHomeScope,
 } from "@/hooks/useFooterCountry";
+import { useCaminoStoreUrl } from "@/hooks/useCaminoStoreUrl";
 import { APP_STORE_URL, appStoreBadgeSrc } from "@/lib/appStore";
 import type { CountryCode, HomeScope } from "@/lib/countries";
 
@@ -24,6 +25,7 @@ export function SiteFooter({
   const country = useFooterCountry(countryOverride);
   const introScope = useFooterHomeScope(scopeOverride);
   const introKeys = footerIntroMessageKeys(introScope);
+  const caminoUrl = useCaminoStoreUrl();
 
   return (
     <footer className="relative mt-8 overflow-hidden text-primary-foreground md:mt-12">
@@ -84,7 +86,7 @@ export function SiteFooter({
             </p>
             <div className="mx-auto grid max-w-4xl gap-3 sm:grid-cols-2 lg:grid-cols-3">
               <a
-                href="https://apps.apple.com/pt/app/my-personal-camino-de-santiago/id6761839093?l=en-GB"
+                href={caminoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex flex-1 items-start gap-3 rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 p-4 text-left backdrop-blur-sm transition-colors hover:border-primary-foreground/40 hover:bg-primary-foreground/15 md:gap-4 md:p-5"

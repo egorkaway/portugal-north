@@ -539,7 +539,7 @@ export const en: Messages = {
     alsoFromUs: "Also from us",
     caminoTitle: "My Personal Camino de Santiago",
     caminoDesc:
-      "iPhone app to track your walk and progress along the Camino de Santiago.",
+      "iOS and Android app to track your walk and progress along the Camino de Santiago.",
     mapaTitle: "Map Your Travel",
     mapaDesc:
       "GetMapa's iPhone app tracks the places you visit and builds a personal travel map from your trips and photos.",

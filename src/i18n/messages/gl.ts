@@ -541,7 +541,7 @@ export const gl: Messages = {
     alsoFromUs: "Tamén nosos",
     caminoTitle: "My Personal Camino de Santiago",
     caminoDesc:
-      "App para iPhone para seguir o camiño e o teu progreso no Camiño de Santiago.",
+      "App para iOS e Android para seguir o camiño e o teu progreso no Camiño de Santiago.",
     mapaTitle: "Map Your Travel",
     mapaDesc:
       "A app GetMapa para iPhone rexistra os lugares que visitas e crea un mapa de viaxe coas túas fotos.",

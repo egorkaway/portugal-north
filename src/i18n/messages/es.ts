@@ -541,7 +541,7 @@ export const es: Messages = {
     alsoFromUs: "También nuestros",
     caminoTitle: "My Personal Camino de Santiago",
     caminoDesc:
-      "App para iPhone para seguir el camino y tu progreso en el Camino de Santiago.",
+      "App para iOS y Android para seguir el camino y tu progreso en el Camino de Santiago.",
     mapaTitle: "Map Your Travel",
     mapaDesc:
       "La app GetMapa para iPhone registra los lugares que visitas y crea un mapa de viaje con tus fotos.",
