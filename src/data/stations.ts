@@ -11,7 +11,7 @@ const cpStations: StationData[] = [
   { name: "Coimbra-B", lines: ["Linha do Norte", "Ramal de Alfarelos"], types: ["Alfa Pendular", "Intercidades", "Regional"], lat: 40.2247, lng: -8.4402 },
   { name: "Pampilhosa", lines: ["Linha do Norte", "Linha da Beira Alta"], types: ["Intercidades", "Regional"], lat: 40.3383, lng: -8.431 },
   { name: "Mealhada", lines: ["Linha do Norte"], types: ["Intercidades", "Regional"], lat: 40.3783, lng: -8.4531 },
-  { name: "Aveiro", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional", "Urban"], lat: 40.6443, lng: -8.6455 },
+  { name: "Aveiro", lines: ["Linha do Norte"], types: ["Alfa Pendular", "Intercidades", "Regional", "Urban"], lat: 40.6434, lng: -8.6408 },
   { name: "Canelas", lines: ["Linha do Norte"], types: ["Regional", "Urban"], lat: 40.7164, lng: -8.564 },
   { name: "Estarreja", lines: ["Linha do Norte"], types: ["Intercidades", "Regional", "Urban"], lat: 40.7536, lng: -8.5725 },
   { name: "Ovar", lines: ["Linha do Norte"], types: ["Intercidades", "Regional", "Urban"], lat: 40.8608, lng: -8.6256 },

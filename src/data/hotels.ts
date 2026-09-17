@@ -36,9 +36,9 @@ export const stationHotels: StationHotels = {
     { name: "Hotel D. Afonso", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Mealhada%2C+Portugal&order=price" },
   ],
   "Aveiro": [
-    { name: "Aveiro Train Guesthouse", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/hotel/pt/aveiro-train-guesthouse.html" },
-    { name: "Aveiro White House", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/hotel/pt/aveiro-white-house.html" },
-    { name: "Hotel As Américas", distanceKm: 0.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20As%20Am%C3%A9ricas%2C%20Aveiro%2C%20Portugal&order=price" },
+    { name: "Residencial Santa Joana", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Residencial%20Santa%20Joana%2C%20Aveiro%2C%20Portugal&order=price" },
+    { name: "Tricana de Aveiro - Alojamento", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Tricana%20de%20Aveiro%20-%20Alojamento%2C%20Aveiro%2C%20Portugal&order=price" },
+    { name: "Soldouro", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Soldouro%2C%20Aveiro%2C%20Portugal&order=price" },
   ],
   "Canelas": [
     { name: "Motel Eclipse", distanceKm: 3.5, priceFrom: 32, bookingUrl: "https://www.booking.com/searchresults.html?ss=Motel%20Eclipse%2C%20Canelas%2C%20Portugal&order=price" },
@@ -2577,9 +2577,9 @@ export const stationHotels: StationHotels = {
     { name: "Albergue Nacama", distanceKm: 0.5, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Nacama%2C%20Pontevedra%2C%20Spain&order=price" },
   ],
   "Vilagarcía de Arousa": [
-    { name: "Hotel Vilagarcía", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vilagarc%C3%ADa%2C%20Vilagarc%C3%ADa%20de%20Arousa%2C%20Spain&order=price" },
-    { name: "Hotel Alda Castelao", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alda%20Castelao%2C%20Vilagarc%C3%ADa%20de%20Arousa%2C%20Spain&order=price" },
-    { name: "Hotel Playa Compostela", distanceKm: 1.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Playa%20Compostela%2C%20Vilagarc%C3%ADa%20de%20Arousa%2C%20Spain&order=price" },
+    { name: "Hotel Vilagarcía", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vilagarc%C3%ADa%2C%20Vilagarc%C3%ADa%20de%20Arousa%2C%20Spain&order=price" },
+    { name: "Hotel Alda Castelao", distanceKm: 0.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Alda%20Castelao%2C%20Vilagarc%C3%ADa%20de%20Arousa%2C%20Spain&order=price" },
+    { name: "Hotel Playa Compostela", distanceKm: 1.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Playa%20Compostela%2C%20Vilagarc%C3%ADa%20de%20Arousa%2C%20Spain&order=price" },
   ],
   "Padrón": [
     { name: "Pensión El Cuco", distanceKm: 0.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20El%20Cuco%2C%20Padr%C3%B3n%2C%20Spain&order=price" },
@@ -2592,9 +2592,9 @@ export const stationHotels: StationHotels = {
     { name: "Albergue Santo Santiago", distanceKm: 2.1, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Santo%20Santiago%2C%20Santiago%20de%20Compostela%2C%20Spain&order=price" },
   ],
   "A Coruña": [
-    { name: "Exe Coruña", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Exe%20Coru%C3%B1a%2C%20A%20Coru%C3%B1a%2C%20Spain&order=price" },
-    { name: "Saudade", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Saudade%2C%20A%20Coru%C3%B1a%2C%20Spain&order=price" },
-    { name: "Moon", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Moon%2C%20A%20Coru%C3%B1a%2C%20Spain&order=price" },
+    { name: "Crisol", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Crisol%2C%20A%20Coru%C3%B1a%2C%20Spain&order=price" },
+    { name: "Pensión132", distanceKm: 0.2, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n132%2C%20A%20Coru%C3%B1a%2C%20Spain&order=price" },
+    { name: "Avenida", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Avenida%2C%20A%20Coru%C3%B1a%2C%20Spain&order=price" },
   ],
   "O Porriño": [
     { name: "Pensión Cando", distanceKm: 0, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pensi%C3%B3n%20Cando%2C%20O%20Porri%C3%B1o%2C%20Spain&order=price" },

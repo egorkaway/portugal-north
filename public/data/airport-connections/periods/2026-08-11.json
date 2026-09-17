@@ -1,14 +1,12 @@
 {
-  "generatedAt": "2026-09-17T07:55:38.623Z",
-  "runCount": 939,
-  "airportCount": 0,
-  "periodId": "2026-09-17",
-  "periodStart": "2026-09-17",
-  "periodEndExclusive": "2026-10-24",
+  "generatedAt": "2026-09-16T17:50:18.346Z",
+  "runCount": 926,
+  "airportCount": 33,
+  "periodId": "2026-08-11",
+  "periodStart": "2026-08-11",
+  "periodEndExclusive": "2026-09-17",
   "flightProvider": null,
-  "airports": {},
-  "fallbackPeriodId": "2026-08-11",
-  "fallbackAirports": {
+  "airports": {
     "LIS": {
       "stationName": "Lisbon Airport (LIS)",
       "slug": "lisbon-airport-lis",
@@ -3322,7 +3320,7 @@
           "lineWeight": 4
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/lisbon-airport-lis-connections.png"
+      "mapImage": "/maps/airports/lisbon-airport-lis-connections.png"
     },
     "OPO": {
       "stationName": "Porto Airport (OPO)",
@@ -6657,7 +6655,7 @@
           "lineWeight": 4
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/porto-airport-opo-connections.png"
+      "mapImage": "/maps/airports/porto-airport-opo-connections.png"
     },
     "FAO": {
       "stationName": "Faro Airport (FAO)",
@@ -9024,7 +9022,7 @@
           "lineWeight": 4
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/faro-airport-fao-connections.png"
+      "mapImage": "/maps/airports/faro-airport-fao-connections.png"
     },
     "MAD": {
       "stationName": "Madrid-Barajas Airport (MAD)",
@@ -13719,7 +13717,7 @@
           "lineWeight": 4
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/madrid-barajas-airport-mad-connections.png"
+      "mapImage": "/maps/airports/madrid-barajas-airport-mad-connections.png"
     },
     "BCN": {
       "stationName": "Barcelona-El Prat Airport (BCN)",
@@ -18466,7 +18464,7 @@
           "lineWeight": 4
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/barcelona-el-prat-airport-bcn-connections.png"
+      "mapImage": "/maps/airports/barcelona-el-prat-airport-bcn-connections.png"
     },
     "AGP": {
       "stationName": "Málaga-Costa del Sol Airport (AGP)",
@@ -22585,7 +22583,7 @@
           "lineWeight": 4
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/malaga-costa-del-sol-airport-agp-connections.png"
+      "mapImage": "/maps/airports/malaga-costa-del-sol-airport-agp-connections.png"
     },
     "ALC": {
       "stationName": "Alicante-Elche Airport (ALC)",
@@ -26192,7 +26190,7 @@
           "lineWeight": 4
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/alicante-elche-airport-alc-connections.png"
+      "mapImage": "/maps/airports/alicante-elche-airport-alc-connections.png"
     },
     "VLC": {
       "stationName": "Valencia Airport (VLC)",
@@ -28883,7 +28881,7 @@
           "lineWeight": 4
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/valencia-airport-vlc-connections.png"
+      "mapImage": "/maps/airports/valencia-airport-vlc-connections.png"
     },
     "SVQ": {
       "stationName": "Seville Airport (SVQ)",
@@ -31198,7 +31196,7 @@
           "lineWeight": 4
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/seville-airport-svq-connections.png"
+      "mapImage": "/maps/airports/seville-airport-svq-connections.png"
     },
     "BIO": {
       "stationName": "Bilbao Airport (BIO)",
@@ -33097,7 +33095,7 @@
           "lineWeight": 4
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/bilbao-airport-bio-connections.png"
+      "mapImage": "/maps/airports/bilbao-airport-bio-connections.png"
     },
     "SCQ": {
       "stationName": "Santiago Airport (SCQ)",
@@ -34064,7 +34062,7 @@
           "lineWeight": 3
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/santiago-airport-scq-connections.png"
+      "mapImage": "/maps/airports/santiago-airport-scq-connections.png"
     },
     "OVD": {
       "stationName": "Asturias Airport (OVD)",
@@ -34947,7 +34945,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/asturias-airport-ovd-connections.png"
+      "mapImage": "/maps/airports/asturias-airport-ovd-connections.png"
     },
     "VGO": {
       "stationName": "Vigo Airport (VGO)",
@@ -35306,7 +35304,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/vigo-airport-vgo-connections.png"
+      "mapImage": "/maps/airports/vigo-airport-vgo-connections.png"
     },
     "LCG": {
       "stationName": "A Coruña Airport (LCG)",
@@ -35601,7 +35599,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/a-coruna-airport-lcg-connections.png"
+      "mapImage": "/maps/airports/a-coruna-airport-lcg-connections.png"
     },
     "SDR": {
       "stationName": "Santander Airport (SDR)",
@@ -36504,7 +36502,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/santander-airport-sdr-connections.png"
+      "mapImage": "/maps/airports/santander-airport-sdr-connections.png"
     },
     "EAS": {
       "stationName": "San Sebastián Airport (EAS)",
@@ -36971,7 +36969,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/san-sebastian-airport-eas-connections.png"
+      "mapImage": "/maps/airports/san-sebastian-airport-eas-connections.png"
     },
     "PNA": {
       "stationName": "Pamplona Airport (PNA)",
@@ -37210,7 +37208,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/pamplona-airport-pna-connections.png"
+      "mapImage": "/maps/airports/pamplona-airport-pna-connections.png"
     },
     "BJZ": {
       "stationName": "Badajoz Airport (BJZ)",
@@ -37433,7 +37431,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/badajoz-airport-bjz-connections.png"
+      "mapImage": "/maps/airports/badajoz-airport-bjz-connections.png"
     },
     "LEI": {
       "stationName": "Almería Airport (LEI)",
@@ -38308,7 +38306,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/almeria-airport-lei-connections.png"
+      "mapImage": "/maps/airports/almeria-airport-lei-connections.png"
     },
     "GRX": {
       "stationName": "Granada-Jaén Airport (GRX)",
@@ -38755,7 +38753,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/granada-jaen-airport-grx-connections.png"
+      "mapImage": "/maps/airports/granada-jaen-airport-grx-connections.png"
     },
     "XRY": {
       "stationName": "Jerez Airport (XRY)",
@@ -39626,7 +39624,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/jerez-airport-xry-connections.png"
+      "mapImage": "/maps/airports/jerez-airport-xry-connections.png"
     },
     "REU": {
       "stationName": "Reus Airport (REU)",
@@ -40421,7 +40419,7 @@
           "lineWeight": 3
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/reus-airport-reu-connections.png"
+      "mapImage": "/maps/airports/reus-airport-reu-connections.png"
     },
     "GRO": {
       "stationName": "Girona-Costa Brava Airport (GRO)",
@@ -41824,7 +41822,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/girona-costa-brava-airport-gro-connections.png"
+      "mapImage": "/maps/airports/girona-costa-brava-airport-gro-connections.png"
     },
     "ILD": {
       "stationName": "Lleida-Alguaire Airport (ILD)",
@@ -42047,7 +42045,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/lleida-alguaire-airport-ild-connections.png"
+      "mapImage": "/maps/airports/lleida-alguaire-airport-ild-connections.png"
     },
     "CDT": {
       "stationName": "Castellón Airport (CDT)",
@@ -42702,7 +42700,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/castellon-airport-cdt-connections.png"
+      "mapImage": "/maps/airports/castellon-airport-cdt-connections.png"
     },
     "RMU": {
       "stationName": "Murcia International Airport (RMU)",
@@ -43389,7 +43387,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/murcia-international-airport-rmu-connections.png"
+      "mapImage": "/maps/airports/murcia-international-airport-rmu-connections.png"
     },
     "ZAZ": {
       "stationName": "Zaragoza Airport (ZAZ)",
@@ -44100,7 +44098,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/zaragoza-airport-zaz-connections.png"
+      "mapImage": "/maps/airports/zaragoza-airport-zaz-connections.png"
     },
     "VLL": {
       "stationName": "Valladolid Airport (VLL)",
@@ -44387,7 +44385,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/valladolid-airport-vll-connections.png"
+      "mapImage": "/maps/airports/valladolid-airport-vll-connections.png"
     },
     "LEN": {
       "stationName": "León Airport (LEN)",
@@ -44738,7 +44736,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/leon-airport-len-connections.png"
+      "mapImage": "/maps/airports/leon-airport-len-connections.png"
     },
     "VIT": {
       "stationName": "Vitoria Airport (VIT)",
@@ -45345,7 +45343,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/vitoria-airport-vit-connections.png"
+      "mapImage": "/maps/airports/vitoria-airport-vit-connections.png"
     },
     "RJL": {
       "stationName": "Logroño-Agoncillo Airport (RJL)",
@@ -45544,7 +45542,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/logrono-agoncillo-airport-rjl-connections.png"
+      "mapImage": "/maps/airports/logrono-agoncillo-airport-rjl-connections.png"
     },
     "ODB": {
       "stationName": "Córdoba Airport (ODB)",
@@ -45775,7 +45773,7 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/cordoba-airport-odb-connections.png"
+      "mapImage": "/maps/airports/cordoba-airport-odb-connections.png"
     },
     "SLM": {
       "stationName": "Salamanca Airport (SLM)",
@@ -45822,7 +45820,8 @@
           "lineWeight": 2
         }
       ],
-      "mapImage": "/maps/airports/periods/2026-08-11/salamanca-airport-slm-connections.png"
+      "mapImage": "/maps/airports/salamanca-airport-slm-connections.png"
     }
-  }
+  },
+  "frozenAt": "2026-09-17T02:15:42.813Z"
 }

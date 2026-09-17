@@ -43,8 +43,8 @@ export const spainStations: Station[] = [
     country: "es",
     lines: ["Eje Atlántico", "Línea de alta velocidad (Madrid–Galicia)"],
     types: ["Regional", "Intercidades"],
-    lat: 42.5967,
-    lng: -8.7642,
+    lat: 42.602,
+    lng: -8.7623,
   },
   {
     name: "Padrón",
@@ -67,8 +67,8 @@ export const spainStations: Station[] = [
     country: "es",
     lines: ["Eje Atlántico", "Línea de alta velocidad (Madrid–Galicia)"],
     types: ["Regional", "Intercidades"],
-    lat: 43.3533,
-    lng: -8.4022,
+    lat: 43.3525,
+    lng: -8.41,
   },
   {
     name: "O Porriño",
