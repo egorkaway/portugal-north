@@ -222,6 +222,16 @@ export const ca: MobileMessages = {
     mostDelayedTrain: 'Els 3 trens més endarrerits',
     trainSpotlightAvgDelay: '{{avg}} min de retard mitjà',
     trainSpotlightMajorStations: 'Via',
+    stationHighlightTitle: 'Estació per explorar',
+    stationHighlightIntro:
+      "Una parada ferroviària ibèrica a l'atzar de la guia, amb la descripció curta i la puntualitat quan tenim prou mostres.",
+    stationHighlightIntroPt:
+      "Una parada ferroviària portuguesa a l'atzar de la guia, amb la descripció curta i la puntualitat quan tenim prou mostres.",
+    stationHighlightIntroEs:
+      "Una parada ferroviària espanyola a l'atzar de la guia, amb la descripció curta i la puntualitat quan tenim prou mostres.",
+    stationHighlightCta: "Obrir la pàgina de l'estació",
+    stationHighlightSamples_one: '{{count}} observació a les nostres mostres',
+    stationHighlightSamples_other: '{{count}} observacions a les nostres mostres',
   },
   tickets: {
     title: 'Bitllets',

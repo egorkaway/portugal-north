@@ -6545,9 +6545,9 @@ export const stationHotels: StationHotels = {
     { name: "El mirador de Rivas", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20mirador%20de%20Rivas%2C%20Orejo%2C%20Spain&order=price" },
   ],
   "Santa Cruz de Mudela": [
-    { name: "Hotel Casa Palacio Natur", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Casa%20Palacio%20Natur%2C%20Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
-    { name: "Hotel Ángel", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20%C3%81ngel%2C%20Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
-    { name: "Casa Rural Poblado de Bazán", distanceKm: 9.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Poblado%20de%20Baz%C3%A1n%2C%20Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
+    { name: "Budget stays near Santa Cruz de Mudela", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
+    { name: "Guest houses near Santa Cruz de Mudela", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
+    { name: "Hotels near Santa Cruz de Mudela", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
   ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

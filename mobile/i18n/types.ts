@@ -221,6 +221,13 @@ export type MobileMessages = {
     mostDelayedTrain: string;
     trainSpotlightAvgDelay: string;
     trainSpotlightMajorStations: string;
+    stationHighlightTitle: string;
+    stationHighlightIntro: string;
+    stationHighlightIntroPt: string;
+    stationHighlightIntroEs: string;
+    stationHighlightCta: string;
+    stationHighlightSamples_one: string;
+    stationHighlightSamples_other: string;
   };
   tickets: {
     title: string;

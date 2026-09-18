@@ -222,6 +222,16 @@ export const pt: MobileMessages = {
     mostDelayedTrain: '3 comboios mais atrasados',
     trainSpotlightAvgDelay: '{{avg}} min de atraso médio',
     trainSpotlightMajorStations: 'Via',
+    stationHighlightTitle: 'Estação para explorar',
+    stationHighlightIntro:
+      'Uma paragem ferroviária ibérica ao acaso do guia, com a descrição curta e a fiabilidade quando temos amostras suficientes.',
+    stationHighlightIntroPt:
+      'Uma paragem ferroviária portuguesa ao acaso do guia, com a descrição curta e a fiabilidade quando temos amostras suficientes.',
+    stationHighlightIntroEs:
+      'Uma paragem ferroviária espanhola ao acaso do guia, com a descrição curta e a fiabilidade quando temos amostras suficientes.',
+    stationHighlightCta: 'Abrir página da estação',
+    stationHighlightSamples_one: '{{count}} observação nas nossas amostras',
+    stationHighlightSamples_other: '{{count}} observações nas nossas amostras',
   },
   tickets: {
     title: 'Bilhetes',

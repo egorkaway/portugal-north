@@ -3,9 +3,11 @@ import { useMemo, useState } from 'react';
 import { useRouter } from 'expo-router';
 import { BuildFooter } from '@/components/BuildFooter';
 import { usePurchases } from '@/components/PurchasesProvider';
+import { RandomStationHighlight } from '@/components/RandomStationHighlight';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import type { Locale } from '@/i18n/types';
+import { ticketGuideCountryCode } from '@/lib/randomStationHighlight';
 import ticketGuides from '@/data/ticket-guides.json';
 
 type TicketLink = {
@@ -69,10 +71,11 @@ export default function TicketsScreen() {
       <Text style={styles.title}>{t('tickets.title')}</Text>
       <Text style={styles.subtitle}>{guide.subtitle}</Text>
 
-      {guide.countries.map((country) => (
+      {guide.countries.map((country, index) => (
         <CountrySection
           key={country.country}
           country={country.country}
+          countryCode={ticketGuideCountryCode(country.country, index)}
           howToBuy={country.howToBuy}
           crossBorderNote={country.crossBorderNote}
           localCardNote={country.localCardNote}
@@ -123,6 +126,7 @@ export default function TicketsScreen() {
 
 function CountrySection({
   country,
+  countryCode,
   howToBuy,
   crossBorderNote,
   localCardNote,
@@ -135,6 +139,7 @@ function CountrySection({
   openLabel,
 }: {
   country: string;
+  countryCode: 'pt' | 'es';
   howToBuy: string;
   crossBorderNote?: string;
   localCardNote?: string;
@@ -169,6 +174,8 @@ function CountrySection({
           </View>
         ) : null}
       </View>
+
+      <RandomStationHighlight country={countryCode} embedded />
 
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>{serviceTypesTitle}</Text>

@@ -57,4 +57,18 @@ describe("randomStationHighlight", () => {
     const picked = pickRandomStationHighlight([porto, airport], {}, () => 0);
     expect(picked?.name).toBe("Porto-Campanhã");
   });
+
+  it("can restrict candidates to one country", () => {
+    const candidates = listStationHighlightCandidates(
+      [porto, madrid],
+      {
+        portugalScores: { "Porto-Campanhã": 9 },
+        portugalMovements: { "Porto-Campanhã": 10 },
+        spainScores: { "Madrid-Chamartín": 8 },
+        spainMovements: { "Madrid-Chamartín": 10 },
+      },
+      "es",
+    );
+    expect(candidates.map((row) => row.name)).toEqual(["Madrid-Chamartín"]);
+  });
 });

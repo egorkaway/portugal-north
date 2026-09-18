@@ -222,6 +222,16 @@ export const en: MobileMessages = {
     mostDelayedTrain: '3 most delayed trains',
     trainSpotlightAvgDelay: '{{avg}} min avg delay',
     trainSpotlightMajorStations: 'Via',
+    stationHighlightTitle: 'Station to explore',
+    stationHighlightIntro:
+      'A random Iberian rail stop from the guide, with its short description and on-time reliability when we have enough samples.',
+    stationHighlightIntroPt:
+      'A random Portuguese rail stop from the guide, with its short description and on-time reliability when we have enough samples.',
+    stationHighlightIntroEs:
+      'A random Spanish rail stop from the guide, with its short description and on-time reliability when we have enough samples.',
+    stationHighlightCta: 'Open station page',
+    stationHighlightSamples_one: '{{count}} observation in our samples',
+    stationHighlightSamples_other: '{{count}} observations in our samples',
   },
   tickets: {
     title: 'Tickets',

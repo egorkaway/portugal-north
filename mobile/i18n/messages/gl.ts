@@ -222,6 +222,16 @@ export const gl: MobileMessages = {
     mostDelayedTrain: 'Os 3 trens máis atrasados',
     trainSpotlightAvgDelay: '{{avg}} min de atraso medio',
     trainSpotlightMajorStations: 'Vía',
+    stationHighlightTitle: 'Estación para explorar',
+    stationHighlightIntro:
+      'Unha parada ferroviaria ibérica ao chou da guía, coa descrición curta e a fiabilidade cando temos mostras dabondo.',
+    stationHighlightIntroPt:
+      'Unha parada ferroviaria portuguesa ao chou da guía, coa descrición curta e a fiabilidade cando temos mostras dabondo.',
+    stationHighlightIntroEs:
+      'Unha parada ferroviaria española ao chou da guía, coa descrición curta e a fiabilidade cando temos mostras dabondo.',
+    stationHighlightCta: 'Abrir páxina da estación',
+    stationHighlightSamples_one: '{{count}} observación nas nosas mostras',
+    stationHighlightSamples_other: '{{count}} observacións nas nosas mostras',
   },
   tickets: {
     title: 'Billetes',

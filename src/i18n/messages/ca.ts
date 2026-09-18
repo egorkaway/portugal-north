@@ -305,6 +305,10 @@ export const ca: Messages = {
     stationHighlightTitle: "Estació per explorar",
     stationHighlightIntro:
       "Una parada ferroviària ibèrica a l'atzar de la guia, amb la descripció curta i la puntualitat quan tenim prou mostres.",
+    stationHighlightIntroPt:
+      "Una parada ferroviària portuguesa a l'atzar de la guia, amb la descripció curta i la puntualitat quan tenim prou mostres.",
+    stationHighlightIntroEs:
+      "Una parada ferroviària espanyola a l'atzar de la guia, amb la descripció curta i la puntualitat quan tenim prou mostres.",
     stationHighlightCta: "Obrir la pàgina de l'estació",
     stationHighlightSamples_one: "{{count}} observació a les nostres mostres",
     stationHighlightSamples_other: "{{count}} observacions a les nostres mostres",

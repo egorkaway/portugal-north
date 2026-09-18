@@ -222,6 +222,16 @@ export const uk: MobileMessages = {
     mostDelayedTrain: '3 найбільш запізнені потяги',
     trainSpotlightAvgDelay: '{{avg}} хв середнього запізнення',
     trainSpotlightMajorStations: 'Через',
+    stationHighlightTitle: 'Станція для огляду',
+    stationHighlightIntro:
+      'Випадкова іберійська залізнична зупинка з гіда, з коротким описом і пунктуальністю, коли є достатньо спостережень.',
+    stationHighlightIntroPt:
+      'Випадкова португальська залізнична зупинка з гіда, з коротким описом і пунктуальністю, коли є достатньо спостережень.',
+    stationHighlightIntroEs:
+      'Випадкова іспанська залізнична зупинка з гіда, з коротким описом і пунктуальністю, коли є достатньо спостережень.',
+    stationHighlightCta: 'Відкрити сторінку станції',
+    stationHighlightSamples_one: '{{count}} спостереження в наших даних',
+    stationHighlightSamples_other: '{{count}} спостережень у наших даних',
   },
   tickets: {
     title: 'Квитки',

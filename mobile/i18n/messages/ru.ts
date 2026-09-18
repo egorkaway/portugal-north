@@ -222,6 +222,16 @@ export const ru: MobileMessages = {
     mostDelayedTrain: '3 самых задержанных поезда',
     trainSpotlightAvgDelay: '{{avg}} мин средней задержки',
     trainSpotlightMajorStations: 'Через',
+    stationHighlightTitle: 'Станция для обзора',
+    stationHighlightIntro:
+      'Случайная иберийская железнодорожная остановка из гида, с кратким описанием и пунктуальностью, когда хватает наблюдений.',
+    stationHighlightIntroPt:
+      'Случайная португальская железнодорожная остановка из гида, с кратким описанием и пунктуальностью, когда хватает наблюдений.',
+    stationHighlightIntroEs:
+      'Случайная испанская железнодорожная остановка из гида, с кратким описанием и пунктуальностью, когда хватает наблюдений.',
+    stationHighlightCta: 'Открыть страницу станции',
+    stationHighlightSamples_one: '{{count}} наблюдение в наших данных',
+    stationHighlightSamples_other: '{{count}} наблюдений в наших данных',
   },
   tickets: {
     title: 'Билеты',

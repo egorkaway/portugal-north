@@ -1,6 +1,7 @@
 import { PageHead } from "@/components/PageHead";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SitePageNavLinks } from "@/components/SitePageNavLinks";
+import { RandomStationHighlightPanel } from "@/components/RandomStationHighlightPanel";
 import { portugalTicketLinks, spainTicketLinks, ticketUrls } from "@/data/ticketLinks";
 import { useLocale } from "@/i18n/LocaleProvider";
 import { getTicketsPageMeta } from "@/lib/pageMeta";
@@ -52,7 +53,11 @@ const Tickets = () => {
                 <p className="rounded-lg border border-border bg-muted p-4 text-sm text-muted-foreground">
                   {t("tickets.portoVigoRenfeNote")}
                 </p>
+              </div>
 
+              <RandomStationHighlightPanel country="pt" embedded />
+
+              <div className="space-y-2">
                 <div className="mt-4 grid gap-3 md:grid-cols-3">
                   <div className="rounded-lg border border-border bg-card p-4">
                     <div className="flex items-center gap-2 font-medium">
@@ -234,6 +239,8 @@ const Tickets = () => {
                 <h3 className="text-lg font-semibold md:text-xl">{t("tickets.howToBuyTitle")}</h3>
                 <p className="text-muted-foreground">{t("tickets.spainHowToBuyIntro")}</p>
               </div>
+
+              <RandomStationHighlightPanel country="es" embedded />
 
               <div className="space-y-2">
                 <h3 className="text-lg font-semibold md:text-xl">{t("tickets.serviceTypesTitle")}</h3>

@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { useRouter } from 'expo-router';
 import { BuildFooter } from '@/components/BuildFooter';
+import { RandomStationHighlight } from '@/components/RandomStationHighlight';
 import { theme } from '@/constants/theme';
 import { useLocale } from '@/i18n/LocaleProvider';
 import { fetchGlobalRatings } from '@/lib/api';
@@ -237,6 +238,7 @@ export default function RankingsScreen() {
           </RankingSection>
         </>
       )}
+      <RandomStationHighlight />
       <BuildFooter />
     </ScrollView>
   );
