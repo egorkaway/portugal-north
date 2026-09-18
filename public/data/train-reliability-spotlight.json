@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-17T11:06:12.452Z",
-  "runCount": 943,
+  "generatedAt": "2026-09-18T07:43:52.626Z",
+  "runCount": 953,
   "mostDelayed": [
     {
       "trainNumber": "868",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 24.7,
-      "observations": 25,
+      "avgDelayMinutes": 25,
+      "observations": 26,
       "stationsSampled": 21,
       "majorStations": [
         "Porto-Campanhã",
@@ -31,8 +31,8 @@
     {
       "trainNumber": "876",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 22.5,
-      "observations": 26,
+      "avgDelayMinutes": 21.7,
+      "observations": 27,
       "stationsSampled": 21,
       "majorStations": [
         "Porto-Campanhã",
@@ -47,7 +47,7 @@
       "trainNumber": "10543",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 27,
+      "observations": 29,
       "stationsSampled": 6,
       "majorStations": [
         "Castelo Branco",
@@ -62,7 +62,7 @@
       "trainNumber": "10544",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 26,
+      "observations": 27,
       "stationsSampled": 6,
       "majorStations": [
         "Abrantes",
@@ -74,15 +74,15 @@
       "poolSize": 1
     },
     {
-      "trainNumber": "36406",
+      "trainNumber": "36407",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
-      "observations": 26,
+      "observations": 27,
       "stationsSampled": 17,
       "majorStations": [
-        "Mira Sintra-Meleças",
         "Pero Negro",
         "Mafra",
+        "Dois Portos",
         "Feliteira"
       ],
       "selectionMode": "stable",
