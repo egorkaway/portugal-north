@@ -272,6 +272,11 @@ export type Messages = {
     airportDestinationMostEs: string;
     airportDestinationCount_one: string;
     airportDestinationCount_other: string;
+    stationHighlightTitle: string;
+    stationHighlightIntro: string;
+    stationHighlightCta: string;
+    stationHighlightSamples_one: string;
+    stationHighlightSamples_other: string;
   };
   map: {
     title: string;

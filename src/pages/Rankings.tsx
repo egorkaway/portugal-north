@@ -12,6 +12,7 @@ import { AirportDestinationRankingsPanel } from "@/components/AirportDestination
 import { SpainReliabilityRankingsPanel } from "@/components/SpainReliabilityRankingsPanel";
 import { TrainReliabilitySpotlightPanel } from "@/components/TrainReliabilitySpotlightPanel";
 import { MapOverviewImages } from "@/components/MapOverviewImages";
+import { RandomStationHighlightPanel } from "@/components/RandomStationHighlightPanel";
 import { buildRankingsStructuredData } from "@/lib/structuredData";
 import { defaultHomePath } from "@/lib/homeRoute";
 
@@ -57,6 +58,7 @@ const Rankings = () => {
           <RankingsPanel alwaysShow showDetailedError />
           <AirportDestinationRankingsPanel />
           <MapOverviewImages />
+          <RandomStationHighlightPanel />
         </main>
 
         <SiteFooter />

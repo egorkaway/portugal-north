@@ -302,6 +302,12 @@ export const pt: Messages = {
     airportDestinationMostEs: "Mais destinos (Espanha)",
     airportDestinationCount_one: "{{count}} destino",
     airportDestinationCount_other: "{{count}} destinos",
+    stationHighlightTitle: "Estação para explorar",
+    stationHighlightIntro:
+      "Uma paragem ferroviária ibérica ao acaso do guia, com a descrição curta e a fiabilidade quando temos amostras suficientes.",
+    stationHighlightCta: "Abrir página da estação",
+    stationHighlightSamples_one: "{{count}} observação nas nossas amostras",
+    stationHighlightSamples_other: "{{count}} observações nas nossas amostras",
   },
   map: {
     title: "Mapa de atividade das estações",

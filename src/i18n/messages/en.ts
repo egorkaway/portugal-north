@@ -300,6 +300,12 @@ export const en: Messages = {
     airportDestinationMostEs: "Most destinations (Spain)",
     airportDestinationCount_one: "{{count}} destination",
     airportDestinationCount_other: "{{count}} destinations",
+    stationHighlightTitle: "Station to explore",
+    stationHighlightIntro:
+      "A random Iberian rail stop from the guide, with its short description and on-time reliability when we have enough samples.",
+    stationHighlightCta: "Open station page",
+    stationHighlightSamples_one: "{{count}} observation in our samples",
+    stationHighlightSamples_other: "{{count}} observations in our samples",
   },
   map: {
     title: "Station activity map",

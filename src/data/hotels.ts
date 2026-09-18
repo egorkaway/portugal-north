@@ -6539,6 +6539,16 @@ export const stationHotels: StationHotels = {
     { name: "Hotel Petit Luxe", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Petit%20Luxe%2C%20Sant%20Miquel%20de%20Gonteres%2C%20Spain&order=price" },
     { name: "Hotel Egara", distanceKm: 3.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Egara%2C%20Sant%20Miquel%20de%20Gonteres%2C%20Spain&order=price" },
   ],
+  "Orejo": [
+    { name: "La casa de la costura", distanceKm: 1.4, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=La%20casa%20de%20la%20costura%2C%20Orejo%2C%20Spain&order=price" },
+    { name: "Hostal Casa Enrique", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Casa%20Enrique%2C%20Orejo%2C%20Spain&order=price" },
+    { name: "El mirador de Rivas", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20mirador%20de%20Rivas%2C%20Orejo%2C%20Spain&order=price" },
+  ],
+  "Santa Cruz de Mudela": [
+    { name: "Hotel Casa Palacio Natur", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Casa%20Palacio%20Natur%2C%20Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
+    { name: "Hotel Ángel", distanceKm: 1.9, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20%C3%81ngel%2C%20Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
+    { name: "Casa Rural Poblado de Bazán", distanceKm: 9.7, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Poblado%20de%20Baz%C3%A1n%2C%20Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

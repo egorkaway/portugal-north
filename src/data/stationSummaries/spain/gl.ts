@@ -2500,4 +2500,10 @@ export const spainSummariesGl: Record<string, string> = {
   "Sant Miquel de Gonteres":
     "Sant Miquel de Gonteres é unha estación de Renfe de cercanías en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
 
+  "Orejo":
+    "Orejo é unha estación de Renfe de cercanías e longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
+  "Santa Cruz de Mudela":
+    "Santa Cruz de Mudela é unha estación de Renfe de longa distancia en España. É unha parada práctica para explorar os arredores, con paneis en directo de suburbanos e longa distancia.",
+
 };

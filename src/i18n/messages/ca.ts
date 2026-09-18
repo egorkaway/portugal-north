@@ -302,6 +302,12 @@ export const ca: Messages = {
     airportDestinationMostEs: "Més destins (Espanya)",
     airportDestinationCount_one: "{{count}} destí",
     airportDestinationCount_other: "{{count}} destins",
+    stationHighlightTitle: "Estació per explorar",
+    stationHighlightIntro:
+      "Una parada ferroviària ibèrica a l'atzar de la guia, amb la descripció curta i la puntualitat quan tenim prou mostres.",
+    stationHighlightCta: "Obrir la pàgina de l'estació",
+    stationHighlightSamples_one: "{{count}} observació a les nostres mostres",
+    stationHighlightSamples_other: "{{count}} observacions a les nostres mostres",
   },
   map: {
     title: "Mapa d'activitat d'estacions",

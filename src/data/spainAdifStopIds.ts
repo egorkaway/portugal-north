@@ -1617,6 +1617,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Sant Miquel de Gonteres": ["78610"],
 
+  "Orejo": ["05663"],
+
+  "Santa Cruz de Mudela": ["50200"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

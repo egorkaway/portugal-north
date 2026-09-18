@@ -2500,4 +2500,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Sant Miquel de Gonteres":
     "Sant Miquel de Gonteres és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Orejo":
+    "Orejo és una estació de Renfe de rodalies i llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Santa Cruz de Mudela":
+    "Santa Cruz de Mudela és una estació de Renfe de llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

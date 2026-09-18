@@ -19,11 +19,12 @@
  * a flight-connections collect, after a successful flight sample,
  * samples Renfe trip updates into data/spain-departure-stats.json +
  * data/spain-train-delay-log.ndjson (Spanish catalog stations / trains),
- * Catalog expansion (new Spanish/Portuguese stations, new Europe destination
- * airports, new compact external-airport pages) is on hold — pass
- * `--spain-expand` / `--portugal-expand` / airport `--expand-europe-destinations`
- * / `--expand-external-airport-pages` to opt in. Iberian catalog stays at the
- * current ~1404 hubs/stops until further notice.
+ * Catalog expansion: adds at most one Iberian station (Spain or Portugal) per
+ * run while under IBERIAN_CATALOG_CAP (1411). Pass `--hold-catalog-expand` to
+ * freeze, `--skip-catalog-expand` to skip this run, or `--spain-expand` /
+ * `--portugal-expand` to prefer one country. Europe destination upserts and
+ * new compact external-airport pages stay opt-in
+ * (`--expand-europe-destinations` / `--expand-external-airport-pages`).
  * appends per-train arrival delay samples to data/train-delay-log.ndjson,
  * and prints this month's avg low / avg high on OK/FAIL lines only when the
  * temperature fetch for this run succeeded,
@@ -324,28 +325,68 @@ if (!dryRun) {
     console.error(`Spain reliability collect skipped: ${message}`);
   }
 
-  if (args.includes("--spain-expand")) {
-    try {
-      const { expandSpainStations } = await import("./expand-spain-stations.mjs");
-      await expandSpainStations();
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      console.error(`Spain station expand skipped: ${message}`);
-    }
-  } else {
-    console.log("Spain station expand on hold (pass --spain-expand to add stations).");
-  }
+  {
+    const {
+      IBERIAN_CATALOG_CAP,
+      countIberianCatalog,
+      iberianCatalogSlotsRemaining,
+    } = await import("./lib/iberianCatalogCap.mjs");
+    const holdCatalog = args.includes("--hold-catalog-expand");
+    const skipCatalog = args.includes("--skip-catalog-expand");
+    const forceSpain = args.includes("--spain-expand");
+    const forcePortugal = args.includes("--portugal-expand");
+    const iberianCount = countIberianCatalog(root);
+    const slots = iberianCatalogSlotsRemaining(root);
 
-  if (args.includes("--portugal-expand")) {
-    try {
-      const { expandPortugalStations } = await import("./expand-portugal-stations.mjs");
-      await expandPortugalStations();
-    } catch (error) {
-      const message = error instanceof Error ? error.message : String(error);
-      console.error(`Portugal station expand skipped: ${message}`);
+    if (holdCatalog) {
+      console.log(
+        `Iberian catalog expand on hold (${iberianCount}/${IBERIAN_CATALOG_CAP}; pass without --hold-catalog-expand to grow by 1/run).`,
+      );
+    } else if (skipCatalog) {
+      console.log(
+        `Iberian catalog expand skipped this run (${iberianCount}/${IBERIAN_CATALOG_CAP}).`,
+      );
+    } else if (slots <= 0) {
+      console.log(
+        `Iberian catalog at cap (${iberianCount}/${IBERIAN_CATALOG_CAP}); not adding stations.`,
+      );
+    } else {
+      const trySpain = forceSpain || !forcePortugal;
+      const tryPortugal = forcePortugal || !forceSpain;
+      let addedCount = 0;
+
+      if (trySpain) {
+        try {
+          const { expandSpainStations } = await import("./expand-spain-stations.mjs");
+          const result = await expandSpainStations({ limit: 1 });
+          addedCount = result?.added?.length ?? 0;
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          console.error(`Spain station expand skipped: ${message}`);
+        }
+      }
+
+      if (addedCount === 0 && tryPortugal) {
+        try {
+          const { expandPortugalStations } = await import("./expand-portugal-stations.mjs");
+          const result = await expandPortugalStations({ limit: 1 });
+          addedCount = result?.added?.length ?? 0;
+        } catch (error) {
+          const message = error instanceof Error ? error.message : String(error);
+          console.error(`Portugal station expand skipped: ${message}`);
+        }
+      }
+
+      if (addedCount === 0) {
+        console.log(
+          `Iberian catalog expand: no candidates this run (${iberianCount}/${IBERIAN_CATALOG_CAP}, ${slots} slot(s) left).`,
+        );
+      } else {
+        console.log(
+          `Iberian catalog expand: +${addedCount} this run (${countIberianCatalog(root)}/${IBERIAN_CATALOG_CAP}).`,
+        );
+      }
     }
-  } else {
-    console.log("Portugal station expand on hold (pass --portugal-expand to add stations).");
   }
 
   if (temperaturesLogged > 0 || temperaturesMissed > 0) {

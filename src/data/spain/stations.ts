@@ -7331,4 +7331,22 @@ export const spainStations: Station[] = [
     lng: 1.9743,
   },
 
+  {
+    name: "Orejo",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 43.3995,
+    lng: -3.7384,
+  },
+
+  {
+    name: "Santa Cruz de Mudela",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.6444,
+    lng: -3.4515,
+  },
+
 ];
