@@ -46,9 +46,8 @@ function buildHtml(options: {
 }): string {
   const { initialRegion, markers, darkMode } = options;
   const zoom = regionToZoom(initialRegion.latitudeDelta);
-  const tileUrl = darkMode
-    ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
-    : 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png';
+  // Carto raster tiles watermark without an API key. Match server maps: OSM.
+  const tileUrl = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 
   // Keep payload compact — hundreds of stations.
   const markerPayload = markers.map((marker) => [
@@ -82,8 +81,7 @@ function buildHtml(options: {
 
     L.tileLayer(${JSON.stringify(tileUrl)}, {
       maxZoom: 19,
-      subdomains: 'abcd',
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
 
     const layer = L.layerGroup().addTo(map);
@@ -101,13 +99,33 @@ function buildHtml(options: {
       return set;
     }
 
+    // Apple Maps uses size as diameter (pt). Leaflet circleMarker uses radius (px).
+    // At peninsula zoom, shrink further so ~1400 dots do not fuse into blobs.
+    function markerRadius(baseSize, zoomLevel) {
+      const diameter = Math.max(4, Number(baseSize) || 7);
+      const t = Math.max(0, Math.min(1, (zoomLevel - 5) / 7));
+      const scale = 0.4 + 0.6 * t;
+      return Math.max(2, (diameter * scale) / 2);
+    }
+
+    function syncMarkerRadii() {
+      const zoomLevel = map.getZoom();
+      for (const id of Object.keys(byId)) {
+        const marker = byId[id];
+        const radius = markerRadius(marker.__baseSize, zoomLevel);
+        marker.setRadius(radius);
+        if (halos[id]) halos[id].setRadius(radius + 3);
+      }
+    }
+
     function addMarkers() {
       layer.clearLayers();
       for (const key of Object.keys(halos)) delete halos[key];
       for (const key of Object.keys(byId)) delete byId[key];
+      const zoomLevel = map.getZoom();
       for (const item of markersData) {
         const [id, lat, lng, color, size] = item;
-        const radius = Math.max(4, Number(size) || 7);
+        const radius = markerRadius(size, zoomLevel);
         const marker = L.circleMarker([lat, lng], {
           radius: radius,
           color: '#ffffff',
@@ -115,6 +133,7 @@ function buildHtml(options: {
           fillColor: color,
           fillOpacity: 0.95,
         });
+        marker.__baseSize = size;
         marker.on('click', function (event) {
           L.DomEvent.stopPropagation(event);
           post('markerPress', id);
@@ -127,6 +146,7 @@ function buildHtml(options: {
     window.__applyMarkerState = function (visitedIds, hiddenIds) {
       const visitedSet = toSet(visitedIds || []);
       const hiddenSet = toSet(hiddenIds || []);
+      const zoomLevel = map.getZoom();
       for (const id of Object.keys(byId)) {
         const marker = byId[id];
         if (hiddenSet[id]) {
@@ -141,9 +161,9 @@ function buildHtml(options: {
         if (visitedSet[id]) {
           if (!halos[id]) {
             const latlng = marker.getLatLng();
-            const radius = marker.options.radius || 7;
+            const radius = markerRadius(marker.__baseSize, zoomLevel);
             halos[id] = L.circleMarker(latlng, {
-              radius: radius + 4,
+              radius: radius + 3,
               color: visitedRingColor,
               weight: 2,
               fill: false,
@@ -159,6 +179,7 @@ function buildHtml(options: {
     };
 
     addMarkers();
+    map.on('zoomend', syncMarkerRadii);
 
     map.on('click', function () {
       post('mapPress', null);
@@ -175,7 +196,7 @@ function buildHtml(options: {
       }
       if (!userMarker) {
         userMarker = L.circleMarker([lat, lng], {
-          radius: 8,
+          radius: 6,
           color: '#ffffff',
           weight: 2,
           fillColor: '#2563EB',

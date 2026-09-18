@@ -8,7 +8,7 @@ Train info across Portugal and Spain is scattered across boards, apps, and maps.
 
 ## What it does
 
-VeryStays is a train companion for Iberia: 400+ stations, live departures/arrivals, trip tracking with countdown (plus iOS/Android widget & iOS Live Activity), a reliability map, rankings, nearby stays, and a tickets guide.
+VeryStays is a train companion for Iberia: 1,400+ stations, live departures/arrivals, trip tracking with countdown (plus iOS/Android widget & iOS Live Activity), a reliability map, rankings, nearby stays, and a tickets guide.
 
 ## How we built it
 

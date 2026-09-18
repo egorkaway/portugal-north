@@ -52,7 +52,7 @@ const IBERIAN_REGION = {
 const MARKER_HIT_SIZE = 52;
 const MARKER_PRESS_LOCK_MS = 120;
 
-/** Android uses free OSM/Carto tiles — no Google Maps API. iOS keeps Apple Maps. */
+/** Android uses free OSM tiles (no Google Maps API / no Carto key). iOS keeps Apple Maps. */
 const USE_OSM_MAP = Platform.OS === 'android';
 /** Navy ring around visited dots — distinct from reliability green/amber/red. */
 const VISITED_RING_COLOR = theme.primary;
