@@ -175,8 +175,6 @@ function CountrySection({
         ) : null}
       </View>
 
-      <RandomStationHighlight country={countryCode} embedded />
-
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>{serviceTypesTitle}</Text>
         {serviceBullets.map((text) => (
@@ -198,6 +196,8 @@ function CountrySection({
           </Pressable>
         ))}
       </View>
+
+      <RandomStationHighlight country={countryCode} embedded />
     </View>
   );
 }

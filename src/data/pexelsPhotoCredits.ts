@@ -456,6 +456,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographerUrl: "https://www.pexels.com/@enesersahin",
     photoPageUrl: "https://www.pexels.com/photo/antique-train-station-in-black-and-white-4458687/",
   },
+  "4525215": {
+    photographer: "Arthur Forti",
+    photographerUrl: "https://www.pexels.com/@arthur-forti-967563",
+    photoPageUrl: "https://www.pexels.com/photo/concrete-stairs-and-metal-railings-of-a-public-place-4525215/",
+  },
   "4525217": {
     photographer: "Arthur Forti",
     photographerUrl: "https://www.pexels.com/@arthur-forti-967563",
@@ -4540,6 +4545,11 @@ export const pexelsPhotoCredits: Record<string, PexelsPhotoCredit> = {
     photographer: "Explorando la provincia de Cádiz",
     photographerUrl: "https://www.pexels.com/@explorando-la-provincia-de-cadiz-1579305",
     photoPageUrl: "https://www.pexels.com/photo/abandoned-railway-station-in-el-portal-spain-39477166/",
+  },
+  "39477169": {
+    photographer: "Explorando la provincia de Cádiz",
+    photographerUrl: "https://www.pexels.com/@explorando-la-provincia-de-cadiz-1579305",
+    photoPageUrl: "https://www.pexels.com/photo/abandoned-railway-station-in-el-portal-spain-39477169/",
   },
   "39477170": {
     photographer: "Explorando la provincia de Cádiz",

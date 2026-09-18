@@ -1621,6 +1621,16 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Santa Cruz de Mudela": ["50200"],
 
+  "Yugueros": ["05762"],
+
+  "Ujo Taruelo": ["05375"],
+
+  "Piñeres": ["05383"],
+
+  "Casatejada": ["35207"],
+
+  "Magaz": ["11004"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

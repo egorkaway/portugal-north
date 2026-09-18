@@ -55,8 +55,6 @@ const Tickets = () => {
                 </p>
               </div>
 
-              <RandomStationHighlightPanel country="pt" embedded />
-
               <div className="space-y-2">
                 <div className="mt-4 grid gap-3 md:grid-cols-3">
                   <div className="rounded-lg border border-border bg-card p-4">
@@ -230,6 +228,8 @@ const Tickets = () => {
                 links={portugalTicketLinks}
                 t={t}
               />
+
+              <RandomStationHighlightPanel country="pt" embedded />
             </section>
 
             <section className="space-y-6">
@@ -239,8 +239,6 @@ const Tickets = () => {
                 <h3 className="text-lg font-semibold md:text-xl">{t("tickets.howToBuyTitle")}</h3>
                 <p className="text-muted-foreground">{t("tickets.spainHowToBuyIntro")}</p>
               </div>
-
-              <RandomStationHighlightPanel country="es" embedded />
 
               <div className="space-y-2">
                 <h3 className="text-lg font-semibold md:text-xl">{t("tickets.serviceTypesTitle")}</h3>
@@ -253,6 +251,8 @@ const Tickets = () => {
               </div>
 
               <TicketLinksSection title={t("tickets.usefulLinksTitle")} links={spainTicketLinks} t={t} />
+
+              <RandomStationHighlightPanel country="es" embedded />
             </section>
 
             <p className="text-sm text-muted-foreground">{t("tickets.overviewDisclaimer")}</p>

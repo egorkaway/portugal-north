@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-18T14:15:51.308Z",
-  "runCount": 972,
+  "generatedAt": "2026-09-18T17:26:13.686Z",
+  "runCount": 976,
   "mostDelayed": [
     {
       "trainNumber": "868",
@@ -31,8 +31,8 @@
     {
       "trainNumber": "876",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 21.7,
-      "observations": 27,
+      "avgDelayMinutes": 21.3,
+      "observations": 28,
       "stationsSampled": 21,
       "majorStations": [
         "Porto-Campanhã",
@@ -47,7 +47,7 @@
       "trainNumber": "10543",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 30,
+      "observations": 31,
       "stationsSampled": 6,
       "majorStations": [
         "Castelo Branco",
@@ -62,7 +62,7 @@
       "trainNumber": "10544",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
-      "observations": 27,
+      "observations": 28,
       "stationsSampled": 6,
       "majorStations": [
         "Abrantes",
@@ -82,8 +82,8 @@
       "majorStations": [
         "Mira Sintra-Meleças",
         "Pero Negro",
-        "Dois Portos",
-        "Mafra"
+        "Mafra",
+        "Dois Portos"
       ],
       "selectionMode": "stable",
       "poolSize": 1

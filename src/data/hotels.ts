@@ -6549,6 +6549,31 @@ export const stationHotels: StationHotels = {
     { name: "Guest houses near Santa Cruz de Mudela", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
     { name: "Hotels near Santa Cruz de Mudela", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Santa%20Cruz%20de%20Mudela%2C%20Spain&order=price" },
   ],
+  "Yugueros": [
+    { name: "Puerta Vadinia", distanceKm: 4.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Puerta%20Vadinia%2C%20Yugueros%2C%20Spain&order=price" },
+    { name: "Hostal Moderno", distanceKm: 4.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20Moderno%2C%20Yugueros%2C%20Spain&order=price" },
+    { name: "Alojamiento Montaña Oriental de León", distanceKm: 4.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Alojamiento%20Monta%C3%B1a%20Oriental%20de%20Le%C3%B3n%2C%20Yugueros%2C%20Spain&order=price" },
+  ],
+  "Ujo Taruelo": [
+    { name: "Hotel Río Caudal", distanceKm: 1.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20R%C3%ADo%20Caudal%2C%20Ujo%20Taruelo%2C%20Spain&order=price" },
+    { name: "Cenera", distanceKm: 3.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Cenera%2C%20Ujo%20Taruelo%2C%20Spain&order=price" },
+    { name: "El Palacio de Arriba", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Palacio%20de%20Arriba%2C%20Ujo%20Taruelo%2C%20Spain&order=price" },
+  ],
+  "Piñeres": [
+    { name: "Budget stays near Piñeres", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pi%C3%B1eres%2C%20Spain&order=price" },
+    { name: "Guest houses near Piñeres", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pi%C3%B1eres%2C%20Spain&order=price" },
+    { name: "Hotels near Piñeres", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Pi%C3%B1eres%2C%20Spain&order=price" },
+  ],
+  "Casatejada": [
+    { name: "El Botánico", distanceKm: 0.8, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=El%20Bot%C3%A1nico%2C%20Casatejada%2C%20Spain&order=price" },
+    { name: "Casas Rurales La Enramá del Cerrillo", distanceKm: 9.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casas%20Rurales%20La%20Enram%C3%A1%20del%20Cerrillo%2C%20Casatejada%2C%20Spain&order=price" },
+    { name: "Hostal los Sauces", distanceKm: 10.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostal%20los%20Sauces%2C%20Casatejada%2C%20Spain&order=price" },
+  ],
+  "Magaz": [
+    { name: "Hotel Europa Centro", distanceKm: 1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Europa%20Centro%2C%20Magaz%2C%20Spain&order=price" },
+    { name: "Albergue Juvenil Palencia", distanceKm: 7.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Juvenil%20Palencia%2C%20Magaz%2C%20Spain&order=price" },
+    { name: "Hotel La Basílica", distanceKm: 7.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Bas%C3%ADlica%2C%20Magaz%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

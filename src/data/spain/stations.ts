@@ -7349,4 +7349,49 @@ export const spainStations: Station[] = [
     lng: -3.4515,
   },
 
+  {
+    name: "Yugueros",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 42.8098,
+    lng: -5.1801,
+  },
+
+  {
+    name: "Ujo Taruelo",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.2006,
+    lng: -5.7879,
+  },
+
+  {
+    name: "Piñeres",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.166,
+    lng: -5.6843,
+  },
+
+  {
+    name: "Casatejada",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 39.8919,
+    lng: -5.6777,
+  },
+
+  {
+    name: "Magaz",
+    country: "es",
+    lines: ["Cercanías", "Larga distancia"],
+    types: ["Urban", "Intercidades"],
+    lat: 41.9766,
+    lng: -4.4321,
+  },
+
 ];
