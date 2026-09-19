@@ -1,6 +1,6 @@
 {
-  "runCount": 1004,
-  "lastRunAt": "2026-09-19T20:20:58.140Z",
+  "runCount": 1005,
+  "lastRunAt": "2026-09-19T20:24:34.188Z",
   "lastAirportConnectionsAt": "2026-09-19T15:31:33.445Z",
   "stations": {
     "Pombal": {
@@ -5905,9 +5905,9 @@
         "delayMinutes": 1231
       },
       "successfulSamples": 348,
-      "failedSamples": 8,
+      "failedSamples": 9,
       "lastSampleAt": "2026-09-19T20:21:20.943Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Sapataria": {
       "cpCode": "94-62299",
@@ -6554,9 +6554,9 @@
         "delayMinutes": 2277
       },
       "successfulSamples": 314,
-      "failedSamples": 14,
+      "failedSamples": 15,
       "lastSampleAt": "2026-09-19T17:34:50.625Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Baixa da Banheira": {
       "cpCode": "94-95059",
@@ -9419,9 +9419,9 @@
         "delayMinutes": 327
       },
       "successfulSamples": 84,
-      "failedSamples": 2,
+      "failedSamples": 3,
       "lastSampleAt": "2026-09-19T20:22:48.096Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Fernando Pó": {
       "cpCode": "94-71050",
