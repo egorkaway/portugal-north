@@ -1,6 +1,6 @@
 {
-  "runCount": 1006,
-  "lastRunAt": "2026-09-19T20:45:26.990Z",
+  "runCount": 1007,
+  "lastRunAt": "2026-09-19T20:52:43.119Z",
   "lastAirportConnectionsAt": "2026-09-19T20:48:21.373Z",
   "stations": {
     "Pombal": {
@@ -799,9 +799,9 @@
         "delayMinutes": 3176
       },
       "successfulSamples": 336,
-      "failedSamples": 8,
+      "failedSamples": 9,
       "lastSampleAt": "2026-09-19T20:22:43.935Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Barcelos": {
       "cpCode": "94-6122",
@@ -5118,9 +5118,9 @@
         "delayMinutes": 679
       },
       "successfulSamples": 336,
-      "failedSamples": 10,
+      "failedSamples": 11,
       "lastSampleAt": "2026-09-19T16:53:28.493Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Litem": {
       "cpCode": "94-34504",
@@ -6425,9 +6425,9 @@
         "delayMinutes": 1114
       },
       "successfulSamples": 335,
-      "failedSamples": 10,
+      "failedSamples": 11,
       "lastSampleAt": "2026-09-19T20:46:34.496Z",
-      "lastError": null
+      "lastError": "cp_api_http_429"
     },
     "Algueirão - Mem Martins": {
       "cpCode": "94-61069",
