@@ -371,6 +371,15 @@ export const ca: Messages = {
       "Un mapa estàtic quadrat de fiabilitat de Portugal i Espanya, amb les mateixes puntuacions de puntualitat de l'app mòbil quan hi ha prou dades.",
     overviewIberianReliabilityAlt:
       "Mapa quadrat de la península ibèrica amb estacions per puntuació de puntualitat",
+    visitedMapTitle: "El teu mapa d'estacions visitades",
+    visitedMapIntro:
+      "Crea un PNG de les estacions que has marcat com a visitades. Es genera al teu navegador i mai s'envia als nostres servidors.",
+    visitedMapDownload: "Descarregar el meu mapa visitat",
+    visitedMapEmpty: "Marca estacions com a visitades per descarregar el mapa.",
+    visitedMapCount_one: "{{count}} estació visitada",
+    visitedMapCount_other: "{{count}} estacions visitades",
+    visitedMapBusy: "Preparant el mapa…",
+    visitedMapError: "No s'ha pogut crear el mapa. Torna-ho a provar.",
   },
   tickets: {
     title: "Bitllets i preus",

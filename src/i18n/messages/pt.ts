@@ -371,6 +371,15 @@ export const pt: Messages = {
       "Um mapa estático quadrado de fiabilidade de Portugal e Espanha, com as mesmas pontuações de pontualidade da app móvel quando há dados suficientes.",
     overviewIberianReliabilityAlt:
       "Mapa quadrado da Península Ibérica com estações por pontuação de pontualidade",
+    visitedMapTitle: "O seu mapa de estações visitadas",
+    visitedMapIntro:
+      "Crie um PNG das estações que marcou como visitadas. É gerado no seu browser e nunca é enviado para os nossos servidores.",
+    visitedMapDownload: "Descarregar o meu mapa visitado",
+    visitedMapEmpty: "Marque estações como visitadas para descarregar o mapa.",
+    visitedMapCount_one: "{{count}} estação visitada",
+    visitedMapCount_other: "{{count}} estações visitadas",
+    visitedMapBusy: "A preparar o mapa…",
+    visitedMapError: "Não foi possível criar o mapa. Tente de novo.",
   },
   tickets: {
     title: "Bilhetes e preços",

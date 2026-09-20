@@ -333,6 +333,14 @@ export type Messages = {
     overviewIberianTitle: string;
     overviewIberianIntro: string;
     overviewIberianReliabilityAlt: string;
+    visitedMapTitle: string;
+    visitedMapIntro: string;
+    visitedMapDownload: string;
+    visitedMapEmpty: string;
+    visitedMapCount_one: string;
+    visitedMapCount_other: string;
+    visitedMapBusy: string;
+    visitedMapError: string;
   };
   tickets: {
     title: string;

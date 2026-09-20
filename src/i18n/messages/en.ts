@@ -369,6 +369,15 @@ export const en: Messages = {
       "A square static reliability map covering Portugal and Spain, using the same on-time scores as our mobile app where we have enough data.",
     overviewIberianReliabilityAlt:
       "Square map of the Iberian peninsula with stations coloured by on-time reliability score",
+    visitedMapTitle: "Your visited stations map",
+    visitedMapIntro:
+      "Build a PNG of the stations you marked visited. It is rendered in your browser and never uploaded to our servers.",
+    visitedMapDownload: "Download my visited map",
+    visitedMapEmpty: "Mark stations as visited to download your map.",
+    visitedMapCount_one: "{{count}} visited station",
+    visitedMapCount_other: "{{count}} visited stations",
+    visitedMapBusy: "Preparing map…",
+    visitedMapError: "Could not create the map. Try again.",
   },
   tickets: {
     title: "Tickets & prices",

@@ -371,6 +371,15 @@ export const gl: Messages = {
       "Un mapa estático cadrado de fiabilidade de Portugal e España, coas mesmas puntuacións de puntualidade da app móbil cando hai datos abondos.",
     overviewIberianReliabilityAlt:
       "Mapa cadrado da península ibérica con estacións por puntuación de puntualidade",
+    visitedMapTitle: "O teu mapa de estacións visitadas",
+    visitedMapIntro:
+      "Crea un PNG das estacións que marcaches como visitadas. Xérase no teu navegador e nunca se envía aos nosos servidores.",
+    visitedMapDownload: "Descargar o meu mapa visitado",
+    visitedMapEmpty: "Marca estacións como visitadas para descargar o teu mapa.",
+    visitedMapCount_one: "{{count}} estación visitada",
+    visitedMapCount_other: "{{count}} estacións visitadas",
+    visitedMapBusy: "Preparando o mapa…",
+    visitedMapError: "Non se puido crear o mapa. Téntao de novo.",
   },
   tickets: {
     title: "Billetes e prezos",

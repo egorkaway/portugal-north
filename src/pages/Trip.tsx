@@ -38,6 +38,7 @@ import { getServiceTypeTextClass } from "@/lib/trainTypes";
 import { allStations } from "@/data/stationRegistry";
 import type { TrainJourneyStop } from "@/lib/trainJourney";
 import { buttonVariants } from "@/components/ui/button";
+import { VisitedMapDownload } from "@/components/VisitedMapDownload";
 import { cn } from "@/lib/utils";
 
 function stationPagePath(stationName: string): string | null {
@@ -386,6 +387,8 @@ const Trip = () => {
               </ul>
             )}
           </section>
+
+          <VisitedMapDownload />
         </main>
 
         <AlertDialog
