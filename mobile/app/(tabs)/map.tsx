@@ -54,9 +54,12 @@ const MARKER_PRESS_LOCK_MS = 120;
 
 /** Android uses free OSM tiles (no Google Maps API / no Carto key). iOS keeps Apple Maps. */
 const USE_OSM_MAP = Platform.OS === 'android';
-/** Navy ring around visited dots — distinct from reliability green/amber/red. */
-const VISITED_RING_COLOR = theme.primary;
-const VISITED_RING_EXTRA = 10;
+/** Navy inner dot on visited stations (iOS) — distinct from reliability green/amber/red. */
+const VISITED_INNER_COLOR = theme.primary;
+
+function visitedInnerDotSize(outerSize: number): number {
+  return Math.max(3, Math.round(outerSize * 0.4));
+}
 
 function markerSize(movements: number): number {
   if (movements >= 500) return 14;
@@ -335,7 +338,7 @@ export default function MapScreen() {
               <LegendSwatch color={reliabilityScoreColor(3)} label={t('map.legendLow')} />
               <LegendSwatch color="#94A3B8" label={t('map.legendNoData')} />
               <LegendSwatch color="#0284C7" label={t('map.legendAirport')} />
-              <LegendSwatch color={VISITED_RING_COLOR} label={t('map.legendVisited')} ring />
+              <LegendSwatch color={VISITED_INNER_COLOR} label={t('map.legendVisited')} inner />
             </View>
           </View>
         </View>
@@ -455,9 +458,9 @@ function StationAppleMarker({
     return () => clearTimeout(timer);
   }, [visited, size, color]);
 
-  const ringSize = size + VISITED_RING_EXTRA;
-  const ringOffset = (MARKER_HIT_SIZE - ringSize) / 2;
   const dotOffset = (MARKER_HIT_SIZE - size) / 2;
+  const innerSize = visitedInnerDotSize(size);
+  const innerOffset = (MARKER_HIT_SIZE - innerSize) / 2;
 
   return (
     <Marker
@@ -477,21 +480,6 @@ function StationAppleMarker({
         accessibilityLabel={accessibilityLabel}
       >
         <View style={styles.markerTouchTarget} />
-        {visited ? (
-          <View
-            pointerEvents="none"
-            style={[
-              styles.visitedRing,
-              {
-                width: ringSize,
-                height: ringSize,
-                borderRadius: ringSize / 2,
-                top: ringOffset,
-                left: ringOffset,
-              },
-            ]}
-          />
-        ) : null}
         <View
           style={[
             styles.dot,
@@ -505,6 +493,21 @@ function StationAppleMarker({
             },
           ]}
         />
+        {visited ? (
+          <View
+            pointerEvents="none"
+            style={[
+              styles.visitedInnerDot,
+              {
+                width: innerSize,
+                height: innerSize,
+                borderRadius: innerSize / 2,
+                top: innerOffset,
+                left: innerOffset,
+              },
+            ]}
+          />
+        ) : null}
       </View>
     </Marker>
   );
@@ -513,16 +516,18 @@ function StationAppleMarker({
 function LegendSwatch({
   color,
   label,
-  ring,
+  inner,
 }: {
   color: string;
   label: string;
-  ring?: boolean;
+  inner?: boolean;
 }) {
   return (
     <View style={styles.legendItem}>
-      {ring ? (
-        <View style={[styles.legendRing, { borderColor: color }]} />
+      {inner ? (
+        <View style={styles.legendVisitedOuter}>
+          <View style={[styles.legendVisitedInner, { backgroundColor: color }]} />
+        </View>
       ) : (
         <View style={[styles.legendDot, { backgroundColor: color }]} />
       )}
@@ -563,11 +568,9 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#fff',
   },
-  visitedRing: {
+  visitedInnerDot: {
     position: 'absolute',
-    borderWidth: 2,
-    borderColor: VISITED_RING_COLOR,
-    backgroundColor: 'transparent',
+    backgroundColor: VISITED_INNER_COLOR,
   },
   markerHitArea: {
     width: MARKER_HIT_SIZE,
@@ -612,12 +615,20 @@ const styles = StyleSheet.create({
     height: 10,
     borderRadius: 5,
   },
-  legendRing: {
+  legendVisitedOuter: {
     width: 10,
     height: 10,
     borderRadius: 5,
-    borderWidth: 2,
-    backgroundColor: 'transparent',
+    backgroundColor: '#94A3B8',
+    borderWidth: 1,
+    borderColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  legendVisitedInner: {
+    width: 4,
+    height: 4,
+    borderRadius: 2,
   },
   legendLabel: {
     fontSize: 12,
