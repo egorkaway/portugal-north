@@ -166,7 +166,7 @@ describe("visitedMapPng", () => {
       title: "Your visited stations map",
       countLabel: "2 visited stations",
       stations: sampleStations,
-      basemapUrl: "/maps/overview/iberian-reliability.png",
+      basemapUrl: "/maps/overview/iberian-basemap.png",
     });
 
     expect(result.count).toBe(2);
@@ -185,7 +185,7 @@ describe("visitedMapPng", () => {
         title: "Empty",
         countLabel: "0",
         stations: sampleStations,
-        basemapUrl: "/maps/overview/iberian-reliability.png",
+        basemapUrl: "/maps/overview/iberian-basemap.png",
       }),
     ).rejects.toThrow(/No visited stations/);
   });

@@ -8,6 +8,7 @@ export const OVERVIEW_MAP_FILENAMES = [
   "portugal-activity.png",
   "portugal-reliability.png",
   "iberian-reliability.png",
+  "iberian-basemap.png",
 ];
 
 /**

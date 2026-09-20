@@ -28,6 +28,9 @@ describe("overviewMapImage", () => {
     expect(getOverviewMapImagePath("reliability", "iberian")).toBe(
       "/maps/overview/iberian-reliability.png",
     );
+    expect(getOverviewMapImagePath("basemap", "iberian")).toBe(
+      "/maps/overview/iberian-basemap.png",
+    );
     expect(getOverviewMapDownloadFilename("reliability", "iberian")).toBe(
       "verystays-iberian-reliability.png",
     );

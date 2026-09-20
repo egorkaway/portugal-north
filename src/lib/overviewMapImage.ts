@@ -1,4 +1,4 @@
-export type OverviewMapKind = "activity" | "reliability";
+export type OverviewMapKind = "activity" | "reliability" | "basemap";
 export type OverviewMapRegion = "portugal" | "iberian";
 
 export const OVERVIEW_MAP_DIMENSIONS: Record<

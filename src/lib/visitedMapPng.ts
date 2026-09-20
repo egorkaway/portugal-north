@@ -167,7 +167,7 @@ export async function renderVisitedMapPng(
     throw new Error("No visited stations to draw");
   }
 
-  const basemapUrl = input.basemapUrl ?? getOverviewMapImagePath("reliability", "iberian");
+  const basemapUrl = input.basemapUrl ?? getOverviewMapImagePath("basemap", "iberian");
   const basemap = await loadImage(basemapUrl);
   const viewport = buildIberianOverviewViewport();
 

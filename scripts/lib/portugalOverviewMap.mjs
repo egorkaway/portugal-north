@@ -679,3 +679,12 @@ export async function renderIberianReliabilityMap(root, { siteUrl = "https://www
     cardWidth: IBERIAN_CARD_SIZE,
   });
 }
+
+/** OSM tiles only: same Iberian frame as reliability, no station markers. */
+export async function renderIberianBasemap(_root, { basemap = "osm" } = {}) {
+  const { buffer: mapBuffer } = await stitchIberianMap(basemap);
+  return sharp(mapBuffer)
+    .resize(IBERIAN_CARD_SIZE, IBERIAN_CARD_SIZE, { fit: "fill" })
+    .png({ compressionLevel: 9 })
+    .toBuffer();
+}
