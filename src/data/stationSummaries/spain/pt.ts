@@ -2524,4 +2524,10 @@ export const spainSummariesPt: Record<string, string> = {
   "Almadenejos-Almadén":
     "Almadenejos-Almadén é uma estação Renfe de longa distância em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
 
+  "Peña Rubia":
+    "Peña Rubia é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
+  "Zanzabornín":
+    "Zanzabornín é uma estação Renfe de cercanías em Espanha. É uma paragem prática para explorar os arredores, com painéis em direto de suburbanos e longa distância.",
+
 };

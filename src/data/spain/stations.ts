@@ -7403,4 +7403,22 @@ export const spainStations: Station[] = [
     lng: -4.7304,
   },
 
+  {
+    name: "Peña Rubia",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.3213,
+    lng: -5.7208,
+  },
+
+  {
+    name: "Zanzabornín",
+    country: "es",
+    lines: ["Cercanías"],
+    types: ["Urban"],
+    lat: 43.5689,
+    lng: -5.8253,
+  },
+
 ];

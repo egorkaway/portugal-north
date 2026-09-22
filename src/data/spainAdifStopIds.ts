@@ -1633,6 +1633,10 @@ export const SPAIN_STATION_STOP_IDS: Record<string, readonly string[]> = {
 
   "Almadenejos-Almadén": ["37305"],
 
+  "Peña Rubia": ["16005"],
+
+  "Zanzabornín": ["05215"],
+
 };
 
 export function normalizeSpainStopId(stopId: string): string {

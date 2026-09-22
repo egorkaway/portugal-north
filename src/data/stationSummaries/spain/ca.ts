@@ -2524,4 +2524,10 @@ export const spainSummariesCa: Record<string, string> = {
   "Almadenejos-Almadén":
     "Almadenejos-Almadén és una estació de Renfe de llarga distància a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
 
+  "Peña Rubia":
+    "Peña Rubia és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
+  "Zanzabornín":
+    "Zanzabornín és una estació de Renfe de rodalies a Espanya. És una parada pràctica per explorar els voltants, amb panells en directe de rodalies i llarga distància.",
+
 };

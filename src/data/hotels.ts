@@ -6579,6 +6579,16 @@ export const stationHotels: StationHotels = {
     { name: "Guest houses near Almadenejos-Almadén", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Almadenejos-Almad%C3%A9n%2C%20Spain&order=price" },
     { name: "Hotels near Almadenejos-Almadén", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Almadenejos-Almad%C3%A9n%2C%20Spain&order=price" },
   ],
+  "Peña Rubia": [
+    { name: "Hotel San Pedro", distanceKm: 2.5, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20San%20Pedro%2C%20Pe%C3%B1a%20Rubia%2C%20Spain&order=price" },
+    { name: "AZZ Asturias LangreHotel & SPA", distanceKm: 3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=AZZ%20Asturias%20LangreHotel%20%26%20SPA%2C%20Pe%C3%B1a%20Rubia%2C%20Spain&order=price" },
+    { name: "Hotel Vaqueros", distanceKm: 3.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20Vaqueros%2C%20Pe%C3%B1a%20Rubia%2C%20Spain&order=price" },
+  ],
+  "Zanzabornín": [
+    { name: "Casa Pradina I y II", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Pradina%20I%20y%20II%2C%20Zanzaborn%C3%ADn%2C%20Spain&order=price" },
+    { name: "Casa Rural María la Carbayeda", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Mar%C3%ADa%20la%20Carbayeda%2C%20Zanzaborn%C3%ADn%2C%20Spain&order=price" },
+    { name: "Casa Rural Capilla San Clemente", distanceKm: 1.1, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Casa%20Rural%20Capilla%20San%20Clemente%2C%20Zanzaborn%C3%ADn%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
