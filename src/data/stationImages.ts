@@ -77,6 +77,7 @@ export const stationImages: Record<string, string> = {
   "Alicante/Alacant-Terminal": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Estacion-Alicante-Terminal-ADIF.jpg/960px-Estacion-Alicante-Terminal-ADIF.jpg",
   "Aljaima": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3b/Estaci%C3%B3n_de_Aljaima_3405.JPG/960px-Estaci%C3%B3n_de_Aljaima_3405.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Aljustrel": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Aljustrel_Train_Station.jpg?utm_source=pt.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+  "Almadenejos-Almadén": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Estaci%C3%B3n_de_Almadenejos-Almad%C3%A9n.jpg/960px-Estaci%C3%B3n_de_Almadenejos-Almad%C3%A9n.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Almagro": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Estaci%C3%B3n_de_Almagro%2C_Ciudad_Real.jpg/960px-Estaci%C3%B3n_de_Almagro%2C_Ciudad_Real.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Almancil": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Almancil_Halt_26_August_2015_%281%29.jpg/960px-Almancil_Halt_26_August_2015_%281%29.jpg?utm_source=pt.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Almansa": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Estacion_Almansa.jpg/960px-Estacion_Almansa.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",

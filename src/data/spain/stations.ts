@@ -7394,4 +7394,13 @@ export const spainStations: Station[] = [
     lng: -4.4321,
   },
 
+  {
+    name: "Almadenejos-Almadén",
+    country: "es",
+    lines: ["Larga distancia"],
+    types: ["Intercidades"],
+    lat: 38.7406,
+    lng: -4.7304,
+  },
+
 ];

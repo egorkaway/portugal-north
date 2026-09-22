@@ -6574,6 +6574,11 @@ export const stationHotels: StationHotels = {
     { name: "Albergue Juvenil Palencia", distanceKm: 7.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Albergue%20Juvenil%20Palencia%2C%20Magaz%2C%20Spain&order=price" },
     { name: "Hotel La Basílica", distanceKm: 7.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hotel%20La%20Bas%C3%ADlica%2C%20Magaz%2C%20Spain&order=price" },
   ],
+  "Almadenejos-Almadén": [
+    { name: "Budget stays near Almadenejos-Almadén", distanceKm: 0.8, priceFrom: 35, bookingUrl: "https://www.booking.com/searchresults.html?ss=Almadenejos-Almad%C3%A9n%2C%20Spain&order=price" },
+    { name: "Guest houses near Almadenejos-Almadén", distanceKm: 1.1, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Almadenejos-Almad%C3%A9n%2C%20Spain&order=price" },
+    { name: "Hotels near Almadenejos-Almadén", distanceKm: 1.4, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Almadenejos-Almad%C3%A9n%2C%20Spain&order=price" },
+  ],
   "Madrid-Barajas Airport (MAD)": [
     { name: "GettSleep Madrid", distanceKm: 0.2, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=GettSleep%20Madrid%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },
     { name: "Hostelfly", distanceKm: 2.2, priceFrom: 25, bookingUrl: "https://www.booking.com/searchresults.html?ss=Hostelfly%2C%20Madrid-Barajas%20Airport%20(MAD)%2C%20Spain&order=price" },

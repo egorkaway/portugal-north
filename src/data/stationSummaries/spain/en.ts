@@ -2521,4 +2521,7 @@ export const spainSummariesEn: Record<string, string> = {
   "Magaz":
     "Magaz is a Renfe Cercanías and long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
 
+  "Almadenejos-Almadén":
+    "Almadenejos-Almadén is a Renfe long-distance station in Spain. It is a practical rail stop for exploring the surrounding area, with live boards for suburban and long-distance services.",
+
 };

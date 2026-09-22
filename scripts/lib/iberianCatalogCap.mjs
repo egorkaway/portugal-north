@@ -7,7 +7,7 @@ import { join } from "node:path";
 import { parseStations } from "./stationImageFetch.mjs";
 
 /** Raised from the 1.0 freeze (1404). Departures still add at most one Iberian entry per run. */
-export const IBERIAN_CATALOG_CAP = 1411;
+export const IBERIAN_CATALOG_CAP = 1414;
 
 /** Previous freeze watermark (docs / migration notes). */
 export const IBERIAN_CATALOG_CAP_PREVIOUS = 1404;

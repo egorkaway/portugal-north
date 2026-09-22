@@ -2521,4 +2521,7 @@ export const spainSummariesEs: Record<string, string> = {
   "Magaz":
     "Magaz es una estación de Renfe de cercanías y larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
 
+  "Almadenejos-Almadén":
+    "Almadenejos-Almadén es una estación de Renfe de larga distancia en España. Es una parada práctica para explorar los alrededores, con paneles en vivo de cercanías y larga distancia.",
+
 };
