@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-21T14:47:15.922Z",
-  "runCount": 1052,
+  "generatedAt": "2026-09-22T08:00:10.124Z",
+  "runCount": 1061,
   "mostDelayed": [
     {
       "trainNumber": "526",
@@ -31,8 +31,8 @@
     {
       "trainNumber": "876",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 20.5,
-      "observations": 30,
+      "avgDelayMinutes": 20.2,
+      "observations": 31,
       "stationsSampled": 21,
       "majorStations": [
         "Porto-Campanhã",
@@ -59,6 +59,21 @@
       "poolSize": 1
     },
     {
+      "trainNumber": "36410",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 31,
+      "stationsSampled": 17,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Mafra",
+        "Bombarral"
+      ],
+      "selectionMode": "stable",
+      "poolSize": 1
+    },
+    {
       "trainNumber": "36406",
       "serviceType": "Regional",
       "avgDelayMinutes": 0,
@@ -68,22 +83,7 @@
         "Mira Sintra-Meleças",
         "Pero Negro",
         "Mafra",
-        "Dois Portos"
-      ],
-      "selectionMode": "stable",
-      "poolSize": 1
-    },
-    {
-      "trainNumber": "36410",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 30,
-      "stationsSampled": 17,
-      "majorStations": [
-        "Mira Sintra-Meleças",
-        "Pero Negro",
-        "Mafra",
-        "Dois Portos"
+        "Bombarral"
       ],
       "selectionMode": "stable",
       "poolSize": 1
