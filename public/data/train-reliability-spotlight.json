@@ -1,20 +1,7 @@
 {
-  "generatedAt": "2026-09-22T21:31:58.268Z",
-  "runCount": 1094,
+  "generatedAt": "2026-09-24T12:11:30.705Z",
+  "runCount": 1114,
   "mostDelayed": [
-    {
-      "trainNumber": "868",
-      "serviceType": "InterRegional",
-      "avgDelayMinutes": 24,
-      "observations": 33,
-      "stationsSampled": 21,
-      "majorStations": [
-        "Porto-Campanhã",
-        "Ermesinde",
-        "Paredes",
-        "Penafiel"
-      ]
-    },
     {
       "trainNumber": "526",
       "serviceType": "Intercidades",
@@ -29,10 +16,23 @@
       ]
     },
     {
+      "trainNumber": "868",
+      "serviceType": "InterRegional",
+      "avgDelayMinutes": 23.8,
+      "observations": 35,
+      "stationsSampled": 21,
+      "majorStations": [
+        "Porto-Campanhã",
+        "Ermesinde",
+        "Paredes",
+        "Penafiel"
+      ]
+    },
+    {
       "trainNumber": "876",
       "serviceType": "InterRegional",
-      "avgDelayMinutes": 20.4,
-      "observations": 32,
+      "avgDelayMinutes": 20.3,
+      "observations": 33,
       "stationsSampled": 21,
       "majorStations": [
         "Porto-Campanhã",
@@ -44,6 +44,36 @@
   ],
   "mostReliable": [
     {
+      "trainNumber": "36406",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 34,
+      "stationsSampled": 17,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Bombarral",
+        "Mafra"
+      ],
+      "selectionMode": "stable",
+      "poolSize": 1
+    },
+    {
+      "trainNumber": "36410",
+      "serviceType": "Regional",
+      "avgDelayMinutes": 0,
+      "observations": 33,
+      "stationsSampled": 17,
+      "majorStations": [
+        "Mira Sintra-Meleças",
+        "Pero Negro",
+        "Bombarral",
+        "Mafra"
+      ],
+      "selectionMode": "stable",
+      "poolSize": 1
+    },
+    {
       "trainNumber": "10543",
       "serviceType": "Intercidades",
       "avgDelayMinutes": 0,
@@ -54,36 +84,6 @@
         "Guarda",
         "Covilhã",
         "Vila Velha de Ródão"
-      ],
-      "selectionMode": "stable",
-      "poolSize": 1
-    },
-    {
-      "trainNumber": "36410",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 32,
-      "stationsSampled": 17,
-      "majorStations": [
-        "Mira Sintra-Meleças",
-        "Pero Negro",
-        "Bombarral",
-        "Mafra"
-      ],
-      "selectionMode": "stable",
-      "poolSize": 1
-    },
-    {
-      "trainNumber": "36406",
-      "serviceType": "Regional",
-      "avgDelayMinutes": 0,
-      "observations": 31,
-      "stationsSampled": 17,
-      "majorStations": [
-        "Mira Sintra-Meleças",
-        "Pero Negro",
-        "Bombarral",
-        "Mafra"
       ],
       "selectionMode": "stable",
       "poolSize": 1
