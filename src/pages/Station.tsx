@@ -262,7 +262,7 @@ const Station = () => {
               href={getBookingSearchUrl(station)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 rounded-md bg-secondary/10 px-3 py-2 text-sm font-medium text-secondary transition-colors hover:bg-secondary hover:text-secondary-foreground"
+              className="inline-flex items-center gap-1.5 rounded-md bg-[#003b95]/10 px-3 py-2 text-sm font-medium text-[#003b95] transition-colors hover:bg-[#003b95] hover:text-white dark:text-blue-300 dark:hover:text-white"
             >
               <BedDouble className="h-4 w-4" aria-hidden="true" />
               {t("station.searchBooking")}

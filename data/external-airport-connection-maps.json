@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-24T11:59:25.145Z",
+  "updatedAt": "2026-09-25T11:59:36.222Z",
   "airports": [
     {
       "iata": "PMI",
@@ -625,13 +625,21 @@
       "stationName": "Düsseldorf Airport (DUS)",
       "slug": "dusseldorf-airport-dus",
       "country": "DE",
-      "iberianFlightCount": 29,
+      "iberianFlightCount": 18,
       "iberianMapImage": "/maps/airports/external/dus-dusseldorf-iberia.png",
       "iberianDestinationCount": 11,
       "iberianSampledFlights": 29,
       "iberianSampledAt": "2026-09-05T07:37:42.913Z",
       "iberianPeriodId": "2026-08-11",
-      "iberianBasemapId": "osm"
+      "iberianBasemapId": "osm",
+      "mapImage": "/maps/airports/external/dus-dusseldorf.png",
+      "destinationCount": 46,
+      "allFlightsIberianDestinationCount": 14,
+      "sampledFlights": 100,
+      "sampledAt": "2026-09-25T11:59:36.222Z",
+      "periodId": "2026-09-17",
+      "provider": "airlabs",
+      "basemapId": "osm"
     },
     {
       "iata": "ARN",
@@ -805,13 +813,21 @@
       "stationName": "Lyon Saint-Exupéry Airport (LYS)",
       "slug": "lyon-saint-exupery-airport-lys",
       "country": "FR",
-      "iberianFlightCount": 24,
+      "iberianFlightCount": 20,
       "iberianMapImage": "/maps/airports/external/lys-lyon-saint-exupery-iberia.png",
       "iberianDestinationCount": 8,
       "iberianSampledFlights": 24,
       "iberianSampledAt": "2026-09-05T07:59:02.766Z",
       "iberianPeriodId": "2026-08-11",
-      "iberianBasemapId": "osm"
+      "iberianBasemapId": "osm",
+      "mapImage": "/maps/airports/external/lys-lyon-saint-exupery.png",
+      "destinationCount": 41,
+      "allFlightsIberianDestinationCount": 8,
+      "sampledFlights": 100,
+      "sampledAt": "2026-09-25T11:58:05.388Z",
+      "periodId": "2026-09-17",
+      "provider": "airlabs",
+      "basemapId": "osm"
     },
     {
       "iata": "DOH",

@@ -182,7 +182,7 @@ const StationCardView = memo(function StationCardView({
             href={getBookingSearchUrl(station)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-secondary/10 text-secondary hover:bg-secondary hover:text-secondary-foreground transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-md bg-[#003b95]/10 text-[#003b95] hover:bg-[#003b95] hover:text-white dark:text-blue-300 dark:hover:text-white transition-colors"
           >
             <BedDouble className="w-3.5 h-3.5" /> {t("station.moreOnBooking")}
           </a>
