@@ -183,6 +183,11 @@ export const en: MobileMessages = {
     body: 'GetMapa helps you explore walking routes across Iberia.',
     cta: 'Get GetMapa',
   },
+  sovnik: {
+    title: 'Learn Iberian languages',
+    body: 'Sovnik helps you learn Spanish, Portuguese, Galician, Catalan, Basque, and more with vocabulary quizzes and mobile apps.',
+    cta: 'Explore Sovnik',
+  },
   map: {
     legendTitle: 'Station reliability',
     legendHigh: 'High',

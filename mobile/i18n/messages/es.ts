@@ -183,6 +183,11 @@ export const es: MobileMessages = {
     body: 'GetMapa te ayuda a explorar rutas a pie por Iberia.',
     cta: 'Obtener GetMapa',
   },
+  sovnik: {
+    title: 'Aprende lenguas ibéricas',
+    body: 'Sovnik te ayuda a aprender español, portugués, gallego, catalán, euskera y más con pruebas de vocabulario y aplicaciones móviles.',
+    cta: 'Descubre Sovnik',
+  },
   map: {
     legendTitle: 'Fiabilidad de estaciones',
     legendHigh: 'Alta',

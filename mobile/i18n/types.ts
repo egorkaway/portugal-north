@@ -182,6 +182,11 @@ export type MobileMessages = {
     body: string;
     cta: string;
   };
+  sovnik: {
+    title: string;
+    body: string;
+    cta: string;
+  };
   map: {
     legendTitle: string;
     legendHigh: string;

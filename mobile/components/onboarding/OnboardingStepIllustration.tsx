@@ -32,7 +32,7 @@ function StepSymbol({
 
 function WelcomeIllustration() {
   const stops = ['Lisboa', 'Coimbra', 'Porto'];
-  const badges = ['426 stations', 'Rankings', 'Budget stays'];
+  const badges = ['1,414 stations', 'Rankings', 'Budget stays'];
 
   return (
     <View style={styles.frame}>

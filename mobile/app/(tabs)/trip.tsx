@@ -14,6 +14,7 @@ import { SymbolView } from 'expo-symbols';
 import ViewShot from 'react-native-view-shot';
 import { WidgetPreviewCard } from '@/components/WidgetPreviewCard';
 import { GetMapaPromoCard } from '@/components/GetMapaPromoCard';
+import { SovnikPromoCard } from '@/components/SovnikPromoCard';
 import { BuildFooter } from '@/components/BuildFooter';
 import { TripShareBrandingFooter } from '@/components/TripShareBrandingFooter';
 import { theme } from '@/constants/theme';
@@ -525,7 +526,12 @@ export default function TripScreen() {
       </View>
 
       <WidgetPreviewCard props={widgetPreviewProps} />
-      {history.length > 0 ? <GetMapaPromoCard /> : null}
+      {history.length > 0 ? (
+        <>
+          <GetMapaPromoCard />
+          <SovnikPromoCard />
+        </>
+      ) : null}
       <BuildFooter />
     </ScrollView>
   );
