@@ -40,6 +40,8 @@ export function filenameFromImageUrl(url: string): string {
 
 /** Best-effort author name from a Wikimedia Commons filename. */
 export function wikimediaCreatorFromFilename(filename: string): string | null {
+  if (filename === "Estação Ferroviária da Curia.jpg") return "JP Ribeiro";
+
   const flickrUser = filename.match(/Flickr_-_(.+?)_-_/i);
   if (flickrUser?.[1]) {
     return humanizeSlug(flickrUser[1]);
@@ -118,6 +120,17 @@ export function attributionForImageUrl(imageUrl: string): ImageAttribution {
       acquireLicensePage: PEXELS_LICENSE,
       sourceUrl: PEXELS_LICENSE,
       sourceName: "Pexels",
+    };
+  }
+
+  if (imageUrl.includes("fertagus.pt")) {
+    const sourceUrl = "https://www.fertagus.pt/en/Stations/Venda-do-Alcaide";
+    return {
+      creator: { "@type": "Organization", name: "Fertagus" },
+      creditText: "Image via Fertagus",
+      copyrightNotice: "Image published by Fertagus",
+      sourceUrl,
+      sourceName: "Fertagus",
     };
   }
 

@@ -378,6 +378,7 @@ export const stationHotels: StationHotels = {
     { name: "Hotel das Termas da Curia", distanceKm: 0.6, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Curia%2C+Portugal&order=price" },
     { name: "Pensão Lourenço", distanceKm: 0.8, priceFrom: 30, bookingUrl: "https://www.booking.com/searchresults.html?ss=Curia%2C+Portugal&order=price" },
     { name: "Curia Clube", distanceKm: 0.3, priceFrom: 38, bookingUrl: "https://www.booking.com/searchresults.html?ss=Curia%20Clube%2C%20Curia%2C%20Portugal&order=price" },
+    { name: "Hotel do Parque, Boutique Hotel - Curia", distanceKm: 0.6, priceFrom: 45, bookingUrl: "https://www.booking.com/hotel/pt/do-parque-anadia.html" },
   ],
   "Oliveira do Bairro": [
     { name: "Paloma Blanca Hotel", distanceKm: 0.9, priceFrom: 45, bookingUrl: "https://www.booking.com/searchresults.html?ss=Oliveira+do+Bairro%2C+Portugal&order=price" },
