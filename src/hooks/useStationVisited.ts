@@ -36,6 +36,14 @@ export function toggleStationVisitedAt(stationName: string): boolean {
   return visited;
 }
 
+/** Mark a station visited without toggling it back off if already marked. */
+export function markStationVisitedAt(stationName: string): void {
+  const current = readVisitedMap();
+  if (current[stationName]) return;
+  writeVisitedMap({ ...current, [stationName]: true });
+  emit();
+}
+
 export function useStationVisited(stationName: string) {
   const visitedMap = useAllVisited();
   const visited = Boolean(visitedMap[stationName]);

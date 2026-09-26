@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { getMinutesSinceDeparture } from "@/lib/departureCountdown";
 import { clearActiveTrip, type PlannedDeparture } from "@/lib/plannedDepartures";
 import { recordTakenTrip } from "@/lib/trainTripHistory";
+import { markStationVisitedAt } from "@/hooks/useStationVisited";
 
 /** Add the active trip to Taken trains once its effective departure time has passed. */
 export function useTripDepartureRecord(
@@ -33,6 +34,7 @@ export function useTripDepartureRecord(
       clearActiveTrip();
       return;
     }
+    markStationVisitedAt(trip.stationName);
     recordTakenTrip(trip, trip.destination, { delayMinutes, platform });
   }, [trip, delayMinutes, platform, now]);
 }
