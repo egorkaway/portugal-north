@@ -458,7 +458,7 @@ export const stationImages: Record<string, string> = {
   "Cuenca-Fernando Zóbel": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Estaci%C3%B3n_de_Cuenca-Fernando_Z%C3%B3bel_12.jpg/960px-Estaci%C3%B3n_de_Cuenca-Fernando_Z%C3%B3bel_12.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Cullera": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Estaci%C3%B3_de_tren_de_Cullera.jpg/960px-Estaci%C3%B3_de_tren_de_Cullera.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Cunit": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/Estaci%C3%B3_de_Cunit.JPG/960px-Estaci%C3%B3_de_Cunit.JPG?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
-  "Curia": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_da_Curia.jpg/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_da_Curia.jpg",
+  "Curia": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_da_Curia.jpg/960px-Esta%C3%A7%C3%A3o_Ferrovi%C3%A1ria_da_Curia.jpg",
   "Curvaceiras": "https://images.pexels.com/photos/7635585/pexels-photo-7635585.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
   "Daimiel": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/09/Daimiel_-_Estaci%C3%B3n_de_Adif_5.jpg/960px-Daimiel_-_Estaci%C3%B3n_de_Adif_5.jpg?utm_source=es.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
   "Darque": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/CP_1413_%2B_%22PTG%22_%2826337261208%29.jpg/960px-CP_1413_%2B_%22PTG%22_%2826337261208%29.jpg",
